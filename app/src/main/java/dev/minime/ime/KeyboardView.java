@@ -135,15 +135,16 @@ final class KeyboardView extends LinearLayout {
         int previousScroll=candidateScroll==null?0:candidateScroll.getScrollX();
         if(!lastRaw.equals(engine.raw())) {previousScroll=0;lastRaw=engine.raw();}
         final int restoreScroll=previousScroll;
+        boolean separatePhonetics=!english && !engine.raw().isEmpty() && engine.preferred()!=0;
         phonetics.setText(engine.raw());phonetics.setContentDescription("Exact input "+engine.raw());
-        phonetics.setVisibility(!english && !engine.raw().isEmpty() && panel==0?VISIBLE:GONE);
+        phonetics.setVisibility(separatePhonetics && panel==0?VISIBLE:GONE);
         strip.removeAllViews();candidateScroll=null;
         List<Candidate> candidates=engine.candidates();
         if(candidates.isEmpty() || panel!=0)expanded=false;
         traceEnabled=english && allowLanguageSwitch && !numeric && !zhuyin && panel==0 && !expanded;
         traceCase=caps?2:shifted?1:0;
         if(!candidates.isEmpty()) {
-            int from=!engine.raw().isEmpty() && !english?1:0;
+            int from=separatePhonetics?1:0;
             candidateScroll=new HorizontalScrollView(getContext());candidateScroll.setHorizontalScrollBarEnabled(false);candidateScroll.setContentDescription("Candidate list");
             LinearLayout words=new LinearLayout(getContext());candidateScroll.addView(words);strip.addView(candidateScroll,new LayoutParams(0,-1,1));
             for(int i=from;i<candidates.size();i++) {
@@ -184,9 +185,10 @@ final class KeyboardView extends LinearLayout {
         if(expanded) {
             ScrollView scroll=new ScrollView(getContext());scroll.setContentDescription("Expanded candidate list");
             CandidateFlowLayout grid=new CandidateFlowLayout(getContext());scroll.addView(grid);
-            int first=engine.raw().isEmpty()?0:1;
+            int first=separatePhonetics?1:0;
             for(int i=first;i<candidates.size();i++) {
                 TextView word=button(candidates.get(i).text,"CANDIDATE:"+i,"","",false,48,1);
+                if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
                 word.setTextColor(engine.preferred()==i && !engine.raw().isEmpty()?Color.BLACK:0xff5d6b71);
                 word.setTextSize(20);word.setMinWidth(dp(48));word.setMinHeight(dp(48));word.setPadding(dp(12),dp(4),dp(12),dp(4));
                 word.setSingleLine(false);word.setMaxLines(Integer.MAX_VALUE);

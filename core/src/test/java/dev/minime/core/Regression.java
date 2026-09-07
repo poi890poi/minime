@@ -172,6 +172,7 @@ public final class Regression {
         c.start(false,false,false,false);type(c,"nihao");yes(c.candidates().stream().anyMatch(v->v.text.equals("你好")),"return to Chinese conversion");
         GapRegression.run();
         PartialSelectionRegression.run();
+        EnglishCandidateRegression.run();
         Collections.sort(latencies);
         System.out.printf(Locale.ROOT,"PASS %d assertions; desktop key processing p50=%.2f ms p95=%.2f ms max=%.2f ms (%d keys; not Android latency)%n", assertions,latencies.get(latencies.size()/2)/1e6,latencies.get(latencies.size()*95/100)/1e6,latencies.get(latencies.size()-1)/1e6,latencies.size());
     }

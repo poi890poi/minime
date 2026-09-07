@@ -468,6 +468,21 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         try { getInstrumentation().getUiAutomation().waitForIdle(300,3000); }
         catch(java.util.concurrent.TimeoutException e) { throw new AssertionError(e); }
     }
+    public void testMixedEnglishDefaultVisible() throws Exception {
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
+        assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
+        for(String raw:new String[]{"hello","time","thanks","morning"}) {
+            clear();type(raw);
+            Rect literal=bounds("Exact input "+raw),strip=bounds("Candidate list");
+            assertTrue("Literal Space default is inside the candidate strip",strip.contains(literal.centerX(),literal.centerY()));
+            if(raw.equals("time"))node("Candidate times").recycle();
+            click("Expand candidates");
+            AccessibilityNodeInfo grid=node("Expanded candidate list"),exact=find(grid,"Exact input "+raw);
+            assertNotNull("Expansion retains the literal choice",exact);exact.recycle();
+            click("Collapse candidates");click("Space");expectText(raw+" ");
+        }
+        clear();type("nihao");click("Candidate 你");click("Candidate 好");expectText("你好");
+    }
     public void testWebViewMixedInput() throws Exception {
         java.util.concurrent.CountDownLatch loaded=new java.util.concurrent.CountDownLatch(1);
         java.util.concurrent.atomic.AtomicReference<android.webkit.WebView> ref=new java.util.concurrent.atomic.AtomicReference<>();

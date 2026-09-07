@@ -267,6 +267,17 @@ public final class CompositionEngine {
         }
         if (dictionary != null && !bpmf && !literalField && (intent == Intent.LATIN_LITERAL || intent == Intent.AMBIGUOUS))
             for (Candidate c : dictionary.englishCompletions(raw)) if (seen.add(c.text)) candidates.add(c);
+        // With a literal default, expose English completions alongside Chinese
+        // choices. Preserve each source's order; neither list buries the other.
+        if(!englishMode && preferred==0 && !bpmf) {
+            List<Candidate> latin=new ArrayList<>(),han=new ArrayList<>();
+            for(int i=1;i<candidates.size();i++)(candidates.get(i).literal?latin:han).add(candidates.get(i));
+            candidates.subList(1,candidates.size()).clear();
+            for(int i=0;i<Math.max(latin.size(),han.size());i++) {
+                if(i<latin.size())candidates.add(latin.get(i));
+                if(i<han.size())candidates.add(han.get(i));
+            }
+        }
         if(englishMode && !literalField && !privateField) {
             for(Candidate c:learning.custom(raw))if(seen.add(c.text))candidates.add(new Candidate(c.text,true,c.score));
             candidates.subList(1,candidates.size()).sort(Comparator.comparingInt((Candidate c)->learning.count(contextKey(),raw,c.text)).reversed().thenComparing(Comparator.comparingDouble((Candidate c)->c.score).reversed()));

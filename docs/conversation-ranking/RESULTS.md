@@ -28,4 +28,8 @@ Verification: five focused Android tests passed in 12.751 s on SM-G781B / Androi
 
 ## Candidate presentation
 
-Further investigation and verification recorded below as each independent change is completed.
+Cause: the layout hid raw candidate zero for every Pinyin-mode token, even when it was the literal Space default. Core appended English completions behind all Chinese conversions. Consequently common English words appeared to have been replaced in the candidate strip despite being committed literally.
+
+Fix: show the literal default directly in both collapsed and expanded strips. When literal is the default, alternate English completions and Chinese alternatives, retaining each source's order and raw index zero. This intentional presentation policy keeps both languages close to the front without changing acceptance or dictionary ranking. Chinese-default compositions retain their separate phonetic row.
+
+The new core regression fails on the old English completion ordering. Eight independently authored word probes, raw recovery, and an explicit learned Chinese default pass with the fix: 1291 core assertions. The phone test exercises hello/time/thanks plus fresh morning, visible raw coordinates inside the strip, expansion, Space, and partial Chinese selection. That test and the frozen conversation study pass (2 tests, 15.693 s). Every frozen study commit is unchanged from the Taiwan-only run. Phone restored and Dozing.
