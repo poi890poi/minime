@@ -50,7 +50,7 @@ english = {}
 raw = gzip.decompress((ROOT / 'third_party/aosp/en_US_wordlist.combined.gz').read_bytes())
 for line in raw.decode('utf-8').splitlines():
     m = re.match(r' word=([^,]+),f=(\d+)', line)
-    if m and int(m[2]) >= 70 and re.fullmatch("[a-z]+(?:'[a-z]+)*", m[1]):
+    if m and int(m[2]) >= 70 and re.fullmatch("[A-Za-z]+(?:'[A-Za-z]+)*", m[1]):
         english[m[1]] = int(m[2])
 with (OUT / 'en_us.tsv').open('w', encoding='utf-8', newline='\n') as f:
     for word, count in sorted(english.items()):

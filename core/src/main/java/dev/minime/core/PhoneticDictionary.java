@@ -10,6 +10,7 @@ public final class PhoneticDictionary {
     private final Map<String, List<Candidate>> pinyin = new HashMap<>();
     private final Map<String, List<Candidate>> zhuyin = new HashMap<>();
     private final NavigableMap<String, Integer> english = new TreeMap<>();
+    private final NavigableMap<String, Integer> foldedEnglish = new TreeMap<>();
     private final Map<String, List<Candidate>> continuations = new HashMap<>();
     private final Set<String> syllables = new HashSet<>();
     private ReadingIndex pinyinPrefixes,zhuyinPrefixes;
@@ -28,15 +29,15 @@ public final class PhoneticDictionary {
             BinaryModel.Reader in=new BinaryModel.Reader(stream);PhoneticDictionary d=new PhoneticDictionary();
             in.words(d.pinyin);in.words(d.zhuyin);in.counts(d.english);in.words(d.continuations);Collections.addAll(d.syllables,in.strings());
             d.pinyinPrefixes=new ReadingIndex(in);d.zhuyinPrefixes=new ReadingIndex(in);d.pinyinSyllables=new PinyinSyllableIndex(in);d.contextModel=new ContextModel(in);
-            if(stream.read()!=-1)throw new IOException("Trailing model data");return d;
+            if(stream.read()!=-1)throw new IOException("Trailing model data");d.indexEnglish();return d;
         } catch(IndexOutOfBoundsException e) {throw new IOException("Invalid model reference",e);}
     }
     public static PhoneticDictionary load(Reader chinese,Reader english,Reader syllables,Reader context)throws IOException {
         PhoneticDictionary d=load(chinese,english,syllables);d.contextModel=ContextModel.load(context);
-        d.contextModel.contractions().forEach(d.english::putIfAbsent);return d;
+        d.contextModel.contractions().forEach(d.english::putIfAbsent);d.indexEnglish();return d;
     }
     public List<Candidate> englishPredictions(String context) { return contextModel.english(context); }
-    public List<Candidate> englishTrace(float[] points) {return EnglishTrace.decode(english,points);}
+    public List<Candidate> englishTrace(float[] points) {return EnglishTrace.decode(foldedEnglish,points);}
 
     public static PhoneticDictionary load(Reader chinese, Reader english, Reader syllables) throws IOException {
         PhoneticDictionary d = new PhoneticDictionary();
@@ -79,6 +80,7 @@ public final class PhoneticDictionary {
             }
         d.pinyinSyllables=new PinyinSyllableIndex(d.pinyin,readings); d.zhuyinPrefixes=new ReadingIndex(d.zhuyin);
         d.pinyinPrefixes=new ReadingIndex(d.pinyin);
+        d.indexEnglish();
         return d;
     }
     private static void add(Map<String, List<Candidate>> map, String key, Candidate c) {
@@ -87,6 +89,10 @@ public final class PhoneticDictionary {
     public static String normalize(String s) { return s.toLowerCase(Locale.ROOT).replace("ü", "v").replace("'", "").replace(" ", ""); }
     private static String toneless(String s) { return s.replaceAll("[ˊˇˋ˙ˉ]", ""); }
     public boolean isEnglish(String raw) { return english.containsKey(raw.toLowerCase(Locale.ROOT)); }
+    public boolean isEnglish(String raw,boolean latinContext) {return (latinContext?foldedEnglish:english).containsKey(raw.toLowerCase(Locale.ROOT));}
+    private void indexEnglish() {
+        foldedEnglish.clear();english.forEach((word,frequency)->foldedEnglish.merge(word.toLowerCase(Locale.ROOT),frequency,Math::max));
+    }
     /** Literal intent must not turn into Chinese solely because abbreviation search found a word. */
     public boolean hasCompletePinyin(String raw) {
         String key=raw.toLowerCase(Locale.ROOT).replace('ü','v').replace(' ', '\'');
@@ -175,6 +181,9 @@ public final class PhoneticDictionary {
         return true;
     }
     public List<Candidate> englishCompletions(String raw) {
+        return englishCompletions(raw,false);
+    }
+    public List<Candidate> englishCompletions(String raw,boolean latinContext) {
         if (raw.length() < 2 || !raw.matches("[A-Za-z]+(?:'[A-Za-z]*)?")) return Collections.emptyList();
         String key = raw.toLowerCase(Locale.ROOT);
         boolean caps=raw.equals(raw.toUpperCase(Locale.ROOT));
@@ -182,8 +191,9 @@ public final class PhoneticDictionary {
         if(!caps && !title && !raw.equals(key)) return Collections.emptyList();
         Comparator<Candidate> order=Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text);
         PriorityQueue<Candidate> top=new PriorityQueue<>(order.reversed());
-        for (Map.Entry<String, Integer> e : english.tailMap(key).entrySet()) {
+        for (Map.Entry<String, Integer> e : (latinContext?foldedEnglish:english).tailMap(key).entrySet()) {
             if (!e.getKey().startsWith(key)) break;
+            if(!latinContext && !e.getKey().equals(e.getKey().toLowerCase(Locale.ROOT)))continue;
             if (!e.getKey().equals(key)) {
                 String text = e.getKey();
                 if (caps) text=text.toUpperCase(Locale.ROOT);
@@ -212,7 +222,7 @@ public final class PhoneticDictionary {
         boolean title=raw.equals(Character.toUpperCase(key.charAt(0))+key.substring(1));
         if(!caps && !title && !raw.equals(key))return Collections.emptyList();
         Set<String> edits=new HashSet<>();
-        boolean apostropheOnly=raw.length()<3 || isEnglish(raw);
+        boolean apostropheOnly=raw.length()<3 || isEnglish(raw,true);
         for(int i=0;i<=key.length();i++) {
             if(apostropheOnly) {edits.add(key.substring(0,i)+"'"+key.substring(i));continue;}
             if(i<key.length())edits.add(key.substring(0,i)+key.substring(i+1));
@@ -223,10 +233,10 @@ public final class PhoneticDictionary {
             }
         }
         List<Candidate> result=new ArrayList<>();
-        for(String word:edits)if(english.containsKey(word)) {
+        for(String word:edits)if(foldedEnglish.containsKey(word)) {
             String text=caps?word.toUpperCase(Locale.ROOT):title?Character.toUpperCase(word.charAt(0))+word.substring(1):word;
             if(text.startsWith("i'"))text="I"+text.substring(1);
-            result.add(new Candidate(text,true,english.get(word)));
+            result.add(new Candidate(text,true,foldedEnglish.get(word)));
         }
         result.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text));
         return result.subList(0,Math.min(8,result.size()));

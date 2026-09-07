@@ -54,3 +54,11 @@ to define expected output; polyphonic reading ambiguity remains a limitation.
 Repeated spelling forms and cache hits must not be described as independent
 language samples. Fresh/primed modes are a controlled learning-state comparison,
 not evidence that every user has selected all overlapping syllables.
+
+The capitalized-source change also uses a newly frozen GUM test split: 1285
+sentences / 20401 normalized words across 15 genres, including conversation,
+interview, fiction, news and instruction. Run it with
+`./tools/test-desktop.ps1 -Corpus docs/conversation-ranking/corpus/gum-test.tsv`.
+The source revision, content hash and genre counts are in gum-manifest.json;
+GUM's separate CC BY-NC-SA license is retained under third_party/ud/UD_English-GUM.
+It is evaluation-only and never packaged or used to set dictionary weights.

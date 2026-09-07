@@ -68,3 +68,33 @@ This is not concealed by the zero above, which measures known words after the
 first word only. Unknown-word conversions remain in the raw reports and summary.
 See DESKTOP_TESTING.md for corpus and measurement limitations. Android integration
 of this core slice will be checked after the core/data work is complete.
+
+## Capitalized AOSP entries
+
+The source-integrity baseline found 9879 missing eligible entries and zero changed
+frequencies. Import now preserves all 44127 source words at the existing frequency
+cutoff, with original case and frequency. A derived folded lookup serves explicit
+English mode and a transient Latin-word boundary. Fresh Pinyin continues using
+the original lowercase vocabulary, preventing romanized proper names from taking
+over Chinese input. Private fields use the same nonpersonal lexical recognition
+without storing choices. No evaluation entry was added to production data.
+
+| Fresh-state mixed input | Tokens | Replacements before import fix | After |
+|---|---:|---:|---:|
+| EWT development | 21741 | 1345 | 806 |
+| EWT test | 21670 | 1518 | 990 |
+| Newly frozen GUM test, 15 genres | 20401 | 903 | 489 |
+
+All 8999 Chinese probe results are identical. Known noninitial English replacement
+remains zero after the learning-context fix. Explicit English mode remains exact.
+GUM is a newly acquired evaluation-only corpus (1285 sentences), not training;
+its separate CC BY-NC-SA terms and source attribution are retained under
+`third_party/ud/UD_English-GUM`. Input text is lowercased and punctuation/numeric
+spans excluded, so the remaining counts include names, fragments, slang and
+out-of-vocabulary words; they are not a claim of complete conversational accuracy.
+
+1870 core assertions pass, including binary round-trip and private-field cases.
+The independently compiled binary is 48943042 bytes and preserves its version-1
+serialization format. Native timing did not materially improve and is not claimed
+as a speedup. The private lexical-boundary assertion was added after the broad
+nonprivate runs; it does not change any mode exercised in those runs.

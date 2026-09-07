@@ -2038,5 +2038,3563 @@
         "position": 6
       }
     ]
+  },
+  "desktop-capital-v2": {
+    "file": "desktop-capital-v2.jsonl",
+    "sha256": "63b9b5e1a6f64ae68ef58c1b1af71a2f94219e6a3eb694207270476f72a6c3c3",
+    "rows": 21044,
+    "groups": {
+      "en-dev/fresh": {
+        "sentences": 1979,
+        "tokens": 21741,
+        "known_tokens": 19241,
+        "changed_tokens": 806,
+        "known_noninitial_tokens": 17714,
+        "known_noninitial_changed": 0
+      },
+      "en-dev/primed": {
+        "sentences": 1979,
+        "tokens": 21741,
+        "known_tokens": 19241,
+        "changed_tokens": 896,
+        "known_noninitial_tokens": 17714,
+        "known_noninitial_changed": 0
+      },
+      "en-dev/english": {
+        "sentences": 1979,
+        "tokens": 21741,
+        "known_tokens": 19241,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 17714,
+        "known_noninitial_changed": 0
+      },
+      "en-test/fresh": {
+        "sentences": 2036,
+        "tokens": 21670,
+        "known_tokens": 18809,
+        "changed_tokens": 990,
+        "known_noninitial_tokens": 17325,
+        "known_noninitial_changed": 0
+      },
+      "en-test/primed": {
+        "sentences": 2036,
+        "tokens": 21670,
+        "known_tokens": 18809,
+        "changed_tokens": 1057,
+        "known_noninitial_tokens": 17325,
+        "known_noninitial_changed": 0
+      },
+      "en-test/english": {
+        "sentences": 2036,
+        "tokens": 21670,
+        "known_tokens": 18809,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 17325,
+        "known_noninitial_changed": 0
+      },
+      "zh-dev-full": {
+        "probes": 1000,
+        "top1": 709,
+        "top5": 908,
+        "reachable": 1000,
+        "space_exact": 707
+      },
+      "zh-dev-initial": {
+        "probes": 1000,
+        "top1": 78,
+        "top5": 238,
+        "reachable": 692,
+        "space_exact": 72
+      },
+      "zh-dev-mixed-left": {
+        "probes": 1000,
+        "top1": 341,
+        "top5": 654,
+        "reachable": 986,
+        "space_exact": 338
+      },
+      "zh-dev-mixed-right": {
+        "probes": 1000,
+        "top1": 323,
+        "top5": 560,
+        "reachable": 902,
+        "space_exact": 317
+      },
+      "zh-test-full": {
+        "probes": 1000,
+        "top1": 703,
+        "top5": 910,
+        "reachable": 1000,
+        "space_exact": 701
+      },
+      "zh-test-initial": {
+        "probes": 1000,
+        "top1": 72,
+        "top5": 229,
+        "reachable": 678,
+        "space_exact": 64
+      },
+      "zh-test-mixed-left": {
+        "probes": 1000,
+        "top1": 334,
+        "top5": 661,
+        "reachable": 988,
+        "space_exact": 331
+      },
+      "zh-test-mixed-right": {
+        "probes": 1000,
+        "top1": 306,
+        "top5": 555,
+        "reachable": 905,
+        "space_exact": 298
+      },
+      "moe-glyph": {
+        "probes": 999,
+        "top1": 217,
+        "top5": 665,
+        "reachable": 999,
+        "space_exact": 211
+      }
+    },
+    "first_changed_examples": [
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "steffen",
+        "output": "沙特紛紛",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "graae",
+        "output": "個人挨挨兒",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "steffen",
+        "output": "沙特紛紛",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "graae",
+        "output": "個人挨挨兒",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "anketell",
+        "output": "安可忒楞楞",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "kramer",
+        "output": "客人埃米爾",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "steadman",
+        "output": "沙特艾德曼",
+        "known": false,
+        "position": 25
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "anketell",
+        "output": "安可忒楞楞",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "kramer",
+        "output": "客人埃米爾",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "steadman",
+        "output": "沙特艾德曼",
+        "known": false,
+        "position": 25
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "6",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "6",
+        "raw": "he",
+        "output": "和",
+        "known": true,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "6",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "8",
+        "raw": "succesfull",
+        "output": "素材測試負利率",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "8",
+        "raw": "succesfull",
+        "output": "素材測試負利率",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "9",
+        "raw": "c'est",
+        "output": "從而身體",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "la",
+        "output": "啦",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "c'est",
+        "output": "從而身體",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "10",
+        "raw": "baqubah",
+        "output": "八區巴赫",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "10",
+        "raw": "baqubah",
+        "output": "八區巴赫",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "11",
+        "raw": "habbaniyah",
+        "output": "哈爸爸尼雅河",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "11",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "11",
+        "raw": "habbaniyah",
+        "output": "哈爸爸尼雅河",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "11",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "12",
+        "raw": "yound",
+        "output": "有難度",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "12",
+        "raw": "yound",
+        "output": "有難度",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "15",
+        "raw": "baath",
+        "output": "巴阿體會",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "15",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "15",
+        "raw": "baath",
+        "output": "巴阿體會",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "15",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "16",
+        "raw": "miniscule",
+        "output": "米尼斯粗了",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "16",
+        "raw": "miniscule",
+        "output": "米尼斯粗了",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "17",
+        "raw": "suckups",
+        "output": "素材庫平時",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "17",
+        "raw": "suckups",
+        "output": "素材庫平時",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "19",
+        "raw": "freewheeling",
+        "output": "發熱額外和惡靈",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "19",
+        "raw": "sergey",
+        "output": "十二個月",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "19",
+        "raw": "freewheeling",
+        "output": "發熱額外和惡靈",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "19",
+        "raw": "sergey",
+        "output": "十二個月",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "21",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "21",
+        "raw": "newsday",
+        "output": "呢無傷大雅",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "21",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "21",
+        "raw": "newsday",
+        "output": "呢無傷大雅",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "23",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "23",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "24",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "24",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "25",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "25",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "26",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "26",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "28",
+        "raw": "qaida",
+        "output": "去挨打",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "28",
+        "raw": "festering",
+        "output": "反而沙特日能夠",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "28",
+        "raw": "qaida",
+        "output": "去挨打",
+        "known": false,
+        "position": 26
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "28",
+        "raw": "qaida",
+        "output": "去挨打",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "28",
+        "raw": "festering",
+        "output": "反而沙特日能夠",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "28",
+        "raw": "qaida",
+        "output": "去挨打",
+        "known": false,
+        "position": 26
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "30",
+        "raw": "xinhua",
+        "output": "新華",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "30",
+        "raw": "yassin",
+        "output": "雅思四年",
+        "known": false,
+        "position": 18
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "30",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "30",
+        "raw": "xinhua",
+        "output": "新華",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "30",
+        "raw": "yassin",
+        "output": "雅思四年",
+        "known": false,
+        "position": 18
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "30",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "32",
+        "raw": "sharq",
+        "output": "殺人去",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "32",
+        "raw": "awsat",
+        "output": "安慰灑脫",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "32",
+        "raw": "sharq",
+        "output": "殺人去",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "32",
+        "raw": "awsat",
+        "output": "安慰灑脫",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "34",
+        "raw": "ramadi",
+        "output": "熱愛嗎地",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "34",
+        "raw": "ramadi",
+        "output": "熱愛嗎地",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "35",
+        "raw": "muqtada",
+        "output": "目前他打",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "35",
+        "raw": "sadr",
+        "output": "所愛的人",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "35",
+        "raw": "muqtada",
+        "output": "目前他打",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "35",
+        "raw": "sadr",
+        "output": "所愛的人",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "36",
+        "raw": "communique",
+        "output": "從盲目你卻",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "36",
+        "raw": "communique",
+        "output": "從盲目你卻",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "38",
+        "raw": "xinhua",
+        "output": "新華",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "38",
+        "raw": "xinhua",
+        "output": "新華",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "55",
+        "raw": "tehran",
+        "output": "特忽然",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "55",
+        "raw": "afp",
+        "output": "啊分配",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "55",
+        "raw": "tehran",
+        "output": "特忽然",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "55",
+        "raw": "afp",
+        "output": "啊分配",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "56",
+        "raw": "an",
+        "output": "按",
+        "known": true,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "57",
+        "raw": "masoud",
+        "output": "嗎搜到",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "57",
+        "raw": "shojai",
+        "output": "手機愛",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "57",
+        "raw": "masoud",
+        "output": "嗎搜到",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "57",
+        "raw": "shojai",
+        "output": "手機愛",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "58",
+        "raw": "doubts",
+        "output": "都不同是",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "58",
+        "raw": "doubts",
+        "output": "都不同是",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "60",
+        "raw": "shojai",
+        "output": "手機愛",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "60",
+        "raw": "tehran's",
+        "output": "特惠燃燒",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "60",
+        "raw": "palestine",
+        "output": "怕了身體呢",
+        "known": false,
+        "position": 12
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "60",
+        "raw": "shojai",
+        "output": "手機愛",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "60",
+        "raw": "tehran's",
+        "output": "特惠燃燒",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "60",
+        "raw": "palestine",
+        "output": "怕了身體呢",
+        "known": false,
+        "position": 12
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "61",
+        "raw": "he",
+        "output": "和",
+        "known": true,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "62",
+        "raw": "he",
+        "output": "和",
+        "known": true,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "67",
+        "raw": "noncombatants",
+        "output": "農村歐美把它女同事",
+        "known": false,
+        "position": 9
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "67",
+        "raw": "shaikh",
+        "output": "上海客戶",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "67",
+        "raw": "abdul",
+        "output": "阿卜杜拉",
+        "known": false,
+        "position": 12
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "67",
+        "raw": "wahhab",
+        "output": "娃哈哈不",
+        "known": false,
+        "position": 13
+      }
+    ]
+  },
+  "gum-baseline": {
+    "file": "gum-baseline.jsonl",
+    "sha256": "0749284526e592a211be79ae0df68d68e9eaa79299bd7278d71a7ce1415cf4c0",
+    "rows": 3855,
+    "groups": {
+      "en-gum-academic/fresh": {
+        "sentences": 90,
+        "tokens": 1635,
+        "known_tokens": 1424,
+        "changed_tokens": 115,
+        "known_noninitial_tokens": 1345,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-academic/primed": {
+        "sentences": 90,
+        "tokens": 1635,
+        "known_tokens": 1424,
+        "changed_tokens": 115,
+        "known_noninitial_tokens": 1345,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-academic/english": {
+        "sentences": 90,
+        "tokens": 1635,
+        "known_tokens": 1424,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1345,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-bio/fresh": {
+        "sentences": 69,
+        "tokens": 1404,
+        "known_tokens": 1210,
+        "changed_tokens": 120,
+        "known_noninitial_tokens": 1157,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-bio/primed": {
+        "sentences": 69,
+        "tokens": 1404,
+        "known_tokens": 1210,
+        "changed_tokens": 132,
+        "known_noninitial_tokens": 1157,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-bio/english": {
+        "sentences": 69,
+        "tokens": 1404,
+        "known_tokens": 1210,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1157,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-conversation/fresh": {
+        "sentences": 193,
+        "tokens": 1432,
+        "known_tokens": 1312,
+        "changed_tokens": 29,
+        "known_noninitial_tokens": 1153,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-conversation/primed": {
+        "sentences": 193,
+        "tokens": 1432,
+        "known_tokens": 1312,
+        "changed_tokens": 44,
+        "known_noninitial_tokens": 1153,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-conversation/english": {
+        "sentences": 193,
+        "tokens": 1432,
+        "known_tokens": 1312,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1153,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-court/fresh": {
+        "sentences": 33,
+        "tokens": 764,
+        "known_tokens": 716,
+        "changed_tokens": 33,
+        "known_noninitial_tokens": 685,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-court/primed": {
+        "sentences": 33,
+        "tokens": 764,
+        "known_tokens": 716,
+        "changed_tokens": 34,
+        "known_noninitial_tokens": 685,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-court/english": {
+        "sentences": 33,
+        "tokens": 764,
+        "known_tokens": 716,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 685,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-essay/fresh": {
+        "sentences": 60,
+        "tokens": 1067,
+        "known_tokens": 1008,
+        "changed_tokens": 34,
+        "known_noninitial_tokens": 954,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-essay/primed": {
+        "sentences": 60,
+        "tokens": 1067,
+        "known_tokens": 1008,
+        "changed_tokens": 34,
+        "known_noninitial_tokens": 954,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-essay/english": {
+        "sentences": 60,
+        "tokens": 1067,
+        "known_tokens": 1008,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 954,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-fiction/fresh": {
+        "sentences": 123,
+        "tokens": 1673,
+        "known_tokens": 1578,
+        "changed_tokens": 63,
+        "known_noninitial_tokens": 1463,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-fiction/primed": {
+        "sentences": 123,
+        "tokens": 1673,
+        "known_tokens": 1578,
+        "changed_tokens": 89,
+        "known_noninitial_tokens": 1463,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-fiction/english": {
+        "sentences": 123,
+        "tokens": 1673,
+        "known_tokens": 1578,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1463,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-interview/fresh": {
+        "sentences": 100,
+        "tokens": 1435,
+        "known_tokens": 1319,
+        "changed_tokens": 49,
+        "known_noninitial_tokens": 1241,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-interview/primed": {
+        "sentences": 100,
+        "tokens": 1435,
+        "known_tokens": 1319,
+        "changed_tokens": 53,
+        "known_noninitial_tokens": 1241,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-interview/english": {
+        "sentences": 100,
+        "tokens": 1435,
+        "known_tokens": 1319,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1241,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-letter/fresh": {
+        "sentences": 58,
+        "tokens": 896,
+        "known_tokens": 857,
+        "changed_tokens": 29,
+        "known_noninitial_tokens": 801,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-letter/primed": {
+        "sentences": 58,
+        "tokens": 896,
+        "known_tokens": 857,
+        "changed_tokens": 32,
+        "known_noninitial_tokens": 801,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-letter/english": {
+        "sentences": 58,
+        "tokens": 896,
+        "known_tokens": 857,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 801,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-news/fresh": {
+        "sentences": 85,
+        "tokens": 1608,
+        "known_tokens": 1416,
+        "changed_tokens": 137,
+        "known_noninitial_tokens": 1349,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-news/primed": {
+        "sentences": 85,
+        "tokens": 1608,
+        "known_tokens": 1416,
+        "changed_tokens": 138,
+        "known_noninitial_tokens": 1349,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-news/english": {
+        "sentences": 85,
+        "tokens": 1608,
+        "known_tokens": 1416,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1349,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-podcast/fresh": {
+        "sentences": 38,
+        "tokens": 819,
+        "known_tokens": 774,
+        "changed_tokens": 28,
+        "known_noninitial_tokens": 740,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-podcast/primed": {
+        "sentences": 38,
+        "tokens": 819,
+        "known_tokens": 774,
+        "changed_tokens": 31,
+        "known_noninitial_tokens": 740,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-podcast/english": {
+        "sentences": 38,
+        "tokens": 819,
+        "known_tokens": 774,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 740,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-speech/fresh": {
+        "sentences": 77,
+        "tokens": 1542,
+        "known_tokens": 1447,
+        "changed_tokens": 48,
+        "known_noninitial_tokens": 1383,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-speech/primed": {
+        "sentences": 77,
+        "tokens": 1542,
+        "known_tokens": 1447,
+        "changed_tokens": 49,
+        "known_noninitial_tokens": 1383,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-speech/english": {
+        "sentences": 77,
+        "tokens": 1542,
+        "known_tokens": 1447,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1383,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-textbook/fresh": {
+        "sentences": 112,
+        "tokens": 1757,
+        "known_tokens": 1665,
+        "changed_tokens": 83,
+        "known_noninitial_tokens": 1560,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-textbook/primed": {
+        "sentences": 112,
+        "tokens": 1757,
+        "known_tokens": 1665,
+        "changed_tokens": 88,
+        "known_noninitial_tokens": 1560,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-textbook/english": {
+        "sentences": 112,
+        "tokens": 1757,
+        "known_tokens": 1665,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1560,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-vlog/fresh": {
+        "sentences": 64,
+        "tokens": 1423,
+        "known_tokens": 1330,
+        "changed_tokens": 19,
+        "known_noninitial_tokens": 1281,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-vlog/primed": {
+        "sentences": 64,
+        "tokens": 1423,
+        "known_tokens": 1330,
+        "changed_tokens": 21,
+        "known_noninitial_tokens": 1281,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-vlog/english": {
+        "sentences": 64,
+        "tokens": 1423,
+        "known_tokens": 1330,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1281,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-voyage/fresh": {
+        "sentences": 75,
+        "tokens": 1516,
+        "known_tokens": 1376,
+        "changed_tokens": 101,
+        "known_noninitial_tokens": 1313,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-voyage/primed": {
+        "sentences": 75,
+        "tokens": 1516,
+        "known_tokens": 1376,
+        "changed_tokens": 103,
+        "known_noninitial_tokens": 1313,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-voyage/english": {
+        "sentences": 75,
+        "tokens": 1516,
+        "known_tokens": 1376,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1313,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-whow/fresh": {
+        "sentences": 108,
+        "tokens": 1430,
+        "known_tokens": 1398,
+        "changed_tokens": 15,
+        "known_noninitial_tokens": 1292,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-whow/primed": {
+        "sentences": 108,
+        "tokens": 1430,
+        "known_tokens": 1398,
+        "changed_tokens": 22,
+        "known_noninitial_tokens": 1292,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-whow/english": {
+        "sentences": 108,
+        "tokens": 1430,
+        "known_tokens": 1398,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1292,
+        "known_noninitial_changed": 0
+      }
+    },
+    "first_changed_examples": [
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-1",
+        "raw": "america",
+        "output": "啊麼日擦",
+        "known": false,
+        "position": 9
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-1",
+        "raw": "america",
+        "output": "啊麼日擦",
+        "known": false,
+        "position": 9
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-14",
+        "raw": "kessler",
+        "output": "可是三輪兒",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-14",
+        "raw": "kessler",
+        "output": "可是三輪兒",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-21",
+        "raw": "recoded",
+        "output": "然而從得到",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-21",
+        "raw": "recoded",
+        "output": "然而從得到",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-37",
+        "raw": "african",
+        "output": "安撫日常按",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-37",
+        "raw": "asian",
+        "output": "阿斯按",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-37",
+        "raw": "african",
+        "output": "安撫日常按",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-37",
+        "raw": "asian",
+        "output": "阿斯按",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-43",
+        "raw": "dichotomously",
+        "output": "滴蟲同謀是利用",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-43",
+        "raw": "dichotomously",
+        "output": "滴蟲同謀是利用",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "stata",
+        "output": "說他他",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "pearson",
+        "output": "配額啊肉鬆",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "fstatistic",
+        "output": "發射塔提升提出",
+        "known": false,
+        "position": 26
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "noninteger",
+        "output": "濃膩南特個人",
+        "known": false,
+        "position": 28
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "rao",
+        "output": "繞",
+        "known": false,
+        "position": 37
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "scott",
+        "output": "是從天天",
+        "known": false,
+        "position": 39
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "stata",
+        "output": "說他他",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "pearson",
+        "output": "配額啊肉鬆",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "fstatistic",
+        "output": "發射塔提升提出",
+        "known": false,
+        "position": 26
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "noninteger",
+        "output": "濃膩南特個人",
+        "known": false,
+        "position": 28
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "rao",
+        "output": "繞",
+        "known": false,
+        "position": 37
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "scott",
+        "output": "是從天天",
+        "known": false,
+        "position": 39
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-1",
+        "raw": "gujjolaay",
+        "output": "古巨基歐拉阿姨",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-1",
+        "raw": "neighbours",
+        "output": "內更好北歐人是",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-1",
+        "raw": "gujjolaay",
+        "output": "古巨基歐拉阿姨",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-1",
+        "raw": "neighbours",
+        "output": "內更好北歐人是",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "jjolaay",
+        "output": "基金歐拉阿姨",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "bqj",
+        "output": "不乾膠",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "jjolaay",
+        "output": "基金歐拉阿姨",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "bqj",
+        "output": "不乾膠",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "senegal",
+        "output": "色呢咖喱",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "ne",
+        "output": "呢",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "simons",
+        "output": "死末那識",
+        "known": false,
+        "position": 27
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "fennig",
+        "output": "分你個",
+        "known": false,
+        "position": 28
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "senegal",
+        "output": "色呢咖喱",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "ne",
+        "output": "呢",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "simons",
+        "output": "死末那識",
+        "known": false,
+        "position": 27
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "fennig",
+        "output": "分你個",
+        "known": false,
+        "position": 28
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "sapir's",
+        "output": "撒譬如說",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "atlantic",
+        "output": "啊投籃提出",
+        "known": false,
+        "position": 12
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "niger",
+        "output": "你個人",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "congo",
+        "output": "從哦",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "sapir's",
+        "output": "撒譬如說",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "atlantic",
+        "output": "啊投籃提出",
+        "known": false,
+        "position": 12
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "niger",
+        "output": "你個人",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "congo",
+        "output": "從哦",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-7",
+        "raw": "gambia",
+        "output": "伽馬彼岸",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-7",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 12
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-7",
+        "raw": "senegal",
+        "output": "色呢咖喱",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-7",
+        "raw": "gambia",
+        "output": "伽馬彼岸",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-7",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 12
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-7",
+        "raw": "senegal",
+        "output": "色呢咖喱",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-8",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-8",
+        "raw": "senegal",
+        "output": "色呢咖喱",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-8",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-8",
+        "raw": "senegal",
+        "output": "色呢咖喱",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-9",
+        "raw": "bandial",
+        "output": "班底阿里",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-9",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-9",
+        "raw": "bandial",
+        "output": "班底阿里",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-9",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "ziguinchor",
+        "output": "子歸納出偶然",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 27
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "senegal",
+        "output": "色呢咖喱",
+        "known": false,
+        "position": 32
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "ziguinchor",
+        "output": "子歸納出偶然",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 27
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "senegal",
+        "output": "色呢咖喱",
+        "known": false,
+        "position": 32
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 19
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "luf",
+        "output": "路飛",
+        "known": false,
+        "position": 21
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "fogny",
+        "output": "佛光那樣",
+        "known": false,
+        "position": 25
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "djibonker",
+        "output": "登記簿男客人",
+        "known": false,
+        "position": 36
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "kujireray",
+        "output": "枯寂然而阿姨",
+        "known": false,
+        "position": 41
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ba",
+        "output": "吧",
+        "known": false,
+        "position": 43
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "nounk",
+        "output": "耨你看",
+        "known": false,
+        "position": 44
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "eher",
+        "output": "誒而",
+        "known": false,
+        "position": 46
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 19
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "luf",
+        "output": "路飛",
+        "known": false,
+        "position": 21
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "fogny",
+        "output": "佛光那樣",
+        "known": false,
+        "position": 25
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "djibonker",
+        "output": "登記簿男客人",
+        "known": false,
+        "position": 36
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "kujireray",
+        "output": "枯寂然而阿姨",
+        "known": false,
+        "position": 41
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ba",
+        "output": "吧",
+        "known": false,
+        "position": 43
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "nounk",
+        "output": "耨你看",
+        "known": false,
+        "position": 44
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "eher",
+        "output": "誒而",
+        "known": false,
+        "position": 46
+      }
+    ]
+  },
+  "gum-capital": {
+    "file": "gum-capital.jsonl",
+    "sha256": "1e4384f607161b697b072b6a399827827cd24d6dde16a2f5c63cbf91d8cafa08",
+    "rows": 3855,
+    "groups": {
+      "en-gum-academic/fresh": {
+        "sentences": 90,
+        "tokens": 1635,
+        "known_tokens": 1424,
+        "changed_tokens": 93,
+        "known_noninitial_tokens": 1345,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-academic/primed": {
+        "sentences": 90,
+        "tokens": 1635,
+        "known_tokens": 1424,
+        "changed_tokens": 93,
+        "known_noninitial_tokens": 1345,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-academic/english": {
+        "sentences": 90,
+        "tokens": 1635,
+        "known_tokens": 1424,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1345,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-bio/fresh": {
+        "sentences": 69,
+        "tokens": 1404,
+        "known_tokens": 1210,
+        "changed_tokens": 54,
+        "known_noninitial_tokens": 1157,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-bio/primed": {
+        "sentences": 69,
+        "tokens": 1404,
+        "known_tokens": 1210,
+        "changed_tokens": 66,
+        "known_noninitial_tokens": 1157,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-bio/english": {
+        "sentences": 69,
+        "tokens": 1404,
+        "known_tokens": 1210,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1157,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-conversation/fresh": {
+        "sentences": 193,
+        "tokens": 1432,
+        "known_tokens": 1312,
+        "changed_tokens": 23,
+        "known_noninitial_tokens": 1153,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-conversation/primed": {
+        "sentences": 193,
+        "tokens": 1432,
+        "known_tokens": 1312,
+        "changed_tokens": 38,
+        "known_noninitial_tokens": 1153,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-conversation/english": {
+        "sentences": 193,
+        "tokens": 1432,
+        "known_tokens": 1312,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1153,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-court/fresh": {
+        "sentences": 33,
+        "tokens": 764,
+        "known_tokens": 716,
+        "changed_tokens": 21,
+        "known_noninitial_tokens": 685,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-court/primed": {
+        "sentences": 33,
+        "tokens": 764,
+        "known_tokens": 716,
+        "changed_tokens": 22,
+        "known_noninitial_tokens": 685,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-court/english": {
+        "sentences": 33,
+        "tokens": 764,
+        "known_tokens": 716,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 685,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-essay/fresh": {
+        "sentences": 60,
+        "tokens": 1067,
+        "known_tokens": 1008,
+        "changed_tokens": 17,
+        "known_noninitial_tokens": 954,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-essay/primed": {
+        "sentences": 60,
+        "tokens": 1067,
+        "known_tokens": 1008,
+        "changed_tokens": 17,
+        "known_noninitial_tokens": 954,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-essay/english": {
+        "sentences": 60,
+        "tokens": 1067,
+        "known_tokens": 1008,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 954,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-fiction/fresh": {
+        "sentences": 123,
+        "tokens": 1673,
+        "known_tokens": 1578,
+        "changed_tokens": 59,
+        "known_noninitial_tokens": 1463,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-fiction/primed": {
+        "sentences": 123,
+        "tokens": 1673,
+        "known_tokens": 1578,
+        "changed_tokens": 85,
+        "known_noninitial_tokens": 1463,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-fiction/english": {
+        "sentences": 123,
+        "tokens": 1673,
+        "known_tokens": 1578,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1463,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-interview/fresh": {
+        "sentences": 100,
+        "tokens": 1435,
+        "known_tokens": 1319,
+        "changed_tokens": 21,
+        "known_noninitial_tokens": 1241,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-interview/primed": {
+        "sentences": 100,
+        "tokens": 1435,
+        "known_tokens": 1319,
+        "changed_tokens": 25,
+        "known_noninitial_tokens": 1241,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-interview/english": {
+        "sentences": 100,
+        "tokens": 1435,
+        "known_tokens": 1319,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1241,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-letter/fresh": {
+        "sentences": 58,
+        "tokens": 896,
+        "known_tokens": 857,
+        "changed_tokens": 20,
+        "known_noninitial_tokens": 801,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-letter/primed": {
+        "sentences": 58,
+        "tokens": 896,
+        "known_tokens": 857,
+        "changed_tokens": 23,
+        "known_noninitial_tokens": 801,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-letter/english": {
+        "sentences": 58,
+        "tokens": 896,
+        "known_tokens": 857,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 801,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-news/fresh": {
+        "sentences": 85,
+        "tokens": 1608,
+        "known_tokens": 1416,
+        "changed_tokens": 55,
+        "known_noninitial_tokens": 1349,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-news/primed": {
+        "sentences": 85,
+        "tokens": 1608,
+        "known_tokens": 1416,
+        "changed_tokens": 56,
+        "known_noninitial_tokens": 1349,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-news/english": {
+        "sentences": 85,
+        "tokens": 1608,
+        "known_tokens": 1416,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1349,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-podcast/fresh": {
+        "sentences": 38,
+        "tokens": 819,
+        "known_tokens": 774,
+        "changed_tokens": 13,
+        "known_noninitial_tokens": 740,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-podcast/primed": {
+        "sentences": 38,
+        "tokens": 819,
+        "known_tokens": 774,
+        "changed_tokens": 16,
+        "known_noninitial_tokens": 740,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-podcast/english": {
+        "sentences": 38,
+        "tokens": 819,
+        "known_tokens": 774,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 740,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-speech/fresh": {
+        "sentences": 77,
+        "tokens": 1542,
+        "known_tokens": 1447,
+        "changed_tokens": 14,
+        "known_noninitial_tokens": 1383,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-speech/primed": {
+        "sentences": 77,
+        "tokens": 1542,
+        "known_tokens": 1447,
+        "changed_tokens": 15,
+        "known_noninitial_tokens": 1383,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-speech/english": {
+        "sentences": 77,
+        "tokens": 1542,
+        "known_tokens": 1447,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1383,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-textbook/fresh": {
+        "sentences": 112,
+        "tokens": 1757,
+        "known_tokens": 1665,
+        "changed_tokens": 27,
+        "known_noninitial_tokens": 1560,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-textbook/primed": {
+        "sentences": 112,
+        "tokens": 1757,
+        "known_tokens": 1665,
+        "changed_tokens": 32,
+        "known_noninitial_tokens": 1560,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-textbook/english": {
+        "sentences": 112,
+        "tokens": 1757,
+        "known_tokens": 1665,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1560,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-vlog/fresh": {
+        "sentences": 64,
+        "tokens": 1423,
+        "known_tokens": 1330,
+        "changed_tokens": 10,
+        "known_noninitial_tokens": 1281,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-vlog/primed": {
+        "sentences": 64,
+        "tokens": 1423,
+        "known_tokens": 1330,
+        "changed_tokens": 12,
+        "known_noninitial_tokens": 1281,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-vlog/english": {
+        "sentences": 64,
+        "tokens": 1423,
+        "known_tokens": 1330,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1281,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-voyage/fresh": {
+        "sentences": 75,
+        "tokens": 1516,
+        "known_tokens": 1376,
+        "changed_tokens": 48,
+        "known_noninitial_tokens": 1313,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-voyage/primed": {
+        "sentences": 75,
+        "tokens": 1516,
+        "known_tokens": 1376,
+        "changed_tokens": 50,
+        "known_noninitial_tokens": 1313,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-voyage/english": {
+        "sentences": 75,
+        "tokens": 1516,
+        "known_tokens": 1376,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1313,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-whow/fresh": {
+        "sentences": 108,
+        "tokens": 1430,
+        "known_tokens": 1398,
+        "changed_tokens": 14,
+        "known_noninitial_tokens": 1292,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-whow/primed": {
+        "sentences": 108,
+        "tokens": 1430,
+        "known_tokens": 1398,
+        "changed_tokens": 21,
+        "known_noninitial_tokens": 1292,
+        "known_noninitial_changed": 0
+      },
+      "en-gum-whow/english": {
+        "sentences": 108,
+        "tokens": 1430,
+        "known_tokens": 1398,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 1292,
+        "known_noninitial_changed": 0
+      }
+    },
+    "first_changed_examples": [
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-21",
+        "raw": "recoded",
+        "output": "然而從得到",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-21",
+        "raw": "recoded",
+        "output": "然而從得到",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-43",
+        "raw": "dichotomously",
+        "output": "滴蟲同謀是利用",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-43",
+        "raw": "dichotomously",
+        "output": "滴蟲同謀是利用",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "stata",
+        "output": "說他他",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "fstatistic",
+        "output": "發射塔提升提出",
+        "known": false,
+        "position": 26
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "noninteger",
+        "output": "濃膩南特個人",
+        "known": false,
+        "position": 28
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "rao",
+        "output": "繞",
+        "known": false,
+        "position": 37
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "stata",
+        "output": "說他他",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "fstatistic",
+        "output": "發射塔提升提出",
+        "known": false,
+        "position": 26
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "noninteger",
+        "output": "濃膩南特個人",
+        "known": false,
+        "position": 28
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_discrimination-50",
+        "raw": "rao",
+        "output": "繞",
+        "known": false,
+        "position": 37
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-1",
+        "raw": "gujjolaay",
+        "output": "古巨基歐拉阿姨",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-1",
+        "raw": "neighbours",
+        "output": "內更好北歐人是",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-1",
+        "raw": "gujjolaay",
+        "output": "古巨基歐拉阿姨",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-1",
+        "raw": "neighbours",
+        "output": "內更好北歐人是",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "jjolaay",
+        "output": "基金歐拉阿姨",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "bqj",
+        "output": "不乾膠",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "jjolaay",
+        "output": "基金歐拉阿姨",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-2",
+        "raw": "bqj",
+        "output": "不乾膠",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "ne",
+        "output": "呢",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "fennig",
+        "output": "分你個",
+        "known": false,
+        "position": 28
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "ne",
+        "output": "呢",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-5",
+        "raw": "fennig",
+        "output": "分你個",
+        "known": false,
+        "position": 28
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "sapir's",
+        "output": "撒譬如說",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-6",
+        "raw": "sapir's",
+        "output": "撒譬如說",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-7",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 12
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-7",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 12
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-8",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-8",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-9",
+        "raw": "bandial",
+        "output": "班底阿里",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-9",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-9",
+        "raw": "bandial",
+        "output": "班底阿里",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-9",
+        "raw": "ethnologue",
+        "output": "二天後你哦咯故而",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "ziguinchor",
+        "output": "子歸納出偶然",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 27
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "ziguinchor",
+        "output": "子歸納出偶然",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-10",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 27
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 19
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "fogny",
+        "output": "佛光那樣",
+        "known": false,
+        "position": 25
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "djibonker",
+        "output": "登記簿男客人",
+        "known": false,
+        "position": 36
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "kujireray",
+        "output": "枯寂然而阿姨",
+        "known": false,
+        "position": 41
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ba",
+        "output": "吧",
+        "known": false,
+        "position": 43
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "nounk",
+        "output": "耨你看",
+        "known": false,
+        "position": 44
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "eher",
+        "output": "誒而",
+        "known": false,
+        "position": 46
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "casamance",
+        "output": "擦薩滿測",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 19
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "fogny",
+        "output": "佛光那樣",
+        "known": false,
+        "position": 25
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "djibonker",
+        "output": "登記簿男客人",
+        "known": false,
+        "position": 36
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "kujireray",
+        "output": "枯寂然而阿姨",
+        "known": false,
+        "position": 41
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "ba",
+        "output": "吧",
+        "known": false,
+        "position": 43
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "nounk",
+        "output": "耨你看",
+        "known": false,
+        "position": 44
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-11",
+        "raw": "eher",
+        "output": "誒而",
+        "known": false,
+        "position": 46
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "bolon",
+        "output": "波龍",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "bayot",
+        "output": "八月嘔吐",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 31
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "kaasa",
+        "output": "卡啊撒",
+        "known": false,
+        "position": 32
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 37
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "kaasa",
+        "output": "卡啊撒",
+        "known": false,
+        "position": 38
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "bolon",
+        "output": "波龍",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "bayot",
+        "output": "八月嘔吐",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 31
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "kaasa",
+        "output": "卡啊撒",
+        "known": false,
+        "position": 32
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "ola",
+        "output": "哦啦",
+        "known": false,
+        "position": 37
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-12",
+        "raw": "kaasa",
+        "output": "卡啊撒",
+        "known": false,
+        "position": 38
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-13",
+        "raw": "palmeri",
+        "output": "怕冷麼日",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-13",
+        "raw": "gazio",
+        "output": "嘎子哦",
+        "known": false,
+        "position": 9
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-13",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-13",
+        "raw": "neighbouring",
+        "output": "內更好北歐日能夠",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-13",
+        "raw": "palmeri",
+        "output": "怕冷麼日",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-13",
+        "raw": "gazio",
+        "output": "嘎子哦",
+        "known": false,
+        "position": 9
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-13",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-13",
+        "raw": "neighbouring",
+        "output": "內更好北歐日能夠",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-15",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-15",
+        "raw": "neighbouring",
+        "output": "內更好北歐日能夠",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-15",
+        "raw": "mof",
+        "output": "模仿",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "primed",
+        "id": "GUM_academic_eegimaa-15",
+        "raw": "neighbouring",
+        "output": "內更好北歐日能夠",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-16",
+        "raw": "essil",
+        "output": "而是思路",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-16",
+        "raw": "kujireray",
+        "output": "枯寂然而阿姨",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-16",
+        "raw": "essil",
+        "output": "而是思路",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-gum-academic",
+        "mode": "fresh",
+        "id": "GUM_academic_eegimaa-16",
+        "raw": "bajjat",
+        "output": "八角街安踏",
+        "known": false,
+        "position": 25
+      }
+    ]
   }
 }

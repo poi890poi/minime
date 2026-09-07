@@ -1,0 +1,38 @@
+{
+  "revision": "34d01cb603867d0c085896e8286a0fe01229fa37",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_English-GUM/34d01cb603867d0c085896e8286a0fe01229fa37/LICENSE.txt",
+      "sha256": "b6310e2df084d7cf04d592a748a1449439768afe8c68d49a4248237db646915f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_English-GUM/34d01cb603867d0c085896e8286a0fe01229fa37/README.md",
+      "sha256": "21fa1d058c33a06d95019651b8a8fff362e33a803e214797c4a33983b29e40cb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_English-GUM/34d01cb603867d0c085896e8286a0fe01229fa37/en_gum-ud-test.conllu",
+      "sha256": "99deb5746618d8ab83e5cafc2d07851e76389b2c8babf5ad9e5ef176a4619114"
+    }
+  ],
+  "rows": 1285,
+  "excluded_no_alpha": 0,
+  "genres": {
+    "en-gum-academic": 90,
+    "en-gum-bio": 69,
+    "en-gum-conversation": 193,
+    "en-gum-court": 33,
+    "en-gum-essay": 60,
+    "en-gum-fiction": 123,
+    "en-gum-interview": 100,
+    "en-gum-letter": 58,
+    "en-gum-news": 85,
+    "en-gum-podcast": 38,
+    "en-gum-speech": 77,
+    "en-gum-textbook": 112,
+    "en-gum-vlog": 64,
+    "en-gum-voyage": 75,
+    "en-gum-whow": 108
+  },
+  "sha256": "eade8de35b75a5124f74d3a9bec755a87fde50fab0de298523689763c0257faa",
+  "scope": "Fresh holdout for capitalized-source vocabulary fix; no GUM data enters training"
+}

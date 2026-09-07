@@ -200,7 +200,7 @@ public final class CompositionEngine {
         afterLatin=c.literal && latinBoundary(c.text);
         raw = ""; refresh();
     }
-    private boolean latinBoundary(String text) {return !englishMode && !literalField && !privateField && text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");}
+    private boolean latinBoundary(String text) {return !englishMode && !literalField && text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");}
     private String contextKey() { return englishMode?"EN:"+context:!context.isEmpty()?context:afterLatin?"AFTER_LATIN":"START_OR_LATIN"; }
     private static String tail(String text, int n) {
         return text.substring(text.offsetByCodePoints(text.length(), -Math.min(n, text.codePointCount(0, text.length()))));
@@ -223,7 +223,7 @@ public final class CompositionEngine {
             return;
         }
         boolean bpmf = raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
-        intent = classifier.classify(raw, zhuyin, literalField || englishMode, dictionary);
+        intent = classifier.classify(raw, zhuyin, literalField || englishMode, dictionary,afterLatin);
         // Raw is always slot zero. The default highlight can point elsewhere without moving it.
         candidates.add(new Candidate(raw, true, 0));
         // Delay ambiguous punctuation so `.ming`, `/ming`, and `#ming` remain one literal token.
@@ -260,7 +260,7 @@ public final class CompositionEngine {
             // English words/completion prefixes and explicit literal recovery.
             if(!bpmf && !literalField && !englishMode && dictionary!=null
                     && raw.matches("[a-zv]+(?:'[a-zv]+)*") && raw.length()>1
-                    && !IntentClassifier.technicalWord(raw) && !dictionary.isEnglish(raw) && dictionary.englishCompletions(raw).isEmpty()) preferred=1;
+                    && !IntentClassifier.technicalWord(raw) && !dictionary.isEnglish(raw,afterLatin) && dictionary.englishCompletions(raw,afterLatin).isEmpty()) preferred=1;
             if (literalVotes > chineseVotes) preferred = 0;
         }
         // Prefix candidates are explicit choices, never a whole-token Space default.
@@ -269,7 +269,7 @@ public final class CompositionEngine {
             for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
         }
         if (dictionary != null && !bpmf && !literalField && (intent == Intent.LATIN_LITERAL || intent == Intent.AMBIGUOUS))
-            for (Candidate c : dictionary.englishCompletions(raw)) if (seen.add(c.text)) candidates.add(c);
+            for (Candidate c : dictionary.englishCompletions(raw,afterLatin || englishMode)) if (seen.add(c.text)) candidates.add(c);
         // With a literal default, expose English completions alongside Chinese
         // choices. Preserve each source's order; neither list buries the other.
         if(!englishMode && preferred==0 && !bpmf) {
@@ -288,7 +288,7 @@ public final class CompositionEngine {
         if(englishMode && !literalField && dictionary!=null) {
             List<Candidate> corrections=dictionary.englishCorrections(raw);
             for(Candidate c:corrections)if(seen.add(c.text))candidates.add(c);
-            if(autoCorrect && !dictionary.isEnglish(raw) && !corrections.isEmpty() && corrections.get(0).score>=100
+            if(autoCorrect && !dictionary.isEnglish(raw,true) && !corrections.isEmpty() && corrections.get(0).score>=100
                     && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,corrections.get(0).text))
                     && (corrections.size()==1 || corrections.get(0).score-corrections.get(1).score>=8)) {
                 for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(corrections.get(0).text)) {preferred=i;automaticCorrection=true;}
