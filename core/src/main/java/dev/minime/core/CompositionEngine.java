@@ -53,7 +53,7 @@ public final class CompositionEngine {
     }
     private Decoder decoder;
     private Runnable changed=()->{};
-    private long revision;
+    private long revision, compositionId;
     private boolean pending,barrier,draining;
     private final ArrayDeque<Runnable> waiting=new ArrayDeque<>();
     public void decoder(Decoder value,Runnable changed) {this.decoder=value;this.changed=changed;}
@@ -69,7 +69,7 @@ public final class CompositionEngine {
         finally {draining=false;}
         changed.run();
     }
-    private void cancelPending() {revision++;pending=false;barrier=false;waiting.clear();}
+    private void cancelPending() {revision++;compositionId++;pending=false;barrier=false;waiting.clear();}
     public CompositionEngine(Editor editor, Learning learning) { this.editor = editor; this.learning = learning; }
     public void dictionary(PhoneticDictionary dictionary) { this.dictionary = dictionary; refresh(); }
     public void start(boolean zhuyin, boolean literalField, boolean privateField, boolean direct) {
@@ -85,6 +85,9 @@ public final class CompositionEngine {
     public Intent intent() { return intent; }
     public List<Candidate> candidates() { return Collections.unmodifiableList(candidates); }
     public int preferred() { return preferred; }
+    /** Presentation may keep completed suggestions while this query runs; acceptance may not. */
+    public boolean predictionPending() { return pending; }
+    public long compositionId() { return compositionId; }
     public boolean privateField() { return privateField; }
     public void type(int codePoint) {
         if(deferUntilReady(()->type(codePoint),!raw.isEmpty() && IntentClassifier.isZhuyin(codePoint)!=raw.codePoints().anyMatch(IntentClassifier::isZhuyin)))return;
@@ -167,6 +170,7 @@ public final class CompositionEngine {
         clearAssistance();
         Candidate choice=candidates.get(index);
         if(partial(choice) && !literalField && !englishMode && !choice.literal) {
+            compositionId++;
             String reading=raw.substring(0,choice.consumed),rest=raw.substring(choice.consumed).replaceFirst("^'+","");
             if(!privateField)learning.choose(contextKey(),reading,choice.text);
             editor.commit(choice.text);context=privateField?"":tail(context+choice.text,3);afterLatin=false;
@@ -177,6 +181,17 @@ public final class CompositionEngine {
         resolveCompletionBoundary(choice.text);
         commit(choice, false, !raw.isEmpty());
         completionBoundary=completed;
+    }
+    /** A displayed snapshot binds a choice by identity, never by a changing row index. */
+    public void selectCandidate(Candidate displayed,long composition) {
+        if(composition!=compositionId)return;
+        if(deferUntilReady(()->selectCandidate(displayed,composition),true))return;
+        for(int i=0;i<candidates.size();i++) {
+            Candidate current=candidates.get(i);
+            if(current.text.equals(displayed.text) && current.literal==displayed.literal) {
+                select(i);return;
+            }
+        }
     }
     private boolean partial(Candidate c) {
         return c.consumed>0 && c.consumed<raw.length() && raw.matches("[a-zv]+(?:'[a-zv]+)*");
@@ -214,6 +229,7 @@ public final class CompositionEngine {
         candidates = new ArrayList<>(); preferred = 0;
         if (direct) return;
         if (raw.isEmpty()) {
+            compositionId++;
             if(englishMode && !literalField && dictionary!=null) {
                 if(!privateField)candidates.addAll(learning.predictEnglish(context));
                 candidates.addAll(dictionary.englishPredictions(context));

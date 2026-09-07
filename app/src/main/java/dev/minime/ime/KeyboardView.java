@@ -16,6 +16,7 @@ final class KeyboardView extends LinearLayout {
     private final Consumer<String> press;
     private final Predicate<String> longPress;
     private final BiConsumer<float[],Integer> trace;
+    private final Consumer<Runnable> choose;
     private final TextView[] letters=new TextView[26];
     private final List<Float> points=new ArrayList<>();
     private boolean traceEnabled,tracePossible,tracing;
@@ -24,7 +25,19 @@ final class KeyboardView extends LinearLayout {
     private final LinearLayout strip, keys;
     private final TextView status,phonetics;
     private HorizontalScrollView candidateScroll;
+    private LinearLayout candidateWords;
+    private CandidateFlowLayout candidateGrid;
+    private TextView expandButton;
+    private String gridKey="";
     private String layoutKey="", lastRaw="";
+    private String stripKey="", snapshotMode="";
+    private CompositionEngine snapshotEngine;
+    private long snapshotComposition=-1;
+    private List<Candidate> snapshot=Collections.emptyList();
+    private int snapshotPreferred;
+    private boolean snapshotHasRaw;
+    private boolean candidateGesture;
+    private Runnable afterCandidateGesture;
     private boolean expanded;
     private static final int INK=0xff37474f, BLUE=0xff4db6ac, BACK=0xffeceff1;
     private static final String[] ZHUYIN={"ㄅㄉˇˋㄓˊ˙ㄚㄞㄢ","ㄆㄊㄍㄐㄔㄗㄧㄛㄟㄣ","ㄇㄋㄎㄑㄕㄘㄨㄜㄠㄤ","ㄈㄌㄏㄒㄖㄙㄩㄝㄡㄥ"};
@@ -34,7 +47,10 @@ final class KeyboardView extends LinearLayout {
     private static final String[] Q_DOWN={"1234567890","@*+-=/#（）","、「」？！～."};
     private static final String[] EN_DOWN={"1234567890","@*+-=/#()","':\"?!~…"};
     KeyboardView(Context context,Consumer<String> press,Predicate<String> longPress,BiConsumer<float[],Integer> trace) {
-        super(context); this.press=press; this.longPress=longPress;this.trace=trace;
+        this(context,press,longPress,trace,Runnable::run);
+    }
+    KeyboardView(Context context,Consumer<String> press,Predicate<String> longPress,BiConsumer<float[],Integer> trace,Consumer<Runnable> choose) {
+        super(context); this.press=press; this.longPress=longPress;this.trace=trace;this.choose=choose;
         setOrientation(VERTICAL); setBackgroundColor(BACK); setPadding(0,0,0,0);
         setMotionEventSplittingEnabled(true);
         FrameLayout header=new FrameLayout(context);addView(header,new LayoutParams(-1,dp(24)));
@@ -55,6 +71,10 @@ final class KeyboardView extends LinearLayout {
     private float[] center(View view) {int[] at=new int[2];view.getLocationOnScreen(at);return new float[]{at[0]+view.getWidth()/2f,at[1]+view.getHeight()/2f};}
     @Override public boolean dispatchTouchEvent(MotionEvent e) {
         int action=e.getActionMasked();
+        if(action==MotionEvent.ACTION_DOWN) {
+            candidateGesture=(e.getY()>=strip.getTop() && e.getY()<strip.getBottom())
+                || (expanded && e.getY()>=keys.getTop());
+        }
         if(action==MotionEvent.ACTION_POINTER_DOWN && !tracing) {
             int pointer=e.getActionIndex();boolean nextLetter=false;
             for(TextView key:letters)if(key!=null && key.getParent()!=null) {
@@ -88,7 +108,15 @@ final class KeyboardView extends LinearLayout {
             }
         }
         if(action==MotionEvent.ACTION_CANCEL || action==MotionEvent.ACTION_POINTER_DOWN) {tracing=false;tracePossible=false;invalidate();}
-        return super.dispatchTouchEvent(e);
+        boolean handled=super.dispatchTouchEvent(e);
+        if(action==MotionEvent.ACTION_UP || action==MotionEvent.ACTION_CANCEL) {
+            candidateGesture=false;Runnable update=afterCandidateGesture;afterCandidateGesture=null;
+            if(update!=null)update.run();
+        }
+        return handled;
+    }
+    @Override protected void onDetachedFromWindow() {
+        candidateGesture=false;afterCandidateGesture=null;super.onDetachedFromWindow();
     }
     @Override protected void dispatchDraw(android.graphics.Canvas canvas) {
         super.dispatchDraw(canvas);if(!tracing || points.size()<4)return;
@@ -97,13 +125,29 @@ final class KeyboardView extends LinearLayout {
         for(int i=2;i<points.size();i+=2)canvas.drawLine(traceX+points.get(i-2)*pitchX-at[0],traceY+points.get(i-1)*pitchY-at[1],traceX+points.get(i)*pitchX-at[0],traceY+points.get(i+1)*pitchY-at[1],paint);
     }
     private int dp(float value) { return Math.round(value*getResources().getDisplayMetrics().density); }
+    private static final class CandidateWord extends TextView {
+        Runnable selection=()->{},pressedSelection;
+        CandidateWord(Context context) {super(context);}
+        @Override public boolean onTouchEvent(MotionEvent event) {
+            if(event.getActionMasked()==MotionEvent.ACTION_DOWN)pressedSelection=selection;
+            if(event.getActionMasked()==MotionEvent.ACTION_CANCEL)pressedSelection=null;
+            boolean handled=super.onTouchEvent(event);
+            // TextView may post its click; clear a non-clicking release only after it.
+            if(event.getActionMasked()==MotionEvent.ACTION_UP)post(()->pressedSelection=null);
+            return handled;
+        }
+        @Override public boolean performClick() {
+            Runnable action=pressedSelection==null?selection:pressedSelection;pressedSelection=null;
+            super.performClick();action.run();return true;
+        }
+    }
     private TextView button(String label,String command,String up,String down,boolean accent,int height,float weight) {
         TextView b;
         if(command.startsWith("CANDIDATE:")) {
             // Let the horizontal candidate scroller intercept drags normally.
-            b=new TextView(getContext()); b.setText(label); b.setGravity(Gravity.CENTER);
+            b=new CandidateWord(getContext()); b.setText(label); b.setGravity(Gravity.CENTER);
             b.setMaxLines(1); b.setFocusable(true); b.setClickable(true);
-            b.setOnClickListener(v->{expanded=false;press.accept(command);});
+            b.setOnClickListener(v->{});
         } else b=new SlideKey(getContext(),label,command,up,down,press,longPress);
         b.setTextColor(accent?Color.BLACK:INK);
         b.setTextSize(Math.min(21,height*.43f));
@@ -115,6 +159,34 @@ final class KeyboardView extends LinearLayout {
         return b;
     }
     private TextView plain(String label,String command,int height,float weight) { return button(label,command,"","",false,height,weight); }
+    private TextView candidate(CompositionEngine engine,Candidate value,long composition) {
+        TextView word=button(value.text,"CANDIDATE:","","",false,48,1);
+        bindCandidate(word,engine,value,composition);
+        return word;
+    }
+    private void bindCandidate(TextView word,CompositionEngine engine,Candidate value,long composition) {
+        if(!value.text.contentEquals(word.getText()))word.setText(value.text);
+        word.setContentDescription("Candidate "+value.text);
+        ((CandidateWord)word).selection=()->{expanded=false;choose.accept(()->engine.selectCandidate(value,composition));};
+    }
+    private void expandedCandidates(CompositionEngine engine,List<Candidate> candidates,int first,int preferred,String key) {
+        if(key.equals(gridKey))return;
+        gridKey=key;
+        while(candidateGrid.getChildCount()>candidates.size()-first)candidateGrid.removeViewAt(candidateGrid.getChildCount()-1);
+        for(int i=first;i<candidates.size();i++) {
+            TextView word;
+            if(i-first<candidateGrid.getChildCount())word=(TextView)candidateGrid.getChildAt(i-first);
+            else {
+                word=candidate(engine,candidates.get(i),snapshotComposition);
+                word.setTextSize(20);word.setMinWidth(dp(48));word.setMinHeight(dp(48));word.setPadding(dp(12),dp(4),dp(12),dp(4));
+                word.setSingleLine(false);word.setMaxLines(Integer.MAX_VALUE);
+                candidateGrid.addView(word,new ViewGroup.LayoutParams(-2,-2));
+            }
+            bindCandidate(word,engine,candidates.get(i),snapshotComposition);
+            if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
+            word.setTextColor(preferred==i && !engine.raw().isEmpty()?Color.BLACK:0xff5d6b71);
+        }
+    }
     private LinearLayout row(int height) {
         LinearLayout row=new LinearLayout(getContext()); row.setMotionEventSplittingEnabled(true);
         keys.addView(row,new LayoutParams(-1,dp(height))); return row;
@@ -142,74 +214,108 @@ final class KeyboardView extends LinearLayout {
         }
     }
     void render(CompositionEngine engine,boolean zhuyin,boolean shifted,boolean caps,int panel,boolean numeric,boolean asciiPunctuation,boolean english,boolean allowLanguageSwitch,String enter,String loading) {
+        if(candidateGesture && snapshotEngine==engine && snapshotComposition==engine.compositionId()) {
+            // Do not remove a touched word or scroller between DOWN and UP/CANCEL.
+            afterCandidateGesture=()->render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,enter,loading);
+            return;
+        }
+        afterCandidateGesture=null;
         String hint=engine.privateField()?"Private input · learning off":loading;
         status.setText(hint);
+        String mode=zhuyin+":"+english+":"+numeric+":"+panel+":"+engine.privateField();
+        // Keep the last completed row while its replacement is computed. Core acceptance
+        // still uses the current query, and composition ownership prevents cross-editor reuse.
+        boolean retain=engine.predictionPending() && !engine.raw().isEmpty() && snapshotHasRaw
+            && snapshotEngine==engine && snapshotComposition==engine.compositionId() && snapshotMode.equals(mode);
+        if(!retain) {
+            if(snapshotEngine!=engine) {stripKey="";gridKey="";}
+            snapshot=new ArrayList<>(engine.candidates());snapshotPreferred=engine.preferred();
+            snapshotEngine=engine;snapshotComposition=engine.compositionId();snapshotMode=mode;snapshotHasRaw=!engine.raw().isEmpty();
+        }
+        List<Candidate> candidates=new ArrayList<>(snapshot);
+        if(retain && !candidates.isEmpty())candidates.set(0,new Candidate(engine.raw(),true,0));
+        int preferred=snapshotPreferred;
         int previousScroll=candidateScroll==null?0:candidateScroll.getScrollX();
-        if(!lastRaw.equals(engine.raw())) {previousScroll=0;lastRaw=engine.raw();}
+        if(!lastRaw.equals(engine.raw()))previousScroll=0;
         final int restoreScroll=previousScroll;
-        boolean separatePhonetics=!english && !engine.raw().isEmpty() && engine.preferred()!=0;
+        boolean separatePhonetics=!english && !engine.raw().isEmpty() && preferred!=0;
         phonetics.setText(engine.raw());phonetics.setContentDescription("Exact input "+engine.raw());
         boolean showPhonetics=separatePhonetics && panel==0;
         phonetics.setVisibility(showPhonetics?VISIBLE:GONE);
         status.setVisibility(!showPhonetics && !hint.isEmpty()?VISIBLE:GONE);
-        strip.removeAllViews();candidateScroll=null;
-        List<Candidate> candidates=engine.candidates();
         if(candidates.isEmpty() || panel!=0)expanded=false;
         traceEnabled=english && allowLanguageSwitch && !numeric && !zhuyin && panel==0 && !expanded;
         traceCase=caps?2:shifted?1:0;
-        if(!candidates.isEmpty()) {
-            int from=separatePhonetics?1:0;
-            candidateScroll=new HorizontalScrollView(getContext());candidateScroll.setHorizontalScrollBarEnabled(false);candidateScroll.setContentDescription("Candidate list");
-            LinearLayout words=new LinearLayout(getContext());candidateScroll.addView(words);strip.addView(candidateScroll,new LayoutParams(0,-1,1));
-            for(int i=from;i<candidates.size();i++) {
-                Candidate c=candidates.get(i);TextView word=button(c.text,"CANDIDATE:"+i,"","",false,48,1);
-                word.setTextSize(english?18:20);word.setTextColor(!engine.raw().isEmpty() && engine.preferred()==i?Color.BLACK:0xff5d6b71);
-                word.setTypeface(null,!engine.raw().isEmpty() && engine.preferred()==i?android.graphics.Typeface.BOLD:android.graphics.Typeface.NORMAL);
-                word.setMinWidth(dp(48));word.setPadding(dp(12),0,dp(12),0);
-                if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
-                words.addView(word,new LayoutParams(-2,dp(48)));
-                View divider=new View(getContext());divider.setBackgroundColor(0xffc3cbcf);LayoutParams rule=new LayoutParams(dp(1),dp(26));rule.gravity=Gravity.CENTER_VERTICAL;words.addView(divider,rule);
-            }
-            HorizontalScrollView currentScroll=candidateScroll;currentScroll.post(()->currentScroll.scrollTo(restoreScroll,0));
-            TextView expand=plain(expanded?"⌃":"⌄","EXPAND",42,1);
-            expand.setContentDescription(expanded?"Collapse candidates":"Expand candidates");
-            expand.setOnClickListener(v->{expanded=!expanded;render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,enter,loading);});
-            strip.addView(expand,new LayoutParams(dp(40),dp(42)));
-        } else {
-            TextView chinese=plain("中",english?"LANGUAGE":"LAYOUT",48,1); chinese.setTextSize(23); ((SlideKey)chinese).icon(null);
-            chinese.setContentDescription(english?"Switch to Chinese":zhuyin?"拼音 layout":"注音 layout");
-            if(!english)chinese.setBackgroundColor(BACK);
-            strip.addView(chinese,new LayoutParams(dp(75),dp(48)));
-            TextView latin=plain("En","LANGUAGE",48,1); latin.setTextSize(23); ((SlideKey)latin).icon(null);
-            latin.setContentDescription(english?"English selected":"Switch to English");
-            latin.setOnClickListener(v->{if(!english)press.accept("LANGUAGE");});
-            if(english)latin.setBackgroundColor(BACK);
-            strip.addView(latin,new LayoutParams(dp(75),dp(48)));
-            strip.addView(new View(getContext()),new LayoutParams(0,1,1));
-            TextView next=plain("Next keyboard","NEXT_IME",42,1);
-            strip.addView(next,new LayoutParams(dp(42),dp(42)));
+        StringBuilder presentation=new StringBuilder(mode).append(':').append(shifted).append(':').append(caps)
+            .append(':').append(asciiPunctuation).append(':').append(allowLanguageSwitch).append(':').append(enter)
+            .append(':').append(loading).append(':').append(snapshotComposition).append(':').append(expanded)
+            .append(':').append(separatePhonetics).append(':').append(preferred).append(':').append(engine.raw().isEmpty());
+        for(int i=separatePhonetics?1:0;i<candidates.size();i++) {
+            Candidate c=candidates.get(i);presentation.append('|').append(c.text.length()).append(':').append(c.text)
+                .append(':').append(c.literal).append(':').append(c.consumed);
         }
-        TextView menu=plain("⚙","SETTINGS",42,1); menu.setContentDescription("Settings");
-        if(candidates.isEmpty() || panel!=0)strip.addView(menu,new LayoutParams(dp(42),dp(42)));
+        String nextStrip=presentation.toString();
+        if(!nextStrip.equals(stripKey)) {
+            stripKey=nextStrip;lastRaw=engine.raw();
+            if(!candidates.isEmpty()) {
+                int from=separatePhonetics?1:0;
+                if(candidateScroll==null) {
+                    strip.removeAllViews();
+                    candidateScroll=new HorizontalScrollView(getContext());candidateScroll.setHorizontalScrollBarEnabled(false);candidateScroll.setContentDescription("Candidate list");
+                    candidateWords=new LinearLayout(getContext());candidateScroll.addView(candidateWords);strip.addView(candidateScroll,new LayoutParams(0,-1,1));
+                    expandButton=plain("⌄","EXPAND",42,1);strip.addView(expandButton,new LayoutParams(dp(40),dp(42)));
+                }
+                while(strip.getChildCount()>2)strip.removeViewAt(strip.getChildCount()-1);
+                while(candidateWords.getChildCount()>(candidates.size()-from)*2)candidateWords.removeViewAt(candidateWords.getChildCount()-1);
+                for(int i=from;i<candidates.size();i++) {
+                    Candidate c=candidates.get(i);TextView word;
+                    if((i-from)*2<candidateWords.getChildCount())word=(TextView)candidateWords.getChildAt((i-from)*2);
+                    else {
+                        word=candidate(engine,c,snapshotComposition);candidateWords.addView(word,new LayoutParams(-2,dp(48)));
+                        View divider=new View(getContext());divider.setBackgroundColor(0xffc3cbcf);LayoutParams rule=new LayoutParams(dp(1),dp(26));rule.gravity=Gravity.CENTER_VERTICAL;candidateWords.addView(divider,rule);
+                    }
+                    bindCandidate(word,engine,c,snapshotComposition);
+                    word.setTextSize(english?18:20);word.setTextColor(!engine.raw().isEmpty() && preferred==i?Color.BLACK:0xff5d6b71);
+                    word.setTypeface(null,!engine.raw().isEmpty() && preferred==i?android.graphics.Typeface.BOLD:android.graphics.Typeface.NORMAL);
+                    word.setMinWidth(dp(48));word.setPadding(dp(12),0,dp(12),0);
+                    if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
+                }
+                HorizontalScrollView currentScroll=candidateScroll;currentScroll.post(()->currentScroll.scrollTo(restoreScroll,0));
+                expandButton.setText(expanded?"⌃":"⌄");
+                expandButton.setContentDescription(expanded?"Collapse candidates":"Expand candidates");
+                expandButton.setOnClickListener(v->{expanded=!expanded;render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,enter,loading);});
+            } else {
+                strip.removeAllViews();candidateScroll=null;candidateWords=null;expandButton=null;
+                TextView chinese=plain("中",english?"LANGUAGE":"LAYOUT",48,1); chinese.setTextSize(23); ((SlideKey)chinese).icon(null);
+                chinese.setContentDescription(english?"Switch to Chinese":zhuyin?"拼音 layout":"注音 layout");
+                if(!english)chinese.setBackgroundColor(BACK);
+                strip.addView(chinese,new LayoutParams(dp(75),dp(48)));
+                TextView latin=plain("En","LANGUAGE",48,1); latin.setTextSize(23); ((SlideKey)latin).icon(null);
+                latin.setContentDescription(english?"English selected":"Switch to English");
+                latin.setOnClickListener(v->{if(!english)press.accept("LANGUAGE");});
+                if(english)latin.setBackgroundColor(BACK);
+                strip.addView(latin,new LayoutParams(dp(75),dp(48)));
+                strip.addView(new View(getContext()),new LayoutParams(0,1,1));
+                TextView next=plain("Next keyboard","NEXT_IME",42,1);
+                strip.addView(next,new LayoutParams(dp(42),dp(42)));
+            }
+            TextView menu=plain("⚙","SETTINGS",42,1); menu.setContentDescription("Settings");
+            if(candidates.isEmpty() || panel!=0)strip.addView(menu,new LayoutParams(dp(42),dp(42)));
+        }
         boolean landscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
         int height=landscape?34:59;
         // Every layout shares the QWERTY budget; only orientation and system insets resize it.
         keys.setLayoutParams(new LayoutParams(-1,dp(height)*4));
-        String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+(expanded?candidates.toString():"");
-        if(nextLayout.equals(layoutKey)) return;
-        layoutKey=nextLayout; keys.removeAllViews();Arrays.fill(letters,null);
+        String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded;
+        if(nextLayout.equals(layoutKey)) {
+            if(expanded)expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);
+            return;
+        }
+        layoutKey=nextLayout; keys.removeAllViews();Arrays.fill(letters,null);candidateGrid=null;gridKey="";
         if(expanded) {
             ScrollView scroll=new ScrollView(getContext());scroll.setContentDescription("Expanded candidate list");
-            CandidateFlowLayout grid=new CandidateFlowLayout(getContext());scroll.addView(grid);
-            int first=separatePhonetics?1:0;
-            for(int i=first;i<candidates.size();i++) {
-                TextView word=button(candidates.get(i).text,"CANDIDATE:"+i,"","",false,48,1);
-                if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
-                word.setTextColor(engine.preferred()==i && !engine.raw().isEmpty()?Color.BLACK:0xff5d6b71);
-                word.setTextSize(20);word.setMinWidth(dp(48));word.setMinHeight(dp(48));word.setPadding(dp(12),dp(4),dp(12),dp(4));
-                word.setSingleLine(false);word.setMaxLines(Integer.MAX_VALUE);
-                grid.addView(word,new ViewGroup.LayoutParams(-2,-2));
-            }
+            candidateGrid=new CandidateFlowLayout(getContext());scroll.addView(candidateGrid);
+            expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);
             keys.addView(scroll,new LayoutParams(-1,dp(height*(zhuyin?4:3))));
         } else if(panel==3) {
             punctuationChoices(asciiPunctuation,allowLanguageSwitch && !english,height);

@@ -1,0 +1,39 @@
+
+dev.minime.ime.CandidateStabilityTest:
+Failure in testPendingQueryKeepsVisibleCandidates:
+junit.framework.AssertionFailedError: Pending prediction must not erase the Chinese row
+	at dev.minime.ime.CandidateStabilityTest.lambda$testPendingQueryKeepsVisibleCandidates$4(CandidateStabilityTest.java:35)
+	at dev.minime.ime.CandidateStabilityTest.$r8$lambda$MLuHdN9Z4PeN6p_-v5_BSO3-DsQ(CandidateStabilityTest.java:0)
+	at dev.minime.ime.CandidateStabilityTest$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+	at android.test.InstrumentationTestCase$1.run(InstrumentationTestCase.java:144)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2353)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:226)
+	at android.os.Looper.loop(Looper.java:313)
+	at android.app.ActivityThread.main(ActivityThread.java:8762)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)
+
+Failure in testUnchangedRenderPreservesCandidateViews:
+junit.framework.AssertionFailedError: Unchanged renders must preserve the scroller expected same:<android.widget.HorizontalScrollView{de30417 VFED..... ......I. 0,0-0,0}> was not:<android.widget.HorizontalScrollView{5b1f004 VFED..... ......I. 0,0-0,0}>
+	at dev.minime.ime.CandidateStabilityTest.lambda$testUnchangedRenderPreservesCandidateViews$5(CandidateStabilityTest.java:44)
+	at dev.minime.ime.CandidateStabilityTest.$r8$lambda$oP6G6uux4b1eqWiiIq6sH9ljGtI(CandidateStabilityTest.java:0)
+	at dev.minime.ime.CandidateStabilityTest$$ExternalSyntheticLambda6.run(D8$$SyntheticClass:0)
+	at android.test.InstrumentationTestCase$1.run(InstrumentationTestCase.java:144)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2353)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:226)
+	at android.os.Looper.loop(Looper.java:313)
+	at android.app.ActivityThread.main(ActivityThread.java:8762)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)
+
+Test results for InstrumentationTestRunner=.F.F
+Time: 4.921
+
+FAILURES!!!
+Tests run: 2,  Failures: 2,  Errors: 0
+
+

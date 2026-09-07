@@ -30,7 +30,10 @@ public final class MiniMeService extends InputMethodService {
         }));
     }
     @Override public View onCreateInputView() {
-        keyboard=new KeyboardView(this,this::key,this::longKey,(points,capitalization)->{engine.trace(points,capitalization);shift.consume();render();});
+        keyboard=new KeyboardView(this,this::key,this::longKey,(points,capitalization)->{engine.trace(points,capitalization);shift.consume();render();},action->{
+            if(getCurrentInputConnection()==null)return;
+            shift.interrupt();action.run();render();
+        });
         render(); return keyboard;
     }
     @Override public void onStartInput(EditorInfo attribute,boolean restarting) {

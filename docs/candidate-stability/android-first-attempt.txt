@@ -1,0 +1,69 @@
+
+dev.minime.ime.CandidateStabilityTest:.
+Failure in testCandidateTouchSurvivesResultReplacement:
+junit.framework.ComparisonFailure: expected:<[一]> but was:<[]>
+	at dev.minime.ime.CandidateStabilityTest.lambda$gesture$8(CandidateStabilityTest.java:85)
+	at dev.minime.ime.CandidateStabilityTest.$r8$lambda$tCUhaKHlGrOSHQeDiaDnXfYQFfY(CandidateStabilityTest.java:0)
+	at dev.minime.ime.CandidateStabilityTest$$ExternalSyntheticLambda9.run(D8$$SyntheticClass:0)
+	at android.test.InstrumentationTestCase$1.run(InstrumentationTestCase.java:144)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2353)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:226)
+	at android.os.Looper.loop(Looper.java:313)
+	at android.app.ActivityThread.main(ActivityThread.java:8762)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)
+
+Failure in testExpandedPendingAndSelection:
+junit.framework.AssertionFailedError: expected same:<android.widget.ScrollView{5600870 VFED.V... ......I. 0,0-0,0}> was not:<android.widget.ScrollView{315e7e9 VFED.V... ......I. 0,0-0,0}>
+	at dev.minime.ime.CandidateStabilityTest.lambda$testExpandedPendingAndSelection$6(CandidateStabilityTest.java:47)
+	at dev.minime.ime.CandidateStabilityTest.$r8$lambda$PXz_VQXqMRiwRR8YLX0CqTLxsdk(CandidateStabilityTest.java:0)
+	at dev.minime.ime.CandidateStabilityTest$$ExternalSyntheticLambda10.run(D8$$SyntheticClass:0)
+	at android.test.InstrumentationTestCase$1.run(InstrumentationTestCase.java:144)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2353)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:226)
+	at android.os.Looper.loop(Looper.java:313)
+	at android.app.ActivityThread.main(ActivityThread.java:8762)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)
+.
+Failure in testPendingQueryKeepsVisibleCandidates:
+junit.framework.AssertionFailedError: Pending query retains the actual word view expected same:<android.widget.TextView{65c19a5 VFED..C.. ......ID 0,0-0,0}> was not:<android.widget.TextView{fa5617a VFED..C.. ......ID 0,0-0,0}>
+	at dev.minime.ime.CandidateStabilityTest.lambda$testPendingQueryKeepsVisibleCandidates$5(CandidateStabilityTest.java:38)
+	at dev.minime.ime.CandidateStabilityTest.$r8$lambda$k0sBJT25g5U8IX-b65kIDyB-Eus(CandidateStabilityTest.java:0)
+	at dev.minime.ime.CandidateStabilityTest$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+	at android.test.InstrumentationTestCase$1.run(InstrumentationTestCase.java:144)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2353)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:226)
+	at android.os.Looper.loop(Looper.java:313)
+	at android.app.ActivityThread.main(ActivityThread.java:8762)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)
+.
+dev.minime.ime.KeyboardHeightTest:.
+dev.minime.ime.KeyboardInteractionTest:..
+Error in testDefaultRimeAndPartialSelection:
+java.lang.AssertionError: Visible control missing: Exact input hao
+	at dev.minime.ime.KeyboardInteractionTest.node(KeyboardInteractionTest.java:86)
+	at dev.minime.ime.KeyboardInteractionTest.click(KeyboardInteractionTest.java:100)
+	at dev.minime.ime.KeyboardInteractionTest.testDefaultRimeAndPartialSelection(KeyboardInteractionTest.java:292)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+.
+Test results for InstrumentationTestRunner=..F.F..F.....E.
+Time: 36.056
+
+FAILURES!!!
+Tests run: 11,  Failures: 3,  Errors: 1
+
+
