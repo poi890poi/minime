@@ -15,6 +15,12 @@ import java.util.function.*;
 final class KeyboardView extends LinearLayout {
     private final Consumer<String> press;
     private final Predicate<String> longPress;
+    private final BiConsumer<float[],Integer> trace;
+    private final TextView[] letters=new TextView[26];
+    private final List<Float> points=new ArrayList<>();
+    private boolean traceEnabled,tracePossible,tracing;
+    private int traceCase;
+    private float traceX,traceY,pitchX,pitchY;
     private final LinearLayout strip, keys;
     private final TextView status;
     private String layoutKey="", lastRaw="";
@@ -27,8 +33,8 @@ final class KeyboardView extends LinearLayout {
     private static final String[] QWERTY={"qwertyuiop","asdfghjkl","zxcvbnm"};
     private static final String[] Q_DOWN={"1234567890","@*+-=/#（）","、「」？！～."};
     private static final String[] EN_DOWN={"1234567890","@*+-=/#()","':\"?!~…"};
-    KeyboardView(Context context,Consumer<String> press,Predicate<String> longPress) {
-        super(context); this.press=press; this.longPress=longPress;
+    KeyboardView(Context context,Consumer<String> press,Predicate<String> longPress,BiConsumer<float[],Integer> trace) {
+        super(context); this.press=press; this.longPress=longPress;this.trace=trace;
         setOrientation(VERTICAL); setBackgroundColor(BACK); setPadding(dp(3),0,dp(3),dp(3));
         setMotionEventSplittingEnabled(false);
         status=new TextView(context); status.setTextColor(INK); status.setTextSize(12); status.setPadding(dp(8),0,0,0); addView(status);
@@ -38,6 +44,41 @@ final class KeyboardView extends LinearLayout {
             android.graphics.Insets bars=insets.getSystemWindowInsets();
             setPadding(dp(3)+bars.left,0,dp(3)+bars.right,Math.max(dp(3),bars.bottom)); return insets;
         });
+    }
+    private float[] center(View view) {int[] at=new int[2];view.getLocationOnScreen(at);return new float[]{at[0]+view.getWidth()/2f,at[1]+view.getHeight()/2f};}
+    @Override public boolean dispatchTouchEvent(MotionEvent e) {
+        int action=e.getActionMasked();
+        if(action==MotionEvent.ACTION_DOWN) {
+            tracePossible=false;tracing=false;points.clear();
+            if(traceEnabled && letters['q'-'a']!=null) {
+                for(TextView key:letters)if(key!=null) {float[] c=center(key);if(Math.abs(e.getRawX()-c[0])<key.getWidth()/2f && Math.abs(e.getRawY()-c[1])<key.getHeight()/2f)tracePossible=true;}
+                float[] q=center(letters['q'-'a']),w=center(letters['w'-'a']),a=center(letters[0]);
+                pitchX=w[0]-q[0];pitchY=a[1]-q[1];traceX=q[0]-.5f*pitchX;traceY=q[1];
+                tracePossible&=pitchX>0 && pitchY>0;
+            }
+        }
+        if(tracePossible && (action==MotionEvent.ACTION_DOWN || action==MotionEvent.ACTION_MOVE || action==MotionEvent.ACTION_UP)) {
+            float x=(e.getRawX()-traceX)/pitchX,y=(e.getRawY()-traceY)/pitchY;
+            if(points.size()<1024) {points.add(x);points.add(y);}
+            float dx=x-points.get(0),dy=y-points.get(1);
+            if(!tracing && Math.abs(dx)<.5 && Math.abs(dy)>.5)tracePossible=false;
+            else if(!tracing && action==MotionEvent.ACTION_MOVE && Math.abs(dx)>.7) {
+                MotionEvent cancel=MotionEvent.obtain(e);cancel.setAction(MotionEvent.ACTION_CANCEL);super.dispatchTouchEvent(cancel);cancel.recycle();tracing=true;
+            }
+            if(tracing) {
+                invalidate();
+                if(action==MotionEvent.ACTION_UP) {float[] path=new float[points.size()];for(int i=0;i<path.length;i++)path[i]=points.get(i);tracing=false;tracePossible=false;trace.accept(path,traceCase);}
+                return true;
+            }
+        }
+        if(action==MotionEvent.ACTION_CANCEL || action==MotionEvent.ACTION_POINTER_DOWN) {tracing=false;tracePossible=false;invalidate();}
+        return super.dispatchTouchEvent(e);
+    }
+    @Override protected void dispatchDraw(android.graphics.Canvas canvas) {
+        super.dispatchDraw(canvas);if(!tracing || points.size()<4)return;
+        int[] at=new int[2];getLocationOnScreen(at);android.graphics.Paint paint=new android.graphics.Paint(android.graphics.Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(0xaa176b91);paint.setStrokeWidth(dp(4));paint.setStrokeCap(android.graphics.Paint.Cap.ROUND);
+        for(int i=2;i<points.size();i+=2)canvas.drawLine(traceX+points.get(i-2)*pitchX-at[0],traceY+points.get(i-1)*pitchY-at[1],traceX+points.get(i)*pitchX-at[0],traceY+points.get(i+1)*pitchY-at[1],paint);
     }
     private int dp(float value) { return Math.round(value*getResources().getDisplayMetrics().density); }
     private TextView button(String label,String command,String up,String down,boolean accent,int height,float weight) {
@@ -90,6 +131,8 @@ final class KeyboardView extends LinearLayout {
         strip.removeAllViews();
         List<Candidate> candidates=engine.candidates();
         if(candidates.isEmpty() || panel!=0)expanded=false;
+        traceEnabled=english && allowLanguageSwitch && !numeric && !zhuyin && panel==0 && !expanded;
+        traceCase=caps?2:shifted?1:0;
         if(!candidates.isEmpty()) {
             int from=0;
             if(!engine.raw().isEmpty()) {
@@ -163,7 +206,8 @@ final class KeyboardView extends LinearLayout {
                 for(int i=0;i<QWERTY[r].length();i++) {
                     String lower=QWERTY[r].substring(i,i+1), upper=lower.toUpperCase(Locale.ROOT);
                     String label=shifted?upper:lower;
-                    line.addView(button(label,label,upper,(english?EN_DOWN:Q_DOWN)[r].substring(i,i+1),false,height,1));
+                    TextView letter=button(label,label,upper,(english?EN_DOWN:Q_DOWN)[r].substring(i,i+1),false,height,1);
+                    letters[lower.charAt(0)-'a']=letter;line.addView(letter);
                 }
                 if(r==1) spacer(line,.5f);
                 if(r==2) line.addView(plain("⌫","DELETE",height,1.5f));

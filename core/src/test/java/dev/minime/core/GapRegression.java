@@ -6,6 +6,15 @@ import static dev.minime.core.Regression.*;
 /** Behavior contracts from paired observations; no evaluation labels enter runtime data. */
 final class GapRegression {
     static void run() {
+        for(String word:Arrays.asList("hello","keyboard","world","meeting","thanks","please","tomorrow","people","computer")) {
+            float[] path=new float[word.length()*2];for(int i=0;i<word.length();i++){float[] p=EnglishTrace.point(word.charAt(i));path[i*2]=p[0]+.03f;path[i*2+1]=p[1]-.02f;}
+            equal(word,dictionary.englishTrace(path).get(0).text,"geometric trace "+word);
+        }
+        Editor traceEditor=new Editor();CompositionEngine traceEngine=engine(traceEditor,Learning.NONE,false);traceEngine.start(false,false,false,false,true);
+        float[] hello=new float[10];for(int i=0;i<5;i++) {float[] p=EnglishTrace.point("hello".charAt(i));hello[i*2]=p[0];hello[i*2+1]=p[1];}
+        traceEngine.trace(hello,1);traceEngine.space();equal("Hello ",traceEditor.text,"trace keeps sentence capitalization and Space");
+        traceEngine.trace(hello,0);traceEngine.select(0);type(traceEngine,"world ");equal("Hello hello world ",traceEditor.text,"trace choice has completion boundary");
+        traceEngine.start(false,true,false,false,true);traceEngine.trace(hello,0);equal("",traceEngine.raw(),"restricted field disables trace");
         Editor delayed=new Editor();CompositionEngine async=engine(delayed,Learning.NONE,false);
         List<Runnable> replies=new ArrayList<>();
         async.decoder((d,r,z,ctx,result)->replies.add(()->result.accept(d.convert(r,z,ctx))),()->{});

@@ -21,4 +21,8 @@ final class AsyncDecoder implements CompositionEngine.Decoder,AutoCloseable {
         },8,TimeUnit.MILLISECONDS);
     }
     public void close() {closed=true;worker.shutdownNow();}
+    public void trace(PhoneticDictionary dictionary,float[] points,Consumer<List<Candidate>> result) {
+        if(queued!=null)queued.cancel(false);
+        queued=worker.schedule(()->{List<Candidate> found=dictionary.englishTrace(points);main.post(()->{if(!closed)result.accept(found);});},0,TimeUnit.MILLISECONDS);
+    }
 }

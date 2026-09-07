@@ -19,6 +19,7 @@ public final class PhoneticDictionary {
         PhoneticDictionary d=load(chinese,english,syllables);d.contextModel=ContextModel.load(context);return d;
     }
     public List<Candidate> englishPredictions(String context) { return contextModel.english(context); }
+    public List<Candidate> englishTrace(float[] points) {return EnglishTrace.decode(english,points);}
 
     public static PhoneticDictionary load(Reader chinese, Reader english, Reader syllables) throws IOException {
         PhoneticDictionary d = new PhoneticDictionary();

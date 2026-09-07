@@ -29,7 +29,26 @@ public final class CompositionEngine {
     private Intent intent = Intent.LATIN_LITERAL;
     private List<Candidate> candidates = new ArrayList<>();
     private int preferred;
-    public interface Decoder { void convert(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,java.util.function.Consumer<List<Candidate>> result); }
+    public interface Decoder {
+        void convert(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,java.util.function.Consumer<List<Candidate>> result);
+        default void trace(PhoneticDictionary dictionary,float[] points,java.util.function.Consumer<List<Candidate>> result) {result.accept(dictionary.englishTrace(points));}
+    }
+    private boolean traced;
+    public void trace(float[] points,int capitalization) {
+        if(deferUntilReady(()->trace(points,capitalization),true))return;
+        if(dictionary==null || !englishMode || literalField || direct)return;
+        clearAssistance();resolveCompletionBoundary("a");commitDefault(true);
+        long query=++revision;pending=true;barrier=true;
+        java.util.function.Consumer<List<Candidate>> done=found->{
+            if(query!=revision)return;pending=false;
+            if(!found.isEmpty()) {
+                candidates=new ArrayList<>();for(Candidate c:found)candidates.add(new Candidate(capitalization==2?c.text.toUpperCase(Locale.ROOT):capitalization==1?Character.toUpperCase(c.text.charAt(0))+c.text.substring(1):c.text,true,c.score));
+                raw=candidates.get(0).text;preferred=0;traced=true;editor.composing(raw);
+            }
+            barrier=false;changed.run();drain();
+        };
+        if(decoder==null)done.accept(dictionary.englishTrace(points));else decoder.trace(dictionary,points,done);
+    }
     private Decoder decoder;
     private Runnable changed=()->{};
     private long revision;
@@ -70,6 +89,7 @@ public final class CompositionEngine {
         if (codePoint == ' ') { space(); return; }
         if (codePoint == '\n') { enter(); return; }
         clearAssistance();
+        traced=false;
         String letter = new String(Character.toChars(codePoint));
         resolveCompletionBoundary(letter);
         if (direct) { editor.commit(letter); return; }
@@ -142,7 +162,7 @@ public final class CompositionEngine {
         if (index < 0 || index >= candidates.size()) return;
         clearAssistance();
         Candidate choice=candidates.get(index);
-        boolean completed=englishMode && !literalField && !choice.text.equals(raw) && choice.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");
+        boolean completed=englishMode && !literalField && (traced || !choice.text.equals(raw)) && choice.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");
         resolveCompletionBoundary(choice.text);
         commit(choice, false, !raw.isEmpty());
         completionBoundary=completed;
@@ -169,6 +189,7 @@ public final class CompositionEngine {
     /** Call after cursor movement, external edits or lifecycle changes; never rewrite text at the new cursor. */
     public void abandon() { cancelPending();clearAssistance();completionBoundary=false; editor.finish(); raw = ""; context = ""; refresh(); }
     public void refresh() {
+        traced=false;
         long query=++revision;pending=false;
         candidates = new ArrayList<>(); preferred = 0;
         if (direct) return;
