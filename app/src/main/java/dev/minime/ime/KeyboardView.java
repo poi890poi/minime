@@ -26,7 +26,7 @@ final class KeyboardView extends LinearLayout {
     private String layoutKey="", lastRaw="";
     private int page;
     private boolean expanded;
-    private static final int INK=0xff263238, BLUE=0xff176b91, BACK=0xffdfe3e5;
+    private static final int INK=0xff37474f, BLUE=0xff4db6ac, BACK=0xffeceff1;
     private static final String[] ZHUYIN={"ㄅㄉˇˋㄓˊ˙ㄚㄞㄢ","ㄆㄊㄍㄐㄔㄗㄧㄛㄟㄣ","ㄇㄋㄎㄑㄕㄘㄨㄜㄠㄤ","ㄈㄌㄏㄒㄖㄙㄩㄝㄡㄥ"};
     private static final String[] ZH_DOWN={"1234567890","qwertyuiop","asdfghjkl：","zxcvbnm…！？"};
     private static final String[] ZH_UP={"!@#$%^&*()","QWERTYUIOP","ASDFGHJKL ","ZXCVBNM   "};
@@ -35,14 +35,14 @@ final class KeyboardView extends LinearLayout {
     private static final String[] EN_DOWN={"1234567890","@*+-=/#()","':\"?!~…"};
     KeyboardView(Context context,Consumer<String> press,Predicate<String> longPress,BiConsumer<float[],Integer> trace) {
         super(context); this.press=press; this.longPress=longPress;this.trace=trace;
-        setOrientation(VERTICAL); setBackgroundColor(BACK); setPadding(dp(3),0,dp(3),dp(3));
+        setOrientation(VERTICAL); setBackgroundColor(BACK); setPadding(0,0,0,0);
         setMotionEventSplittingEnabled(false);
         status=new TextView(context); status.setTextColor(INK); status.setTextSize(12); status.setPadding(dp(8),0,0,0); addView(status);
-        strip=new LinearLayout(context); strip.setGravity(Gravity.CENTER_VERTICAL); addView(strip,new LayoutParams(-1,dp(48)));
+        strip=new LinearLayout(context); strip.setGravity(Gravity.CENTER_VERTICAL); strip.setBackgroundColor(0xffe4e7e9); addView(strip,new LayoutParams(-1,dp(48)));
         keys=new LinearLayout(context); keys.setOrientation(VERTICAL); addView(keys);
         setOnApplyWindowInsetsListener((view,insets)-> {
             android.graphics.Insets bars=insets.getSystemWindowInsets();
-            setPadding(dp(3)+bars.left,0,dp(3)+bars.right,Math.max(dp(3),bars.bottom)); return insets;
+            setPadding(bars.left,0,bars.right,bars.bottom); return insets;
         });
     }
     private float[] center(View view) {int[] at=new int[2];view.getLocationOnScreen(at);return new float[]{at[0]+view.getWidth()/2f,at[1]+view.getHeight()/2f};}
@@ -89,18 +89,19 @@ final class KeyboardView extends LinearLayout {
             b.setMaxLines(1); b.setFocusable(true); b.setClickable(true);
             b.setOnClickListener(v->{expanded=false;press.accept(command);});
         } else b=new SlideKey(getContext(),label,command,up,down,press,longPress);
-        b.setTextColor(accent?Color.WHITE:INK);
+        b.setTextColor(accent?Color.BLACK:INK);
         b.setTextSize(Math.min(21,height*.43f));
         b.setContentDescription(command.startsWith("CANDIDATE:")?"Candidate "+label:label);
-        GradientDrawable shape=new GradientDrawable(); shape.setColor(accent?BLUE:0xfff9fafb); shape.setCornerRadius(dp(4));
+        GradientDrawable shape=new GradientDrawable(); shape.setColor(Color.TRANSPARENT);
         b.setBackground(new RippleDrawable(ColorStateList.valueOf(0x33263238),shape,null));
-        LayoutParams lp=new LayoutParams(0,dp(height),weight); lp.setMargins(dp(2),dp(2),dp(2),dp(2)); b.setLayoutParams(lp);
+        LayoutParams lp=new LayoutParams(0,dp(height),weight); b.setLayoutParams(lp);
+        if(b instanceof SlideKey && KeyboardIcon.supports(command)) ((SlideKey)b).icon(new KeyboardIcon(command,label,INK,BLUE));
         return b;
     }
     private TextView plain(String label,String command,int height,float weight) { return button(label,command,"","",false,height,weight); }
     private LinearLayout row(int height) {
         LinearLayout row=new LinearLayout(getContext()); row.setMotionEventSplittingEnabled(false);
-        keys.addView(row,new LayoutParams(-1,dp(height+4))); return row;
+        keys.addView(row,new LayoutParams(-1,dp(height))); return row;
     }
     private void spacer(LinearLayout row,float weight) { row.addView(new View(getContext()),new LayoutParams(0,1,weight)); }
     private void simpleRow(String text,int height) {
@@ -109,7 +110,7 @@ final class KeyboardView extends LinearLayout {
     private TextView punctuation(boolean comma,boolean ascii,boolean allowWidthChoice,int height) {
         String label=comma?(ascii?",":"，"):(ascii?".":"。");
         TextView key=button(label,"INSERT:"+label,comma?(ascii?"，":","):(ascii?"。":"."),comma?"、":"…",false,height,1);
-        if(comma)key.setOnLongClickListener(v->{press.accept("EMOJI");return true;});
+        if(comma) { ((SlideKey)key).emojiHint(); key.setOnLongClickListener(v->{press.accept("EMOJI");return true;}); }
         else ((SlideKey)key).punctuationPalette(new String[]{".","。",",","，","、","…","?","？","!","！",":","：",";","；","_","%","$","^","&",":P",":D",":(",":)","^_^"},allowWidthChoice,ascii);
         return key;
     }
@@ -160,14 +161,23 @@ final class KeyboardView extends LinearLayout {
             expand.setOnClickListener(v->{expanded=!expanded;render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,enter,loading);});
             strip.addView(expand,new LayoutParams(dp(40),dp(42)));
         } else {
-            TextView layout=plain(zhuyin?"拼音 layout":"注音 layout","LAYOUT",42,1); layout.setTextSize(14);
-            strip.addView(layout);
-            TextView next=plain("Next keyboard","NEXT_IME",42,1); next.setTextSize(13); strip.addView(next);
+            TextView chinese=plain("中",english?"LANGUAGE":"LAYOUT",48,1); chinese.setTextSize(23); ((SlideKey)chinese).icon(null);
+            chinese.setContentDescription(english?"Switch to Chinese":zhuyin?"拼音 layout":"注音 layout");
+            if(!english)chinese.setBackgroundColor(BACK);
+            strip.addView(chinese,new LayoutParams(dp(75),dp(48)));
+            TextView latin=plain("En","LANGUAGE",48,1); latin.setTextSize(23); ((SlideKey)latin).icon(null);
+            latin.setContentDescription(english?"English selected":"Switch to English");
+            latin.setOnClickListener(v->{if(!english)press.accept("LANGUAGE");});
+            if(english)latin.setBackgroundColor(BACK);
+            strip.addView(latin,new LayoutParams(dp(75),dp(48)));
+            strip.addView(new View(getContext()),new LayoutParams(0,1,1));
+            TextView next=plain("Next keyboard","NEXT_IME",42,1);
+            strip.addView(next,new LayoutParams(dp(42),dp(42)));
         }
         TextView menu=plain("⚙","SETTINGS",42,1); menu.setContentDescription("Settings");
         strip.addView(menu,new LayoutParams(dp(42),dp(42)));
         boolean landscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
-        int height=landscape?34:48;
+        int height=landscape?34:59;
         String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+(expanded?candidates.toString():"");
         if(nextLayout.equals(layoutKey)) return;
         layoutKey=nextLayout; keys.removeAllViews();
@@ -182,7 +192,7 @@ final class KeyboardView extends LinearLayout {
                 }
                 for(int j=Math.min(i+3,candidates.size());j<i+3;j++)spacer(line,1);
             }
-            keys.addView(scroll,new LayoutParams(-1,dp((height+4)*(zhuyin?4:3))));
+            keys.addView(scroll,new LayoutParams(-1,dp(height*(zhuyin?4:3))));
         } else if(panel==3) {
             punctuationChoices(asciiPunctuation,allowLanguageSwitch && !english,height);
         } else if(panel>0) {
@@ -207,6 +217,7 @@ final class KeyboardView extends LinearLayout {
                     String lower=QWERTY[r].substring(i,i+1), upper=lower.toUpperCase(Locale.ROOT);
                     String label=shifted?upper:lower;
                     TextView letter=button(label,label,upper,(english?EN_DOWN:Q_DOWN)[r].substring(i,i+1),false,height,1);
+                    ((SlideKey)letter).qwertyStyle();
                     letters[lower.charAt(0)-'a']=letter;line.addView(letter);
                 }
                 if(r==1) spacer(line,.5f);
@@ -214,15 +225,15 @@ final class KeyboardView extends LinearLayout {
             }
         }
         LinearLayout bottom=row(height);
-        TextView symbol=plain(panel>0?"ABC":"?123",panel>0?"LETTERS":"SYMBOLS",height,1.5f); symbol.setTextSize(15); bottom.addView(symbol);
+        TextView symbol=plain(panel>0?"ABC":"?123",panel>0?"LETTERS":"SYMBOLS",height,1.6f); symbol.setTextSize(16); bottom.addView(symbol);
         bottom.addView(punctuation(true,asciiPunctuation,allowLanguageSwitch && !english,height));
-        TextView emoji=plain(panel==2?"#+":"☺",panel==2?"SYMBOLS":"EMOJI",height,1);
-        emoji.setContentDescription(panel==2?"Symbols":"Emoji");bottom.addView(emoji);
         if(allowLanguageSwitch) {
-            TextView language=plain(english?"中":"EN","LANGUAGE",height,1.2f);language.setTextSize(15);
+            TextView language=plain(english?"中":"EN","LANGUAGE",height,.9f);language.setTextSize(15);
             language.setContentDescription(english?"Switch to Chinese":"Switch to English");bottom.addView(language);
         }
-        TextView space=plain("Space","SPACE",height,3.5f); space.setTextSize(16); bottom.addView(space);
+        TextView space=plain(english?"English":zhuyin?"注音":"拼音","SPACE",height,4); space.setTextSize(14); space.setTextColor(0xff6d7b80); space.setContentDescription("Space");
+        GradientDrawable spaceShape=new GradientDrawable();spaceShape.setColor(0xffcbd0d3);spaceShape.setCornerRadius(dp(2));
+        space.setBackground(new RippleDrawable(ColorStateList.valueOf(0x33263238),new InsetDrawable(spaceShape,dp(12),dp(14),dp(12),dp(14)),null));bottom.addView(space);
         if(zhuyin && panel==0 && !numeric) bottom.addView(plain("ㄦ","ㄦ",height,1));
         else bottom.addView(punctuation(false,asciiPunctuation,allowLanguageSwitch && !english,height));
         if(zhuyin || panel>0 || numeric || expanded) bottom.addView(plain("⌫","DELETE",height,1.5f));

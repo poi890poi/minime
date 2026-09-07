@@ -84,6 +84,15 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         capture("review-control-failure");throw new AssertionError("Visible control missing: "+description);
     }
     private void click(String description) {
+        if(description.equals("Emoji")) {
+            AccessibilityNodeInfo comma=null;
+            for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows()) {
+                comma=find(window.getRoot(),"，");if(comma==null)comma=find(window.getRoot(),",");if(comma!=null)break;
+            }
+            assertNotNull("Comma exposes emoji by hold",comma);Rect r=new Rect();comma.getBoundsInScreen(r);comma.recycle();
+            long start=SystemClock.uptimeMillis();event(start,MotionEvent.ACTION_DOWN,r.exactCenterX(),r.exactCenterY());SystemClock.sleep(650);
+            event(start,MotionEvent.ACTION_UP,r.exactCenterX(),r.exactCenterY());getInstrumentation().waitForIdleSync();return;
+        }
         boolean clicked=false;
         for(int attempt=0;attempt<3 && !clicked;attempt++) {
             AccessibilityNodeInfo n=node(description);clicked=n.performAction(AccessibilityNodeInfo.ACTION_CLICK);n.recycle();
@@ -330,7 +339,9 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
     }
     public void testZhuyinCapitalAndPunctuationSlides() {
         click("注音 layout"); zhuyin=true;
-        type("USB ㄓㄨˋㄧㄣ  "); assertEquals("USB 注音",activity.text.getText().toString());
+        capture("layout-zhuyin-before");
+        type("U");capture("layout-zhuyin-first-slide");expectText("U");
+        type("SB ㄓㄨˋㄧㄣ  "); assertEquals("USB 注音",activity.text.getText().toString());
         clear(); slide("ㄅ",1,false); slide("ㄉ",-1,false); type(" "); assertEquals("1@ ",activity.text.getText().toString());
         clear(); type("ㄋㄧˇㄏㄠˇ"); slide("ㄥ",1,false); assertEquals("你好？",activity.text.getText().toString());
         // ㄦ belongs to the bottom row, below the forty-key grid.

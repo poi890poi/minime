@@ -47,6 +47,8 @@ final class SymbolPanel extends LinearLayout {
             }
         } else loadSymbols();
         LinearLayout selectors=new LinearLayout(context);
+        Button alternate=navButton(emoji?"#+":"☺",emoji?"Symbols":"Emoji",()->press.accept(emoji?"SYMBOLS":"EMOJI"));
+        selectors.addView(alternate,new LayoutParams(dp(42),dp(40)));
         groups=new Button(context); groups.setContentDescription(emoji?"Emoji category":"Symbol category");
         sections=new Button(context); sections.setContentDescription("Emoji group");
         groups.setTextSize(12);sections.setTextSize(12);groups.setPadding(0,0,0,0);sections.setPadding(0,0,0,0);

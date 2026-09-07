@@ -16,6 +16,11 @@ final class SlideKey extends TextView {
     private final Consumer<String> press;
     private final Predicate<String> hold;
     private final Paint hintPaint=new Paint(Paint.ANTI_ALIAS_FLAG);
+    private KeyboardIcon icon;
+    private boolean centeredHint,emojiHint;
+    void icon(KeyboardIcon value) {icon=value;}
+    void qwertyStyle() {centeredHint=true;setPadding(0,0,0,Math.round(15*getResources().getDisplayMetrics().density));}
+    void emojiHint() {emojiHint=true;setPadding(0,Math.round(14*getResources().getDisplayMetrics().density),0,0);}
     private float originX,originY;
     private int direction;
     private boolean active, consumed, cancelled;
@@ -82,8 +87,18 @@ final class SlideKey extends TextView {
         hintPaint.setTextSize(10*getResources().getDisplayMetrics().scaledDensity);
     }
     @Override protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if(direction==0) {
+        if(icon==null)super.onDraw(canvas);
+        else {icon.setBounds(0,0,getWidth(),getHeight());icon.draw(canvas);}
+        if(direction==0 && centeredHint) {
+            hintPaint.setTextAlign(Paint.Align.CENTER);hintPaint.setFakeBoldText(true);
+            canvas.drawText(down,getWidth()/2f,getHeight()-9*getResources().getDisplayMetrics().density-hintPaint.descent(),hintPaint);
+        } else if(direction==0 && emojiHint) {
+            hintPaint.setTextAlign(Paint.Align.CENTER);hintPaint.setFakeBoldText(false);
+            float density=getResources().getDisplayMetrics().density,x=getWidth()/2f,y=12*density;
+            hintPaint.setStyle(Paint.Style.STROKE);hintPaint.setStrokeWidth(density);canvas.drawCircle(x,y,5*density,hintPaint);
+            canvas.drawArc(x-3*density,y-2*density,x+3*density,y+3*density,25,130,false,hintPaint);
+            hintPaint.setStyle(Paint.Style.FILL);canvas.drawCircle(x-1.7f*density,y-1.5f*density,.7f*density,hintPaint);canvas.drawCircle(x+1.7f*density,y-1.5f*density,.7f*density,hintPaint);
+        } else if(direction==0) {
             float pad=3*getResources().getDisplayMetrics().density;
             if(!up.isEmpty() && !up.equals(label)) canvas.drawText(up,getWidth()-pad,pad-hintPaint.ascent(),hintPaint);
             if(!down.isEmpty()) canvas.drawText(down,getWidth()-pad,getHeight()-pad-hintPaint.descent(),hintPaint);
