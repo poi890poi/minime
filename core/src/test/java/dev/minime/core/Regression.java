@@ -153,7 +153,8 @@ public final class Regression {
         for(String prefix:Arrays.asList("pronun","Pronun","PRONUN","keybo","translat")) {
             e=new Editor();c=engine(e,Learning.NONE,false);c.start(false,false,false,false,true);type(c,prefix);
             yes(c.candidates().size()>1,"explicit English has completions: "+prefix);
-            yes(c.candidates().stream().allMatch(v->v.literal && v.text.startsWith(prefix)),"English candidates preserve spelling and case");
+            yes(c.candidates().stream().allMatch(v->v.literal),"English alternatives stay literal");
+            yes(dictionary.englishCompletions(prefix).stream().allMatch(v->v.text.startsWith(prefix)),"English completions preserve spelling and case");
             equal(0,c.preferred(),"Space preserves exact English prefix");
             String chosen=c.candidates().get(1).text;c.select(1);c.space();equal(chosen+" ",e.text,"explicit completion then real Space");
         }

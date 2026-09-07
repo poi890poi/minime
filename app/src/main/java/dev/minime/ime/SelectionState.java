@@ -15,6 +15,7 @@ final class SelectionState {
         expected.add(end); if(expected.size()>256) expected.removeFirst();
     }
     void finish() { composingStart=-1; }
+    void rewind(int count) { start=end=Math.max(0,end-count);composingStart=-1;expected.clear(); }
     void delete() { deletion=true; composingStart=-1; expected.clear(); }
     boolean update(int nextStart,int nextEnd) {
         if(nextStart==nextEnd && expected.contains(nextEnd)) {

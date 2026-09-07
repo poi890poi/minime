@@ -41,6 +41,8 @@ public final class MiniMeService extends InputMethodService {
         if(restarting) engine.abandon();
         selection.start(attribute.initialSelStart,attribute.initialSelEnd);
         engine.start(zhuyin,policy.literal,policy.privateField,policy.secure || policy.numeric,english);
+        engine.englishOptions(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_correction",false),
+            getSharedPreferences("settings",MODE_PRIVATE).getBoolean("double_space_period",true));
         render();
     }
     @Override public void onFinishInput() {

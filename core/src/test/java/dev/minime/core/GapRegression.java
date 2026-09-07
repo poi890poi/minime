@@ -6,6 +6,21 @@ import static dev.minime.core.Regression.*;
 /** Behavior contracts from paired observations; no evaluation labels enter runtime data. */
 final class GapRegression {
     static void run() {
+        for(boolean enabled:Arrays.asList(false,true)) {
+            Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.start(false,false,false,false,true);c.englishOptions(enabled,true);
+            type(c,"teh");yes(find(c,"the")>0,"transposition suggestion");c.space(1000);
+            equal(enabled?"the ":"teh ",e.text,"optional correction");
+            if(enabled) {c.backspace();equal("",e.text,"correction undo deletes only owned output");equal("teh",c.raw(),"correction undo restores spelling");c.select(0);equal("teh",e.text,"undo exact recovery");}
+        }
+        Editor assistance=new Editor();CompositionEngine assist=engine(assistance,Learning.NONE,false);assist.start(false,false,false,false,true);assist.englishOptions(true,true);
+        type(assist,"dont");yes(find(assist,"don't")>0,"contraction alternative");assist.space(1000);equal("don't ",assistance.text,"contraction correction");
+        assist.space(1400);equal("don't. ",assistance.text,"double Space period");assist.space(1500);equal("don't.  ",assistance.text,"third Space is ordinary");
+        assistance=new Editor();assist=engine(assistance,Learning.NONE,false);assist.start(false,true,false,false,true);assist.englishOptions(true,true);
+        type(assist,"teh");assist.space(1000);assist.space(1100);equal("teh  ",assistance.text,"restricted field assistance bypass");
+        assistance=new Editor();assist=engine(assistance,Learning.NONE,false);assist.start(false,false,false,false,true);assist.englishOptions(true,true);
+        type(assist,"hello");assist.space(1000);assist.space(2100);equal("hello  ",assistance.text,"double Space timeout");
+        yes(dictionary.englishCorrections("cant").isEmpty(),"known word is not corrected to contraction");
+        yes(dictionary.englishCorrections("fooBar").isEmpty(),"mixed case is literal");
         ShiftState shift=new ShiftState();shift.automatic(true);yes(shift.upper(),"editor automatic capitals");
         shift.tap(1000,300);yes(!shift.upper(),"manual Shift suppresses automatic capital");
         shift.tap(1100,300);yes(shift.locked(),"double Shift locks from auto capital");

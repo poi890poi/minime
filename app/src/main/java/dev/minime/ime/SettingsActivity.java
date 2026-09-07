@@ -27,6 +27,8 @@ public final class SettingsActivity extends Activity {
         layout.setChecked(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("zhuyin",false));
         layout.setOnCheckedChangeListener((b,value)->getSharedPreferences("settings",MODE_PRIVATE).edit().putBoolean("zhuyin",value).apply()); body.addView(layout);
         text("Typing",21);
+        option("Correct English spelling on Space", "english_correction",false);
+        option("Double Space inserts a period in English", "double_space_period",true);
         Switch adaptation=new Switch(this);adaptation.setText("Learn English word pairs on this device");
         adaptation.setChecked(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_learning",false));
         adaptation.setOnCheckedChangeListener((b,value)->getSharedPreferences("settings",MODE_PRIVATE).edit().putBoolean("english_learning",value).apply());body.addView(adaptation);
@@ -75,5 +77,10 @@ public final class SettingsActivity extends Activity {
         });
     }
     private void text(String text,int size) { TextView v=new TextView(this); v.setText(text); v.setTextSize(size); v.setPadding(0,14,0,10); body.addView(v); }
+    private void option(String label,String key,boolean initial) {
+        Switch toggle=new Switch(this);toggle.setText(label);
+        toggle.setChecked(getSharedPreferences("settings",MODE_PRIVATE).getBoolean(key,initial));
+        toggle.setOnCheckedChangeListener((b,value)->getSharedPreferences("settings",MODE_PRIVATE).edit().putBoolean(key,value).apply());body.addView(toggle);
+    }
     private void button(String label,Runnable action) { Button b=new Button(this); b.setText(label); b.setOnClickListener(v->action.run()); body.addView(b); }
 }

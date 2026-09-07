@@ -21,6 +21,13 @@ final class AndroidEditor implements CompositionEngine.Editor {
         c.beginBatchEdit(); try { c.commitText(text,1); } finally { c.endBatchEdit(); }
     }
     public void finish() { selection.finish(); InputConnection c=connection.get(); if(c!=null) c.finishComposingText(); }
+    public void restoreSpelling(int count,String spelling) {
+        InputConnection c=connection.get();if(c==null)return;
+        c.beginBatchEdit();try {
+            if(!c.deleteSurroundingText(count,0))return;
+            selection.rewind(count);selection.write(spelling,true);c.setComposingText(spelling,1);
+        } finally {c.endBatchEdit();}
+    }
     public void delete() {
         InputConnection c=connection.get(); if(c==null) return;
         selection.delete();

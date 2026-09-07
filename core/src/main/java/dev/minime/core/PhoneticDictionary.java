@@ -185,4 +185,29 @@ public final class PhoneticDictionary {
         Set<String> seen = new HashSet<>(); result.removeIf(c -> !seen.add(c.text));
         return result.subList(0, Math.min(6, result.size()));
     }
+    /** One-edit spelling alternatives, bounded by the input length, with source frequencies. */
+    public List<Candidate> englishCorrections(String raw) {
+        if(raw.length()<3 || raw.length()>32 || !raw.matches("[A-Za-z]+(?:'[A-Za-z]+)?") || isEnglish(raw)
+                || IntentClassifier.technicalWord(raw.toLowerCase(Locale.ROOT))) return Collections.emptyList();
+        String key=raw.toLowerCase(Locale.ROOT);
+        boolean caps=raw.equals(raw.toUpperCase(Locale.ROOT));
+        boolean title=raw.equals(Character.toUpperCase(key.charAt(0))+key.substring(1));
+        if(!caps && !title && !raw.equals(key))return Collections.emptyList();
+        Set<String> edits=new HashSet<>();
+        for(int i=0;i<=key.length();i++) {
+            if(i<key.length())edits.add(key.substring(0,i)+key.substring(i+1));
+            if(i+1<key.length())edits.add(key.substring(0,i)+key.charAt(i+1)+key.charAt(i)+key.substring(i+2));
+            for(char c: "abcdefghijklmnopqrstuvwxyz'".toCharArray()) {
+                edits.add(key.substring(0,i)+c+key.substring(i));
+                if(i<key.length())edits.add(key.substring(0,i)+c+key.substring(i+1));
+            }
+        }
+        List<Candidate> result=new ArrayList<>();
+        for(String word:edits)if(english.containsKey(word)) {
+            String text=caps?word.toUpperCase(Locale.ROOT):title?Character.toUpperCase(word.charAt(0))+word.substring(1):word;
+            result.add(new Candidate(text,true,english.get(word)));
+        }
+        result.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text));
+        return result.subList(0,Math.min(8,result.size()));
+    }
 }
