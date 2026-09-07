@@ -39,3 +39,8 @@ The final 0.5.6 package passes five navigation/order/attached insertion tests in
 remembered second arrow page after visiting letters and emoji. Final preferences
 match their pre-test hashes, Samsung IME is restored, and the phone is Dozing;
 phone-restoration.json records the read-back.
+
+Version 0.5.6 / code 12 is packaged as an installable debug-signed APK inside a ZIP.
+The public Cloudflare ZIP returned HTTP 200 and matched the local archive
+byte-for-byte. package.json and download-verification.json retain identities.
+The link is temporary and depends on the local server and tunnel remaining up.

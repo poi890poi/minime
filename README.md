@@ -4,6 +4,11 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.5.6** remembers the last symbol category/page and puts symbols missing
+from the active main board ahead of those available by tapping or sliding.
+Private fields neither read nor update saved symbol navigation. See
+[symbol navigation verification](docs/symbol-navigation/RESULTS.md).
+
 Version **0.5.5** removes the unused top band. Raw phonetics float above the fixed
 keyboard only when needed; symbols and emojis replace the toolbar and use its
 space for a third grid row. See [panel space verification](docs/panel-space/RESULTS.md).
