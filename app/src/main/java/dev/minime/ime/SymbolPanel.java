@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.function.Consumer;
 
-/** Paged Unicode text; no image assets, editor reads or usage-history storage. */
+/** Unicode palettes with optional local recents; private fields never access history. */
 final class SymbolPanel extends LinearLayout {
     private static final class Entry {
         final String text,name;
@@ -23,15 +23,29 @@ final class SymbolPanel extends LinearLayout {
     private final Button previous,next;
     private final Consumer<String> press;
     private final boolean emoji;
+    private final boolean remember;
+    private float touchX,touchY;
+    private static List<String[]> emojiRows;
     private List<Entry> entries=Collections.emptyList();
     private int page;
     private int chooser;
     private String groupName,sectionName;
     private final int keyHeight;
-    SymbolPanel(Context context,boolean emoji,Consumer<String> press) {
+    SymbolPanel(Context context,boolean emoji,boolean privateField,Consumer<String> press) {
         super(context);this.emoji=emoji;this.press=press;setOrientation(VERTICAL);
+        remember=emoji && !privateField && context.getSharedPreferences("settings",Context.MODE_PRIVATE).getBoolean("emoji_recents",false);
         keyHeight=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE?28:42;
-        if(emoji) loadEmoji(); else loadSymbols();
+        if(emoji) {
+            loadEmoji();
+            for(Map<String,List<Entry>> sections:catalog.values()) {List<Entry> all=new ArrayList<>();for(List<Entry> list:sections.values())all.addAll(list);
+                Map<String,List<Entry>> ordered=new LinkedHashMap<>();ordered.put("All",all);ordered.putAll(sections);sections.clear();sections.putAll(ordered);
+            }
+            if(remember) {
+                Map<String,Entry> byText=new HashMap<>();for(Map<String,List<Entry>> sections:catalog.values())for(Entry e:sections.get("All"))byText.put(e.text,e);
+                List<Entry> recent=new ArrayList<>();for(String text:context.getSharedPreferences("learning",Context.MODE_PRIVATE).getString("recent_emoji","").split("\n"))if(byText.containsKey(text))recent.add(byText.get(text));
+                if(!recent.isEmpty()) {Map<String,Map<String,List<Entry>>> ordered=new LinkedHashMap<>();ordered.put("Recent",Collections.singletonMap("All",recent));ordered.putAll(catalog);catalog.clear();catalog.putAll(ordered);}
+            }
+        } else loadSymbols();
         LinearLayout selectors=new LinearLayout(context);
         groups=new Button(context); groups.setContentDescription(emoji?"Emoji category":"Symbol category");
         sections=new Button(context); sections.setContentDescription("Emoji group");
@@ -89,9 +103,31 @@ final class SymbolPanel extends LinearLayout {
         range("括號 Brackets",0x2768,0x2775);
     }
     private void loadEmoji() {
-        try(BufferedReader reader=new BufferedReader(new InputStreamReader(getContext().getAssets().open("emoji.tsv"),StandardCharsets.UTF_8))) {
-            String line;while((line=reader.readLine())!=null) {String[] p=line.split("\t",-1);if(p.length!=4) throw new IOException("Invalid emoji row");add(p[0],p[1],p[2],p[3]);}
-        } catch(IOException e) {throw new IllegalStateException("Bundled emoji catalog unavailable",e);}
+        if(emojiRows==null) {
+            List<String[]> rows=new ArrayList<>();
+            try(BufferedReader reader=new BufferedReader(new InputStreamReader(getContext().getAssets().open("emoji.tsv"),StandardCharsets.UTF_8))) {
+                String line;while((line=reader.readLine())!=null) {String[] p=line.split("\t",-1);if(p.length!=4) throw new IOException("Invalid emoji row");rows.add(p);}
+            } catch(IOException e) {throw new IllegalStateException("Bundled emoji catalog unavailable",e);}
+            emojiRows=Collections.unmodifiableList(rows);
+        }
+        for(String[] p:emojiRows)add(p[0],p[1],p[2],p[3]);
+    }
+    @Override public boolean onInterceptTouchEvent(MotionEvent e) {
+        if(e.getActionMasked()==MotionEvent.ACTION_DOWN) {touchX=e.getX();touchY=e.getY();}
+        if(e.getActionMasked()==MotionEvent.ACTION_MOVE && Math.abs(e.getX()-touchX)>dp(48) && Math.abs(e.getX()-touchX)>1.5*Math.abs(e.getY()-touchY))return true;
+        return super.onInterceptTouchEvent(e);
+    }
+    @Override public boolean onTouchEvent(MotionEvent e) {
+        if(e.getActionMasked()==MotionEvent.ACTION_UP) {if(Math.abs(e.getX()-touchX)>dp(48)) {page+=e.getX()<touchX?1:-1;render();}return true;}
+        return true;
+    }
+    private void insert(Entry e) {
+        if(remember) {
+            android.content.SharedPreferences prefs=getContext().getSharedPreferences("learning",Context.MODE_PRIVATE);
+            LinkedHashSet<String> recent=new LinkedHashSet<>();recent.add(e.text);recent.addAll(Arrays.asList(prefs.getString("recent_emoji","").split("\n")));recent.remove("");
+            List<String> list=new ArrayList<>(recent);prefs.edit().putString("recent_emoji",String.join("\n",list.subList(0,Math.min(24,list.size())))).apply();
+        }
+        press.accept("INSERT:"+e.text);
     }
     private void render() {
         groups.setText(groupName+" ▾");sections.setText(sectionName+" ▾");
@@ -109,7 +145,7 @@ final class SymbolPanel extends LinearLayout {
                 key.setGravity(Gravity.CENTER);key.setMaxLines(chooser==0?1:3);key.setBackgroundColor(0xfff9fafb);key.setFocusable(true);key.setClickable(true);
                 key.setContentDescription(chooser==0?(emoji?"Emoji ":"Symbol ")+e.name:e.name);
                 key.setOnClickListener(v->{
-                    if(chooser==0) press.accept("INSERT:"+e.text);
+                    if(chooser==0) insert(e);
                     else {if(chooser==1) selectGroup(e.text);else {sectionName=e.text;entries=catalog.get(groupName).get(sectionName);}chooser=0;page=0;render();}
                 });
                 LayoutParams lp=new LayoutParams(0,dp(keyHeight),1);lp.setMargins(dp(1),dp(1),dp(1),dp(1));line.addView(key,lp);

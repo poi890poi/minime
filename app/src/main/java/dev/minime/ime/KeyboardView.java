@@ -68,9 +68,9 @@ final class KeyboardView extends LinearLayout {
     private TextView punctuation(boolean comma,boolean ascii,boolean allowWidthChoice,int height) {
         String label=comma?(ascii?",":"，"):(ascii?".":"。");
         TextView key=button(label,"INSERT:"+label,comma?(ascii?"，":","):(ascii?"。":"."),comma?"、":"…",false,height,1);
-        key.setOnLongClickListener(v->{
-            press.accept(comma?"EMOJI":"PUNCTUATION");return true;
-        });return key;
+        if(comma)key.setOnLongClickListener(v->{press.accept("EMOJI");return true;});
+        else ((SlideKey)key).punctuationPalette(new String[]{".","。",",","，","、","…","?","？","!","！",":","：",";","；","_","%","$","^","&",":P",":D",":(",":)","^_^"},allowWidthChoice,ascii);
+        return key;
     }
     private void punctuationChoices(boolean ascii,boolean allowWidthChoice,int height) {
         String[] choices={".","。",",","，","、","…","?","？","!","！",":","：",";","；","_","%","$","^","&",":P",":D",":(",":)","^_^"};
@@ -143,7 +143,7 @@ final class KeyboardView extends LinearLayout {
         } else if(panel==3) {
             punctuationChoices(asciiPunctuation,allowLanguageSwitch && !english,height);
         } else if(panel>0) {
-            keys.addView(new SymbolPanel(getContext(),panel==2,press));
+            keys.addView(new SymbolPanel(getContext(),panel==2,engine.privateField(),press));
         } else if(numeric) {
             simpleRow("123",height); simpleRow("456",height); simpleRow("789",height);
             simpleRow("+0.-",height);

@@ -29,6 +29,7 @@ public final class SettingsActivity extends Activity {
         text("Typing",21);
         option("Correct English spelling on Space", "english_correction",false);
         option("Double Space inserts a period in English", "double_space_period",true);
+        option("Keep recent emoji on this device", "emoji_recents",false);
         Switch adaptation=new Switch(this);adaptation.setText("Learn English word pairs on this device");
         adaptation.setChecked(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_learning",false));
         adaptation.setOnCheckedChangeListener((b,value)->getSharedPreferences("settings",MODE_PRIVATE).edit().putBoolean("english_learning",value).apply());body.addView(adaptation);

@@ -20,6 +20,40 @@ final class SlideKey extends TextView {
     private int direction;
     private boolean active, consumed, cancelled;
     private PopupMenu menu;
+    private PopupWindow palette;
+    private final java.util.List<TextView> paletteKeys=new java.util.ArrayList<>();
+    private int paletteSelection=-1;
+    void punctuationPalette(String[] values,boolean widthChoice,boolean ascii) {
+        setOnLongClickListener(v->{
+            dismissPalette();LinearLayout body=new LinearLayout(getContext());body.setOrientation(LinearLayout.VERTICAL);body.setBackgroundColor(0xffdfe3e5);
+            int cell=Math.round(42*getResources().getDisplayMetrics().density);
+            for(int row=0;row<(values.length+5)/6;row++) {
+                LinearLayout line=new LinearLayout(getContext());body.addView(line);
+                for(int col=0;col<6 && row*6+col<values.length;col++) {
+                    String text=values[row*6+col];TextView key=new TextView(getContext());key.setText(text);key.setTextSize(20);key.setTextColor(0xff263238);key.setGravity(Gravity.CENTER);
+                    key.setContentDescription("Punctuation "+text);key.setFocusable(true);key.setClickable(true);key.setOnClickListener(view->{dismissPalette();press.accept("INSERT:"+text);});
+                    paletteKeys.add(key);line.addView(key,new LinearLayout.LayoutParams(0,cell,1));
+                }
+            }
+            if(widthChoice) {
+                Button width=new Button(getContext());width.setText(ascii?"Use Chinese punctuation":"Use English punctuation");
+                width.setOnClickListener(view->{dismissPalette();press.accept("PUNCT_WIDTH");});body.addView(width,new LinearLayout.LayoutParams(-1,cell));
+            }
+            int[] at=new int[2];getLocationOnScreen(at);
+            int screen=getResources().getDisplayMetrics().widthPixels,width=Math.min(screen-16,cell*6),height=cell*((values.length+5)/6+(widthChoice?1:0));
+            palette=new PopupWindow(body,width,height,false);palette.setElevation(12);palette.setOutsideTouchable(true);palette.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(0xffdfe3e5));
+            palette.showAtLocation(getRootView(),Gravity.TOP|Gravity.LEFT,Math.max(0,Math.min(at[0]+getWidth()/2-width/2,screen-width)),Math.max(0,at[1]-height));
+            return true;
+        });
+    }
+    private void dismissPalette() { if(palette!=null)palette.dismiss();palette=null;paletteKeys.clear();paletteSelection=-1; }
+    private void trackPalette(float x,float y) {
+        paletteSelection=-1;
+        for(int i=0;i<paletteKeys.size();i++) {TextView key=paletteKeys.get(i);int[] at=new int[2];key.getLocationOnScreen(at);
+            boolean selected=x>=at[0] && x<at[0]+key.getWidth() && y>=at[1] && y<at[1]+key.getHeight();
+            key.setBackgroundColor(selected?0xffa7d8ee:0xfff9fafb);if(selected)paletteSelection=i;
+        }
+    }
     private final Runnable repeat=new Runnable() {
         public void run() {
             if(!active || cancelled || direction!=0) return;
@@ -70,7 +104,7 @@ final class SlideKey extends TextView {
     private void stopTimers() { removeCallbacks(repeat); removeCallbacks(longAction); }
     private void reset() { active=false; stopTimers(); direction=0; setText(label); setPressed(false); }
     @Override protected void onDetachedFromWindow() {
-        reset(); if(menu!=null) menu.dismiss(); super.onDetachedFromWindow();
+        reset();dismissPalette(); if(menu!=null) menu.dismiss(); super.onDetachedFromWindow();
     }
     @Override public boolean onTouchEvent(MotionEvent event) {
         switch(event.getActionMasked()) {
@@ -82,8 +116,9 @@ final class SlideKey extends TextView {
                 return true;
             case MotionEvent.ACTION_POINTER_DOWN:
             case MotionEvent.ACTION_CANCEL:
-                cancelled=true; reset(); return true;
+                cancelled=true;dismissPalette(); reset(); return true;
             case MotionEvent.ACTION_MOVE:
+                if(palette!=null && palette.isShowing()) {trackPalette(event.getRawX(),event.getRawY());return true;}
                 if(!active || consumed || cancelled) return true;
                 float dx=event.getX()-originX,dy=event.getY()-originY;
                 float threshold=18*getResources().getDisplayMetrics().density;
@@ -97,6 +132,10 @@ final class SlideKey extends TextView {
                 return true;
             case MotionEvent.ACTION_UP:
                 if(!active) return true;
+                if(palette!=null && palette.isShowing()) {
+                    trackPalette(event.getRawX(),event.getRawY());int picked=paletteSelection;reset();
+                    if(picked>=0) {String text=paletteKeys.get(picked).getText().toString();dismissPalette();press.accept("INSERT:"+text);}return true;
+                }
                 int selected=direction;
                 boolean emit=!consumed && !cancelled;
                 boolean inside=event.getX()>=0 && event.getX()<getWidth() && event.getY()>=0 && event.getY()<getHeight();
