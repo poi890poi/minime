@@ -4,6 +4,11 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.5.2** keeps the IME height stable while typing, expanding candidates,
+switching languages/layouts, and opening symbol or emoji panels. Portrait and
+landscape each use a fixed content budget; system navigation insets remain honored.
+See [height verification](docs/stable-height/RESULTS.md).
+
 Version **0.5.1** restores Taiwan-standard glyph conversion, keeps literal English
 defaults visible, separates learned Chinese choices from English continuation,
 and retains source-capitalized English vocabulary. These are data and general
