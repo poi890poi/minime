@@ -1,5 +1,21 @@
 # Offline language data
 
+Optional packs are built separately with `tools/compile_addons.py` and
+`tools/compile_rudy_names.py`; refresh packaged notices with
+`tools/write_addon_notices.py`. Selection uses source metadata and general rules,
+never entity allowlists. See [counts and limitations](../docs/addons-learning/RESULTS.md).
+
+- `cedict`: CC-CEDICT, CC BY-SA 4.0; Taiwan-marked vocabulary and title readings.
+- `jmnedict`: pinned jmdict-simplified JMnedict snapshot, CC BY-SA 4.0; source works,
+  creative professions and Taiwan-related metadata, with original kana readings.
+- `itaigi`: original ChhoeTaigi iTaigi POJ fields, CC0; short expressions selected
+  using the existing McBopomofo Mandarin frequency source.
+- `wikidata`: CC0 title identities selected by recorded category queries.
+- `wanakana`: MIT, build-time kana Romanization; no runtime dependency.
+- `rudy`: OSM/Rudy POI geography, ODbL 1.0, kept in a separate derived database.
+  The complete normalized thematic source snapshot is vendored for offline rebuilds;
+  the large upstream ZIP is fetched separately. See [source rules](rudy/README.md).
+
 - `unicode`: official Emoji 12.0 data and Unicode license, used to generate 3,010
   fully-qualified emoji sequences. See [source and license](unicode/README.md).
 

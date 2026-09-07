@@ -1,0 +1,4 @@
+{
+  "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%20%3Fitem%20wdt%3AP31%20wd%3AQ7366%3B%20wdt%3AP175%20%3Fartist.%20%3Fartist%20wdt%3AP27%20wd%3AQ865.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22zh-tw%2Czh-hant%2Czh%2Cen%22.%20%7D%20%7D%20ORDER%20BY%20%3Fitem%20LIMIT%2060",
+  "sha256": "4071b144a8429870c9c53a5b9a840046085fa576908a85092b236098c4c8d20f"
+}

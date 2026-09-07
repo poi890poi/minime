@@ -27,3 +27,29 @@ Use broad independent conversational regressions and source-derived coverage
 separately; data membership checks are not language-quality accuracy. Keep
 negative results and coverage gaps. Device verification only on RFCR91GWXLX;
 restore IME/preferences and sleep/verify display after every session.
+
+User clarification: Taiwanese uses Pe̍h-ōe-jī (POJ) throughout, not a ts/ch
+substitution applied to Tâi-lô. Prefer original source POJ fields, with POJ vowels,
+nasalization and tones in output, input conventions, help and export metadata.
+The short Taiwanese phrase pack is separately optional and explicitly selected.
+
+Wikipedia evaluation exposed a feature-design weakness: dropping duplicates also
+dropped the add-on's visibility benefit when Rime already had the name deep in its
+candidate list. Revise enabled-pack behavior to promote matching names at slot 3
+(after raw and two existing choices), retaining the exact Space default and the
+relative order of unpromoted candidates. Off remains baseline-identical. Test this
+general source-membership rule on a second fresh Wikipedia sample; do not add or
+reweight any individual missed Wikipedia title.
+
+User correction: never handpick production entries. The earlier 38-name hiking
+list, 15 POJ IDs and Japanese cultural-name seed set are rejected and removed.
+SHINE AAC's constitution says “Prefer data pipelines over hand tuning.” See
+https://github.com/poi890poi/shine_aac/blob/main/docs/PROJECT_CONSTITUTION.md .
+MinIME AGENTS.md now makes the stronger user instruction explicit. Source filters
+and upstream metadata select every production entry; structural test fixtures do
+not influence those filters. Replace the article-by-article work with Rudy Map's
+published POI snapshot, category hierarchy and name/pronunciation fields. Track
+source version, hash, licence, rule and counts at dataset level. Keep ODbL-derived
+geography separate and independently switchable. Replace the custom kana converter
+with established MIT-licensed WanaKana for build-time aliases. Validate the new
+source baseline before further UI changes or release.

@@ -1,0 +1,4 @@
+{
+  "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%20%3Fitem%20wdt%3AP31/wdt%3AP279%2A%20wd%3AQ571%3B%20wdt%3AP50%20%3Fauthor.%20%3Fauthor%20wdt%3AP27%20wd%3AQ865.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22zh-tw%2Czh-hant%2Czh%2Cen%22.%20%7D%20%7D%20ORDER%20BY%20%3Fitem%20LIMIT%2060",
+  "sha256": "d04d58b222a46269e8c792eed1a5dd5d555a5a34a21a07cc8b3818a1c4f0f13b"
+}

@@ -6,3 +6,15 @@ third_party/rime/data-sources/opencc/** -text
 app/src/androidTest/assets/conversation-probes.tsv text eol=lf
 docs/conversation-ranking/corpus/inputs.tsv text eol=lf
 docs/conversation-ranking/corpus/gum-test.tsv text eol=lf
+app/src/main/assets/addons.tsv text eol=lf
+app/src/main/assets/addon-sources.txt text eol=lf
+app/src/main/assets/NOTICE.txt text eol=lf
+third_party/cedict/** -text
+third_party/itaigi/** -text
+third_party/jmnedict/** -text
+third_party/wikidata/** -text
+third_party/rudy/** -text
+third_party/wanakana/** -text
+app/src/main/assets/geography.tsv text eol=lf
+docs/addons-learning/*.json -text
+docs/addons-learning/*.tsv -text

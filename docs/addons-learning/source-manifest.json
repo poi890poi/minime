@@ -1,0 +1,4853 @@
+{
+  "format": 1,
+  "orthography": {
+    "poj": "Pe̍h-ōe-jī; original PojUnicode/PojInput, not Tâi-lô"
+  },
+  "sources": [
+    {
+      "file": "third_party/cedict/cedict.txt.gz",
+      "url": "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+      "license": "CC-BY-SA-4.0",
+      "sha256": "cd81c0d253c82d4b1dc3ca2cfe4cd5fc46ca10b753743a80d783f3969ae11a23"
+    },
+    {
+      "file": "third_party/jmnedict/jmnedict.json.tgz",
+      "url": "https://github.com/scriptin/jmdict-simplified/releases/download/3.6.2%2B20260831182826/jmnedict-all-3.6.2%2B20260831182826.json.tgz",
+      "license": "CC-BY-SA-4.0",
+      "sha256": "bbc82a8a8650816430a3e1589a335de0a782af1a7165dba401ea8490eb2bc0a2"
+    },
+    {
+      "file": "third_party/itaigi/itaigi.csv",
+      "url": "https://raw.githubusercontent.com/ChhoeTaigi/ChhoeTaigiDatabase/b33c6a1fcc2d11a2962e76b6055d528d11677c3b/ChhoeTaigiDatabase/ChhoeTaigi_iTaigiHoataiTuichiautian.csv",
+      "license": "CC0-1.0",
+      "sha256": "eec28ed3fec522b72a70257c6d6d454f4f710d0ad6d63a07994a6354a4f0d3b4"
+    },
+    {
+      "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%20%3Fitem%20wdt%3AP31/wdt%3AP279%2A%20wd%3AQ571%3B%20wdt%3AP50%20%3Fauthor.%20%3Fauthor%20wdt%3AP27%20wd%3AQ865.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22zh-tw%2Czh-hant%2Czh%2Cen%22.%20%7D%20%7D%20ORDER%20BY%20%3Fitem%20LIMIT%2060",
+      "sha256": "d04d58b222a46269e8c792eed1a5dd5d555a5a34a21a07cc8b3818a1c4f0f13b",
+      "file": "third_party/wikidata/taiwan-books.json",
+      "license": "CC0-1.0"
+    },
+    {
+      "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%0A%20%20%20%20%20%20%3Fitem%20wdt%3AP31%20wd%3AQ11424%3B%20wdt%3AP495%20wd%3AQ865.%0A%20%20%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22zh-tw%2Czh-hant%2Czh%2Cen%22.%20%7D%0A%20%20%20%20%7D%20ORDER%20BY%20%3Fitem%20LIMIT%2060",
+      "sha256": "4f9edc3eb64447eac6475fd469aae933aa417e26515153fd3d2351889e715ffe",
+      "file": "third_party/wikidata/taiwan-films.json",
+      "license": "CC0-1.0"
+    },
+    {
+      "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%20%3Fitem%20wdt%3AP31%20wd%3AQ7366%3B%20wdt%3AP175%20%3Fartist.%20%3Fartist%20wdt%3AP27%20wd%3AQ865.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22zh-tw%2Czh-hant%2Czh%2Cen%22.%20%7D%20%7D%20ORDER%20BY%20%3Fitem%20LIMIT%2060",
+      "sha256": "4071b144a8429870c9c53a5b9a840046085fa576908a85092b236098c4c8d20f",
+      "file": "third_party/wikidata/taiwan-songs.json",
+      "license": "CC0-1.0"
+    }
+  ],
+  "asset_sha256": "50b483838ba0737bcd8f427ab7921adbbff28e7aa6f8e5f2f37c54c73e5dedc0",
+  "rows": 11641,
+  "outputs_by_pack": {
+    "taiwan": 2353,
+    "poj": 356,
+    "japanese": 4151
+  },
+  "taiwan_category_outputs": {
+    "animals": 32,
+    "beverages": 10,
+    "books": 25,
+    "films": 28,
+    "foods": 39,
+    "history": 8,
+    "indigenous": 40,
+    "mountains": 10,
+    "people": 39,
+    "performers": 35,
+    "places": 202,
+    "plants": 11,
+    "rivers": 3,
+    "songs": 21,
+    "taiwan_usage": 1850
+  },
+  "poj_entries": [
+    {
+      "source": "itaigi:70",
+      "meaning": "台灣",
+      "input": "tai5-oan5",
+      "output": "Tâi-oân",
+      "orthography": "POJ",
+      "contributor": "David Kang",
+      "Mandarin_source_frequency": 24111.0
+    },
+    {
+      "source": "itaigi:315",
+      "meaning": "這樣子",
+      "input": "an2-ne-sinn",
+      "output": "án-ne-siⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1496.0
+    },
+    {
+      "source": "itaigi:326",
+      "meaning": "高雄",
+      "input": "ta2-kau2",
+      "output": "Tá-káu",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3837.0
+    },
+    {
+      "source": "itaigi:370",
+      "meaning": "還是",
+      "input": "oan5-a2",
+      "output": "oân-á",
+      "orthography": "POJ",
+      "contributor": "莊銘彥",
+      "Mandarin_source_frequency": 9209.0
+    },
+    {
+      "source": "itaigi:373",
+      "meaning": "其實",
+      "input": "lun7-chin",
+      "output": "lūn-chin",
+      "orthography": "POJ",
+      "contributor": "Jou Ying-cheng",
+      "Mandarin_source_frequency": 6610.0
+    },
+    {
+      "source": "itaigi:375",
+      "meaning": "遊戲",
+      "input": "sng2-i7",
+      "output": "sńg-ī",
+      "orthography": "POJ",
+      "contributor": "莊銘彥",
+      "Mandarin_source_frequency": 1591.0
+    },
+    {
+      "source": "itaigi:376",
+      "meaning": "遊戲",
+      "input": "i7-sng2",
+      "output": "ī-sńg",
+      "orthography": "POJ",
+      "contributor": "莊銘彥",
+      "Mandarin_source_frequency": 1591.0
+    },
+    {
+      "source": "itaigi:490",
+      "meaning": "小朋友",
+      "input": "gin2-a2-hiann",
+      "output": "gín-á-hiaⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2239.0
+    },
+    {
+      "source": "itaigi:491",
+      "meaning": "小朋友",
+      "input": "gin2-a2-che2",
+      "output": "gín-á-ché",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2239.0
+    },
+    {
+      "source": "itaigi:497",
+      "meaning": "小朋友",
+      "input": "sio2-peng5-iu2",
+      "output": "sió-pêng-iú",
+      "orthography": "POJ",
+      "contributor": "Lin Hsuan-tung",
+      "Mandarin_source_frequency": 2239.0
+    },
+    {
+      "source": "itaigi:739",
+      "meaning": "這樣子",
+      "input": "an2-ne",
+      "output": "án-ne",
+      "orthography": "POJ",
+      "contributor": "Tan-nî Danny Chiou",
+      "Mandarin_source_frequency": 1496.0
+    },
+    {
+      "source": "itaigi:827",
+      "meaning": "大部分",
+      "input": "toa7-poo7-hun7",
+      "output": "tōa-pō͘-hūn",
+      "orthography": "POJ",
+      "contributor": "E-Ping Rau",
+      "Mandarin_source_frequency": 1333.0
+    },
+    {
+      "source": "itaigi:874",
+      "meaning": "由於",
+      "input": "iu5-i5",
+      "output": "iû-î",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 5571.0
+    },
+    {
+      "source": "itaigi:952",
+      "meaning": "現在",
+      "input": "chim2",
+      "output": "chím",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 12352.0
+    },
+    {
+      "source": "itaigi:953",
+      "meaning": "今天",
+      "input": "kiann9-jit8",
+      "output": "kiăⁿ-ji̍t",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 9490.0
+    },
+    {
+      "source": "itaigi:1016",
+      "meaning": "正常",
+      "input": "cheng3-siong5",
+      "output": "chèng-siông",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1300.0
+    },
+    {
+      "source": "itaigi:1021",
+      "meaning": "興趣",
+      "input": "heng3-chhu3",
+      "output": "hèng-chhù",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1796.0
+    },
+    {
+      "source": "itaigi:1040",
+      "meaning": "將來",
+      "input": "leng7-pai2-a2",
+      "output": "lēng-pái-á",
+      "orthography": "POJ",
+      "contributor": "郭耀南",
+      "Mandarin_source_frequency": 1174.0
+    },
+    {
+      "source": "itaigi:1046",
+      "meaning": "責任",
+      "input": "tam-tng",
+      "output": "tam-tng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1795.0
+    },
+    {
+      "source": "itaigi:1049",
+      "meaning": "一個",
+      "input": "chit8 e5",
+      "output": "chi̍t ê",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 19451.0
+    },
+    {
+      "source": "itaigi:1240",
+      "meaning": "角色",
+      "input": "kioh-siau3",
+      "output": "kioh-siàu",
+      "orthography": "POJ",
+      "contributor": "James Chang",
+      "Mandarin_source_frequency": 1579.0
+    },
+    {
+      "source": "itaigi:1279",
+      "meaning": "關係",
+      "input": "khan-gai7",
+      "output": "khan-gāi",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 5383.0
+    },
+    {
+      "source": "itaigi:1304",
+      "meaning": "積極",
+      "input": "chek-kek8",
+      "output": "chek-ke̍k",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1861.0
+    },
+    {
+      "source": "itaigi:1340",
+      "meaning": "年輕",
+      "input": "lian5-khin",
+      "output": "liân-khin",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2059.0
+    },
+    {
+      "source": "itaigi:1416",
+      "meaning": "希望",
+      "input": "ng3-bang7",
+      "output": "ǹg-bāng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 8271.0
+    },
+    {
+      "source": "itaigi:1515",
+      "meaning": "真正",
+      "input": "chin-chiann3",
+      "output": "chin-chiàⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2547.0
+    },
+    {
+      "source": "itaigi:1522",
+      "meaning": "參加",
+      "input": "chham-ka",
+      "output": "chham-ka",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3396.0
+    },
+    {
+      "source": "itaigi:1632",
+      "meaning": "一百",
+      "input": "chit8-pa3",
+      "output": "chi̍t-pà",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2984.0
+    },
+    {
+      "source": "itaigi:1635",
+      "meaning": "上面",
+      "input": "ko-teng2",
+      "output": "ko-téng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1607.0
+    },
+    {
+      "source": "itaigi:1651",
+      "meaning": "污染",
+      "input": "u-jiam2",
+      "output": "u-jiám",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1049.0
+    },
+    {
+      "source": "itaigi:1699",
+      "meaning": "小朋友",
+      "input": "gin2-a2",
+      "output": "gín-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2239.0
+    },
+    {
+      "source": "itaigi:1938",
+      "meaning": "幾年",
+      "input": "kui2 ni5",
+      "output": "kúi nî",
+      "orthography": "POJ",
+      "contributor": "葉宇喬",
+      "Mandarin_source_frequency": 1035.0
+    },
+    {
+      "source": "itaigi:1986",
+      "meaning": "媽媽",
+      "input": "i--a2",
+      "output": "i--á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2366.0
+    },
+    {
+      "source": "itaigi:2005",
+      "meaning": "國民黨",
+      "input": "kok-bin5-tong2",
+      "output": "Kok-bîn-tóng",
+      "orthography": "POJ",
+      "contributor": "Chih-chieh Yang",
+      "Mandarin_source_frequency": 1780.0
+    },
+    {
+      "source": "itaigi:2031",
+      "meaning": "角色",
+      "input": "kha-siau3",
+      "output": "kha-siàu",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1579.0
+    },
+    {
+      "source": "itaigi:2057",
+      "meaning": "參加",
+      "input": "chham-ka",
+      "output": "chham-ka",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3396.0
+    },
+    {
+      "source": "itaigi:2060",
+      "meaning": "電影",
+      "input": "tian7-hoe7 hi3",
+      "output": "tiān-hōe hì",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3520.0
+    },
+    {
+      "source": "itaigi:2077",
+      "meaning": "學生",
+      "input": "hak8-seng-a2",
+      "output": "ha̍k-seng-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 9354.0
+    },
+    {
+      "source": "itaigi:2169",
+      "meaning": "以後",
+      "input": "ji5-au7",
+      "output": "jî-āu",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:2200",
+      "meaning": "一樣",
+      "input": "sio-kang7",
+      "output": "sio-kāng",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 6039.0
+    },
+    {
+      "source": "itaigi:2203",
+      "meaning": "得到",
+      "input": "tioh8",
+      "output": "tio̍h",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2806.0
+    },
+    {
+      "source": "itaigi:2323",
+      "meaning": "不要",
+      "input": "be7-gian3",
+      "output": "bē-giàn",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 4862.0
+    },
+    {
+      "source": "itaigi:2388",
+      "meaning": "晚上",
+      "input": "oo-am3-mi5",
+      "output": "o͘-àm-mî",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1691.0
+    },
+    {
+      "source": "itaigi:2419",
+      "meaning": "也有",
+      "input": "ma7 u7",
+      "output": "mā ū",
+      "orthography": "POJ",
+      "contributor": "高嘉徽",
+      "Mandarin_source_frequency": 2178.0
+    },
+    {
+      "source": "itaigi:2425",
+      "meaning": "只能",
+      "input": "kan-tann e7-tang3",
+      "output": "kan-taⁿ ē-tàng",
+      "orthography": "POJ",
+      "contributor": "高嘉徽",
+      "Mandarin_source_frequency": 1240.0
+    },
+    {
+      "source": "itaigi:2426",
+      "meaning": "準備",
+      "input": "khoan2 mih8-kiann7",
+      "output": "khoán mi̍h-kiāⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2394.0
+    },
+    {
+      "source": "itaigi:2456",
+      "meaning": "中國人",
+      "input": "a-lak8-a2",
+      "output": "A-la̍k-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1046.0
+    },
+    {
+      "source": "itaigi:2475",
+      "meaning": "媽媽",
+      "input": "i5--a2",
+      "output": "î--á",
+      "orthography": "POJ",
+      "contributor": "Daigu Sigua",
+      "Mandarin_source_frequency": 2366.0
+    },
+    {
+      "source": "itaigi:2520",
+      "meaning": "全部",
+      "input": "choan5-oan5",
+      "output": "choân-oân",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1534.0
+    },
+    {
+      "source": "itaigi:2521",
+      "meaning": "全球",
+      "input": "choan5-se3-kai3",
+      "output": "choân-sè-kài",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1941.0
+    },
+    {
+      "source": "itaigi:2522",
+      "meaning": "全球",
+      "input": "thong-se3-kai3",
+      "output": "thong-sè-kài",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1941.0
+    },
+    {
+      "source": "itaigi:2647",
+      "meaning": "終於",
+      "input": "chiong-a2",
+      "output": "chiong-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1601.0
+    },
+    {
+      "source": "itaigi:2829",
+      "meaning": "方法",
+      "input": "phiat-poo7",
+      "output": "phiat-pō͘",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3253.0
+    },
+    {
+      "source": "itaigi:2912",
+      "meaning": "中國",
+      "input": "chi-na2",
+      "output": "Chi-ná",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 8319.0
+    },
+    {
+      "source": "itaigi:2928",
+      "meaning": "有沒有",
+      "input": "kam2 u7",
+      "output": "kám ū",
+      "orthography": "POJ",
+      "contributor": "戴宸洋",
+      "Mandarin_source_frequency": 2154.0
+    },
+    {
+      "source": "itaigi:2946",
+      "meaning": "他的",
+      "input": "i e5",
+      "output": "i ê",
+      "orthography": "POJ",
+      "contributor": "Hsin-Chia Lin",
+      "Mandarin_source_frequency": 3855.0
+    },
+    {
+      "source": "itaigi:2950",
+      "meaning": "這次",
+      "input": "chit hoan",
+      "output": "chit hoan",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1387.0
+    },
+    {
+      "source": "itaigi:2991",
+      "meaning": "遊戲",
+      "input": "tian7-tong7",
+      "output": "tiān-tōng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1591.0
+    },
+    {
+      "source": "itaigi:3071",
+      "meaning": "還有",
+      "input": "koh u7",
+      "output": "koh ū",
+      "orthography": "POJ",
+      "contributor": "李宇佑",
+      "Mandarin_source_frequency": 4791.0
+    },
+    {
+      "source": "itaigi:3123",
+      "meaning": "以為",
+      "input": "liah8-chun2 kong2",
+      "output": "lia̍h-chún kóng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2070.0
+    },
+    {
+      "source": "itaigi:3157",
+      "meaning": "二十",
+      "input": "ji-chap8",
+      "output": "ji-cha̍p",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 6415.0
+    },
+    {
+      "source": "itaigi:3198",
+      "meaning": "剛剛",
+      "input": "thah8-tu2-a2",
+      "output": "tha̍h-tú-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2205.0
+    },
+    {
+      "source": "itaigi:3553",
+      "meaning": "上午",
+      "input": "e7-cha2",
+      "output": "ē-chá",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1044.0
+    },
+    {
+      "source": "itaigi:3578",
+      "meaning": "好像",
+      "input": "kai3 seng5",
+      "output": "kài sêng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 4000.0
+    },
+    {
+      "source": "itaigi:3591",
+      "meaning": "一百",
+      "input": "chit8-pah",
+      "output": "chi̍t-pah",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2984.0
+    },
+    {
+      "source": "itaigi:3592",
+      "meaning": "現在",
+      "input": "chit-si5",
+      "output": "chit-sî",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 12352.0
+    },
+    {
+      "source": "itaigi:3770",
+      "meaning": "危險",
+      "input": "hiam2-lan7",
+      "output": "hiám-lān",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1010.0
+    },
+    {
+      "source": "itaigi:3771",
+      "meaning": "危險",
+      "input": "hiam2-eh",
+      "output": "hiám-eh",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1010.0
+    },
+    {
+      "source": "itaigi:3772",
+      "meaning": "危險",
+      "input": "moo7-hiam2",
+      "output": "mō͘-hiám",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1010.0
+    },
+    {
+      "source": "itaigi:3773",
+      "meaning": "危險",
+      "input": "hoan7-hiam2",
+      "output": "hoān-hiám",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1010.0
+    },
+    {
+      "source": "itaigi:3796",
+      "meaning": "怎麼",
+      "input": "an2-hoe7",
+      "output": "án-hōe",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 7021.0
+    },
+    {
+      "source": "itaigi:3797",
+      "meaning": "怎麼",
+      "input": "si7-an2-hoe7",
+      "output": "sī-án-hōe",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 7021.0
+    },
+    {
+      "source": "itaigi:3867",
+      "meaning": "大陸",
+      "input": "tiong-kok",
+      "output": "Tiong-kok",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 4737.0
+    },
+    {
+      "source": "itaigi:3870",
+      "meaning": "上面",
+      "input": "teng2-peng5",
+      "output": "téng-pêng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1607.0
+    },
+    {
+      "source": "itaigi:3974",
+      "meaning": "後來",
+      "input": "soa3--loh8-lai5",
+      "output": "sòa--lo̍h-lâi",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2731.0
+    },
+    {
+      "source": "itaigi:3993",
+      "meaning": "都是",
+      "input": "long2 si7",
+      "output": "lóng sī",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 5141.0
+    },
+    {
+      "source": "itaigi:4127",
+      "meaning": "不管",
+      "input": "m7 chhap",
+      "output": "m̄ chhap",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1692.0
+    },
+    {
+      "source": "itaigi:4161",
+      "meaning": "容易",
+      "input": "kan2-tan",
+      "output": "kán-tan",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3024.0
+    },
+    {
+      "source": "itaigi:4202",
+      "meaning": "認識",
+      "input": "jin7-bat",
+      "output": "jīn-bat",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1827.0
+    },
+    {
+      "source": "itaigi:4229",
+      "meaning": "關於",
+      "input": "iu2-koan-tioh8",
+      "output": "iú-koan-tio̍h",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1346.0
+    },
+    {
+      "source": "itaigi:4322",
+      "meaning": "真的",
+      "input": "chin-chiann3",
+      "output": "chin-chiàⁿ",
+      "orthography": "POJ",
+      "contributor": "Uta Liu",
+      "Mandarin_source_frequency": 4218.0
+    },
+    {
+      "source": "itaigi:4439",
+      "meaning": "流行",
+      "input": "jin5-khi3",
+      "output": "jîn-khì",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1245.0
+    },
+    {
+      "source": "itaigi:4489",
+      "meaning": "幾個",
+      "input": "kui2 e5",
+      "output": "kúi ê",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1215.0
+    },
+    {
+      "source": "itaigi:4517",
+      "meaning": "隨著",
+      "input": "toe3",
+      "output": "tòe",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1319.0
+    },
+    {
+      "source": "itaigi:4536",
+      "meaning": "一年",
+      "input": "chit8 ni5",
+      "output": "chi̍t nî",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2559.0
+    },
+    {
+      "source": "itaigi:4537",
+      "meaning": "是不是",
+      "input": "si7 m7 si7",
+      "output": "sī m̄ sī",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1696.0
+    },
+    {
+      "source": "itaigi:4716",
+      "meaning": "我國",
+      "input": "lan2-kok",
+      "output": "lán-kok",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2315.0
+    },
+    {
+      "source": "itaigi:4728",
+      "meaning": "攝影",
+      "input": "liok8-iann2",
+      "output": "lio̍k-iáⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1536.0
+    },
+    {
+      "source": "itaigi:4815",
+      "meaning": "想像",
+      "input": "siunn7-chhiang7",
+      "output": "siūⁿ-chhiāng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1263.0
+    },
+    {
+      "source": "itaigi:5408",
+      "meaning": "遊戲",
+      "input": "kian2-muh",
+      "output": "kián-muh",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1591.0
+    },
+    {
+      "source": "itaigi:5428",
+      "meaning": "遊戲",
+      "input": "sng2-hi3",
+      "output": "sńg-hì",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1591.0
+    },
+    {
+      "source": "itaigi:5457",
+      "meaning": "謝謝",
+      "input": "seh-seh",
+      "output": "seh-seh",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1223.0
+    },
+    {
+      "source": "itaigi:5601",
+      "meaning": "母親",
+      "input": "kha3-sang3",
+      "output": "khà-sàng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1727.0
+    },
+    {
+      "source": "itaigi:5602",
+      "meaning": "母親",
+      "input": "kha3-chiang3",
+      "output": "khà-chiàng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1727.0
+    },
+    {
+      "source": "itaigi:5611",
+      "meaning": "心情",
+      "input": "khi-moo2-chih",
+      "output": "khi-mó͘-chih",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1042.0
+    },
+    {
+      "source": "itaigi:5636",
+      "meaning": "安全",
+      "input": "lai9-jioo3-bu3",
+      "output": "lăi-jiò͘-bù",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3016.0
+    },
+    {
+      "source": "itaigi:5702",
+      "meaning": "安全",
+      "input": "se3-hu3",
+      "output": "sè-hù",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3016.0
+    },
+    {
+      "source": "itaigi:5705",
+      "meaning": "照片",
+      "input": "sia-sin2",
+      "output": "sia-sín",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1276.0
+    },
+    {
+      "source": "itaigi:5737",
+      "meaning": "父親",
+      "input": "too2-sang3",
+      "output": "tó͘-sàng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1377.0
+    },
+    {
+      "source": "itaigi:5857",
+      "meaning": "是否",
+      "input": "si7--bo5",
+      "output": "sī--bô",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3603.0
+    },
+    {
+      "source": "itaigi:5931",
+      "meaning": "年級",
+      "input": "ni5-a2",
+      "output": "nî-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1177.0
+    },
+    {
+      "source": "itaigi:6135",
+      "meaning": "法律",
+      "input": "lut8-hoat",
+      "output": "lu̍t-hoat",
+      "orthography": "POJ",
+      "contributor": "黃文贊",
+      "Mandarin_source_frequency": 1742.0
+    },
+    {
+      "source": "itaigi:6520",
+      "meaning": "父親",
+      "input": "too3-sang3",
+      "output": "tò͘-sàng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1377.0
+    },
+    {
+      "source": "itaigi:6527",
+      "meaning": "汽車",
+      "input": "ji-loo3-sia3",
+      "output": "ji-lò͘-sià",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1046.0
+    },
+    {
+      "source": "itaigi:6528",
+      "meaning": "汽車",
+      "input": "ji-lo3-sia3",
+      "output": "ji-lò-sià",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1046.0
+    },
+    {
+      "source": "itaigi:6536",
+      "meaning": "母親",
+      "input": "oo-kha3-sang3",
+      "output": "o͘-khà-sàng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1727.0
+    },
+    {
+      "source": "itaigi:6548",
+      "meaning": "父親",
+      "input": "a-pa",
+      "output": "a-pa",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1377.0
+    },
+    {
+      "source": "itaigi:6549",
+      "meaning": "終於",
+      "input": "chiong-ki5-boe2",
+      "output": "chiong-kî-bóe",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1601.0
+    },
+    {
+      "source": "itaigi:6553",
+      "meaning": "不僅",
+      "input": "m7-na7",
+      "output": "m̄-nā",
+      "orthography": "POJ",
+      "contributor": "Ôo Siok-tsing",
+      "Mandarin_source_frequency": 1614.0
+    },
+    {
+      "source": "itaigi:6654",
+      "meaning": "二月",
+      "input": "ji7-goeh8",
+      "output": "jī-goe̍h",
+      "orthography": "POJ",
+      "contributor": "Hui-Min Wang",
+      "Mandarin_source_frequency": 1381.0
+    },
+    {
+      "source": "itaigi:6660",
+      "meaning": "兩個",
+      "input": "nng7-e5",
+      "output": "nn̄g-ê",
+      "orthography": "POJ",
+      "contributor": "Hui-Min Wang",
+      "Mandarin_source_frequency": 2193.0
+    },
+    {
+      "source": "itaigi:6695",
+      "meaning": "二月",
+      "input": "ji7--goeh8",
+      "output": "jī--goe̍h",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1381.0
+    },
+    {
+      "source": "itaigi:6758",
+      "meaning": "明天",
+      "input": "mia5-a2-chai3",
+      "output": "miâ-á-chài",
+      "orthography": "POJ",
+      "contributor": "Hui-Min Wang",
+      "Mandarin_source_frequency": 1515.0
+    },
+    {
+      "source": "itaigi:6781",
+      "meaning": "回家",
+      "input": "tng2--chhu3",
+      "output": "tńg--chhù",
+      "orthography": "POJ",
+      "contributor": "Shen GT",
+      "Mandarin_source_frequency": 1134.0
+    },
+    {
+      "source": "itaigi:6829",
+      "meaning": "原來",
+      "input": "tang-si5-a2",
+      "output": "tang-sî-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2164.0
+    },
+    {
+      "source": "itaigi:6880",
+      "meaning": "有沒有",
+      "input": "u7--bo5",
+      "output": "ū--bô",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2154.0
+    },
+    {
+      "source": "itaigi:6892",
+      "meaning": "到了",
+      "input": "kau3--ah",
+      "output": "kàu--ah",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2031.0
+    },
+    {
+      "source": "itaigi:6897",
+      "meaning": "不可能",
+      "input": "bo5-kho2-leng5",
+      "output": "bô-khó-lêng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1102.0
+    },
+    {
+      "source": "itaigi:7012",
+      "meaning": "找到",
+      "input": "chhoe7--tioh8",
+      "output": "chhōe--tio̍h",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1826.0
+    },
+    {
+      "source": "itaigi:7020",
+      "meaning": "研究所",
+      "input": "gian2-kiu3-soo2",
+      "output": "gián-kiù-só͘",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1279.0
+    },
+    {
+      "source": "itaigi:7059",
+      "meaning": "比賽",
+      "input": "su-iann5",
+      "output": "su-iâⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1710.0
+    },
+    {
+      "source": "itaigi:7297",
+      "meaning": "所以",
+      "input": "soo2-pai2",
+      "output": "só͘-pái",
+      "orthography": "POJ",
+      "contributor": "Payuholake Ukiam Len",
+      "Mandarin_source_frequency": 15405.0
+    },
+    {
+      "source": "itaigi:7342",
+      "meaning": "結束",
+      "input": "kiat-sok",
+      "output": "kiat-sok",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1512.0
+    },
+    {
+      "source": "itaigi:7495",
+      "meaning": "太陽",
+      "input": "jit8",
+      "output": "ji̍t",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1016.0
+    },
+    {
+      "source": "itaigi:7730",
+      "meaning": "認識",
+      "input": "sek8-sai7",
+      "output": "se̍k-sāi",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1827.0
+    },
+    {
+      "source": "itaigi:7741",
+      "meaning": "太陽",
+      "input": "thai3-iang5",
+      "output": "thài-iâng",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1016.0
+    },
+    {
+      "source": "itaigi:7842",
+      "meaning": "以前",
+      "input": "goan5-cha2",
+      "output": "goân-chá",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:7843",
+      "meaning": "以前",
+      "input": "khah-cha2",
+      "output": "khah-chá",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:7844",
+      "meaning": "以前",
+      "input": "hit-tang-si5",
+      "output": "hit-tang-sî",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:7845",
+      "meaning": "以前",
+      "input": "hit-tang-chun7",
+      "output": "hit-tang-chūn",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:7846",
+      "meaning": "以前",
+      "input": "koe3-khi3",
+      "output": "kòe-khì",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:7847",
+      "meaning": "以前",
+      "input": "teng2-hoe5",
+      "output": "téng-hôe",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:7848",
+      "meaning": "以前",
+      "input": "hiang3-si5",
+      "output": "hiàng-sî",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:7849",
+      "meaning": "以前",
+      "input": "thau5-pai2",
+      "output": "thâu-pái",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:7850",
+      "meaning": "以前",
+      "input": "teng2-kai2",
+      "output": "téng-kái",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:7851",
+      "meaning": "以前",
+      "input": "teng2-pang",
+      "output": "téng-pang",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:7852",
+      "meaning": "以後",
+      "input": "boe2-chhiu2",
+      "output": "bóe-chhiú",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7853",
+      "meaning": "以後",
+      "input": "loh8-boe2",
+      "output": "lo̍h-bóe",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7854",
+      "meaning": "以後",
+      "input": "au7-lai5",
+      "output": "āu-lâi",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7855",
+      "meaning": "以後",
+      "input": "loh8-boe2-chhiu2",
+      "output": "lo̍h-bóe-chhiú",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7856",
+      "meaning": "以後",
+      "input": "chiong-lai5",
+      "output": "chiong-lâi",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7857",
+      "meaning": "以後",
+      "input": "loo7-boe2",
+      "output": "lō͘-bóe",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7858",
+      "meaning": "以後",
+      "input": "au7-pian3",
+      "output": "āu-piàn",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7859",
+      "meaning": "以後",
+      "input": "pat8-jit8",
+      "output": "pa̍t-ji̍t",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7860",
+      "meaning": "以後",
+      "input": "pat8-jit8-a2",
+      "output": "pa̍t-ji̍t-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7861",
+      "meaning": "以後",
+      "input": "au7-jit8-a2",
+      "output": "āu-ji̍t-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7862",
+      "meaning": "以後",
+      "input": "boe2-a2",
+      "output": "bóe-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7863",
+      "meaning": "以後",
+      "input": "ji5-boe2",
+      "output": "jî-bóe",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7864",
+      "meaning": "以後",
+      "input": "loh8-boe2-a2",
+      "output": "lo̍h-bóe-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3724.0
+    },
+    {
+      "source": "itaigi:7865",
+      "meaning": "現在",
+      "input": "chit loo7-boe2",
+      "output": "chit lō͘-bóe",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 12352.0
+    },
+    {
+      "source": "itaigi:7866",
+      "meaning": "現在",
+      "input": "chiang3-si5",
+      "output": "chiàng-sî",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 12352.0
+    },
+    {
+      "source": "itaigi:7867",
+      "meaning": "明年",
+      "input": "sin-ni5",
+      "output": "sin-nî",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1454.0
+    },
+    {
+      "source": "itaigi:7872",
+      "meaning": "一天",
+      "input": "chit8-kang",
+      "output": "chi̍t-kang",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1333.0
+    },
+    {
+      "source": "itaigi:7874",
+      "meaning": "晚上",
+      "input": "am3-thau5-a2",
+      "output": "àm-thâu-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1691.0
+    },
+    {
+      "source": "itaigi:7875",
+      "meaning": "晚上",
+      "input": "eng-am3",
+      "output": "eng-àm",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1691.0
+    },
+    {
+      "source": "itaigi:7876",
+      "meaning": "晚上",
+      "input": "e-hng-am3",
+      "output": "e-hng-àm",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1691.0
+    },
+    {
+      "source": "itaigi:7877",
+      "meaning": "晚上",
+      "input": "eng-si5",
+      "output": "eng-sî",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1691.0
+    },
+    {
+      "source": "itaigi:7878",
+      "meaning": "晚上",
+      "input": "chiu7-am3",
+      "output": "chiū-àm",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1691.0
+    },
+    {
+      "source": "itaigi:7879",
+      "meaning": "晚上",
+      "input": "chiu7-mi5",
+      "output": "chiū-mî",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1691.0
+    },
+    {
+      "source": "itaigi:7880",
+      "meaning": "晚上",
+      "input": "eng-am3 si5",
+      "output": "eng-àm sî",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1691.0
+    },
+    {
+      "source": "itaigi:7881",
+      "meaning": "晚上",
+      "input": "am3-si5-a2",
+      "output": "àm-sî-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1691.0
+    },
+    {
+      "source": "itaigi:7894",
+      "meaning": "下午",
+      "input": "e7-poo-si5-a2",
+      "output": "ē-po͘-sî-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1737.0
+    },
+    {
+      "source": "itaigi:7902",
+      "meaning": "哪裡",
+      "input": "toh-ui7-a2",
+      "output": "toh-ūi-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1312.0
+    },
+    {
+      "source": "itaigi:7905",
+      "meaning": "下午",
+      "input": "koe3-tau3",
+      "output": "kòe-tàu",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1737.0
+    },
+    {
+      "source": "itaigi:7906",
+      "meaning": "下午",
+      "input": "e7-tau3-si5-a2",
+      "output": "ē-tàu-sî-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1737.0
+    },
+    {
+      "source": "itaigi:7919",
+      "meaning": "哪裡",
+      "input": "toh-loh8",
+      "output": "toh-lo̍h",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1312.0
+    },
+    {
+      "source": "itaigi:7920",
+      "meaning": "哪裡",
+      "input": "toh-chit8-ui7",
+      "output": "toh-chi̍t-ūi",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1312.0
+    },
+    {
+      "source": "itaigi:7921",
+      "meaning": "工具",
+      "input": "ke-si-thau5-a2",
+      "output": "ke-si-thâu-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1535.0
+    },
+    {
+      "source": "itaigi:7923",
+      "meaning": "財產",
+      "input": "ke-hoe2-a2",
+      "output": "ke-hóe-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1265.0
+    },
+    {
+      "source": "itaigi:7931",
+      "meaning": "如何",
+      "input": "an2-na2",
+      "output": "án-ná",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 5522.0
+    },
+    {
+      "source": "itaigi:7935",
+      "meaning": "這樣",
+      "input": "chiah-ni7",
+      "output": "chiah-nī",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 13123.0
+    },
+    {
+      "source": "itaigi:7936",
+      "meaning": "這麼",
+      "input": "goa7-ni7",
+      "output": "gōa-nī",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 4089.0
+    },
+    {
+      "source": "itaigi:7937",
+      "meaning": "這麼",
+      "input": "kann2-chiah-ni7",
+      "output": "káⁿ-chiah-nī",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 4089.0
+    },
+    {
+      "source": "itaigi:7939",
+      "meaning": "那是",
+      "input": "na7-si7",
+      "output": "nā-sī",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1046.0
+    },
+    {
+      "source": "itaigi:7944",
+      "meaning": "可以",
+      "input": "e7-thang",
+      "output": "ē-thang",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 28334.0
+    },
+    {
+      "source": "itaigi:7947",
+      "meaning": "還要",
+      "input": "peng7-chhiann2",
+      "output": "pēng-chhiáⁿ",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1271.0
+    },
+    {
+      "source": "itaigi:7948",
+      "meaning": "但是",
+      "input": "ji5-chhiann2",
+      "output": "jî-chhiáⁿ",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 11656.0
+    },
+    {
+      "source": "itaigi:7949",
+      "meaning": "但是",
+      "input": "siong7-chhiann2",
+      "output": "siōng-chhiáⁿ",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 11656.0
+    },
+    {
+      "source": "itaigi:7950",
+      "meaning": "不但",
+      "input": "kann2-tan7",
+      "output": "káⁿ-tān",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1839.0
+    },
+    {
+      "source": "itaigi:7951",
+      "meaning": "不但",
+      "input": "m7-chi2",
+      "output": "m̄-chí",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1839.0
+    },
+    {
+      "source": "itaigi:7953",
+      "meaning": "不只",
+      "input": "m7-chi2",
+      "output": "m̄-chí",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1039.0
+    },
+    {
+      "source": "itaigi:7954",
+      "meaning": "不只",
+      "input": "m7-nia7",
+      "output": "m̄-niā",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1039.0
+    },
+    {
+      "source": "itaigi:7955",
+      "meaning": "不只",
+      "input": "bo5-kann2-teng7",
+      "output": "bô-káⁿ-tēng",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1039.0
+    },
+    {
+      "source": "itaigi:7956",
+      "meaning": "只是",
+      "input": "tan7-tan7",
+      "output": "tān-tān",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 4970.0
+    },
+    {
+      "source": "itaigi:7957",
+      "meaning": "可是",
+      "input": "chong2-si7",
+      "output": "chóng-sī",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 4932.0
+    },
+    {
+      "source": "itaigi:7958",
+      "meaning": "只是",
+      "input": "khiok-si7",
+      "output": "khiok-sī",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 4970.0
+    },
+    {
+      "source": "itaigi:7975",
+      "meaning": "太陽",
+      "input": "kim-oo",
+      "output": "kim-o͘",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1016.0
+    },
+    {
+      "source": "itaigi:8011",
+      "meaning": "中國人",
+      "input": "chiah8 kam-a2",
+      "output": "chia̍h kam-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1046.0
+    },
+    {
+      "source": "itaigi:8126",
+      "meaning": "德國",
+      "input": "tok8-kok",
+      "output": "To̍k-kok",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1004.0
+    },
+    {
+      "source": "itaigi:8127",
+      "meaning": "德國",
+      "input": "tok8-ek8",
+      "output": "To̍k-e̍k",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1004.0
+    },
+    {
+      "source": "itaigi:8128",
+      "meaning": "德國",
+      "input": "tok8-it",
+      "output": "To̍k-it",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1004.0
+    },
+    {
+      "source": "itaigi:8129",
+      "meaning": "德國",
+      "input": "tek-i3-chi3",
+      "output": "Tek-ì-chì",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1004.0
+    },
+    {
+      "source": "itaigi:8457",
+      "meaning": "一樣",
+      "input": "kang7 chit8-iunn7",
+      "output": "kāng chi̍t-iūⁿ",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 6039.0
+    },
+    {
+      "source": "itaigi:8458",
+      "meaning": "一樣",
+      "input": "kang5-khoan2",
+      "output": "kâng-khoán",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 6039.0
+    },
+    {
+      "source": "itaigi:8586",
+      "meaning": "人口",
+      "input": "thau5-chhui3",
+      "output": "thâu-chhùi",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1463.0
+    },
+    {
+      "source": "itaigi:9088",
+      "meaning": "也許",
+      "input": "phah-sng3",
+      "output": "phah-sǹg",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1893.0
+    },
+    {
+      "source": "itaigi:9518",
+      "meaning": "大概",
+      "input": "phah-sng3",
+      "output": "phah-sǹg",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3084.0
+    },
+    {
+      "source": "itaigi:9519",
+      "meaning": "大概",
+      "input": "phoo2 ki5 liok8 a2",
+      "output": "phó͘ kî lio̍k á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3084.0
+    },
+    {
+      "source": "itaigi:9911",
+      "meaning": "不少",
+      "input": "be7-chio2",
+      "output": "bē-chió",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2400.0
+    },
+    {
+      "source": "itaigi:9915",
+      "meaning": "不可",
+      "input": "be7-tang3",
+      "output": "bē-tàng",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3777.0
+    },
+    {
+      "source": "itaigi:9938",
+      "meaning": "不只",
+      "input": "m7 tan7 na7",
+      "output": "m̄ tān nā",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1039.0
+    },
+    {
+      "source": "itaigi:9958",
+      "meaning": "不用",
+      "input": "m7-sai3",
+      "output": "m̄-sài",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1434.0
+    },
+    {
+      "source": "itaigi:10220",
+      "meaning": "不要",
+      "input": "m7",
+      "output": "m̄",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 4862.0
+    },
+    {
+      "source": "itaigi:10221",
+      "meaning": "不要",
+      "input": "m7-ai3",
+      "output": "m̄-ài",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 4862.0
+    },
+    {
+      "source": "itaigi:10375",
+      "meaning": "不會",
+      "input": "be7",
+      "output": "bē",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 7284.0
+    },
+    {
+      "source": "itaigi:10388",
+      "meaning": "不過",
+      "input": "khah-su",
+      "output": "khah-su",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 9116.0
+    },
+    {
+      "source": "itaigi:10406",
+      "meaning": "不管",
+      "input": "m7-koan2",
+      "output": "m̄-koán",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1692.0
+    },
+    {
+      "source": "itaigi:10428",
+      "meaning": "不錯",
+      "input": "bo5 m7-tioh8",
+      "output": "bô m̄-tio̍h",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1645.0
+    },
+    {
+      "source": "itaigi:10557",
+      "meaning": "仍然",
+      "input": "iah8-si7",
+      "output": "ia̍h-sī",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1357.0
+    },
+    {
+      "source": "itaigi:10596",
+      "meaning": "我覺得",
+      "input": "goa2 kam2-kak",
+      "output": "góa kám-kak",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2303.0
+    },
+    {
+      "source": "itaigi:10597",
+      "meaning": "我覺得",
+      "input": "goa2 jin7-ui5",
+      "output": "góa jīn-ûi",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2303.0
+    },
+    {
+      "source": "itaigi:10673",
+      "meaning": "反對",
+      "input": "tui3-keh8",
+      "output": "tùi-ke̍h",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1452.0
+    },
+    {
+      "source": "itaigi:10859",
+      "meaning": "尤其",
+      "input": "koh-khah",
+      "output": "koh-khah",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2080.0
+    },
+    {
+      "source": "itaigi:11128",
+      "meaning": "遇到",
+      "input": "tu2-tioh8",
+      "output": "tú-tio̍h",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1130.0
+    },
+    {
+      "source": "itaigi:11292",
+      "meaning": "媽媽",
+      "input": "i5-a2",
+      "output": "î-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2366.0
+    },
+    {
+      "source": "itaigi:11307",
+      "meaning": "分享",
+      "input": "pun-tiunn",
+      "output": "pun-tiuⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1320.0
+    },
+    {
+      "source": "itaigi:11318",
+      "meaning": "國小",
+      "input": "kok-hau7",
+      "output": "kok-hāu",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1834.0
+    },
+    {
+      "source": "itaigi:11323",
+      "meaning": "國小",
+      "input": "kok-hau7-a2",
+      "output": "kok-hāu-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1834.0
+    },
+    {
+      "source": "itaigi:11452",
+      "meaning": "現在",
+      "input": "hian7-chia",
+      "output": "hiān-chia",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 12352.0
+    },
+    {
+      "source": "itaigi:11458",
+      "meaning": "剛剛",
+      "input": "tu2-tu2-a2",
+      "output": "tú-tú-á",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 2205.0
+    },
+    {
+      "source": "itaigi:11468",
+      "meaning": "節目",
+      "input": "chiat-bokchiat8-bok8",
+      "output": "chiat-bokchia̍t-bo̍k",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2070.0
+    },
+    {
+      "source": "itaigi:11487",
+      "meaning": "警察",
+      "input": "chhat8-thau5",
+      "output": "chha̍t-thâu",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1008.0
+    },
+    {
+      "source": "itaigi:11499",
+      "meaning": "今天",
+      "input": "kin-thian",
+      "output": "kin-thian",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 9490.0
+    },
+    {
+      "source": "itaigi:11500",
+      "meaning": "今天",
+      "input": "kin7-jit8",
+      "output": "kīn-ji̍t",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 9490.0
+    },
+    {
+      "source": "itaigi:11501",
+      "meaning": "明天",
+      "input": "beng5-thian",
+      "output": "bêng-thian",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1515.0
+    },
+    {
+      "source": "itaigi:11502",
+      "meaning": "昨天",
+      "input": "cha-huinn",
+      "output": "cha-huiⁿ",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 3564.0
+    },
+    {
+      "source": "itaigi:11515",
+      "meaning": "晚上",
+      "input": "e-huinn",
+      "output": "e-huiⁿ",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1691.0
+    },
+    {
+      "source": "itaigi:11584",
+      "meaning": "結果",
+      "input": "loo7-boe2",
+      "output": "lō͘-bóe",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 4671.0
+    },
+    {
+      "source": "itaigi:11745",
+      "meaning": "身體",
+      "input": "hun-sun",
+      "output": "hun-sun",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1685.0
+    },
+    {
+      "source": "itaigi:11756",
+      "meaning": "謝謝",
+      "input": "kam2-un",
+      "output": "kám-un",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1223.0
+    },
+    {
+      "source": "itaigi:11913",
+      "meaning": "結果",
+      "input": "boe2-chhiu2",
+      "output": "bóe-chhiú",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 4671.0
+    },
+    {
+      "source": "itaigi:11969",
+      "meaning": "汽車",
+      "input": "tong7-chhia",
+      "output": "tōng-chhia",
+      "orthography": "POJ",
+      "contributor": "Chenwujack Chen",
+      "Mandarin_source_frequency": 1046.0
+    },
+    {
+      "source": "itaigi:12073",
+      "meaning": "但是",
+      "input": "m7-koh",
+      "output": "m̄-koh",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 11656.0
+    },
+    {
+      "source": "itaigi:12264",
+      "meaning": "曾經",
+      "input": "ku7-si5",
+      "output": "kū-sî",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2143.0
+    },
+    {
+      "source": "itaigi:12302",
+      "meaning": "其實",
+      "input": "kiu3-sit8",
+      "output": "kiù-si̍t",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 6610.0
+    },
+    {
+      "source": "itaigi:12519",
+      "meaning": "這些",
+      "input": "choa--e5",
+      "output": "choa--ê",
+      "orthography": "POJ",
+      "contributor": "戴宸洋",
+      "Mandarin_source_frequency": 10840.0
+    },
+    {
+      "source": "itaigi:12657",
+      "meaning": "現在",
+      "input": "chiang3-si5",
+      "output": "chiàng-sî",
+      "orthography": "POJ",
+      "contributor": "戴宸洋",
+      "Mandarin_source_frequency": 12352.0
+    },
+    {
+      "source": "itaigi:12658",
+      "meaning": "以前",
+      "input": "hiang3-si5",
+      "output": "hiàng-sî",
+      "orthography": "POJ",
+      "contributor": "戴宸洋",
+      "Mandarin_source_frequency": 2840.0
+    },
+    {
+      "source": "itaigi:12659",
+      "meaning": "當時",
+      "input": "hiang3-si5",
+      "output": "hiàng-sî",
+      "orthography": "POJ",
+      "contributor": "戴宸洋",
+      "Mandarin_source_frequency": 3340.0
+    },
+    {
+      "source": "itaigi:12682",
+      "meaning": "最好",
+      "input": "it-liap8-it",
+      "output": "it-lia̍p-it",
+      "orthography": "POJ",
+      "contributor": "戴宸洋",
+      "Mandarin_source_frequency": 1220.0
+    },
+    {
+      "source": "itaigi:12828",
+      "meaning": "網站",
+      "input": "bang7-tiam2",
+      "output": "bāng-tiám",
+      "orthography": "POJ",
+      "contributor": "Liau Peh-Han",
+      "Mandarin_source_frequency": 2062.0
+    },
+    {
+      "source": "itaigi:12832",
+      "meaning": "方法",
+      "input": "phiat-poo7",
+      "output": "phiat-pō͘",
+      "orthography": "POJ",
+      "contributor": "戴宸洋",
+      "Mandarin_source_frequency": 3253.0
+    },
+    {
+      "source": "itaigi:12843",
+      "meaning": "以為",
+      "input": "ho-cho3",
+      "output": "ho-chò",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2070.0
+    },
+    {
+      "source": "itaigi:12911",
+      "meaning": "法國",
+      "input": "hut8-kok",
+      "output": "Hu̍t-kok",
+      "orthography": "POJ",
+      "contributor": "許祐綸",
+      "Mandarin_source_frequency": 1037.0
+    },
+    {
+      "source": "itaigi:13074",
+      "meaning": "一點",
+      "input": "chit-tiam2-a2",
+      "output": "chit-tiám-á",
+      "orthography": "POJ",
+      "contributor": "戴宸洋",
+      "Mandarin_source_frequency": 4493.0
+    },
+    {
+      "source": "itaigi:13118",
+      "meaning": "這次",
+      "input": "chit-kai2",
+      "output": "chit-kái",
+      "orthography": "POJ",
+      "contributor": "Justin Richard Leung",
+      "Mandarin_source_frequency": 1387.0
+    },
+    {
+      "source": "itaigi:13501",
+      "meaning": "影像",
+      "input": "iann2-siong7",
+      "output": "iáⁿ-siōng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1385.0
+    },
+    {
+      "source": "itaigi:13541",
+      "meaning": "只要",
+      "input": "pian7-na7",
+      "output": "piān-nā",
+      "orthography": "POJ",
+      "contributor": "Hsin-Chia Lin",
+      "Mandarin_source_frequency": 3909.0
+    },
+    {
+      "source": "itaigi:13591",
+      "meaning": "這是",
+      "input": "che si7",
+      "output": "che sī",
+      "orthography": "POJ",
+      "contributor": "徐啟富",
+      "Mandarin_source_frequency": 3779.0
+    },
+    {
+      "source": "itaigi:13597",
+      "meaning": "行政院",
+      "input": "heng5-cheng3-inn7",
+      "output": "hêng-chèng-īⁿ",
+      "orthography": "POJ",
+      "contributor": "徐啟富",
+      "Mandarin_source_frequency": 2552.0
+    },
+    {
+      "source": "itaigi:13663",
+      "meaning": "國中",
+      "input": "chhoo-tiong",
+      "output": "chho͘-tiong",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1423.0
+    },
+    {
+      "source": "itaigi:13681",
+      "meaning": "英國",
+      "input": "boh8-li2-tng3",
+      "output": "Bo̍h-lí-tǹg",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1559.0
+    },
+    {
+      "source": "itaigi:13755",
+      "meaning": "研究",
+      "input": "khe-kho2",
+      "output": "khe-khó",
+      "orthography": "POJ",
+      "contributor": "Ng Liok-san",
+      "Mandarin_source_frequency": 11024.0
+    },
+    {
+      "source": "itaigi:13756",
+      "meaning": "研究",
+      "input": "kiu3-kham3",
+      "output": "kiù-khàm",
+      "orthography": "POJ",
+      "contributor": "Ng Liok-san",
+      "Mandarin_source_frequency": 11024.0
+    },
+    {
+      "source": "itaigi:13805",
+      "meaning": "關於",
+      "input": "kan-i5",
+      "output": "kan-î",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1346.0
+    },
+    {
+      "source": "itaigi:13880",
+      "meaning": "國小",
+      "input": "sio2-hak8",
+      "output": "sió-ha̍k",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1834.0
+    },
+    {
+      "source": "itaigi:13895",
+      "meaning": "各位",
+      "input": "liat8-ui7",
+      "output": "lia̍t-ūi",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1578.0
+    },
+    {
+      "source": "itaigi:13900",
+      "meaning": "慢慢",
+      "input": "tauh8-tauh8-a2",
+      "output": "ta̍uh-ta̍uh-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1102.0
+    },
+    {
+      "source": "itaigi:13924",
+      "meaning": "二十",
+      "input": "ji7-chap8",
+      "output": "jī-cha̍p",
+      "orthography": "POJ",
+      "contributor": "徐啟富",
+      "Mandarin_source_frequency": 6415.0
+    },
+    {
+      "source": "itaigi:13937",
+      "meaning": "遊戲",
+      "input": "iu5-sng2",
+      "output": "iû-sńg",
+      "orthography": "POJ",
+      "contributor": "米之助",
+      "Mandarin_source_frequency": 1591.0
+    },
+    {
+      "source": "itaigi:14009",
+      "meaning": "保存",
+      "input": "khng3",
+      "output": "khǹg",
+      "orthography": "POJ",
+      "contributor": "Ng Liok-san",
+      "Mandarin_source_frequency": 1019.0
+    },
+    {
+      "source": "itaigi:14213",
+      "meaning": "剛剛",
+      "input": "tu2-chiah",
+      "output": "tú-chiah",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2205.0
+    },
+    {
+      "source": "itaigi:14244",
+      "meaning": "開放",
+      "input": "khui-hong3",
+      "output": "khui-hòng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3332.0
+    },
+    {
+      "source": "itaigi:14381",
+      "meaning": "語言",
+      "input": "gian5-gi2",
+      "output": "giân-gí",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1793.0
+    },
+    {
+      "source": "itaigi:14395",
+      "meaning": "語言",
+      "input": "gian5-gur2",
+      "output": "giân-gṳ́",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1793.0
+    },
+    {
+      "source": "itaigi:14396",
+      "meaning": "語言",
+      "input": "gur2-gian5",
+      "output": "gṳ́-giân",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1793.0
+    },
+    {
+      "source": "itaigi:14487",
+      "meaning": "真正",
+      "input": "chiann3-kang2",
+      "output": "chiàⁿ-káng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2547.0
+    },
+    {
+      "source": "itaigi:14491",
+      "meaning": "稱為",
+      "input": "ho7-choe3",
+      "output": "hō-chòe",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1179.0
+    },
+    {
+      "source": "itaigi:14797",
+      "meaning": "終於",
+      "input": "chiong-u5",
+      "output": "chiong-û",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1601.0
+    },
+    {
+      "source": "itaigi:14822",
+      "meaning": "狀況",
+      "input": "si5-kiok8",
+      "output": "sî-kio̍k",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2421.0
+    },
+    {
+      "source": "itaigi:14880",
+      "meaning": "遊戲",
+      "input": "i7-mih-a2",
+      "output": "ī-mih-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1591.0
+    },
+    {
+      "source": "itaigi:14972",
+      "meaning": "家庭",
+      "input": "ka-siok",
+      "output": "ka-siok",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2518.0
+    },
+    {
+      "source": "itaigi:14980",
+      "meaning": "數位",
+      "input": "soo3-ma2",
+      "output": "sò͘-má",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1323.0
+    },
+    {
+      "source": "itaigi:15010",
+      "meaning": "星期",
+      "input": "chhit-iau7",
+      "output": "chhit-iāu",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1885.0
+    },
+    {
+      "source": "itaigi:15051",
+      "meaning": "遊戲",
+      "input": "chhit-tho5",
+      "output": "chhit-thô",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1591.0
+    },
+    {
+      "source": "itaigi:15068",
+      "meaning": "自己",
+      "input": "ka-ti",
+      "output": "ka-ti",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 16871.0
+    },
+    {
+      "source": "itaigi:15105",
+      "meaning": "英文",
+      "input": "eng-kok-bun5",
+      "output": "Eng-kok-bûn",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1732.0
+    },
+    {
+      "source": "itaigi:15139",
+      "meaning": "不能",
+      "input": "be7",
+      "output": "bē",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 7178.0
+    },
+    {
+      "source": "itaigi:15151",
+      "meaning": "關係",
+      "input": "kan-he7",
+      "output": "kan-hē",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 5383.0
+    },
+    {
+      "source": "itaigi:15154",
+      "meaning": "數位",
+      "input": "soo3-be2",
+      "output": "sò͘-bé",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1323.0
+    },
+    {
+      "source": "itaigi:15160",
+      "meaning": "中文",
+      "input": "chi-na2-bun5",
+      "output": "Chi-ná-bûn",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1960.0
+    },
+    {
+      "source": "itaigi:15165",
+      "meaning": "新竹",
+      "input": "sin-tek",
+      "output": "Sin-tek",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1419.0
+    },
+    {
+      "source": "itaigi:15166",
+      "meaning": "新竹",
+      "input": "tek-chham3",
+      "output": "Tek-chhàm",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1419.0
+    },
+    {
+      "source": "itaigi:15171",
+      "meaning": "不能",
+      "input": "be7-eng7-tit",
+      "output": "bē-ēng-tit",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 7178.0
+    },
+    {
+      "source": "itaigi:15186",
+      "meaning": "中文",
+      "input": "hoa5-bun5",
+      "output": "Hôa-bûn",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1960.0
+    },
+    {
+      "source": "itaigi:15188",
+      "meaning": "角色",
+      "input": "kha-sek",
+      "output": "kha-sek",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1579.0
+    },
+    {
+      "source": "itaigi:15192",
+      "meaning": "員工",
+      "input": "sin-lo5",
+      "output": "sin-lô",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1641.0
+    },
+    {
+      "source": "itaigi:15360",
+      "meaning": "中國人",
+      "input": "chi-na2-lang5",
+      "output": "Chi-ná-lâng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1046.0
+    },
+    {
+      "source": "itaigi:15606",
+      "meaning": "支持",
+      "input": "sio-thin7",
+      "output": "sio-thīn",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2510.0
+    },
+    {
+      "source": "itaigi:15624",
+      "meaning": "公視",
+      "input": "kong-si7",
+      "output": "Kong-sī",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1573.0
+    },
+    {
+      "source": "itaigi:15637",
+      "meaning": "成功",
+      "input": "moa5-lau2-lau7",
+      "output": "Môa-láu-lāu",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2497.0
+    },
+    {
+      "source": "itaigi:15676",
+      "meaning": "成功",
+      "input": "sin-kang2",
+      "output": "Sin-káng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2497.0
+    },
+    {
+      "source": "itaigi:15719",
+      "meaning": "新竹",
+      "input": "tek-cham7",
+      "output": "Tek-chām",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1419.0
+    },
+    {
+      "source": "itaigi:16193",
+      "meaning": "情況",
+      "input": "si5-kiok8",
+      "output": "sî-kio̍k",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3396.0
+    },
+    {
+      "source": "itaigi:16301",
+      "meaning": "明年",
+      "input": "moa5-ni5",
+      "output": "môa-nî",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1454.0
+    },
+    {
+      "source": "itaigi:16327",
+      "meaning": "男人",
+      "input": "ta-poo-kiann2",
+      "output": "ta-po͘-kiáⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1153.0
+    },
+    {
+      "source": "itaigi:16347",
+      "meaning": "有時",
+      "input": "u7-tang-tioh8-a2",
+      "output": "ū-tang-tio̍h-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2355.0
+    },
+    {
+      "source": "itaigi:16348",
+      "meaning": "有時候",
+      "input": "u7-tang-tioh8-a2",
+      "output": "ū-tang-tio̍h-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1135.0
+    },
+    {
+      "source": "itaigi:16402",
+      "meaning": "破壞",
+      "input": "phah-hai7",
+      "output": "phah-hāi",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1017.0
+    },
+    {
+      "source": "itaigi:16419",
+      "meaning": "全部",
+      "input": "sann-poann",
+      "output": "saⁿ-poaⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1534.0
+    },
+    {
+      "source": "itaigi:16476",
+      "meaning": "還沒",
+      "input": "iah-boe7",
+      "output": "iah-bōe",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1602.0
+    },
+    {
+      "source": "itaigi:16477",
+      "meaning": "還沒",
+      "input": "iah-be7",
+      "output": "iah-bē",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1602.0
+    },
+    {
+      "source": "itaigi:16479",
+      "meaning": "還沒",
+      "input": "ia2-boe7",
+      "output": "iá-bōe",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1602.0
+    },
+    {
+      "source": "itaigi:16480",
+      "meaning": "還沒",
+      "input": "ia2-be7",
+      "output": "iá-bē",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1602.0
+    },
+    {
+      "source": "itaigi:16486",
+      "meaning": "上午",
+      "input": "e-chai2-a2",
+      "output": "e-chái-á",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1044.0
+    },
+    {
+      "source": "itaigi:16571",
+      "meaning": "直接",
+      "input": "tiau5-tit8",
+      "output": "tiâu-ti̍t",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3041.0
+    },
+    {
+      "source": "itaigi:16628",
+      "meaning": "自己",
+      "input": "ka-ti7",
+      "output": "ka-tī",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 16871.0
+    },
+    {
+      "source": "itaigi:16713",
+      "meaning": "一天",
+      "input": "chit8 kang",
+      "output": "chi̍t kang",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1333.0
+    },
+    {
+      "source": "itaigi:16741",
+      "meaning": "身體",
+      "input": "siang-khu",
+      "output": "siang-khu",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1685.0
+    },
+    {
+      "source": "itaigi:16742",
+      "meaning": "身體",
+      "input": "hun-su",
+      "output": "hun-su",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1685.0
+    },
+    {
+      "source": "itaigi:16778",
+      "meaning": "老師",
+      "input": "kau3-su",
+      "output": "kàu-su",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 4827.0
+    },
+    {
+      "source": "itaigi:16779",
+      "meaning": "老師",
+      "input": "kau3-oan5",
+      "output": "kàu-oân",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 4827.0
+    },
+    {
+      "source": "itaigi:16780",
+      "meaning": "教師",
+      "input": "lau7-su",
+      "output": "lāu-su",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1444.0
+    },
+    {
+      "source": "itaigi:16781",
+      "meaning": "教師",
+      "input": "kau3-oan5",
+      "output": "kàu-oân",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1444.0
+    },
+    {
+      "source": "itaigi:16785",
+      "meaning": "當然",
+      "input": "chai7-chui2",
+      "output": "chāi-chúi",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3884.0
+    },
+    {
+      "source": "itaigi:16786",
+      "meaning": "當然",
+      "input": "chai7-chun2",
+      "output": "chāi-chún",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3884.0
+    },
+    {
+      "source": "itaigi:17072",
+      "meaning": "行為",
+      "input": "kiann5-tah8",
+      "output": "kiâⁿ-ta̍h",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2706.0
+    },
+    {
+      "source": "itaigi:17119",
+      "meaning": "網站",
+      "input": "bang7-iah8",
+      "output": "bāng-ia̍h",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2062.0
+    },
+    {
+      "source": "itaigi:17249",
+      "meaning": "語言",
+      "input": "oe7-gi2",
+      "output": "ōe-gí",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1793.0
+    },
+    {
+      "source": "itaigi:17409",
+      "meaning": "科學",
+      "input": "khe-hak8",
+      "output": "khe-ha̍k",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2737.0
+    },
+    {
+      "source": "itaigi:17434",
+      "meaning": "好像",
+      "input": "kai3-seng5",
+      "output": "kài-sêng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 4000.0
+    },
+    {
+      "source": "itaigi:17435",
+      "meaning": "似乎",
+      "input": "kai3-seng5",
+      "output": "kài-sêng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2377.0
+    },
+    {
+      "source": "itaigi:17441",
+      "meaning": "根本",
+      "input": "te2-ti3",
+      "output": "té-tì",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2008.0
+    },
+    {
+      "source": "itaigi:17443",
+      "meaning": "醫院",
+      "input": "pinn7-inn7",
+      "output": "pīⁿ-īⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2147.0
+    },
+    {
+      "source": "itaigi:17455",
+      "meaning": "電子",
+      "input": "tian7-chi2",
+      "output": "tiān-chí",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2677.0
+    },
+    {
+      "source": "itaigi:17492",
+      "meaning": "醫院",
+      "input": "i-koan2",
+      "output": "i-koán",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2147.0
+    },
+    {
+      "source": "itaigi:17559",
+      "meaning": "終於",
+      "input": "loo7-boe2",
+      "output": "lō͘-bóe",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1601.0
+    },
+    {
+      "source": "itaigi:17674",
+      "meaning": "市場",
+      "input": "chhi7-tionn5",
+      "output": "chhī-tiôⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 5368.0
+    },
+    {
+      "source": "itaigi:17778",
+      "meaning": "回來",
+      "input": "to3-tng2--lai5",
+      "output": "tò-tńg--lâi",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2204.0
+    },
+    {
+      "source": "itaigi:17790",
+      "meaning": "台中",
+      "input": "toa7-tun",
+      "output": "Tōa-tun",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1505.0
+    },
+    {
+      "source": "itaigi:17797",
+      "meaning": "法國",
+      "input": "hoat-lan5-se",
+      "output": "Hoat-lân-se",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1037.0
+    },
+    {
+      "source": "itaigi:17819",
+      "meaning": "大陸",
+      "input": "tng5-soann",
+      "output": "Tn̂g-soaⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 4737.0
+    },
+    {
+      "source": "itaigi:17826",
+      "meaning": "也許",
+      "input": "bo5-tek-khak",
+      "output": "bô-tek-khak",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1893.0
+    },
+    {
+      "source": "itaigi:17827",
+      "meaning": "或許",
+      "input": "bo5-tiann7-tioh8",
+      "output": "bô-tiāⁿ-tio̍h",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1287.0
+    },
+    {
+      "source": "itaigi:17877",
+      "meaning": "也許",
+      "input": "phah-suinn3",
+      "output": "phah-sùiⁿ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1893.0
+    },
+    {
+      "source": "itaigi:17991",
+      "meaning": "或許",
+      "input": "hoan7-se3",
+      "output": "hoān-sè",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1287.0
+    },
+    {
+      "source": "itaigi:17996",
+      "meaning": "美國",
+      "input": "bi2-kok",
+      "output": "bí-kok",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 8851.0
+    },
+    {
+      "source": "itaigi:18057",
+      "meaning": "在於",
+      "input": "chai7",
+      "output": "chāi",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1318.0
+    },
+    {
+      "source": "itaigi:18109",
+      "meaning": "想像",
+      "input": "siunn7-siong2",
+      "output": "siūⁿ-sióng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1263.0
+    },
+    {
+      "source": "itaigi:18110",
+      "meaning": "必須",
+      "input": "to7-ai3",
+      "output": "tō-ài",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 5953.0
+    },
+    {
+      "source": "itaigi:18275",
+      "meaning": "獲得",
+      "input": "tit--tioh8",
+      "output": "tit--tio̍h",
+      "orthography": "POJ",
+      "contributor": "Ngôo Huī-tshing",
+      "Mandarin_source_frequency": 2489.0
+    },
+    {
+      "source": "itaigi:18286",
+      "meaning": "生命",
+      "input": "oah8-mia7",
+      "output": "oa̍h-miā",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3147.0
+    },
+    {
+      "source": "itaigi:18310",
+      "meaning": "本來",
+      "input": "pun2-jian5",
+      "output": "pún-jiân",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1688.0
+    },
+    {
+      "source": "itaigi:18316",
+      "meaning": "相同",
+      "input": "sann-tang5",
+      "output": "saⁿ-tâng",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1289.0
+    },
+    {
+      "source": "itaigi:18320",
+      "meaning": "全部",
+      "input": "it-chin7",
+      "output": "it-chīn",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1534.0
+    },
+    {
+      "source": "itaigi:18339",
+      "meaning": "獲得",
+      "input": "hek8-tit",
+      "output": "he̍k-tit",
+      "orthography": "POJ",
+      "contributor": "Justin Richard Leung",
+      "Mandarin_source_frequency": 2489.0
+    },
+    {
+      "source": "itaigi:18340",
+      "meaning": "獲得",
+      "input": "hek8-tek",
+      "output": "he̍k-tek",
+      "orthography": "POJ",
+      "contributor": "Justin Richard Leung",
+      "Mandarin_source_frequency": 2489.0
+    },
+    {
+      "source": "itaigi:18467",
+      "meaning": "時候",
+      "input": "si5-cham7",
+      "output": "sî-chām",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 11902.0
+    },
+    {
+      "source": "itaigi:18557",
+      "meaning": "叫做",
+      "input": "hiam3",
+      "output": "hiàm",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1045.0
+    },
+    {
+      "source": "itaigi:18734",
+      "meaning": "適合",
+      "input": "hah8-tai5",
+      "output": "ha̍h-tâi",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1297.0
+    },
+    {
+      "source": "itaigi:18757",
+      "meaning": "只要",
+      "input": "pian7-poo7-na7",
+      "output": "piān-pō͘-nā",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3909.0
+    },
+    {
+      "source": "itaigi:18798",
+      "meaning": "分之",
+      "input": "hun7",
+      "output": "hūn",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3818.0
+    },
+    {
+      "source": "itaigi:18833",
+      "meaning": "治療",
+      "input": "li2",
+      "output": "lí",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1633.0
+    },
+    {
+      "source": "itaigi:18841",
+      "meaning": "在於",
+      "input": "chai7-ti7",
+      "output": "chāi-tī",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1318.0
+    },
+    {
+      "source": "itaigi:18842",
+      "meaning": "屬於",
+      "input": "siok8-ti7",
+      "output": "sio̍k-tī",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1717.0
+    },
+    {
+      "source": "itaigi:18910",
+      "meaning": "常常",
+      "input": "si5-si5",
+      "output": "sî-sî",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1818.0
+    },
+    {
+      "source": "itaigi:18921",
+      "meaning": "資金",
+      "input": "khoo-khoo",
+      "output": "kho͘-kho͘",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1021.0
+    },
+    {
+      "source": "itaigi:18959",
+      "meaning": "那時",
+      "input": "hit-ku2",
+      "output": "hit-kú",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1135.0
+    },
+    {
+      "source": "itaigi:18983",
+      "meaning": "當時",
+      "input": "hit-chun7",
+      "output": "hit-chūn",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 3340.0
+    },
+    {
+      "source": "itaigi:19065",
+      "meaning": "關於",
+      "input": "koan-he7-tioh8",
+      "output": "koan-hē-tio̍h",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1346.0
+    },
+    {
+      "source": "itaigi:19070",
+      "meaning": "常常",
+      "input": "tauh8-tauh8",
+      "output": "ta̍uh-ta̍uh",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1818.0
+    },
+    {
+      "source": "itaigi:19118",
+      "meaning": "那時",
+      "input": "hit-tang-chun7",
+      "output": "hit-tang-chūn",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1135.0
+    },
+    {
+      "source": "itaigi:19139",
+      "meaning": "這次",
+      "input": "chit-tau2",
+      "output": "chit-táu",
+      "orthography": "POJ",
+      "contributor": "Justin Richard Leung",
+      "Mandarin_source_frequency": 1387.0
+    },
+    {
+      "source": "itaigi:19229",
+      "meaning": "不斷",
+      "input": "tau3-e5-tit8-tit8",
+      "output": "tàu-ê-ti̍t-ti̍t",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2274.0
+    },
+    {
+      "source": "itaigi:19247",
+      "meaning": "媽媽",
+      "input": "an2-nia",
+      "output": "án-nia",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2366.0
+    },
+    {
+      "source": "itaigi:19327",
+      "meaning": "維持",
+      "input": "ui5-chhi5",
+      "output": "ûi-chhî",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1526.0
+    },
+    {
+      "source": "itaigi:19404",
+      "meaning": "對於",
+      "input": "tui3-tioh8",
+      "output": "tùi-tio̍h",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 6020.0
+    },
+    {
+      "source": "itaigi:19450",
+      "meaning": "幾乎",
+      "input": "oa2-beh",
+      "output": "óa-beh",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 2254.0
+    },
+    {
+      "source": "itaigi:19513",
+      "meaning": "都有",
+      "input": "long2 u7",
+      "output": "lóng ū",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1848.0
+    },
+    {
+      "source": "itaigi:19576",
+      "meaning": "可能",
+      "input": "toa7-bin7",
+      "output": "tōa-bīn",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 13979.0
+    },
+    {
+      "source": "itaigi:19581",
+      "meaning": "名字",
+      "input": "mia5",
+      "output": "miâ",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1075.0
+    },
+    {
+      "source": "itaigi:19606",
+      "meaning": "感到",
+      "input": "kam2-kak",
+      "output": "kám-kak",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1412.0
+    },
+    {
+      "source": "itaigi:19664",
+      "meaning": "認為",
+      "input": "phah-sng3",
+      "output": "phah-sǹg",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 7852.0
+    },
+    {
+      "source": "itaigi:19665",
+      "meaning": "覺得",
+      "input": "phah-sng3",
+      "output": "phah-sǹg",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 9979.0
+    },
+    {
+      "source": "itaigi:19774",
+      "meaning": "作業",
+      "input": "kong-kho3",
+      "output": "kong-khò",
+      "orthography": "POJ",
+      "contributor": "匿名",
+      "Mandarin_source_frequency": 1543.0
+    }
+  ],
+  "skipped": [
+    [
+      "cedict",
+      "110",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "A",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "A菜",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "CP值",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "K書",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "MC",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "OK繃",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "PO",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "QR扣",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "□",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "□",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "○",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "ㄅㄧㄤˋ",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "ㄏㄤ",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "下頦",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "中焙",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "似地",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "伽馬",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "供詞",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "供養",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "便秘",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "倒轉",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "刁難",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "刊載",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "刺棱",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "卵泡",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "口吃",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "只當",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "唐納·川普",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "喀麥隆",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "執拗",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "塞爾維亞",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "壓軸",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "壓軸戲",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "大部分",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "奉養",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "小蘇打",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "少部分",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "崗卡",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "巴布·狄倫",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "幾內亞",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "強制",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "悄悄",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "成熟",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "掂量",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "摩挲",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "朝鮮",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "樹蔭",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "櫛瓜",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "比鄰",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "法兒",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "深焙",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "淺焙",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "現剝",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "疏散",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "硬拗",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "稀罕",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "穆罕默德·歐瑪",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "粘扣帶",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "著急",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "著著失敗",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "薄荷",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "衝壓",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "角力",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "諸葛",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "謔",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "貓腰",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "趔趄",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "輩分",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "逮捕",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "遮蔭",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "部分",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "酪梨",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "酪梨醬",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "錄供",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "關卡",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "靚麗",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "頂港有名聲，下港上出名",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "餛飩",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "香Q",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "骨碌",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "骨碌碌",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "高挑",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "高麗菜",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "鮮剝",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "cedict",
+      "麵糊",
+      "unsupported reading or non-Han headword"
+    ],
+    [
+      "wikidata:Q101191296",
+      "Great Hunter",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q101245223",
+      "A Book of Heroes",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q10297122",
+      "报告班长3",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q10369216",
+      "殭屍小子系列",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q104051095",
+      "我沒有談的那場戀愛",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q104051130",
+      "同學麥娜絲",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q104370068",
+      "Shaolin Temple Strikes Back",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q104377472",
+      "Dynasty",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q105080380",
+      "緝魂",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q105486187",
+      "角頭－浪流連",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q10567393",
+      "龍虎豹 (1967年電影)",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q105694575",
+      "聽見歌 再唱",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106020073",
+      "當男人戀愛時",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106080039",
+      "刺蠻王",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106080051",
+      "再見阿郎_(1970年電影)",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106418027",
+      "血戰大二膽 (1982)",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106513837",
+      "1905年的冬天",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106557837",
+      "親愛的殺手",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106634417",
+      "白日夢外送王",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106689913",
+      "神拳霸腿追魂手",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106718165",
+      "Q106718165",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106718812",
+      "Q106718812",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106871354",
+      "我吃了那男孩一整年的早餐",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q107094446",
+      "金錢男孩MONEYBOYS",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q108122957",
+      "詭祭",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q108276161",
+      "大摩天嶺",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q10843715",
+      "10+10",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q10846517",
+      "BBS鄉民的正義",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q10863615",
+      "Z-108弃城",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q10864500",
+      "七匹狼2",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q10868794",
+      "不一樣的月光",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q10868817",
+      "不倒翁的奇幻旅程",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q105498108",
+      "鐵男孩：山寨之城",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q105612043",
+      "Complex graphs and networks: NSF-CBMS Regional Research Conference on the Combinatorics of Large Sparse Graphs, held at California State University San Marcos, June 7 - 12, 2004",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q106617277",
+      "大茅埔開發史",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q109342652",
+      "記憶的怪物",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q110273326",
+      "高雄縣簡史、人物志",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q111018998",
+      "臺灣古典作家論集",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q111915904",
+      "I Am Golden",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q112159440",
+      "臺灣鐵路百週年紀念 1887-1987",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q112334398",
+      "臺南市古蹟與歷史建築總覽",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q113147622",
+      "搞空間-亞洲後替代空間",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q113771203",
+      "華美族與911浩劫",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q114253529",
+      "阿神大推薦！必玩100款 Minecraft 地圖金殿堂",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q114253657",
+      "阿神帶你進入YouTube 影音網紅金殿堂",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q115787310",
+      "飛行傭兵：第1美籍志願大隊戰鬥史",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q115930106",
+      "Biofluorescence in terrestrial animals, with emphasis on fireflies: A review and field observation",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q132672645",
+      "微笑的魚",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q136248791",
+      "Inverse problems and zero forcing for graphs",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q138690751",
+      "綠之歌 －收集群風－",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q138762620",
+      "Q138762620",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q139256305",
+      "1/2王子",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q140425593",
+      "祖先教我拜祖先",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q140425625",
+      "鬥志——我的老闆不是人：與靈對話實錄",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q140425686",
+      "往生以後——生命之路最後的現場實錄",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q19851968",
+      "北城百畫帖",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q19853858",
+      "酷头哈妹",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q24836018",
+      "勇者(略)",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q27728046",
+      "火王",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q5284110",
+      "仙曲",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q7755579",
+      "鏡子的另一邊",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q88486341",
+      "Q88486341",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q108991125",
+      "大国民 (歌曲)",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q112169102",
+      "正月調",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q112889191",
+      "酒矸倘賣無",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q114406775",
+      "說愛你",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q114743275",
+      "同一個答案",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q114945421",
+      "給一個人",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q115613119",
+      "I'm Not Yours",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q115978743",
+      "你，好不好？",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q116180484",
+      "外婆的澎湖灣",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q118915776",
+      "大家说华语",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q125796913",
+      "My Only One",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q130758958",
+      "錯的人",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q130759176",
+      "孤单心事",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q137587995",
+      "讨厌红楼梦",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q137588090",
+      "爱我还是他",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q139891567",
+      "寫好的句點",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q14915253",
+      "One Dream",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q18859477",
+      "ㄅㄆㄇ注音歌",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q45259726",
+      "Now Is the Time",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q55695157",
+      "漂向北方",
+      "reading needs review"
+    ],
+    [
+      "wikidata:Q99899191",
+      "隱形的翅膀",
+      "reading needs review"
+    ],
+    [
+      "jmnedict:5008509",
+      "アイザック・バシェヴィス・シンガー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5008616",
+      "アイネ・クライネ・ナハトムジーク",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5008917",
+      "アガサ・クリスティ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5013421",
+      "イマジン・ジョンレノン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5016896",
+      "エグゼクティブ・デシジョン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5018624",
+      "エンパイア・レコード",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5018790",
+      "オースティン・パワーズ・ゴールドメンバー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5019934",
+      "オノ・ヨーコ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5020867",
+      "カー・センサー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5035775",
+      "サルマン・ラシュディ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5036777",
+      "ザ・カー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5036938",
+      "ザ・ビートルズ・グレイテスト・ストーリー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5043004",
+      "スカイキャプテン・ワールドオブトゥモロー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5043453",
+      "スター・ウォーズ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5043453",
+      "スター・ウオーズ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5044580",
+      "スパイシー・ラブ・スープ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5052880",
+      "デイヴィッド・リンチ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5056434",
+      "ドゥームズデイ・ブック",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5057492",
+      "ドン・ジョバンニ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5057500",
+      "ドン・キホーテ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5059035",
+      "ニュー・ヨーカー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5060612",
+      "ハーバート・ジョージ・ウェルズ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5061722",
+      "ハリー・ポッター",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5063111",
+      "バトル・ロワイアル",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5063111",
+      "バトル・ロワイヤル",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5065120",
+      "パリ・マッチ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5070533",
+      "フランク・シナトラ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5072449",
+      "ブレード・ランナー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5077760",
+      "ボウリング・フォー・コロンバイン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5079819",
+      "マイケル・ジャクソン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5081496",
+      "マトリックス・レボリューションズ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5081676",
+      "マノン・レスコー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5090350",
+      "ランダウン・ロッキングザアマゾン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5093295",
+      "レ・ミゼラブル",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5093707",
+      "レオナルド・ディカプリオ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5095751",
+      "ロビンフッド・キングオブタイツ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5149450",
+      "ウォン・カーウァイ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5218761",
+      "リッキー・ホイ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5218762",
+      "サミュエル・ホイ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5218763",
+      "マイケル・ホイ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5351651",
+      "チョウ・ユンファ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5351683",
+      "チャウ・シンチー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5735439",
+      "アレックス・マン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5736697",
+      "アラン・タム",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5740735",
+      "カンガルー・スキッピー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5740741",
+      "ザ・インタビュー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5740756",
+      "シャルリ・エブド",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5740979",
+      "アラビアン・ナイト",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741009",
+      "ギネス・ブック",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741085",
+      "ロビンソン・クルーソー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741135",
+      "ブルー・バックス",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741356",
+      "ケ・セラ・セラ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741360",
+      "ラブ・ライブ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741395",
+      "ワン・ナイト・スタンド",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741447",
+      "エヴゲニー・オネーギン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741571",
+      "スターシップ・トゥルーパーズ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741575",
+      "ロード・オブ・ザ・リング",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741581",
+      "ダ・ヴィンチ・コード",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741586",
+      "ライフ・ヒーリング",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741593",
+      "ウォーターシップ・ダウンのうさぎたち",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741594",
+      "ベン・ハー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741598",
+      "ゲーム・オブ・スローンズ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741599",
+      "ウォーキング・デッド",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741604",
+      "こゝろ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741664",
+      "そのおとこ、きょうぼうにつき",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741681",
+      "アロハ・オエ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741687",
+      "ムーラン・ルージュ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741746",
+      "ジュリアス・シーザー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741751",
+      "ウイニング・イレブン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741775",
+      "タイム・マガジン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741850",
+      "ペール・ギュント",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741905",
+      "ウィキメディア・コモンズ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5741973",
+      "マイ・フェア・レディ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5742005",
+      "わたし、ていじでかえります。",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5742058",
+      "オールド・ブラック・ジョー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5742059",
+      "オールド・ラング・ザイン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5742062",
+      "オール・マン・リバー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5742158",
+      "イエロー・ブック",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5742360",
+      "サムライ・ジャック",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5742391",
+      "キンキー・ブーツ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5742471",
+      "テラス・ハウス",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5743308",
+      "ドチリナ・キリシタン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5743342",
+      "ナショナル・ジオグラフィック",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5743350",
+      "ドンキー・コング",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5743363",
+      "ブリトニー・スピアーズ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5743363",
+      "ブリットニー・スピアーズ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5743416",
+      "ビックリ・ハウス",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5743421",
+      "ホット・ペッパー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5743463",
+      "トイ・ストーリー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5743474",
+      "ジョージ・タケイ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5743517",
+      "カウボーイ・ビバップ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5744247",
+      "チキ・チキ・バン・バン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5744311",
+      "フェルキッシャー・ベオバハター",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5745256",
+      "ロミ・ジュリ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5746341",
+      "アンティル・ドーン",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5746401",
+      "ハンガリアン・ダンス",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5746403",
+      "ハンガリアン・ラプソティー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5746614",
+      "ドクター・フー",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747089",
+      "ハーヴェイ・カイテル",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747109",
+      "ヰタ・セクスアリス",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747109",
+      "ウィタ・セクスアリス",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747151",
+      "キャスティング・ディレクター",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747218",
+      "ドライブ・クラブ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747341",
+      "シュガー・シャック",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747498",
+      "ゴースト・ハウス",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747583",
+      "スリーピー・ホロウ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747689",
+      "マリオ・アドルフ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747718",
+      "ターヘル・アナトミア",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747722",
+      "マック・ザ・ナイフ",
+      "unsupported kana alias"
+    ],
+    [
+      "jmnedict:5747811",
+      "メタル・ギア",
+      "unsupported kana alias"
+    ]
+  ],
+  "romanizer": {
+    "version": "5.3.1",
+    "url": "https://registry.npmjs.org/wanakana/-/wanakana-5.3.1.tgz",
+    "integrity": "sha512-OSDqupzTlzl2LGyqTdhcXcl6ezMiFhcUwLBP8YKaBIbMYW1wAwDvupw2T9G9oVaKT9RmaSpyTXjxddFPUcFFIw==",
+    "sha256": "3031e9df16570357f8f0b7bb407b6371f113940515753336968f8c251ae14c27",
+    "license": "MIT"
+  },
+  "selection_rules": {
+    "poj": "All iTaigi expressions with 2-6 Han Mandarin labels, source frequency >=1000, at most four POJ syllables; retain source variants",
+    "japanese": "All JMnedict works, source-tagged creative professions and Taiwan-related translations; no entity allowlist"
+  }
+}

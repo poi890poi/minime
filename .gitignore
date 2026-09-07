@@ -9,3 +9,6 @@ artifacts/
 __pycache__/
 /*.apk
 third_party/ud/*/*.conllu.gz
+# Full Rudy download is a reproducible extraction input, not a runtime dependency.
+# The complete normalized thematic name snapshot is vendored under third_party/rudy.
+third_party/rudy/rudy-poi.zip

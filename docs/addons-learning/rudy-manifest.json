@@ -1,0 +1,131 @@
+{
+  "source": {
+    "dataset": "Rudy Map MOI.OSM Taiwan TOPO POI",
+    "page": "https://rudymap.tw/",
+    "url": "https://map.happyman.idv.tw/rudy/MOI_OSM_Taiwan_TOPO_Rudy.poi.zip",
+    "retrieved": "2026-09-08",
+    "bytes": 63960427,
+    "sha256": "bf2355af401c5f349d31a3ecbfb6dc13df2b9dc828e959aa494489825e37cec9",
+    "headers": {
+      "Date": "Mon, 07 Sep 2026 16:27:41 GMT",
+      "Content-Type": "application/zip",
+      "Content-Length": "63960427",
+      "Connection": "close",
+      "Server": "cloudflare",
+      "strict-transport-security": "max-age=31536000;includeSubdomains; preload",
+      "last-modified": "Thu, 03 Sep 2026 01:50:42 GMT",
+      "etag": "\"3cff56b-65a8a61240080\"",
+      "Accept-Ranges": "bytes",
+      "Age": "2418",
+      "Cache-Control": "max-age=1800",
+      "cf-cache-status": "HIT",
+      "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=j%2FMxw%2FZvnr97vxpPJXxywgqwGIYP%2BRw0H8aDiQYn1T%2B2OMOoaTrNM17t2apbf2m41PMBjPA80avY0LiS7GhXrBs%2FvityCkWLpnfWkBFCDWav91wYEyzI%2BsQGScbZg6jnuEC6CH6V\"}]}",
+      "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "CF-RAY": "a377150ef86ecf19-SJC",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "members": [
+      {
+        "name": "MOI_OSM_Taiwan_TOPO_Rudy.poi",
+        "bytes": 248340480
+      }
+    ],
+    "license": "ODbL-1.0; OpenStreetMap contributors, packaged by Rudy Map"
+  },
+  "database_metadata": {
+    "bounds": "21.0990845,118.1247149,26.3830744,122.1068025",
+    "comment": "2026.09.03  /  (c) Map data: OSM contributors",
+    "date": "1788394502719",
+    "language": null,
+    "version": "3",
+    "ways": "true",
+    "writer": "mapsforge-poi-writer-0.28.0"
+  },
+  "source_records": 765630,
+  "selected_records": 335387,
+  "selected_categories": {
+    "01 百岳": 100,
+    "02 小百岳": 99,
+    "01 山頭": 4055,
+    "01 三角點": 2012,
+    "02 圖根點": 2055,
+    "03 鑛務點": 898,
+    "04 森林三角點/山字柱": 1572,
+    "05 精密導線點": 481,
+    "06 地政三角點": 537,
+    "07 其他": 4393,
+    "02 標石(基點)": 12184,
+    "03 步道/山徑": 164222,
+    "01 登山口": 4434,
+    "02 登山指示牌": 2573,
+    "03 步道里程碑": 7674,
+    "04 通訊點": 2081,
+    "05 救援樁": 235,
+    "04 登山標誌": 0,
+    "05 山屋/營地": 882,
+    "06 溪流/水源/瀑布": 111537,
+    "07 保護區/景點/觀景台": 5693,
+    "01 登山相關": 0,
+    "01 山/山峰": 4055,
+    "02 噴泉/泉水": 293,
+    "03 自然": 0,
+    "01 城市": 9,
+    "02 鎮": 751,
+    "03 村": 1969,
+    "04 聚落": 14038,
+    "05 獨宅": 168,
+    "04 地點": 0,
+    "01 瀑布": 474,
+    "03 水區": 94,
+    "06 水路": 0,
+    "戰場": 6,
+    "城門": 35,
+    "堡壘": 23,
+    "紀念館": 713,
+    "紀念碑": 371,
+    "遺跡": 882,
+    "礦坑": 6,
+    "路邊小廟": 437,
+    "歷史遺跡": 0
+  },
+  "osm_origins": {
+    "P": 61439,
+    "W": 273948
+  },
+  "name_fields": [
+    "name:zh-hant-tw",
+    "name:zh-hant",
+    "name:zh",
+    "name"
+  ],
+  "alias_fields": [
+    "alt_name:zh-hant",
+    "alt_name:zh",
+    "alt_name",
+    "old_name:zh-hant",
+    "old_name:zh",
+    "old_name",
+    "official_name:zh",
+    "official_name",
+    "short_name:zh",
+    "short_name"
+  ],
+  "rejected": {
+    "non_Han_or_outside_length_limit": 32355,
+    "unnamed_record": 252738
+  },
+  "eligible_Han_names": 30962,
+  "reading_methods": {
+    "upstream_tags": 3148,
+    "mcbopomofo_unambiguous_units": 14394,
+    "mcbopomofo_exact": 1831
+  },
+  "included_names": 19373,
+  "pinyin_names": 19367,
+  "rows": 54969,
+  "unavailable_readings": 11589,
+  "asset_sha256": "8969bee08d2315e349e8e53618ac2986b5a6632d95bee6aee8e772de00cd7040",
+  "extracted_snapshot_sha256": "4444a6e1832d72eea9e11d6e1e1360830433853fa1f9565a162fa943cb86b212",
+  "reading_source_sha256": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+  "rules": "All descendants of named thematic categories; NFC/trim; semicolon aliases; 2-32 Han glyphs; upstream Pinyin/Zhuyin or exact/unambiguous McBopomofo units; no entity allowlist or per-name links"
+}
