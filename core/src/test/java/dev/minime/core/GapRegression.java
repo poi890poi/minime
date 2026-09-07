@@ -6,6 +6,16 @@ import static dev.minime.core.Regression.*;
 /** Behavior contracts from paired observations; no evaluation labels enter runtime data. */
 final class GapRegression {
     static void run() {
+        Editor delayed=new Editor();CompositionEngine async=engine(delayed,Learning.NONE,false);
+        List<Runnable> replies=new ArrayList<>();
+        async.decoder((d,r,z,ctx,result)->replies.add(()->result.accept(d.convert(r,z,ctx))),()->{});
+        type(async,"nihao");equal("nihao",delayed.composing,"async updates composing text immediately");
+        replies.get(0).run();equal(1,async.candidates().size(),"stale prediction ignored");
+        async.space();type(async,"bkq ");equal("",delayed.text,"commit waits without choosing unfinished query");
+        replies.get(4).run();equal("你好",delayed.text,"matching query commits first word");
+        replies.get(replies.size()-1).run();equal("你好不客氣",delayed.text,"queued input preserves word order");
+        type(async,"nihao");async.space();async.start(false,false,false,false,true);
+        replies.get(replies.size()-1).run();equal("",async.raw(),"field switch discards deferred input");equal("你好不客氣",delayed.text,"old field cannot commit after switch");
         for(boolean enabled:Arrays.asList(false,true)) {
             Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.start(false,false,false,false,true);c.englishOptions(enabled,true);
             type(c,"teh");yes(find(c,"the")>0,"transposition suggestion");c.space(1000);

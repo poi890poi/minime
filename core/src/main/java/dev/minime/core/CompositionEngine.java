@@ -12,6 +12,7 @@ public final class CompositionEngine {
         void enter();
         void finish();
         default void restoreSpelling(int count,String spelling) { for(int i=0;i<count;i++)delete();composing(spelling); }
+        default void replacePrevious(int count,String text) {for(int i=0;i<count;i++)delete();commit(text);}
     }
     private final Editor editor;
     private final IntentClassifier classifier = new IntentClassifier();
@@ -28,13 +29,33 @@ public final class CompositionEngine {
     private Intent intent = Intent.LATIN_LITERAL;
     private List<Candidate> candidates = new ArrayList<>();
     private int preferred;
+    public interface Decoder { void convert(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,java.util.function.Consumer<List<Candidate>> result); }
+    private Decoder decoder;
+    private Runnable changed=()->{};
+    private long revision;
+    private boolean pending,barrier,draining;
+    private final ArrayDeque<Runnable> waiting=new ArrayDeque<>();
+    public void decoder(Decoder value,Runnable changed) {this.decoder=value;this.changed=changed;}
+    /** Commit actions wait for their matching prediction; newer typing remains responsive. */
+    public boolean deferUntilReady(Runnable action,boolean requiresPrediction) {
+        if(barrier || (requiresPrediction && pending)) {
+            if(draining)waiting.addFirst(action);else waiting.addLast(action);barrier=true;return true;
+        }
+        return false;
+    }
+    private void drain() {
+        draining=true;try {while(!waiting.isEmpty()) {barrier=false;waiting.removeFirst().run();if(barrier)break;}}
+        finally {draining=false;}
+        changed.run();
+    }
+    private void cancelPending() {revision++;pending=false;barrier=false;waiting.clear();}
     public CompositionEngine(Editor editor, Learning learning) { this.editor = editor; this.learning = learning; }
     public void dictionary(PhoneticDictionary dictionary) { this.dictionary = dictionary; refresh(); }
     public void start(boolean zhuyin, boolean literalField, boolean privateField, boolean direct) {
         start(zhuyin,literalField,privateField,direct,false);
     }
     public void start(boolean zhuyin, boolean literalField, boolean privateField, boolean direct, boolean englishMode) {
-        raw = ""; context = ""; completionBoundary=false; clearAssistance(); this.zhuyin = zhuyin; this.literalField = literalField;
+        cancelPending();raw = ""; context = ""; completionBoundary=false; clearAssistance(); this.zhuyin = zhuyin; this.literalField = literalField;
         this.privateField = privateField; this.direct = direct; this.englishMode=englishMode; refresh();
     }
     public void layout(boolean zhuyin) { commitDefault(false); this.zhuyin = zhuyin; refresh(); }
@@ -45,6 +66,7 @@ public final class CompositionEngine {
     public int preferred() { return preferred; }
     public boolean privateField() { return privateField; }
     public void type(int codePoint) {
+        if(deferUntilReady(()->type(codePoint),!raw.isEmpty() && IntentClassifier.isZhuyin(codePoint)!=raw.codePoints().anyMatch(IntentClassifier::isZhuyin)))return;
         if (codePoint == ' ') { space(); return; }
         if (codePoint == '\n') { enter(); return; }
         clearAssistance();
@@ -66,9 +88,10 @@ public final class CompositionEngine {
         space(System.nanoTime()/1000000);
     }
     public void space(long now) {
+        if(deferUntilReady(()->space(now),true))return;
         completionBoundary=false;
         if(doubleSpace && englishMode && !literalField && !direct && raw.isEmpty() && spaceAt>=0 && now-spaceAt<=1000 && now>=spaceAt) {
-            clearAssistance();editor.delete();editor.commit(". ");context="";refresh();return;
+            clearAssistance();editor.replacePrevious(1,". ");context="";refresh();return;
         }
         String spelling=raw;
         clearAssistance();
@@ -84,10 +107,10 @@ public final class CompositionEngine {
             if(!selected.text.equals(spelling)) {undoSpelling=spelling;undoOutput=selected.text+" ";}
         }
     }
-    public void confirm() { clearAssistance();completionBoundary=false; commitDefault(false); }
+    public void confirm() { if(deferUntilReady(this::confirm,true))return;clearAssistance();completionBoundary=false; commitDefault(false); }
     /** An explicit slide commits its literal output, independent of token inference. */
-    public void literal(String text) { clearAssistance();resolveCompletionBoundary(text); commitDefault(false); editor.commit(text); context=""; refresh(); }
-    public void enter() { clearAssistance();completionBoundary=false; commitDefault(false); editor.enter(); context = ""; refresh(); }
+    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();resolveCompletionBoundary(text); commitDefault(false); editor.commit(text); context=""; refresh(); }
+    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();completionBoundary=false; commitDefault(false); editor.enter(); context = ""; refresh(); }
     private void resolveCompletionBoundary(String text) {
         if(completionBoundary) {
             completionBoundary=false;
@@ -100,6 +123,7 @@ public final class CompositionEngine {
         commit(new Candidate(raw, true, 0), space, false);
     }
     public void backspace() {
+        if(deferUntilReady(this::backspace,false))return;
         completionBoundary=false;
         if(!undoSpelling.isEmpty() && raw.isEmpty()) {
             String spelling=undoSpelling;int count=undoOutput.length();clearAssistance();
@@ -143,8 +167,9 @@ public final class CompositionEngine {
         return text.substring(text.offsetByCodePoints(text.length(), -Math.min(n, text.codePointCount(0, text.length()))));
     }
     /** Call after cursor movement, external edits or lifecycle changes; never rewrite text at the new cursor. */
-    public void abandon() { clearAssistance();completionBoundary=false; editor.finish(); raw = ""; context = ""; refresh(); }
+    public void abandon() { cancelPending();clearAssistance();completionBoundary=false; editor.finish(); raw = ""; context = ""; refresh(); }
     public void refresh() {
+        long query=++revision;pending=false;
         candidates = new ArrayList<>(); preferred = 0;
         if (direct) return;
         if (raw.isEmpty()) {
@@ -170,7 +195,16 @@ public final class CompositionEngine {
                 preferred = 1; return;
             }
         }
-        List<Candidate> converted = dictionary == null || literalField || englishMode ? new ArrayList<>() : dictionary.convert(raw, bpmf,context);
+        if(decoder!=null && dictionary!=null && !literalField && !englishMode) {
+            pending=true;
+            decoder.convert(dictionary,raw,bpmf,context,result->{
+                if(query!=revision)return;
+                pending=false;applyCandidates(new ArrayList<>(result));changed.run();drain();
+            });
+        } else applyCandidates(dictionary == null || literalField || englishMode ? new ArrayList<>() : dictionary.convert(raw, bpmf,context));
+    }
+    private void applyCandidates(List<Candidate> converted) {
+        boolean bpmf=raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
         if (!privateField && !literalField && !englishMode) converted.addAll(learning.custom(raw));
         if (!privateField) converted.sort(Comparator.comparingInt((Candidate c) -> learning.count(contextKey(), raw, c.text)).reversed()
             .thenComparing(Comparator.comparingDouble((Candidate c) -> c.score).reversed()));

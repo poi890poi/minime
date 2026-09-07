@@ -9,6 +9,7 @@ import dev.minime.core.*;
 
 public final class MiniMeService extends InputMethodService {
     private CompositionEngine engine;
+    private AsyncDecoder decoder;
     private KeyboardView keyboard;
     private boolean zhuyin, english, englishPunctuation, destroyed, ready;
     private int panel;
@@ -20,6 +21,7 @@ public final class MiniMeService extends InputMethodService {
     @Override public void onCreate() {
         super.onCreate();
         engine=new CompositionEngine(new AndroidEditor(this::getCurrentInputConnection,()->editorInfo,selection),new LocalLearning(this));
+        decoder=new AsyncDecoder(new Handler(Looper.getMainLooper()));engine.decoder(decoder,this::render);
         DictionaryRepository.load(this).whenComplete((dictionary,error)->new Handler(Looper.getMainLooper()).post(()-> {
             if(destroyed) return;
             if(error==null) { engine.dictionary(dictionary); ready=true; dictionaryStatus=""; }
@@ -59,6 +61,16 @@ public final class MiniMeService extends InputMethodService {
     @Override public void onFinishInput() {
         engine.abandon(); super.onFinishInput();
     }
+    @Override public void onStartInputView(EditorInfo attribute,boolean restarting) {
+        super.onStartInputView(attribute,restarting);
+        if(!engine.raw().isEmpty()) {
+            InputConnection input=getCurrentInputConnection();int end=selection.cursor();
+            CharSequence owned=input==null?null:input.getTextBeforeCursor(engine.raw().length(),0);
+            if(!selection.owns(end,end,engine.raw().length()) || owned==null || !engine.raw().contentEquals(owned)
+                    || !input.setComposingRegion(end-engine.raw().length(),end))engine.abandon();
+        }
+        render();
+    }
     @Override public void onFinishInputView(boolean finishingInput) {
         if(finishingInput)engine.abandon(); super.onFinishInputView(finishingInput);
     }
@@ -74,7 +86,7 @@ public final class MiniMeService extends InputMethodService {
         }
     }
     @Override public boolean onEvaluateFullscreenMode() { return false; }
-    @Override public void onDestroy() { destroyed=true; super.onDestroy(); }
+    @Override public void onDestroy() { destroyed=true;decoder.close(); super.onDestroy(); }
     private void render() {
         InputConnection input=getCurrentInputConnection();
         shift.automatic(english && !policy.literal && input!=null && input.getCursorCapsMode(editorInfo.inputType)!=0);
@@ -83,6 +95,7 @@ public final class MiniMeService extends InputMethodService {
             EditorPolicy.enterLabel(editorInfo),ready ? "" : dictionaryStatus);
     }
     private boolean longKey(String value) {
+        if(value.equals("SPACE") && engine.deferUntilReady(()->longKey(value),false))return true;
         if(value.equals("SHIFT")) { shift.hold(); render(); return true; }
         if(value.equals("SYMBOLS")) { shift.interrupt(); panel=2; render(); return true; }
         if(value.equals("SPACE")) { engine.commitRaw(true); render(); return true; }
@@ -90,6 +103,9 @@ public final class MiniMeService extends InputMethodService {
     }
     private void key(String value) {
         if(getCurrentInputConnection()==null) return;
+        boolean commit=value.equals("SPACE") || value.equals("ENTER") || value.equals("LANGUAGE") || value.equals("LAYOUT")
+            || value.startsWith("INSERT:") || value.startsWith("LITERAL:");
+        if(engine.deferUntilReady(()->key(value),commit))return;
         if(!value.equals("SHIFT")) shift.interrupt();
         switch(value) {
             case "SHIFT": shift.tap(SystemClock.uptimeMillis(),ViewConfiguration.getDoubleTapTimeout()); break;
