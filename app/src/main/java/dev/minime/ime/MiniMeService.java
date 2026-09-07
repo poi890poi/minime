@@ -33,7 +33,18 @@ public final class MiniMeService extends InputMethodService {
     }
     @Override public void onStartInput(EditorInfo attribute,boolean restarting) {
         super.onStartInput(attribute,restarting);
+        boolean resume=restarting && !engine.raw().isEmpty() && editorInfo.fieldId==attribute.fieldId
+            && java.util.Objects.equals(editorInfo.packageName,attribute.packageName) && editorInfo.inputType==attribute.inputType
+            && selection.owns(attribute.initialSelStart,attribute.initialSelEnd,engine.raw().length());
+        if(resume) {
+            InputConnection input=getCurrentInputConnection();
+            // Validate only our bounded composing text; never retain editor surroundings.
+            CharSequence owned=input==null?null:input.getTextBeforeCursor(engine.raw().length(),0);
+            resume=owned!=null && engine.raw().contentEquals(owned)
+                && input.setComposingRegion(attribute.initialSelEnd-engine.raw().length(),attribute.initialSelEnd);
+        }
         editorInfo=attribute; policy=new EditorPolicy(attribute);
+        if(resume) {render();return;}
         zhuyin=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("zhuyin",false);
         englishPunctuation=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_punctuation",false);
         english=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_mode",false);
@@ -49,7 +60,7 @@ public final class MiniMeService extends InputMethodService {
         engine.abandon(); super.onFinishInput();
     }
     @Override public void onFinishInputView(boolean finishingInput) {
-        engine.abandon(); super.onFinishInputView(finishingInput);
+        if(finishingInput)engine.abandon(); super.onFinishInputView(finishingInput);
     }
     @Override public void onUpdateSelection(int oldStart,int oldEnd,int newStart,int newEnd,int candidatesStart,int candidatesEnd) {
         super.onUpdateSelection(oldStart,oldEnd,newStart,newEnd,candidatesStart,candidatesEnd);
@@ -86,7 +97,7 @@ public final class MiniMeService extends InputMethodService {
             case "DELETE": engine.backspace(); break;
             case "ENTER":
                 int action=EditorPolicy.action(editorInfo);
-                if(!policy.literal && !english && !engine.raw().isEmpty() && (action==EditorInfo.IME_ACTION_NONE || action==EditorInfo.IME_ACTION_UNSPECIFIED)) engine.confirm();
+                if(!policy.literal && !english && !engine.raw().isEmpty()) engine.confirm();
                 else engine.enter();
                 break;
             case "SYMBOLS": panel=panel==1?0:1; break;
