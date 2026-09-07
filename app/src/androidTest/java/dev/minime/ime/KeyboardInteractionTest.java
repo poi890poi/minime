@@ -189,11 +189,13 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         getInstrumentation().waitForIdleSync();
     }
     private void paletteEntry(String label) {
-        for(int page=0;page<16;page++) {
+        for(int page=0;page<300;page++) {
             for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows()) {
                 AccessibilityNodeInfo found=find(w.getRoot(),label);
                 if(found!=null) {assertTrue(found.performAction(AccessibilityNodeInfo.ACTION_CLICK));found.recycle();getInstrumentation().waitForIdleSync();return;}
             }
+            AccessibilityNodeInfo next=node("Next palette page");boolean available=next.isEnabled();next.recycle();
+            if(!available)break;
             click("Next palette page");
         }
         throw new AssertionError("Palette entry missing: "+label);
@@ -290,8 +292,9 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         clear();type("nihao");click("Candidate 你");click("Exact input hao");expectText("你hao");
         clear();type("nihao");click("Candidate 你");click("Switch to English");expectText("你好");type(" hello ");expectText("你好 hello ");
         click("Switch to Chinese");clear();type("womenmingtianjian");
-        Rect raw=bounds("Exact input womenmingtianjian"),phrase=bounds("Candidate 我們明天見");
-        assertTrue("Raw recovery is above the candidate strip",raw.bottom<=phrase.top);
+        // Wait for the asynchronous phrase result before measuring its raw recovery row.
+        Rect phrase=bounds("Candidate 我們明天見"),raw=bounds("Exact input womenmingtianjian");
+        capture("stable-height-raw");assertTrue("Raw recovery is above the candidate strip: "+raw+" / "+phrase,raw.bottom<=phrase.top);
         click("Expand candidates");capture("first-impression-expanded");click("Candidate 我們明天見");expectText("我們明天見");
         prefs.edit().putBoolean("rime_pinyin",false).commit();assertFalse("Explicit original backend choice retained",RimeBackend.enabled(activity));
     }
@@ -482,6 +485,31 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
             click("Collapse candidates");click("Space");expectText(raw+" ");
         }
         clear();type("nihao");click("Candidate 你");click("Candidate 好");expectText("你好");
+    }
+    private Rect keyboardBounds() {
+        for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows()) {
+            if(w.getType()==AccessibilityWindowInfo.TYPE_INPUT_METHOD) {Rect r=new Rect();w.getBoundsInScreen(r);return r;}
+        }
+        throw new AssertionError("IME window missing");
+    }
+    private void sameKeyboardBounds(Rect expected,String stage) {
+        getInstrumentation().waitForIdleSync();SystemClock.sleep(100);
+        assertEquals("Stable IME bounds at "+stage,expected,keyboardBounds());
+    }
+    public void testStableHeightDuringTypingAndPanelChanges() {
+        Rect stable=keyboardBounds(),space=bounds("Space"),q=bounds("q");
+        for(String key:new String[]{"n","i","h","a","o"}) {click(key);sameKeyboardBounds(stable,key);assertEquals(q,bounds("q"));}
+        click("Expand candidates");sameKeyboardBounds(stable,"expanded");assertEquals(space.top,bounds("Space").top);assertEquals(space.bottom,bounds("Space").bottom);
+        click("Collapse candidates");click("Space");sameKeyboardBounds(stable,"commit");
+        click("Switch to English");type("hello");sameKeyboardBounds(stable,"English literal");assertEquals(q,bounds("q"));
+        click("Space");click("Switch to Chinese");clear();
+        click("Emoji");sameKeyboardBounds(stable,"emoji");click("Emoji category");sameKeyboardBounds(stable,"emoji chooser");
+        menuItem("Flags");sameKeyboardBounds(stable,"emoji category selected");click("ABC");
+        click("?123");sameKeyboardBounds(stable,"symbols");click("Symbol category");sameKeyboardBounds(stable,"symbol chooser");
+        click("ABC");clear();click("注音 layout");zhuyin=true;sameKeyboardBounds(stable,"Zhuyin");
+        click("拼音 layout");zhuyin=false;focus(activity.password);sameKeyboardBounds(stable,"password");
+        focus(activity.number);sameKeyboardBounds(stable,"number");focus(activity.text);sameKeyboardBounds(stable,"return to editor");
+        capture("stable-height-final");
     }
     public void testLearnedChineseDoesNotReplaceEnglishContinuation() throws Exception {
         getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();

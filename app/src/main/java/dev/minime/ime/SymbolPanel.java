@@ -30,11 +30,12 @@ final class SymbolPanel extends LinearLayout {
     private int page;
     private int chooser;
     private String groupName,sectionName;
-    private final int keyHeight;
+    private final boolean landscape;
     SymbolPanel(Context context,boolean emoji,boolean privateField,Consumer<String> press) {
         super(context);this.emoji=emoji;this.press=press;setOrientation(VERTICAL);
         remember=emoji && !privateField && context.getSharedPreferences("settings",Context.MODE_PRIVATE).getBoolean("emoji_recents",false);
-        keyHeight=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE?28:42;
+        landscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
+        int selectorHeight=landscape?28:40,navHeight=landscape?22:34;
         if(emoji) {
             loadEmoji();
             for(Map<String,List<Entry>> sections:catalog.values()) {List<Entry> all=new ArrayList<>();for(List<Entry> list:sections.values())all.addAll(list);
@@ -46,22 +47,22 @@ final class SymbolPanel extends LinearLayout {
                 if(!recent.isEmpty()) {Map<String,Map<String,List<Entry>>> ordered=new LinkedHashMap<>();ordered.put("Recent",Collections.singletonMap("All",recent));ordered.putAll(catalog);catalog.clear();catalog.putAll(ordered);}
             }
         } else loadSymbols();
-        LinearLayout selectors=new LinearLayout(context);
+        LinearLayout selectors=new LinearLayout(context);selectors.setBaselineAligned(false);
         Button alternate=navButton(emoji?"#+":"☺",emoji?"Symbols":"Emoji",()->press.accept(emoji?"SYMBOLS":"EMOJI"));
-        selectors.addView(alternate,new LayoutParams(dp(42),dp(40)));
+        selectors.addView(alternate,new LayoutParams(dp(42),dp(selectorHeight)));
         groups=new Button(context); groups.setContentDescription(emoji?"Emoji category":"Symbol category");
         sections=new Button(context); sections.setContentDescription("Emoji group");
         groups.setTextSize(12);sections.setTextSize(12);groups.setPadding(0,0,0,0);sections.setPadding(0,0,0,0);
-        selectors.addView(groups,new LayoutParams(0,dp(40),1));
-        if(emoji) selectors.addView(sections,new LayoutParams(0,dp(40),1));
-        addView(selectors);
-        grid=new LinearLayout(context);grid.setOrientation(VERTICAL);addView(grid);
-        LinearLayout nav=new LinearLayout(context);
+        selectors.addView(groups,new LayoutParams(0,dp(selectorHeight),1));
+        if(emoji) selectors.addView(sections,new LayoutParams(0,dp(selectorHeight),1));
+        addView(selectors,new LayoutParams(-1,dp(selectorHeight)));
+        grid=new LinearLayout(context);grid.setOrientation(VERTICAL);addView(grid,new LayoutParams(-1,0,1));
+        LinearLayout nav=new LinearLayout(context);nav.setBaselineAligned(false);
         previous=navButton("‹","Previous palette page",()->{page--;render();});
         next=navButton("›","Next palette page",()->{page++;render();});
         counter=new TextView(context);counter.setTextColor(0xff263238);counter.setGravity(Gravity.CENTER);
-        nav.addView(previous,new LayoutParams(dp(55),dp(34)));
-        nav.addView(counter,new LayoutParams(0,dp(34),1));nav.addView(next,new LayoutParams(dp(55),dp(34)));addView(nav);
+        nav.addView(previous,new LayoutParams(dp(55),dp(navHeight)));
+        nav.addView(counter,new LayoutParams(0,dp(navHeight),1));nav.addView(next,new LayoutParams(dp(55),dp(navHeight)));addView(nav,new LayoutParams(-1,dp(navHeight)));
         groupName=catalog.keySet().iterator().next();
         selectGroup(groupName);
         groups.setOnClickListener(v->{chooser=chooser==1?0:1;page=0;render();});
@@ -134,23 +135,23 @@ final class SymbolPanel extends LinearLayout {
     private void render() {
         groups.setText(groupName+" ▾");sections.setText(sectionName+" ▾");
         List<String> choices=chooser==1?new ArrayList<>(catalog.keySet()):chooser==2?new ArrayList<>(catalog.get(groupName).keySet()):Collections.emptyList();
-        int columns=chooser==0?6:3,perPage=columns*4,size=chooser==0?entries.size():choices.size();
+        int columns=chooser==0?6:3,perPage=columns*2,size=chooser==0?entries.size():choices.size();
         int count=Math.max(1,(size+perPage-1)/perPage);page=Math.max(0,Math.min(page,count-1));
         grid.removeAllViews();
-        for(int row=0;row<4;row++) {
-            LinearLayout line=new LinearLayout(getContext());grid.addView(line,new LayoutParams(-1,dp(keyHeight+2)));
+        for(int row=0;row<2;row++) {
+            LinearLayout line=new LinearLayout(getContext());grid.addView(line,new LayoutParams(-1,0,1));
             for(int col=0;col<columns;col++) {
                 int index=page*perPage+row*columns+col;
-                if(index>=size) {line.addView(new View(getContext()),new LayoutParams(0,dp(keyHeight),1));continue;}
+                if(index>=size) {line.addView(new View(getContext()),new LayoutParams(0,-1,1));continue;}
                 Entry e=chooser==0?entries.get(index):new Entry(choices.get(index),choices.get(index));
-                TextView key=new TextView(getContext());key.setText(e.text);key.setTextColor(Color.BLACK);key.setTextSize(chooser!=0?12:emoji?24:21);
+                TextView key=new TextView(getContext());key.setText(e.text);key.setTextColor(Color.BLACK);key.setTextSize(chooser!=0?12:landscape?18:emoji?24:21);
                 key.setGravity(Gravity.CENTER);key.setMaxLines(chooser==0?1:3);key.setBackgroundColor(0xfff9fafb);key.setFocusable(true);key.setClickable(true);
                 key.setContentDescription(chooser==0?(emoji?"Emoji ":"Symbol ")+e.name:e.name);
                 key.setOnClickListener(v->{
                     if(chooser==0) insert(e);
                     else {if(chooser==1) selectGroup(e.text);else {sectionName=e.text;entries=catalog.get(groupName).get(sectionName);}chooser=0;page=0;render();}
                 });
-                LayoutParams lp=new LayoutParams(0,dp(keyHeight),1);lp.setMargins(dp(1),dp(1),dp(1),dp(1));line.addView(key,lp);
+                LayoutParams lp=new LayoutParams(0,-1,1);lp.setMargins(dp(1),dp(1),dp(1),dp(1));line.addView(key,lp);
             }
         }
         counter.setText(String.format(Locale.getDefault(),"%d / %d",page+1,count));previous.setEnabled(page>0);next.setEnabled(page+1<count);

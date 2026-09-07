@@ -37,11 +37,14 @@ final class KeyboardView extends LinearLayout {
         super(context); this.press=press; this.longPress=longPress;this.trace=trace;
         setOrientation(VERTICAL); setBackgroundColor(BACK); setPadding(0,0,0,0);
         setMotionEventSplittingEnabled(false);
-        status=new TextView(context); status.setTextColor(INK); status.setTextSize(12); status.setPadding(dp(8),0,0,0); addView(status);
+        FrameLayout header=new FrameLayout(context);addView(header,new LayoutParams(-1,dp(24)));
+        status=new TextView(context); status.setTextColor(INK); status.setTextSize(12); status.setPadding(dp(8),0,0,0);
+        status.setGravity(Gravity.CENTER_VERTICAL);status.setMaxLines(1);status.setEllipsize(android.text.TextUtils.TruncateAt.END);
+        header.addView(status,new FrameLayout.LayoutParams(-1,-1));
         phonetics=new TextView(context);phonetics.setTextColor(Color.BLACK);phonetics.setTextSize(14);phonetics.setGravity(Gravity.CENTER_VERTICAL);
         phonetics.setPadding(dp(8),0,dp(8),0);phonetics.setMaxLines(1);phonetics.setEllipsize(android.text.TextUtils.TruncateAt.END);
         phonetics.setClickable(true);phonetics.setFocusable(true);phonetics.setOnClickListener(v->{expanded=false;press.accept("CANDIDATE:0");});
-        addView(phonetics,new LayoutParams(-1,dp(24)));
+        header.addView(phonetics,new FrameLayout.LayoutParams(-1,-1));
         strip=new LinearLayout(context); strip.setGravity(Gravity.CENTER_VERTICAL); strip.setBackgroundColor(0xffe4e7e9); addView(strip,new LayoutParams(-1,dp(48)));
         keys=new LinearLayout(context); keys.setOrientation(VERTICAL); addView(keys);
         setOnApplyWindowInsetsListener((view,insets)-> {
@@ -131,13 +134,15 @@ final class KeyboardView extends LinearLayout {
     }
     void render(CompositionEngine engine,boolean zhuyin,boolean shifted,boolean caps,int panel,boolean numeric,boolean asciiPunctuation,boolean english,boolean allowLanguageSwitch,String enter,String loading) {
         String hint=engine.privateField()?"Private input · learning off":loading;
-        status.setText(hint); status.setVisibility(hint.isEmpty()?GONE:VISIBLE);
+        status.setText(hint);
         int previousScroll=candidateScroll==null?0:candidateScroll.getScrollX();
         if(!lastRaw.equals(engine.raw())) {previousScroll=0;lastRaw=engine.raw();}
         final int restoreScroll=previousScroll;
         boolean separatePhonetics=!english && !engine.raw().isEmpty() && engine.preferred()!=0;
         phonetics.setText(engine.raw());phonetics.setContentDescription("Exact input "+engine.raw());
-        phonetics.setVisibility(separatePhonetics && panel==0?VISIBLE:GONE);
+        boolean showPhonetics=separatePhonetics && panel==0;
+        phonetics.setVisibility(showPhonetics?VISIBLE:GONE);
+        status.setVisibility(!showPhonetics && !hint.isEmpty()?VISIBLE:GONE);
         strip.removeAllViews();candidateScroll=null;
         List<Candidate> candidates=engine.candidates();
         if(candidates.isEmpty() || panel!=0)expanded=false;
@@ -179,6 +184,8 @@ final class KeyboardView extends LinearLayout {
         if(candidates.isEmpty() || panel!=0)strip.addView(menu,new LayoutParams(dp(42),dp(42)));
         boolean landscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
         int height=landscape?34:59;
+        // Every layout shares the QWERTY budget; only orientation and system insets resize it.
+        keys.setLayoutParams(new LayoutParams(-1,dp(height)*4));
         String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+(expanded?candidates.toString():"");
         if(nextLayout.equals(layoutKey)) return;
         layoutKey=nextLayout; keys.removeAllViews();
@@ -240,5 +247,16 @@ final class KeyboardView extends LinearLayout {
         else bottom.addView(punctuation(false,asciiPunctuation,allowLanguageSwitch && !english,height));
         if(zhuyin || panel>0 || numeric || expanded) bottom.addView(plain("⌫","DELETE",height,1.5f));
         TextView action=button(enter,"ENTER","","",true,height,1.5f); action.setTextSize(14); bottom.addView(action);
+        for(int i=0;i<keys.getChildCount();i++) {
+            View child=keys.getChildAt(i);
+            child.setLayoutParams(child==bottom?new LayoutParams(-1,dp(height)):new LayoutParams(-1,0,1));
+            if(child instanceof LinearLayout && !(child instanceof SymbolPanel)) {
+                LinearLayout line=(LinearLayout)child;
+                for(int j=0;j<line.getChildCount();j++) {
+                    View key=line.getChildAt(j);LayoutParams params=(LayoutParams)key.getLayoutParams();
+                    params.height=LayoutParams.MATCH_PARENT;key.setLayoutParams(params);
+                }
+            }
+        }
     }
 }
