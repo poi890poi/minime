@@ -1,0 +1,43 @@
+
+dev.minime.ime.TypingTouchTest:
+Failure in testNearEdgeReleaseWithinPlatformSlop:
+junit.framework.AssertionFailedError: Small edge drift n expected:<[n]> but was:<[]>
+	at dev.minime.ime.TypingTouchTest.lambda$testNearEdgeReleaseWithinPlatformSlop$4(TypingTouchTest.java:64)
+	at dev.minime.ime.TypingTouchTest.$r8$lambda$QUgV0_5E7Av5pUNg_Ro6UXeo7VU(TypingTouchTest.java:0)
+	at dev.minime.ime.TypingTouchTest$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+	at dev.minime.ime.TypingTouchTest.lambda$onMain$2(TypingTouchTest.java:27)
+	at dev.minime.ime.TypingTouchTest.$r8$lambda$vrAbtln2msP4mrzPxGRJDY8Mj10(TypingTouchTest.java:0)
+	at dev.minime.ime.TypingTouchTest$$ExternalSyntheticLambda5.run(D8$$SyntheticClass:0)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2353)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:226)
+	at android.os.Looper.loop(Looper.java:313)
+	at android.app.ActivityThread.main(ActivityThread.java:8762)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)
+
+Failure in testOverlappingThumbsAcrossRows:
+junit.framework.AssertionFailedError: Overlapping keys [w, o] expected:<[w, o]> but was:<[]>
+	at dev.minime.ime.TypingTouchTest.lambda$testOverlappingThumbsAcrossRows$3(TypingTouchTest.java:54)
+	at dev.minime.ime.TypingTouchTest.$r8$lambda$JfB0H8zJq6fED1lzR1wb-xU33Ac(TypingTouchTest.java:0)
+	at dev.minime.ime.TypingTouchTest$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0)
+	at dev.minime.ime.TypingTouchTest.lambda$onMain$2(TypingTouchTest.java:27)
+	at dev.minime.ime.TypingTouchTest.$r8$lambda$vrAbtln2msP4mrzPxGRJDY8Mj10(TypingTouchTest.java:0)
+	at dev.minime.ime.TypingTouchTest$$ExternalSyntheticLambda5.run(D8$$SyntheticClass:0)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2353)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:226)
+	at android.os.Looper.loop(Looper.java:313)
+	at android.app.ActivityThread.main(ActivityThread.java:8762)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)
+
+Test results for InstrumentationTestRunner=.F.F
+Time: 0.25
+
+FAILURES!!!
+Tests run: 2,  Failures: 2,  Errors: 0
+
+

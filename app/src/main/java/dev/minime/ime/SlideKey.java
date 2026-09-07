@@ -22,7 +22,7 @@ final class SlideKey extends TextView {
     void qwertyStyle() {centeredHint=true;setPadding(0,0,0,Math.round(15*getResources().getDisplayMetrics().density));}
     void emojiHint() {emojiHint=true;setPadding(0,Math.round(14*getResources().getDisplayMetrics().density),0,0);}
     private float originX,originY;
-    private int direction;
+    private int direction, activePointer=-1;
     private boolean active, consumed, cancelled;
     private PopupMenu menu;
     private PopupWindow palette;
@@ -104,6 +104,11 @@ final class SlideKey extends TextView {
             if(!down.isEmpty()) canvas.drawText(down,getWidth()-pad,getHeight()-pad-hintPaint.descent(),hintPaint);
         }
     }
+    // A new letter contact completes the older plain tap in finger-down order.
+    // Slides, holds and cancelled gestures retain their own lifecycle.
+    void finishTapForOverlap() {
+        if(active && !consumed && !cancelled && direction==0) {reset();performClick();}
+    }
     @Override public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
         super.onInitializeAccessibilityNodeInfo(info); info.setClassName(Button.class.getName());
         if(!up.isEmpty()) info.addAction(new AccessibilityNodeInfo.AccessibilityAction(SLIDE_UP,"Slide up: "+up));
@@ -117,25 +122,35 @@ final class SlideKey extends TextView {
     @Override public boolean performClick() { return super.performClick(); }
     private void alternate(String value) { press.accept("LITERAL:"+value); }
     private void stopTimers() { removeCallbacks(repeat); removeCallbacks(longAction); }
-    private void reset() { active=false; stopTimers(); direction=0; setText(label); setPressed(false); }
+    private void reset() { active=false; activePointer=-1; stopTimers(); direction=0; setText(label); setPressed(false); }
     @Override protected void onDetachedFromWindow() {
         reset();dismissPalette(); if(menu!=null) menu.dismiss(); super.onDetachedFromWindow();
     }
     @Override public boolean onTouchEvent(MotionEvent event) {
-        switch(event.getActionMasked()) {
+        int action=event.getActionMasked();
+        if(action==MotionEvent.ACTION_POINTER_DOWN) {
+            if(active)return true;
+            action=MotionEvent.ACTION_DOWN;
+        }
+        if(action==MotionEvent.ACTION_POINTER_UP) {
+            if(event.getPointerId(event.getActionIndex())!=activePointer)return true;
+            action=MotionEvent.ACTION_UP;
+        }
+        int pointer=action==MotionEvent.ACTION_DOWN?event.getActionIndex():event.findPointerIndex(activePointer);
+        float x=pointer<0?0:event.getX(pointer),y=pointer<0?0:event.getY(pointer);
+        switch(action) {
             case MotionEvent.ACTION_DOWN:
-                active=true; consumed=false; cancelled=false; direction=0;
-                originX=event.getX(); originY=event.getY(); setPressed(true);
+                active=true; activePointer=event.getPointerId(pointer); consumed=false; cancelled=false; direction=0;
+                originX=x; originY=y; setPressed(true);
                 getParent().requestDisallowInterceptTouchEvent(true);
                 postDelayed(command.equals("DELETE")?repeat:longAction,ViewConfiguration.getLongPressTimeout());
                 return true;
-            case MotionEvent.ACTION_POINTER_DOWN:
             case MotionEvent.ACTION_CANCEL:
                 cancelled=true;dismissPalette(); reset(); return true;
             case MotionEvent.ACTION_MOVE:
                 if(palette!=null && palette.isShowing()) {trackPalette(event.getRawX(),event.getRawY());return true;}
                 if(!active || consumed || cancelled) return true;
-                float dx=event.getX()-originX,dy=event.getY()-originY;
+                float dx=x-originX,dy=y-originY;
                 float threshold=18*getResources().getDisplayMetrics().density;
                 if(Math.abs(dx)>threshold || Math.abs(dy)>threshold) stopTimers();
                 if(Math.abs(dx)>threshold && Math.abs(dx)>Math.abs(dy)) {
@@ -153,7 +168,8 @@ final class SlideKey extends TextView {
                 }
                 int selected=direction;
                 boolean emit=!consumed && !cancelled;
-                boolean inside=event.getX()>=0 && event.getX()<getWidth() && event.getY()>=0 && event.getY()<getHeight();
+                float slop=ViewConfiguration.get(getContext()).getScaledTouchSlop();
+                boolean inside=pointer>=0 && x>=-slop && x<getWidth()+slop && y>=-slop && y<getHeight()+slop;
                 reset();
                 if(emit) {
                     if(selected==0 && inside) performClick();

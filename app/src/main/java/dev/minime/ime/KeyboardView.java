@@ -36,7 +36,7 @@ final class KeyboardView extends LinearLayout {
     KeyboardView(Context context,Consumer<String> press,Predicate<String> longPress,BiConsumer<float[],Integer> trace) {
         super(context); this.press=press; this.longPress=longPress;this.trace=trace;
         setOrientation(VERTICAL); setBackgroundColor(BACK); setPadding(0,0,0,0);
-        setMotionEventSplittingEnabled(false);
+        setMotionEventSplittingEnabled(true);
         FrameLayout header=new FrameLayout(context);addView(header,new LayoutParams(-1,dp(24)));
         status=new TextView(context); status.setTextColor(INK); status.setTextSize(12); status.setPadding(dp(8),0,0,0);
         status.setGravity(Gravity.CENTER_VERTICAL);status.setMaxLines(1);status.setEllipsize(android.text.TextUtils.TruncateAt.END);
@@ -55,6 +55,15 @@ final class KeyboardView extends LinearLayout {
     private float[] center(View view) {int[] at=new int[2];view.getLocationOnScreen(at);return new float[]{at[0]+view.getWidth()/2f,at[1]+view.getHeight()/2f};}
     @Override public boolean dispatchTouchEvent(MotionEvent e) {
         int action=e.getActionMasked();
+        if(action==MotionEvent.ACTION_POINTER_DOWN && !tracing) {
+            int pointer=e.getActionIndex();boolean nextLetter=false;
+            for(TextView key:letters)if(key!=null && key.getParent()!=null) {
+                android.graphics.Rect bounds=new android.graphics.Rect(0,0,key.getWidth(),key.getHeight());
+                offsetDescendantRectToMyCoords(key,bounds);
+                if(bounds.contains((int)e.getX(pointer),(int)e.getY(pointer))) {nextLetter=true;break;}
+            }
+            if(nextLetter)for(TextView key:letters.clone())if(key instanceof SlideKey)((SlideKey)key).finishTapForOverlap();
+        }
         if(action==MotionEvent.ACTION_DOWN) {
             tracePossible=false;tracing=false;points.clear();
             if(traceEnabled && letters['q'-'a']!=null) {
@@ -107,7 +116,7 @@ final class KeyboardView extends LinearLayout {
     }
     private TextView plain(String label,String command,int height,float weight) { return button(label,command,"","",false,height,weight); }
     private LinearLayout row(int height) {
-        LinearLayout row=new LinearLayout(getContext()); row.setMotionEventSplittingEnabled(false);
+        LinearLayout row=new LinearLayout(getContext()); row.setMotionEventSplittingEnabled(true);
         keys.addView(row,new LayoutParams(-1,dp(height))); return row;
     }
     private void spacer(LinearLayout row,float weight) { row.addView(new View(getContext()),new LayoutParams(0,1,weight)); }
@@ -188,7 +197,7 @@ final class KeyboardView extends LinearLayout {
         keys.setLayoutParams(new LayoutParams(-1,dp(height)*4));
         String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+(expanded?candidates.toString():"");
         if(nextLayout.equals(layoutKey)) return;
-        layoutKey=nextLayout; keys.removeAllViews();
+        layoutKey=nextLayout; keys.removeAllViews();Arrays.fill(letters,null);
         if(expanded) {
             ScrollView scroll=new ScrollView(getContext());scroll.setContentDescription("Expanded candidate list");
             CandidateFlowLayout grid=new CandidateFlowLayout(getContext());scroll.addView(grid);

@@ -486,6 +486,46 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         }
         clear();type("nihao");click("Candidate 你");click("Candidate 好");expectText("你好");
     }
+
+    private void pointers(long start,int action,int[] ids,float... xy) {
+        MotionEvent.PointerProperties[] properties=new MotionEvent.PointerProperties[ids.length];
+        MotionEvent.PointerCoords[] coords=new MotionEvent.PointerCoords[ids.length];
+        for(int i=0;i<ids.length;i++) {properties[i]=new MotionEvent.PointerProperties();properties[i].id=ids[i];properties[i].toolType=MotionEvent.TOOL_TYPE_FINGER;
+            coords[i]=new MotionEvent.PointerCoords();coords[i].x=xy[2*i];coords[i].y=xy[2*i+1];coords[i].pressure=1;coords[i].size=1;}
+        MotionEvent e=MotionEvent.obtain(start,SystemClock.uptimeMillis(),action,ids.length,properties,coords,0,0,1,1,0,0,InputDevice.SOURCE_TOUCHSCREEN,0);
+        try {assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(e,true));}finally{e.recycle();}
+    }
+    public void testPinyinThumbOverlapKeepsEveryLetterComposing() throws Throwable {
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
+        assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
+        Map<Character,Rect> keys=new HashMap<>();for(char c='a';c<='z';c++)keys.put(c,bounds(String.valueOf(c)));
+        int ordinal=0,samples=0;
+        try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getInstrumentation().getContext().getAssets().open("rime-probes.tsv"),java.nio.charset.StandardCharsets.UTF_8))) {
+            String line;while((line=reader.readLine())!=null) {
+                String[] fields=line.split("\t",-1);if(fields.length<5 || !fields[3].matches("[a-z]+"))continue;
+                if(ordinal++%7!=0)continue;String raw=fields[3];clear();focus(activity.url);focus(activity.text);samples++;
+                for(int i=0;i<raw.length();) {
+                    Rect a=keys.get(raw.charAt(i));long start=SystemClock.uptimeMillis();
+                    pointers(start,MotionEvent.ACTION_DOWN,new int[]{3},a.exactCenterX(),a.exactCenterY());SystemClock.sleep(20);
+                    if(i+1<raw.length()) {
+                        Rect b=keys.get(raw.charAt(i+1));
+                        pointers(start,MotionEvent.ACTION_POINTER_DOWN|(1<<MotionEvent.ACTION_POINTER_INDEX_SHIFT),new int[]{3,7},a.exactCenterX(),a.exactCenterY(),b.exactCenterX(),b.exactCenterY());SystemClock.sleep(20);
+                        boolean reverse=(samples+i)%2==0;
+                        pointers(start,MotionEvent.ACTION_POINTER_UP|((reverse?1:0)<<MotionEvent.ACTION_POINTER_INDEX_SHIFT),new int[]{3,7},a.exactCenterX(),a.exactCenterY(),b.exactCenterX(),b.exactCenterY());SystemClock.sleep(20);
+                        Rect last=reverse?a:b;pointers(start,MotionEvent.ACTION_UP,new int[]{reverse?3:7},last.exactCenterX(),last.exactCenterY());i+=2;
+                    } else {pointers(start,MotionEvent.ACTION_UP,new int[]{3},a.exactCenterX(),a.exactCenterY());i++;}
+                    String expected=raw.substring(0,i);runTestOnUiThread(()-> {
+                        assertEquals("No lost letters or premature conversion",expected,activity.text.getText().toString());
+                        assertEquals("No Chinese prefix committed",0,android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText()));
+                        assertEquals(expected.length(),android.view.inputmethod.BaseInputConnection.getComposingSpanEnd(activity.text.getText()));
+                    });
+                }
+                SystemClock.sleep(150);expectText(raw);click("Space");
+            }
+        }
+        assertTrue("Frozen full/initial/mixed inputs sampled",samples>=10);
+        capture("typing-overlap-final");
+    }
     private Rect keyboardBounds() {
         for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows()) {
             if(w.getType()==AccessibilityWindowInfo.TYPE_INPUT_METHOD) {Rect r=new Rect();w.getBoundsInScreen(r);return r;}
