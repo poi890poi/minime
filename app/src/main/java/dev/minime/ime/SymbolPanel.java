@@ -24,15 +24,18 @@ final class SymbolPanel extends LinearLayout {
     private final Consumer<String> press;
     private final boolean emoji;
     private final boolean remember;
+    private final android.content.SharedPreferences navigation;
     private float touchX,touchY;
     private static List<String[]> emojiRows;
     private List<Entry> entries=Collections.emptyList();
     private int page;
     private int chooser;
+    private int contentPage;
     private String groupName,sectionName;
     private final boolean landscape;
     SymbolPanel(Context context,boolean emoji,boolean privateField,Consumer<String> press) {
         super(context);this.emoji=emoji;this.press=press;setOrientation(VERTICAL);
+        navigation=!emoji && !privateField?context.getSharedPreferences("settings",Context.MODE_PRIVATE):null;
         remember=emoji && !privateField && context.getSharedPreferences("settings",Context.MODE_PRIVATE).getBoolean("emoji_recents",false);
         landscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
         int selectorHeight=landscape?28:40,navHeight=landscape?22:34;
@@ -64,9 +67,19 @@ final class SymbolPanel extends LinearLayout {
         nav.addView(previous,new LayoutParams(dp(55),dp(navHeight)));
         nav.addView(counter,new LayoutParams(0,dp(navHeight),1));nav.addView(next,new LayoutParams(dp(55),dp(navHeight)));addView(nav,new LayoutParams(-1,dp(navHeight)));
         groupName=catalog.keySet().iterator().next();
+        if(navigation!=null) {
+            String saved=navigation.getString("symbol_category",groupName);
+            if(catalog.containsKey(saved))groupName=saved;
+        }
         selectGroup(groupName);
-        groups.setOnClickListener(v->{chooser=chooser==1?0:1;page=0;render();});
+        if(navigation!=null && groupName.equals(navigation.getString("symbol_category","")))page=navigation.getInt("symbol_page",0);
+        groups.setOnClickListener(v->{if(emoji) {chooser=chooser==1?0:1;page=0;render();}else toggleChooser(1);});
         sections.setOnClickListener(v->{chooser=chooser==2?0:2;page=0;render();});
+        render();
+    }
+    private void toggleChooser(int target) {
+        if(chooser==target) {chooser=0;page=contentPage;}
+        else {if(chooser==0)contentPage=page;chooser=target;page=0;}
         render();
     }
     private int dp(int n) {return Math.round(n*getResources().getDisplayMetrics().density);}
@@ -155,5 +168,10 @@ final class SymbolPanel extends LinearLayout {
             }
         }
         counter.setText(String.format(Locale.getDefault(),"%d / %d",page+1,count));previous.setEnabled(page>0);next.setEnabled(page+1<count);
+        if(chooser==0) {
+            contentPage=page;
+            if(navigation!=null && (!groupName.equals(navigation.getString("symbol_category","")) || page!=navigation.getInt("symbol_page",-1)))
+                navigation.edit().putString("symbol_category",groupName).putInt("symbol_page",page).apply();
+        }
     }
 }
