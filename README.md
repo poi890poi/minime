@@ -4,6 +4,18 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.6.0** keeps the composition buffer visible across literal/Chinese
+prediction changes and adds independently optional Taiwan, Rudy geography, Japanese and POJ
+phrase dictionaries, plus repeated Chinese phrase learning. These switches are
+off by default. POJ is used as a complete orthography, with original source tones,
+vowels and nasalization. Enabled packs bring matching names forward without
+changing the Space default. Source IDs are searchable in Settings; snapshots,
+licences, skipped readings and independent Wikipedia testing are recorded in
+[add-on results](docs/addons-learning/RESULTS.md). The geography pack systematically
+extracts 19,373 names from Rudy Map's OSM POI categories. All packs use reproducible
+source rules; no production names or phrase IDs are handpicked. See the separate
+[dictionary sync proposal](docs/addons-learning/SYNC-PROPOSAL.md); sync is not implemented.
+
 Version **0.5.6** remembers the last symbol category/page and puts symbols missing
 from the active main board ahead of those available by tapping or sliding.
 Private fields neither read nor update saved symbol navigation. See
