@@ -21,6 +21,7 @@ public final class CompositionEngine {
     private String raw = "", context = "";
     private boolean zhuyin, literalField, privateField, direct, englishMode;
     private boolean completionBoundary;
+    private boolean committedEnglishWord;
     private boolean autoCorrect, doubleSpace, automaticCorrection;
     private long spaceAt=-1;
     private String undoSpelling="", undoOutput="";
@@ -74,7 +75,7 @@ public final class CompositionEngine {
         start(zhuyin,literalField,privateField,direct,false);
     }
     public void start(boolean zhuyin, boolean literalField, boolean privateField, boolean direct, boolean englishMode) {
-        cancelPending();raw = ""; context = ""; completionBoundary=false; clearAssistance(); this.zhuyin = zhuyin; this.literalField = literalField;
+        cancelPending();raw = ""; context = ""; completionBoundary=false;committedEnglishWord=false; clearAssistance(); this.zhuyin = zhuyin; this.literalField = literalField;
         this.privateField = privateField; this.direct = direct; this.englishMode=englishMode; refresh();
     }
     public void layout(boolean zhuyin) { commitDefault(false); this.zhuyin = zhuyin; refresh(); }
@@ -92,6 +93,7 @@ public final class CompositionEngine {
         traced=false;
         String letter = new String(Character.toChars(codePoint));
         resolveCompletionBoundary(letter);
+        committedEnglishWord=false;
         if (direct) { editor.commit(letter); return; }
         boolean phonetic = IntentClassifier.isZhuyin(codePoint);
         boolean existingPhonetic = raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
@@ -115,7 +117,7 @@ public final class CompositionEngine {
         }
         String spelling=raw;
         clearAssistance();
-        if (direct || raw.isEmpty()) { editor.commit(" "); refresh(); return; }
+        if (direct || raw.isEmpty()) { editor.commit(" ");if(committedEnglishWord && !literalField && !direct)spaceAt=now;committedEnglishWord=false;refresh(); return; }
         int last=raw.codePointBefore(raw.length());
         if(zhuyin && !literalField && !englishMode && last>=0x3105 && last<=0x3129) {
             raw+="ˉ"; editor.composing(raw); refresh(); return;
@@ -129,8 +131,8 @@ public final class CompositionEngine {
     }
     public void confirm() { if(deferUntilReady(this::confirm,true))return;clearAssistance();completionBoundary=false; commitDefault(false); }
     /** An explicit slide commits its literal output, independent of token inference. */
-    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();resolveCompletionBoundary(text); commitDefault(false); editor.commit(text); context=""; refresh(); }
-    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();completionBoundary=false; commitDefault(false); editor.enter(); context = ""; refresh(); }
+    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();resolveCompletionBoundary(text); commitDefault(false); editor.commit(text);committedEnglishWord=false; context=""; refresh(); }
+    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();completionBoundary=false; commitDefault(false); editor.enter();committedEnglishWord=false; context = ""; refresh(); }
     private void resolveCompletionBoundary(String text) {
         if(completionBoundary) {
             completionBoundary=false;
@@ -145,6 +147,7 @@ public final class CompositionEngine {
     public void backspace() {
         if(deferUntilReady(this::backspace,false))return;
         completionBoundary=false;
+        committedEnglishWord=false;
         if(!undoSpelling.isEmpty() && raw.isEmpty()) {
             String spelling=undoSpelling;int count=undoOutput.length();clearAssistance();
             raw=spelling;context="";editor.restoreSpelling(count,raw);refresh();preferred=0;return;
@@ -175,7 +178,9 @@ public final class CompositionEngine {
     private void commit(Candidate c, boolean withSpace, boolean explicit) {
         if (explicit && !privateField) learning.choose(contextKey(), raw, c.text);
         editor.commit(c.text + (withSpace ? " " : ""));
+        committedEnglishWord=false;
         if(englishMode && !literalField && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
+            committedEnglishWord=!withSpace;
             if(!privateField)learning.rememberEnglish(context,c.text.toLowerCase(Locale.ROOT));
             String[] words=(context+" "+c.text.toLowerCase(Locale.ROOT)).trim().split(" ");
             context=words.length>1?words[words.length-2]+" "+words[words.length-1]:words[0];
@@ -187,7 +192,7 @@ public final class CompositionEngine {
         return text.substring(text.offsetByCodePoints(text.length(), -Math.min(n, text.codePointCount(0, text.length()))));
     }
     /** Call after cursor movement, external edits or lifecycle changes; never rewrite text at the new cursor. */
-    public void abandon() { cancelPending();clearAssistance();completionBoundary=false; editor.finish(); raw = ""; context = ""; refresh(); }
+    public void abandon() { cancelPending();clearAssistance();completionBoundary=false;committedEnglishWord=false; editor.finish(); raw = ""; context = ""; refresh(); }
     public void refresh() {
         automaticCorrection=false;
         traced=false;
