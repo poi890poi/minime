@@ -14,6 +14,11 @@ public final class PhoneticDictionary {
     private final Set<String> syllables = new HashSet<>();
     private ReadingIndex pinyinPrefixes,zhuyinPrefixes;
     private PinyinSyllableIndex pinyinSyllables;
+    private ContextModel contextModel=new ContextModel();
+    public static PhoneticDictionary load(Reader chinese,Reader english,Reader syllables,Reader context)throws IOException {
+        PhoneticDictionary d=load(chinese,english,syllables);d.contextModel=ContextModel.load(context);return d;
+    }
+    public List<Candidate> englishPredictions(String context) { return contextModel.english(context); }
 
     public static PhoneticDictionary load(Reader chinese, Reader english, Reader syllables) throws IOException {
         PhoneticDictionary d = new PhoneticDictionary();

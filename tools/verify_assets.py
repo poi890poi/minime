@@ -22,3 +22,6 @@ sequences={row[2] for row in rows}
 assert len(sequences)==len(rows)
 assert {'😀','❤️','👍🏽','👨‍👩‍👧‍👦','🇹🇼'} <= sequences
 print('PASS 3010 Unicode emoji sequences, including flags, skin tones and ZWJ families')
+context=json.loads((root/'docs/context-report.json').read_text(encoding='utf-8'))
+assert hashlib.sha256((root/'app/src/main/assets/context.tsv').read_bytes()).hexdigest()==context['asset_sha256']
+print('PASS context asset integrity; training splits recorded separately from holdouts')

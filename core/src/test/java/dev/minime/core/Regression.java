@@ -43,7 +43,7 @@ public final class Regression {
     public static void main(String[] args) throws Exception {
         Path assets = Paths.get("app/src/main/assets");
         long start = System.nanoTime();
-        dictionary = PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")), Files.newBufferedReader(assets.resolve("en_us.tsv")), Files.newBufferedReader(assets.resolve("syllables.tsv")));
+        dictionary = PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")), Files.newBufferedReader(assets.resolve("en_us.tsv")), Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));
         System.out.printf(Locale.ROOT, "Dictionary startup %.0f ms%n", (System.nanoTime()-start)/1e6);
         for (String line : Files.readAllLines(Paths.get("core/src/test/resources/mixed-corpus.tsv"), StandardCharsets.UTF_8)) {
             if (line.startsWith("#") || line.isEmpty()) continue;

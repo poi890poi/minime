@@ -26,6 +26,11 @@ final class GapRegression {
         }
         Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);type(c,"bkq");c.select(0);c.space();
         equal("bkq ",e.text,"abbreviation raw recovery");
+        e=new Editor();c=engine(e,Learning.NONE,false);c.start(false,false,false,false,true);type(c,"how are ");
+        yes(!c.candidates().isEmpty(),"English context offers next words");String next=c.candidates().get(0).text;
+        c.select(0);type(c,"today ");equal("how are "+next+" today ",e.text,"next-word choice carries deferred boundary");
+        e=new Editor();c=engine(e,Learning.NONE,false);c.start(false,true,false,false,true);type(c,"how are ");
+        yes(c.candidates().isEmpty(),"restricted field has no next-word suggestions");
         for(String suffix:Arrays.asList("test ",",","."," ","\n")) {
             e=new Editor();c=engine(e,Learning.NONE,false);c.start(false,false,false,false,true);
             type(c,"pronun");c.select(find(c,"pronunciation"));

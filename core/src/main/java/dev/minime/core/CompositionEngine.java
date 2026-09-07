@@ -102,12 +102,16 @@ public final class CompositionEngine {
         commit(c, withSpace && c.literal, false);
     }
     private void commit(Candidate c, boolean withSpace, boolean explicit) {
-        if (explicit && !privateField && !englishMode) learning.choose(contextKey(), raw, c.text);
+        if (explicit && !privateField) learning.choose(contextKey(), raw, c.text);
         editor.commit(c.text + (withSpace ? " " : ""));
-        context = c.literal || privateField ? "" : tail(context + c.text, 3);
+        if(englishMode && !literalField && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
+            if(!privateField)learning.rememberEnglish(context,c.text.toLowerCase(Locale.ROOT));
+            String[] words=(context+" "+c.text.toLowerCase(Locale.ROOT)).trim().split(" ");
+            context=words.length>1?words[words.length-2]+" "+words[words.length-1]:words[0];
+        } else context = c.literal || privateField ? "" : tail(context + c.text, 3);
         raw = ""; refresh();
     }
-    private String contextKey() { return context.isEmpty() ? "START_OR_LATIN" : context; }
+    private String contextKey() { return englishMode?"EN:"+context:context.isEmpty() ? "START_OR_LATIN" : context; }
     private static String tail(String text, int n) {
         return text.substring(text.offsetByCodePoints(text.length(), -Math.min(n, text.codePointCount(0, text.length()))));
     }
@@ -117,6 +121,11 @@ public final class CompositionEngine {
         candidates = new ArrayList<>(); preferred = 0;
         if (direct) return;
         if (raw.isEmpty()) {
+            if(englishMode && !literalField && dictionary!=null) {
+                if(!privateField)candidates.addAll(learning.predictEnglish(context));
+                candidates.addAll(dictionary.englishPredictions(context));
+                Set<String> seen=new HashSet<>();candidates.removeIf(c->!seen.add(c.text));
+            }
             if (!privateField && dictionary != null && !literalField && !englishMode) candidates.addAll(dictionary.predict(context));
             return;
         }
@@ -153,5 +162,9 @@ public final class CompositionEngine {
         }
         if (dictionary != null && !bpmf && !literalField && (intent == Intent.LATIN_LITERAL || intent == Intent.AMBIGUOUS))
             for (Candidate c : dictionary.englishCompletions(raw)) if (seen.add(c.text)) candidates.add(c);
+        if(englishMode && !literalField && !privateField) {
+            for(Candidate c:learning.custom(raw))if(seen.add(c.text))candidates.add(new Candidate(c.text,true,c.score));
+            candidates.subList(1,candidates.size()).sort(Comparator.comparingInt((Candidate c)->learning.count(contextKey(),raw,c.text)).reversed().thenComparing(Comparator.comparingDouble((Candidate c)->c.score).reversed()));
+        }
     }
 }
