@@ -1,0 +1,15 @@
+Dictionary startup 2822 ms
+PASS corpus A
+PASS corpus B
+PASS corpus C
+PASS corpus D
+PASS corpus meeting-transition
+PASS corpus technical
+PASS corpus url
+PASS corpus email
+PASS corpus code
+PASS corpus literal
+PASS corpus zhuyin-A
+PASS corpus zhuyin-transition
+Pinyin continuity: 411 frozen full/initial/mixed inputs, immediate and out-of-order callbacks
+PASS 11675 assertions; desktop key processing p50=0.61 ms p95=4.74 ms max=54.58 ms (1684 keys; not Android latency)
