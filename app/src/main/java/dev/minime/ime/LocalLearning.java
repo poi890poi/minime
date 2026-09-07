@@ -8,6 +8,15 @@ final class LocalLearning implements Learning {
     private final SharedPreferences preferences;
     private final SharedPreferences settings;
     LocalLearning(Context context) { preferences=context.getSharedPreferences("learning",Context.MODE_PRIVATE);settings=context.getSharedPreferences("settings",Context.MODE_PRIVATE); }
+    public void observePhrase(String reading,String output) {
+        if(!settings.getBoolean("phrase_learning",false))return;
+        PhraseLexicon lexicon=new PhraseLexicon(preferences.getString("phrases_v1",""));
+        lexicon.observe(reading,output);preferences.edit().putString("phrases_v1",lexicon.serialize()).apply();
+    }
+    public List<Candidate> phrases(String raw) {
+        if(!settings.getBoolean("phrase_learning",false))return Collections.emptyList();
+        return new PhraseLexicon(preferences.getString("phrases_v1","")).lookup(raw);
+    }
     public void rememberEnglish(String context,String word) {
         if(!settings.getBoolean("english_learning",false) || context.isEmpty())return;
         choose("EN_NEXT",context,word);

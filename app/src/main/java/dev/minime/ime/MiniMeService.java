@@ -18,6 +18,32 @@ public final class MiniMeService extends InputMethodService {
     private EditorInfo editorInfo=new EditorInfo();
     private EditorPolicy policy=new EditorPolicy(editorInfo);
     private final SelectionState selection=new SelectionState();
+    private AddonDictionary addonDictionary=AddonDictionary.EMPTY;
+    private AddonDictionary geographyDictionary=AddonDictionary.EMPTY;
+    private java.util.Set<String> activeAddons=java.util.Collections.emptySet();
+    private boolean addonRequested,geographyRequested;
+    private void applyAddons() {engine.addons(AddonDictionary.combine(addonDictionary,geographyDictionary),AddonRepository.enabled(this));}
+    private void configureAddons() {
+        java.util.Set<String> enabled=AddonRepository.enabled(this);
+        engine.phraseLearning(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("phrase_learning",false));
+        if(!enabled.equals(activeAddons)) {activeAddons=enabled;applyAddons();}
+        if(enabled.stream().anyMatch(pack->!pack.equals("geography")) && !addonRequested) {
+            addonRequested=true;
+            AddonRepository.load(this).whenComplete((dictionary,error)->new Handler(Looper.getMainLooper()).post(()-> {
+                if(destroyed)return;
+                if(error==null) {addonDictionary=dictionary;applyAddons();render();}
+                else android.widget.Toast.makeText(this,"Optional dictionaries unavailable; check MinIME settings",android.widget.Toast.LENGTH_LONG).show();
+            }));
+        }
+        if(enabled.contains("geography") && !geographyRequested) {
+            geographyRequested=true;
+            AddonRepository.geography(this).whenComplete((dictionary,error)->new Handler(Looper.getMainLooper()).post(()-> {
+                if(destroyed)return;
+                if(error==null) {geographyDictionary=dictionary;applyAddons();render();}
+                else android.widget.Toast.makeText(this,"Optional geography dictionary unavailable",android.widget.Toast.LENGTH_LONG).show();
+            }));
+        }
+    }
     @Override public void onCreate() {
         super.onCreate();
         engine=new CompositionEngine(new AndroidEditor(this::getCurrentInputConnection,()->editorInfo,selection),new LocalLearning(this));
@@ -50,6 +76,7 @@ public final class MiniMeService extends InputMethodService {
                 && input.setComposingRegion(attribute.initialSelEnd-engine.raw().length(),attribute.initialSelEnd);
         }
         editorInfo=attribute; policy=new EditorPolicy(attribute);
+        configureAddons();
         if(resume) {render();return;}
         zhuyin=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("zhuyin",false);
         decoder.rime(RimeBackend.enabled(this));
@@ -74,6 +101,7 @@ public final class MiniMeService extends InputMethodService {
     }
     @Override public void onStartInputView(EditorInfo attribute,boolean restarting) {
         super.onStartInputView(attribute,restarting);
+        configureAddons();
         if(keyboard!=null)keyboard.inputActive(true);
         if(!engine.raw().isEmpty()) {
             InputConnection input=getCurrentInputConnection();int end=selection.cursor();

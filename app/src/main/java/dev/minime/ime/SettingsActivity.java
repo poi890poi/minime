@@ -41,6 +41,38 @@ public final class SettingsActivity extends Activity {
         text("Try it",21);
         EditText test=new EditText(this); test.setHint("這個 pronunciation 不對"); test.setMinLines(2); test.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_MULTI_LINE); body.addView(test);
         text("Local dictionary",21);
+        option("Learn repeated Chinese phrases on this device", "phrase_learning",false);
+        text("After three accepted occurrences, a phrase becomes an extra candidate for the same reading. Only accepted Chinese segments are observed, including parts you select separately. Edits and field changes break the chain. No surrounding text is collected. Up to 512 reading/phrase pairs are retained; turning this off stops learning and hides these suggestions.",16);
+        button("View learned phrases",()-> {
+            String saved=getSharedPreferences("learning",MODE_PRIVATE).getString("phrases_v1","");
+            new android.app.AlertDialog.Builder(this).setTitle("Reading · phrase · occurrences")
+                .setMessage(saved.isEmpty()?"No repeated phrases recorded.":saved)
+                .setPositiveButton("Close",null).setNeutralButton("Clear phrase learning",(d,w)->getSharedPreferences("learning",MODE_PRIVATE).edit().remove("phrases_v1").apply()).show();
+        });
+        text("Optional dictionaries",21);
+        option("Taiwan names, culture and local vocabulary", "addon_taiwan",false);
+        option("Taiwan geography and history · Rudy Map / OSM", "addon_geography",false);
+        option("Japanese names and kana · Taiwan and culture", "addon_japanese",false);
+        option("Short Taiwanese phrases · Pe̍h-ōe-jī (POJ)", "addon_poj",false);
+        text("Each pack works offline and is off by default. Extra candidates are explicit choices; they do not replace the Space default. Taiwan entries accept full Pinyin, whole-phrase initials, or toned Zhuyin. These packs do not yet complete arbitrary mixed abbreviated sentences.",16);
+        text("Taiwanese uses the complete POJ spelling system, including ch/chh, oe/oa, o͘, ⁿ and tone marks. On the letter board, omit tone numbers, spaces and hyphens; type oo for o͘ and nn for ⁿ. Original numbered POJ keys are retained in the source data. Short expressions are selected automatically using source frequency and length, with all eligible source variants retained. This is not a full Taiwanese decoder.",16);
+        text("Japanese joined Romanized readings offer kana and source names; the raw candidate keeps the Romanization. WanaKana supplies the reading aliases. Entries are selected by source categories and metadata, without a name list. This does not provide Japanese grammar or sentence conversion.",16);
+        text("The geography pack systematically imports Rudy Map's hiking, nature, settlement, waterway and historical-site categories. Dataset version, licence, extraction rules and coverage are recorded together. Available source Pinyin/Zhuyin takes precedence; other readings use existing dictionary units. Missing or ambiguous readings are reported rather than guessed.",16);
+        button("Dictionary sources and coverage",()->showAsset("addon-sources.txt","Optional dictionary sources"));
+        EditText sourceQuery=new EditText(this);sourceQuery.setHint("Find a word or reading in add-on sources");body.addView(sourceQuery);
+        button("Find add-on entry sources",()-> {
+            String query=sourceQuery.getText().toString().trim().toLowerCase(java.util.Locale.ROOT);
+            if(query.isEmpty()) {sourceQuery.setError("Enter a word or reading");return;}
+            try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(new java.io.SequenceInputStream(getAssets().open("addons.tsv"),getAssets().open("geography.tsv")),java.nio.charset.StandardCharsets.UTF_8))) {
+                StringBuilder matches=new StringBuilder();String line;int count=0;
+                while((line=reader.readLine())!=null)if(!line.startsWith("#") && line.toLowerCase(java.util.Locale.ROOT).contains(query)) {
+                    matches.append(line).append("\n\n");if(++count==40) {matches.append("First 40 matches. Narrow the search for more specific results.");break;}
+                }
+                new android.app.AlertDialog.Builder(this).setTitle("Pack · reading · output · source · category")
+                    .setMessage(count==0?"No matching add-on entries.":matches.toString()).setPositiveButton("Close",null).show();
+            } catch(java.io.IOException error) {Toast.makeText(this,"Optional dictionary asset unavailable",Toast.LENGTH_LONG).show();}
+        });
+        text("Custom entries",21);
         text("Add one reading, a tab, and its output per line. Use Pinyin, Zhuyin, or the same literal word in both columns. Entries remain on this device.",16);
         EditText custom=new EditText(this); custom.setHint("minime\tMinIME"); custom.setMinLines(3);
         custom.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_MULTI_LINE|InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
@@ -70,7 +102,7 @@ public final class SettingsActivity extends Activity {
         text("Privacy",21);
         text("Fully offline. No network permission, keystroke logs, telemetry, or cloud backup. Explicit choices are learned locally. English word-pair learning and recent emoji are optional and off by default. Password fields use direct input without composition, suggestions or learning. Private fields do not access personalized history. Restart recovery briefly checks only the keyboard's own composing text, up to 96 characters; it does not collect the rest of the editor.",16);
         text("About this prototype",21);
-        text("Version 0.5.0. Independent implementation; not a Google product. Rime Pinyin is on by default and supports choosing part of a phrase. Long abbreviated sentences still need work. Language foundations: Rime, McBopomofo, AOSP LatinIME, Universal Dependencies and Unicode. See notices for complete sources, authors and licenses.",16);
+        text("Independent implementation; not a Google product. Rime Pinyin is on by default and supports choosing part of a phrase. Long abbreviated sentences still need work. Language foundations: Rime, McBopomofo, AOSP LatinIME, Universal Dependencies and Unicode. See notices for complete sources, authors and licenses.",16);
         button("Open-source notices",()-> {
             try(java.io.InputStream in=getAssets().open("NOTICE.txt")) {
                 java.io.ByteArrayOutputStream out=new java.io.ByteArrayOutputStream(); byte[] b=new byte[4096]; int n;
@@ -78,6 +110,13 @@ public final class SettingsActivity extends Activity {
                 new android.app.AlertDialog.Builder(this).setTitle("Notices").setMessage(out.toString("UTF-8")).setPositiveButton("Close",null).show();
             } catch(java.io.IOException e) { Toast.makeText(this,"Notices unavailable",Toast.LENGTH_SHORT).show(); }
         });
+    }
+    private void showAsset(String name,String title) {
+        try(java.io.InputStream in=getAssets().open(name)) {
+            java.io.ByteArrayOutputStream out=new java.io.ByteArrayOutputStream();byte[] b=new byte[4096];int n;
+            while((n=in.read(b))!=-1)out.write(b,0,n);
+            new android.app.AlertDialog.Builder(this).setTitle(title).setMessage(out.toString("UTF-8")).setPositiveButton("Close",null).show();
+        } catch(java.io.IOException e) {Toast.makeText(this,"Asset unavailable",Toast.LENGTH_LONG).show();}
     }
     private void text(String text,int size) { TextView v=new TextView(this); v.setText(text); v.setTextSize(size); v.setPadding(0,14,0,10); body.addView(v); }
     private void option(String label,String key,boolean initial) {

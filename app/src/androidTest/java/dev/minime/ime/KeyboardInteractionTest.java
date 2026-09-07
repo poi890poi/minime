@@ -427,6 +427,21 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         focus(activity.text);
         for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows())assertNull("Old annotation cannot return after field change",find(window.getRoot(),"Exact input nihao"));
     }
+    public void testOptionalPacksThroughService() throws Exception {
+        String[] poj=AddonTestData.probe(activity,"poj"),japanese=AddonTestData.probe(activity,"japanese"),geography=AddonTestData.probe(activity,"geography");
+        SharedPreferences settings=getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE);
+        settings.edit().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).putBoolean("addon_taiwan",true).putBoolean("addon_geography",true).commit();
+        AddonRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
+        AddonRepository.geography(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
+        getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
+        type(poj[0]);click("Expand candidates");click("Candidate "+poj[1]);expectText(poj[1]);
+        clear();type(geography[0]);click("Expand candidates");click("Candidate "+geography[1]);expectText(geography[1]);
+        clear();click("Switch to English");type(poj[0]);click("Expand candidates");click("Candidate "+poj[1]);expectText(poj[1]);
+        clear();type(japanese[0]);click("Expand candidates");click("Candidate "+japanese[1]);expectText(japanese[1]);
+        clear();settings.edit().putBoolean("addon_poj",false).putBoolean("addon_japanese",false).putBoolean("addon_taiwan",false).putBoolean("addon_geography",false).commit();
+        getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
+        type(poj[0]+" ");expectText(poj[0]+" ");
+    }
     public void testSymbolPageSurvivesMainBoardAndEmojiSwitches() {
         click("?123");click("Symbol category");menuItem("箭頭 Arrows");click("Next palette page");
         AccessibilityNodeInfo category=node("Symbol category"),palette=category.getParent().getParent();
