@@ -6,6 +6,9 @@ import static dev.minime.core.Regression.*;
 /** Behavior contracts from paired observations; no evaluation labels enter runtime data. */
 final class GapRegression {
     static void run() {
+        equal("could",dictionary.englishCompletions("co").get(0).text,"prefix ranking includes later alphabetic matches");
+        equal("into",dictionary.englishCompletions("in").get(0).text,"in prefix frequency ranking");
+        equal("released",dictionary.englishCompletions("re").get(0).text,"re prefix frequency ranking");
         for(String raw:Arrays.asList("bkq","bukq","xiex")) {
             Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);type(c,raw);
             String phrase=raw.startsWith("b")?"不客氣":"謝謝";

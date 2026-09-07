@@ -153,19 +153,19 @@ public final class PhoneticDictionary {
         boolean caps=raw.equals(raw.toUpperCase(Locale.ROOT));
         boolean title=raw.equals(Character.toUpperCase(key.charAt(0))+key.substring(1));
         if(!caps && !title && !raw.equals(key)) return Collections.emptyList();
-        List<Candidate> result = new ArrayList<>();
-        int inspected = 0;
+        Comparator<Candidate> order=Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text);
+        PriorityQueue<Candidate> top=new PriorityQueue<>(order.reversed());
         for (Map.Entry<String, Integer> e : english.tailMap(key).entrySet()) {
-            if (!e.getKey().startsWith(key) || inspected++ >= 500) break;
+            if (!e.getKey().startsWith(key)) break;
             if (!e.getKey().equals(key)) {
                 String text = e.getKey();
                 if (caps) text=text.toUpperCase(Locale.ROOT);
                 else if (title) text = Character.toUpperCase(text.charAt(0)) + text.substring(1);
-                result.add(new Candidate(text, true, e.getValue()));
+                top.add(new Candidate(text, true, e.getValue()));
+                if(top.size()>24) top.remove();
             }
         }
-        result.sort(Comparator.comparingDouble((Candidate c) -> c.score).reversed());
-        return result.subList(0, Math.min(3, result.size()));
+        List<Candidate> result=new ArrayList<>(top);result.sort(order);return result;
     }
     public List<Candidate> predict(String context) {
         List<Candidate> result = new ArrayList<>();
