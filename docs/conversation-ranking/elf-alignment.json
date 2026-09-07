@@ -1,0 +1,74 @@
+[
+  {
+    "apk": "app/build/outputs/apk/debug/app-debug.apk",
+    "entry": "lib/arm64-v8a/libminime_rime.so",
+    "load_alignments": [
+      16384,
+      16384,
+      16384
+    ]
+  },
+  {
+    "apk": "app/build/outputs/apk/debug/app-debug.apk",
+    "entry": "lib/armeabi-v7a/libminime_rime.so",
+    "load_alignments": [
+      16384,
+      16384,
+      16384
+    ]
+  },
+  {
+    "apk": "app/build/outputs/apk/debug/app-debug.apk",
+    "entry": "lib/x86/libminime_rime.so",
+    "load_alignments": [
+      16384,
+      16384,
+      16384
+    ]
+  },
+  {
+    "apk": "app/build/outputs/apk/debug/app-debug.apk",
+    "entry": "lib/x86_64/libminime_rime.so",
+    "load_alignments": [
+      16384,
+      16384,
+      16384
+    ]
+  },
+  {
+    "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
+    "entry": "lib/arm64-v8a/libminime_rime.so",
+    "load_alignments": [
+      16384,
+      16384,
+      16384
+    ]
+  },
+  {
+    "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
+    "entry": "lib/armeabi-v7a/libminime_rime.so",
+    "load_alignments": [
+      16384,
+      16384,
+      16384
+    ]
+  },
+  {
+    "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
+    "entry": "lib/x86/libminime_rime.so",
+    "load_alignments": [
+      16384,
+      16384,
+      16384
+    ]
+  },
+  {
+    "apk": "app/build/outputs/apk/release/app-release-unsigned.apk",
+    "entry": "lib/x86_64/libminime_rime.so",
+    "load_alignments": [
+      16384,
+      16384,
+      16384
+    ]
+  }
+]

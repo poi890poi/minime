@@ -13,3 +13,13 @@ Learned-state diagnosis: four independently chosen everyday sentences reproduce 
 Capitalized-source diagnosis: the import regex accepts only lowercase English source entries. AOSP already contains ordinary months, cities, languages and acronyms at frequencies well above the unchanged cutoff. Preserve all eligible source entries with original case/frequency. Derive a folded lookup for an established Latin boundary and explicit English mode; preserve the existing lowercase-only recognition at fresh Chinese boundaries so romanized names do not silently take over Pinyin. No per-word additions, deletions, weights or new frequency thresholds. Rebuild the derived binary without changing its serialization format. Verify all source entries/frequencies, binary round-trip, the frozen Chinese/English corpus and a newly frozen GUM test corpus before Android packaging.
 
 Native order hypothesis (rejected): test whether removing the adapter's fixed three-full/three-prefix preview improves access by restoring Rime order across both classes, retaining the same 100-inspected / 24-full / 12-prefix bounds. Measurement found no commit changes and mostly better full-phrase positions, but common prefixes moved farther back because Rime itself orders full conversions before prefixes. This contradicts the proposed cause of the prefix-access gap. Production native changes were reverted; the desktop experiment remains opt-in only. No Android build was used for this rejected experiment.
+
+
+Release slice: version 0.5.1 / code 7 packages the verified fixes. No new permission,
+network access, storage schema or native ranking policy is added. The larger
+English source vocabulary increases the binary modestly without changing format.
+Debug installer and ZIP hashes, release build, lint, source/asset provenance,
+16 KB packaging alignment and restored phone state are checked. Distribution uses
+the existing authorized local server and Cloudflare tunnel; the public bytes are
+verified before delivery. The release report retains unresolved ranking and mixed
+English Space parity gaps rather than claiming complete equivalence.

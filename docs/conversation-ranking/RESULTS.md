@@ -110,3 +110,46 @@ common-glyph problem. The experiment is rejected; production retains its prefix
 preview. A separate 11272-input mechanical check found 3119 reordered lists and
 zero candidate-set or first-complete changes. This is evidence about ordering,
 not linguistic accuracy. Raw output and the mechanical report are retained.
+
+
+## Android packaging and final integration
+
+MinIME 0.5.1 (version code 7) packages the verified core and data changes.
+Debug, Android-test and unsigned release builds pass. Lint reports zero errors
+and 15 warnings. Both app APKs pass asset/bundle provenance checks, exclude
+conversation evaluation assets, and pass ZIP alignment for 16 KB pages. All
+eight packaged native libraries across debug/release and four ABIs have ELF
+LOAD alignment of at least 16 KB. Hardware verification is ARM64 only.
+
+The initial final-build phone batch passes 11 editor, Rime, Taiwan conversion
+and conversation-study tests in 19.745 seconds. `final-phone.json` is its fresh
+recording. Desktop cross-check: 95 raw queries, 1613 displayed native candidates,
+zero text/score/consumption differences. Fewer native candidates are displayed
+in English-default lists because English completions now share the strip.
+This is an adapter check, not a claim about UI equivalence or latency.
+
+Artifact sizes and SHA-256 digests are recorded in `package.json`; the ZIP contains
+only the debug-signed, installable APK. The unsigned release APK is a build gate,
+not the distributed installer. Android testing follows core evaluation and does
+not replace the frozen corpus measurements above.
+
+
+All 27 visible keyboard interaction tests also pass in 168.232 seconds. This
+includes the real-key test that learns a Chinese choice at input start, preserves
+that preference there, and then types English continuation with source-capitalized
+vocabulary literally. Both test batches restore the prior Samsung IME and exact
+MinIME preference files, then verify `mWakefulness=Dozing`.
+
+
+Final paired observation covers all 14 provider/case runs in `phone-final`.
+Screenshots confirm MinIME now displays the literal English default first and
+uses 吃飯 in Taiwan glyph form. Layout details and alternative ranks remain
+different from Google; this is not a parity claim. In the three mixed-English
+Space observations, MinIME appends a space while Google commits the literal
+without a trailing space; this existing behavior remains a documented gap. The paired instrumentation
+passes in 50.699 seconds. Final preference read-back matches the saved hashes,
+Samsung IME is restored, and display state is Dozing (`phone-restoration.json`).
+
+The complete public Cloudflare ZIP download matches the local ZIP SHA-256
+(`download-verification.json`). The link is temporary and depends on the local
+download server and tunnel remaining available.

@@ -4,6 +4,13 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.5.1** restores Taiwan-standard glyph conversion, keeps literal English
+defaults visible, separates learned Chinese choices from English continuation,
+and retains source-capitalized English vocabulary. These are data and general
+logic changes, evaluated in the shared core before Android builds. See the
+[candidate-quality results](docs/conversation-ranking/RESULTS.md) and
+[desktop corpus workflow](docs/conversation-ranking/DESKTOP_TESTING.md).
+
 Version **0.5.0** aligns the QWERTY appearance and layout with the observed legacy
 keyboard, adds continuous candidate browsing and explicit partial-phrase selection,
 and enables Rime Pinyin by default. Turn **Use Rime for Pinyin phrase prediction**
