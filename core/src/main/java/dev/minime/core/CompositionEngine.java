@@ -130,6 +130,11 @@ public final class CompositionEngine {
             int literalVotes = privateField ? 0 : learning.count(contextKey(), raw, raw);
             int chineseVotes = privateField ? 0 : learning.count(contextKey(), raw, candidates.get(1).text);
             if (intent == Intent.CHINESE_PHONETIC || ((intent == Intent.AMBIGUOUS || intent == Intent.LATIN_LITERAL) && chineseVotes > literalVotes)) preferred = 1;
+            // Partial phonetics are valid Chinese input too. Preserve known
+            // English words/completion prefixes and explicit literal recovery.
+            if(!bpmf && !literalField && !englishMode && dictionary!=null
+                    && raw.matches("[a-zv]+(?:'[a-zv]+)*") && raw.length()>1
+                    && !IntentClassifier.technicalWord(raw) && !dictionary.isEnglish(raw) && dictionary.englishCompletions(raw).isEmpty()) preferred=1;
             if (literalVotes > chineseVotes) preferred = 0;
         }
         if (dictionary != null && !bpmf && !literalField && (intent == Intent.LATIN_LITERAL || intent == Intent.AMBIGUOUS))

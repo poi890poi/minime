@@ -129,7 +129,8 @@ public final class Regression {
         yes(dictionary.convert("n'h",false).stream().noneMatch(v->v.text.codePointCount(0,v.text.length())==1),"apostrophe forces two syllables even when abbreviated");
         e=new Editor(); memory=new Memory(); c=engine(e,memory,false); type(c,"nh"); c.select(find(c,"你好"));
         c.start(false,false,false,false); type(c,"nh"); c.space(); equal("你好你好",e.text,"explicit abbreviation choice can become local default");
-        c.start(false,false,true,false); type(c,"nh"); equal(0,c.preferred(),"private field ignores abbreviation votes");
+        c.start(false,false,true,false); type(c,"nh");
+        equal(dictionary.convert("nh",false).get(0).text,c.candidates().get(c.preferred()).text,"private field uses generic abbreviation ranking");
         e=new Editor(); c=engine(e,Learning.NONE,false); type(c,"nh"); c.select(0); c.space(); equal("nh ",e.text,"abbreviation exact recovery");
         for(String input:Arrays.asList("s".repeat(32),"w".repeat(96),"abcdefghijklmnopqrstuvwxyz".repeat(3))) {
             long begun=System.nanoTime(); dictionary.convert(input,false);
@@ -168,6 +169,7 @@ public final class Regression {
         e=new Editor();memory=new Memory();c=engine(e,memory,false);c.start(false,false,true,false,true);type(c,"pronun");
         c.select(find(c,"pronunciation"));equal(0,memory.votes.size(),"private English selection never learns");
         c.start(false,false,false,false);type(c,"nihao");yes(c.candidates().stream().anyMatch(v->v.text.equals("你好")),"return to Chinese conversion");
+        GapRegression.run();
         Collections.sort(latencies);
         System.out.printf(Locale.ROOT,"PASS %d assertions; desktop key processing p50=%.2f ms p95=%.2f ms max=%.2f ms (%d keys; not Android latency)%n", assertions,latencies.get(latencies.size()/2)/1e6,latencies.get(latencies.size()*95/100)/1e6,latencies.get(latencies.size()-1)/1e6,latencies.size());
     }

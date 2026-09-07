@@ -3,9 +3,15 @@ package dev.minime.core;
 import java.util.*;
 
 public final class IntentClassifier {
+    // Domain vocabulary for mixed technical typing, not Chinese ranking overrides.
+    private static final Set<String> COMMANDS=new HashSet<>(Arrays.asList(
+        "adb","git","ssh","scp","sftp","curl","wget","npm","npx","pnpm","yarn","pip","gradle",
+        "bash","zsh","cmd","pwsh","sudo","chmod","chown","mkdir","rmdir","grep","awk","sed","cd","ls","pwd"));
+    public static boolean technicalWord(String raw) { return COMMANDS.contains(raw); }
     public enum Intent { CHINESE_PHONETIC, LATIN_LITERAL, AMBIGUOUS, URL_EMAIL, CODE_IDENTIFIER, NUMBER_ALNUM }
     public Intent classify(String raw, boolean zhuyin, boolean literalField, PhoneticDictionary dictionary) {
         if (literalField) return Intent.LATIN_LITERAL;
+        if (technicalWord(raw)) return Intent.CODE_IDENTIFIER;
         if (raw.contains("@") || raw.contains("://")) return Intent.URL_EMAIL;
         if (raw.codePoints().anyMatch(Character::isDigit)) return Intent.NUMBER_ALNUM;
         if (raw.matches(".*[_/\\\\.:#=+{}\\[\\]();<>$%&*?!,\"-].*")) return Intent.CODE_IDENTIFIER;
