@@ -26,6 +26,8 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
             SharedPreferences prefs=getInstrumentation().getTargetContext().getSharedPreferences(name,Context.MODE_PRIVATE);
             saved.put(name,new HashMap<>(prefs.getAll())); prefs.edit().clear().commit();
         }
+        // Legacy behavior cases keep their established decoder; defaults have a dedicated test.
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",false).commit();
         zhuyin=false;
         activity=getActivity();
         DictionaryRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
@@ -277,6 +279,21 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         type("ㄓㄜˋㄍㄜ˙  pronunciation ㄅㄨˊㄉㄨㄟˋ ");
         assertEquals("這個 pronunciation 不對",activity.text.getText().toString());
         capture("review-zhuyin");
+    }
+    public void testDefaultRimeAndPartialSelection() throws Exception {
+        SharedPreferences prefs=getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE);
+        prefs.edit().remove("rime_pinyin").commit();assertTrue("Rime enabled when no preference exists",RimeBackend.enabled(activity));
+        focus(activity.url);focus(activity.text);type("womenmtjian ");expectText("我們明天見");
+        clear();type("nihao");click("Candidate 你");expectText("你hao");
+        node("Exact input hao").recycle();click("Candidate 好");expectText("你好");
+        clear();type("nihao");click("Candidate 你");click("⌫");expectText("你ha");type("o ");expectText("你好");
+        clear();type("nihao");click("Candidate 你");click("Exact input hao");expectText("你hao");
+        clear();type("nihao");click("Candidate 你");click("Switch to English");expectText("你好");type(" hello ");expectText("你好 hello ");
+        click("Switch to Chinese");clear();type("womenmingtianjian");
+        Rect raw=bounds("Exact input womenmingtianjian"),phrase=bounds("Candidate 我們明天見");
+        assertTrue("Raw recovery is above the candidate strip",raw.bottom<=phrase.top);
+        click("Expand candidates");capture("first-impression-expanded");click("Candidate 我們明天見");expectText("我們明天見");
+        prefs.edit().putBoolean("rime_pinyin",false).commit();assertFalse("Explicit original backend choice retained",RimeBackend.enabled(activity));
     }
     public void testRimePhrasesAndLiteralRecovery() throws Exception {
         assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));

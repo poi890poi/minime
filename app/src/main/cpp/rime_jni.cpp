@@ -44,9 +44,9 @@ Java_dev_minime_ime_RimeBackend_initialize(JNIEnv* env,jclass,jstring shared,jst
     } catch(const std::exception&) {ready=false;return false;}
 }
 extern "C" JNIEXPORT jobjectArray JNICALL
-Java_dev_minime_ime_RimeBackend_query(JNIEnv* env,jclass,jstring raw) {
+Java_dev_minime_ime_RimeBackend_query(JNIEnv* env,jclass,jstring raw,jboolean includePrefixes) {
     std::lock_guard<std::mutex> guard(lock);
-    std::vector<std::string> words;
+    std::vector<std::string> words,prefixes;
     auto input=utf8(env,raw);
     try {
     if(ready && !input.empty() && input.size()<=96) {
@@ -57,16 +57,23 @@ Java_dev_minime_ime_RimeBackend_query(JNIEnv* env,jclass,jstring raw) {
             auto context=session?session->context():nullptr;
             if(context && context->input()==input && !context->composition().empty()) {
                 auto& segment=context->composition().back();
-                if(segment.menu)for(size_t i=0;i<100 && words.size()<24;i++) {
+                if(segment.menu)for(size_t i=0;i<100 && (includePrefixes || words.size()<24);i++) {
                     auto candidate=segment.menu->GetCandidateAt(i);
                     if(!candidate)break;
-                    // MinIME commits whole tokens. Never pass a prefix-only choice.
-                    if(candidate->start()==0 && candidate->end()==input.size())words.push_back(candidate->text());
+                    if(candidate->start()!=0 || candidate->end()==0 || candidate->end()>input.size())continue;
+                    if(candidate->end()==input.size() && words.size()<24)
+                        words.push_back(includePrefixes?std::to_string(candidate->end())+"\t"+candidate->text():candidate->text());
+                    else if(includePrefixes && candidate->end()<input.size() && prefixes.size()<12)
+                        prefixes.push_back(std::to_string(candidate->end())+"\t"+candidate->text());
                 }
             }
         }
     }
-    } catch(const std::exception&) {words.clear();}
+    } catch(const std::exception&) {words.clear();prefixes.clear();}
+    // Keep full-phrase order and default intact, while exposing a few prefix choices.
+    size_t preview=std::min<size_t>(3,prefixes.size());
+    words.insert(words.begin()+std::min<size_t>(3,words.size()),prefixes.begin(),prefixes.begin()+preview);
+    words.insert(words.end(),prefixes.begin()+preview,prefixes.end());
     auto result=env->NewObjectArray(words.size(),env->FindClass("java/lang/String"),nullptr);
     for(size_t i=0;i<words.size();i++) {
         // UTF-8 can contain supplementary Han glyphs; Java decodes standard UTF-8.

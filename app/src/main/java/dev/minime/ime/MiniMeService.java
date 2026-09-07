@@ -49,8 +49,12 @@ public final class MiniMeService extends InputMethodService {
         editorInfo=attribute; policy=new EditorPolicy(attribute);
         if(resume) {render();return;}
         zhuyin=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("zhuyin",false);
-        decoder.rime(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("rime_pinyin",false));
-        if(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("rime_pinyin",false))RimeBackend.load(this);
+        decoder.rime(RimeBackend.enabled(this));
+        if(RimeBackend.enabled(this))RimeBackend.load(this).whenComplete((loaded,error)->new Handler(Looper.getMainLooper()).post(()-> {
+            if(!destroyed && Boolean.TRUE.equals(loaded) && RimeBackend.enabled(this) && !english && !policy.literal && !engine.raw().isEmpty()) {
+                engine.refresh();render();
+            }
+        }));
         englishPunctuation=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_punctuation",false);
         english=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_mode",false);
         shift.reset(); panel=0;

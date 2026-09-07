@@ -21,7 +21,7 @@ final class AsyncDecoder implements CompositionEngine.Decoder,AutoCloseable {
         queued=worker.schedule(()-> {
             List<Candidate> found=dictionary.convert(raw,zhuyin,context);
             if(useRime) {
-                List<Candidate> nativeChoices=RimeBackend.convert(raw);
+                List<Candidate> nativeChoices=RimeBackend.candidates(raw);
                 if(!nativeChoices.isEmpty()) {
                     Set<String> seen=new HashSet<>();for(Candidate c:nativeChoices)seen.add(c.text);
                     for(Candidate c:found)if(seen.add(c.text))nativeChoices.add(c);

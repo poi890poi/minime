@@ -22,9 +22,9 @@ final class KeyboardView extends LinearLayout {
     private int traceCase;
     private float traceX,traceY,pitchX,pitchY;
     private final LinearLayout strip, keys;
-    private final TextView status;
+    private final TextView status,phonetics;
+    private HorizontalScrollView candidateScroll;
     private String layoutKey="", lastRaw="";
-    private int page;
     private boolean expanded;
     private static final int INK=0xff37474f, BLUE=0xff4db6ac, BACK=0xffeceff1;
     private static final String[] ZHUYIN={"ㄅㄉˇˋㄓˊ˙ㄚㄞㄢ","ㄆㄊㄍㄐㄔㄗㄧㄛㄟㄣ","ㄇㄋㄎㄑㄕㄘㄨㄜㄠㄤ","ㄈㄌㄏㄒㄖㄙㄩㄝㄡㄥ"};
@@ -38,6 +38,10 @@ final class KeyboardView extends LinearLayout {
         setOrientation(VERTICAL); setBackgroundColor(BACK); setPadding(0,0,0,0);
         setMotionEventSplittingEnabled(false);
         status=new TextView(context); status.setTextColor(INK); status.setTextSize(12); status.setPadding(dp(8),0,0,0); addView(status);
+        phonetics=new TextView(context);phonetics.setTextColor(Color.BLACK);phonetics.setTextSize(14);phonetics.setGravity(Gravity.CENTER_VERTICAL);
+        phonetics.setPadding(dp(8),0,dp(8),0);phonetics.setMaxLines(1);phonetics.setEllipsize(android.text.TextUtils.TruncateAt.END);
+        phonetics.setClickable(true);phonetics.setFocusable(true);phonetics.setOnClickListener(v->{expanded=false;press.accept("CANDIDATE:0");});
+        addView(phonetics,new LayoutParams(-1,dp(24)));
         strip=new LinearLayout(context); strip.setGravity(Gravity.CENTER_VERTICAL); strip.setBackgroundColor(0xffe4e7e9); addView(strip,new LayoutParams(-1,dp(48)));
         keys=new LinearLayout(context); keys.setOrientation(VERTICAL); addView(keys);
         setOnApplyWindowInsetsListener((view,insets)-> {
@@ -128,34 +132,30 @@ final class KeyboardView extends LinearLayout {
     void render(CompositionEngine engine,boolean zhuyin,boolean shifted,boolean caps,int panel,boolean numeric,boolean asciiPunctuation,boolean english,boolean allowLanguageSwitch,String enter,String loading) {
         String hint=engine.privateField()?"Private input · learning off":loading;
         status.setText(hint); status.setVisibility(hint.isEmpty()?GONE:VISIBLE);
-        if(!lastRaw.equals(engine.raw())) { page=0; lastRaw=engine.raw(); }
-        strip.removeAllViews();
+        int previousScroll=candidateScroll==null?0:candidateScroll.getScrollX();
+        if(!lastRaw.equals(engine.raw())) {previousScroll=0;lastRaw=engine.raw();}
+        final int restoreScroll=previousScroll;
+        phonetics.setText(engine.raw());phonetics.setContentDescription("Exact input "+engine.raw());
+        phonetics.setVisibility(!english && !engine.raw().isEmpty() && panel==0?VISIBLE:GONE);
+        strip.removeAllViews();candidateScroll=null;
         List<Candidate> candidates=engine.candidates();
         if(candidates.isEmpty() || panel!=0)expanded=false;
         traceEnabled=english && allowLanguageSwitch && !numeric && !zhuyin && panel==0 && !expanded;
         traceCase=caps?2:shifted?1:0;
         if(!candidates.isEmpty()) {
-            int from=0;
-            if(!engine.raw().isEmpty()) {
-                TextView raw=plain(engine.raw(),"CANDIDATE:0",42,1);
-                raw.setTextColor(engine.preferred()==0?BLUE:INK); raw.setTextSize(15);
-                raw.setEllipsize(android.text.TextUtils.TruncateAt.END); raw.setContentDescription("Exact input "+engine.raw());
-                strip.addView(raw,new LayoutParams(dp(90),dp(42))); from=1;
+            int from=!engine.raw().isEmpty() && !english?1:0;
+            candidateScroll=new HorizontalScrollView(getContext());candidateScroll.setHorizontalScrollBarEnabled(false);candidateScroll.setContentDescription("Candidate list");
+            LinearLayout words=new LinearLayout(getContext());candidateScroll.addView(words);strip.addView(candidateScroll,new LayoutParams(0,-1,1));
+            for(int i=from;i<candidates.size();i++) {
+                Candidate c=candidates.get(i);TextView word=button(c.text,"CANDIDATE:"+i,"","",false,48,1);
+                word.setTextSize(english?18:20);word.setTextColor(!engine.raw().isEmpty() && engine.preferred()==i?Color.BLACK:0xff5d6b71);
+                word.setTypeface(null,!engine.raw().isEmpty() && engine.preferred()==i?android.graphics.Typeface.BOLD:android.graphics.Typeface.NORMAL);
+                word.setMinWidth(dp(48));word.setPadding(dp(12),0,dp(12),0);
+                if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
+                words.addView(word,new LayoutParams(-2,dp(48)));
+                View divider=new View(getContext());divider.setBackgroundColor(0xffc3cbcf);LayoutParams rule=new LayoutParams(dp(1),dp(26));rule.gravity=Gravity.CENTER_VERTICAL;words.addView(divider,rule);
             }
-            HorizontalScrollView scroll=new HorizontalScrollView(getContext()); scroll.setHorizontalScrollBarEnabled(false);
-            LinearLayout words=new LinearLayout(getContext()); scroll.addView(words); strip.addView(scroll,new LayoutParams(0,-1,1));
-            int pageCount=Math.max(1,(candidates.size()-from+23)/24);
-            page%=pageCount;
-            int start=from+page*24;
-            for(int i=start;i<Math.min(candidates.size(),start+24);i++) {
-                Candidate c=candidates.get(i); TextView word=button(c.text,"CANDIDATE:"+i,"","",!engine.raw().isEmpty() && engine.preferred()==i,42,1);
-                word.setPadding(dp(14),0,dp(14),0); words.addView(word,new LayoutParams(-2,dp(42)));
-            }
-            if(pageCount>1) {
-                TextView more=plain("⋯","MORE",42,1); more.setContentDescription("Next candidate page");
-                more.setOnClickListener(v->{ page=(page+1)%pageCount; render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,enter,loading); });
-                strip.addView(more,new LayoutParams(dp(40),dp(42)));
-            }
+            HorizontalScrollView currentScroll=candidateScroll;currentScroll.post(()->currentScroll.scrollTo(restoreScroll,0));
             TextView expand=plain(expanded?"⌃":"⌄","EXPAND",42,1);
             expand.setContentDescription(expanded?"Collapse candidates":"Expand candidates");
             expand.setOnClickListener(v->{expanded=!expanded;render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,enter,loading);});
@@ -175,22 +175,22 @@ final class KeyboardView extends LinearLayout {
             strip.addView(next,new LayoutParams(dp(42),dp(42)));
         }
         TextView menu=plain("⚙","SETTINGS",42,1); menu.setContentDescription("Settings");
-        strip.addView(menu,new LayoutParams(dp(42),dp(42)));
+        if(candidates.isEmpty() || panel!=0)strip.addView(menu,new LayoutParams(dp(42),dp(42)));
         boolean landscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
         int height=landscape?34:59;
         String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+(expanded?candidates.toString():"");
         if(nextLayout.equals(layoutKey)) return;
         layoutKey=nextLayout; keys.removeAllViews();
         if(expanded) {
-            ScrollView scroll=new ScrollView(getContext());LinearLayout grid=new LinearLayout(getContext());grid.setOrientation(VERTICAL);scroll.addView(grid);
+            ScrollView scroll=new ScrollView(getContext());scroll.setContentDescription("Expanded candidate list");
+            CandidateFlowLayout grid=new CandidateFlowLayout(getContext());scroll.addView(grid);
             int first=engine.raw().isEmpty()?0:1;
-            for(int i=first;i<candidates.size();i+=3) {
-                LinearLayout line=new LinearLayout(getContext());grid.addView(line);
-                for(int j=i;j<Math.min(i+3,candidates.size());j++) {
-                    TextView word=button(candidates.get(j).text,"CANDIDATE:"+j,"","",engine.preferred()==j && !engine.raw().isEmpty(),height,1);
-                    word.setTextSize(16);word.setEllipsize(android.text.TextUtils.TruncateAt.END);line.addView(word);
-                }
-                for(int j=Math.min(i+3,candidates.size());j<i+3;j++)spacer(line,1);
+            for(int i=first;i<candidates.size();i++) {
+                TextView word=button(candidates.get(i).text,"CANDIDATE:"+i,"","",false,48,1);
+                word.setTextColor(engine.preferred()==i && !engine.raw().isEmpty()?Color.BLACK:0xff5d6b71);
+                word.setTextSize(20);word.setMinWidth(dp(48));word.setMinHeight(dp(48));word.setPadding(dp(12),dp(4),dp(12),dp(4));
+                word.setSingleLine(false);word.setMaxLines(Integer.MAX_VALUE);
+                grid.addView(word,new ViewGroup.LayoutParams(-2,-2));
             }
             keys.addView(scroll,new LayoutParams(-1,dp(height*(zhuyin?4:3))));
         } else if(panel==3) {

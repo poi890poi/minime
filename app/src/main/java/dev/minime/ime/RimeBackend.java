@@ -10,6 +10,7 @@ import java.util.concurrent.*;
 final class RimeBackend {
     private static CompletableFuture<Boolean> loading;
     private static volatile boolean available;
+    static boolean enabled(Context context) {return context.getSharedPreferences("settings",Context.MODE_PRIVATE).getBoolean("rime_pinyin",true);}
     static synchronized CompletableFuture<Boolean> load(Context context) {
         if(loading==null) {
             Context app=context.getApplicationContext();
@@ -45,10 +46,20 @@ final class RimeBackend {
     }
     static List<Candidate> convert(String raw) {
         if(!available || !raw.matches("[a-zv]+(?:'[a-zv]+)*") || raw.length()>96)return Collections.emptyList();
-        String[] words=query(raw);List<Candidate> result=new ArrayList<>();
+        String[] words=query(raw,false);List<Candidate> result=new ArrayList<>();
         for(int i=0;i<words.length;i++)result.add(new Candidate(words[i],false,100-i));
         return result;
     }
+    static List<Candidate> candidates(String raw) {
+        if(!available || !raw.matches("[a-zv]+(?:'[a-zv]+)*") || raw.length()>96)return Collections.emptyList();
+        String[] words=query(raw,true);List<Candidate> result=new ArrayList<>();
+        for(int i=0;i<words.length;i++) {
+            int tab=words[i].indexOf('\t');if(tab<1)continue;
+            int end=Integer.parseInt(words[i].substring(0,tab));
+            if(end>0 && end<=raw.length())result.add(new Candidate(words[i].substring(tab+1),false,100-i,end==raw.length()?0:end));
+        }
+        return result;
+    }
     private static native boolean initialize(String shared,String user);
-    private static native String[] query(String raw);
+    private static native String[] query(String raw,boolean includePrefixes);
 }

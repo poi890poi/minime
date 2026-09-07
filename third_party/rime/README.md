@@ -44,5 +44,9 @@ it does not compile dictionaries on the phone. New sessions receive only active
 Pinyin spelling, never surrounding editor text. Personal Rime dictionaries and
 native input logs are disabled. MinIME's existing optional local choices remain
 subject to its original privacy policy. Only candidates consuming the complete
-input reach MinIME's whole-token commit path. Original MinIME candidates remain
+input reach MinIME's whole-token commit path. Explicit prefix choices carry Rime's
+consumed length; selection commits that prefix and continues with the remaining
+spelling. The first three full choices precede three prefix previews, followed by
+the remaining full and prefix choices. The order within each group is preserved.
+Original MinIME candidates remain
 available as alternatives and as fallback if the native engine is unavailable.
