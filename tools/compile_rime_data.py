@@ -39,7 +39,18 @@ with tempfile.TemporaryDirectory(prefix='minime-rime-') as scratch:
     for name in ('default.yaml','luna_pinyin.schema.yaml','luna_pinyin.prism.bin','luna_pinyin.table.bin','luna_pinyin.reverse.bin'):
         data=(compiled/name).read_bytes()
         (OUT/name).write_bytes(data)
-hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(OUT.iterdir()) if p.name!='bundle-id.txt'}
+# Reuse the pinned OpenCC Taiwan variant dictionary in its supported text format.
+# This changes serialization only; no mappings or evaluation phrases are added.
+opencc=SOURCE/'data-sources/opencc'
+for name,digest in json.loads((SOURCE/'opencc-data.json').read_text(encoding='utf-8'))['files'].items():
+    assert hashlib.sha256((opencc/Path(name).name).read_bytes()).hexdigest()==digest
+opencc_out=OUT/'opencc';opencc_out.mkdir(exist_ok=True)
+config=json.loads((opencc/'t2tw.json').read_text(encoding='utf-8'))
+for dictionary in (config['segmentation']['dict'],config['conversion_chain'][0]['dict']):
+    dictionary['type']='text';dictionary['file']='TWVariants.txt'
+(opencc_out/'t2tw.json').write_text(json.dumps(config,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+shutil.copyfile(str(opencc/'TWVariants.txt'),str(opencc_out/'TWVariants.txt'))
+hashes={p.relative_to(OUT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(OUT.rglob('*')) if p.is_file() and p.name!='bundle-id.txt'}
 bundle=hashlib.sha256(json.dumps(hashes,sort_keys=True).encode()).hexdigest()
 (OUT/'bundle-id.txt').write_text(bundle+'\n',encoding='utf-8')
 (SOURCE/'model.json').write_text(json.dumps(dict(librime='1.16.1',bundle=bundle,assets=hashes),indent=2)+'\n',encoding='utf-8')

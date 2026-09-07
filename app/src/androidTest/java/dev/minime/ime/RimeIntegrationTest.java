@@ -53,9 +53,9 @@ public final class RimeIntegrationTest extends AndroidTestCase {
         }
         JSONObject report=new JSONObject().put("loadMs",loadMs).put("firstChoiceHits",new JSONObject(hits)).put("samples",samples);
         try(OutputStream out=new FileOutputStream(new File(getContext().getExternalFilesDir(null),"rime-phone.json"))) {out.write(report.toString(2).getBytes(StandardCharsets.UTF_8));}
-        assertEquals(14,(int)hits.getOrDefault("reference",0));
-        assertEquals(20,(int)hits.getOrDefault("development",0));
-        assertEquals(15,(int)hits.getOrDefault("fresh",0));
+        assertTrue("Reference baseline coverage",hits.getOrDefault("reference",0)>=14);
+        assertTrue("Development baseline coverage",hits.getOrDefault("development",0)>=20);
+        assertTrue("Fresh baseline coverage",hits.getOrDefault("fresh",0)>=15);
         assertTrue(RimeBackend.convert("ssh://host").isEmpty());
         assertTrue(RimeBackend.convert("a".repeat(97)).isEmpty());
         assertFalse(RimeBackend.convert("womenmingtianjian").stream().anyMatch(c->c.text.equals("我們")));

@@ -28,21 +28,26 @@ final class RimeBackend {
                     File shared=new File(base,"shared"),user=new File(base,"user");
                     if(!shared.isDirectory() && !shared.mkdirs())throw new IOException("Cannot prepare model");
                     if(!user.isDirectory() && !user.mkdirs())throw new IOException("Cannot prepare session directory");
-                    for(String name:app.getAssets().list("rime")) {
-                        File target=new File(shared,name);
-                        if(target.isFile())continue;
-                        File temporary=new File(shared,name+".tmp");
-                        try(InputStream in=app.getAssets().open("rime/"+name);OutputStream out=new FileOutputStream(temporary)) {
-                            byte[] buffer=new byte[32768];int n;while((n=in.read(buffer))!=-1)out.write(buffer,0,n);
-                        }
-                        if(!temporary.renameTo(target))throw new IOException("Cannot install model");
-                    }
+                    copyAssets(app,"rime",shared);
                     available=initialize(shared.getAbsolutePath(),user.getAbsolutePath());
                 } catch(IOException | UnsatisfiedLinkError | SecurityException e) { available=false; }
                 return available;
             });
         }
         return loading;
+    }
+    private static void copyAssets(Context app,String asset,File directory) throws IOException {
+        if(!directory.isDirectory() && !directory.mkdirs())throw new IOException("Cannot prepare model directory");
+        for(String name:app.getAssets().list(asset)) {
+            String path=asset+"/"+name;File target=new File(directory,name);
+            if(app.getAssets().list(path).length>0) {copyAssets(app,path,target);continue;}
+            if(target.isFile())continue;
+            File temporary=new File(directory,name+".tmp");
+            try(InputStream in=app.getAssets().open(path);OutputStream out=new FileOutputStream(temporary)) {
+                byte[] buffer=new byte[32768];int n;while((n=in.read(buffer))!=-1)out.write(buffer,0,n);
+            }
+            if(!temporary.renameTo(target))throw new IOException("Cannot install model");
+        }
     }
     static List<Candidate> convert(String raw) {
         if(!available || !raw.matches("[a-zv]+(?:'[a-zv]+)*") || raw.length()>96)return Collections.emptyList();

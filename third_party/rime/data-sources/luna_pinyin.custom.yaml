@@ -1,6 +1,7 @@
 patch:
   schema/dependencies: []
   engine/translators: [script_translator]
-  engine/filters: [uniquifier]
+  engine/filters: [simplifier@zh_hant_tw, uniquifier]
+  switches/@2/reset: 3
   translator/enable_user_dict: false
   menu/page_size: 100

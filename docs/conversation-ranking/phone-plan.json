@@ -1,0 +1,9 @@
+[
+  {"id":"eat","mode":"pinyin","actions":[{"type":"chifan","capture":true},{"key":"SPACE"}]},
+  {"id":"why","mode":"pinyin","actions":[{"type":"weishenme","capture":true},{"key":"SPACE"}]},
+  {"id":"where","mode":"pinyin","actions":[{"type":"nizainali","capture":true},{"key":"SPACE"}]},
+  {"id":"hello-mixed","mode":"pinyin","actions":[{"type":"hello","capture":true},{"key":"SPACE"}]},
+  {"id":"time-mixed","mode":"pinyin","actions":[{"type":"time","capture":true},{"key":"SPACE"}]},
+  {"id":"thanks-mixed","mode":"pinyin","actions":[{"type":"thanks","capture":true},{"key":"SPACE"}]},
+  {"id":"hello-english","mode":"english","actions":[{"type":"hello","capture":true},{"key":"SPACE"}]}
+]

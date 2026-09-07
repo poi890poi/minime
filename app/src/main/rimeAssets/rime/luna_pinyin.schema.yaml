@@ -23,6 +23,7 @@ custom_phrase:
   user_dict: custom_phrase
 engine:
   filters:
+    - "simplifier@zh_hant_tw"
     - uniquifier
   processors:
     - ascii_composer
@@ -416,6 +417,7 @@ switches:
     states: ["半角", "全角"]
   - abbrev: ["漢", "简", "港", "臺"]
     options: [zh_hant, zh_hans, zh_hant_hk, zh_hant_tw]
+    reset: 3
     states: ["傳統漢字", "简化字", "香港字形", "臺灣字形"]
   - name: ascii_punct
     states: ["。，", "．，"]

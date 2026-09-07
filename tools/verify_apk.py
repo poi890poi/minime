@@ -19,6 +19,7 @@ with zipfile.ZipFile(str(app)) as z:
     legacy=json.loads((ROOT/'docs/model-report.json').read_text(encoding='utf-8'))
     assert hashlib.sha256(z.read('assets/model.bin')).hexdigest()==legacy['sha256']
     assert 'assets/rime-probes.tsv' not in names, 'Evaluation data must not ship'
+    assert 'assets/conversation-probes.tsv' not in names, 'Conversation evaluation must not ship'
     assert z.read('assets/NOTICE.txt')==(ROOT/'app/src/main/assets/NOTICE.txt').read_bytes(), 'Packaged notices stale'
     abis=sorted(n.split('/')[1] for n in names if n.startswith('lib/') and n.endswith('/libminime_rime.so'))
     assert abis, 'Native Rime library missing'

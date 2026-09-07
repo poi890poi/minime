@@ -40,6 +40,10 @@ if rime_path.exists():
         assert hashlib.sha256((assets/name).read_bytes()).hexdigest()==expected, 'Rime asset changed: '+name
     assert (assets/'bundle-id.txt').read_text(encoding='utf-8').strip()==rime['bundle']
     assert hashlib.sha256(json.dumps(rime['assets'],sort_keys=True).encode()).hexdigest()==rime['bundle']
+    opencc=root/'third_party/rime/data-sources/opencc'
+    for name,digest in json.loads((root/'third_party/rime/opencc-data.json').read_text(encoding='utf-8'))['files'].items():
+        assert hashlib.sha256((opencc/Path(name).name).read_bytes()).hexdigest()==digest
+    assert (assets/'opencc/TWVariants.txt').read_bytes()==(opencc/'TWVariants.txt').read_bytes()
     for item in json.loads((root/'third_party/rime/data-sources.json').read_text(encoding='utf-8')):
         assert hashlib.sha256((root/'third_party/rime/data-sources'/item['archive']).read_bytes()).hexdigest()==item['sha256']
     print('PASS pinned Rime models, bundle identity and corresponding source archives')

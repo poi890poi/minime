@@ -1,0 +1,36 @@
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+Input method dev.minime.ime/.MiniMeService: already enabled for user #0
+Input method dev.minime.ime/.MiniMeService selected for user #0
+
+dev.minime.ime.TaiwanConversionTest:
+Failure in testTaiwanVariantsAndFreshPhrases:
+junit.framework.ComparisonFailure: taishou expected:<[抬手]> but was:<[太守]>
+	at dev.minime.ime.TaiwanConversionTest.testTaiwanVariantsAndFreshPhrases(TaiwanConversionTest.java:15)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+
+dev.minime.ime.ConversationStudyTest:.
+dev.minime.ime.RimeIntegrationTest:.
+Failure in testPackagedModelAndCompleteCandidates:
+junit.framework.AssertionFailedError: expected:<15> but was:<19>
+	at dev.minime.ime.RimeIntegrationTest.testPackagedModelAndCompleteCandidates(RimeIntegrationTest.java:58)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+.
+Test results for InstrumentationTestRunner=.F...F.
+Time: 12.605
+
+FAILURES!!!
+Tests run: 5,  Failures: 2,  Errors: 0
+
+
+E:\workspace\minime\artifacts\device-tests\0069826f-769e-4f45-9318-c68aaaeac378\settings.xml: 1 file pushed, 0 skipped. 0.2 MB/s (60 bytes in 0.000s)
+E:\workspace\minime\artifacts\device-tests\0069826f-769e-4f45-9318-c68aaaeac378\learning.xml: 1 file pushed, 0 skipped. 0.2 MB/s (60 bytes in 0.000s)
+Input method com.samsung.android.honeyboard/.service.HoneyBoardService selected for user #0
