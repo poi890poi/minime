@@ -21,7 +21,7 @@ public final class CompositionEngine {
     private String raw = "", context = "";
     private boolean zhuyin, literalField, privateField, direct, englishMode;
     private boolean completionBoundary;
-    private boolean autoCorrect, doubleSpace;
+    private boolean autoCorrect, doubleSpace, automaticCorrection;
     private long spaceAt=-1;
     private String undoSpelling="", undoOutput="";
     public void englishOptions(boolean correction,boolean period) { autoCorrect=correction;doubleSpace=period;refresh(); }
@@ -169,7 +169,7 @@ public final class CompositionEngine {
     }
     private void commitDefault(boolean withSpace) {
         if (raw.isEmpty()) return;
-        Candidate c = candidates.isEmpty() ? new Candidate(raw, true, 0) : candidates.get(preferred);
+        Candidate c = candidates.isEmpty() || (automaticCorrection && !withSpace) ? new Candidate(raw, true, 0) : candidates.get(preferred);
         commit(c, withSpace && c.literal, false);
     }
     private void commit(Candidate c, boolean withSpace, boolean explicit) {
@@ -189,6 +189,7 @@ public final class CompositionEngine {
     /** Call after cursor movement, external edits or lifecycle changes; never rewrite text at the new cursor. */
     public void abandon() { cancelPending();clearAssistance();completionBoundary=false; editor.finish(); raw = ""; context = ""; refresh(); }
     public void refresh() {
+        automaticCorrection=false;
         traced=false;
         long query=++revision;pending=false;
         candidates = new ArrayList<>(); preferred = 0;
@@ -252,8 +253,9 @@ public final class CompositionEngine {
             List<Candidate> corrections=dictionary.englishCorrections(raw);
             for(Candidate c:corrections)if(seen.add(c.text))candidates.add(c);
             if(autoCorrect && !corrections.isEmpty() && corrections.get(0).score>=100
+                    && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,corrections.get(0).text))
                     && (corrections.size()==1 || corrections.get(0).score-corrections.get(1).score>=8)) {
-                for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(corrections.get(0).text))preferred=i;
+                for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(corrections.get(0).text)) {preferred=i;automaticCorrection=true;}
             }
         }
     }

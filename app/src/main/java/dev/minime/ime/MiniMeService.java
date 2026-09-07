@@ -37,6 +37,7 @@ public final class MiniMeService extends InputMethodService {
         super.onStartInput(attribute,restarting);
         boolean resume=restarting && !engine.raw().isEmpty() && editorInfo.fieldId==attribute.fieldId
             && java.util.Objects.equals(editorInfo.packageName,attribute.packageName) && editorInfo.inputType==attribute.inputType
+            && policy.privateField==new EditorPolicy(attribute).privateField && policy.literal==new EditorPolicy(attribute).literal
             && selection.owns(attribute.initialSelStart,attribute.initialSelEnd,engine.raw().length());
         if(resume) {
             InputConnection input=getCurrentInputConnection();

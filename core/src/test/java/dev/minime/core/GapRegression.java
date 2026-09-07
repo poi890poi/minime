@@ -40,6 +40,8 @@ final class GapRegression {
         type(assist,"hello");assist.space(1000);assist.space(2100);equal("hello  ",assistance.text,"double Space timeout");
         yes(dictionary.englishCorrections("cant").isEmpty(),"known word is not corrected to contraction");
         yes(dictionary.englishCorrections("fooBar").isEmpty(),"mixed case is literal");
+        assistance=new Editor();assist=engine(assistance,Learning.NONE,false);assist.start(false,false,false,false,true);assist.englishOptions(true,true);
+        type(assist,"teh");assist.literal(".");equal("teh.",assistance.text,"correction is limited to configured Space acceptance");
         ShiftState shift=new ShiftState();shift.automatic(true);yes(shift.upper(),"editor automatic capitals");
         shift.tap(1000,300);yes(!shift.upper(),"manual Shift suppresses automatic capital");
         shift.tap(1100,300);yes(shift.locked(),"double Shift locks from auto capital");
