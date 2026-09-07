@@ -1,0 +1,92 @@
+[
+  {
+    "id": "wo-forward",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "overlap": "wo",
+        "reverse": false,
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "wo-reverse",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "overlap": "wo",
+        "reverse": true,
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "ni-forward",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "overlap": "ni",
+        "reverse": false,
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "ni-reverse",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "overlap": "ni",
+        "reverse": true,
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "xx-forward",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "overlap": "xx",
+        "reverse": false,
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "xx-reverse",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "overlap": "xx",
+        "reverse": true,
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ]
+  }
+]

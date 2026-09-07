@@ -1,0 +1,78 @@
+[
+  {
+    "id": "capital-mid-phrase",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "ni",
+        "capture": true
+      },
+      {
+        "key": "h",
+        "slide": -1,
+        "capture": true
+      },
+      {
+        "type": "ao",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "digit-mid-phrase",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "capture": true
+      },
+      {
+        "key": "q",
+        "slide": 1,
+        "capture": true
+      },
+      {
+        "type": "ma",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "symbol-mid-phrase",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "women",
+        "capture": true
+      },
+      {
+        "key": "a",
+        "slide": 1,
+        "capture": true
+      },
+      {
+        "type": "hao",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "apostrophe-boundary",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "xi",
+        "capture": true
+      },
+      {
+        "key": "n",
+        "slide": 1,
+        "capture": true
+      },
+      {
+        "type": "an",
+        "capture": true
+      }
+    ]
+  }
+]

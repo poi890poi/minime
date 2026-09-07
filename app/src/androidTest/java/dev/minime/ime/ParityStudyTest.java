@@ -69,7 +69,8 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
         MotionEvent e=MotionEvent.obtain(t,SystemClock.uptimeMillis(),action,x,y,0);e.setSource(InputDevice.SOURCE_TOUCHSCREEN);
         try{assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(e,true));}finally{e.recycle();}
     }
-    private void press(String key,int direction,int hold,boolean twice)throws Exception {
+    private void press(String key,int direction,int hold,boolean twice)throws Exception {press(key,direction,hold,twice,.8f);}
+    private void press(String key,int direction,int hold,boolean twice,float travel)throws Exception {
         if(!selectedIme().equals(ime()))throw new IllegalStateException("Selected IME changed: "+selectedIme());
         AccessibilityNodeInfo n=node(labels(key));
         if(n==null)throw new IllegalStateException("Visible action unavailable: "+key);
@@ -77,12 +78,28 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
         for(int tap=0;tap<(twice?2:1);tap++){
             long t=SystemClock.uptimeMillis();float x=r.exactCenterX(),y=r.exactCenterY();event(t,MotionEvent.ACTION_DOWN,x,y);
             try{
-                if(direction!=0)for(int j=1;j<=4;j++){SystemClock.sleep(12);event(t,MotionEvent.ACTION_MOVE,x,y+direction*r.height()*.8f*j/4);}
+                if(direction!=0)for(int j=1;j<=4;j++){SystemClock.sleep(12);event(t,MotionEvent.ACTION_MOVE,x,y+direction*r.height()*travel*j/4);}
                 else SystemClock.sleep(hold>0?hold:35);
                 if(hold>0){saveSnapshot("held-"+key);capture("held-"+key);}
-            }finally{event(t,MotionEvent.ACTION_UP,x,y+direction*r.height()*.8f);}
+            }finally{event(t,MotionEvent.ACTION_UP,x,y+direction*r.height()*travel);}
             SystemClock.sleep(twice?65:50);
         }
+    }
+    private void pointers(long start,int action,int[] ids,float... xy) {
+        MotionEvent.PointerProperties[] properties=new MotionEvent.PointerProperties[ids.length];MotionEvent.PointerCoords[] coords=new MotionEvent.PointerCoords[ids.length];
+        for(int i=0;i<ids.length;i++){properties[i]=new MotionEvent.PointerProperties();properties[i].id=ids[i];properties[i].toolType=MotionEvent.TOOL_TYPE_FINGER;
+            coords[i]=new MotionEvent.PointerCoords();coords[i].x=xy[2*i];coords[i].y=xy[2*i+1];coords[i].pressure=1;coords[i].size=1;}
+        MotionEvent e=MotionEvent.obtain(start,SystemClock.uptimeMillis(),action,ids.length,properties,coords,0,0,1,1,0,0,InputDevice.SOURCE_TOUCHSCREEN,0);
+        try{assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(e,true));}finally{e.recycle();}
+    }
+    private void overlap(String pair,boolean reverse)throws Exception {
+        AccessibilityNodeInfo first=node(labels(pair.substring(0,1))),second=node(labels(pair.substring(1,2)));
+        if(first==null || second==null)throw new IllegalStateException("Overlap keys missing");
+        Rect a=new Rect(),b=new Rect();first.getBoundsInScreen(a);second.getBoundsInScreen(b);first.recycle();second.recycle();
+        long start=SystemClock.uptimeMillis();pointers(start,MotionEvent.ACTION_DOWN,new int[]{3},a.exactCenterX(),a.exactCenterY());SystemClock.sleep(20);
+        pointers(start,MotionEvent.ACTION_POINTER_DOWN|(1<<MotionEvent.ACTION_POINTER_INDEX_SHIFT),new int[]{3,7},a.exactCenterX(),a.exactCenterY(),b.exactCenterX(),b.exactCenterY());SystemClock.sleep(20);
+        pointers(start,MotionEvent.ACTION_POINTER_UP|((reverse?1:0)<<MotionEvent.ACTION_POINTER_INDEX_SHIFT),new int[]{3,7},a.exactCenterX(),a.exactCenterY(),b.exactCenterX(),b.exactCenterY());SystemClock.sleep(20);
+        Rect last=reverse?a:b;pointers(start,MotionEvent.ACTION_UP,new int[]{reverse?3:7},last.exactCenterX(),last.exactCenterY());
     }
     private void text(String value)throws Exception {
         for(int cp:value.codePoints().toArray()){
@@ -116,9 +133,17 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
             InputMethodManager imm=(InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
             activity.text.post(()->imm.showSoftInput(activity.text,InputMethodManager.SHOW_IMPLICIT));
         });SystemClock.sleep(400);
+        getInstrumentation().runOnMainSync(()-> {
+            assertTrue("Observed editor is attached and focused",activity.text.isAttachedToWindow() && activity.text.hasWindowFocus() && activity.text.hasFocus());
+            assertTrue("Observed editor owns input",((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).isActive(activity.text));
+        });
     }
     private void setupCase(JSONObject test)throws Exception {
         mode=test.getString("mode");caseId=test.getString("id");
+        // Own the currently visible editor, including after IME/configuration restarts.
+        android.content.Intent fresh=new android.content.Intent(getInstrumentation().getTargetContext(),EditorTestActivity.class);
+        fresh.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK|android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        activity=(EditorTestActivity)getInstrumentation().startActivitySync(fresh);
         boolean landscape=test.optBoolean("landscape",false);
         if((activity.getResources().getConfiguration().orientation==android.content.res.Configuration.ORIENTATION_LANDSCAPE)!=landscape){
             android.app.Instrumentation.ActivityMonitor monitor=getInstrumentation().addMonitor(EditorTestActivity.class.getName(),null,false);
@@ -192,7 +217,8 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
             try{for(int i=1;i<points.size();i++)for(int j=1;j<=6;j++){PointF a=points.get(i-1),b=points.get(i);SystemClock.sleep(15);event(at,MotionEvent.ACTION_MOVE,a.x+(b.x-a.x)*j/6,a.y+(b.y-a.y)*j/6);}}
             finally{event(at,MotionEvent.ACTION_UP,last.x,last.y);}
         }
-        else if(action.has("key"))press(action.getString("key"),action.optInt("slide",0),action.optInt("hold",0),action.optBoolean("double",false));
+        else if(action.has("overlap"))overlap(action.getString("overlap"),action.optBoolean("reverse",false));
+        else if(action.has("key"))press(action.getString("key"),action.optInt("slide",0),action.optInt("hold",0),action.optBoolean("double",false),(float)action.optDouble("travel",.8));
         else if(action.has("choose"))press(provider.equals("google")?action.getString("choose"):"Candidate "+action.getString("choose"),0,0,false);
         else if(action.has("raw"))press(provider.equals("google")?action.getString("raw"):"Exact input "+action.getString("raw"),0,0,false);
         else if(action.has("cursor"))getInstrumentation().runOnMainSync(()->activity.text.setSelection(action.optInt("cursor"),action.optInt("end",action.optInt("cursor"))));
