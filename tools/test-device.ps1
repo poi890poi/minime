@@ -1,5 +1,7 @@
 param([Parameter(Mandatory=$true)][string]$Serial,[string]$SdkDir=$env:ANDROID_HOME,
-    [string]$TestClass='dev.minime.ime.EditorIntegrationTest,dev.minime.ime.KeyboardInteractionTest')
+    [string]$TestClass='dev.minime.ime.EditorIntegrationTest,dev.minime.ime.KeyboardInteractionTest',
+    [string]$AppApk='app/build/outputs/apk/debug/app-debug.apk',
+    [string]$TestApk='app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')
 $ErrorActionPreference='Stop'
 if (!$SdkDir) { throw 'Pass -SdkDir or set ANDROID_HOME' }
 $adb=Join-Path $SdkDir 'platform-tools/adb.exe'
@@ -10,9 +12,9 @@ $prefBackup=Join-Path (Get-Location) ('artifacts/device-tests/'+[guid]::NewGuid(
 New-Item -ItemType Directory -Force $prefBackup | Out-Null
 $backedUp=@()
 try {
-    & $adb -s $Serial install -r app/build/outputs/apk/debug/app-debug.apk
+    & $adb -s $Serial install -r -t $AppApk
     if($LASTEXITCODE -ne 0) { throw 'App installation failed' }
-    & $adb -s $Serial install -r app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+    & $adb -s $Serial install -r -t $TestApk
     if($LASTEXITCODE -ne 0) { throw 'Test installation failed' }
     & $adb -s $Serial shell am force-stop dev.minime.ime
     foreach($name in @('settings','learning')) {
