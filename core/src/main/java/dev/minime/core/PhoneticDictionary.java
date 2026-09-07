@@ -32,7 +32,8 @@ public final class PhoneticDictionary {
         } catch(IndexOutOfBoundsException e) {throw new IOException("Invalid model reference",e);}
     }
     public static PhoneticDictionary load(Reader chinese,Reader english,Reader syllables,Reader context)throws IOException {
-        PhoneticDictionary d=load(chinese,english,syllables);d.contextModel=ContextModel.load(context);return d;
+        PhoneticDictionary d=load(chinese,english,syllables);d.contextModel=ContextModel.load(context);
+        d.contextModel.contractions().forEach(d.english::putIfAbsent);return d;
     }
     public List<Candidate> englishPredictions(String context) { return contextModel.english(context); }
     public List<Candidate> englishTrace(float[] points) {return EnglishTrace.decode(english,points);}
@@ -204,14 +205,16 @@ public final class PhoneticDictionary {
     }
     /** One-edit spelling alternatives, bounded by the input length, with source frequencies. */
     public List<Candidate> englishCorrections(String raw) {
-        if(raw.length()<3 || raw.length()>32 || !raw.matches("[A-Za-z]+(?:'[A-Za-z]+)?") || isEnglish(raw)
+        if(raw.length()<2 || raw.length()>32 || !raw.matches("[A-Za-z]+(?:'[A-Za-z]+)?")
                 || IntentClassifier.technicalWord(raw.toLowerCase(Locale.ROOT))) return Collections.emptyList();
         String key=raw.toLowerCase(Locale.ROOT);
         boolean caps=raw.equals(raw.toUpperCase(Locale.ROOT));
         boolean title=raw.equals(Character.toUpperCase(key.charAt(0))+key.substring(1));
         if(!caps && !title && !raw.equals(key))return Collections.emptyList();
         Set<String> edits=new HashSet<>();
+        boolean apostropheOnly=raw.length()<3 || isEnglish(raw);
         for(int i=0;i<=key.length();i++) {
+            if(apostropheOnly) {edits.add(key.substring(0,i)+"'"+key.substring(i));continue;}
             if(i<key.length())edits.add(key.substring(0,i)+key.substring(i+1));
             if(i+1<key.length())edits.add(key.substring(0,i)+key.charAt(i+1)+key.charAt(i)+key.substring(i+2));
             for(char c: "abcdefghijklmnopqrstuvwxyz'".toCharArray()) {
@@ -222,6 +225,7 @@ public final class PhoneticDictionary {
         List<Candidate> result=new ArrayList<>();
         for(String word:edits)if(english.containsKey(word)) {
             String text=caps?word.toUpperCase(Locale.ROOT):title?Character.toUpperCase(word.charAt(0))+word.substring(1):word;
+            if(text.startsWith("i'"))text="I"+text.substring(1);
             result.add(new Candidate(text,true,english.get(word)));
         }
         result.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text));

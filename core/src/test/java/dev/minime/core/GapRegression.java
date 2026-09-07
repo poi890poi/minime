@@ -38,7 +38,11 @@ final class GapRegression {
         type(assist,"teh");assist.space(1000);assist.space(1100);equal("teh  ",assistance.text,"restricted field assistance bypass");
         assistance=new Editor();assist=engine(assistance,Learning.NONE,false);assist.start(false,false,false,false,true);assist.englishOptions(true,true);
         type(assist,"hello");assist.space(1000);assist.space(2100);equal("hello  ",assistance.text,"double Space timeout");
-        yes(dictionary.englishCorrections("cant").isEmpty(),"known word is not corrected to contraction");
+        yes(dictionary.englishCorrections("cant").stream().anyMatch(c->c.text.equals("can't")),"known word can offer explicit contraction");
+        yes(dictionary.englishCorrections("im").stream().anyMatch(c->c.text.equals("I'm")),"short contraction from training lexicon");
+        assistance=new Editor();assist=engine(assistance,Learning.NONE,false);assist.start(false,false,false,false,true);assist.englishOptions(true,true);
+        type(assist,"cant ");equal("cant ",assistance.text,"known word never automatically changes to contraction");
+        type(assist,"im ");equal("cant I'm ",assistance.text,"short contraction automatic option");
         yes(dictionary.englishCorrections("fooBar").isEmpty(),"mixed case is literal");
         assistance=new Editor();assist=engine(assistance,Learning.NONE,false);assist.start(false,false,false,false,true);assist.englishOptions(true,true);
         type(assist,"teh");assist.literal(".");equal("teh.",assistance.text,"correction is limited to configured Space acceptance");

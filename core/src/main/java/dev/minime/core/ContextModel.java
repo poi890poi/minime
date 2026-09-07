@@ -7,6 +7,8 @@ import java.util.*;
 public final class ContextModel {
     private final Map<String,List<Candidate>> english=new HashMap<>();
     private final Map<String,Integer> chinese=new HashMap<>(),totals=new HashMap<>();
+    private final Map<String,Integer> contractions=new HashMap<>();
+    Map<String,Integer> contractions() {return contractions;}
     public ContextModel() { }
     ContextModel(BinaryModel.Reader in)throws IOException {in.words(english);in.counts(chinese);in.counts(totals);}
     void write(BinaryModel.Writer out)throws IOException {out.words(english);out.counts(chinese);out.counts(totals);}
@@ -14,7 +16,10 @@ public final class ContextModel {
         ContextModel m=new ContextModel();
         try(BufferedReader r=new BufferedReader(source)) {String line;while((line=r.readLine())!=null){
             String[] p=line.split("\t",-1);if(p.length!=4)throw new IOException("Invalid context row");int count=Integer.parseInt(p[3]);
-            if(p[0].equals("en"))m.english.computeIfAbsent(p[1],k->new ArrayList<>()).add(new Candidate(p[2],true,count));
+            if(p[0].equals("en")) {
+                m.english.computeIfAbsent(p[1],k->new ArrayList<>()).add(new Candidate(p[2],true,count));
+                if(p[1].isEmpty() && p[2].matches("[a-z]+'[a-z]+") && count>=2)m.contractions.put(p[2],(int)Math.min(180,70+30*Math.log10(count+1)));
+            }
             else {m.chinese.put(p[1]+"\t"+p[2],count);m.totals.merge(p[1],count,Integer::sum);}
         }}
         for(List<Candidate> list:m.english.values()) {list.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text));if(list.size()>24)list.subList(24,list.size()).clear();}

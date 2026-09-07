@@ -252,7 +252,7 @@ public final class CompositionEngine {
         if(englishMode && !literalField && dictionary!=null) {
             List<Candidate> corrections=dictionary.englishCorrections(raw);
             for(Candidate c:corrections)if(seen.add(c.text))candidates.add(c);
-            if(autoCorrect && !corrections.isEmpty() && corrections.get(0).score>=100
+            if(autoCorrect && !dictionary.isEnglish(raw) && !corrections.isEmpty() && corrections.get(0).score>=100
                     && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,corrections.get(0).text))
                     && (corrections.size()==1 || corrections.get(0).score-corrections.get(1).score>=8)) {
                 for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(corrections.get(0).text)) {preferred=i;automaticCorrection=true;}
