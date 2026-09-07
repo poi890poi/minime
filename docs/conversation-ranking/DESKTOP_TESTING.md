@@ -62,3 +62,10 @@ interview, fiction, news and instruction. Run it with
 The source revision, content hash and genre counts are in gum-manifest.json;
 GUM's separate CC BY-NC-SA license is retained under third_party/ud/UD_English-GUM.
 It is evaluation-only and never packaged or used to set dictionary weights.
+
+
+The desktop bridge defaults to the production prefix-preview order. Its optional
+`--natural-order` flag retains a rejected experiment outside the Android runtime.
+`tools/check_rime_order.py` checks candidate-set and first-complete preservation;
+`native-order.json` records the result. `desktop-natural-v2.jsonl.gz` contains the
+broad run. Better full-phrase rank did not imply better partial-glyph access.

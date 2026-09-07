@@ -98,3 +98,15 @@ The independently compiled binary is 48943042 bytes and preserves its version-1
 serialization format. Native timing did not materially improve and is not claimed
 as a speedup. The private lexical-boundary assertion was added after the broad
 nonprivate runs; it does not change any mode exercised in those runs.
+
+
+## Rejected candidate-order experiment
+
+Restoring the native Rime order improved 901 target ranks and worsened one across
+8999 Chinese probes, with no Space output changes across the complete desktop
+corpus. However, it delayed access to common partial candidates: for nihao, 你
+moved behind another full conversion, 擬好. This does not resolve the reported
+common-glyph problem. The experiment is rejected; production retains its prefix
+preview. A separate 11272-input mechanical check found 3119 reordered lists and
+zero candidate-set or first-complete changes. This is evidence about ordering,
+not linguistic accuracy. Raw output and the mechanical report are retained.
