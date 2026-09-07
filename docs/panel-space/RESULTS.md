@@ -76,3 +76,6 @@ Every test restores the prior Samsung IME and MinIME settings/learning files,
 then sleeps the phone. Each run verifies Dozing; always-on-display is unchanged.
 The ZIP contains only the installable debug-signed APK; unsigned release is for
 packaging validation. package.json records artifact identities.
+The public Cloudflare ZIP returned HTTP 200 and matched the complete local ZIP
+byte-for-byte; download-verification.json records the URL, length and hash. This
+temporary link requires the local download server and tunnel to remain running.

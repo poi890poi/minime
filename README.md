@@ -4,6 +4,10 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.5.5** removes the unused top band. Raw phonetics float above the fixed
+keyboard only when needed; symbols and emojis replace the toolbar and use its
+space for a third grid row. See [panel space verification](docs/panel-space/RESULTS.md).
+
 Version **0.5.4** keeps candidates visible while the next prediction is computed,
 updates candidate views in place, and preserves the word touched while results
 change. See [candidate stability verification](docs/candidate-stability/RESULTS.md).
