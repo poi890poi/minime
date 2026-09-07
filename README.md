@@ -4,20 +4,21 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
-Version **0.4.0** adds an optional Rime Pinyin backend after comparing established
-engines on 84 phrase probes. Enable **Use Rime for Pinyin phrase prediction** in
-MinIME settings; turn it off to retain the original decoder. See the
-[engine comparison](docs/existing-engines/RESULTS.md) and
-[0.3.0 implementation results](docs/GAP_CLOSURE_RESULTS.md).
+Version **0.5.0** aligns the QWERTY appearance and layout with the observed legacy
+keyboard, adds continuous candidate browsing and explicit partial-phrase selection,
+and enables Rime Pinyin by default. Turn **Use Rime for Pinyin phrase prediction**
+off in MinIME settings to use the original decoder; an existing explicit choice
+is preserved. See [first-use results](docs/first-impressions/RESULTS.md) and the
+[existing-engine comparison](docs/existing-engines/RESULTS.md).
 
 ## Included
 
 - Standard `InputMethodService`, Android 10+ (min 29, target/compile 35).
 - Three-row staggered QWERTY and four-row Taiwan Zhuyin, with Latin/symbol slide hints and bottom-row ㄦ.
-- Visible EN / 中 key: one tap switches between English and Chinese. English offers completions, next words, spelling alternatives and word tracing. Automatic correction on Space is optional and off by default.
+- Bottom globe key: one tap switches between English and Chinese. English offers completions, next words, spelling alternatives and word tracing. Automatic correction on Space is optional and off by default.
 - Double-tap Shift for Caps Lock; tap again to unlock. Upward letter slides enter capitals.
 - Immediate Chinese/English punctuation, hold-drag-release period popup, categorized symbols, and 3,010 Unicode emoji sequences. Optional local recents are disabled in private input.
-- Exact raw candidate in a fixed left slot; separate highlighted Space choice and expandable candidate grid.
+- Raw spelling above Chinese candidates, exact recovery in both languages, continuous candidate scrolling and a grid that gives long phrases more room.
 - Incremental token intent: Chinese, English/ambiguous Latin, URLs/email, identifiers and alphanumeric text.
 - English Space commits U+0020; Chinese Space accepts a candidate. On an unfinished Zhuyin syllable, Space first adds first tone. Another Space after commitment inserts U+0020.
 - Taiwan vocabulary, full/abbreviated Pinyin syllables, phrase segmentation, English completions, contextual Chinese continuations and explicit local choice learning.
@@ -37,17 +38,18 @@ On Linux/macOS use `./gradlew` instead. The debug APK is `app/build/outputs/apk/
 
 Install the debug APK, open **MinIME 注音**, enable it in Android settings, then choose it from the input-method picker. The setup screen includes a test field, local dictionary editor, learning reset and open-source notices.
 
-Type `zhege`, Space, Space, `pronunciation`, Space, `budui`, Space to produce `這個 pronunciation 不對`. No language key is involved. Chinese homophones may need a candidate tap, such as selecting `請` for `qing`. To keep `ming` literal, tap the fixed exact-input candidate. Hold Space also commits exact input plus a space.
+Type `zhege`, Space, Space, `pronunciation`, Space, `budui`, Space to produce `這個 pronunciation 不對`. No language key is involved. Chinese homophones may need a candidate tap, such as selecting `請` for `qing`. To keep `ming` literal, tap the exact-input control. Hold Space also commits exact input plus a space.
 
-The onscreen comma and period accept pending composition and insert immediately: ，。 in Chinese mode and ,. in English mode. Slide up for the other width. Hold comma to open emoji; hold period for punctuation, text faces and the Chinese-mode punctuation-width preference. Tap ☺ for emoji, ?123 for symbols, and ABC to return to letters. Physical-keyboard ASCII punctuation remains with its token so URLs, paths and code retain exact spelling.
+The onscreen comma and period accept pending composition and insert immediately: ，。 in Chinese mode and ,. in English mode. Slide up for the other width. Hold comma to open emoji; hold period for punctuation, text faces and the Chinese-mode punctuation-width preference. Tap ?123 for symbols and ABC to return to letters; hold comma for emoji. Physical-keyboard ASCII punctuation remains with its token so URLs, paths and code retain exact spelling.
 
-Pinyin candidates support initials and mixed syllables: `jt` / `jtian` → 今天,
-`srf` / `shrf` / `srufa` → 輸入法. Tap the desired candidate; abbreviations that
-match known English words, English prefixes or technical commands retain literal
-acceptance; other lowercase abbreviations with candidates prefer Chinese.
-Apostrophes force syllable boundaries. Continue typing or use
-Backspace to refine the same composition. Candidate pages retain alternatives
-when a spelling such as `sh` can represent one syllable or two initials.
+Pinyin candidates support initials and mixed syllables, for example
+`womenmtjian` → 我們明天見 with Rime. Tap the desired candidate; abbreviations
+that match known English words, English prefixes or technical commands retain
+literal acceptance. Other lowercase abbreviations with candidates prefer Chinese.
+Apostrophes force syllable boundaries. With Rime, selecting 你 from `nihao`
+commits 你 and continues conversion of `hao`. Exact recovery preserves the remaining
+spelling. Space accepts a complete phrase; it never silently drops an unconsumed
+suffix. Swipe the candidate strip or expand it to browse alternatives.
 
 ## Verification
 
@@ -66,13 +68,13 @@ The device script restores the previous input method and turns the display off i
 
 `core/` owns composition, classification, phonetic lookup/segmentation, candidate ranking and commit policy. `app/` adapts that core to Android and renders the keyboard. `third_party/` contains pinned, licensed language inputs; `tools/compile_dictionary.py` deterministically generates the shipped assets. There are no acceptance-phrase ranking overrides.
 
-The optional Rime backend builds librime 1.16.1 from source and uses unmodified
+The selectable Rime backend builds librime 1.16.1 from source and uses unmodified
 Luna Pinyin/Essay vocabulary. Its own learning and logging are disabled; each
-query uses an isolated session and only complete-input candidates can commit.
+query uses an isolated session. Space uses complete-input candidates; explicit
+prefix choices carry a consumed length and preserve the remaining spelling.
 Original MinIME candidates remain available as alternatives and fallback. Full
 source archives, licenses and model reproduction are documented in
-[the Rime foundation](third_party/rime/README.md). English, Zhuyin and the keyboard
-interaction rules continue to use MinIME's existing implementation.
+[the Rime foundation](third_party/rime/README.md). English and Zhuyin decoding continue to use MinIME's existing implementation.
 
 The dictionary is augmented with attributed offline context counts. English has optional one-edit correction, contraction alternatives, deferred completion spacing, double-Space punctuation, editor-driven capitalization and geometric word tracing. These are limited models; Chinese sentence and initial-only ranking remain substantially weaker than Google Zhuyin on the reviewed conversational probes. English/Pinyin ambiguity still requires a candidate choice in some cases.
 

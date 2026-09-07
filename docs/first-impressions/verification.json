@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-07",
+  "version": "0.5.0",
+  "versionCode": 6,
+  "artifacts": {
+    "debug": {
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 64406471,
+      "sha256": "83b98c9d3c1f6816e2141b5de5c5ac1b9acb96d4c062c994756801f0c16164d1"
+    },
+    "releaseUnsigned": {
+      "path": "app/build/outputs/apk/release/app-release-unsigned.apk",
+      "bytes": 39267203,
+      "sha256": "64504445ad2eae914f4da2a78cdfa83680bc21b97bbbd2ce31c09db5a2f7701b"
+    },
+    "androidTest": {
+      "path": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "bytes": 4181236,
+      "sha256": "4f7a4c3664a544c3c9d7ef286503130852eb1ec10ecfecbfc62adc1e76bbfbfb"
+    },
+    "zip": {
+      "path": "artifacts/downloads/MinIME-0.5.0.zip",
+      "bytes": 34884406,
+      "sha256": "ed581ff3f37f1bb7eba14db85ed5a66070b38865ed26c8a503c400850d55e7f6"
+    }
+  },
+  "rimeBundle": "b6370a054330264010903849eb8002071f1b34b6ef0cca2590b82427ac4c8b04",
+  "builtAbis": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86",
+    "x86_64"
+  ],
+  "coreAssertions": 1219,
+  "phoneTests": {
+    "full": 34,
+    "seconds": 160.657,
+    "nativeRepeat": 3,
+    "nativeRepeatSeconds": 5.446,
+    "pairedObserved": 18
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 15
+  },
+  "device": {
+    "model": "SM-G781B",
+    "android": 13,
+    "abi": "arm64-v8a",
+    "restoredIme": "com.samsung.android.honeyboard/.service.HoneyBoardService",
+    "wakefulness": "Dozing",
+    "restoredSettingsAndLearningSha256": "f1fa7d5ff2ac7a03b9718d26fb6bd4e03c15da34fc955e6320c27c17dea6ea23"
+  },
+  "zipDownloadVerified": true,
+  "elfAndZip16KBAligned": true,
+  "runtime16KBDeviceTest": false,
+  "implementationCommits": [
+    "bc0ff32",
+    "102f858",
+    "525124f"
+  ]
+}

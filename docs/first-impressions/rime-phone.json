@@ -1,0 +1,1159 @@
+{
+  "loadMs": 0,
+  "firstChoiceHits": {
+    "reference": 14,
+    "development": 20,
+    "fresh": 15
+  },
+  "samples": [
+    {
+      "group": "reference",
+      "case": "py-xiexie",
+      "input": "xiexie",
+      "expected": "謝謝",
+      "first": "謝謝",
+      "microseconds": 12947,
+      "uiMicroseconds": 12713,
+      "candidates": [
+        "謝謝",
+        "寫寫",
+        "歇歇",
+        "寫些",
+        "泄瀉",
+        "些些",
+        "斜斜",
+        "屑屑",
+        "渫渫",
+        "偕偕"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-xx",
+      "input": "xx",
+      "expected": "謝謝",
+      "first": "學習",
+      "microseconds": 11585,
+      "uiMicroseconds": 18522,
+      "candidates": [
+        "學習",
+        "信息",
+        "學校",
+        "謝謝",
+        "現象",
+        "相信",
+        "形象",
+        "消息",
+        "休息",
+        "想想",
+        "線下",
+        "選項",
+        "詳細",
+        "想象",
+        "小心",
+        "新鮮",
+        "嘻嘻",
+        "小學",
+        "信心",
+        "小型",
+        "行星",
+        "向下",
+        "寫下",
+        "休閑"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-xiex",
+      "input": "xiex",
+      "expected": "謝謝",
+      "first": "謝謝",
+      "microseconds": 9729,
+      "uiMicroseconds": 13238,
+      "candidates": [
+        "謝謝",
+        "寫下",
+        "些許",
+        "血腥",
+        "寫寫",
+        "寫信",
+        "血型",
+        "歇息",
+        "血性",
+        "卸下",
+        "歇歇",
+        "寫些",
+        "些小",
+        "血洗",
+        "謝遜",
+        "斜線",
+        "楔形",
+        "血虛",
+        "泄瀉",
+        "瀉下",
+        "些些",
+        "血象",
+        "些須",
+        "邪心"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-bukeqi",
+      "input": "bukeqi",
+      "expected": "不客氣",
+      "first": "不客氣",
+      "microseconds": 12496,
+      "uiMicroseconds": 12244,
+      "candidates": [
+        "不客氣",
+        "不可欺",
+        "不可棄",
+        "不可期"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-bkq",
+      "input": "bkq",
+      "expected": "不客氣",
+      "first": "不可取",
+      "microseconds": 18150,
+      "uiMicroseconds": 18272,
+      "candidates": [
+        "不可取",
+        "博客圈",
+        "不客氣",
+        "別客氣",
+        "博客羣",
+        "不肯去",
+        "不開竅",
+        "駁殼槍",
+        "八塊錢",
+        "擺闊氣",
+        "彆口氣",
+        "不看球",
+        "不可欺",
+        "別開槍",
+        "不可棄",
+        "不可期",
+        "不吭氣"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-bukq",
+      "input": "bukq",
+      "expected": "不客氣",
+      "first": "不可取",
+      "microseconds": 12973,
+      "uiMicroseconds": 13436,
+      "candidates": [
+        "不可取",
+        "不客氣",
+        "不肯去",
+        "不開竅",
+        "不看球",
+        "不可欺",
+        "不可棄",
+        "不可期",
+        "不吭氣"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-zaoshanghao",
+      "input": "zaoshanghao",
+      "expected": "早上好",
+      "first": "早上好",
+      "microseconds": 12699,
+      "uiMicroseconds": 12964,
+      "candidates": [
+        "早上好"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-zsh",
+      "input": "zsh",
+      "expected": "早上好",
+      "first": "這是",
+      "microseconds": 23198,
+      "uiMicroseconds": 31645,
+      "candidates": [
+        "這是",
+        "只是",
+        "知識",
+        "至少",
+        "總是",
+        "則是",
+        "真是",
+        "真實",
+        "自身",
+        "指數",
+        "展示",
+        "正是",
+        "這時",
+        "正式",
+        "證書",
+        "暫時",
+        "再說",
+        "這時候",
+        "戰術",
+        "早上",
+        "這事",
+        "智商",
+        "之上",
+        "姿勢"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-zaoshh",
+      "input": "zaoshh",
+      "expected": "早上好",
+      "first": "早上好",
+      "microseconds": 16357,
+      "uiMicroseconds": 16609,
+      "candidates": [
+        "早上好",
+        "早收穫"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-womenmingtianjian",
+      "input": "womenmingtianjian",
+      "expected": "我們明天見",
+      "first": "我們明天見",
+      "microseconds": 13644,
+      "uiMicroseconds": 13642,
+      "candidates": [
+        "我們明天見"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-wmmtj",
+      "input": "wmmtj",
+      "expected": "我們明天見",
+      "first": "我們茅臺酒",
+      "microseconds": 28010,
+      "uiMicroseconds": 27663,
+      "candidates": [
+        "我們茅臺酒"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-womenmtjian",
+      "input": "womenmtjian",
+      "expected": "我們明天見",
+      "first": "我們明天見",
+      "microseconds": 25212,
+      "uiMicroseconds": 25180,
+      "candidates": [
+        "我們明天見"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-woyaohekafei",
+      "input": "woyaohekafei",
+      "expected": "我要喝咖啡",
+      "first": "我要喝咖啡",
+      "microseconds": 13223,
+      "uiMicroseconds": 13046,
+      "candidates": [
+        "我要喝咖啡"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-wyhkf",
+      "input": "wyhkf",
+      "expected": "我要喝咖啡",
+      "first": "委員會開發",
+      "microseconds": 29893,
+      "uiMicroseconds": 30293,
+      "candidates": [
+        "委員會開發"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-woyhekafei",
+      "input": "woyhekafei",
+      "expected": "我要喝咖啡",
+      "first": "我也喝咖啡",
+      "microseconds": 22866,
+      "uiMicroseconds": 22883,
+      "candidates": [
+        "我也喝咖啡"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-jintianxiawu",
+      "input": "jintianxiawu",
+      "expected": "今天下午",
+      "first": "今天下午",
+      "microseconds": 12919,
+      "uiMicroseconds": 13288,
+      "candidates": [
+        "今天下午"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-jtxw",
+      "input": "jtxw",
+      "expected": "今天下午",
+      "first": "今天下午",
+      "microseconds": 20104,
+      "uiMicroseconds": 20186,
+      "candidates": [
+        "今天下午",
+        "街頭巷尾",
+        "集體行爲"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-jintxiawu",
+      "input": "jintxiawu",
+      "expected": "今天下午",
+      "first": "今天下午",
+      "microseconds": 14052,
+      "uiMicroseconds": 14049,
+      "candidates": [
+        "今天下午"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-qingbangwokanyixia",
+      "input": "qingbangwokanyixia",
+      "expected": "請幫我看一下",
+      "first": "請幫我看一下",
+      "microseconds": 13676,
+      "uiMicroseconds": 13931,
+      "candidates": [
+        "請幫我看一下"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-qbwkyx",
+      "input": "qbwkyx",
+      "expected": "請幫我看一下",
+      "first": "全部無愧於心",
+      "microseconds": 30172,
+      "uiMicroseconds": 29750,
+      "candidates": [
+        "全部無愧於心"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-qingbwkanyixia",
+      "input": "qingbwkanyixia",
+      "expected": "請幫我看一下",
+      "first": "情報網看一下",
+      "microseconds": 29574,
+      "uiMicroseconds": 29574,
+      "candidates": [
+        "情報網看一下"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-xianzaijidian",
+      "input": "xianzaijidian",
+      "expected": "現在幾點",
+      "first": "現在幾點",
+      "microseconds": 13142,
+      "uiMicroseconds": 13204,
+      "candidates": [
+        "現在幾點"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-xzjd",
+      "input": "xzjd",
+      "expected": "現在幾點",
+      "first": "旋轉角度",
+      "microseconds": 23621,
+      "uiMicroseconds": 23636,
+      "candidates": [
+        "旋轉角度",
+        "現在幾點",
+        "行政決定",
+        "行政監督"
+      ]
+    },
+    {
+      "group": "reference",
+      "case": "py-xianzaijd",
+      "input": "xianzaijd",
+      "expected": "現在幾點",
+      "first": "現在幾點",
+      "microseconds": 15127,
+      "uiMicroseconds": 15347,
+      "candidates": [
+        "現在幾點"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-mingtianxiawu",
+      "input": "mingtianxiawu",
+      "expected": "明天下午",
+      "first": "明天下午",
+      "microseconds": 11173,
+      "uiMicroseconds": 11395,
+      "candidates": [
+        "明天下午"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-mtxw",
+      "input": "mtxw",
+      "expected": "明天下午",
+      "first": "每天下午",
+      "microseconds": 19248,
+      "uiMicroseconds": 19454,
+      "candidates": [
+        "每天下午",
+        "明天下午"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-mingtxiawu",
+      "input": "mingtxiawu",
+      "expected": "明天下午",
+      "first": "明天下午",
+      "microseconds": 13504,
+      "uiMicroseconds": 13941,
+      "candidates": [
+        "明天下午"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-keyibangwo",
+      "input": "keyibangwo",
+      "expected": "可以幫我",
+      "first": "可以幫我",
+      "microseconds": 13328,
+      "uiMicroseconds": 13259,
+      "candidates": [
+        "可以幫我"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-kybw",
+      "input": "kybw",
+      "expected": "可以幫我",
+      "first": "可以把我",
+      "microseconds": 26975,
+      "uiMicroseconds": 27001,
+      "candidates": [
+        "可以把我"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-keyibw",
+      "input": "keyibw",
+      "expected": "可以幫我",
+      "first": "可以把我",
+      "microseconds": 15848,
+      "uiMicroseconds": 16071,
+      "candidates": [
+        "可以把我"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-woxianghuijia",
+      "input": "woxianghuijia",
+      "expected": "我想回家",
+      "first": "我想回家",
+      "microseconds": 12922,
+      "uiMicroseconds": 12960,
+      "candidates": [
+        "我想回家"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-wxhj",
+      "input": "wxhj",
+      "expected": "我想回家",
+      "first": "我喜歡就",
+      "microseconds": 26365,
+      "uiMicroseconds": 26249,
+      "candidates": [
+        "我喜歡就"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-woxhuijia",
+      "input": "woxhuijia",
+      "expected": "我想回家",
+      "first": "我想回家",
+      "microseconds": 14749,
+      "uiMicroseconds": 14994,
+      "candidates": [
+        "我想回家"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-jintianwanshang",
+      "input": "jintianwanshang",
+      "expected": "今天晚上",
+      "first": "今天晚上",
+      "microseconds": 13354,
+      "uiMicroseconds": 13309,
+      "candidates": [
+        "今天晚上"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-jtws",
+      "input": "jtws",
+      "expected": "今天晚上",
+      "first": "今天晚上",
+      "microseconds": 19774,
+      "uiMicroseconds": 20017,
+      "candidates": [
+        "今天晚上",
+        "家庭衛生",
+        "家庭污水",
+        "家庭污水管"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-jintwanshang",
+      "input": "jintwanshang",
+      "expected": "今天晚上",
+      "first": "今天晚上",
+      "microseconds": 15031,
+      "uiMicroseconds": 15067,
+      "candidates": [
+        "今天晚上"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-mingtianzaishuo",
+      "input": "mingtianzaishuo",
+      "expected": "明天再說",
+      "first": "明天再說",
+      "microseconds": 11398,
+      "uiMicroseconds": 12489,
+      "candidates": [
+        "明天再說",
+        "明天再說吧"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-mtzs",
+      "input": "mtzs",
+      "expected": "明天再說",
+      "first": "明天再說",
+      "microseconds": 20628,
+      "uiMicroseconds": 21034,
+      "candidates": [
+        "明天再說",
+        "媒體造勢",
+        "明天再說吧"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-mingtzaishuo",
+      "input": "mingtzaishuo",
+      "expected": "明天再說",
+      "first": "明天再說",
+      "microseconds": 14545,
+      "uiMicroseconds": 14636,
+      "candidates": [
+        "明天再說",
+        "明天再說吧"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-wobuzhidao",
+      "input": "wobuzhidao",
+      "expected": "我不知道",
+      "first": "我不知道",
+      "microseconds": 12583,
+      "uiMicroseconds": 12963,
+      "candidates": [
+        "我不知道",
+        "我不知道啊",
+        "我不知道說什麼",
+        "我不知道怎麼說"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-wbzd",
+      "input": "wbzd",
+      "expected": "我不知道",
+      "first": "我不知道",
+      "microseconds": 18325,
+      "uiMicroseconds": 18513,
+      "candidates": [
+        "我不知道",
+        "微不足道",
+        "文本字段",
+        "我不知道啊",
+        "我不知道說什麼",
+        "我不知道怎麼說"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-wobuzd",
+      "input": "wobuzd",
+      "expected": "我不知道",
+      "first": "我不知道",
+      "microseconds": 13191,
+      "uiMicroseconds": 13293,
+      "candidates": [
+        "我不知道",
+        "我不知道啊",
+        "我不知道說什麼",
+        "我不知道怎麼說"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-womenyiqi",
+      "input": "womenyiqi",
+      "expected": "我們一起",
+      "first": "我們一起",
+      "microseconds": 12543,
+      "uiMicroseconds": 12727,
+      "candidates": [
+        "我們一起",
+        "我們一起走"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-wmyq",
+      "input": "wmyq",
+      "expected": "我們一起",
+      "first": "我們一起",
+      "microseconds": 17179,
+      "uiMicroseconds": 17251,
+      "candidates": [
+        "我們一起",
+        "我們要求",
+        "我沒有錢",
+        "寤寐以求",
+        "我們一起走"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-womenyq",
+      "input": "womenyq",
+      "expected": "我們一起",
+      "first": "我們一起",
+      "microseconds": 13596,
+      "uiMicroseconds": 13903,
+      "candidates": [
+        "我們一起",
+        "我們要求",
+        "我們一起走"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-xiexiedajia",
+      "input": "xiexiedajia",
+      "expected": "謝謝大家",
+      "first": "謝謝大家",
+      "microseconds": 12628,
+      "uiMicroseconds": 13235,
+      "candidates": [
+        "謝謝大家"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-xxdj",
+      "input": "xxdj",
+      "expected": "謝謝大家",
+      "first": "謝謝大家",
+      "microseconds": 21311,
+      "uiMicroseconds": 21485,
+      "candidates": [
+        "謝謝大家",
+        "相信大家",
+        "休閒度假",
+        "西學東漸",
+        "學習動機"
+      ]
+    },
+    {
+      "group": "development",
+      "case": "fresh-xiexiedj",
+      "input": "xiexiedj",
+      "expected": "謝謝大家",
+      "first": "謝謝大家",
+      "microseconds": 12874,
+      "uiMicroseconds": 13043,
+      "candidates": [
+        "謝謝大家"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-1-full",
+      "input": "nijintianyaoqunali",
+      "expected": "你今天要去哪裡",
+      "first": "你今天要去哪裏",
+      "microseconds": 13971,
+      "uiMicroseconds": 14443,
+      "candidates": [
+        "你今天要去哪裏"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-1-initials",
+      "input": "njtyqnl",
+      "expected": "你今天要去哪裡",
+      "first": "南京條約去哪裏",
+      "microseconds": 41773,
+      "uiMicroseconds": 46993,
+      "candidates": [
+        "南京條約去哪裏"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-1-mixed",
+      "input": "nijtianyqunli",
+      "expected": "你今天要去哪裡",
+      "first": "你今天要去哪裏",
+      "microseconds": 20465,
+      "uiMicroseconds": 20719,
+      "candidates": [
+        "你今天要去哪裏"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-2-full",
+      "input": "woyijingdaojiale",
+      "expected": "我已經到家了",
+      "first": "我已經到家了",
+      "microseconds": 13466,
+      "uiMicroseconds": 13578,
+      "candidates": [
+        "我已經到家了"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-2-initials",
+      "input": "wyjdjl",
+      "expected": "我已經到家了",
+      "first": "我也覺得經歷",
+      "microseconds": 39830,
+      "uiMicroseconds": 39641,
+      "candidates": [
+        "我也覺得經歷"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-2-mixed",
+      "input": "woyjingdjial",
+      "expected": "我已經到家了",
+      "first": "我已經大家樂",
+      "microseconds": 28164,
+      "uiMicroseconds": 28251,
+      "candidates": [
+        "我已經大家樂"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-3-full",
+      "input": "womenyiqichifanba",
+      "expected": "我們一起吃飯吧",
+      "first": "我們一起喫飯吧",
+      "microseconds": 13249,
+      "uiMicroseconds": 13470,
+      "candidates": [
+        "我們一起喫飯吧"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-3-initials",
+      "input": "wmyqcfb",
+      "expected": "我們一起吃飯吧",
+      "first": "我們一起成反比",
+      "microseconds": 37588,
+      "uiMicroseconds": 38009,
+      "candidates": [
+        "我們一起成反比"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-3-mixed",
+      "input": "womyiqchifba",
+      "expected": "我們一起吃飯吧",
+      "first": "我們一起喫飯吧",
+      "microseconds": 18274,
+      "uiMicroseconds": 18499,
+      "candidates": [
+        "我們一起喫飯吧"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-4-full",
+      "input": "qingwenchezhanzenmezou",
+      "expected": "請問車站怎麼走",
+      "first": "請問車站怎麼走",
+      "microseconds": 14179,
+      "uiMicroseconds": 14711,
+      "candidates": [
+        "請問車站怎麼走"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-4-initials",
+      "input": "qwczzmz",
+      "expected": "請問車站怎麼走",
+      "first": "去僞存真這麼做",
+      "microseconds": 62766,
+      "uiMicroseconds": 61901,
+      "candidates": [
+        "去僞存真這麼做"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-4-mixed",
+      "input": "qingwchezzenmzou",
+      "expected": "請問車站怎麼走",
+      "first": "請問車主怎麼走",
+      "microseconds": 61820,
+      "uiMicroseconds": 62536,
+      "candidates": [
+        "請問車主怎麼走"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-5-full",
+      "input": "zhegeduoshaoqian",
+      "expected": "這個多少錢",
+      "first": "這個多少錢",
+      "microseconds": 14417,
+      "uiMicroseconds": 13950,
+      "candidates": [
+        "這個多少錢"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-5-initials",
+      "input": "zgdsq",
+      "expected": "這個多少錢",
+      "first": "這個多少錢",
+      "microseconds": 49617,
+      "uiMicroseconds": 51056,
+      "candidates": [
+        "這個多少錢"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-5-mixed",
+      "input": "zhegduosqian",
+      "expected": "這個多少錢",
+      "first": "這個多少錢",
+      "microseconds": 35188,
+      "uiMicroseconds": 35312,
+      "candidates": [
+        "這個多少錢"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-6-full",
+      "input": "womingtianzaidageini",
+      "expected": "我明天再打給你",
+      "first": "我明天再打給你",
+      "microseconds": 13700,
+      "uiMicroseconds": 13520,
+      "candidates": [
+        "我明天再打給你"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-6-initials",
+      "input": "wmtzdgn",
+      "expected": "我明天再打給你",
+      "first": "我每天診斷功能",
+      "microseconds": 49845,
+      "uiMicroseconds": 49962,
+      "candidates": [
+        "我每天診斷功能"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-6-mixed",
+      "input": "womtianzdagni",
+      "expected": "我明天再打給你",
+      "first": "我每天最大給你",
+      "microseconds": 34801,
+      "uiMicroseconds": 35315,
+      "candidates": [
+        "我每天最大給你"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-7-full",
+      "input": "nishenmeshihouyoukong",
+      "expected": "你什麼時候有空",
+      "first": "你什麼時候有空",
+      "microseconds": 13920,
+      "uiMicroseconds": 13978,
+      "candidates": [
+        "你什麼時候有空"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-7-initials",
+      "input": "nsmshyk",
+      "expected": "你什麼時候有空",
+      "first": "拿什麼是一款",
+      "microseconds": 66721,
+      "uiMicroseconds": 66795,
+      "candidates": [
+        "拿什麼是一款"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-7-mixed",
+      "input": "nismeshouykong",
+      "expected": "你什麼時候有空",
+      "first": "你什麼時候有空",
+      "microseconds": 36002,
+      "uiMicroseconds": 35421,
+      "candidates": [
+        "你什麼時候有空"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-8-full",
+      "input": "keyizaishuoyicima",
+      "expected": "可以再說一次嗎",
+      "first": "可以再說一次嗎",
+      "microseconds": 13488,
+      "uiMicroseconds": 13742,
+      "candidates": [
+        "可以再說一次嗎"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-8-initials",
+      "input": "kyzsycm",
+      "expected": "可以再說一次嗎",
+      "first": "課以重稅一場夢",
+      "microseconds": 68038,
+      "uiMicroseconds": 68170,
+      "candidates": [
+        "課以重稅一場夢"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-8-mixed",
+      "input": "keyzaisyicma",
+      "expected": "可以再說一次嗎",
+      "first": "可以再試一次嗎",
+      "microseconds": 32657,
+      "uiMicroseconds": 32788,
+      "candidates": [
+        "可以再試一次嗎"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-9-full",
+      "input": "woyaoqumaidongxi",
+      "expected": "我要去買東西",
+      "first": "我要去買東西",
+      "microseconds": 13113,
+      "uiMicroseconds": 13172,
+      "candidates": [
+        "我要去買東西"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-9-initials",
+      "input": "wyqmdx",
+      "expected": "我要去買東西",
+      "first": "我也輕描淡寫",
+      "microseconds": 33344,
+      "uiMicroseconds": 33510,
+      "candidates": [
+        "我也輕描淡寫"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-9-mixed",
+      "input": "woyqumdongx",
+      "expected": "我要去買東西",
+      "first": "我也去買東西",
+      "microseconds": 25305,
+      "uiMicroseconds": 25450,
+      "candidates": [
+        "我也去買東西"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-10-full",
+      "input": "zhunishengrikuaile",
+      "expected": "祝你生日快樂",
+      "first": "祝你生日快樂",
+      "microseconds": 12646,
+      "uiMicroseconds": 13135,
+      "candidates": [
+        "祝你生日快樂"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-10-initials",
+      "input": "znsrkl",
+      "expected": "祝你生日快樂",
+      "first": "祝你生日快樂",
+      "microseconds": 23121,
+      "uiMicroseconds": 23018,
+      "candidates": [
+        "祝你生日快樂"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-10-mixed",
+      "input": "zhunshengrkuail",
+      "expected": "祝你生日快樂",
+      "first": "祝你生日快樂",
+      "microseconds": 16928,
+      "uiMicroseconds": 16930,
+      "candidates": [
+        "祝你生日快樂"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-11-full",
+      "input": "buhaoyisirangnijiudengle",
+      "expected": "不好意思讓你久等了",
+      "first": "不好意思讓你就等了",
+      "microseconds": 13449,
+      "uiMicroseconds": 13714,
+      "candidates": [
+        "不好意思讓你就等了"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-11-initials",
+      "input": "bhysrnjdl",
+      "expected": "不好意思讓你久等了",
+      "first": "不好意思讓你決定了",
+      "microseconds": 58361,
+      "uiMicroseconds": 58454,
+      "candidates": [
+        "不好意思讓你決定了"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-11-mixed",
+      "input": "buhyisrangnjiudle",
+      "expected": "不好意思讓你久等了",
+      "first": "不好意思讓你就對了",
+      "microseconds": 35487,
+      "uiMicroseconds": 35321,
+      "candidates": [
+        "不好意思讓你就對了"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-12-full",
+      "input": "jintianwanshangyoushijianma",
+      "expected": "今天晚上有時間嗎",
+      "first": "今天晚上有時間嗎",
+      "microseconds": 14224,
+      "uiMicroseconds": 14673,
+      "candidates": [
+        "今天晚上有時間嗎"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-12-initials",
+      "input": "jtwsysjm",
+      "expected": "今天晚上有時間嗎",
+      "first": "今天晚上影視節目",
+      "microseconds": 59099,
+      "uiMicroseconds": 59029,
+      "candidates": [
+        "今天晚上影視節目"
+      ]
+    },
+    {
+      "group": "fresh",
+      "case": "fresh-12-mixed",
+      "input": "jintwansyousjianm",
+      "expected": "今天晚上有時間嗎",
+      "first": "今天晚上有時間嗎",
+      "microseconds": 42129,
+      "uiMicroseconds": 42218,
+      "candidates": [
+        "今天晚上有時間嗎"
+      ]
+    }
+  ]
+}

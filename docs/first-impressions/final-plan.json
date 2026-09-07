@@ -1,0 +1,111 @@
+[
+  {
+    "id": "idle-pinyin",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "active-pinyin",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "mixed-phrase",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "womenmtjian",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "partial-selection",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "capture": true
+      },
+      {
+        "choose": "\u4f60",
+        "capture": true
+      },
+      {
+        "choose": "\u597d",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "expanded-pinyin",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "shi",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "symbols-pinyin",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "key": "SYMBOLS",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "idle-english",
+    "mode": "english",
+    "actions": [
+      {
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "active-english",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "emoji-english",
+    "mode": "english",
+    "actions": [
+      {
+        "key": "COMMA",
+        "hold": 650,
+        "capture": true
+      }
+    ]
+  }
+]
