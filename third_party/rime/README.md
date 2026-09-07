@@ -10,12 +10,16 @@ the build also recognizes these versions under `.tools/android-sdk`. Configure
 The independent CMake/JNI adapter is in `app/src/main/cpp`. It builds the public
 Rime engine and dependencies directly, with native logging and external plugins
 disabled, static C++ runtime, and 16 KB ELF alignment. No Trime code or binaries
-are included. The sole compatibility flag demotes OpenCC's deprecated C++17
-iterator warning from an upstream `-Werror`; dependency source is unchanged.
+are included. Compatibility flags demote OpenCC's deprecated C++17 iterator
+warning from an upstream `-Werror` and disable Boost's embedded GDB printer on
+ARMv7 (its assembler section syntax is incompatible with ARM). Dependency source
+and language behavior are unchanged.
 
 Native licenses: librime BSD-3-Clause, Boost BSL-1.0, yaml-cpp MIT, LevelDB
 BSD-3-Clause, Marisa's BSD-2-Clause option, OpenCC Apache-2.0, and RapidJSON's
-upstream MIT/third-party terms. The complete notices are in `licenses` and
+upstream MIT/third-party terms. The statically linked LLVM C++ runtime carries
+Apache-2.0 with LLVM exceptions and retained legacy notices from NDK r27c
+and the upstream LLVM 18.1.8 libunwind license. The complete notices are in `licenses` and
 `NOTICES.txt`, also appended to the app's visible open-source notices.
 
 ## Model sources and reproduction

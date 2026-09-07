@@ -269,6 +269,21 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         assertEquals("這個 pronunciation 不對",activity.text.getText().toString());
         capture("review-zhuyin");
     }
+    public void testRimePhrasesAndLiteralRecovery() throws Exception {
+        assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",true).commit();
+        focus(activity.url);focus(activity.text);
+        type("womenmingtianjian ");expectText("我們明天見");
+        getInstrumentation().getUiAutomation().waitForIdle(200,3000);capture("rime-phone-phrase");
+        clear();type("womenmtjian ");expectText("我們明天見");
+        clear();type("woyaohekafei");click("。");expectText("我要喝咖啡。");
+        clear();type("qingbangwokanyixia");click("Switch to English");expectText("請幫我看一下");
+        type(" hello ");expectText("請幫我看一下 hello ");click("Switch to Chinese");
+        clear();type("ssh ");expectText("ssh ");
+        clear();type("womenmtjian");click("Exact input womenmtjian");expectText("womenmtjian");
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",false).commit();
+        focus(activity.url);focus(activity.text);clear();type("bkq ");expectText("不客氣");
+    }
     public void testPinyinInitialsMixedSyllablesAndEditing() {
         type("jt"); click("Candidate 今天"); assertEquals("今天",activity.text.getText().toString());
         clear(); type("srufa"); click("Candidate 輸入法"); assertEquals("輸入法",activity.text.getText().toString());

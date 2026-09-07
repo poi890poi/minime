@@ -1,5 +1,5 @@
 param([Parameter(Mandatory=$true)][string]$Serial,[string]$SdkDir=$env:ANDROID_HOME,
-    [string]$TestClass='dev.minime.ime.EditorIntegrationTest,dev.minime.ime.KeyboardInteractionTest',
+    [string]$TestClass='dev.minime.ime.EditorIntegrationTest,dev.minime.ime.KeyboardInteractionTest,dev.minime.ime.RimeIntegrationTest',
     [string]$AppApk='app/build/outputs/apk/debug/app-debug.apk',
     [string]$TestApk='app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')
 $ErrorActionPreference='Stop'

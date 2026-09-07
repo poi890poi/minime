@@ -27,6 +27,8 @@ public final class SettingsActivity extends Activity {
         layout.setChecked(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("zhuyin",false));
         layout.setOnCheckedChangeListener((b,value)->getSharedPreferences("settings",MODE_PRIVATE).edit().putBoolean("zhuyin",value).apply()); body.addView(layout);
         text("Typing",21);
+        option("Use Rime for Pinyin phrase prediction", "rime_pinyin",false);
+        text("Rime offers stronger sentence prediction in our tests, with different candidate ordering. Turn it off to use the original MinIME decoder. It works offline and does not keep its own typing history.",16);
         option("Correct English spelling on Space", "english_correction",false);
         option("Double Space inserts a period in English", "double_space_period",true);
         option("Keep recent emoji on this device", "emoji_recents",false);
@@ -68,7 +70,7 @@ public final class SettingsActivity extends Activity {
         text("Privacy",21);
         text("Fully offline. No network permission, keystroke logs, telemetry, or cloud backup. Explicit choices are learned locally. English word-pair learning and recent emoji are optional and off by default. Password fields use direct input without composition, suggestions or learning. Private fields do not access personalized history. Restart recovery briefly checks only the keyboard's own composing text, up to 96 characters; it does not collect the rest of the editor.",16);
         text("About this prototype",21);
-        text("Version 0.3.0. Independent implementation; not a Google product. Phrase ranking and device compatibility continue to need evaluation. Language data: McBopomofo (MIT), AOSP LatinIME (Apache 2.0), Universal Dependencies context counts (CC BY-SA 4.0), and Unicode emoji data. See notices for sources and authors.",16);
+        text("Version 0.4.0. Independent implementation; not a Google product. Optional Rime Pinyin improves sentence prediction in our tests. Long abbreviated sentences still need work. Language foundations: Rime, McBopomofo, AOSP LatinIME, Universal Dependencies and Unicode. See notices for complete sources, authors and licenses.",16);
         button("Open-source notices",()-> {
             try(java.io.InputStream in=getAssets().open("NOTICE.txt")) {
                 java.io.ByteArrayOutputStream out=new java.io.ByteArrayOutputStream(); byte[] b=new byte[4096]; int n;

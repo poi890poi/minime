@@ -4,8 +4,11 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
-Version **0.3.0** implements the follow-up changes in independent commits. See
-[implementation results](docs/GAP_CLOSURE_RESULTS.md) for evidence and remaining gaps.
+Version **0.4.0** adds an optional Rime Pinyin backend after comparing established
+engines on 84 phrase probes. Enable **Use Rime for Pinyin phrase prediction** in
+MinIME settings; turn it off to retain the original decoder. See the
+[engine comparison](docs/existing-engines/RESULTS.md) and
+[0.3.0 implementation results](docs/GAP_CLOSURE_RESULTS.md).
 
 ## Included
 
@@ -23,9 +26,10 @@ Version **0.3.0** implements the follow-up changes in independent commits. See
 
 ## Build and run
 
-Install JDK 17 and Android SDK platform 35. Set `ANDROID_HOME`, or create an ignored `local.properties` with `sdk.dir=E\:/Android/Sdk` on this Windows setup.
+Install JDK 17, Android SDK platform 35, NDK 27.2.12479018 and CMake 3.22.1. Set `ANDROID_HOME`, or create an ignored `local.properties` with `sdk.dir=E\:/Android/Sdk` on this Windows setup. Fetch pinned native sources once before building:
 
 ```powershell
+python tools/fetch_rime_sources.py
 .\gradlew.bat :core:regression :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
 ```
 
@@ -62,9 +66,17 @@ The device script restores the previous input method and turns the display off i
 
 `core/` owns composition, classification, phonetic lookup/segmentation, candidate ranking and commit policy. `app/` adapts that core to Android and renders the keyboard. `third_party/` contains pinned, licensed language inputs; `tools/compile_dictionary.py` deterministically generates the shipped assets. There are no acceptance-phrase ranking overrides.
 
+The optional Rime backend builds librime 1.16.1 from source and uses unmodified
+Luna Pinyin/Essay vocabulary. Its own learning and logging are disabled; each
+query uses an isolated session and only complete-input candidates can commit.
+Original MinIME candidates remain available as alternatives and fallback. Full
+source archives, licenses and model reproduction are documented in
+[the Rime foundation](third_party/rime/README.md). English, Zhuyin and the keyboard
+interaction rules continue to use MinIME's existing implementation.
+
 The dictionary is augmented with attributed offline context counts. English has optional one-edit correction, contraction alternatives, deferred completion spacing, double-Space punctuation, editor-driven capitalization and geometric word tracing. These are limited models; Chinese sentence and initial-only ranking remain substantially weaker than Google Zhuyin on the reviewed conversational probes. English/Pinyin ambiguity still requires a candidate choice in some cases.
 
-Gradle precompiles the TSV sources into a versioned binary model. The measured phone load fell from 7.38 to 2.25 seconds, with roughly 30 MB less retained heap, at the cost of a roughly 18.5 MB debug APK. See [startup measurements](docs/gap-implementation/STARTUP.md). Chinese decoding runs on a coalescing worker with stale-result rejection and ordered commits.
+Gradle precompiles the TSV sources into a versioned binary model. The measured phone load fell from 7.38 to 2.25 seconds, with roughly 30 MB less retained heap, with a roughly 18.5 MB debug APK in version 0.3.0. Version 0.4.0 adds native Rime libraries and its model: the universal debug APK is 64.4 MB and the unsigned release APK is 39.3 MB. See [startup measurements](docs/gap-implementation/STARTUP.md). Chinese decoding runs on a coalescing worker with stale-result rejection and ordered commits.
 
 No device-wide surrounding text is collected. Same-editor restart recovery validates only the IME-owned composing text, up to 96 characters. Cursor moves and field changes clear prediction context. Explicit choices are learned locally; optional English word-pair learning and emoji recents default off. Private fields neither read nor write personalized history.
 
