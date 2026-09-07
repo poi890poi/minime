@@ -483,6 +483,14 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         }
         clear();type("nihao");click("Candidate 你");click("Candidate 好");expectText("你好");
     }
+    public void testLearnedChineseDoesNotReplaceEnglishContinuation() throws Exception {
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
+        assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
+        type("you");click("Candidate 有");expectText("有");clear();focus(activity.url);focus(activity.text);
+        type("see you tomorrow ");expectText("see you tomorrow ");
+        clear();focus(activity.url);focus(activity.text);type("in january we use html ");expectText("in january we use html ");
+        clear();focus(activity.url);focus(activity.text);type("you ");expectText("有");
+    }
     public void testWebViewMixedInput() throws Exception {
         java.util.concurrent.CountDownLatch loaded=new java.util.concurrent.CountDownLatch(1);
         java.util.concurrent.atomic.AtomicReference<android.webkit.WebView> ref=new java.util.concurrent.atomic.AtomicReference<>();
