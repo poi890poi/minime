@@ -16,6 +16,7 @@ final class SelectionState {
     }
     void finish() { composingStart=-1; }
     boolean owns(int nextStart,int nextEnd,int length) { return composingStart>=0 && start==end && end==nextStart && end==nextEnd && end-composingStart==length; }
+    int cursor() {return end;}
     void rewind(int count) { start=end=Math.max(0,end-count);composingStart=-1;expected.clear(); }
     void delete() { deletion=true; composingStart=-1; expected.clear(); }
     boolean update(int nextStart,int nextEnd) {
