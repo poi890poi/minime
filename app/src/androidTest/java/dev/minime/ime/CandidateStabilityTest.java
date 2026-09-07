@@ -30,6 +30,20 @@ public final class CandidateStabilityTest extends ActivityInstrumentationTestCas
     }
     private void reply() {replies.get(replies.size()-1).accept(Collections.singletonList(new Candidate("一",false,1000)));}
     private void render() {view.render(engine,false,false,false,0,false,false,false,true,"Enter","");}
+    public void testBufferSurvivesLiteralAndUnavailablePredictions() throws Throwable {
+        runTestOnUiThread(()-> {
+            setup();android.widget.FrameLayout buffer=(android.widget.FrameLayout)view.compositionAnnotation();
+            View raw=buffer.getChildAt(1);assertEquals(View.VISIBLE,raw.getVisibility());
+            engine.type('i');render();assertEquals(View.VISIBLE,raw.getVisibility());
+            replies.get(replies.size()-1).accept(Collections.emptyList());
+            assertEquals("Literal default must not hide nonempty composition",View.VISIBLE,raw.getVisibility());
+            for(char c:"haotime".toCharArray()) {
+                engine.type(c);render();assertEquals(View.VISIBLE,raw.getVisibility());reply();
+                assertEquals("Completed prediction must not remove buffer",View.VISIBLE,raw.getVisibility());
+            }
+            engine.abandon();render();assertEquals("No stale buffer after composition ends",View.GONE,raw.getVisibility());
+        });
+    }
     public void testPendingQueryKeepsVisibleCandidates() throws Throwable {
         runTestOnUiThread(()-> {
             setup();View word=find(view,"Candidate 一"),scroll=find(view,"Candidate list");assertNotNull(word);

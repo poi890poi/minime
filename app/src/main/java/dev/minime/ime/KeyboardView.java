@@ -291,8 +291,9 @@ final class KeyboardView extends LinearLayout {
         if(!lastRaw.equals(engine.raw()))previousScroll=0;
         final int restoreScroll=previousScroll;
         boolean separatePhonetics=!english && !engine.raw().isEmpty() && preferred!=0;
-        phonetics.setText(engine.raw());phonetics.setContentDescription("Exact input "+engine.raw());
-        boolean showPhonetics=separatePhonetics && panel==0;
+        phonetics.setText(engine.raw());phonetics.setContentDescription((separatePhonetics?"Exact input ":"Composition buffer ")+engine.raw());
+        // Prediction intent may change at every prefix; composition visibility must not.
+        boolean showPhonetics=!english && !engine.raw().isEmpty() && panel==0;
         phonetics.setVisibility(showPhonetics?VISIBLE:GONE);
         status.setVisibility(panel==0 && !showPhonetics && !hint.isEmpty()?VISIBLE:GONE);
         annotationRequested=showPhonetics || status.getVisibility()==VISIBLE;queueAnnotation();
