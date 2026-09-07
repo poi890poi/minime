@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "seed": 20260908,
+  "source": "docs\\conversation-ranking\\corpus\\inputs.tsv",
+  "source_sha256": "14c186c6589c4081f709f6aa237bb9a0d61a0d5ad32754dad8d72976d478004d",
+  "cases": [
+    {
+      "id": "en-dev:1810:and",
+      "split": "dev",
+      "mode": "english",
+      "text": "and"
+    },
+    {
+      "id": "en-dev:1048:speed",
+      "split": "dev",
+      "mode": "english",
+      "text": "speed"
+    },
+    {
+      "id": "zh-dev-full:無往不利:wuwangbuli",
+      "split": "dev",
+      "mode": "pinyin",
+      "text": "wuwangbuli"
+    },
+    {
+      "id": "zh-dev-full:自己:ziji",
+      "split": "dev",
+      "mode": "pinyin",
+      "text": "ziji"
+    },
+    {
+      "id": "zh-dev-initial:年久失修:njsx",
+      "split": "dev",
+      "mode": "pinyin",
+      "text": "njsx"
+    },
+    {
+      "id": "zh-dev-initial:義大利:ydl",
+      "split": "dev",
+      "mode": "pinyin",
+      "text": "ydl"
+    },
+    {
+      "id": "zh-dev-mixed-left:本身:bens",
+      "split": "dev",
+      "mode": "pinyin",
+      "text": "bens"
+    },
+    {
+      "id": "zh-dev-mixed-left:進貢:jing",
+      "split": "dev",
+      "mode": "pinyin",
+      "text": "jing"
+    },
+    {
+      "id": "zh-dev-mixed-right:如果:rguo",
+      "split": "dev",
+      "mode": "pinyin",
+      "text": "rguo"
+    },
+    {
+      "id": "zh-dev-mixed-right:維也納:wyen",
+      "split": "dev",
+      "mode": "pinyin",
+      "text": "wyen"
+    },
+    {
+      "id": "en-test:60:just",
+      "split": "test",
+      "mode": "english",
+      "text": "just"
+    },
+    {
+      "id": "en-test:1446:lifetime",
+      "split": "test",
+      "mode": "english",
+      "text": "lifetime"
+    },
+    {
+      "id": "zh-test-full:民眾:minzhong",
+      "split": "test",
+      "mode": "pinyin",
+      "text": "minzhong"
+    },
+    {
+      "id": "zh-test-full:無權:wuquan",
+      "split": "test",
+      "mode": "pinyin",
+      "text": "wuquan"
+    },
+    {
+      "id": "zh-test-initial:大嘴鳥:dzn",
+      "split": "test",
+      "mode": "pinyin",
+      "text": "dzn"
+    },
+    {
+      "id": "zh-test-initial:威斯康辛:wskx",
+      "split": "test",
+      "mode": "pinyin",
+      "text": "wskx"
+    },
+    {
+      "id": "zh-test-mixed-left:巡航:xunh",
+      "split": "test",
+      "mode": "pinyin",
+      "text": "xunh"
+    },
+    {
+      "id": "zh-test-mixed-left:廳:ting",
+      "split": "test",
+      "mode": "pinyin",
+      "text": "ting"
+    },
+    {
+      "id": "zh-test-mixed-right:宮城:gcheng",
+      "split": "test",
+      "mode": "pinyin",
+      "text": "gcheng"
+    },
+    {
+      "id": "zh-test-mixed-right:君主:jzhu",
+      "split": "test",
+      "mode": "pinyin",
+      "text": "jzhu"
+    }
+  ]
+}

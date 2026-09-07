@@ -1,0 +1,136 @@
+{
+  "matrix": {
+    "drift": {
+      "cases": 1664,
+      "failed": 0,
+      "deletions": 0,
+      "insertions": 0,
+      "substitutions": 0,
+      "unexpected_slides": 0,
+      "unexpected_traces": 0
+    },
+    "overlap": {
+      "cases": 10816,
+      "failed": 0,
+      "deletions": 0,
+      "insertions": 0,
+      "substitutions": 0,
+      "unexpected_slides": 0,
+      "unexpected_traces": 0
+    },
+    "cancel": {
+      "cases": 208,
+      "failed": 0,
+      "deletions": 0,
+      "insertions": 0,
+      "substitutions": 0,
+      "unexpected_slides": 0,
+      "unexpected_traces": 0
+    },
+    "intentional-up": {
+      "cases": 208,
+      "failed": 0
+    }
+  },
+  "exploratory": {
+    "outside-right": {
+      "cases": 208,
+      "failed": 208,
+      "deletions": 16,
+      "insertions": 40,
+      "substitutions": 192,
+      "unexpected_slides": 0,
+      "unexpected_traces": 0
+    }
+  },
+  "replay": {
+    "en-dev": {
+      "cases": 2,
+      "complete": 2,
+      "touches": 14,
+      "cancelled_touches": 2,
+      "checkpoints": 16,
+      "failed_checkpoints": 0
+    },
+    "zh-dev-full": {
+      "cases": 2,
+      "complete": 2,
+      "touches": 23,
+      "cancelled_touches": 3,
+      "checkpoints": 25,
+      "failed_checkpoints": 0
+    },
+    "zh-dev-initial": {
+      "cases": 2,
+      "complete": 2,
+      "touches": 13,
+      "cancelled_touches": 2,
+      "checkpoints": 15,
+      "failed_checkpoints": 0
+    },
+    "zh-dev-mixed-left": {
+      "cases": 2,
+      "complete": 2,
+      "touches": 14,
+      "cancelled_touches": 2,
+      "checkpoints": 16,
+      "failed_checkpoints": 0
+    },
+    "zh-dev-mixed-right": {
+      "cases": 2,
+      "complete": 2,
+      "touches": 14,
+      "cancelled_touches": 2,
+      "checkpoints": 16,
+      "failed_checkpoints": 0
+    },
+    "en-test": {
+      "cases": 2,
+      "complete": 2,
+      "touches": 21,
+      "cancelled_touches": 3,
+      "checkpoints": 23,
+      "failed_checkpoints": 0
+    },
+    "zh-test-full": {
+      "cases": 2,
+      "complete": 2,
+      "touches": 23,
+      "cancelled_touches": 3,
+      "checkpoints": 25,
+      "failed_checkpoints": 0
+    },
+    "zh-test-initial": {
+      "cases": 2,
+      "complete": 2,
+      "touches": 13,
+      "cancelled_touches": 2,
+      "checkpoints": 15,
+      "failed_checkpoints": 0
+    },
+    "zh-test-mixed-left": {
+      "cases": 2,
+      "complete": 2,
+      "touches": 14,
+      "cancelled_touches": 2,
+      "checkpoints": 16,
+      "failed_checkpoints": 0
+    },
+    "zh-test-mixed-right": {
+      "cases": 2,
+      "complete": 2,
+      "touches": 16,
+      "cancelled_touches": 2,
+      "checkpoints": 18,
+      "failed_checkpoints": 0
+    }
+  },
+  "complete": true,
+  "gate_failures": 0,
+  "observed_touch_hold_ms": {
+    "count": 165,
+    "p50": 163,
+    "p95": 228,
+    "max": 285
+  }
+}

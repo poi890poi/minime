@@ -1,0 +1,33 @@
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+Input method dev.minime.ime/.MiniMeService: already enabled for user #0
+Input method dev.minime.ime/.MiniMeService selected for user #0
+
+dev.minime.ime.HumanInputPrecisionTest:
+Failure in testLandscapeImprecisionMatrix:
+junit.framework.AssertionFailedError
+	at dev.minime.ime.HumanInputPrecisionTest.setup(HumanInputPrecisionTest.java:36)
+	at dev.minime.ime.HumanInputPrecisionTest.lambda$matrix$2(HumanInputPrecisionTest.java:121)
+	at dev.minime.ime.HumanInputPrecisionTest.$r8$lambda$BHycdoR2LzGsu0N4fNdHagL1u2A(HumanInputPrecisionTest.java:0)
+	at dev.minime.ime.HumanInputPrecisionTest$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+	at android.test.InstrumentationTestCase$1.run(InstrumentationTestCase.java:144)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2353)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:226)
+	at android.os.Looper.loop(Looper.java:313)
+	at android.app.ActivityThread.main(ActivityThread.java:8762)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)
+.
+dev.minime.ime.CandidateStabilityTest:......
+Test results for InstrumentationTestRunner=.F.......
+Time: 14.616
+
+FAILURES!!!
+Tests run: 8,  Failures: 1,  Errors: 0
+
+
+Input method com.samsung.android.honeyboard/.service.HoneyBoardService selected for user #0

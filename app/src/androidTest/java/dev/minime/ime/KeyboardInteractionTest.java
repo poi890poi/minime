@@ -15,7 +15,7 @@ import java.util.*;
 
 /** Clicks the real visible IME buttons; no broadcasts or test-only input hooks. */
 @SuppressWarnings("deprecation")
-public final class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<EditorTestActivity> {
+public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<EditorTestActivity> {
     public KeyboardInteractionTest() { super(EditorTestActivity.class); }
     private EditorTestActivity activity;
     private boolean zhuyin;
@@ -525,6 +525,74 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         }
         assertTrue("Frozen full/initial/mixed inputs sampled",samples>=10);
         capture("typing-overlap-final");
+    }
+    protected void humanReplay(String split) throws Throwable {
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
+        assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
+        String fixture;
+        try(java.io.InputStream input=getInstrumentation().getContext().getAssets().open("human-input.json")) {
+            java.io.ByteArrayOutputStream bytes=new java.io.ByteArrayOutputStream();byte[] buffer=new byte[4096];int count;
+            while((count=input.read(buffer))!=-1)bytes.write(buffer,0,count);
+            fixture=bytes.toString("UTF-8");
+        }
+        org.json.JSONArray cases=new org.json.JSONObject(fixture).getJSONArray("cases"),results=new org.json.JSONArray();
+        boolean english=false,complete=false;
+        try {
+            for(int row=0;row<cases.length();row++) {
+                org.json.JSONObject sample=cases.getJSONObject(row);if(!split.equals(sample.getString("split")))continue;
+                String raw=sample.getString("text");boolean en=sample.getString("mode").equals("english");
+                if(en!=english){click(en?"Switch to English":"Switch to Chinese");english=en;}
+                clear();focus(activity.url);focus(activity.text);
+                Map<Character,Rect> positions=new HashMap<>();for(char c='a';c<='z';c++)positions.put(c,bounds(String.valueOf(c)));
+                Random random=new Random(20260908L+sample.getString("id").hashCode());
+                org.json.JSONArray states=new org.json.JSONArray(),trace=new org.json.JSONArray();
+                org.json.JSONObject result=new org.json.JSONObject().put("id",sample.getString("id")).put("expected",raw).put("events",trace).put("states",states).put("complete",false);
+                results.put(result);long began=SystemClock.uptimeMillis();
+                for(int i=0;i<raw.length();i++) {
+                    String prefix=raw.substring(0,i);
+                    if(i%5==1) {
+                        impreciseTap(positions.get(raw.charAt(i)),random,true,trace);precisionState(prefix,states);
+                    }
+                    if(i%4==2) {
+                        char typo=(char)('a'+(raw.charAt(i)-'a'+7)%26);
+                        impreciseTap(positions.get(typo),random,false,trace);precisionState(prefix+typo,states);
+                        impreciseTap(bounds("⌫"),random,false,trace);precisionState(prefix,states);
+                    }
+                    impreciseTap(positions.get(raw.charAt(i)),random,false,trace);precisionState(raw.substring(0,i+1),states);
+                    SystemClock.sleep(i%3==0?180+random.nextInt(150):5+random.nextInt(45));
+                }
+                // Allow a delayed result to arrive, then prove the entire spelling is still composing.
+                SystemClock.sleep(200);precisionState(raw,states);
+                click("Exact input "+raw);expectText(raw);
+                result.put("complete",true).put("wallMs",SystemClock.uptimeMillis()-began);
+            }
+            complete=true;
+        } finally {
+            HumanInputPrecisionTest.writeReport(activity,"human-input-replay-"+split+".json",new org.json.JSONObject()
+                .put("complete",complete).put("virtualEventTime",false).put("seed",20260908).put("fixture",new org.json.JSONObject(fixture)).put("cases",results));
+        }
+        assertEquals("Frozen split case count",10,results.length());
+    }
+    private void precisionState(String expected,org.json.JSONArray states) throws Throwable {
+        String[] actual={""};int[] span={-1,-1};
+        runTestOnUiThread(()-> {
+            actual[0]=activity.text.getText().toString();span[0]=android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText());
+            span[1]=android.view.inputmethod.BaseInputConnection.getComposingSpanEnd(activity.text.getText());
+        });
+        states.put(new org.json.JSONObject().put("expected",expected).put("actual",actual[0]).put("composingStart",span[0]).put("composingEnd",span[1]));
+        assertEquals("Imprecise input remains literal composing spelling",expected,actual[0]);
+        if(!expected.isEmpty()) {assertEquals("No prematurely committed prefix",0,span[0]);assertEquals(expected.length(),span[1]);}
+    }
+    private void impreciseTap(Rect key,Random random,boolean cancel,org.json.JSONArray trace) throws Exception {
+        float x=key.left+key.width()*(.15f+random.nextFloat()*.7f),y=key.top+key.height()*(.15f+random.nextFloat()*.7f);
+        float dx=key.width()*(random.nextFloat()-.5f)*.1f,dy=key.height()*(random.nextFloat()-.5f)*.08f;
+        long start=SystemClock.uptimeMillis();int duration=35+random.nextInt(135);
+        event(start,MotionEvent.ACTION_DOWN,x,y);
+        for(int step=1;step<=3;step++) {SystemClock.sleep(duration/3);event(start,MotionEvent.ACTION_MOVE,x+dx*step/3,y+dy*step/3);}
+        event(start,cancel?MotionEvent.ACTION_CANCEL:MotionEvent.ACTION_UP,x+dx,y+dy);
+        trace.put(new org.json.JSONObject().put("bounds",key.flattenToString()).put("x",x).put("y",y).put("dx",dx).put("dy",dy)
+            .put("cancel",cancel).put("plannedHoldMs",duration).put("actualHoldMs",SystemClock.uptimeMillis()-start));
+        getInstrumentation().waitForIdleSync();
     }
     private Rect keyboardBounds() {
         for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows()) {
