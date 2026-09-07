@@ -1,0 +1,17 @@
+Dictionary startup 3211 ms
+PASS corpus A
+PASS corpus B
+PASS corpus C
+PASS corpus D
+PASS corpus meeting-transition
+PASS corpus technical
+PASS corpus url
+PASS corpus email
+PASS corpus code
+PASS corpus literal
+PASS corpus zhuyin-A
+PASS corpus zhuyin-transition
+Exception in thread "main" java.lang.AssertionError: start-of-input Chinese choice must not replace conversational English: can expected [we can meet today ] actual [we 餐meet today ]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.MixedLearningRegression.run(MixedLearningRegression.java:15)
+	at dev.minime.core.Regression.main(Regression.java:176)

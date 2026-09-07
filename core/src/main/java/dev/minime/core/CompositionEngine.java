@@ -19,6 +19,7 @@ public final class CompositionEngine {
     private final Learning learning;
     private PhoneticDictionary dictionary;
     private String raw = "", context = "";
+    private boolean afterLatin;
     private boolean zhuyin, literalField, privateField, direct, englishMode;
     private boolean completionBoundary;
     private boolean committedEnglishWord;
@@ -75,7 +76,7 @@ public final class CompositionEngine {
         start(zhuyin,literalField,privateField,direct,false);
     }
     public void start(boolean zhuyin, boolean literalField, boolean privateField, boolean direct, boolean englishMode) {
-        cancelPending();raw = ""; context = ""; completionBoundary=false;committedEnglishWord=false; clearAssistance(); this.zhuyin = zhuyin; this.literalField = literalField;
+        cancelPending();raw = ""; context = ""; afterLatin=false;completionBoundary=false;committedEnglishWord=false; clearAssistance(); this.zhuyin = zhuyin; this.literalField = literalField;
         this.privateField = privateField; this.direct = direct; this.englishMode=englishMode; refresh();
     }
     public void layout(boolean zhuyin) { commitDefault(false); this.zhuyin = zhuyin; refresh(); }
@@ -101,7 +102,7 @@ public final class CompositionEngine {
         // ASCII punctuation stays with Latin tokens so email, URLs and identifiers never lose raw input.
         if (!phonetic && !Character.isLetterOrDigit(codePoint) && (codePoint > 126 || codePoint < 33)) {
             commitDefault(false);
-            editor.commit(letter); context = ""; refresh(); return;
+            editor.commit(letter); context = "";afterLatin=false; refresh(); return;
         }
         if (raw.length() + letter.length() > 96) commitRaw(false);
         raw += letter; editor.composing(raw); refresh();
@@ -131,8 +132,8 @@ public final class CompositionEngine {
     }
     public void confirm() { if(deferUntilReady(this::confirm,true))return;clearAssistance();completionBoundary=false; commitDefault(false); }
     /** An explicit slide commits its literal output, independent of token inference. */
-    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();resolveCompletionBoundary(text); commitDefault(false); editor.commit(text);committedEnglishWord=false; context=""; refresh(); }
-    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();completionBoundary=false; commitDefault(false); editor.enter();committedEnglishWord=false; context = ""; refresh(); }
+    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();resolveCompletionBoundary(text); commitDefault(false); editor.commit(text);committedEnglishWord=false; context="";afterLatin=latinBoundary(text); refresh(); }
+    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();completionBoundary=false; commitDefault(false); editor.enter();committedEnglishWord=false; context = "";afterLatin=false; refresh(); }
     private void resolveCompletionBoundary(String text) {
         if(completionBoundary) {
             completionBoundary=false;
@@ -153,7 +154,7 @@ public final class CompositionEngine {
             raw=spelling;context="";editor.restoreSpelling(count,raw);refresh();preferred=0;return;
         }
         clearAssistance();
-        if (raw.isEmpty()) { editor.delete(); context = ""; }
+        if (raw.isEmpty()) { editor.delete(); context = "";afterLatin=false; }
         else {
             raw = raw.substring(0, raw.offsetByCodePoints(raw.length(), -1));
             editor.composing(raw);
@@ -168,7 +169,7 @@ public final class CompositionEngine {
         if(partial(choice) && !literalField && !englishMode && !choice.literal) {
             String reading=raw.substring(0,choice.consumed),rest=raw.substring(choice.consumed).replaceFirst("^'+","");
             if(!privateField)learning.choose(contextKey(),reading,choice.text);
-            editor.commit(choice.text);context=privateField?"":tail(context+choice.text,3);
+            editor.commit(choice.text);context=privateField?"":tail(context+choice.text,3);afterLatin=false;
             raw=rest;completionBoundary=false;committedEnglishWord=false;
             editor.composing(raw);refresh();return;
         }
@@ -196,14 +197,16 @@ public final class CompositionEngine {
             String[] words=(context+" "+c.text.toLowerCase(Locale.ROOT)).trim().split(" ");
             context=words.length>1?words[words.length-2]+" "+words[words.length-1]:words[0];
         } else context = c.literal || privateField ? "" : tail(context + c.text, 3);
+        afterLatin=c.literal && latinBoundary(c.text);
         raw = ""; refresh();
     }
-    private String contextKey() { return englishMode?"EN:"+context:context.isEmpty() ? "START_OR_LATIN" : context; }
+    private boolean latinBoundary(String text) {return !englishMode && !literalField && !privateField && text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");}
+    private String contextKey() { return englishMode?"EN:"+context:!context.isEmpty()?context:afterLatin?"AFTER_LATIN":"START_OR_LATIN"; }
     private static String tail(String text, int n) {
         return text.substring(text.offsetByCodePoints(text.length(), -Math.min(n, text.codePointCount(0, text.length()))));
     }
     /** Call after cursor movement, external edits or lifecycle changes; never rewrite text at the new cursor. */
-    public void abandon() { cancelPending();clearAssistance();completionBoundary=false;committedEnglishWord=false; editor.finish(); raw = ""; context = ""; refresh(); }
+    public void abandon() { cancelPending();clearAssistance();completionBoundary=false;committedEnglishWord=false; editor.finish(); raw = ""; context = "";afterLatin=false; refresh(); }
     public void refresh() {
         automaticCorrection=false;
         traced=false;

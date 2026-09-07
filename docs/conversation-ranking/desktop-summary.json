@@ -1,0 +1,2042 @@
+{
+  "desktop-baseline-v2": {
+    "file": "desktop-baseline-v2.jsonl",
+    "sha256": "61e549d668443ede4b75cece1508ac17a42449fa15d1800be3bc55371ff26319",
+    "rows": 21044,
+    "groups": {
+      "en-dev/fresh": {
+        "sentences": 1979,
+        "tokens": 21741,
+        "known_tokens": 19241,
+        "changed_tokens": 1345,
+        "known_noninitial_tokens": 17714,
+        "known_noninitial_changed": 0
+      },
+      "en-dev/primed": {
+        "sentences": 1979,
+        "tokens": 21741,
+        "known_tokens": 19241,
+        "changed_tokens": 2415,
+        "known_noninitial_tokens": 17714,
+        "known_noninitial_changed": 981
+      },
+      "en-dev/english": {
+        "sentences": 1979,
+        "tokens": 21741,
+        "known_tokens": 19241,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 17714,
+        "known_noninitial_changed": 0
+      },
+      "en-test/fresh": {
+        "sentences": 2036,
+        "tokens": 21670,
+        "known_tokens": 18809,
+        "changed_tokens": 1518,
+        "known_noninitial_tokens": 17325,
+        "known_noninitial_changed": 0
+      },
+      "en-test/primed": {
+        "sentences": 2036,
+        "tokens": 21670,
+        "known_tokens": 18809,
+        "changed_tokens": 2550,
+        "known_noninitial_tokens": 17325,
+        "known_noninitial_changed": 965
+      },
+      "en-test/english": {
+        "sentences": 2036,
+        "tokens": 21670,
+        "known_tokens": 18809,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 17325,
+        "known_noninitial_changed": 0
+      },
+      "zh-dev-full": {
+        "probes": 1000,
+        "top1": 709,
+        "top5": 908,
+        "reachable": 1000,
+        "space_exact": 707
+      },
+      "zh-dev-initial": {
+        "probes": 1000,
+        "top1": 78,
+        "top5": 238,
+        "reachable": 692,
+        "space_exact": 72
+      },
+      "zh-dev-mixed-left": {
+        "probes": 1000,
+        "top1": 341,
+        "top5": 654,
+        "reachable": 986,
+        "space_exact": 338
+      },
+      "zh-dev-mixed-right": {
+        "probes": 1000,
+        "top1": 323,
+        "top5": 560,
+        "reachable": 902,
+        "space_exact": 317
+      },
+      "zh-test-full": {
+        "probes": 1000,
+        "top1": 703,
+        "top5": 910,
+        "reachable": 1000,
+        "space_exact": 701
+      },
+      "zh-test-initial": {
+        "probes": 1000,
+        "top1": 72,
+        "top5": 229,
+        "reachable": 678,
+        "space_exact": 64
+      },
+      "zh-test-mixed-left": {
+        "probes": 1000,
+        "top1": 334,
+        "top5": 661,
+        "reachable": 988,
+        "space_exact": 331
+      },
+      "zh-test-mixed-right": {
+        "probes": 1000,
+        "top1": 306,
+        "top5": 555,
+        "reachable": 905,
+        "space_exact": 298
+      },
+      "moe-glyph": {
+        "probes": 999,
+        "top1": 217,
+        "top5": 665,
+        "reachable": 999,
+        "space_exact": 211
+      }
+    },
+    "first_changed_examples": [
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "2",
+        "raw": "washington",
+        "output": "王安石你溝通",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "2",
+        "raw": "washington",
+        "output": "王安石你溝通",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "jennifer",
+        "output": "吉恩你反而",
+        "known": false,
+        "position": 2
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "anderson",
+        "output": "安道爾送",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "columbia",
+        "output": "從路面彼岸",
+        "known": false,
+        "position": 20
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "steffen",
+        "output": "沙特紛紛",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "graae",
+        "output": "個人挨挨兒",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "jennifer",
+        "output": "吉恩你反而",
+        "known": false,
+        "position": 2
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "anderson",
+        "output": "安道爾送",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "columbia",
+        "output": "從路面彼岸",
+        "known": false,
+        "position": 20
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "steffen",
+        "output": "沙特紛紛",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "graae",
+        "output": "個人挨挨兒",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "noel",
+        "output": "你哦而來",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "anketell",
+        "output": "安可忒楞楞",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "kramer",
+        "output": "客人埃米爾",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "columbia",
+        "output": "從路面彼岸",
+        "known": false,
+        "position": 18
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "montague",
+        "output": "模擬他故而",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "steadman",
+        "output": "沙特艾德曼",
+        "known": false,
+        "position": 25
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "noel",
+        "output": "你哦而來",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "anketell",
+        "output": "安可忒楞楞",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "kramer",
+        "output": "客人埃米爾",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 8
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "columbia",
+        "output": "從路面彼岸",
+        "known": false,
+        "position": 18
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "montague",
+        "output": "模擬他故而",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "steadman",
+        "output": "沙特艾德曼",
+        "known": false,
+        "position": 25
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "5",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 9
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "6",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "6",
+        "raw": "he",
+        "output": "和",
+        "known": true,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "6",
+        "raw": "he",
+        "output": "和",
+        "known": true,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "6",
+        "raw": "he",
+        "output": "和",
+        "known": true,
+        "position": 17
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "6",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "8",
+        "raw": "succesfull",
+        "output": "素材測試負利率",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "8",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "8",
+        "raw": "succesfull",
+        "output": "素材測試負利率",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "9",
+        "raw": "la",
+        "output": "啦",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "9",
+        "raw": "c'est",
+        "output": "從而身體",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "9",
+        "raw": "la",
+        "output": "啦",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "la",
+        "output": "啦",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "c'est",
+        "output": "從而身體",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "la",
+        "output": "啦",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "10",
+        "raw": "baqubah",
+        "output": "八區巴赫",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "10",
+        "raw": "baqubah",
+        "output": "八區巴赫",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "10",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 8
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "10",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 12
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "11",
+        "raw": "habbaniyah",
+        "output": "哈爸爸尼雅河",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "11",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "11",
+        "raw": "habbaniyah",
+        "output": "哈爸爸尼雅河",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "11",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "12",
+        "raw": "fallujah",
+        "output": "法律路徑愛好",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "12",
+        "raw": "yound",
+        "output": "有難度",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "12",
+        "raw": "fallujah",
+        "output": "法律路徑愛好",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "12",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "12",
+        "raw": "yound",
+        "output": "有難度",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "13",
+        "raw": "an",
+        "output": "按",
+        "known": true,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "13",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 20
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "15",
+        "raw": "baath",
+        "output": "巴阿體會",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "15",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "15",
+        "raw": "me",
+        "output": "麼",
+        "known": true,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "15",
+        "raw": "baath",
+        "output": "巴阿體會",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "15",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "16",
+        "raw": "miniscule",
+        "output": "米尼斯粗了",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "16",
+        "raw": "an",
+        "output": "按",
+        "known": true,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "16",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "16",
+        "raw": "miniscule",
+        "output": "米尼斯粗了",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "17",
+        "raw": "suckups",
+        "output": "素材庫平時",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "17",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "17",
+        "raw": "suckups",
+        "output": "素材庫平時",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "18",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 11
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "18",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "19",
+        "raw": "freewheeling",
+        "output": "發熱額外和惡靈",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "19",
+        "raw": "sergey",
+        "output": "十二個月",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "19",
+        "raw": "freewheeling",
+        "output": "發熱額外和惡靈",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "19",
+        "raw": "sergey",
+        "output": "十二個月",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "19",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "19",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 30
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "19",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 40
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "20",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "21",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "21",
+        "raw": "newsday",
+        "output": "呢無傷大雅",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "21",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "21",
+        "raw": "newsday",
+        "output": "呢無傷大雅",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "23",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "23",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "23",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "24",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "24",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "24",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "24",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "25",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "25",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "25",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "25",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "25",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "26",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "26",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "27",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 5
+      }
+    ]
+  },
+  "desktop-candidate-v2": {
+    "file": "desktop-candidate-v2.jsonl",
+    "sha256": "7b0f64e51fa9e72c340d06c6c233a650b8a7561a143e2cb51f6977f8bb3e9426",
+    "rows": 21044,
+    "groups": {
+      "en-dev/fresh": {
+        "sentences": 1979,
+        "tokens": 21741,
+        "known_tokens": 19241,
+        "changed_tokens": 1345,
+        "known_noninitial_tokens": 17714,
+        "known_noninitial_changed": 0
+      },
+      "en-dev/primed": {
+        "sentences": 1979,
+        "tokens": 21741,
+        "known_tokens": 19241,
+        "changed_tokens": 1434,
+        "known_noninitial_tokens": 17714,
+        "known_noninitial_changed": 0
+      },
+      "en-dev/english": {
+        "sentences": 1979,
+        "tokens": 21741,
+        "known_tokens": 19241,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 17714,
+        "known_noninitial_changed": 0
+      },
+      "en-test/fresh": {
+        "sentences": 2036,
+        "tokens": 21670,
+        "known_tokens": 18809,
+        "changed_tokens": 1518,
+        "known_noninitial_tokens": 17325,
+        "known_noninitial_changed": 0
+      },
+      "en-test/primed": {
+        "sentences": 2036,
+        "tokens": 21670,
+        "known_tokens": 18809,
+        "changed_tokens": 1585,
+        "known_noninitial_tokens": 17325,
+        "known_noninitial_changed": 0
+      },
+      "en-test/english": {
+        "sentences": 2036,
+        "tokens": 21670,
+        "known_tokens": 18809,
+        "changed_tokens": 0,
+        "known_noninitial_tokens": 17325,
+        "known_noninitial_changed": 0
+      },
+      "zh-dev-full": {
+        "probes": 1000,
+        "top1": 709,
+        "top5": 908,
+        "reachable": 1000,
+        "space_exact": 707
+      },
+      "zh-dev-initial": {
+        "probes": 1000,
+        "top1": 78,
+        "top5": 238,
+        "reachable": 692,
+        "space_exact": 72
+      },
+      "zh-dev-mixed-left": {
+        "probes": 1000,
+        "top1": 341,
+        "top5": 654,
+        "reachable": 986,
+        "space_exact": 338
+      },
+      "zh-dev-mixed-right": {
+        "probes": 1000,
+        "top1": 323,
+        "top5": 560,
+        "reachable": 902,
+        "space_exact": 317
+      },
+      "zh-test-full": {
+        "probes": 1000,
+        "top1": 703,
+        "top5": 910,
+        "reachable": 1000,
+        "space_exact": 701
+      },
+      "zh-test-initial": {
+        "probes": 1000,
+        "top1": 72,
+        "top5": 229,
+        "reachable": 678,
+        "space_exact": 64
+      },
+      "zh-test-mixed-left": {
+        "probes": 1000,
+        "top1": 334,
+        "top5": 661,
+        "reachable": 988,
+        "space_exact": 331
+      },
+      "zh-test-mixed-right": {
+        "probes": 1000,
+        "top1": 306,
+        "top5": 555,
+        "reachable": 905,
+        "space_exact": 298
+      },
+      "moe-glyph": {
+        "probes": 999,
+        "top1": 217,
+        "top5": 665,
+        "reachable": 999,
+        "space_exact": 211
+      }
+    },
+    "first_changed_examples": [
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "2",
+        "raw": "washington",
+        "output": "王安石你溝通",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "2",
+        "raw": "washington",
+        "output": "王安石你溝通",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "jennifer",
+        "output": "吉恩你反而",
+        "known": false,
+        "position": 2
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "anderson",
+        "output": "安道爾送",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "columbia",
+        "output": "從路面彼岸",
+        "known": false,
+        "position": 20
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "steffen",
+        "output": "沙特紛紛",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "3",
+        "raw": "graae",
+        "output": "個人挨挨兒",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "jennifer",
+        "output": "吉恩你反而",
+        "known": false,
+        "position": 2
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "anderson",
+        "output": "安道爾送",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "columbia",
+        "output": "從路面彼岸",
+        "known": false,
+        "position": 20
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "steffen",
+        "output": "沙特紛紛",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "3",
+        "raw": "graae",
+        "output": "個人挨挨兒",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "noel",
+        "output": "你哦而來",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "anketell",
+        "output": "安可忒楞楞",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "kramer",
+        "output": "客人埃米爾",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "columbia",
+        "output": "從路面彼岸",
+        "known": false,
+        "position": 18
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "montague",
+        "output": "模擬他故而",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "4",
+        "raw": "steadman",
+        "output": "沙特艾德曼",
+        "known": false,
+        "position": 25
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "noel",
+        "output": "你哦而來",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "anketell",
+        "output": "安可忒楞楞",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "kramer",
+        "output": "客人埃米爾",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "columbia",
+        "output": "從路面彼岸",
+        "known": false,
+        "position": 18
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "montague",
+        "output": "模擬他故而",
+        "known": false,
+        "position": 24
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "4",
+        "raw": "steadman",
+        "output": "沙特艾德曼",
+        "known": false,
+        "position": 25
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "6",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "6",
+        "raw": "he",
+        "output": "和",
+        "known": true,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "6",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "8",
+        "raw": "succesfull",
+        "output": "素材測試負利率",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "8",
+        "raw": "succesfull",
+        "output": "素材測試負利率",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "9",
+        "raw": "la",
+        "output": "啦",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "9",
+        "raw": "c'est",
+        "output": "從而身體",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "9",
+        "raw": "la",
+        "output": "啦",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "a",
+        "output": "啊",
+        "known": true,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "la",
+        "output": "啦",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "c'est",
+        "output": "從而身體",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "9",
+        "raw": "la",
+        "output": "啦",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "10",
+        "raw": "baqubah",
+        "output": "八區巴赫",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "10",
+        "raw": "baqubah",
+        "output": "八區巴赫",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "11",
+        "raw": "habbaniyah",
+        "output": "哈爸爸尼雅河",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "11",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "11",
+        "raw": "habbaniyah",
+        "output": "哈爸爸尼雅河",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "11",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 13
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "12",
+        "raw": "fallujah",
+        "output": "法律路徑愛好",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "12",
+        "raw": "yound",
+        "output": "有難度",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "12",
+        "raw": "fallujah",
+        "output": "法律路徑愛好",
+        "known": false,
+        "position": 1
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "12",
+        "raw": "yound",
+        "output": "有難度",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "15",
+        "raw": "baath",
+        "output": "巴阿體會",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "15",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "15",
+        "raw": "baath",
+        "output": "巴阿體會",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "15",
+        "raw": "sunni",
+        "output": "遜尼",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "16",
+        "raw": "miniscule",
+        "output": "米尼斯粗了",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "16",
+        "raw": "miniscule",
+        "output": "米尼斯粗了",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "17",
+        "raw": "suckups",
+        "output": "素材庫平時",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "17",
+        "raw": "suckups",
+        "output": "素材庫平時",
+        "known": false,
+        "position": 8
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "19",
+        "raw": "freewheeling",
+        "output": "發熱額外和惡靈",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "19",
+        "raw": "sergey",
+        "output": "十二個月",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "19",
+        "raw": "freewheeling",
+        "output": "發熱額外和惡靈",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "19",
+        "raw": "sergey",
+        "output": "十二個月",
+        "known": false,
+        "position": 10
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "21",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "21",
+        "raw": "newsday",
+        "output": "呢無傷大雅",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "21",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "21",
+        "raw": "newsday",
+        "output": "呢無傷大雅",
+        "known": false,
+        "position": 15
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "23",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "23",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "24",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "24",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "24",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 7
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "24",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 22
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "25",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "25",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "25",
+        "raw": "arafat's",
+        "output": "啊熱愛法庭上",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "25",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 6
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "26",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "26",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 4
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "27",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "27",
+        "raw": "palestinians",
+        "output": "怕了身體年少",
+        "known": false,
+        "position": 20
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "27",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 5
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "27",
+        "raw": "palestinians",
+        "output": "怕了身體年少",
+        "known": false,
+        "position": 20
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "28",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "28",
+        "raw": "qaida",
+        "output": "去挨打",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "28",
+        "raw": "festering",
+        "output": "反而沙特日能夠",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "28",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "28",
+        "raw": "qaida",
+        "output": "去挨打",
+        "known": false,
+        "position": 26
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "28",
+        "raw": "muslim",
+        "output": "穆斯里穆",
+        "known": false,
+        "position": 29
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "28",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "28",
+        "raw": "qaida",
+        "output": "去挨打",
+        "known": false,
+        "position": 11
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "28",
+        "raw": "festering",
+        "output": "反而沙特日能夠",
+        "known": false,
+        "position": 14
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "28",
+        "raw": "palestinian",
+        "output": "怕了身體年",
+        "known": false,
+        "position": 16
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "28",
+        "raw": "qaida",
+        "output": "去挨打",
+        "known": false,
+        "position": 26
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "28",
+        "raw": "muslim",
+        "output": "穆斯里穆",
+        "known": false,
+        "position": 29
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "30",
+        "raw": "xinhua",
+        "output": "新華",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "30",
+        "raw": "ahmed",
+        "output": "啊漢密爾頓",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "30",
+        "raw": "yassin",
+        "output": "雅思四年",
+        "known": false,
+        "position": 18
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "30",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "30",
+        "raw": "xinhua",
+        "output": "新華",
+        "known": false,
+        "position": 0
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "30",
+        "raw": "ahmed",
+        "output": "啊漢密爾頓",
+        "known": false,
+        "position": 17
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "30",
+        "raw": "yassin",
+        "output": "雅思四年",
+        "known": false,
+        "position": 18
+      },
+      {
+        "group": "en-dev",
+        "mode": "primed",
+        "id": "30",
+        "raw": "hamas",
+        "output": "哈馬斯",
+        "known": false,
+        "position": 23
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "31",
+        "raw": "muslim",
+        "output": "穆斯里穆",
+        "known": false,
+        "position": 3
+      },
+      {
+        "group": "en-dev",
+        "mode": "fresh",
+        "id": "31",
+        "raw": "fallujah",
+        "output": "法律路徑愛好",
+        "known": false,
+        "position": 6
+      }
+    ]
+  }
+}

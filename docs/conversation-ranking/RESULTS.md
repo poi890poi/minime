@@ -33,3 +33,38 @@ Cause: the layout hid raw candidate zero for every Pinyin-mode token, even when 
 Fix: show the literal default directly in both collapsed and expanded strips. When literal is the default, alternate English completions and Chinese alternatives, retaining each source's order and raw index zero. This intentional presentation policy keeps both languages close to the front without changing acceptance or dictionary ranking. Chinese-default compositions retain their separate phonetic row.
 
 The new core regression fails on the old English completion ordering. Eight independently authored word probes, raw recovery, and an explicit learned Chinese default pass with the fix: 1291 core assertions. The phone test exercises hello/time/thanks plus fresh morning, visible raw coordinates inside the strip, expansion, Space, and partial Chinese selection. That test and the frozen conversation study pass (2 tests, 15.693 s). Every frozen study commit is unchanged from the Taiwan-only run. Phone restored and Dozing.
+
+## Learned choices crossing language contexts
+
+Cause: START_OR_LATIN conflated a fresh editor with a position following an English
+word. Explicitly choosing 有 for you at the start then typing `see you tomorrow`
+produced `see 有tomorrow`; three other independently authored sentences reproduced
+the same mechanism. The regression fails on the baseline at `we can meet today`.
+
+Fix: a transient boolean distinguishes a committed Latin word boundary. New
+explicit choices there use AFTER_LATIN; the existing start key and Han contexts
+are retained for stored-preference compatibility. This stores no English history
+and changes no word-specific rules or model parameters. Private input and
+lifecycle/newline/delete/punctuation resets are tested. Deliberate Chinese choices
+within Latin input remain available and learn only in that context.
+
+1615 core assertions pass, including four reproduced and four fresh ambiguity
+cases. The broader desktop result is a one-variable comparison with the same
+Taiwan model, corpus, source dictionaries and candidate presentation:
+
+| Corpus/state | Known noninitial English tokens | Replaced before | Replaced after |
+|---|---:|---:|---:|
+| EWT development, 29 source-derived Chinese choices | 17714 | 981 | 0 |
+| EWT test, same learning state | 17325 | 965 | 0 |
+
+All 8999 Chinese probe results and fresh-state English results are unchanged.
+Explicit English mode preserves all 43411 English tokens. The 29 overlaps are
+data-derived, not an exception list. First-word preferences remain intentional:
+the fix does not erase an explicit Chinese preference in its original context.
+
+The broader run also exposes a separate data-import issue: capitalization filtering
+removed capitalized AOSP entries, including ordinary months, cities and acronyms.
+This is not concealed by the zero above, which measures known words after the
+first word only. Unknown-word conversions remain in the raw reports and summary.
+See DESKTOP_TESTING.md for corpus and measurement limitations. Android integration
+of this core slice will be checked after the core/data work is complete.
