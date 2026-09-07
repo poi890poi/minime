@@ -1,0 +1,50 @@
+{
+  "lib/arm64-v8a/libminime_rime.so": {
+    "loadSegments": [
+      "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x3d2250 0x3d2250 R E 0x4000",
+      "LOAD           0x3d2250 0x00000000003d6250 0x00000000003d6250 0x01abe8 0x01adb0 RW  0x4000",
+      "LOAD           0x3ece38 0x00000000003f4e38 0x00000000003f4e38 0x000b08 0x004428 RW  0x4000"
+    ],
+    "dependencies": [
+      "0x0000000000000001 (NEEDED)       Shared library: [libm.so]",
+      "0x0000000000000001 (NEEDED)       Shared library: [libdl.so]",
+      "0x0000000000000001 (NEEDED)       Shared library: [libc.so]"
+    ]
+  },
+  "lib/armeabi-v7a/libminime_rime.so": {
+    "loadSegments": [
+      "LOAD           0x000000 0x00000000 0x00000000 0x2aebd0 0x2aebd0 R E 0x4000",
+      "LOAD           0x2aebd0 0x002b2bd0 0x002b2bd0 0x0d808 0x0e430 RW  0x4000",
+      "LOAD           0x2bc3d8 0x002c43d8 0x002c43d8 0x00504 0x01e45 RW  0x4000"
+    ],
+    "dependencies": [
+      "0x00000001 (NEEDED)       Shared library: [libm.so]",
+      "0x00000001 (NEEDED)       Shared library: [libdl.so]",
+      "0x00000001 (NEEDED)       Shared library: [libc.so]"
+    ]
+  },
+  "lib/x86/libminime_rime.so": {
+    "loadSegments": [
+      "LOAD           0x000000 0x00000000 0x00000000 0x3e66c0 0x3e66c0 R E 0x4000",
+      "LOAD           0x3e66c0 0x003ea6c0 0x003ea6c0 0x0d80c 0x0d940 RW  0x4000",
+      "LOAD           0x3f3ecc 0x003fbecc 0x003fbecc 0x0056c 0x02434 RW  0x4000"
+    ],
+    "dependencies": [
+      "0x00000001 (NEEDED)       Shared library: [libm.so]",
+      "0x00000001 (NEEDED)       Shared library: [libdl.so]",
+      "0x00000001 (NEEDED)       Shared library: [libc.so]"
+    ]
+  },
+  "lib/x86_64/libminime_rime.so": {
+    "loadSegments": [
+      "LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x3da650 0x3da650 R E 0x4000",
+      "LOAD           0x3da650 0x00000000003de650 0x00000000003de650 0x01ac40 0x01b9b0 RW  0x4000",
+      "LOAD           0x3f5290 0x00000000003fd290 0x00000000003fd290 0x000b18 0x0043e0 RW  0x4000"
+    ],
+    "dependencies": [
+      "0x0000000000000001 (NEEDED)       Shared library: [libm.so]",
+      "0x0000000000000001 (NEEDED)       Shared library: [libdl.so]",
+      "0x0000000000000001 (NEEDED)       Shared library: [libc.so]"
+    ]
+  }
+}

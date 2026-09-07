@@ -1,0 +1,49 @@
+{
+  "version": "0.4.0",
+  "versionCode": 5,
+  "date": "2026-09-07",
+  "artifacts": {
+    "debug": {
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 64399962,
+      "sha256": "30a92bcdd169a377e908100a2df7406667a5d1133ee30140439d3c9c1702135f"
+    },
+    "releaseUnsigned": {
+      "path": "app/build/outputs/apk/release/app-release-unsigned.apk",
+      "bytes": 39264211,
+      "sha256": "e3d2cc30f7bc52c62655c5b61f0c6042b6eee43d99ddc4d75934a3924251191f"
+    },
+    "androidTest": {
+      "path": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "bytes": 4181236,
+      "sha256": "7f0ab787e8da858496b175a610984fcf9c4e6511dd91a82ad22deb8cb450b177"
+    }
+  },
+  "rimeBundle": "b6370a054330264010903849eb8002071f1b34b6ef0cca2590b82427ac4c8b04",
+  "builtAbis": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86",
+    "x86_64"
+  ],
+  "device": {
+    "model": "Samsung SM-G781B",
+    "android": 13,
+    "abi": "arm64-v8a",
+    "testsPassed": 32,
+    "seconds": 122.032,
+    "restoredIme": "com.samsung.android.honeyboard/.service.HoneyBoardService",
+    "finalWakefulness": "Dozing"
+  },
+  "coreAssertions": 1153,
+  "lint": {
+    "errors": 0,
+    "warnings": 15
+  },
+  "zipalign16KB": [
+    "debug",
+    "releaseUnsigned"
+  ],
+  "runtime16KBDeviceTest": false,
+  "implementationCommit": "885f188"
+}

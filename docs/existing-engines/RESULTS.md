@@ -53,3 +53,59 @@ MinIME runs `PredictionBenchmark INPUT OUTPUT context` after `tools/test-core.ps
 Timing columns are diagnostic, not comparable latency benchmarks: Rime processes
 incremental key events while MinIME and AOSP query the whole spelling. Desktop
 results exclude Android dispatch/rendering. Phone verification is a separate gate.
+
+## Android 0.4.0 integration and decision
+
+Land Rime as an **optional** Pinyin backend. Enable **Use Rime for Pinyin phrase
+prediction** in MinIME settings. It is off by default because individual candidate
+choices can regress. The old decoder remains available as a selectable backend,
+additional candidates and native-load fallback. English, Zhuyin, literal recovery,
+privacy rules, gestures and editor ownership retain their existing implementation.
+No proprietary Google code, models or assets are packaged.
+
+Only complete-input Rime candidates enter the whole-token commit path. Each query
+uses a fresh session with personal dictionaries disabled; a separate empty session
+keeps model objects cached. The engine receives active spelling only. Reusing the
+public whole-input API and retaining the model cache preserved all 84 candidate
+lists; the one-variable measurements are in [CACHE_EXPERIMENT.md](CACHE_EXPERIMENT.md).
+The two isolated model rebuilds produced the same bundle, with unmodified compiled
+bytes and no evaluation phrases or frequencies added to the models.
+
+Final validation on September 7, 2026:
+
+- **32/32 Android tests passed**, 122.032 seconds, on the authorized Samsung
+  SM-G781B phone running Android 13 (ARM64). Includes the existing editor/keyboard
+  suite, Rime sentence and mixed-phonetic commits, punctuation, single-tap English
+  switching, exact literal recovery, original-backend recovery, all 84 native
+  probes, long-input bounds and query isolation.
+- Native first choices reproduced **14/24 reference, 20/24 development and 15/36
+  fresh**. All 84 complete candidate lists matched the previous isolated run.
+  Repeated native query p50 **9.87 ms**, p95 **35.40 ms**, maximum **40.77 ms**.
+  This full-suite run used an already loaded model (loadMs=0); the earlier isolated
+  run measured initialization at 133 ms. These are debug native query timings,
+  excluding MinIME fallback lookup, scheduling and rendering.
+- The three synthetic long/noisy queries took **309.40, 92.89 and 10.59 ms**;
+  each was below the predeclared one-second bound and left the next known phrase
+  unaffected. This is bounded stress coverage, not a general worst-case guarantee.
+- **1,153 core assertions passed**. Debug, test and unsigned release APK builds
+  passed; Android lint reported **0 errors, 15 warnings**. Source preparation ran
+  successfully from the hash-verified cached archives. Language/model integrity
+  and exact packaged assets/notices passed verification.
+- All four ABIs (arm64-v8a, armeabi-v7a, x86, x86_64) compiled in debug and release.
+  Every release native LOAD segment has 16 KB alignment, and both APKs pass Android
+  zipalign with 16 KB page alignment. Only ARM64 was tested on a device; no 16 KB
+  page-size device test was performed.
+- Version **0.4.0 (5)** is installed. The wrapper restored MinIME preferences and
+  Samsung Keyboard; a final power check confirmed **Dozing**. AOD was unchanged.
+
+The universal debug APK is **64,399,962 bytes**; the unsigned release APK is
+**39,264,211 bytes**. The additional native libraries and Rime model increase size
+from 0.3.0. APK hashes, bundle identity, ELF checks and test evidence are retained
+in `verification.json`, `elf-check.json`, `phone-tests.txt`, `core-tests.txt`,
+`rime-phone-final.json` and `rime-stress.json`. The visible phrase screenshot is
+[rime-phone-phrase.png](rime-phone-phrase.png).
+
+Long initial-only sentences, candidate ordering and broader language coverage
+remain open. This measured improvement does not establish Google Zhuyin parity.
+The comparison favors this existing foundation over further custom sentence
+assembly, while leaving future model choices open to independent evaluation.
