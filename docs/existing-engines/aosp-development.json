@@ -1,0 +1,535 @@
+{
+  "top1": 20,
+  "top5": 20,
+  "count": 24,
+  "results": [
+    {
+      "case": "fresh-mingtianxiawu",
+      "input": "mingtianxiawu",
+      "expected": "明天下午",
+      "decoded": 13,
+      "rank": 1,
+      "microseconds": 288,
+      "simplified": [
+        "明天下午",
+        "明天",
+        "名",
+        "明",
+        "命"
+      ],
+      "traditional": [
+        "明天下午",
+        "明天",
+        "名",
+        "明",
+        "命"
+      ]
+    },
+    {
+      "case": "fresh-mtxw",
+      "input": "mtxw",
+      "expected": "明天下午",
+      "decoded": 4,
+      "rank": 0,
+      "microseconds": 183,
+      "simplified": [
+        "明天希望",
+        "明天",
+        "每天",
+        "媒体",
+        "模特"
+      ],
+      "traditional": [
+        "明天希望",
+        "明天",
+        "每天",
+        "媒體",
+        "模特"
+      ]
+    },
+    {
+      "case": "fresh-mingtxiawu",
+      "input": "mingtxiawu",
+      "expected": "明天下午",
+      "decoded": 10,
+      "rank": 1,
+      "microseconds": 77,
+      "simplified": [
+        "明天下午",
+        "明天",
+        "命题",
+        "名堂",
+        "名头"
+      ],
+      "traditional": [
+        "明天下午",
+        "明天",
+        "命題",
+        "名堂",
+        "名頭"
+      ]
+    },
+    {
+      "case": "fresh-keyibangwo",
+      "input": "keyibangwo",
+      "expected": "可以幫我",
+      "decoded": 10,
+      "rank": 1,
+      "microseconds": 280,
+      "simplified": [
+        "可以帮我",
+        "可以",
+        "刻意",
+        "可疑",
+        "可依"
+      ],
+      "traditional": [
+        "可以幫我",
+        "可以",
+        "刻意",
+        "可疑",
+        "可依"
+      ]
+    },
+    {
+      "case": "fresh-kybw",
+      "input": "kybw",
+      "expected": "可以幫我",
+      "decoded": 4,
+      "rank": 1,
+      "microseconds": 147,
+      "simplified": [
+        "可以帮我",
+        "可以",
+        "考研",
+        "考验",
+        "可用"
+      ],
+      "traditional": [
+        "可以幫我",
+        "可以",
+        "考研",
+        "考驗",
+        "可用"
+      ]
+    },
+    {
+      "case": "fresh-keyibw",
+      "input": "keyibw",
+      "expected": "可以幫我",
+      "decoded": 6,
+      "rank": 1,
+      "microseconds": 146,
+      "simplified": [
+        "可以帮我",
+        "可以",
+        "刻意",
+        "可疑",
+        "可依"
+      ],
+      "traditional": [
+        "可以幫我",
+        "可以",
+        "刻意",
+        "可疑",
+        "可依"
+      ]
+    },
+    {
+      "case": "fresh-woxianghuijia",
+      "input": "woxianghuijia",
+      "expected": "我想回家",
+      "decoded": 13,
+      "rank": 1,
+      "microseconds": 223,
+      "simplified": [
+        "我想回家",
+        "我想",
+        "我",
+        "喔",
+        "窝"
+      ],
+      "traditional": [
+        "我想回家",
+        "我想",
+        "我",
+        "喔",
+        "窩"
+      ]
+    },
+    {
+      "case": "fresh-wxhj",
+      "input": "wxhj",
+      "expected": "我想回家",
+      "decoded": 4,
+      "rank": 0,
+      "microseconds": 168,
+      "simplified": [
+        "我喜欢就",
+        "微循环",
+        "我想",
+        "我",
+        "危险"
+      ],
+      "traditional": [
+        "我喜歡就",
+        "微迴圈",
+        "我想",
+        "我",
+        "危險"
+      ]
+    },
+    {
+      "case": "fresh-woxhuijia",
+      "input": "woxhuijia",
+      "expected": "我想回家",
+      "decoded": 9,
+      "rank": 1,
+      "microseconds": 122,
+      "simplified": [
+        "我想回家",
+        "我想",
+        "我",
+        "我先",
+        "我校"
+      ],
+      "traditional": [
+        "我想回家",
+        "我想",
+        "我",
+        "我先",
+        "我校"
+      ]
+    },
+    {
+      "case": "fresh-jintianwanshang",
+      "input": "jintianwanshang",
+      "expected": "今天晚上",
+      "decoded": 15,
+      "rank": 1,
+      "microseconds": 224,
+      "simplified": [
+        "今天晚上",
+        "今天",
+        "进",
+        "金",
+        "近"
+      ],
+      "traditional": [
+        "今天晚上",
+        "今天",
+        "進",
+        "金",
+        "近"
+      ]
+    },
+    {
+      "case": "fresh-jtws",
+      "input": "jtws",
+      "expected": "今天晚上",
+      "decoded": 4,
+      "rank": 1,
+      "microseconds": 321,
+      "simplified": [
+        "今天晚上",
+        "今天",
+        "具体",
+        "集团",
+        "家庭"
+      ],
+      "traditional": [
+        "今天晚上",
+        "今天",
+        "具體",
+        "集團",
+        "家庭"
+      ]
+    },
+    {
+      "case": "fresh-jintwanshang",
+      "input": "jintwanshang",
+      "expected": "今天晚上",
+      "decoded": 12,
+      "rank": 1,
+      "microseconds": 83,
+      "simplified": [
+        "今天晚上",
+        "今天",
+        "尽头",
+        "津贴",
+        "紧贴"
+      ],
+      "traditional": [
+        "今天晚上",
+        "今天",
+        "盡頭",
+        "津貼",
+        "緊貼"
+      ]
+    },
+    {
+      "case": "fresh-mingtianzaishuo",
+      "input": "mingtianzaishuo",
+      "expected": "明天再說",
+      "decoded": 15,
+      "rank": 1,
+      "microseconds": 150,
+      "simplified": [
+        "明天再说",
+        "明天",
+        "名",
+        "明",
+        "命"
+      ],
+      "traditional": [
+        "明天再說",
+        "明天",
+        "名",
+        "明",
+        "命"
+      ]
+    },
+    {
+      "case": "fresh-mtzs",
+      "input": "mtzs",
+      "expected": "明天再說",
+      "decoded": 4,
+      "rank": 0,
+      "microseconds": 211,
+      "simplified": [
+        "明天只是",
+        "明天",
+        "每天",
+        "媒体",
+        "模特"
+      ],
+      "traditional": [
+        "明天只是",
+        "明天",
+        "每天",
+        "媒體",
+        "模特"
+      ]
+    },
+    {
+      "case": "fresh-mingtzaishuo",
+      "input": "mingtzaishuo",
+      "expected": "明天再說",
+      "decoded": 12,
+      "rank": 1,
+      "microseconds": 69,
+      "simplified": [
+        "明天再说",
+        "明天",
+        "命题",
+        "名堂",
+        "名头"
+      ],
+      "traditional": [
+        "明天再說",
+        "明天",
+        "命題",
+        "名堂",
+        "名頭"
+      ]
+    },
+    {
+      "case": "fresh-wobuzhidao",
+      "input": "wobuzhidao",
+      "expected": "我不知道",
+      "decoded": 10,
+      "rank": 1,
+      "microseconds": 170,
+      "simplified": [
+        "我不知道",
+        "我",
+        "我不",
+        "我部",
+        "喔"
+      ],
+      "traditional": [
+        "我不知道",
+        "我",
+        "我不",
+        "我部",
+        "喔"
+      ]
+    },
+    {
+      "case": "fresh-wbzd",
+      "input": "wbzd",
+      "expected": "我不知道",
+      "decoded": 4,
+      "rank": 0,
+      "microseconds": 173,
+      "simplified": [
+        "微不足道",
+        "外包装",
+        "我不在",
+        "我",
+        "我不"
+      ],
+      "traditional": [
+        "微不足道",
+        "外包裝",
+        "我不在",
+        "我",
+        "我不"
+      ]
+    },
+    {
+      "case": "fresh-wobuzd",
+      "input": "wobuzd",
+      "expected": "我不知道",
+      "decoded": 6,
+      "rank": 1,
+      "microseconds": 73,
+      "simplified": [
+        "我不知道",
+        "我不在",
+        "我",
+        "我不",
+        "我部"
+      ],
+      "traditional": [
+        "我不知道",
+        "我不在",
+        "我",
+        "我不",
+        "我部"
+      ]
+    },
+    {
+      "case": "fresh-womenyiqi",
+      "input": "womenyiqi",
+      "expected": "我們一起",
+      "decoded": 9,
+      "rank": 1,
+      "microseconds": 138,
+      "simplified": [
+        "我们一起",
+        "我们",
+        "我",
+        "喔",
+        "窝"
+      ],
+      "traditional": [
+        "我們一起",
+        "我們",
+        "我",
+        "喔",
+        "窩"
+      ]
+    },
+    {
+      "case": "fresh-wmyq",
+      "input": "wmyq",
+      "expected": "我們一起",
+      "decoded": 4,
+      "rank": 1,
+      "microseconds": 167,
+      "simplified": [
+        "我们一起",
+        "我们",
+        "万美元",
+        "我",
+        "外面"
+      ],
+      "traditional": [
+        "我們一起",
+        "我們",
+        "萬美元",
+        "我",
+        "外面"
+      ]
+    },
+    {
+      "case": "fresh-womenyq",
+      "input": "womenyq",
+      "expected": "我們一起",
+      "decoded": 7,
+      "rank": 1,
+      "microseconds": 54,
+      "simplified": [
+        "我们一起",
+        "我们",
+        "我",
+        "喔",
+        "窝"
+      ],
+      "traditional": [
+        "我們一起",
+        "我們",
+        "我",
+        "喔",
+        "窩"
+      ]
+    },
+    {
+      "case": "fresh-xiexiedajia",
+      "input": "xiexiedajia",
+      "expected": "謝謝大家",
+      "decoded": 11,
+      "rank": 1,
+      "microseconds": 78,
+      "simplified": [
+        "谢谢大家",
+        "谢谢",
+        "写写",
+        "歇歇",
+        "写些"
+      ],
+      "traditional": [
+        "謝謝大家",
+        "謝謝",
+        "寫寫",
+        "歇歇",
+        "寫些"
+      ]
+    },
+    {
+      "case": "fresh-xxdj",
+      "input": "xxdj",
+      "expected": "謝謝大家",
+      "decoded": 4,
+      "rank": 1,
+      "microseconds": 416,
+      "simplified": [
+        "谢谢大家",
+        "休闲度假",
+        "小小的",
+        "信息",
+        "谢谢"
+      ],
+      "traditional": [
+        "謝謝大家",
+        "休閒度假",
+        "小小的",
+        "資訊",
+        "謝謝"
+      ]
+    },
+    {
+      "case": "fresh-xiexiedj",
+      "input": "xiexiedj",
+      "expected": "謝謝大家",
+      "decoded": 8,
+      "rank": 1,
+      "microseconds": 87,
+      "simplified": [
+        "谢谢大家",
+        "谢谢",
+        "写写",
+        "歇歇",
+        "写些"
+      ],
+      "traditional": [
+        "謝謝大家",
+        "謝謝",
+        "寫寫",
+        "歇歇",
+        "寫些"
+      ]
+    }
+  ]
+}

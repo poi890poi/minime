@@ -1,0 +1,26 @@
+case	context	input	expected	rank	microseconds	top5
+fresh-mingtianxiawu		mingtianxiawu	明天下午	1	2567	明天下午 | 明天 | 命題 | 明體 | 名體
+fresh-mtxw		mtxw	明天下午	2	1960	每天下午 | 明天下午 | 滿天星 | 滿天下 | 湄潭縣
+fresh-mingtxiawu		mingtxiawu	明天下午	1	4302	明天下午 | 明天 | 命題 | 名頭 | 名堂
+fresh-keyibangwo		keyibangwo	可以幫我	1	2785	可以幫我 | 可以 | 刻意 | 可疑 | 可依
+fresh-kybw		kybw	可以幫我	0	3230	可以把我 | 可以把 | 可以被 | 靠右邊 | 可樂餅
+fresh-keyibw		keyibw	可以幫我	0	1515	可以把我 | 可以把 | 可以被 | 可以背 | 可以吧
+fresh-woxianghuijia		woxianghuijia	我想回家	1	2807	我想回家 | 我想 | 我向 | 我像 | 我相
+fresh-wxhj		wxhj	我想回家	0	2639	我喜歡就 | 我喜歡 | 微循環 | 文學化 | 玩笑話
+fresh-woxhuijia		woxhuijia	我想回家	1	2602	我想回家 | 我想 | 我先 | 我寫 | 我校
+fresh-jintianwanshang		jintianwanshang	今天晚上	1	2726	今天晚上 | 今天 | 金田 | 金天 | 浸提
+fresh-jtws		jtws	今天晚上	1	5002	今天晚上 | 家庭衛生 | 家庭污水 | 家庭污水管 | 校團委
+fresh-jintwanshang		jintwanshang	今天晚上	1	11576	今天晚上 | 今天 | 盡頭 | 津貼 | 緊貼
+fresh-mingtianzaishuo		mingtianzaishuo	明天再說	1	2043	明天再說 | 明天再說吧 | 明天再 | 明天 | 命題
+fresh-mtzs		mtzs	明天再說	1	2101	明天再說 | 媒體造勢 | 明天再說吧 | 明太祖 | 明天再
+fresh-mingtzaishuo		mingtzaishuo	明天再說	1	5702	明天再說 | 明天再說吧 | 明天再 | 明太祖 | 明體字
+fresh-wobuzhidao		wobuzhidao	我不知道	1	1321	我不知道 | 我不知道啊 | 我不知道說什麼 | 我不知道怎麼說 | 我不知
+fresh-wbzd		wbzd	我不知道	1	2295	我不知道 | 微不足道 | 文本字段 | 我不知道啊 | 我不知道說什麼
+fresh-wobuzd		wobuzd	我不知道	1	1289	我不知道 | 我不知道啊 | 我不知道說什麼 | 我不知道怎麼說 | 我不在
+fresh-womenyiqi		womenyiqi	我們一起	1	1104	我們一起 | 我們一起走 | 我們 | 我 | 喔
+fresh-wmyq		wmyq	我們一起	1	1909	我們一起 | 我們要求 | 我沒有錢 | 寤寐以求 | 我們一起走
+fresh-womenyq		womenyq	我們一起	1	1053	我們一起 | 我們要求 | 我們一起走 | 我們要 | 我們也
+fresh-xiexiedajia		xiexiedajia	謝謝大家	1	1375	謝謝大家 | 謝謝 | 寫寫 | 歇歇 | 寫些
+fresh-xxdj		xxdj	謝謝大家	1	3861	謝謝大家 | 相信大家 | 休閒度假 | 西學東漸 | 學習動機
+fresh-xiexiedj		xiexiedj	謝謝大家	1	2011	謝謝大家 | 謝謝 | 寫寫 | 歇歇 | 寫些
+# top1=20/24 top5=21/24

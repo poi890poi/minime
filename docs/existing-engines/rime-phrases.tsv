@@ -1,0 +1,26 @@
+case	context	input	expected	rank	microseconds	top5
+py-xiexie		xiexie	謝謝	1	1310	謝謝 | 寫寫 | 歇歇 | 寫些 | 泄瀉
+py-xx		xx	謝謝	4	2426	學習 | 信息 | 學校 | 謝謝 | 現象
+py-xiex		xiex	謝謝	1	884	謝謝 | 寫下 | 些許 | 血腥 | 寫寫
+py-bukeqi		bukeqi	不客氣	1	1451	不客氣 | 不可欺 | 不可棄 | 不可期 | 不可
+py-bkq		bkq	不客氣	3	2884	不可取 | 博客圈 | 不客氣 | 別客氣 | 博客羣
+py-bukq		bukq	不客氣	2	829	不可取 | 不客氣 | 不肯去 | 不開竅 | 不看球
+py-zaoshanghao		zaoshanghao	早上好	1	7272	早上好 | 早上 | 竈上 | 早晌 | 早
+py-zsh		zsh	早上好	0	3167	這是 | 只是 | 知識 | 至少 | 總是
+py-zaoshh		zaoshh	早上好	1	2013	早上好 | 早收穫 | 早上 | 遭受 | 噪聲
+py-womenmingtianjian		womenmingtianjian	我們明天見	1	10113	我們明天見 | 我們 | 我 | 喔 | 窩
+py-wmmtj		wmmtj	我們明天見	0	3599	我們茅臺酒 | 我媽媽 | 我慢慢 | 未命名 | 我明明
+py-womenmtjian		womenmtjian	我們明天見	1	13911	我們明天見 | 我們 | 我麼 | 我媽 | 我沒
+py-woyaohekafei		woyaohekafei	我要喝咖啡	1	5487	我要喝咖啡 | 我要 | 我呀 | 我 | 喔
+py-wyhkf		wyhkf	我要喝咖啡	0	5678	委員會開發 | 委員會 | 我也會 | 我也很 | 爲以後
+py-woyhekafei		woyhekafei	我要喝咖啡	0	10025	我也喝咖啡 | 我也會 | 我也很 | 我也好 | 我要回
+py-jintianxiawu		jintianxiawu	今天下午	1	6433	今天下午 | 今天 | 金田 | 金天 | 浸提
+py-jtxw		jtxw	今天下午	1	2352	今天下午 | 街頭巷尾 | 集體行爲 | 甲天下 | 金堂縣
+py-jintxiawu		jintxiawu	今天下午	1	2824	今天下午 | 今天 | 盡頭 | 津貼 | 緊貼
+py-qingbangwokanyixia		qingbangwokanyixia	請幫我看一下	1	12294	請幫我看一下 | 請幫我 | 青幫 | 青棒 | 請幫
+py-qbwkyx		qbwkyx	請幫我看一下	0	4885	全部無愧於心 | 千百萬 | 情報網 | 七百萬 | 起步晚
+py-qingbwkanyixia		qingbwkanyixia	請幫我看一下	0	15642	情報網看一下 | 情報網 | 請幫我 | 清北 | 情報
+py-xianzaijidian		xianzaijidian	現在幾點	1	2052	現在幾點 | 現在 | 先在 | 先宰 | 先載
+py-xzjd		xzjd	現在幾點	2	3864	旋轉角度 | 現在幾點 | 行政決定 | 行政監督 | 新專輯
+py-xianzaijd		xianzaijd	現在幾點	1	1463	現在幾點 | 現在就 | 現在 | 先在 | 先宰
+# top1=14/24 top5=18/24

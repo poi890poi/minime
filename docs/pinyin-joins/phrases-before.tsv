@@ -1,0 +1,26 @@
+case	context	input	expected	rank	microseconds	top5
+py-xiexie		xiexie	謝謝	1	6177	謝謝 | 寫寫 | 些些 | 歇歇 | 謝謝你
+py-xx		xx	謝謝	6	3667	學校 | 學習 | 訊息 | 相信 | 消息
+py-xiex		xiex	謝謝	1	5337	謝謝 | 寫信 | 寫下 | 些小 | 些許
+py-bukeqi		bukeqi	不客氣	1	10343	不客氣 | 不可欺 | 不可其 | 不可起 | 不可期
+py-bkq		bkq	不客氣	1	4696	不客氣 | 百塊錢 | 八塊錢 | 不肯去 | 不可欺
+py-bukq		bukq	不客氣	1	3008	不客氣 | 不肯去 | 不可欺 | 不看起 | 不空氣
+py-zaoshanghao		zaoshanghao	早上好	1	31565	早上好 | 早上號 | 造上好 | 早上豪 | 早上毫
+py-zsh		zsh	早上好	0	7352	只是 | 這是 | 知識 | 正式 | 則是
+py-zaoshh		zaoshh	早上好	0	7883	造時候 | 造社會 | 早時候 | 早社會 | 造生活
+py-womenmingtianjian		womenmingtianjian	我們明天見	3	18220	我們明天間 | 我們明天建 | 我們明天見 | 我們明天件 | 我們明天檢
+py-wmmtj		wmmtj	我們明天見	0	3432	我們茅台酒 | 我媽媽條件 | 我媽媽統計 | 我媽媽推薦 | 我媽媽投機
+py-womenmtjian		womenmtjian	我們明天見	16	6352	我們媒體間 | 我們媒體建 | 我們媒體見 | 我們媒體件 | 我們明天間
+py-woyaohekafei		woyaohekafei	我要喝咖啡	5	2962	我要和咖啡 | 我要合咖啡 | 我要何咖啡 | 我要很咖啡 | 我要喝咖啡
+py-wyhkf		wyhkf	我要喝咖啡	0	9990	委員會開發 | 委員會開放 | 委員會看法 | 委員會咖啡 | 委員會克服
+py-woyhekafei		woyhekafei	我要喝咖啡	0	2572	我也和咖啡 | 我也合咖啡 | 我有和咖啡 | 我要和咖啡 | 我也何咖啡
+py-jintianxiawu		jintianxiawu	今天下午	1	6273	今天下午 | 今天校務 | 今天小屋 | 今天小五 | 今天狎侮
+py-jtxw		jtxw	今天下午	6	2472	街頭巷尾 | 今天希望 | 今天新聞 | 今天行為 | 家庭希望
+py-jintxiawu		jintxiawu	今天下午	1	7076	今天下午 | 鏡頭下午 | 津貼下午 | 今天校務 | 靜態下午
+py-qingbangwokanyixia		qingbangwokanyixia	請幫我看一下	9	5500	青棒我看一下 | 青幫我看一下 | 青棒我看以下 | 青棒我看影響 | 青棒握看一下
+py-qbwkyx		qbwkyx	請幫我看一下	0	6776	千百萬看一下 | 千百萬抗藥性 | 千百萬可用性 | 千百萬客雅溪 | 千百萬抗壓性
+py-qingbwkanyixia		qingbwkanyixia	請幫我看一下	0	6404	情百萬看一下 | 情博物看一下 | 請百萬看一下 | 請博物看一下 | 清百萬看一下
+py-xianzaijidian		xianzaijidian	現在幾點	3	9147	現在祭典 | 現在焦點 | 現在幾點 | 現在機電 | 現在經典
+py-xzjd		xzjd	現在幾點	0	14629	學自己的 | 下自己的 | 行自己的 | 心自己的 | 現自己的
+py-xianzaijd		xianzaijd	現在幾點	0	6243	現在覺得 | 現在決定 | 現在記得 | 現在簡單 | 現在階段
+# top1=8/24 top5=11/24 p50_us=6352 p95_us=18220 load_ms=2644

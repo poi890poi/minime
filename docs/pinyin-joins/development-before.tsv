@@ -1,0 +1,26 @@
+case	context	input	expected	rank	microseconds	top5
+fresh-mingtianxiawu		mingtianxiawu	明天下午	1	24248	明天下午 | 明天校務 | 明天小屋 | 明天小五 | 明天狎侮
+fresh-mtxw		mtxw	明天下午	11	4676	媒體希望 | 媒體新聞 | 媒體行為 | 媒體下午 | 明天希望
+fresh-mingtxiawu		mingtxiawu	明天下午	1	8179	明天下午 | 命題下午 | 明體下午 | 明天校務 | 名堂下午
+fresh-keyibangwo		keyibangwo	可以幫我	1	6984	可以幫我 | 可以旁我 | 可以棒我 | 可以邦我 | 可以榜我
+fresh-kybw		kybw	可以幫我	0	4014	可以百萬 | 可以博物 | 可一百五 | 會一百五 | 可一百萬
+fresh-keyibw		keyibw	可以幫我	0	4825	可以百萬 | 可以博物 | 可一百五 | 可一百萬 | 可以把握
+fresh-woxianghuijia		woxianghuijia	我想回家	1	20596	我想回家 | 我向回家 | 我想回教 | 我想會見 | 我像回家
+fresh-wxhj		wxhj	我想回家	8	4364	文學環境 | 我想環境 | 危險環境 | 威脅環境 | 文獻環境
+fresh-woxhuijia		woxhuijia	我想回家	1	4490	我想回家 | 我下回家 | 我向回家 | 我想回教 | 斡旋回家
+fresh-jintianwanshang		jintianwanshang	今天晚上	1	11584	今天晚上 | 今天往上 | 今天玩賞 | 今天灣上 | 今天惋傷
+fresh-jtws		jtws	今天晚上	9	6909	今天五十 | 就台灣省 | 今天我是 | 家台灣省 | 今天衛生
+fresh-jintwanshang		jintwanshang	今天晚上	1	8133	今天晚上 | 鏡頭晚上 | 津貼晚上 | 靜態晚上 | 盡頭晚上
+fresh-mingtianzaishuo		mingtianzaishuo	明天再說	1	5938	明天再說 | 明天在說 | 明天在數 | 明天在率 | 明天再數
+fresh-mtzs		mtzs	明天再說	0	9020	媒體只是 | 們台中市 | 媒體這是 | 沒台中市 | 麼台中市
+fresh-mingtzaishuo		mingtzaishuo	明天再說	1	5685	明天再說 | 明天在說 | 命題再說 | 命題在說 | 明體再說
+fresh-wobuzhidao		wobuzhidao	我不知道	1	6583	我不知道 | 握不知道 | 我不直到 | 我不指導 | 窩不知道
+fresh-wbzd		wbzd	我不知道	2	2680	微不足道 | 我不知道 | 為不知道 | 於不知道 | 文不知道
+fresh-wobuzd		wobuzd	我不知道	1	2096	我不知道 | 我不足的 | 我不值得 | 我不真的 | 我不制度
+fresh-womenyiqi		womenyiqi	我們一起	1	3579	我們一起 | 我們以前 | 我們一切 | 我們引起 | 我們儀器
+fresh-wmyq		wmyq	我們一起	1	1708	我們一起 | 我們要求 | 我們以前 | 我們尤其 | 我們一切
+fresh-womenyq		womenyq	我們一起	1	8532	我們一起 | 我們要求 | 我們以前 | 我們尤其 | 我們一切
+fresh-xiexiedajia		xiexiedajia	謝謝大家	1	3309	謝謝大家 | 寫寫大家 | 謝謝打架 | 謝謝大甲 | 些些大家
+fresh-xxdj		xxdj	謝謝大家	8	2554	西學東漸 | 學校大家 | 學習大家 | 訊息大家 | 相信大家
+fresh-xiexiedj		xiexiedj	謝謝大家	1	5341	謝謝大家 | 謝謝打擊 | 謝謝登記 | 謝謝動機 | 謝謝當局
+# top1=16/24 top5=17/24 p50_us=5685 p95_us=20596 load_ms=3853

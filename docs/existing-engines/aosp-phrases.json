@@ -1,0 +1,535 @@
+{
+  "top1": 12,
+  "top5": 12,
+  "count": 24,
+  "results": [
+    {
+      "case": "py-xiexie",
+      "input": "xiexie",
+      "expected": "謝謝",
+      "decoded": 6,
+      "rank": 1,
+      "microseconds": 182,
+      "simplified": [
+        "谢谢",
+        "写写",
+        "歇歇",
+        "写些",
+        "写"
+      ],
+      "traditional": [
+        "謝謝",
+        "寫寫",
+        "歇歇",
+        "寫些",
+        "寫"
+      ]
+    },
+    {
+      "case": "py-xx",
+      "input": "xx",
+      "expected": "謝謝",
+      "decoded": 2,
+      "rank": 1,
+      "microseconds": 280,
+      "simplified": [
+        "谢谢",
+        "信息",
+        "学校",
+        "学习",
+        "消息"
+      ],
+      "traditional": [
+        "謝謝",
+        "資訊",
+        "學校",
+        "學習",
+        "訊息"
+      ]
+    },
+    {
+      "case": "py-xiex",
+      "input": "xiex",
+      "expected": "謝謝",
+      "decoded": 4,
+      "rank": 1,
+      "microseconds": 48,
+      "simplified": [
+        "谢谢",
+        "写下",
+        "写信",
+        "些许",
+        "写写"
+      ],
+      "traditional": [
+        "謝謝",
+        "寫下",
+        "寫信",
+        "些許",
+        "寫寫"
+      ]
+    },
+    {
+      "case": "py-bukeqi",
+      "input": "bukeqi",
+      "expected": "不客氣",
+      "decoded": 6,
+      "rank": 1,
+      "microseconds": 175,
+      "simplified": [
+        "不客气",
+        "不可",
+        "不",
+        "补课",
+        "部"
+      ],
+      "traditional": [
+        "不客氣",
+        "不可",
+        "不",
+        "補課",
+        "部"
+      ]
+    },
+    {
+      "case": "py-bkq",
+      "input": "bkq",
+      "expected": "不客氣",
+      "decoded": 3,
+      "rank": 0,
+      "microseconds": 183,
+      "simplified": [
+        "博客圈",
+        "别客气",
+        "博客群",
+        "包括",
+        "博客"
+      ],
+      "traditional": [
+        "部落格圈",
+        "別客氣",
+        "部落格群",
+        "包括",
+        "部落格"
+      ]
+    },
+    {
+      "case": "py-bukq",
+      "input": "bukq",
+      "expected": "不客氣",
+      "decoded": 4,
+      "rank": 0,
+      "microseconds": 36,
+      "simplified": [
+        "不空气",
+        "不可",
+        "不",
+        "不看",
+        "不肯"
+      ],
+      "traditional": [
+        "不空氣",
+        "不可",
+        "不",
+        "不看",
+        "不肯"
+      ]
+    },
+    {
+      "case": "py-zaoshanghao",
+      "input": "zaoshanghao",
+      "expected": "早上好",
+      "decoded": 11,
+      "rank": 1,
+      "microseconds": 290,
+      "simplified": [
+        "早上好",
+        "早上",
+        "早",
+        "造",
+        "遭"
+      ],
+      "traditional": [
+        "早上好",
+        "早上",
+        "早",
+        "造",
+        "遭"
+      ]
+    },
+    {
+      "case": "py-zsh",
+      "input": "zsh",
+      "expected": "早上好",
+      "decoded": 3,
+      "rank": 0,
+      "microseconds": 333,
+      "simplified": [
+        "只是",
+        "这是",
+        "真是",
+        "总是",
+        "至少"
+      ],
+      "traditional": [
+        "只是",
+        "這是",
+        "真是",
+        "總是",
+        "至少"
+      ]
+    },
+    {
+      "case": "py-zaoshh",
+      "input": "zaoshh",
+      "expected": "早上好",
+      "decoded": 6,
+      "rank": 1,
+      "microseconds": 48,
+      "simplified": [
+        "早上好",
+        "早上",
+        "遭受",
+        "噪声",
+        "早说"
+      ],
+      "traditional": [
+        "早上好",
+        "早上",
+        "遭受",
+        "噪聲",
+        "早說"
+      ]
+    },
+    {
+      "case": "py-womenmingtianjian",
+      "input": "womenmingtianjian",
+      "expected": "我們明天見",
+      "decoded": 17,
+      "rank": 1,
+      "microseconds": 314,
+      "simplified": [
+        "我们明天见",
+        "我们",
+        "我",
+        "喔",
+        "窝"
+      ],
+      "traditional": [
+        "我們明天見",
+        "我們",
+        "我",
+        "喔",
+        "窩"
+      ]
+    },
+    {
+      "case": "py-wmmtj",
+      "input": "wmmtj",
+      "expected": "我們明天見",
+      "decoded": 5,
+      "rank": 0,
+      "microseconds": 166,
+      "simplified": [
+        "我们明天就",
+        "我们",
+        "我",
+        "外面",
+        "完美"
+      ],
+      "traditional": [
+        "我們明天就",
+        "我們",
+        "我",
+        "外面",
+        "完美"
+      ]
+    },
+    {
+      "case": "py-womenmtjian",
+      "input": "womenmtjian",
+      "expected": "我們明天見",
+      "decoded": 11,
+      "rank": 0,
+      "microseconds": 89,
+      "simplified": [
+        "我们没条件",
+        "我们",
+        "我",
+        "喔",
+        "窝"
+      ],
+      "traditional": [
+        "我們沒條件",
+        "我們",
+        "我",
+        "喔",
+        "窩"
+      ]
+    },
+    {
+      "case": "py-woyaohekafei",
+      "input": "woyaohekafei",
+      "expected": "我要喝咖啡",
+      "decoded": 12,
+      "rank": 1,
+      "microseconds": 171,
+      "simplified": [
+        "我要喝咖啡",
+        "我",
+        "我要",
+        "喔",
+        "窝"
+      ],
+      "traditional": [
+        "我要喝咖啡",
+        "我",
+        "我要",
+        "喔",
+        "窩"
+      ]
+    },
+    {
+      "case": "py-wyhkf",
+      "input": "wyhkf",
+      "expected": "我要喝咖啡",
+      "decoded": 5,
+      "rank": 0,
+      "microseconds": 180,
+      "simplified": [
+        "委员会开发",
+        "委员会",
+        "我也",
+        "我",
+        "网友"
+      ],
+      "traditional": [
+        "委員會開發",
+        "委員會",
+        "我也",
+        "我",
+        "網友"
+      ]
+    },
+    {
+      "case": "py-woyhekafei",
+      "input": "woyhekafei",
+      "expected": "我要喝咖啡",
+      "decoded": 10,
+      "rank": 0,
+      "microseconds": 63,
+      "simplified": [
+        "我也喝咖啡",
+        "我也",
+        "我",
+        "我要",
+        "我有"
+      ],
+      "traditional": [
+        "我也喝咖啡",
+        "我也",
+        "我",
+        "我要",
+        "我有"
+      ]
+    },
+    {
+      "case": "py-jintianxiawu",
+      "input": "jintianxiawu",
+      "expected": "今天下午",
+      "decoded": 12,
+      "rank": 1,
+      "microseconds": 78,
+      "simplified": [
+        "今天下午",
+        "今天",
+        "进",
+        "金",
+        "近"
+      ],
+      "traditional": [
+        "今天下午",
+        "今天",
+        "進",
+        "金",
+        "近"
+      ]
+    },
+    {
+      "case": "py-jtxw",
+      "input": "jtxw",
+      "expected": "今天下午",
+      "decoded": 4,
+      "rank": 0,
+      "microseconds": 322,
+      "simplified": [
+        "今天希望",
+        "今天",
+        "具体",
+        "集团",
+        "家庭"
+      ],
+      "traditional": [
+        "今天希望",
+        "今天",
+        "具體",
+        "集團",
+        "家庭"
+      ]
+    },
+    {
+      "case": "py-jintxiawu",
+      "input": "jintxiawu",
+      "expected": "今天下午",
+      "decoded": 9,
+      "rank": 1,
+      "microseconds": 101,
+      "simplified": [
+        "今天下午",
+        "今天",
+        "尽头",
+        "津贴",
+        "紧贴"
+      ],
+      "traditional": [
+        "今天下午",
+        "今天",
+        "盡頭",
+        "津貼",
+        "緊貼"
+      ]
+    },
+    {
+      "case": "py-qingbangwokanyixia",
+      "input": "qingbangwokanyixia",
+      "expected": "請幫我看一下",
+      "decoded": 18,
+      "rank": 1,
+      "microseconds": 91,
+      "simplified": [
+        "请帮我看一下",
+        "请",
+        "清",
+        "情",
+        "轻"
+      ],
+      "traditional": [
+        "請幫我看一下",
+        "請",
+        "清",
+        "情",
+        "輕"
+      ]
+    },
+    {
+      "case": "py-qbwkyx",
+      "input": "qbwkyx",
+      "expected": "請幫我看一下",
+      "decoded": 6,
+      "rank": 0,
+      "microseconds": 224,
+      "simplified": [
+        "全部我看一下",
+        "全部",
+        "区别",
+        "确保",
+        "去吧"
+      ],
+      "traditional": [
+        "全部我看一下",
+        "全部",
+        "區別",
+        "確保",
+        "去吧"
+      ]
+    },
+    {
+      "case": "py-qingbwkanyixia",
+      "input": "qingbwkanyixia",
+      "expected": "請幫我看一下",
+      "decoded": 14,
+      "rank": 0,
+      "microseconds": 126,
+      "simplified": [
+        "情报我看一下",
+        "情报",
+        "清白",
+        "轻薄",
+        "请把"
+      ],
+      "traditional": [
+        "情報我看一下",
+        "情報",
+        "清白",
+        "輕薄",
+        "請把"
+      ]
+    },
+    {
+      "case": "py-xianzaijidian",
+      "input": "xianzaijidian",
+      "expected": "現在幾點",
+      "decoded": 13,
+      "rank": 1,
+      "microseconds": 991,
+      "simplified": [
+        "现在几点",
+        "现在",
+        "先在",
+        "先",
+        "线"
+      ],
+      "traditional": [
+        "現在幾點",
+        "現在",
+        "先在",
+        "先",
+        "線"
+      ]
+    },
+    {
+      "case": "py-xzjd",
+      "input": "xzjd",
+      "expected": "現在幾點",
+      "decoded": 4,
+      "rank": 0,
+      "microseconds": 349,
+      "simplified": [
+        "现在觉得",
+        "现在",
+        "选择",
+        "下载",
+        "现状及"
+      ],
+      "traditional": [
+        "現在覺得",
+        "現在",
+        "選擇",
+        "下載",
+        "現狀及"
+      ]
+    },
+    {
+      "case": "py-xianzaijd",
+      "input": "xianzaijd",
+      "expected": "現在幾點",
+      "decoded": 9,
+      "rank": 0,
+      "microseconds": 94,
+      "simplified": [
+        "现在觉得",
+        "现在",
+        "先在",
+        "先",
+        "线"
+      ],
+      "traditional": [
+        "現在覺得",
+        "現在",
+        "先在",
+        "先",
+        "線"
+      ]
+    }
+  ]
+}

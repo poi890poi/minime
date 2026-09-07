@@ -1,0 +1,799 @@
+{
+  "top1": 13,
+  "top5": 13,
+  "count": 36,
+  "results": [
+    {
+      "case": "fresh-1-full",
+      "input": "nijintianyaoqunali",
+      "expected": "你今天要去哪裡",
+      "decoded": 18,
+      "rank": 1,
+      "microseconds": 696,
+      "simplified": [
+        "你今天要去哪里",
+        "你",
+        "拟",
+        "尼",
+        "呢"
+      ],
+      "traditional": [
+        "你今天要去哪裡",
+        "你",
+        "擬",
+        "尼",
+        "呢"
+      ]
+    },
+    {
+      "case": "fresh-1-initials",
+      "input": "njtyqnl",
+      "expected": "你今天要去哪裡",
+      "decoded": 7,
+      "rank": 0,
+      "microseconds": 166,
+      "simplified": [
+        "你具体要求哪里",
+        "你",
+        "那就",
+        "南京",
+        "你就"
+      ],
+      "traditional": [
+        "你具體要求哪裡",
+        "你",
+        "那就",
+        "南京",
+        "你就"
+      ]
+    },
+    {
+      "case": "fresh-1-mixed",
+      "input": "nijtianyqunli",
+      "expected": "你今天要去哪裡",
+      "decoded": 13,
+      "rank": 0,
+      "microseconds": 105,
+      "simplified": [
+        "你今天有群里",
+        "你",
+        "你就",
+        "你家",
+        "逆境"
+      ],
+      "traditional": [
+        "你今天有群裡",
+        "你",
+        "你就",
+        "你家",
+        "逆境"
+      ]
+    },
+    {
+      "case": "fresh-2-full",
+      "input": "woyijingdaojiale",
+      "expected": "我已經到家了",
+      "decoded": 16,
+      "rank": 1,
+      "microseconds": 195,
+      "simplified": [
+        "我已经到家了",
+        "我",
+        "我一",
+        "我已",
+        "喔"
+      ],
+      "traditional": [
+        "我已經到家了",
+        "我",
+        "我一",
+        "我已",
+        "喔"
+      ]
+    },
+    {
+      "case": "fresh-2-initials",
+      "input": "wyjdjl",
+      "expected": "我已經到家了",
+      "decoded": 6,
+      "rank": 0,
+      "microseconds": 245,
+      "simplified": [
+        "我已经的建立",
+        "望远镜",
+        "违约金",
+        "无意间",
+        "我也"
+      ],
+      "traditional": [
+        "我已經的建立",
+        "望遠鏡",
+        "違約金",
+        "無意間",
+        "我也"
+      ]
+    },
+    {
+      "case": "fresh-2-mixed",
+      "input": "woyjingdjial",
+      "expected": "我已經到家了",
+      "decoded": 12,
+      "rank": 0,
+      "microseconds": 132,
+      "simplified": [
+        "我已经的家里",
+        "我也",
+        "我",
+        "我要",
+        "我有"
+      ],
+      "traditional": [
+        "我已經的家裡",
+        "我也",
+        "我",
+        "我要",
+        "我有"
+      ]
+    },
+    {
+      "case": "fresh-3-full",
+      "input": "womenyiqichifanba",
+      "expected": "我們一起吃飯吧",
+      "decoded": 17,
+      "rank": 1,
+      "microseconds": 284,
+      "simplified": [
+        "我们一起吃饭吧",
+        "我们",
+        "我",
+        "喔",
+        "窝"
+      ],
+      "traditional": [
+        "我們一起吃飯吧",
+        "我們",
+        "我",
+        "喔",
+        "窩"
+      ]
+    },
+    {
+      "case": "fresh-3-initials",
+      "input": "wmyqcfb",
+      "expected": "我們一起吃飯吧",
+      "decoded": 7,
+      "rank": 0,
+      "microseconds": 210,
+      "simplified": [
+        "我们一起吃饭不",
+        "我们",
+        "万美元",
+        "我",
+        "外面"
+      ],
+      "traditional": [
+        "我們一起吃飯不",
+        "我們",
+        "萬美元",
+        "我",
+        "外面"
+      ]
+    },
+    {
+      "case": "fresh-3-mixed",
+      "input": "womyiqchifba",
+      "expected": "我們一起吃飯吧",
+      "decoded": 12,
+      "rank": 1,
+      "microseconds": 134,
+      "simplified": [
+        "我们一起吃饭吧",
+        "我们",
+        "我",
+        "我没",
+        "我妈"
+      ],
+      "traditional": [
+        "我們一起吃飯吧",
+        "我們",
+        "我",
+        "我沒",
+        "我媽"
+      ]
+    },
+    {
+      "case": "fresh-4-full",
+      "input": "qingwenchezhanzenmezou",
+      "expected": "請問車站怎麼走",
+      "decoded": 22,
+      "rank": 1,
+      "microseconds": 278,
+      "simplified": [
+        "请问车站怎么走",
+        "请问",
+        "请",
+        "清",
+        "情"
+      ],
+      "traditional": [
+        "請問車站怎麼走",
+        "請問",
+        "請",
+        "清",
+        "情"
+      ]
+    },
+    {
+      "case": "fresh-4-initials",
+      "input": "qwczzmz",
+      "expected": "請問車站怎麼走",
+      "decoded": 7,
+      "rank": 0,
+      "microseconds": 302,
+      "simplified": [
+        "请问存在怎么在",
+        "请问",
+        "千万",
+        "前往",
+        "期望"
+      ],
+      "traditional": [
+        "請問存在怎麼在",
+        "請問",
+        "千萬",
+        "前往",
+        "期望"
+      ]
+    },
+    {
+      "case": "fresh-4-mixed",
+      "input": "qingwchezzenmzou",
+      "expected": "請問車站怎麼走",
+      "decoded": 16,
+      "rank": 0,
+      "microseconds": 135,
+      "simplified": [
+        "请问车子怎么走",
+        "请问",
+        "请勿",
+        "青蛙",
+        "轻微"
+      ],
+      "traditional": [
+        "請問車子怎麼走",
+        "請問",
+        "請勿",
+        "青蛙",
+        "輕微"
+      ]
+    },
+    {
+      "case": "fresh-5-full",
+      "input": "zhegeduoshaoqian",
+      "expected": "這個多少錢",
+      "decoded": 16,
+      "rank": 1,
+      "microseconds": 215,
+      "simplified": [
+        "这个多少钱",
+        "这个",
+        "这",
+        "这歌",
+        "着"
+      ],
+      "traditional": [
+        "這個多少錢",
+        "這個",
+        "這",
+        "這歌",
+        "著"
+      ]
+    },
+    {
+      "case": "fresh-5-initials",
+      "input": "zgdsq",
+      "expected": "這個多少錢",
+      "decoded": 5,
+      "rank": 1,
+      "microseconds": 361,
+      "simplified": [
+        "这个多少钱",
+        "这个",
+        "中国",
+        "中国队",
+        "最高点"
+      ],
+      "traditional": [
+        "這個多少錢",
+        "這個",
+        "中國",
+        "中國隊",
+        "最高點"
+      ]
+    },
+    {
+      "case": "fresh-5-mixed",
+      "input": "zhegduosqian",
+      "expected": "這個多少錢",
+      "decoded": 12,
+      "rank": 1,
+      "microseconds": 110,
+      "simplified": [
+        "这个多少钱",
+        "这个",
+        "这股",
+        "这",
+        "这歌"
+      ],
+      "traditional": [
+        "這個多少錢",
+        "這個",
+        "這股",
+        "這",
+        "這歌"
+      ]
+    },
+    {
+      "case": "fresh-6-full",
+      "input": "womingtianzaidageini",
+      "expected": "我明天再打給你",
+      "decoded": 20,
+      "rank": 0,
+      "microseconds": 337,
+      "simplified": [
+        "我明天在大给你",
+        "我",
+        "喔",
+        "窝",
+        "握"
+      ],
+      "traditional": [
+        "我明天在大給你",
+        "我",
+        "喔",
+        "窩",
+        "握"
+      ]
+    },
+    {
+      "case": "fresh-6-initials",
+      "input": "wmtzdgn",
+      "expected": "我明天再打給你",
+      "decoded": 7,
+      "rank": 0,
+      "microseconds": 221,
+      "simplified": [
+        "我们投资的功能",
+        "我们",
+        "我",
+        "外面",
+        "完美"
+      ],
+      "traditional": [
+        "我們投資的功能",
+        "我們",
+        "我",
+        "外面",
+        "完美"
+      ]
+    },
+    {
+      "case": "fresh-6-mixed",
+      "input": "womtianzdagni",
+      "expected": "我明天再打給你",
+      "decoded": 13,
+      "rank": 0,
+      "microseconds": 111,
+      "simplified": [
+        "我明天最大给你",
+        "我们",
+        "我",
+        "我没",
+        "我妈"
+      ],
+      "traditional": [
+        "我明天最大給你",
+        "我們",
+        "我",
+        "我沒",
+        "我媽"
+      ]
+    },
+    {
+      "case": "fresh-7-full",
+      "input": "nishenmeshihouyoukong",
+      "expected": "你什麼時候有空",
+      "decoded": 21,
+      "rank": 1,
+      "microseconds": 153,
+      "simplified": [
+        "你什么时候有空",
+        "你",
+        "拟",
+        "尼",
+        "呢"
+      ],
+      "traditional": [
+        "你什麼時候有空",
+        "你",
+        "擬",
+        "尼",
+        "呢"
+      ]
+    },
+    {
+      "case": "fresh-7-initials",
+      "input": "nsmshyk",
+      "expected": "你什麼時候有空",
+      "decoded": 7,
+      "rank": 0,
+      "microseconds": 195,
+      "simplified": [
+        "你什么是一款",
+        "拿什么",
+        "那是",
+        "你",
+        "你是"
+      ],
+      "traditional": [
+        "你什麼是一款",
+        "拿什麼",
+        "那是",
+        "你",
+        "你是"
+      ]
+    },
+    {
+      "case": "fresh-7-mixed",
+      "input": "nismeshouykong",
+      "expected": "你什麼時候有空",
+      "decoded": 14,
+      "rank": 0,
+      "microseconds": 239,
+      "simplified": [
+        "你什么收有空",
+        "你",
+        "你是",
+        "你说",
+        "你所"
+      ],
+      "traditional": [
+        "你什麼收有空",
+        "你",
+        "你是",
+        "你說",
+        "你所"
+      ]
+    },
+    {
+      "case": "fresh-8-full",
+      "input": "keyizaishuoyicima",
+      "expected": "可以再說一次嗎",
+      "decoded": 17,
+      "rank": 1,
+      "microseconds": 102,
+      "simplified": [
+        "可以再说一次吗",
+        "可以",
+        "刻意",
+        "可疑",
+        "可依"
+      ],
+      "traditional": [
+        "可以再說一次嗎",
+        "可以",
+        "刻意",
+        "可疑",
+        "可依"
+      ]
+    },
+    {
+      "case": "fresh-8-initials",
+      "input": "kyzsycm",
+      "expected": "可以再說一次嗎",
+      "decoded": 7,
+      "rank": 0,
+      "microseconds": 255,
+      "simplified": [
+        "可以之所以充满",
+        "可以",
+        "看样子",
+        "客运站",
+        "考研"
+      ],
+      "traditional": [
+        "可以之所以充滿",
+        "可以",
+        "看樣子",
+        "客運站",
+        "考研"
+      ]
+    },
+    {
+      "case": "fresh-8-mixed",
+      "input": "keyzaisyicma",
+      "expected": "可以再說一次嗎",
+      "decoded": 12,
+      "rank": 0,
+      "microseconds": 139,
+      "simplified": [
+        "可以在所以筹码",
+        "可以",
+        "可用",
+        "科研",
+        "刻意"
+      ],
+      "traditional": [
+        "可以在所以籌碼",
+        "可以",
+        "可用",
+        "科研",
+        "刻意"
+      ]
+    },
+    {
+      "case": "fresh-9-full",
+      "input": "woyaoqumaidongxi",
+      "expected": "我要去買東西",
+      "decoded": 16,
+      "rank": 1,
+      "microseconds": 173,
+      "simplified": [
+        "我要去买东西",
+        "我",
+        "我要",
+        "喔",
+        "窝"
+      ],
+      "traditional": [
+        "我要去買東西",
+        "我",
+        "我要",
+        "喔",
+        "窩"
+      ]
+    },
+    {
+      "case": "fresh-9-initials",
+      "input": "wyqmdx",
+      "expected": "我要去買東西",
+      "decoded": 6,
+      "rank": 0,
+      "microseconds": 282,
+      "simplified": [
+        "我也轻描淡写",
+        "我也",
+        "我",
+        "网友",
+        "我要"
+      ],
+      "traditional": [
+        "我也輕描淡寫",
+        "我也",
+        "我",
+        "網友",
+        "我要"
+      ]
+    },
+    {
+      "case": "fresh-9-mixed",
+      "input": "woyqumdongx",
+      "expected": "我要去買東西",
+      "decoded": 11,
+      "rank": 0,
+      "microseconds": 89,
+      "simplified": [
+        "我也去买东西",
+        "我也",
+        "我",
+        "我要",
+        "我有"
+      ],
+      "traditional": [
+        "我也去買東西",
+        "我也",
+        "我",
+        "我要",
+        "我有"
+      ]
+    },
+    {
+      "case": "fresh-10-full",
+      "input": "zhunishengrikuaile",
+      "expected": "祝你生日快樂",
+      "decoded": 18,
+      "rank": 1,
+      "microseconds": 104,
+      "simplified": [
+        "祝你生日快乐",
+        "祝你",
+        "住",
+        "猪",
+        "主"
+      ],
+      "traditional": [
+        "祝你生日快樂",
+        "祝你",
+        "住",
+        "豬",
+        "主"
+      ]
+    },
+    {
+      "case": "fresh-10-initials",
+      "input": "znsrkl",
+      "expected": "祝你生日快樂",
+      "decoded": 6,
+      "rank": 0,
+      "microseconds": 336,
+      "simplified": [
+        "只能生日快乐",
+        "只能",
+        "在",
+        "智能",
+        "找你"
+      ],
+      "traditional": [
+        "只能生日快樂",
+        "只能",
+        "在",
+        "智慧",
+        "找你"
+      ]
+    },
+    {
+      "case": "fresh-10-mixed",
+      "input": "zhunshengrkuail",
+      "expected": "祝你生日快樂",
+      "decoded": 15,
+      "rank": 0,
+      "microseconds": 55,
+      "simplified": [
+        "准生日快乐",
+        "准",
+        "肫",
+        "準",
+        "谆"
+      ],
+      "traditional": [
+        "準生日快樂",
+        "準",
+        "肫",
+        "準",
+        "諄"
+      ]
+    },
+    {
+      "case": "fresh-11-full",
+      "input": "buhaoyisirangnijiudengle",
+      "expected": "不好意思讓你久等了",
+      "decoded": 24,
+      "rank": 0,
+      "microseconds": 162,
+      "simplified": [
+        "不好意思让你就等了",
+        "不好意思",
+        "不好",
+        "不",
+        "部"
+      ],
+      "traditional": [
+        "不好意思讓你就等了",
+        "不好意思",
+        "不好",
+        "不",
+        "部"
+      ]
+    },
+    {
+      "case": "fresh-11-initials",
+      "input": "bhysrnjdl",
+      "expected": "不好意思讓你久等了",
+      "decoded": 9,
+      "rank": 0,
+      "microseconds": 338,
+      "simplified": [
+        "不好意思让你觉得了",
+        "不好意思",
+        "不会",
+        "不好",
+        "不好用"
+      ],
+      "traditional": [
+        "不好意思讓你覺得了",
+        "不好意思",
+        "不會",
+        "不好",
+        "不好用"
+      ]
+    },
+    {
+      "case": "fresh-11-mixed",
+      "input": "buhyisrangnjiudle",
+      "expected": "不好意思讓你久等了",
+      "decoded": 17,
+      "rank": 0,
+      "microseconds": 155,
+      "simplified": [
+        "不好意思让你就的了",
+        "不好意思",
+        "不会",
+        "不好",
+        "不"
+      ],
+      "traditional": [
+        "不好意思讓你就的了",
+        "不好意思",
+        "不會",
+        "不好",
+        "不"
+      ]
+    },
+    {
+      "case": "fresh-12-full",
+      "input": "jintianwanshangyoushijianma",
+      "expected": "今天晚上有時間嗎",
+      "decoded": 27,
+      "rank": 1,
+      "microseconds": 137,
+      "simplified": [
+        "今天晚上有时间吗",
+        "今天",
+        "进",
+        "金",
+        "近"
+      ],
+      "traditional": [
+        "今天晚上有時間嗎",
+        "今天",
+        "進",
+        "金",
+        "近"
+      ]
+    },
+    {
+      "case": "fresh-12-initials",
+      "input": "jtwsysjm",
+      "expected": "今天晚上有時間嗎",
+      "decoded": 8,
+      "rank": 0,
+      "microseconds": 413,
+      "simplified": [
+        "今天我实验室节目",
+        "今天",
+        "具体",
+        "集团",
+        "家庭"
+      ],
+      "traditional": [
+        "今天我實驗室節目",
+        "今天",
+        "具體",
+        "集團",
+        "家庭"
+      ]
+    },
+    {
+      "case": "fresh-12-mixed",
+      "input": "jintwansyousjianm",
+      "expected": "今天晚上有時間嗎",
+      "decoded": 17,
+      "rank": 0,
+      "microseconds": 240,
+      "simplified": [
+        "今天晚上有时间没",
+        "今天",
+        "尽头",
+        "津贴",
+        "紧贴"
+      ],
+      "traditional": [
+        "今天晚上有時間沒",
+        "今天",
+        "盡頭",
+        "津貼",
+        "緊貼"
+      ]
+    }
+  ]
+}
