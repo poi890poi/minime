@@ -5,9 +5,11 @@ import java.util.*;
 /** Geometric QWERTY templates from the attributed English lexicon. */
 final class EnglishTrace {
     private static final String[] ROWS={"qwertyuiop","asdfghjkl","zxcvbnm"};
+    private static final float[][] KEYS=new float[26][];
+    private static final float[] OUTSIDE={-10,-10};
+    static {for(int row=0;row<3;row++)for(int col=0;col<ROWS[row].length();col++)KEYS[ROWS[row].charAt(col)-'a']=new float[]{col+(row==0?.5f:row==1?1f:2f),row};}
     static float[] point(char c) {
-        for(int row=0;row<3;row++) {int col=ROWS[row].indexOf(c);if(col>=0)return new float[]{col+(row==0?.5f:row==1?1f:2f),row};}
-        return new float[]{-10,-10};
+        return c>='a' && c<='z'?KEYS[c-'a']:OUTSIDE;
     }
     private static float distance(float x,float y,float a,float b) {return (float)Math.hypot(x-a,y-b);}
     static float[] sample(float[] points) {
@@ -28,9 +30,11 @@ final class EnglishTrace {
         for(float p:points)if(!Float.isFinite(p))return Collections.emptyList();
         float[] path=sample(points);List<Candidate> result=new ArrayList<>();
         for(Map.Entry<String,Integer> entry:words.entrySet()) {
-            String word=entry.getKey();if(word.length()<2 || word.length()>24 || !word.matches("[a-z]+"))continue;
+            String word=entry.getKey();if(word.length()<2 || word.length()>24)continue;
             float[] first=point(word.charAt(0)),last=point(word.charAt(word.length()-1));
             if(distance(path[0],path[1],first[0],first[1])>.8 || distance(path[62],path[63],last[0],last[1])>.8)continue;
+            boolean letters=true;for(int i=0;i<word.length();i++)if(word.charAt(i)<'a' || word.charAt(i)>'z'){letters=false;break;}
+            if(!letters)continue;
             float[] template=new float[word.length()*2];for(int i=0;i<word.length();i++) {float[] p=point(word.charAt(i));template[i*2]=p[0];template[i*2+1]=p[1];}
             float[] shape=sample(template);double error=0;
             for(int i=0;i<32;i++)error+=Math.pow(path[i*2]-shape[i*2],2)+Math.pow(path[i*2+1]-shape[i*2+1],2);
