@@ -19,6 +19,7 @@ final class KeyboardView extends LinearLayout {
     private final TextView status;
     private String layoutKey="", lastRaw="";
     private int page;
+    private boolean expanded;
     private static final int INK=0xff263238, BLUE=0xff176b91, BACK=0xffdfe3e5;
     private static final String[] ZHUYIN={"ㄅㄉˇˋㄓˊ˙ㄚㄞㄢ","ㄆㄊㄍㄐㄔㄗㄧㄛㄟㄣ","ㄇㄋㄎㄑㄕㄘㄨㄜㄠㄤ","ㄈㄌㄏㄒㄖㄙㄩㄝㄡㄥ"};
     private static final String[] ZH_DOWN={"1234567890","qwertyuiop","asdfghjkl：","zxcvbnm…！？"};
@@ -45,7 +46,7 @@ final class KeyboardView extends LinearLayout {
             // Let the horizontal candidate scroller intercept drags normally.
             b=new TextView(getContext()); b.setText(label); b.setGravity(Gravity.CENTER);
             b.setMaxLines(1); b.setFocusable(true); b.setClickable(true);
-            b.setOnClickListener(v->press.accept(command));
+            b.setOnClickListener(v->{expanded=false;press.accept(command);});
         } else b=new SlideKey(getContext(),label,command,up,down,press,longPress);
         b.setTextColor(accent?Color.WHITE:INK);
         b.setTextSize(Math.min(21,height*.43f));
@@ -88,6 +89,7 @@ final class KeyboardView extends LinearLayout {
         if(!lastRaw.equals(engine.raw())) { page=0; lastRaw=engine.raw(); }
         strip.removeAllViews();
         List<Candidate> candidates=engine.candidates();
+        if(candidates.isEmpty() || panel!=0)expanded=false;
         if(!candidates.isEmpty()) {
             int from=0;
             if(!engine.raw().isEmpty()) {
@@ -110,6 +112,10 @@ final class KeyboardView extends LinearLayout {
                 more.setOnClickListener(v->{ page=(page+1)%pageCount; render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,enter,loading); });
                 strip.addView(more,new LayoutParams(dp(40),dp(42)));
             }
+            TextView expand=plain(expanded?"⌃":"⌄","EXPAND",42,1);
+            expand.setContentDescription(expanded?"Collapse candidates":"Expand candidates");
+            expand.setOnClickListener(v->{expanded=!expanded;render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,enter,loading);});
+            strip.addView(expand,new LayoutParams(dp(40),dp(42)));
         } else {
             TextView layout=plain(zhuyin?"拼音 layout":"注音 layout","LAYOUT",42,1); layout.setTextSize(14);
             strip.addView(layout);
@@ -119,10 +125,22 @@ final class KeyboardView extends LinearLayout {
         strip.addView(menu,new LayoutParams(dp(42),dp(42)));
         boolean landscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
         int height=landscape?34:48;
-        String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height;
+        String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+(expanded?candidates.toString():"");
         if(nextLayout.equals(layoutKey)) return;
         layoutKey=nextLayout; keys.removeAllViews();
-        if(panel==3) {
+        if(expanded) {
+            ScrollView scroll=new ScrollView(getContext());LinearLayout grid=new LinearLayout(getContext());grid.setOrientation(VERTICAL);scroll.addView(grid);
+            int first=engine.raw().isEmpty()?0:1;
+            for(int i=first;i<candidates.size();i+=3) {
+                LinearLayout line=new LinearLayout(getContext());grid.addView(line);
+                for(int j=i;j<Math.min(i+3,candidates.size());j++) {
+                    TextView word=button(candidates.get(j).text,"CANDIDATE:"+j,"","",engine.preferred()==j && !engine.raw().isEmpty(),height,1);
+                    word.setTextSize(16);word.setEllipsize(android.text.TextUtils.TruncateAt.END);line.addView(word);
+                }
+                for(int j=Math.min(i+3,candidates.size());j<i+3;j++)spacer(line,1);
+            }
+            keys.addView(scroll,new LayoutParams(-1,dp((height+4)*(zhuyin?4:3))));
+        } else if(panel==3) {
             punctuationChoices(asciiPunctuation,allowLanguageSwitch && !english,height);
         } else if(panel>0) {
             keys.addView(new SymbolPanel(getContext(),panel==2,press));
@@ -163,7 +181,7 @@ final class KeyboardView extends LinearLayout {
         TextView space=plain("Space","SPACE",height,3.5f); space.setTextSize(16); bottom.addView(space);
         if(zhuyin && panel==0 && !numeric) bottom.addView(plain("ㄦ","ㄦ",height,1));
         else bottom.addView(punctuation(false,asciiPunctuation,allowLanguageSwitch && !english,height));
-        if(zhuyin || panel>0 || numeric) bottom.addView(plain("⌫","DELETE",height,1.5f));
+        if(zhuyin || panel>0 || numeric || expanded) bottom.addView(plain("⌫","DELETE",height,1.5f));
         TextView action=button(enter,"ENTER","","",true,height,1.5f); action.setTextSize(14); bottom.addView(action);
     }
 }

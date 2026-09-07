@@ -331,6 +331,12 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         focus(activity.text);click("H");type("ello");click(".");click("Space");click("W");type("orld");click("Space");
         assertEquals("Hello. World ",activity.text.getText().toString());
     }
+    public void testExpandedCandidatesInBothLanguages() {
+        type("ming");click("Expand candidates");node("Collapse candidates").recycle();
+        click("Candidate 明");assertEquals("明",activity.text.getText().toString());
+        clear();click("Switch to English");type("pronun");click("Expand candidates");
+        click("Candidate pronunciation");type("test ");assertEquals("pronunciation test ",activity.text.getText().toString());
+    }
     public void testHeldDeleteStopsOnRelease() {
         type("abcdefghijkl");
         Rect r=bounds("⌫"); long start=SystemClock.uptimeMillis();
