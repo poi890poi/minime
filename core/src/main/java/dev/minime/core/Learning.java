@@ -9,6 +9,8 @@ public interface Learning {
     default List<Candidate> custom(String raw) { return Collections.emptyList(); }
     default List<Candidate> predictEnglish(String context) { return Collections.emptyList(); }
     default void rememberEnglish(String context,String word) { }
+    default void observePhrase(String reading,String output) { }
+    default List<Candidate> phrases(String raw) {return Collections.emptyList();}
     Learning NONE = new Learning() {
         public int count(String c, String r, String v) { return 0; }
         public void choose(String c, String r, String v) { }

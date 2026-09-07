@@ -1,0 +1,166 @@
+{
+  "baseline": {
+    "sha256": "73ad05a18cd4616433ee964726b3285d8ba80765c0e21154962940628cf14140",
+    "groups": {
+      "wiki-full": {
+        "queries": 291,
+        "top8": 88,
+        "any_candidate": 165
+      },
+      "wiki-initial": {
+        "queries": 291,
+        "top8": 16,
+        "any_candidate": 53
+      },
+      "wiki-mixed": {
+        "queries": 291,
+        "top8": 43,
+        "any_candidate": 83
+      }
+    }
+  },
+  "addons": {
+    "sha256": "2808895ace34cc62bd07f647552e719becdbc659cd8d6dd24e5b1d8e92a42f51",
+    "groups": {
+      "wiki-full": {
+        "queries": 291,
+        "top8": 88,
+        "any_candidate": 165
+      },
+      "wiki-initial": {
+        "queries": 291,
+        "top8": 18,
+        "any_candidate": 55
+      },
+      "wiki-mixed": {
+        "queries": 291,
+        "top8": 43,
+        "any_candidate": 83
+      }
+    },
+    "changed_space_outputs": 0
+  },
+  "promoted": {
+    "sha256": "0f61e24ced59a351d03282c0d5d8784f30245da6f4eb6fa544bc14a31530e70f",
+    "groups": {
+      "wiki-full": {
+        "queries": 291,
+        "top8": 88,
+        "any_candidate": 165
+      },
+      "wiki-initial": {
+        "queries": 291,
+        "top8": 19,
+        "any_candidate": 55
+      },
+      "wiki-mixed": {
+        "queries": 291,
+        "top8": 43,
+        "any_candidate": 83
+      }
+    },
+    "changed_space_outputs": 0
+  },
+  "fresh-baseline": {
+    "sha256": "e5f21ae6f9601a7f036b6ba74384c8e8dca47eaed9e5f358341594aa314d25dd",
+    "groups": {
+      "wiki-full": {
+        "queries": 258,
+        "top8": 60,
+        "any_candidate": 109
+      },
+      "wiki-initial": {
+        "queries": 258,
+        "top8": 14,
+        "any_candidate": 44
+      },
+      "wiki-mixed": {
+        "queries": 258,
+        "top8": 37,
+        "any_candidate": 67
+      }
+    }
+  },
+  "fresh-promoted": {
+    "sha256": "00e8141c5a04cbe99eb053868210fe020bf2b106758db35a83d348ec82c2b127",
+    "groups": {
+      "wiki-full": {
+        "queries": 258,
+        "top8": 63,
+        "any_candidate": 110
+      },
+      "wiki-initial": {
+        "queries": 258,
+        "top8": 19,
+        "any_candidate": 47
+      },
+      "wiki-mixed": {
+        "queries": 258,
+        "top8": 37,
+        "any_candidate": 67
+      }
+    },
+    "changed_space_outputs": 0
+  },
+  "systematic-off": {
+    "sha256": "e5f21ae6f9601a7f036b6ba74384c8e8dca47eaed9e5f358341594aa314d25dd",
+    "groups": {
+      "wiki-full": {
+        "queries": 258,
+        "top8": 60,
+        "any_candidate": 109
+      },
+      "wiki-initial": {
+        "queries": 258,
+        "top8": 14,
+        "any_candidate": 44
+      },
+      "wiki-mixed": {
+        "queries": 258,
+        "top8": 37,
+        "any_candidate": 67
+      }
+    }
+  },
+  "systematic-on": {
+    "sha256": "33d8c8d2e5a6ed4316c59ea40d2c9770280cdb588e5dc1b6a8a7c95864a1ca88",
+    "groups": {
+      "wiki-full": {
+        "queries": 258,
+        "top8": 65,
+        "any_candidate": 110
+      },
+      "wiki-initial": {
+        "queries": 258,
+        "top8": 18,
+        "any_candidate": 47
+      },
+      "wiki-mixed": {
+        "queries": 258,
+        "top8": 37,
+        "any_candidate": 67
+      }
+    },
+    "changed_space_outputs": 0
+  },
+  "systematic-development": {
+    "sha256": "0e389ca7793fe6fc1d79a286d6f1e1cb61764aff39ef827798b16288372f5435",
+    "groups": {
+      "wiki-full": {
+        "queries": 291,
+        "top8": 117,
+        "any_candidate": 185
+      },
+      "wiki-initial": {
+        "queries": 291,
+        "top8": 23,
+        "any_candidate": 62
+      },
+      "wiki-mixed": {
+        "queries": 291,
+        "top8": 43,
+        "any_candidate": 83
+      }
+    }
+  }
+}

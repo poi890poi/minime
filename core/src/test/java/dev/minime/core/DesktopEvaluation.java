@@ -8,6 +8,8 @@ import java.util.function.Consumer;
 
 /** Core + pinned desktop Rime evaluation. No Android dependencies or APK build. */
 public final class DesktopEvaluation {
+    private static AddonDictionary addons=AddonDictionary.EMPTY;
+    private static Set<String> packs=Collections.emptySet();
     private static String json(String s) {return "\""+s.replace("\\","\\\\").replace("\"","\\\"").replace("\n","\\n").replace("\r","\\r").replace("\t","\\t")+"\"";}
     private static final class Editor implements CompositionEngine.Editor {
         StringBuilder text=new StringBuilder();
@@ -57,12 +59,14 @@ public final class DesktopEvaluation {
         }
     }
     private static CompositionEngine engine(Editor e,Learning learning,PhoneticDictionary d,Decoder decoder,boolean english) {
-        CompositionEngine c=new CompositionEngine(e,learning);c.dictionary(d);c.start(false,false,false,false,english);c.decoder(decoder,()->{});return c;
+        CompositionEngine c=new CompositionEngine(e,learning);c.dictionary(d);c.start(false,false,false,false,english);c.decoder(decoder,()->{});
+        if(!packs.isEmpty())c.addons(addons,packs);return c;
     }
     private static void type(CompositionEngine c,Decoder decoder,String raw) {raw.codePoints().forEach(c::type);decoder.flush();}
     public static void main(String[] args) throws Exception {
         if(args.length!=6)throw new IllegalArgumentException("corpus.tsv output.jsonl native.exe rime.dll model-dir user-dir");
         Path assets=Paths.get("app/src/main/assets");
+        if(Boolean.getBoolean("minime.addons")) {addons=AddonDictionary.combine(AddonDictionary.read(Files.newBufferedReader(assets.resolve("addons.tsv"))),AddonDictionary.read(Files.newBufferedReader(assets.resolve("geography.tsv"))));packs=new HashSet<>(Arrays.asList("taiwan","japanese","poj","geography"));}
         PhoneticDictionary dictionary=PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")),Files.newBufferedReader(assets.resolve("en_us.tsv")),Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));
         List<String> rows=Files.readAllLines(Paths.get(args[0]),StandardCharsets.UTF_8);
         try(Native nativeRime=new Native(args[2],args[3],args[4],args[5]);BufferedWriter report=Files.newBufferedWriter(Paths.get(args[1]),StandardCharsets.UTF_8)) {

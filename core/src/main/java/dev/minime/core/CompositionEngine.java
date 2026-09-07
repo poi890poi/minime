@@ -31,6 +31,18 @@ public final class CompositionEngine {
     private Intent intent = Intent.LATIN_LITERAL;
     private List<Candidate> candidates = new ArrayList<>();
     private int preferred;
+    private final PhraseSession phraseSession=new PhraseSession();
+    private boolean phraseLearning;
+    public void phraseLearning(boolean enabled) {if(phraseLearning!=enabled) {phraseLearning=enabled;phraseSession.clear();refresh();}}
+    private void acceptedPhrase(String reading,Candidate choice) {
+        if(!phraseLearning || privateField || literalField || englishMode || choice.literal || choice.supplemental) {phraseSession.clear();return;}
+        phraseSession.accept(reading,choice.text,learning::observePhrase);
+    }
+    private AddonDictionary addons=AddonDictionary.EMPTY;
+    private Set<String> enabledAddons=Collections.emptySet();
+    public void addons(AddonDictionary dictionary,Set<String> enabled) {
+        addons=Objects.requireNonNull(dictionary);enabledAddons=new HashSet<>(enabled);refresh();
+    }
     public interface Decoder {
         void convert(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,java.util.function.Consumer<List<Candidate>> result);
         default void trace(PhoneticDictionary dictionary,float[] points,java.util.function.Consumer<List<Candidate>> result) {result.accept(dictionary.englishTrace(points));}
@@ -69,7 +81,7 @@ public final class CompositionEngine {
         finally {draining=false;}
         changed.run();
     }
-    private void cancelPending() {revision++;compositionId++;pending=false;barrier=false;waiting.clear();}
+    private void cancelPending() {revision++;compositionId++;pending=false;barrier=false;waiting.clear();phraseSession.clear();}
     public CompositionEngine(Editor editor, Learning learning) { this.editor = editor; this.learning = learning; }
     public void dictionary(PhoneticDictionary dictionary) { this.dictionary = dictionary; refresh(); }
     public void start(boolean zhuyin, boolean literalField, boolean privateField, boolean direct) {
@@ -105,6 +117,7 @@ public final class CompositionEngine {
         // ASCII punctuation stays with Latin tokens so email, URLs and identifiers never lose raw input.
         if (!phonetic && !Character.isLetterOrDigit(codePoint) && (codePoint > 126 || codePoint < 33)) {
             commitDefault(false);
+            phraseSession.clear();
             editor.commit(letter); context = "";afterLatin=false; refresh(); return;
         }
         if (raw.length() + letter.length() > 96) commitRaw(false);
@@ -121,7 +134,7 @@ public final class CompositionEngine {
         }
         String spelling=raw;
         clearAssistance();
-        if (direct || raw.isEmpty()) { editor.commit(" ");if(committedEnglishWord && !literalField && !direct)spaceAt=now;committedEnglishWord=false;refresh(); return; }
+        if (direct || raw.isEmpty()) { phraseSession.clear();editor.commit(" ");if(committedEnglishWord && !literalField && !direct)spaceAt=now;committedEnglishWord=false;refresh(); return; }
         int last=raw.codePointBefore(raw.length());
         if(zhuyin && !literalField && !englishMode && last>=0x3105 && last<=0x3129) {
             raw+="ˉ"; editor.composing(raw); refresh(); return;
@@ -135,8 +148,8 @@ public final class CompositionEngine {
     }
     public void confirm() { if(deferUntilReady(this::confirm,true))return;clearAssistance();completionBoundary=false; commitDefault(false); }
     /** An explicit slide commits its literal output, independent of token inference. */
-    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();resolveCompletionBoundary(text); commitDefault(false); editor.commit(text);committedEnglishWord=false; context="";afterLatin=latinBoundary(text); refresh(); }
-    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();completionBoundary=false; commitDefault(false); editor.enter();committedEnglishWord=false; context = "";afterLatin=false; refresh(); }
+    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();resolveCompletionBoundary(text); commitDefault(false);phraseSession.clear(); editor.commit(text);committedEnglishWord=false; context="";afterLatin=latinBoundary(text); refresh(); }
+    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();completionBoundary=false; commitDefault(false);phraseSession.clear(); editor.enter();committedEnglishWord=false; context = "";afterLatin=false; refresh(); }
     private void resolveCompletionBoundary(String text) {
         if(completionBoundary) {
             completionBoundary=false;
@@ -150,6 +163,7 @@ public final class CompositionEngine {
     }
     public void backspace() {
         if(deferUntilReady(this::backspace,false))return;
+        phraseSession.clear();
         completionBoundary=false;
         committedEnglishWord=false;
         if(!undoSpelling.isEmpty() && raw.isEmpty()) {
@@ -172,6 +186,7 @@ public final class CompositionEngine {
         if(partial(choice) && !literalField && !englishMode && !choice.literal) {
             compositionId++;
             String reading=raw.substring(0,choice.consumed),rest=raw.substring(choice.consumed).replaceFirst("^'+","");
+            acceptedPhrase(reading,choice);
             if(!privateField)learning.choose(contextKey(),reading,choice.text);
             editor.commit(choice.text);context=privateField?"":tail(context+choice.text,3);afterLatin=false;
             raw=rest;completionBoundary=false;committedEnglishWord=false;
@@ -203,12 +218,13 @@ public final class CompositionEngine {
         commit(c, withSpace && c.literal, false);
     }
     private void commit(Candidate c, boolean withSpace, boolean explicit) {
-        if (explicit && !privateField) learning.choose(contextKey(), raw, c.text);
+        acceptedPhrase(raw,c);
+        if (explicit && !privateField && !c.supplemental) learning.choose(contextKey(), raw, c.text);
         editor.commit(c.text + (withSpace ? " " : ""));
         committedEnglishWord=false;
         if(englishMode && !literalField && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
             committedEnglishWord=!withSpace;
-            if(!privateField)learning.rememberEnglish(context,c.text.toLowerCase(Locale.ROOT));
+            if(!privateField && !c.supplemental)learning.rememberEnglish(context,c.text.toLowerCase(Locale.ROOT));
             String[] words=(context+" "+c.text.toLowerCase(Locale.ROOT)).trim().split(" ");
             context=words.length>1?words[words.length-2]+" "+words[words.length-1]:words[0];
         } else context = c.literal || privateField ? "" : tail(context + c.text, 3);
@@ -309,6 +325,22 @@ public final class CompositionEngine {
                     && (corrections.size()==1 || corrections.get(0).score-corrections.get(1).score>=8)) {
                 for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(corrections.get(0).text)) {preferred=i;automaticCorrection=true;}
             }
+        }
+        if(!literalField && !privateField && (!enabledAddons.isEmpty() || phraseLearning)) {
+            Candidate defaultChoice=candidates.get(preferred);
+            int insertion=Math.min(3,candidates.size());
+            List<Candidate> supplements=new ArrayList<>();
+            if(phraseLearning && !englishMode)supplements.addAll(learning.phrases(raw));
+            supplements.addAll(addons.lookup(raw,enabledAddons));
+            Set<String> promoted=new HashSet<>();
+            for(Candidate c:supplements) {
+                if(!promoted.add(c.text) || c.text.equals(raw) || c.text.equals(defaultChoice.text))continue;
+                int existing=-1;for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(c.text)) {existing=i;break;}
+                if(existing>=0 && existing<insertion)continue;
+                if(existing>=0)candidates.remove(existing);
+                candidates.add(insertion++,c);
+            }
+            preferred=candidates.indexOf(defaultChoice);
         }
     }
 }
