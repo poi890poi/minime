@@ -1,0 +1,88 @@
+[
+  {
+    "id": "pinyin-idle-panels",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "capture": true
+      },
+      {
+        "key": "SYMBOLS",
+        "capture": true
+      },
+      {
+        "key": "EMOJI",
+        "capture": true
+      },
+      {
+        "key": "LETTERS",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "pinyin-composing-panels",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "capture": true
+      },
+      {
+        "key": "SYMBOLS",
+        "capture": true
+      },
+      {
+        "key": "EMOJI",
+        "capture": true
+      },
+      {
+        "key": "LETTERS",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "english-idle-panels",
+    "mode": "english",
+    "actions": [
+      {
+        "capture": true
+      },
+      {
+        "key": "SYMBOLS",
+        "capture": true
+      },
+      {
+        "key": "EMOJI",
+        "capture": true
+      },
+      {
+        "key": "LETTERS",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "english-composing-panels",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "capture": true
+      },
+      {
+        "key": "SYMBOLS",
+        "capture": true
+      },
+      {
+        "key": "EMOJI",
+        "capture": true
+      },
+      {
+        "key": "LETTERS",
+        "capture": true
+      }
+    ]
+  }
+]

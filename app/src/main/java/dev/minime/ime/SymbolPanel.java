@@ -135,10 +135,10 @@ final class SymbolPanel extends LinearLayout {
     private void render() {
         groups.setText(groupName+" ▾");sections.setText(sectionName+" ▾");
         List<String> choices=chooser==1?new ArrayList<>(catalog.keySet()):chooser==2?new ArrayList<>(catalog.get(groupName).keySet()):Collections.emptyList();
-        int columns=chooser==0?6:3,perPage=columns*2,size=chooser==0?entries.size():choices.size();
+        int columns=chooser==0?6:3,perPage=columns*3,size=chooser==0?entries.size():choices.size();
         int count=Math.max(1,(size+perPage-1)/perPage);page=Math.max(0,Math.min(page,count-1));
         grid.removeAllViews();
-        for(int row=0;row<2;row++) {
+        for(int row=0;row<3;row++) {
             LinearLayout line=new LinearLayout(getContext());grid.addView(line,new LayoutParams(-1,0,1));
             for(int col=0;col<columns;col++) {
                 int index=page*perPage+row*columns+col;

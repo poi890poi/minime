@@ -415,10 +415,25 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         clear();type("im ");expectText("I'm ");clear();type("cant ");expectText("cant ");
         clear();type("pronun");click("Candidate pronunciation");click("Space");click("Space");expectText("pronunciation. ");
     }
+    public void testPhoneticAnnotationTracksPanelsAndEditors() {
+        type("nihao");node("Candidate 你好").recycle();node("Exact input nihao").recycle();
+        click("?123");
+        for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows())assertNull("Symbols hide spelling annotation",find(window.getRoot(),"Exact input nihao"));
+        click("Emoji");
+        for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows())assertNull("Emoji hide spelling annotation",find(window.getRoot(),"Exact input nihao"));
+        click("ABC");node("Exact input nihao").recycle();expectText("nihao");
+        focus(activity.password);
+        for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows())assertNull("New private editor cannot show old spelling",find(window.getRoot(),"Exact input nihao"));
+        focus(activity.text);
+        for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows())assertNull("Old annotation cannot return after field change",find(window.getRoot(),"Exact input nihao"));
+    }
     public void testCompositionSurvivesHideAndRestart() {
         type("nihao");
+        node("Exact input nihao").recycle();
         getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(activity.text.getWindowToken(),0));
-        SystemClock.sleep(700);focus(activity.text);SystemClock.sleep(500);click("Space");expectText("你好");
+        SystemClock.sleep(700);
+        for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows())assertNull("Hidden IME dismisses spelling annotation",find(window.getRoot(),"Exact input nihao"));
+        focus(activity.text);SystemClock.sleep(500);node("Exact input nihao").recycle();click("Space");expectText("你好");
         clear();type("nihao");getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
         SystemClock.sleep(500);click("Space");expectText("你好");
     }

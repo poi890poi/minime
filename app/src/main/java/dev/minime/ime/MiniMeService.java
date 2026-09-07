@@ -69,10 +69,12 @@ public final class MiniMeService extends InputMethodService {
         render();
     }
     @Override public void onFinishInput() {
+        if(keyboard!=null)keyboard.inputActive(false);
         engine.abandon(); super.onFinishInput();
     }
     @Override public void onStartInputView(EditorInfo attribute,boolean restarting) {
         super.onStartInputView(attribute,restarting);
+        if(keyboard!=null)keyboard.inputActive(true);
         if(!engine.raw().isEmpty()) {
             InputConnection input=getCurrentInputConnection();int end=selection.cursor();
             CharSequence owned=input==null?null:input.getTextBeforeCursor(engine.raw().length(),0);
@@ -82,6 +84,7 @@ public final class MiniMeService extends InputMethodService {
         render();
     }
     @Override public void onFinishInputView(boolean finishingInput) {
+        if(keyboard!=null)keyboard.inputActive(false);
         if(finishingInput)engine.abandon(); super.onFinishInputView(finishingInput);
     }
     @Override public void onUpdateSelection(int oldStart,int oldEnd,int newStart,int newEnd,int candidatesStart,int candidatesEnd) {

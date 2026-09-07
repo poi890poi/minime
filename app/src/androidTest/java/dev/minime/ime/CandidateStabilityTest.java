@@ -103,6 +103,7 @@ public final class CandidateStabilityTest extends ActivityInstrumentationTestCas
         });
     }
     private static View find(View v,String description) {
+        if(v instanceof KeyboardView) {View found=find(((KeyboardView)v).compositionAnnotation(),description);if(found!=null)return found;}
         if(description.contentEquals(v.getContentDescription()==null?"":v.getContentDescription()))return v;
         if(v instanceof ViewGroup)for(int i=0;i<((ViewGroup)v).getChildCount();i++){View found=find(((ViewGroup)v).getChildAt(i),description);if(found!=null)return found;}
         return null;

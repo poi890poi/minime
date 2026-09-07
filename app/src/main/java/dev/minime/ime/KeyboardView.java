@@ -24,6 +24,11 @@ final class KeyboardView extends LinearLayout {
     private float traceX,traceY,pitchX,pitchY;
     private final LinearLayout strip, keys;
     private final TextView status,phonetics;
+    private final FrameLayout annotation;
+    private final PopupWindow annotationWindow;
+    private boolean inputActive,annotationRequested;
+    private final Runnable placeAnnotation=this::placeAnnotation;
+    private int annotationX=-1,annotationY=-1,annotationWidth=-1;
     private HorizontalScrollView candidateScroll;
     private LinearLayout candidateWords;
     private CandidateFlowLayout candidateGrid;
@@ -53,14 +58,19 @@ final class KeyboardView extends LinearLayout {
         super(context); this.press=press; this.longPress=longPress;this.trace=trace;this.choose=choose;
         setOrientation(VERTICAL); setBackgroundColor(BACK); setPadding(0,0,0,0);
         setMotionEventSplittingEnabled(true);
-        FrameLayout header=new FrameLayout(context);addView(header,new LayoutParams(-1,dp(24)));
+        annotation=new FrameLayout(context);annotation.setBackgroundColor(BACK);
         status=new TextView(context); status.setTextColor(INK); status.setTextSize(12); status.setPadding(dp(8),0,0,0);
         status.setGravity(Gravity.CENTER_VERTICAL);status.setMaxLines(1);status.setEllipsize(android.text.TextUtils.TruncateAt.END);
-        header.addView(status,new FrameLayout.LayoutParams(-1,-1));
+        annotation.addView(status,new FrameLayout.LayoutParams(-2,-1));
         phonetics=new TextView(context);phonetics.setTextColor(Color.BLACK);phonetics.setTextSize(14);phonetics.setGravity(Gravity.CENTER_VERTICAL);
         phonetics.setPadding(dp(8),0,dp(8),0);phonetics.setMaxLines(1);phonetics.setEllipsize(android.text.TextUtils.TruncateAt.END);
         phonetics.setClickable(true);phonetics.setFocusable(true);phonetics.setOnClickListener(v->{expanded=false;press.accept("CANDIDATE:0");});
-        header.addView(phonetics,new FrameLayout.LayoutParams(-1,-1));
+        annotation.addView(phonetics,new FrameLayout.LayoutParams(-2,-1));
+        annotationWindow=new PopupWindow(annotation,0,dp(24),false);
+        annotationWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
+        // Position in screen coordinates, including above the IME's own window.
+        annotationWindow.setIsLaidOutInScreen(true);
+        annotationWindow.setBackgroundDrawable(new ColorDrawable(BACK));
         strip=new LinearLayout(context); strip.setGravity(Gravity.CENTER_VERTICAL); strip.setBackgroundColor(0xffe4e7e9); addView(strip,new LayoutParams(-1,dp(48)));
         keys=new LinearLayout(context); keys.setOrientation(VERTICAL); addView(keys);
         setOnApplyWindowInsetsListener((view,insets)-> {
@@ -68,11 +78,39 @@ final class KeyboardView extends LinearLayout {
             setPadding(bars.left,0,bars.right,bars.bottom); return insets;
         });
     }
+    View compositionAnnotation() {return annotation;}
+    void inputActive(boolean active) {
+        inputActive=active;queueAnnotation();
+    }
+    private void queueAnnotation() {
+        removeCallbacks(placeAnnotation);
+        if(!inputActive || !annotationRequested)annotationWindow.dismiss();
+        else post(placeAnnotation);
+    }
+    private void placeAnnotation() {
+        if(!inputActive || !annotationRequested || !isAttachedToWindow() || !isShown()
+                || getWindowVisibility()!=VISIBLE || getWidth()<=0) {annotationWindow.dismiss();return;}
+        int available=getWidth()-getPaddingLeft()-getPaddingRight();
+        annotation.measure(MeasureSpec.makeMeasureSpec(available,MeasureSpec.AT_MOST),MeasureSpec.makeMeasureSpec(dp(24),MeasureSpec.EXACTLY));
+        int[] at=new int[2];getLocationOnScreen(at);
+        int x=at[0]+getPaddingLeft(),y=Math.max(0,at[1]-dp(24)),width=Math.max(1,annotation.getMeasuredWidth());
+        if(!annotationWindow.isShowing()) {
+            annotationWindow.setWidth(width);annotationWindow.showAtLocation(getRootView(),Gravity.TOP|Gravity.LEFT,x,y);
+        } else if(x!=annotationX || y!=annotationY || width!=annotationWidth)annotationWindow.update(x,y,width,dp(24));
+        annotationX=x;annotationY=y;annotationWidth=width;
+    }
+    @Override protected void onLayout(boolean changed,int l,int t,int r,int b) {
+        super.onLayout(changed,l,t,r,b);queueAnnotation();
+    }
+    @Override protected void onWindowVisibilityChanged(int visibility) {
+        super.onWindowVisibilityChanged(visibility);
+        if(annotationWindow!=null)queueAnnotation();
+    }
     private float[] center(View view) {int[] at=new int[2];view.getLocationOnScreen(at);return new float[]{at[0]+view.getWidth()/2f,at[1]+view.getHeight()/2f};}
     @Override public boolean dispatchTouchEvent(MotionEvent e) {
         int action=e.getActionMasked();
         if(action==MotionEvent.ACTION_DOWN) {
-            candidateGesture=(e.getY()>=strip.getTop() && e.getY()<strip.getBottom())
+            candidateGesture=(strip.getVisibility()==VISIBLE && e.getY()>=strip.getTop() && e.getY()<strip.getBottom())
                 || (expanded && e.getY()>=keys.getTop());
         }
         if(action==MotionEvent.ACTION_POINTER_DOWN && !tracing) {
@@ -116,6 +154,7 @@ final class KeyboardView extends LinearLayout {
         return handled;
     }
     @Override protected void onDetachedFromWindow() {
+        removeCallbacks(placeAnnotation);annotationWindow.dismiss();
         candidateGesture=false;afterCandidateGesture=null;super.onDetachedFromWindow();
     }
     @Override protected void dispatchDraw(android.graphics.Canvas canvas) {
@@ -242,7 +281,9 @@ final class KeyboardView extends LinearLayout {
         phonetics.setText(engine.raw());phonetics.setContentDescription("Exact input "+engine.raw());
         boolean showPhonetics=separatePhonetics && panel==0;
         phonetics.setVisibility(showPhonetics?VISIBLE:GONE);
-        status.setVisibility(!showPhonetics && !hint.isEmpty()?VISIBLE:GONE);
+        status.setVisibility(panel==0 && !showPhonetics && !hint.isEmpty()?VISIBLE:GONE);
+        annotationRequested=showPhonetics || status.getVisibility()==VISIBLE;queueAnnotation();
+        strip.setVisibility(panel==0?VISIBLE:GONE);
         if(candidates.isEmpty() || panel!=0)expanded=false;
         traceEnabled=english && allowLanguageSwitch && !numeric && !zhuyin && panel==0 && !expanded;
         traceCase=caps?2:shifted?1:0;
@@ -305,7 +346,7 @@ final class KeyboardView extends LinearLayout {
         boolean landscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
         int height=landscape?34:59;
         // Every layout shares the QWERTY budget; only orientation and system insets resize it.
-        keys.setLayoutParams(new LayoutParams(-1,dp(height)*4));
+        keys.setLayoutParams(new LayoutParams(-1,dp(height)*4+(panel==0?0:dp(48))));
         String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded;
         if(nextLayout.equals(layoutKey)) {
             if(expanded)expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);

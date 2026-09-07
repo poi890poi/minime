@@ -1,0 +1,62 @@
+[
+  {
+    "id": "pinyin-panels",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "capture": true
+      },
+      {
+        "type": "nihao",
+        "capture": true
+      },
+      {
+        "key": "SYMBOLS",
+        "capture": true
+      },
+      {
+        "key": "LETTERS",
+        "capture": true
+      },
+      {
+        "key": "COMMA",
+        "hold": 650,
+        "capture": true
+      },
+      {
+        "key": "LETTERS",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "english-panels",
+    "mode": "english",
+    "actions": [
+      {
+        "capture": true
+      },
+      {
+        "type": "hello",
+        "capture": true
+      },
+      {
+        "key": "SYMBOLS",
+        "capture": true
+      },
+      {
+        "key": "LETTERS",
+        "capture": true
+      },
+      {
+        "key": "COMMA",
+        "hold": 650,
+        "capture": true
+      },
+      {
+        "key": "LETTERS",
+        "capture": true
+      }
+    ]
+  }
+]
