@@ -321,6 +321,16 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         assertEquals("你好",activity.search.getText().toString());
         assertEquals("Editor action: 3",activity.actions.getText().toString());
     }
+    public void testEditorSentenceCapitalization() {
+        click("Switch to English");
+        getInstrumentation().runOnMainSync(()-> {
+            android.widget.EditText text=new android.widget.EditText(activity);
+            text.setInputType(android.text.InputType.TYPE_CLASS_TEXT|android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE|android.text.InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+            activity.setContentView(text);activity.text=text;
+        });
+        focus(activity.text);click("H");type("ello");click(".");click("Space");click("W");type("orld");click("Space");
+        assertEquals("Hello. World ",activity.text.getText().toString());
+    }
     public void testHeldDeleteStopsOnRelease() {
         type("abcdefghijkl");
         Rect r=bounds("⌫"); long start=SystemClock.uptimeMillis();

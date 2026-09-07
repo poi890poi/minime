@@ -6,6 +6,11 @@ import static dev.minime.core.Regression.*;
 /** Behavior contracts from paired observations; no evaluation labels enter runtime data. */
 final class GapRegression {
     static void run() {
+        ShiftState shift=new ShiftState();shift.automatic(true);yes(shift.upper(),"editor automatic capitals");
+        shift.tap(1000,300);yes(!shift.upper(),"manual Shift suppresses automatic capital");
+        shift.tap(1100,300);yes(shift.locked(),"double Shift locks from auto capital");
+        shift.reset();shift.automatic(true);shift.tap(2000,300);shift.consume();
+        yes(shift.upper(),"manual suppression ends after character");shift.automatic(false);yes(!shift.upper(),"editor ends automatic capitals");
         equal("could",dictionary.englishCompletions("co").get(0).text,"prefix ranking includes later alphabetic matches");
         equal("into",dictionary.englishCompletions("in").get(0).text,"in prefix frequency ranking");
         equal("released",dictionary.englishCompletions("re").get(0).text,"re prefix frequency ranking");

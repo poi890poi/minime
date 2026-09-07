@@ -54,10 +54,13 @@ public final class MiniMeService extends InputMethodService {
         if(selection.update(newStart,newEnd) && (!engine.raw().isEmpty() || !engine.context().isEmpty())) {
             engine.abandon(); render();
         }
+        else if(english) render();
     }
     @Override public boolean onEvaluateFullscreenMode() { return false; }
     @Override public void onDestroy() { destroyed=true; super.onDestroy(); }
     private void render() {
+        InputConnection input=getCurrentInputConnection();
+        shift.automatic(english && !policy.literal && input!=null && input.getCursorCapsMode(editorInfo.inputType)!=0);
         if(keyboard!=null) keyboard.render(engine,zhuyin && !policy.literal && !english,shift.upper(),shift.locked(),panel,policy.numeric,
             policy.literal || policy.numeric || english || englishPunctuation,english || policy.literal,!policy.literal && !policy.numeric,
             EditorPolicy.enterLabel(editorInfo),ready ? "" : dictionaryStatus);
