@@ -1,0 +1,83 @@
+[
+  {
+    "id": "en-double-space",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ],
+    "group": "english-spacing"
+  },
+  {
+    "id": "en-sentence-caps",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "PERIOD",
+        "capture": true
+      },
+      {
+        "type": " world",
+        "label": "typed",
+        "capture": true
+      }
+    ],
+    "field": "sentences",
+    "group": "capitalization"
+  },
+  {
+    "id": "en-word-trace",
+    "mode": "english",
+    "actions": [
+      {
+        "trace": "hello",
+        "capture": true
+      }
+    ],
+    "group": "gestures"
+  },
+  {
+    "id": "en-expanded-candidates",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "co",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "capture": true
+      }
+    ],
+    "group": "candidate-presentation"
+  },
+  {
+    "id": "english-slide-up",
+    "mode": "english",
+    "actions": [
+      {
+        "key": "a",
+        "slide": -1,
+        "capture": true
+      }
+    ],
+    "group": "gestures"
+  }
+]

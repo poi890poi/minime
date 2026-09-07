@@ -4,14 +4,17 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.3.0** implements the follow-up changes in independent commits. See
+[implementation results](docs/GAP_CLOSURE_RESULTS.md) for evidence and remaining gaps.
+
 ## Included
 
 - Standard `InputMethodService`, Android 10+ (min 29, target/compile 35).
 - Three-row staggered QWERTY and four-row Taiwan Zhuyin, with Latin/symbol slide hints and bottom-row ㄦ.
-- Visible EN / 中 key: one tap switches between English and your chosen Chinese layout. English offers case-preserving word completions; Space keeps typed spelling unless you tap a suggestion.
+- Visible EN / 中 key: one tap switches between English and Chinese. English offers completions, next words, spelling alternatives and word tracing. Automatic correction on Space is optional and off by default.
 - Double-tap Shift for Caps Lock; tap again to unlock. Upward letter slides enter capitals.
-- Immediate Chinese/English punctuation, categorized symbols, and 3,010 Unicode emoji sequences including skin tones, families and flags.
-- Exact raw candidate in a fixed left slot; separate highlighted Space choice.
+- Immediate Chinese/English punctuation, hold-drag-release period popup, categorized symbols, and 3,010 Unicode emoji sequences. Optional local recents are disabled in private input.
+- Exact raw candidate in a fixed left slot; separate highlighted Space choice and expandable candidate grid.
 - Incremental token intent: Chinese, English/ambiguous Latin, URLs/email, identifiers and alphanumeric text.
 - English Space commits U+0020; Chinese Space accepts a candidate. On an unfinished Zhuyin syllable, Space first adds first tone. Another Space after commitment inserts U+0020.
 - Taiwan vocabulary, full/abbreviated Pinyin syllables, phrase segmentation, English completions, contextual Chinese continuations and explicit local choice learning.
@@ -36,8 +39,9 @@ The onscreen comma and period accept pending composition and insert immediately:
 
 Pinyin candidates support initials and mixed syllables: `jt` / `jtian` → 今天,
 `srf` / `shrf` / `srufa` → 輸入法. Tap the desired candidate; abbreviations that
-could be literal text retain the exact-input Space default until an explicit local
-choice is learned. Apostrophes force syllable boundaries. Continue typing or use
+match known English words, English prefixes or technical commands retain literal
+acceptance; other lowercase abbreviations with candidates prefer Chinese.
+Apostrophes force syllable boundaries. Continue typing or use
 Backspace to refine the same composition. Candidate pages retain alternatives
 when a spelling such as `sh` can represent one syllable or two initials.
 
@@ -58,7 +62,11 @@ The device script restores the previous input method and turns the display off i
 
 `core/` owns composition, classification, phonetic lookup/segmentation, candidate ranking and commit policy. `app/` adapts that core to Android and renders the keyboard. `third_party/` contains pinned, licensed language inputs; `tools/compile_dictionary.py` deterministically generates the shipped assets. There are no acceptance-phrase ranking overrides.
 
-The source dictionary is a unigram baseline. Local learning uses recent Chinese context, but the app does not yet have a contextual statistical sentence model, typo correction or word-tracing gestures. Device-wide surrounding text is not collected, so predictions reset after cursor movement or a field change. English/Pinyin ambiguity remains a candidate-choice problem in some cases; raw input stays recoverable.
+The dictionary is augmented with attributed offline context counts. English has optional one-edit correction, contraction alternatives, deferred completion spacing, double-Space punctuation, editor-driven capitalization and geometric word tracing. These are limited models; Chinese sentence and initial-only ranking remain substantially weaker than Google Zhuyin on the reviewed conversational probes. English/Pinyin ambiguity still requires a candidate choice in some cases.
+
+Gradle precompiles the TSV sources into a versioned binary model. The measured phone load fell from 7.38 to 2.25 seconds, with roughly 30 MB less retained heap, at the cost of a roughly 18.5 MB debug APK. See [startup measurements](docs/gap-implementation/STARTUP.md). Chinese decoding runs on a coalescing worker with stale-result rejection and ordered commits.
+
+No device-wide surrounding text is collected. Same-editor restart recovery validates only the IME-owned composing text, up to 96 characters. Cursor moves and field changes clear prediction context. Explicit choices are learned locally; optional English word-pair learning and emoji recents default off. Private fields neither read nor write personalized history.
 
 On Zhuyin, slide down for lowercase Latin/digits and up for capitals/shifted digits. On QWERTY, slide up for a capital letter and down for the small symbol; Shift-and-tap also gives capitals. Slides commit directly. In English mode, Enter commits spelling and inserts a newline in one press. In Chinese mode, Enter first accepts composition and the next Enter inserts a newline. Hold a key to choose alternatives by tapping; hold Backspace to repeat deletion. This is an independent implementation of functional layout mappings. One-handed ergonomics, landscape, TalkBack, larger text, Chrome and messaging-app behavior need broader device validation. Cold dictionary loading occurs in the background and can take seconds; literal input stays available, and phonetic candidates appear when loading completes.
 

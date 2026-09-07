@@ -84,9 +84,24 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         capture("review-control-failure");throw new AssertionError("Visible control missing: "+description);
     }
     private void click(String description) {
-        AccessibilityNodeInfo n=node(description);
-        assertTrue("Click visible "+description,n.performAction(AccessibilityNodeInfo.ACTION_CLICK));
-        n.recycle(); getInstrumentation().waitForIdleSync();
+        boolean clicked=false;
+        for(int attempt=0;attempt<3 && !clicked;attempt++) {
+            AccessibilityNodeInfo n=node(description);clicked=n.performAction(AccessibilityNodeInfo.ACTION_CLICK);n.recycle();
+            if(!clicked)SystemClock.sleep(50); // An expansion can replace an accessibility snapshot in flight.
+        }
+        assertTrue("Click visible "+description,clicked);getInstrumentation().waitForIdleSync();
+        if(description.equals("Space") && !zhuyin) {
+            long until=SystemClock.uptimeMillis()+3000;
+            java.util.concurrent.atomic.AtomicBoolean composing=new java.util.concurrent.atomic.AtomicBoolean();
+            do {
+                getInstrumentation().runOnMainSync(()-> {
+                    android.view.View focused=activity.getCurrentFocus();
+                    composing.set(focused instanceof android.widget.EditText && android.view.inputmethod.BaseInputConnection.getComposingSpanEnd(((android.widget.EditText)focused).getText())>=0);
+                });
+                if(!composing.get())break;SystemClock.sleep(15);
+            }while(SystemClock.uptimeMillis()<until);
+            assertFalse("Space completes its asynchronous composition",composing.get());
+        }
         if(description.endsWith(" layout") || description.startsWith("Switch to ") || description.equals("Emoji") || description.equals("Symbols") || description.equals("ABC") || description.endsWith("category") || description.equals("Emoji group")) {
             try { getInstrumentation().getUiAutomation().waitForIdle(300,3000); }
             catch(java.util.concurrent.TimeoutException e) { throw new AssertionError("Layout did not settle",e); }
@@ -213,7 +228,7 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
             if(expected.equals(actual.get())) return;
             SystemClock.sleep(25);
         } while(SystemClock.uptimeMillis()<until);
-        capture("review-editor-failure");assertEquals(expected,actual.get());
+        capture("review-editor-failure");assertEquals("destroyed="+activity.isDestroyed()+" focused="+activity.hasWindowFocus()+" attached="+activity.text.isAttachedToWindow(),expected,actual.get());
     }
     public void testPunctuationCommitAndWidth() {
         type("nihao");click("，");click("。");assertEquals("你好，。",activity.text.getText().toString());
@@ -319,6 +334,7 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         click("↵"); assertEquals("你好\n",activity.text.getText().toString());
         focus(activity.search); type("nihao"); click("Search");
         assertEquals("你好",activity.search.getText().toString());
+        click("Search");
         assertEquals("Editor action: 3",activity.actions.getText().toString());
     }
     public void testEditorSentenceCapitalization() {
@@ -336,6 +352,52 @@ public final class KeyboardInteractionTest extends ActivityInstrumentationTestCa
         click("Candidate 明");assertEquals("明",activity.text.getText().toString());
         clear();click("Switch to English");type("pronun");click("Expand candidates");
         click("Candidate pronunciation");type("test ");assertEquals("pronunciation test ",activity.text.getText().toString());
+    }
+    public void testPunctuationHoldDragRelease() {
+        type("nihao");Rect origin=bounds("。");long start=SystemClock.uptimeMillis();
+        event(start,MotionEvent.ACTION_DOWN,origin.exactCenterX(),origin.exactCenterY());SystemClock.sleep(700);
+        Rect target=bounds("Punctuation ？");capture("implementation-punctuation-popup");
+        event(start,MotionEvent.ACTION_MOVE,target.exactCenterX(),target.exactCenterY());SystemClock.sleep(80);
+        event(start,MotionEvent.ACTION_UP,target.exactCenterX(),target.exactCenterY());getInstrumentation().waitForIdleSync();
+        expectText("你好？");
+    }
+    public void testEnglishCorrectionUndoAndDoubleSpace() {
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("english_correction",true).commit();
+        click("Switch to English");focus(activity.search);focus(activity.text);
+        type("teh ");expectText("the ");click("⌫");expectText("teh");click("Exact input teh");click("Space");
+        expectText("teh ");clear();type("hello");click("Space");click("Space");expectText("hello. ");
+        clear();type("im ");expectText("I'm ");clear();type("cant ");expectText("cant ");
+        clear();type("pronun");click("Candidate pronunciation");click("Space");click("Space");expectText("pronunciation. ");
+    }
+    public void testCompositionSurvivesHideAndRestart() {
+        type("nihao");
+        getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(activity.text.getWindowToken(),0));
+        SystemClock.sleep(700);focus(activity.text);SystemClock.sleep(500);click("Space");expectText("你好");
+        clear();type("nihao");getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
+        SystemClock.sleep(500);click("Space");expectText("你好");
+    }
+    public void testEnglishWordTraceAndVerticalSlide() {
+        click("Switch to English");String word="hello";Rect first=bounds("h");long start=SystemClock.uptimeMillis();
+        float x=first.exactCenterX(),y=first.exactCenterY();event(start,MotionEvent.ACTION_DOWN,x,y);
+        for(int i=1;i<word.length();i++) {Rect r=bounds(word.substring(i,i+1));float nx=r.exactCenterX(),ny=r.exactCenterY();
+            for(int step=1;step<=8;step++){event(start,MotionEvent.ACTION_MOVE,x+(nx-x)*step/8,y+(ny-y)*step/8);SystemClock.sleep(12);}x=nx;y=ny;
+        }
+        event(start,MotionEvent.ACTION_UP,x,y);node("Exact input hello").recycle();click("Space");expectText("hello ");
+        slide("g",-1,false);type("ood ");expectText("hello Good ");
+    }
+    public void testOptionalEmojiRecentsRespectPrivateInput() {
+        SharedPreferences settings=getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE);
+        SharedPreferences learning=getInstrumentation().getTargetContext().getSharedPreferences("learning",Context.MODE_PRIVATE);
+        click("Emoji");click("Emoji grinning face");assertFalse(learning.contains("recent_emoji"));click("ABC");
+        settings.edit().putBoolean("emoji_recents",true).commit();click("Emoji");click("Emoji grinning face");
+        String recent=learning.getString("recent_emoji","");assertEquals("😀",recent);click("ABC");
+        getInstrumentation().runOnMainSync(()-> {
+            android.widget.EditText text=new android.widget.EditText(activity);
+            text.setInputType(android.text.InputType.TYPE_CLASS_TEXT|android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+            text.setImeOptions(android.view.inputmethod.EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING);activity.setContentView(text);activity.text=text;
+        });focus(activity.text);click("Emoji");click("Emoji grinning face with big eyes");
+        assertEquals(recent,learning.getString("recent_emoji",""));
+        click("Emoji category");for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows())assertNull("Private field hides recents",find(w.getRoot(),"Recent"));
     }
     public void testHeldDeleteStopsOnRelease() {
         type("abcdefghijkl");

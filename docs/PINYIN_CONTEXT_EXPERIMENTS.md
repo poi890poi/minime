@@ -25,3 +25,10 @@ improves or that ranking matches Google Zhuyin. See the adjacent before/after TS
 Core verification: 1,057 assertions pass, including unchanged mixed-language,
 technical, privacy, abbreviated acceptance and explicit literal recovery contracts.
 Android integration and final paired comparisons remain separate gates.
+
+Subsequent validation used 400 additional nonduplicate `(context, reading, word)`
+probes after the initial portion of the same held-out test corpus. No weight was
+changed after their results were observed. Top one improved 323/400 to 332/400;
+top five improved 391/400 to 393/400. Inputs and both outputs are in
+`gap-implementation/pinyin-validation*.tsv`. Conversational initial-only quality
+still trails the reference substantially; see `GAP_CLOSURE_RESULTS.md`.

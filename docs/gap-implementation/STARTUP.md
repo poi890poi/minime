@@ -20,8 +20,9 @@ algorithm comparison: the format is identical semantically and the second run
 benefits from warmed conversion code. These measurements exclude input dispatch
 and keyboard rendering. They do not establish end-to-end latency.
 
-The cost is storage: the uncompressed model is 48,780,946 bytes and the debug APK
-is approximately 22 MB, compared with the reviewed prototype's 3.74 MB APK.
+The cost is storage: the benchmark model was 48,780,946 bytes and the final model
+is 48,782,028 bytes after adding source-derived contractions. The debug APK
+is approximately 18.5 MB, compared with the reviewed prototype's 3.74 MB APK.
 The startup/heap benefit is accepted for this iteration; a more compact binary
 format remains possible. No Java object deserialization or downloaded model is used.
 

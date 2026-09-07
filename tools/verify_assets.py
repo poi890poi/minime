@@ -25,3 +25,10 @@ print('PASS 3010 Unicode emoji sequences, including flags, skin tones and ZWJ fa
 context=json.loads((root/'docs/context-report.json').read_text(encoding='utf-8'))
 assert hashlib.sha256((root/'app/src/main/assets/context.tsv').read_bytes()).hexdigest()==context['asset_sha256']
 print('PASS context asset integrity; training splits recorded separately from holdouts')
+binary=root/'app/build/generated/minimeAssets/model.bin'
+if binary.exists():
+    compiled=json.loads((root/'docs/model-report.json').read_text(encoding='utf-8'))
+    assert hashlib.sha256(binary.read_bytes()).hexdigest()==compiled['sha256'], 'Compiled model changed'
+    for name,expected in compiled['sources'].items():
+        assert hashlib.sha256((root/'app/src/main/assets'/name).read_bytes()).hexdigest()==expected
+    print('PASS compiled model and source hashes')

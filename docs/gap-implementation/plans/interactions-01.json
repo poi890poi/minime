@@ -1,0 +1,96 @@
+[
+  {
+    "id": "py-hide-show",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "hideShow": true,
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ],
+    "group": "lifecycle"
+  },
+  {
+    "id": "py-restart",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "srf",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "restart": true,
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ],
+    "group": "lifecycle"
+  },
+  {
+    "id": "field-search-py",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "ENTER",
+        "capture": true
+      }
+    ],
+    "field": "search",
+    "group": "editor-action"
+  },
+  {
+    "id": "py-expanded-candidates",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "shi",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "capture": true
+      }
+    ],
+    "group": "candidate-presentation"
+  },
+  {
+    "id": "en-completion-space",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "pronunciation",
+        "capture": true
+      },
+      {
+        "type": "test ",
+        "label": "typed",
+        "capture": true
+      }
+    ],
+    "group": "candidate-acceptance"
+  }
+]
