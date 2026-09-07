@@ -84,6 +84,13 @@ python tools/verify_assets.py
 
 The device script restores the previous input method and turns the display off in a `finally` block. Interaction tests restore the app’s settings and learned choices. Tests type only synthetic text in the debug-only editor activity. The debug activity and test code are excluded from release builds.
 
+For seeded imprecise-touch testing, build the test APK and run
+`.\tools\test-human-input.ps1`. It runs the geometric matrix, development replay,
+then a disjoint holdout on the authorized phone, restoring and sleeping it after
+each phase. `-Phase Matrix`, `Development`, or `Holdout` runs a bounded subset.
+Each run saves fresh, identified evidence and rejects stale reports. See
+[profiles, results and limitations](docs/human-input/RESULTS.md).
+
 ## Foundations and limits
 
 `core/` owns composition, classification, phonetic lookup/segmentation, candidate ranking and commit policy. `app/` adapts that core to Android and renders the keyboard. `third_party/` contains pinned, licensed language inputs; `tools/compile_dictionary.py` deterministically generates the shipped assets. There are no acceptance-phrase ranking overrides.
