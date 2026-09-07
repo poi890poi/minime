@@ -1,0 +1,13 @@
+# name	layout	keys (space accepts current candidate; <SP> inserts an actual space)	expected
+A	pinyin	zhege <SP>pronunciation budui 	這個 pronunciation 不對
+B	pinyin	mingtian <SP>meeting gaidao <SP>3pm 	明天 meeting 改到 3pm 
+C	pinyin	qing<PICK:請><SP>check GitHub issue 	請 check GitHub issue 
+D	pinyin	USB debugging meiyou kai 	USB debugging 沒有開
+meeting-transition	pinyin	meeting zhongwen 	meeting 中文
+technical	pinyin	API v2.0 USB3 RTX5070 S23U v2.1 1080p 30fps 	API v2.0 USB3 RTX5070 S23U v2.1 1080p 30fps 
+url	pinyin	https://github.com/poi890poi/shine_aac 	https://github.com/poi890poi/shine_aac 
+email	pinyin	name@example.com 	name@example.com 
+code	pinyin	adb shell C:\Users\Lee foo_bar MainActivity.kt git checkout main 	adb shell C:\Users\Lee foo_bar MainActivity.kt git checkout main 
+literal	pinyin	meeting input python typing pin 	meeting input python typing pin 
+zhuyin-A	zhuyin	ㄓㄜˋㄍㄜ˙ <SP>pronunciation ㄅㄨˋㄉㄨㄟˋ<PICK:不對>	這個 pronunciation 不對
+zhuyin-transition	zhuyin	USB debugging ㄇㄟˊㄧㄡˇㄎㄞ  	USB debugging 沒有開

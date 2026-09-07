@@ -1,0 +1,36 @@
+[
+  {
+    "id": "landscape-pinyin",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ],
+    "landscape": true,
+    "group": "landscape"
+  },
+  {
+    "id": "landscape-english",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello ",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "PERIOD",
+        "capture": true
+      }
+    ],
+    "landscape": true,
+    "group": "landscape"
+  }
+]

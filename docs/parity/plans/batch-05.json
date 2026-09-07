@@ -1,0 +1,164 @@
+[
+  {
+    "id": "en-double-space",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE"
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "group": "english-spacing"
+  },
+  {
+    "id": "en-sentence-caps",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "PERIOD"
+      },
+      {
+        "type": " world",
+        "label": "typed"
+      }
+    ],
+    "field": "sentences",
+    "group": "capitalization"
+  },
+  {
+    "id": "en-word-caps",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello world",
+        "label": "typed"
+      }
+    ],
+    "field": "words",
+    "group": "capitalization"
+  },
+  {
+    "id": "en-completion-space",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "choose": "pronunciation"
+      },
+      {
+        "type": "test ",
+        "label": "typed"
+      }
+    ],
+    "group": "candidate-acceptance"
+  },
+  {
+    "id": "en-raw-recovery",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "teh",
+        "label": "typed"
+      },
+      {
+        "raw": "teh"
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "group": "candidate-acceptance"
+  },
+  {
+    "id": "en-comma-spacing",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "COMMA"
+      },
+      {
+        "type": " world",
+        "label": "typed"
+      },
+      {
+        "key": "PERIOD"
+      }
+    ],
+    "group": "punctuation"
+  },
+  {
+    "id": "en-caps-lock",
+    "mode": "english",
+    "actions": [
+      {
+        "key": "SHIFT",
+        "double": true
+      },
+      {
+        "type": "api usb ",
+        "label": "typed"
+      },
+      {
+        "key": "SHIFT"
+      },
+      {
+        "type": "x ",
+        "label": "typed"
+      }
+    ],
+    "group": "capitalization"
+  },
+  {
+    "id": "en-shift-once",
+    "mode": "english",
+    "actions": [
+      {
+        "key": "SHIFT"
+      },
+      {
+        "type": "hello ",
+        "label": "typed"
+      }
+    ],
+    "group": "capitalization"
+  },
+  {
+    "id": "pinyin-slide-up",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "key": "a",
+        "slide": -1
+      }
+    ],
+    "group": "gestures"
+  },
+  {
+    "id": "pinyin-slide-number",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "key": "q",
+        "slide": 1
+      }
+    ],
+    "group": "gestures"
+  }
+]

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "pinyin-slide-up",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "key": "a",
+        "slide": -1,
+        "capture": true
+      }
+    ],
+    "group": "gestures"
+  },
+  {
+    "id": "pinyin-slide-number",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "key": "q",
+        "slide": 1,
+        "capture": true
+      }
+    ],
+    "group": "gestures"
+  },
+  {
+    "id": "py-hide-show",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "hideShow": true,
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ],
+    "group": "lifecycle"
+  },
+  {
+    "id": "py-restart",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "srf",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "restart": true,
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ],
+    "group": "lifecycle"
+  },
+  {
+    "id": "field-search-py",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "ENTER",
+        "capture": true
+      }
+    ],
+    "field": "search",
+    "group": "editor-action"
+  },
+  {
+    "id": "py-enter",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "ENTER",
+        "capture": true
+      },
+      {
+        "key": "ENTER",
+        "capture": true
+      }
+    ],
+    "group": "editor-action"
+  },
+  {
+    "id": "py-expanded-candidates",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "shi",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "capture": true
+      }
+    ],
+    "group": "candidate-presentation"
+  },
+  {
+    "id": "py-bkq",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "bkq",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": true
+      }
+    ],
+    "group": "pinyin-initials",
+    "target": "不客氣"
+  },
+  {
+    "id": "en-completion-space",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "pronunciation",
+        "capture": true
+      },
+      {
+        "type": "test ",
+        "label": "typed",
+        "capture": true
+      }
+    ],
+    "group": "candidate-acceptance"
+  },
+  {
+    "id": "en-sentence-caps",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "PERIOD",
+        "capture": true
+      },
+      {
+        "type": " world",
+        "label": "typed",
+        "capture": true
+      }
+    ],
+    "field": "sentences",
+    "group": "capitalization"
+  }
+]

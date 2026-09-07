@@ -1,0 +1,89 @@
+[
+  {
+    "id": "py-xx",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "xx",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": true
+      }
+    ],
+    "group": "pinyin-initials",
+    "target": "謝謝"
+  },
+  {
+    "id": "en-teh",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "teh",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": true
+      }
+    ],
+    "group": "english-spelling"
+  },
+  {
+    "id": "en-sentence-caps",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "PERIOD"
+      },
+      {
+        "type": " world",
+        "label": "typed",
+        "capture": true
+      }
+    ],
+    "field": "sentences",
+    "group": "capitalization"
+  },
+  {
+    "id": "field-url",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ],
+    "field": "url",
+    "group": "editor-policy"
+  },
+  {
+    "id": "py-enter",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "key": "ENTER"
+      },
+      {
+        "key": "ENTER",
+        "capture": true
+      }
+    ],
+    "group": "editor-action"
+  }
+]

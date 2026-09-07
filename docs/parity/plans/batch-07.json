@@ -1,0 +1,186 @@
+[
+  {
+    "id": "py-composition-slide",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "key": "a",
+        "slide": -1
+      }
+    ],
+    "group": "gestures"
+  },
+  {
+    "id": "py-refine",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "bukeqi",
+        "label": "typed"
+      },
+      {
+        "key": "DELETE"
+      },
+      {
+        "key": "DELETE"
+      },
+      {
+        "type": "qi",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "group": "editing"
+  },
+  {
+    "id": "en-selected-delete",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello world ",
+        "label": "typed"
+      },
+      {
+        "cursor": 0,
+        "end": 5
+      },
+      {
+        "key": "DELETE"
+      }
+    ],
+    "group": "editing"
+  },
+  {
+    "id": "en-reedit",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello ",
+        "label": "typed"
+      },
+      {
+        "key": "DELETE"
+      },
+      {
+        "type": "x ",
+        "label": "typed"
+      }
+    ],
+    "group": "editing"
+  },
+  {
+    "id": "en-cursor-in-word",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello ",
+        "label": "typed"
+      },
+      {
+        "cursor": 2
+      },
+      {
+        "type": "x ",
+        "label": "typed"
+      }
+    ],
+    "group": "editing"
+  },
+  {
+    "id": "py-hide-show",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "hideShow": true
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "group": "lifecycle"
+  },
+  {
+    "id": "py-restart",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "srf",
+        "label": "typed"
+      },
+      {
+        "restart": true
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "group": "lifecycle"
+  },
+  {
+    "id": "en-restart",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hel",
+        "label": "typed"
+      },
+      {
+        "restart": true
+      },
+      {
+        "type": "lo ",
+        "label": "typed"
+      }
+    ],
+    "group": "lifecycle"
+  },
+  {
+    "id": "py-active-switch",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "key": "LANGUAGE"
+      },
+      {
+        "type": "hello ",
+        "label": "typed"
+      }
+    ],
+    "group": "switching"
+  },
+  {
+    "id": "en-active-switch",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "LANGUAGE"
+      },
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "group": "switching"
+  }
+]

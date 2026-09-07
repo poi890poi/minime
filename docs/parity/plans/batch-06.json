@@ -1,0 +1,136 @@
+[
+  {
+    "id": "pinyin-shift-slide",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "key": "SHIFT"
+      },
+      {
+        "key": "q",
+        "slide": -1
+      }
+    ],
+    "group": "gestures"
+  },
+  {
+    "id": "pinyin-comma-hold",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "key": "COMMA",
+        "hold": 700,
+        "capture": true
+      }
+    ],
+    "group": "palettes"
+  },
+  {
+    "id": "pinyin-period-hold",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "key": "PERIOD",
+        "hold": 700,
+        "capture": true
+      }
+    ],
+    "group": "palettes"
+  },
+  {
+    "id": "pinyin-symbols",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "key": "SYMBOLS",
+        "capture": true
+      },
+      {
+        "key": "LETTERS"
+      },
+      {
+        "type": "x",
+        "label": "typed"
+      }
+    ],
+    "group": "palettes"
+  },
+  {
+    "id": "english-slide-up",
+    "mode": "english",
+    "actions": [
+      {
+        "key": "a",
+        "slide": -1
+      }
+    ],
+    "group": "gestures"
+  },
+  {
+    "id": "english-slide-number",
+    "mode": "english",
+    "actions": [
+      {
+        "key": "q",
+        "slide": 1
+      }
+    ],
+    "group": "gestures"
+  },
+  {
+    "id": "english-shift-slide",
+    "mode": "english",
+    "actions": [
+      {
+        "key": "SHIFT"
+      },
+      {
+        "key": "q",
+        "slide": -1
+      }
+    ],
+    "group": "gestures"
+  },
+  {
+    "id": "english-comma-hold",
+    "mode": "english",
+    "actions": [
+      {
+        "key": "COMMA",
+        "hold": 700,
+        "capture": true
+      }
+    ],
+    "group": "palettes"
+  },
+  {
+    "id": "english-period-hold",
+    "mode": "english",
+    "actions": [
+      {
+        "key": "PERIOD",
+        "hold": 700,
+        "capture": true
+      }
+    ],
+    "group": "palettes"
+  },
+  {
+    "id": "english-symbols",
+    "mode": "english",
+    "actions": [
+      {
+        "key": "SYMBOLS",
+        "capture": true
+      },
+      {
+        "key": "LETTERS"
+      },
+      {
+        "type": "x",
+        "label": "typed"
+      }
+    ],
+    "group": "palettes"
+  }
+]

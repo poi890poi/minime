@@ -1,0 +1,18 @@
+case	context	input	expected	rank	microseconds	top5
+prefix-today		jint	今天	0	30	
+prefix-computer		diann	電腦	0	48	
+prefix-ime		shuruf	輸入法	0	27	
+prefix-no-problem		meiwen	沒問題	0	36	沒文 | 沒問 | 美文 | 美問 | 每文
+prefix-question		qingw	請問	0	16	
+prefix-thanks		xiex	謝謝	0	27	
+prefix-work		gongz	工作	0	10	
+prefix-now		xianz	現在	0	42	
+context-can	可	yi	以	2	241	一 | 以 | 意 | 已 | 議
+context-computer	電	nao	腦	1	57	腦 | 鬧 | 惱 | 撓 | 淖
+context-taiwan	台	wan	灣	1	1297	灣 | 完 | 萬 | 晚 | 玩
+context-how	怎	me	麼	1	12	麼 | 嚒 | 麽
+full-today		jintian	今天	1	91	今天 | 進天 | 金天 | 進田 | 今田
+full-computer		diannao	電腦	1	131	電腦 | 點腦 | 店腦 | 電鬧 | 點鬧
+full-ime		shurufa	輸入法	1	51	輸入法 | 輸入發 | 輸入乏 | 書如法 | 書如發
+full-no-problem		meiwenti	沒問題	1	65	沒問題 | 美問題 | 每問題 | 沒文體 | 美文體
+# top1=7/16 top5=8/16 p50_us=48 p95_us=1297 load_ms=1712

@@ -1,0 +1,95 @@
+id	group	google_status	minime_status	google_text	minime_text	same_final_text	google_candidates	minime_candidates
+py-xiexie	pinyin-full	observed	observed	謝謝	謝謝	True	謝謝 | 寫寫 | 寫些 | 斜斜 | 歇歇	謝謝 | 寫寫 | 些些
+py-xx	pinyin-initials	observed	observed	謝謝	xx 	False	謝謝 | 學習 | 相信 | 學校 | 訊息	學校 | 學習 | 訊息 | 相信
+py-xiex	pinyin-mixed	observed	observed	謝謝	xiex 	False	謝謝 | 些許 | 寫下 | 寫信 | 些小	謝謝 | 寫信 | 寫下
+py-bukeqi	pinyin-full	observed	observed	不客氣	不客氣	True	不客氣 | 不可取 | 不可 | 不 | 部	不客氣 | 不可欺 | 不可其
+py-bkq	pinyin-initials	observed	observed	不客氣	bkq 	False	不客氣 | 不可缺 | 不可取 | 倍可親	不客氣 | 百塊錢 | 八塊錢
+py-bukq	pinyin-mixed	observed	observed	不客氣	bukq 	False	不客氣 | 不可缺 | 不可取 | 不	不客氣 | 不肯去 | 不可欺
+py-zaoshanghao	pinyin-full	observed	observed	早上好	早上好	True	早上好 | 早上 | 早 | 遭 | 造	早上好 | 早上號 | 造上好
+py-zsh	pinyin-initials	observed	observed	這是	zsh 	False	這是 | 早上好 | 只是 | 真是 | 總是	只是 | 這是 | 知識
+py-zaoshh	pinyin-mixed	observed	observed	早上好	zaoshh 	False	早上好 | 早 | 遭 | 造 | 早上	造時候 | 造社會 | 早時候
+py-womenmingtianjian	pinyin-full	observed	observed	我們明天見	我們明天間	False	我們明天見 | 我們 | women | 我	我們明天間 | 我們明天建
+py-wmmtj	pinyin-initials	observed	observed	我們明天見	wmmtj 	False	我們明天見 | 我媽媽 | 我們	我們茅台酒 | 我媽媽條件
+py-womenmtjian	pinyin-mixed	observed	observed	我們明天見	womenmtjian 	False	我們明天見 | 我們 | 我 | women	我們媒體間 | 我們媒體建
+py-woyaohekafei	pinyin-full	observed	observed	我要喝咖啡	我要和咖啡	False	我要喝咖啡 | 我要 | 我 | 窩	我要和咖啡 | 我要合咖啡
+py-wyhkf	pinyin-initials	observed	observed	我要喝咖啡	wyhkf 	False	我要喝咖啡 | 委員會 | 網友 | 我也	委員會開發 | 委員會開放
+py-woyhekafei	pinyin-mixed	observed	observed	我要喝咖啡	woyhekafei 	False	我要喝咖啡 | 我也 | 我要 | 我有	我也和咖啡 | 我也合咖啡
+py-jintianxiawu	pinyin-full	observed	observed	今天下午	今天下午	True	今天下午 | 今天 | 津田 | 金 | 進	今天下午 | 今天校務
+py-jtxw	pinyin-initials	observed	observed	今天下午	jtxw 	False	今天下午 | 街頭巷尾 | 今天 | 家庭	街頭巷尾 | 今天希望 | 今天新聞
+py-jintxiawu	pinyin-mixed	observed	observed	今天下午	jintxiawu 	False	今天下午 | 今天 | 盡頭 | 津貼 | 進退	今天下午 | 鏡頭下午
+py-qingbangwokanyixia	pinyin-full	observed	observed	請幫我看一下	青棒我看一下	False	請幫我看一下 | 請 | 清 | 輕	青棒我看一下 | 青幫我看一下
+py-qbwkyx	pinyin-initials	observed	observed	請幫我看一下	qbwkyx 	False	請幫我看一下 | 全部 | 確保 | 情報	千百萬看一下 | 千百萬抗藥性
+py-qingbwkanyixia	pinyin-mixed	observed	observed	請幫我看一下	qingbwkanyixia 	False	請幫我看一下 | 請 | 情報 | 清	情百萬看一下 | 情博物看一下
+py-xianzaijidian	pinyin-full	observed	observed	現在幾點	現在祭典	False	現在幾點 | 現在 | 先在 | 先 | 現	現在祭典 | 現在焦點
+py-xzjd	pinyin-initials	observed	observed	現在幾點	xzjd 	False	現在幾點 | 傳宗接代 | x | 小	學自己的 | 下自己的
+py-xianzaijd	pinyin-mixed	observed	observed	現在幾點	xianzaijd 	False	現在幾點 | 現在 | 先在 | 先 | 現	現在覺得 | 現在決定
+en-schedu	english-spelling	observed	observed	schedule 	schedu 	False	schedule | schedu | scheduled	scheduled | schedule | schedules
+en-arrang	english-spelling	observed	observed	arrange 	arrang 	False	arrange | arrang | arrangements	arranged | arrangement
+en-tomorr	english-spelling	observed	observed	tomorrow 	tomorr 	False	tomorrow | tomorr | tomorrow's	tomorrow
+en-teh	english-spelling	observed	observed	tech 	teh 	False	tech | teh | reg | regards | yeah	
+en-recieve	english-spelling	observed	observed	receive 	recieve 	False	receive | recieve | received | recurve	
+en-definately	english-spelling	observed	observed	definitely 	definately 	False	definitely | definately | defiantly	
+en-dont	english-spelling	observed	observed	don't 	dont 	False	don't | dont | font | Sony | front | done	
+en-im	english-spelling	observed	observed	I'm 	im 	False	I'm | im | in | on | I	important | immediately
+en-wont	english-spelling	observed	observed	won't 	wont 	False	won't | wont | don't | want | went	
+en-hellp	english-spelling	observed	observed	hello 	hellp 	False	hello | hellp | help | hell | jello | he'll	
+en-thsi	english-spelling	observed	observed	this 	thsi 	False	this | thsi | Thai | that | Thailand	
+en-adress	english-spelling	observed	observed	address 	adress 	False	address | adress | a dress | addressed	
+en-next-thanks	english-prediction	observed	observed	thank you 	thank you 	True	for | so | very | to | again	
+en-next-see	english-prediction	observed	observed	see you 	see you 	True	soon | tomorrow | then | at | on	
+en-next-good	english-prediction	observed	observed	good morning 	good morning 	True	I | and | my | please | Mr	
+en-next-going	english-prediction	observed	observed	going to 	going to 	True	be | have | the | do | get | try	
+en-double-space	english-spacing	observed	observed	hello. 	hello  	False	jello | hello | help | hell | hellos	
+en-sentence-caps	capitalization	observed	observed	Hello. World	hello. world	False	Jello | Hello | Help | Hell | Hellos	
+en-word-caps	capitalization	observed	observed	Hello World	hello world	False	Would | World | Works | World's	worldwide | world's | worlds
+en-completion-space	candidate-acceptance	observed	observed	pronunciation test 	pronunciationtest 	False	pronunciation | pronun | pronunciations	pronunciation | pronunciations
+en-raw-recovery	candidate-acceptance	observed	observed	teh 	teh 	True	tech | teh | reg | regards | yeah	
+en-comma-spacing	punctuation	observed	observed	hello, world.	hello, world.	True	jello | hello | help | hell | hellos	
+en-caps-lock	capitalization	observed	observed	API USB x 	API USB x 	True	CABLE | PORT | STICK | DEVICE	
+en-shift-once	capitalization	observed	observed	Hello 	Hello 	True	world | I | my | all | everyone	
+pinyin-slide-up	gestures	observed	observed	a	A	False		
+pinyin-slide-number	gestures	observed	observed	1	1	True		
+pinyin-shift-slide	gestures	observed	observed	q	Q	False		
+pinyin-comma-hold	palettes	observed	observed			True		
+pinyin-period-hold	palettes	observed	observed	，		False		
+pinyin-symbols	palettes	observed	observed		x	False	小 | x | X | 下 | 新 | 想	學 | 下 | 行 | 心 | 現
+english-slide-up	gestures	observed	observed	A	A	True		
+english-slide-number	gestures	observed	observed	1	1	True		
+english-shift-slide	gestures	observed	observed	q	Q	False		
+english-comma-hold	palettes	observed	observed			True		
+english-period-hold	palettes	observed	observed	?		False		
+english-symbols	palettes	observed	observed	x	x	True	can | x | I | a | could	
+py-composition-slide	gestures	observed	observed	你好a	你好A	False	你好 | 妳好 | 你 | 妳 | 你還	你好 | 妳好 | 您好
+py-refine	editing	observed	observed	不客氣	不客氣	True	不客氣 | 不可取 | 不可 | 不 | 部	不客氣 | 不可欺 | 不可其
+en-selected-delete	editing	observed	observed	 world 	 world 	True	of | and | is | to | wide | in	
+en-reedit	editing	observed	observed	hello x 	hellox 	False	I | my | all | everyone | there	
+en-cursor-in-word	editing	observed	observed	hex llo 	hex llo 	True	x | I | my | all | everyone	
+py-hide-show	lifecycle	observed	observed	 	nihao 	False	你好 | 妳好 | 你 | 妳 | 你還	你好 | 妳好 | 您好
+py-restart	lifecycle	observed	observed	 	srf 	False	雙人房 | 輸入法 | 殺人犯 | 四人房	輸入法 | 殺人犯 | 雙人房
+en-restart	lifecycle	observed	observed	hello 	hello 	True	hello | hel | Hel | help | hex	held | help | helped
+py-active-switch	switching	unavailable	observed		你好hello 	False		你好 | 妳好 | 您好
+en-active-switch	switching	unavailable	observed	hello	hello你好	False	jello | hello | help | hell | hellos	
+field-nosuggest	editor-policy	observed	observed	pronun 	pronun 	True		
+field-private	editor-policy	observed	observed	pronunciation 	pronun 	False	pronunciation | pronun | pronunciations	pronunciation | pronunciations
+field-password	editor-policy	observed	observed	pronun 	pronun 	True		
+field-url	editor-policy	observed	observed	pronun 	pronun 	True	pronunciation | pronun | pronunciations	
+field-email	editor-policy	observed	observed	pronun 	pronun 	True	pronunciation | pronun | pronunciations	
+field-number	editor-policy	observed	observed	12.3	12.3	True		
+field-search-en	editor-action	observed	observed	hello	hello	True	jello | hello | help | hell | hellos	
+field-search-py	editor-action	observed	observed	你好	你好	True	你好 | 妳好 | 你 | 妳 | 你還	你好 | 妳好 | 您好
+en-enter	editor-action	observed	observed	"hello
+"	"hello
+"	True	jello | hello | help | hell | hellos	
+py-enter	editor-action	observed	observed	"你好
+"	"你好
+"	True	你好 | 妳好 | 你 | 妳 | 你還	你好 | 妳好 | 您好
+url-slides	editor-policy	observed	observed	name@example.com	name@example.com	True	named | name | names | same | make	
+py-latin-space	intentional-control	observed	observed	meeting	meeting 	False	meeting | nesting | 麼 | 嗎	梅爾聽 | 梅爾停 | 梅爾庭
+en-cap-co	english-prefix-cap	observed	observed	co	co	True	could | co | come | to | contact	come | company | community
+en-cap-in	english-prefix-cap	observed	observed	in	in	True	on | in | I'm | into | information	including | include | included
+en-cap-re	english-prefix-cap	observed	observed	re	re	True	receive | re | tech | are | teh	received | record | recorded
+en-word-trace	gestures	observed	observed	hello		False		
+py-expanded-candidates	candidate-presentation	observed	observed		shi	False	是 | 時 | 使 | 十 | 式 | 事	是 | 時 | 十 | 事 | 實
+en-expanded-candidates	candidate-presentation	observed	unavailable	co	co	False	could | co | come | to | contact	come | company | community
+landscape-pinyin	landscape	observed	observed	你好	你好	True	Mixed text | 你好 | 妳好 | 你 | 妳 | 泥 | 妮 | 尼 | 呢	你好 | 妳好 | 您好 | 你好嗎 | 念好 | 逆號 | 唸好 | 兒好 | 年好
+landscape-english	landscape	observed	observed	hello .	hello .	True	hello  | x | I | my | all | everyone | there | again | to	

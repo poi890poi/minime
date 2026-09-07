@@ -1,0 +1,11 @@
+case	context	input	expected	rank	microseconds	top5
+dy		dy	電影	3	5289	第一 | 對於 | 電影 | 都有 | 導演
+diany		diany	電影	1	10537	電影 | 電源 | 店員 | 電壓 | 電影節
+dying		dying	電影	1	12685	電影 | 答應 | 對應 | 都應 | 黨營
+ly		ly	旅遊	2	2352	利用 | 旅遊 | 另一 | 利益 | 領域
+lvy		lvy	旅遊	1	1120	旅遊 | 綠意 | 旅遊業 | 綠營 | 綠野
+lyou		lyou	旅遊	1	2829	旅遊 | 理由 | 另有 | 留有 | 老友
+hj		hj	環境	1	2294	環境 | 回家 | 好幾 | 畫家 | 黃金
+huanj		huanj	環境	1	4831	環境 | 黃金 | 換句 | 換句話 | 皇家
+hjing		hjing	環境	1	8891	環境 | 火警 | 後勁 | 幻境 | 好景
+# top1=7/9 top5=9/9 p50_us=4831 p95_us=12685 load_ms=2403

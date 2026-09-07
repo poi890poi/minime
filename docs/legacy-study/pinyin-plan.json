@@ -1,0 +1,405 @@
+[
+  {
+    "name": "first-tone",
+    "actions": [
+      {
+        "description": "讷",
+        "label": "ㄋ",
+        "capture": true
+      },
+      {
+        "description": "衣",
+        "label": "ㄧ",
+        "capture": true
+      },
+      {
+        "description": "阴平",
+        "label": "Space",
+        "capture": true
+      },
+      {
+        "description": "阴平",
+        "label": "Space",
+        "capture": true
+      },
+      {
+        "description": "阴平",
+        "label": "Space",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "first-tone-phrase",
+    "actions": [
+      {
+        "description": "知",
+        "label": "ㄓ",
+        "capture": true
+      },
+      {
+        "description": "屋",
+        "label": "ㄨ",
+        "capture": true
+      },
+      {
+        "description": "阴平",
+        "label": "Space",
+        "capture": true
+      },
+      {
+        "description": "衣",
+        "label": "ㄧ",
+        "capture": true
+      },
+      {
+        "description": "恩",
+        "label": "ㄣ",
+        "capture": true
+      },
+      {
+        "description": "阴平",
+        "label": "Space",
+        "capture": true
+      },
+      {
+        "description": "阴平",
+        "label": "Space",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "enter-twice",
+    "actions": [
+      {
+        "description": "讷",
+        "label": "ㄋ",
+        "capture": true
+      },
+      {
+        "description": "衣",
+        "label": "ㄧ",
+        "capture": true
+      },
+      {
+        "description": "上声",
+        "label": "ˇ",
+        "capture": true
+      },
+      {
+        "description": "Enter 鍵",
+        "label": "Enter",
+        "capture": true
+      },
+      {
+        "description": "Enter 鍵",
+        "label": "Enter",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "pinyin-phrase",
+    "layout": "pinyin",
+    "actions": [
+      {
+        "description": "n",
+        "label": "n"
+      },
+      {
+        "description": "i",
+        "label": "i"
+      },
+      {
+        "description": "h",
+        "label": "h"
+      },
+      {
+        "description": "a",
+        "label": "a"
+      },
+      {
+        "description": "o",
+        "label": "o"
+      },
+      {
+        "description": "空格",
+        "label": " "
+      },
+      {
+        "description": "空格",
+        "label": " ",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "pinyin-english",
+    "layout": "pinyin",
+    "actions": [
+      {
+        "description": "m",
+        "label": "m"
+      },
+      {
+        "description": "e",
+        "label": "e"
+      },
+      {
+        "description": "e",
+        "label": "e"
+      },
+      {
+        "description": "t",
+        "label": "t"
+      },
+      {
+        "description": "i",
+        "label": "i"
+      },
+      {
+        "description": "n",
+        "label": "n"
+      },
+      {
+        "description": "g",
+        "label": "g"
+      },
+      {
+        "description": "空格",
+        "label": " ",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "pinyin-mixed",
+    "layout": "pinyin",
+    "actions": [
+      {
+        "description": "z",
+        "label": "z"
+      },
+      {
+        "description": "h",
+        "label": "h"
+      },
+      {
+        "description": "e",
+        "label": "e"
+      },
+      {
+        "description": "g",
+        "label": "g"
+      },
+      {
+        "description": "e",
+        "label": "e"
+      },
+      {
+        "description": "空格",
+        "label": " "
+      },
+      {
+        "description": "空格",
+        "label": " "
+      },
+      {
+        "description": "p",
+        "label": "p"
+      },
+      {
+        "description": "r",
+        "label": "r"
+      },
+      {
+        "description": "o",
+        "label": "o"
+      },
+      {
+        "description": "n",
+        "label": "n"
+      },
+      {
+        "description": "u",
+        "label": "u"
+      },
+      {
+        "description": "n",
+        "label": "n"
+      },
+      {
+        "description": "c",
+        "label": "c"
+      },
+      {
+        "description": "i",
+        "label": "i"
+      },
+      {
+        "description": "a",
+        "label": "a"
+      },
+      {
+        "description": "t",
+        "label": "t"
+      },
+      {
+        "description": "i",
+        "label": "i"
+      },
+      {
+        "description": "o",
+        "label": "o"
+      },
+      {
+        "description": "n",
+        "label": "n"
+      },
+      {
+        "description": "空格",
+        "label": " "
+      },
+      {
+        "description": "b",
+        "label": "b"
+      },
+      {
+        "description": "u",
+        "label": "u"
+      },
+      {
+        "description": "d",
+        "label": "d"
+      },
+      {
+        "description": "u",
+        "label": "u"
+      },
+      {
+        "description": "i",
+        "label": "i"
+      },
+      {
+        "description": "空格",
+        "label": " ",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "pinyin-ambiguous",
+    "layout": "pinyin",
+    "actions": [
+      {
+        "description": "m",
+        "label": "m"
+      },
+      {
+        "description": "i",
+        "label": "i"
+      },
+      {
+        "description": "n",
+        "label": "n"
+      },
+      {
+        "description": "g",
+        "label": "g"
+      },
+      {
+        "description": "空格",
+        "label": " ",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "pinyin-enter",
+    "layout": "pinyin",
+    "actions": [
+      {
+        "description": "n",
+        "label": "n"
+      },
+      {
+        "description": "i",
+        "label": "i"
+      },
+      {
+        "description": "h",
+        "label": "h"
+      },
+      {
+        "description": "a",
+        "label": "a"
+      },
+      {
+        "description": "o",
+        "label": "o"
+      },
+      {
+        "description": "Enter 鍵",
+        "label": "\n"
+      },
+      {
+        "description": "Enter 鍵",
+        "label": "\n",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "pinyin-up",
+    "layout": "pinyin",
+    "actions": [
+      {
+        "description": "m",
+        "label": "up m",
+        "dy": -100,
+        "capture": true
+      },
+      {
+        "description": "i",
+        "label": "up i",
+        "dy": -100,
+        "capture": true
+      },
+      {
+        "description": "n",
+        "label": "up n",
+        "dy": -100,
+        "capture": true
+      },
+      {
+        "description": "g",
+        "label": "up g",
+        "dy": -100,
+        "capture": true
+      },
+      {
+        "description": "空格",
+        "label": "Space",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "pinyin-down",
+    "layout": "pinyin",
+    "actions": [
+      {
+        "description": "q",
+        "label": "down q",
+        "dy": 100,
+        "capture": true
+      },
+      {
+        "description": "空格",
+        "label": "Space",
+        "capture": true
+      }
+    ]
+  }
+]

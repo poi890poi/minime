@@ -1,0 +1,97 @@
+[
+  {
+    "layout": "pinyin",
+    "name": "caps-lock",
+    "actions": [
+      {
+        "capture": true,
+        "doubleTap": true,
+        "description": "Shift",
+        "label": "double Shift"
+      },
+      {
+        "description": "A",
+        "label": "A"
+      },
+      {
+        "description": "B",
+        "label": "B"
+      },
+      {
+        "description": "Shift",
+        "label": "unlock"
+      },
+      {
+        "description": "c",
+        "label": "c"
+      },
+      {
+        "description": "空格",
+        "label": "space"
+      }
+    ]
+  },
+  {
+    "layout": "pinyin",
+    "name": "chinese-comma",
+    "actions": [
+      {
+        "description": "n"
+      },
+      {
+        "description": "i"
+      },
+      {
+        "description": "h"
+      },
+      {
+        "description": "a"
+      },
+      {
+        "description": "o"
+      },
+      {
+        "capture": true,
+        "description": "全形逗號",
+        "label": "comma"
+      },
+      {
+        "description": "全形句號",
+        "label": "period"
+      }
+    ]
+  },
+  {
+    "layout": "pinyin",
+    "name": "latin-comma",
+    "actions": [
+      {
+        "description": "h",
+        "dy": -100
+      },
+      {
+        "description": "i",
+        "dy": -100
+      },
+      {
+        "description": "全形逗號",
+        "label": "comma"
+      },
+      {
+        "description": "全形句號",
+        "label": "period"
+      }
+    ]
+  },
+  {
+    "layout": "pinyin",
+    "name": "symbol-overview",
+    "actions": [
+      {
+        "capture": true,
+        "description": "符號鍵盤",
+        "label": "symbols"
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+case	context	input	expected	rank	microseconds	top5
+prefix-today		jint	今天	1	164	今天 | 今天的 | 津貼 | 今天在 | 今天是
+prefix-computer		diann	電腦	1	462	電腦 | 店內 | 電腦化 | 電腦業 | 電能
+prefix-ime		shuruf	輸入法	1	64	輸入法
+prefix-no-problem		meiwen	沒問題	1	71	沒問題 | 沒文 | 沒問 | 美文 | 美問
+prefix-question		qingw	請問	1	125	請問 | 青蛙 | 輕微 | 請勿 | 情網
+prefix-thanks		xiex	謝謝	1	324	謝謝 | 寫信 | 寫下 | 些小 | 些許
+prefix-work		gongz	工作	1	1487	工作 | 公眾 | 工資 | 公主 | 工作者
+prefix-now		xianz	現在	1	41386	現在 | 限制 | 現在的 | 縣長 | 顯著
+context-can	可	yi	以	2	22682	一 | 以 | 意 | 已 | 議
+context-computer	電	nao	腦	1	168	腦 | 鬧 | 惱 | 撓 | 腦筋
+context-taiwan	台	wan	灣	1	506	灣 | 完 | 萬 | 晚 | 玩
+context-how	怎	me	麼	1	227	麼 | 們 | 沒 | 美 | 沒有
+full-today		jintian	今天	1	74	今天 | 今天的 | 今天在 | 今天是 | 今天有
+full-computer		diannao	電腦	1	136	電腦 | 電腦化 | 電腦業 | 電腦展 | 電腦課
+full-ime		shurufa	輸入法	1	44	輸入法 | 輸入發 | 輸入乏 | 書如法 | 書如發
+full-no-problem		meiwenti	沒問題	1	66	沒問題 | 美問題 | 每問題 | 沒文體 | 美文體
+# top1=15/16 top5=16/16 p50_us=168 p95_us=41386 load_ms=3466

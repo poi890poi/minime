@@ -1,0 +1,20 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'dev.minime.ime'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'dev.minime.ime'
+        minSdk 29
+        targetSdk 35
+        versionCode 3
+        versionName '0.2.1'
+        testInstrumentationRunner 'android.test.InstrumentationTestRunner'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    buildTypes { release { minifyEnabled false } }
+}
+dependencies {
+    implementation project(':core')
+    androidTestCompileOnly files("${android.sdkDirectory}/platforms/android-35/optional/android.test.base.jar")
+    androidTestCompileOnly files("${android.sdkDirectory}/platforms/android-35/optional/android.test.runner.jar")
+}

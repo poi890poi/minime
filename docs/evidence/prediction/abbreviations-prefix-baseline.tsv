@@ -1,0 +1,20 @@
+case	context	input	expected	rank	microseconds	top5
+nh		nh	你好	0	20	
+nih		nih	你好	2	428	你會 | 你好 | 妳會 | 霓虹 | 妳好
+nhao		nhao	你好	0	20	
+nihao		nihao	你好	1	149	你好 | 妳好 | 你好嗎 | 逆號 | 兒好
+jt		jt	今天	0	11	
+jint		jint	今天	1	103	今天 | 今天的 | 津貼 | 今天在 | 今天是
+jtian		jtian	今天	0	13	
+jintian		jintian	今天	1	157	今天 | 今天的 | 今天在 | 今天是 | 今天有
+srf		srf	輸入法	0	7	
+shrf		shrf	輸入法	0	8	
+shuruf		shuruf	輸入法	1	41	輸入法
+srufa		srufa	輸入法	0	9	
+shurufa		shurufa	輸入法	1	63	輸入法 | 輸入發 | 輸入乏 | 書如法 | 書如發
+mwt		mwt	沒問題	0	7	
+meiwent		meiwent	沒問題	1	56	沒問題
+mwenti		mwenti	沒問題	0	11	
+wxsrf		wxsrf	我想輸入法	0	10	
+woxt		woxt	我想他	0	14	
+# top1=6/18 top5=7/18 p50_us=20 p95_us=428 load_ms=2061

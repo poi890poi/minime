@@ -1,0 +1,149 @@
+[
+  {
+    "id": "url-slides",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "name",
+        "label": "typed"
+      },
+      {
+        "key": "a",
+        "slide": 1
+      },
+      {
+        "type": "example",
+        "label": "typed"
+      },
+      {
+        "key": "PERIOD"
+      },
+      {
+        "type": "com",
+        "label": "typed"
+      }
+    ],
+    "field": "email",
+    "group": "editor-policy"
+  },
+  {
+    "id": "py-latin-space",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "meeting",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "group": "intentional-control"
+  },
+  {
+    "id": "en-cap-co",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "co",
+        "label": "typed"
+      }
+    ],
+    "group": "english-prefix-cap"
+  },
+  {
+    "id": "en-cap-in",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "in",
+        "label": "typed"
+      }
+    ],
+    "group": "english-prefix-cap"
+  },
+  {
+    "id": "en-cap-re",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "re",
+        "label": "typed"
+      }
+    ],
+    "group": "english-prefix-cap"
+  },
+  {
+    "id": "en-word-trace",
+    "mode": "english",
+    "actions": [
+      {
+        "trace": "hello",
+        "capture": true
+      }
+    ],
+    "group": "gestures"
+  },
+  {
+    "id": "py-expanded-candidates",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "shi",
+        "label": "typed"
+      },
+      {
+        "key": "EXPAND",
+        "capture": true
+      }
+    ],
+    "group": "candidate-presentation"
+  },
+  {
+    "id": "en-expanded-candidates",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "co",
+        "label": "typed"
+      },
+      {
+        "key": "EXPAND",
+        "capture": true
+      }
+    ],
+    "group": "candidate-presentation"
+  },
+  {
+    "id": "landscape-pinyin",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "capture": true
+      }
+    ],
+    "landscape": true,
+    "group": "landscape"
+  },
+  {
+    "id": "landscape-english",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello ",
+        "label": "typed"
+      },
+      {
+        "key": "PERIOD",
+        "capture": true
+      }
+    ],
+    "landscape": true,
+    "group": "landscape"
+  }
+]

@@ -1,0 +1,558 @@
+[
+  {
+    "name": "pure-zhuyin",
+    "actions": [
+      {
+        "label": "ㄋ",
+        "description": "讷"
+      },
+      {
+        "label": "ㄧ",
+        "description": "衣"
+      },
+      {
+        "label": "ˇ",
+        "description": "上声"
+      },
+      {
+        "label": "ㄏ",
+        "description": "喝"
+      },
+      {
+        "label": "ㄠ",
+        "description": "熬"
+      },
+      {
+        "label": "ˇ",
+        "capture": true,
+        "description": "上声"
+      },
+      {
+        "label": "Space",
+        "description": "阴平"
+      },
+      {
+        "label": "Space",
+        "capture": true,
+        "description": "阴平"
+      }
+    ]
+  },
+  {
+    "name": "english-spaces",
+    "actions": [
+      {
+        "dy": 100,
+        "label": "down m",
+        "description": "迂"
+      },
+      {
+        "dy": 100,
+        "label": "down e",
+        "description": "哥"
+      },
+      {
+        "dy": 100,
+        "label": "down e",
+        "description": "哥"
+      },
+      {
+        "dy": 100,
+        "label": "down t",
+        "description": "蚩"
+      },
+      {
+        "dy": 100,
+        "label": "down i",
+        "description": "喔"
+      },
+      {
+        "dy": 100,
+        "label": "down n",
+        "description": "思"
+      },
+      {
+        "dy": 100,
+        "label": "down g",
+        "capture": true,
+        "description": "诗"
+      },
+      {
+        "label": "Space",
+        "description": "阴平"
+      },
+      {
+        "label": "Space",
+        "capture": true,
+        "description": "阴平"
+      }
+    ]
+  },
+  {
+    "name": "mixed",
+    "actions": [
+      {
+        "label": "ㄓ",
+        "description": "知"
+      },
+      {
+        "label": "ㄜ",
+        "description": "鹅"
+      },
+      {
+        "label": "ˋ",
+        "description": "去声"
+      },
+      {
+        "label": "ㄍ",
+        "description": "哥"
+      },
+      {
+        "label": "ㄜ",
+        "description": "鹅"
+      },
+      {
+        "label": "˙",
+        "description": "轻声"
+      },
+      {
+        "label": "Space",
+        "description": "阴平"
+      },
+      {
+        "label": "Space",
+        "description": "阴平"
+      },
+      {
+        "dy": 100,
+        "label": "down p",
+        "description": "恩"
+      },
+      {
+        "dy": 100,
+        "label": "down r",
+        "description": "基"
+      },
+      {
+        "dy": 100,
+        "label": "down o",
+        "description": "诶"
+      },
+      {
+        "dy": 100,
+        "label": "down n",
+        "description": "思"
+      },
+      {
+        "dy": 100,
+        "label": "down u",
+        "description": "衣"
+      },
+      {
+        "dy": 100,
+        "label": "down n",
+        "description": "思"
+      },
+      {
+        "dy": 100,
+        "label": "down c",
+        "description": "喝"
+      },
+      {
+        "dy": 100,
+        "label": "down i",
+        "description": "喔"
+      },
+      {
+        "dy": 100,
+        "label": "down a",
+        "description": "摸"
+      },
+      {
+        "dy": 100,
+        "label": "down t",
+        "description": "蚩"
+      },
+      {
+        "dy": 100,
+        "label": "down i",
+        "description": "喔"
+      },
+      {
+        "dy": 100,
+        "label": "down o",
+        "description": "诶"
+      },
+      {
+        "dy": 100,
+        "label": "down n",
+        "description": "思"
+      },
+      {
+        "label": "Space",
+        "description": "阴平"
+      },
+      {
+        "label": "ㄅ",
+        "description": "玻"
+      },
+      {
+        "label": "ㄨ",
+        "description": "屋"
+      },
+      {
+        "label": "ˊ",
+        "description": "阳平"
+      },
+      {
+        "label": "ㄉ",
+        "description": "得"
+      },
+      {
+        "label": "ㄨ",
+        "description": "屋"
+      },
+      {
+        "label": "ㄟ",
+        "description": "诶"
+      },
+      {
+        "label": "ˋ",
+        "description": "去声"
+      },
+      {
+        "label": "Space",
+        "capture": true,
+        "description": "阴平"
+      }
+    ]
+  },
+  {
+    "name": "capitals",
+    "actions": [
+      {
+        "dy": -100,
+        "label": "up G",
+        "description": "诗"
+      },
+      {
+        "dy": 100,
+        "label": "down i",
+        "description": "喔"
+      },
+      {
+        "dy": 100,
+        "label": "down t",
+        "description": "蚩"
+      },
+      {
+        "dy": -100,
+        "label": "up H",
+        "description": "雌"
+      },
+      {
+        "dy": 100,
+        "label": "down u",
+        "description": "衣"
+      },
+      {
+        "dy": 100,
+        "label": "down b",
+        "description": "日"
+      },
+      {
+        "label": "Space",
+        "description": "阴平"
+      },
+      {
+        "dy": -100,
+        "label": "up U",
+        "description": "衣"
+      },
+      {
+        "dy": -100,
+        "label": "up S",
+        "description": "讷"
+      },
+      {
+        "dy": -100,
+        "label": "up B",
+        "description": "日"
+      },
+      {
+        "label": "Space",
+        "capture": true,
+        "description": "阴平"
+      }
+    ]
+  },
+  {
+    "name": "numbers",
+    "actions": [
+      {
+        "dy": 100,
+        "label": "down 3",
+        "description": "上声"
+      },
+      {
+        "dy": 100,
+        "label": "down p",
+        "description": "恩"
+      },
+      {
+        "dy": 100,
+        "label": "down m",
+        "description": "迂"
+      },
+      {
+        "label": "Space",
+        "description": "阴平"
+      },
+      {
+        "dy": -100,
+        "label": "up U",
+        "description": "衣"
+      },
+      {
+        "dy": -100,
+        "label": "up S",
+        "description": "讷"
+      },
+      {
+        "dy": -100,
+        "label": "up B",
+        "description": "日"
+      },
+      {
+        "dy": 100,
+        "label": "down 3",
+        "description": "上声"
+      },
+      {
+        "label": "Space",
+        "capture": true,
+        "description": "阴平"
+      }
+    ]
+  },
+  {
+    "name": "ambiguous-latin",
+    "actions": [
+      {
+        "dy": 100,
+        "label": "down m",
+        "description": "迂"
+      },
+      {
+        "dy": 100,
+        "label": "down i",
+        "description": "喔"
+      },
+      {
+        "dy": 100,
+        "label": "down n",
+        "description": "思"
+      },
+      {
+        "dy": 100,
+        "label": "down g",
+        "description": "诗"
+      },
+      {
+        "label": "Space",
+        "capture": true,
+        "description": "阴平"
+      }
+    ]
+  },
+  {
+    "name": "delete-composition",
+    "actions": [
+      {
+        "label": "ㄋ",
+        "description": "讷"
+      },
+      {
+        "label": "ㄧ",
+        "description": "衣"
+      },
+      {
+        "label": "ˇ",
+        "description": "上声"
+      },
+      {
+        "label": "Backspace",
+        "capture": true,
+        "description": "刪除"
+      },
+      {
+        "label": "Backspace",
+        "description": "刪除"
+      },
+      {
+        "label": "Space",
+        "capture": true,
+        "description": "阴平"
+      }
+    ]
+  },
+  {
+    "name": "enter-phonetic",
+    "actions": [
+      {
+        "label": "ㄋ",
+        "description": "讷"
+      },
+      {
+        "label": "ㄧ",
+        "capture": true,
+        "description": "衣"
+      },
+      {
+        "label": "ˇ",
+        "description": "上声"
+      },
+      {
+        "label": "Enter",
+        "capture": true,
+        "description": "Enter 鍵"
+      }
+    ]
+  },
+  {
+    "name": "punctuation",
+    "actions": [
+      {
+        "label": "ㄋ",
+        "description": "讷"
+      },
+      {
+        "label": "ㄧ",
+        "description": "衣"
+      },
+      {
+        "label": "ˇ",
+        "description": "上声"
+      },
+      {
+        "label": "ㄏ",
+        "description": "喝"
+      },
+      {
+        "label": "ㄠ",
+        "description": "熬"
+      },
+      {
+        "label": "ˇ",
+        "description": "上声"
+      },
+      {
+        "dy": 100,
+        "label": "down ？",
+        "capture": true,
+        "description": "亨"
+      }
+    ]
+  },
+  {
+    "name": "email-prefix",
+    "actions": [
+      {
+        "dy": 100,
+        "label": "down m",
+        "description": "迂"
+      },
+      {
+        "dy": 100,
+        "label": "down i",
+        "description": "喔"
+      },
+      {
+        "dy": 100,
+        "label": "down n",
+        "description": "思"
+      },
+      {
+        "dy": 100,
+        "label": "down g",
+        "description": "诗"
+      },
+      {
+        "dy": -100,
+        "label": "up @",
+        "description": "得"
+      },
+      {
+        "dy": 100,
+        "label": "down e",
+        "description": "哥"
+      },
+      {
+        "dy": 100,
+        "label": "down x",
+        "description": "勒"
+      },
+      {
+        "dy": 100,
+        "label": "down a",
+        "description": "摸"
+      },
+      {
+        "dy": 100,
+        "label": "down m",
+        "description": "迂"
+      },
+      {
+        "dy": 100,
+        "label": "down p",
+        "description": "恩"
+      },
+      {
+        "dy": 100,
+        "label": "down l",
+        "description": "熬"
+      },
+      {
+        "dy": 100,
+        "label": "down e",
+        "capture": true,
+        "description": "哥"
+      }
+    ]
+  },
+  {
+    "name": "cursor",
+    "actions": [
+      {
+        "label": "ㄋ",
+        "description": "讷"
+      },
+      {
+        "label": "ㄧ",
+        "description": "衣"
+      },
+      {
+        "label": "ˇ",
+        "description": "上声"
+      },
+      {
+        "label": "Space",
+        "description": "阴平"
+      },
+      {
+        "cursor": 0,
+        "label": "cursor to start"
+      },
+      {
+        "dy": 100,
+        "label": "down a",
+        "description": "摸"
+      },
+      {
+        "label": "Space",
+        "capture": true,
+        "description": "阴平"
+      }
+    ]
+  }
+]

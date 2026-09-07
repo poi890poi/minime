@@ -1,0 +1,136 @@
+[
+  {
+    "id": "en-dont",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "dont",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ],
+    "group": "english-spelling"
+  },
+  {
+    "id": "en-im",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "im",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ],
+    "group": "english-spelling"
+  },
+  {
+    "id": "en-wont",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "wont",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ],
+    "group": "english-spelling"
+  },
+  {
+    "id": "en-hellp",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hellp",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ],
+    "group": "english-spelling"
+  },
+  {
+    "id": "en-thsi",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "thsi",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ],
+    "group": "english-spelling"
+  },
+  {
+    "id": "en-adress",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "adress",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ],
+    "group": "english-spelling"
+  },
+  {
+    "id": "en-next-thanks",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "thank you ",
+        "label": "typed"
+      }
+    ],
+    "group": "english-prediction"
+  },
+  {
+    "id": "en-next-see",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "see you ",
+        "label": "typed"
+      }
+    ],
+    "group": "english-prediction"
+  },
+  {
+    "id": "en-next-good",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "good morning ",
+        "label": "typed"
+      }
+    ],
+    "group": "english-prediction"
+  },
+  {
+    "id": "en-next-going",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "going to ",
+        "label": "typed"
+      }
+    ],
+    "group": "english-prediction"
+  }
+]

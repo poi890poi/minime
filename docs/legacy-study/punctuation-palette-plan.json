@@ -1,0 +1,42 @@
+[
+  {
+    "layout": "pinyin",
+    "name": "symbol-categories",
+    "actions": [
+      {
+        "label": "open symbols",
+        "description": "符號鍵盤"
+      },
+      {
+        "label": "start",
+        "snapshot": true
+      },
+      {
+        "label": "brackets",
+        "description": "括號"
+      },
+      {
+        "label": "arrows",
+        "description": "箭頭"
+      },
+      {
+        "label": "math",
+        "description": "數學符號"
+      },
+      {
+        "label": "shapes",
+        "description": "圖形"
+      },
+      {
+        "label": "return",
+        "description": "字母鍵盤"
+      },
+      {
+        "description": "全形句號",
+        "capture": true,
+        "label": "period hold",
+        "hold": true
+      }
+    ]
+  }
+]

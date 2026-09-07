@@ -1,0 +1,115 @@
+[
+  {
+    "actions": [
+      {
+        "description": "英文鍵盤",
+        "label": "select English"
+      },
+      {
+        "description": "p"
+      },
+      {
+        "description": "r"
+      },
+      {
+        "description": "o"
+      },
+      {
+        "description": "n"
+      },
+      {
+        "description": "u"
+      },
+      {
+        "description": "n"
+      },
+      {
+        "snapshot": true,
+        "label": "result"
+      }
+    ],
+    "layout": "current",
+    "name": "english-prefix"
+  },
+  {
+    "actions": [
+      {
+        "description": "h"
+      },
+      {
+        "description": "e"
+      },
+      {
+        "description": "l"
+      },
+      {
+        "description": "l"
+      },
+      {
+        "description": "o"
+      },
+      {
+        "description": "空格",
+        "label": "Space"
+      },
+      {
+        "snapshot": true,
+        "label": "result"
+      }
+    ],
+    "layout": "current",
+    "name": "english-space"
+  },
+  {
+    "actions": [
+      {
+        "description": "h"
+      },
+      {
+        "description": "e"
+      },
+      {
+        "description": "l"
+      },
+      {
+        "description": "l"
+      },
+      {
+        "description": "o"
+      },
+      {
+        "description": "Enter 鍵",
+        "label": "Enter"
+      },
+      {
+        "snapshot": true,
+        "label": "result"
+      }
+    ],
+    "layout": "current",
+    "name": "english-enter"
+  },
+  {
+    "actions": [
+      {
+        "description": "t"
+      },
+      {
+        "description": "e"
+      },
+      {
+        "description": "h"
+      },
+      {
+        "description": "空格",
+        "label": "Space"
+      },
+      {
+        "snapshot": true,
+        "label": "result"
+      }
+    ],
+    "layout": "current",
+    "name": "english-typo"
+  }
+]

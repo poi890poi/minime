@@ -1,0 +1,150 @@
+[
+  {
+    "id": "field-nosuggest",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "field": "nosuggest",
+    "group": "editor-policy"
+  },
+  {
+    "id": "field-private",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "field": "private",
+    "group": "editor-policy"
+  },
+  {
+    "id": "field-password",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "field": "password",
+    "group": "editor-policy"
+  },
+  {
+    "id": "field-url",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "field": "url",
+    "group": "editor-policy"
+  },
+  {
+    "id": "field-email",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE"
+      }
+    ],
+    "field": "email",
+    "group": "editor-policy"
+  },
+  {
+    "id": "field-number",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "12.3",
+        "label": "typed"
+      }
+    ],
+    "field": "number",
+    "group": "editor-policy"
+  },
+  {
+    "id": "field-search-en",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "ENTER"
+      }
+    ],
+    "field": "search",
+    "group": "editor-action"
+  },
+  {
+    "id": "field-search-py",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "key": "ENTER"
+      }
+    ],
+    "field": "search",
+    "group": "editor-action"
+  },
+  {
+    "id": "en-enter",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "ENTER"
+      }
+    ],
+    "group": "editor-action"
+  },
+  {
+    "id": "py-enter",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "key": "ENTER"
+      },
+      {
+        "key": "ENTER"
+      }
+    ],
+    "group": "editor-action"
+  }
+]

@@ -1,0 +1,291 @@
+[
+  {
+    "name": "url",
+    "layout": "pinyin",
+    "actions": [
+      {
+        "description": "g",
+        "label": "literal g",
+        "dy": -100
+      },
+      {
+        "description": "i",
+        "label": "literal i",
+        "dy": -100
+      },
+      {
+        "description": "t",
+        "label": "literal t",
+        "dy": -100
+      },
+      {
+        "description": "h",
+        "label": "literal h",
+        "dy": -100
+      },
+      {
+        "description": "u",
+        "label": "literal u",
+        "dy": -100
+      },
+      {
+        "description": "b",
+        "label": "literal b",
+        "dy": -100
+      },
+      {
+        "description": "m",
+        "label": "literal .",
+        "dy": 100
+      },
+      {
+        "description": "c",
+        "label": "literal c",
+        "dy": -100
+      },
+      {
+        "description": "o",
+        "label": "literal o",
+        "dy": -100
+      },
+      {
+        "description": "m",
+        "label": "literal m",
+        "dy": -100
+      },
+      {
+        "description": "h",
+        "label": "literal /",
+        "dy": 100
+      },
+      {
+        "description": "m",
+        "label": "literal m",
+        "dy": -100
+      },
+      {
+        "description": "i",
+        "label": "literal i",
+        "dy": -100
+      },
+      {
+        "description": "n",
+        "label": "literal n",
+        "dy": -100
+      },
+      {
+        "description": "i",
+        "label": "literal i",
+        "dy": -100
+      },
+      {
+        "description": "m",
+        "label": "literal m",
+        "dy": -100
+      },
+      {
+        "description": "e",
+        "label": "literal e",
+        "dy": -100
+      },
+      {
+        "description": "空格",
+        "label": "Space",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "email",
+    "layout": "pinyin",
+    "actions": [
+      {
+        "description": "n",
+        "label": "literal n",
+        "dy": -100
+      },
+      {
+        "description": "a",
+        "label": "literal a",
+        "dy": -100
+      },
+      {
+        "description": "m",
+        "label": "literal m",
+        "dy": -100
+      },
+      {
+        "description": "e",
+        "label": "literal e",
+        "dy": -100
+      },
+      {
+        "description": "a",
+        "label": "literal @",
+        "dy": 100
+      },
+      {
+        "description": "e",
+        "label": "literal e",
+        "dy": -100
+      },
+      {
+        "description": "x",
+        "label": "literal x",
+        "dy": -100
+      },
+      {
+        "description": "a",
+        "label": "literal a",
+        "dy": -100
+      },
+      {
+        "description": "m",
+        "label": "literal m",
+        "dy": -100
+      },
+      {
+        "description": "p",
+        "label": "literal p",
+        "dy": -100
+      },
+      {
+        "description": "l",
+        "label": "literal l",
+        "dy": -100
+      },
+      {
+        "description": "e",
+        "label": "literal e",
+        "dy": -100
+      },
+      {
+        "description": "m",
+        "label": "literal .",
+        "dy": 100
+      },
+      {
+        "description": "c",
+        "label": "literal c",
+        "dy": -100
+      },
+      {
+        "description": "o",
+        "label": "literal o",
+        "dy": -100
+      },
+      {
+        "description": "m",
+        "label": "literal m",
+        "dy": -100
+      },
+      {
+        "description": "空格",
+        "label": "Space",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "pinyin-shifted-slide",
+    "layout": "pinyin",
+    "actions": [
+      {
+        "description": "Shift",
+        "label": "Shift"
+      },
+      {
+        "description": "Q",
+        "label": "up Q",
+        "dy": -100,
+        "capture": true
+      },
+      {
+        "description": "空格",
+        "label": "Space",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "name": "repeated-transitions",
+    "actions": [
+      {
+        "description": "讷",
+        "label": "ㄋ",
+        "dy": 0
+      },
+      {
+        "description": "衣",
+        "label": "ㄧ",
+        "dy": 0
+      },
+      {
+        "description": "上声",
+        "label": "ˇ",
+        "dy": 0
+      },
+      {
+        "description": "迂",
+        "label": "down m",
+        "dy": 100
+      },
+      {
+        "description": "空格",
+        "label": "Space",
+        "dy": 0
+      },
+      {
+        "description": "讷",
+        "label": "ㄋ",
+        "dy": 0
+      },
+      {
+        "description": "衣",
+        "label": "ㄧ",
+        "dy": 0
+      },
+      {
+        "description": "上声",
+        "label": "ˇ",
+        "dy": 0
+      },
+      {
+        "description": "空格",
+        "label": "Space",
+        "dy": 0
+      },
+      {
+        "description": "衣",
+        "label": "up U",
+        "dy": -100
+      },
+      {
+        "description": "空格",
+        "label": "Space",
+        "dy": 0
+      },
+      {
+        "description": "讷",
+        "label": "ㄋ",
+        "dy": 0
+      },
+      {
+        "description": "衣",
+        "label": "ㄧ",
+        "dy": 0
+      },
+      {
+        "description": "上声",
+        "label": "ˇ",
+        "dy": 0
+      },
+      {
+        "description": "空格",
+        "label": "Space",
+        "dy": 0,
+        "capture": true
+      }
+    ]
+  }
+]
