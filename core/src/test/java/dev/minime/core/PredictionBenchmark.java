@@ -9,7 +9,9 @@ public final class PredictionBenchmark {
     public static void main(String[] args) throws Exception {
         Path assets=Paths.get("app/src/main/assets");
         long started=System.nanoTime();
-        PhoneticDictionary d=PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")),Files.newBufferedReader(assets.resolve("en_us.tsv")),Files.newBufferedReader(assets.resolve("syllables.tsv")));
+        PhoneticDictionary d=args.length>2 && args[2].equals("context")?
+            PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")),Files.newBufferedReader(assets.resolve("en_us.tsv")),Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv"))):
+            PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")),Files.newBufferedReader(assets.resolve("en_us.tsv")),Files.newBufferedReader(assets.resolve("syllables.tsv")));
         long loadMs=(System.nanoTime()-started)/1000000;
         java.lang.reflect.Method contextual=null;
         try { contextual=PhoneticDictionary.class.getMethod("convert",String.class,boolean.class,String.class); } catch(NoSuchMethodException ignored) { }

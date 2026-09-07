@@ -143,7 +143,7 @@ public final class CompositionEngine {
                 preferred = 1; return;
             }
         }
-        List<Candidate> converted = dictionary == null || literalField || englishMode ? new ArrayList<>() : dictionary.convert(raw, bpmf);
+        List<Candidate> converted = dictionary == null || literalField || englishMode ? new ArrayList<>() : dictionary.convert(raw, bpmf,context);
         if (!privateField && !literalField && !englishMode) converted.addAll(learning.custom(raw));
         if (!privateField) converted.sort(Comparator.comparingInt((Candidate c) -> learning.count(contextKey(), raw, c.text)).reversed()
             .thenComparing(Comparator.comparingDouble((Candidate c) -> c.score).reversed()));

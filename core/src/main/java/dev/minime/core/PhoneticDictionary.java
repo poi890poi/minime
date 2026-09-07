@@ -90,7 +90,8 @@ public final class PhoneticDictionary {
         }
         return !raw.isEmpty();
     }
-    public List<Candidate> convert(String raw, boolean bpmf) {
+    public List<Candidate> convert(String raw, boolean bpmf) { return convert(raw,bpmf,""); }
+    public List<Candidate> convert(String raw, boolean bpmf,String context) {
         String key = bpmf ? raw.replace(" ", "") : raw.toLowerCase(Locale.ROOT).replace("ü", "v").replace(' ', '\'');
         if (key.isEmpty() || key.length() > 96) return Collections.emptyList();
         Map<String, List<Candidate>> index = bpmf ? zhuyin : pinyin;
@@ -131,6 +132,9 @@ public final class PhoneticDictionary {
             result.addAll(pinyinSyllables.convert(key));
             result.addAll(pinyinPrefixes.complete(key,(reading,c)->true));
         }
+        // Apply only the boundary signal; retain dictionary word probabilities.
+        if(!bpmf && !context.isEmpty())result.replaceAll(c->new Candidate(c.text,c.literal,
+            c.score+.5*(contextModel.chinese(context,c.text)-contextModel.chinese("",c.text)),c.reading));
         result.sort(Comparator.comparingDouble((Candidate c) -> c.score).reversed().thenComparing(c -> c.text));
         Set<String> seen = new HashSet<>(); result.removeIf(c -> !seen.add(c.text));
         return result;
