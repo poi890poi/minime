@@ -34,6 +34,9 @@ final class SymbolPanel extends LinearLayout {
     private String groupName,sectionName;
     private final boolean landscape;
     SymbolPanel(Context context,boolean emoji,boolean privateField,Consumer<String> press) {
+        this(context,emoji,privateField,press,Collections.emptySet());
+    }
+    SymbolPanel(Context context,boolean emoji,boolean privateField,Consumer<String> press,Set<String> mainBoardSymbols) {
         super(context);this.emoji=emoji;this.press=press;setOrientation(VERTICAL);
         navigation=!emoji && !privateField?context.getSharedPreferences("settings",Context.MODE_PRIVATE):null;
         remember=emoji && !privateField && context.getSharedPreferences("settings",Context.MODE_PRIVATE).getBoolean("emoji_recents",false);
@@ -49,7 +52,12 @@ final class SymbolPanel extends LinearLayout {
                 List<Entry> recent=new ArrayList<>();for(String text:context.getSharedPreferences("learning",Context.MODE_PRIVATE).getString("recent_emoji","").split("\n"))if(byText.containsKey(text))recent.add(byText.get(text));
                 if(!recent.isEmpty()) {Map<String,Map<String,List<Entry>>> ordered=new LinkedHashMap<>();ordered.put("Recent",Collections.singletonMap("All",recent));ordered.putAll(catalog);catalog.clear();catalog.putAll(ordered);}
             }
-        } else loadSymbols();
+        } else {
+            loadSymbols();
+            // Stable ordering retains all entries and their relative order within each tier.
+            for(Map<String,List<Entry>> sections:catalog.values())for(List<Entry> list:sections.values())
+                list.sort(Comparator.comparing(entry->mainBoardSymbols.contains(entry.text)));
+        }
         LinearLayout selectors=new LinearLayout(context);selectors.setBaselineAligned(false);
         Button alternate=navButton(emoji?"#+":"☺",emoji?"Symbols":"Emoji",()->press.accept(emoji?"SYMBOLS":"EMOJI"));
         selectors.addView(alternate,new LayoutParams(dp(42),dp(selectorHeight)));

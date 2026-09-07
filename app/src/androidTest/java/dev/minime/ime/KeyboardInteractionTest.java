@@ -427,6 +427,16 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         focus(activity.text);
         for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows())assertNull("Old annotation cannot return after field change",find(window.getRoot(),"Exact input nihao"));
     }
+    public void testSymbolPageSurvivesMainBoardAndEmojiSwitches() {
+        click("?123");click("Symbol category");menuItem("箭頭 Arrows");click("Next palette page");
+        AccessibilityNodeInfo category=node("Symbol category"),palette=category.getParent().getParent();
+        AccessibilityNodeInfo grid=palette.getChild(1),entry=grid.getChild(0).getChild(0);
+        String expected=entry.getContentDescription().toString();entry.recycle();grid.recycle();palette.recycle();category.recycle();
+        click("ABC");click("?123");node(expected).recycle();
+        click("Emoji");click("Symbols");node(expected).recycle();
+        click(expected);assertFalse("Restored symbol can be inserted",activity.text.getText().toString().isEmpty());
+        capture("remembered-symbol-page");
+    }
     public void testCompositionSurvivesHideAndRestart() {
         type("nihao");
         node("Exact input nihao").recycle();

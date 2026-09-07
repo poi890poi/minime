@@ -51,6 +51,19 @@ final class KeyboardView extends LinearLayout {
     private static final String[] QWERTY={"qwertyuiop","asdfghjkl","zxcvbnm"};
     private static final String[] Q_DOWN={"1234567890","@*+-=/#（）","、「」？！～."};
     private static final String[] EN_DOWN={"1234567890","@*+-=/#()","':\"?!~…"};
+    static Set<String> mainBoardSymbols(boolean zhuyin,boolean english,boolean numeric) {
+        Set<String> result=new LinkedHashSet<>();
+        String[] down=numeric?new String[]{"1234567890+.-"}:zhuyin?ZH_DOWN:english?EN_DOWN:Q_DOWN;
+        for(String row:down)addSymbols(result,row);
+        if(zhuyin && !numeric)for(String row:ZH_UP)addSymbols(result,row);
+        addSymbols(result,",，、");
+        if(!zhuyin || numeric)addSymbols(result,".。…");
+        return result;
+    }
+    private static void addSymbols(Set<String> result,String text) {
+        text.codePoints().filter(cp->!Character.isLetter(cp) && !Character.isWhitespace(cp))
+            .forEach(cp->result.add(new String(Character.toChars(cp))));
+    }
     KeyboardView(Context context,Consumer<String> press,Predicate<String> longPress,BiConsumer<float[],Integer> trace) {
         this(context,press,longPress,trace,Runnable::run);
     }
@@ -361,7 +374,7 @@ final class KeyboardView extends LinearLayout {
         } else if(panel==3) {
             punctuationChoices(asciiPunctuation,allowLanguageSwitch && !english,height);
         } else if(panel>0) {
-            keys.addView(new SymbolPanel(getContext(),panel==2,engine.privateField(),press));
+            keys.addView(new SymbolPanel(getContext(),panel==2,engine.privateField(),press,mainBoardSymbols(zhuyin,english,numeric)));
         } else if(numeric) {
             simpleRow("123",height); simpleRow("456",height); simpleRow("789",height);
             simpleRow("+0.-",height);
