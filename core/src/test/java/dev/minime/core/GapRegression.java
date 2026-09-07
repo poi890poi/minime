@@ -18,5 +18,11 @@ final class GapRegression {
         }
         Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);type(c,"bkq");c.select(0);c.space();
         equal("bkq ",e.text,"abbreviation raw recovery");
+        for(String suffix:Arrays.asList("test ",",","."," ","\n")) {
+            e=new Editor();c=engine(e,Learning.NONE,false);c.start(false,false,false,false,true);
+            type(c,"pronun");c.select(find(c,"pronunciation"));
+            if(suffix.equals(",") || suffix.equals(".")) c.literal(suffix); else type(c,suffix);
+            equal("pronunciation"+(suffix.equals("test ")?" ":"")+suffix,e.text,"deferred completion boundary "+suffix);
+        }
     }
 }

@@ -18,6 +18,7 @@ public final class CompositionEngine {
     private PhoneticDictionary dictionary;
     private String raw = "", context = "";
     private boolean zhuyin, literalField, privateField, direct, englishMode;
+    private boolean completionBoundary;
     private Intent intent = Intent.LATIN_LITERAL;
     private List<Candidate> candidates = new ArrayList<>();
     private int preferred;
@@ -27,7 +28,7 @@ public final class CompositionEngine {
         start(zhuyin,literalField,privateField,direct,false);
     }
     public void start(boolean zhuyin, boolean literalField, boolean privateField, boolean direct, boolean englishMode) {
-        raw = ""; context = ""; this.zhuyin = zhuyin; this.literalField = literalField;
+        raw = ""; context = ""; completionBoundary=false; this.zhuyin = zhuyin; this.literalField = literalField;
         this.privateField = privateField; this.direct = direct; this.englishMode=englishMode; refresh();
     }
     public void layout(boolean zhuyin) { commitDefault(false); this.zhuyin = zhuyin; refresh(); }
@@ -41,6 +42,7 @@ public final class CompositionEngine {
         if (codePoint == ' ') { space(); return; }
         if (codePoint == '\n') { enter(); return; }
         String letter = new String(Character.toChars(codePoint));
+        resolveCompletionBoundary(letter);
         if (direct) { editor.commit(letter); return; }
         boolean phonetic = IntentClassifier.isZhuyin(codePoint);
         boolean existingPhonetic = raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
@@ -54,6 +56,7 @@ public final class CompositionEngine {
         raw += letter; editor.composing(raw); refresh();
     }
     public void space() {
+        completionBoundary=false;
         if (direct || raw.isEmpty()) { editor.commit(" "); refresh(); return; }
         int last=raw.codePointBefore(raw.length());
         if(zhuyin && !literalField && !englishMode && last>=0x3105 && last<=0x3129) {
@@ -61,15 +64,22 @@ public final class CompositionEngine {
         }
         commitDefault(true);
     }
-    public void confirm() { commitDefault(false); }
+    public void confirm() { completionBoundary=false; commitDefault(false); }
     /** An explicit slide commits its literal output, independent of token inference. */
-    public void literal(String text) { commitDefault(false); editor.commit(text); context=""; refresh(); }
-    public void enter() { commitDefault(false); editor.enter(); context = ""; refresh(); }
+    public void literal(String text) { resolveCompletionBoundary(text); commitDefault(false); editor.commit(text); context=""; refresh(); }
+    public void enter() { completionBoundary=false; commitDefault(false); editor.enter(); context = ""; refresh(); }
+    private void resolveCompletionBoundary(String text) {
+        if(completionBoundary) {
+            completionBoundary=false;
+            if(!text.isEmpty() && Character.isLetterOrDigit(text.codePointAt(0))) editor.commit(" ");
+        }
+    }
     public void commitRaw(boolean space) {
         if (raw.isEmpty()) { if (space) editor.commit(" "); return; }
         commit(new Candidate(raw, true, 0), space, false);
     }
     public void backspace() {
+        completionBoundary=false;
         if (raw.isEmpty()) { editor.delete(); context = ""; }
         else {
             raw = raw.substring(0, raw.offsetByCodePoints(raw.length(), -1));
@@ -80,7 +90,11 @@ public final class CompositionEngine {
     }
     public void select(int index) {
         if (index < 0 || index >= candidates.size()) return;
-        commit(candidates.get(index), false, !raw.isEmpty());
+        Candidate choice=candidates.get(index);
+        boolean completed=englishMode && !literalField && !choice.text.equals(raw) && choice.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");
+        resolveCompletionBoundary(choice.text);
+        commit(choice, false, !raw.isEmpty());
+        completionBoundary=completed;
     }
     private void commitDefault(boolean withSpace) {
         if (raw.isEmpty()) return;
@@ -98,7 +112,7 @@ public final class CompositionEngine {
         return text.substring(text.offsetByCodePoints(text.length(), -Math.min(n, text.codePointCount(0, text.length()))));
     }
     /** Call after cursor movement, external edits or lifecycle changes; never rewrite text at the new cursor. */
-    public void abandon() { editor.finish(); raw = ""; context = ""; refresh(); }
+    public void abandon() { completionBoundary=false; editor.finish(); raw = ""; context = ""; refresh(); }
     public void refresh() {
         candidates = new ArrayList<>(); preferred = 0;
         if (direct) return;
