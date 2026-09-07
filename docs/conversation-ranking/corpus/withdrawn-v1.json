@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "inputs_sha256": "f5bbfb81a590e4ad953b845c9d873eaf318f977590a7a94f25975fac94ae4bd6",
+  "rows": 12943,
+  "sources": [
+    {
+      "group": "en-dev",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_English-EWT/4dc8e10cf32352e11ab2c46e024b19853b91546e/en_ewt-ud-dev.conllu",
+      "sha256": "14a82ce2c4c4648c3e7c4efc76872c85c5f4c39643fcb7f9c91a45a58157a270"
+    },
+    {
+      "group": "en-test",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_English-EWT/4dc8e10cf32352e11ab2c46e024b19853b91546e/en_ewt-ud-test.conllu",
+      "sha256": "0612e45914359e4b36d187ef2bfeaf66fc8933210925be985c5fbf6a9e311036"
+    },
+    {
+      "group": "zh-dev",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Chinese-GSD/a7cb4270c8ea437d7f2cd7978b0dcc0941cb7266/zh_gsd-ud-dev.conllu",
+      "sha256": "c47229001ede78b41a3304570689aedc841d3e5465082e19f418ecb29418733d"
+    },
+    {
+      "group": "zh-test",
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Chinese-GSD/a7cb4270c8ea437d7f2cd7978b0dcc0941cb7266/zh_gsd-ud-test.conllu",
+      "sha256": "b4984c1d8434c866c3b4e32906c941db274942ed0cde6af783939cfbeca68c99"
+    },
+    {
+      "group": "moe-glyph",
+      "url": "https://language.moe.gov.tw/001/Upload/files/SITE_CONTENT/M0001/PRIMARY/shrest2-18.htm",
+      "extraction": "SHINE AAC b5b2de7b2eab8dc5e5b56ff97d599b5deb692f8a generated MOE entries",
+      "sha256": "8f9afba41c7b653eb76b824dde638ed291d7b7ecf987ea6c0e2862885cefdf0d",
+      "eligible": 999,
+      "rank_limit": 1000,
+      "total": 999
+    }
+  ],
+  "coverage": [
+    {
+      "group": "en-dev",
+      "sentences": 1944,
+      "normalization": "CoNLL-U letter/apostrophe tokens, lowercased; punctuation and numeric tokens excluded"
+    },
+    {
+      "group": "en-test",
+      "sentences": 2000,
+      "normalization": "CoNLL-U letter/apostrophe tokens, lowercased; punctuation and numeric tokens excluded"
+    },
+    {
+      "group": "zh-dev",
+      "source_unique": 4021,
+      "annotated_readings": 3450,
+      "sampled": 1000,
+      "missing_readings": 571
+    },
+    {
+      "group": "zh-test",
+      "source_unique": 3732,
+      "annotated_readings": 3163,
+      "sampled": 1000,
+      "missing_readings": 569
+    }
+  ],
+  "status": "withdrawn before scoring",
+  "reason": "Annotation token forms split natural contractions into artificial English inputs, e.g. ca + nt. Use original sentence text instead; Chinese inputs unchanged."
+}
