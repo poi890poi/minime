@@ -1,0 +1,6 @@
+patch:
+  schema/dependencies: []
+  engine/translators: [script_translator]
+  engine/filters: [uniquifier]
+  translator/enable_user_dict: false
+  menu/page_size: 100

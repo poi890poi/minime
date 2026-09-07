@@ -32,3 +32,14 @@ if binary.exists():
     for name,expected in compiled['sources'].items():
         assert hashlib.sha256((root/'app/src/main/assets'/name).read_bytes()).hexdigest()==expected
     print('PASS compiled model and source hashes')
+rime_path=root/'third_party/rime/model.json'
+if rime_path.exists():
+    rime=json.loads(rime_path.read_text(encoding='utf-8'))
+    assets=root/'app/src/main/rimeAssets/rime'
+    for name,expected in rime['assets'].items():
+        assert hashlib.sha256((assets/name).read_bytes()).hexdigest()==expected, 'Rime asset changed: '+name
+    assert (assets/'bundle-id.txt').read_text(encoding='utf-8').strip()==rime['bundle']
+    assert hashlib.sha256(json.dumps(rime['assets'],sort_keys=True).encode()).hexdigest()==rime['bundle']
+    for item in json.loads((root/'third_party/rime/data-sources.json').read_text(encoding='utf-8')):
+        assert hashlib.sha256((root/'third_party/rime/data-sources'/item['archive']).read_bytes()).hexdigest()==item['sha256']
+    print('PASS pinned Rime models, bundle identity and corresponding source archives')
