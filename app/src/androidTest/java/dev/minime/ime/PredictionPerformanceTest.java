@@ -12,12 +12,18 @@ import org.json.*;
 @SuppressWarnings("deprecation")
 public final class PredictionPerformanceTest extends AndroidTestCase {
     private Reader asset(String name) throws IOException {
-        return new InputStreamReader(getContext().getAssets().open(name),StandardCharsets.UTF_8);
+        try {return new InputStreamReader(getContext().createPackageContext("dev.minime.ime.test",0).getAssets().open(name),StandardCharsets.UTF_8);}
+        catch(android.content.pm.PackageManager.NameNotFoundException e) {throw new IOException(e);}
     }
     private long heap() { Runtime r=Runtime.getRuntime();return r.totalMemory()-r.freeMemory(); }
     public void testOfflinePredictionCosts() throws Exception {
+        measure(true);
+    }
+    public void testTextPredictionCosts() throws Exception {measure(false);}
+    private void measure(boolean binary)throws Exception {
         System.gc(); long beforeHeap=heap(),begun=SystemClock.elapsedRealtime();
-        PhoneticDictionary dictionary=PhoneticDictionary.load(asset("zh_tw.tsv"),asset("en_us.tsv"),asset("syllables.tsv"));
+        PhoneticDictionary dictionary=binary?PhoneticDictionary.readBinary(getContext().getAssets().open("model.bin")):
+            PhoneticDictionary.load(asset("zh_tw.tsv"),asset("en_us.tsv"),asset("syllables.tsv"),asset("context.tsv"));
         long loadMs=SystemClock.elapsedRealtime()-begun;
         System.gc(); long retained=heap()-beforeHeap;
         JSONArray samples=new JSONArray();
@@ -32,7 +38,7 @@ public final class PredictionPerformanceTest extends AndroidTestCase {
         }
         JSONObject report=new JSONObject().put("loadMs",loadMs).put("approxRetainedHeapBytes",retained).put("samples",samples)
             .put("scope","Android offline conversion only; excludes input dispatch, composing span updates and rendering. GC makes heap approximate.");
-        try(FileOutputStream out=new FileOutputStream(new File(getContext().getExternalFilesDir(null),"prediction-performance.json"))) {
+        try(FileOutputStream out=new FileOutputStream(new File(getContext().getExternalFilesDir(null),binary?"prediction-performance.json":"prediction-performance-text.json"))) {
             out.write(report.toString(2).getBytes(StandardCharsets.UTF_8));
         }
         assertFalse(dictionary.convert("srufa",false).isEmpty());

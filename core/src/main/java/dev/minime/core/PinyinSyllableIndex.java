@@ -10,6 +10,8 @@ final class PinyinSyllableIndex {
     private double[] best;
     private int size=1;
     private static final int BEAM=6, CANDIDATES=24, SEARCH_BUDGET=2048, MAX_WORD_INPUT=32;
+    PinyinSyllableIndex(BinaryModel.Reader in)throws java.io.IOException {syllable=in.strings();child=in.ints();sibling=in.ints();words=in.lists();best=in.doubles();size=syllable.length;}
+    void write(BinaryModel.Writer out)throws java.io.IOException {out.strings(syllable);out.ints(child);out.ints(sibling);out.lists(words);out.doubles(best);}
 
     @SuppressWarnings("unchecked")
     PinyinSyllableIndex(Map<String,List<Candidate>> source, Set<String> readings) {

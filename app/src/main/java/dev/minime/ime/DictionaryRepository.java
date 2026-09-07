@@ -12,7 +12,7 @@ final class DictionaryRepository {
         if(future==null) {
             Context app=context.getApplicationContext();
             future=CompletableFuture.supplyAsync(() -> {
-                try { return PhoneticDictionary.load(reader(app,"zh_tw.tsv"),reader(app,"en_us.tsv"),reader(app,"syllables.tsv"),reader(app,"context.tsv")); }
+                try { return PhoneticDictionary.readBinary(app.getAssets().open("model.bin")); }
                 catch(IOException e) { throw new CompletionException(e); }
             });
         }

@@ -15,6 +15,22 @@ public final class PhoneticDictionary {
     private ReadingIndex pinyinPrefixes,zhuyinPrefixes;
     private PinyinSyllableIndex pinyinSyllables;
     private ContextModel contextModel=new ContextModel();
+    public void writeBinary(OutputStream target)throws IOException {
+        try(DataOutputStream stream=new DataOutputStream(new BufferedOutputStream(target))) {
+            stream.writeInt(0x4d494d45);stream.writeInt(1);BinaryModel.Writer out=new BinaryModel.Writer(stream);
+            out.words(pinyin);out.words(zhuyin);out.counts(english);out.words(continuations);out.strings(new TreeSet<>(syllables).toArray(new String[0]));
+            pinyinPrefixes.write(out);zhuyinPrefixes.write(out);pinyinSyllables.write(out);contextModel.write(out);
+        }
+    }
+    public static PhoneticDictionary readBinary(InputStream source)throws IOException {
+        try(DataInputStream stream=new DataInputStream(new BufferedInputStream(source))) {
+            if(stream.readInt()!=0x4d494d45 || stream.readInt()!=1)throw new IOException("Unsupported dictionary format");
+            BinaryModel.Reader in=new BinaryModel.Reader(stream);PhoneticDictionary d=new PhoneticDictionary();
+            in.words(d.pinyin);in.words(d.zhuyin);in.counts(d.english);in.words(d.continuations);Collections.addAll(d.syllables,in.strings());
+            d.pinyinPrefixes=new ReadingIndex(in);d.zhuyinPrefixes=new ReadingIndex(in);d.pinyinSyllables=new PinyinSyllableIndex(in);d.contextModel=new ContextModel(in);
+            if(stream.read()!=-1)throw new IOException("Trailing model data");return d;
+        } catch(IndexOutOfBoundsException e) {throw new IOException("Invalid model reference",e);}
+    }
     public static PhoneticDictionary load(Reader chinese,Reader english,Reader syllables,Reader context)throws IOException {
         PhoneticDictionary d=load(chinese,english,syllables);d.contextModel=ContextModel.load(context);return d;
     }

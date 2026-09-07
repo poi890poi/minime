@@ -9,6 +9,8 @@ final class ReadingIndex {
     private final List<Candidate>[] words;
     private final double[] best;
     private final int base;
+    ReadingIndex(BinaryModel.Reader in)throws java.io.IOException {keys=in.strings();words=in.lists();best=in.doubles();base=in.in.readInt();}
+    void write(BinaryModel.Writer out)throws java.io.IOException {out.strings(keys);out.lists(words);out.doubles(best);out.out.writeInt(base);}
     @SuppressWarnings("unchecked")
     ReadingIndex(Map<String,List<Candidate>> source) {
         keys=source.keySet().stream().filter(s->!s.startsWith("~")).sorted().toArray(String[]::new);

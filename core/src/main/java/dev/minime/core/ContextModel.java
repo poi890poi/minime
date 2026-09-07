@@ -7,6 +7,9 @@ import java.util.*;
 public final class ContextModel {
     private final Map<String,List<Candidate>> english=new HashMap<>();
     private final Map<String,Integer> chinese=new HashMap<>(),totals=new HashMap<>();
+    public ContextModel() { }
+    ContextModel(BinaryModel.Reader in)throws IOException {in.words(english);in.counts(chinese);in.counts(totals);}
+    void write(BinaryModel.Writer out)throws IOException {out.words(english);out.counts(chinese);out.counts(totals);}
     public static ContextModel load(Reader source)throws IOException {
         ContextModel m=new ContextModel();
         try(BufferedReader r=new BufferedReader(source)) {String line;while((line=r.readLine())!=null){

@@ -12,7 +12,27 @@ android {
     }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
     buildTypes { release { minifyEnabled false } }
+    sourceSets {
+        main.assets.srcDirs = [layout.buildDirectory.dir('generated/minimeAssets')]
+        androidTest.assets.srcDirs = ['src/main/assets']
+    }
 }
+evaluationDependsOn(':core')
+def compileLanguageModel = tasks.register('compileLanguageModel', JavaExec) {
+    dependsOn ':core:testClasses'
+    classpath = project(':core').sourceSets.test.runtimeClasspath
+    mainClass = 'dev.minime.core.CompileModel'
+    workingDir rootProject.projectDir
+    maxHeapSize = '1g'
+    inputs.dir('src/main/assets')
+    inputs.files(classpath)
+    outputs.dir(layout.buildDirectory.dir('generated/minimeAssets'))
+    args layout.buildDirectory.file('generated/minimeAssets/model.bin').get().asFile.absolutePath
+    doLast {
+        copy { from 'src/main/assets'; include 'NOTICE.txt', 'emoji.tsv'; into layout.buildDirectory.dir('generated/minimeAssets') }
+    }
+}
+tasks.named('preBuild').configure { dependsOn compileLanguageModel }
 dependencies {
     implementation project(':core')
     androidTestCompileOnly files("${android.sdkDirectory}/platforms/android-35/optional/android.test.base.jar")

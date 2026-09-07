@@ -1,0 +1,55 @@
+{
+  "loadMs": 2246,
+  "approxRetainedHeapBytes": 104734032,
+  "samples": [
+    {
+      "input": "nh",
+      "candidates": 30,
+      "medianUs": 6061,
+      "p95Us": 10379
+    },
+    {
+      "input": "jtian",
+      "candidates": 33,
+      "medianUs": 6640,
+      "p95Us": 7457
+    },
+    {
+      "input": "shrf",
+      "candidates": 24,
+      "medianUs": 8776,
+      "p95Us": 9816
+    },
+    {
+      "input": "srufa",
+      "candidates": 28,
+      "medianUs": 4561,
+      "p95Us": 6388
+    },
+    {
+      "input": "wxsrf",
+      "candidates": 24,
+      "medianUs": 8663,
+      "p95Us": 10566
+    },
+    {
+      "input": "mingtian",
+      "candidates": 32,
+      "medianUs": 8012,
+      "p95Us": 10661
+    },
+    {
+      "input": "womenxyaoxuexi",
+      "candidates": 30,
+      "medianUs": 11827,
+      "p95Us": 13835
+    },
+    {
+      "input": "ssssssssssssssssssssssssssssssss",
+      "candidates": 30,
+      "medianUs": 124353,
+      "p95Us": 125129
+    }
+  ],
+  "scope": "Android offline conversion only; excludes input dispatch, composing span updates and rendering. GC makes heap approximate."
+}
