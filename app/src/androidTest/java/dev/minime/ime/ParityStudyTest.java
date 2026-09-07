@@ -133,10 +133,13 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
             InputMethodManager imm=(InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
             activity.text.post(()->imm.showSoftInput(activity.text,InputMethodManager.SHOW_IMPLICIT));
         });SystemClock.sleep(400);
-        getInstrumentation().runOnMainSync(()-> {
-            assertTrue("Observed editor is attached and focused",activity.text.isAttachedToWindow() && activity.text.hasWindowFocus() && activity.text.hasFocus());
-            assertTrue("Observed editor owns input",((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).isActive(activity.text));
-        });
+        boolean[] owned={false};long until=SystemClock.uptimeMillis()+1500;
+        do {
+            getInstrumentation().runOnMainSync(()->owned[0]=activity.text.isAttachedToWindow() && activity.text.hasWindowFocus() && activity.text.hasFocus()
+                && ((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).isActive(activity.text));
+            if(owned[0])break;SystemClock.sleep(25);
+        }while(SystemClock.uptimeMillis()<until);
+        assertTrue("Observed editor is attached, focused and owns input",owned[0]);
     }
     private void setupCase(JSONObject test)throws Exception {
         mode=test.getString("mode");caseId=test.getString("id");
