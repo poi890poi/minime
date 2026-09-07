@@ -165,14 +165,25 @@ public final class CompositionEngine {
         if (index < 0 || index >= candidates.size()) return;
         clearAssistance();
         Candidate choice=candidates.get(index);
+        if(partial(choice) && !literalField && !englishMode && !choice.literal) {
+            String reading=raw.substring(0,choice.consumed),rest=raw.substring(choice.consumed).replaceFirst("^'+","");
+            if(!privateField)learning.choose(contextKey(),reading,choice.text);
+            editor.commit(choice.text);context=privateField?"":tail(context+choice.text,3);
+            raw=rest;completionBoundary=false;committedEnglishWord=false;
+            editor.composing(raw);refresh();return;
+        }
         boolean completed=englishMode && !literalField && (traced || !choice.text.equals(raw)) && choice.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");
         resolveCompletionBoundary(choice.text);
         commit(choice, false, !raw.isEmpty());
         completionBoundary=completed;
     }
+    private boolean partial(Candidate c) {
+        return c.consumed>0 && c.consumed<raw.length() && raw.matches("[a-zv]+(?:'[a-zv]+)*");
+    }
     private void commitDefault(boolean withSpace) {
         if (raw.isEmpty()) return;
         Candidate c = candidates.isEmpty() || (automaticCorrection && !withSpace) ? new Candidate(raw, true, 0) : candidates.get(preferred);
+        if(partial(c))c=new Candidate(raw,true,0);
         commit(c, withSpace && c.literal, false);
     }
     private void commit(Candidate c, boolean withSpace, boolean explicit) {
@@ -232,6 +243,7 @@ public final class CompositionEngine {
     }
     private void applyCandidates(List<Candidate> converted) {
         boolean bpmf=raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
+        converted.removeIf(c->c.consumed<0 || c.consumed>raw.length() || (c.consumed>0 && (c.literal || bpmf || !raw.matches("[a-zv]+(?:'[a-zv]+)*"))));
         if (!privateField && !literalField && !englishMode) converted.addAll(learning.custom(raw));
         if (!privateField) converted.sort(Comparator.comparingInt((Candidate c) -> learning.count(contextKey(), raw, c.text)).reversed()
             .thenComparing(Comparator.comparingDouble((Candidate c) -> c.score).reversed()));
@@ -247,6 +259,11 @@ public final class CompositionEngine {
                     && raw.matches("[a-zv]+(?:'[a-zv]+)*") && raw.length()>1
                     && !IntentClassifier.technicalWord(raw) && !dictionary.isEnglish(raw) && dictionary.englishCompletions(raw).isEmpty()) preferred=1;
             if (literalVotes > chineseVotes) preferred = 0;
+        }
+        // Prefix candidates are explicit choices, never a whole-token Space default.
+        if(partial(candidates.get(preferred))) {
+            preferred=0;
+            for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
         }
         if (dictionary != null && !bpmf && !literalField && (intent == Intent.LATIN_LITERAL || intent == Intent.AMBIGUOUS))
             for (Candidate c : dictionary.englishCompletions(raw)) if (seen.add(c.text)) candidates.add(c);
