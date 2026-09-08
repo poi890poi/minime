@@ -53,8 +53,7 @@ public final class DesktopEvaluation {
         // query before a token is accepted; no intermediate candidate is reused.
         void flush() {
             if(pending==null)return;Consumer<List<Candidate>> done=pending;pending=null;
-            List<Candidate> choices=new ArrayList<>(nativeRime.query(raw));Set<String> seen=new HashSet<>();for(Candidate c:choices)seen.add(c.text);
-            for(Candidate c:dictionary.convert(raw,bpmf,context))if(seen.add(c.text))choices.add(c);
+            List<Candidate> choices=CandidateMerge.merge(nativeRime.query(raw),dictionary.convert(raw,bpmf,context));
             done.accept(choices);
         }
     }
