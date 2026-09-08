@@ -1,0 +1,58 @@
+{
+  "baseline": "146bf1e",
+  "source_entries": 125009,
+  "eligible_dictionary_reading_pairs": 108981,
+  "unique_dictionary_targets": 108895,
+  "production_seen_pairs": 55203,
+  "vocabulary_entries": 292038,
+  "rows": 670020,
+  "unique_queries": 373181,
+  "groups": {
+    "dict-unseen-full": 53778,
+    "dict-unseen-initial": 53778,
+    "dict-unseen-mixed-left": 53778,
+    "dict-unseen-mixed-right": 53778,
+    "dict-unseen-prefix": 53778,
+    "dict-seen-full": 55203,
+    "dict-seen-initial": 55203,
+    "dict-seen-mixed-left": 55203,
+    "dict-seen-mixed-right": 55203,
+    "dict-seen-prefix": 55203,
+    "natural-dev-full": 13058,
+    "natural-dev-initial": 13058,
+    "natural-dev-mixed-left": 13058,
+    "natural-dev-mixed-right": 13058,
+    "natural-dev-prefix": 13058,
+    "natural-test-full": 11965,
+    "natural-test-initial": 11965,
+    "natural-test-mixed-left": 11965,
+    "natural-test-mixed-right": 11965,
+    "natural-test-prefix": 11965
+  },
+  "rejected": {
+    "non_Han_or_outside_2_to_8_characters": 14544,
+    "unsupported_reading": 820
+  },
+  "natural": {
+    "dev": {
+      "eligible_spans": 13058,
+      "missing_token_readings": 1420
+    },
+    "test": {
+      "eligible_spans": 11965,
+      "missing_token_readings": 1492
+    }
+  },
+  "sources": {
+    "third_party/cedict/cedict.txt.gz": "cd81c0d253c82d4b1dc3ca2cfe4cd5fc46ca10b753743a80d783f3969ae11a23",
+    "app/src/main/assets/zh_tw.tsv": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+    "app/src/main/assets/syllables.tsv": "4915d49bbc76e0aad722b25f06e5906bec00694672d6b0f2ff678a58f370c30b",
+    "third_party/ud/UD_Chinese-GSD/zh_gsd-ud-dev.conllu.gz": "b11f5fa175a4a327dfe117ad6f5b8c8b48f1687378a73fd9feca148994eb959a",
+    "third_party/ud/UD_Chinese-GSD/zh_gsd-ud-test.conllu.gz": "a7e588450219a2fd885e257b54dfc3ee112242504c7b82f90268d7ef774d3d60"
+  },
+  "artifacts": {
+    "inputs.tsv.gz": "996f05b8757baae2a29b58db31360130e77152e992c786c57dd8b49629cb73c5",
+    "vocabulary.txt.gz": "a810b11e55319209f1b870c37132d854c40fc883825d07aeafe19d7a97f4527c"
+  },
+  "limits": "Dictionary membership is attestation, not semantic accuracy. Chinese variant spelling and polyphonic reading ambiguity are not normalized away. Natural readings use annotated units, never decoder outputs."
+}
