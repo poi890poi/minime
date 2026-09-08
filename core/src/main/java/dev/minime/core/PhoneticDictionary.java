@@ -183,7 +183,7 @@ public final class PhoneticDictionary {
                 }
                 for (Candidate before : paths.get(start)) for (int w = 0; w < Math.min(3, words.size()); w++) {
                     Candidate word = words.get(w);
-                    choices.add(new Candidate(before.text + word.text, false, before.score + word.score));
+                    choices.add(Candidate.concatenate(before,word));
                 }
             }
             choices.sort(Comparator.comparingDouble((Candidate c) -> c.score).reversed());
@@ -197,8 +197,8 @@ public final class PhoneticDictionary {
             result.addAll(pinyinPrefixes.complete(key,(reading,c)->true));
         }
         // Apply only the boundary signal; retain dictionary word probabilities.
-        if(!bpmf && !context.isEmpty())result.replaceAll(c->new Candidate(c.text,c.literal,
-            c.score+.5*(contextModel.chinese(context,c.text)-contextModel.chinese("",c.text)),c.reading));
+        if(!bpmf && !context.isEmpty())result.replaceAll(c->c.withScore(
+            c.score+.5*(contextModel.chinese(context,c.text)-contextModel.chinese("",c.text))));
         result.sort(Comparator.comparingDouble((Candidate c) -> c.score).reversed().thenComparing(c -> c.text));
         Set<String> seen = new HashSet<>(); result.removeIf(c -> !seen.add(c.text));
         return result;

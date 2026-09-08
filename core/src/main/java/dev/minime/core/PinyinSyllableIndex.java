@@ -117,7 +117,7 @@ final class PinyinSyllableIndex {
             for(int end=start+1;end<matches.size();end++) {
                 List<Candidate> next=paths.get(end);
                 for(Candidate prefix:before) for(Candidate word:matches.get(end))
-                    next.add(new Candidate(prefix.text+word.text,false,prefix.score+word.score));
+                    next.add(Candidate.concatenate(prefix,word));
                 // Intermediate paths have a strict beam. Display diversity belongs
                 // only to the final candidate list, not every partial sentence.
                 trim(next,end==raw.length()?CANDIDATES:BEAM,end==raw.length());
