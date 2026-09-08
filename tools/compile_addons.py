@@ -1,11 +1,12 @@
 """Deterministic, offline source selection; no base-model or ranking changes.
 
 The build report distinguishes source readings from conservative dictionary-derived
-title readings. Source archive hashes pin all inputs. Runtime bundles names only.
+title readings. Source archive hashes pin all inputs. Runtime bundles vocabulary only.
 """
 from pathlib import Path
 import csv, gzip, hashlib, json, re, tarfile, unicodedata, subprocess
 from collections import Counter, defaultdict
+from everyday_addons import append_everyday
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / 'app/src/main/assets'
@@ -78,7 +79,7 @@ for kind in ('films','books','songs'):
         else:skipped.append(['wikidata:'+entity,word,'reading needs review'])
 
 # POJ selection is entirely data-driven: short source expressions with Mandarin
-# labels attested at least 1,000 times in the pinned McBopomofo frequency source.
+# labels, without using written Mandarin frequency to exclude conversation phrases.
 # Keep all eligible source variants; no phrase/name/ID allowlist.
 frequency={}
 for line in (ROOT/'third_party/mcbopomofo/phrase.occ').read_text(encoding='utf-8').splitlines():
@@ -86,11 +87,11 @@ for line in (ROOT/'third_party/mcbopomofo/phrase.occ').read_text(encoding='utf-8
     if len(parts)==2:frequency[parts[0]]=float(parts[1])
 for item in csv.DictReader((ROOT/'third_party/itaigi/itaigi.csv').open(encoding='utf-8-sig')):
     meaning=item['HoaBun'];key=item['PojInput'].lower()
-    if not (2<=len(meaning)<=6 and han(meaning) and frequency.get(meaning,0)>=1000):continue
-    if not re.fullmatch('[a-z0-9 -]+',key) or len(re.split('[- ]+',key))>4:continue
+    if not (2<=len(meaning)<=6 and han(meaning)):continue
+    if not re.fullmatch('[a-z0-9 -]+',key) or len(re.split('[- ]+',key))>6:continue
     output=unicodedata.normalize('NFC',item['PojUnicode']);source='itaigi:'+item['DictWordID']
-    for alias in (key,re.sub('[1-9]','',key)):add('poj',alias,output,source,'common_short_expressions')
-    provenance.append({'source':source,'meaning':meaning,'input':key,'output':output,'orthography':'POJ','contributor':item['DataProvidedBy'],'Mandarin_source_frequency':frequency[meaning]})
+    for alias in (key,re.sub('[1-9]','',key)):add('poj',alias,output,source,'short_vocabulary')
+    provenance.append({'source':source,'meaning':meaning,'input':key,'output':output,'orthography':'POJ','contributor':item['DataProvidedBy'],'Mandarin_source_frequency':frequency.get(meaning,0)})
 
 # Existing MIT-licensed WanaKana provides build-time Romanization.
 with tarfile.open(ROOT/'third_party/jmnedict/jmnedict.json.tgz') as archive:
@@ -108,6 +109,7 @@ for item in selected_japanese:
             if '*' in kana['appliesToKanji'] or name['text'] in kana['appliesToKanji']:
                 add('japanese',key,name['text'],source,'taiwan_and_culture')
 
+everyday = append_everyday(add, skipped)
 serialized='# pack\treading\toutput\tsource\tcategory\n'+''.join('\t'.join(r)+'\n' for r in sorted(rows))
 (ASSETS/'addons.tsv').write_bytes(serialized.encode('utf-8'))
 sources=[]
@@ -120,13 +122,19 @@ for folder,filename,url,license_name in [
 for path in sorted((ROOT/'third_party/wikidata').glob('*.json')):
     if path.name.endswith('.source.json'):continue
     source=json.loads(path.with_name(path.name+'.source.json').read_text());source.update(file=str(path.relative_to(ROOT)).replace('\\','/'),license='CC0-1.0');sources.append(source)
+for folder, filename in [('jmdict','jmdict-eng-common.json.tgz'), ('taiwanese_basic','vocabulary.csv')]:
+    path=ROOT/'third_party'/folder/filename
+    source=json.loads(path.with_name(path.name+'.source.json').read_text())
+    assert hashlib.sha256(path.read_bytes()).hexdigest()==source['sha256']
+    source['file']=str(path.relative_to(ROOT)).replace('\\','/');sources.append(source)
 report=dict(format=1,orthography={'poj':'Pe̍h-ōe-jī; original PojUnicode/PojInput, not Tâi-lô'},
  sources=sources,asset_sha256=hashlib.sha256(serialized.encode()).hexdigest(),rows=len(rows),
  outputs_by_pack={pack:len({r[2] for r in rows if r[0]==pack}) for pack in ('taiwan','poj','japanese')},
  taiwan_category_outputs={category:len({r[2] for r in rows if r[0]=='taiwan' and r[4]==category}) for category in sorted({r[4] for r in rows if r[0]=='taiwan'})},
  poj_entries=provenance,skipped=skipped)
 report['romanizer']=json.loads((ROOT/'third_party/wanakana/source.json').read_text(encoding='utf-8'))
-report['selection_rules']={'poj':'All iTaigi expressions with 2-6 Han Mandarin labels, source frequency >=1000, at most four POJ syllables; retain source variants','japanese':'All JMnedict works, source-tagged creative professions and Taiwan-related translations; no entity allowlist'}
+report['everyday']=everyday
+report['selection_rules']={'poj':'All iTaigi expressions with 2-6 Han Mandarin labels and <=6 POJ syllables, plus all beginner headwords/variants and complete examples <=6 syllables; no Mandarin frequency eligibility gate','japanese':'JMdict source-common expression/interjection readings and compatible common spellings, plus JMnedict works, creative professions and Taiwan metadata; no entity allowlist'}
 (OUT/'source-manifest.json').write_bytes((json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
 print(json.dumps({k:v for k,v in report.items() if k in ('rows','outputs_by_pack','taiwan_category_outputs')},ensure_ascii=False,indent=2))
 print('Skipped for review:',len(skipped))

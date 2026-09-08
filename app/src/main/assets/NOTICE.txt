@@ -3507,33 +3507,39 @@ Wikidata (CC0) supplies film/book/song title identities from reproducible querie
 https://www.wikidata.org/wiki/Wikidata:Licensing
 Title readings marked +cedict:derived use unambiguous dictionary units. Ambiguous
 readings are omitted for review. These bounded snapshots are not popularity lists.
-No definitions, lyrics, book text, article prose, routes or photographs are bundled.
+No definitions, lyrics, article prose, routes or photographs are bundled.
 
-Japanese · 4,151 indexed outputs, including Romanized raw spelling
-JMnedict, Electronic Dictionary Research and Development Group, started by Jim
+Japanese · 5,757 indexed outputs, including Romanized raw spelling
+JMdict and JMnedict, Electronic Dictionary Research and Development Group, started by Jim
 Breen; used in conformance with the Group's licence, CC BY-SA 4.0.
 https://www.edrdg.org/edrdg/licence.html
 JSON source: scriptin/jmdict-simplified, pinned release in source-manifest.json.
 https://github.com/scriptin/jmdict-simplified
-All source-tagged works, creative professions and Taiwan-related translations
-are eligible. No entity allowlist. No measured Taiwan-popularity claim is made.
+Everyday expressions and interjections use JMdict common readings and compatible
+common spellings. JMnedict supplies works, creative professions and Taiwan-related
+names. No entity allowlist or geographic restriction on everyday vocabulary.
 WanaKana 5.3.1 (MIT) supplies build-time Romanized
 aliases. Unsupported aliases are reported. This is not a Japanese sentence IME.
 https://github.com/WaniKani/WanaKana
 
-Taiwanese POJ · 356 short expressions
+Taiwanese POJ · 20,274 short expressions
 iTaigi contributors via ChhoeTaigi/ChhoeTaigiDatabase, CC0.
 https://itaigi.tw/
 https://github.com/ChhoeTaigi/ChhoeTaigiDatabase
 Original PojUnicode/PojInput fields preserve the entire Pe̍h-ōe-jī system, including
 tones, ch/chh, oe/oa, o͘ and ⁿ. There is no Tâi-lô ts-to-ch conversion. Source keys
 encode o͘ as oo and ⁿ as nn. Letter-board aliases omit tones and separators.
-All expressions with 2–6 Han Mandarin labels, source frequency at least 1,000,
-and at most four POJ syllables are selected, retaining all eligible variants.
-Frequency comes from McBopomofo's MIT-licensed written Mandarin corpus; it is a
-reproducible common-vocabulary proxy, not spoken Taiwanese usage measurement.
+All iTaigi expressions with 2–6 Han Mandarin labels and at most six POJ syllables
+are selected. Mandarin frequency does not exclude everyday expressions.
+Beginner vocabulary and complete short examples also come from the 1956
+A Basic Vocabulary for a Beginner in Taiwanese, CC BY-SA 4.0, via ChhoeTaigi.
+Authors: Ko Chek-hoàn (高積煥), Tân Pang-tìn (陳邦鎮). Digitization/editing:
+Lîm Bûn-cheng, Tēⁿ Tì-têng, Tân Kim-hoa, Chiúⁿ Ji̍t-êng.
+All compatible headwords, aligned variants and complete examples up to six
+syllables are eligible. Terminal example punctuation is omitted. This historical
+source contains dated vocabulary; inclusion does not establish modern popularity.
 
-CC-CEDICT/JMnedict-derived language data remains CC BY-SA 4.0; CC0 data retains
+CC-CEDICT/JMdict/JMnedict/beginner-derived data remains CC BY-SA 4.0; CC0 data retains
 its public-domain dedication. Geography data remains ODbL. Code and datasets are
 separately licensed. Changes are filtering, normalization, aliases, dictionary-unit
 reading derivation and packaging. Personal learning remains separate and local.

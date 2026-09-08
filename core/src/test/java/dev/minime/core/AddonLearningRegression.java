@@ -36,6 +36,22 @@ final class AddonLearningRegression {
             c.addons(addon,Collections.emptySet());equal(base,c.candidates().stream().map(v->v.text).collect(java.util.stream.Collectors.toList()),"off removes supplemental results");samples++;
         }
         yes(samples>30,"source-diverse composition checks");
+        Map<String,Integer> everydayCounts=new HashMap<>();Set<String> everydayKeys=new HashSet<>();
+        for(String row:sourceRows) {
+            String[] p=row.split("\t");if(p.length!=5 || !p[4].startsWith("everyday_"))continue;
+            String key=p[1].replace("'","").replace("-","").replace(" ","");
+            if(!key.matches("[a-z]{4,24}") || everydayCounts.getOrDefault(p[0],0)>=24 || !everydayKeys.add(p[0]+"\t"+key))continue;
+            everydayCounts.merge(p[0],1,Integer::sum);
+            for(boolean english:new boolean[]{false,true}) {
+                Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.start(false,false,false,false,english);
+                type(c,key);String before=c.candidates().get(c.preferred()).text;c.addons(addon,all);
+                equal(before,c.candidates().get(c.preferred()).text,"everyday pack preserves default");
+                for(Candidate extra:addon.lookup(key,all))if(!extra.text.equals(key))yes(find(c,extra.text)>=0,"everyday source suggestion reachable");
+                String expected=addon.lookup(key,Collections.singleton(p[0])).stream().filter(v->!v.text.equals(key)).findFirst().get().text;
+                c.select(find(c,expected));equal(expected,e.text,"everyday phrase selected in both modes");
+            }
+        }
+        equal(24,everydayCounts.get("poj"),"Taiwanese everyday probes");equal(24,everydayCounts.get("japanese"),"Japanese everyday probes");
         // Orthographic round-trip fixtures are independent of production selection.
         // They cannot cause a dictionary entry to be imported or promoted.
         addon=AddonDictionary.read(new StringReader("poj\tliho\tlí hó\tfixture\tfixture\npoj\tli2-ho2\tlí hó\tfixture\tfixture\npoj\tboeiaukin\tbōe-iàu-kín\tfixture\tfixture\npoj\tchinphainnse\tchin-pháiⁿ-sè\tfixture\tfixture\n"));
