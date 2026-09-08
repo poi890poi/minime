@@ -358,6 +358,12 @@ public final class CompositionEngine {
                 if(!promoted.add(c.text) || c.text.equals(raw))continue;
                 if(c.incomplete)insertion=Math.max(insertion,Math.min(3,candidates.size()));
                 int existing=-1;for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(c.text)) {existing=i;break;}
+                // A second source is not evidence that an already attested base
+                // entry is more frequent. Preserve its established homophone
+                // rank, including after English completion interleaving.
+                if(c.supplemental && existing>=0 && !candidates.get(existing).supplemental && dictionary!=null
+                        && (dictionary.exactChinese(raw,bpmf,c.text)
+                            || (candidates.get(existing).consumed==0 && c.text.codePointCount(0,c.text.length())==1)))continue;
                 if(existing>=0 && existing<insertion)continue;
                 Candidate value=existing>=0 && (!c.supplemental || candidates.get(existing)==defaultChoice)?candidates.get(existing):c;
                 if(existing>=0)candidates.remove(existing);

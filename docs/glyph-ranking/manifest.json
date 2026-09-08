@@ -1,0 +1,19 @@
+{
+  "inputs": 499,
+  "complete_syllables": 424,
+  "moe_reference_glyphs": 4343,
+  "ud_reference_glyphs": 2365,
+  "sources": {
+    "E:\\workspace\\shine_aac\\packages\\aac-core\\src\\data\\zh-tw-moe-glyph-frequency.generated.js": "8f9afba41c7b653eb76b824dde638ed291d7b7ecf987ea6c0e2862885cefdf0d",
+    "third_party/ud/UD_Chinese-GSD/zh_gsd-ud-dev.conllu.gz": "b11f5fa175a4a327dfe117ad6f5b8c8b48f1687378a73fd9feca148994eb959a",
+    "third_party/ud/UD_Chinese-GSD/zh_gsd-ud-test.conllu.gz": "a7e588450219a2fd885e257b54dfc3ee112242504c7b82f90268d7ef774d3d60",
+    "app/src/main/assets/zh_tw.tsv": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+    "third_party/cedict/cedict.txt.gz": "cd81c0d253c82d4b1dc3ca2cfe4cd5fc46ca10b753743a80d783f3969ae11a23",
+    "third_party/rime/data-sources/rime-luna-pinyin.zip": "96f96206361a9f5e9ec5af7f102cb1c6b04e3f394746150e5fa62ae87290f9c2",
+    "third_party/rime/data-sources/rime-essay.zip": "4eacdf2018805883d8e63da4a33db6947ccc698f28d7cf78e5493c1892cbf5ac"
+  },
+  "moe_source": "https://language.moe.gov.tw/001/Upload/files/SITE_CONTENT/M0001/PRIMARY/shrest2-18.htm",
+  "contract": "All supported syllables and every proper prefix. Fresh native sessions, no user learning. References only score outputs afterward. Compare core, native, merge, composition without packs, and composition with all packs. School-corpus frequency is not universal frequency; missing reference glyphs are unranked, not proven rare.",
+  "inputs.txt_sha256": "c02a4f20da8b2eed3af9bcc3ce9632b5cebf62cdc4180bf919af9e2487711657",
+  "reference.json_sha256": "21bf0d1b21f9706893462db4afcb02f47fe29e55fa5055fd6240ee8a1c5ba3ab"
+}

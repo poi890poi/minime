@@ -183,6 +183,7 @@ public final class Regression {
         ApostropheRegression.run();
         ProvenanceRegression.run();
         CandidateMergeRegression.run();
+        GlyphOrderRegression.run();
         Collections.sort(latencies);
         System.out.printf(Locale.ROOT,"PASS %d assertions; desktop key processing p50=%.2f ms p95=%.2f ms max=%.2f ms (%d keys; not Android latency)%n", assertions,latencies.get(latencies.size()/2)/1e6,latencies.get(latencies.size()*95/100)/1e6,latencies.get(latencies.size()-1)/1e6,latencies.size());
     }
