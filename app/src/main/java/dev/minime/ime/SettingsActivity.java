@@ -52,11 +52,11 @@ public final class SettingsActivity extends Activity {
         text("Optional dictionaries",21);
         option("Taiwan names, culture and local vocabulary", "addon_taiwan",false);
         option("Taiwan geography and history · Rudy Map / OSM", "addon_geography",false);
-        option("Japanese names and kana · Taiwan and culture", "addon_japanese",false);
-        option("Short Taiwanese phrases · Pe̍h-ōe-jī (POJ)", "addon_poj",false);
+        option("Japanese everyday phrases, names and kana", "addon_japanese",false);
+        option("Taiwanese everyday vocabulary · Pe̍h-ōe-jī (POJ)", "addon_poj",false);
         text("Each pack works offline and is off by default. Extra candidates are explicit choices; they do not replace the Space default. Taiwan entries accept full Pinyin, whole-phrase initials, or toned Zhuyin. These packs do not yet complete arbitrary mixed abbreviated sentences.",16);
-        text("Taiwanese uses the complete POJ spelling system, including ch/chh, oe/oa, o͘, ⁿ and tone marks. On the letter board, omit tone numbers, spaces and hyphens; type oo for o͘ and nn for ⁿ. Original numbered POJ keys are retained in the source data. Short expressions are selected automatically using source frequency and length, with all eligible source variants retained. This is not a full Taiwanese decoder.",16);
-        text("Japanese joined Romanized readings offer kana and source names; the raw candidate keeps the Romanization. WanaKana supplies the reading aliases. Entries are selected by source categories and metadata, without a name list. This does not provide Japanese grammar or sentence conversion.",16);
+        text("Taiwanese uses the complete POJ spelling system, including ch/chh, oe/oa, o͘, ⁿ and tone marks. On the letter board, omit tone numbers, spaces and hyphens; type oo for o͘ and nn for ⁿ. Original numbered POJ keys are retained in the source data. Everyday vocabulary and short examples are selected automatically from source dictionaries, with eligible source variants retained. This is not a full Taiwanese decoder.",16);
+        text("Japanese joined Romanized readings offer everyday expressions, kana and names; the raw candidate keeps the Romanization. Everyday expressions use the source dictionary’s common-expression and interjection tags. This does not provide Japanese grammar or sentence conversion.",16);
         text("The geography pack systematically imports Rudy Map's hiking, nature, settlement, waterway and historical-site categories. Dataset version, licence, extraction rules and coverage are recorded together. Available source Pinyin/Zhuyin takes precedence; other readings use existing dictionary units. Missing or ambiguous readings are reported rather than guessed.",16);
         button("Dictionary sources and coverage",()->showAsset("addon-sources.txt","Optional dictionary sources"));
         EditText sourceQuery=new EditText(this);sourceQuery.setHint("Find a word or reading in add-on sources");body.addView(sourceQuery);

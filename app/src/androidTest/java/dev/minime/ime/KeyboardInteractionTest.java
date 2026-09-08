@@ -442,6 +442,17 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
         type(poj[0]+" ");expectText(poj[0]+" ");
     }
+    public void testEverydayPacksThroughService() throws Exception {
+        String[] poj=AddonTestData.probe(activity,"poj","everyday_expressions"),japanese=AddonTestData.probe(activity,"japanese","everyday_expressions");
+        SharedPreferences settings=activity.getSharedPreferences("settings",Context.MODE_PRIVATE);
+        settings.edit().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).commit();
+        AddonRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
+        getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
+        for(int language=0;language<2;language++) {
+            for(String[] probe:new String[][]{poj,japanese}) {type(probe[0]);click("Expand candidates");click("Candidate "+probe[1]);expectText(probe[1]);clear();}
+            if(language==0)click("Switch to English");
+        }
+    }
     public void testSymbolPageSurvivesMainBoardAndEmojiSwitches() {
         click("?123");click("Symbol category");menuItem("箭頭 Arrows");click("Next palette page");
         AccessibilityNodeInfo category=node("Symbol category"),palette=category.getParent().getParent();
