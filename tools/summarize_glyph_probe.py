@@ -2,7 +2,10 @@ from pathlib import Path
 import collections,json
 root=Path(__file__).resolve().parent.parent;out=root/'docs/glyph-ranking'
 ref=json.loads((out/'reference.json').read_text(encoding='utf-8'));moe=ref['moe'];ud=ref['ud_gsd_dev_test']
-rows=[json.loads(line) for line in (out/'candidates.jsonl').read_text(encoding='utf-8').splitlines()]
+import gzip
+raw_path=out/'candidates.jsonl'
+raw_data=raw_path.read_bytes() if raw_path.exists() else gzip.decompress((out/'candidates.jsonl.gz').read_bytes())
+rows=[json.loads(line) for line in raw_data.decode('utf-8').splitlines()]
 stats=collections.defaultdict(collections.Counter);pairs=[];unranked=[]
 def primary(glyph,raw):
     weights=ref['rime_reading_weights'].get(glyph,{})

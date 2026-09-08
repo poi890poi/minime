@@ -1,7 +1,8 @@
 from pathlib import Path
 import collections,gzip,hashlib,json
 root=Path(__file__).resolve().parent.parent;out=root/'docs/glyph-ranking'
-def rows(name):return [json.loads(line) for line in (out/name).read_text(encoding='utf-8').splitlines()]
+def data(name):return (out/name).read_bytes() if (out/name).exists() else gzip.decompress((out/(name+'.gz')).read_bytes())
+def rows(name):return [json.loads(line) for line in data(name).decode('utf-8').splitlines()]
 def index(data):return {(r['input'],r['mode']):r['candidates'] for r in data}
 def reversals(data):
     idx=index(data);found=[]
@@ -22,10 +23,10 @@ summary=json.loads((out/'summary.json').read_text(encoding='utf-8'));reference=j
 evidence={'baseline':'146bf1e / 0.6.2','inputs':499,'complete_syllables':424,'layer_snapshots':len(new),'baseline_addon_glyph_order_reversals':len(a),'affected_inputs':len({r[0] for r in a}),'final_addon_glyph_order_reversals':len(b),'native_lists_unchanged':unchanged['native'],'baseline_reversals':a}
 manifest={}
 for name in ('release-062.jsonl','before.jsonl','duplicate-fixed.jsonl','candidates.jsonl'):
-    path=out/name;data=path.read_bytes()
+    path=out/name;payload=data(name)
     with (out/(name+'.gz')).open('wb') as f:
-        with gzip.GzipFile(filename='',fileobj=f,mode='wb',mtime=0) as z:z.write(data)
-    manifest[name]={'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()}
+        with gzip.GzipFile(filename='',fileobj=f,mode='wb',mtime=0) as z:z.write(payload)
+    manifest[name]={'bytes':len(payload),'sha256':hashlib.sha256(payload).hexdigest()}
 evidence['raw']=manifest
 (out/'comparison.json').write_bytes((json.dumps(evidence,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
 def pos(idx,raw,text):

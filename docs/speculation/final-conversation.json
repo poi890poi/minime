@@ -1,0 +1,397 @@
+{
+  "records": 21044,
+  "before_sha256": "1f7a3dc1f22c3f0eedea6e92b3e5213ddc6afa979ad894d980ebfb1a47679118",
+  "after_sha256": "c0eb5f619e4004df7c53e619d4fb626b01a3c63a6a6ec8e76eb85907f1e6a948",
+  "english": {
+    "tokens": 130233,
+    "changed": 30
+  },
+  "chinese": {
+    "zh-dev-full": {
+      "n": 1000,
+      "before_top1": 712,
+      "after_top1": 709,
+      "before_top8": 922,
+      "after_top8": 923,
+      "space_changes": 1
+    },
+    "zh-dev-initial": {
+      "n": 1000,
+      "before_top1": 78,
+      "after_top1": 78,
+      "before_top8": 203,
+      "after_top8": 317,
+      "space_changes": 0
+    },
+    "zh-dev-mixed-left": {
+      "n": 1000,
+      "before_top1": 340,
+      "after_top1": 339,
+      "before_top8": 752,
+      "after_top8": 732,
+      "space_changes": 1
+    },
+    "zh-dev-mixed-right": {
+      "n": 1000,
+      "before_top1": 323,
+      "after_top1": 323,
+      "before_top8": 655,
+      "after_top8": 633,
+      "space_changes": 0
+    },
+    "zh-test-full": {
+      "n": 1000,
+      "before_top1": 713,
+      "after_top1": 703,
+      "before_top8": 927,
+      "after_top8": 932,
+      "space_changes": 4
+    },
+    "zh-test-initial": {
+      "n": 1000,
+      "before_top1": 72,
+      "after_top1": 72,
+      "before_top8": 213,
+      "after_top8": 307,
+      "space_changes": 0
+    },
+    "zh-test-mixed-left": {
+      "n": 1000,
+      "before_top1": 334,
+      "after_top1": 332,
+      "before_top8": 734,
+      "after_top8": 728,
+      "space_changes": 1
+    },
+    "zh-test-mixed-right": {
+      "n": 1000,
+      "before_top1": 306,
+      "after_top1": 306,
+      "before_top8": 658,
+      "after_top8": 643,
+      "space_changes": 2
+    },
+    "moe-glyph": {
+      "n": 999,
+      "before_top1": 218,
+      "after_top1": 217,
+      "before_top8": 694,
+      "after_top8": 727,
+      "space_changes": 0
+    }
+  },
+  "changes": [
+    {
+      "group": "en-dev",
+      "id": "79",
+      "mode": "fresh",
+      "raw": "jim",
+      "before": "寂寞",
+      "after": "jîm"
+    },
+    {
+      "group": "en-dev",
+      "id": "79",
+      "mode": "primed",
+      "raw": "jim",
+      "before": "寂寞",
+      "after": "jîm"
+    },
+    {
+      "group": "en-dev",
+      "id": "115",
+      "mode": "fresh",
+      "raw": "chahine",
+      "before": "chahine",
+      "after": "chòe-āu hit nn̄g ê"
+    },
+    {
+      "group": "en-dev",
+      "id": "115",
+      "mode": "primed",
+      "raw": "chahine",
+      "before": "chahine",
+      "after": "chòe-āu hit nn̄g ê"
+    },
+    {
+      "group": "en-dev",
+      "id": "117",
+      "mode": "fresh",
+      "raw": "chahine",
+      "before": "chahine",
+      "after": "chòe-āu hit nn̄g ê"
+    },
+    {
+      "group": "en-dev",
+      "id": "117",
+      "mode": "primed",
+      "raw": "chahine",
+      "before": "chahine",
+      "after": "chòe-āu hit nn̄g ê"
+    },
+    {
+      "group": "en-dev",
+      "id": "121",
+      "mode": "fresh",
+      "raw": "chahine",
+      "before": "chahine",
+      "after": "chòe-āu hit nn̄g ê"
+    },
+    {
+      "group": "en-dev",
+      "id": "121",
+      "mode": "primed",
+      "raw": "chahine",
+      "before": "chahine",
+      "after": "chòe-āu hit nn̄g ê"
+    },
+    {
+      "group": "en-dev",
+      "id": "315",
+      "mode": "fresh",
+      "raw": "ae",
+      "before": "啊哦",
+      "after": "a-è"
+    },
+    {
+      "group": "en-dev",
+      "id": "315",
+      "mode": "primed",
+      "raw": "ae",
+      "before": "啊哦",
+      "after": "a-è"
+    },
+    {
+      "group": "en-dev",
+      "id": "335",
+      "mode": "fresh",
+      "raw": "nimo",
+      "before": "膩抹",
+      "after": "にも"
+    },
+    {
+      "group": "en-dev",
+      "id": "335",
+      "mode": "primed",
+      "raw": "nimo",
+      "before": "膩抹",
+      "after": "にも"
+    },
+    {
+      "group": "en-dev",
+      "id": "336",
+      "mode": "fresh",
+      "raw": "nimo",
+      "before": "膩抹",
+      "after": "にも"
+    },
+    {
+      "group": "en-dev",
+      "id": "336",
+      "mode": "primed",
+      "raw": "nimo",
+      "before": "膩抹",
+      "after": "にも"
+    },
+    {
+      "group": "en-dev",
+      "id": "339",
+      "mode": "fresh",
+      "raw": "nimo",
+      "before": "膩抹",
+      "after": "にも"
+    },
+    {
+      "group": "en-dev",
+      "id": "339",
+      "mode": "primed",
+      "raw": "nimo",
+      "before": "膩抹",
+      "after": "にも"
+    },
+    {
+      "group": "en-dev",
+      "id": "340",
+      "mode": "fresh",
+      "raw": "nimo",
+      "before": "膩抹",
+      "after": "にも"
+    },
+    {
+      "group": "en-dev",
+      "id": "340",
+      "mode": "primed",
+      "raw": "nimo",
+      "before": "膩抹",
+      "after": "にも"
+    },
+    {
+      "group": "en-dev",
+      "id": "734",
+      "mode": "fresh",
+      "raw": "jim",
+      "before": "寂寞",
+      "after": "jîm"
+    },
+    {
+      "group": "en-dev",
+      "id": "734",
+      "mode": "primed",
+      "raw": "jim",
+      "before": "寂寞",
+      "after": "jîm"
+    },
+    {
+      "group": "en-test",
+      "id": "155",
+      "mode": "fresh",
+      "raw": "abu",
+      "before": "阿布",
+      "after": "a-bú"
+    },
+    {
+      "group": "en-test",
+      "id": "155",
+      "mode": "primed",
+      "raw": "abu",
+      "before": "阿布",
+      "after": "a-bú"
+    },
+    {
+      "group": "en-test",
+      "id": "330",
+      "mode": "fresh",
+      "raw": "rohan",
+      "before": "人偶汗",
+      "after": "ろはん"
+    },
+    {
+      "group": "en-test",
+      "id": "330",
+      "mode": "primed",
+      "raw": "rohan",
+      "before": "人偶汗",
+      "after": "ろはん"
+    },
+    {
+      "group": "en-test",
+      "id": "900",
+      "mode": "fresh",
+      "raw": "china",
+      "before": "痴那",
+      "after": "Chi-ná"
+    },
+    {
+      "group": "en-test",
+      "id": "900",
+      "mode": "primed",
+      "raw": "china",
+      "before": "痴那",
+      "after": "Chi-ná"
+    },
+    {
+      "group": "en-test",
+      "id": "1100",
+      "mode": "fresh",
+      "raw": "sei",
+      "before": "塞",
+      "after": "sè-î"
+    },
+    {
+      "group": "en-test",
+      "id": "1100",
+      "mode": "primed",
+      "raw": "sei",
+      "before": "塞",
+      "after": "sè-î"
+    },
+    {
+      "group": "en-test",
+      "id": "1211",
+      "mode": "fresh",
+      "raw": "bose",
+      "before": "波色",
+      "after": "bô-sè"
+    },
+    {
+      "group": "en-test",
+      "id": "1211",
+      "mode": "primed",
+      "raw": "bose",
+      "before": "波色",
+      "after": "bô-sè"
+    },
+    {
+      "group": "zh-dev-mixed-left",
+      "id": "破壞",
+      "raw": "poh",
+      "expected": "破壞",
+      "before": "破壞",
+      "after": "po̍h"
+    },
+    {
+      "group": "zh-dev-full",
+      "id": "航程",
+      "raw": "hangcheng",
+      "expected": "航程",
+      "before": "杭城",
+      "after": "hàng-chéng"
+    },
+    {
+      "group": "zh-test-mixed-right",
+      "id": "兒子",
+      "raw": "ezi",
+      "expected": "兒子",
+      "before": "蛾子",
+      "after": "蚵仔"
+    },
+    {
+      "group": "zh-test-mixed-left",
+      "id": "破壞",
+      "raw": "poh",
+      "expected": "破壞",
+      "before": "破壞",
+      "after": "po̍h"
+    },
+    {
+      "group": "zh-test-full",
+      "id": "航程",
+      "raw": "hangcheng",
+      "expected": "航程",
+      "before": "杭城",
+      "after": "hàng-chéng"
+    },
+    {
+      "group": "zh-test-full",
+      "id": "龍岡",
+      "raw": "longgang",
+      "expected": "龍岡",
+      "before": "龍崗",
+      "after": "龍港"
+    },
+    {
+      "group": "zh-test-full",
+      "id": "澎湖",
+      "raw": "penghu",
+      "expected": "澎湖",
+      "before": "棚戶",
+      "after": "彭湖"
+    },
+    {
+      "group": "zh-test-mixed-right",
+      "id": "澎湖",
+      "raw": "phu",
+      "expected": "澎湖",
+      "before": "平湖",
+      "after": "phû"
+    },
+    {
+      "group": "zh-test-full",
+      "id": "太康",
+      "raw": "taikang",
+      "expected": "太康",
+      "before": "泰康",
+      "after": "Tâi-kang"
+    }
+  ]
+}
