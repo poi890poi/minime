@@ -52,6 +52,16 @@ final class AddonLearningRegression {
             }
         }
         equal(24,everydayCounts.get("poj"),"Taiwanese everyday probes");equal(24,everydayCounts.get("japanese"),"Japanese everyday probes");
+        for(boolean english:new boolean[]{false,true}) {
+            Editor e=new Editor();Learning manual=new Learning() {
+                public int count(String context,String raw,String output) {return 0;}
+                public void choose(String context,String raw,String output) {}
+                public List<Candidate> custom(String raw) {return raw.equals("fixture")?Arrays.asList(new Candidate("自訂詞",false,0)):Collections.emptyList();}
+            };
+            CompositionEngine c=engine(e,manual,false);c.start(false,false,false,false,english);
+            c.decoder((d,r,b,context,done)->done.accept(Arrays.asList(new Candidate("推測詞",false,1000))),()->{});
+            type(c,"fixture");equal("自訂詞",c.candidates().get(1).text,"exact custom entry outranks decoder score scale");
+        }
         // Orthographic round-trip fixtures are independent of production selection.
         // They cannot cause a dictionary entry to be imported or promoted.
         addon=AddonDictionary.read(new StringReader("poj\tliho\tlí hó\tfixture\tfixture\npoj\tli2-ho2\tlí hó\tfixture\tfixture\npoj\tboeiaukin\tbōe-iàu-kín\tfixture\tfixture\npoj\tchinphainnse\tchin-pháiⁿ-sè\tfixture\tfixture\n"));
@@ -63,7 +73,7 @@ final class AddonLearningRegression {
             type(c,"shanyu");String before=c.candidates().get(c.preferred()).text;
             String target="山"+(char)(0x4e00+10);
             AddonDictionary specific=AddonDictionary.read(new StringReader("taiwan\tshanyu\t"+target+"\ttest:fixture\tfixture\n"));
-            c.addons(specific,Collections.singleton("taiwan"));equal(3,find(c,target),"source membership promotes a buried duplicate");
+            c.addons(specific,Collections.singleton("taiwan"));equal(1,find(c,target),"exact source match precedes decoder guesses");
             equal(before,c.candidates().get(c.preferred()).text,"promotion never changes default identity");
             equal(1L,c.candidates().stream().filter(v->v.text.equals(target)).count(),"promotion has no duplicate row");
         }

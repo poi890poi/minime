@@ -1,0 +1,84 @@
+{
+  "frozen-baseline": {
+    "sha256": "33d8c8d2e5a6ed4316c59ea40d2c9770280cdb588e5dc1b6a8a7c95864a1ca88",
+    "groups": {
+      "wiki-full": {
+        "n": 258,
+        "top1": 54,
+        "top8": 65
+      },
+      "wiki-initial": {
+        "n": 258,
+        "top1": 3,
+        "top8": 18
+      },
+      "wiki-mixed": {
+        "n": 258,
+        "top1": 21,
+        "top8": 37
+      }
+    }
+  },
+  "frozen-after": {
+    "sha256": "78f2280855575a274f9f9658c19554579b3aaf49172d7c133d18fd7bf72e9942",
+    "groups": {
+      "wiki-full": {
+        "n": 258,
+        "top1": 60,
+        "top8": 65
+      },
+      "wiki-initial": {
+        "n": 258,
+        "top1": 9,
+        "top8": 19
+      },
+      "wiki-mixed": {
+        "n": 258,
+        "top1": 21,
+        "top8": 37
+      }
+    },
+    "space_changes": 0
+  },
+  "new-baseline": {
+    "sha256": "75a94b040a50a04a78571de3b6b2f42747c6498ed5c2c5c51c5b4fcb5324ec72",
+    "groups": {
+      "wiki-full": {
+        "n": 141,
+        "top1": 23,
+        "top8": 26
+      },
+      "wiki-initial": {
+        "n": 141,
+        "top1": 1,
+        "top8": 7
+      },
+      "wiki-mixed": {
+        "n": 141,
+        "top1": 6,
+        "top8": 15
+      }
+    }
+  },
+  "new-after": {
+    "sha256": "904ea57c897311657a084b04363357826e70798a4b6e888d9e319ce9fa5ec7bb",
+    "groups": {
+      "wiki-full": {
+        "n": 141,
+        "top1": 24,
+        "top8": 26
+      },
+      "wiki-initial": {
+        "n": 141,
+        "top1": 2,
+        "top8": 7
+      },
+      "wiki-mixed": {
+        "n": 141,
+        "top1": 6,
+        "top8": 15
+      }
+    },
+    "space_changes": 0
+  }
+}

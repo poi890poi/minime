@@ -278,8 +278,9 @@ public final class CompositionEngine {
     }
     private void applyCandidates(List<Candidate> converted) {
         boolean bpmf=raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
+        List<Candidate> custom=!privateField && !literalField?learning.custom(raw):Collections.emptyList();
         converted.removeIf(c->c.consumed<0 || c.consumed>raw.length() || (c.consumed>0 && (c.literal || bpmf || !raw.matches("[a-zv]+(?:'[a-zv]+)*"))));
-        if (!privateField && !literalField && !englishMode) converted.addAll(learning.custom(raw));
+        if (!englishMode) converted.addAll(custom);
         if (!privateField) converted.sort(Comparator.comparingInt((Candidate c) -> learning.count(contextKey(), raw, c.text)).reversed()
             .thenComparing(Comparator.comparingDouble((Candidate c) -> c.score).reversed()));
         Set<String> seen = new HashSet<>(); seen.add(raw);
@@ -314,7 +315,7 @@ public final class CompositionEngine {
             }
         }
         if(englishMode && !literalField && !privateField) {
-            for(Candidate c:learning.custom(raw))if(seen.add(c.text))candidates.add(new Candidate(c.text,true,c.score));
+            for(Candidate c:custom)if(seen.add(c.text))candidates.add(new Candidate(c.text,true,c.score));
             candidates.subList(1,candidates.size()).sort(Comparator.comparingInt((Candidate c)->learning.count(contextKey(),raw,c.text)).reversed().thenComparing(Comparator.comparingDouble((Candidate c)->c.score).reversed()));
         }
         if(englishMode && !literalField && dictionary!=null) {
@@ -326,19 +327,20 @@ public final class CompositionEngine {
                 for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(corrections.get(0).text)) {preferred=i;automaticCorrection=true;}
             }
         }
-        if(!literalField && !privateField && (!enabledAddons.isEmpty() || phraseLearning)) {
+        if(!literalField && !privateField) {
             Candidate defaultChoice=candidates.get(preferred);
-            int insertion=Math.min(3,candidates.size());
-            List<Candidate> supplements=new ArrayList<>();
+            int insertion=1;
+            List<Candidate> supplements=new ArrayList<>(custom);
             if(phraseLearning && !englishMode)supplements.addAll(learning.phrases(raw));
             supplements.addAll(addons.lookup(raw,enabledAddons));
             Set<String> promoted=new HashSet<>();
             for(Candidate c:supplements) {
-                if(!promoted.add(c.text) || c.text.equals(raw) || c.text.equals(defaultChoice.text))continue;
+                if(!promoted.add(c.text) || c.text.equals(raw))continue;
                 int existing=-1;for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(c.text)) {existing=i;break;}
                 if(existing>=0 && existing<insertion)continue;
+                Candidate value=existing>=0 && (!c.supplemental || candidates.get(existing)==defaultChoice)?candidates.get(existing):c;
                 if(existing>=0)candidates.remove(existing);
-                candidates.add(insertion++,c);
+                candidates.add(insertion++,value);
             }
             preferred=candidates.indexOf(defaultChoice);
         }

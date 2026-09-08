@@ -2,13 +2,16 @@
 Missing/ambiguous readings remain visible in a separate report, never guessed.
 """
 from pathlib import Path
+import argparse
 import gzip,hashlib,json,re,unicodedata,sys
 from collections import defaultdict
 root=Path(__file__).resolve().parent.parent
-folder=root/'docs/addons-learning'
-fresh=len(sys.argv)>1 and sys.argv[1]=='fresh'
-prefix='wikipedia-fresh' if fresh else 'wikipedia'
-source=folder/('wikipedia-fresh-holdout.json' if fresh else 'wikipedia-expanded-holdout.json')
+parser=argparse.ArgumentParser();parser.add_argument('mode',nargs='?',choices=['fresh']);parser.add_argument('--source',type=Path);parser.add_argument('--output-dir',type=Path);parser.add_argument('--prefix')
+options=parser.parse_args()
+folder=options.output_dir or root/'docs/addons-learning';folder.mkdir(parents=True,exist_ok=True)
+fresh=options.mode=='fresh'
+prefix=options.prefix or ('wikipedia-fresh' if fresh else 'wikipedia')
+source=options.source or folder/('wikipedia-fresh-holdout.json' if fresh else 'wikipedia-expanded-holdout.json')
 data=json.loads(source.read_text(encoding='utf-8'))
 readings=defaultdict(set)
 syllables={s.split('\t')[0] for s in (root/'app/src/main/assets/syllables.tsv').read_text(encoding='utf-8').splitlines()}
