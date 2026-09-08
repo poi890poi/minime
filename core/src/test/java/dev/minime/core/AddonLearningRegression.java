@@ -83,6 +83,17 @@ final class AddonLearningRegression {
             c.start(false,false,true,false,english);type(c,"liho");yes(c.candidates().stream().noneMatch(v->v.supplemental),"private hides all add-ons");
             c.start(false,true,false,false,english);type(c,"liho");yes(c.candidates().stream().noneMatch(v->v.supplemental),"literal fields exclude add-ons");
         }
+        {
+            Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);type(c,"nihao");
+            String first=c.candidates().get(1).text;yes(dictionary.exactChinese("nihao",false,first),"fixture is a source-attested full reading");
+            c.addons(AddonDictionary.read(new StringReader("taiwan\tni'hao\t測試\tfixture\tfixture\n")),all);
+            equal(first,c.candidates().get(1).text,"full lexical match stays ahead of add-on alternatives");
+            e=new Editor();c=engine(e,Learning.NONE,false);
+            c.decoder((d,r,b,context,done)->done.accept(Arrays.asList(new Candidate("甲",false,100),new Candidate("乙",false,90))),()->{});
+            c.addons(AddonDictionary.read(new StringReader("taiwan\tcs\t測試\tfixture\tfixture\n")),all);type(c,"cs");
+            equal("甲",c.candidates().get(1).text,"initial alias preserves leading base choice");
+            equal(3,find(c,"測試"),"initial alias retains previous insertion boundary");
+        }
         yes(addon.lookup("li2-ho2",Collections.singleton("poj")).stream().anyMatch(c->c.text.equals("lí hó")),"numbered POJ alias");
         yes(addon.lookup("boeiaukin",Collections.singleton("poj")).stream().anyMatch(c->c.text.equals("bōe-iàu-kín")),"POJ oe preserved");
         yes(addon.lookup("chinphainnse",Collections.singleton("poj")).stream().anyMatch(c->c.text.contains("ⁿ")),"POJ nasal output");

@@ -332,10 +332,18 @@ public final class CompositionEngine {
             int insertion=1;
             List<Candidate> supplements=new ArrayList<>(custom);
             if(phraseLearning && !englishMode)supplements.addAll(learning.phrases(raw));
-            supplements.addAll(addons.lookup(raw,enabledAddons));
+            // An already leading, source-attested full Chinese reading is not
+            // a decoder guess. Keep it ahead of optional dictionary alternatives.
+            if(!englishMode && dictionary!=null && candidates.size()>1 && dictionary.exactChinese(raw,bpmf,candidates.get(1).text))supplements.add(candidates.get(1));
+            if(!privateField) {
+                List<Candidate> matches=addons.lookup(raw,enabledAddons);
+                for(Candidate c:matches)if(!c.abbreviated)supplements.add(c);
+                for(Candidate c:matches)if(c.abbreviated)supplements.add(c);
+            }
             Set<String> promoted=new HashSet<>();
             for(Candidate c:supplements) {
                 if(!promoted.add(c.text) || c.text.equals(raw))continue;
+                if(c.abbreviated)insertion=Math.max(insertion,Math.min(3,candidates.size()));
                 int existing=-1;for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(c.text)) {existing=i;break;}
                 if(existing>=0 && existing<insertion)continue;
                 Candidate value=existing>=0 && (!c.supplemental || candidates.get(existing)==defaultChoice)?candidates.get(existing):c;

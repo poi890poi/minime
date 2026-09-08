@@ -89,6 +89,10 @@ public final class PhoneticDictionary {
     public static String normalize(String s) { return s.toLowerCase(Locale.ROOT).replace("ü", "v").replace("'", "").replace(" ", ""); }
     private static String toneless(String s) { return s.replaceAll("[ˊˇˋ˙ˉ]", ""); }
     public boolean isEnglish(String raw) { return english.containsKey(raw.toLowerCase(Locale.ROOT)); }
+    public boolean exactChinese(String raw,boolean bpmf,String text) {
+        for(Candidate c:(bpmf?zhuyin:pinyin).getOrDefault(normalize(raw),Collections.emptyList()))if(c.text.equals(text))return true;
+        return false;
+    }
     public boolean isEnglish(String raw,boolean latinContext) {return (latinContext?foldedEnglish:english).containsKey(raw.toLowerCase(Locale.ROOT));}
     private void indexEnglish() {
         foldedEnglish.clear();english.forEach((word,frequency)->foldedEnglish.merge(word.toLowerCase(Locale.ROOT),frequency,Math::max));

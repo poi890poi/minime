@@ -23,7 +23,11 @@ public final class AddonDictionary {
                 if(p.length!=5 || !p[0].matches("[a-z][a-z0-9_-]{0,31}") || p[1].isEmpty() || p[1].length()>96
                         || p[2].isEmpty() || p[2].length()>96 || p[3].isEmpty() || ++count>200000)throw new IOException("Invalid add-on entry");
                 String key=p[0]+"\t"+normalize(p[1]);
-                entries.computeIfAbsent(key,k->new ArrayList<>()).add(Candidate.supplement(p[2],0));
+                // Generated Chinese initials contain one ASCII letter per Han
+                // glyph. Full multisyllable readings retain source separators.
+                boolean abbreviated=p[1].matches("[a-z]+") && p[1].length()==p[2].codePointCount(0,p[2].length())
+                    && p[2].codePoints().allMatch(cp->Character.UnicodeScript.of(cp)==Character.UnicodeScript.HAN);
+                entries.computeIfAbsent(key,k->new ArrayList<>()).add(Candidate.supplement(p[2],0,abbreviated));
             }
         }
         return new AddonDictionary(entries);
