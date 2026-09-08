@@ -1,0 +1,82 @@
+{
+  "language_load_us": 5830036,
+  "geography_load_us": 3425420,
+  "approx_retained_heap_bytes": 55761064,
+  "combine": {
+    "n": 30,
+    "p50_us": 1,
+    "p95_us": 1,
+    "max_us": 3
+  },
+  "lookup_all": {
+    "n": 1000,
+    "p50_us": 1826,
+    "p95_us": 6840,
+    "max_us": 11585
+  },
+  "lookup_partial_all": {
+    "n": 500,
+    "p50_us": 1270,
+    "p95_us": 1948,
+    "max_us": 84555
+  },
+  "saved_512_trials": [
+    {
+      "custom": {
+        "n": 100,
+        "p50_us": 1,
+        "p95_us": 2,
+        "max_us": 4
+      },
+      "learned": {
+        "n": 100,
+        "p50_us": 339,
+        "p95_us": 358,
+        "max_us": 474
+      }
+    },
+    {
+      "learned": {
+        "n": 100,
+        "p50_us": 47,
+        "p95_us": 56,
+        "max_us": 117
+      },
+      "custom": {
+        "n": 100,
+        "p50_us": 1,
+        "p95_us": 2,
+        "max_us": 6
+      }
+    },
+    {
+      "custom": {
+        "n": 100,
+        "p50_us": 1,
+        "p95_us": 2,
+        "max_us": 3
+      },
+      "learned": {
+        "n": 100,
+        "p50_us": 46,
+        "p95_us": 54,
+        "max_us": 124
+      }
+    },
+    {
+      "learned": {
+        "n": 100,
+        "p50_us": 46,
+        "p95_us": 53,
+        "max_us": 97
+      },
+      "custom": {
+        "n": 100,
+        "p50_us": 1,
+        "p95_us": 2,
+        "max_us": 4
+      }
+    }
+  ],
+  "scope": "Android component costs; no Rime, touch dispatch or rendering. Heap is approximate; timings are not end-to-end frame latency."
+}
