@@ -7,15 +7,23 @@ import java.util.*;
 final class LocalLearning implements Learning {
     private final SharedPreferences preferences;
     private final SharedPreferences settings;
+    private String phraseSource,customSource;
+    private PhraseLexicon phraseCache;
+    private final Map<String,List<Candidate>> customCache=new HashMap<>();
     LocalLearning(Context context) { preferences=context.getSharedPreferences("learning",Context.MODE_PRIVATE);settings=context.getSharedPreferences("settings",Context.MODE_PRIVATE); }
+    private PhraseLexicon phraseLexicon() {
+        String saved=preferences.getString("phrases_v1","");
+        if(!saved.equals(phraseSource)) {phraseCache=new PhraseLexicon(saved);phraseSource=saved;}
+        return phraseCache;
+    }
     public void observePhrase(String reading,String output) {
         if(!settings.getBoolean("phrase_learning",false))return;
-        PhraseLexicon lexicon=new PhraseLexicon(preferences.getString("phrases_v1",""));
-        lexicon.observe(reading,output);preferences.edit().putString("phrases_v1",lexicon.serialize()).apply();
+        PhraseLexicon lexicon=phraseLexicon();
+        lexicon.observe(reading,output);phraseSource=lexicon.serialize();preferences.edit().putString("phrases_v1",phraseSource).apply();
     }
     public List<Candidate> phrases(String raw) {
         if(!settings.getBoolean("phrase_learning",false))return Collections.emptyList();
-        return new PhraseLexicon(preferences.getString("phrases_v1","")).lookup(raw);
+        return phraseLexicon().lookup(raw);
     }
     public void rememberEnglish(String context,String word) {
         if(!settings.getBoolean("english_learning",false) || context.isEmpty())return;
@@ -36,11 +44,15 @@ final class LocalLearning implements Learning {
         preferences.edit().putInt(key(c,r,v),Math.min(100,count(c,r,v)+1)).apply();
     }
     public List<Candidate> custom(String raw) {
-        List<Candidate> list=new ArrayList<>();
-        for(String row:preferences.getString("custom","").split("\n")) {
-            String[] p=row.split("\t");
-            if(p.length==2 && p[0].equals(raw)) list.add(new Candidate(p[1],p[0].equals(p[1]),0));
+        String saved=preferences.getString("custom","");
+        if(!saved.equals(customSource)) {
+            customCache.clear();
+            for(String row:saved.split("\n")) {
+                String[] p=row.split("\t");
+                if(p.length==2)customCache.computeIfAbsent(p[0],key->new ArrayList<>()).add(new Candidate(p[1],p[0].equals(p[1]),0));
+            }
+            customSource=saved;
         }
-        return list;
+        return new ArrayList<>(customCache.getOrDefault(raw,Collections.emptyList()));
     }
 }

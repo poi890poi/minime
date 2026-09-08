@@ -7,12 +7,12 @@ import java.util.*;
 public final class AddonDictionary {
     public static final AddonDictionary EMPTY=new AddonDictionary(Collections.emptyMap());
     private final Map<String,List<Candidate>> entries;
-    private AddonDictionary(Map<String,List<Candidate>> entries) {this.entries=entries;}
+    private final AddonDictionary first,second;
+    private AddonDictionary(Map<String,List<Candidate>> entries) {this.entries=entries;first=null;second=null;}
+    private AddonDictionary(AddonDictionary first,AddonDictionary second) {entries=Collections.emptyMap();this.first=first;this.second=second;}
     public static AddonDictionary combine(AddonDictionary a,AddonDictionary b) {
-        Map<String,List<Candidate>> entries=new HashMap<>(a.entries);
-        b.entries.forEach((key,values)-> {
-            List<Candidate> merged=new ArrayList<>(entries.getOrDefault(key,Collections.emptyList()));merged.addAll(values);entries.put(key,merged);
-        });return new AddonDictionary(entries);
+        if(a==EMPTY)return b;if(b==EMPTY)return a;
+        return new AddonDictionary(a,b);
     }
     public static AddonDictionary read(Reader input) throws IOException {
         Map<String,List<Candidate>> entries=new HashMap<>();int count=0;
@@ -31,9 +31,13 @@ public final class AddonDictionary {
     public List<Candidate> lookup(String raw,Set<String> enabled) {
         if(raw.length()>96 || enabled.isEmpty())return Collections.emptyList();
         List<Candidate> result=new ArrayList<>();Set<String> seen=new HashSet<>();String key=normalize(raw);
-        for(String pack:new TreeSet<>(enabled))for(Candidate c:entries.getOrDefault(pack+"\t"+key,Collections.emptyList()))
-            if(seen.add(c.text)) {result.add(c);if(result.size()==8)return result;}
+        for(String pack:new TreeSet<>(enabled))if(append(pack+"\t"+key,result,seen))break;
         return result;
+    }
+    private boolean append(String key,List<Candidate> result,Set<String> seen) {
+        if(first!=null)return first.append(key,result,seen) || second.append(key,result,seen);
+        for(Candidate c:entries.getOrDefault(key,Collections.emptyList()))if(seen.add(c.text)) {result.add(c);if(result.size()==8)return true;}
+        return false;
     }
     private static String normalize(String key) {return key.toLowerCase(Locale.ROOT).replace("'","").replace("-","").replace(" ","");}
 }

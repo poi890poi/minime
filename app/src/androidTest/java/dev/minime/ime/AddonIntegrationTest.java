@@ -51,6 +51,19 @@ public final class AddonIntegrationTest extends ActivityInstrumentationTestCase2
             data.edit().remove("phrases_v1").commit();settings.edit().putBoolean("phrase_learning",true).commit();assertTrue(learning.phrases("shanyu").isEmpty());
         });
     }
+    public void testSavedDictionaryCachesFollowEditsAndDeletion() {
+        SharedPreferences settings=context.getSharedPreferences("settings",Context.MODE_PRIVATE),data=context.getSharedPreferences("learning",Context.MODE_PRIVATE);
+        settings.edit().putBoolean("phrase_learning",true).commit();
+        data.edit().putString("custom","abc\t甲乙\n").putString("phrases_v1","abc\t甲乙\t3\n").commit();
+        LocalLearning cached=new LocalLearning(context);
+        assertEquals("甲乙",cached.custom("abc").get(0).text);assertEquals("甲乙",cached.phrases("abc").get(0).text);
+        cached.custom("abc").clear();assertFalse(cached.custom("abc").isEmpty());
+        data.edit().putString("custom","abc\t乙丙\n").putString("phrases_v1","abc\t乙丙\t3\n").commit();
+        assertEquals("乙丙",cached.custom("abc").get(0).text);assertEquals("乙丙",cached.phrases("abc").get(0).text);
+        data.edit().remove("custom").remove("phrases_v1").commit();
+        assertTrue(cached.custom("abc").isEmpty());assertTrue(cached.phrases("abc").isEmpty());
+        for(int i=0;i<3;i++)cached.observePhrase("abc","丙丁");assertEquals("丙丁",cached.phrases("abc").get(0).text);
+    }
     private static View find(View view,String description) {
         if(description.contentEquals(view.getContentDescription()==null?"":view.getContentDescription()))return view;
         if(view instanceof ViewGroup)for(int i=0;i<((ViewGroup)view).getChildCount();i++) {View result=find(((ViewGroup)view).getChildAt(i),description);if(result!=null)return result;}
