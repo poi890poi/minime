@@ -4,6 +4,13 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.6.1** broadens Japanese and Taiwanese packs to everyday expressions
+and vocabulary. Japanese uses JMdict common expression/interjection metadata;
+Taiwanese uses broader iTaigi entries and licensed beginner POJ vocabulary and
+short examples. There is no Taiwan-place or name restriction on everyday phrases.
+Existing pack switches remain off by default; select an extra candidate explicitly.
+See [everyday phrase verification](docs/everyday-phrases/RESULTS.md).
+
 Version **0.6.0** keeps the composition buffer visible across literal/Chinese
 prediction changes and adds independently optional Taiwan, Rudy geography, Japanese and POJ
 phrase dictionaries, plus repeated Chinese phrase learning. These switches are
