@@ -12,8 +12,14 @@ public final class Candidate {
     public final boolean abbreviated;
     /** True only when the retained path joins more than one lexical unit. */
     public final boolean composed;
+    /** The stored reading requires letters that have not been typed yet. */
+    public final boolean incomplete;
     private Candidate(String text,boolean literal,double score,String reading,int consumed,boolean supplemental,boolean abbreviated,boolean composed) {
+        this(text,literal,score,reading,consumed,supplemental,abbreviated,composed,abbreviated);
+    }
+    private Candidate(String text,boolean literal,double score,String reading,int consumed,boolean supplemental,boolean abbreviated,boolean composed,boolean incomplete) {
         this.text=text;this.literal=literal;this.score=score;this.reading=reading;this.consumed=consumed;this.supplemental=supplemental;this.abbreviated=abbreviated;this.composed=composed;
+        this.incomplete=incomplete;
     }
     private Candidate(String text,double score,boolean abbreviated) {
         this(text,false,score,"",0,true,abbreviated,false);
@@ -30,8 +36,9 @@ public final class Candidate {
         this(text,literal,score,reading,0,false,false,false);
     }
     static Candidate concatenate(Candidate prefix,Candidate word) {
-        return new Candidate(prefix.text+word.text,false,prefix.score+word.score,"",0,false,false,prefix.composed || word.composed || !prefix.text.isEmpty());
+        return new Candidate(prefix.text+word.text,false,prefix.score+word.score,"",0,false,false,prefix.composed || word.composed || !prefix.text.isEmpty(),prefix.incomplete || word.incomplete);
     }
-    Candidate withScore(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed);}
+    Candidate withScore(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,incomplete);}
+    Candidate completing(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,true);}
     @Override public String toString() { return text; }
 }

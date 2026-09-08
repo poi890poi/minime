@@ -44,7 +44,7 @@ final class ReadingIndex {
                 int accepted=0;
                 for(Candidate c:words[r.left]) {
                     if(!accept.test(key,c)) continue;
-                    Candidate value=new Candidate(c.text,false,c.score-penalty,c.reading);
+                    Candidate value=c.completing(c.score-penalty);
                     Candidate prior=found.get(value.text);
                     if(prior==null || prior.score<value.score) found.put(value.text,value);
                     if(++accepted==8) break;

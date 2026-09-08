@@ -16,7 +16,7 @@ public final class PhoneticDictionary {
     private final Map<String, List<Candidate>> continuations = new HashMap<>();
     private final Set<String> syllables = new HashSet<>();
     private ReadingIndex pinyinPrefixes,zhuyinPrefixes;
-    private PinyinSyllableIndex pinyinSyllables;
+    private ReadingUnitIndex pinyinSyllables;
     private ContextModel contextModel=new ContextModel();
     public void writeBinary(OutputStream target)throws IOException {
         try(DataOutputStream stream=new DataOutputStream(new BufferedOutputStream(target))) {
@@ -30,7 +30,7 @@ public final class PhoneticDictionary {
             if(stream.readInt()!=0x4d494d45 || stream.readInt()!=1)throw new IOException("Unsupported dictionary format");
             BinaryModel.Reader in=new BinaryModel.Reader(stream);PhoneticDictionary d=new PhoneticDictionary();
             in.words(d.pinyin);in.words(d.zhuyin);in.counts(d.english);in.words(d.continuations);Collections.addAll(d.syllables,in.strings());
-            d.pinyinPrefixes=new ReadingIndex(in);d.zhuyinPrefixes=new ReadingIndex(in);d.pinyinSyllables=new PinyinSyllableIndex(in);d.contextModel=new ContextModel(in);
+            d.pinyinPrefixes=new ReadingIndex(in);d.zhuyinPrefixes=new ReadingIndex(in);d.pinyinSyllables=new ReadingUnitIndex(in);d.contextModel=new ContextModel(in);
             if(stream.read()!=-1)throw new IOException("Trailing model data");d.indexEnglish();return d;
         } catch(IndexOutOfBoundsException e) {throw new IOException("Invalid model reference",e);}
     }
@@ -80,7 +80,7 @@ public final class PhoneticDictionary {
                 list.sort(Comparator.comparingDouble((Candidate c) -> c.score).reversed().thenComparing(c -> c.text));
                 Set<String> seen = new HashSet<>(); list.removeIf(c -> !seen.add(c.text));
             }
-        d.pinyinSyllables=new PinyinSyllableIndex(d.pinyin,readings); d.zhuyinPrefixes=new ReadingIndex(d.zhuyin);
+        d.pinyinSyllables=new ReadingUnitIndex(d.pinyin,readings); d.zhuyinPrefixes=new ReadingIndex(d.zhuyin);
         d.pinyinPrefixes=new ReadingIndex(d.pinyin);
         d.indexEnglish();
         return d;

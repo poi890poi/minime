@@ -1,0 +1,11 @@
+{
+  "sources": {
+    "app/src/main/assets/addons.tsv": "2a7129abc51917ab016f85bb8f905a01192715c6d73eedf25596257bd0204067",
+    "app/src/main/assets/geography.tsv": "8969bee08d2315e349e8e53618ac2986b5a6632d95bee6aee8e772de00cd7040"
+  },
+  "cases": 329599,
+  "queries": 221728,
+  "excluded_non_roman_rows": 21699,
+  "sha256": "99a0c1eaaa091ca628ec8c0c13d552ac7bdd7ba753e9871c99394839af25ef94",
+  "contract": "Every source row; deduplicated pack/form/input/output. Complete, trailing prefix, initial and mixed source units. Reference outputs score retrieval only and never enter matching. Ambiguous keys may exceed the eight display slots."
+}

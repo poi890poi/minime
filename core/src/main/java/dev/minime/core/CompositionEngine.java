@@ -350,13 +350,13 @@ public final class CompositionEngine {
             supplements.addAll(apostrophes);
             if(!privateField) {
                 List<Candidate> matches=addons.lookup(raw,enabledAddons);
-                for(Candidate c:matches)if(!c.abbreviated)supplements.add(c);
-                for(Candidate c:matches)if(c.abbreviated)supplements.add(c);
+                for(Candidate c:matches)if(!c.incomplete)supplements.add(c);
+                for(Candidate c:matches)if(c.incomplete)supplements.add(c);
             }
             Set<String> promoted=new HashSet<>();
             for(Candidate c:supplements) {
                 if(!promoted.add(c.text) || c.text.equals(raw))continue;
-                if(c.abbreviated)insertion=Math.max(insertion,Math.min(3,candidates.size()));
+                if(c.incomplete)insertion=Math.max(insertion,Math.min(3,candidates.size()));
                 int existing=-1;for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(c.text)) {existing=i;break;}
                 if(existing>=0 && existing<insertion)continue;
                 Candidate value=existing>=0 && (!c.supplemental || candidates.get(existing)==defaultChoice)?candidates.get(existing):c;

@@ -179,6 +179,7 @@ public final class Regression {
         PinyinContinuityRegression.run();
         CandidateSelectionRegression.run();
         AddonLearningRegression.run();
+        SharedPartialRegression.run();
         ApostropheRegression.run();
         ProvenanceRegression.run();
         CandidateMergeRegression.run();

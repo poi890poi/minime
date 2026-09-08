@@ -3,18 +3,18 @@ package dev.minime.core;
 import java.util.*;
 
 /** Source syllable boundaries, not generated abbreviation combinations. Immutable after load. */
-final class PinyinSyllableIndex {
+final class ReadingUnitIndex {
     private String[] syllable;
     private int[] child, sibling;
     private List<Candidate>[] words;
     private double[] best;
     private int size=1;
     private static final int BEAM=6, CANDIDATES=24, SEARCH_BUDGET=2048, MAX_WORD_INPUT=32;
-    PinyinSyllableIndex(BinaryModel.Reader in)throws java.io.IOException {syllable=in.strings();child=in.ints();sibling=in.ints();words=in.lists();best=in.doubles();size=syllable.length;}
+    ReadingUnitIndex(BinaryModel.Reader in)throws java.io.IOException {syllable=in.strings();child=in.ints();sibling=in.ints();words=in.lists();best=in.doubles();size=syllable.length;}
     void write(BinaryModel.Writer out)throws java.io.IOException {out.strings(syllable);out.ints(child);out.ints(sibling);out.lists(words);out.doubles(best);}
 
     @SuppressWarnings("unchecked")
-    PinyinSyllableIndex(Map<String,List<Candidate>> source, Set<String> readings) {
+    ReadingUnitIndex(Map<String,List<Candidate>> source, Set<String> readings) {
         int capacity=readings.size()*2+1;
         syllable=new String[capacity]; child=new int[capacity]; sibling=new int[capacity];
         words=(List<Candidate>[])new List<?>[capacity]; best=new double[capacity];
@@ -87,7 +87,7 @@ final class PinyinSyllableIndex {
             if(words[state.node]!=null) {
                 List<Candidate> at=matches.get(state.at);
                 for(Candidate c:words[state.node].subList(0,Math.min(CANDIDATES,words[state.node].size())))
-                    at.add(new Candidate(c.text,false,c.score-penalty(state.missing),c.reading));
+                    at.add(state.missing==0?c:c.completing(c.score-penalty(state.missing)));
                 trim(at,CANDIDATES,true);
             }
             if(state.at==limit) continue;
@@ -103,6 +103,11 @@ final class PinyinSyllableIndex {
             }
         }
         return matches;
+    }
+    /** Match one stored entry using full or incomplete source reading units. */
+    List<Candidate> lookup(String raw) {
+        if(raw.isEmpty() || raw.length()>MAX_WORD_INPUT || !raw.matches("[a-z0-9]+(?:'[a-z0-9]+)*"))return Collections.emptyList();
+        return match(raw,0,new int[]{SEARCH_BUDGET}).get(raw.length());
     }
     List<Candidate> convert(String raw) {
         if(!raw.matches("[a-zv]+(?:'[a-zv]+)*")) return Collections.emptyList();
