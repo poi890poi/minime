@@ -64,6 +64,25 @@ public final class AddonIntegrationTest extends ActivityInstrumentationTestCase2
         assertTrue(cached.custom("abc").isEmpty());assertTrue(cached.phrases("abc").isEmpty());
         for(int i=0;i<3;i++)cached.observePhrase("abc","丙丁");assertEquals("丙丁",cached.phrases("abc").get(0).text);
     }
+    public void testAsyncDictionaryLookupAndSpaceUseOneResult() throws Throwable {
+        java.util.concurrent.CountDownLatch done=new java.util.concurrent.CountDownLatch(1);
+        StringBuilder output=new StringBuilder();AsyncDecoder[] worker=new AsyncDecoder[1];
+        runTestOnUiThread(()-> {
+            try {
+                AddonDictionary fixture=AddonDictionary.read(new java.io.StringReader("japanese\tka'na'mi\tかなみ\tfixture\ttest\n"));
+                CompositionEngine engine=new CompositionEngine(new CompositionEngine.Editor() {
+                    public void composing(String text) {}public void commit(String text) {output.append(text);done.countDown();}
+                    public void delete() {}public void enter() {}public void finish() {}
+                },Learning.NONE);
+                engine.dictionary(dictionary);engine.start(false,false,false,false);engine.addons(fixture,Collections.singleton("japanese"));
+                worker[0]=new AsyncDecoder(new android.os.Handler(android.os.Looper.getMainLooper()));
+                engine.decoder(worker[0],()->{});"kanami".codePoints().forEach(engine::type);engine.space();
+                assertEquals("Space must await the worker",0,output.length());
+            } catch(java.io.IOException e) {throw new AssertionError(e);}
+        });
+        try {assertTrue(done.await(10,java.util.concurrent.TimeUnit.SECONDS));assertEquals("かなみ",output.toString());}
+        finally {runTestOnUiThread(()->worker[0].close());}
+    }
     private static View find(View view,String description) {
         if(description.contentEquals(view.getContentDescription()==null?"":view.getContentDescription()))return view;
         if(view instanceof ViewGroup)for(int i=0;i<((ViewGroup)view).getChildCount();i++) {View result=find(((ViewGroup)view).getChildAt(i),description);if(result!=null)return result;}

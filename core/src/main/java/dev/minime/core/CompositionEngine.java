@@ -45,6 +45,13 @@ public final class CompositionEngine {
     }
     public interface Decoder {
         void convert(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,java.util.function.Consumer<List<Candidate>> result);
+        default void query(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,boolean phonetic,
+                AddonDictionary addons,Set<String> enabled,java.util.function.Consumer<List<Candidate>> result) {
+            java.util.function.Consumer<List<Candidate>> done=base->{
+                List<Candidate> combined=new ArrayList<>(base);combined.addAll(addons.lookup(raw,enabled));result.accept(combined);
+            };
+            if(phonetic)convert(dictionary,raw,zhuyin,context,done);else done.accept(Collections.emptyList());
+        }
         default void trace(PhoneticDictionary dictionary,float[] points,java.util.function.Consumer<List<Candidate>> result) {result.accept(dictionary.englishTrace(points));}
     }
     private boolean traced;
@@ -268,15 +275,22 @@ public final class CompositionEngine {
                 preferred = 1; return;
             }
         }
-        if(decoder!=null && dictionary!=null && !literalField && !englishMode) {
+        Set<String> packs=!privateField && !literalField?enabledAddons:Collections.emptySet();
+        if(decoder!=null && dictionary!=null && !literalField && (!englishMode || !packs.isEmpty())) {
             pending=true;
-            decoder.convert(dictionary,raw,bpmf,context,result->{
+            decoder.query(dictionary,raw,bpmf,context,!englishMode,addons,packs,result->{
                 if(query!=revision)return;
                 pending=false;applyCandidates(new ArrayList<>(result));changed.run();drain();
             });
-        } else applyCandidates(dictionary == null || literalField || englishMode ? new ArrayList<>() : dictionary.convert(raw, bpmf,context));
+        } else {
+            List<Candidate> found=dictionary == null || literalField || englishMode ? new ArrayList<>() : dictionary.convert(raw,bpmf,context);
+            found.addAll(addons.lookup(raw,packs));applyCandidates(found);
+        }
     }
     private void applyCandidates(List<Candidate> converted) {
+        List<Candidate> addonMatches=new ArrayList<>();
+        for(Candidate c:converted)if(c.supplemental)addonMatches.add(c);
+        converted.removeIf(c->c.supplemental);
         boolean bpmf=raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
         List<Candidate> custom=!privateField && !literalField?learning.custom(raw):Collections.emptyList();
         converted.removeIf(c->c.consumed<0 || c.consumed>raw.length() || (c.consumed>0 && (c.literal || bpmf || !raw.matches("[a-zv]+(?:'[a-zv]+)*"))));
@@ -291,9 +305,7 @@ public final class CompositionEngine {
             if (intent == Intent.CHINESE_PHONETIC || ((intent == Intent.AMBIGUOUS || intent == Intent.LATIN_LITERAL) && chineseVotes > literalVotes)) preferred = 1;
             // Partial phonetics are valid Chinese input too. Preserve known
             // English words/completion prefixes and explicit literal recovery.
-            if(!bpmf && !literalField && !englishMode && dictionary!=null
-                    && raw.matches("[a-zv]+(?:'[a-zv]+)*") && raw.length()>1
-                    && !IntentClassifier.technicalWord(raw) && !dictionary.isEnglish(raw,afterLatin) && dictionary.englishCompletions(raw,afterLatin).isEmpty()) preferred=1;
+            if(conversionInput(bpmf)) preferred=1;
             if (literalVotes > chineseVotes) preferred = 0;
         }
         // Prefix candidates are explicit choices, never a whole-token Space default.
@@ -349,14 +361,12 @@ public final class CompositionEngine {
             if(!englishMode && dictionary!=null && candidates.size()>1 && dictionary.exactChinese(raw,bpmf,candidates.get(1).text))supplements.add(candidates.get(1));
             supplements.addAll(apostrophes);
             if(!privateField) {
-                List<Candidate> matches=addons.lookup(raw,enabledAddons);
-                for(Candidate c:matches)if(!c.incomplete)supplements.add(c);
-                for(Candidate c:matches)if(c.incomplete)supplements.add(c);
+                for(Candidate c:addonMatches)if(!c.incomplete)supplements.add(c);
+                for(Candidate c:addonMatches)if(c.incomplete)supplements.add(c);
             }
-            Set<String> promoted=new HashSet<>();
+            Set<String> promoted=new HashSet<>();int partialPreviews=0;
             for(Candidate c:supplements) {
                 if(!promoted.add(c.text) || c.text.equals(raw))continue;
-                if(c.incomplete)insertion=Math.max(insertion,Math.min(3,candidates.size()));
                 int existing=-1;for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(c.text)) {existing=i;break;}
                 // A second source is not evidence that an already attested base
                 // entry is more frequent. Preserve its established homophone
@@ -364,12 +374,29 @@ public final class CompositionEngine {
                 if(c.supplemental && existing>=0 && !candidates.get(existing).supplemental && dictionary!=null
                         && (dictionary.exactChinese(raw,bpmf,c.text)
                             || (candidates.get(existing).consumed==0 && c.text.codePointCount(0,c.text.length())==1)))continue;
+                // One early alternate previews incomplete dictionary matches;
+                // the rest do not displace the primary decoder's whole first row.
+                if(c.incomplete)insertion=Math.max(insertion,Math.min(partialPreviews==0?3:9,candidates.size()));
                 if(existing>=0 && existing<insertion)continue;
                 Candidate value=existing>=0 && (!c.supplemental || candidates.get(existing)==defaultChoice)?candidates.get(existing):c;
                 if(existing>=0)candidates.remove(existing);
                 candidates.add(insertion++,value);
+                if(c.incomplete)partialPreviews++;
             }
             preferred=candidates.indexOf(defaultChoice);
+            if(preferred==0 && !addonMatches.isEmpty() && candidates.size()>1 && !candidates.get(1).incomplete && conversionInput(bpmf) && !dictionary.validEnglishSpelling(raw)
+                    && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,candidates.get(1).text)))preferred=1;
+            // Candidate ordering and automatic acceptance share one winner.
+            // Known English/raw recovery remains slot zero; prefix-only choices
+            // still require an explicit tap because they leave unconsumed input.
+            if(preferred>0 && !automaticCorrection) {
+                for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
+            }
         }
+    }
+    private boolean conversionInput(boolean bpmf) {
+        return !bpmf && !literalField && !englishMode && dictionary!=null
+            && raw.matches("[a-zv]+(?:'[a-zv]+)*") && raw.length()>1
+            && !IntentClassifier.technicalWord(raw) && !dictionary.isEnglish(raw,afterLatin) && dictionary.englishCompletions(raw,afterLatin).isEmpty();
     }
 }

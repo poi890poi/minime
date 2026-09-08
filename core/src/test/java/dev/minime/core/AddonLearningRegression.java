@@ -6,6 +6,10 @@ import java.util.*;
 import static dev.minime.core.Regression.*;
 
 final class AddonLearningRegression {
+    static void coherentDefault(CompositionEngine c,String before) {
+        if(c.preferred()==0)equal(before,c.candidates().get(0).text,"literal recovery remains the default");
+        else equal(c.candidates().stream().skip(1).filter(v->v.consumed==0).findFirst().get().text,c.candidates().get(c.preferred()).text,"Space follows leading whole-input suggestion");
+    }
     static final class Memory implements Learning {
         PhraseLexicon phrases=new PhraseLexicon("");int observations,votes;
         public int count(String c,String r,String v) {return 0;}
@@ -29,7 +33,7 @@ final class AddonLearningRegression {
             Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);type(c,p[1]);
             String before=c.candidates().get(c.preferred()).text;
             List<String> base=new ArrayList<>();for(Candidate value:c.candidates())base.add(value.text);
-            c.addons(addon,all);equal(before,c.candidates().get(c.preferred()).text,"add-ons preserve Space");
+            c.addons(addon,all);coherentDefault(c,before);
             List<String> retained=new ArrayList<>();for(Candidate value:c.candidates())if(!value.supplemental)retained.add(value.text);
             List<String> unpromoted=new ArrayList<>();for(String value:base)if(retained.contains(value))unpromoted.add(value);
             equal(unpromoted,retained,"unpromoted base candidates retain relative order");
@@ -45,7 +49,7 @@ final class AddonLearningRegression {
             for(boolean english:new boolean[]{false,true}) {
                 Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.start(false,false,false,false,english);
                 type(c,key);String before=c.candidates().get(c.preferred()).text;c.addons(addon,all);
-                equal(before,c.candidates().get(c.preferred()).text,"everyday pack preserves default");
+                coherentDefault(c,before);
                 for(Candidate extra:addon.lookup(key,all))if(!extra.text.equals(key))yes(find(c,extra.text)>=0,"everyday source suggestion reachable");
                 String expected=addon.lookup(key,Collections.singleton(p[0])).stream().filter(v->!v.text.equals(key)).findFirst().get().text;
                 c.select(find(c,expected));equal(expected,e.text,"everyday phrase selected in both modes");
@@ -74,8 +78,9 @@ final class AddonLearningRegression {
             String target="山"+(char)(0x4e00+10);
             AddonDictionary specific=AddonDictionary.read(new StringReader("taiwan\tshanyu\t"+target+"\ttest:fixture\tfixture\n"));
             c.addons(specific,Collections.singleton("taiwan"));equal(1,find(c,target),"exact source match precedes decoder guesses");
-            equal(before,c.candidates().get(c.preferred()).text,"promotion never changes default identity");
+            equal(target,c.candidates().get(c.preferred()).text,"promotion updates automatic choice to displayed winner");
             equal(1L,c.candidates().stream().filter(v->v.text.equals(target)).count(),"promotion has no duplicate row");
+            c.space();equal(target,e.text,"Space commits the promoted dictionary phrase");
         }
         for(boolean english:new boolean[]{false,true}) {
             Memory m=new Memory();Editor e=new Editor();CompositionEngine c=engine(e,m,false);c.start(false,false,false,false,english);c.addons(addon,all);

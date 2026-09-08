@@ -46,14 +46,23 @@ public final class DesktopEvaluation {
         public void close() throws Exception {input.close();if(!process.waitFor(10,java.util.concurrent.TimeUnit.SECONDS)){process.destroyForcibly();throw new IOException("Rime exit timeout");}if(process.exitValue()!=0)throw new IOException("Rime exit "+process.exitValue());}
     }
     private static final class Decoder implements CompositionEngine.Decoder {
-        Native nativeRime;String raw,context;PhoneticDictionary dictionary;boolean bpmf;Consumer<List<Candidate>> pending;
+        Native nativeRime;String raw,context;PhoneticDictionary dictionary;boolean bpmf,phonetic;Consumer<List<Candidate>> pending;
+        AddonDictionary optional=AddonDictionary.EMPTY;Set<String> enabled=Collections.emptySet();
+        AddonDictionary cachedOptional;Set<String> cachedPacks=Collections.emptySet();Map<String,List<Candidate>> optionalCache=new HashMap<>();
         Decoder(Native n) {nativeRime=n;}
-        public void convert(PhoneticDictionary d,String r,boolean b,String c,Consumer<List<Candidate>> result) {dictionary=d;raw=r;bpmf=b;context=c;pending=result;}
+        public void convert(PhoneticDictionary d,String r,boolean b,String c,Consumer<List<Candidate>> result) {query(d,r,b,c,true,AddonDictionary.EMPTY,Collections.emptySet(),result);}
+        public void query(PhoneticDictionary d,String r,boolean b,String c,boolean p,AddonDictionary a,Set<String> e,Consumer<List<Candidate>> result) {
+            dictionary=d;raw=r;bpmf=b;context=c;phonetic=p;optional=a;enabled=e;pending=result;
+        }
         // The production engine coalesces unfinished queries. Flush the final
         // query before a token is accepted; no intermediate candidate is reused.
         void flush() {
             if(pending==null)return;Consumer<List<Candidate>> done=pending;pending=null;
-            List<Candidate> choices=CandidateMerge.merge(nativeRime.query(raw),dictionary.convert(raw,bpmf,context));
+            List<Candidate> choices=phonetic?CandidateMerge.merge(nativeRime.query(raw),dictionary.convert(raw,bpmf,context)):new ArrayList<>();
+            // Static lookup is pure; memoize repeated corpus tokens just as the
+            // native evaluator does. This harness never reports end-to-end latency.
+            if(cachedOptional!=optional || !cachedPacks.equals(enabled)) {optionalCache.clear();cachedOptional=optional;cachedPacks=new HashSet<>(enabled);}
+            choices.addAll(optionalCache.computeIfAbsent(raw,r->optional.lookup(r,enabled)));
             done.accept(choices);
         }
     }

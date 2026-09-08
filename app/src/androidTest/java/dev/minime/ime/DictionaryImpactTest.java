@@ -30,6 +30,18 @@ public final class DictionaryImpactTest extends AndroidTestCase {
             String row;while((row=reader.readLine())!=null && keys.size()<512) {String[] p=row.split("\t");if(p.length==5 && p[1].matches("[a-z']{4,24}"))keys.add(p[1]);}
         }
         final int[] position={0};report.put("lookup_all",measure(()->both.lookup(keys.get(position[0]++%keys.size()),all),1000));
+        List<String> partials=new ArrayList<>();
+        try(BufferedReader reader=new BufferedReader(asset("addons.tsv"))) {
+            String row;Map<String,Integer> counts=new HashMap<>();
+            while((row=reader.readLine())!=null) {
+                String[] p=row.split("\t");if(p.length!=5 || counts.getOrDefault(p[0],0)>=64)continue;
+                String[] parts=p[1].split("[- ']+");String raw=String.join("",parts);
+                if(parts.length<2 || !raw.matches("[a-z]{4,32}"))continue;
+                counts.merge(p[0],1,Integer::sum);partials.add(raw.substring(0,raw.length()-1));
+                StringBuilder mixed=new StringBuilder();for(int i=0;i<parts.length;i++)mixed.append(i%2==0?parts[i]:parts[i].substring(0,1));partials.add(mixed.toString());
+            }
+        }
+        report.put("lookup_partial_all",measure(()->both.lookup(partials.get(position[0]++%partials.size()),all),500));
         SharedPreferences settings=getContext().getSharedPreferences("settings",Context.MODE_PRIVATE),learning=getContext().getSharedPreferences("learning",Context.MODE_PRIVATE);
         StringBuilder custom=new StringBuilder(),phrases=new StringBuilder();
         for(int i=0;i<512;i++) {custom.append(keys.get(i)).append('\t').append("測試").append(i).append('\n');phrases.append(keys.get(i)).append('\t').appendCodePoint(0x4e00+i).append("山\t3\n");}

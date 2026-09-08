@@ -180,6 +180,7 @@ public final class Regression {
         CandidateSelectionRegression.run();
         AddonLearningRegression.run();
         SharedPartialRegression.run();
+        AddonAsyncRegression.run();
         ApostropheRegression.run();
         ProvenanceRegression.run();
         CandidateMergeRegression.run();
