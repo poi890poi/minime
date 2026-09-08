@@ -10,6 +10,14 @@
   train, development and test roles distinct. Record negative results and missing
   coverage. Do not call a synthetic assertion count language-model accuracy.
 - Keep independently reviewable changes in independent commits.
+- Prefer original Taiwan-authored or locally curated language sources. A locale
+  tag or Traditional spelling does not establish Taiwanese usage. Do not convert
+  a Simplified Chinese corpus into production Taiwan vocabulary. Register source
+  decisions, evidence and pins through `sources/README.md` before refreshing data.
+- Essays and conversations both belong in evaluation, with separate genre results
+  and declared input/error conditions. Split by document or conversation, preserve
+  source lineage, and keep production, development and holdout roles distinct.
+  Previously inspected or evaluated data is not a fresh holdout.
 - Never handpick production dictionary entries, phrase IDs, names, aliases or
   per-word promotions. Use established source datasets and reproducible general
   extraction/filtering rules. Track dataset versions, licences, hashes and counts;

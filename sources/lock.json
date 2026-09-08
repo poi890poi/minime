@@ -1,0 +1,298 @@
+{
+  "format": 1,
+  "digest_policy": "Text CRLF normalized to LF; binary bytes exact. Existing upstream manifests separately retain original-byte hashes.",
+  "files": {
+    "third_party/mcbopomofo/BPMFBase.txt": {
+      "source": "mcbopomofo",
+      "sha256": "5916b2128627a63cb04138a0ee6dd8dcca18bb8726bd0554f12253725e5d3381"
+    },
+    "third_party/mcbopomofo/BPMFMappings.txt": {
+      "source": "mcbopomofo",
+      "sha256": "51715ee5c731f9994be3b168d7681ed9692b8c335ae6fc2e7cfd4af6fd0e0781"
+    },
+    "third_party/mcbopomofo/phrase.occ": {
+      "source": "mcbopomofo",
+      "sha256": "0fc51c5245a8820e1003e3fa3fb2759b0d1b502a71da81bbfa265e9ac6c9fb5a"
+    },
+    "third_party/rudy/extracted-names.json.gz": {
+      "source": "rudy",
+      "sha256": "4444a6e1832d72eea9e11d6e1e1360830433853fa1f9565a162fa943cb86b212"
+    },
+    "third_party/rudy/source.json": {
+      "source": "rudy",
+      "sha256": "def7aecb86a3623e91d8df18e7f25e2675c2beea8ea6c9a2accc538500c0dbb6"
+    },
+    "third_party/aosp/en_US_wordlist.combined.gz": {
+      "source": "aosp",
+      "sha256": "0f78dd455b532be169a23f233227b811fabced4b5bd7fc9c40cc05839793bcbd"
+    },
+    "third_party/itaigi/itaigi.csv": {
+      "source": "itaigi",
+      "sha256": "628be41ac7063336de627beb0e8c392c5cd6e537dc398443cdb0683865d3772b"
+    },
+    "third_party/taiwanese_basic/vocabulary.csv": {
+      "source": "taiwanese-basic",
+      "sha256": "3b996a05ddc05d23cc75ea824f63f0c3279c2379e5063496dc36014365a561bb"
+    },
+    "third_party/jmdict/jmdict-eng-common.json.tgz": {
+      "source": "jmdict",
+      "sha256": "47555ec41e40d45e0207c2d253e8675d2cc400c02f8962682d9807892c3ba850"
+    },
+    "third_party/jmnedict/jmnedict.json.tgz": {
+      "source": "jmnedict",
+      "sha256": "bbc82a8a8650816430a3e1589a335de0a782af1a7165dba401ea8490eb2bc0a2"
+    },
+    "third_party/wanakana/index.js": {
+      "source": "wanakana",
+      "sha256": "a560add93ab26ec70e850ed433070772824aa4cda1d0f4843b6063593b924682"
+    },
+    "third_party/wanakana/LICENSE": {
+      "source": "wanakana",
+      "sha256": "a2b910e52e70524d13946b7936c1accbb8531461fafaaa21cc1eb5088a8b86df"
+    },
+    "third_party/wanakana/README.md": {
+      "source": "wanakana",
+      "sha256": "be8c57543d77fffab94dfbadb6d71e85d0141f90ea49099728e213d306606b32"
+    },
+    "third_party/wanakana/source.json": {
+      "source": "wanakana",
+      "sha256": "68821ef84afb447363c7d927bc45d3e3741defe2c1fd1d7d5091a10ade033d8a"
+    },
+    "third_party/cedict/cedict.txt.gz": {
+      "source": "cedict",
+      "sha256": "cd81c0d253c82d4b1dc3ca2cfe4cd5fc46ca10b753743a80d783f3969ae11a23"
+    },
+    "third_party/wikidata/taiwan-books.json": {
+      "source": "wikidata",
+      "sha256": "d04d58b222a46269e8c792eed1a5dd5d555a5a34a21a07cc8b3818a1c4f0f13b"
+    },
+    "third_party/wikidata/taiwan-books.json.source.json": {
+      "source": "wikidata",
+      "sha256": "0f11ddecc36266e366af9d440c8090a6aa7aa3d3871395d69bedf89357e67f5a"
+    },
+    "third_party/wikidata/taiwan-films.json": {
+      "source": "wikidata",
+      "sha256": "4f9edc3eb64447eac6475fd469aae933aa417e26515153fd3d2351889e715ffe"
+    },
+    "third_party/wikidata/taiwan-films.json.source.json": {
+      "source": "wikidata",
+      "sha256": "e4bc8384f5c339a0fcf40b4f044a1723f6612a14e93c78cb507d6c6ae34eb0af"
+    },
+    "third_party/wikidata/taiwan-songs.json": {
+      "source": "wikidata",
+      "sha256": "4071b144a8429870c9c53a5b9a840046085fa576908a85092b236098c4c8d20f"
+    },
+    "third_party/wikidata/taiwan-songs.json.source.json": {
+      "source": "wikidata",
+      "sha256": "f3e649f8fc86d6a14277c20d50b3d0382efac687cf037b41938b18fbe653d4ab"
+    },
+    "third_party/taiwan_encyclopedia/entity-types.json.gz": {
+      "source": "taiwan-encyclopedia",
+      "sha256": "cf665eabefbeef9b81f0babdbfcc9b5f4378eb0bcf8498065997cbb862559170"
+    },
+    "third_party/taiwan_encyclopedia/snapshot.json.gz": {
+      "source": "taiwan-encyclopedia",
+      "sha256": "327fc1c8c71de87d677136061a96de94ca2703b21cd703b6f4be7ff4e4c0e7ea"
+    },
+    "third_party/taiwan_encyclopedia/traditional-labels.json.gz": {
+      "source": "taiwan-encyclopedia",
+      "sha256": "29b11df86928b8cea357889e79f43d5989b1a5d3d029edddd47548bbc8877955"
+    },
+    "third_party/taiwan_encyclopedia/source.json": {
+      "source": "taiwan-encyclopedia",
+      "sha256": "019709e29e85c4f0b1e722c2e6469b242ce59d77def552de3a0c0266c16902e8"
+    },
+    "third_party/opencc_python/opencc/opencc.py": {
+      "source": "opencc-python",
+      "sha256": "dfba0adb8ca2d07e9fc90aab9de38cc3830ed338fa51c6a1e408c71a916e65f9"
+    },
+    "third_party/opencc_python/opencc/__init__.py": {
+      "source": "opencc-python",
+      "sha256": "9ee2882ab0156a817c928fa4800b38def0b7cbf5ff33b2c4c42294c3c0648f23"
+    },
+    "third_party/opencc_python/opencc/__main__.py": {
+      "source": "opencc-python",
+      "sha256": "dafcba671d01b7ba86222d9f9e2a96bb26f13a0fb5a3a2c53750b1cc560d5b6c"
+    },
+    "third_party/opencc_python/opencc/config/hk2s.json": {
+      "source": "opencc-python",
+      "sha256": "7c80c326743d7f38f1be4deb9be22ee83f042b34f7ee7d8ed473d33d80c95449"
+    },
+    "third_party/opencc_python/opencc/config/s2hk.json": {
+      "source": "opencc-python",
+      "sha256": "e4972d284f9c520c2f20ed22ce4c93c2ba259db7a91449117a7680b61fda117e"
+    },
+    "third_party/opencc_python/opencc/config/s2t.json": {
+      "source": "opencc-python",
+      "sha256": "67b23a594b608df3605bfd34631ee67570d88cf04a8de14798223697ff1910d4"
+    },
+    "third_party/opencc_python/opencc/config/s2tw.json": {
+      "source": "opencc-python",
+      "sha256": "20ea5db5ef5480f4c2e45cb5e3cf8b4f41018ca8381dc15b76d215fa64bcb2d9"
+    },
+    "third_party/opencc_python/opencc/config/s2twp.json": {
+      "source": "opencc-python",
+      "sha256": "70a3aca9a6347264d21221db91170c5da8444673da22c3e914a52609426016a1"
+    },
+    "third_party/opencc_python/opencc/config/t2hk.json": {
+      "source": "opencc-python",
+      "sha256": "659f5ee2290c270c345074bf27c72e02ad509637d058711c4795c6be1a57b709"
+    },
+    "third_party/opencc_python/opencc/config/t2s.json": {
+      "source": "opencc-python",
+      "sha256": "ecc1cbf0ca4cd2f58804168281642640492813da15d5b655eceebf0fd42fbc8e"
+    },
+    "third_party/opencc_python/opencc/config/t2tw.json": {
+      "source": "opencc-python",
+      "sha256": "ffe8e39d6e5e3a90552bb402761a7467b9f5ad08f33ff7215b888a8ab7bd530b"
+    },
+    "third_party/opencc_python/opencc/config/tw2s.json": {
+      "source": "opencc-python",
+      "sha256": "c73defe6d08c1aa1ea7cd39452a0e3665e52415cdcadcf6bf66102b34de6294d"
+    },
+    "third_party/opencc_python/opencc/config/tw2sp.json": {
+      "source": "opencc-python",
+      "sha256": "89705f76e387be7879d2972b8e65c25a5dae976994dad0046709227ab1b59753"
+    },
+    "third_party/opencc_python/opencc/dictionary/HKVariants.txt": {
+      "source": "opencc-python",
+      "sha256": "c3c93c35885902ba2b12a3235a7761b00fb2b027f36aa8314db2f6b6ad51d374"
+    },
+    "third_party/opencc_python/opencc/dictionary/HKVariantsPhrases.txt": {
+      "source": "opencc-python",
+      "sha256": "4f9d33a61bb29e18086f5f492fe896735218045fca11e46c67b8cff3f15f0560"
+    },
+    "third_party/opencc_python/opencc/dictionary/HKVariantsRev.txt": {
+      "source": "opencc-python",
+      "sha256": "fedb94d40c7352c74c3949cc571b58363011846f9a23774e85158afbad7f64ef"
+    },
+    "third_party/opencc_python/opencc/dictionary/HKVariantsRevPhrases.txt": {
+      "source": "opencc-python",
+      "sha256": "c2da309afa7fdd9061f204664039d33b000a4dca0ecae4e7480dcbf9e20f658e"
+    },
+    "third_party/opencc_python/opencc/dictionary/JPVariants.txt": {
+      "source": "opencc-python",
+      "sha256": "7e998db5d6f437a605c901c9413ccd7505f8b2e1cd3f9e2dd84572d0af1d3fc0"
+    },
+    "third_party/opencc_python/opencc/dictionary/STCharacters.txt": {
+      "source": "opencc-python",
+      "sha256": "9207708da9f2e2a248f39c457b2fccad26ec42e7efaf47a860e6900464f4cac5"
+    },
+    "third_party/opencc_python/opencc/dictionary/STPhrases.txt": {
+      "source": "opencc-python",
+      "sha256": "a4de4d2471f73cdb7e5b1b22920139aa4e4bbb1ebeea8f1fc341f988aa75c586"
+    },
+    "third_party/opencc_python/opencc/dictionary/TSCharacters.txt": {
+      "source": "opencc-python",
+      "sha256": "6b5a0a799bea2bb22c001f635eaa3fc2904310f0c08addbff275477a80ecf09a"
+    },
+    "third_party/opencc_python/opencc/dictionary/TSPhrases.txt": {
+      "source": "opencc-python",
+      "sha256": "b2ef895dd4953b4bb77fc8ef8d26a2a9ca6d43a760ed9a1d767672cfafa6324f"
+    },
+    "third_party/opencc_python/opencc/dictionary/TWPhrases.txt": {
+      "source": "opencc-python",
+      "sha256": "378a498e57d17d2a2b78a8d8ea4ddbd0e4652e399200e1d302c3cbf4a3d6bbe4"
+    },
+    "third_party/opencc_python/opencc/dictionary/TWPhrasesRev.txt": {
+      "source": "opencc-python",
+      "sha256": "a2f342499c22c63e94293e0a7163a0a73cfea32b1611d3fc4fa61f68c5080dfe"
+    },
+    "third_party/opencc_python/opencc/dictionary/TWVariants.txt": {
+      "source": "opencc-python",
+      "sha256": "30e6f8395edbfdd74e293fd8b9c62105d787c849fbb208d2a7832eac696734d7"
+    },
+    "third_party/opencc_python/opencc/dictionary/TWVariantsRev.txt": {
+      "source": "opencc-python",
+      "sha256": "90bee84a5cef3c20f08483c2e172f5eaae124cb35acbca263e3e7e4aa85cbaf8"
+    },
+    "third_party/opencc_python/opencc/dictionary/TWVariantsRevPhrases.txt": {
+      "source": "opencc-python",
+      "sha256": "bef60ceb4e57b6b062351406cb5d4644875574231d64787e03711317b7e773f3"
+    },
+    "third_party/rime/data-sources/rime-essay.zip": {
+      "source": "rime-data",
+      "sha256": "4eacdf2018805883d8e63da4a33db6947ccc698f28d7cf78e5493c1892cbf5ac"
+    },
+    "third_party/rime/data-sources/rime-luna-pinyin.zip": {
+      "source": "rime-data",
+      "sha256": "96f96206361a9f5e9ec5af7f102cb1c6b04e3f394746150e5fa62ae87290f9c2"
+    },
+    "third_party/rime/data-sources/rime-prelude.zip": {
+      "source": "rime-data",
+      "sha256": "624be6ea2a2abbf743d9c69c6e9ad4784932f36abd0922a655af38710e1c8695"
+    },
+    "third_party/rime/data-sources/default.custom.yaml": {
+      "source": "rime-data",
+      "sha256": "20b8c83ef07e670c3f940214a1aa96e111c02ebf0b7e5a9614da18f8276d7d95"
+    },
+    "third_party/rime/data-sources/luna_pinyin.custom.yaml": {
+      "source": "rime-data",
+      "sha256": "8cc4e4c811eeafd0115978ef00bea7909c00be1196deed939634aba1800a04f0"
+    },
+    "third_party/rime/data-sources/opencc/t2tw.json": {
+      "source": "rime-data",
+      "sha256": "11495bf144cd932a9568810822a5af0fbba2db9c2e06a2bb2871583423fac24a"
+    },
+    "third_party/rime/data-sources/opencc/TWVariants.txt": {
+      "source": "rime-data",
+      "sha256": "30e6f8395edbfdd74e293fd8b9c62105d787c849fbb208d2a7832eac696734d7"
+    },
+    "third_party/ud/sources.json": {
+      "source": "ud-context",
+      "sha256": "b861bbd47fb266474dff06a123df3fb2b03efdf10dddb697f9ff97cf600e9201"
+    }
+  },
+  "addon_rows": {
+    "jmdict": {
+      "rows": 1614,
+      "sha256": "cf7bf67ea64aef383fcc63a926031ccfece800a7e3b990c878161d2b31038727"
+    },
+    "jmnedict": {
+      "rows": 4225,
+      "sha256": "91384b32f0f06e890f4aa5c8d4fcf718da7ed8cf53ad0b3e2817b7eb9f88c863"
+    },
+    "itaigi": {
+      "rows": 32911,
+      "sha256": "89de6fc412b3ae8cb2816b7ef514d6fdb1f67c48fadfbd901f13ecb0ad6594e0"
+    },
+    "taiwanese-basic": {
+      "rows": 11428,
+      "sha256": "02e8acfca36739d431fa9c77a660c0db8ddb13d53611a6b787d5b94727f1e5b8"
+    },
+    "taiwan-encyclopedia": {
+      "rows": 28976,
+      "sha256": "8fd60651f789138543ba73ec0de1a3522fd66a1c2f1f9ad2e7b4e48fa91db430"
+    },
+    "cedict": {
+      "rows": 6470,
+      "sha256": "b4f3a6a2b6962dc01d1e51f1554226123f3d4423c701bf53e1bd6e5bdbe4d97b"
+    },
+    "wikidata": {
+      "rows": 221,
+      "sha256": "409aca0469e782e57ff65fb0daaf3e96a059c49408c3ede46aca6a071a5c43db"
+    }
+  },
+  "audit_evidence": {
+    "docs/sources/audit-2026-09-08/artifacts.json": "e17a9b2b4c00803276a801eff540f603547acfbcd1e3aa90b1fdda6f141f3379",
+    "docs/sources/audit-2026-09-08/cip.json.gz": "74d663ccc4da6f69e0441e5894e8a34b415fc7f2a22c4e4f647dc95c21893a04",
+    "docs/sources/audit-2026-09-08/fetch-errors.json.gz": "9b04ff474c6714874d2e1e794867aa28188ae3622750745aa29e098a19740075",
+    "docs/sources/audit-2026-09-08/kemdict-inventory.json.gz": "d074cc1dfad951a980364e41dc1ff03c3c33b19be51e8a268248f51dc48d1168",
+    "docs/sources/audit-2026-09-08/measurements.json": "400794683883fa4d94f018b78cbf58ad160389d38b34d7b3af8ad26e593e9bcc",
+    "docs/sources/audit-2026-09-08/music-catalog.json.gz": "002d13072b3756c6736d711f5a5f9c0a94d530fbaa478794daf95941fa45bbb6",
+    "docs/sources/audit-2026-09-08/music-records.json.gz": "c900edb961d271e1e4f06d4d01bea10f21e3b941a6a6d4b87468699ec56a8238",
+    "docs/sources/audit-2026-09-08/sample-records.json.gz": "07fcdf332972d286db63b33149ed021dcdea43ce08371c3d78245b0e6ff56bfb",
+    "docs/sources/audit-2026-09-08/taicol.zip": "56755faa08d74d64301e140df5f7fb4dabbab40c8b369cde2003f4582b794aa4",
+    "docs/sources/audit-2026-09-08/taiwan-md-inventory.json.gz": "e4783c1f8de0ab86fac0f9602e8be48b400e13d179dac75d687f57ae0d47a2a2",
+    "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz": "67741d407f0184a6aeb2ecded1123570b02e5fc080584490b683024c65bd329f"
+  },
+  "evaluation": {
+    "sources/evaluation.json": "d03bf620005850b3b26333baff9d5a00932854bea9135f0cc6a13c8be0aac052",
+    "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz": "67741d407f0184a6aeb2ecded1123570b02e5fc080584490b683024c65bd329f",
+    "docs/sources/audit-2026-09-08/sample-records.json.gz": "07fcdf332972d286db63b33149ed021dcdea43ce08371c3d78245b0e6ff56bfb",
+    "docs/conversation-ranking/corpus/gum-manifest.json": "b7b3abbc303d4ca20b1a65dc92dd305cd1082c660561016f4de2099d207f2529",
+    "docs/conversation-ranking/corpus/gum-test.tsv": "eade8de35b75a5124f74d3a9bec755a87fde50fab0de298523689763c0257faa",
+    "docs/conversation-ranking/corpus/manifest.json": "734898dada9a17ca0512c4573e4a86c3d42c4684e3de2c84624ef1d9c38efad8",
+    "docs/conversation-ranking/corpus/inputs.tsv": "14c186c6589c4081f709f6aa237bb9a0d61a0d5ad32754dad8d72976d478004d"
+  }
+}

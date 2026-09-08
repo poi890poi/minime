@@ -1,0 +1,701 @@
+{
+  "format": 1,
+  "policy": {
+    "original_wording": "Prefer original Taiwan-authored/curated vocabulary. Never convert Simplified corpora into Taiwan data.",
+    "no_shortcuts": "Script, zh-tw tags, dataset size, stars and source overlap do not establish editorial quality.",
+    "ranking": "Source inclusion and typing frequency are separate decisions.",
+    "selection": "Systematic source/category rules only; no per-name lists or benchmark tuning.",
+    "legacy": "Replace decisions freeze the exact existing release; this records migration debt, not approval of source quality."
+  },
+  "sources": [
+    {
+      "id": "mcbopomofo",
+      "name": "McBopomofo",
+      "origin": "taiwan-traditional",
+      "decision": "retain",
+      "uses": [
+        "vocabulary",
+        "readings",
+        "frequency"
+      ],
+      "inputs": [
+        "third_party/mcbopomofo/BPMF*.txt",
+        "third_party/mcbopomofo/phrase.occ"
+      ],
+      "license": {
+        "id": "MIT",
+        "status": "verified",
+        "evidence": "https://github.com/openvanilla/McBopomofo/tree/3.1/Source/Data"
+      },
+      "evidence": [
+        "https://github.com/openvanilla/McBopomofo/tree/3.1/Source/Data"
+      ],
+      "editorial": "Maintained Taiwan input-method data with source readings and correction history.",
+      "coverage": "171,708 readings in current compiled base.",
+      "limitations": "Original data can still contain uncommon readings; name-unit concatenation is not verified pronunciation.",
+      "reason": "Retain the Taiwan input-method foundation.",
+      "addon_prefixes": []
+    },
+    {
+      "id": "rudy",
+      "name": "Rudy / OSM Taiwan POI",
+      "origin": "taiwan-community",
+      "decision": "retain",
+      "uses": [
+        "vocabulary",
+        "readings"
+      ],
+      "inputs": [
+        "third_party/rudy/extracted-names.json.gz",
+        "third_party/rudy/source.json"
+      ],
+      "license": {
+        "id": "ODbL-1.0",
+        "status": "verified",
+        "evidence": "https://rudymap.tw/"
+      },
+      "evidence": [
+        "https://rudymap.tw/"
+      ],
+      "editorial": "Locally maintained thematic mapping built on OSM contributions.",
+      "coverage": "Complete pinned normalized POI snapshot; existing sector/reading exclusions in rudy-manifest.",
+      "limitations": "Not all names have usable Mandarin readings; map presence is not typing frequency.",
+      "reason": "Preserve the high-quality geography source and separate ODbL pack.",
+      "addon_prefixes": []
+    },
+    {
+      "id": "aosp",
+      "name": "AOSP LatinIME English",
+      "origin": "english",
+      "decision": "retain",
+      "uses": [
+        "vocabulary",
+        "frequency"
+      ],
+      "inputs": [
+        "third_party/aosp/*.gz"
+      ],
+      "license": {
+        "id": "Apache-2.0",
+        "status": "verified",
+        "evidence": "https://android.googlesource.com/platform/packages/inputmethods/LatinIME/"
+      },
+      "evidence": [
+        "https://android.googlesource.com/platform/packages/inputmethods/LatinIME/"
+      ],
+      "editorial": "Upstream English keyboard lexicon; contractions retained.",
+      "coverage": "Current en_US corpus; existing spelling report records filters.",
+      "limitations": "English source, not evidence about Taiwan Chinese.",
+      "reason": "Retain English-specific source.",
+      "addon_prefixes": []
+    },
+    {
+      "id": "itaigi",
+      "name": "ChhoeTaigi iTaigi",
+      "origin": "taiwan-poj",
+      "decision": "retain",
+      "uses": [
+        "vocabulary",
+        "readings"
+      ],
+      "inputs": [
+        "third_party/itaigi/itaigi.csv"
+      ],
+      "license": {
+        "id": "CC0-1.0",
+        "status": "verified",
+        "evidence": "https://github.com/ChhoeTaigi/ChhoeTaigiDatabase"
+      },
+      "evidence": [
+        "https://github.com/ChhoeTaigi/ChhoeTaigiDatabase"
+      ],
+      "editorial": "Community contributions retain contributor IDs and original POJ fields.",
+      "coverage": "19,046 source records in pinned dataset description; compiled counts in existing manifest.",
+      "limitations": "Contributor quality varies; Mandarin gloss length filter limits coverage.",
+      "reason": "Retain original POJ and source attribution.",
+      "addon_prefixes": [
+        "itaigi:"
+      ]
+    },
+    {
+      "id": "taiwanese-basic",
+      "name": "Taiwanese beginner vocabulary",
+      "origin": "taiwan-poj",
+      "decision": "retain",
+      "uses": [
+        "vocabulary",
+        "readings"
+      ],
+      "inputs": [
+        "third_party/taiwanese_basic/vocabulary.csv"
+      ],
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/ChhoeTaigi/ChhoeTaigiDatabase"
+      },
+      "evidence": [
+        "https://github.com/ChhoeTaigi/ChhoeTaigiDatabase"
+      ],
+      "editorial": "Digitized authored beginner vocabulary, retaining source variants.",
+      "coverage": "5,429 source records; current short-expression import is narrower.",
+      "limitations": "Historical 1956 vocabulary is not a modern frequency sample.",
+      "reason": "Retain POJ; do not infer modern popularity.",
+      "addon_prefixes": [
+        "taiwanese-basic:"
+      ]
+    },
+    {
+      "id": "jmdict",
+      "name": "JMDICT",
+      "origin": "japanese",
+      "decision": "retain",
+      "uses": [
+        "vocabulary",
+        "readings"
+      ],
+      "inputs": [
+        "third_party/jmdict/*.tgz"
+      ],
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://www.edrdg.org/"
+      },
+      "evidence": [
+        "https://www.edrdg.org/"
+      ],
+      "editorial": "Maintained Japanese dictionaries with reading/spelling relationships and source metadata.",
+      "coverage": "Common expressions for JMdict; names/works/professions for JMnedict.",
+      "limitations": "Common flags are not a complete frequency model. jmdict-simplified denotes a JSON format, not Simplified Chinese.",
+      "reason": "Retain Japanese-specific sources.",
+      "addon_prefixes": [
+        "jmdict:"
+      ]
+    },
+    {
+      "id": "jmnedict",
+      "name": "JMNEDICT",
+      "origin": "japanese",
+      "decision": "retain",
+      "uses": [
+        "vocabulary",
+        "readings"
+      ],
+      "inputs": [
+        "third_party/jmnedict/*.tgz"
+      ],
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://www.edrdg.org/"
+      },
+      "evidence": [
+        "https://www.edrdg.org/"
+      ],
+      "editorial": "Maintained Japanese dictionaries with reading/spelling relationships and source metadata.",
+      "coverage": "Common expressions for JMdict; names/works/professions for JMnedict.",
+      "limitations": "Common flags are not a complete frequency model. jmdict-simplified denotes a JSON format, not Simplified Chinese.",
+      "reason": "Retain Japanese-specific sources.",
+      "addon_prefixes": [
+        "jmnedict:"
+      ]
+    },
+    {
+      "id": "wanakana",
+      "name": "WanaKana",
+      "origin": "tooling",
+      "decision": "retain",
+      "uses": [
+        "tooling"
+      ],
+      "inputs": [
+        "third_party/wanakana/*"
+      ],
+      "license": {
+        "id": "MIT",
+        "status": "verified",
+        "evidence": "https://github.com/WaniKani/WanaKana"
+      },
+      "evidence": [
+        "https://github.com/WaniKani/WanaKana"
+      ],
+      "editorial": "Kana romanization library.",
+      "coverage": "Build-time aliases.",
+      "limitations": "Does not establish vocabulary quality.",
+      "reason": "Retain language tooling.",
+      "addon_prefixes": []
+    },
+    {
+      "id": "cedict",
+      "name": "CC-CEDICT legacy Taiwan filter",
+      "origin": "mixed-chinese",
+      "decision": "replace",
+      "uses": [
+        "vocabulary",
+        "readings"
+      ],
+      "inputs": [
+        "third_party/cedict/cedict.txt.gz"
+      ],
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://www.mdbg.net/chinese/dictionary?page=cedict"
+      },
+      "evidence": [
+        "https://www.mdbg.net/chinese/dictionary?page=cedict"
+      ],
+      "editorial": "Global dictionary; current importer reads Traditional headwords and Taiwan-marked definitions.",
+      "coverage": "Legacy optional usage vocabulary plus inferred name readings.",
+      "limitations": "A Taiwan mention and Traditional spelling do not establish locally natural usage.",
+      "reason": "Freeze existing contribution pending Taiwan-authored replacement.",
+      "addon_prefixes": [
+        "cedict:"
+      ],
+      "replacement": "Replace usage vocabulary with locally authored lexicons; use Taiwan reading sources."
+    },
+    {
+      "id": "wikidata",
+      "name": "Wikidata legacy cultural labels",
+      "origin": "mixed-chinese",
+      "decision": "replace",
+      "uses": [
+        "vocabulary",
+        "discovery"
+      ],
+      "inputs": [
+        "third_party/wikidata/taiwan-*.json"
+      ],
+      "license": {
+        "id": "CC0-1.0",
+        "status": "verified",
+        "evidence": "https://www.wikidata.org/wiki/Wikidata:Licensing"
+      },
+      "evidence": [
+        "https://www.wikidata.org/wiki/Wikidata:Licensing"
+      ],
+      "editorial": "Global collaborative structured entity data.",
+      "coverage": "Legacy film/book/song queries are limited to 60 rows each.",
+      "limitations": "Locale fallback and citizenship gates distort wording and historical coverage.",
+      "reason": "Freeze existing contribution; use specialist authored catalogs for wording.",
+      "addon_prefixes": [
+        "wikidata:"
+      ],
+      "replacement": "Replace with cultural institutions and source-attested entity names."
+    },
+    {
+      "id": "taiwan-encyclopedia",
+      "name": "Wikipedia category-derived Taiwan pack",
+      "origin": "mixed-chinese",
+      "decision": "replace",
+      "uses": [
+        "vocabulary",
+        "discovery"
+      ],
+      "inputs": [
+        "third_party/taiwan_encyclopedia/*.gz",
+        "third_party/taiwan_encyclopedia/source.json"
+      ],
+      "license": {
+        "id": "CC-BY-SA-4.0 + CC0-1.0",
+        "status": "verified",
+        "evidence": "https://zh.wikipedia.org/"
+      },
+      "evidence": [
+        "https://zh.wikipedia.org/"
+      ],
+      "editorial": "Global article/category editing; Wikidata identity checks.",
+      "coverage": "15,228 pages within depth two; 12,458 total Taiwan outputs in 0.6.4.",
+      "limitations": "Categories are not editorial quality; zh-tw labels are not proof of Taiwan authorship or usage.",
+      "reason": "Freeze current data; stop treating volume and locale tags as quality.",
+      "addon_prefixes": [
+        "zhwiki:"
+      ],
+      "replacement": "Evaluate specialist Taiwan sources by sector before replacement."
+    },
+    {
+      "id": "opencc-python",
+      "name": "Legacy build-time OpenCC detector",
+      "origin": "tooling",
+      "decision": "replace",
+      "uses": [
+        "tooling"
+      ],
+      "inputs": [
+        "third_party/opencc_python/opencc/*.py",
+        "third_party/opencc_python/opencc/config/*.json",
+        "third_party/opencc_python/opencc/dictionary/*.txt"
+      ],
+      "license": {
+        "id": "Apache-2.0",
+        "status": "verified",
+        "evidence": "https://github.com/yichen0831/opencc-python"
+      },
+      "evidence": [
+        "https://github.com/yichen0831/opencc-python"
+      ],
+      "editorial": "Script-variant detector only in 0.6.4 importer.",
+      "coverage": "No converted candidate text is produced by the final 0.6.4 detector.",
+      "limitations": "Detecting unchanged spelling does not validate Taiwanese wording.",
+      "reason": "Freeze until replacing the mixed-source import path.",
+      "addon_prefixes": [],
+      "replacement": "Remove detector when original Taiwan name sources replace mixed-script titles."
+    },
+    {
+      "id": "rime-data",
+      "name": "Rime Luna / Essay / Prelude",
+      "origin": "mixed-traditional",
+      "decision": "replace",
+      "uses": [
+        "vocabulary",
+        "readings",
+        "frequency"
+      ],
+      "inputs": [
+        "third_party/rime/data-sources/*.zip",
+        "third_party/rime/data-sources/*.yaml",
+        "third_party/rime/data-sources/opencc/*"
+      ],
+      "license": {
+        "id": "LGPL-3.0 + Apache-2.0",
+        "status": "verified",
+        "evidence": "https://github.com/rime/rime-essay"
+      },
+      "evidence": [
+        "https://github.com/rime/rime-essay"
+      ],
+      "editorial": "Rime-maintained Traditional lexicon; Taiwan glyph-variant filter is t2tw.",
+      "coverage": "Native phrase and incomplete-input decoding.",
+      "limitations": "Frequency distribution is not Taiwan-specific; rare exact readings and inversion cases remain in GLYPHS.md.",
+      "reason": "Retain frozen native behavior during source evaluation; replacement requires broad ranking evidence.",
+      "addon_prefixes": [],
+      "replacement": "Benchmark Taiwan-authored native lexicon/frequency replacements separately from add-ons."
+    },
+    {
+      "id": "ud-context",
+      "name": "UD context training",
+      "origin": "mixed-traditional",
+      "decision": "replace",
+      "uses": [
+        "frequency",
+        "evaluation"
+      ],
+      "inputs": [
+        "third_party/ud/sources.json"
+      ],
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/UniversalDependencies/UD_Chinese-GSD"
+      },
+      "evidence": [
+        "https://github.com/UniversalDependencies/UD_Chinese-GSD"
+      ],
+      "editorial": "Wiki treebank, annotated/converted to UD; this does not itself mean script conversion.",
+      "coverage": "3,997 Chinese and 12,544 English training sentences in current context report.",
+      "limitations": "Annotation licence differs from underlying text rights; Chinese genre is not everyday Taiwan conversation.",
+      "reason": "Freeze model; keep train/dev/test roles distinct.",
+      "addon_prefixes": [],
+      "replacement": "Evaluate Taiwan conversational sources and their underlying rights before context retraining."
+    },
+    {
+      "id": "taicol",
+      "name": "TaiCOL Taiwan species",
+      "origin": "taiwan-specialist",
+      "decision": "pilot",
+      "uses": [
+        "vocabulary"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-4.0",
+        "status": "verified",
+        "evidence": "https://ipt.taibif.tw/resource?r=taibnet_com_all&v=1.13"
+      },
+      "evidence": [
+        "https://ipt.taibif.tw/resource?r=taibnet_com_all&v=1.13"
+      ],
+      "editorial": "Literature-linked taxonomy curated by specialist contributors.",
+      "coverage": "Full v1.13 archive audited: 111,267 taxon rows, 45,616 distinct Chinese name fields.",
+      "limitations": "Many taxa lack Chinese labels or Mandarin readings; synonyms and accepted taxa must be distinguished. No popularity weights.",
+      "reason": "First candidate for nature-sector replacement.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/sources/audit-2026-09-08/artifacts.json",
+        "docs/sources/audit-2026-09-08/cip.json.gz",
+        "docs/sources/audit-2026-09-08/fetch-errors.json.gz",
+        "docs/sources/audit-2026-09-08/kemdict-inventory.json.gz",
+        "docs/sources/audit-2026-09-08/measurements.json",
+        "docs/sources/audit-2026-09-08/music-catalog.json.gz",
+        "docs/sources/audit-2026-09-08/music-records.json.gz",
+        "docs/sources/audit-2026-09-08/sample-records.json.gz",
+        "docs/sources/audit-2026-09-08/taicol.zip",
+        "docs/sources/audit-2026-09-08/taiwan-md-inventory.json.gz",
+        "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz"
+      ]
+    },
+    {
+      "id": "kemdict-kisaragi",
+      "name": "如月的現代台灣華語補足典",
+      "origin": "taiwan-authored",
+      "decision": "pilot",
+      "uses": [
+        "vocabulary",
+        "readings"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC0-1.0",
+        "status": "verified",
+        "evidence": "https://github.com/kemdict/kemdict/tree/main/dicts/kisaragi"
+      },
+      "evidence": [
+        "https://github.com/kemdict/kemdict/tree/main/dicts/kisaragi"
+      ],
+      "editorial": "Authored observations of Taiwan Mandarin gaps; completed entries separate from Todo.",
+      "coverage": "346 completed entries; 314 with Zhuyin in fetched revision.",
+      "limitations": "Small and topical; colloquial and dated senses occur. Not a general frequency corpus.",
+      "reason": "Good local usage supplement; audit parser and full/partial lookup before import.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/sources/audit-2026-09-08/artifacts.json",
+        "docs/sources/audit-2026-09-08/cip.json.gz",
+        "docs/sources/audit-2026-09-08/fetch-errors.json.gz",
+        "docs/sources/audit-2026-09-08/kemdict-inventory.json.gz",
+        "docs/sources/audit-2026-09-08/measurements.json",
+        "docs/sources/audit-2026-09-08/music-catalog.json.gz",
+        "docs/sources/audit-2026-09-08/music-records.json.gz",
+        "docs/sources/audit-2026-09-08/sample-records.json.gz",
+        "docs/sources/audit-2026-09-08/taicol.zip",
+        "docs/sources/audit-2026-09-08/taiwan-md-inventory.json.gz",
+        "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz"
+      ]
+    },
+    {
+      "id": "taiwan-md",
+      "name": "Taiwan.md",
+      "origin": "taiwan-curated-ai-assisted",
+      "decision": "pilot",
+      "uses": [
+        "discovery",
+        "evaluation"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/frank890417/taiwan-md"
+      },
+      "evidence": [
+        "https://github.com/frank890417/taiwan-md"
+      ],
+      "editorial": "Taiwan-oriented editorial project with AI-assisted production and review metadata.",
+      "coverage": "1,110 topical article filenames; 104 stratified article samples inspected mechanically.",
+      "limitations": "104 frozen topical samples: 90 lastHumanReview:false, 14 true; 28 curation:incubating. These are metadata signals, not an accuracy verdict. Essays and explanatory titles are not a ready lexicon or a conversational frequency corpus.",
+      "reason": "Pilot source discovery and essay evaluation; reviewed prose has a separate role from conversational tests or production vocabulary.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/sources/audit-2026-09-08/artifacts.json",
+        "docs/sources/audit-2026-09-08/cip.json.gz",
+        "docs/sources/audit-2026-09-08/fetch-errors.json.gz",
+        "docs/sources/audit-2026-09-08/kemdict-inventory.json.gz",
+        "docs/sources/audit-2026-09-08/measurements.json",
+        "docs/sources/audit-2026-09-08/music-catalog.json.gz",
+        "docs/sources/audit-2026-09-08/music-records.json.gz",
+        "docs/sources/audit-2026-09-08/sample-records.json.gz",
+        "docs/sources/audit-2026-09-08/taicol.zip",
+        "docs/sources/audit-2026-09-08/taiwan-md-inventory.json.gz",
+        "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz"
+      ]
+    },
+    {
+      "id": "cip-tribes",
+      "name": "CIP Indigenous community names",
+      "origin": "taiwan-institutional",
+      "decision": "pilot",
+      "uses": [
+        "vocabulary"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "OGDL-1.0",
+        "status": "verified",
+        "evidence": "https://data.gov.tw/dataset/156632"
+      },
+      "evidence": [
+        "https://data.gov.tw/dataset/156632"
+      ],
+      "editorial": "Indigenous Peoples Council administrative community inventory with original romanization.",
+      "coverage": "739 records, 708 distinct name fields, 0 missing romanizations.",
+      "limitations": "Administrative recognition is not all historical settlements. Duplicate names and two truncated-looking fields need source-level handling.",
+      "reason": "Strong identity/romanization candidate; preserve community names and scripts.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/sources/audit-2026-09-08/artifacts.json",
+        "docs/sources/audit-2026-09-08/cip.json.gz",
+        "docs/sources/audit-2026-09-08/fetch-errors.json.gz",
+        "docs/sources/audit-2026-09-08/kemdict-inventory.json.gz",
+        "docs/sources/audit-2026-09-08/measurements.json",
+        "docs/sources/audit-2026-09-08/music-catalog.json.gz",
+        "docs/sources/audit-2026-09-08/music-records.json.gz",
+        "docs/sources/audit-2026-09-08/sample-records.json.gz",
+        "docs/sources/audit-2026-09-08/taicol.zip",
+        "docs/sources/audit-2026-09-08/taiwan-md-inventory.json.gz",
+        "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz"
+      ]
+    },
+    {
+      "id": "music-awards",
+      "name": "BAMID music awards catalogs",
+      "origin": "taiwan-institutional",
+      "decision": "pilot",
+      "uses": [
+        "vocabulary"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "OGDL-1.0",
+        "status": "verified",
+        "evidence": "https://opendata.culture.tw/frontsite/openData/detail?datasetId=581"
+      },
+      "evidence": [
+        "https://opendata.culture.tw/frontsite/openData/detail?datasetId=581"
+      ],
+      "editorial": "Official nomination and winner records; named people and works.",
+      "coverage": "80 linked CSVs; 5,456 rows, 8 schemas, editions 1-35; 3,196 distinct nonempty work fields. Catalog freshness does not imply current award coverage.",
+      "limitations": "Award selection omits much everyday and independent culture; artists, credits and song/album fields need separation.",
+      "reason": "Candidate for musicians/works; awards do not become frequency weights.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/sources/audit-2026-09-08/artifacts.json",
+        "docs/sources/audit-2026-09-08/cip.json.gz",
+        "docs/sources/audit-2026-09-08/fetch-errors.json.gz",
+        "docs/sources/audit-2026-09-08/kemdict-inventory.json.gz",
+        "docs/sources/audit-2026-09-08/measurements.json",
+        "docs/sources/audit-2026-09-08/music-catalog.json.gz",
+        "docs/sources/audit-2026-09-08/music-records.json.gz",
+        "docs/sources/audit-2026-09-08/sample-records.json.gz",
+        "docs/sources/audit-2026-09-08/taicol.zip",
+        "docs/sources/audit-2026-09-08/taiwan-md-inventory.json.gz",
+        "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz"
+      ]
+    },
+    {
+      "id": "tbdb",
+      "name": "Taiwan Biographical Database",
+      "origin": "taiwan-specialist",
+      "decision": "hold",
+      "uses": [
+        "discovery"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "unresolved",
+        "status": "unresolved",
+        "evidence": "https://tbdb.ntnu.edu.tw/"
+      },
+      "evidence": [
+        "https://tbdb.ntnu.edu.tw/"
+      ],
+      "editorial": "Academic historical person authority project; guide documents relation export.",
+      "coverage": "Historical periods and bulk denominator not verified in this audit.",
+      "limitations": "Public browsing/export does not establish a reusable bulk-data licence.",
+      "reason": "Promising historical identity source; obtain a reusable snapshot and terms first.",
+      "addon_prefixes": []
+    },
+    {
+      "id": "nmtl",
+      "name": "National Museum of Taiwan Literature databases",
+      "origin": "taiwan-specialist",
+      "decision": "hold",
+      "uses": [
+        "discovery"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "unresolved",
+        "status": "unresolved",
+        "evidence": "https://db.nmtl.gov.tw/site2/"
+      },
+      "evidence": [
+        "https://db.nmtl.gov.tw/site2/"
+      ],
+      "editorial": "Named specialist-authored literary entries and bibliographies.",
+      "coverage": "Authors, works and Japanese-era literature; whole inventory not downloaded.",
+      "limitations": "Source-specific reuse terms and bulk access unresolved; not a ready IME dictionary.",
+      "reason": "Prefer specialist names/works over broad category ancestry; establish dataset access first.",
+      "addon_prefixes": []
+    },
+    {
+      "id": "cultural-memory",
+      "name": "National Cultural Memory Bank / Taiwan encyclopedia",
+      "origin": "taiwan-institutional",
+      "decision": "hold",
+      "uses": [
+        "discovery"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "per-record",
+        "status": "unresolved",
+        "evidence": "https://tcmb.culture.tw/zh-tw/OpenApi"
+      },
+      "evidence": [
+        "https://tcmb.culture.tw/zh-tw/OpenApi"
+      ],
+      "editorial": "Institutional and community collections with source and rights metadata.",
+      "coverage": "Broad history/culture inventory; open API scope is narrower than the whole portal.",
+      "limitations": "Custom API requires a key; licences differ per object; image titles often do not name a lexical entity.",
+      "reason": "Evaluate compatible datasets individually, never scrape the whole portal into phrases.",
+      "addon_prefixes": []
+    },
+    {
+      "id": "moe-dictionaries",
+      "name": "MOE / Moedict dictionary data",
+      "origin": "taiwan-authored",
+      "decision": "reference",
+      "uses": [
+        "evaluation"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-ND-3.0-TW",
+        "status": "verified",
+        "evidence": "https://www.moedict.tw/about.html"
+      },
+      "evidence": [
+        "https://www.moedict.tw/about.html"
+      ],
+      "editorial": "Edited Taiwan dictionaries; revised and concise editions have different purposes.",
+      "coverage": "Large dictionary reference with original pronunciation fields.",
+      "limitations": "Historical/literary coverage is not modern frequency; ND text terms are not relicensed by a wrapper repository.",
+      "reason": "Use as a reference; establish permissible derivative use before adding an importer.",
+      "addon_prefixes": []
+    },
+    {
+      "id": "ud-gum-evaluation",
+      "name": "UD English GUM evaluation",
+      "origin": "english-multigenre",
+      "decision": "reference",
+      "uses": [
+        "evaluation"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "per-document; see upstream notice",
+        "status": "unresolved",
+        "evidence": "docs/conversation-ranking/corpus/gum-manifest.json"
+      },
+      "evidence": [
+        "https://github.com/UniversalDependencies/UD_English-GUM",
+        "docs/conversation-ranking/corpus/gum-manifest.json"
+      ],
+      "editorial": "Annotated multi-genre corpus with original document genre labels.",
+      "coverage": "Existing 1,285 sentence probes include 193 conversation and 60 essay rows.",
+      "limitations": "English only; genres vary in style and rights. Previously evaluated; not a fresh holdout. No production reuse approved here.",
+      "reason": "Reuse existing genre-separated regression evidence.",
+      "addon_prefixes": []
+    }
+  ]
+}

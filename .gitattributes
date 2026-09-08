@@ -31,3 +31,5 @@ docs/taiwan-quality/*.tsv -text
 third_party/taiwan_encyclopedia/** -text
 # Preserve upstream vendored bytes, including whitespace, for source hashes.
 third_party/opencc_python/** -text -whitespace
+sources/*.json text eol=lf
+docs/sources/**/*.json text eol=lf

@@ -6,6 +6,8 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from sources import require_sources
+require_sources('mcbopomofo','aosp')
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'third_party' / 'mcbopomofo'

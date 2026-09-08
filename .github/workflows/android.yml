@@ -15,6 +15,8 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
       - run: chmod +x gradlew
       - run: python3 tools/verify_assets.py
+      - run: python3 tools/sources.py check
+      - run: python3 -m unittest discover -s tools -p test_sources.py
       - run: ./gradlew :core:regression :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
       - uses: actions/upload-artifact@v4
         with:

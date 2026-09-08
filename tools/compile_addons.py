@@ -8,6 +8,8 @@ import csv, gzip, hashlib, json, re, tarfile, unicodedata, subprocess
 from collections import Counter, defaultdict
 from everyday_addons import append_everyday
 from taiwan_entities import append_entities
+from sources import require_sources
+require_sources('cedict','wikidata','taiwan-encyclopedia','opencc-python','itaigi','taiwanese-basic','jmdict','jmnedict','wanakana')
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / 'app/src/main/assets'

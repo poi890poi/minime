@@ -12,6 +12,8 @@ import sys
 import tempfile
 import zipfile
 from pathlib import Path
+from sources import require_sources
+require_sources('rime-data')
 
 ROOT=Path(__file__).resolve().parent.parent
 SOURCE=ROOT/'third_party/rime'

@@ -5,6 +5,8 @@ join unambiguous licensed McBopomofo units. Keep this ODbL-derived pack separate
 from CC-BY-SA language packs. No per-name article links are maintained.
 """
 from pathlib import Path
+from sources import require_sources
+require_sources('rudy','mcbopomofo')
 import collections,gzip,hashlib,io,json,re,shutil,sqlite3,unicodedata,zipfile,sys
 ROOT=Path(__file__).resolve().parent.parent
 SOURCE=ROOT/'third_party/rudy'

@@ -5,12 +5,18 @@ upstream corpus notices describe the underlying texts separately.
 """
 import gzip,json,hashlib,re,collections
 from pathlib import Path
+from sources import require_sources
+require_sources('ud-context')
 ROOT=Path(__file__).resolve().parent.parent
 src=ROOT/'third_party/ud'
+pins={r['path'].replace('\\','/'):r['sha256'] for r in json.loads((src/'sources.json').read_text(encoding='utf8'))}
 counts=collections.Counter(); totals={}
 for repo,prefix,lang in [('UD_English-EWT','en_ewt','en'),('UD_Chinese-GSD','zh_gsd','zh')]:
     path=src/repo/(prefix+'-ud-train.conllu.gz')
-    text=gzip.decompress(path.read_bytes()).decode('utf-8')
+    raw=gzip.decompress(path.read_bytes())
+    if hashlib.sha256(raw).hexdigest()!=pins[path.relative_to(src).as_posix()]:
+        raise ValueError('UD training input differs from pinned original: '+str(path))
+    text=raw.decode('utf-8')
     sentences=[x[9:] for x in text.splitlines() if x.startswith('# text = ')]
     totals[lang]=len(sentences)
     for sentence in sentences:
