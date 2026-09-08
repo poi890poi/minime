@@ -101,10 +101,11 @@ kana_values=sorted({kana['text'] for item in selected_japanese for kana in item[
 converted=json.loads(subprocess.check_output(['node',str(ROOT/'tools/romanize_kana.cjs')],input=json.dumps(kana_values,ensure_ascii=False).encode('utf-8')).decode('utf-8'))
 for item in selected_japanese:
     for kana in item['kana']:
-        key=converted[kana['text']].replace(' ', '').replace('・','');source='jmnedict:'+item['id']
+        roman=converted[kana['text']]['romaji'].replace(' ', '').replace('・','')
+        key=converted[kana['text']]['reading'];source='jmnedict:'+item['id']
         if not re.fullmatch("[a-z']+",key):skipped.append([source,kana['text'],'unsupported kana alias']);continue
         add('japanese',key,kana['text'],source,'taiwan_and_culture')
-        add('japanese',key,key,source,'taiwan_and_culture')
+        add('japanese',key,roman,source,'taiwan_and_culture')
         for name in item['kanji']:
             if '*' in kana['appliesToKanji'] or name['text'] in kana['appliesToKanji']:
                 add('japanese',key,name['text'],source,'taiwan_and_culture')

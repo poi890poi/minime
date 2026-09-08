@@ -58,10 +58,11 @@ def append_everyday(add, skipped):
             if not kana['common']: continue
             senses = [s for s in item['sense'] if set(s['partOfSpeech']) & {'exp', 'int'} and ('*' in s['appliesToKana'] or kana['text'] in s['appliesToKana'])]
             if not senses: continue
-            key = aliases[kana['text']].replace(' ', '').replace('・', '')
-            if not re.fullmatch("[a-z']{2,64}", key):
+            roman = aliases[kana['text']]['romaji'].replace(' ', '').replace('・', '')
+            key = aliases[kana['text']]['reading']
+            if not re.fullmatch("[a-z']{2,64}", roman):
                 skipped.append([source, kana['text'], 'unsupported everyday kana alias']); continue
-            for output in [kana['text'], key] + [k['text'] for k in item['kanji'] if k['common'] and ('*' in kana['appliesToKanji'] or k['text'] in kana['appliesToKanji']) and any('*' in s['appliesToKanji'] or k['text'] in s['appliesToKanji'] for s in senses)]:
+            for output in [kana['text'], roman] + [k['text'] for k in item['kanji'] if k['common'] and ('*' in kana['appliesToKanji'] or k['text'] in kana['appliesToKanji']) and any('*' in s['appliesToKanji'] or k['text'] in s['appliesToKanji'] for s in senses)]:
                 add('japanese', key, output, source, 'everyday_expressions'); accepted.add(output)
     counts['japanese_everyday_outputs'] = len(accepted)
     return counts
