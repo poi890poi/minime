@@ -32,7 +32,7 @@ public final class PanelSpaceTest extends InstrumentationTestCase {
         runTestOnUiThread(()-> {
             KeyboardView view=new KeyboardView(getInstrumentation().getTargetContext(),key->{},key->false,(path,caps)->{});
             CompositionEngine e=engine();e.start(false,false,false,false);
-            view.render(e,false,false,false,0,false,false,false,true,"Enter","");measure(view);
+            view.render(e,false,false,false,0,false,false,false,true,true,"Enter","");measure(view);
             assertEquals("No reserved blank band above idle toolbar",0,bounds(view,find(view,"Switch to English")).top);
         });
     }
@@ -42,9 +42,9 @@ public final class PanelSpaceTest extends InstrumentationTestCase {
                 Configuration config=new Configuration(getInstrumentation().getTargetContext().getResources().getConfiguration());config.orientation=orientation;
                 Context context=getInstrumentation().getTargetContext().createConfigurationContext(config);
                 KeyboardView view=new KeyboardView(context,key->{},key->false,(path,caps)->{});CompositionEngine e=engine();e.start(false,false,false,false);
-                view.render(e,false,false,false,0,false,false,false,true,"Enter","");measure(view);int height=view.getHeight();Rect space=bounds(view,find(view,"Space"));
+                view.render(e,false,false,false,0,false,false,false,true,true,"Enter","");measure(view);int height=view.getHeight();Rect space=bounds(view,find(view,"Space"));
                 for(int panel:new int[]{1,2}) {
-                    view.render(e,false,false,false,panel,false,false,false,true,"Enter","");measure(view);
+                    view.render(e,false,false,false,panel,false,false,false,true,true,"Enter","");measure(view);
                     assertEquals("Palette height remains fixed",height,view.getHeight());assertEquals(space.top,bounds(view,find(view,"Space")).top);
                     View category=find(view,panel==1?"Symbol category":"Emoji category");
                     assertEquals("Category controls replace the toolbar",0,bounds(view,category).top);

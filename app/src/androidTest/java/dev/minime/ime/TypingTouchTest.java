@@ -21,7 +21,7 @@ public final class TypingTouchTest extends InstrumentationTestCase {
                 public void enter() {} public void finish() {}
             },Learning.NONE);
             engine.start(false,false,false,false);
-            keyboard.render(engine,false,false,false,0,false,false,false,true,"Enter","");
+            keyboard.render(engine,false,false,false,0,false,false,false,true,true,"Enter","");
             int width=getInstrumentation().getTargetContext().getResources().getDisplayMetrics().widthPixels;
             keyboard.measure(View.MeasureSpec.makeMeasureSpec(width,View.MeasureSpec.EXACTLY),View.MeasureSpec.makeMeasureSpec(0,View.MeasureSpec.UNSPECIFIED));
             keyboard.layout(0,0,width,keyboard.getMeasuredHeight());test.run();

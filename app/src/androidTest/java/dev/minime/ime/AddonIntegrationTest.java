@@ -30,7 +30,7 @@ public final class AddonIntegrationTest extends ActivityInstrumentationTestCase2
             engine.dictionary(dictionary);engine.start(false,false,false,false);
             engine.addons(addon,Collections.singleton("poj"));probe[0].codePoints().forEach(engine::type);
             KeyboardView view=new KeyboardView(context,key->{},key->false,(path,caps)->{},Runnable::run);
-            view.render(engine,false,false,false,0,false,false,false,true,"Enter","");activity.setContentView(view);
+            view.render(engine,false,false,false,0,false,false,false,true,true,"Enter","");activity.setContentView(view);
             View candidate=find(view,"Candidate "+probe[1]);assertNotNull("POJ must be visible and selectable",candidate);
             candidate.performClick();assertEquals(probe[1],output.toString());assertEquals("",engine.raw());
         });

@@ -265,10 +265,10 @@ final class KeyboardView extends LinearLayout {
             width.setTextSize(14);row(height).addView(width);
         }
     }
-    void render(CompositionEngine engine,boolean zhuyin,boolean shifted,boolean caps,int panel,boolean numeric,boolean asciiPunctuation,boolean english,boolean allowLanguageSwitch,String enter,String loading) {
+    void render(CompositionEngine engine,boolean zhuyin,boolean shifted,boolean caps,int panel,boolean numeric,boolean asciiPunctuation,boolean english,boolean allowLanguageSwitch,boolean allowTrace,String enter,String loading) {
         if(candidateGesture && snapshotEngine==engine && snapshotComposition==engine.compositionId()) {
             // Do not remove a touched word or scroller between DOWN and UP/CANCEL.
-            afterCandidateGesture=()->render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,enter,loading);
+            afterCandidateGesture=()->render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading);
             return;
         }
         afterCandidateGesture=null;
@@ -299,7 +299,7 @@ final class KeyboardView extends LinearLayout {
         annotationRequested=showPhonetics || status.getVisibility()==VISIBLE;queueAnnotation();
         strip.setVisibility(panel==0?VISIBLE:GONE);
         if(candidates.isEmpty() || panel!=0)expanded=false;
-        traceEnabled=english && allowLanguageSwitch && !numeric && !zhuyin && panel==0 && !expanded;
+        traceEnabled=english && allowTrace && !numeric && !zhuyin && panel==0 && !expanded;
         traceCase=caps?2:shifted?1:0;
         StringBuilder presentation=new StringBuilder(mode).append(':').append(shifted).append(':').append(caps)
             .append(':').append(asciiPunctuation).append(':').append(allowLanguageSwitch).append(':').append(enter)
@@ -338,7 +338,7 @@ final class KeyboardView extends LinearLayout {
                 HorizontalScrollView currentScroll=candidateScroll;currentScroll.post(()->currentScroll.scrollTo(restoreScroll,0));
                 expandButton.setText(expanded?"⌃":"⌄");
                 expandButton.setContentDescription(expanded?"Collapse candidates":"Expand candidates");
-                expandButton.setOnClickListener(v->{expanded=!expanded;render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,enter,loading);});
+                expandButton.setOnClickListener(v->{expanded=!expanded;render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading);});
             } else {
                 strip.removeAllViews();candidateScroll=null;candidateWords=null;expandButton=null;
                 TextView chinese=plain("中",english?"LANGUAGE":"LAYOUT",48,1); chinese.setTextSize(23); ((SlideKey)chinese).icon(null);

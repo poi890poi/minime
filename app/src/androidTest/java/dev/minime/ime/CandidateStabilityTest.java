@@ -29,7 +29,7 @@ public final class CandidateStabilityTest extends ActivityInstrumentationTestCas
         engine.type('n');reply();render();
     }
     private void reply() {replies.get(replies.size()-1).accept(Collections.singletonList(new Candidate("一",false,1000)));}
-    private void render() {view.render(engine,false,false,false,0,false,false,false,true,"Enter","");}
+    private void render() {view.render(engine,false,false,false,0,false,false,false,true,true,"Enter","");}
     public void testBufferSurvivesLiteralAndUnavailablePredictions() throws Throwable {
         runTestOnUiThread(()-> {
             setup();android.widget.FrameLayout buffer=(android.widget.FrameLayout)view.compositionAnnotation();
@@ -68,7 +68,7 @@ public final class CandidateStabilityTest extends ActivityInstrumentationTestCas
     public void testOldChoiceCannotCrossEditorOrPrivateField() throws Throwable {
         runTestOnUiThread(()-> {
             setup();View old=find(view,"Candidate 一");
-            engine.start(false,true,true,true,true);view.render(engine,false,false,false,0,false,true,true,false,"Enter","");
+            engine.start(false,true,true,true,true);view.render(engine,false,false,false,0,false,true,true,false,false,"Enter","");
             assertNull(find(view,"Candidate 一"));old.performClick();assertEquals("",committed);
             engine.start(false,false,false,false);engine.type('n');render();
             assertNull("New composition cannot retain old results",find(view,"Candidate 一"));

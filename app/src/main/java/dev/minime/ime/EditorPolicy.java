@@ -4,7 +4,7 @@ import android.text.InputType;
 import android.view.inputmethod.EditorInfo;
 
 final class EditorPolicy {
-    final boolean secure, privateField, literal, numeric;
+    final boolean secure, privateField, literal, numeric, preferEnglish, literalEnglish;
     EditorPolicy(EditorInfo info) {
         int cls = info.inputType & InputType.TYPE_MASK_CLASS;
         int variation = info.inputType & InputType.TYPE_MASK_VARIATION;
@@ -13,10 +13,15 @@ final class EditorPolicy {
             || (cls == InputType.TYPE_CLASS_NUMBER && variation == InputType.TYPE_NUMBER_VARIATION_PASSWORD);
         numeric = cls == InputType.TYPE_CLASS_NUMBER || cls == InputType.TYPE_CLASS_PHONE || cls == InputType.TYPE_CLASS_DATETIME;
         privateField = secure || (info.imeOptions & EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING) != 0;
-        literal = secure || numeric || cls == InputType.TYPE_NULL || (cls == InputType.TYPE_CLASS_TEXT &&
+        // A text editor's assistance hints must not remove Chinese conversion.
+        literal = secure || numeric || cls == InputType.TYPE_NULL;
+        preferEnglish = cls == InputType.TYPE_CLASS_TEXT &&
             (variation == InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS || variation == InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS
-            || variation == InputType.TYPE_TEXT_VARIATION_URI || (info.inputType & InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS) != 0));
+            || variation == InputType.TYPE_TEXT_VARIATION_URI);
+        literalEnglish = preferEnglish || (cls == InputType.TYPE_CLASS_TEXT &&
+            (info.inputType & InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS) != 0);
     }
+    boolean literal(boolean english) { return literal || (english && literalEnglish); }
     static int action(EditorInfo info) {
         if ((info.imeOptions & EditorInfo.IME_FLAG_NO_ENTER_ACTION) != 0) return EditorInfo.IME_ACTION_NONE;
         if (info.actionLabel != null && info.actionId != 0) return info.actionId;

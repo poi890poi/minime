@@ -1,0 +1,30 @@
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+Input method dev.minime.ime/.MiniMeService: already enabled for user #0
+Input method dev.minime.ime/.MiniMeService selected for user #0
+
+dev.minime.ime.EditorIntegrationTest:.......
+dev.minime.ime.KeyboardInteractionTest:...
+Error in testCompositionSurvivesHideAndRestart:
+java.lang.AssertionError: Visible control missing: Space
+	at dev.minime.ime.KeyboardInteractionTest.node(KeyboardInteractionTest.java:86)
+	at dev.minime.ime.KeyboardInteractionTest.click(KeyboardInteractionTest.java:100)
+	at dev.minime.ime.KeyboardInteractionTest.testCompositionSurvivesHideAndRestart(KeyboardInteractionTest.java:494)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+..
+Test results for InstrumentationTestRunner=...........E..
+Time: 41.064
+
+FAILURES!!!
+Tests run: 13,  Failures: 0,  Errors: 1
+
+
+Input method com.samsung.android.honeyboard/.service.HoneyBoardService selected for user #0

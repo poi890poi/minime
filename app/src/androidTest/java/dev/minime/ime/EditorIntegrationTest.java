@@ -62,8 +62,27 @@ public final class EditorIntegrationTest extends ActivityInstrumentationTestCase
         }
         EditorInfo info=new EditorInfo(); info.inputType=InputType.TYPE_CLASS_TEXT; info.imeOptions=EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING;
         assertFalse(new EditorPolicy(info).secure); assertTrue(new EditorPolicy(info).privateField);
-        info.inputType=InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_URI; assertTrue(new EditorPolicy(info).literal);
+        info.inputType=InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_URI;
+        assertFalse(new EditorPolicy(info).literal); assertTrue(new EditorPolicy(info).literal(true));
         info.inputType=InputType.TYPE_CLASS_NUMBER; assertTrue(new EditorPolicy(info).numeric);
+    }
+    public void testTextHintsDoNotProhibitChineseConversion() {
+        for(int variation:new int[]{InputType.TYPE_TEXT_VARIATION_URI,InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS,InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS}) {
+            for(int hints:new int[]{0,InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS}) {
+                EditorInfo info=new EditorInfo();info.inputType=InputType.TYPE_CLASS_TEXT|variation|hints;
+                EditorPolicy policy=new EditorPolicy(info);
+                assertTrue(policy.preferEnglish);assertTrue(policy.literal(true));assertFalse(policy.literal(false));
+                assertFalse(policy.secure);assertFalse(policy.literal);
+            }
+        }
+        EditorInfo info=new EditorInfo();info.inputType=InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS;
+        info.imeOptions=EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING;
+        EditorPolicy policy=new EditorPolicy(info);
+        assertFalse(policy.preferEnglish);assertFalse(policy.literal(false));assertTrue(policy.literal(true));assertTrue(policy.privateField);
+        for(int type:new int[]{InputType.TYPE_NULL,InputType.TYPE_CLASS_NUMBER,InputType.TYPE_CLASS_PHONE,InputType.TYPE_CLASS_DATETIME,
+                InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD}) {
+            info.inputType=type;policy=new EditorPolicy(info);assertTrue(policy.literal(false));assertTrue(policy.literal(true));
+        }
     }
     public void testQueuedSelectionAcknowledgementsAndExternalMove() {
         SelectionState s=new SelectionState(); s.start(0,0);

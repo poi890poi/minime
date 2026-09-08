@@ -17,6 +17,7 @@ public final class MiniMeService extends InputMethodService {
     private String dictionaryStatus="Loading offline dictionary…";
     private EditorInfo editorInfo=new EditorInfo();
     private EditorPolicy policy=new EditorPolicy(editorInfo);
+    private boolean literalInput() { return policy.literal(english); }
     private final SelectionState selection=new SelectionState();
     private AddonDictionary addonDictionary=AddonDictionary.EMPTY;
     private AddonDictionary geographyDictionary=AddonDictionary.EMPTY;
@@ -64,9 +65,11 @@ public final class MiniMeService extends InputMethodService {
     }
     @Override public void onStartInput(EditorInfo attribute,boolean restarting) {
         super.onStartInput(attribute,restarting);
-        boolean resume=restarting && !engine.raw().isEmpty() && editorInfo.fieldId==attribute.fieldId
+        EditorPolicy nextPolicy=new EditorPolicy(attribute);
+        boolean sameField=restarting && editorInfo.fieldId==attribute.fieldId
             && java.util.Objects.equals(editorInfo.packageName,attribute.packageName) && editorInfo.inputType==attribute.inputType
-            && policy.privateField==new EditorPolicy(attribute).privateField && policy.literal==new EditorPolicy(attribute).literal
+            && policy.privateField==nextPolicy.privateField && literalInput()==nextPolicy.literal(english);
+        boolean resume=sameField && !engine.raw().isEmpty()
             && selection.owns(attribute.initialSelStart,attribute.initialSelEnd,engine.raw().length());
         if(resume) {
             InputConnection input=getCurrentInputConnection();
@@ -75,22 +78,24 @@ public final class MiniMeService extends InputMethodService {
             resume=owned!=null && engine.raw().contentEquals(owned)
                 && input.setComposingRegion(attribute.initialSelEnd-engine.raw().length(),attribute.initialSelEnd);
         }
-        editorInfo=attribute; policy=new EditorPolicy(attribute);
+        editorInfo=attribute; policy=nextPolicy;
         configureAddons();
         if(resume) {render();return;}
         zhuyin=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("zhuyin",false);
         decoder.rime(RimeBackend.enabled(this));
         if(RimeBackend.enabled(this))RimeBackend.load(this).whenComplete((loaded,error)->new Handler(Looper.getMainLooper()).post(()-> {
-            if(!destroyed && Boolean.TRUE.equals(loaded) && RimeBackend.enabled(this) && !english && !policy.literal && !engine.raw().isEmpty()) {
+            if(!destroyed && Boolean.TRUE.equals(loaded) && RimeBackend.enabled(this) && !english && !literalInput() && !engine.raw().isEmpty()) {
                 engine.refresh();render();
             }
         }));
         englishPunctuation=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_punctuation",false);
-        english=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_mode",false);
+        // Chrome may restart an empty editor after a commit. Keep an explicit
+        // language choice for that field rather than applying its default again.
+        if(!sameField)english=policy.preferEnglish || getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_mode",false);
         shift.reset(); panel=0;
         if(restarting) engine.abandon();
         selection.start(attribute.initialSelStart,attribute.initialSelEnd);
-        engine.start(zhuyin,policy.literal,policy.privateField,policy.secure || policy.numeric,english);
+        engine.start(zhuyin,literalInput(),policy.privateField,policy.secure || policy.numeric,english);
         engine.englishOptions(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_correction",false),
             getSharedPreferences("settings",MODE_PRIVATE).getBoolean("double_space_period",true));
         render();
@@ -122,7 +127,7 @@ public final class MiniMeService extends InputMethodService {
         }
         else if(english) {
             boolean upper=shift.upper();InputConnection input=getCurrentInputConnection();
-            shift.automatic(!policy.literal && input!=null && input.getCursorCapsMode(editorInfo.inputType)!=0);
+            shift.automatic(!literalInput() && input!=null && input.getCursorCapsMode(editorInfo.inputType)!=0);
             if(upper!=shift.upper())render();
         }
     }
@@ -130,9 +135,9 @@ public final class MiniMeService extends InputMethodService {
     @Override public void onDestroy() { destroyed=true;decoder.close(); super.onDestroy(); }
     private void render() {
         InputConnection input=getCurrentInputConnection();
-        shift.automatic(english && !policy.literal && input!=null && input.getCursorCapsMode(editorInfo.inputType)!=0);
-        if(keyboard!=null) keyboard.render(engine,zhuyin && !policy.literal && !english,shift.upper(),shift.locked(),panel,policy.numeric,
-            policy.literal || policy.numeric || english || englishPunctuation,english || policy.literal,!policy.literal && !policy.numeric,
+        shift.automatic(english && !literalInput() && input!=null && input.getCursorCapsMode(editorInfo.inputType)!=0);
+        if(keyboard!=null) keyboard.render(engine,zhuyin && !literalInput() && !english,shift.upper(),shift.locked(),panel,policy.numeric,
+            literalInput() || policy.numeric || english || englishPunctuation,english || literalInput(),!policy.literal && !policy.numeric,!literalInput(),
             EditorPolicy.enterLabel(editorInfo),ready ? "" : dictionaryStatus);
     }
     private boolean longKey(String value) {
@@ -154,7 +159,7 @@ public final class MiniMeService extends InputMethodService {
             case "DELETE": engine.backspace(); break;
             case "ENTER":
                 int action=EditorPolicy.action(editorInfo);
-                if(!policy.literal && !english && !engine.raw().isEmpty()) engine.confirm();
+                if(!literalInput() && !english && !engine.raw().isEmpty()) engine.confirm();
                 else engine.enter();
                 break;
             case "SYMBOLS": panel=panel==1?0:1; break;
@@ -164,7 +169,7 @@ public final class MiniMeService extends InputMethodService {
             case "LANGUAGE":
                 engine.confirm();english=!english;englishPunctuation=false;shift.reset();panel=0;
                 getSharedPreferences("settings",MODE_PRIVATE).edit().putBoolean("english_mode",english).putBoolean("english_punctuation",false).apply();
-                engine.start(zhuyin,policy.literal,policy.privateField,policy.secure || policy.numeric,english);
+                engine.start(zhuyin,literalInput(),policy.privateField,policy.secure || policy.numeric,english);
                 break;
             case "PUNCT_WIDTH":
                 englishPunctuation=!englishPunctuation;panel=0;

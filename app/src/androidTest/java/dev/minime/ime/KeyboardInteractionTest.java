@@ -534,6 +534,32 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         focus(activity.number); click("1"); click("2"); click("."); click("3");
         assertEquals("12.3",activity.number.getText().toString());
     }
+    public void testUrlAllowsChineseAndKeepsChoiceAcrossRestart() {
+        getInstrumentation().runOnMainSync(()->activity.url.setInputType(
+            android.text.InputType.TYPE_CLASS_TEXT|android.text.InputType.TYPE_TEXT_VARIATION_URI
+            |android.text.InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS));
+        focus(activity.url);node("Switch to Chinese").recycle();
+        type("ming");click("Space");assertEquals("ming ",activity.url.getText().toString());
+        getInstrumentation().runOnMainSync(()->activity.url.setText(""));
+        click("Switch to Chinese");
+        node("Switch to English").recycle();
+        getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.url));
+        node("Switch to English").recycle();
+        type("nihao");click("Space");assertEquals("你好",activity.url.getText().toString());
+        getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.url));
+        node("Switch to English").recycle();
+        click("Switch to English");type("ming");click("Space");assertEquals("你好ming ",activity.url.getText().toString());
+    }
+    public void testNoSuggestionsKeepsChineseConversionAndPrivatePolicy() {
+        getInstrumentation().runOnMainSync(()-> {
+            activity.text.setInputType(android.text.InputType.TYPE_CLASS_TEXT|android.text.InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+            activity.text.setImeOptions(android.view.inputmethod.EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING);
+            ((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text);
+        });
+        node("Switch to English").recycle();type("nihao");click("Space");expectText("你好");
+        click("Switch to English");type("pronun");
+        for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows())assertNull("No-suggestions English stays literal",find(w.getRoot(),"Candidate pronunciation"));
+    }
     private void focus(android.view.View view) {
         getInstrumentation().runOnMainSync(()-> {
             view.requestFocus(); ((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(view,InputMethodManager.SHOW_IMPLICIT);

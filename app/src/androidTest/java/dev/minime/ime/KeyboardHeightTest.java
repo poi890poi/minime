@@ -47,7 +47,7 @@ public final class KeyboardHeightTest extends InstrumentationTestCase {
         if(failure.get()!=null)throw failure.get();
     }
     private static void render(KeyboardView v,CompositionEngine e,boolean zh,boolean en,boolean numeric,int panel,String loading) {
-        v.render(e,zh,false,false,panel,numeric,en,en,!numeric,"Enter",loading);
+        v.render(e,zh,false,false,panel,numeric,en,en,!numeric,!numeric,"Enter",loading);
     }
     private static int measure(View v,int orientation) {
         int width=Math.round((orientation==Configuration.ORIENTATION_PORTRAIT?400:800)*v.getResources().getDisplayMetrics().density);

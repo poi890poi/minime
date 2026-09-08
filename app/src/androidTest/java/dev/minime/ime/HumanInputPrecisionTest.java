@@ -31,7 +31,7 @@ public final class HumanInputPrecisionTest extends InstrumentationTestCase {
             public void composing(String s) {} public void commit(String s) {} public void delete() {}
             public void enter() {} public void finish() {}
         },Learning.NONE);engine.start(false,false,false,false,english);
-        keyboard.render(engine,false,false,false,0,false,english,english,true,"Enter","");
+        keyboard.render(engine,false,false,false,0,false,english,english,true,true,"Enter","");
         host.setContentView(keyboard);assertTrue("Replay host is active and keyboard attached",!host.isFinishing() && !host.isDestroyed() && keyboard.isAttachedToWindow());
         int width=Math.round((orientation==Configuration.ORIENTATION_PORTRAIT?360:740)*density);
         keyboard.measure(View.MeasureSpec.makeMeasureSpec(width,View.MeasureSpec.EXACTLY),View.MeasureSpec.makeMeasureSpec(0,View.MeasureSpec.UNSPECIFIED));
