@@ -26,3 +26,8 @@ docs/dictionary-impact/*.tsv -text
 docs/speculation/*.json -text
 docs/glyph-ranking/*.json -text
 docs/glyph-ranking/*.txt text eol=lf
+docs/taiwan-quality/*.json -text
+docs/taiwan-quality/*.tsv -text
+third_party/taiwan_encyclopedia/** -text
+# Preserve upstream vendored bytes, including whitespace, for source hashes.
+third_party/opencc_python/** -text -whitespace

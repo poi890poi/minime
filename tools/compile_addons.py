@@ -7,6 +7,7 @@ from pathlib import Path
 import csv, gzip, hashlib, json, re, tarfile, unicodedata, subprocess
 from collections import Counter, defaultdict
 from everyday_addons import append_everyday
+from taiwan_entities import append_entities
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / 'app/src/main/assets'
@@ -47,14 +48,6 @@ def derived(word):
         else:return None
     return result
 
-# These tags are selection aids, not an assertion of encyclopedic completeness.
-categories=[('indigenous',r'aborigin|indigenous|Austronesian'),('history',r'massacre|uprising|incident|historical|dynasty|Japanese (rule|occupation)|colonial'),
- ('performers',r'\b(singer|actor|actress|artist|band|director|musician|performer)\b'),('mountains',r'\b(mountain|peak|range)\b'),
- ('rivers',r'\b(river|stream)\b'),('animals',r'\b(bird|mammal|butterfly|fish|deer|bear|frog|snake|species)\b'),
- ('plants',r'\b(tree|plant|flower|fern|orchid|bamboo)\b'),('beverages',r'\b(tea|beverage|drink|juice|beer|wine)\b'),
- ('foods',r'\b(food|dish|snack|cake|noodle|rice|soup|dumpling|tofu)\b'),('people',r'\b(politician|president|writer|poet|activist|born|b\.)'),
- ('places',r'\b(city|county|town|district|island|village|park|temple|station)\b')]
-
 cedict=gzip.open(ROOT/'third_party/cedict/cedict.txt.gz','rt',encoding='utf-8').read().splitlines()
 for num,line in enumerate(cedict,1):
     m=re.match(r'(\S+) \S+ \[([^]]+)\] /(.*)/$',line)
@@ -65,7 +58,9 @@ for num,line in enumerate(cedict,1):
     if parts and han(word):readings[word].add(tuple(parts))
     if not re.search(r'\bTaiwan(?:ese)?\b|\bFormosa\b|\(Tw\)',definition,re.I):continue
     if not parts or not han(word):skipped.append(['cedict',word,'unsupported reading or non-Han headword']);continue
-    category=next((c for c,pattern in categories if re.search(pattern,definition,re.I)),'taiwan_usage')
+    # A definition mentioning a president or plant does not make its headword
+    # a person or plant. Keep usage vocabulary separate from entity taxonomy.
+    category='taiwan_usage'
     chinese(word,parts,'cedict:line:'+str(num),category)
 
 # Wikidata supplies title identity; CC-CEDICT supplies only unambiguous reading units.
@@ -111,6 +106,7 @@ for item in selected_japanese:
                 add('japanese',key,name['text'],source,'taiwan_and_culture')
 
 everyday = append_everyday(add, skipped)
+encyclopedia = append_entities(add, readings, syllables)
 serialized='# pack\treading\toutput\tsource\tcategory\n'+''.join('\t'.join(r)+'\n' for r in sorted(rows))
 (ASSETS/'addons.tsv').write_bytes(serialized.encode('utf-8'))
 sources=[]
@@ -135,6 +131,10 @@ report=dict(format=1,orthography={'poj':'Pe̍h-ōe-jī; original PojUnicode/PojI
  poj_entries=provenance,skipped=skipped)
 report['romanizer']=json.loads((ROOT/'third_party/wanakana/source.json').read_text(encoding='utf-8'))
 report['everyday']=everyday
+report['taiwan_encyclopedia']=encyclopedia
+report['sources'].append(dict(file='third_party/taiwan_encyclopedia/snapshot.json.gz',url='https://zh.wikipedia.org/',license='CC-BY-SA-4.0',sha256=encyclopedia['snapshot_sha256']))
+report['sources'].append(dict(file='third_party/taiwan_encyclopedia/entity-types.json.gz',url='https://www.wikidata.org/',license='CC0-1.0',sha256=encyclopedia['entity_types_sha256']))
+report['sources'].append(dict(file='third_party/taiwan_encyclopedia/traditional-labels.json.gz',url='https://www.wikidata.org/',license='CC0-1.0',sha256=encyclopedia['traditional_labels_sha256']))
 report['selection_rules']={'poj':'All iTaigi expressions with 2-6 Han Mandarin labels and <=6 POJ syllables, plus all beginner headwords/variants and complete examples <=6 syllables; no Mandarin frequency eligibility gate','japanese':'JMdict source-common expression/interjection readings and compatible common spellings, plus JMnedict works, creative professions and Taiwan metadata; no entity allowlist'}
 (OUT/'source-manifest.json').write_bytes((json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
 print(json.dumps({k:v for k,v in report.items() if k in ('rows','outputs_by_pack','taiwan_category_outputs')},ensure_ascii=False,indent=2))

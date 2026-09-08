@@ -21,14 +21,26 @@ unambiguous McBopomofo units (MIT). These are not independently verified local
 pronunciations. The complete derived database is provided as geography.tsv under
 ODbL, separately from the other language packs. No map styles or contours are used.
 
-Taiwan language/culture · 2,353 indexed outputs
+Taiwan language/culture · 12,458 indexed outputs
 CC-CEDICT contributors via MDBG, CC BY-SA 4.0.
 https://www.mdbg.net/chinese/dictionary?page=cedict
 https://creativecommons.org/licenses/by-sa/4.0/
 Selection uses Taiwan/Taiwanese/Formosa/(Tw) source metadata. Explicit Taiwan
-pronunciation is preferred when supplied. Categories are heuristic tags, not an
-expert taxonomy or encyclopedic completeness claim. cedict:line:N is an automatic
-record identifier in the pinned archive.
+pronunciation is preferred when supplied. These entries are usage vocabulary,
+not an entity taxonomy. cedict:line:N identifies a record in the pinned archive.
+Chinese Wikipedia contributors, CC BY-SA 4.0, supply a separate paginated category
+graph for historical people, arts, science, events, indigenous topics, nature,
+food, beverages and cultural works. Source page IDs and snapshot hashes are retained.
+https://zh.wikipedia.org/
+https://github.com/poi890poi/minime/tree/codex/close-ime-gaps/docs/taiwan-quality
+The graph has explicit depth/frontier limits, follows hard and soft category
+redirects, and does not filter historical people by modern citizenship. Topic
+membership is not a popularity or identity-verification score. Readings derive
+from unambiguous CC-CEDICT/McBopomofo units; unresolved names are reported.
+OpenCC Python 0.1.7 (Apache 2.0) detects titles requiring script review. Changed
+titles require explicit Wikidata zh-tw/zh-hant labels; conversion is not guessed:
+https://github.com/yichen0831/opencc-python
+No proper-name vocabulary substitutions, individual name lists or scores are used.
 Wikidata (CC0) supplies film/book/song title identities from reproducible queries.
 https://www.wikidata.org/wiki/Wikidata:Licensing
 Title readings marked +cedict:derived use unambiguous dictionary units. Ambiguous
@@ -65,7 +77,7 @@ All compatible headwords, aligned variants and complete examples up to six
 syllables are eligible. Terminal example punctuation is omitted. This historical
 source contains dated vocabulary; inclusion does not establish modern popularity.
 
-CC-CEDICT/JMdict/JMnedict/beginner-derived data remains CC BY-SA 4.0; CC0 data retains
+Wikipedia/CC-CEDICT/JMdict/JMnedict/beginner-derived data remains CC BY-SA 4.0; CC0 data retains
 its public-domain dedication. Geography data remains ODbL. Code and datasets are
 separately licensed. Changes are filtering, normalization, aliases, dictionary-unit
 reading derivation and packaging. Personal learning remains separate and local.

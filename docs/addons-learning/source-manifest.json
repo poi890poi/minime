@@ -51,31 +51,79 @@
       "sha256": "16e9c0e20b08a6e46eeb3c49f8181f4973c1bd4a36a2bb6adf40eef39ab8c6a5",
       "license": "CC-BY-SA-4.0",
       "file": "third_party/taiwanese_basic/vocabulary.csv"
+    },
+    {
+      "file": "third_party/taiwan_encyclopedia/snapshot.json.gz",
+      "url": "https://zh.wikipedia.org/",
+      "license": "CC-BY-SA-4.0",
+      "sha256": "327fc1c8c71de87d677136061a96de94ca2703b21cd703b6f4be7ff4e4c0e7ea"
+    },
+    {
+      "file": "third_party/taiwan_encyclopedia/entity-types.json.gz",
+      "url": "https://www.wikidata.org/",
+      "license": "CC0-1.0",
+      "sha256": "cf665eabefbeef9b81f0babdbfcc9b5f4378eb0bcf8498065997cbb862559170"
+    },
+    {
+      "file": "third_party/taiwan_encyclopedia/traditional-labels.json.gz",
+      "url": "https://www.wikidata.org/",
+      "license": "CC0-1.0",
+      "sha256": "29b11df86928b8cea357889e79f43d5989b1a5d3d029edddd47548bbc8877955"
     }
   ],
-  "asset_sha256": "2a7129abc51917ab016f85bb8f905a01192715c6d73eedf25596257bd0204067",
-  "rows": 56869,
+  "asset_sha256": "57f4669a9f30fb2f552d31781807426321ec685797f341689b03f3b74376dab0",
+  "rows": 85845,
   "outputs_by_pack": {
-    "taiwan": 2353,
+    "taiwan": 12458,
     "poj": 20274,
     "japanese": 5757
   },
   "taiwan_category_outputs": {
-    "animals": 32,
-    "beverages": 10,
-    "books": 25,
-    "films": 28,
-    "foods": 39,
-    "history": 8,
-    "indigenous": 40,
-    "mountains": 10,
-    "people": 39,
-    "performers": 35,
-    "places": 202,
-    "plants": 11,
-    "rivers": 3,
-    "songs": 21,
-    "taiwan_usage": 1850
+    "animals": 540,
+    "animals+films": 3,
+    "animals+foods": 1,
+    "animals+foods+plants": 2,
+    "animals+indigenous": 1,
+    "animals+plants": 185,
+    "beverages": 12,
+    "beverages+books": 1,
+    "beverages+books+films+foods": 1,
+    "beverages+foods": 90,
+    "beverages+foods+plants": 2,
+    "beverages+plants": 2,
+    "books": 197,
+    "books+films": 25,
+    "books+films+songs": 1,
+    "books+history": 11,
+    "books+history+indigenous": 1,
+    "books+indigenous": 2,
+    "books+songs": 17,
+    "films": 750,
+    "films+history": 2,
+    "films+indigenous": 3,
+    "films+songs": 2,
+    "foods": 402,
+    "foods+history": 2,
+    "foods+indigenous": 1,
+    "foods+plants": 4,
+    "history": 649,
+    "history+indigenous": 30,
+    "history+indigenous+people": 4,
+    "history+people": 65,
+    "history+people+performers": 2,
+    "history+performers": 1,
+    "history+plants": 1,
+    "indigenous": 360,
+    "indigenous+people": 396,
+    "indigenous+people+performers": 117,
+    "indigenous+performers": 2,
+    "indigenous+songs": 1,
+    "people": 3416,
+    "people+performers": 672,
+    "performers": 1923,
+    "plants": 197,
+    "songs": 249,
+    "taiwan_usage": 2279
   },
   "poj_entries": [
     {
@@ -154139,6 +154187,168 @@
     "japanese_common_records": 22637,
     "japanese_expression_records": 590,
     "japanese_everyday_outputs": 1606
+  },
+  "taiwan_encyclopedia": {
+    "snapshot_sha256": "327fc1c8c71de87d677136061a96de94ca2703b21cd703b6f4be7ff4e4c0e7ea",
+    "entity_types_sha256": "cf665eabefbeef9b81f0babdbfcc9b5f4378eb0bcf8498065997cbb862559170",
+    "traditional_labels_sha256": "29b11df86928b8cea357889e79f43d5989b1a5d3d029edddd47548bbc8877955",
+    "category_counts": {
+      "performers": {
+        "source_entities": 4425,
+        "included": 2926,
+        "unsupported_script_or_length": 118,
+        "unresolved_script_or_name_variant": 162,
+        "category_topic_is_not_person": 472,
+        "unresolved_reading": 653,
+        "disambiguation_or_list_entity": 13,
+        "index_or_edition_title": 1,
+        "unresolved_person_identity": 80
+      },
+      "animals": {
+        "source_entities": 1305,
+        "included": 766,
+        "unresolved_reading": 383,
+        "disambiguation_or_list_entity": 6,
+        "unresolved_script_or_name_variant": 106,
+        "category_topic_is_not_person": 35,
+        "unsupported_script_or_length": 8,
+        "index_or_edition_title": 1
+      },
+      "people": {
+        "source_entities": 6490,
+        "included": 4768,
+        "unresolved_script_or_name_variant": 216,
+        "unresolved_reading": 1118,
+        "category_topic_is_not_person": 158,
+        "unsupported_script_or_length": 150,
+        "disambiguation_or_list_entity": 8,
+        "unresolved_person_identity": 72
+      },
+      "history": {
+        "source_entities": 1080,
+        "included": 769,
+        "unresolved_reading": 176,
+        "unresolved_script_or_name_variant": 64,
+        "unsupported_script_or_length": 49,
+        "disambiguation_or_list_entity": 18,
+        "index_or_edition_title": 4
+      },
+      "books": {
+        "source_entities": 613,
+        "included": 401,
+        "unresolved_script_or_name_variant": 32,
+        "category_topic_is_not_person": 34,
+        "unresolved_reading": 101,
+        "unsupported_script_or_length": 43,
+        "disambiguation_or_list_entity": 2
+      },
+      "beverages": {
+        "source_entities": 142,
+        "included": 112,
+        "unresolved_reading": 18,
+        "unsupported_script_or_length": 4,
+        "unresolved_script_or_name_variant": 7,
+        "category_topic_is_not_person": 1
+      },
+      "foods": {
+        "source_entities": 666,
+        "included": 520,
+        "unresolved_reading": 67,
+        "category_topic_is_not_person": 28,
+        "unsupported_script_or_length": 6,
+        "unresolved_script_or_name_variant": 43,
+        "disambiguation_or_list_entity": 2
+      },
+      "songs": {
+        "source_entities": 435,
+        "included": 261,
+        "unsupported_script_or_length": 63,
+        "unresolved_reading": 68,
+        "unresolved_script_or_name_variant": 29,
+        "category_topic_is_not_person": 8,
+        "disambiguation_or_list_entity": 4,
+        "index_or_edition_title": 2
+      },
+      "films": {
+        "source_entities": 1267,
+        "unsupported_script_or_length": 144,
+        "unresolved_reading": 215,
+        "included": 781,
+        "unresolved_script_or_name_variant": 122,
+        "disambiguation_or_list_entity": 5
+      },
+      "indigenous": {
+        "source_entities": 1349,
+        "included": 924,
+        "unresolved_reading": 273,
+        "unsupported_script_or_length": 101,
+        "unresolved_script_or_name_variant": 49,
+        "disambiguation_or_list_entity": 1,
+        "index_or_edition_title": 1
+      },
+      "plants": {
+        "source_entities": 712,
+        "included": 422,
+        "unresolved_script_or_name_variant": 99,
+        "disambiguation_or_list_entity": 1,
+        "unresolved_reading": 188,
+        "unsupported_script_or_length": 2
+      }
+    },
+    "unique_outputs_by_sector": {
+      "performers": 2711,
+      "animals": 732,
+      "people": 4666,
+      "history": 767,
+      "beverages": 108,
+      "foods": 505,
+      "songs": 259,
+      "books": 228,
+      "indigenous": 917,
+      "films": 779,
+      "plants": 392
+    },
+    "reading_policy": "Longest unambiguous existing CC-CEDICT/McBopomofo units. Tonal ambiguity may retain an unambiguous untoned Pinyin key, but no guessed Zhuyin is emitted. Readings are derived, not independently verified names.",
+    "normalization": "Preserve unchanged source titles. Where OpenCC s2tw would change a title, require an explicit Wikidata zh-tw/zh-hant label instead of applying conversion. Strip trailing disambiguator; retain 2-24 Han characters; omit index/edition titles. No guessed surname substitutions or name allowlists.",
+    "reading_sources": {
+      "app/src/main/assets/zh_tw.tsv": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+      "third_party/cedict/cedict.txt.gz": "cd81c0d253c82d4b1dc3ca2cfe4cd5fc46ca10b753743a80d783f3969ae11a23"
+    },
+    "opencc": {
+      "package": "opencc-python-reimplemented",
+      "version": "0.1.7",
+      "license": "Apache-2.0",
+      "files": {
+        "opencc/__init__.py": "9ee2882ab0156a817c928fa4800b38def0b7cbf5ff33b2c4c42294c3c0648f23",
+        "opencc/__main__.py": "dafcba671d01b7ba86222d9f9e2a96bb26f13a0fb5a3a2c53750b1cc560d5b6c",
+        "opencc/config/hk2s.json": "11d1001e56bf26f73a9bd4e88e63e064bbab421054701f22d948bb4d72e0a6cb",
+        "opencc/config/s2hk.json": "423ae690c62e0829044ce76cd5736667ff196562b06b1beedd60d1446bfd0ec9",
+        "opencc/config/s2t.json": "246f559aaf3756b280157f4eb2ab1dd22f31ebac2a9e0aafa2b4a99c1cb676ce",
+        "opencc/config/s2tw.json": "5eaf3d5138ad09ca34aae6b424c9928aaf870fcadd8495e4f8bd4172f57c3017",
+        "opencc/config/s2twp.json": "e2eeb094abf6ef8f1b75971110ab9b37471d19eb4d79b7cbe2dc7ce8eb46def1",
+        "opencc/config/t2hk.json": "2362f65edb9eb6627762e959ebb22e7c91a7260435e3135ecb7a21844ee913f8",
+        "opencc/config/t2s.json": "3848b420a86a7c5f79a796321029db6f9aaa534bc3a7a67b90fc66744d3030d0",
+        "opencc/config/t2tw.json": "0cb4078cd55c50892c8beeae79be73bbd4dc7c256b13c12f0aa6fe79f3436624",
+        "opencc/config/tw2s.json": "efefc6b3031f370558cb9f3a75c7940927d6849aa92512cd2896dffa4e1b9ce2",
+        "opencc/config/tw2sp.json": "ab8645dc184af734199701f09f515e68b5ef4f7f4fea20db79354c6fe6db33f2",
+        "opencc/dictionary/HKVariants.txt": "c3c93c35885902ba2b12a3235a7761b00fb2b027f36aa8314db2f6b6ad51d374",
+        "opencc/dictionary/HKVariantsPhrases.txt": "d790e9bcafd2610efc3c44db7d859d6882d2864ac43792fd13fd2825cb341192",
+        "opencc/dictionary/HKVariantsRev.txt": "2b4fdb5865703f1cf75d6e524e0b0d33733e9bb6f92df697cf1ad8fe27989619",
+        "opencc/dictionary/HKVariantsRevPhrases.txt": "c2da309afa7fdd9061f204664039d33b000a4dca0ecae4e7480dcbf9e20f658e",
+        "opencc/dictionary/JPVariants.txt": "7e998db5d6f437a605c901c9413ccd7505f8b2e1cd3f9e2dd84572d0af1d3fc0",
+        "opencc/dictionary/STCharacters.txt": "9207708da9f2e2a248f39c457b2fccad26ec42e7efaf47a860e6900464f4cac5",
+        "opencc/dictionary/STPhrases.txt": "a4de4d2471f73cdb7e5b1b22920139aa4e4bbb1ebeea8f1fc341f988aa75c586",
+        "opencc/dictionary/TSCharacters.txt": "6b5a0a799bea2bb22c001f635eaa3fc2904310f0c08addbff275477a80ecf09a",
+        "opencc/dictionary/TSPhrases.txt": "b2ef895dd4953b4bb77fc8ef8d26a2a9ca6d43a760ed9a1d767672cfafa6324f",
+        "opencc/dictionary/TWPhrases.txt": "2ac64976553b8dd1f8d308b699540716099c04238d175ff336f53ababed26f07",
+        "opencc/dictionary/TWPhrasesRev.txt": "85059c3722d6098a44db23d78ef583fb10e34002c5ea717ab738d3b170d48d14",
+        "opencc/dictionary/TWVariants.txt": "30e6f8395edbfdd74e293fd8b9c62105d787c849fbb208d2a7832eac696734d7",
+        "opencc/dictionary/TWVariantsRev.txt": "1ea2b90f85eea6a2c9440716beee3268c740408caa334aa890bb4a35833f1b72",
+        "opencc/dictionary/TWVariantsRevPhrases.txt": "bef60ceb4e57b6b062351406cb5d4644875574231d64787e03711317b7e773f3",
+        "opencc/NOTICE.txt": "afcbc6ee2d4fa9c2e9d5944b53ca05d3cc06bab6d082817c689bdfa33c38fcb0",
+        "opencc/opencc.py": "dfba0adb8ca2d07e9fc90aab9de38cc3830ed338fa51c6a1e408c71a916e65f9"
+      }
+    }
   },
   "selection_rules": {
     "poj": "All iTaigi expressions with 2-6 Han Mandarin labels and <=6 POJ syllables, plus all beginner headwords/variants and complete examples <=6 syllables; no Mandarin frequency eligibility gate",

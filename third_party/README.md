@@ -15,6 +15,11 @@ never entity allowlists. See [counts and limitations](../docs/addons-learning/RE
 - `jmdict`: CC BY-SA 4.0 common expressions/interjections and compatible common
   spellings from the pinned jmdict-simplified snapshot.
 - `wikidata`: CC0 title identities selected by recorded category queries.
+- `taiwan_encyclopedia`: Chinese Wikipedia category graph metadata, CC BY-SA 4.0.
+  Fully paginated visited categories with explicit depth/frontier and source hashes;
+  no per-person allowlist or modern-citizenship gate. See `docs/taiwan-quality`.
+- `opencc_python`: OpenCC Python 0.1.7, Apache 2.0; vendored build-time script
+  normalization for encyclopedia titles. No Taiwan word-substitution configuration.
 - `wanakana`: MIT, build-time kana Romanization; no runtime dependency.
 - `rudy`: OSM/Rudy POI geography, ODbL 1.0, kept in a separate derived database.
   The complete normalized thematic source snapshot is vendored for offline rebuilds;
