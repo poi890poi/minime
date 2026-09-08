@@ -1,0 +1,18 @@
+{
+  "inputs": 16208,
+  "group_counts": {
+    "missing-letter": 527,
+    "phrase-prefix": 8615,
+    "syllable": 424,
+    "syllable-prefix": 228,
+    "adjacent-key": 2108,
+    "transposed-letters": 925,
+    "phrase-initial": 1288,
+    "phrase-mixed": 1875,
+    "phrase-full": 1985
+  },
+  "source_sha256": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+  "input_sha256": "b12d09cec63b67c120426b537a3307e4677e959d4a97829758133bb7b6845eda",
+  "phrase_selection": "First 2000 distinct reading/output pairs by SHA256(first-choice-064 + reading + output); no frequency reference or complaint examples",
+  "reference_role": "Syllables and dictionary entries generate queries only. MOE/UD references judge output afterward; this is an audit, not independent sentence accuracy."
+}

@@ -365,6 +365,7 @@ public final class CompositionEngine {
                 for(Candidate c:addonMatches)if(c.incomplete)supplements.add(c);
             }
             Set<String> promoted=new HashSet<>();int partialPreviews=0;
+            List<Candidate> unrankedGlyphs=new ArrayList<>();
             for(Candidate c:supplements) {
                 if(!promoted.add(c.text) || c.text.equals(raw))continue;
                 int existing=-1;for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(c.text)) {existing=i;break;}
@@ -374,6 +375,13 @@ public final class CompositionEngine {
                 if(c.supplemental && existing>=0 && !candidates.get(existing).supplemental && dictionary!=null
                         && (dictionary.exactChinese(raw,bpmf,c.text)
                             || (candidates.get(existing).consumed==0 && c.text.codePointCount(0,c.text.length())==1)))continue;
+                // Static dictionaries supply identity/readings, not comparable
+                // glyph frequencies. A novel Han glyph must not outrank the
+                // decoder's established whole-input glyph alternatives either.
+                if(c.supplemental && existing<0 && hanGlyph(c.text) && candidates.stream().anyMatch(base->
+                        !base.supplemental && !base.literal && base.consumed==0 && hanGlyph(base.text))) {
+                    unrankedGlyphs.add(c);continue;
+                }
                 // One early alternate previews incomplete dictionary matches;
                 // the rest do not displace the primary decoder's whole first row.
                 if(c.incomplete)insertion=Math.max(insertion,Math.min(partialPreviews==0?3:9,candidates.size()));
@@ -382,6 +390,11 @@ public final class CompositionEngine {
                 if(existing>=0)candidates.remove(existing);
                 candidates.add(insertion++,value);
                 if(c.incomplete)partialPreviews++;
+            }
+            for(Candidate c:unrankedGlyphs) {
+                int after=1;
+                for(int i=1;i<candidates.size();i++)if(candidates.get(i).consumed==0 && hanGlyph(candidates.get(i).text))after=i+1;
+                candidates.add(after,c);
             }
             preferred=candidates.indexOf(defaultChoice);
             if(preferred==0 && !addonMatches.isEmpty() && candidates.size()>1 && !candidates.get(1).incomplete && conversionInput(bpmf) && !dictionary.validEnglishSpelling(raw)
@@ -393,6 +406,9 @@ public final class CompositionEngine {
                 for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
             }
         }
+    }
+    private static boolean hanGlyph(String text) {
+        return text.codePointCount(0,text.length())==1 && Character.UnicodeScript.of(text.codePointAt(0))==Character.UnicodeScript.HAN;
     }
     private boolean conversionInput(boolean bpmf) {
         return !bpmf && !literalField && !englishMode && dictionary!=null

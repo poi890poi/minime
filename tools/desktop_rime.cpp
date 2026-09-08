@@ -13,7 +13,8 @@
 struct Word {size_t end;std::string text;};
 int main(int argc,char** argv) {
     if(argc!=4 && argc!=5)return 2;
-    bool legacyOrder=!(argc==5 && std::string(argv[4])=="--natural-order");
+    bool auditAll=argc==5 && std::string(argv[4])=="--audit-all";
+    bool legacyOrder=!(argc==5 && (std::string(argv[4])=="--natural-order" || auditAll));
     _setmode(_fileno(stdout),_O_BINARY);
     auto dll=LoadLibraryA(argv[1]);if(!dll)return 3;
     auto entry=reinterpret_cast<RimeApi*(*)()>(GetProcAddress(dll,"rime_get_api"));if(!entry)return 4;
@@ -41,8 +42,8 @@ int main(int argc,char** argv) {
                     // A single fresh ASCII composition has no confirmed prefix.
                     if(ctx.composition.sel_start==0 && suffix>=0 && static_cast<size_t>(suffix)<input.size()) {
                         size_t end=input.size()-suffix;
-                        if(end==input.size() && full.size()<24) {full.push_back({end,texts[i]});ordered.push_back(full.back());}
-                        else if(end<input.size() && prefix.size()<12) {prefix.push_back({end,texts[i]});ordered.push_back(prefix.back());}
+                        if(end==input.size() && full.size()<(auditAll?100:24)) {full.push_back({end,texts[i]});ordered.push_back(full.back());}
+                        else if(end<input.size() && prefix.size()<(auditAll?100:12)) {prefix.push_back({end,texts[i]});ordered.push_back(prefix.back());}
                     }
                     api->free_context(&ctx);
                 }

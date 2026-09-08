@@ -1,0 +1,77 @@
+{
+  "records": 21044,
+  "changed_records": 607,
+  "before_sha256": "c0eb5f619e4004df7c53e619d4fb626b01a3c63a6a6ec8e76eb85907f1e6a948",
+  "after_sha256": "e667f8d76094ee45440ba97ac4f225bdcd9c26400154914d3b0034ff14586105",
+  "english": {
+    "fresh_tokens": 43411,
+    "primed_tokens": 43411,
+    "english_tokens": 43411
+  },
+  "chinese": {
+    "zh-dev-full": {
+      "n": 1000,
+      "before_top1": 709,
+      "before_top8": 923,
+      "after_top1": 709,
+      "after_top8": 925
+    },
+    "zh-dev-initial": {
+      "n": 1000,
+      "before_top1": 78,
+      "before_top8": 317,
+      "after_top1": 78,
+      "after_top8": 319
+    },
+    "zh-dev-mixed-left": {
+      "n": 1000,
+      "before_top1": 339,
+      "before_top8": 732,
+      "after_top1": 339,
+      "after_top8": 734
+    },
+    "zh-dev-mixed-right": {
+      "n": 1000,
+      "before_top1": 323,
+      "before_top8": 633,
+      "after_top1": 323,
+      "after_top8": 635
+    },
+    "zh-test-full": {
+      "n": 1000,
+      "before_top1": 703,
+      "before_top8": 932,
+      "after_top1": 703,
+      "after_top8": 933
+    },
+    "zh-test-initial": {
+      "n": 1000,
+      "before_top1": 72,
+      "before_top8": 307,
+      "after_top1": 72,
+      "after_top8": 309
+    },
+    "zh-test-mixed-left": {
+      "n": 1000,
+      "before_top1": 332,
+      "before_top8": 728,
+      "after_top1": 332,
+      "after_top8": 729
+    },
+    "zh-test-mixed-right": {
+      "n": 1000,
+      "before_top1": 306,
+      "before_top8": 643,
+      "after_top1": 306,
+      "after_top8": 645
+    },
+    "moe-glyph": {
+      "n": 999,
+      "before_top1": 217,
+      "before_top8": 727,
+      "after_top1": 217,
+      "after_top8": 734
+    }
+  },
+  "acceptance_changes": []
+}
