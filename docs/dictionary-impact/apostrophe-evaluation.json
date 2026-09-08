@@ -1,0 +1,4711 @@
+{
+  "unrestricted-rejected": {
+    "records": 21044,
+    "before_sha256": "0713c4f45596eecce039bbc5d512e2eb70de93aa8800d5e96d3bc4d265918d93",
+    "after_sha256": "f254dd0aab5513a009485563ef118cc99caf00387aacfe02177fc333f4b13a59",
+    "english": {
+      "tokens": 130233,
+      "changed": 204
+    },
+    "chinese": {
+      "zh-dev-full": {
+        "n": 1000,
+        "before_top1": 709,
+        "after_top1": 657,
+        "before_top8": 924,
+        "after_top8": 921,
+        "space_changes": 0
+      },
+      "zh-dev-initial": {
+        "n": 1000,
+        "before_top1": 78,
+        "after_top1": 35,
+        "before_top8": 203,
+        "after_top8": 147,
+        "space_changes": 21
+      },
+      "zh-dev-mixed-left": {
+        "n": 1000,
+        "before_top1": 341,
+        "after_top1": 311,
+        "before_top8": 754,
+        "after_top8": 751,
+        "space_changes": 3
+      },
+      "zh-dev-mixed-right": {
+        "n": 1000,
+        "before_top1": 323,
+        "after_top1": 320,
+        "before_top8": 655,
+        "after_top8": 655,
+        "space_changes": 0
+      },
+      "zh-test-full": {
+        "n": 1000,
+        "before_top1": 703,
+        "after_top1": 647,
+        "before_top8": 929,
+        "after_top8": 925,
+        "space_changes": 0
+      },
+      "zh-test-initial": {
+        "n": 1000,
+        "before_top1": 72,
+        "after_top1": 36,
+        "before_top8": 213,
+        "after_top8": 161,
+        "space_changes": 24
+      },
+      "zh-test-mixed-left": {
+        "n": 1000,
+        "before_top1": 334,
+        "after_top1": 304,
+        "before_top8": 736,
+        "after_top8": 732,
+        "space_changes": 2
+      },
+      "zh-test-mixed-right": {
+        "n": 1000,
+        "before_top1": 306,
+        "after_top1": 304,
+        "before_top8": 658,
+        "after_top8": 658,
+        "space_changes": 0
+      },
+      "moe-glyph": {
+        "n": 999,
+        "before_top1": 217,
+        "after_top1": 89,
+        "before_top8": 703,
+        "after_top8": 690,
+        "space_changes": 0
+      }
+    },
+    "changes": [
+      {
+        "group": "en-dev",
+        "id": "28",
+        "mode": "fresh",
+        "raw": "qaida",
+        "before": "去挨打",
+        "after": "qa'ida"
+      },
+      {
+        "group": "en-dev",
+        "id": "28",
+        "mode": "fresh",
+        "raw": "qaida",
+        "before": "去挨打",
+        "after": "qa'ida"
+      },
+      {
+        "group": "en-dev",
+        "id": "28",
+        "mode": "primed",
+        "raw": "qaida",
+        "before": "去挨打",
+        "after": "qa'ida"
+      },
+      {
+        "group": "en-dev",
+        "id": "28",
+        "mode": "primed",
+        "raw": "qaida",
+        "before": "去挨打",
+        "after": "qa'ida"
+      },
+      {
+        "group": "en-dev",
+        "id": "28",
+        "mode": "english",
+        "raw": "qaida",
+        "before": "qaida",
+        "after": "qa'ida"
+      },
+      {
+        "group": "en-dev",
+        "id": "28",
+        "mode": "english",
+        "raw": "qaida",
+        "before": "qaida",
+        "after": "qa'ida"
+      },
+      {
+        "group": "en-dev",
+        "id": "35",
+        "mode": "fresh",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "35",
+        "mode": "primed",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "35",
+        "mode": "english",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "203",
+        "mode": "fresh",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "203",
+        "mode": "primed",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "203",
+        "mode": "english",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "221",
+        "mode": "fresh",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "221",
+        "mode": "primed",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "221",
+        "mode": "english",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "222",
+        "mode": "fresh",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "222",
+        "mode": "fresh",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "222",
+        "mode": "primed",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "222",
+        "mode": "primed",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "222",
+        "mode": "english",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "222",
+        "mode": "english",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-dev",
+        "id": "302",
+        "mode": "fresh",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-dev",
+        "id": "302",
+        "mode": "primed",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-dev",
+        "id": "302",
+        "mode": "english",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-dev",
+        "id": "544",
+        "mode": "fresh",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-dev",
+        "id": "544",
+        "mode": "primed",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-dev",
+        "id": "544",
+        "mode": "english",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-dev",
+        "id": "855",
+        "mode": "fresh",
+        "raw": "fms",
+        "before": "分明是",
+        "after": "fm's"
+      },
+      {
+        "group": "en-dev",
+        "id": "855",
+        "mode": "primed",
+        "raw": "fms",
+        "before": "分明是",
+        "after": "fm's"
+      },
+      {
+        "group": "en-dev",
+        "id": "855",
+        "mode": "english",
+        "raw": "fms",
+        "before": "fms",
+        "after": "fm's"
+      },
+      {
+        "group": "en-dev",
+        "id": "911",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "911",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "911",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1021",
+        "mode": "fresh",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1021",
+        "mode": "primed",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1021",
+        "mode": "english",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1083",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1083",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1083",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1088",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1088",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1088",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1152",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1152",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1152",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1220",
+        "mode": "fresh",
+        "raw": "blacks",
+        "before": "blacks",
+        "after": "black's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1220",
+        "mode": "primed",
+        "raw": "blacks",
+        "before": "blacks",
+        "after": "black's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1220",
+        "mode": "english",
+        "raw": "blacks",
+        "before": "blacks",
+        "after": "black's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1263",
+        "mode": "fresh",
+        "raw": "cockatiels",
+        "before": "從此卡鐵嶺市",
+        "after": "cockatiel's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1263",
+        "mode": "primed",
+        "raw": "cockatiels",
+        "before": "從此卡鐵嶺市",
+        "after": "cockatiel's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1263",
+        "mode": "english",
+        "raw": "cockatiels",
+        "before": "cockatiels",
+        "after": "cockatiel's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1276",
+        "mode": "fresh",
+        "raw": "valentines",
+        "before": "valentines",
+        "after": "valentine's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1276",
+        "mode": "primed",
+        "raw": "valentines",
+        "before": "valentines",
+        "after": "valentine's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1276",
+        "mode": "english",
+        "raw": "valentines",
+        "before": "valentines",
+        "after": "valentine's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1289",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1289",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1289",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1311",
+        "mode": "fresh",
+        "raw": "anothers",
+        "before": "按嘔吐赫爾松",
+        "after": "another's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1311",
+        "mode": "primed",
+        "raw": "anothers",
+        "before": "按嘔吐赫爾松",
+        "after": "another's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1311",
+        "mode": "english",
+        "raw": "anothers",
+        "before": "anothers",
+        "after": "another's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1331",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1331",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1331",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1337",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1337",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1337",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1417",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1417",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1417",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1419",
+        "mode": "fresh",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1419",
+        "mode": "primed",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1419",
+        "mode": "english",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1420",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1420",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1420",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1698",
+        "mode": "fresh",
+        "raw": "barrys",
+        "before": "吧如人飲水",
+        "after": "barry's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1698",
+        "mode": "primed",
+        "raw": "barrys",
+        "before": "吧如人飲水",
+        "after": "barry's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1698",
+        "mode": "english",
+        "raw": "barrys",
+        "before": "barrys",
+        "after": "barry's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1704",
+        "mode": "fresh",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1704",
+        "mode": "primed",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1704",
+        "mode": "english",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1713",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1713",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1713",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1818",
+        "mode": "fresh",
+        "raw": "hancocks",
+        "before": "汗從此開始",
+        "after": "hancock's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1818",
+        "mode": "primed",
+        "raw": "hancocks",
+        "before": "汗從此開始",
+        "after": "hancock's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1818",
+        "mode": "english",
+        "raw": "hancocks",
+        "before": "hancocks",
+        "after": "hancock's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1974",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1974",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1974",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "106",
+        "mode": "fresh",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-test",
+        "id": "106",
+        "mode": "primed",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-test",
+        "id": "106",
+        "mode": "english",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-test",
+        "id": "110",
+        "mode": "fresh",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-test",
+        "id": "110",
+        "mode": "primed",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-test",
+        "id": "110",
+        "mode": "english",
+        "raw": "shiite",
+        "before": "shiite",
+        "after": "shi'ite"
+      },
+      {
+        "group": "en-test",
+        "id": "410",
+        "mode": "fresh",
+        "raw": "ss",
+        "before": "算是",
+        "after": "s's"
+      },
+      {
+        "group": "en-test",
+        "id": "410",
+        "mode": "primed",
+        "raw": "ss",
+        "before": "算是",
+        "after": "s's"
+      },
+      {
+        "group": "en-test",
+        "id": "410",
+        "mode": "english",
+        "raw": "ss",
+        "before": "ss",
+        "after": "s's"
+      },
+      {
+        "group": "en-test",
+        "id": "652",
+        "mode": "fresh",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-test",
+        "id": "652",
+        "mode": "primed",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-test",
+        "id": "652",
+        "mode": "english",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-test",
+        "id": "854",
+        "mode": "fresh",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-test",
+        "id": "854",
+        "mode": "primed",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-test",
+        "id": "854",
+        "mode": "english",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-test",
+        "id": "924",
+        "mode": "fresh",
+        "raw": "sheeps",
+        "before": "適合恩平市",
+        "after": "sheep's"
+      },
+      {
+        "group": "en-test",
+        "id": "924",
+        "mode": "primed",
+        "raw": "sheeps",
+        "before": "適合恩平市",
+        "after": "sheep's"
+      },
+      {
+        "group": "en-test",
+        "id": "924",
+        "mode": "english",
+        "raw": "sheeps",
+        "before": "sheeps",
+        "after": "sheep's"
+      },
+      {
+        "group": "en-test",
+        "id": "1083",
+        "mode": "fresh",
+        "raw": "es",
+        "before": "es",
+        "after": "e's"
+      },
+      {
+        "group": "en-test",
+        "id": "1083",
+        "mode": "primed",
+        "raw": "es",
+        "before": "es",
+        "after": "e's"
+      },
+      {
+        "group": "en-test",
+        "id": "1083",
+        "mode": "english",
+        "raw": "es",
+        "before": "es",
+        "after": "e's"
+      },
+      {
+        "group": "en-test",
+        "id": "1145",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1145",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1145",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1161",
+        "mode": "fresh",
+        "raw": "theyre",
+        "before": "他和預熱",
+        "after": "they're"
+      },
+      {
+        "group": "en-test",
+        "id": "1161",
+        "mode": "primed",
+        "raw": "theyre",
+        "before": "他和預熱",
+        "after": "they're"
+      },
+      {
+        "group": "en-test",
+        "id": "1161",
+        "mode": "english",
+        "raw": "theyre",
+        "before": "theyre",
+        "after": "they're"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "fresh",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "won't"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "primed",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "won't"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "english",
+        "raw": "wont",
+        "before": "wont",
+        "after": "won't"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1206",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1206",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1206",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1218",
+        "mode": "fresh",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1218",
+        "mode": "primed",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1218",
+        "mode": "english",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1222",
+        "mode": "fresh",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1222",
+        "mode": "primed",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1222",
+        "mode": "english",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1320",
+        "mode": "fresh",
+        "raw": "thatd",
+        "before": "挺好啊他的",
+        "after": "that'd"
+      },
+      {
+        "group": "en-test",
+        "id": "1320",
+        "mode": "primed",
+        "raw": "thatd",
+        "before": "挺好啊他的",
+        "after": "that'd"
+      },
+      {
+        "group": "en-test",
+        "id": "1320",
+        "mode": "english",
+        "raw": "thatd",
+        "before": "thatd",
+        "after": "that'd"
+      },
+      {
+        "group": "en-test",
+        "id": "1326",
+        "mode": "fresh",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "won't"
+      },
+      {
+        "group": "en-test",
+        "id": "1326",
+        "mode": "primed",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "won't"
+      },
+      {
+        "group": "en-test",
+        "id": "1326",
+        "mode": "english",
+        "raw": "wont",
+        "before": "wont",
+        "after": "won't"
+      },
+      {
+        "group": "en-test",
+        "id": "1327",
+        "mode": "fresh",
+        "raw": "shes",
+        "before": "設施",
+        "after": "she's"
+      },
+      {
+        "group": "en-test",
+        "id": "1327",
+        "mode": "primed",
+        "raw": "shes",
+        "before": "設施",
+        "after": "she's"
+      },
+      {
+        "group": "en-test",
+        "id": "1327",
+        "mode": "english",
+        "raw": "shes",
+        "before": "shes",
+        "after": "she's"
+      },
+      {
+        "group": "en-test",
+        "id": "1342",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1342",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1342",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1374",
+        "mode": "fresh",
+        "raw": "heres",
+        "before": "heres",
+        "after": "here's"
+      },
+      {
+        "group": "en-test",
+        "id": "1374",
+        "mode": "primed",
+        "raw": "heres",
+        "before": "heres",
+        "after": "here's"
+      },
+      {
+        "group": "en-test",
+        "id": "1374",
+        "mode": "english",
+        "raw": "heres",
+        "before": "heres",
+        "after": "here's"
+      },
+      {
+        "group": "en-test",
+        "id": "1375",
+        "mode": "fresh",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-test",
+        "id": "1375",
+        "mode": "primed",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-test",
+        "id": "1375",
+        "mode": "english",
+        "raw": "ps",
+        "before": "ps",
+        "after": "p's"
+      },
+      {
+        "group": "en-test",
+        "id": "1417",
+        "mode": "fresh",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "won't"
+      },
+      {
+        "group": "en-test",
+        "id": "1417",
+        "mode": "primed",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "won't"
+      },
+      {
+        "group": "en-test",
+        "id": "1417",
+        "mode": "english",
+        "raw": "wont",
+        "before": "wont",
+        "after": "won't"
+      },
+      {
+        "group": "en-test",
+        "id": "1428",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-test",
+        "id": "1428",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-test",
+        "id": "1428",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-test",
+        "id": "1486",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1486",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1486",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1549",
+        "mode": "fresh",
+        "raw": "sams",
+        "before": "sams",
+        "after": "sam's"
+      },
+      {
+        "group": "en-test",
+        "id": "1549",
+        "mode": "primed",
+        "raw": "sams",
+        "before": "sams",
+        "after": "sam's"
+      },
+      {
+        "group": "en-test",
+        "id": "1549",
+        "mode": "english",
+        "raw": "sams",
+        "before": "sams",
+        "after": "sam's"
+      },
+      {
+        "group": "en-test",
+        "id": "1604",
+        "mode": "fresh",
+        "raw": "mens",
+        "before": "mens",
+        "after": "men's"
+      },
+      {
+        "group": "en-test",
+        "id": "1604",
+        "mode": "primed",
+        "raw": "mens",
+        "before": "mens",
+        "after": "men's"
+      },
+      {
+        "group": "en-test",
+        "id": "1604",
+        "mode": "english",
+        "raw": "mens",
+        "before": "mens",
+        "after": "men's"
+      },
+      {
+        "group": "en-test",
+        "id": "1609",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1609",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1609",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1647",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1647",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1647",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1729",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1729",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1729",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1885",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1885",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1885",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1909",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1909",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1909",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1941",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1941",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1941",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "2020",
+        "mode": "fresh",
+        "raw": "doesnt",
+        "before": "竇娥仕女圖",
+        "after": "doesn't"
+      },
+      {
+        "group": "en-test",
+        "id": "2020",
+        "mode": "primed",
+        "raw": "doesnt",
+        "before": "竇娥仕女圖",
+        "after": "doesn't"
+      },
+      {
+        "group": "en-test",
+        "id": "2020",
+        "mode": "english",
+        "raw": "doesnt",
+        "before": "doesnt",
+        "after": "doesn't"
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "多少",
+        "raw": "ds",
+        "expected": "多少",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "逝世",
+        "raw": "ss",
+        "expected": "逝世",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "打算",
+        "raw": "ds",
+        "expected": "打算",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "瑞士",
+        "raw": "rs",
+        "expected": "瑞士",
+        "before": "人生",
+        "after": "r's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "第四",
+        "raw": "ds",
+        "expected": "第四",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "電視",
+        "raw": "ds",
+        "expected": "電視",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "史詩",
+        "raw": "ss",
+        "expected": "史詩",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "世俗",
+        "raw": "ss",
+        "expected": "世俗",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "賽事",
+        "raw": "ss",
+        "expected": "賽事",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "失事",
+        "raw": "ss",
+        "expected": "失事",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-dev-mixed-left",
+        "id": "和聲",
+        "raw": "hes",
+        "expected": "和聲",
+        "before": "hes ",
+        "after": "he's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "二十",
+        "raw": "es",
+        "expected": "二十",
+        "before": "es ",
+        "after": "e's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "大師",
+        "raw": "ds",
+        "expected": "大師",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "事實",
+        "raw": "ss",
+        "expected": "事實",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "實數",
+        "raw": "ss",
+        "expected": "實數",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "對手",
+        "raw": "ds",
+        "expected": "對手",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "二世",
+        "raw": "es",
+        "expected": "二世",
+        "before": "es ",
+        "after": "e's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "仍是",
+        "raw": "rs",
+        "expected": "仍是",
+        "before": "人生",
+        "after": "r's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "設施",
+        "raw": "ss",
+        "expected": "設施",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-dev-mixed-left",
+        "id": "設施",
+        "raw": "shes",
+        "expected": "設施",
+        "before": "設施",
+        "after": "she's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "上訴",
+        "raw": "ss",
+        "expected": "上訴",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "而是",
+        "raw": "es",
+        "expected": "而是",
+        "before": "es ",
+        "after": "e's "
+      },
+      {
+        "group": "zh-dev-mixed-left",
+        "id": "本身",
+        "raw": "bens",
+        "expected": "本身",
+        "before": "本身",
+        "after": "ben's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "上述",
+        "raw": "ss",
+        "expected": "上述",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "都市",
+        "raw": "ds",
+        "expected": "都市",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-test-mixed-left",
+        "id": "誤殺",
+        "raw": "wus",
+        "expected": "誤殺",
+        "before": "無數",
+        "after": "wu's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "時尚",
+        "raw": "ss",
+        "expected": "時尚",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "三世",
+        "raw": "ss",
+        "expected": "三世",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "瑞士",
+        "raw": "rs",
+        "expected": "瑞士",
+        "before": "人生",
+        "after": "r's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "電視",
+        "raw": "ds",
+        "expected": "電視",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "史詩",
+        "raw": "ss",
+        "expected": "史詩",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "賽事",
+        "raw": "ss",
+        "expected": "賽事",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "配上",
+        "raw": "ps",
+        "expected": "配上",
+        "before": "ps ",
+        "after": "p's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "人士",
+        "raw": "rs",
+        "expected": "人士",
+        "before": "人生",
+        "after": "r's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "第十",
+        "raw": "ds",
+        "expected": "第十",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "大石",
+        "raw": "ds",
+        "expected": "大石",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "雕塑",
+        "raw": "ds",
+        "expected": "雕塑",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "事實",
+        "raw": "ss",
+        "expected": "事實",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "對手",
+        "raw": "ds",
+        "expected": "對手",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "二世",
+        "raw": "es",
+        "expected": "二世",
+        "before": "es ",
+        "after": "e's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "少數",
+        "raw": "ss",
+        "expected": "少數",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "設施",
+        "raw": "ss",
+        "expected": "設施",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-test-mixed-left",
+        "id": "設施",
+        "raw": "shes",
+        "expected": "設施",
+        "before": "設施",
+        "after": "she's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "肉食",
+        "raw": "rs",
+        "expected": "肉食",
+        "before": "人生",
+        "after": "r's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "升上",
+        "raw": "ss",
+        "expected": "升上",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "地勢",
+        "raw": "ds",
+        "expected": "地勢",
+        "before": "但是",
+        "after": "d's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "上述",
+        "raw": "ss",
+        "expected": "上述",
+        "before": "算是",
+        "after": "s's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "派生",
+        "raw": "ps",
+        "expected": "派生",
+        "before": "ps ",
+        "after": "p's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "樸素",
+        "raw": "ps",
+        "expected": "樸素",
+        "before": "ps ",
+        "after": "p's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "縮水",
+        "raw": "ss",
+        "expected": "縮水",
+        "before": "算是",
+        "after": "s's "
+      }
+    ]
+  },
+  "blanket-order-rejected": {
+    "records": 21044,
+    "before_sha256": "0713c4f45596eecce039bbc5d512e2eb70de93aa8800d5e96d3bc4d265918d93",
+    "after_sha256": "f1b626392a8502ce897d7fc8648c18f8866fe145cc59d61b015dc019eba6e1c7",
+    "english": {
+      "tokens": 130233,
+      "changed": 135
+    },
+    "chinese": {
+      "zh-dev-full": {
+        "n": 1000,
+        "before_top1": 709,
+        "after_top1": 657,
+        "before_top8": 924,
+        "after_top8": 921,
+        "space_changes": 0
+      },
+      "zh-dev-initial": {
+        "n": 1000,
+        "before_top1": 78,
+        "after_top1": 36,
+        "before_top8": 203,
+        "after_top8": 147,
+        "space_changes": 8
+      },
+      "zh-dev-mixed-left": {
+        "n": 1000,
+        "before_top1": 341,
+        "after_top1": 313,
+        "before_top8": 754,
+        "after_top8": 751,
+        "space_changes": 3
+      },
+      "zh-dev-mixed-right": {
+        "n": 1000,
+        "before_top1": 323,
+        "after_top1": 320,
+        "before_top8": 655,
+        "after_top8": 655,
+        "space_changes": 0
+      },
+      "zh-test-full": {
+        "n": 1000,
+        "before_top1": 703,
+        "after_top1": 647,
+        "before_top8": 929,
+        "after_top8": 925,
+        "space_changes": 0
+      },
+      "zh-test-initial": {
+        "n": 1000,
+        "before_top1": 72,
+        "after_top1": 36,
+        "before_top8": 213,
+        "after_top8": 161,
+        "space_changes": 10
+      },
+      "zh-test-mixed-left": {
+        "n": 1000,
+        "before_top1": 334,
+        "after_top1": 304,
+        "before_top8": 736,
+        "after_top8": 732,
+        "space_changes": 1
+      },
+      "zh-test-mixed-right": {
+        "n": 1000,
+        "before_top1": 306,
+        "after_top1": 304,
+        "before_top8": 658,
+        "after_top8": 658,
+        "space_changes": 0
+      },
+      "moe-glyph": {
+        "n": 999,
+        "before_top1": 217,
+        "after_top1": 89,
+        "before_top8": 703,
+        "after_top8": 690,
+        "space_changes": 0
+      }
+    },
+    "changes": [
+      {
+        "group": "en-dev",
+        "id": "28",
+        "mode": "fresh",
+        "raw": "qaida",
+        "before": "去挨打",
+        "after": "qaida"
+      },
+      {
+        "group": "en-dev",
+        "id": "28",
+        "mode": "fresh",
+        "raw": "qaida",
+        "before": "去挨打",
+        "after": "qaida"
+      },
+      {
+        "group": "en-dev",
+        "id": "28",
+        "mode": "primed",
+        "raw": "qaida",
+        "before": "去挨打",
+        "after": "qaida"
+      },
+      {
+        "group": "en-dev",
+        "id": "28",
+        "mode": "primed",
+        "raw": "qaida",
+        "before": "去挨打",
+        "after": "qaida"
+      },
+      {
+        "group": "en-dev",
+        "id": "855",
+        "mode": "english",
+        "raw": "fms",
+        "before": "fms",
+        "after": "fm's"
+      },
+      {
+        "group": "en-dev",
+        "id": "911",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "911",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "911",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1021",
+        "mode": "fresh",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1021",
+        "mode": "primed",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1021",
+        "mode": "english",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1083",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1083",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1083",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1088",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1088",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1088",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1152",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1152",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1152",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1263",
+        "mode": "fresh",
+        "raw": "cockatiels",
+        "before": "從此卡鐵嶺市",
+        "after": "cockatiels"
+      },
+      {
+        "group": "en-dev",
+        "id": "1263",
+        "mode": "primed",
+        "raw": "cockatiels",
+        "before": "從此卡鐵嶺市",
+        "after": "cockatiels"
+      },
+      {
+        "group": "en-dev",
+        "id": "1289",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1289",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1289",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1311",
+        "mode": "english",
+        "raw": "anothers",
+        "before": "anothers",
+        "after": "another's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1331",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1331",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1331",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1337",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1337",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1337",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1417",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1417",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1417",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1419",
+        "mode": "fresh",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1419",
+        "mode": "primed",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1419",
+        "mode": "english",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1420",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1420",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1420",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1698",
+        "mode": "english",
+        "raw": "barrys",
+        "before": "barrys",
+        "after": "barry's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1713",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1713",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1713",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1818",
+        "mode": "english",
+        "raw": "hancocks",
+        "before": "hancocks",
+        "after": "hancock's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1974",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1974",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1974",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "372",
+        "mode": "fresh",
+        "raw": "stephens",
+        "before": "是特派很少",
+        "after": "stephens"
+      },
+      {
+        "group": "en-test",
+        "id": "372",
+        "mode": "primed",
+        "raw": "stephens",
+        "before": "是特派很少",
+        "after": "stephens"
+      },
+      {
+        "group": "en-test",
+        "id": "410",
+        "mode": "english",
+        "raw": "ss",
+        "before": "ss",
+        "after": "s's"
+      },
+      {
+        "group": "en-test",
+        "id": "924",
+        "mode": "english",
+        "raw": "sheeps",
+        "before": "sheeps",
+        "after": "sheep's"
+      },
+      {
+        "group": "en-test",
+        "id": "1083",
+        "mode": "english",
+        "raw": "es",
+        "before": "es",
+        "after": "e's"
+      },
+      {
+        "group": "en-test",
+        "id": "1145",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1145",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1145",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1161",
+        "mode": "fresh",
+        "raw": "theyre",
+        "before": "他和預熱",
+        "after": "they're"
+      },
+      {
+        "group": "en-test",
+        "id": "1161",
+        "mode": "primed",
+        "raw": "theyre",
+        "before": "他和預熱",
+        "after": "they're"
+      },
+      {
+        "group": "en-test",
+        "id": "1161",
+        "mode": "english",
+        "raw": "theyre",
+        "before": "theyre",
+        "after": "they're"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "fresh",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "primed",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1206",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1206",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1206",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1218",
+        "mode": "fresh",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1218",
+        "mode": "primed",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1218",
+        "mode": "english",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1222",
+        "mode": "fresh",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1222",
+        "mode": "primed",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1222",
+        "mode": "english",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1320",
+        "mode": "english",
+        "raw": "thatd",
+        "before": "thatd",
+        "after": "that'd"
+      },
+      {
+        "group": "en-test",
+        "id": "1326",
+        "mode": "fresh",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1326",
+        "mode": "primed",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1327",
+        "mode": "fresh",
+        "raw": "shes",
+        "before": "設施",
+        "after": "she's"
+      },
+      {
+        "group": "en-test",
+        "id": "1327",
+        "mode": "primed",
+        "raw": "shes",
+        "before": "設施",
+        "after": "she's"
+      },
+      {
+        "group": "en-test",
+        "id": "1327",
+        "mode": "english",
+        "raw": "shes",
+        "before": "shes",
+        "after": "she's"
+      },
+      {
+        "group": "en-test",
+        "id": "1342",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1342",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1342",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1374",
+        "mode": "fresh",
+        "raw": "heres",
+        "before": "heres",
+        "after": "here's"
+      },
+      {
+        "group": "en-test",
+        "id": "1374",
+        "mode": "primed",
+        "raw": "heres",
+        "before": "heres",
+        "after": "here's"
+      },
+      {
+        "group": "en-test",
+        "id": "1374",
+        "mode": "english",
+        "raw": "heres",
+        "before": "heres",
+        "after": "here's"
+      },
+      {
+        "group": "en-test",
+        "id": "1417",
+        "mode": "fresh",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1417",
+        "mode": "primed",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1428",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-test",
+        "id": "1428",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-test",
+        "id": "1428",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-test",
+        "id": "1486",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1486",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1486",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1549",
+        "mode": "english",
+        "raw": "sams",
+        "before": "sams",
+        "after": "sam's"
+      },
+      {
+        "group": "en-test",
+        "id": "1604",
+        "mode": "english",
+        "raw": "mens",
+        "before": "mens",
+        "after": "men's"
+      },
+      {
+        "group": "en-test",
+        "id": "1609",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1609",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1609",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1647",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1647",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1647",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1729",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1729",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1729",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1885",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1885",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1885",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1909",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1909",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1909",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1941",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1941",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1941",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "2020",
+        "mode": "fresh",
+        "raw": "doesnt",
+        "before": "竇娥仕女圖",
+        "after": "doesn't"
+      },
+      {
+        "group": "en-test",
+        "id": "2020",
+        "mode": "primed",
+        "raw": "doesnt",
+        "before": "竇娥仕女圖",
+        "after": "doesn't"
+      },
+      {
+        "group": "en-test",
+        "id": "2020",
+        "mode": "english",
+        "raw": "doesnt",
+        "before": "doesnt",
+        "after": "doesn't"
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "多少",
+        "raw": "ds",
+        "expected": "多少",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "打算",
+        "raw": "ds",
+        "expected": "打算",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "瑞士",
+        "raw": "rs",
+        "expected": "瑞士",
+        "before": "人生",
+        "after": "rs "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "第四",
+        "raw": "ds",
+        "expected": "第四",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "電視",
+        "raw": "ds",
+        "expected": "電視",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-dev-mixed-left",
+        "id": "和聲",
+        "raw": "hes",
+        "expected": "和聲",
+        "before": "hes ",
+        "after": "he's "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "大師",
+        "raw": "ds",
+        "expected": "大師",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "對手",
+        "raw": "ds",
+        "expected": "對手",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-dev-initial",
+        "id": "仍是",
+        "raw": "rs",
+        "expected": "仍是",
+        "before": "人生",
+        "after": "rs "
+      },
+      {
+        "group": "zh-dev-mixed-left",
+        "id": "設施",
+        "raw": "shes",
+        "expected": "設施",
+        "before": "設施",
+        "after": "she's "
+      },
+      {
+        "group": "zh-dev-mixed-left",
+        "id": "本身",
+        "raw": "bens",
+        "expected": "本身",
+        "before": "本身",
+        "after": "bens "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "都市",
+        "raw": "ds",
+        "expected": "都市",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "瑞士",
+        "raw": "rs",
+        "expected": "瑞士",
+        "before": "人生",
+        "after": "rs "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "電視",
+        "raw": "ds",
+        "expected": "電視",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "人士",
+        "raw": "rs",
+        "expected": "人士",
+        "before": "人生",
+        "after": "rs "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "第十",
+        "raw": "ds",
+        "expected": "第十",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "大石",
+        "raw": "ds",
+        "expected": "大石",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "雕塑",
+        "raw": "ds",
+        "expected": "雕塑",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "對手",
+        "raw": "ds",
+        "expected": "對手",
+        "before": "但是",
+        "after": "ds "
+      },
+      {
+        "group": "zh-test-mixed-left",
+        "id": "設施",
+        "raw": "shes",
+        "expected": "設施",
+        "before": "設施",
+        "after": "she's "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "肉食",
+        "raw": "rs",
+        "expected": "肉食",
+        "before": "人生",
+        "after": "rs "
+      },
+      {
+        "group": "zh-test-initial",
+        "id": "地勢",
+        "raw": "ds",
+        "expected": "地勢",
+        "before": "但是",
+        "after": "ds "
+      }
+    ]
+  },
+  "ordering": {
+    "records": 21044,
+    "before_sha256": "0713c4f45596eecce039bbc5d512e2eb70de93aa8800d5e96d3bc4d265918d93",
+    "after_sha256": "aaf80e3b2cfa919068ffae8c571b59ae6b525167bd6e20bda4f48422076b804b",
+    "english": {
+      "tokens": 130233
+    },
+    "chinese": {
+      "zh-dev-full": {
+        "n": 1000,
+        "before_top1": 709,
+        "after_top1": 712,
+        "before_top8": 924,
+        "after_top8": 922,
+        "space_changes": 0
+      },
+      "zh-dev-initial": {
+        "n": 1000,
+        "before_top1": 78,
+        "after_top1": 78,
+        "before_top8": 203,
+        "after_top8": 203,
+        "space_changes": 0
+      },
+      "zh-dev-mixed-left": {
+        "n": 1000,
+        "before_top1": 341,
+        "after_top1": 341,
+        "before_top8": 754,
+        "after_top8": 752,
+        "space_changes": 0
+      },
+      "zh-dev-mixed-right": {
+        "n": 1000,
+        "before_top1": 323,
+        "after_top1": 323,
+        "before_top8": 655,
+        "after_top8": 655,
+        "space_changes": 0
+      },
+      "zh-test-full": {
+        "n": 1000,
+        "before_top1": 703,
+        "after_top1": 713,
+        "before_top8": 929,
+        "after_top8": 927,
+        "space_changes": 0
+      },
+      "zh-test-initial": {
+        "n": 1000,
+        "before_top1": 72,
+        "after_top1": 72,
+        "before_top8": 213,
+        "after_top8": 213,
+        "space_changes": 0
+      },
+      "zh-test-mixed-left": {
+        "n": 1000,
+        "before_top1": 334,
+        "after_top1": 335,
+        "before_top8": 736,
+        "after_top8": 734,
+        "space_changes": 0
+      },
+      "zh-test-mixed-right": {
+        "n": 1000,
+        "before_top1": 306,
+        "after_top1": 306,
+        "before_top8": 658,
+        "after_top8": 658,
+        "space_changes": 0
+      },
+      "moe-glyph": {
+        "n": 999,
+        "before_top1": 217,
+        "after_top1": 218,
+        "before_top8": 703,
+        "after_top8": 694,
+        "space_changes": 0
+      }
+    },
+    "changes": []
+  },
+  "new-wikipedia": {
+    "records": 423,
+    "before_sha256": "75a94b040a50a04a78571de3b6b2f42747c6498ed5c2c5c51c5b4fcb5324ec72",
+    "after_sha256": "347b3fe21ce6c3b4e66d6c59ffcfacb8f43917574c6e67700b89fd3f426c6ec6",
+    "english": {},
+    "chinese": {
+      "wiki-full": {
+        "n": 141,
+        "before_top1": 23,
+        "after_top1": 24,
+        "before_top8": 26,
+        "after_top8": 26,
+        "space_changes": 0
+      },
+      "wiki-initial": {
+        "n": 141,
+        "before_top1": 1,
+        "after_top1": 1,
+        "before_top8": 7,
+        "after_top8": 7,
+        "space_changes": 0
+      },
+      "wiki-mixed": {
+        "n": 141,
+        "before_top1": 6,
+        "after_top1": 6,
+        "before_top8": 15,
+        "after_top8": 15,
+        "space_changes": 0
+      }
+    },
+    "changes": []
+  },
+  "apostrophe": {
+    "records": 21044,
+    "before_sha256": "aaf80e3b2cfa919068ffae8c571b59ae6b525167bd6e20bda4f48422076b804b",
+    "after_sha256": "1f7a3dc1f22c3f0eedea6e92b3e5213ddc6afa979ad894d980ebfb1a47679118",
+    "english": {
+      "tokens": 130233,
+      "changed": 127
+    },
+    "chinese": {
+      "zh-dev-full": {
+        "n": 1000,
+        "before_top1": 712,
+        "after_top1": 712,
+        "before_top8": 922,
+        "after_top8": 922,
+        "space_changes": 0
+      },
+      "zh-dev-initial": {
+        "n": 1000,
+        "before_top1": 78,
+        "after_top1": 78,
+        "before_top8": 203,
+        "after_top8": 203,
+        "space_changes": 0
+      },
+      "zh-dev-mixed-left": {
+        "n": 1000,
+        "before_top1": 341,
+        "after_top1": 340,
+        "before_top8": 752,
+        "after_top8": 752,
+        "space_changes": 2
+      },
+      "zh-dev-mixed-right": {
+        "n": 1000,
+        "before_top1": 323,
+        "after_top1": 323,
+        "before_top8": 655,
+        "after_top8": 655,
+        "space_changes": 0
+      },
+      "zh-test-full": {
+        "n": 1000,
+        "before_top1": 713,
+        "after_top1": 713,
+        "before_top8": 927,
+        "after_top8": 927,
+        "space_changes": 0
+      },
+      "zh-test-initial": {
+        "n": 1000,
+        "before_top1": 72,
+        "after_top1": 72,
+        "before_top8": 213,
+        "after_top8": 213,
+        "space_changes": 0
+      },
+      "zh-test-mixed-left": {
+        "n": 1000,
+        "before_top1": 335,
+        "after_top1": 334,
+        "before_top8": 734,
+        "after_top8": 734,
+        "space_changes": 1
+      },
+      "zh-test-mixed-right": {
+        "n": 1000,
+        "before_top1": 306,
+        "after_top1": 306,
+        "before_top8": 658,
+        "after_top8": 658,
+        "space_changes": 0
+      },
+      "moe-glyph": {
+        "n": 999,
+        "before_top1": 218,
+        "after_top1": 218,
+        "before_top8": 694,
+        "after_top8": 694,
+        "space_changes": 0
+      }
+    },
+    "changes": [
+      {
+        "group": "en-dev",
+        "id": "855",
+        "mode": "english",
+        "raw": "fms",
+        "before": "fms",
+        "after": "fm's"
+      },
+      {
+        "group": "en-dev",
+        "id": "911",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "911",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "911",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1021",
+        "mode": "fresh",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1021",
+        "mode": "primed",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1021",
+        "mode": "english",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1083",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1083",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1083",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1088",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1088",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1088",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1152",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1152",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1152",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1289",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1289",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1289",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1311",
+        "mode": "english",
+        "raw": "anothers",
+        "before": "anothers",
+        "after": "another's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1331",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1331",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1331",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1332",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1337",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1337",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1337",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1417",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1417",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1417",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1419",
+        "mode": "fresh",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1419",
+        "mode": "primed",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1419",
+        "mode": "english",
+        "raw": "havent",
+        "before": "havent",
+        "after": "haven't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1420",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1420",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1420",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-dev",
+        "id": "1578",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1698",
+        "mode": "english",
+        "raw": "barrys",
+        "before": "barrys",
+        "after": "barry's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1713",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1713",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1713",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-dev",
+        "id": "1818",
+        "mode": "english",
+        "raw": "hancocks",
+        "before": "hancocks",
+        "after": "hancock's"
+      },
+      {
+        "group": "en-dev",
+        "id": "1974",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1974",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-dev",
+        "id": "1974",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "410",
+        "mode": "english",
+        "raw": "ss",
+        "before": "ss",
+        "after": "s's"
+      },
+      {
+        "group": "en-test",
+        "id": "924",
+        "mode": "english",
+        "raw": "sheeps",
+        "before": "sheeps",
+        "after": "sheep's"
+      },
+      {
+        "group": "en-test",
+        "id": "1083",
+        "mode": "english",
+        "raw": "es",
+        "before": "es",
+        "after": "e's"
+      },
+      {
+        "group": "en-test",
+        "id": "1145",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1145",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1145",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "fresh",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "primed",
+        "raw": "thats",
+        "before": "挺好啊同時",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1150",
+        "mode": "english",
+        "raw": "thats",
+        "before": "thats",
+        "after": "that's"
+      },
+      {
+        "group": "en-test",
+        "id": "1161",
+        "mode": "fresh",
+        "raw": "theyre",
+        "before": "他和預熱",
+        "after": "they're"
+      },
+      {
+        "group": "en-test",
+        "id": "1161",
+        "mode": "primed",
+        "raw": "theyre",
+        "before": "他和預熱",
+        "after": "they're"
+      },
+      {
+        "group": "en-test",
+        "id": "1161",
+        "mode": "english",
+        "raw": "theyre",
+        "before": "theyre",
+        "after": "they're"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "fresh",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "primed",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1192",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1206",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1206",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1206",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1218",
+        "mode": "fresh",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1218",
+        "mode": "primed",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1218",
+        "mode": "english",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1222",
+        "mode": "fresh",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1222",
+        "mode": "primed",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1222",
+        "mode": "english",
+        "raw": "theres",
+        "before": "theres",
+        "after": "there's"
+      },
+      {
+        "group": "en-test",
+        "id": "1320",
+        "mode": "english",
+        "raw": "thatd",
+        "before": "thatd",
+        "after": "that'd"
+      },
+      {
+        "group": "en-test",
+        "id": "1326",
+        "mode": "fresh",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1326",
+        "mode": "primed",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1327",
+        "mode": "fresh",
+        "raw": "shes",
+        "before": "設施",
+        "after": "she's"
+      },
+      {
+        "group": "en-test",
+        "id": "1327",
+        "mode": "primed",
+        "raw": "shes",
+        "before": "設施",
+        "after": "she's"
+      },
+      {
+        "group": "en-test",
+        "id": "1327",
+        "mode": "english",
+        "raw": "shes",
+        "before": "shes",
+        "after": "she's"
+      },
+      {
+        "group": "en-test",
+        "id": "1342",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1342",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1342",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1374",
+        "mode": "fresh",
+        "raw": "heres",
+        "before": "heres",
+        "after": "here's"
+      },
+      {
+        "group": "en-test",
+        "id": "1374",
+        "mode": "primed",
+        "raw": "heres",
+        "before": "heres",
+        "after": "here's"
+      },
+      {
+        "group": "en-test",
+        "id": "1374",
+        "mode": "english",
+        "raw": "heres",
+        "before": "heres",
+        "after": "here's"
+      },
+      {
+        "group": "en-test",
+        "id": "1417",
+        "mode": "fresh",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1417",
+        "mode": "primed",
+        "raw": "wont",
+        "before": "我那天",
+        "after": "wont"
+      },
+      {
+        "group": "en-test",
+        "id": "1428",
+        "mode": "fresh",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-test",
+        "id": "1428",
+        "mode": "primed",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-test",
+        "id": "1428",
+        "mode": "english",
+        "raw": "im",
+        "before": "im",
+        "after": "I'm"
+      },
+      {
+        "group": "en-test",
+        "id": "1486",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1486",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1486",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1549",
+        "mode": "english",
+        "raw": "sams",
+        "before": "sams",
+        "after": "sam's"
+      },
+      {
+        "group": "en-test",
+        "id": "1604",
+        "mode": "english",
+        "raw": "mens",
+        "before": "mens",
+        "after": "men's"
+      },
+      {
+        "group": "en-test",
+        "id": "1609",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1609",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1609",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1647",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1647",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1647",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1729",
+        "mode": "fresh",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1729",
+        "mode": "primed",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1729",
+        "mode": "english",
+        "raw": "ive",
+        "before": "ive",
+        "after": "I've"
+      },
+      {
+        "group": "en-test",
+        "id": "1885",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1885",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1885",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1909",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1909",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1909",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1941",
+        "mode": "fresh",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1941",
+        "mode": "primed",
+        "raw": "dont",
+        "before": "都能他",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "1941",
+        "mode": "english",
+        "raw": "dont",
+        "before": "dont",
+        "after": "don't"
+      },
+      {
+        "group": "en-test",
+        "id": "2020",
+        "mode": "fresh",
+        "raw": "doesnt",
+        "before": "竇娥仕女圖",
+        "after": "doesn't"
+      },
+      {
+        "group": "en-test",
+        "id": "2020",
+        "mode": "primed",
+        "raw": "doesnt",
+        "before": "竇娥仕女圖",
+        "after": "doesn't"
+      },
+      {
+        "group": "en-test",
+        "id": "2020",
+        "mode": "english",
+        "raw": "doesnt",
+        "before": "doesnt",
+        "after": "doesn't"
+      },
+      {
+        "group": "zh-dev-mixed-left",
+        "id": "和聲",
+        "raw": "hes",
+        "expected": "和聲",
+        "before": "hes ",
+        "after": "he's "
+      },
+      {
+        "group": "zh-dev-mixed-left",
+        "id": "設施",
+        "raw": "shes",
+        "expected": "設施",
+        "before": "設施",
+        "after": "she's "
+      },
+      {
+        "group": "zh-test-mixed-left",
+        "id": "設施",
+        "raw": "shes",
+        "expected": "設施",
+        "before": "設施",
+        "after": "she's "
+      }
+    ]
+  },
+  "gum": {
+    "records": 3855,
+    "before_sha256": "1e4384f607161b697b072b6a399827827cd24d6dde16a2f5c63cbf91d8cafa08",
+    "after_sha256": "1e4384f607161b697b072b6a399827827cd24d6dde16a2f5c63cbf91d8cafa08",
+    "english": {
+      "tokens": 61203
+    },
+    "chinese": {},
+    "changes": []
+  }
+}

@@ -4,6 +4,13 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.6.2** caches saved dictionaries, moves full add-on matches ahead of
+decoder guesses while protecting verified base phrases and initials, and restores
+missing English apostrophes on Space. Valid source spellings such as `cant` stay
+unchanged, with `can't` offered before unrelated completions. Pinyin uses annotated
+grammatical contractions to avoid possessives overriding Chinese initials.
+See [dictionary impact and verification](docs/dictionary-impact/RESULTS.md).
+
 Version **0.6.1** broadens Japanese and Taiwanese packs to everyday expressions
 and vocabulary. Japanese uses JMdict common expression/interjection metadata;
 Taiwanese uses broader iTaigi entries and licensed beginner POJ vocabulary and
