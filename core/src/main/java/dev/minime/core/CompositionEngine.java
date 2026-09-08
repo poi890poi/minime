@@ -141,7 +141,7 @@ public final class CompositionEngine {
         }
         Candidate selected=candidates.isEmpty()?new Candidate(raw,true,0):candidates.get(preferred);
         commitDefault(true);
-        if(englishMode && !literalField && spelling.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
+        if((englishMode || selected.literal) && !literalField && spelling.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
             spaceAt=now;
             if(!selected.text.equals(spelling)) {undoSpelling=spelling;undoOutput=selected.text+" ";}
         }
@@ -321,20 +321,33 @@ public final class CompositionEngine {
         if(englishMode && !literalField && dictionary!=null) {
             List<Candidate> corrections=dictionary.englishCorrections(raw);
             for(Candidate c:corrections)if(seen.add(c.text))candidates.add(c);
-            if(autoCorrect && !dictionary.isEnglish(raw,true) && !corrections.isEmpty() && corrections.get(0).score>=100
+            if(autoCorrect && !dictionary.validEnglishSpelling(raw) && !corrections.isEmpty() && corrections.get(0).score>=100
                     && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,corrections.get(0).text))
                     && (corrections.size()==1 || corrections.get(0).score-corrections.get(1).score>=8)) {
                 for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(corrections.get(0).text)) {preferred=i;automaticCorrection=true;}
             }
         }
-        if(!literalField && !privateField) {
+        if(!literalField) {
+            List<Candidate> apostrophes=dictionary!=null && !bpmf?dictionary.englishApostrophes(raw,englishMode):Collections.emptyList();
+            if(!apostrophes.isEmpty() && dictionary.validEnglishSpelling(raw) && custom.isEmpty()
+                    && (privateField || learning.count(contextKey(),raw,candidates.get(preferred).text)<=learning.count(contextKey(),raw,raw))) {
+                preferred=0;automaticCorrection=false;
+            }
+            if(!apostrophes.isEmpty() && !dictionary.validEnglishSpelling(raw) && custom.isEmpty()
+                    && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,apostrophes.get(0).text))) {
+                Candidate restored=apostrophes.get(0);int existing=-1;
+                for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(restored.text)) {existing=i;break;}
+                if(existing<0) {candidates.add(restored);existing=candidates.size()-1;}
+                preferred=existing;automaticCorrection=true;
+            }
             Candidate defaultChoice=candidates.get(preferred);
             int insertion=1;
             List<Candidate> supplements=new ArrayList<>(custom);
-            if(phraseLearning && !englishMode)supplements.addAll(learning.phrases(raw));
+            if(!privateField && phraseLearning && !englishMode)supplements.addAll(learning.phrases(raw));
             // An already leading, source-attested full Chinese reading is not
             // a decoder guess. Keep it ahead of optional dictionary alternatives.
             if(!englishMode && dictionary!=null && candidates.size()>1 && dictionary.exactChinese(raw,bpmf,candidates.get(1).text))supplements.add(candidates.get(1));
+            supplements.addAll(apostrophes);
             if(!privateField) {
                 List<Candidate> matches=addons.lookup(raw,enabledAddons);
                 for(Candidate c:matches)if(!c.abbreviated)supplements.add(c);

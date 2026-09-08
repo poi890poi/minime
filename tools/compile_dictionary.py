@@ -3,6 +3,8 @@ import gzip
 import hashlib
 import json
 import re
+import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -55,6 +57,7 @@ for line in raw.decode('utf-8').splitlines():
 with (OUT / 'en_us.tsv').open('w', encoding='utf-8', newline='\n') as f:
     for word, count in sorted(english.items()):
         f.write('{}\t{}\n'.format(word, count))
+subprocess.run([sys.executable, str(ROOT / 'tools/compile_english_spelling.py')], check=True)
 report = {'chinese_readings': len(entries), 'chinese_labels': len({e[0] for e in entries}),
           'syllables': len(readings), 'skipped_unmapped_readings': skipped,
           'english_words': len(english), 'aosp_decompressed_sha256': hashlib.sha256(raw).hexdigest(),

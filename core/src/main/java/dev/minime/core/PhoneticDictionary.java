@@ -11,6 +11,8 @@ public final class PhoneticDictionary {
     private final Map<String, List<Candidate>> zhuyin = new HashMap<>();
     private final NavigableMap<String, Integer> english = new TreeMap<>();
     private final NavigableMap<String, Integer> foldedEnglish = new TreeMap<>();
+    private final Map<String,List<Candidate>> apostropheEnglish=new HashMap<>();
+    private final Set<String> validBareSpellings=new HashSet<>(),grammaticalContractions=new HashSet<>();
     private final Map<String, List<Candidate>> continuations = new HashMap<>();
     private final Set<String> syllables = new HashSet<>();
     private ReadingIndex pinyinPrefixes,zhuyinPrefixes;
@@ -96,6 +98,40 @@ public final class PhoneticDictionary {
     public boolean isEnglish(String raw,boolean latinContext) {return (latinContext?foldedEnglish:english).containsKey(raw.toLowerCase(Locale.ROOT));}
     private void indexEnglish() {
         foldedEnglish.clear();english.forEach((word,frequency)->foldedEnglish.merge(word.toLowerCase(Locale.ROOT),frequency,Math::max));
+        apostropheEnglish.clear();
+        foldedEnglish.forEach((word,frequency)-> {
+            if(word.indexOf('\'')>0 && word.matches("[a-z]+(?:'[a-z]+)+"))apostropheEnglish.computeIfAbsent(word.replace("'",""),key->new ArrayList<>()).add(new Candidate(word,true,frequency));
+        });
+        for(List<Candidate> values:apostropheEnglish.values())values.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text));
+    }
+    /** Exact letters from source apostrophized spellings, without edit-distance guesses. */
+    public void englishSpelling(Reader source)throws IOException {
+        try(BufferedReader reader=new BufferedReader(source)) {
+            String line;while((line=reader.readLine())!=null) {
+                String[] p=line.split("\t");
+                if(p.length!=2 || !(p[0].equals("valid") || p[0].equals("contraction")) || !p[1].matches("[a-z]+(?:'[a-z]+)*"))throw new IOException("Invalid English spelling metadata");
+                (p[0].equals("valid")?validBareSpellings:grammaticalContractions).add(p[1]);
+            }
+        }
+    }
+    public boolean validEnglishSpelling(String raw) {return isEnglish(raw,true) || validBareSpellings.contains(raw.toLowerCase(Locale.ROOT));}
+    public List<Candidate> englishApostrophes(String raw,boolean englishMode) {
+        List<Candidate> result=englishApostrophes(raw);
+        if(!englishMode && !result.isEmpty())result.removeIf(c->!grammaticalContractions.contains(c.text.toLowerCase(Locale.ROOT)));
+        return result;
+    }
+    public List<Candidate> englishApostrophes(String raw) {
+        if(raw.length()<2 || raw.length()>32 || !raw.matches("[A-Za-z]+") || IntentClassifier.technicalWord(raw.toLowerCase(Locale.ROOT)))return Collections.emptyList();
+        String key=raw.toLowerCase(Locale.ROOT);boolean caps=raw.equals(raw.toUpperCase(Locale.ROOT));
+        boolean title=raw.equals(Character.toUpperCase(key.charAt(0))+key.substring(1));
+        if(!caps && !title && !raw.equals(key))return Collections.emptyList();
+        List<Candidate> result=new ArrayList<>();
+        for(Candidate value:apostropheEnglish.getOrDefault(key,Collections.emptyList())) {
+            String word=value.text,text=caps?word.toUpperCase(Locale.ROOT):title?Character.toUpperCase(word.charAt(0))+word.substring(1):word;
+            if(text.startsWith("i'"))text="I"+text.substring(1);
+            result.add(new Candidate(text,true,value.score));
+        }
+        return result;
     }
     /** Literal intent must not turn into Chinese solely because abbreviation search found a word. */
     public boolean hasCompletePinyin(String raw) {

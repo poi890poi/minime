@@ -30,6 +30,7 @@ public final class SettingsActivity extends Activity {
         option("Use Rime for Pinyin phrase prediction", "rime_pinyin",true);
         text("Rime is on by default and offers stronger sentence prediction in our tests, with different candidate ordering. Turn it off to use the original MinIME decoder. It works offline and does not keep its own typing history.",16);
         option("Correct English spelling on Space", "english_correction",false);
+        text("Missing apostrophes are restored on Space in ordinary text fields even with spelling correction off. Valid source-dictionary spellings stay unchanged; Backspace immediately restores your original input. Pinyin restores annotated English contractions, avoiding possessive guesses over Chinese initials. Exact custom and enabled-pack matches appear before decoder guesses.",16);
         option("Double Space inserts a period in English", "double_space_period",true);
         option("Keep recent emoji on this device", "emoji_recents",false);
         Switch adaptation=new Switch(this);adaptation.setText("Learn English word pairs on this device");

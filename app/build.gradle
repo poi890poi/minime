@@ -36,7 +36,7 @@ def compileLanguageModel = tasks.register('compileLanguageModel', JavaExec) {
     outputs.dir(layout.buildDirectory.dir('generated/minimeAssets'))
     args layout.buildDirectory.file('generated/minimeAssets/model.bin').get().asFile.absolutePath
     doLast {
-        copy { from 'src/main/assets'; include 'NOTICE.txt', 'emoji.tsv', 'addons.tsv', 'geography.tsv', 'addon-sources.txt'; into layout.buildDirectory.dir('generated/minimeAssets') }
+        copy { from 'src/main/assets'; include 'NOTICE.txt', 'emoji.tsv', 'addons.tsv', 'geography.tsv', 'addon-sources.txt', 'en_spelling.tsv'; into layout.buildDirectory.dir('generated/minimeAssets') }
     }
 }
 tasks.named('preBuild').configure { dependsOn compileLanguageModel }

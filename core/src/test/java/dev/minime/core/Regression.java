@@ -44,6 +44,7 @@ public final class Regression {
         Path assets = Paths.get("app/src/main/assets");
         long start = System.nanoTime();
         dictionary = args.length>0?PhoneticDictionary.readBinary(Files.newInputStream(Paths.get(args[0]))):PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")), Files.newBufferedReader(assets.resolve("en_us.tsv")), Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));
+        dictionary.englishSpelling(Files.newBufferedReader(assets.resolve("en_spelling.tsv")));
         System.out.printf(Locale.ROOT, "Dictionary startup %.0f ms%n", (System.nanoTime()-start)/1e6);
         for (String line : Files.readAllLines(Paths.get("core/src/test/resources/mixed-corpus.tsv"), StandardCharsets.UTF_8)) {
             if (line.startsWith("#") || line.isEmpty()) continue;
@@ -178,6 +179,7 @@ public final class Regression {
         PinyinContinuityRegression.run();
         CandidateSelectionRegression.run();
         AddonLearningRegression.run();
+        ApostropheRegression.run();
         Collections.sort(latencies);
         System.out.printf(Locale.ROOT,"PASS %d assertions; desktop key processing p50=%.2f ms p95=%.2f ms max=%.2f ms (%d keys; not Android latency)%n", assertions,latencies.get(latencies.size()/2)/1e6,latencies.get(latencies.size()*95/100)/1e6,latencies.get(latencies.size()-1)/1e6,latencies.size());
     }

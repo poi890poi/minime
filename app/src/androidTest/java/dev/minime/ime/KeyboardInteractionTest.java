@@ -453,6 +453,26 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
             if(language==0)click("Switch to English");
         }
     }
+    private String firstNonRawCandidate(AccessibilityNodeInfo node) {
+        if(node==null)return null;CharSequence description=node.getContentDescription();
+        if(description!=null && description.toString().startsWith("Candidate ") && !description.toString().equals("Candidate list"))return description.toString();
+        for(int i=0;i<node.getChildCount();i++) {AccessibilityNodeInfo child=node.getChild(i);String found=firstNonRawCandidate(child);if(child!=null)child.recycle();if(found!=null)return found;}
+        return null;
+    }
+    public void testExactAndApostropheChoicesLeadThroughService()throws Exception {
+        String[] phrase=AddonTestData.probe(activity,"japanese","everyday_expressions");
+        activity.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_japanese",true).putBoolean("english_correction",false).putBoolean("rime_pinyin",true).commit();
+        assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));
+        AddonRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
+        getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
+        type(phrase[0]);node("Candidate "+phrase[1]).recycle();AccessibilityNodeInfo list=node("Candidate list");assertEquals("Candidate "+phrase[1],firstNonRawCandidate(list));list.recycle();
+        click("Candidate "+phrase[1]);expectText(phrase[1]);clear();
+        for(int language=0;language<2;language++) {
+            type("dont ");expectText("don't ");click("⌫");node("Exact input dont").recycle();clear();
+            type("cant");node("Candidate can't").recycle();list=node("Candidate list");assertEquals("Candidate can't",firstNonRawCandidate(list));list.recycle();click("Space");expectText("cant ");clear();
+            if(language==0)click("Switch to English");
+        }
+    }
     public void testSymbolPageSurvivesMainBoardAndEmojiSwitches() {
         click("?123");click("Symbol category");menuItem("箭頭 Arrows");click("Next palette page");
         AccessibilityNodeInfo category=node("Symbol category"),palette=category.getParent().getParent();

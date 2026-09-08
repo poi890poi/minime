@@ -25,6 +25,11 @@ print('PASS 3010 Unicode emoji sequences, including flags, skin tones and ZWJ fa
 context=json.loads((root/'docs/context-report.json').read_text(encoding='utf-8'))
 assert hashlib.sha256((root/'app/src/main/assets/context.tsv').read_bytes()).hexdigest()==context['asset_sha256']
 print('PASS context asset integrity; training splits recorded separately from holdouts')
+spelling=json.loads((root/'docs/dictionary-impact/spelling-sources.json').read_text(encoding='utf-8'))
+for name,digest in spelling['sources'].items():
+    assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest, 'Spelling source changed: '+name
+assert hashlib.sha256((root/'app/src/main/assets/en_spelling.tsv').read_bytes()).hexdigest()==spelling['asset_sha256']
+print('PASS apostrophe validity and grammar metadata hashes; TRAIN source only')
 binary=root/'app/build/generated/minimeAssets/model.bin'
 if binary.exists():
     compiled=json.loads((root/'docs/model-report.json').read_text(encoding='utf-8'))

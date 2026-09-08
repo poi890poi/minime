@@ -3543,3 +3543,9 @@ CC-CEDICT/JMdict/JMnedict/beginner-derived data remains CC BY-SA 4.0; CC0 data r
 its public-domain dedication. Geography data remains ODbL. Code and datasets are
 separately licensed. Changes are filtering, normalization, aliases, dictionary-unit
 reading derivation and packaging. Personal learning remains separate and local.
+
+English apostrophe safety metadata (en_spelling.tsv) is derived from the complete
+AOSP English vocabulary (Apache-2.0) and Universal Dependencies English EWT TRAIN
+multiword-token AUX annotations (CC BY-SA 4.0). Only source-valid collision spellings
+and source-annotated contractions are retained. No evaluation sentences are used.
+Existing AOSP and UD notices and licences above apply to these derived records.

@@ -69,13 +69,17 @@ public final class DesktopEvaluation {
         if(Boolean.getBoolean("minime.addons")) {addons=AddonDictionary.combine(AddonDictionary.read(Files.newBufferedReader(assets.resolve("addons.tsv"))),AddonDictionary.read(Files.newBufferedReader(assets.resolve("geography.tsv"))));packs=new HashSet<>(Arrays.asList("taiwan","japanese","poj","geography"));}
         PhoneticDictionary dictionary=PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")),Files.newBufferedReader(assets.resolve("en_us.tsv")),Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));
         List<String> rows=Files.readAllLines(Paths.get(args[0]),StandardCharsets.UTF_8);
+        dictionary.englishSpelling(Files.newBufferedReader(assets.resolve("en_spelling.tsv")));
         try(Native nativeRime=new Native(args[2],args[3],args[4],args[5]);BufferedWriter report=Files.newBufferedWriter(Paths.get(args[1]),StandardCharsets.UTF_8)) {
             Memory primed=new Memory();Decoder decoder=new Decoder(nativeRime);Set<String> vocabulary=new HashSet<>();
             for(String line:rows)if(line.startsWith("en-"))Collections.addAll(vocabulary,line.split("\t",-1)[2].split(" "));
             int primes=0;
             for(String line:Files.readAllLines(assets.resolve("syllables.tsv"),StandardCharsets.UTF_8)) {
                 String raw=line.split("\t")[0];if(!vocabulary.contains(raw) || !dictionary.isEnglish(raw))continue;
-                CompositionEngine c=engine(new Editor(),primed,dictionary,decoder,false);type(c,decoder,raw);
+                // Keep simulated past choices identical across add-on ranking experiments.
+                // Supplemental choices deliberately do not train the base model.
+                CompositionEngine c=engine(new Editor(),primed,dictionary,decoder,false);
+                c.addons(AddonDictionary.EMPTY,Collections.emptySet());type(c,decoder,raw);
                 for(int i=1;i<c.candidates().size();i++)if(!c.candidates().get(i).literal && c.candidates().get(i).consumed==0){c.select(i);primes++;break;}
             }
             System.out.println("Data-derived single-syllable English/Pinyin overlap choices: "+primes);

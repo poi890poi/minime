@@ -1,0 +1,13 @@
+{
+  "valid_bare_spellings": 727,
+  "grammatical_contractions": 52,
+  "bytes": 11070,
+  "rule": "Complete AOSP ASCII vocabulary intersected with apostrophe-stripped model words; UD EWT TRAIN multiword tokens containing an AUX expansion intersected with model words.",
+  "sources": {
+    "third_party/aosp/en_US_wordlist.combined.gz": "0f78dd455b532be169a23f233227b811fabced4b5bd7fc9c40cc05839793bcbd",
+    "third_party/ud/UD_English-EWT/en_ewt-ud-train.conllu.gz": "f7ec54af7791b1d0a1e2f074cbaf5c84bc769cb6905ba8da560bbf993af84707",
+    "app/src/main/assets/en_us.tsv": "00fde127ac14cac7577b54b6f8a59b119456c3890c06667361bac5849dea6ff2",
+    "app/src/main/assets/context.tsv": "0627a69373c47f8ffca381245fd48292a50316ff8cbca53efbfa70e545f60952"
+  },
+  "asset_sha256": "9dc2823be8f18e4c12bbeccc1ef6deaf12322f980814efb37c79c605a519db76"
+}
