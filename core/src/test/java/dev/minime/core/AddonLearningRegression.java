@@ -30,7 +30,7 @@ final class AddonLearningRegression {
             if(!p[1].matches("[a-z']{2,24}") || sampleCounts.getOrDefault(p[0],0)>=24)continue;
             sampleCounts.merge(p[0],1,Integer::sum);
             equal(0,addon.lookup(p[1],Collections.emptySet()).size(),"disabled add-on");
-            Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);type(c,p[1]);
+            Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.switchMode(InputMode.fromId(p[0].equals("poj")?"taiwanese":p[0]),false);type(c,p[1]);
             String before=c.candidates().get(c.preferred()).text;
             List<String> base=new ArrayList<>();for(Candidate value:c.candidates())base.add(value.text);
             c.addons(addon,all);coherentDefault(c,before);
@@ -48,9 +48,9 @@ final class AddonLearningRegression {
             everydayCounts.merge(p[0],1,Integer::sum);
             for(boolean english:new boolean[]{false,true}) {
                 Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.start(false,false,false,false,english);
-                type(c,key);String before=c.candidates().get(c.preferred()).text;c.addons(addon,all);
+                c.switchMode(InputMode.fromId(p[0].equals("poj")?"taiwanese":p[0]),false);type(c,key);String before=c.candidates().get(c.preferred()).text;c.addons(addon,all);
                 coherentDefault(c,before);
-                for(Candidate extra:addon.lookup(key,all))if(!extra.text.equals(key))yes(find(c,extra.text)>=0,"everyday source suggestion reachable");
+                for(Candidate extra:addon.lookup(key,c.inputMode().packs(all)))if(!extra.text.equals(key))yes(find(c,extra.text)>=0,"everyday source suggestion reachable");
                 String expected=addon.lookup(key,Collections.singleton(p[0])).stream().filter(v->!v.text.equals(key)).findFirst().get().text;
                 c.select(find(c,expected));equal(expected,e.text,"everyday phrase selected in both modes");
             }
@@ -83,7 +83,7 @@ final class AddonLearningRegression {
             c.space();equal(target,e.text,"Space commits the promoted dictionary phrase");
         }
         for(boolean english:new boolean[]{false,true}) {
-            Memory m=new Memory();Editor e=new Editor();CompositionEngine c=engine(e,m,false);c.start(false,false,false,false,english);c.addons(addon,all);
+            Memory m=new Memory();Editor e=new Editor();CompositionEngine c=engine(e,m,false);c.start(false,false,false,false,english);c.switchMode(InputMode.TAIWANESE,false);c.addons(addon,all);
             type(c,"liho");c.select(find(c,"lí hó"));equal("lí hó",e.text,"original POJ output");equal(0,m.votes,"POJ never trains base preference");
             c.start(false,false,true,false,english);type(c,"liho");yes(c.candidates().stream().noneMatch(v->v.supplemental),"private hides all add-ons");
             c.start(false,true,false,false,english);type(c,"liho");yes(c.candidates().stream().noneMatch(v->v.supplemental),"literal fields exclude add-ons");

@@ -21,6 +21,7 @@ public final class CompositionEngine {
     private String raw = "", context = "";
     private boolean afterLatin;
     private boolean zhuyin, literalField, privateField, direct, englishMode;
+    private InputMode inputMode=InputMode.CHINESE;
     private boolean completionBoundary;
     private boolean committedEnglishWord;
     private boolean autoCorrect, doubleSpace, automaticCorrection;
@@ -96,7 +97,18 @@ public final class CompositionEngine {
     }
     public void start(boolean zhuyin, boolean literalField, boolean privateField, boolean direct, boolean englishMode) {
         cancelPending();raw = ""; context = ""; afterLatin=false;completionBoundary=false;committedEnglishWord=false; clearAssistance(); this.zhuyin = zhuyin; this.literalField = literalField;
-        this.privateField = privateField; this.direct = direct; this.englishMode=englishMode; refresh();
+        this.privateField = privateField; this.direct = direct; this.englishMode=englishMode; inputMode=englishMode?InputMode.ENGLISH:InputMode.CHINESE; refresh();
+    }
+    public InputMode inputMode() {return inputMode;}
+    /** Reinterpret owned spelling without accepting it or reusing old candidate gestures. */
+    public void switchMode(InputMode mode,boolean literal) {
+        Objects.requireNonNull(mode);
+        if(deferUntilReady(()->switchMode(mode,literal),false))return;
+        if(inputMode==mode && literalField==literal)return;
+        revision++;compositionId++;pending=false;phraseSession.clear();clearAssistance();
+        inputMode=mode;englishMode=mode.english();literalField=literal;
+        context="";afterLatin=false;completionBoundary=false;committedEnglishWord=false;
+        refresh();changed.run();
     }
     public void layout(boolean zhuyin) { commitDefault(false); this.zhuyin = zhuyin; refresh(); }
     public String raw() { return raw; }
@@ -239,7 +251,10 @@ public final class CompositionEngine {
         raw = ""; refresh();
     }
     private boolean latinBoundary(String text) {return !englishMode && !literalField && text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");}
-    private String contextKey() { return englishMode?"EN:"+context:!context.isEmpty()?context:afterLatin?"AFTER_LATIN":"START_OR_LATIN"; }
+    private String contextKey() {
+        String base=englishMode?"EN:"+context:!context.isEmpty()?context:afterLatin?"AFTER_LATIN":"START_OR_LATIN";
+        return inputMode==InputMode.TAIWANESE || inputMode==InputMode.JAPANESE?"MODE:"+inputMode.id+":"+base:base;
+    }
     private static String tail(String text, int n) {
         return text.substring(text.offsetByCodePoints(text.length(), -Math.min(n, text.codePointCount(0, text.length()))));
     }
@@ -275,7 +290,7 @@ public final class CompositionEngine {
                 preferred = 1; return;
             }
         }
-        Set<String> packs=!privateField && !literalField?enabledAddons:Collections.emptySet();
+        Set<String> packs=!privateField && !literalField?inputMode.packs(enabledAddons):Collections.emptySet();
         if(decoder!=null && dictionary!=null && !literalField && (!englishMode || !packs.isEmpty())) {
             pending=true;
             decoder.query(dictionary,raw,bpmf,context,!englishMode,addons,packs,result->{
