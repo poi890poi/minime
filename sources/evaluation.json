@@ -184,6 +184,31 @@
       ],
       "leakage": "Targets and aliases are production-source records. No independent conversation, essay, accuracy or fresh-holdout claim.",
       "limitations": "Source commonness is imperfect. Does not measure sentence conversion, sense correctness, modern usage or spontaneous human typing."
+    },
+    {
+      "id": "taihoa-full-retrieval-20260910",
+      "source_ids": [
+        "taihoa"
+      ],
+      "genre": [
+        "general-dictionary"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "All supported source headwords and aligned variants, full tone-free queries plus 2048 deterministic hash-selected half-reading probes. Frozen before importer expansion. Reproduced by tools/audit_focused_dictionaries.py.",
+      "files": [
+        "docs/two-language-modes/taihoa-inputs.tsv",
+        "docs/two-language-modes/source-audit.json"
+      ],
+      "report_by": [
+        "source",
+        "genre",
+        "input-condition",
+        "retrieval-rank",
+        "latency"
+      ],
+      "leakage": "Production-source targets measure source retrieval only; not independent conversation or essay accuracy.",
+      "limitations": "No lexical frequency, sense, spontaneous conversation, spelling consensus or grammar evaluation. Query variants remain grouped by source ID."
     }
   ]
 }

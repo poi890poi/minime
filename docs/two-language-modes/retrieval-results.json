@@ -1,0 +1,120 @@
+{
+  "taihoa-baseline": {
+    "full": {
+      "n": 100973,
+      "top3": 14009,
+      "top8": 14247,
+      "available": 14247,
+      "paired": 11803
+    },
+    "prefix": {
+      "n": 2047,
+      "top3": 33,
+      "top8": 66,
+      "available": 66,
+      "paired": 49
+    }
+  },
+  "taihoa-final": {
+    "full": {
+      "n": 100973,
+      "top3": 99010,
+      "top8": 100970,
+      "available": 100973,
+      "paired": 67126
+    },
+    "prefix": {
+      "n": 2047,
+      "top3": 101,
+      "top8": 249,
+      "available": 697,
+      "paired": 443
+    }
+  },
+  "beginner-baseline": {
+    "full": {
+      "n": 5163,
+      "top3": 5113,
+      "top8": 5163,
+      "available": 5163,
+      "paired": 3009
+    },
+    "prefix": {
+      "n": 5163,
+      "top3": 1603,
+      "top8": 2893,
+      "available": 2893,
+      "paired": 1385
+    },
+    "initials": {
+      "n": 5163,
+      "top3": 1106,
+      "top8": 1792,
+      "available": 1792,
+      "paired": 602
+    }
+  },
+  "beginner-final": {
+    "full": {
+      "n": 5163,
+      "top3": 5103,
+      "top8": 5163,
+      "available": 5163,
+      "paired": 3009
+    },
+    "prefix": {
+      "n": 5163,
+      "top3": 1423,
+      "top8": 2645,
+      "available": 4285,
+      "paired": 2380
+    },
+    "initials": {
+      "n": 5163,
+      "top3": 1085,
+      "top8": 1751,
+      "available": 2814,
+      "paired": 1268
+    }
+  },
+  "japanese-baseline": {
+    "full": {
+      "n": 22953,
+      "top3": 22509,
+      "top8": 22819,
+      "available": 22953
+    },
+    "half": {
+      "n": 1024,
+      "top3": 75,
+      "top8": 191,
+      "available": 224
+    },
+    "initials": {
+      "n": 1019,
+      "top3": 499,
+      "top8": 766,
+      "available": 796
+    }
+  },
+  "japanese-final": {
+    "full": {
+      "n": 22953,
+      "top3": 22509,
+      "top8": 22819,
+      "available": 22953
+    },
+    "half": {
+      "n": 1024,
+      "top3": 75,
+      "top8": 191,
+      "available": 418
+    },
+    "initials": {
+      "n": 1019,
+      "top3": 499,
+      "top8": 766,
+      "available": 948
+    }
+  }
+}

@@ -29,7 +29,7 @@ def append_everyday(add, skipped):
             for key, output in zip(keys, outputs):
                 key = key.strip().lower(); output = unicodedata.normalize('NFC', output.strip())
                 if not key: continue
-                if not re.fullmatch('[a-z0-9 -]+', key) or not short_poj(key):
+                if not re.fullmatch('[a-z0-9 -]+', key) or len(key)>96 or len(output)>96:
                     skipped.append([source, output, 'unsupported or long beginner headword']); continue
                 for alias in (key, re.sub('[1-9]', '', key)):
                     add('poj', alias, output, source, 'everyday_vocabulary')

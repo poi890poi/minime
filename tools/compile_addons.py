@@ -9,7 +9,7 @@ from collections import Counter, defaultdict
 from everyday_addons import append_everyday
 from taiwan_entities import append_entities
 from sources import require_sources
-require_sources('cedict','wikidata','taiwan-encyclopedia','opencc-python','itaigi','taiwanese-basic','jmdict','jmnedict','wanakana')
+require_sources('cedict','wikidata','taiwan-encyclopedia','opencc-python','itaigi','taihoa','taiwanese-basic','jmdict','jmnedict','wanakana')
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / 'app/src/main/assets'
@@ -84,8 +84,7 @@ for line in (ROOT/'third_party/mcbopomofo/phrase.occ').read_text(encoding='utf-8
     if len(parts)==2:frequency[parts[0]]=float(parts[1])
 for item in csv.DictReader((ROOT/'third_party/itaigi/itaigi.csv').open(encoding='utf-8-sig')):
     meaning=item['HoaBun'];key=item['PojInput'].lower()
-    if not (2<=len(meaning)<=6 and han(meaning)):continue
-    if not re.fullmatch('[a-z0-9 -]+',key) or len(re.split('[- ]+',key))>6:continue
+    if not re.fullmatch('[a-z0-9 -]+',key) or len(key)>96:continue
     output=unicodedata.normalize('NFC',item['PojUnicode']);source='itaigi:'+item['DictWordID']
     for alias in (key,re.sub('[1-9]','',key)):add('poj',alias,output,source,'short_vocabulary')
     provenance.append({'source':source,'meaning':meaning,'input':key,'output':output,'orthography':'POJ','contributor':item['DataProvidedBy'],'Mandarin_source_frequency':frequency.get(meaning,0)})
@@ -107,7 +106,23 @@ for item in selected_japanese:
             if '*' in kana['appliesToKanji'] or name['text'] in kana['appliesToKanji']:
                 add('japanese',key,name['text'],source,'taiwan_and_culture')
 
+# Full authored Taiwanese dictionary. Preserve aligned source variants; never
+# use Mandarin gloss form or guessed example fragments as eligibility criteria.
+taihoa_records = 0
+for item in csv.DictReader((ROOT/'third_party/taihoa/taihoa.csv').open(encoding='utf-8-sig')):
+    taihoa_records += 1
+    source='taihoa:'+item['DictWordID']
+    for suffix in ('','Others'):
+        keys=item['PojInput'+suffix].split('/');outputs=item['PojUnicode'+suffix].split('/')
+        if len(keys)!=len(outputs):skipped.append([source,suffix,'unaligned source variants']);continue
+        for key,output in zip(keys,outputs):
+            key=key.strip().lower();output=unicodedata.normalize('NFC',output.strip())
+            if not key:continue
+            if not re.fullmatch('[a-z0-9 -]+',key) or not output or len(key)>96 or len(output)>96:
+                skipped.append([source,output,'unsupported or exceeds composition limit']);continue
+            for alias in (key,re.sub('[1-9]','',key)):add('poj',alias,output,source,'extended_vocabulary')
 everyday = append_everyday(add, skipped)
+everyday['taihoa_source_records']=taihoa_records
 encyclopedia = append_entities(add, readings, syllables)
 serialized='# pack\treading\toutput\tsource\tcategory\n'+''.join('\t'.join(r)+'\n' for r in sorted(rows))
 (ASSETS/'addons.tsv').write_bytes(serialized.encode('utf-8'))
@@ -126,6 +141,7 @@ for folder, filename in [('jmdict','jmdict-eng-common.json.tgz'), ('taiwanese_ba
     source=json.loads(path.with_name(path.name+'.source.json').read_text())
     assert hashlib.sha256(path.read_bytes()).hexdigest()==source['sha256']
     source['file']=str(path.relative_to(ROOT)).replace('\\','/');sources.append(source)
+source=json.loads((ROOT/'third_party/taihoa/source.json').read_text(encoding='utf-8'));source['file']='third_party/taihoa/taihoa.csv';sources.append(source)
 report=dict(format=1,orthography={'poj':'Pe̍h-ōe-jī; original PojUnicode/PojInput, not Tâi-lô'},
  sources=sources,asset_sha256=hashlib.sha256(serialized.encode()).hexdigest(),rows=len(rows),
  outputs_by_pack={pack:len({r[2] for r in rows if r[0]==pack}) for pack in ('taiwan','poj','japanese')},
@@ -137,7 +153,7 @@ report['taiwan_encyclopedia']=encyclopedia
 report['sources'].append(dict(file='third_party/taiwan_encyclopedia/snapshot.json.gz',url='https://zh.wikipedia.org/',license='CC-BY-SA-4.0',sha256=encyclopedia['snapshot_sha256']))
 report['sources'].append(dict(file='third_party/taiwan_encyclopedia/entity-types.json.gz',url='https://www.wikidata.org/',license='CC0-1.0',sha256=encyclopedia['entity_types_sha256']))
 report['sources'].append(dict(file='third_party/taiwan_encyclopedia/traditional-labels.json.gz',url='https://www.wikidata.org/',license='CC0-1.0',sha256=encyclopedia['traditional_labels_sha256']))
-report['selection_rules']={'poj':'All iTaigi expressions with 2-6 Han Mandarin labels and <=6 POJ syllables, plus all beginner headwords/variants and complete examples <=6 syllables; no Mandarin frequency eligibility gate','japanese':'All JMdict source-common readings and compatible common spellings across parts of speech, plus JMnedict works, creative professions and Taiwan metadata; no entity allowlist'}
+report['selection_rules']={'poj':'All supported iTaigi and Taihoa headwords/variants and beginner headwords within the 96-character limit; complete beginner examples <=6 syllables; no Mandarin gloss or frequency eligibility gate','japanese':'All JMdict source-common readings and compatible common spellings across parts of speech, plus JMnedict works, creative professions and Taiwan metadata; no entity allowlist'}
 (OUT/'source-manifest.json').write_bytes((json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
 print(json.dumps({k:v for k,v in report.items() if k in ('rows','outputs_by_pack','taiwan_category_outputs')},ensure_ascii=False,indent=2))
 print('Skipped for review:',len(skipped))

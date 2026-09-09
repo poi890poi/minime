@@ -244,11 +244,11 @@
     },
     "app/src/main/assets/paired-forms.tsv": {
       "source": "paired-taiwanese",
-      "sha256": "12f56cf26dce392df810a1b8db8fa9c8f9a58b415ba1e6da0b7f566da09cf439"
+      "sha256": "c3c53b5f56c8c541df641f808187fdb980ede098cc7a36081a667a6a481f864f"
     },
     "docs/candidate-annotations/pairs-manifest.json": {
       "source": "paired-taiwanese",
-      "sha256": "eff78f06fb27a730cd3f91aac7c90677844382be45481d5119ee22f6930dfd76"
+      "sha256": "0111912726cede3bb5a956604b8e493f1173c97f384e103e717f948474cdf9e0"
     },
     "third_party/taihoa/taihoa.csv": {
       "source": "taihoa",
@@ -281,12 +281,16 @@
       "sha256": "91384b32f0f06e890f4aa5c8d4fcf718da7ed8cf53ad0b3e2817b7eb9f88c863"
     },
     "itaigi": {
-      "rows": 32911,
-      "sha256": "89de6fc412b3ae8cb2816b7ef514d6fdb1f67c48fadfbd901f13ecb0ad6594e0"
+      "rows": 35405,
+      "sha256": "f3d4f7ccabad00ea58dfd9e3bedd8940a851802c5cc7d0f4f719eefef9858e19"
     },
     "taiwanese-basic": {
-      "rows": 11428,
-      "sha256": "02e8acfca36739d431fa9c77a660c0db8ddb13d53611a6b787d5b94727f1e5b8"
+      "rows": 11454,
+      "sha256": "0f2bc6dc96f501ab1bc48a1ab461f217741aa62d66528638a9900ca7ea012507"
+    },
+    "taihoa": {
+      "rows": 192936,
+      "sha256": "46ff10afbe767030ed9b0c2b07d5c2d8faabdf07ffcf55a862c57f7fce7bdcec"
     },
     "taiwan-encyclopedia": {
       "rows": 28976,
@@ -316,7 +320,7 @@
     "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz": "67741d407f0184a6aeb2ecded1123570b02e5fc080584490b683024c65bd329f"
   },
   "evaluation": {
-    "sources/evaluation.json": "07845cf2c22cbe3723ed21930ed887e51fda3d624b05dd058e00b6981359d734",
+    "sources/evaluation.json": "620230899b8050bf4c8a70303e77dc1c893181b99e73d7542aedd189f4a4c847",
     "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz": "67741d407f0184a6aeb2ecded1123570b02e5fc080584490b683024c65bd329f",
     "docs/sources/audit-2026-09-08/sample-records.json.gz": "07fcdf332972d286db63b33149ed021dcdea43ce08371c3d78245b0e6ff56bfb",
     "docs/conversation-ranking/corpus/gum-manifest.json": "b7b3abbc303d4ca20b1a65dc92dd305cd1082c660561016f4de2099d207f2529",
@@ -332,6 +336,8 @@
     "docs/taiwanese-coverage/basic-headwords.json": "442f4a0b2af634c03100642b73d773d4fc675dacd46b0294481ced80a2c9c0f4",
     "docs/taiwanese-coverage/retrieval-inputs.tsv": "052e1c63271bb3b3d3a58ce2b004de03d228d23b0c827fd3b03b550aade84fa2",
     "docs/japanese-coverage/inputs.tsv": "5ed0f522d1ad723817e78dc312ba07ef8434c6f0d3d33e084be830e95b5c3440",
-    "docs/japanese-coverage/inputs-manifest.json": "ff271c894b92048b0a123753f164976a9de3b5f16d0b102a4f81a85e81b60554"
+    "docs/japanese-coverage/inputs-manifest.json": "ff271c894b92048b0a123753f164976a9de3b5f16d0b102a4f81a85e81b60554",
+    "docs/two-language-modes/taihoa-inputs.tsv": "39053e7a81270b3f360d1c99d15a48e40060046e0e8f84c52a57fb7d73b4d260",
+    "docs/two-language-modes/source-audit.json": "4c7cc01d4fb66a9cd6700fb33f558ad1b10b91176c74b840ddbf2922b267b10c"
   }
 }

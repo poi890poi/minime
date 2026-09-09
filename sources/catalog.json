@@ -114,7 +114,7 @@
       ],
       "editorial": "Community contributions retain contributor IDs and original POJ fields.",
       "coverage": "19,046 source records in pinned dataset description; compiled counts in existing manifest.",
-      "limitations": "Contributor quality varies; Mandarin gloss length filter limits coverage.",
+      "limitations": "Contributor quality varies; source spelling and contributors are retained. No Mandarin gloss eligibility gate.",
       "reason": "Retain original POJ and source attribution.",
       "addon_prefixes": [
         "itaigi:"
@@ -762,13 +762,16 @@
       },
       "evidence": [
         "third_party/itaigi/README.md",
-        "docs/taiwanese-coverage/PLAN.md"
+        "docs/taiwanese-coverage/PLAN.md",
+        "docs/two-language-modes/SOURCES.md"
       ],
       "editorial": "Taiwan-authored 鄭良偉 foundation, expanded and edited by 楊允言 and transcription/proofreading volunteers; original POJ/HanLo fields.",
-      "coverage": "91,339 records at existing ChhoeTaigi pin. Use source-attested alternatives only for existing shipped phonetic outputs.",
+      "coverage": "All syntactically supported headwords and aligned POJ variants within the 96-character composition limit, plus source-attested Han alternatives. 91,339 records at unchanged pin.",
       "limitations": "Dictionary breadth is not typing frequency or spelling consensus. Homophones have multiple senses; canonical form is one pronunciation example. No guessed alternate-reading pairing.",
-      "reason": "Restore basic Taiwanese Han alternatives missing from iTaigi-only metadata.",
-      "addon_prefixes": []
+      "reason": "Dedicated Taiwanese mode needs an extensive authored dictionary; import original headwords and aligned variants without Mandarin gloss, length-in-syllables or frequency eligibility gates.",
+      "addon_prefixes": [
+        "taihoa:"
+      ]
     },
     {
       "id": "kanjidic",

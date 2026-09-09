@@ -28,6 +28,6 @@ public final class PairedForms {
         }return new PairedForms(result);
     }
     Pair forEntry(String pack,String output,String source) {
-        return pack.equals("poj") && (source.startsWith("itaigi:") || source.startsWith("taiwanese-basic:"))?entries.get(output):null;
+        return pack.equals("poj") && (source.startsWith("itaigi:") || source.startsWith("taiwanese-basic:") || source.startsWith("taihoa:"))?entries.get(output):null;
     }
 }
