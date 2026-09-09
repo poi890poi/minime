@@ -1,0 +1,2628 @@
+{
+  "baseline": {
+    "chinese|en-conversation|full": {
+      "n": 256,
+      "top3": 10,
+      "top8": 10,
+      "available": 10,
+      "default": 247
+    },
+    "english|en-conversation|full": {
+      "n": 256,
+      "top3": 11,
+      "top8": 11,
+      "available": 11,
+      "default": 250
+    },
+    "taiwanese|en-conversation|full": {
+      "n": 256,
+      "top3": 10,
+      "top8": 10,
+      "available": 10,
+      "default": 247
+    },
+    "japanese|en-conversation|full": {
+      "n": 256,
+      "top3": 10,
+      "top8": 10,
+      "available": 10,
+      "default": 247
+    },
+    "chinese|en-conversation|half": {
+      "n": 256,
+      "top3": 25,
+      "top8": 56,
+      "available": 89,
+      "default": 0
+    },
+    "english|en-conversation|half": {
+      "n": 256,
+      "top3": 71,
+      "top8": 97,
+      "available": 117,
+      "default": 0
+    },
+    "taiwanese|en-conversation|half": {
+      "n": 256,
+      "top3": 30,
+      "top8": 53,
+      "available": 102,
+      "default": 0
+    },
+    "japanese|en-conversation|half": {
+      "n": 256,
+      "top3": 17,
+      "top8": 29,
+      "available": 112,
+      "default": 0
+    },
+    "chinese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "english|en-conversation|transpose": {
+      "n": 204,
+      "top3": 162,
+      "top8": 167,
+      "available": 170,
+      "default": 4
+    },
+    "taiwanese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "japanese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "chinese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 126
+    },
+    "english|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 126
+    },
+    "taiwanese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 126
+    },
+    "japanese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 126
+    },
+    "chinese|en-essay|half": {
+      "n": 128,
+      "top3": 24,
+      "top8": 45,
+      "available": 60,
+      "default": 0
+    },
+    "english|en-essay|half": {
+      "n": 128,
+      "top3": 51,
+      "top8": 67,
+      "available": 75,
+      "default": 0
+    },
+    "taiwanese|en-essay|half": {
+      "n": 128,
+      "top3": 24,
+      "top8": 44,
+      "available": 64,
+      "default": 0
+    },
+    "japanese|en-essay|half": {
+      "n": 128,
+      "top3": 14,
+      "top8": 25,
+      "available": 66,
+      "default": 0
+    },
+    "chinese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "english|en-essay|transpose": {
+      "n": 106,
+      "top3": 97,
+      "top8": 100,
+      "available": 101,
+      "default": 1
+    },
+    "taiwanese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "japanese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "chinese|zh-essay|full": {
+      "n": 416,
+      "top3": 224,
+      "top8": 226,
+      "available": 235,
+      "default": 209
+    },
+    "english|zh-essay|full": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|full": {
+      "n": 416,
+      "top3": 224,
+      "top8": 226,
+      "available": 235,
+      "default": 209
+    },
+    "japanese|zh-essay|full": {
+      "n": 416,
+      "top3": 219,
+      "top8": 223,
+      "available": 235,
+      "default": 204
+    },
+    "chinese|zh-essay|half": {
+      "n": 416,
+      "top3": 9,
+      "top8": 9,
+      "available": 47,
+      "default": 3
+    },
+    "english|zh-essay|half": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|half": {
+      "n": 416,
+      "top3": 7,
+      "top8": 8,
+      "available": 47,
+      "default": 3
+    },
+    "japanese|zh-essay|half": {
+      "n": 416,
+      "top3": 8,
+      "top8": 9,
+      "available": 47,
+      "default": 3
+    },
+    "chinese|zh-essay|initials": {
+      "n": 416,
+      "top3": 52,
+      "top8": 77,
+      "available": 115,
+      "default": 33
+    },
+    "english|zh-essay|initials": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|initials": {
+      "n": 416,
+      "top3": 52,
+      "top8": 76,
+      "available": 115,
+      "default": 33
+    },
+    "japanese|zh-essay|initials": {
+      "n": 416,
+      "top3": 40,
+      "top8": 65,
+      "available": 115,
+      "default": 28
+    },
+    "chinese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 118,
+      "top8": 131,
+      "available": 155,
+      "default": 97
+    },
+    "english|zh-essay|mixed": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 114,
+      "top8": 128,
+      "available": 155,
+      "default": 92
+    },
+    "japanese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 108,
+      "top8": 124,
+      "available": 155,
+      "default": 87
+    },
+    "chinese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "english|zh-essay|transpose": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "japanese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "chinese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 14
+    },
+    "english|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 49
+    },
+    "taiwanese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 14
+    },
+    "japanese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 79,
+      "top8": 79,
+      "available": 79,
+      "default": 48
+    },
+    "chinese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 48,
+      "top8": 72,
+      "available": 96,
+      "default": 11
+    },
+    "chinese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "english|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "taiwanese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "japanese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 3,
+      "top8": 3,
+      "available": 3,
+      "default": 2
+    },
+    "chinese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "english|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 6
+    },
+    "taiwanese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 121,
+      "top8": 122,
+      "available": 122,
+      "default": 99
+    },
+    "japanese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "chinese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 28,
+      "top8": 51,
+      "available": 51,
+      "default": 9
+    },
+    "japanese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 1,
+      "default": 0
+    },
+    "chinese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 1,
+      "available": 1,
+      "default": 0
+    },
+    "taiwanese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 5,
+      "top8": 5,
+      "available": 5,
+      "default": 4
+    },
+    "japanese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    }
+  },
+  "policy": {
+    "chinese|en-conversation|full": {
+      "n": 256,
+      "top3": 10,
+      "top8": 10,
+      "available": 10,
+      "default": 247
+    },
+    "english|en-conversation|full": {
+      "n": 256,
+      "top3": 11,
+      "top8": 11,
+      "available": 11,
+      "default": 250
+    },
+    "taiwanese|en-conversation|full": {
+      "n": 256,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 152
+    },
+    "japanese|en-conversation|full": {
+      "n": 256,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 120
+    },
+    "taiwanese_english|en-conversation|full": {
+      "n": 256,
+      "top3": 6,
+      "top8": 6,
+      "available": 10,
+      "default": 157
+    },
+    "japanese_english|en-conversation|full": {
+      "n": 256,
+      "top3": 2,
+      "top8": 5,
+      "available": 10,
+      "default": 124
+    },
+    "chinese|en-conversation|half": {
+      "n": 256,
+      "top3": 25,
+      "top8": 56,
+      "available": 89,
+      "default": 0
+    },
+    "english|en-conversation|half": {
+      "n": 256,
+      "top3": 71,
+      "top8": 97,
+      "available": 117,
+      "default": 0
+    },
+    "taiwanese|en-conversation|half": {
+      "n": 256,
+      "top3": 11,
+      "top8": 13,
+      "available": 13,
+      "default": 0
+    },
+    "japanese|en-conversation|half": {
+      "n": 256,
+      "top3": 0,
+      "top8": 0,
+      "available": 23,
+      "default": 0
+    },
+    "taiwanese_english|en-conversation|half": {
+      "n": 256,
+      "top3": 34,
+      "top8": 56,
+      "available": 102,
+      "default": 0
+    },
+    "japanese_english|en-conversation|half": {
+      "n": 256,
+      "top3": 20,
+      "top8": 36,
+      "available": 112,
+      "default": 0
+    },
+    "chinese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "english|en-conversation|transpose": {
+      "n": 204,
+      "top3": 162,
+      "top8": 167,
+      "available": 170,
+      "default": 4
+    },
+    "taiwanese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "japanese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "taiwanese_english|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "japanese_english|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "chinese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 126
+    },
+    "english|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 126
+    },
+    "taiwanese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 92
+    },
+    "japanese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 88
+    },
+    "taiwanese_english|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 92
+    },
+    "japanese_english|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 88
+    },
+    "chinese|en-essay|half": {
+      "n": 128,
+      "top3": 24,
+      "top8": 45,
+      "available": 60,
+      "default": 0
+    },
+    "english|en-essay|half": {
+      "n": 128,
+      "top3": 51,
+      "top8": 67,
+      "available": 75,
+      "default": 0
+    },
+    "taiwanese|en-essay|half": {
+      "n": 128,
+      "top3": 3,
+      "top8": 4,
+      "available": 4,
+      "default": 0
+    },
+    "japanese|en-essay|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 6,
+      "default": 0
+    },
+    "taiwanese_english|en-essay|half": {
+      "n": 128,
+      "top3": 32,
+      "top8": 46,
+      "available": 64,
+      "default": 0
+    },
+    "japanese_english|en-essay|half": {
+      "n": 128,
+      "top3": 18,
+      "top8": 32,
+      "available": 66,
+      "default": 0
+    },
+    "chinese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "english|en-essay|transpose": {
+      "n": 106,
+      "top3": 97,
+      "top8": 100,
+      "available": 101,
+      "default": 1
+    },
+    "taiwanese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "japanese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "taiwanese_english|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "japanese_english|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "chinese|zh-essay|full": {
+      "n": 416,
+      "top3": 224,
+      "top8": 226,
+      "available": 235,
+      "default": 209
+    },
+    "english|zh-essay|full": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|full": {
+      "n": 416,
+      "top3": 224,
+      "top8": 226,
+      "available": 235,
+      "default": 209
+    },
+    "japanese|zh-essay|full": {
+      "n": 416,
+      "top3": 219,
+      "top8": 223,
+      "available": 235,
+      "default": 204
+    },
+    "taiwanese_english|zh-essay|full": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|full": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|half": {
+      "n": 416,
+      "top3": 9,
+      "top8": 9,
+      "available": 47,
+      "default": 3
+    },
+    "english|zh-essay|half": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|half": {
+      "n": 416,
+      "top3": 7,
+      "top8": 8,
+      "available": 47,
+      "default": 3
+    },
+    "japanese|zh-essay|half": {
+      "n": 416,
+      "top3": 8,
+      "top8": 9,
+      "available": 47,
+      "default": 3
+    },
+    "taiwanese_english|zh-essay|half": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|half": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|initials": {
+      "n": 416,
+      "top3": 52,
+      "top8": 77,
+      "available": 115,
+      "default": 33
+    },
+    "english|zh-essay|initials": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|initials": {
+      "n": 416,
+      "top3": 55,
+      "top8": 77,
+      "available": 115,
+      "default": 33
+    },
+    "japanese|zh-essay|initials": {
+      "n": 416,
+      "top3": 42,
+      "top8": 65,
+      "available": 115,
+      "default": 28
+    },
+    "taiwanese_english|zh-essay|initials": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|initials": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 118,
+      "top8": 131,
+      "available": 155,
+      "default": 97
+    },
+    "english|zh-essay|mixed": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 114,
+      "top8": 130,
+      "available": 155,
+      "default": 92
+    },
+    "japanese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 109,
+      "top8": 124,
+      "available": 155,
+      "default": 87
+    },
+    "taiwanese_english|zh-essay|mixed": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|mixed": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "english|zh-essay|transpose": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "japanese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "taiwanese_english|zh-essay|transpose": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|transpose": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 14
+    },
+    "english|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 49
+    },
+    "taiwanese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 12
+    },
+    "japanese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 79,
+      "top8": 79,
+      "available": 79,
+      "default": 48
+    },
+    "taiwanese_english|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 45
+    },
+    "japanese_english|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 79,
+      "top8": 79,
+      "available": 79,
+      "default": 48
+    },
+    "chinese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 48,
+      "top8": 72,
+      "available": 96,
+      "default": 15
+    },
+    "taiwanese_english|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 49,
+      "top8": 76,
+      "available": 109,
+      "default": 15
+    },
+    "chinese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "english|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "taiwanese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "japanese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 3,
+      "top8": 3,
+      "available": 3,
+      "default": 2
+    },
+    "taiwanese_english|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "japanese_english|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 3,
+      "top8": 3,
+      "available": 3,
+      "default": 2
+    },
+    "chinese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "english|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 6
+    },
+    "taiwanese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 121,
+      "top8": 122,
+      "available": 122,
+      "default": 103
+    },
+    "japanese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "taiwanese_english|poj-retrieval|full": {
+      "n": 128,
+      "top3": 121,
+      "top8": 122,
+      "available": 122,
+      "default": 103
+    },
+    "japanese_english|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "chinese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 28,
+      "top8": 51,
+      "available": 51,
+      "default": 14
+    },
+    "japanese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 1,
+      "default": 0
+    },
+    "taiwanese_english|poj-retrieval|half": {
+      "n": 128,
+      "top3": 28,
+      "top8": 53,
+      "available": 53,
+      "default": 14
+    },
+    "japanese_english|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 1,
+      "default": 0
+    },
+    "chinese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 1,
+      "available": 1,
+      "default": 0
+    },
+    "taiwanese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 5,
+      "top8": 5,
+      "available": 5,
+      "default": 4
+    },
+    "japanese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese_english|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 5,
+      "top8": 5,
+      "available": 5,
+      "default": 4
+    },
+    "japanese_english|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    }
+  },
+  "search": {
+    "chinese|en-conversation|full": {
+      "n": 256,
+      "top3": 10,
+      "top8": 10,
+      "available": 10,
+      "default": 247
+    },
+    "english|en-conversation|full": {
+      "n": 256,
+      "top3": 11,
+      "top8": 11,
+      "available": 11,
+      "default": 250
+    },
+    "taiwanese|en-conversation|full": {
+      "n": 256,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 149
+    },
+    "japanese|en-conversation|full": {
+      "n": 256,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 120
+    },
+    "taiwanese_english|en-conversation|full": {
+      "n": 256,
+      "top3": 6,
+      "top8": 6,
+      "available": 10,
+      "default": 157
+    },
+    "japanese_english|en-conversation|full": {
+      "n": 256,
+      "top3": 2,
+      "top8": 5,
+      "available": 10,
+      "default": 124
+    },
+    "chinese|en-conversation|half": {
+      "n": 256,
+      "top3": 25,
+      "top8": 56,
+      "available": 89,
+      "default": 0
+    },
+    "english|en-conversation|half": {
+      "n": 256,
+      "top3": 71,
+      "top8": 97,
+      "available": 117,
+      "default": 0
+    },
+    "taiwanese|en-conversation|half": {
+      "n": 256,
+      "top3": 11,
+      "top8": 19,
+      "available": 19,
+      "default": 0
+    },
+    "japanese|en-conversation|half": {
+      "n": 256,
+      "top3": 0,
+      "top8": 0,
+      "available": 24,
+      "default": 0
+    },
+    "taiwanese_english|en-conversation|half": {
+      "n": 256,
+      "top3": 34,
+      "top8": 54,
+      "available": 102,
+      "default": 0
+    },
+    "japanese_english|en-conversation|half": {
+      "n": 256,
+      "top3": 20,
+      "top8": 36,
+      "available": 113,
+      "default": 0
+    },
+    "chinese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "english|en-conversation|transpose": {
+      "n": 204,
+      "top3": 162,
+      "top8": 167,
+      "available": 170,
+      "default": 4
+    },
+    "taiwanese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "japanese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "taiwanese_english|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "japanese_english|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "chinese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 126
+    },
+    "english|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 126
+    },
+    "taiwanese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 92
+    },
+    "japanese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 88
+    },
+    "taiwanese_english|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 92
+    },
+    "japanese_english|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 88
+    },
+    "chinese|en-essay|half": {
+      "n": 128,
+      "top3": 24,
+      "top8": 45,
+      "available": 60,
+      "default": 0
+    },
+    "english|en-essay|half": {
+      "n": 128,
+      "top3": 51,
+      "top8": 67,
+      "available": 75,
+      "default": 0
+    },
+    "taiwanese|en-essay|half": {
+      "n": 128,
+      "top3": 3,
+      "top8": 4,
+      "available": 4,
+      "default": 0
+    },
+    "japanese|en-essay|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 6,
+      "default": 0
+    },
+    "taiwanese_english|en-essay|half": {
+      "n": 128,
+      "top3": 32,
+      "top8": 46,
+      "available": 64,
+      "default": 0
+    },
+    "japanese_english|en-essay|half": {
+      "n": 128,
+      "top3": 18,
+      "top8": 32,
+      "available": 66,
+      "default": 0
+    },
+    "chinese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "english|en-essay|transpose": {
+      "n": 106,
+      "top3": 97,
+      "top8": 100,
+      "available": 101,
+      "default": 1
+    },
+    "taiwanese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "japanese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "taiwanese_english|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "japanese_english|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "chinese|zh-essay|full": {
+      "n": 416,
+      "top3": 224,
+      "top8": 226,
+      "available": 235,
+      "default": 209
+    },
+    "english|zh-essay|full": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|full": {
+      "n": 416,
+      "top3": 224,
+      "top8": 226,
+      "available": 235,
+      "default": 209
+    },
+    "japanese|zh-essay|full": {
+      "n": 416,
+      "top3": 219,
+      "top8": 223,
+      "available": 235,
+      "default": 204
+    },
+    "taiwanese_english|zh-essay|full": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|full": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|half": {
+      "n": 416,
+      "top3": 9,
+      "top8": 9,
+      "available": 47,
+      "default": 3
+    },
+    "english|zh-essay|half": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|half": {
+      "n": 416,
+      "top3": 7,
+      "top8": 8,
+      "available": 47,
+      "default": 3
+    },
+    "japanese|zh-essay|half": {
+      "n": 416,
+      "top3": 8,
+      "top8": 9,
+      "available": 47,
+      "default": 3
+    },
+    "taiwanese_english|zh-essay|half": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|half": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|initials": {
+      "n": 416,
+      "top3": 52,
+      "top8": 77,
+      "available": 115,
+      "default": 33
+    },
+    "english|zh-essay|initials": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|initials": {
+      "n": 416,
+      "top3": 52,
+      "top8": 68,
+      "available": 115,
+      "default": 31
+    },
+    "japanese|zh-essay|initials": {
+      "n": 416,
+      "top3": 42,
+      "top8": 65,
+      "available": 115,
+      "default": 28
+    },
+    "taiwanese_english|zh-essay|initials": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|initials": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 118,
+      "top8": 131,
+      "available": 155,
+      "default": 97
+    },
+    "english|zh-essay|mixed": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 114,
+      "top8": 127,
+      "available": 155,
+      "default": 92
+    },
+    "japanese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 109,
+      "top8": 124,
+      "available": 155,
+      "default": 87
+    },
+    "taiwanese_english|zh-essay|mixed": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|mixed": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "english|zh-essay|transpose": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "japanese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "taiwanese_english|zh-essay|transpose": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|transpose": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 14
+    },
+    "english|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 49
+    },
+    "taiwanese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 12
+    },
+    "japanese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 79,
+      "top8": 79,
+      "available": 79,
+      "default": 48
+    },
+    "taiwanese_english|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 45
+    },
+    "japanese_english|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 79,
+      "top8": 79,
+      "available": 79,
+      "default": 48
+    },
+    "chinese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 49,
+      "top8": 76,
+      "available": 125,
+      "default": 15
+    },
+    "taiwanese_english|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 49,
+      "top8": 76,
+      "available": 125,
+      "default": 15
+    },
+    "chinese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "english|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "taiwanese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "japanese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 3,
+      "top8": 3,
+      "available": 3,
+      "default": 2
+    },
+    "taiwanese_english|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "japanese_english|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 3,
+      "top8": 3,
+      "available": 3,
+      "default": 2
+    },
+    "chinese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "english|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 6
+    },
+    "taiwanese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 121,
+      "top8": 122,
+      "available": 122,
+      "default": 103
+    },
+    "japanese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "taiwanese_english|poj-retrieval|full": {
+      "n": 128,
+      "top3": 121,
+      "top8": 122,
+      "available": 122,
+      "default": 103
+    },
+    "japanese_english|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "chinese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 28,
+      "top8": 53,
+      "available": 87,
+      "default": 14
+    },
+    "japanese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 1,
+      "default": 0
+    },
+    "taiwanese_english|poj-retrieval|half": {
+      "n": 128,
+      "top3": 28,
+      "top8": 53,
+      "available": 87,
+      "default": 14
+    },
+    "japanese_english|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 1,
+      "default": 0
+    },
+    "chinese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 1,
+      "available": 1,
+      "default": 0
+    },
+    "taiwanese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 5,
+      "top8": 5,
+      "available": 5,
+      "default": 4
+    },
+    "japanese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese_english|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 5,
+      "top8": 5,
+      "available": 5,
+      "default": 4
+    },
+    "japanese_english|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    }
+  },
+  "final": {
+    "chinese|en-conversation|full": {
+      "n": 256,
+      "top3": 10,
+      "top8": 10,
+      "available": 10,
+      "default": 247
+    },
+    "english|en-conversation|full": {
+      "n": 256,
+      "top3": 11,
+      "top8": 11,
+      "available": 11,
+      "default": 250
+    },
+    "taiwanese|en-conversation|full": {
+      "n": 256,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 141
+    },
+    "japanese|en-conversation|full": {
+      "n": 256,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 120
+    },
+    "taiwanese_english|en-conversation|full": {
+      "n": 256,
+      "top3": 6,
+      "top8": 6,
+      "available": 10,
+      "default": 147
+    },
+    "japanese_english|en-conversation|full": {
+      "n": 256,
+      "top3": 2,
+      "top8": 5,
+      "available": 10,
+      "default": 124
+    },
+    "chinese|en-conversation|half": {
+      "n": 256,
+      "top3": 25,
+      "top8": 56,
+      "available": 89,
+      "default": 0
+    },
+    "english|en-conversation|half": {
+      "n": 256,
+      "top3": 71,
+      "top8": 97,
+      "available": 117,
+      "default": 0
+    },
+    "taiwanese|en-conversation|half": {
+      "n": 256,
+      "top3": 9,
+      "top8": 19,
+      "available": 32,
+      "default": 0
+    },
+    "japanese|en-conversation|half": {
+      "n": 256,
+      "top3": 0,
+      "top8": 0,
+      "available": 24,
+      "default": 0
+    },
+    "taiwanese_english|en-conversation|half": {
+      "n": 256,
+      "top3": 32,
+      "top8": 51,
+      "available": 115,
+      "default": 0
+    },
+    "japanese_english|en-conversation|half": {
+      "n": 256,
+      "top3": 20,
+      "top8": 36,
+      "available": 113,
+      "default": 0
+    },
+    "chinese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "english|en-conversation|transpose": {
+      "n": 204,
+      "top3": 162,
+      "top8": 167,
+      "available": 170,
+      "default": 4
+    },
+    "taiwanese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "japanese|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "taiwanese_english|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "japanese_english|en-conversation|transpose": {
+      "n": 204,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 3
+    },
+    "chinese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 126
+    },
+    "english|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 126
+    },
+    "taiwanese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 90
+    },
+    "japanese|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 88
+    },
+    "taiwanese_english|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 90
+    },
+    "japanese_english|en-essay|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 88
+    },
+    "chinese|en-essay|half": {
+      "n": 128,
+      "top3": 24,
+      "top8": 45,
+      "available": 60,
+      "default": 0
+    },
+    "english|en-essay|half": {
+      "n": 128,
+      "top3": 51,
+      "top8": 67,
+      "available": 75,
+      "default": 0
+    },
+    "taiwanese|en-essay|half": {
+      "n": 128,
+      "top3": 3,
+      "top8": 4,
+      "available": 6,
+      "default": 0
+    },
+    "japanese|en-essay|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 6,
+      "default": 0
+    },
+    "taiwanese_english|en-essay|half": {
+      "n": 128,
+      "top3": 31,
+      "top8": 44,
+      "available": 66,
+      "default": 0
+    },
+    "japanese_english|en-essay|half": {
+      "n": 128,
+      "top3": 18,
+      "top8": 32,
+      "available": 66,
+      "default": 0
+    },
+    "chinese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "english|en-essay|transpose": {
+      "n": 106,
+      "top3": 97,
+      "top8": 100,
+      "available": 101,
+      "default": 1
+    },
+    "taiwanese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "japanese|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "taiwanese_english|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "japanese_english|en-essay|transpose": {
+      "n": 106,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "chinese|zh-essay|full": {
+      "n": 416,
+      "top3": 224,
+      "top8": 226,
+      "available": 235,
+      "default": 209
+    },
+    "english|zh-essay|full": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|full": {
+      "n": 416,
+      "top3": 223,
+      "top8": 225,
+      "available": 235,
+      "default": 208
+    },
+    "japanese|zh-essay|full": {
+      "n": 416,
+      "top3": 219,
+      "top8": 223,
+      "available": 235,
+      "default": 204
+    },
+    "taiwanese_english|zh-essay|full": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|full": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|half": {
+      "n": 416,
+      "top3": 9,
+      "top8": 9,
+      "available": 47,
+      "default": 3
+    },
+    "english|zh-essay|half": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|half": {
+      "n": 416,
+      "top3": 7,
+      "top8": 7,
+      "available": 47,
+      "default": 3
+    },
+    "japanese|zh-essay|half": {
+      "n": 416,
+      "top3": 8,
+      "top8": 9,
+      "available": 47,
+      "default": 3
+    },
+    "taiwanese_english|zh-essay|half": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|half": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|initials": {
+      "n": 416,
+      "top3": 52,
+      "top8": 77,
+      "available": 115,
+      "default": 33
+    },
+    "english|zh-essay|initials": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|initials": {
+      "n": 416,
+      "top3": 52,
+      "top8": 67,
+      "available": 115,
+      "default": 31
+    },
+    "japanese|zh-essay|initials": {
+      "n": 416,
+      "top3": 42,
+      "top8": 65,
+      "available": 115,
+      "default": 28
+    },
+    "taiwanese_english|zh-essay|initials": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|initials": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 118,
+      "top8": 131,
+      "available": 155,
+      "default": 97
+    },
+    "english|zh-essay|mixed": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 112,
+      "top8": 123,
+      "available": 155,
+      "default": 91
+    },
+    "japanese|zh-essay|mixed": {
+      "n": 416,
+      "top3": 109,
+      "top8": 124,
+      "available": 155,
+      "default": 87
+    },
+    "taiwanese_english|zh-essay|mixed": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|mixed": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "english|zh-essay|transpose": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "japanese|zh-essay|transpose": {
+      "n": 416,
+      "top3": 35,
+      "top8": 36,
+      "available": 37,
+      "default": 18
+    },
+    "taiwanese_english|zh-essay|transpose": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|zh-essay|transpose": {
+      "n": 416,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "chinese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 14
+    },
+    "english|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 49
+    },
+    "taiwanese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 11
+    },
+    "japanese|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 79,
+      "top8": 79,
+      "available": 79,
+      "default": 48
+    },
+    "taiwanese_english|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 44
+    },
+    "japanese_english|japanese-retrieval|full": {
+      "n": 128,
+      "top3": 79,
+      "top8": 79,
+      "available": 79,
+      "default": 48
+    },
+    "chinese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 49,
+      "top8": 76,
+      "available": 125,
+      "default": 15
+    },
+    "taiwanese_english|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "japanese_english|japanese-retrieval|half": {
+      "n": 128,
+      "top3": 49,
+      "top8": 76,
+      "available": 125,
+      "default": 15
+    },
+    "chinese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "english|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "taiwanese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "japanese|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 3,
+      "top8": 3,
+      "available": 3,
+      "default": 2
+    },
+    "taiwanese_english|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 1
+    },
+    "japanese_english|japanese-retrieval|transpose": {
+      "n": 128,
+      "top3": 3,
+      "top8": 3,
+      "available": 3,
+      "default": 2
+    },
+    "chinese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "english|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 6
+    },
+    "taiwanese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 121,
+      "top8": 122,
+      "available": 122,
+      "default": 103
+    },
+    "japanese|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 2
+    },
+    "taiwanese_english|poj-retrieval|full": {
+      "n": 128,
+      "top3": 121,
+      "top8": 122,
+      "available": 122,
+      "default": 103
+    },
+    "japanese_english|poj-retrieval|full": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 4
+    },
+    "chinese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 27,
+      "top8": 50,
+      "available": 84,
+      "default": 14
+    },
+    "japanese|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 1,
+      "default": 0
+    },
+    "taiwanese_english|poj-retrieval|half": {
+      "n": 128,
+      "top3": 27,
+      "top8": 50,
+      "available": 84,
+      "default": 14
+    },
+    "japanese_english|poj-retrieval|half": {
+      "n": 128,
+      "top3": 0,
+      "top8": 0,
+      "available": 1,
+      "default": 0
+    },
+    "chinese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "english|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 1,
+      "available": 1,
+      "default": 0
+    },
+    "taiwanese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 5,
+      "top8": 5,
+      "available": 5,
+      "default": 4
+    },
+    "japanese|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    },
+    "taiwanese_english|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 5,
+      "top8": 5,
+      "available": 5,
+      "default": 4
+    },
+    "japanese_english|poj-retrieval|transpose": {
+      "n": 124,
+      "top3": 0,
+      "top8": 0,
+      "available": 0,
+      "default": 0
+    }
+  }
+}

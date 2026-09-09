@@ -27,6 +27,9 @@ final class ReadingIndex {
         Range(int node,int left,int right) {this.node=node;this.left=left;this.right=right;}
     }
     List<Candidate> complete(String prefix,BiPredicate<String,Candidate> accept) {
+        return complete(prefix,accept,8);
+    }
+    List<Candidate> complete(String prefix,BiPredicate<String,Candidate> accept,int limit) {
         if(prefix.isEmpty()) return Collections.emptyList();
         int from=lower(prefix),to=lower(prefix+'\uffff');
         if(from==to) return Collections.emptyList();
@@ -53,22 +56,22 @@ final class ReadingIndex {
                     if(prior==null || prior.score<value.score) {
                         // Remove before changing a score used by the heap comparator.
                         top.remove(value.text);found.put(value.text,value);top.add(value.text);
-                        if(top.size()>8)top.remove();
+                        if(top.size()>limit)top.remove();
                     }
-                    if(++accepted==8) break;
+                    if(++accepted==limit) break;
                 }
             } else {
                 int mid=(r.left+r.right)/2;
                 if(mid>from) queue.add(new Range(r.node*2,r.left,mid));
                 if(mid<to) queue.add(new Range(r.node*2+1,mid,r.right));
             }
-            if(found.size()>=8) {
+            if(found.size()>=limit) {
                 double threshold=found.get(top.element()).score;
                 if(queue.isEmpty() || best[queue.peek().node]-.7<=threshold) break;
             }
         }
         List<Candidate> result=new ArrayList<>(found.values());
         result.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text));
-        return result.subList(0,Math.min(8,result.size()));
+        return result.subList(0,Math.min(limit,result.size()));
     }
 }

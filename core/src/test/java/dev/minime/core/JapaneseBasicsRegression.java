@@ -42,7 +42,7 @@ final class JapaneseBasicsRegression {
         List<Candidate> matches=separate.lookup("ab",Collections.singleton("japanese"));
         yes(matches.stream().anyMatch(v->v.text.equals("定型句")),"vocabulary growth cannot evict an expression from its lookup budget");
         yes(matches.stream().anyMatch(v->v.text.startsWith("語彙")),"ordinary vocabulary gets its own bounded partial results");
-        yes(matches.size()<=16,"two word budgets remain bounded");
+        yes(matches.size()<=48,"two word budgets remain bounded");
         for(String bad:Arrays.asList("kanji\tka\t甲\t501\tkanjidic:U7532\n","kanji\tka\t甲\t1\tfixture\n","hiragana\tka\t甲\t0\twanakana:5.3.1\n")) {
             try {JapaneseBasics.read(new StringReader(bad));throw new AssertionError("invalid character source accepted");}catch(IOException expected){}
         }

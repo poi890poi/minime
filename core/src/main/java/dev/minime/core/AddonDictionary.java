@@ -31,11 +31,11 @@ public final class AddonDictionary {
                 if(line.isEmpty() || line.startsWith("#"))continue;
                 String[] p=line.split("\t",-1);
                 if(p.length!=5 || !p[0].matches("[a-z][a-z0-9_-]{0,31}") || p[1].isEmpty() || p[1].length()>96
-                        || p[2].isEmpty() || p[2].length()>96 || p[3].isEmpty() || ++count>200000)throw new IOException("Invalid add-on entry");
+                        || p[2].isEmpty() || p[2].length()>96 || p[3].isEmpty() || ++count>500000)throw new IOException("Invalid add-on entry");
                 // Ordinary common Japanese vocabulary must not consume the
                 // existing expression/name search budget as its corpus grows.
                 p[0]=strings.computeIfAbsent(p[0],k->k);p[2]=strings.computeIfAbsent(p[2],k->k);
-                String indexPack=p[0].equals("japanese") && p[4].equals("everyday_vocabulary")?"japanese-common":p[0];
+                String indexPack=p[0].equals("japanese") && p[4].equals("everyday_vocabulary")?"japanese-common":p[0].equals("poj") && p[4].equals("extended_vocabulary")?"poj-common":p[0];
                 String key=indexPack+"\t"+normalize(p[1]);
                 // Generated Chinese initials contain one ASCII letter per Han
                 // glyph. Full multisyllable readings retain source separators.
@@ -72,40 +72,45 @@ public final class AddonDictionary {
         return result;
     }
     public List<Candidate> lookup(String raw,Set<String> enabled) {
-        List<Candidate> words=lookupWords(raw,enabled);
-        if(enabled.contains("japanese")) {
-            List<Candidate> vocabulary=lookupWords(raw,Collections.singleton("japanese-common"));
-            if(!vocabulary.isEmpty()) {
-                List<Candidate> combined=new ArrayList<>();Set<String> seen=new HashSet<>();
-                for(boolean incomplete:new boolean[]{false,true}) {
-                    for(Candidate c:words)if(c.incomplete==incomplete && seen.add(c.text))combined.add(c);
-                    for(Candidate c:vocabulary)if(c.incomplete==incomplete && seen.add(c.text))combined.add(c);
-                }
-                words=combined;
-            }
+        Set<String> secondary=new HashSet<>(enabled);secondary.remove("poj");secondary.remove("japanese");
+        List<List<Candidate>> groups=new ArrayList<>();
+        for(String pack:Arrays.asList("poj","japanese"))if(enabled.contains(pack)) {
+            // A focused dictionary has the same 24-choice budget as core reading
+            // matches. Large general vocabulary cannot consume the expression tier.
+            List<Candidate> focused=lookupWords(raw,Collections.singleton(pack),24);
+            List<Candidate> common=lookupWords(raw,Collections.singleton(pack+"-common"),24);
+            List<Candidate> words=merge(Arrays.asList(focused,common));
+            groups.add(pack.equals("japanese") && japaneseBasics!=JapaneseBasics.EMPTY?japaneseBasics.merge(raw,words):words);
         }
-        return japaneseBasics!=JapaneseBasics.EMPTY && enabled.contains("japanese")?japaneseBasics.merge(raw,words):words;
+        groups.add(lookupWords(raw,secondary,8));
+        return merge(groups);
     }
-    private List<Candidate> lookupWords(String raw,Set<String> enabled) {
+    private static List<Candidate> merge(List<List<Candidate>> groups) {
+        List<Candidate> result=new ArrayList<>();Set<String> seen=new HashSet<>();
+        for(boolean incomplete:new boolean[]{false,true})for(List<Candidate> group:groups)
+            for(Candidate c:group)if(c.incomplete==incomplete && seen.add(c.text))result.add(c);
+        return result;
+    }
+    private List<Candidate> lookupWords(String raw,Set<String> enabled,int limit) {
         if(raw.length()>96 || enabled.isEmpty())return Collections.emptyList();
         List<Candidate> result=new ArrayList<>();Set<String> seen=new HashSet<>();String key=normalize(raw);
         Set<String> packs=new TreeSet<>(enabled);
-        for(String pack:packs)if(append(pack+"\t"+key,result,seen))return result;
+        for(String pack:packs)if(append(pack+"\t"+key,result,seen,limit))return result;
         List<Candidate> partials=new ArrayList<>();
-        for(String pack:packs)complete(pack,raw,partials);
+        for(String pack:packs)complete(pack,raw,partials,limit);
         partials.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text));
-        for(Candidate c:partials)if(seen.add(c.text)) {result.add(c);if(result.size()==8)break;}
+        for(Candidate c:partials)if(seen.add(c.text)) {result.add(c);if(result.size()==limit)break;}
         return result;
     }
-    private void complete(String pack,String raw,List<Candidate> result) {
-        if(first!=null) {first.complete(pack,raw,result);second.complete(pack,raw,result);return;}
+    private void complete(String pack,String raw,List<Candidate> result,int limit) {
+        if(first!=null) {first.complete(pack,raw,result,limit);second.complete(pack,raw,result,limit);return;}
         ReadingIndex prefix=prefixes.get(pack);ReadingUnitIndex unit=units.get(pack);
-        if(prefix!=null)result.addAll(prefix.complete(normalize(raw),(key,c)->true));
+        if(prefix!=null)result.addAll(prefix.complete(normalize(raw),(key,c)->true,limit));
         if(unit!=null)result.addAll(unit.lookup(raw.toLowerCase(Locale.ROOT).replaceAll("[- ']+","'")));
     }
-    private boolean append(String key,List<Candidate> result,Set<String> seen) {
-        if(first!=null)return first.append(key,result,seen) || second.append(key,result,seen);
-        for(Candidate c:entries.getOrDefault(key,Collections.emptyList()))if(seen.add(c.text)) {result.add(c);if(result.size()==8)return true;}
+    private boolean append(String key,List<Candidate> result,Set<String> seen,int limit) {
+        if(first!=null)return first.append(key,result,seen,limit) || second.append(key,result,seen,limit);
+        for(Candidate c:entries.getOrDefault(key,Collections.emptyList()))if(seen.add(c.text)) {result.add(c);if(result.size()==limit)return true;}
         return false;
     }
     private static String normalize(String key) {return key.toLowerCase(Locale.ROOT).replace("'","").replace("-","").replace(" ","");}

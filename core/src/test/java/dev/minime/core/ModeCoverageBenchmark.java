@@ -48,7 +48,7 @@ public final class ModeCoverageBenchmark {
         }catch(ClassNotFoundException legacy) {/* Immutable pre-mode baseline classes. */}
     }
     public static void main(String[] args)throws Exception {
-        Path assets=Paths.get("app/src/main/assets");
+        Path assets=Paths.get(args.length>3?args[3]:"app/src/main/assets");
         PhoneticDictionary dictionary=PhoneticDictionary.readBinary(Files.newInputStream(Paths.get("app/build/generated/minimeAssets/model.bin")));
         dictionary.englishSpelling(Files.newBufferedReader(assets.resolve("en_spelling.tsv")));
         AddonDictionary addons=AddonDictionary.combine(AddonDictionary.read(Files.newBufferedReader(assets.resolve("addons.tsv"))),AddonDictionary.read(Files.newBufferedReader(assets.resolve("geography.tsv"))));
