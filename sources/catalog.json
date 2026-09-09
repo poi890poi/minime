@@ -16,7 +16,8 @@
       "uses": [
         "vocabulary",
         "readings",
-        "frequency"
+        "frequency",
+        "evaluation"
       ],
       "inputs": [
         "third_party/mcbopomofo/BPMF*.txt",
@@ -43,7 +44,8 @@
       "decision": "retain",
       "uses": [
         "vocabulary",
-        "readings"
+        "readings",
+        "evaluation"
       ],
       "inputs": [
         "third_party/rudy/extracted-names.json.gz",
@@ -96,7 +98,8 @@
       "decision": "retain",
       "uses": [
         "vocabulary",
-        "readings"
+        "readings",
+        "evaluation"
       ],
       "inputs": [
         "third_party/itaigi/itaigi.csv"
@@ -124,7 +127,8 @@
       "decision": "retain",
       "uses": [
         "vocabulary",
-        "readings"
+        "readings",
+        "evaluation"
       ],
       "inputs": [
         "third_party/taiwanese_basic/vocabulary.csv"
@@ -152,7 +156,8 @@
       "decision": "retain",
       "uses": [
         "vocabulary",
-        "readings"
+        "readings",
+        "evaluation"
       ],
       "inputs": [
         "third_party/jmdict/*.tgz"
@@ -180,7 +185,8 @@
       "decision": "retain",
       "uses": [
         "vocabulary",
-        "readings"
+        "readings",
+        "evaluation"
       ],
       "inputs": [
         "third_party/jmnedict/*.tgz"
@@ -233,7 +239,8 @@
       "decision": "replace",
       "uses": [
         "vocabulary",
-        "readings"
+        "readings",
+        "evaluation"
       ],
       "inputs": [
         "third_party/cedict/cedict.txt.gz"
@@ -262,7 +269,8 @@
       "decision": "replace",
       "uses": [
         "vocabulary",
-        "discovery"
+        "discovery",
+        "evaluation"
       ],
       "inputs": [
         "third_party/wikidata/taiwan-*.json"
@@ -291,7 +299,8 @@
       "decision": "replace",
       "uses": [
         "vocabulary",
-        "discovery"
+        "discovery",
+        "evaluation"
       ],
       "inputs": [
         "third_party/taiwan_encyclopedia/*.gz",

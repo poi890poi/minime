@@ -37,6 +37,46 @@
       "report_by": ["source", "genre", "original-split", "input-mode", "imprecision"],
       "leakage": "Context training uses separate upstream train splits, but these development/test rows have already informed regression work. Do not market them as unseen. Shared upstream source lineage also limits independence.",
       "limitations": "The historical folder name conversation-ranking does not make Chinese Wikipedia-derived spans natural conversation. Glyph reference probes and derived phonetic queries are not sentence-level accuracy. No Taiwan conversational representativeness is established."
+    },
+    {
+      "id": "suggestion-latency-20260909",
+      "source_ids": [
+        "ud-context",
+        "moe-dictionaries",
+        "mcbopomofo",
+        "rudy",
+        "itaigi",
+        "taiwanese-basic",
+        "jmdict",
+        "jmnedict",
+        "cedict",
+        "wikidata",
+        "taiwan-encyclopedia"
+      ],
+      "genre": [
+        "web-mixed",
+        "encyclopedic",
+        "glyph-reference",
+        "specialist-lexicon"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "Hash-selected 16 queries per existing corpus/pack/input-mode group, with full, half and first-letter variants (1488 queries). Native acceptance uses 32 hash-selected rows per legacy group (352). Phone uses the first selected triple in each group (93 queries). Seeds and original source digests are in corpus.json and tools/make_latency_corpus.py.",
+      "files": [
+        "docs/suggestion-latency/corpus.json",
+        "docs/suggestion-latency/inputs.tsv",
+        "docs/suggestion-latency/native-inputs.tsv",
+        "docs/taiwan-quality/entity-lookup-inputs.tsv"
+      ],
+      "report_by": [
+        "source",
+        "genre",
+        "original-split",
+        "input-mode",
+        "prefix-length"
+      ],
+      "leakage": "Reuses inspected regression sources and source-derived dictionary queries. Suitable for timing and exact output parity only; not a fresh language-quality holdout. No production entries, source decisions or ranking weights changed.",
+      "limitations": "Hash sampling is per source/mode, not traffic weighted. No natural conversation or essay representativeness claim; broad existing source groups remain separate. Callback timing excludes touch dispatch, final layout and display refresh. Synthetic prefix variants are not observed human typing errors."
     }
   ]
 }

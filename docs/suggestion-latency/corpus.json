@@ -1,0 +1,10 @@
+{
+  "seed": "latency-20260909",
+  "rows": 1488,
+  "sources": {
+    "docs/conversation-ranking/corpus/inputs.tsv": "14c186c6589c4081f709f6aa237bb9a0d61a0d5ad32754dad8d72976d478004d",
+    "docs/taiwan-quality/entity-lookup-inputs.tsv": "680ba219538012568cd5e56859237109d16c7f911a6ad48b20585881feded7eb"
+  },
+  "sha256": "cd50e119257521710a601f279f35c28c85b969a1f4a0ad9918011edc57344603",
+  "scope": "Hash-selected existing regression queries, with deterministic typing prefixes; not a fresh language-quality holdout. Genres and source packs remain separate. No complaint words or outputs selected the inputs."
+}

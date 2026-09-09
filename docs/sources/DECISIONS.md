@@ -4,17 +4,17 @@ Generated from sources/catalog.json. Retain is scoped to the listed use; pilot i
 
 | Source | Decision | Intended use | Reason |
 |---|---|---|---|
-| McBopomofo | retain | vocabulary, readings, frequency | Retain the Taiwan input-method foundation. |
-| Rudy / OSM Taiwan POI | retain | vocabulary, readings | Preserve the high-quality geography source and separate ODbL pack. |
+| McBopomofo | retain | vocabulary, readings, frequency, evaluation | Retain the Taiwan input-method foundation. |
+| Rudy / OSM Taiwan POI | retain | vocabulary, readings, evaluation | Preserve the high-quality geography source and separate ODbL pack. |
 | AOSP LatinIME English | retain | vocabulary, frequency | Retain English-specific source. |
-| ChhoeTaigi iTaigi | retain | vocabulary, readings | Retain original POJ and source attribution. |
-| Taiwanese beginner vocabulary | retain | vocabulary, readings | Retain POJ; do not infer modern popularity. |
-| JMDICT | retain | vocabulary, readings | Retain Japanese-specific sources. |
-| JMNEDICT | retain | vocabulary, readings | Retain Japanese-specific sources. |
+| ChhoeTaigi iTaigi | retain | vocabulary, readings, evaluation | Retain original POJ and source attribution. |
+| Taiwanese beginner vocabulary | retain | vocabulary, readings, evaluation | Retain POJ; do not infer modern popularity. |
+| JMDICT | retain | vocabulary, readings, evaluation | Retain Japanese-specific sources. |
+| JMNEDICT | retain | vocabulary, readings, evaluation | Retain Japanese-specific sources. |
 | WanaKana | retain | tooling | Retain language tooling. |
-| CC-CEDICT legacy Taiwan filter | replace | vocabulary, readings | Freeze existing contribution pending Taiwan-authored replacement. |
-| Wikidata legacy cultural labels | replace | vocabulary, discovery | Freeze existing contribution; use specialist authored catalogs for wording. |
-| Wikipedia category-derived Taiwan pack | replace | vocabulary, discovery | Freeze current data; stop treating volume and locale tags as quality. |
+| CC-CEDICT legacy Taiwan filter | replace | vocabulary, readings, evaluation | Freeze existing contribution pending Taiwan-authored replacement. |
+| Wikidata legacy cultural labels | replace | vocabulary, discovery, evaluation | Freeze existing contribution; use specialist authored catalogs for wording. |
+| Wikipedia category-derived Taiwan pack | replace | vocabulary, discovery, evaluation | Freeze current data; stop treating volume and locale tags as quality. |
 | Legacy build-time OpenCC detector | replace | tooling | Freeze until replacing the mixed-source import path. |
 | Rime Luna / Essay / Prelude | replace | vocabulary, readings, frequency | Retain frozen native behavior during source evaluation; replacement requires broad ranking evidence. |
 | UD context training | replace | frequency, evaluation | Freeze model; keep train/dev/test roles distinct. |
