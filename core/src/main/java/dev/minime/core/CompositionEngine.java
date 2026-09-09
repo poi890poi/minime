@@ -389,6 +389,14 @@ public final class CompositionEngine {
             int insertion=1;
             List<Candidate> supplements=new ArrayList<>(custom);
             if(!privateField && phraseLearning && !englishMode)supplements.addAll(learning.phrases(raw));
+            // Dedicated modes express language preference, not merely pack scope.
+            // Keep explicit overrides and apostrophe recovery, then use the
+            // selected language's full and incomplete matches in source order.
+            if(!inputMode.pack.isEmpty()) {
+                supplements.addAll(apostrophes);
+                for(Candidate c:addonMatches)if(focused(c) && !c.incomplete)supplements.add(c);
+                for(Candidate c:addonMatches)if(focused(c) && c.incomplete)supplements.add(c);
+            }
             // An already leading, source-attested full Chinese reading is not
             // a decoder guess. Keep it ahead of optional dictionary alternatives.
             if(!englishMode && dictionary!=null && candidates.size()>1 && dictionary.exactChinese(raw,bpmf,candidates.get(1).text))supplements.add(candidates.get(1));
@@ -417,12 +425,12 @@ public final class CompositionEngine {
                 }
                 // One early alternate previews incomplete dictionary matches;
                 // the rest do not displace the primary decoder's whole first row.
-                if(c.incomplete)insertion=Math.max(insertion,Math.min(partialPreviews==0?3:9,candidates.size()));
+                if(c.incomplete && !focused(c))insertion=Math.max(insertion,Math.min(partialPreviews==0?3:9,candidates.size()));
                 if(existing>=0 && existing<insertion)continue;
                 Candidate value=existing>=0 && (!c.supplemental || candidates.get(existing)==defaultChoice)?candidates.get(existing):c;
                 if(existing>=0)candidates.remove(existing);
                 candidates.add(insertion++,value);
-                if(c.incomplete)partialPreviews++;
+                if(c.incomplete && !focused(c))partialPreviews++;
             }
             for(Candidate c:unrankedGlyphs) {
                 int after=1;
@@ -443,6 +451,9 @@ public final class CompositionEngine {
             Candidate c=candidates.get(i);
             if(c.pair!=null)candidates.set(i,pairedTaiwanese && inputMode==InputMode.TAIWANESE?c.primary(hanPrimary):c.paired(null));
         }
+    }
+    private boolean focused(Candidate candidate) {
+        return !inputMode.pack.isEmpty() && inputMode.pack.equals(candidate.pack);
     }
     private static boolean hanGlyph(String text) {
         return text.codePointCount(0,text.length())==1 && Character.UnicodeScript.of(text.codePointAt(0))==Character.UnicodeScript.HAN;

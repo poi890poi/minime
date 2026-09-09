@@ -33,7 +33,7 @@ public final class AddonDictionary {
                 // glyph. Full multisyllable readings retain source separators.
                 boolean abbreviated=p[1].matches("[a-z]+") && p[1].length()==p[2].codePointCount(0,p[2].length())
                     && p[2].codePoints().allMatch(cp->Character.UnicodeScript.of(cp)==Character.UnicodeScript.HAN);
-                Candidate value=Candidate.supplement(p[2],0,abbreviated).paired(pairs.forEntry(p[0],p[2],p[3]));
+                Candidate value=Candidate.supplement(p[2],0,abbreviated).inPack(p[0]).paired(pairs.forEntry(p[0],p[2],p[3]));
                 entries.computeIfAbsent(key,k->new ArrayList<>()).add(value);
                 // Generated initial aliases remain exact aliases. Index source
                 // readings, not abbreviations of abbreviations.
