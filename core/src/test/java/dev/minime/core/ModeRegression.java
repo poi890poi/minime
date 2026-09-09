@@ -36,6 +36,12 @@ final class ModeRegression {
             equal(mode.englishEnabled(),scoped.candidates().stream().anyMatch(v->v.literal && !v.text.equals("meet")),"English suggestions follow pair scope");
             for(boolean call:phoneticCalls)equal(mode.chineseEnabled(),call,"Chinese decoder is skipped when absent");
         }
+        PhoneticDictionary collision=PhoneticDictionary.load(new StringReader("can\tㄘㄢ\t甲\t100\tㄘㄢ\n"),new StringReader("candy\t100\n"),new StringReader("can\tㄘㄢ\n"));
+        for(InputMode pair:Arrays.asList(InputMode.TAIWANESE_ENGLISH,InputMode.JAPANESE_ENGLISH)) {
+            CompositionEngine c=new CompositionEngine(new Editor(),Learning.NONE);c.dictionary(collision);c.start(false,false,false,false);c.switchMode(pair,false);type(c,"can");
+            yes(c.candidates().stream().anyMatch(v->v.text.equals("candy")),"excluded Chinese intent cannot suppress English completion");
+            yes(c.candidates().stream().noneMatch(v->v.text.equals("甲")),"excluded Chinese lexicon remains absent");
+        }
         Editor editor=new Editor();Memory memory=new Memory();CompositionEngine engine=engine(editor,memory,false);
         engine.addons(addon,ALL);List<Runnable> replies=new ArrayList<>();List<Set<String>> queries=new ArrayList<>();
         engine.decoder(new CompositionEngine.Decoder() {
