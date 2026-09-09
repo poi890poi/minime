@@ -1,0 +1,3141 @@
+{
+  "desktop": {
+    "rows": 4464,
+    "candidate_output_parity": true,
+    "overall": {
+      "core": {
+        "before": {
+          "n": 4464,
+          "p50_us": 830.5,
+          "p95_us": 4955,
+          "max_us": 58591
+        },
+        "after": {
+          "n": 4464,
+          "p50_us": 590.0,
+          "p95_us": 4904,
+          "max_us": 31997
+        }
+      },
+      "addons": {
+        "before": {
+          "n": 4464,
+          "p50_us": 3853.5,
+          "p95_us": 70223,
+          "max_us": 181308
+        },
+        "after": {
+          "n": 4464,
+          "p50_us": 1611.5,
+          "p95_us": 4766,
+          "max_us": 22994
+        }
+      }
+    },
+    "groups": {
+      "en-dev/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1202.0,
+            "p95_us": 3875,
+            "max_us": 5712
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1831.5,
+            "p95_us": 7339,
+            "max_us": 12394
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1399.0,
+            "p95_us": 29243,
+            "max_us": 30297
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1787.5,
+            "p95_us": 6076,
+            "max_us": 10027
+          }
+        }
+      },
+      "en-dev/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 523.5,
+            "p95_us": 1203,
+            "max_us": 1577
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 312.5,
+            "p95_us": 1507,
+            "max_us": 2298
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 40602.5,
+            "p95_us": 74396,
+            "max_us": 77330
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2373.0,
+            "p95_us": 5625,
+            "max_us": 8488
+          }
+        }
+      },
+      "en-dev/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 620.5,
+            "p95_us": 3005,
+            "max_us": 3740
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 860.0,
+            "p95_us": 8273,
+            "max_us": 10614
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1969.0,
+            "p95_us": 28974,
+            "max_us": 32163
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1690.5,
+            "p95_us": 5007,
+            "max_us": 13436
+          }
+        }
+      },
+      "en-test/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1003.5,
+            "p95_us": 2688,
+            "max_us": 3271
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1146.0,
+            "p95_us": 3764,
+            "max_us": 5696
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 984.0,
+            "p95_us": 3197,
+            "max_us": 3595
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1071.5,
+            "p95_us": 3534,
+            "max_us": 4965
+          }
+        }
+      },
+      "en-test/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 557.0,
+            "p95_us": 1163,
+            "max_us": 1371
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 260.5,
+            "p95_us": 638,
+            "max_us": 2142
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 32320.0,
+            "p95_us": 75980,
+            "max_us": 90427
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2119.5,
+            "p95_us": 5382,
+            "max_us": 6691
+          }
+        }
+      },
+      "en-test/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 546.0,
+            "p95_us": 2120,
+            "max_us": 3098
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 446.5,
+            "p95_us": 1363,
+            "max_us": 2198
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1273.5,
+            "p95_us": 41940,
+            "max_us": 46988
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1172.0,
+            "p95_us": 3649,
+            "max_us": 6444
+          }
+        }
+      },
+      "geography-full/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 2615.5,
+            "p95_us": 11925,
+            "max_us": 13884
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2836.0,
+            "p95_us": 12265,
+            "max_us": 20509
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1632.5,
+            "p95_us": 3578,
+            "max_us": 5529
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1427.5,
+            "p95_us": 5103,
+            "max_us": 6767
+          }
+        }
+      },
+      "geography-full/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 499.0,
+            "p95_us": 1537,
+            "max_us": 3688
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 277.5,
+            "p95_us": 887,
+            "max_us": 1089
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 33900.0,
+            "p95_us": 73948,
+            "max_us": 76621
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2235.0,
+            "p95_us": 4674,
+            "max_us": 12071
+          }
+        }
+      },
+      "geography-full/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 998.0,
+            "p95_us": 6789,
+            "max_us": 7066
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1162.5,
+            "p95_us": 6255,
+            "max_us": 11512
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 2598.0,
+            "p95_us": 44998,
+            "max_us": 50307
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1656.0,
+            "p95_us": 4580,
+            "max_us": 8845
+          }
+        }
+      },
+      "geography-initial/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1471.5,
+            "p95_us": 4929,
+            "max_us": 7121
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1285.0,
+            "p95_us": 5040,
+            "max_us": 5250
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1124.5,
+            "p95_us": 3520,
+            "max_us": 4721
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1292.5,
+            "p95_us": 3109,
+            "max_us": 9908
+          }
+        }
+      },
+      "geography-initial/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 608.0,
+            "p95_us": 1558,
+            "max_us": 1913
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 251.0,
+            "p95_us": 448,
+            "max_us": 2057
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 32986.0,
+            "p95_us": 74190,
+            "max_us": 81624
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2293.5,
+            "p95_us": 6775,
+            "max_us": 17369
+          }
+        }
+      },
+      "geography-initial/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 709.0,
+            "p95_us": 2097,
+            "max_us": 2881
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 347.0,
+            "p95_us": 2717,
+            "max_us": 4323
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 27414.0,
+            "p95_us": 41688,
+            "max_us": 44800
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1505.5,
+            "p95_us": 6024,
+            "max_us": 8765
+          }
+        }
+      },
+      "geography-mixed-left/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 2960.0,
+            "p95_us": 9123,
+            "max_us": 12127
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 3585.0,
+            "p95_us": 9142,
+            "max_us": 10831
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1502.5,
+            "p95_us": 2874,
+            "max_us": 3571
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1462.0,
+            "p95_us": 3032,
+            "max_us": 3495
+          }
+        }
+      },
+      "geography-mixed-left/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 440.0,
+            "p95_us": 1393,
+            "max_us": 2202
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 231.5,
+            "p95_us": 924,
+            "max_us": 1563
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 30475.0,
+            "p95_us": 66700,
+            "max_us": 99653
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1369.0,
+            "p95_us": 3173,
+            "max_us": 4243
+          }
+        }
+      },
+      "geography-mixed-left/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1293.0,
+            "p95_us": 5656,
+            "max_us": 7301
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1234.5,
+            "p95_us": 4620,
+            "max_us": 7412
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 2294.5,
+            "p95_us": 23202,
+            "max_us": 29592
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1666.5,
+            "p95_us": 4143,
+            "max_us": 6538
+          }
+        }
+      },
+      "geography-mixed-right/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 3097.0,
+            "p95_us": 10918,
+            "max_us": 11523
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2560.5,
+            "p95_us": 10470,
+            "max_us": 17284
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1113.5,
+            "p95_us": 4288,
+            "max_us": 4883
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1121.5,
+            "p95_us": 3163,
+            "max_us": 5316
+          }
+        }
+      },
+      "geography-mixed-right/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 616.5,
+            "p95_us": 1720,
+            "max_us": 3699
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 252.0,
+            "p95_us": 606,
+            "max_us": 5328
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 35118.0,
+            "p95_us": 75879,
+            "max_us": 125717
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1819.0,
+            "p95_us": 7922,
+            "max_us": 14431
+          }
+        }
+      },
+      "geography-mixed-right/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1123.5,
+            "p95_us": 3852,
+            "max_us": 6080
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1308.0,
+            "p95_us": 4126,
+            "max_us": 9708
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1180.5,
+            "p95_us": 25007,
+            "max_us": 31005
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1159.5,
+            "p95_us": 2638,
+            "max_us": 3640
+          }
+        }
+      },
+      "geography-prefix/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 3382.0,
+            "p95_us": 13921,
+            "max_us": 14495
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 3694.0,
+            "p95_us": 16091,
+            "max_us": 25527
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1473.5,
+            "p95_us": 3708,
+            "max_us": 5864
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1405.0,
+            "p95_us": 3971,
+            "max_us": 4376
+          }
+        }
+      },
+      "geography-prefix/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 640.0,
+            "p95_us": 1995,
+            "max_us": 4180
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 272.5,
+            "p95_us": 547,
+            "max_us": 848
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 38598.5,
+            "p95_us": 76416,
+            "max_us": 80376
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1967.0,
+            "p95_us": 4260,
+            "max_us": 6850
+          }
+        }
+      },
+      "geography-prefix/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1609.0,
+            "p95_us": 7685,
+            "max_us": 9250
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1376.5,
+            "p95_us": 7531,
+            "max_us": 10048
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1731.5,
+            "p95_us": 32373,
+            "max_us": 37574
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1787.0,
+            "p95_us": 4250,
+            "max_us": 8718
+          }
+        }
+      },
+      "japanese-full/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 2181.5,
+            "p95_us": 6384,
+            "max_us": 8249
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2740.5,
+            "p95_us": 8480,
+            "max_us": 12451
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1311.5,
+            "p95_us": 2502,
+            "max_us": 2636
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1507.5,
+            "p95_us": 3326,
+            "max_us": 6316
+          }
+        }
+      },
+      "japanese-full/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 603.5,
+            "p95_us": 978,
+            "max_us": 1250
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 257.0,
+            "p95_us": 1392,
+            "max_us": 1648
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 40470.0,
+            "p95_us": 71285,
+            "max_us": 77240
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2163.5,
+            "p95_us": 5046,
+            "max_us": 6526
+          }
+        }
+      },
+      "japanese-full/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 945.0,
+            "p95_us": 2776,
+            "max_us": 3306
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1045.5,
+            "p95_us": 3900,
+            "max_us": 6937
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1444.0,
+            "p95_us": 2788,
+            "max_us": 5558
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1377.5,
+            "p95_us": 4904,
+            "max_us": 7493
+          }
+        }
+      },
+      "japanese-initial/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1702.5,
+            "p95_us": 3641,
+            "max_us": 5948
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1816.5,
+            "p95_us": 4947,
+            "max_us": 17457
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1119.0,
+            "p95_us": 2981,
+            "max_us": 3881
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1269.5,
+            "p95_us": 3682,
+            "max_us": 4628
+          }
+        }
+      },
+      "japanese-initial/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 590.0,
+            "p95_us": 1196,
+            "max_us": 1642
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 242.5,
+            "p95_us": 669,
+            "max_us": 1409
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 42874.0,
+            "p95_us": 72409,
+            "max_us": 96206
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1931.0,
+            "p95_us": 7415,
+            "max_us": 8054
+          }
+        }
+      },
+      "japanese-initial/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 828.5,
+            "p95_us": 2690,
+            "max_us": 2834
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 914.0,
+            "p95_us": 2116,
+            "max_us": 2857
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1182.5,
+            "p95_us": 28166,
+            "max_us": 31591
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1264.5,
+            "p95_us": 4765,
+            "max_us": 22994
+          }
+        }
+      },
+      "japanese-mixed-left/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1820.0,
+            "p95_us": 6189,
+            "max_us": 9372
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2502.5,
+            "p95_us": 8557,
+            "max_us": 12202
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1567.0,
+            "p95_us": 3129,
+            "max_us": 3914
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1488.0,
+            "p95_us": 2647,
+            "max_us": 2997
+          }
+        }
+      },
+      "japanese-mixed-left/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 581.0,
+            "p95_us": 1351,
+            "max_us": 1940
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 250.5,
+            "p95_us": 388,
+            "max_us": 936
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 47155.0,
+            "p95_us": 86366,
+            "max_us": 101253
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2048.5,
+            "p95_us": 3999,
+            "max_us": 4431
+          }
+        }
+      },
+      "japanese-mixed-left/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 919.0,
+            "p95_us": 3239,
+            "max_us": 3628
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1105.5,
+            "p95_us": 5107,
+            "max_us": 7550
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1667.5,
+            "p95_us": 34804,
+            "max_us": 40985
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1665.0,
+            "p95_us": 4150,
+            "max_us": 4503
+          }
+        }
+      },
+      "japanese-mixed-right/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 2300.5,
+            "p95_us": 5626,
+            "max_us": 6998
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1726.5,
+            "p95_us": 6567,
+            "max_us": 8405
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 808.5,
+            "p95_us": 4140,
+            "max_us": 6853
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 957.0,
+            "p95_us": 4478,
+            "max_us": 5453
+          }
+        }
+      },
+      "japanese-mixed-right/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 447.0,
+            "p95_us": 1352,
+            "max_us": 2334
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 212.5,
+            "p95_us": 1369,
+            "max_us": 3600
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 37156.0,
+            "p95_us": 85500,
+            "max_us": 181308
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1543.5,
+            "p95_us": 4339,
+            "max_us": 5022
+          }
+        }
+      },
+      "japanese-mixed-right/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 909.0,
+            "p95_us": 1888,
+            "max_us": 3112
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 886.0,
+            "p95_us": 1911,
+            "max_us": 3068
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 764.0,
+            "p95_us": 3137,
+            "max_us": 4934
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 870.5,
+            "p95_us": 2689,
+            "max_us": 4387
+          }
+        }
+      },
+      "japanese-prefix/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1877.5,
+            "p95_us": 7040,
+            "max_us": 10416
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2022.5,
+            "p95_us": 7343,
+            "max_us": 9304
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1312.5,
+            "p95_us": 3132,
+            "max_us": 3848
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1287.0,
+            "p95_us": 3025,
+            "max_us": 3359
+          }
+        }
+      },
+      "japanese-prefix/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 581.0,
+            "p95_us": 1763,
+            "max_us": 2017
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 230.5,
+            "p95_us": 498,
+            "max_us": 3336
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 34951.5,
+            "p95_us": 71654,
+            "max_us": 104496
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1746.0,
+            "p95_us": 4287,
+            "max_us": 6935
+          }
+        }
+      },
+      "japanese-prefix/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1261.5,
+            "p95_us": 3778,
+            "max_us": 4178
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1522.5,
+            "p95_us": 4912,
+            "max_us": 7297
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1240.5,
+            "p95_us": 33178,
+            "max_us": 42515
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1236.0,
+            "p95_us": 3427,
+            "max_us": 5834
+          }
+        }
+      },
+      "moe-glyph/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 716.0,
+            "p95_us": 2642,
+            "max_us": 14866
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 620.0,
+            "p95_us": 1886,
+            "max_us": 3079
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 2535.5,
+            "p95_us": 13671,
+            "max_us": 39705
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1440.5,
+            "p95_us": 3419,
+            "max_us": 5070
+          }
+        }
+      },
+      "moe-glyph/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 619.5,
+            "p95_us": 1322,
+            "max_us": 2477
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 257.5,
+            "p95_us": 678,
+            "max_us": 1731
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 37538.0,
+            "p95_us": 98001,
+            "max_us": 107655
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1960.5,
+            "p95_us": 6885,
+            "max_us": 21251
+          }
+        }
+      },
+      "moe-glyph/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 607.0,
+            "p95_us": 3548,
+            "max_us": 7022
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 310.5,
+            "p95_us": 1810,
+            "max_us": 5739
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 30218.5,
+            "p95_us": 70695,
+            "max_us": 99171
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1646.5,
+            "p95_us": 3531,
+            "max_us": 4733
+          }
+        }
+      },
+      "poj-full/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1694.0,
+            "p95_us": 3736,
+            "max_us": 4980
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1766.0,
+            "p95_us": 5342,
+            "max_us": 6466
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1653.5,
+            "p95_us": 11705,
+            "max_us": 21552
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1534.5,
+            "p95_us": 5994,
+            "max_us": 6399
+          }
+        }
+      },
+      "poj-full/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 597.5,
+            "p95_us": 1700,
+            "max_us": 2943
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 265.0,
+            "p95_us": 628,
+            "max_us": 1259
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 42256.5,
+            "p95_us": 85774,
+            "max_us": 131261
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1966.0,
+            "p95_us": 3762,
+            "max_us": 4243
+          }
+        }
+      },
+      "poj-full/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 931.0,
+            "p95_us": 2602,
+            "max_us": 4631
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 990.0,
+            "p95_us": 3271,
+            "max_us": 5235
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1710.0,
+            "p95_us": 44721,
+            "max_us": 82696
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1547.5,
+            "p95_us": 6484,
+            "max_us": 8841
+          }
+        }
+      },
+      "poj-initial/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1278.5,
+            "p95_us": 6105,
+            "max_us": 36044
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1348.5,
+            "p95_us": 3956,
+            "max_us": 6191
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 2096.0,
+            "p95_us": 6091,
+            "max_us": 8456
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2302.5,
+            "p95_us": 6990,
+            "max_us": 7608
+          }
+        }
+      },
+      "poj-initial/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 680.5,
+            "p95_us": 3353,
+            "max_us": 9060
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 277.5,
+            "p95_us": 1246,
+            "max_us": 3105
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 48034.5,
+            "p95_us": 113334,
+            "max_us": 170841
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1970.5,
+            "p95_us": 4766,
+            "max_us": 6618
+          }
+        }
+      },
+      "poj-initial/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 870.5,
+            "p95_us": 2089,
+            "max_us": 27020
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 398.0,
+            "p95_us": 2048,
+            "max_us": 2299
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 33576.0,
+            "p95_us": 77187,
+            "max_us": 97819
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1887.5,
+            "p95_us": 4394,
+            "max_us": 4501
+          }
+        }
+      },
+      "poj-mixed-left/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 2151.5,
+            "p95_us": 4740,
+            "max_us": 8265
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2003.0,
+            "p95_us": 5793,
+            "max_us": 6033
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 2064.5,
+            "p95_us": 8218,
+            "max_us": 10441
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2538.5,
+            "p95_us": 8378,
+            "max_us": 10236
+          }
+        }
+      },
+      "poj-mixed-left/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 649.0,
+            "p95_us": 1539,
+            "max_us": 3073
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 278.0,
+            "p95_us": 657,
+            "max_us": 1414
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 37361.0,
+            "p95_us": 84856,
+            "max_us": 119488
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1968.5,
+            "p95_us": 4283,
+            "max_us": 8385
+          }
+        }
+      },
+      "poj-mixed-left/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1079.5,
+            "p95_us": 6867,
+            "max_us": 8835
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 928.0,
+            "p95_us": 2684,
+            "max_us": 5771
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 3015.5,
+            "p95_us": 25953,
+            "max_us": 60586
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2072.0,
+            "p95_us": 6428,
+            "max_us": 10240
+          }
+        }
+      },
+      "poj-mixed-right/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1555.0,
+            "p95_us": 5148,
+            "max_us": 7124
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1451.5,
+            "p95_us": 5902,
+            "max_us": 7796
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 2780.0,
+            "p95_us": 7873,
+            "max_us": 10426
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2866.0,
+            "p95_us": 7077,
+            "max_us": 8097
+          }
+        }
+      },
+      "poj-mixed-right/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 615.5,
+            "p95_us": 1409,
+            "max_us": 3332
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 258.0,
+            "p95_us": 485,
+            "max_us": 1482
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 37850.5,
+            "p95_us": 95410,
+            "max_us": 115121
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2156.5,
+            "p95_us": 4323,
+            "max_us": 9965
+          }
+        }
+      },
+      "poj-mixed-right/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1003.5,
+            "p95_us": 3000,
+            "max_us": 9060
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1033.5,
+            "p95_us": 2977,
+            "max_us": 3448
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1325.5,
+            "p95_us": 7455,
+            "max_us": 14504
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 839.5,
+            "p95_us": 6026,
+            "max_us": 8856
+          }
+        }
+      },
+      "poj-prefix/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1464.5,
+            "p95_us": 6697,
+            "max_us": 13137
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1485.5,
+            "p95_us": 5756,
+            "max_us": 6503
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 2299.5,
+            "p95_us": 7243,
+            "max_us": 8110
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2375.5,
+            "p95_us": 8926,
+            "max_us": 12337
+          }
+        }
+      },
+      "poj-prefix/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 614.5,
+            "p95_us": 1076,
+            "max_us": 2569
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 266.5,
+            "p95_us": 956,
+            "max_us": 2078
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 49253.5,
+            "p95_us": 96167,
+            "max_us": 162913
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2103.0,
+            "p95_us": 5066,
+            "max_us": 5991
+          }
+        }
+      },
+      "poj-prefix/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 887.5,
+            "p95_us": 3824,
+            "max_us": 6081
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 781.0,
+            "p95_us": 4338,
+            "max_us": 6562
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 3809.0,
+            "p95_us": 64869,
+            "max_us": 73966
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2393.5,
+            "p95_us": 6451,
+            "max_us": 8971
+          }
+        }
+      },
+      "taiwan-full/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 3755.0,
+            "p95_us": 16031,
+            "max_us": 42757
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 3518.5,
+            "p95_us": 12840,
+            "max_us": 14120
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1375.0,
+            "p95_us": 5292,
+            "max_us": 6470
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1364.5,
+            "p95_us": 3074,
+            "max_us": 3438
+          }
+        }
+      },
+      "taiwan-full/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 561.5,
+            "p95_us": 2832,
+            "max_us": 7287
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 230.5,
+            "p95_us": 544,
+            "max_us": 947
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 33715.5,
+            "p95_us": 73254,
+            "max_us": 105988
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1601.0,
+            "p95_us": 3841,
+            "max_us": 4620
+          }
+        }
+      },
+      "taiwan-full/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1253.5,
+            "p95_us": 8336,
+            "max_us": 13873
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1221.0,
+            "p95_us": 7800,
+            "max_us": 8201
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1856.0,
+            "p95_us": 19608,
+            "max_us": 32922
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1446.0,
+            "p95_us": 4045,
+            "max_us": 4944
+          }
+        }
+      },
+      "taiwan-initial/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1676.0,
+            "p95_us": 12086,
+            "max_us": 16156
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1574.5,
+            "p95_us": 10137,
+            "max_us": 31997
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1129.0,
+            "p95_us": 3673,
+            "max_us": 5953
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1016.5,
+            "p95_us": 2800,
+            "max_us": 8635
+          }
+        }
+      },
+      "taiwan-initial/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 557.5,
+            "p95_us": 1871,
+            "max_us": 2342
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 226.5,
+            "p95_us": 803,
+            "max_us": 1702
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 41429.0,
+            "p95_us": 105878,
+            "max_us": 142562
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1966.0,
+            "p95_us": 5629,
+            "max_us": 5843
+          }
+        }
+      },
+      "taiwan-initial/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 584.0,
+            "p95_us": 3621,
+            "max_us": 5823
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 456.5,
+            "p95_us": 3627,
+            "max_us": 10836
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1199.0,
+            "p95_us": 78612,
+            "max_us": 129275
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 990.5,
+            "p95_us": 4606,
+            "max_us": 5307
+          }
+        }
+      },
+      "taiwan-mixed-left/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 3105.0,
+            "p95_us": 13221,
+            "max_us": 25327
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 3294.0,
+            "p95_us": 8683,
+            "max_us": 15265
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 926.0,
+            "p95_us": 3087,
+            "max_us": 6601
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 865.0,
+            "p95_us": 3476,
+            "max_us": 3536
+          }
+        }
+      },
+      "taiwan-mixed-left/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 452.0,
+            "p95_us": 1542,
+            "max_us": 3442
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 200.0,
+            "p95_us": 479,
+            "max_us": 1393
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 37571.0,
+            "p95_us": 96937,
+            "max_us": 153435
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1534.0,
+            "p95_us": 4492,
+            "max_us": 5475
+          }
+        }
+      },
+      "taiwan-mixed-left/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1228.5,
+            "p95_us": 5577,
+            "max_us": 11683
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 918.0,
+            "p95_us": 4474,
+            "max_us": 5265
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 682.0,
+            "p95_us": 30840,
+            "max_us": 91425
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 722.0,
+            "p95_us": 3061,
+            "max_us": 4226
+          }
+        }
+      },
+      "taiwan-mixed-right/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 2862.5,
+            "p95_us": 9925,
+            "max_us": 22776
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2679.5,
+            "p95_us": 8863,
+            "max_us": 9874
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1325.5,
+            "p95_us": 5459,
+            "max_us": 14548
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1396.5,
+            "p95_us": 4264,
+            "max_us": 8847
+          }
+        }
+      },
+      "taiwan-mixed-right/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 508.0,
+            "p95_us": 2511,
+            "max_us": 3911
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 235.0,
+            "p95_us": 701,
+            "max_us": 961
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 38458.5,
+            "p95_us": 73708,
+            "max_us": 94117
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1586.5,
+            "p95_us": 4052,
+            "max_us": 6461
+          }
+        }
+      },
+      "taiwan-mixed-right/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1077.5,
+            "p95_us": 2721,
+            "max_us": 6690
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1018.5,
+            "p95_us": 3292,
+            "max_us": 4368
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 2303.5,
+            "p95_us": 15404,
+            "max_us": 23505
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1402.5,
+            "p95_us": 5012,
+            "max_us": 7624
+          }
+        }
+      },
+      "taiwan-prefix/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 4643.5,
+            "p95_us": 11097,
+            "max_us": 58591
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 3957.5,
+            "p95_us": 11420,
+            "max_us": 12869
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1859.0,
+            "p95_us": 4823,
+            "max_us": 5169
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1860.5,
+            "p95_us": 4454,
+            "max_us": 5254
+          }
+        }
+      },
+      "taiwan-prefix/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 596.0,
+            "p95_us": 2313,
+            "max_us": 4626
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 291.0,
+            "p95_us": 465,
+            "max_us": 640
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 35432.0,
+            "p95_us": 71974,
+            "max_us": 95792
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1674.0,
+            "p95_us": 6764,
+            "max_us": 7915
+          }
+        }
+      },
+      "taiwan-prefix/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1592.0,
+            "p95_us": 4694,
+            "max_us": 5835
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1641.0,
+            "p95_us": 3971,
+            "max_us": 4965
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1965.0,
+            "p95_us": 34712,
+            "max_us": 54000
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1781.0,
+            "p95_us": 5875,
+            "max_us": 7376
+          }
+        }
+      },
+      "zh-dev-full/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1981.5,
+            "p95_us": 5276,
+            "max_us": 10251
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1648.0,
+            "p95_us": 6838,
+            "max_us": 9652
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1421.5,
+            "p95_us": 10891,
+            "max_us": 17156
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1454.5,
+            "p95_us": 5562,
+            "max_us": 8719
+          }
+        }
+      },
+      "zh-dev-full/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 636.0,
+            "p95_us": 1528,
+            "max_us": 2146
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 246.5,
+            "p95_us": 748,
+            "max_us": 985
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 44289.5,
+            "p95_us": 107078,
+            "max_us": 111618
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2111.5,
+            "p95_us": 4905,
+            "max_us": 7632
+          }
+        }
+      },
+      "zh-dev-full/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 938.0,
+            "p95_us": 4262,
+            "max_us": 9246
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 849.5,
+            "p95_us": 2335,
+            "max_us": 3493
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1758.5,
+            "p95_us": 42961,
+            "max_us": 99894
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1190.0,
+            "p95_us": 4234,
+            "max_us": 9599
+          }
+        }
+      },
+      "zh-dev-initial/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 816.5,
+            "p95_us": 2690,
+            "max_us": 4008
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 746.5,
+            "p95_us": 3005,
+            "max_us": 3859
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 10.5,
+            "p95_us": 4125,
+            "max_us": 8829
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 8.5,
+            "p95_us": 3284,
+            "max_us": 4509
+          }
+        }
+      },
+      "zh-dev-initial/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 559.5,
+            "p95_us": 2197,
+            "max_us": 3191
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 250.0,
+            "p95_us": 1590,
+            "max_us": 4127
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 41935.0,
+            "p95_us": 95777,
+            "max_us": 119001
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1805.0,
+            "p95_us": 4299,
+            "max_us": 4563
+          }
+        }
+      },
+      "zh-dev-initial/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 488.5,
+            "p95_us": 2528,
+            "max_us": 5973
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 230.5,
+            "p95_us": 588,
+            "max_us": 939
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 40323.5,
+            "p95_us": 81358,
+            "max_us": 170209
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1815.5,
+            "p95_us": 4320,
+            "max_us": 5071
+          }
+        }
+      },
+      "zh-dev-mixed-left/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 968.0,
+            "p95_us": 5382,
+            "max_us": 13237
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1029.0,
+            "p95_us": 3368,
+            "max_us": 11387
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1218.0,
+            "p95_us": 9427,
+            "max_us": 19475
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1109.5,
+            "p95_us": 6044,
+            "max_us": 7972
+          }
+        }
+      },
+      "zh-dev-mixed-left/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 562.5,
+            "p95_us": 1063,
+            "max_us": 1363
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 276.0,
+            "p95_us": 646,
+            "max_us": 1126
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 43665.5,
+            "p95_us": 89717,
+            "max_us": 148481
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1942.0,
+            "p95_us": 4617,
+            "max_us": 7884
+          }
+        }
+      },
+      "zh-dev-mixed-left/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 595.5,
+            "p95_us": 1673,
+            "max_us": 1772
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 284.0,
+            "p95_us": 1299,
+            "max_us": 1819
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 20125.0,
+            "p95_us": 79115,
+            "max_us": 92887
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1513.5,
+            "p95_us": 3841,
+            "max_us": 20123
+          }
+        }
+      },
+      "zh-dev-mixed-right/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1920.0,
+            "p95_us": 4532,
+            "max_us": 37538
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1599.5,
+            "p95_us": 5101,
+            "max_us": 7097
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1444.0,
+            "p95_us": 4209,
+            "max_us": 4730
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1276.5,
+            "p95_us": 4041,
+            "max_us": 7802
+          }
+        }
+      },
+      "zh-dev-mixed-right/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 599.0,
+            "p95_us": 2524,
+            "max_us": 2748
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 263.0,
+            "p95_us": 882,
+            "max_us": 2084
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 40510.0,
+            "p95_us": 94474,
+            "max_us": 118419
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 2021.0,
+            "p95_us": 3369,
+            "max_us": 4415
+          }
+        }
+      },
+      "zh-dev-mixed-right/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 720.5,
+            "p95_us": 2253,
+            "max_us": 5148
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 658.5,
+            "p95_us": 2734,
+            "max_us": 4323
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 10.0,
+            "p95_us": 69586,
+            "max_us": 140335
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 9.5,
+            "p95_us": 3987,
+            "max_us": 6591
+          }
+        }
+      },
+      "zh-test-full/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 2040.0,
+            "p95_us": 4827,
+            "max_us": 7422
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1755.0,
+            "p95_us": 9495,
+            "max_us": 11143
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1429.0,
+            "p95_us": 17505,
+            "max_us": 21368
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1435.0,
+            "p95_us": 5717,
+            "max_us": 7517
+          }
+        }
+      },
+      "zh-test-full/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 650.5,
+            "p95_us": 3760,
+            "max_us": 4417
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 280.0,
+            "p95_us": 703,
+            "max_us": 909
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 35268.5,
+            "p95_us": 80308,
+            "max_us": 113254
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1921.0,
+            "p95_us": 3979,
+            "max_us": 7513
+          }
+        }
+      },
+      "zh-test-full/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 745.0,
+            "p95_us": 4306,
+            "max_us": 14154
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 572.0,
+            "p95_us": 2657,
+            "max_us": 4004
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 12247.0,
+            "p95_us": 67001,
+            "max_us": 107117
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1755.5,
+            "p95_us": 5972,
+            "max_us": 18222
+          }
+        }
+      },
+      "zh-test-initial/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 702.5,
+            "p95_us": 3552,
+            "max_us": 12704
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 713.0,
+            "p95_us": 3401,
+            "max_us": 4200
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 9.0,
+            "p95_us": 30259,
+            "max_us": 44496
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 9.5,
+            "p95_us": 2218,
+            "max_us": 3626
+          }
+        }
+      },
+      "zh-test-initial/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 573.5,
+            "p95_us": 1713,
+            "max_us": 5656
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 223.5,
+            "p95_us": 414,
+            "max_us": 1556
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 33908.5,
+            "p95_us": 74880,
+            "max_us": 76163
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1498.5,
+            "p95_us": 3162,
+            "max_us": 8055
+          }
+        }
+      },
+      "zh-test-initial/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 491.0,
+            "p95_us": 1971,
+            "max_us": 3627
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 207.5,
+            "p95_us": 1182,
+            "max_us": 2601
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 30500.0,
+            "p95_us": 56882,
+            "max_us": 73363
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1427.5,
+            "p95_us": 4522,
+            "max_us": 7308
+          }
+        }
+      },
+      "zh-test-mixed-left/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1315.0,
+            "p95_us": 5413,
+            "max_us": 7800
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1047.0,
+            "p95_us": 3057,
+            "max_us": 4512
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1524.0,
+            "p95_us": 5991,
+            "max_us": 19903
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1438.0,
+            "p95_us": 4417,
+            "max_us": 6356
+          }
+        }
+      },
+      "zh-test-mixed-left/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 444.0,
+            "p95_us": 1745,
+            "max_us": 4086
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 237.5,
+            "p95_us": 647,
+            "max_us": 870
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 34187.5,
+            "p95_us": 87704,
+            "max_us": 167142
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1827.5,
+            "p95_us": 5784,
+            "max_us": 7660
+          }
+        }
+      },
+      "zh-test-mixed-left/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 573.0,
+            "p95_us": 2818,
+            "max_us": 24043
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 334.0,
+            "p95_us": 1213,
+            "max_us": 1862
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 27282.5,
+            "p95_us": 49506,
+            "max_us": 56337
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1341.0,
+            "p95_us": 2679,
+            "max_us": 4261
+          }
+        }
+      },
+      "zh-test-mixed-right/full": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 1197.0,
+            "p95_us": 4699,
+            "max_us": 9088
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1188.5,
+            "p95_us": 4456,
+            "max_us": 4715
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 1197.5,
+            "p95_us": 41347,
+            "max_us": 59132
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1460.5,
+            "p95_us": 4592,
+            "max_us": 5866
+          }
+        }
+      },
+      "zh-test-mixed-right/typing-first": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 602.5,
+            "p95_us": 1155,
+            "max_us": 5286
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 236.0,
+            "p95_us": 455,
+            "max_us": 950
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 45489.5,
+            "p95_us": 90659,
+            "max_us": 103493
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1954.0,
+            "p95_us": 4211,
+            "max_us": 5644
+          }
+        }
+      },
+      "zh-test-mixed-right/typing-half": {
+        "core": {
+          "before": {
+            "n": 48,
+            "p50_us": 626.0,
+            "p95_us": 1468,
+            "max_us": 3256
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 460.0,
+            "p95_us": 1759,
+            "max_us": 2546
+          }
+        },
+        "addons": {
+          "before": {
+            "n": 48,
+            "p50_us": 2983.0,
+            "p95_us": 78779,
+            "max_us": 110443
+          },
+          "after": {
+            "n": 48,
+            "p50_us": 1656.5,
+            "p95_us": 6445,
+            "max_us": 10038
+          }
+        }
+      }
+    }
+  },
+  "phone": {
+    "candidate_output_parity": true,
+    "components": {
+      "core_us": {
+        "before": {
+          "n": 186,
+          "p50_us": 2035.0,
+          "p95_us": 9452,
+          "max_us": 20602
+        },
+        "after": {
+          "n": 186,
+          "p50_us": 1617.0,
+          "p95_us": 9433,
+          "max_us": 20636
+        }
+      },
+      "rime_us": {
+        "before": {
+          "n": 186,
+          "p50_us": 10482.5,
+          "p95_us": 16463,
+          "max_us": 20702
+        },
+        "after": {
+          "n": 186,
+          "p50_us": 10204.0,
+          "p95_us": 15863,
+          "max_us": 20086
+        }
+      },
+      "addons_us": {
+        "before": {
+          "n": 186,
+          "p50_us": 11128.0,
+          "p95_us": 79128,
+          "max_us": 125165
+        },
+        "after": {
+          "n": 186,
+          "p50_us": 5806.5,
+          "p95_us": 11811,
+          "max_us": 16784
+        }
+      },
+      "conditions": {
+        "full": {
+          "core_us": {
+            "before": {
+              "n": 62,
+              "p50_us": 5503.0,
+              "p95_us": 10325,
+              "max_us": 20602
+            },
+            "after": {
+              "n": 62,
+              "p50_us": 5807.5,
+              "p95_us": 11147,
+              "max_us": 20636
+            }
+          },
+          "rime_us": {
+            "before": {
+              "n": 62,
+              "p50_us": 12574.0,
+              "p95_us": 19391,
+              "max_us": 20702
+            },
+            "after": {
+              "n": 62,
+              "p50_us": 12226.5,
+              "p95_us": 19106,
+              "max_us": 20086
+            }
+          },
+          "addons_us": {
+            "before": {
+              "n": 62,
+              "p50_us": 5371.0,
+              "p95_us": 14349,
+              "max_us": 15437
+            },
+            "after": {
+              "n": 62,
+              "p50_us": 5197.5,
+              "p95_us": 14311,
+              "max_us": 15076
+            }
+          }
+        },
+        "typing-first": {
+          "core_us": {
+            "before": {
+              "n": 62,
+              "p50_us": 1411.5,
+              "p95_us": 2049,
+              "max_us": 2510
+            },
+            "after": {
+              "n": 62,
+              "p50_us": 791.0,
+              "p95_us": 1088,
+              "max_us": 1199
+            }
+          },
+          "rime_us": {
+            "before": {
+              "n": 62,
+              "p50_us": 10297.5,
+              "p95_us": 10815,
+              "max_us": 12659
+            },
+            "after": {
+              "n": 62,
+              "p50_us": 10051.5,
+              "p95_us": 10628,
+              "max_us": 11109
+            }
+          },
+          "addons_us": {
+            "before": {
+              "n": 62,
+              "p50_us": 60326.5,
+              "p95_us": 115779,
+              "max_us": 125165
+            },
+            "after": {
+              "n": 62,
+              "p50_us": 6905.5,
+              "p95_us": 9226,
+              "max_us": 12729
+            }
+          }
+        },
+        "typing-half": {
+          "core_us": {
+            "before": {
+              "n": 62,
+              "p50_us": 2041.0,
+              "p95_us": 6484,
+              "max_us": 14177
+            },
+            "after": {
+              "n": 62,
+              "p50_us": 1901.0,
+              "p95_us": 4619,
+              "max_us": 14038
+            }
+          },
+          "rime_us": {
+            "before": {
+              "n": 62,
+              "p50_us": 10360.0,
+              "p95_us": 14235,
+              "max_us": 15786
+            },
+            "after": {
+              "n": 62,
+              "p50_us": 10138.0,
+              "p95_us": 13952,
+              "max_us": 15789
+            }
+          },
+          "addons_us": {
+            "before": {
+              "n": 62,
+              "p50_us": 5207.0,
+              "p95_us": 78699,
+              "max_us": 81993
+            },
+            "after": {
+              "n": 62,
+              "p50_us": 4364.0,
+              "p95_us": 14270,
+              "max_us": 16784
+            }
+          }
+        }
+      }
+    },
+    "delivery-all": {
+      "delivery_us": {
+        "before": {
+          "n": 93,
+          "p50_us": 52702,
+          "p95_us": 111888,
+          "max_us": 154343
+        },
+        "after": {
+          "n": 93,
+          "p50_us": 39994,
+          "p95_us": 58958,
+          "max_us": 72036
+        }
+      },
+      "conditions": {
+        "full": {
+          "delivery_us": {
+            "before": {
+              "n": 31,
+              "p50_us": 43559,
+              "p95_us": 54434,
+              "max_us": 61574
+            },
+            "after": {
+              "n": 31,
+              "p50_us": 44511,
+              "p95_us": 63805,
+              "max_us": 72036
+            }
+          }
+        },
+        "typing-first": {
+          "delivery_us": {
+            "before": {
+              "n": 31,
+              "p50_us": 90667,
+              "p95_us": 146653,
+              "max_us": 154343
+            },
+            "after": {
+              "n": 31,
+              "p50_us": 38266,
+              "p95_us": 42966,
+              "max_us": 46797
+            }
+          }
+        },
+        "typing-half": {
+          "delivery_us": {
+            "before": {
+              "n": 31,
+              "p50_us": 40034,
+              "p95_us": 108533,
+              "max_us": 109054
+            },
+            "after": {
+              "n": 31,
+              "p50_us": 39252,
+              "p95_us": 51469,
+              "max_us": 51973
+            }
+          }
+        }
+      }
+    },
+    "delivery-none": {
+      "delivery_us": {
+        "before": {
+          "n": 93,
+          "p50_us": 34305,
+          "p95_us": 53994,
+          "max_us": 69163
+        },
+        "after": {
+          "n": 93,
+          "p50_us": 35305,
+          "p95_us": 57442,
+          "max_us": 67799
+        }
+      },
+      "conditions": {
+        "full": {
+          "delivery_us": {
+            "before": {
+              "n": 31,
+              "p50_us": 42068,
+              "p95_us": 66530,
+              "max_us": 69163
+            },
+            "after": {
+              "n": 31,
+              "p50_us": 43785,
+              "p95_us": 64479,
+              "max_us": 67799
+            }
+          }
+        },
+        "typing-first": {
+          "delivery_us": {
+            "before": {
+              "n": 31,
+              "p50_us": 32722,
+              "p95_us": 37543,
+              "max_us": 47870
+            },
+            "after": {
+              "n": 31,
+              "p50_us": 32922,
+              "p95_us": 51381,
+              "max_us": 52112
+            }
+          }
+        },
+        "typing-half": {
+          "delivery_us": {
+            "before": {
+              "n": 31,
+              "p50_us": 33568,
+              "p95_us": 41945,
+              "max_us": 44558
+            },
+            "after": {
+              "n": 31,
+              "p50_us": 33910,
+              "p95_us": 43550,
+              "max_us": 48826
+            }
+          }
+        }
+      }
+    }
+  }
+}
