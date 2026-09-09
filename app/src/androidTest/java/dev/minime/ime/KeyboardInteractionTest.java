@@ -456,6 +456,24 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
     }
     public void testTaiwaneseDirectPairedOutput() throws Exception { pairedOutput(false); }
     public void testBeginnerTaiwaneseHanSource() throws Exception { pairedOutput(true); }
+    public void testTwoLanguagePairsKeepCompositionAndReturnMode() throws Exception {
+        android.content.SharedPreferences settings=activity.getSharedPreferences("settings",Context.MODE_PRIVATE);
+        settings.edit().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).commit();
+        AddonRepository.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS);
+        Rect stable=keyboardBounds();
+        for(dev.minime.core.InputMode family:java.util.Arrays.asList(dev.minime.core.InputMode.TAIWANESE,dev.minime.core.InputMode.JAPANESE)) {
+            clear();activateMode(family);
+            assertEquals(family.secondaryEnglish(true),new ModePreferences(activity).selected());
+            type("ab");expectText("ab");
+            click("Expand candidates");click("Choose chinese mode");expectText("ab");
+            click("Expand candidates");click("Choose "+family.id+" mode");expectText("ab");
+            assertEquals(family.secondaryEnglish(true),new ModePreferences(activity).selected());
+            click("Switch to English");expectText("ab");
+            click("Switch to "+(family.taiwanese()?"Taiwanese":"Japanese"));expectText("ab");
+            assertEquals(family.secondaryEnglish(true),new ModePreferences(activity).selected());
+            assertEquals("Pair switches keep keyboard bounds",stable,keyboardBounds());
+        }
+    }
     public void testJapaneseCharactersAndCommonVocabulary() throws Exception {
         activity.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_japanese",true).commit();
         dev.minime.core.AddonDictionary addon=AddonRepository.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS);
@@ -523,7 +541,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
         activateMode(dev.minime.core.InputMode.TAIWANESE);
         type(poj[0]);click("Expand candidates");click("Candidate "+poj[1]);expectText(poj[1]);
-        clear();type(geography[0]);click("Expand candidates");click("Candidate "+geography[1]);expectText(geography[1]);
+        clear();activateMode(dev.minime.core.InputMode.CHINESE);type(geography[0]);click("Expand candidates");click("Candidate "+geography[1]);expectText(geography[1]);
         clear();activateMode(dev.minime.core.InputMode.JAPANESE);type(japanese[0]);click("Expand candidates");click("Candidate "+japanese[1]);expectText(japanese[1]);
         clear();settings.edit().putBoolean("addon_poj",false).putBoolean("addon_japanese",false).putBoolean("addon_taiwan",false).putBoolean("addon_geography",false).commit();
         getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));

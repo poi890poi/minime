@@ -11,8 +11,11 @@ final class ModePreferences {
     ModePreferences(Context context) {this.context=context;settings=context.getSharedPreferences("settings",Context.MODE_PRIVATE);}
     Set<String> configured() {return AddonRepository.enabled(context);}
     InputMode mixed() {
-        InputMode mode=InputMode.fromId(settings.getString("mixed_mode","chinese"));
+        InputMode mode=resolve(InputMode.fromId(settings.getString("mixed_mode","chinese")));
         return !mode.english() && mode.available(configured())?mode:InputMode.CHINESE;
+    }
+    InputMode resolve(InputMode mode) {
+        return mode.secondaryEnglish(true);
     }
     InputMode selected() {return settings.getBoolean("english_mode",false)?InputMode.ENGLISH:mixed();}
     void select(InputMode mode) {

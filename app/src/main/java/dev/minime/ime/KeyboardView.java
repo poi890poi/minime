@@ -50,10 +50,10 @@ final class KeyboardView extends LinearLayout {
     void modeOptions(InputMode mixed,Set<String> configured) {
         returnMode=mixed;configuredModes=new HashSet<>(configured);
     }
-    private static String modeName(InputMode mode) {return mode==InputMode.TAIWANESE?"Taiwanese":mode==InputMode.JAPANESE?"Japanese":"Chinese";}
+    private static String modeName(InputMode mode) {return mode.taiwanese()?"Taiwanese":mode.japanese()?"Japanese":"Chinese";}
     private TextView modeBadge(InputMode current,Runnable show) {
         TextView badge=plain(current.label+"⌄","MODE_PICKER",48,1);badge.setTextSize(15);
-        badge.setContentDescription("Choose language mode: "+current.id);
+        badge.setContentDescription("Choose language mode: "+current.family().id);
         badge.setOnClickListener(anchor->{modeMenu=true;show.run();});
         return badge;
     }
@@ -383,10 +383,10 @@ final class KeyboardView extends LinearLayout {
                 // The expanded page already repeats the strip's words. Use that
                 // existing toolbar for mode choices without shrinking either viewport.
                 strip.removeAllViews();candidateScroll=null;candidateWords=null;
-                for(InputMode choice:InputMode.values()) {
+                for(InputMode choice:Arrays.asList(InputMode.CHINESE,InputMode.ENGLISH,InputMode.TAIWANESE,InputMode.JAPANESE)) {
                     TextView tab=plain(choice.label,"MODE:"+choice.id,48,1);tab.setTextSize(20);
                     tab.setContentDescription("Choose "+choice.id+" mode");
-                    if(choice==engine.inputMode())tab.setBackgroundColor(BLUE);
+                    if(choice==engine.inputMode().family())tab.setBackgroundColor(BLUE);
                     if(!choice.available(configuredModes))tab.setTextColor(0xff90a4ae);
                     tab.setOnClickListener(v->{expanded=false;modeMenu=false;press.accept(choice.available(configuredModes)?"MODE:"+choice.id:"SETTINGS");});
                     strip.addView(tab,new LayoutParams(0,dp(48),1));
@@ -493,7 +493,7 @@ final class KeyboardView extends LinearLayout {
             TextView language=plain(english?returnMode.label:"EN","LANGUAGE",height,.9f);language.setTextSize(15);((SlideKey)language).icon(null);
             language.setContentDescription(english?"Switch to "+modeName(returnMode):"Switch to English");bottom.addView(language);
         }
-        String mixedLabel=(zhuyin?"注音":"拼音")+(engine.inputMode()==InputMode.TAIWANESE?"・台語":engine.inputMode()==InputMode.JAPANESE?"・日本語":"");
+        String mixedLabel=engine.inputMode()==InputMode.CHINESE?(zhuyin?"注音":"拼音"):engine.inputMode().description();
         TextView space=plain(english?"English":mixedLabel,"SPACE",height,4); space.setTextSize(14); space.setTextColor(0xff6d7b80); space.setContentDescription("Space");
         GradientDrawable spaceShape=new GradientDrawable();spaceShape.setColor(0xffcbd0d3);spaceShape.setCornerRadius(dp(2));
         space.setBackground(new RippleDrawable(ColorStateList.valueOf(0x33263238),new InsetDrawable(spaceShape,dp(12),dp(14),dp(12),dp(14)),null));bottom.addView(space);

@@ -142,11 +142,12 @@ public final class MiniMeService extends InputMethodService {
     private void render() {
         InputConnection input=getCurrentInputConnection();
         shift.automatic(english && !literalInput() && input!=null && input.getCursorCapsMode(editorInfo.inputType)!=0);
-        if(keyboard!=null) {keyboard.modeOptions(modes.mixed(),modes.configured());keyboard.render(engine,zhuyin && !literalInput() && !english,shift.upper(),shift.locked(),panel,policy.numeric,
+        if(keyboard!=null) {keyboard.modeOptions(modes.mixed(),modes.configured());keyboard.render(engine,zhuyin && engine.inputMode()==InputMode.CHINESE && !literalInput() && !english,shift.upper(),shift.locked(),panel,policy.numeric,
             literalInput() || policy.numeric || english || englishPunctuation,english || literalInput(),!policy.literal && !policy.numeric,!literalInput(),
             EditorPolicy.enterLabel(editorInfo),ready ? "" : dictionaryStatus);}
     }
     private void switchMode(InputMode mode) {
+        mode=modes.resolve(mode);
         if(!mode.available(modes.configured()))return;
         english=mode.english();englishPunctuation=false;shift.reset();panel=0;
         modes.select(mode);engine.switchMode(mode,literalInput());configureAddons();

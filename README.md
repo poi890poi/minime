@@ -4,6 +4,15 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.7.4** uses Chinese/English, Taiwanese/English and Japanese/English
+boards, with the one-tap English-focused board retained. Expanded Taiwanese
+vocabulary and compact shared indexes keep all-pack desktop retained heap near
+the old inventory despite broader coverage.
+
+The [two-language mode benchmark](docs/two-language-modes/RESULTS.md) compares Chinese
+and English as the single secondary for focused Taiwanese/Japanese boards, with
+source inventory, typing latency, memory costs and negative coverage results.
+
 Version **0.7.3** prioritizes Taiwanese/Japanese suggestions in their dedicated
 modes and expands Japanese common vocabulary across parts of speech. Japanese
 mode also offers both kana scripts and source-ranked kanji. Existing expressions

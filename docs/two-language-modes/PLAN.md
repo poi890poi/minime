@@ -1,10 +1,13 @@
 # Two-language modes: contract and evaluation
 
 Behavior change based on 0.7.3 (3ecf81d). Chinese/English and the one-tap
-English board remain. Taiwanese and Japanese each have a configurable Chinese
-or English secondary language. Existing selections default to Chinese secondary.
+English board remain. Taiwanese and Japanese each have exactly one secondary language. Benchmark Chinese
+and English alternatives to inform the fixed product choice. Existing selections
+resolve to English secondary after the completed balance comparison.
 Core mode identity owns decoder scope, add-on scope, ranking and learning context.
-The UI retains four mode tabs; settings choose the secondary language per family.
+The UI retains four mode tabs. Per the user clarification, no secondary-language
+setting or extra pairing tabs. English is fixed for 台/日; alternatives remain in
+the benchmark.
 
 Focused-language full and incomplete candidates precede secondary-language choices,
 including collisions with English words, contractions and Mandarin glyphs. Raw

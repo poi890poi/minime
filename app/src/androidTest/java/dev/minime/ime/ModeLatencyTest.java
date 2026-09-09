@@ -19,7 +19,7 @@ public final class ModeLatencyTest extends InstrumentationTestCase {
         assertTrue(RimeBackend.load(context).get(60,TimeUnit.SECONDS));
         Class modeType;try{modeType=Class.forName("dev.minime.core.InputMode");}catch(ClassNotFoundException old){modeType=null;}
         final Class type=modeType;
-        List<String> modes=type==null?Arrays.asList("legacy-mixed","legacy-english"):Arrays.asList("chinese","english","taiwanese","japanese");
+        List<String> modes=type==null?Arrays.asList("legacy-mixed","legacy-english"):Arrays.asList("chinese","english","taiwanese","japanese","taiwanese_english","japanese_english");
         List<String[]> inputs=new ArrayList<>();
         try(BufferedReader in=new BufferedReader(new InputStreamReader(getInstrumentation().getContext().getAssets().open("latency-inputs.tsv"),StandardCharsets.UTF_8))){String line;int i=0;while((line=in.readLine())!=null)if(i++%48<3)inputs.add(line.split("\t"));}
         Handler main=new Handler(Looper.getMainLooper());
