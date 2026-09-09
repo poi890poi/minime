@@ -454,16 +454,18 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         getInstrumentation().runOnMainSync(()->new ModePreferences(activity).select(mode));
         focus(activity.url);focus(activity.text);
     }
-    public void testTaiwaneseDirectPairedOutput() throws Exception {
+    public void testTaiwaneseDirectPairedOutput() throws Exception { pairedOutput(false); }
+    public void testBeginnerTaiwaneseHanSource() throws Exception { pairedOutput(true); }
+    private void pairedOutput(boolean beginner) throws Exception {
         SharedPreferences settings=activity.getSharedPreferences("settings",Context.MODE_PRIVATE);
         settings.edit().putBoolean("addon_poj",true).putBoolean("paired_taiwanese",true).commit();
         dev.minime.core.AddonDictionary addon=AddonRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
         String spelling=null,phonetic=null,han=null;
         try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(activity.getAssets().open("addons.tsv"),java.nio.charset.StandardCharsets.UTF_8))) {
             String line;while((line=reader.readLine())!=null && spelling==null) {
-                String[] p=line.split("\t");if(p.length!=5 || !p[0].equals("poj"))continue;
+                String[] p=line.split("\t");if(p.length!=5 || !p[0].equals("poj") || (beginner && !p[3].startsWith("taiwanese-basic:")))continue;
                 String key=p[1].replace("-","").replace("'","").replace(" ","");if(!key.matches("[a-z]{4,12}"))continue;
-                for(dev.minime.core.Candidate c:addon.lookup(key,Collections.singleton("poj")))if(c.pair!=null && c.text.equals(p[2])) {spelling=key;phonetic=c.text;han=c.alternateText();break;}
+                for(dev.minime.core.Candidate c:addon.lookup(key,Collections.singleton("poj")))if(c.pair!=null && c.text.equals(p[2]) && (!beginner || c.pair.source.startsWith("taihoa:"))) {spelling=key;phonetic=c.text;han=c.alternateText();break;}
             }
         }
         assertNotNull("Source-derived packaged paired probe",spelling);

@@ -1,5 +1,7 @@
 # Direct Taiwanese paired output
 
+This records the 0.7.1 policy. The 0.7.2 [Han coverage correction](../taiwanese-coverage/RESULTS.md) extends its source eligibility and beginner vocabulary handling.
+
 Approved behavior: tap selects the visible primary form, long press directly
 selects the paired alternative without opening a menu. The secondary line shows
 that exact alternative. An optional Taiwanese Han-primary setting reverses the
