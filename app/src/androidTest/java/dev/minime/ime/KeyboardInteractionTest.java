@@ -454,6 +454,39 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         getInstrumentation().runOnMainSync(()->new ModePreferences(activity).select(mode));
         focus(activity.url);focus(activity.text);
     }
+    public void testTaiwaneseDirectPairedOutput() throws Exception {
+        SharedPreferences settings=activity.getSharedPreferences("settings",Context.MODE_PRIVATE);
+        settings.edit().putBoolean("addon_poj",true).putBoolean("paired_taiwanese",true).commit();
+        dev.minime.core.AddonDictionary addon=AddonRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
+        String spelling=null,phonetic=null,han=null;
+        try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(activity.getAssets().open("addons.tsv"),java.nio.charset.StandardCharsets.UTF_8))) {
+            String line;while((line=reader.readLine())!=null && spelling==null) {
+                String[] p=line.split("\t");if(p.length!=5 || !p[0].equals("poj"))continue;
+                String key=p[1].replace("-","").replace("'","").replace(" ","");if(!key.matches("[a-z]{4,12}"))continue;
+                for(dev.minime.core.Candidate c:addon.lookup(key,Collections.singleton("poj")))if(c.pair!=null && c.text.equals(p[2])) {spelling=key;phonetic=c.text;han=c.alternateText();break;}
+            }
+        }
+        assertNotNull("Source-derived packaged paired probe",spelling);
+        activateMode(dev.minime.core.InputMode.TAIWANESE);
+        type(spelling);Rect row=bounds("Candidate list");Rect key=bounds("q");int phoneticWidth=bounds("Candidate "+phonetic).width();
+        AccessibilityNodeInfo paired=node("Candidate "+phonetic);assertTrue(paired.isLongClickable());
+        final String alternateLabel="Insert "+han;
+        assertTrue(paired.getActionList().stream().anyMatch(a->alternateLabel.contentEquals(a.getLabel()==null?"":a.getLabel())));paired.recycle();
+        capture("paired-taiwanese-phonetic");
+        Rect target=bounds("Candidate "+phonetic);long start=SystemClock.uptimeMillis();
+        event(start,MotionEvent.ACTION_DOWN,target.exactCenterX(),target.exactCenterY());
+        SystemClock.sleep(android.view.ViewConfiguration.getLongPressTimeout()+120);
+        event(start,MotionEvent.ACTION_UP,target.exactCenterX(),target.exactCenterY());expectText(han);
+        clear();type(spelling);click("Candidate "+phonetic);expectText(phonetic);
+        clear();settings.edit().putBoolean("taiwanese_han_primary",true).commit();activateMode(dev.minime.core.InputMode.TAIWANESE);
+        type(spelling);assertEquals(row,bounds("Candidate list"));assertEquals(key,bounds("q"));
+        assertTrue("Han-primary keeps phonetic cell width",bounds("Candidate "+han).width()>=phoneticWidth);capture("paired-taiwanese-han");
+        paired=node("Candidate "+han);assertTrue(paired.performAction(AccessibilityNodeInfo.ACTION_LONG_CLICK));paired.recycle();expectText(phonetic);
+        clear();type(spelling);click("Candidate "+han);expectText(han);
+        clear();settings.edit().putBoolean("paired_taiwanese",false).commit();activateMode(dev.minime.core.InputMode.TAIWANESE);
+        type(spelling);paired=node("Candidate "+phonetic);assertFalse("Disabled pairs have no hold action",paired.isLongClickable());paired.recycle();
+        assertEquals(row,bounds("Candidate list"));assertEquals(key,bounds("q"));
+    }
     public void testOptionalPacksThroughService() throws Exception {
         String[] poj=AddonTestData.probe(activity,"poj"),japanese=AddonTestData.probe(activity,"japanese"),geography=AddonTestData.probe(activity,"geography");
         SharedPreferences settings=getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE);

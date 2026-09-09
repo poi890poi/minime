@@ -192,19 +192,67 @@ final class KeyboardView extends LinearLayout {
     }
     private int dp(float value) { return Math.round(value*getResources().getDisplayMetrics().density); }
     private static final class CandidateWord extends TextView {
-        Runnable selection=()->{},pressedSelection;
+        Runnable selection=()->{},pressedSelection,alternate,pressedAlternate;
+        private String hint="",phonetic="";
+        private final android.text.TextPaint hintPaint=new android.text.TextPaint();
+        private final android.graphics.Paint.FontMetrics hintMetrics=new android.graphics.Paint.FontMetrics();
+        private boolean held;
         CandidateWord(Context context) {super(context);}
+        void alternate(String text,String reading,Runnable action) {
+            alternate=action;setLongClickable(action!=null);
+            if(!hint.equals(text) || !phonetic.equals(reading)) {hint=text;phonetic=reading;requestLayout();invalidate();}
+        }
+        private float hintSize() {return 12*getResources().getDisplayMetrics().scaledDensity;}
+        private int hintHeight() {return (int)Math.ceil(hintSize()*1.35f);}
+        @Override protected void onMeasure(int width,int height) {
+            super.onMeasure(width,height);
+            if(!hint.isEmpty() && MeasureSpec.getMode(width)!=MeasureSpec.EXACTLY) {
+                int readingWidth=(int)Math.ceil(android.text.Layout.getDesiredWidth(phonetic,getPaint()))+getCompoundPaddingLeft()+getCompoundPaddingRight();
+                int desired=resolveSize(Math.max(getMeasuredWidth(),readingWidth),width);
+                if(desired!=getMeasuredWidth())super.onMeasure(MeasureSpec.makeMeasureSpec(desired,MeasureSpec.EXACTLY),height);
+            }
+            if(!hint.isEmpty() && MeasureSpec.getMode(height)!=MeasureSpec.EXACTLY)
+                setMeasuredDimension(getMeasuredWidth(),resolveSize(Math.max(getSuggestedMinimumHeight(),
+                    (getLayout()==null?getMeasuredHeight():getLayout().getHeight())+getCompoundPaddingTop()+getCompoundPaddingBottom()+hintHeight()),height));
+        }
+        @Override protected void onDraw(android.graphics.Canvas canvas) {
+            if(hint.isEmpty() || getLayout()==null) {super.onDraw(canvas);return;}
+            android.text.Layout layout=getLayout();
+            int top=getPaddingTop(),bottom=getHeight()-getPaddingBottom(),hintHeight=hintHeight();
+            // The primary keeps its original width and line wrapping; annotations never widen the row.
+            getPaint().setColor(getCurrentTextColor());
+            canvas.save();canvas.translate(getCompoundPaddingLeft(),top+Math.max(0,(bottom-top-hintHeight-layout.getHeight())/2f));
+            layout.draw(canvas);canvas.restore();
+            android.text.TextPaint paint=hintPaint;paint.set(getPaint());
+            paint.setTextSize(hintSize());paint.setTypeface(android.graphics.Typeface.DEFAULT);
+            int available=Math.max(0,getWidth()-getPaddingLeft()-getPaddingRight());
+            CharSequence shown=android.text.TextUtils.ellipsize(hint,paint,available,android.text.TextUtils.TruncateAt.END);
+            float x=getPaddingLeft()+(available-paint.measureText(shown.toString()))/2;
+            paint.getFontMetrics(hintMetrics);
+            canvas.drawText(shown.toString(),x,bottom-hintMetrics.descent,paint);
+        }
+        @Override public void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo info) {
+            super.onInitializeAccessibilityNodeInfo(info);
+            if(alternate!=null)info.addAction(new android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction(
+                android.view.accessibility.AccessibilityNodeInfo.ACTION_LONG_CLICK,"Insert "+hint));
+        }
         @Override public boolean onTouchEvent(MotionEvent event) {
-            if(event.getActionMasked()==MotionEvent.ACTION_DOWN)pressedSelection=selection;
-            if(event.getActionMasked()==MotionEvent.ACTION_CANCEL)pressedSelection=null;
+            if(event.getActionMasked()==MotionEvent.ACTION_DOWN) {pressedSelection=selection;pressedAlternate=alternate;held=false;}
+            if(event.getActionMasked()==MotionEvent.ACTION_CANCEL) {pressedSelection=null;pressedAlternate=null;}
             boolean handled=super.onTouchEvent(event);
             // TextView may post its click; clear a non-clicking release only after it.
-            if(event.getActionMasked()==MotionEvent.ACTION_UP)post(()->pressedSelection=null);
+            if(event.getActionMasked()==MotionEvent.ACTION_UP)post(()->{pressedSelection=null;pressedAlternate=null;held=false;});
             return handled;
         }
         @Override public boolean performClick() {
+            if(held) {held=false;return true;}
             Runnable action=pressedSelection==null?selection:pressedSelection;pressedSelection=null;
             super.performClick();action.run();return true;
+        }
+        @Override public boolean performLongClick() {
+            Runnable action=pressedSelection==null?alternate:pressedAlternate;
+            if(action==null || held)return false;
+            held=true;action.run();performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);return true;
         }
     }
     private TextView button(String label,String command,String up,String down,boolean accent,int height,float weight) {
@@ -234,6 +282,9 @@ final class KeyboardView extends LinearLayout {
         if(!value.text.contentEquals(word.getText()))word.setText(value.text);
         word.setContentDescription("Candidate "+value.text);
         ((CandidateWord)word).selection=()->{expanded=false;choose.accept(()->engine.selectCandidate(value,composition));};
+        String alternate=value.alternateText();
+        ((CandidateWord)word).alternate(alternate,value.pair==null?"":value.pair.phonetic,alternate.isEmpty()?null:
+            ()->{expanded=false;choose.accept(()->engine.selectAlternative(value,composition));});
     }
     private void expandedCandidates(CompositionEngine engine,List<Candidate> candidates,int first,int preferred,String key) {
         if(key.equals(gridKey))return;
@@ -323,7 +374,7 @@ final class KeyboardView extends LinearLayout {
             .append(':').append(separatePhonetics).append(':').append(preferred).append(':').append(engine.raw().isEmpty());
         for(int i=separatePhonetics?1:0;i<candidates.size();i++) {
             Candidate c=candidates.get(i);presentation.append('|').append(c.text.length()).append(':').append(c.text)
-                .append(':').append(c.literal).append(':').append(c.consumed);
+                .append(':').append(c.literal).append(':').append(c.consumed).append(':').append(c.alternateText());
         }
         String nextStrip=presentation.toString();
         if(!nextStrip.equals(stripKey)) {

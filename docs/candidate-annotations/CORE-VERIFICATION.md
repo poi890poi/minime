@@ -26,7 +26,7 @@ passed in that first run, whose later acceptance failure is retained in the resu
 record. The complete final core run passes after correction.
 
 Desktop lookup timing (JDK 17, Windows, six alternating paired/off passes, three
-warmups; 3,922 frozen rows per pass; all optional Chinese + POJ packs):
+warmups; 3,922 frozen rows per pass; Chinese culture + POJ packs):
 
 | Run | Median, off / paired | p95, off / paired | p99, off / paired |
 |---|---:|---:|---:|

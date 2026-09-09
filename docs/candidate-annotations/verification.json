@@ -1,0 +1,32 @@
+{
+  "version": "0.7.1",
+  "baseline_commit": "e6d1334",
+  "source_commit": "0e504bd",
+  "core_commit": "15ea3e9",
+  "core_assertions": 29186,
+  "parity_queries": 179699,
+  "frozen_conditions": 3922,
+  "phone_final_tests": 15,
+  "phone_initial_tests_including_latency": 13,
+  "device": "RFCR91GWXLX",
+  "restored_ime": "com.samsung.android.honeyboard/.service.HoneyBoardService",
+  "settings_and_learning": "exact text comparison to prior backup passed",
+  "display": "Display State=OFF; mScreenState=OFF; mActualState=OFF",
+  "lint": {
+    "errors": 0,
+    "warnings": 17
+  },
+  "apk_sha256": "d5a88fdd752f4f4be5952df2d02c2878e30d086e8a8c5ee8111bf55ab2332295",
+  "zip_sha256": "ace0327dcf00e3c62f36ecceb15dcd0dff2ef568537033598f35f3da4e9b11f6",
+  "zip_bytes": 37284809,
+  "evidence_sha256": {
+    "core-final.log.gz": "141d811d08b222d0a86596c74c8d2583c9227eeb3007c9fd35708d02520e3e33",
+    "first-core-run.log.gz": "034ab9c282695c281db649f6f14d3fbff2dd9537260297d31b9fe3d9f77e900f",
+    "lookup-samples.tsv.gz": "8c1e91791322c931c974f3aa105c09f8c513e4fa94cdf4563b28e2e2bd1ba718",
+    "phone-final.log.gz": "c9a583cb45a97327afa60255a1ea82844f389a2ddbac6b7d6a97c4243e26d318",
+    "phone-latency.tsv.gz": "a9e0181c513ac4a20ed5e207d7cad5c01c5fd6b4984c5074364816800730b17f"
+  },
+  "unchanged_prior_assets": 15,
+  "download_url": "https://que-put-miracle-wal.trycloudflare.com/MinIME-0.7.1.zip",
+  "public_zip_verification": "Downloaded through Cloudflare; exact SHA-256 match; ZIP CRC and embedded signed APK verified"
+}

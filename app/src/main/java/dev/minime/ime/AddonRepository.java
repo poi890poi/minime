@@ -2,6 +2,7 @@ package dev.minime.ime;
 
 import android.content.*;
 import dev.minime.core.AddonDictionary;
+import dev.minime.core.PairedForms;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -14,7 +15,10 @@ final class AddonRepository {
         if(future==null) {
             Context app=context.getApplicationContext();
             future=CompletableFuture.supplyAsync(()-> {
-                try {return AddonDictionary.read(new InputStreamReader(app.getAssets().open("addons.tsv"),StandardCharsets.UTF_8));}
+                PairedForms pairs=PairedForms.EMPTY;
+                try {pairs=PairedForms.read(new InputStreamReader(app.getAssets().open("paired-forms.tsv"),StandardCharsets.UTF_8));}
+                catch(IOException e) {android.util.Log.w("MinIME","Paired forms unavailable",e);}
+                try {return AddonDictionary.read(new InputStreamReader(app.getAssets().open("addons.tsv"),StandardCharsets.UTF_8),pairs);}
                 catch(IOException e) {throw new CompletionException(e);}
             });
         }

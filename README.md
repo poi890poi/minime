@@ -4,6 +4,12 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.7.1** adds direct Taiwanese paired output in 台 mode: tap POJ, hold
+its candidate to insert the Han form shown below it. Settings can reverse the
+outputs or disable pairing. The 9,385 source-attested alternatives use a systematic
+character-familiarity filter; unsupported readings remain phonetic-only. The
+candidate strip stays 48 dp high. See [paired-output results](docs/candidate-annotations/RESULTS.md).
+
 Version **0.6.2** caches saved dictionaries, moves full add-on matches ahead of
 decoder guesses while protecting verified base phrases and initials, and restores
 missing English apostrophes on Space. Valid source spellings such as `cant` stay
