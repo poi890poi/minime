@@ -13,12 +13,28 @@ final class ModeRegression {
             Editor editor=new Editor();CompositionEngine engine=engine(editor,Learning.NONE,false);
             engine.addons(addon,ALL);engine.switchMode(mode,false);type(engine,"fixture");
             Set<String> texts=new HashSet<>();for(Candidate c:engine.candidates())texts.add(c.text);
-            equal(!mode.english(),texts.contains("文化"),"Chinese cultural pack belongs to mixed modes");
-            equal(!mode.english(),texts.contains("山岳"),"geography belongs to mixed modes");
-            equal(mode==InputMode.TAIWANESE,texts.contains("tâi-gí"),"POJ isolated by mode");
-            equal(mode==InputMode.JAPANESE,texts.contains("かな"),"Japanese isolated by mode");
+            equal(mode.chineseEnabled(),texts.contains("文化"),"Chinese cultural pack belongs to mixed modes");
+            equal(mode.chineseEnabled(),texts.contains("山岳"),"geography belongs to mixed modes");
+            equal(mode.taiwanese(),texts.contains("tâi-gí"),"POJ isolated by mode");
+            equal(mode.japanese(),texts.contains("かな"),"Japanese isolated by mode");
             Candidate selected=engine.candidates().get(engine.preferred());
             engine.space();equal(selected.text+(selected.literal?" ":""),editor.text,"Space matches mode highlight");
+        }
+        // Every pair controls all query paths, including empty-buffer predictions.
+        for(InputMode mode:InputMode.values()) {
+            CompositionEngine scoped=engine(new Editor(),Learning.NONE,false);
+            scoped.addons(addon,ALL);scoped.switchMode(mode,false);
+            if(!mode.chineseEnabled() && !mode.english())equal(0,scoped.candidates().size(),"no Chinese idle predictions in English-secondary pair");
+            List<Boolean> phoneticCalls=new ArrayList<>();
+            scoped.decoder(new CompositionEngine.Decoder() {
+                public void convert(PhoneticDictionary d,String r,boolean z,String x,Consumer<List<Candidate>> done){throw new AssertionError();}
+                public void query(PhoneticDictionary d,String r,boolean z,String x,boolean phonetic,AddonDictionary a,Set<String> enabled,Consumer<List<Candidate>> done) {
+                    phoneticCalls.add(phonetic);equal(mode.packs(ALL),enabled,"exact pair scope reaches worker");done.accept(a.lookup(r,enabled));
+                }
+            },()->{});
+            type(scoped,"meet");
+            equal(mode.englishEnabled(),scoped.candidates().stream().anyMatch(v->v.literal && !v.text.equals("meet")),"English suggestions follow pair scope");
+            for(boolean call:phoneticCalls)equal(mode.chineseEnabled(),call,"Chinese decoder is skipped when absent");
         }
         Editor editor=new Editor();Memory memory=new Memory();CompositionEngine engine=engine(editor,memory,false);
         engine.addons(addon,ALL);List<Runnable> replies=new ArrayList<>();List<Set<String>> queries=new ArrayList<>();

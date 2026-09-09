@@ -48,10 +48,15 @@ final class ModePriorityRegression {
                 mode.pack+"\tdont\t"+second+"\tfixture\tfixture\n"));
             e=new Editor();c=engine(e,Learning.NONE,false);c.switchMode(mode,false);c.addons(addon,enabled);type(c,"meeting");
             equal(first,c.candidates().get(1).text,"focused suggestion alongside known English");
-            equal(0,c.preferred(),"English literal default remains protected");c.space();equal("meeting ",e.text,"English Space remains literal");
+            equal(first,c.candidates().get(c.preferred()).text,"focus overrides English literal heuristic");c.space();equal(first,e.text,"Space accepts focus");
             c=engine(new Editor(),Learning.NONE,false);c.switchMode(mode,false);c.addons(addon,enabled);type(c,"dont");
-            equal("don't",c.candidates().get(1).text,"apostrophe restoration precedes focused suggestion");
-            equal("don't",c.candidates().get(c.preferred()).text,"apostrophe highlight remains coherent");
+            equal(second,c.candidates().get(1).text,"focused suggestion precedes secondary contraction");
+            equal(second,c.candidates().get(c.preferred()).text,"focused highlight remains coherent");
+        }
+        for(InputMode mode:Arrays.asList(InputMode.TAIWANESE_ENGLISH,InputMode.JAPANESE_ENGLISH)) {
+            CompositionEngine self=engine(new Editor(),Learning.NONE,false);self.switchMode(mode,false);
+            self.addons(AddonDictionary.read(new StringReader(mode.pack+"\ta\ta\tfixture\ttest\n")),Collections.singleton(mode.pack));
+            type(self,"a");equal(0,self.preferred(),"raw-only source match remains valid without an alternate");
         }
         PairedForms pairs=PairedForms.read(new StringReader("poj\tá-bé\t甲乙\titaigi:1\n"));
         AddonDictionary paired=AddonDictionary.read(new StringReader("poj\tab'cd\tá-bé\titaigi:1\tfixture\n"),pairs);

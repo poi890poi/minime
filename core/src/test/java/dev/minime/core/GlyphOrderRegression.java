@@ -13,14 +13,16 @@ final class GlyphOrderRegression {
             Editor editor=new Editor();CompositionEngine engine=new CompositionEngine(editor,Learning.NONE);engine.dictionary(d);engine.start(false,false,false,false);engine.switchMode(InputMode.fromId(pack.equals("poj")?"taiwanese":pack),false);type(engine,"can");
             List<String> before=new ArrayList<>();for(Candidate c:engine.candidates())before.add(c.text);
             engine.addons(AddonDictionary.read(new StringReader(pack+"\tcan\t丙\tfixture\ttest\n")),Collections.singleton(pack));
-            equal(before,engine.candidates().stream().map(c->c.text).collect(java.util.stream.Collectors.toList()),"duplicate source cannot promote a low-ranked homophone: "+pack+" English="+englishOverlap);
-            yes(find(engine,"甲")<find(engine,"乙") && find(engine,"乙")<find(engine,"丙"),"entire base homophone order survives");
+            boolean focused=pack.equals("japanese") || pack.equals("poj");
+            if(!focused)equal(before,engine.candidates().stream().map(c->c.text).collect(java.util.stream.Collectors.toList()),"duplicate source cannot promote a low-ranked homophone: "+pack+" English="+englishOverlap);
+            if(!focused)yes(find(engine,"甲")<find(engine,"乙") && find(engine,"乙")<find(engine,"丙"),"entire base homophone order survives");
             Editor nativeEditor=new Editor();engine=new CompositionEngine(nativeEditor,Learning.NONE);engine.dictionary(d);engine.start(false,false,false,false);engine.switchMode(InputMode.fromId(pack.equals("poj")?"taiwanese":pack),false);
             engine.decoder((model,raw,b,context,done)->done.accept(Arrays.asList(new Candidate("甲",false,100),new Candidate("乙",false,99),new Candidate("丁",false,98))),()->{});
             type(engine,"can");engine.addons(AddonDictionary.read(new StringReader(pack+"\tcan\t丁\tfixture\ttest\n")),Collections.singleton(pack));
-            yes(find(engine,"乙")<find(engine,"丁"),"native single-glyph duplicate retains rank even outside the fallback dictionary");
+            if(!focused)yes(find(engine,"乙")<find(engine,"丁"),"native single-glyph duplicate retains rank even outside the fallback dictionary");
             engine.addons(AddonDictionary.read(new StringReader(pack+"\tcan\t戊\tfixture\ttest\n")),Collections.singleton(pack));
-            yes(find(engine,"丁")<find(engine,"戊"),"novel unweighted glyph follows established native glyphs: "+pack);
+            if(focused)equal(1,find(engine,"戊"),"focused glyph is not subject to Mandarin frequency gate");
+            else yes(find(engine,"丁")<find(engine,"戊"),"novel unweighted glyph follows established native glyphs: "+pack);
             yes(find(engine,"戊")>0,"novel glyph remains selectable");
             // The static-source constraint must not block an explicit selection.
             int rare=find(engine,"戊");engine.select(rare);

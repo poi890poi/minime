@@ -238,7 +238,7 @@ public final class CompositionEngine {
     }
     /** Long press accepts exactly the advertised alternate of the held snapshot. */
     public void selectAlternative(Candidate displayed,long composition) {
-        if(composition!=compositionId || displayed.pair==null || !pairedTaiwanese || inputMode!=InputMode.TAIWANESE)return;
+        if(composition!=compositionId || displayed.pair==null || !pairedTaiwanese || !inputMode.taiwanese())return;
         if(deferUntilReady(()->selectAlternative(displayed,composition),true))return;
         for(Candidate current:candidates) {
             if(current.text.equals(displayed.text) && current.literal==displayed.literal
@@ -271,7 +271,7 @@ public final class CompositionEngine {
     private boolean latinBoundary(String text) {return !englishMode && !literalField && text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");}
     private String contextKey() {
         String base=englishMode?"EN:"+context:!context.isEmpty()?context:afterLatin?"AFTER_LATIN":"START_OR_LATIN";
-        return inputMode==InputMode.TAIWANESE || inputMode==InputMode.JAPANESE?"MODE:"+inputMode.id+":"+base:base;
+        return !inputMode.pack.isEmpty()?"MODE:"+inputMode.id+":"+base:base;
     }
     private static String tail(String text, int n) {
         return text.substring(text.offsetByCodePoints(text.length(), -Math.min(n, text.codePointCount(0, text.length()))));
@@ -291,7 +291,7 @@ public final class CompositionEngine {
                 candidates.addAll(dictionary.englishPredictions(context));
                 Set<String> seen=new HashSet<>();candidates.removeIf(c->!seen.add(c.text));
             }
-            if (!privateField && dictionary != null && !literalField && !englishMode) candidates.addAll(dictionary.predict(context));
+            if (!privateField && dictionary != null && !literalField && inputMode.chineseEnabled()) candidates.addAll(dictionary.predict(context));
             return;
         }
         boolean bpmf = raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
@@ -309,14 +309,14 @@ public final class CompositionEngine {
             }
         }
         Set<String> packs=!privateField && !literalField?inputMode.packs(enabledAddons):Collections.emptySet();
-        if(decoder!=null && dictionary!=null && !literalField && (!englishMode || !packs.isEmpty())) {
+        if(decoder!=null && dictionary!=null && !literalField && (inputMode.chineseEnabled() || !packs.isEmpty())) {
             pending=true;
-            decoder.query(dictionary,raw,bpmf,context,!englishMode,addons,packs,result->{
+            decoder.query(dictionary,raw,bpmf,context,inputMode.chineseEnabled(),addons,packs,result->{
                 if(query!=revision)return;
                 pending=false;applyCandidates(new ArrayList<>(result));changed.run();drain();
             });
         } else {
-            List<Candidate> found=dictionary == null || literalField || englishMode ? new ArrayList<>() : dictionary.convert(raw,bpmf,context);
+            List<Candidate> found=dictionary == null || literalField || !inputMode.chineseEnabled() ? new ArrayList<>() : dictionary.convert(raw,bpmf,context);
             found.addAll(addons.lookup(raw,packs));applyCandidates(found);
         }
     }
@@ -346,7 +346,7 @@ public final class CompositionEngine {
             preferred=0;
             for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
         }
-        if (dictionary != null && !bpmf && !literalField && (intent == Intent.LATIN_LITERAL || intent == Intent.AMBIGUOUS))
+        if (dictionary != null && inputMode.englishEnabled() && !bpmf && !literalField && (intent == Intent.LATIN_LITERAL || intent == Intent.AMBIGUOUS))
             for (Candidate c : dictionary.englishCompletions(raw,afterLatin || englishMode)) if (seen.add(c.text)) candidates.add(c);
         // With a literal default, expose English completions alongside Chinese
         // choices. Preserve each source's order; neither list buries the other.
@@ -373,7 +373,7 @@ public final class CompositionEngine {
             }
         }
         if(!literalField) {
-            List<Candidate> apostrophes=dictionary!=null && !bpmf?dictionary.englishApostrophes(raw,englishMode):Collections.emptyList();
+            List<Candidate> apostrophes=dictionary!=null && inputMode.englishEnabled() && !bpmf?dictionary.englishApostrophes(raw,englishMode):Collections.emptyList();
             if(!apostrophes.isEmpty() && dictionary.validEnglishSpelling(raw) && custom.isEmpty()
                     && (privateField || learning.count(contextKey(),raw,candidates.get(preferred).text)<=learning.count(contextKey(),raw,raw))) {
                 preferred=0;automaticCorrection=false;
@@ -393,7 +393,6 @@ public final class CompositionEngine {
             // Keep explicit overrides and apostrophe recovery, then use the
             // selected language's full and incomplete matches in source order.
             if(!inputMode.pack.isEmpty()) {
-                supplements.addAll(apostrophes);
                 for(Candidate c:addonMatches)if(focused(c) && !c.incomplete)supplements.add(c);
                 for(Candidate c:addonMatches)if(focused(c) && c.incomplete)supplements.add(c);
             }
@@ -413,13 +412,13 @@ public final class CompositionEngine {
                 // A second source is not evidence that an already attested base
                 // entry is more frequent. Preserve its established homophone
                 // rank, including after English completion interleaving.
-                if(c.supplemental && !(focused(c) && c.languageCharacter) && existing>=0 && !candidates.get(existing).supplemental && dictionary!=null
+                if(c.supplemental && !focused(c) && existing>=0 && !candidates.get(existing).supplemental && dictionary!=null
                         && (dictionary.exactChinese(raw,bpmf,c.text)
                             || (candidates.get(existing).consumed==0 && c.text.codePointCount(0,c.text.length())==1)))continue;
                 // Static dictionaries supply identity/readings, not comparable
                 // glyph frequencies. A novel Han glyph must not outrank the
                 // decoder's established whole-input glyph alternatives either.
-                if(c.supplemental && !(focused(c) && c.languageCharacter) && existing<0 && hanGlyph(c.text) && candidates.stream().anyMatch(base->
+                if(c.supplemental && !focused(c) && existing<0 && hanGlyph(c.text) && candidates.stream().anyMatch(base->
                         !base.supplemental && !base.literal && base.consumed==0 && hanGlyph(base.text))) {
                     unrankedGlyphs.add(c);continue;
                 }
@@ -427,7 +426,7 @@ public final class CompositionEngine {
                 // the rest do not displace the primary decoder's whole first row.
                 if(c.incomplete && !focused(c))insertion=Math.max(insertion,Math.min(partialPreviews==0?3:9,candidates.size()));
                 if(existing>=0 && existing<insertion)continue;
-                Candidate value=existing>=0 && !(focused(c) && c.languageCharacter) && (!c.supplemental || candidates.get(existing)==defaultChoice)?candidates.get(existing):c;
+                Candidate value=existing>=0 && !focused(c) && (!c.supplemental || candidates.get(existing)==defaultChoice)?candidates.get(existing):c;
                 if(existing>=0)candidates.remove(existing);
                 candidates.add(insertion++,value);
                 if(c.incomplete && !focused(c))partialPreviews++;
@@ -442,15 +441,22 @@ public final class CompositionEngine {
             if(preferred==0 && !addonMatches.isEmpty() && candidates.size()>1 && !candidates.get(1).incomplete && conversionInput(bpmf) && !dictionary.validEnglishSpelling(raw)
                     && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,candidates.get(1).text)))preferred=1;
             // Candidate ordering and automatic acceptance share one winner.
-            // Known English/raw recovery remains slot zero; prefix-only choices
-            // still require an explicit tap because they leave unconsumed input.
+            // Raw recovery stays available; choices consuming only part of the
+            // current spelling still require an explicit tap.
+            // A dedicated language owns the default, including collisions with
+            // valid English spellings, contractions and Mandarin glyphs. Explicit
+            // raw recovery, manual entries and literal/private field policy remain.
+            boolean focusAvailable=candidates.stream().skip(1).anyMatch(this::focused);
+            if(focusAvailable && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,candidates.get(1).text))) {
+                preferred=1;automaticCorrection=false;
+            }
             if(preferred>0 && !automaticCorrection) {
                 for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
             }
         }
         for(int i=0;i<candidates.size();i++) {
             Candidate c=candidates.get(i);
-            if(c.pair!=null)candidates.set(i,pairedTaiwanese && inputMode==InputMode.TAIWANESE?c.primary(hanPrimary):c.paired(null));
+            if(c.pair!=null)candidates.set(i,pairedTaiwanese && inputMode.taiwanese()?c.primary(hanPrimary):c.paired(null));
         }
     }
     private boolean focused(Candidate candidate) {

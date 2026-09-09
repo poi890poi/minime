@@ -13,7 +13,7 @@ public final class ModeCoverageBenchmark {
         if(mode.startsWith("legacy-"))return ALL;
         if(mode.equals("english"))return Collections.emptySet();
         Set<String> selected=new HashSet<>(Arrays.asList("taiwan","geography"));
-        if(mode.equals("taiwanese"))selected.add("poj");if(mode.equals("japanese"))selected.add("japanese");return selected;
+        if(mode.startsWith("taiwanese"))selected.add("poj");if(mode.startsWith("japanese"))selected.add("japanese");return selected;
     }
     static final class Editor implements CompositionEngine.Editor {
         String text="";public void composing(String s){}public void commit(String s){text+=s;}
@@ -54,7 +54,7 @@ public final class ModeCoverageBenchmark {
         AddonDictionary addons=AddonDictionary.combine(AddonDictionary.read(Files.newBufferedReader(assets.resolve("addons.tsv"))),AddonDictionary.read(Files.newBufferedReader(assets.resolve("geography.tsv"))));
         if(Files.exists(assets.resolve("japanese-basic.tsv")))addons=AddonDictionary.withJapaneseBasics(addons,JapaneseBasics.read(Files.newBufferedReader(assets.resolve("japanese-basic.tsv"))));
         boolean baseline=args[2].equals("baseline");
-        List<String> modes=baseline?Arrays.asList("legacy-mixed","legacy-english","chinese","english","taiwanese","japanese"):Arrays.asList("chinese","english","taiwanese","japanese");
+        List<String> modes=baseline?Arrays.asList("legacy-mixed","legacy-english","chinese","english","taiwanese","japanese"):(args[2].equals("pairs")?Arrays.asList("chinese","english","taiwanese","japanese","taiwanese_english","japanese_english"):Arrays.asList("chinese","english","taiwanese","japanese"));
         try(SpeculationBenchmark.Native nativeRime=new SpeculationBenchmark.Native(91);BufferedWriter out=SpeculationBenchmark.writer(args[1])) {
             Decoder decoder=new Decoder(nativeRime);int row=0;
             for(String line:Files.readAllLines(Paths.get(args[0]))) {
