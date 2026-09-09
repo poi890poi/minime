@@ -46,9 +46,9 @@ def append_everyday(add, skipped):
     with tarfile.open(ROOT/'third_party/jmdict/jmdict-eng-common.json.tgz') as archive:
         data = json.load(archive.extractfile(next(m for m in archive.getmembers() if m.name.endswith('.json'))))
     assert data['commonOnly'] is True
-    selected = [item for item in data['words'] if any(set(s['partOfSpeech']) & {'exp', 'int'} for s in item['sense'])]
+    selected = data['words']
     counts['japanese_common_records'] = len(data['words'])
-    counts['japanese_expression_records'] = len(selected)
+    counts['japanese_expression_records'] = sum(any(set(s['partOfSpeech']) & {'exp', 'int'} for s in item['sense']) for item in selected)
     kana_values = sorted({k['text'] for item in selected for k in item['kana'] if k['common']})
     aliases = json.loads(subprocess.check_output(['node', str(ROOT/'tools/romanize_kana.cjs')], input=json.dumps(kana_values, ensure_ascii=False).encode('utf-8')).decode('utf-8'))
     accepted = set()
@@ -56,13 +56,14 @@ def append_everyday(add, skipped):
         source = 'jmdict:' + item['id']
         for kana in item['kana']:
             if not kana['common']: continue
-            senses = [s for s in item['sense'] if set(s['partOfSpeech']) & {'exp', 'int'} and ('*' in s['appliesToKana'] or kana['text'] in s['appliesToKana'])]
+            senses = [s for s in item['sense'] if '*' in s['appliesToKana'] or kana['text'] in s['appliesToKana']]
+            category = 'everyday_expressions' if any(set(s['partOfSpeech']) & {'exp', 'int'} for s in senses) else 'everyday_vocabulary'
             if not senses: continue
             roman = aliases[kana['text']]['romaji'].replace(' ', '').replace('・', '')
             key = aliases[kana['text']]['reading']
-            if not re.fullmatch("[a-z']{2,64}", roman):
+            if not re.fullmatch("[a-z']{1,64}", roman):
                 skipped.append([source, kana['text'], 'unsupported everyday kana alias']); continue
             for output in [kana['text'], roman] + [k['text'] for k in item['kanji'] if k['common'] and ('*' in kana['appliesToKanji'] or k['text'] in kana['appliesToKanji']) and any('*' in s['appliesToKanji'] or k['text'] in s['appliesToKanji'] for s in senses)]:
-                add('japanese', key, output, source, 'everyday_expressions'); accepted.add(output)
+                add('japanese', key, output, source, category); accepted.add(output)
     counts['japanese_everyday_outputs'] = len(accepted)
     return counts

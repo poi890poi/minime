@@ -71,12 +71,12 @@
       "sha256": "29b11df86928b8cea357889e79f43d5989b1a5d3d029edddd47548bbc8877955"
     }
   ],
-  "asset_sha256": "57f4669a9f30fb2f552d31781807426321ec685797f341689b03f3b74376dab0",
-  "rows": 85845,
+  "asset_sha256": "12582086c9dbc2eec9a09222de976feffb20b9f04c5fa6f8b152534a53a5d0f7",
+  "rows": 148313,
   "outputs_by_pack": {
     "taiwan": 12458,
     "poj": 20274,
-    "japanese": 5757
+    "japanese": 62547
   },
   "taiwan_category_outputs": {
     "animals": 540,
@@ -154129,8 +154129,23 @@
       "unsupported everyday kana alias"
     ],
     [
+      "jmdict:1002940",
+      "かなー",
+      "unsupported everyday kana alias"
+    ],
+    [
       "jmdict:1005110",
       "さー",
+      "unsupported everyday kana alias"
+    ],
+    [
+      "jmdict:1006380",
+      "ずーっと",
+      "unsupported everyday kana alias"
+    ],
+    [
+      "jmdict:1011760",
+      "ぼーっと",
       "unsupported everyday kana alias"
     ],
     [
@@ -154139,8 +154154,23 @@
       "unsupported everyday kana alias"
     ],
     [
+      "jmdict:1059100",
+      "シー・エム",
+      "unsupported everyday kana alias"
+    ],
+    [
+      "jmdict:1133230",
+      "メゾ・ソプラノ",
+      "unsupported everyday kana alias"
+    ],
+    [
       "jmdict:1565440",
       "あー",
+      "unsupported everyday kana alias"
+    ],
+    [
+      "jmdict:1632330",
+      "にゃー",
       "unsupported everyday kana alias"
     ],
     [
@@ -154154,18 +154184,28 @@
       "unsupported everyday kana alias"
     ],
     [
-      "jmdict:2122310",
-      "え",
+      "jmdict:2159450",
+      "ジー・ユー・アイ",
       "unsupported everyday kana alias"
     ],
     [
-      "jmdict:2394370",
-      "あっ",
+      "jmdict:2221030",
+      "ビー・ジー・エム",
       "unsupported everyday kana alias"
     ],
     [
-      "jmdict:2394370",
-      "アッ",
+      "jmdict:2273030",
+      "エー・ティー・エム",
+      "unsupported everyday kana alias"
+    ],
+    [
+      "jmdict:2446480",
+      "ジェー・アール",
+      "unsupported everyday kana alias"
+    ],
+    [
+      "jmdict:2676310",
+      "ユー・エス・エー",
       "unsupported everyday kana alias"
     ],
     [
@@ -154186,7 +154226,7 @@
     "taiwanese_beginner_outputs": 5457,
     "japanese_common_records": 22637,
     "japanese_expression_records": 590,
-    "japanese_everyday_outputs": 1606
+    "japanese_everyday_outputs": 58521
   },
   "taiwan_encyclopedia": {
     "snapshot_sha256": "327fc1c8c71de87d677136061a96de94ca2703b21cd703b6f4be7ff4e4c0e7ea",
@@ -154352,6 +154392,6 @@
   },
   "selection_rules": {
     "poj": "All iTaigi expressions with 2-6 Han Mandarin labels and <=6 POJ syllables, plus all beginner headwords/variants and complete examples <=6 syllables; no Mandarin frequency eligibility gate",
-    "japanese": "JMdict source-common expression/interjection readings and compatible common spellings, plus JMnedict works, creative professions and Taiwan metadata; no entity allowlist"
+    "japanese": "All JMdict source-common readings and compatible common spellings across parts of speech, plus JMnedict works, creative professions and Taiwan metadata; no entity allowlist"
   }
 }

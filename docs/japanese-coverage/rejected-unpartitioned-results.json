@@ -1,0 +1,1529 @@
+{
+  "baseline": "fb85a39 ranking with 0.7.2 data",
+  "added_rows": 62468,
+  "removed_rows": 0,
+  "retrieval": {
+    "before": {
+      "full": {
+        "n": 22953,
+        "top3": 744,
+        "top8": 744,
+        "any": 744,
+        "lookup": {
+          "n": 22953,
+          "mean_us": 48.06083165599268,
+          "p50_us": 11.6,
+          "p95_us": 51.8,
+          "max_us": 46817.001
+        }
+      },
+      "half": {
+        "n": 1024,
+        "top3": 23,
+        "top8": 37,
+        "any": 37,
+        "lookup": {
+          "n": 1024,
+          "mean_us": 215.0625244140625,
+          "p50_us": 17.4,
+          "p95_us": 392.001,
+          "max_us": 20753.601
+        }
+      },
+      "initials": {
+        "n": 1019,
+        "top3": 35,
+        "top8": 37,
+        "any": 37,
+        "lookup": {
+          "n": 1019,
+          "mean_us": 62.762014720314035,
+          "p50_us": 7.1,
+          "p95_us": 40.101,
+          "max_us": 13415.0
+        }
+      }
+    },
+    "after": {
+      "full": {
+        "n": 22953,
+        "top3": 22511,
+        "top8": 22819,
+        "any": 22953,
+        "lookup": {
+          "n": 22953,
+          "mean_us": 232.2474365006753,
+          "p50_us": 62.2,
+          "p95_us": 449.3,
+          "max_us": 113594.5
+        }
+      },
+      "half": {
+        "n": 1024,
+        "top3": 75,
+        "top8": 195,
+        "any": 197,
+        "lookup": {
+          "n": 1024,
+          "mean_us": 725.2320078125,
+          "p50_us": 144.6495,
+          "p95_us": 2769.2,
+          "max_us": 54401.1
+        }
+      },
+      "initials": {
+        "n": 1019,
+        "top3": 506,
+        "top8": 775,
+        "any": 788,
+        "lookup": {
+          "n": 1019,
+          "mean_us": 321.74868596663396,
+          "p50_us": 80.6,
+          "p95_us": 997.9,
+          "max_us": 21695.9
+        }
+      }
+    }
+  },
+  "mode_unchanged": {
+    "chinese": 3922,
+    "english": 3922,
+    "taiwanese": 3922,
+    "japanese": 3029
+  },
+  "mode_changed": {
+    "japanese": 893
+  },
+  "mode_coverage": [
+    {
+      "group": "en-conversation",
+      "condition": "full",
+      "mode": "chinese",
+      "before": {
+        "n": 256,
+        "optional3": 10,
+        "optional8": 10,
+        "any": 254,
+        "highlight": 247,
+        "raw": 244
+      },
+      "after": {
+        "n": 256,
+        "optional3": 10,
+        "optional8": 10,
+        "any": 254,
+        "highlight": 247,
+        "raw": 244
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "full",
+      "mode": "english",
+      "before": {
+        "n": 256,
+        "optional3": 11,
+        "optional8": 11,
+        "any": 255,
+        "highlight": 250,
+        "raw": 244
+      },
+      "after": {
+        "n": 256,
+        "optional3": 11,
+        "optional8": 11,
+        "any": 255,
+        "highlight": 250,
+        "raw": 244
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "full",
+      "mode": "japanese",
+      "before": {
+        "n": 256,
+        "optional3": 10,
+        "optional8": 10,
+        "any": 254,
+        "highlight": 247,
+        "raw": 244
+      },
+      "after": {
+        "n": 256,
+        "optional3": 10,
+        "optional8": 10,
+        "any": 254,
+        "highlight": 247,
+        "raw": 244
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "full",
+      "mode": "taiwanese",
+      "before": {
+        "n": 256,
+        "optional3": 10,
+        "optional8": 10,
+        "any": 254,
+        "highlight": 247,
+        "raw": 244
+      },
+      "after": {
+        "n": 256,
+        "optional3": 10,
+        "optional8": 10,
+        "any": 254,
+        "highlight": 247,
+        "raw": 244
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "half",
+      "mode": "chinese",
+      "before": {
+        "n": 256,
+        "optional3": 25,
+        "optional8": 56,
+        "any": 89,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 256,
+        "optional3": 25,
+        "optional8": 56,
+        "any": 89,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "half",
+      "mode": "english",
+      "before": {
+        "n": 256,
+        "optional3": 71,
+        "optional8": 97,
+        "any": 117,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 256,
+        "optional3": 71,
+        "optional8": 97,
+        "any": 117,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "half",
+      "mode": "japanese",
+      "before": {
+        "n": 256,
+        "optional3": 26,
+        "optional8": 57,
+        "any": 94,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 256,
+        "optional3": 17,
+        "optional8": 39,
+        "any": 108,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "half",
+      "mode": "taiwanese",
+      "before": {
+        "n": 256,
+        "optional3": 30,
+        "optional8": 53,
+        "any": 102,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 256,
+        "optional3": 30,
+        "optional8": 53,
+        "any": 102,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "transpose",
+      "mode": "chinese",
+      "before": {
+        "n": 204,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 4,
+        "highlight": 4,
+        "raw": 4
+      },
+      "after": {
+        "n": 204,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 4,
+        "highlight": 4,
+        "raw": 4
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "transpose",
+      "mode": "english",
+      "before": {
+        "n": 204,
+        "optional3": 162,
+        "optional8": 167,
+        "any": 174,
+        "highlight": 4,
+        "raw": 4
+      },
+      "after": {
+        "n": 204,
+        "optional3": 162,
+        "optional8": 167,
+        "any": 174,
+        "highlight": 4,
+        "raw": 4
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "transpose",
+      "mode": "japanese",
+      "before": {
+        "n": 204,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 4,
+        "highlight": 4,
+        "raw": 4
+      },
+      "after": {
+        "n": 204,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 4,
+        "highlight": 4,
+        "raw": 4
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "transpose",
+      "mode": "taiwanese",
+      "before": {
+        "n": 204,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 4,
+        "highlight": 4,
+        "raw": 4
+      },
+      "after": {
+        "n": 204,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 4,
+        "highlight": 4,
+        "raw": 4
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "full",
+      "mode": "chinese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 126,
+        "highlight": 126,
+        "raw": 126
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 126,
+        "highlight": 126,
+        "raw": 126
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "full",
+      "mode": "english",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 126,
+        "highlight": 126,
+        "raw": 126
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 126,
+        "highlight": 126,
+        "raw": 126
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "full",
+      "mode": "japanese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 126,
+        "highlight": 126,
+        "raw": 126
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 126,
+        "highlight": 126,
+        "raw": 126
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "full",
+      "mode": "taiwanese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 126,
+        "highlight": 126,
+        "raw": 126
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 126,
+        "highlight": 126,
+        "raw": 126
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "half",
+      "mode": "chinese",
+      "before": {
+        "n": 128,
+        "optional3": 24,
+        "optional8": 45,
+        "any": 60,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 24,
+        "optional8": 45,
+        "any": 60,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "half",
+      "mode": "english",
+      "before": {
+        "n": 128,
+        "optional3": 51,
+        "optional8": 67,
+        "any": 75,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 51,
+        "optional8": 67,
+        "any": 75,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "half",
+      "mode": "japanese",
+      "before": {
+        "n": 128,
+        "optional3": 21,
+        "optional8": 43,
+        "any": 62,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 14,
+        "optional8": 31,
+        "any": 64,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "half",
+      "mode": "taiwanese",
+      "before": {
+        "n": 128,
+        "optional3": 24,
+        "optional8": 44,
+        "any": 64,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 24,
+        "optional8": 44,
+        "any": 64,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "transpose",
+      "mode": "chinese",
+      "before": {
+        "n": 106,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 1,
+        "highlight": 1,
+        "raw": 1
+      },
+      "after": {
+        "n": 106,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 1,
+        "highlight": 1,
+        "raw": 1
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "transpose",
+      "mode": "english",
+      "before": {
+        "n": 106,
+        "optional3": 97,
+        "optional8": 100,
+        "any": 102,
+        "highlight": 1,
+        "raw": 1
+      },
+      "after": {
+        "n": 106,
+        "optional3": 97,
+        "optional8": 100,
+        "any": 102,
+        "highlight": 1,
+        "raw": 1
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "transpose",
+      "mode": "japanese",
+      "before": {
+        "n": 106,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 1,
+        "highlight": 1,
+        "raw": 1
+      },
+      "after": {
+        "n": 106,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 1,
+        "highlight": 1,
+        "raw": 1
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "transpose",
+      "mode": "taiwanese",
+      "before": {
+        "n": 106,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 1,
+        "highlight": 1,
+        "raw": 1
+      },
+      "after": {
+        "n": 106,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 1,
+        "highlight": 1,
+        "raw": 1
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "full",
+      "mode": "chinese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 49,
+        "highlight": 14,
+        "raw": 49
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 49,
+        "highlight": 14,
+        "raw": 49
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "full",
+      "mode": "english",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 49,
+        "highlight": 49,
+        "raw": 49
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 49,
+        "highlight": 49,
+        "raw": 49
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "full",
+      "mode": "japanese",
+      "before": {
+        "n": 128,
+        "optional3": 79,
+        "optional8": 79,
+        "any": 128,
+        "highlight": 49,
+        "raw": 49
+      },
+      "after": {
+        "n": 128,
+        "optional3": 79,
+        "optional8": 79,
+        "any": 128,
+        "highlight": 48,
+        "raw": 49
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "full",
+      "mode": "taiwanese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 49,
+        "highlight": 14,
+        "raw": 49
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 49,
+        "highlight": 14,
+        "raw": 49
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "half",
+      "mode": "chinese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "half",
+      "mode": "english",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "half",
+      "mode": "japanese",
+      "before": {
+        "n": 128,
+        "optional3": 64,
+        "optional8": 97,
+        "any": 97,
+        "highlight": 15,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 14,
+        "optional8": 39,
+        "any": 40,
+        "highlight": 3,
+        "raw": 0
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "half",
+      "mode": "taiwanese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "transpose",
+      "mode": "chinese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 2,
+        "highlight": 2,
+        "raw": 2
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 2,
+        "highlight": 2,
+        "raw": 2
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "transpose",
+      "mode": "english",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 2,
+        "highlight": 2,
+        "raw": 2
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 2,
+        "highlight": 2,
+        "raw": 2
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "transpose",
+      "mode": "japanese",
+      "before": {
+        "n": 128,
+        "optional3": 3,
+        "optional8": 3,
+        "any": 5,
+        "highlight": 2,
+        "raw": 2
+      },
+      "after": {
+        "n": 128,
+        "optional3": 3,
+        "optional8": 3,
+        "any": 5,
+        "highlight": 2,
+        "raw": 2
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "transpose",
+      "mode": "taiwanese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 2,
+        "highlight": 2,
+        "raw": 2
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 2,
+        "highlight": 2,
+        "raw": 2
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "full",
+      "mode": "chinese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 6,
+        "highlight": 4,
+        "raw": 6
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 6,
+        "highlight": 4,
+        "raw": 6
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "full",
+      "mode": "english",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 6,
+        "highlight": 6,
+        "raw": 6
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 6,
+        "highlight": 6,
+        "raw": 6
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "full",
+      "mode": "japanese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 6,
+        "highlight": 4,
+        "raw": 6
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 6,
+        "highlight": 4,
+        "raw": 6
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "full",
+      "mode": "taiwanese",
+      "before": {
+        "n": 128,
+        "optional3": 121,
+        "optional8": 122,
+        "any": 128,
+        "highlight": 99,
+        "raw": 6
+      },
+      "after": {
+        "n": 128,
+        "optional3": 121,
+        "optional8": 122,
+        "any": 128,
+        "highlight": 99,
+        "raw": 6
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "half",
+      "mode": "chinese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "half",
+      "mode": "english",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "half",
+      "mode": "japanese",
+      "before": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 1,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "half",
+      "mode": "taiwanese",
+      "before": {
+        "n": 128,
+        "optional3": 28,
+        "optional8": 51,
+        "any": 51,
+        "highlight": 9,
+        "raw": 0
+      },
+      "after": {
+        "n": 128,
+        "optional3": 28,
+        "optional8": 51,
+        "any": 51,
+        "highlight": 9,
+        "raw": 0
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "transpose",
+      "mode": "chinese",
+      "before": {
+        "n": 124,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 124,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "transpose",
+      "mode": "english",
+      "before": {
+        "n": 124,
+        "optional3": 0,
+        "optional8": 1,
+        "any": 1,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 124,
+        "optional3": 0,
+        "optional8": 1,
+        "any": 1,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "transpose",
+      "mode": "japanese",
+      "before": {
+        "n": 124,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 124,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "transpose",
+      "mode": "taiwanese",
+      "before": {
+        "n": 124,
+        "optional3": 5,
+        "optional8": 5,
+        "any": 5,
+        "highlight": 4,
+        "raw": 0
+      },
+      "after": {
+        "n": 124,
+        "optional3": 5,
+        "optional8": 5,
+        "any": 5,
+        "highlight": 4,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "full",
+      "mode": "chinese",
+      "before": {
+        "n": 416,
+        "optional3": 224,
+        "optional8": 226,
+        "any": 235,
+        "highlight": 209,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 224,
+        "optional8": 226,
+        "any": 235,
+        "highlight": 209,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "full",
+      "mode": "english",
+      "before": {
+        "n": 416,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "full",
+      "mode": "japanese",
+      "before": {
+        "n": 416,
+        "optional3": 223,
+        "optional8": 226,
+        "any": 235,
+        "highlight": 208,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 219,
+        "optional8": 224,
+        "any": 235,
+        "highlight": 204,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "full",
+      "mode": "taiwanese",
+      "before": {
+        "n": 416,
+        "optional3": 224,
+        "optional8": 226,
+        "any": 235,
+        "highlight": 209,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 224,
+        "optional8": 226,
+        "any": 235,
+        "highlight": 209,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "half",
+      "mode": "chinese",
+      "before": {
+        "n": 416,
+        "optional3": 9,
+        "optional8": 9,
+        "any": 47,
+        "highlight": 3,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 9,
+        "optional8": 9,
+        "any": 47,
+        "highlight": 3,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "half",
+      "mode": "english",
+      "before": {
+        "n": 416,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "half",
+      "mode": "japanese",
+      "before": {
+        "n": 416,
+        "optional3": 9,
+        "optional8": 9,
+        "any": 47,
+        "highlight": 3,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 8,
+        "optional8": 9,
+        "any": 47,
+        "highlight": 3,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "half",
+      "mode": "taiwanese",
+      "before": {
+        "n": 416,
+        "optional3": 7,
+        "optional8": 8,
+        "any": 47,
+        "highlight": 3,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 7,
+        "optional8": 8,
+        "any": 47,
+        "highlight": 3,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "initials",
+      "mode": "chinese",
+      "before": {
+        "n": 416,
+        "optional3": 52,
+        "optional8": 77,
+        "any": 115,
+        "highlight": 33,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 52,
+        "optional8": 77,
+        "any": 115,
+        "highlight": 33,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "initials",
+      "mode": "english",
+      "before": {
+        "n": 416,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "initials",
+      "mode": "japanese",
+      "before": {
+        "n": 416,
+        "optional3": 52,
+        "optional8": 77,
+        "any": 115,
+        "highlight": 33,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 47,
+        "optional8": 72,
+        "any": 115,
+        "highlight": 32,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "initials",
+      "mode": "taiwanese",
+      "before": {
+        "n": 416,
+        "optional3": 52,
+        "optional8": 76,
+        "any": 115,
+        "highlight": 33,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 52,
+        "optional8": 76,
+        "any": 115,
+        "highlight": 33,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "mixed",
+      "mode": "chinese",
+      "before": {
+        "n": 416,
+        "optional3": 118,
+        "optional8": 131,
+        "any": 155,
+        "highlight": 97,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 118,
+        "optional8": 131,
+        "any": 155,
+        "highlight": 97,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "mixed",
+      "mode": "english",
+      "before": {
+        "n": 416,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "mixed",
+      "mode": "japanese",
+      "before": {
+        "n": 416,
+        "optional3": 117,
+        "optional8": 131,
+        "any": 155,
+        "highlight": 96,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 108,
+        "optional8": 124,
+        "any": 155,
+        "highlight": 87,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "mixed",
+      "mode": "taiwanese",
+      "before": {
+        "n": 416,
+        "optional3": 114,
+        "optional8": 128,
+        "any": 155,
+        "highlight": 92,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 114,
+        "optional8": 128,
+        "any": 155,
+        "highlight": 92,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "transpose",
+      "mode": "chinese",
+      "before": {
+        "n": 416,
+        "optional3": 26,
+        "optional8": 26,
+        "any": 26,
+        "highlight": 18,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 26,
+        "optional8": 26,
+        "any": 26,
+        "highlight": 18,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "transpose",
+      "mode": "english",
+      "before": {
+        "n": 416,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 0,
+        "optional8": 0,
+        "any": 0,
+        "highlight": 0,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "transpose",
+      "mode": "japanese",
+      "before": {
+        "n": 416,
+        "optional3": 26,
+        "optional8": 26,
+        "any": 26,
+        "highlight": 18,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 26,
+        "optional8": 26,
+        "any": 26,
+        "highlight": 18,
+        "raw": 0
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "transpose",
+      "mode": "taiwanese",
+      "before": {
+        "n": 416,
+        "optional3": 26,
+        "optional8": 26,
+        "any": 26,
+        "highlight": 18,
+        "raw": 0
+      },
+      "after": {
+        "n": 416,
+        "optional3": 26,
+        "optional8": 26,
+        "any": 26,
+        "highlight": 18,
+        "raw": 0
+      }
+    }
+  ],
+  "limitations": "Source-derived retrieval, not independent language accuracy. Mode corpus is previously exposed. First 3/8 are ordinal optional slots excluding raw, not measured viewport visibility. Lookup timing excludes native/core merge, rendering and input dispatch."
+}

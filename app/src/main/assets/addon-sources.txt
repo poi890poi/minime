@@ -47,14 +47,14 @@ Title readings marked +cedict:derived use unambiguous dictionary units. Ambiguou
 readings are omitted for review. These bounded snapshots are not popularity lists.
 No definitions, lyrics, article prose, routes or photographs are bundled.
 
-Japanese · 5,757 indexed outputs, including Romanized raw spelling
+Japanese · 62,547 indexed outputs, including Romanized raw spelling
 JMdict and JMnedict, Electronic Dictionary Research and Development Group, started by Jim
 Breen; used in conformance with the Group's licence, CC BY-SA 4.0.
 https://www.edrdg.org/edrdg/licence.html
 JSON source: scriptin/jmdict-simplified, pinned release in source-manifest.json.
 https://github.com/scriptin/jmdict-simplified
-Everyday expressions and interjections use JMdict common readings and compatible
-common spellings. JMnedict supplies works, creative professions and Taiwan-related
+All source-common vocabulary uses JMdict common readings and compatible
+common spellings across parts of speech. JMnedict supplies works, creative professions and Taiwan-related
 names. No entity allowlist or geographic restriction on everyday vocabulary.
 WanaKana 5.3.1 (MIT) supplies build-time Romanized
 aliases. Unsupported aliases are reported. This is not a Japanese sentence IME.
@@ -81,3 +81,10 @@ Wikipedia/CC-CEDICT/JMdict/JMnedict/beginner-derived data remains CC BY-SA 4.0; 
 its public-domain dedication. Geography data remains ODbL. Code and datasets are
 separately licensed. Changes are filtering, normalization, aliases, dictionary-unit
 reading derivation and packaging. Personal learning remains separate and local.
+
+Single kana and common kanji: WanaKana 5.3.1 supplies both kana scripts and aliases.
+KANJIDIC2 (James William Breen / EDRDG, CC BY-SA 4.0) supplies source frequency
+ranks 1-500 and complete Japanese on/kun readings. Newspaper character frequency
+is not conversational or reading frequency. Original pins: third_party/kanjidic.
+https://www.edrdg.org/edrdg/licence.html
+https://www.edrdg.org/kanjidic/kanjidic2_ov_legacy.html

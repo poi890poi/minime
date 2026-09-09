@@ -413,13 +413,13 @@ public final class CompositionEngine {
                 // A second source is not evidence that an already attested base
                 // entry is more frequent. Preserve its established homophone
                 // rank, including after English completion interleaving.
-                if(c.supplemental && existing>=0 && !candidates.get(existing).supplemental && dictionary!=null
+                if(c.supplemental && !(focused(c) && c.languageCharacter) && existing>=0 && !candidates.get(existing).supplemental && dictionary!=null
                         && (dictionary.exactChinese(raw,bpmf,c.text)
                             || (candidates.get(existing).consumed==0 && c.text.codePointCount(0,c.text.length())==1)))continue;
                 // Static dictionaries supply identity/readings, not comparable
                 // glyph frequencies. A novel Han glyph must not outrank the
                 // decoder's established whole-input glyph alternatives either.
-                if(c.supplemental && existing<0 && hanGlyph(c.text) && candidates.stream().anyMatch(base->
+                if(c.supplemental && !(focused(c) && c.languageCharacter) && existing<0 && hanGlyph(c.text) && candidates.stream().anyMatch(base->
                         !base.supplemental && !base.literal && base.consumed==0 && hanGlyph(base.text))) {
                     unrankedGlyphs.add(c);continue;
                 }
@@ -427,7 +427,7 @@ public final class CompositionEngine {
                 // the rest do not displace the primary decoder's whole first row.
                 if(c.incomplete && !focused(c))insertion=Math.max(insertion,Math.min(partialPreviews==0?3:9,candidates.size()));
                 if(existing>=0 && existing<insertion)continue;
-                Candidate value=existing>=0 && (!c.supplemental || candidates.get(existing)==defaultChoice)?candidates.get(existing):c;
+                Candidate value=existing>=0 && !(focused(c) && c.languageCharacter) && (!c.supplemental || candidates.get(existing)==defaultChoice)?candidates.get(existing):c;
                 if(existing>=0)candidates.remove(existing);
                 candidates.add(insertion++,value);
                 if(c.incomplete && !focused(c))partialPreviews++;
@@ -438,6 +438,7 @@ public final class CompositionEngine {
                 candidates.add(after,c);
             }
             preferred=candidates.indexOf(defaultChoice);
+            if(preferred<0)for(int i=0;i<candidates.size();i++)if(candidates.get(i).text.equals(defaultChoice.text)) {preferred=i;break;}
             if(preferred==0 && !addonMatches.isEmpty() && candidates.size()>1 && !candidates.get(1).incomplete && conversionInput(bpmf) && !dictionary.validEnglishSpelling(raw)
                     && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,candidates.get(1).text)))preferred=1;
             // Candidate ordering and automatic acceptance share one winner.

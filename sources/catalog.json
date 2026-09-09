@@ -171,11 +171,14 @@
         "https://www.edrdg.org/"
       ],
       "editorial": "Maintained Japanese dictionaries with reading/spelling relationships and source metadata.",
-      "coverage": "Common expressions for JMdict; names/works/professions for JMnedict.",
+      "coverage": "All source-common Japanese vocabulary readings and compatible common spellings, including expressions/interjections, nouns, verbs and adjectives.",
       "limitations": "Common flags are not a complete frequency model. jmdict-simplified denotes a JSON format, not Simplified Chinese.",
-      "reason": "Retain Japanese-specific sources.",
+      "reason": "Expand the former expression/interjection-only filter systematically to all source-common vocabulary; no word or part-of-speech allowlist. Preserve reading/sense restrictions.",
       "addon_prefixes": [
         "jmdict:"
+      ],
+      "audit_files": [
+        "docs/japanese-coverage/PLAN.md"
       ]
     },
     {
@@ -213,7 +216,9 @@
       "origin": "tooling",
       "decision": "retain",
       "uses": [
-        "tooling"
+        "tooling",
+        "readings",
+        "evaluation"
       ],
       "inputs": [
         "third_party/wanakana/*"
@@ -227,7 +232,7 @@
         "https://github.com/WaniKani/WanaKana"
       ],
       "editorial": "Kana romanization library.",
-      "coverage": "Build-time aliases.",
+      "coverage": "Build-time aliases and exhaustive single-kana mappings in both scripts, including the library IME aliases.",
       "limitations": "Does not establish vocabulary quality.",
       "reason": "Retain language tooling.",
       "addon_prefixes": []
@@ -763,6 +768,34 @@
       "coverage": "91,339 records at existing ChhoeTaigi pin. Use source-attested alternatives only for existing shipped phonetic outputs.",
       "limitations": "Dictionary breadth is not typing frequency or spelling consensus. Homophones have multiple senses; canonical form is one pronunciation example. No guessed alternate-reading pairing.",
       "reason": "Restore basic Taiwanese Han alternatives missing from iTaigi-only metadata.",
+      "addon_prefixes": []
+    },
+    {
+      "id": "kanjidic",
+      "name": "KANJIDIC2",
+      "origin": "japanese",
+      "decision": "retain",
+      "uses": [
+        "vocabulary",
+        "readings",
+        "frequency"
+      ],
+      "inputs": [
+        "third_party/kanjidic/*"
+      ],
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://www.edrdg.org/edrdg/licence.html"
+      },
+      "evidence": [
+        "https://www.edrdg.org/kanjidic/kanjidic2_ov_legacy.html",
+        "https://github.com/scriptin/jmdict-simplified/releases/tag/3.6.2%2B20260831182826"
+      ],
+      "editorial": "James William Breen and EDRDG character dictionary with source Japanese readings and newspaper character-frequency ranks.",
+      "coverage": "Frequency ranks 1-500 with complete unmarked Japanese on/kun readings; no nanori or reconstructed stems.",
+      "limitations": "Historical newspaper frequency is not modern conversation frequency or a reading-level popularity ranking. Dotted and affix readings are excluded.",
+      "reason": "User requested very common kanji in Japanese mode. Fixed top-500 source-rank cutoff before evaluation; no per-character selections.",
       "addon_prefixes": []
     }
   ]

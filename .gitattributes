@@ -51,3 +51,11 @@ third_party/taihoa/*.json text eol=lf
 third_party/taihoa/*.md text eol=lf
 docs/taiwanese-coverage/*.json text eol=lf
 docs/taiwanese-coverage/*.tsv text eol=lf
+
+third_party/jmdict/*.md text eol=lf
+third_party/kanjidic/*.tgz -text
+third_party/kanjidic/*.md text eol=lf
+third_party/kanjidic/*.json text eol=lf
+app/src/main/assets/japanese-basic.tsv text eol=lf
+docs/japanese-coverage/*.json text eol=lf
+docs/japanese-coverage/*.tsv text eol=lf

@@ -6,7 +6,8 @@ https://www.edrdg.org/edrdg/licence.html
 
 JSON snapshot from scriptin/jmdict-simplified release 3.6.2+20260831182826.
 The adjacent source manifest records the exact URL and SHA-256. Import all
-source-common expression/interjection readings and compatible common spellings.
+source-common readings and compatible common spellings across all parts of speech.
+The earlier expression/interjection-only filter omitted ordinary common vocabulary.
 Names and cultural terms remain sourced independently from JMnedict. No handpicked
 phrases. Source commonness does not guarantee present-day conversational popularity.
 

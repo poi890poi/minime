@@ -3521,14 +3521,14 @@ Title readings marked +cedict:derived use unambiguous dictionary units. Ambiguou
 readings are omitted for review. These bounded snapshots are not popularity lists.
 No definitions, lyrics, article prose, routes or photographs are bundled.
 
-Japanese · 5,757 indexed outputs, including Romanized raw spelling
+Japanese · 62,547 indexed outputs, including Romanized raw spelling
 JMdict and JMnedict, Electronic Dictionary Research and Development Group, started by Jim
 Breen; used in conformance with the Group's licence, CC BY-SA 4.0.
 https://www.edrdg.org/edrdg/licence.html
 JSON source: scriptin/jmdict-simplified, pinned release in source-manifest.json.
 https://github.com/scriptin/jmdict-simplified
-Everyday expressions and interjections use JMdict common readings and compatible
-common spellings. JMnedict supplies works, creative professions and Taiwan-related
+All source-common vocabulary uses JMdict common readings and compatible
+common spellings across parts of speech. JMnedict supplies works, creative professions and Taiwan-related
 names. No entity allowlist or geographic restriction on everyday vocabulary.
 WanaKana 5.3.1 (MIT) supplies build-time Romanized
 aliases. Unsupported aliases are reported. This is not a Japanese sentence IME.
@@ -3559,3 +3559,20 @@ reading derivation and packaging. Personal learning remains separate and local.
 Taiwanese paired forms (paired-forms.tsv): iTaigi POJ / HanLo records (CC0-1.0), filtered using McBopomofo phrase.occ (MIT). Existing source pins and licenses above apply. Reproduction and limitations: tools/compile_paired_forms.py and docs/candidate-annotations/IMPLEMENTATION.md. No MOE-derived forms imported.
 
 Taiwanese Han coverage extension (paired-forms.tsv): 台華線頂對照典, foundation by 鄭良偉, additions/editing by 楊允言 and transcription/proofreading volunteers, via ChhoeTaigi pinned b33c6a1fcc2d11a2962e76b6055d528d11677c3b. CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ . Original data, source identity, selection changes and attribution: third_party/taihoa/README.md and docs/taiwanese-coverage/PLAN.md. Derived Taihoa pairs retain CC BY-SA 4.0. Beginner headword eligibility uses the already attributed 台灣白話基礎語句 source. No MOE handout content is imported.
+
+Japanese basic expansion: all source-common JMdict readings and compatible common
+spellings across parts of speech, not only expressions/interjections. The pinned
+JMdict source and CC BY-SA 4.0 attribution above apply.
+
+Japanese characters (japanese-basic.tsv): WanaKana 5.3.1 (MIT) supplies exhaustive
+single-kana mappings in hiragana and katakana, including aliases. KANJIDIC2,
+copyright James William BREEN and the Electronic Dictionary Research and
+Development Group, CC BY-SA 4.0, supplies frequency ranks 1-500 and complete
+Japanese on/kun readings. Changes: fixed rank filtering, standalone reading
+filtering, WanaKana Romanization and packaging. No names, reconstructed stems,
+SKIP codes or foreign readings are imported. Newspaper frequency is not spoken
+frequency. Pinned source/manifest: third_party/kanjidic; compiler:
+tools/compile_japanese_basics.py.
+https://www.edrdg.org/edrdg/licence.html
+https://www.edrdg.org/kanjidic/kanjidic2_ov_legacy.html
+https://www.edrdg.org/wiki/index.php/KANJIDIC_Project

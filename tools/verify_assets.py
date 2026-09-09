@@ -12,6 +12,11 @@ manifest=(root/'app/src/main/AndroidManifest.xml').read_text(encoding='utf-8')
 assert 'android.permission.INTERNET' not in manifest
 assert 'android.permission.BIND_INPUT_METHOD' in manifest
 print('PASS dictionary asset integrity and offline IME manifest')
+japanese=json.loads((root/'docs/japanese-coverage/basics-manifest.json').read_text(encoding='utf-8'))
+assert hashlib.sha256((root/'app/src/main/assets/japanese-basic.tsv').read_bytes()).hexdigest()==japanese['asset_sha256']
+for name,digest in japanese['sources'].items():
+    assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest, 'Japanese source changed: '+name
+print('PASS source-ranked Japanese character asset and input hashes')
 emoji=json.loads((root/'docs/emoji-report.json').read_text(encoding='utf-8'))
 palette=root/'app/src/main/assets/emoji.tsv'
 assert hashlib.sha256(palette.read_bytes()).hexdigest()==emoji['asset_sha256']

@@ -17,6 +17,8 @@ public final class Candidate {
     public final PairedForms.Pair pair;
     /** Source dictionary pack, retained through matching and display transformations. */
     public final String pack;
+    /** Standalone form from the validated Japanese character source. */
+    public final boolean languageCharacter;
     private Candidate(String text,boolean literal,double score,String reading,int consumed,boolean supplemental,boolean abbreviated,boolean composed) {
         this(text,literal,score,reading,consumed,supplemental,abbreviated,composed,abbreviated);
     }
@@ -27,8 +29,11 @@ public final class Candidate {
         this(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,"");
     }
     private Candidate(String text,boolean literal,double score,String reading,int consumed,boolean supplemental,boolean abbreviated,boolean composed,boolean incomplete,PairedForms.Pair pair,String pack) {
+        this(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,false);
+    }
+    private Candidate(String text,boolean literal,double score,String reading,int consumed,boolean supplemental,boolean abbreviated,boolean composed,boolean incomplete,PairedForms.Pair pair,String pack,boolean languageCharacter) {
         this.text=text;this.literal=literal;this.score=score;this.reading=reading;this.consumed=consumed;this.supplemental=supplemental;this.abbreviated=abbreviated;this.composed=composed;
-        this.incomplete=incomplete;this.pair=pair;this.pack=pack;
+        this.incomplete=incomplete;this.pair=pair;this.pack=pack;this.languageCharacter=languageCharacter;
     }
     private Candidate(String text,double score,boolean abbreviated) {
         this(text,false,score,"",0,true,abbreviated,false);
@@ -47,12 +52,13 @@ public final class Candidate {
     static Candidate concatenate(Candidate prefix,Candidate word) {
         return new Candidate(prefix.text+word.text,false,prefix.score+word.score,"",0,false,false,prefix.composed || word.composed || !prefix.text.isEmpty(),prefix.incomplete || word.incomplete);
     }
-    Candidate withScore(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack);}
-    Candidate completing(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,true,pair,pack);}
-    Candidate paired(PairedForms.Pair value) {return pair==value?this:new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,value,pack);}
-    Candidate inPack(String value) {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,value);}
+    Candidate withScore(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,languageCharacter);}
+    Candidate completing(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,true,pair,pack,languageCharacter);}
+    Candidate paired(PairedForms.Pair value) {return pair==value?this:new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,value,pack,languageCharacter);}
+    Candidate inPack(String value) {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,value,languageCharacter);}
+    Candidate asLanguageCharacter() {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,true);}
     Candidate primary(boolean han) {return pair==null?this:pairedText(han?pair.han:pair.phonetic);}
-    private Candidate pairedText(String value) {return text.equals(value)?this:new Candidate(value,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack);}
+    private Candidate pairedText(String value) {return text.equals(value)?this:new Candidate(value,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,languageCharacter);}
     public String alternateText() {return pair==null?"":text.equals(pair.phonetic)?pair.han:pair.phonetic;}
     Candidate alternative() {return pair==null?this:pairedText(alternateText());}
     @Override public String toString() { return text; }

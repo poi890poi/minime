@@ -137,7 +137,7 @@ report['taiwan_encyclopedia']=encyclopedia
 report['sources'].append(dict(file='third_party/taiwan_encyclopedia/snapshot.json.gz',url='https://zh.wikipedia.org/',license='CC-BY-SA-4.0',sha256=encyclopedia['snapshot_sha256']))
 report['sources'].append(dict(file='third_party/taiwan_encyclopedia/entity-types.json.gz',url='https://www.wikidata.org/',license='CC0-1.0',sha256=encyclopedia['entity_types_sha256']))
 report['sources'].append(dict(file='third_party/taiwan_encyclopedia/traditional-labels.json.gz',url='https://www.wikidata.org/',license='CC0-1.0',sha256=encyclopedia['traditional_labels_sha256']))
-report['selection_rules']={'poj':'All iTaigi expressions with 2-6 Han Mandarin labels and <=6 POJ syllables, plus all beginner headwords/variants and complete examples <=6 syllables; no Mandarin frequency eligibility gate','japanese':'JMdict source-common expression/interjection readings and compatible common spellings, plus JMnedict works, creative professions and Taiwan metadata; no entity allowlist'}
+report['selection_rules']={'poj':'All iTaigi expressions with 2-6 Han Mandarin labels and <=6 POJ syllables, plus all beginner headwords/variants and complete examples <=6 syllables; no Mandarin frequency eligibility gate','japanese':'All JMdict source-common readings and compatible common spellings across parts of speech, plus JMnedict works, creative professions and Taiwan metadata; no entity allowlist'}
 (OUT/'source-manifest.json').write_bytes((json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
 print(json.dumps({k:v for k,v in report.items() if k in ('rows','outputs_by_pack','taiwan_category_outputs')},ensure_ascii=False,indent=2))
 print('Skipped for review:',len(skipped))

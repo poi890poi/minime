@@ -158,6 +158,32 @@
       ],
       "leakage": "Targets and keys are from the existing production source; this verifies retrieval and paired metadata, not language accuracy or new independent holdout coverage.",
       "limitations": "Does not measure sense correctness, spontaneous conversation, dialect coverage or spelling consensus. Rank is within the bounded optional dictionary results, not pixel visibility."
+    },
+    {
+      "id": "japanese-common-retrieval-20260909",
+      "source_ids": [
+        "jmdict",
+        "wanakana"
+      ],
+      "genre": [
+        "common-vocabulary"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "All eligible source-common kana readings, plus a fixed hash-selected 1,024-reading partial/initial sample; frozen before generation outcomes.",
+      "files": [
+        "docs/japanese-coverage/inputs.tsv",
+        "docs/japanese-coverage/inputs-manifest.json"
+      ],
+      "report_by": [
+        "source",
+        "input-condition",
+        "retrieval-rank",
+        "latency",
+        "genre"
+      ],
+      "leakage": "Targets and aliases are production-source records. No independent conversation, essay, accuracy or fresh-holdout claim.",
+      "limitations": "Source commonness is imperfect. Does not measure sentence conversion, sense correctness, modern usage or spontaneous human typing."
     }
   ]
 }

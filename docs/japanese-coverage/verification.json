@@ -1,0 +1,30 @@
+{
+  "version": "0.7.3",
+  "versionCode": 21,
+  "APK_sha256": "ab5717f011f816654b2c8877c59f2732cdb9cdb298297a096d59d8871a945361",
+  "APK_bytes": 67687475,
+  "ZIP_sha256": "60f05c1ffd0f869c652699bbf4022267477be45c00b342085a8df23c07270d0e",
+  "ZIP_bytes": 37891305,
+  "changed_assets_from_0_7_2": [
+    "assets/NOTICE.txt",
+    "assets/addon-sources.txt",
+    "assets/addons.tsv"
+  ],
+  "added_assets": [
+    "assets/japanese-basic.tsv"
+  ],
+  "unchanged_old_assets": 14,
+  "core_assertions": 31957,
+  "native_uncached_queries": 628,
+  "native_output_sha256": "8e3ec8cd7cf56571a55fd42e0100b646267e9f5ce3b4b0a1f04af8941f86abe1",
+  "phone_tests_passed_after_harness_fix": 4,
+  "phone_restore": "HoneyBoard, settings and learning restored; display verified OFF; AOD unchanged",
+  "public_download": "https://que-put-miracle-wal.trycloudflare.com/MinIME-0.7.3.zip",
+  "public_zip_verified": true,
+  "signature": "APK v2 verified",
+  "lint": {
+    "errors": 0,
+    "warnings": 17
+  },
+  "ranking_commit": "fb85a39"
+}

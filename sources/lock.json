@@ -248,7 +248,7 @@
     },
     "docs/candidate-annotations/pairs-manifest.json": {
       "source": "paired-taiwanese",
-      "sha256": "86241eeb30f46797e922d677f472b571c37715cdcfbc38f539b27173ae32a874"
+      "sha256": "eff78f06fb27a730cd3f91aac7c90677844382be45481d5119ee22f6930dfd76"
     },
     "third_party/taihoa/taihoa.csv": {
       "source": "taihoa",
@@ -257,12 +257,24 @@
     "third_party/taihoa/source.json": {
       "source": "taihoa",
       "sha256": "b95e6f25802f2d0ca38f5a9c03599415e0fe4f52fc758142608a3b05d4dd10f7"
+    },
+    "third_party/kanjidic/kanjidic2-en.json.tgz": {
+      "source": "kanjidic",
+      "sha256": "f23fcb6bb13d4441a6187b225f9418ba5b68f5e89db5e1703f28ab201899aca3"
+    },
+    "third_party/kanjidic/README.md": {
+      "source": "kanjidic",
+      "sha256": "037d1b5402586266ef70314bc72774c120ee97ceb12c5305914a1a318ef2b880"
+    },
+    "third_party/kanjidic/source.json": {
+      "source": "kanjidic",
+      "sha256": "2663f7e95d90e58daaf5fbc5bed582473a6903653eb67c9a98870ad9e989f4d4"
     }
   },
   "addon_rows": {
     "jmdict": {
-      "rows": 1614,
-      "sha256": "cf7bf67ea64aef383fcc63a926031ccfece800a7e3b990c878161d2b31038727"
+      "rows": 64082,
+      "sha256": "7e1c82d8dbe06a9951c49b84339e324d426d6c89f3031767e7fe97c356db161d"
     },
     "jmnedict": {
       "rows": 4225,
@@ -290,6 +302,7 @@
     }
   },
   "audit_evidence": {
+    "docs/japanese-coverage/PLAN.md": "773f17fe3b4a1262833d9a887f2551d2df83bba85ec4b0f910a5bd5ca7acd0ba",
     "docs/sources/audit-2026-09-08/artifacts.json": "e17a9b2b4c00803276a801eff540f603547acfbcd1e3aa90b1fdda6f141f3379",
     "docs/sources/audit-2026-09-08/cip.json.gz": "74d663ccc4da6f69e0441e5894e8a34b415fc7f2a22c4e4f647dc95c21893a04",
     "docs/sources/audit-2026-09-08/fetch-errors.json.gz": "9b04ff474c6714874d2e1e794867aa28188ae3622750745aa29e098a19740075",
@@ -303,7 +316,7 @@
     "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz": "67741d407f0184a6aeb2ecded1123570b02e5fc080584490b683024c65bd329f"
   },
   "evaluation": {
-    "sources/evaluation.json": "cc62e1502184447fde6fc84139b42eeecbd4694827831a93d37811ed5e01137f",
+    "sources/evaluation.json": "07845cf2c22cbe3723ed21930ed887e51fda3d624b05dd058e00b6981359d734",
     "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz": "67741d407f0184a6aeb2ecded1123570b02e5fc080584490b683024c65bd329f",
     "docs/sources/audit-2026-09-08/sample-records.json.gz": "07fcdf332972d286db63b33149ed021dcdea43ce08371c3d78245b0e6ff56bfb",
     "docs/conversation-ranking/corpus/gum-manifest.json": "b7b3abbc303d4ca20b1a65dc92dd305cd1082c660561016f4de2099d207f2529",
@@ -317,6 +330,8 @@
     "docs/input-modes/coverage-inputs.tsv": "00aaa44a5036725e61ebeb1f6659fde15c2ed3682f678f4c480516b059e1e287",
     "docs/input-modes/coverage-manifest.json": "ba27fd299887d034eb04864a62668254bf7b042551ce14af1cc6d85712644a39",
     "docs/taiwanese-coverage/basic-headwords.json": "442f4a0b2af634c03100642b73d773d4fc675dacd46b0294481ced80a2c9c0f4",
-    "docs/taiwanese-coverage/retrieval-inputs.tsv": "052e1c63271bb3b3d3a58ce2b004de03d228d23b0c827fd3b03b550aade84fa2"
+    "docs/taiwanese-coverage/retrieval-inputs.tsv": "052e1c63271bb3b3d3a58ce2b004de03d228d23b0c827fd3b03b550aade84fa2",
+    "docs/japanese-coverage/inputs.tsv": "5ed0f522d1ad723817e78dc312ba07ef8434c6f0d3d33e084be830e95b5c3440",
+    "docs/japanese-coverage/inputs-manifest.json": "ff271c894b92048b0a123753f164976a9de3b5f16d0b102a4f81a85e81b60554"
   }
 }

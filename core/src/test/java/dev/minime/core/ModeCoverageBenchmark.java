@@ -52,6 +52,7 @@ public final class ModeCoverageBenchmark {
         PhoneticDictionary dictionary=PhoneticDictionary.readBinary(Files.newInputStream(Paths.get("app/build/generated/minimeAssets/model.bin")));
         dictionary.englishSpelling(Files.newBufferedReader(assets.resolve("en_spelling.tsv")));
         AddonDictionary addons=AddonDictionary.combine(AddonDictionary.read(Files.newBufferedReader(assets.resolve("addons.tsv"))),AddonDictionary.read(Files.newBufferedReader(assets.resolve("geography.tsv"))));
+        if(Files.exists(assets.resolve("japanese-basic.tsv")))addons=AddonDictionary.withJapaneseBasics(addons,JapaneseBasics.read(Files.newBufferedReader(assets.resolve("japanese-basic.tsv"))));
         boolean baseline=args[2].equals("baseline");
         List<String> modes=baseline?Arrays.asList("legacy-mixed","legacy-english","chinese","english","taiwanese","japanese"):Arrays.asList("chinese","english","taiwanese","japanese");
         try(SpeculationBenchmark.Native nativeRime=new SpeculationBenchmark.Native(91);BufferedWriter out=SpeculationBenchmark.writer(args[1])) {

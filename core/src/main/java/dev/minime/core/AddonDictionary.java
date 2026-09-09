@@ -10,8 +10,11 @@ public final class AddonDictionary {
     private final Map<String,ReadingIndex> prefixes=new HashMap<>();
     private final Map<String,ReadingUnitIndex> units=new HashMap<>();
     private final AddonDictionary first,second;
-    private AddonDictionary(Map<String,List<Candidate>> entries) {this.entries=entries;first=null;second=null;}
-    private AddonDictionary(AddonDictionary first,AddonDictionary second) {entries=Collections.emptyMap();this.first=first;this.second=second;}
+    private final JapaneseBasics japaneseBasics;
+    private AddonDictionary(Map<String,List<Candidate>> entries) {this.entries=entries;first=null;second=null;japaneseBasics=JapaneseBasics.EMPTY;}
+    private AddonDictionary(AddonDictionary first,AddonDictionary second) {this(first,second,first.japaneseBasics!=JapaneseBasics.EMPTY?first.japaneseBasics:second.japaneseBasics);}
+    private AddonDictionary(AddonDictionary first,AddonDictionary second,JapaneseBasics basics) {entries=Collections.emptyMap();this.first=first;this.second=second;japaneseBasics=basics;}
+    public static AddonDictionary withJapaneseBasics(AddonDictionary words,JapaneseBasics basics) {return new AddonDictionary(words,EMPTY,Objects.requireNonNull(basics));}
     public static AddonDictionary combine(AddonDictionary a,AddonDictionary b) {
         if(a==EMPTY)return b;if(b==EMPTY)return a;
         return new AddonDictionary(a,b);
@@ -28,7 +31,10 @@ public final class AddonDictionary {
                 String[] p=line.split("\t",-1);
                 if(p.length!=5 || !p[0].matches("[a-z][a-z0-9_-]{0,31}") || p[1].isEmpty() || p[1].length()>96
                         || p[2].isEmpty() || p[2].length()>96 || p[3].isEmpty() || ++count>200000)throw new IOException("Invalid add-on entry");
-                String key=p[0]+"\t"+normalize(p[1]);
+                // Ordinary common Japanese vocabulary must not consume the
+                // existing expression/name search budget as its corpus grows.
+                String indexPack=p[0].equals("japanese") && p[4].equals("everyday_vocabulary")?"japanese-common":p[0];
+                String key=indexPack+"\t"+normalize(p[1]);
                 // Generated Chinese initials contain one ASCII letter per Han
                 // glyph. Full multisyllable readings retain source separators.
                 boolean abbreviated=p[1].matches("[a-z]+") && p[1].length()==p[2].codePointCount(0,p[2].length())
@@ -38,10 +44,10 @@ public final class AddonDictionary {
                 // Generated initial aliases remain exact aliases. Index source
                 // readings, not abbreviations of abbreviations.
                 if(!abbreviated) {
-                    prefixEntries.computeIfAbsent(p[0],k->new HashMap<>()).computeIfAbsent(normalize(p[1]),k->new ArrayList<>()).add(value);
+                    prefixEntries.computeIfAbsent(indexPack,k->new HashMap<>()).computeIfAbsent(normalize(p[1]),k->new ArrayList<>()).add(value);
                     String reading=p[1].toLowerCase(Locale.ROOT).replaceAll("[- ']+","'");
                     if(reading.matches("[a-z0-9]+(?:'[a-z0-9]+)*")) {
-                        unitEntries.computeIfAbsent(p[0],k->new HashMap<>()).computeIfAbsent(reading,k->new ArrayList<>()).add(value);
+                        unitEntries.computeIfAbsent(indexPack,k->new HashMap<>()).computeIfAbsent(reading,k->new ArrayList<>()).add(value);
                     }
                 }
             }
@@ -52,6 +58,21 @@ public final class AddonDictionary {
         return result;
     }
     public List<Candidate> lookup(String raw,Set<String> enabled) {
+        List<Candidate> words=lookupWords(raw,enabled);
+        if(enabled.contains("japanese")) {
+            List<Candidate> vocabulary=lookupWords(raw,Collections.singleton("japanese-common"));
+            if(!vocabulary.isEmpty()) {
+                List<Candidate> combined=new ArrayList<>();Set<String> seen=new HashSet<>();
+                for(boolean incomplete:new boolean[]{false,true}) {
+                    for(Candidate c:words)if(c.incomplete==incomplete && seen.add(c.text))combined.add(c);
+                    for(Candidate c:vocabulary)if(c.incomplete==incomplete && seen.add(c.text))combined.add(c);
+                }
+                words=combined;
+            }
+        }
+        return japaneseBasics!=JapaneseBasics.EMPTY && enabled.contains("japanese")?japaneseBasics.merge(raw,words):words;
+    }
+    private List<Candidate> lookupWords(String raw,Set<String> enabled) {
         if(raw.length()>96 || enabled.isEmpty())return Collections.emptyList();
         List<Candidate> result=new ArrayList<>();Set<String> seen=new HashSet<>();String key=normalize(raw);
         Set<String> packs=new TreeSet<>(enabled);
