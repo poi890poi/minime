@@ -8,9 +8,10 @@ final class ReadingUnitIndex {
     private int[] child, sibling;
     private List<Candidate>[] words;
     private double[] best;
+    private int[][] branches;
     private int size=1;
     private static final int BEAM=6, CANDIDATES=24, SEARCH_BUDGET=2048, MAX_WORD_INPUT=32;
-    ReadingUnitIndex(BinaryModel.Reader in)throws java.io.IOException {syllable=in.strings();child=in.ints();sibling=in.ints();words=in.lists();best=in.doubles();size=syllable.length;}
+    ReadingUnitIndex(BinaryModel.Reader in)throws java.io.IOException {syllable=in.strings();child=in.ints();sibling=in.ints();words=in.lists();best=in.doubles();size=syllable.length;indexBranches();}
     void write(BinaryModel.Writer out)throws java.io.IOException {out.strings(syllable);out.ints(child);out.ints(sibling);out.lists(words);out.doubles(best);}
 
     @SuppressWarnings("unchecked")
@@ -34,11 +35,30 @@ final class ReadingUnitIndex {
             words[path[parts.length]]=source.get(reading); previous=parts;
         }
         grow(size);
+        indexBranches();
         Arrays.fill(best,Double.NEGATIVE_INFINITY);
         for(int node=size-1;node>=0;node--) {
             if(words[node]!=null && !words[node].isEmpty()) best[node]=words[node].get(0).score;
             for(int c=child[node];c!=0;c=sibling[c]) best[node]=Math.max(best[node],best[c]);
         }
+    }
+    /** Index only branching nodes; avoid scanning unrelated initial letters. */
+    private void indexBranches() {
+        branches=new int[size][];
+        for(int parent=0;parent<size;parent++) {
+            int count=0;for(int c=child[parent];c!=0;c=sibling[c])count++;
+            if(count<8)continue;
+            int[] indexed=new int[count];int at=count;
+            // Construction visits source readings in sorted order and prepends
+            // children. Reverse that list to obtain a sorted first-letter range.
+            for(int c=child[parent];c!=0;c=sibling[c])indexed[--at]=c;
+            branches[parent]=indexed;
+        }
+    }
+    private int firstInitial(int[] nodes,char initial) {
+        int lo=0,hi=nodes.length;
+        while(lo<hi) {int mid=(lo+hi)>>>1;if(syllable[nodes[mid]].charAt(0)<initial)lo=mid+1;else hi=mid;}
+        return lo;
     }
     private void grow(int capacity) {
         syllable=Arrays.copyOf(syllable,capacity); child=Arrays.copyOf(child,capacity);
@@ -91,18 +111,26 @@ final class ReadingUnitIndex {
                 trim(at,CANDIDATES,true);
             }
             if(state.at==limit) continue;
-            for(int node=child[state.node];node!=0;node=sibling[node]) {
-                String reading=syllable[node]; int common=0;
-                while(common<reading.length() && state.at+common<limit && reading.charAt(common)==raw.charAt(state.at+common)) common++;
-                for(int used=1;used<=common;used++) {
-                    int end=state.at+used;
-                    // An apostrophe explicitly ends this syllable, including an abbreviated one.
-                    if(end<limit && raw.charAt(end)=='\'') end++;
-                    queue.add(new State(node,end,state.missing+reading.length()-used));
-                }
+            int[] indexed=branches[state.node];
+            if(indexed==null) {
+                for(int node=child[state.node];node!=0;node=sibling[node])extend(queue,state,node,raw,limit);
+            } else {
+                char initial=raw.charAt(state.at);
+                for(int i=firstInitial(indexed,initial);i<indexed.length && syllable[indexed[i]].charAt(0)==initial;i++)
+                    extend(queue,state,indexed[i],raw,limit);
             }
         }
         return matches;
+    }
+    private void extend(PriorityQueue<State> queue,State state,int node,String raw,int limit) {
+        String reading=syllable[node]; int common=0;
+        while(common<reading.length() && state.at+common<limit && reading.charAt(common)==raw.charAt(state.at+common)) common++;
+        for(int used=1;used<=common;used++) {
+            int end=state.at+used;
+            // An apostrophe explicitly ends this syllable, including an abbreviated one.
+            if(end<limit && raw.charAt(end)=='\'') end++;
+            queue.add(new State(node,end,state.missing+reading.length()-used));
+        }
     }
     /** Match one stored entry using full or incomplete source reading units. */
     List<Candidate> lookup(String raw) {
