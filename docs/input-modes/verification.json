@@ -1,0 +1,43 @@
+{
+  "baseline_commit": "c16f878",
+  "version": "0.7.0",
+  "sha256": {
+    "artifacts/modes-baseline.apk": "6f773a93158aadab86e75b56c4dd069e5c7f2f0843d8fd0a9f3d8bda1c2128d9",
+    "app/build/outputs/apk/debug/app-debug.apk": "7bffece86115c91f8f82ed0174d694d4d0ab9781214de7dea556d87af99b1b7d",
+    "artifacts/downloads/MinIME-0.7.0.zip": "8990dad97eb36aa56ae575b38c4e49e288952583b1f5fd99e26aeff165b8a2dd",
+    "artifacts/modes-native-baseline.jsonl": "8e3ec8cd7cf56571a55fd42e0100b646267e9f5ce3b4b0a1f04af8941f86abe1",
+    "artifacts/modes-native-candidate.jsonl": "8e3ec8cd7cf56571a55fd42e0100b646267e9f5ce3b4b0a1f04af8941f86abe1"
+  },
+  "identical_packaged_assets": 16,
+  "core_assertions": 29089,
+  "source_contract_tests": 19,
+  "phone": "RFCR91GWXLX",
+  "display_final": "OFF",
+  "restored_ime": "com.samsung.android.honeyboard/.service.HoneyBoardService",
+  "geometry_units": "px; density 3, fontScale 1",
+  "final_phone_runs": [
+    {
+      "tests": "ModeRenderingMetricsTest, KeyboardInteractionTest.testExplicitMixedModesKeepCompositionAndGeometry",
+      "passed": 2,
+      "seconds": 28.723
+    },
+    {
+      "tests": "one-tap switch, English typing, Chrome, CandidateStabilityTest, HumanInputPrecisionTest",
+      "passed": 12,
+      "seconds": 45.717
+    },
+    {
+      "tests": "optional packs, everyday packs, exact/apostrophe choices through service",
+      "passed": 3,
+      "seconds": 30.415
+    }
+  ],
+  "limitations": [
+    "Timing excludes touch dispatch, view rendering, display frames, cold loading, and mode-switch duration.",
+    "First row/page geometry only measured in phone portrait at default font scale.",
+    "Missing Taiwan Mandarin conversations and independent Japanese/POJ essays and conversations."
+  ],
+  "core_commit": "5237175",
+  "android_commit": "90ce9c3",
+  "public_zip_verified": "https://que-put-miracle-wal.trycloudflare.com/MinIME-0.7.0.zip"
+}

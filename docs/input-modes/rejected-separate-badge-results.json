@@ -1,0 +1,2443 @@
+{
+  "control_pairs": 15688,
+  "exact_control_parity": true,
+  "baseline_geometry": {
+    "width": 1080,
+    "density": 3,
+    "scaledDensity": 3,
+    "fontScale": 1,
+    "chinese": {
+      "rowWidth": 960,
+      "keyboardHeight": 852,
+      "pageWidth": 1080,
+      "pageHeight": 531
+    },
+    "english": {
+      "rowWidth": 960,
+      "keyboardHeight": 852,
+      "pageWidth": 1080,
+      "pageHeight": 531
+    },
+    "taiwanese": {
+      "rowWidth": 960,
+      "keyboardHeight": 852,
+      "pageWidth": 1080,
+      "pageHeight": 531
+    },
+    "japanese": {
+      "rowWidth": 960,
+      "keyboardHeight": 852,
+      "pageWidth": 1080,
+      "pageHeight": 531
+    },
+    "texts": 49110
+  },
+  "candidate_geometry": {
+    "width": 1080,
+    "density": 3,
+    "scaledDensity": 3,
+    "fontScale": 1,
+    "chinese": {
+      "rowWidth": 816,
+      "keyboardHeight": 852,
+      "pageWidth": 1080,
+      "pageHeight": 531
+    },
+    "english": {
+      "rowWidth": 816,
+      "keyboardHeight": 852,
+      "pageWidth": 1080,
+      "pageHeight": 531
+    },
+    "taiwanese": {
+      "rowWidth": 816,
+      "keyboardHeight": 852,
+      "pageWidth": 1080,
+      "pageHeight": 531
+    },
+    "japanese": {
+      "rowWidth": 816,
+      "keyboardHeight": 852,
+      "pageWidth": 1080,
+      "pageHeight": 531
+    },
+    "texts": 49110
+  },
+  "coverage": [
+    {
+      "group": "en-conversation",
+      "condition": "full",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 256,
+          "row": 251,
+          "page": 251,
+          "any": 254,
+          "highlight": 247,
+          "raw_available": 244
+        },
+        "scoped_old_geometry": {
+          "n": 256,
+          "row": 251,
+          "page": 251,
+          "any": 254,
+          "highlight": 247,
+          "raw_available": 244
+        },
+        "scoped_new_geometry": {
+          "n": 256,
+          "row": 251,
+          "page": 251,
+          "any": 254,
+          "highlight": 247,
+          "raw_available": 244
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "full",
+      "mode": "english",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 256,
+          "row": 255,
+          "page": 255,
+          "any": 255,
+          "highlight": 250,
+          "raw_available": 244
+        },
+        "scoped_old_geometry": {
+          "n": 256,
+          "row": 255,
+          "page": 255,
+          "any": 255,
+          "highlight": 250,
+          "raw_available": 244
+        },
+        "scoped_new_geometry": {
+          "n": 256,
+          "row": 255,
+          "page": 255,
+          "any": 255,
+          "highlight": 250,
+          "raw_available": 244
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "full",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 256,
+          "row": 251,
+          "page": 251,
+          "any": 254,
+          "highlight": 247,
+          "raw_available": 244
+        },
+        "scoped_old_geometry": {
+          "n": 256,
+          "row": 251,
+          "page": 251,
+          "any": 254,
+          "highlight": 247,
+          "raw_available": 244
+        },
+        "scoped_new_geometry": {
+          "n": 256,
+          "row": 251,
+          "page": 251,
+          "any": 254,
+          "highlight": 247,
+          "raw_available": 244
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "full",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 256,
+          "row": 251,
+          "page": 251,
+          "any": 254,
+          "highlight": 247,
+          "raw_available": 244
+        },
+        "scoped_old_geometry": {
+          "n": 256,
+          "row": 251,
+          "page": 251,
+          "any": 254,
+          "highlight": 247,
+          "raw_available": 244
+        },
+        "scoped_new_geometry": {
+          "n": 256,
+          "row": 251,
+          "page": 251,
+          "any": 254,
+          "highlight": 247,
+          "raw_available": 244
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "half",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 256,
+          "row": 33,
+          "page": 75,
+          "any": 107,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 256,
+          "row": 29,
+          "page": 61,
+          "any": 89,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 256,
+          "row": 24,
+          "page": 61,
+          "any": 89,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "half",
+      "mode": "english",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 256,
+          "row": 66,
+          "page": 113,
+          "any": 135,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 256,
+          "row": 74,
+          "page": 106,
+          "any": 117,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 256,
+          "row": 69,
+          "page": 106,
+          "any": 117,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "half",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 256,
+          "row": 33,
+          "page": 75,
+          "any": 107,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 256,
+          "row": 33,
+          "page": 62,
+          "any": 94,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 256,
+          "row": 29,
+          "page": 62,
+          "any": 94,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "half",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 256,
+          "row": 33,
+          "page": 75,
+          "any": 107,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 256,
+          "row": 28,
+          "page": 70,
+          "any": 102,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 256,
+          "row": 24,
+          "page": 70,
+          "any": 102,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "transpose",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 204,
+          "row": 4,
+          "page": 4,
+          "any": 4,
+          "highlight": 4,
+          "raw_available": 4
+        },
+        "scoped_old_geometry": {
+          "n": 204,
+          "row": 4,
+          "page": 4,
+          "any": 4,
+          "highlight": 4,
+          "raw_available": 4
+        },
+        "scoped_new_geometry": {
+          "n": 204,
+          "row": 4,
+          "page": 4,
+          "any": 4,
+          "highlight": 4,
+          "raw_available": 4
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "transpose",
+      "mode": "english",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 204,
+          "row": 167,
+          "page": 174,
+          "any": 174,
+          "highlight": 4,
+          "raw_available": 4
+        },
+        "scoped_old_geometry": {
+          "n": 204,
+          "row": 168,
+          "page": 174,
+          "any": 174,
+          "highlight": 4,
+          "raw_available": 4
+        },
+        "scoped_new_geometry": {
+          "n": 204,
+          "row": 167,
+          "page": 174,
+          "any": 174,
+          "highlight": 4,
+          "raw_available": 4
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "transpose",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 204,
+          "row": 4,
+          "page": 4,
+          "any": 4,
+          "highlight": 4,
+          "raw_available": 4
+        },
+        "scoped_old_geometry": {
+          "n": 204,
+          "row": 4,
+          "page": 4,
+          "any": 4,
+          "highlight": 4,
+          "raw_available": 4
+        },
+        "scoped_new_geometry": {
+          "n": 204,
+          "row": 4,
+          "page": 4,
+          "any": 4,
+          "highlight": 4,
+          "raw_available": 4
+        }
+      }
+    },
+    {
+      "group": "en-conversation",
+      "condition": "transpose",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 204,
+          "row": 4,
+          "page": 4,
+          "any": 4,
+          "highlight": 4,
+          "raw_available": 4
+        },
+        "scoped_old_geometry": {
+          "n": 204,
+          "row": 4,
+          "page": 4,
+          "any": 4,
+          "highlight": 4,
+          "raw_available": 4
+        },
+        "scoped_new_geometry": {
+          "n": 204,
+          "row": 4,
+          "page": 4,
+          "any": 4,
+          "highlight": 4,
+          "raw_available": 4
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "full",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "full",
+      "mode": "english",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "full",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "full",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 126,
+          "page": 126,
+          "any": 126,
+          "highlight": 126,
+          "raw_available": 126
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "half",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 28,
+          "page": 51,
+          "any": 66,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 27,
+          "page": 45,
+          "any": 60,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 22,
+          "page": 45,
+          "any": 60,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "half",
+      "mode": "english",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 42,
+          "page": 71,
+          "any": 81,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 51,
+          "page": 70,
+          "any": 75,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 47,
+          "page": 70,
+          "any": 75,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "half",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 28,
+          "page": 51,
+          "any": 66,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 28,
+          "page": 47,
+          "any": 62,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 24,
+          "page": 47,
+          "any": 62,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "half",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 28,
+          "page": 51,
+          "any": 66,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 26,
+          "page": 49,
+          "any": 64,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 22,
+          "page": 49,
+          "any": 64,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "transpose",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 106,
+          "row": 1,
+          "page": 1,
+          "any": 1,
+          "highlight": 1,
+          "raw_available": 1
+        },
+        "scoped_old_geometry": {
+          "n": 106,
+          "row": 1,
+          "page": 1,
+          "any": 1,
+          "highlight": 1,
+          "raw_available": 1
+        },
+        "scoped_new_geometry": {
+          "n": 106,
+          "row": 1,
+          "page": 1,
+          "any": 1,
+          "highlight": 1,
+          "raw_available": 1
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "transpose",
+      "mode": "english",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 106,
+          "row": 97,
+          "page": 101,
+          "any": 102,
+          "highlight": 1,
+          "raw_available": 1
+        },
+        "scoped_old_geometry": {
+          "n": 106,
+          "row": 98,
+          "page": 101,
+          "any": 102,
+          "highlight": 1,
+          "raw_available": 1
+        },
+        "scoped_new_geometry": {
+          "n": 106,
+          "row": 96,
+          "page": 101,
+          "any": 102,
+          "highlight": 1,
+          "raw_available": 1
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "transpose",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 106,
+          "row": 1,
+          "page": 1,
+          "any": 1,
+          "highlight": 1,
+          "raw_available": 1
+        },
+        "scoped_old_geometry": {
+          "n": 106,
+          "row": 1,
+          "page": 1,
+          "any": 1,
+          "highlight": 1,
+          "raw_available": 1
+        },
+        "scoped_new_geometry": {
+          "n": 106,
+          "row": 1,
+          "page": 1,
+          "any": 1,
+          "highlight": 1,
+          "raw_available": 1
+        }
+      }
+    },
+    {
+      "group": "en-essay",
+      "condition": "transpose",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 106,
+          "row": 1,
+          "page": 1,
+          "any": 1,
+          "highlight": 1,
+          "raw_available": 1
+        },
+        "scoped_old_geometry": {
+          "n": 106,
+          "row": 1,
+          "page": 1,
+          "any": 1,
+          "highlight": 1,
+          "raw_available": 1
+        },
+        "scoped_new_geometry": {
+          "n": 106,
+          "row": 1,
+          "page": 1,
+          "any": 1,
+          "highlight": 1,
+          "raw_available": 1
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "full",
+      "mode": "chinese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 78,
+          "page": 81,
+          "any": 128,
+          "highlight": 47,
+          "raw_available": 49
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 14,
+          "page": 14,
+          "any": 49,
+          "highlight": 14,
+          "raw_available": 49
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 14,
+          "page": 14,
+          "any": 49,
+          "highlight": 14,
+          "raw_available": 49
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "full",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 116,
+          "page": 128,
+          "any": 128,
+          "highlight": 49,
+          "raw_available": 49
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 49,
+          "page": 49,
+          "any": 49,
+          "highlight": 49,
+          "raw_available": 49
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 49,
+          "page": 49,
+          "any": 49,
+          "highlight": 49,
+          "raw_available": 49
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "full",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 78,
+          "page": 81,
+          "any": 128,
+          "highlight": 47,
+          "raw_available": 49
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 78,
+          "page": 81,
+          "any": 128,
+          "highlight": 47,
+          "raw_available": 49
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 76,
+          "page": 81,
+          "any": 128,
+          "highlight": 47,
+          "raw_available": 49
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "full",
+      "mode": "taiwanese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 78,
+          "page": 81,
+          "any": 128,
+          "highlight": 47,
+          "raw_available": 49
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 14,
+          "page": 14,
+          "any": 49,
+          "highlight": 14,
+          "raw_available": 49
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 14,
+          "page": 14,
+          "any": 49,
+          "highlight": 14,
+          "raw_available": 49
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "half",
+      "mode": "chinese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 15,
+          "page": 70,
+          "any": 85,
+          "highlight": 2,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "half",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 17,
+          "page": 70,
+          "any": 85,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "half",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 15,
+          "page": 70,
+          "any": 85,
+          "highlight": 2,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 21,
+          "page": 80,
+          "any": 97,
+          "highlight": 2,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 14,
+          "page": 80,
+          "any": 97,
+          "highlight": 2,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "half",
+      "mode": "taiwanese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 15,
+          "page": 70,
+          "any": 85,
+          "highlight": 2,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "transpose",
+      "mode": "chinese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 3,
+          "page": 3,
+          "any": 5,
+          "highlight": 2,
+          "raw_available": 2
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 2,
+          "page": 2,
+          "any": 2,
+          "highlight": 2,
+          "raw_available": 2
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 2,
+          "page": 2,
+          "any": 2,
+          "highlight": 2,
+          "raw_available": 2
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "transpose",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 4,
+          "page": 5,
+          "any": 5,
+          "highlight": 2,
+          "raw_available": 2
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 2,
+          "page": 2,
+          "any": 2,
+          "highlight": 2,
+          "raw_available": 2
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 2,
+          "page": 2,
+          "any": 2,
+          "highlight": 2,
+          "raw_available": 2
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "transpose",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 3,
+          "page": 3,
+          "any": 5,
+          "highlight": 2,
+          "raw_available": 2
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 3,
+          "page": 3,
+          "any": 5,
+          "highlight": 2,
+          "raw_available": 2
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 2,
+          "page": 3,
+          "any": 5,
+          "highlight": 2,
+          "raw_available": 2
+        }
+      }
+    },
+    {
+      "group": "japanese-retrieval",
+      "condition": "transpose",
+      "mode": "taiwanese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 3,
+          "page": 3,
+          "any": 5,
+          "highlight": 2,
+          "raw_available": 2
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 2,
+          "page": 2,
+          "any": 2,
+          "highlight": 2,
+          "raw_available": 2
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 2,
+          "page": 2,
+          "any": 2,
+          "highlight": 2,
+          "raw_available": 2
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "full",
+      "mode": "chinese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 122,
+          "page": 124,
+          "any": 128,
+          "highlight": 94,
+          "raw_available": 6
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 4,
+          "page": 4,
+          "any": 6,
+          "highlight": 4,
+          "raw_available": 6
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 4,
+          "page": 4,
+          "any": 6,
+          "highlight": 4,
+          "raw_available": 6
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "full",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 115,
+          "page": 128,
+          "any": 128,
+          "highlight": 6,
+          "raw_available": 6
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 6,
+          "page": 6,
+          "any": 6,
+          "highlight": 6,
+          "raw_available": 6
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 6,
+          "page": 6,
+          "any": 6,
+          "highlight": 6,
+          "raw_available": 6
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "full",
+      "mode": "japanese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 122,
+          "page": 124,
+          "any": 128,
+          "highlight": 94,
+          "raw_available": 6
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 4,
+          "page": 4,
+          "any": 6,
+          "highlight": 4,
+          "raw_available": 6
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 4,
+          "page": 4,
+          "any": 6,
+          "highlight": 4,
+          "raw_available": 6
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "full",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 122,
+          "page": 124,
+          "any": 128,
+          "highlight": 94,
+          "raw_available": 6
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 122,
+          "page": 124,
+          "any": 128,
+          "highlight": 94,
+          "raw_available": 6
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 120,
+          "page": 124,
+          "any": 128,
+          "highlight": 94,
+          "raw_available": 6
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "half",
+      "mode": "chinese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 8,
+          "page": 35,
+          "any": 49,
+          "highlight": 4,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "half",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 13,
+          "page": 40,
+          "any": 49,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "half",
+      "mode": "japanese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 8,
+          "page": 35,
+          "any": 49,
+          "highlight": 4,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "half",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 128,
+          "row": 8,
+          "page": 35,
+          "any": 49,
+          "highlight": 4,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 128,
+          "row": 8,
+          "page": 37,
+          "any": 51,
+          "highlight": 4,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 128,
+          "row": 2,
+          "page": 37,
+          "any": 51,
+          "highlight": 4,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "transpose",
+      "mode": "chinese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 124,
+          "row": 4,
+          "page": 5,
+          "any": 5,
+          "highlight": 4,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 124,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 124,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "transpose",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 124,
+          "row": 5,
+          "page": 6,
+          "any": 6,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 124,
+          "row": 1,
+          "page": 1,
+          "any": 1,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 124,
+          "row": 0,
+          "page": 1,
+          "any": 1,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "transpose",
+      "mode": "japanese",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 124,
+          "row": 4,
+          "page": 5,
+          "any": 5,
+          "highlight": 4,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 124,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 124,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "poj-retrieval",
+      "condition": "transpose",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 124,
+          "row": 4,
+          "page": 5,
+          "any": 5,
+          "highlight": 4,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 124,
+          "row": 4,
+          "page": 5,
+          "any": 5,
+          "highlight": 4,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 124,
+          "row": 4,
+          "page": 5,
+          "any": 5,
+          "highlight": 4,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "full",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 225,
+          "page": 231,
+          "any": 235,
+          "highlight": 209,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 225,
+          "page": 231,
+          "any": 235,
+          "highlight": 209,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 225,
+          "page": 231,
+          "any": 235,
+          "highlight": 209,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "full",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 19,
+          "page": 19,
+          "any": 19,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "full",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 225,
+          "page": 231,
+          "any": 235,
+          "highlight": 209,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 225,
+          "page": 231,
+          "any": 235,
+          "highlight": 209,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 225,
+          "page": 231,
+          "any": 235,
+          "highlight": 209,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "full",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 225,
+          "page": 231,
+          "any": 235,
+          "highlight": 209,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 225,
+          "page": 231,
+          "any": 235,
+          "highlight": 209,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 225,
+          "page": 231,
+          "any": 235,
+          "highlight": 209,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "half",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 9,
+          "page": 16,
+          "any": 47,
+          "highlight": 3,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 9,
+          "page": 16,
+          "any": 47,
+          "highlight": 3,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 9,
+          "page": 16,
+          "any": 47,
+          "highlight": 3,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "half",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 6,
+          "page": 8,
+          "any": 8,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "half",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 9,
+          "page": 16,
+          "any": 47,
+          "highlight": 3,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 9,
+          "page": 16,
+          "any": 47,
+          "highlight": 3,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 9,
+          "page": 16,
+          "any": 47,
+          "highlight": 3,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "half",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 9,
+          "page": 16,
+          "any": 47,
+          "highlight": 3,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 9,
+          "page": 16,
+          "any": 47,
+          "highlight": 3,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 9,
+          "page": 16,
+          "any": 47,
+          "highlight": 3,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "initials",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 59,
+          "page": 82,
+          "any": 115,
+          "highlight": 33,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 59,
+          "page": 82,
+          "any": 115,
+          "highlight": 33,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 57,
+          "page": 82,
+          "any": 115,
+          "highlight": 33,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "initials",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 11,
+          "page": 15,
+          "any": 15,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "initials",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 59,
+          "page": 82,
+          "any": 115,
+          "highlight": 33,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 59,
+          "page": 82,
+          "any": 115,
+          "highlight": 33,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 57,
+          "page": 82,
+          "any": 115,
+          "highlight": 33,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "initials",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 59,
+          "page": 82,
+          "any": 115,
+          "highlight": 33,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 59,
+          "page": 82,
+          "any": 115,
+          "highlight": 33,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 57,
+          "page": 82,
+          "any": 115,
+          "highlight": 33,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "mixed",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 122,
+          "page": 144,
+          "any": 155,
+          "highlight": 97,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 122,
+          "page": 144,
+          "any": 155,
+          "highlight": 97,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 120,
+          "page": 144,
+          "any": 155,
+          "highlight": 97,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "mixed",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 16,
+          "page": 18,
+          "any": 18,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "mixed",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 122,
+          "page": 144,
+          "any": 155,
+          "highlight": 97,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 122,
+          "page": 144,
+          "any": 155,
+          "highlight": 97,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 120,
+          "page": 144,
+          "any": 155,
+          "highlight": 97,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "mixed",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 122,
+          "page": 144,
+          "any": 155,
+          "highlight": 97,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 122,
+          "page": 144,
+          "any": 155,
+          "highlight": 97,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 120,
+          "page": 144,
+          "any": 155,
+          "highlight": 97,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "transpose",
+      "mode": "chinese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 26,
+          "page": 26,
+          "any": 26,
+          "highlight": 18,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 26,
+          "page": 26,
+          "any": 26,
+          "highlight": 18,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 26,
+          "page": 26,
+          "any": 26,
+          "highlight": 18,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "transpose",
+      "mode": "english",
+      "applicable": false,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 0,
+          "page": 0,
+          "any": 0,
+          "highlight": 0,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "transpose",
+      "mode": "japanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 26,
+          "page": 26,
+          "any": 26,
+          "highlight": 18,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 26,
+          "page": 26,
+          "any": 26,
+          "highlight": 18,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 26,
+          "page": 26,
+          "any": 26,
+          "highlight": 18,
+          "raw_available": 0
+        }
+      }
+    },
+    {
+      "group": "zh-essay",
+      "condition": "transpose",
+      "mode": "taiwanese",
+      "applicable": true,
+      "stages": {
+        "original_all": {
+          "n": 416,
+          "row": 26,
+          "page": 26,
+          "any": 26,
+          "highlight": 18,
+          "raw_available": 0
+        },
+        "scoped_old_geometry": {
+          "n": 416,
+          "row": 26,
+          "page": 26,
+          "any": 26,
+          "highlight": 18,
+          "raw_available": 0
+        },
+        "scoped_new_geometry": {
+          "n": 416,
+          "row": 26,
+          "page": 26,
+          "any": 26,
+          "highlight": 18,
+          "raw_available": 0
+        }
+      }
+    }
+  ],
+  "latency": {
+    "baseline": {
+      "legacy-english": {
+        "overall": {
+          "n": 186,
+          "mean_us": 37698.903225806454,
+          "p50_us": 38935.0,
+          "p95_us": 53596,
+          "max_us": 65363
+        },
+        "conditions": {
+          "full": {
+            "n": 62,
+            "mean_us": 39770.66129032258,
+            "p50_us": 40805.5,
+            "p95_us": 60073,
+            "max_us": 65363
+          },
+          "typing-first": {
+            "n": 62,
+            "mean_us": 37112.48387096774,
+            "p50_us": 38292.0,
+            "p95_us": 46539,
+            "max_us": 49041
+          },
+          "typing-half": {
+            "n": 62,
+            "mean_us": 36213.56451612903,
+            "p50_us": 37970.5,
+            "p95_us": 54075,
+            "max_us": 59027
+          }
+        }
+      },
+      "legacy-mixed": {
+        "overall": {
+          "n": 186,
+          "mean_us": 46817.10752688172,
+          "p50_us": 44593.0,
+          "p95_us": 63966,
+          "max_us": 89408
+        },
+        "conditions": {
+          "full": {
+            "n": 62,
+            "mean_us": 52299.6935483871,
+            "p50_us": 51244.0,
+            "p95_us": 72988,
+            "max_us": 89408
+          },
+          "typing-first": {
+            "n": 62,
+            "mean_us": 42150.54838709677,
+            "p50_us": 42112.0,
+            "p95_us": 51725,
+            "max_us": 61475
+          },
+          "typing-half": {
+            "n": 62,
+            "mean_us": 46001.08064516129,
+            "p50_us": 44974.0,
+            "p95_us": 59371,
+            "max_us": 63966
+          }
+        }
+      }
+    },
+    "candidate": {
+      "chinese": {
+        "overall": {
+          "n": 186,
+          "mean_us": 42886.155913978495,
+          "p50_us": 40790.0,
+          "p95_us": 59174,
+          "max_us": 69264
+        },
+        "conditions": {
+          "full": {
+            "n": 62,
+            "mean_us": 47379.95161290323,
+            "p50_us": 46434.5,
+            "p95_us": 66083,
+            "max_us": 69264
+          },
+          "typing-first": {
+            "n": 62,
+            "mean_us": 39087.91935483871,
+            "p50_us": 37789.0,
+            "p95_us": 46381,
+            "max_us": 63936
+          },
+          "typing-half": {
+            "n": 62,
+            "mean_us": 42190.596774193546,
+            "p50_us": 40862.0,
+            "p95_us": 52891,
+            "max_us": 63929
+          }
+        }
+      },
+      "english": {
+        "overall": {
+          "n": 186,
+          "mean_us": 609.5752688172043,
+          "p50_us": 469.5,
+          "p95_us": 1803,
+          "max_us": 2809
+        },
+        "conditions": {
+          "full": {
+            "n": 62,
+            "mean_us": 1151.1935483870968,
+            "p50_us": 1160.5,
+            "p95_us": 2224,
+            "max_us": 2809
+          },
+          "typing-first": {
+            "n": 62,
+            "mean_us": 54.79032258064516,
+            "p50_us": 49.5,
+            "p95_us": 89,
+            "max_us": 159
+          },
+          "typing-half": {
+            "n": 62,
+            "mean_us": 622.741935483871,
+            "p50_us": 723.5,
+            "p95_us": 1255,
+            "max_us": 1714
+          }
+        }
+      },
+      "japanese": {
+        "overall": {
+          "n": 186,
+          "mean_us": 43863.913978494624,
+          "p50_us": 42163.0,
+          "p95_us": 59434,
+          "max_us": 70099
+        },
+        "conditions": {
+          "full": {
+            "n": 62,
+            "mean_us": 48204.145161290326,
+            "p50_us": 47824.0,
+            "p95_us": 61063,
+            "max_us": 70099
+          },
+          "typing-first": {
+            "n": 62,
+            "mean_us": 40409.51612903226,
+            "p50_us": 39570.5,
+            "p95_us": 51200,
+            "max_us": 63347
+          },
+          "typing-half": {
+            "n": 62,
+            "mean_us": 42978.08064516129,
+            "p50_us": 42163.0,
+            "p95_us": 56386,
+            "max_us": 61609
+          }
+        }
+      },
+      "taiwanese": {
+        "overall": {
+          "n": 186,
+          "mean_us": 45572.86559139785,
+          "p50_us": 43719.0,
+          "p95_us": 62542,
+          "max_us": 84572
+        },
+        "conditions": {
+          "full": {
+            "n": 62,
+            "mean_us": 50412.32258064516,
+            "p50_us": 49050.0,
+            "p95_us": 69233,
+            "max_us": 84572
+          },
+          "typing-first": {
+            "n": 62,
+            "mean_us": 41048.91935483871,
+            "p50_us": 40478.5,
+            "p95_us": 49977,
+            "max_us": 51541
+          },
+          "typing-half": {
+            "n": 62,
+            "mean_us": 45257.354838709674,
+            "p50_us": 44196.0,
+            "p95_us": 58091,
+            "max_us": 66644
+          }
+        }
+      }
+    }
+  },
+  "definition": "Fully visible whole-input target in initial row / expanded viewport, using measured Android cell sizes. Raw spelling availability and highlight are separate. Shared dictionary controls have exact output parity; geometry-only loss is separate from language-scope effects. No natural conversation coverage is claimed for Taiwan.md essays or dictionary retrieval probes."
+}

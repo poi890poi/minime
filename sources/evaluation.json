@@ -77,6 +77,40 @@
       ],
       "leakage": "Reuses inspected regression sources and source-derived dictionary queries. Suitable for timing and exact output parity only; not a fresh language-quality holdout. No production entries, source decisions or ranking weights changed.",
       "limitations": "Hash sampling is per source/mode, not traffic weighted. No natural conversation or essay representativeness claim; broad existing source groups remain separate. Callback timing excludes touch dispatch, final layout and display refresh. Synthetic prefix variants are not observed human typing errors."
+    },
+    {
+      "id": "input-mode-coverage-20260909",
+      "source_ids": [
+        "ud-gum-evaluation",
+        "taiwan-md",
+        "mcbopomofo",
+        "itaigi",
+        "taiwanese-basic",
+        "jmdict"
+      ],
+      "genre": [
+        "conversation",
+        "essay",
+        "specialist-lexicon"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "Frozen hash selection by complete source document, then occurrences: eight GUM conversation documents, four GUM essays, two previously audited Taiwan.md essays per category, and 128 everyday entries per third-language pack. 3922 complete, partial and deterministic transposition queries. See coverage-manifest.json and make_mode_corpus.py.",
+      "files": [
+        "docs/input-modes/coverage-inputs.tsv",
+        "docs/input-modes/coverage-manifest.json"
+      ],
+      "report_by": [
+        "source",
+        "genre",
+        "document",
+        "input-mode",
+        "imprecision",
+        "first-row",
+        "first-page"
+      ],
+      "leakage": "GUM train/dev exports are not MinIME training data: they were newly acquired and frozen after mode design, before candidate outputs, for a first-use holdout. Now evaluated and not fresh for future changes. Taiwan.md was already audited and has possible Wikipedia lineage. Chinese reading resolution uses original McBopomofo annotations shared with the production lexicon, not decoder output; this limits independence. Dictionary probes are explicitly seen-source retrieval.",
+      "limitations": "No accessible, permission-cleared Taiwan Mandarin conversation sample or independent Japanese/Taiwanese conversation/essay corpus was acquired. Chinese prose excludes unresolved or ambiguous reference readings and outside-window spans; counts are explicit. GUM input uses source-prefix words as accepted context. Coverage uses fully visible whole-input candidates and measured Android font/viewport sizes, not fixed top-N rank; timing uses a separate uncached phone test."
     }
   ]
 }

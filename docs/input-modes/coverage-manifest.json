@@ -1,0 +1,109 @@
+{
+  "seed": "mode-coverage-20260909-v1",
+  "rows": 3922,
+  "groups": {
+    "en-conversation": 716,
+    "en-essay": 362,
+    "zh-essay": 2080,
+    "japanese-retrieval": 384,
+    "poj-retrieval": 380
+  },
+  "documents": {
+    "en-conversation": {
+      "available_documents": 12,
+      "selected_documents": [
+        "GUM_conversation_toys",
+        "GUM_conversation_atoms",
+        "GUM_conversation_blacksmithing",
+        "GUM_conversation_gossip",
+        "GUM_conversation_scientist",
+        "GUM_conversation_erasmus",
+        "GUM_conversation_zero",
+        "GUM_conversation_vet"
+      ],
+      "eligible_occurrences": 7194
+    },
+    "en-essay": {
+      "available_documents": 4,
+      "selected_documents": [
+        "GUM_essay_sexlife",
+        "GUM_essay_evolved",
+        "GUM_essay_distraction",
+        "GUM_essay_dividends"
+      ],
+      "eligible_occurrences": 3683
+    },
+    "zh-essay": {
+      "Art": [
+        "knowledge/Art/鶯歌陶瓷博物館.md",
+        "knowledge/Art/台灣攝影.md"
+      ],
+      "Culture": [
+        "knowledge/Culture/鄒族戰祭.md",
+        "knowledge/Culture/台灣華語的演化.md"
+      ],
+      "Economy": [
+        "knowledge/Economy/台灣企業：兆豐金控.md",
+        "knowledge/Economy/台灣國際貿易政策.md"
+      ],
+      "Food": [
+        "knowledge/Food/台灣咖啡文化.md",
+        "knowledge/Food/大腸包小腸.md"
+      ],
+      "Geography": [
+        "knowledge/Geography/林安泰古厝.md",
+        "knowledge/Geography/基隆市.md"
+      ],
+      "History": [
+        "knowledge/History/台灣漁業起源.md",
+        "knowledge/History/高雄加工出口區.md"
+      ],
+      "Lifestyle": [
+        "knowledge/Lifestyle/台灣海關報關制度與EZWAY.md",
+        "knowledge/Lifestyle/台灣機車文化.md"
+      ],
+      "Music": [
+        "knowledge/Music/台灣民歌運動.md",
+        "knowledge/Music/台灣嘻哈與饒舌發展.md"
+      ],
+      "Nature": [
+        "knowledge/Nature/台灣海洋生態.md",
+        "knowledge/Nature/特有種.md"
+      ],
+      "People": [
+        "knowledge/People/蕭敬騰.md",
+        "knowledge/People/席慕蓉.md"
+      ],
+      "Politics": [
+        "knowledge/Politics/選舉過程.md",
+        "knowledge/Politics/九合一選舉是什麼.md"
+      ],
+      "Society": [
+        "knowledge/Society/手語視訊轉譯.md",
+        "knowledge/Society/毒馬鈴薯認知作戰.md"
+      ],
+      "Technology": [
+        "knowledge/Technology/均一教育平台.md",
+        "knowledge/Technology/電子商務與數位支付生態系.md"
+      ]
+    }
+  },
+  "sources": {
+    "app/src/main/assets/syllables.tsv": "4915d49bbc76e0aad722b25f06e5906bec00694672d6b0f2ff678a58f370c30b",
+    "app/src/main/assets/addons.tsv": "57f4669a9f30fb2f552d31781807426321ec685797f341689b03f3b74376dab0",
+    "artifacts\\mode-corpus\\en_gum-ud-train.conllu": "2c25ae2a7c51ac467777eeeb0beae46b46e389c5e8c5d6f8a0513b0e0f7683af",
+    "artifacts\\mode-corpus\\en_gum-ud-dev.conllu": "6625c7dcdf8440cc8d098aef13e84ed5585c7a9484c47a07ac9f15e73a6b02a6",
+    "third_party\\mcbopomofo\\BPMFBase.txt": "5916b2128627a63cb04138a0ee6dd8dcca18bb8726bd0554f12253725e5d3381",
+    "third_party\\mcbopomofo\\BPMFMappings.txt": "51715ee5c731f9994be3b168d7681ed9692b8c335ae6fc2e7cfd4af6fd0e0781",
+    "docs\\sources\\audit-2026-09-08\\sample-records.json.gz": "07fcdf332972d286db63b33149ed021dcdea43ce08371c3d78245b0e6ff56bfb"
+  },
+  "exclusions": {
+    "zh-essay/eligible-reference-spans-before-sampling": 4435,
+    "zh-essay/outside-2-12-glyph-window": 3285,
+    "zh-essay/ambiguous-or-missing-reference-reading": 4791
+  },
+  "sha256": "00aaa44a5036725e61ebeb1f6659fde15c2ed3682f678f4c480516b059e1e287",
+  "scope": "GUM train/dev documents are newly acquired local evaluation holdouts, never MinIME training. Taiwan.md essays were previously audited. Chinese reading eligibility uses unambiguous original McBopomofo annotations (shared lexical lineage, no decoder-generated gold). Dictionary probes are seen-source retrieval. No production or ranking changes were selected from outputs.",
+  "missing": "No licensed accessible Taiwan Mandarin conversation corpus acquired: NCCU public endpoint returns site suspended; Sinica TMC requires an approved account. No independent POJ/Japanese conversation or essay corpus is established. Do not infer these missing genre/language results.",
+  "gum_upstream": "https://github.com/UniversalDependencies/UD_English-GUM/tree/34d01cb603867d0c085896e8286a0fe01229fa37"
+}
