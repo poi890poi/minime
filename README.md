@@ -4,6 +4,11 @@ An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Z
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
+Version **0.7.3** prioritizes Taiwanese/Japanese suggestions in their dedicated
+modes and expands Japanese common vocabulary across parts of speech. Japanese
+mode also offers both kana scripts and source-ranked kanji. Existing expressions
+have a separate bounded search budget. See [coverage, tradeoffs and performance](docs/japanese-coverage/RESULTS.md).
+
 Version **0.7.2** restores source-backed Han alternatives for everyday Taiwanese
 readings. Beginner headwords with retrievable Han rise from 258 to 3,009 of 5,163,
 using the Taiwan-authored 台華線頂對照典 and a basic-vocabulary rule that avoids

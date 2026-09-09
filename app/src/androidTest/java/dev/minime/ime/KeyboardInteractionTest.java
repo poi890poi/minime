@@ -456,6 +456,31 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
     }
     public void testTaiwaneseDirectPairedOutput() throws Exception { pairedOutput(false); }
     public void testBeginnerTaiwaneseHanSource() throws Exception { pairedOutput(true); }
+    public void testJapaneseCharactersAndCommonVocabulary() throws Exception {
+        activity.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_japanese",true).commit();
+        dev.minime.core.AddonDictionary addon=AddonRepository.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS);
+        activateMode(dev.minime.core.InputMode.JAPANESE);Rect stable=keyboardBounds();
+        // Source-derived single-character probes in each script, with actual taps.
+        java.util.Map<String,String[]> probes=new java.util.LinkedHashMap<>();
+        try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(activity.getAssets().open("japanese-basic.tsv"),java.nio.charset.StandardCharsets.UTF_8))) {
+            String line;while((line=reader.readLine())!=null) {
+                if(line.startsWith("#"))continue;
+                String[] p=line.split("\t");if(p.length!=5 || !p[1].replace("'","").matches("[a-z]{1,8}"))continue;
+                if(p[0].equals("kanji")) {
+                    java.util.List<dev.minime.core.Candidate> found=addon.lookup(p[1],java.util.Collections.singleton("japanese"));
+                    if(found.isEmpty() || !found.get(0).text.equals(p[2]))continue;
+                }
+                probes.putIfAbsent(p[0],new String[]{p[1].replace("'",""),p[2]});
+            }
+        }
+        assertEquals(3,probes.size());
+        for(String[] probe:probes.values()) {clear();type(probe[0]);click("Candidate "+probe[1]);expectText(probe[1]);sameKeyboardBounds(stable,"single kana");}
+        clear();String[] word=AddonTestData.probe(activity,"japanese","everyday_vocabulary");
+        type(word[0]);node("Candidate "+word[1]).recycle();
+        // Exact raw spelling stays owned while candidate ordering changes.
+        expectText(word[0]);click("Candidate "+word[1]);expectText(word[1]);
+        sameKeyboardBounds(stable,"common Japanese vocabulary");
+    }
     private void pairedOutput(boolean beginner) throws Exception {
         SharedPreferences settings=activity.getSharedPreferences("settings",Context.MODE_PRIVATE);
         settings.edit().putBoolean("addon_poj",true).putBoolean("paired_taiwanese",true).commit();
