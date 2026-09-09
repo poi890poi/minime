@@ -21,6 +21,10 @@ final class ReadingIndex {
         for(int i=base-1;i>0;i--) best[i]=Math.max(best[i*2],best[i*2+1]);
     }
     private int lower(String key) { int at=Arrays.binarySearch(keys,key);return at<0?-at-1:at; }
+    List<Candidate> exact(String key) {
+        int at=Arrays.binarySearch(keys,key);
+        return at<0?Collections.emptyList():words[at];
+    }
     boolean containsPrefix(String prefix) { int at=lower(prefix);return at<keys.length && keys[at].startsWith(prefix); }
     private static final class Range {
         final int node,left,right;

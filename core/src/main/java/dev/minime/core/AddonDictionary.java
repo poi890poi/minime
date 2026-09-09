@@ -60,7 +60,21 @@ public final class AddonDictionary {
         // Builder pools must not survive while the compact search arrays are
         // allocated. Release each temporary map as its index takes ownership.
         values.clear();strings.clear();
-        AddonDictionary result=new AddonDictionary(entries);
+        // Exact and prefix lookup already own the same full focused readings.
+        // Reuse the sorted index instead of retaining a second hash key/list.
+        // Keep mixed abbreviated keys intact to preserve their original order.
+        for(Iterator<Map.Entry<String,List<Candidate>>> it=entries.entrySet().iterator();it.hasNext();) {
+            Map.Entry<String,List<Candidate>> entry=it.next();int tab=entry.getKey().indexOf('\t');
+            String pack=entry.getKey().substring(0,tab);
+            if((pack.startsWith("poj") || pack.startsWith("japanese")) && entry.getValue().stream().noneMatch(c->c.abbreviated))it.remove();
+        }
+        // Equal immutable candidate sequences are shared across source aliases
+        // and both indexes. List order and duplicate references remain unchanged.
+        Map<List<Candidate>,List<Candidate>> lists=new HashMap<>();
+        for(Map<String,List<Candidate>> source:prefixEntries.values())source.replaceAll((key,list)->lists.computeIfAbsent(list,k->k));
+        for(Map<String,List<Candidate>> source:unitEntries.values())source.replaceAll((key,list)->lists.computeIfAbsent(list,k->k));
+        entries.replaceAll((key,list)->lists.computeIfAbsent(list,k->k));lists.clear();
+        AddonDictionary result=new AddonDictionary(new HashMap<>(entries));entries.clear();
         for(Iterator<Map.Entry<String,Map<String,List<Candidate>>>> it=prefixEntries.entrySet().iterator();it.hasNext();) {
             Map.Entry<String,Map<String,List<Candidate>>> item=it.next();
             result.prefixes.put(item.getKey(),new ReadingIndex(item.getValue()));it.remove();
@@ -110,7 +124,12 @@ public final class AddonDictionary {
     }
     private boolean append(String key,List<Candidate> result,Set<String> seen,int limit) {
         if(first!=null)return first.append(key,result,seen,limit) || second.append(key,result,seen,limit);
-        for(Candidate c:entries.getOrDefault(key,Collections.emptyList()))if(seen.add(c.text)) {result.add(c);if(result.size()==limit)return true;}
+        List<Candidate> exact=entries.get(key);
+        if(exact==null) {
+            int tab=key.indexOf('\t');ReadingIndex index=prefixes.get(key.substring(0,tab));
+            exact=index==null?Collections.emptyList():index.exact(key.substring(tab+1));
+        }
+        for(Candidate c:exact)if(seen.add(c.text)) {result.add(c);if(result.size()==limit)return true;}
         return false;
     }
     private static String normalize(String key) {return key.toLowerCase(Locale.ROOT).replace("'","").replace("-","").replace(" ","");}
