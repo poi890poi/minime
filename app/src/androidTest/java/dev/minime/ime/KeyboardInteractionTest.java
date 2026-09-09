@@ -207,13 +207,36 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         clear();click("⇧");SystemClock.sleep(400);click("⬆");node("⇧").recycle();type("x ");assertEquals("x ",activity.text.getText().toString());
     }
     public void testOneTapLanguageSwitch() {
-        type("nihao");click("Switch to English");assertEquals("你好",activity.text.getText().toString());
+        type("nihao");click("Switch to English");assertEquals("nihao",activity.text.getText().toString());
+        click("Switch to Chinese");click("Space");assertEquals("你好",activity.text.getText().toString());click("Switch to English");
         type("nihao");click(",");assertEquals("你好nihao,",activity.text.getText().toString());
         type(" meeting ");click("Switch to Chinese");type("nihao");click("。");
         assertEquals("你好nihao, meeting 你好。",activity.text.getText().toString());
         clear();click("注音 layout");click("Switch to English");type("hello ");click("Switch to Chinese");
         node("ㄅ").recycle();assertEquals("hello ",activity.text.getText().toString());
         click("拼音 layout");
+    }
+    public void testExplicitMixedModesKeepCompositionAndGeometry() throws Exception {
+        Context context=getInstrumentation().getTargetContext();
+        context.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).commit();
+        AddonRepository.load(context).get(60,java.util.concurrent.TimeUnit.SECONDS);
+        focus(activity.url);focus(activity.text);
+        Rect stable=keyboardBounds(),q=bounds("q"),space=bounds("Space");
+        type("ni");click("Expand candidates");capture("modes-chooser");click("Choose japanese mode");
+        assertEquals("ni",activity.text.getText().toString());
+        sameKeyboardBounds(stable,"Japanese mode");assertEquals(q,bounds("q"));assertEquals(space,bounds("Space"));
+        getInstrumentation().runOnMainSync(()->assertTrue("Mode switch retains composing span",android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText())>=0));
+        click("Switch to English");node("Switch to Japanese").recycle();assertEquals("ni",activity.text.getText().toString());
+        click("Switch to Japanese");clear();node("Choose language mode: japanese").recycle();
+        String[] japanese=AddonTestData.probe(context,"japanese","everyday_");type(japanese[0]);
+        node("Candidate "+japanese[1]).recycle();capture("modes-japanese");clear();
+        click("Choose language mode: japanese");click("Choose taiwanese mode");
+        node("Choose language mode: taiwanese").recycle();sameKeyboardBounds(stable,"Taiwanese mode");
+        String[] poj=AddonTestData.probe(context,"poj","everyday_");type(poj[0]);node("Candidate "+poj[1]).recycle();capture("modes-taiwanese");
+        click("Switch to English");node("Switch to Taiwanese").recycle();click("Switch to Taiwanese");assertEquals(poj[0],activity.text.getText().toString());
+        clear();focus(activity.url);node("Switch to Taiwanese").recycle();focus(activity.text);node("Choose language mode: taiwanese").recycle();
+        context.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_poj",false).commit();
+        focus(activity.url);focus(activity.text);node("Choose language mode: chinese").recycle();sameKeyboardBounds(stable,"disabled optional mode");
     }
     public void testEnglishPrimaryTyping() {
         click("Switch to English");type("pronun");click("Candidate pronunciation");click("Space");
@@ -227,7 +250,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         clear();slide("z",1,false);slide("k",1,false);slide("l",1,false);slide("c",1,false);
         assertEquals("'()\"",activity.text.getText().toString());
         clear();type("pronun");capture("review-english");
-        click("Switch to Chinese");type("nihao");click("。");assertEquals("pronun你好。",activity.text.getText().toString());
+        click("Switch to Chinese");assertEquals("pronun",activity.text.getText().toString());clear();type("nihao");click("。");assertEquals("你好。",activity.text.getText().toString());
         click("Switch to English");focus(activity.url);type("pronun");
         for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows()) assertNull("URL has no English completion",find(w.getRoot(),"Candidate pronunciation"));
         slide("k",1,false);assertEquals("pronun(",activity.url.getText().toString());
@@ -427,6 +450,10 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         focus(activity.text);
         for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows())assertNull("Old annotation cannot return after field change",find(window.getRoot(),"Exact input nihao"));
     }
+    private void activateMode(dev.minime.core.InputMode mode) {
+        getInstrumentation().runOnMainSync(()->new ModePreferences(activity).select(mode));
+        focus(activity.url);focus(activity.text);
+    }
     public void testOptionalPacksThroughService() throws Exception {
         String[] poj=AddonTestData.probe(activity,"poj"),japanese=AddonTestData.probe(activity,"japanese"),geography=AddonTestData.probe(activity,"geography");
         SharedPreferences settings=getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE);
@@ -434,13 +461,13 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         AddonRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
         AddonRepository.geography(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
         getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
+        activateMode(dev.minime.core.InputMode.TAIWANESE);
         type(poj[0]);click("Expand candidates");click("Candidate "+poj[1]);expectText(poj[1]);
         clear();type(geography[0]);click("Expand candidates");click("Candidate "+geography[1]);expectText(geography[1]);
-        clear();click("Switch to English");type(poj[0]);click("Expand candidates");click("Candidate "+poj[1]);expectText(poj[1]);
-        clear();type(japanese[0]);click("Expand candidates");click("Candidate "+japanese[1]);expectText(japanese[1]);
+        clear();activateMode(dev.minime.core.InputMode.JAPANESE);type(japanese[0]);click("Expand candidates");click("Candidate "+japanese[1]);expectText(japanese[1]);
         clear();settings.edit().putBoolean("addon_poj",false).putBoolean("addon_japanese",false).putBoolean("addon_taiwan",false).putBoolean("addon_geography",false).commit();
         getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
-        type(poj[0]+" ");expectText(poj[0]+" ");
+        activateMode(dev.minime.core.InputMode.ENGLISH);type(poj[0]+" ");expectText(poj[0]+" ");
     }
     public void testEverydayPacksThroughService() throws Exception {
         String[] poj=AddonTestData.probe(activity,"poj","everyday_expressions"),japanese=AddonTestData.probe(activity,"japanese","everyday_expressions");
@@ -449,8 +476,9 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         AddonRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
         getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
         for(int language=0;language<2;language++) {
-            for(String[] probe:new String[][]{poj,japanese}) {type(probe[0]);click("Expand candidates");click("Candidate "+probe[1]);expectText(probe[1]);clear();}
-            if(language==0)click("Switch to English");
+            activateMode(language==0?dev.minime.core.InputMode.TAIWANESE:dev.minime.core.InputMode.JAPANESE);
+            String[] probe=language==0?poj:japanese;
+            type(probe[0]);click("Expand candidates");click("Candidate "+probe[1]);expectText(probe[1]);clear();
         }
     }
     private String firstNonRawCandidate(AccessibilityNodeInfo node) {
@@ -465,6 +493,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));
         AddonRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
         getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
+        activateMode(dev.minime.core.InputMode.JAPANESE);
         type(phrase[0]);node("Candidate "+phrase[1]).recycle();AccessibilityNodeInfo list=node("Candidate list");assertEquals("Candidate "+phrase[1],firstNonRawCandidate(list));list.recycle();
         click("Candidate "+phrase[1]);expectText(phrase[1]);clear();
         for(int language=0;language<2;language++) {

@@ -11,6 +11,7 @@ public final class MiniMeService extends InputMethodService {
     private CompositionEngine engine;
     private AsyncDecoder decoder;
     private KeyboardView keyboard;
+    private ModePreferences modes;
     private boolean zhuyin, english, englishPunctuation, destroyed, ready;
     private int panel;
     private final ShiftState shift=new ShiftState();
@@ -47,6 +48,7 @@ public final class MiniMeService extends InputMethodService {
     }
     @Override public void onCreate() {
         super.onCreate();
+        modes=new ModePreferences(this);
         engine=new CompositionEngine(new AndroidEditor(this::getCurrentInputConnection,()->editorInfo,selection),new LocalLearning(this));
         decoder=new AsyncDecoder(new Handler(Looper.getMainLooper()));engine.decoder(decoder,this::render);
         DictionaryRepository.load(this).whenComplete((dictionary,error)->new Handler(Looper.getMainLooper()).post(()-> {
@@ -91,11 +93,12 @@ public final class MiniMeService extends InputMethodService {
         englishPunctuation=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_punctuation",false);
         // Chrome may restart an empty editor after a commit. Keep an explicit
         // language choice for that field rather than applying its default again.
-        if(!sameField)english=policy.preferEnglish || getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_mode",false);
+        if(!sameField)english=policy.preferEnglish || modes.selected().english();
         shift.reset(); panel=0;
         if(restarting) engine.abandon();
         selection.start(attribute.initialSelStart,attribute.initialSelEnd);
         engine.start(zhuyin,literalInput(),policy.privateField,policy.secure || policy.numeric,english);
+        engine.switchMode(english?InputMode.ENGLISH:modes.mixed(),literalInput());
         engine.englishOptions(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_correction",false),
             getSharedPreferences("settings",MODE_PRIVATE).getBoolean("double_space_period",true));
         render();
@@ -107,6 +110,7 @@ public final class MiniMeService extends InputMethodService {
     @Override public void onStartInputView(EditorInfo attribute,boolean restarting) {
         super.onStartInputView(attribute,restarting);
         configureAddons();
+        if(!english && engine.inputMode()!=modes.mixed())engine.switchMode(modes.mixed(),literalInput());
         if(keyboard!=null)keyboard.inputActive(true);
         if(!engine.raw().isEmpty()) {
             InputConnection input=getCurrentInputConnection();int end=selection.cursor();
@@ -136,9 +140,14 @@ public final class MiniMeService extends InputMethodService {
     private void render() {
         InputConnection input=getCurrentInputConnection();
         shift.automatic(english && !literalInput() && input!=null && input.getCursorCapsMode(editorInfo.inputType)!=0);
-        if(keyboard!=null) keyboard.render(engine,zhuyin && !literalInput() && !english,shift.upper(),shift.locked(),panel,policy.numeric,
+        if(keyboard!=null) {keyboard.modeOptions(modes.mixed(),modes.configured());keyboard.render(engine,zhuyin && !literalInput() && !english,shift.upper(),shift.locked(),panel,policy.numeric,
             literalInput() || policy.numeric || english || englishPunctuation,english || literalInput(),!policy.literal && !policy.numeric,!literalInput(),
-            EditorPolicy.enterLabel(editorInfo),ready ? "" : dictionaryStatus);
+            EditorPolicy.enterLabel(editorInfo),ready ? "" : dictionaryStatus);}
+    }
+    private void switchMode(InputMode mode) {
+        if(!mode.available(modes.configured()))return;
+        english=mode.english();englishPunctuation=false;shift.reset();panel=0;
+        modes.select(mode);engine.switchMode(mode,literalInput());configureAddons();
     }
     private boolean longKey(String value) {
         if(value.equals("SPACE") && engine.deferUntilReady(()->longKey(value),false))return true;
@@ -149,7 +158,7 @@ public final class MiniMeService extends InputMethodService {
     }
     private void key(String value) {
         if(getCurrentInputConnection()==null) return;
-        boolean commit=value.equals("SPACE") || value.equals("ENTER") || value.equals("LANGUAGE") || value.equals("LAYOUT")
+        boolean commit=value.equals("SPACE") || value.equals("ENTER") || value.equals("LAYOUT")
             || value.startsWith("INSERT:") || value.startsWith("LITERAL:");
         if(engine.deferUntilReady(()->key(value),commit))return;
         if(!value.equals("SHIFT")) shift.interrupt();
@@ -167,9 +176,7 @@ public final class MiniMeService extends InputMethodService {
             case "PUNCTUATION": panel=3; break;
             case "LETTERS": panel=0; break;
             case "LANGUAGE":
-                engine.confirm();english=!english;englishPunctuation=false;shift.reset();panel=0;
-                getSharedPreferences("settings",MODE_PRIVATE).edit().putBoolean("english_mode",english).putBoolean("english_punctuation",false).apply();
-                engine.start(zhuyin,literalInput(),policy.privateField,policy.secure || policy.numeric,english);
+                switchMode(english?modes.mixed():InputMode.ENGLISH);
                 break;
             case "PUNCT_WIDTH":
                 englishPunctuation=!englishPunctuation;panel=0;
@@ -179,7 +186,8 @@ public final class MiniMeService extends InputMethodService {
             case "SETTINGS": startActivity(new Intent(this,SettingsActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)); break;
             case "NEXT_IME": switchToNextInputMethod(false); break;
             default:
-                if(value.startsWith("INSERT:")) { engine.literal(value.substring(7)); shift.consume(); if(panel==3) panel=0; }
+                if(value.startsWith("MODE:"))switchMode(InputMode.fromId(value.substring(5)));
+                else if(value.startsWith("INSERT:")) { engine.literal(value.substring(7)); shift.consume(); if(panel==3) panel=0; }
                 else if(value.startsWith("LITERAL:")) { engine.literal(value.substring(8)); shift.consume(); }
                 else if(value.startsWith("CANDIDATE:")) engine.select(Integer.parseInt(value.substring(10)));
                 else { value.codePoints().forEach(engine::type); shift.consume(); }

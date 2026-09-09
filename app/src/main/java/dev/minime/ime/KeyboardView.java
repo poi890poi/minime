@@ -44,6 +44,19 @@ final class KeyboardView extends LinearLayout {
     private boolean candidateGesture;
     private Runnable afterCandidateGesture;
     private boolean expanded;
+    private InputMode returnMode=InputMode.CHINESE;
+    private Set<String> configuredModes=Collections.emptySet();
+    private boolean modeMenu;
+    void modeOptions(InputMode mixed,Set<String> configured) {
+        returnMode=mixed;configuredModes=new HashSet<>(configured);
+    }
+    private static String modeName(InputMode mode) {return mode==InputMode.TAIWANESE?"Taiwanese":mode==InputMode.JAPANESE?"Japanese":"Chinese";}
+    private TextView modeBadge(InputMode current,Runnable show) {
+        TextView badge=plain(current.label+"⌄","MODE_PICKER",48,1);badge.setTextSize(15);
+        badge.setContentDescription("Choose language mode: "+current.id);
+        badge.setOnClickListener(anchor->{modeMenu=true;show.run();});
+        return badge;
+    }
     private static final int INK=0xff37474f, BLUE=0xff4db6ac, BACK=0xffeceff1;
     private static final String[] ZHUYIN={"ㄅㄉˇˋㄓˊ˙ㄚㄞㄢ","ㄆㄊㄍㄐㄔㄗㄧㄛㄟㄣ","ㄇㄋㄎㄑㄕㄘㄨㄜㄠㄤ","ㄈㄌㄏㄒㄖㄙㄩㄝㄡㄥ"};
     private static final String[] ZH_DOWN={"1234567890","qwertyuiop","asdfghjkl：","zxcvbnm…！？"};
@@ -168,6 +181,7 @@ final class KeyboardView extends LinearLayout {
     }
     @Override protected void onDetachedFromWindow() {
         removeCallbacks(placeAnnotation);annotationWindow.dismiss();
+        modeMenu=false;
         candidateGesture=false;afterCandidateGesture=null;super.onDetachedFromWindow();
     }
     @Override protected void dispatchDraw(android.graphics.Canvas canvas) {
@@ -274,7 +288,8 @@ final class KeyboardView extends LinearLayout {
         afterCandidateGesture=null;
         String hint=engine.privateField()?"Private input · learning off":loading;
         status.setText(hint);
-        String mode=zhuyin+":"+english+":"+numeric+":"+panel+":"+engine.privateField();
+        String mode=zhuyin+":"+english+":"+numeric+":"+panel+":"+engine.privateField()+":"+engine.inputMode()+":"+returnMode+":"+new TreeSet<>(configuredModes);
+        if(!lastRaw.equals(engine.raw()) || !snapshotMode.equals(mode) || panel!=0)modeMenu=false;
         // Keep the last completed row while its replacement is computed. Core acceptance
         // still uses the current query, and composition ownership prevents cross-editor reuse.
         boolean retain=engine.predictionPending() && !engine.raw().isEmpty() && snapshotHasRaw
@@ -304,6 +319,7 @@ final class KeyboardView extends LinearLayout {
         StringBuilder presentation=new StringBuilder(mode).append(':').append(shifted).append(':').append(caps)
             .append(':').append(asciiPunctuation).append(':').append(allowLanguageSwitch).append(':').append(enter)
             .append(':').append(loading).append(':').append(snapshotComposition).append(':').append(expanded)
+            .append(':').append(modeMenu)
             .append(':').append(separatePhonetics).append(':').append(preferred).append(':').append(engine.raw().isEmpty());
         for(int i=separatePhonetics?1:0;i<candidates.size();i++) {
             Candidate c=candidates.get(i);presentation.append('|').append(c.text.length()).append(':').append(c.text)
@@ -312,7 +328,22 @@ final class KeyboardView extends LinearLayout {
         String nextStrip=presentation.toString();
         if(!nextStrip.equals(stripKey)) {
             stripKey=nextStrip;lastRaw=engine.raw();
-            if(!candidates.isEmpty()) {
+            if((expanded || modeMenu) && allowLanguageSwitch) {
+                // The expanded page already repeats the strip's words. Use that
+                // existing toolbar for mode choices without shrinking either viewport.
+                strip.removeAllViews();candidateScroll=null;candidateWords=null;
+                for(InputMode choice:InputMode.values()) {
+                    TextView tab=plain(choice.label,"MODE:"+choice.id,48,1);tab.setTextSize(20);
+                    tab.setContentDescription("Choose "+choice.id+" mode");
+                    if(choice==engine.inputMode())tab.setBackgroundColor(BLUE);
+                    if(!choice.available(configuredModes))tab.setTextColor(0xff90a4ae);
+                    tab.setOnClickListener(v->{expanded=false;modeMenu=false;press.accept(choice.available(configuredModes)?"MODE:"+choice.id:"SETTINGS");});
+                    strip.addView(tab,new LayoutParams(0,dp(48),1));
+                }
+                expandButton=plain("⌃","EXPAND",42,1);expandButton.setContentDescription("Collapse candidates");
+                expandButton.setOnClickListener(v->{expanded=false;modeMenu=false;render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading);});
+                strip.addView(expandButton,new LayoutParams(dp(40),dp(42)));
+            } else if(!candidates.isEmpty()) {
                 int from=separatePhonetics?1:0;
                 if(candidateScroll==null) {
                     strip.removeAllViews();
@@ -336,13 +367,13 @@ final class KeyboardView extends LinearLayout {
                     if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
                 }
                 HorizontalScrollView currentScroll=candidateScroll;currentScroll.post(()->currentScroll.scrollTo(restoreScroll,0));
-                expandButton.setText(expanded?"⌃":"⌄");
+                expandButton.setText(expanded?"⌃":allowLanguageSwitch?engine.inputMode().label+"⌄":"⌄");expandButton.setTextSize(15);
                 expandButton.setContentDescription(expanded?"Collapse candidates":"Expand candidates");
                 expandButton.setOnClickListener(v->{expanded=!expanded;render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading);});
             } else {
                 strip.removeAllViews();candidateScroll=null;candidateWords=null;expandButton=null;
-                TextView chinese=plain("中",english?"LANGUAGE":"LAYOUT",48,1); chinese.setTextSize(23); ((SlideKey)chinese).icon(null);
-                chinese.setContentDescription(english?"Switch to Chinese":zhuyin?"拼音 layout":"注音 layout");
+                TextView chinese=plain(returnMode.label,english?"LANGUAGE":"LAYOUT",48,1); chinese.setTextSize(23); ((SlideKey)chinese).icon(null);
+                chinese.setContentDescription(english?"Switch to "+modeName(returnMode):zhuyin?"拼音 layout":"注音 layout");
                 if(!english)chinese.setBackgroundColor(BACK);
                 strip.addView(chinese,new LayoutParams(dp(75),dp(48)));
                 TextView latin=plain("En","LANGUAGE",48,1); latin.setTextSize(23); ((SlideKey)latin).icon(null);
@@ -350,6 +381,7 @@ final class KeyboardView extends LinearLayout {
                 latin.setOnClickListener(v->{if(!english)press.accept("LANGUAGE");});
                 if(english)latin.setBackgroundColor(BACK);
                 strip.addView(latin,new LayoutParams(dp(75),dp(48)));
+                if(allowLanguageSwitch)strip.addView(modeBadge(engine.inputMode(),()->render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading)),new LayoutParams(dp(48),dp(48)));
                 strip.addView(new View(getContext()),new LayoutParams(0,1,1));
                 TextView next=plain("Next keyboard","NEXT_IME",42,1);
                 strip.addView(next,new LayoutParams(dp(42),dp(42)));
@@ -361,7 +393,7 @@ final class KeyboardView extends LinearLayout {
         int height=landscape?34:59;
         // Every layout shares the QWERTY budget; only orientation and system insets resize it.
         keys.setLayoutParams(new LayoutParams(-1,dp(height)*4+(panel==0?0:dp(48))));
-        String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded;
+        String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+":"+engine.inputMode()+":"+returnMode;
         if(nextLayout.equals(layoutKey)) {
             if(expanded)expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);
             return;
@@ -407,10 +439,11 @@ final class KeyboardView extends LinearLayout {
         TextView symbol=plain(panel>0?"ABC":"?123",panel>0?"LETTERS":"SYMBOLS",height,1.6f); symbol.setTextSize(16); bottom.addView(symbol);
         bottom.addView(punctuation(true,asciiPunctuation,allowLanguageSwitch && !english,height));
         if(allowLanguageSwitch) {
-            TextView language=plain(english?"中":"EN","LANGUAGE",height,.9f);language.setTextSize(15);
-            language.setContentDescription(english?"Switch to Chinese":"Switch to English");bottom.addView(language);
+            TextView language=plain(english?returnMode.label:"EN","LANGUAGE",height,.9f);language.setTextSize(15);((SlideKey)language).icon(null);
+            language.setContentDescription(english?"Switch to "+modeName(returnMode):"Switch to English");bottom.addView(language);
         }
-        TextView space=plain(english?"English":zhuyin?"注音":"拼音","SPACE",height,4); space.setTextSize(14); space.setTextColor(0xff6d7b80); space.setContentDescription("Space");
+        String mixedLabel=(zhuyin?"注音":"拼音")+(engine.inputMode()==InputMode.TAIWANESE?"・台語":engine.inputMode()==InputMode.JAPANESE?"・日本語":"");
+        TextView space=plain(english?"English":mixedLabel,"SPACE",height,4); space.setTextSize(14); space.setTextColor(0xff6d7b80); space.setContentDescription("Space");
         GradientDrawable spaceShape=new GradientDrawable();spaceShape.setColor(0xffcbd0d3);spaceShape.setCornerRadius(dp(2));
         space.setBackground(new RippleDrawable(ColorStateList.valueOf(0x33263238),new InsetDrawable(spaceShape,dp(12),dp(14),dp(12),dp(14)),null));bottom.addView(space);
         if(zhuyin && panel==0 && !numeric) bottom.addView(plain("ㄦ","ㄦ",height,1));

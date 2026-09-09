@@ -28,7 +28,7 @@ public final class AddonIntegrationTest extends ActivityInstrumentationTestCase2
                 public void delete() {}public void enter() {}public void finish() {}
             },Learning.NONE);
             engine.dictionary(dictionary);engine.start(false,false,false,false);
-            engine.addons(addon,Collections.singleton("poj"));probe[0].codePoints().forEach(engine::type);
+            engine.switchMode(InputMode.TAIWANESE,false);engine.addons(addon,Collections.singleton("poj"));probe[0].codePoints().forEach(engine::type);
             KeyboardView view=new KeyboardView(context,key->{},key->false,(path,caps)->{},Runnable::run);
             view.render(engine,false,false,false,0,false,false,false,true,true,"Enter","");activity.setContentView(view);
             View candidate=find(view,"Candidate "+probe[1]);assertNotNull("POJ must be visible and selectable",candidate);
@@ -74,7 +74,7 @@ public final class AddonIntegrationTest extends ActivityInstrumentationTestCase2
                     public void composing(String text) {}public void commit(String text) {output.append(text);done.countDown();}
                     public void delete() {}public void enter() {}public void finish() {}
                 },Learning.NONE);
-                engine.dictionary(dictionary);engine.start(false,false,false,false);engine.addons(fixture,Collections.singleton("japanese"));
+                engine.dictionary(dictionary);engine.start(false,false,false,false);engine.switchMode(InputMode.JAPANESE,false);engine.addons(fixture,Collections.singleton("japanese"));
                 worker[0]=new AsyncDecoder(new android.os.Handler(android.os.Looper.getMainLooper()));
                 engine.decoder(worker[0],()->{});"kanami".codePoints().forEach(engine::type);engine.space();
                 assertEquals("Space must await the worker",0,output.length());
