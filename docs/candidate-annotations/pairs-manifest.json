@@ -1,0 +1,25 @@
+{
+  "format": 1,
+  "pairs": 9385,
+  "existing_itaigi_outputs": 15188,
+  "familiar_characters": 2641,
+  "minimum_character_occurrence": 212.0,
+  "familiar_occurrence_fraction": 0.9900230203120364,
+  "excluded": {
+    "not_single_all_Han_form": 849,
+    "outside_familiar_character_set": 5812
+  },
+  "multi_example_readings": 683,
+  "inputs": {
+    "third_party/itaigi/itaigi.csv": "eec28ed3fec522b72a70257c6d6d454f4f710d0ad6d63a07994a6354a4f0d3b4",
+    "third_party/mcbopomofo/phrase.occ": "0fc51c5245a8820e1003e3fa3fb2759b0d1b502a71da81bbfa265e9ac6c9fb5a",
+    "app/src/main/assets/addons.tsv": "57f4669a9f30fb2f552d31781807426321ec685797f341689b03f3b74376dab0"
+  },
+  "sha256": "6186ebba2c4bbf6f79e88a54e337f3559898b95c0f00e1868da8b798dabff82e",
+  "policy": "99% single-Han occurrence mass, all boundary ties; valid source-owned POJ/Han pairs only; one form per complete phonetic output.",
+  "limitations": "Written Taiwan Mandarin familiarity proxy; not Taiwanese spelling popularity, semantic disambiguation or community consensus. No beginner-example homophone joins.",
+  "licences": {
+    "itaigi": "CC0-1.0",
+    "mcbopomofo": "MIT"
+  }
+}

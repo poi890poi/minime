@@ -705,6 +705,35 @@
       "limitations": "English only; genres vary in style and rights. Previously evaluated; not a fresh holdout. No production reuse approved here.",
       "reason": "Reuse existing genre-separated regression evidence.",
       "addon_prefixes": []
+    },
+    {
+      "id": "paired-taiwanese",
+      "name": "Taiwanese source-attested paired output",
+      "origin": "taiwan-poj",
+      "decision": "retain",
+      "uses": [
+        "vocabulary",
+        "readings"
+      ],
+      "inputs": [
+        "app/src/main/assets/paired-forms.tsv",
+        "docs/candidate-annotations/pairs-manifest.json"
+      ],
+      "license": {
+        "id": "CC0-1.0 AND MIT",
+        "status": "verified",
+        "evidence": "docs/candidate-annotations/IMPLEMENTATION.md"
+      },
+      "evidence": [
+        "docs/candidate-annotations/IMPLEMENTATION.md",
+        "third_party/itaigi/itaigi.csv",
+        "third_party/mcbopomofo/phrase.occ"
+      ],
+      "editorial": "Existing iTaigi explicit POJ and HanLo fields. Reproducible McBopomofo single-character familiarity filter and deterministic choice among attested forms.",
+      "coverage": "9,385 pairs from 15,188 currently shipped iTaigi outputs; no new phonetic entries.",
+      "limitations": "Taiwan Mandarin written frequency is only a familiarity proxy, not Taiwanese spelling popularity or agreement. Mixed HanLo and any unfamiliar character excluded. Beginner homophones are not joined.",
+      "reason": "Optional direct alternative output for existing Taiwanese candidates; does not change ranking or primary phonetic output.",
+      "addon_prefixes": []
     }
   ]
 }

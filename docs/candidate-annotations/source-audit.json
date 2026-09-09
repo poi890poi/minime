@@ -1,0 +1,33 @@
+{
+  "sha256": {
+    "app/src/main/assets/addons.tsv": "57f4669a9f30fb2f552d31781807426321ec685797f341689b03f3b74376dab0",
+    "third_party/itaigi/itaigi.csv": "eec28ed3fec522b72a70257c6d6d454f4f710d0ad6d63a07994a6354a4f0d3b4",
+    "third_party/jmdict/jmdict-eng-common.json.tgz": "47555ec41e40d45e0207c2d253e8675d2cc400c02f8962682d9807892c3ba850"
+  },
+  "poj_unique_outputs": 20274,
+  "poj_exact_NFC_reading_with_HanLo_from_existing_itaigi": 14951,
+  "poj_groups": {
+    "short_vocabulary": {
+      "outputs": 15188,
+      "exact_itaigi_HanLo_example_available": 14858
+    },
+    "everyday_vocabulary": {
+      "outputs": 5163,
+      "exact_itaigi_HanLo_example_available": 464
+    },
+    "everyday_expressions": {
+      "outputs": 295,
+      "exact_itaigi_HanLo_example_available": 0
+    }
+  },
+  "itaigi_records": 19775,
+  "itaigi_unique_HanLo_readings": 17111,
+  "itaigi_readings_multiple_examples": 149,
+  "jmdict_common_records": 22637,
+  "jmdict_expression_or_interjection_records": 590,
+  "jmdict_common_expression_readings": 616,
+  "with_compatible_spelling": 442,
+  "with_compatible_common_Han_spelling": 366,
+  "readings_with_kana_usually_flag": 167,
+  "limitations": "Exact NFC POJ join measures availability, not editorial/common-glyph approval or sense alignment. Japanese counts precede ASCII alias filters. This audit cannot establish community agreement."
+}
