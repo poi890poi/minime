@@ -14,12 +14,16 @@ public final class Candidate {
     public final boolean composed;
     /** The stored reading requires letters that have not been typed yet. */
     public final boolean incomplete;
+    public final PairedForms.Pair pair;
     private Candidate(String text,boolean literal,double score,String reading,int consumed,boolean supplemental,boolean abbreviated,boolean composed) {
         this(text,literal,score,reading,consumed,supplemental,abbreviated,composed,abbreviated);
     }
     private Candidate(String text,boolean literal,double score,String reading,int consumed,boolean supplemental,boolean abbreviated,boolean composed,boolean incomplete) {
+        this(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,null);
+    }
+    private Candidate(String text,boolean literal,double score,String reading,int consumed,boolean supplemental,boolean abbreviated,boolean composed,boolean incomplete,PairedForms.Pair pair) {
         this.text=text;this.literal=literal;this.score=score;this.reading=reading;this.consumed=consumed;this.supplemental=supplemental;this.abbreviated=abbreviated;this.composed=composed;
-        this.incomplete=incomplete;
+        this.incomplete=incomplete;this.pair=pair;
     }
     private Candidate(String text,double score,boolean abbreviated) {
         this(text,false,score,"",0,true,abbreviated,false);
@@ -38,7 +42,12 @@ public final class Candidate {
     static Candidate concatenate(Candidate prefix,Candidate word) {
         return new Candidate(prefix.text+word.text,false,prefix.score+word.score,"",0,false,false,prefix.composed || word.composed || !prefix.text.isEmpty(),prefix.incomplete || word.incomplete);
     }
-    Candidate withScore(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,incomplete);}
-    Candidate completing(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,true);}
+    Candidate withScore(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,incomplete,pair);}
+    Candidate completing(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,true,pair);}
+    Candidate paired(PairedForms.Pair value) {return pair==value?this:new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,value);}
+    Candidate primary(boolean han) {return pair==null?this:pairedText(han?pair.han:pair.phonetic);}
+    private Candidate pairedText(String value) {return text.equals(value)?this:new Candidate(value,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair);}
+    public String alternateText() {return pair==null?"":text.equals(pair.phonetic)?pair.han:pair.phonetic;}
+    Candidate alternative() {return pair==null?this:pairedText(alternateText());}
     @Override public String toString() { return text; }
 }

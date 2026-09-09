@@ -22,6 +22,12 @@ public final class CompositionEngine {
     private boolean afterLatin;
     private boolean zhuyin, literalField, privateField, direct, englishMode;
     private InputMode inputMode=InputMode.CHINESE;
+    private boolean pairedTaiwanese=true,hanPrimary;
+    public void pairedTaiwanese(boolean enabled,boolean primaryHan) {
+        if(pairedTaiwanese==enabled && hanPrimary==primaryHan)return;
+        if(deferUntilReady(()->pairedTaiwanese(enabled,primaryHan),false))return;
+        pairedTaiwanese=enabled;hanPrimary=primaryHan;compositionId++;refresh();changed.run();
+    }
     private boolean completionBoundary;
     private boolean committedEnglishWord;
     private boolean autoCorrect, doubleSpace, automaticCorrection;
@@ -200,8 +206,10 @@ public final class CompositionEngine {
     }
     public void select(int index) {
         if (index < 0 || index >= candidates.size()) return;
+        selectChoice(candidates.get(index));
+    }
+    private void selectChoice(Candidate choice) {
         clearAssistance();
-        Candidate choice=candidates.get(index);
         if(partial(choice) && !literalField && !englishMode && !choice.literal) {
             compositionId++;
             String reading=raw.substring(0,choice.consumed),rest=raw.substring(choice.consumed).replaceFirst("^'+","");
@@ -222,9 +230,19 @@ public final class CompositionEngine {
         if(deferUntilReady(()->selectCandidate(displayed,composition),true))return;
         for(int i=0;i<candidates.size();i++) {
             Candidate current=candidates.get(i);
-            if(current.text.equals(displayed.text) && current.literal==displayed.literal) {
+            if(current.text.equals(displayed.text) && current.literal==displayed.literal
+                    && (displayed.pair==null?current.pair==null:displayed.pair.same(current.pair))) {
                 select(i);return;
             }
+        }
+    }
+    /** Long press accepts exactly the advertised alternate of the held snapshot. */
+    public void selectAlternative(Candidate displayed,long composition) {
+        if(composition!=compositionId || displayed.pair==null || !pairedTaiwanese || inputMode!=InputMode.TAIWANESE)return;
+        if(deferUntilReady(()->selectAlternative(displayed,composition),true))return;
+        for(Candidate current:candidates) {
+            if(current.text.equals(displayed.text) && current.literal==displayed.literal
+                    && displayed.pair.same(current.pair)) {selectChoice(current.alternative());return;}
         }
     }
     private boolean partial(Candidate c) {
@@ -420,6 +438,10 @@ public final class CompositionEngine {
             if(preferred>0 && !automaticCorrection) {
                 for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
             }
+        }
+        for(int i=0;i<candidates.size();i++) {
+            Candidate c=candidates.get(i);
+            if(c.pair!=null)candidates.set(i,pairedTaiwanese && inputMode==InputMode.TAIWANESE?c.primary(hanPrimary):c.paired(null));
         }
     }
     private static boolean hanGlyph(String text) {
