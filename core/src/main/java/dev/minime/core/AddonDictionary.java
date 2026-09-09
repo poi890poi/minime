@@ -24,6 +24,7 @@ public final class AddonDictionary {
     }
     public static AddonDictionary read(Reader input,PairedForms pairs) throws IOException {
         Map<String,List<Candidate>> entries=new HashMap<>();
+        Map<String,Candidate> values=new HashMap<>();Map<String,String> strings=new HashMap<>();
         Map<String,Map<String,List<Candidate>>> unitEntries=new HashMap<>(),prefixEntries=new HashMap<>();int count=0;
         try(BufferedReader reader=new BufferedReader(input)) {
             String line;while((line=reader.readLine())!=null) {
@@ -33,13 +34,17 @@ public final class AddonDictionary {
                         || p[2].isEmpty() || p[2].length()>96 || p[3].isEmpty() || ++count>200000)throw new IOException("Invalid add-on entry");
                 // Ordinary common Japanese vocabulary must not consume the
                 // existing expression/name search budget as its corpus grows.
+                p[0]=strings.computeIfAbsent(p[0],k->k);p[2]=strings.computeIfAbsent(p[2],k->k);
                 String indexPack=p[0].equals("japanese") && p[4].equals("everyday_vocabulary")?"japanese-common":p[0];
                 String key=indexPack+"\t"+normalize(p[1]);
                 // Generated Chinese initials contain one ASCII letter per Han
                 // glyph. Full multisyllable readings retain source separators.
                 boolean abbreviated=p[1].matches("[a-z]+") && p[1].length()==p[2].codePointCount(0,p[2].length())
                     && p[2].codePoints().allMatch(cp->Character.UnicodeScript.of(cp)==Character.UnicodeScript.HAN);
-                Candidate value=Candidate.supplement(p[2],0,abbreviated).inPack(p[0]).paired(pairs.forEntry(p[0],p[2],p[3]));
+                PairedForms.Pair pair=pairs.forEntry(p[0],p[2],p[3]);
+                String identity=p[0]+"\t"+p[2]+"\t"+abbreviated+"\t"+(pair==null?"":pair.source);
+                Candidate value=values.get(identity);
+                if(value==null) {value=Candidate.supplement(p[2],0,abbreviated).inPack(p[0]).paired(pair);values.put(identity,value);}
                 entries.computeIfAbsent(key,k->new ArrayList<>()).add(value);
                 // Generated initial aliases remain exact aliases. Index source
                 // readings, not abbreviations of abbreviations.
@@ -52,9 +57,18 @@ public final class AddonDictionary {
                 }
             }
         }
+        // Builder pools must not survive while the compact search arrays are
+        // allocated. Release each temporary map as its index takes ownership.
+        values.clear();strings.clear();
         AddonDictionary result=new AddonDictionary(entries);
-        unitEntries.forEach((pack,source)->result.units.put(pack,new ReadingUnitIndex(source,source.keySet())));
-        prefixEntries.forEach((pack,source)->result.prefixes.put(pack,new ReadingIndex(source)));
+        for(Iterator<Map.Entry<String,Map<String,List<Candidate>>>> it=prefixEntries.entrySet().iterator();it.hasNext();) {
+            Map.Entry<String,Map<String,List<Candidate>>> item=it.next();
+            result.prefixes.put(item.getKey(),new ReadingIndex(item.getValue()));it.remove();
+        }
+        for(Iterator<Map.Entry<String,Map<String,List<Candidate>>>> it=unitEntries.entrySet().iterator();it.hasNext();) {
+            Map.Entry<String,Map<String,List<Candidate>>> item=it.next();
+            result.units.put(item.getKey(),new ReadingUnitIndex(item.getValue(),item.getValue().keySet()));it.remove();
+        }
         return result;
     }
     public List<Candidate> lookup(String raw,Set<String> enabled) {
