@@ -18,6 +18,18 @@ final class PairedFormsRegression {
             equal("甲乙",found.get(0).withScore(9).completing(8).alternateText(),"copy operations retain pair");
         }
         yes(addons.lookup("otherkey",Collections.singleton("poj")).get(0).pair==null,"unrelated source homophone is not paired");
+        // An explicitly attested source pair may annotate an existing beginner reading.
+        PairedForms taihoa=PairedForms.read(new StringReader("poj\tabc-def\t甲乙\ttaihoa:9\n"));
+        AddonDictionary beginner=AddonDictionary.read(new StringReader("poj\tabc-def\tabc-def\ttaiwanese-basic:8\teveryday_vocabulary\n"),taihoa);
+        for(String raw:Arrays.asList("abcdef","abcd","ad","ab'd")) {
+            Candidate word=beginner.lookup(raw,Collections.singleton("poj")).get(0);
+            equal("甲乙",word.alternateText(),"beginner source carries exact whole-reading Taihoa pair");
+            equal("taihoa:9",word.pair.source,"alternate retains its actual Han source");
+        }
+        Editor basicOutput=new Editor();CompositionEngine basicEngine=engine(basicOutput,Learning.NONE,false);
+        basicEngine.addons(beginner,Collections.singleton("poj"));basicEngine.switchMode(InputMode.TAIWANESE,false);type(basicEngine,"abcdef");
+        Candidate basicChoice=basicEngine.candidates().stream().filter(v->v.pair!=null).findFirst().get();
+        basicEngine.selectAlternative(basicChoice,basicEngine.compositionId());equal("甲乙",basicOutput.text,"beginner Han accepts through shared engine");
         for(boolean han:Arrays.asList(false,true))for(boolean hold:Arrays.asList(false,true)) {
             Editor e=new Editor();Memory memory=new Memory();CompositionEngine c=engine(e,memory,false);
             c.addons(addons,Collections.singleton("poj"));c.switchMode(InputMode.TAIWANESE,false);c.pairedTaiwanese(true,han);type(c,"abcdef");

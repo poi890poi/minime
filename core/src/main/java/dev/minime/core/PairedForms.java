@@ -20,7 +20,7 @@ public final class PairedForms {
                 if(line.isEmpty() || line.startsWith("#"))continue;
                 String[] p=line.split("\t",-1);
                 if(p.length!=4 || !p[0].equals("poj") || p[1].isEmpty() || p[1].length()>96
-                        || p[2].isEmpty() || p[2].length()>24 || !p[3].matches("itaigi:[0-9]+")
+                        || p[2].isEmpty() || p[2].length()>24 || !p[3].matches("(?:itaigi|taihoa):[0-9]+")
                         || !p[2].codePoints().allMatch(c->Character.UnicodeScript.of(c)==Character.UnicodeScript.HAN)
                         || result.size()>=200000 || result.containsKey(p[1]))throw new IOException("Invalid paired form");
                 result.put(p[1],new Pair(p[1],p[2],p[3]));
@@ -28,6 +28,6 @@ public final class PairedForms {
         }return new PairedForms(result);
     }
     Pair forEntry(String pack,String output,String source) {
-        return pack.equals("poj") && source.startsWith("itaigi:")?entries.get(output):null;
+        return pack.equals("poj") && (source.startsWith("itaigi:") || source.startsWith("taiwanese-basic:"))?entries.get(output):null;
     }
 }
