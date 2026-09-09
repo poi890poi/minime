@@ -40,3 +40,5 @@ app/src/androidTest/assets/latency-inputs.tsv text eol=lf
 docs/input-modes/*.tsv text eol=lf
 docs/input-modes/*.json text eol=lf
 app/src/androidTest/assets/mode-coverage-texts.txt text eol=lf
+# The seventh TSV column is optional accepted context; empty cells end in a tab.
+docs/input-modes/coverage-inputs.tsv whitespace=-blank-at-eol
