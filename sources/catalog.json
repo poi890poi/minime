@@ -720,19 +720,49 @@
         "docs/candidate-annotations/pairs-manifest.json"
       ],
       "license": {
-        "id": "CC0-1.0 AND MIT",
+        "id": "CC-BY-SA-4.0 AND CC0-1.0 AND MIT",
         "status": "verified",
         "evidence": "docs/candidate-annotations/IMPLEMENTATION.md"
       },
       "evidence": [
         "docs/candidate-annotations/IMPLEMENTATION.md",
         "third_party/itaigi/itaigi.csv",
-        "third_party/mcbopomofo/phrase.occ"
+        "third_party/mcbopomofo/phrase.occ",
+        "docs/taiwanese-coverage/PLAN.md"
       ],
-      "editorial": "Existing iTaigi explicit POJ and HanLo fields. Reproducible McBopomofo single-character familiarity filter and deterministic choice among attested forms.",
-      "coverage": "9,385 pairs from 15,188 currently shipped iTaigi outputs; no new phonetic entries.",
-      "limitations": "Taiwan Mandarin written frequency is only a familiarity proxy, not Taiwanese spelling popularity or agreement. Mixed HanLo and any unfamiliar character excluded. Beginner homophones are not joined.",
+      "editorial": "Explicit iTaigi/Taihoa POJ/HanLo pairs; preserve prior choices, extend through authored beginner vocabulary and existing familiarity policy.",
+      "coverage": "Existing POJ outputs with source-attested iTaigi/Taihoa alternatives; generated manifest records counts.",
+      "limitations": "Mandarin written occurrence ranks familiarity but does not veto attested beginner words. One example per complete pronunciation is not semantic disambiguation or community consensus.",
       "reason": "Optional direct alternative output for existing Taiwanese candidates; does not change ranking or primary phonetic output.",
+      "addon_prefixes": []
+    },
+    {
+      "id": "taihoa",
+      "name": "台華線頂對照典 / Taihoa",
+      "origin": "taiwan-poj",
+      "decision": "retain",
+      "uses": [
+        "readings",
+        "vocabulary",
+        "evaluation"
+      ],
+      "inputs": [
+        "third_party/taihoa/taihoa.csv",
+        "third_party/taihoa/source.json"
+      ],
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/ChhoeTaigi/ChhoeTaigiDatabase#1-2002-%E5%8F%B0%E8%8F%AF%E7%B7%9A%E9%A0%82%E5%B0%8D%E7%85%A7%E5%85%B8"
+      },
+      "evidence": [
+        "third_party/itaigi/README.md",
+        "docs/taiwanese-coverage/PLAN.md"
+      ],
+      "editorial": "Taiwan-authored 鄭良偉 foundation, expanded and edited by 楊允言 and transcription/proofreading volunteers; original POJ/HanLo fields.",
+      "coverage": "91,339 records at existing ChhoeTaigi pin. Use source-attested alternatives only for existing shipped phonetic outputs.",
+      "limitations": "Dictionary breadth is not typing frequency or spelling consensus. Homophones have multiple senses; canonical form is one pronunciation example. No guessed alternate-reading pairing.",
+      "reason": "Restore basic Taiwanese Han alternatives missing from iTaigi-only metadata.",
       "addon_prefixes": []
     }
   ]

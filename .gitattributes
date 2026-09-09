@@ -46,3 +46,8 @@ docs/input-modes/coverage-inputs.tsv whitespace=-blank-at-eol
 app/src/main/assets/paired-forms.tsv text eol=lf
 docs/candidate-annotations/*.json text eol=lf
 third_party/mcbopomofo/phrase.occ -text
+third_party/taihoa/taihoa.csv -text -whitespace
+third_party/taihoa/*.json text eol=lf
+third_party/taihoa/*.md text eol=lf
+docs/taiwanese-coverage/*.json text eol=lf
+docs/taiwanese-coverage/*.tsv text eol=lf

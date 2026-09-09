@@ -1,0 +1,1409 @@
+{
+  "preserved_original_pairs": 9385,
+  "new_pairs": 2961,
+  "category_availability": {
+    "short_vocabulary": {
+      "outputs": 15188,
+      "old_pair_record": 9385,
+      "new_pair_record": 9700
+    },
+    "everyday_vocabulary": {
+      "outputs": 5163,
+      "old_pair_record": 258,
+      "new_pair_record": 3009
+    },
+    "everyday_expressions": {
+      "outputs": 295,
+      "old_pair_record": 0,
+      "new_pair_record": 1
+    }
+  },
+  "retrieval_inputs": {
+    "queries": 15489,
+    "outputs": 5163,
+    "sha256": "052e1c63271bb3b3d3a58ce2b004de03d228d23b0c827fd3b03b550aade84fa2",
+    "role": "source-derived regression, not independent accuracy"
+  },
+  "moe_basic_han_inventory": {
+    "numbered": 504,
+    "comparable": 497,
+    "old_present": 62,
+    "new_present": 225,
+    "unsupported": [
+      44,
+      100,
+      250,
+      298,
+      387,
+      443,
+      451
+    ],
+    "missing_stages": {
+      "no_existing_complete_phonetic_output": 76,
+      "no_exact_source_Han_field": 82,
+      "eligibility_or_other_canonical_spelling": 114
+    },
+    "missing_after": [
+      {
+        "id": 1,
+        "han": "阿",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 2,
+        "han": "仔",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 4,
+        "han": "偝",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 5,
+        "han": "沃",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 6,
+        "han": "泔",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 7,
+        "han": "頷頸",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 13,
+        "han": "漚",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 14,
+        "han": "甌",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 15,
+        "han": "拗",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 16,
+        "han": "漚",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 19,
+        "han": "䆀",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 20,
+        "han": "目",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 22,
+        "han": "蠓",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 23,
+        "han": "茫",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 24,
+        "han": "捌",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 25,
+        "han": "袂",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 26,
+        "han": "欲",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 30,
+        "han": "明",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 38,
+        "han": "魩",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 39,
+        "han": "的",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 40,
+        "han": "个",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 45,
+        "han": "夯",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 46,
+        "han": "攑",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 47,
+        "han": "鋏",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 48,
+        "han": "囡仔",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 49,
+        "han": "凝",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 56,
+        "han": "縖",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 59,
+        "han": "蚶仔",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 60,
+        "han": "譀",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 62,
+        "han": "吼",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 69,
+        "han": "現",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 71,
+        "han": "㧒",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 73,
+        "han": "雄雄",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 82,
+        "han": "撫",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 83,
+        "han": "拊",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 84,
+        "han": "喝",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 89,
+        "han": "伊",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 91,
+        "han": "奕",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 92,
+        "han": "也",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 93,
+        "han": "蛾仔",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 97,
+        "han": "芫荽",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 98,
+        "han": "枵",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 101,
+        "han": "往",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 103,
+        "han": "臆",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 107,
+        "han": "入",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 109,
+        "han": "揉",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 110,
+        "han": "鰇魚",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 111,
+        "han": "愈",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 112,
+        "han": "偌",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 114,
+        "han": "挼",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 115,
+        "han": "虼",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 119,
+        "han": "蓋",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 120,
+        "han": "甲",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 121,
+        "han": "佮意",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 122,
+        "han": "甘",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 125,
+        "han": "干焦",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 126,
+        "han": "工",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 127,
+        "han": "仝",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 129,
+        "han": "加",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 130,
+        "han": "家婆",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 131,
+        "han": "羹",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 132,
+        "han": "跤",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 134,
+        "han": "尻脊",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 135,
+        "han": "跤",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 136,
+        "han": "敲",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 137,
+        "han": "較",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 138,
+        "han": "坎",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 139,
+        "han": "崁",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 143,
+        "han": "薅",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 144,
+        "han": "剾",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 145,
+        "han": "齧",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 146,
+        "han": "徛",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 148,
+        "han": "抾",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 149,
+        "han": "搝",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 150,
+        "han": "虯",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 151,
+        "han": "囥",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 152,
+        "han": "洘",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 154,
+        "han": "觳",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 155,
+        "han": "硞",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 156,
+        "han": "悾",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 157,
+        "han": "炕",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 158,
+        "han": "箍",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 159,
+        "han": "跍",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 163,
+        "han": "睏",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 164,
+        "han": "枝",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 165,
+        "han": "見若",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 170,
+        "han": "揀",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 171,
+        "han": "閣",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 174,
+        "han": "鈷",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 176,
+        "han": "古錐",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 179,
+        "han": "蓋",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 182,
+        "han": "乾",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 184,
+        "han": "粿",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 186,
+        "han": "規",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 189,
+        "han": "蜊仔",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 191,
+        "han": "橐",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 193,
+        "han": "咱",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 196,
+        "han": "扭",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 198,
+        "han": "咧",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 200,
+        "han": "連鞭",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 201,
+        "han": "輪",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 203,
+        "han": "啉",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 206,
+        "han": "冗",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 207,
+        "han": "鈕",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 209,
+        "han": "橐",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 210,
+        "han": "漉喙",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 211,
+        "han": "攏",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 212,
+        "han": "挵",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 215,
+        "han": "攄",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 216,
+        "han": "鑢",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 217,
+        "han": "捋",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 218,
+        "han": "蕊",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 220,
+        "han": "媽",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 223,
+        "han": "暝",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 224,
+        "han": "糜",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 225,
+        "han": "嚨喉",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 226,
+        "han": "若",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 227,
+        "han": "䘼",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 228,
+        "han": "夾",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 229,
+        "han": "擽",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 230,
+        "han": "拈",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 232,
+        "han": "卵",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 233,
+        "han": "瀾",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 235,
+        "han": "蚵",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 236,
+        "han": "僫",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 237,
+        "han": "烏",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 238,
+        "han": "挖",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 239,
+        "han": "枋",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 240,
+        "han": "爸",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 241,
+        "han": "擘",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 242,
+        "han": "葩",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 244,
+        "han": "拍呃",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 245,
+        "han": "歹",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 246,
+        "han": "揹",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 248,
+        "han": "捀",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 249,
+        "han": "冇",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 252,
+        "han": "粕",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 253,
+        "han": "捧",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 254,
+        "han": "膨",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 256,
+        "han": "舖",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 257,
+        "han": "殕",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 258,
+        "han": "批",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 259,
+        "han": "呸",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 261,
+        "han": "觱",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 263,
+        "han": "摒",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 265,
+        "han": "撆",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 266,
+        "han": "反",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 267,
+        "han": "爿",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 268,
+        "han": "保庇",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 270,
+        "han": "磅",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 271,
+        "han": "埔",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 272,
+        "han": "脯",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 274,
+        "han": "菠",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 275,
+        "han": "掰",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 276,
+        "han": "培墓",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 278,
+        "han": "歕",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 280,
+        "han": "捒",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 281,
+        "han": "瘦",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 282,
+        "han": "散赤",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 283,
+        "han": "散食",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 284,
+        "han": "衫",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 285,
+        "han": "霎",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 286,
+        "han": "梢聲",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 287,
+        "han": "嗽",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 288,
+        "han": "細",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 291,
+        "han": "生成",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 293,
+        "han": "四界",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 295,
+        "han": "閃爍",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 299,
+        "han": "蟮",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 302,
+        "han": "唌",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 304,
+        "han": "數",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 306,
+        "han": "爍爁",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 309,
+        "han": "承",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 311,
+        "han": "小",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 314,
+        "han": "岫",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 316,
+        "han": "傷",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 317,
+        "han": "耍",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 318,
+        "han": "挲",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 321,
+        "han": "索",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 322,
+        "han": "軀",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 324,
+        "han": "紲",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 325,
+        "han": "煞",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 326,
+        "han": "漩",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 327,
+        "han": "璇石",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 329,
+        "han": "欶",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 331,
+        "han": "隨",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 332,
+        "han": "隨在",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 334,
+        "han": "焦",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 336,
+        "han": "代誌",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 337,
+        "han": "逐",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 338,
+        "han": "澹",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 339,
+        "han": "淡",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 340,
+        "han": "擲",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 341,
+        "han": "霆",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 342,
+        "han": "冬",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 347,
+        "han": "沓",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 348,
+        "han": "貯",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 349,
+        "han": "硩",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 350,
+        "han": "刣",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 353,
+        "han": "迵",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 354,
+        "han": "窒",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 358,
+        "han": "頭路",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 360,
+        "han": "提",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 362,
+        "han": "疼",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 364,
+        "han": "斟",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 365,
+        "han": "褪",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 366,
+        "han": "討債",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 367,
+        "han": "捅",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 368,
+        "han": "土",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 371,
+        "han": "挩",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 372,
+        "han": "屜",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 374,
+        "han": "箸",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 375,
+        "han": "佇",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 376,
+        "han": "踮",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 378,
+        "han": "埕",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 381,
+        "han": "牢",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 382,
+        "han": "抌",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 386,
+        "han": "亭",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 388,
+        "han": "滇",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 389,
+        "han": "趒",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 395,
+        "han": "搪",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 397,
+        "han": "佗位",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 401,
+        "han": "剁",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 402,
+        "han": "啄龜",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 403,
+        "han": "當做",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 404,
+        "han": "杜蚓",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 407,
+        "han": "查埔",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 408,
+        "han": "紮",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 410,
+        "han": "知",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 412,
+        "han": "欉",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 418,
+        "han": "濟",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 423,
+        "han": "青",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 424,
+        "han": "生份",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 430,
+        "han": "撨",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 431,
+        "han": "揤",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 432,
+        "han": "粟",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 435,
+        "han": "凊彩",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 437,
+        "han": "清芳",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 438,
+        "han": "擤",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 440,
+        "han": "鮮",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 442,
+        "han": "拭",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 445,
+        "han": "吮",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 449,
+        "han": "厝",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 450,
+        "han": "跙",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 453,
+        "han": "疶",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 454,
+        "han": "礤",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 455,
+        "han": "掣",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 457,
+        "han": "炊",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 458,
+        "han": "箠",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 460,
+        "han": "喙",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 461,
+        "han": "喙䫌",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 462,
+        "han": "賰",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 463,
+        "han": "糍",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 473,
+        "han": "誠",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 475,
+        "han": "唚",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 476,
+        "han": "斟酌",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 478,
+        "han": "櫼",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 479,
+        "han": "糋",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 480,
+        "han": "舐",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 483,
+        "han": "一",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 485,
+        "han": "螿蜍",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 486,
+        "han": "做伙",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 487,
+        "han": "作穡",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 489,
+        "han": "苴",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 490,
+        "han": "逝",
+        "stage": "no_existing_complete_phonetic_output"
+      },
+      {
+        "id": 493,
+        "han": "拄",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 494,
+        "han": "蹛",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 495,
+        "han": "肚",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 497,
+        "han": "盹龜",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 498,
+        "han": "揬",
+        "stage": "no_exact_source_Han_field"
+      },
+      {
+        "id": 499,
+        "han": "倚",
+        "stage": "eligibility_or_other_canonical_spelling"
+      },
+      {
+        "id": 504,
+        "han": "搵",
+        "stage": "no_existing_complete_phonetic_output"
+      }
+    ]
+  }
+}

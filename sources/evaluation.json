@@ -111,6 +111,53 @@
       ],
       "leakage": "GUM train/dev exports are not MinIME training data: they were newly acquired and frozen after mode design, before candidate outputs, for a first-use holdout. Now evaluated and not fresh for future changes. Taiwan.md was already audited and has possible Wikipedia lineage. Chinese reading resolution uses original McBopomofo annotations shared with the production lexicon, not decoder output; this limits independence. Dictionary probes are explicitly seen-source retrieval.",
       "limitations": "No accessible, permission-cleared Taiwan Mandarin conversation sample or independent Japanese/Taiwanese conversation/essay corpus was acquired. Chinese prose excludes unresolved or ambiguous reference readings and outside-window spans; counts are explicit. GUM input uses source-prefix words as accepted context. Coverage uses fully visible whole-input candidates and measured Android font/viewport sizes, not fixed top-N rank; timing uses a separate uncached phone test."
+    },
+    {
+      "id": "moe-taiwanese-basic-han-20260909",
+      "source_ids": [
+        "moe-dictionaries"
+      ],
+      "genre": [
+        "beginner-vocabulary"
+      ],
+      "role": "audit",
+      "exposure": "inspected",
+      "selection": "All 504 numbered headwords from pinned MOE beginner handout; complete inventory frozen before sidecar change.",
+      "files": [
+        "docs/taiwanese-coverage/basic-headwords.json"
+      ],
+      "report_by": [
+        "source",
+        "genre",
+        "Han-availability",
+        "reading-availability"
+      ],
+      "leakage": "Previously unseen handout now inspected for extraction. It shares editorial lineage with Taiwan dictionaries; no independent language-accuracy or spelling-consensus claim. No handout data enters production.",
+      "limitations": "Printed romanization has damaged PDF extraction and is not gold. Han inventory tests spelling presence, not sense or dialect correctness; duplicate spellings are retained by numbered item."
+    },
+    {
+      "id": "taiwanese-basic-pair-retrieval-20260909",
+      "source_ids": [
+        "taiwanese-basic"
+      ],
+      "genre": [
+        "beginner-vocabulary"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "Every shipped authored beginner headword/variant, shortest tone-free source alias, complete/prefix/initial input. Frozen 15,489 queries for 5,163 outputs.",
+      "files": [
+        "docs/taiwanese-coverage/retrieval-inputs.tsv"
+      ],
+      "report_by": [
+        "source",
+        "genre",
+        "input-condition",
+        "rank",
+        "Han-availability"
+      ],
+      "leakage": "Targets and keys are from the existing production source; this verifies retrieval and paired metadata, not language accuracy or new independent holdout coverage.",
+      "limitations": "Does not measure sense correctness, spontaneous conversation, dialect coverage or spelling consensus. Rank is within the bounded optional dictionary results, not pixel visibility."
     }
   ]
 }

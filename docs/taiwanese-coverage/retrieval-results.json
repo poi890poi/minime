@@ -1,0 +1,44 @@
+{
+  "baseline": {
+    "full": {
+      "queries": 5163,
+      "retrieved": 5163,
+      "paired": 258,
+      "first_three_paired": 254
+    },
+    "prefix": {
+      "queries": 5163,
+      "retrieved": 2893,
+      "paired": 117,
+      "first_three_paired": 52
+    },
+    "initials": {
+      "queries": 5163,
+      "retrieved": 1792,
+      "paired": 63,
+      "first_three_paired": 28
+    }
+  },
+  "current": {
+    "full": {
+      "queries": 5163,
+      "retrieved": 5163,
+      "paired": 3009,
+      "first_three_paired": 2962
+    },
+    "prefix": {
+      "queries": 5163,
+      "retrieved": 2893,
+      "paired": 1385,
+      "first_three_paired": 631
+    },
+    "initials": {
+      "queries": 5163,
+      "retrieved": 1792,
+      "paired": 602,
+      "first_three_paired": 265
+    }
+  },
+  "rank_parity_queries": 15489,
+  "native_matches_071": true
+}

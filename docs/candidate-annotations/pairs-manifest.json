@@ -1,25 +1,39 @@
 {
-  "format": 1,
-  "pairs": 9385,
+  "format": 2,
+  "pairs": 12346,
+  "existing_poj_outputs": 20274,
+  "beginner_headword_outputs": 5163,
+  "legacy_pairs_preserved": 9385,
+  "basic_pairs_outside_mandarin_familiarity": 357,
+  "pairs_by_source": {
+    "itaigi": 9496,
+    "taihoa": 2850
+  },
   "existing_itaigi_outputs": 15188,
   "familiar_characters": 2641,
   "minimum_character_occurrence": 212.0,
   "familiar_occurrence_fraction": 0.9900230203120364,
   "excluded": {
-    "not_single_all_Han_form": 849,
-    "outside_familiar_character_set": 5812
+    "itaigi:not_single_all_Han_form": 866,
+    "itaigi:outside_familiar_and_basic_vocabulary": 5795,
+    "taihoa:not_single_all_Han_form": 1693,
+    "taihoa:outside_familiar_and_basic_vocabulary": 1607
   },
-  "multi_example_readings": 683,
+  "multi_example_readings": 3680,
   "inputs": {
     "third_party/itaigi/itaigi.csv": "eec28ed3fec522b72a70257c6d6d454f4f710d0ad6d63a07994a6354a4f0d3b4",
     "third_party/mcbopomofo/phrase.occ": "0fc51c5245a8820e1003e3fa3fb2759b0d1b502a71da81bbfa265e9ac6c9fb5a",
-    "app/src/main/assets/addons.tsv": "57f4669a9f30fb2f552d31781807426321ec685797f341689b03f3b74376dab0"
+    "app/src/main/assets/addons.tsv": "57f4669a9f30fb2f552d31781807426321ec685797f341689b03f3b74376dab0",
+    "third_party/taihoa/taihoa.csv": "e557d5f3b3b7fb902b3c8e72f2c3ff2da4140cffa5c8af8a5ac869e8d67e8bd2",
+    "third_party/taiwanese_basic/vocabulary.csv": "16e9c0e20b08a6e46eeb3c49f8181f4973c1bd4a36a2bb6adf40eef39ab8c6a5"
   },
-  "sha256": "6186ebba2c4bbf6f79e88a54e337f3559898b95c0f00e1868da8b798dabff82e",
-  "policy": "99% single-Han occurrence mass, all boundary ties; valid source-owned POJ/Han pairs only; one form per complete phonetic output.",
-  "limitations": "Written Taiwan Mandarin familiarity proxy; not Taiwanese spelling popularity, semantic disambiguation or community consensus. No beginner-example homophone joins.",
+  "sha256": "12f56cf26dce392df810a1b8db8fa9c8f9a58b415ba1e6da0b7f566da09cf439",
+  "policy": "Source-owned iTaigi/Taihoa pairs for existing POJ outputs. Preserve original iTaigi tier; permit authored beginner headwords despite Mandarin frequency cutoff; otherwise retain 99% single-Han mass policy. One canonical form per complete phonetic output.",
+  "limitations": "Mandarin occurrence is a familiarity preference, not Taiwanese spelling popularity or consensus. Basic headword membership does not establish spelling agreement. Canonical source example may represent a different sense of the same complete reading; no fragment joins or guessed alternate-reading pairings.",
   "licences": {
     "itaigi": "CC0-1.0",
-    "mcbopomofo": "MIT"
+    "mcbopomofo": "MIT",
+    "taihoa": "CC-BY-SA-4.0",
+    "taiwanese-basic": "CC-BY-SA-4.0"
   }
 }

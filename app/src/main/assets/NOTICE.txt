@@ -3557,3 +3557,5 @@ separately licensed. Changes are filtering, normalization, aliases, dictionary-u
 reading derivation and packaging. Personal learning remains separate and local.
 
 Taiwanese paired forms (paired-forms.tsv): iTaigi POJ / HanLo records (CC0-1.0), filtered using McBopomofo phrase.occ (MIT). Existing source pins and licenses above apply. Reproduction and limitations: tools/compile_paired_forms.py and docs/candidate-annotations/IMPLEMENTATION.md. No MOE-derived forms imported.
+
+Taiwanese Han coverage extension (paired-forms.tsv): 台華線頂對照典, foundation by 鄭良偉, additions/editing by 楊允言 and transcription/proofreading volunteers, via ChhoeTaigi pinned b33c6a1fcc2d11a2962e76b6055d528d11677c3b. CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ . Original data, source identity, selection changes and attribution: third_party/taihoa/README.md and docs/taiwanese-coverage/PLAN.md. Derived Taihoa pairs retain CC BY-SA 4.0. Beginner headword eligibility uses the already attributed 台灣白話基礎語句 source. No MOE handout content is imported.
