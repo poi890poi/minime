@@ -244,11 +244,11 @@
     },
     "app/src/main/assets/paired-forms.tsv": {
       "source": "paired-taiwanese",
-      "sha256": "c3c53b5f56c8c541df641f808187fdb980ede098cc7a36081a667a6a481f864f"
+      "sha256": "e5e6b29e35a829da7d5cb31135fa8ec33cb1a6e2394f8bea0f2103fa006799a3"
     },
     "docs/candidate-annotations/pairs-manifest.json": {
       "source": "paired-taiwanese",
-      "sha256": "abf0879d2bcc931f1425c8f1a74aea148b4cbe0d69e02c1909ac521b2d7b709f"
+      "sha256": "e2a6ecd006b7dbd6cac262797bf00d2881e6924aa4ad859c4e02d5825840d212"
     },
     "third_party/taihoa/taihoa.csv": {
       "source": "taihoa",
@@ -281,12 +281,12 @@
       "sha256": "2fc74af91b38663a7589d3ba548ed1a10020f46a7335eb0054b15bd8b7247926"
     },
     "itaigi": {
-      "rows": 35405,
-      "sha256": "f3d4f7ccabad00ea58dfd9e3bedd8940a851802c5cc7d0f4f719eefef9858e19"
+      "rows": 39714,
+      "sha256": "a7188f989e79e164b861d8d47b9bf46e4498129d0883879aa68318d9b356387a"
     },
     "taiwanese-basic": {
-      "rows": 11454,
-      "sha256": "0f2bc6dc96f501ab1bc48a1ab461f217741aa62d66528638a9900ca7ea012507"
+      "rows": 11481,
+      "sha256": "39521b4ae6844ac32b6719bca7d8439ce6466df9ea52bdfd65a6176648d0cddb"
     },
     "taihoa": {
       "rows": 192936,
@@ -306,6 +306,7 @@
     }
   },
   "audit_evidence": {
+    "docs/poj-tones/PLAN.md": "adb0c4023dce426c215fbc0d6e5df7217060a599ad5ba132635017c1ae151b85",
     "docs/japanese-coverage/PLAN.md": "773f17fe3b4a1262833d9a887f2551d2df83bba85ec4b0f910a5bd5ca7acd0ba",
     "docs/japanese-output/RESULTS.md": "3db6eec35cd9dcaae7d6d9c1576d7597c030ec18db434dcbc6f943d2f08315ea",
     "docs/sources/audit-2026-09-08/artifacts.json": "e17a9b2b4c00803276a801eff540f603547acfbcd1e3aa90b1fdda6f141f3379",
@@ -321,7 +322,7 @@
     "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz": "67741d407f0184a6aeb2ecded1123570b02e5fc080584490b683024c65bd329f"
   },
   "evaluation": {
-    "sources/evaluation.json": "620230899b8050bf4c8a70303e77dc1c893181b99e73d7542aedd189f4a4c847",
+    "sources/evaluation.json": "f7dd23227055af7f7e39d2a8708639e99c1366b78b189449f80ee50fd174c4de",
     "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz": "67741d407f0184a6aeb2ecded1123570b02e5fc080584490b683024c65bd329f",
     "docs/sources/audit-2026-09-08/sample-records.json.gz": "07fcdf332972d286db63b33149ed021dcdea43ce08371c3d78245b0e6ff56bfb",
     "docs/conversation-ranking/corpus/gum-manifest.json": "b7b3abbc303d4ca20b1a65dc92dd305cd1082c660561016f4de2099d207f2529",
@@ -339,6 +340,9 @@
     "docs/japanese-coverage/inputs.tsv": "5ed0f522d1ad723817e78dc312ba07ef8434c6f0d3d33e084be830e95b5c3440",
     "docs/japanese-coverage/inputs-manifest.json": "ff271c894b92048b0a123753f164976a9de3b5f16d0b102a4f81a85e81b60554",
     "docs/two-language-modes/taihoa-inputs.tsv": "39053e7a81270b3f360d1c99d15a48e40060046e0e8f84c52a57fb7d73b4d260",
-    "docs/two-language-modes/source-audit.json": "4c7cc01d4fb66a9cd6700fb33f558ad1b10b91176c74b840ddbf2922b267b10c"
+    "docs/two-language-modes/source-audit.json": "4c7cc01d4fb66a9cd6700fb33f558ad1b10b91176c74b840ddbf2922b267b10c",
+    "docs/poj-tones/targets.tsv.gz": "3b5d24dac3bef1f480cdc079a01783834ba5d1ceed59e11db00ada5167de6b04",
+    "docs/poj-tones/probes.tsv.gz": "b9f9af34e673493654232fa6bcd83ac58cf140c1698c1a584f991d929be7c979",
+    "docs/poj-tones/partial-probes.tsv.gz": "026f31b526659ca1f23fd7a43955a94b5e086ed6b78efe0d72f547e63cc945a0"
   }
 }

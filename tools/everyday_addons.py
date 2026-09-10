@@ -1,14 +1,9 @@
 """Source-defined everyday vocabulary. No phrase/name lists or evaluation inputs."""
 from pathlib import Path
+from poj_readings import letters as poj_letters, variants as poj_variants
 import csv, json, re, subprocess, tarfile, unicodedata
 
 ROOT = Path(__file__).resolve().parent.parent
-
-def poj_letters(value):
-    # A tone mark can sit between o and its combining dot in NFD order.
-    value = unicodedata.normalize('NFD', value.lower()).replace('\u0358', 'o').replace('ⁿ', 'nn')
-    value = ''.join(c for c in value if not unicodedata.combining(c))
-    return value if re.fullmatch('[a-z -]+', value) else None
 
 def short_poj(value):
     return bool(value) and len(re.split('[- ]+', value)) <= 6 and len(value) <= 64
@@ -21,19 +16,10 @@ def append_everyday(add, skipped):
     accepted = set()
     for item in entries:
         source = 'taiwanese-basic:' + item['DictWordID']
-        for suffix in ('', 'Others'):
-            keys = item['PojInput' + suffix].split('/')
-            outputs = item['PojUnicode' + suffix].split('/')
-            if len(keys) != len(outputs):
-                skipped.append([source, suffix, 'unaligned source variants']); continue
-            for key, output in zip(keys, outputs):
-                key = key.strip().lower(); output = unicodedata.normalize('NFC', output.strip())
-                if not key: continue
-                if not re.fullmatch('[a-z0-9 -]+', key) or len(key)>96 or len(output)>96:
-                    skipped.append([source, output, 'unsupported or long beginner headword']); continue
-                for alias in (key, re.sub('[1-9]', '', key)):
-                    add('poj', alias, output, source, 'everyday_vocabulary')
-                accepted.add(output)
+        for aliases, output in poj_variants(item, source, skipped):
+            for alias in aliases:
+                add('poj', alias, output, source, 'everyday_vocabulary')
+            accepted.add(output)
         # Complete short examples only. No splitting sentences into guessed phrases.
         for example in item['LekuPoj'].split('/'):
             output = unicodedata.normalize('NFC', example.strip().rstrip('.!?'))

@@ -7,6 +7,7 @@ from pathlib import Path
 import csv, gzip, hashlib, json, re, tarfile, unicodedata, subprocess
 from collections import Counter, defaultdict
 from everyday_addons import append_everyday
+from poj_readings import variants as poj_variants
 from taiwan_entities import append_entities
 from sources import require_sources
 require_sources('cedict','wikidata','taiwan-encyclopedia','opencc-python','itaigi','taihoa','taiwanese-basic','jmdict','jmnedict','wanakana')
@@ -83,11 +84,10 @@ for line in (ROOT/'third_party/mcbopomofo/phrase.occ').read_text(encoding='utf-8
     parts=line.split()
     if len(parts)==2:frequency[parts[0]]=float(parts[1])
 for item in csv.DictReader((ROOT/'third_party/itaigi/itaigi.csv').open(encoding='utf-8-sig')):
-    meaning=item['HoaBun'];key=item['PojInput'].lower()
-    if not re.fullmatch('[a-z0-9 -]+',key) or len(key)>96:continue
-    output=unicodedata.normalize('NFC',item['PojUnicode']);source='itaigi:'+item['DictWordID']
-    for alias in (key,re.sub('[1-9]','',key)):add('poj',alias,output,source,'short_vocabulary')
-    provenance.append({'source':source,'meaning':meaning,'input':key,'output':output,'orthography':'POJ','contributor':item['DataProvidedBy'],'Mandarin_source_frequency':frequency.get(meaning,0)})
+    meaning=item['HoaBun'];source='itaigi:'+item['DictWordID']
+    for aliases,output in poj_variants(item,source,skipped):
+        for alias in aliases:add('poj',alias,output,source,'short_vocabulary')
+        provenance.append({'source':source,'meaning':meaning,'input':item['PojInput'].lower(),'output':output,'orthography':'POJ','contributor':item['DataProvidedBy'],'Mandarin_source_frequency':frequency.get(meaning,0)})
 
 # Existing MIT-licensed WanaKana provides build-time Romanization.
 with tarfile.open(ROOT/'third_party/jmnedict/jmnedict.json.tgz') as archive:
@@ -110,15 +110,8 @@ taihoa_records = 0
 for item in csv.DictReader((ROOT/'third_party/taihoa/taihoa.csv').open(encoding='utf-8-sig')):
     taihoa_records += 1
     source='taihoa:'+item['DictWordID']
-    for suffix in ('','Others'):
-        keys=item['PojInput'+suffix].split('/');outputs=item['PojUnicode'+suffix].split('/')
-        if len(keys)!=len(outputs):skipped.append([source,suffix,'unaligned source variants']);continue
-        for key,output in zip(keys,outputs):
-            key=key.strip().lower();output=unicodedata.normalize('NFC',output.strip())
-            if not key:continue
-            if not re.fullmatch('[a-z0-9 -]+',key) or not output or len(key)>96 or len(output)>96:
-                skipped.append([source,output,'unsupported or exceeds composition limit']);continue
-            for alias in (key,re.sub('[1-9]','',key)):add('poj',alias,output,source,'extended_vocabulary')
+    for aliases,output in poj_variants(item,source,skipped):
+        for alias in aliases:add('poj',alias,output,source,'extended_vocabulary')
 everyday = append_everyday(add, skipped)
 everyday['taihoa_source_records']=taihoa_records
 encyclopedia = append_entities(add, readings, syllables)

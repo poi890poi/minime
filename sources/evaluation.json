@@ -4,37 +4,92 @@
   "corpora": [
     {
       "id": "taiwan-md-essay-audit-20260908",
-      "source_ids": ["taiwan-md"],
-      "genre": ["essay"],
+      "source_ids": [
+        "taiwan-md"
+      ],
+      "genre": [
+        "essay"
+      ],
       "role": "audit",
       "exposure": "inspected",
       "selection": "Eight hash-selected articles per topical folder at pinned commit; 104 topical samples. sample-records also contains About/resources and Kemdict evidence, which the source/category selector must exclude.",
-      "files": ["docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz", "docs/sources/audit-2026-09-08/sample-records.json.gz"],
-      "report_by": ["source", "genre", "category", "input-mode", "imprecision"],
+      "files": [
+        "docs/sources/audit-2026-09-08/taiwan-md-sample-plan.json.gz",
+        "docs/sources/audit-2026-09-08/sample-records.json.gz"
+      ],
+      "report_by": [
+        "source",
+        "genre",
+        "category",
+        "input-mode",
+        "imprecision"
+      ],
       "leakage": "Already inspected for source quality. Not an unseen holdout. No production extraction from these artifacts. Before ranking evaluation, measure overlap with production sources by document and normalized passage; copied/rephrased Wikipedia content requires lineage review.",
       "limitations": "Audit-ready prose, not yet annotated IME targets. Useful for terminology, names, longer phrasing and punctuation. Human review status varies. Do not infer conversational frequency, generate gold readings from the decoder under test, or call filename membership typing accuracy."
     },
     {
       "id": "gum-existing-regression",
-      "source_ids": ["ud-gum-evaluation"],
-      "genre": ["academic", "bio", "conversation", "court", "essay", "fiction", "interview", "letter", "news", "podcast", "speech", "textbook", "vlog", "voyage", "whow"],
+      "source_ids": [
+        "ud-gum-evaluation"
+      ],
+      "genre": [
+        "academic",
+        "bio",
+        "conversation",
+        "court",
+        "essay",
+        "fiction",
+        "interview",
+        "letter",
+        "news",
+        "podcast",
+        "speech",
+        "textbook",
+        "vlog",
+        "voyage",
+        "whow"
+      ],
       "role": "regression",
       "exposure": "previously-evaluated",
       "selection": "Reuse the pinned GUM test export and existing per-row genre labels; 1,285 rows. Retain its source manifest rather than re-extracting a favorable sample.",
-      "files": ["docs/conversation-ranking/corpus/gum-manifest.json", "docs/conversation-ranking/corpus/gum-test.tsv"],
-      "report_by": ["source", "genre", "input-mode", "imprecision"],
+      "files": [
+        "docs/conversation-ranking/corpus/gum-manifest.json",
+        "docs/conversation-ranking/corpus/gum-test.tsv"
+      ],
+      "report_by": [
+        "source",
+        "genre",
+        "input-mode",
+        "imprecision"
+      ],
       "leakage": "Previously evaluated during vocabulary changes; suitable for regression, not fresh generalization claims. No GUM data enters context training. Recheck text overlap if future production sources change.",
       "limitations": "English only. The 193 conversation rows and 60 essay rows are separate denominators. A typed reconstruction of spoken dialogue is not recorded touchscreen behavior. Source rights remain governed by the original corpus notices."
     },
     {
       "id": "legacy-mixed-regression",
-      "source_ids": ["ud-context", "moe-dictionaries"],
-      "genre": ["web-mixed", "encyclopedic", "glyph-reference"],
+      "source_ids": [
+        "ud-context",
+        "moe-dictionaries"
+      ],
+      "genre": [
+        "web-mixed",
+        "encyclopedic",
+        "glyph-reference"
+      ],
       "role": "regression",
       "exposure": "previously-evaluated",
       "selection": "Existing 13,014-row core corpus; preserve en-dev/en-test, zh-dev/zh-test and moe-glyph labels from its detailed manifest.",
-      "files": ["docs/conversation-ranking/corpus/manifest.json", "docs/conversation-ranking/corpus/inputs.tsv"],
-      "report_by": ["source", "genre", "original-split", "input-mode", "imprecision"],
+      "files": [
+        "docs/conversation-ranking/corpus/manifest.json",
+        "docs/conversation-ranking/corpus/inputs.tsv"
+      ],
+      "report_by": [
+        "source",
+        "genre",
+        "original-split",
+        "input-mode",
+        "imprecision"
+      ],
       "leakage": "Context training uses separate upstream train splits, but these development/test rows have already informed regression work. Do not market them as unseen. Shared upstream source lineage also limits independence.",
       "limitations": "The historical folder name conversation-ranking does not make Chinese Wikipedia-derived spans natural conversation. Glyph reference probes and derived phonetic queries are not sentence-level accuracy. No Taiwan conversational representativeness is established."
     },
@@ -209,6 +264,34 @@
       ],
       "leakage": "Production-source targets measure source retrieval only; not independent conversation or essay accuracy.",
       "limitations": "No lexical frequency, sense, spontaneous conversation, spelling consensus or grammar evaluation. Query variants remain grouped by source ID."
+    },
+    {
+      "id": "poj-import-recovery-20260910",
+      "source_ids": [
+        "itaigi",
+        "taihoa",
+        "taiwanese-basic"
+      ],
+      "genre": [
+        "dictionary-headwords",
+        "beginner-expressions"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "All 1555 recovered spellings under complete tone-free input, plus SHA256(query) first 8 hex digits modulo 128 controls. Half-reading probes use fixed modulo 8 selection. Full source union inventory is exhaustive; runtime probes are bounded and frozen before ranks.",
+      "files": [
+        "docs/poj-tones/targets.tsv.gz",
+        "docs/poj-tones/probes.tsv.gz",
+        "docs/poj-tones/partial-probes.tsv.gz"
+      ],
+      "report_by": [
+        "source-category",
+        "genre",
+        "input-condition",
+        "retrieval-rank"
+      ],
+      "leakage": "Targets and aliases share production sources. Not independent language accuracy or a fresh holdout.",
+      "limitations": "Commonness, dialect coverage, modern conversation and intended sense are not measured. Five formerly reachable partial targets are displaced by recovered entries."
     }
   ]
 }

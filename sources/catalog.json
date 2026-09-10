@@ -115,9 +115,12 @@
       "editorial": "Community contributions retain contributor IDs and original POJ fields.",
       "coverage": "19,046 source records in pinned dataset description; compiled counts in existing manifest.",
       "limitations": "Contributor quality varies; source spelling and contributors are retained. No Mandarin gloss eligibility gate.",
-      "reason": "Retain original POJ and source attribution.",
+      "reason": "Retain original POJ and source attribution. Recover all aligned slash-separated POJ readings and supported Unicode-input spellings through a shared parser; preserve source tones and numeric aliases.",
       "addon_prefixes": [
         "itaigi:"
+      ],
+      "audit_files": [
+        "docs/poj-tones/PLAN.md"
       ]
     },
     {
@@ -144,9 +147,12 @@
       "editorial": "Digitized authored beginner vocabulary, retaining source variants.",
       "coverage": "5,429 source records; current short-expression import is narrower.",
       "limitations": "Historical 1956 vocabulary is not a modern frequency sample.",
-      "reason": "Retain POJ; do not infer modern popularity.",
+      "reason": "Retain POJ; do not infer modern popularity. Recover all aligned slash-separated POJ readings and supported Unicode-input spellings through a shared parser; preserve source tones and numeric aliases.",
       "addon_prefixes": [
         "taiwanese-basic:"
+      ],
+      "audit_files": [
+        "docs/poj-tones/PLAN.md"
       ]
     },
     {
@@ -772,9 +778,12 @@
       "editorial": "Taiwan-authored 鄭良偉 foundation, expanded and edited by 楊允言 and transcription/proofreading volunteers; original POJ/HanLo fields.",
       "coverage": "All syntactically supported headwords and aligned POJ variants within the 96-character composition limit, plus source-attested Han alternatives. 91,339 records at unchanged pin.",
       "limitations": "Dictionary breadth is not typing frequency or spelling consensus. Homophones have multiple senses; canonical form is one pronunciation example. No guessed alternate-reading pairing.",
-      "reason": "Dedicated Taiwanese mode needs an extensive authored dictionary; import original headwords and aligned variants without Mandarin gloss, length-in-syllables or frequency eligibility gates.",
+      "reason": "Dedicated Taiwanese mode needs an extensive authored dictionary; import original headwords and aligned variants without Mandarin gloss, length-in-syllables or frequency eligibility gates. Recover all aligned slash-separated POJ readings and supported Unicode-input spellings through a shared parser; preserve source tones and numeric aliases.",
       "addon_prefixes": [
         "taihoa:"
+      ],
+      "audit_files": [
+        "docs/poj-tones/PLAN.md"
       ]
     },
     {
