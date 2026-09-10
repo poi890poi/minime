@@ -11,13 +11,10 @@ G=KIT/'graphics';G.mkdir(parents=True,exist_ok=True)
 TEAL='#006765';INK='#153e3c';CREAM='#f3f5ed'
 FONT=Path('C:/Windows/Fonts')
 def font(size,bold=False,cjk=False):return ImageFont.truetype(str(FONT/('msjhbd.ttc' if bold and cjk else 'msjh.ttc' if cjk else 'segoeuib.ttf' if bold else 'segoeui.ttf')),size)
-# Export the exact 48-unit Android vector geometry, without baked corner mask.
-s=4;im=Image.new('RGBA',(512*s,512*s),TEAL);d=ImageDraw.Draw(im)
-points=[(round(x/48*512*s),round(y/48*512*s)) for x,y in [(11,33),(11,15),(24,27),(37,15),(37,33)]]
-w=round(4/48*512*s);d.line(points,fill='white',width=w,joint='curve')
-for x,y in (points[0],points[-1]):d.ellipse((x-w/2,y-w/2,x+w/2,y+w/2),fill='white')
-im.resize((512,512),Image.Resampling.LANCZOS).save(G/'icon-512.png')
-(G/'icon.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 48 48"><path fill="#006765" d="M0 0h48v48h-48z"/><path fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" d="M11 33V15L24 27L37 15V33"/></svg>\n',encoding='utf-8')
+# Shared approved artwork. Store output stays square; Play supplies its mask.
+from icon_art import render as render_icon, svg as icon_svg, svg_paths
+render_icon(512,'square').save(G/'icon-512.png')
+(G/'icon.svg').write_text(icon_svg('square'),encoding='utf-8')
 for locale,tag in [('en-US','Your words. Your keyboard.'),('zh-TW','自己的話，自己的鍵盤。')]:
  im=Image.new('RGB',(1024,500),CREAM);d=ImageDraw.Draw(im)
  d.ellipse((900,-140,1280,240),fill='#d7e7df');d.ellipse((-180,395,160,735),fill='#d7e7df')
@@ -25,11 +22,8 @@ for locale,tag in [('en-US','Your words. Your keyboard.'),('zh-TW','自己的話
  d.text((92,229),tag,font=font(30,cjk=locale=='zh-TW'),fill=INK)
  d.text((92,319),'中文 · English · 台語 · 日本語',font=font(24,cjk=True),fill=TEAL)
  svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">',f'<rect width="1024" height="500" fill="{CREAM}"/>','<circle cx="1090" cy="50" r="190" fill="#d7e7df"/><circle cx="-10" cy="565" r="170" fill="#d7e7df"/>',f'<text x="88" y="190" font-family="Segoe UI" font-weight="700" font-size="76" fill="{TEAL}">MinIME</text>',f'<text x="92" y="265" font-family="Segoe UI,Microsoft JhengHei" font-size="30" fill="{INK}">{html.escape(tag)}</text>',f'<text x="92" y="347" font-family="Microsoft JhengHei" font-size="24" fill="{TEAL}">中文 · English · 台語 · 日本語</text>']
- for i,label in enumerate(['中','A','台','あ']):
-  x=690+(i%2)*116;y=135+(i//2)*116;bg=TEAL if i==0 else '#dce9e2';fg='white' if i==0 else TEAL
-  d.rounded_rectangle((x,y,x+96,y+96),radius=22,fill=bg)
-  d.text((x+48,y+46),label,font=font(43,True,True),fill=fg,anchor='mm')
-  svg.append(f'<rect x="{x}" y="{y}" width="96" height="96" rx="22" fill="{bg}"/><text x="{x+48}" y="{y+64}" text-anchor="middle" font-family="Microsoft JhengHei" font-size="43" font-weight="700" fill="{fg}">{label}</text>')
+ mark=render_icon(310,None);im.paste(mark,(651,86),mark)
+ svg.append('<g transform="translate(651 86) scale(6.4583333333)">'+svg_paths()+'</g>')
  im.save(G/('feature-'+locale+'.png'));(G/('feature-'+locale+'.svg')).write_text(''.join(svg)+'</svg>\n',encoding='utf-8')
 # Copy-ready listing fields, no Markdown headings or developer placeholders.
 source=(ROOT/'docs/play-publishing/STORE-LISTING.md').read_text(encoding='utf-8')

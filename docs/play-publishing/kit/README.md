@@ -42,8 +42,8 @@ The existing local AAB is a preparation artifact and must not be uploaded as-is.
 
 ## Provenance and reuse
 
-Brand: MinIME (minimal + IME, and mini-me). The icon retains the existing Android
-vector geometry and teal color. Feature graphics are original typographic/vector
+Brand: MinIME (minimal + IME, and mini-me). The icon uses the approved bamboo-leaf farmer hat and
+smiling face, inspired by 台, in the original deep teal #006765. Feature graphics use the same original artwork with typographic/vector
 artwork, with no Google assets, fake UI, store badges or ranking claims. Fonts are
 rendered using Segoe UI and Microsoft JhengHei; font binaries are not distributed.
 Editable SVG rendering may vary if these fonts are unavailable.
