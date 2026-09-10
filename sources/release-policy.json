@@ -1,0 +1,14 @@
+{
+  "format": 1,
+  "scope": "Google Play release clearance; separate from source editorial quality",
+  "open_items": [
+    {
+      "id": "ud-underlying-text-rights",
+      "source_id": "ud-context",
+      "status": "review-required",
+      "affected_assets": ["context.tsv", "en_spelling.tsv", "model.bin"],
+      "evidence": "third_party/ud/UD_English-EWT/README.md",
+      "resolution": "Document a rights decision for the exact derived outputs, obtain permission, or replace the source with a separately evaluated licensed source. Do not clear this item merely because compilation passes."
+    }
+  ]
+}

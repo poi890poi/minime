@@ -1,3 +1,12 @@
+MinIME
+Copyright 2026 MinIME contributors.
+
+Original MinIME code is licensed under Apache-2.0. Third-party code, language
+data and evaluation materials retain their own licences. See LICENSING.md,
+third_party/, sources/catalog.json and the notices available in the app.
+MinIME is independently developed and is not a Google product.
+
+--- Third-party notices ---
 MIT License
 
 Copyright (c) 2011-2026 Mengjuei Hsieh et al.
@@ -3521,28 +3530,29 @@ Title readings marked +cedict:derived use unambiguous dictionary units. Ambiguou
 readings are omitted for review. These bounded snapshots are not popularity lists.
 No definitions, lyrics, article prose, routes or photographs are bundled.
 
-Japanese · 62,547 indexed outputs, including Romanized raw spelling
+Japanese · 40,942 indexed kana/Kanji outputs; Romanization is input only
 JMdict and JMnedict, Electronic Dictionary Research and Development Group, started by Jim
 Breen; used in conformance with the Group's licence, CC BY-SA 4.0.
 https://www.edrdg.org/edrdg/licence.html
 JSON source: scriptin/jmdict-simplified, pinned release in source-manifest.json.
 https://github.com/scriptin/jmdict-simplified
-All source-common vocabulary uses JMdict common readings and compatible
-common spellings across parts of speech. JMnedict supplies works, creative professions and Taiwan-related
+Common vocabulary across parts of speech uses JMdict common readings and
+compatible common spellings. JMnedict supplies works, creative professions and Taiwan-related
 names. No entity allowlist or geographic restriction on everyday vocabulary.
 WanaKana 5.3.1 (MIT) supplies build-time Romanized
 aliases. Unsupported aliases are reported. This is not a Japanese sentence IME.
 https://github.com/WaniKani/WanaKana
 
-Taiwanese POJ · 20,274 short expressions
+Taiwanese POJ · 81,844 distinct source spellings; 51,421 Han examples
 iTaigi contributors via ChhoeTaigi/ChhoeTaigiDatabase, CC0.
 https://itaigi.tw/
 https://github.com/ChhoeTaigi/ChhoeTaigiDatabase
 Original PojUnicode/PojInput fields preserve the entire Pe̍h-ōe-jī system, including
 tones, ch/chh, oe/oa, o͘ and ⁿ. There is no Tâi-lô ts-to-ch conversion. Source keys
 encode o͘ as oo and ⁿ as nn. Letter-board aliases omit tones and separators.
-All iTaigi expressions with 2–6 Han Mandarin labels and at most six POJ syllables
-are selected. Mandarin frequency does not exclude everyday expressions.
+Supported iTaigi and Taihoa headwords and aligned variants are imported without
+Mandarin-gloss length or syllable-count gates, within the shared 96-character limit.
+Plain input aliases are derived from source spelling; no tone variants are invented.
 Beginner vocabulary and complete short examples also come from the 1956
 A Basic Vocabulary for a Beginner in Taiwanese, CC BY-SA 4.0, via ChhoeTaigi.
 Authors: Ko Chek-hoàn (高積煥), Tân Pang-tìn (陳邦鎮). Digitization/editing:
@@ -3551,30 +3561,21 @@ All compatible headwords, aligned variants and complete examples up to six
 syllables are eligible. Terminal example punctuation is omitted. This historical
 source contains dated vocabulary; inclusion does not establish modern popularity.
 
-Wikipedia/CC-CEDICT/JMdict/JMnedict/beginner-derived data remains CC BY-SA 4.0; CC0 data retains
+Taihoa / 台華線頂對照典, via ChhoeTaigi at pinned revision
+b33c6a1fcc2d11a2962e76b6055d528d11677c3b, CC BY-SA 4.0.
+Foundation: Tēⁿ Liông-úi (鄭良偉). Additions and editing: Iûⁿ Ún-giân (楊允言)
+and transcription/proofreading volunteers. Original POJ readings and supported
+source variants supply vocabulary; source Han forms supply paired alternatives.
+https://github.com/ChhoeTaigi/ChhoeTaigiDatabase
+
+Single kana and common kanji: WanaKana supplies both kana scripts and input aliases.
+KANJIDIC2, James William Breen / EDRDG, CC BY-SA 4.0, supplies frequency-ranked
+kanji and Japanese on/kun readings. Source ranks 1–500 determine eligibility;
+newspaper frequency does not establish conversational frequency.
+https://www.edrdg.org/edrdg/licence.html
+https://www.edrdg.org/kanjidic/kanjidic2_ov_legacy.html
+
+Wikipedia/CC-CEDICT/JMdict/JMnedict/KANJIDIC2/Taihoa/beginner-derived data remains CC BY-SA 4.0; CC0 data retains
 its public-domain dedication. Geography data remains ODbL. Code and datasets are
 separately licensed. Changes are filtering, normalization, aliases, dictionary-unit
 reading derivation and packaging. Personal learning remains separate and local.
-
-Taiwanese paired forms (paired-forms.tsv): iTaigi POJ / HanLo records (CC0-1.0), filtered using McBopomofo phrase.occ (MIT). Existing source pins and licenses above apply. Reproduction and limitations: tools/compile_paired_forms.py and docs/candidate-annotations/IMPLEMENTATION.md. No MOE-derived forms imported.
-
-Taiwanese Han coverage extension (paired-forms.tsv): 台華線頂對照典, foundation by 鄭良偉, additions/editing by 楊允言 and transcription/proofreading volunteers, via ChhoeTaigi pinned b33c6a1fcc2d11a2962e76b6055d528d11677c3b. CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ . Original data, source identity, selection changes and attribution: third_party/taihoa/README.md and docs/taiwanese-coverage/PLAN.md. Derived Taihoa pairs retain CC BY-SA 4.0. Beginner headword eligibility uses the already attributed 台灣白話基礎語句 source. No MOE handout content is imported.
-
-Japanese basic expansion: all source-common JMdict readings and compatible common
-spellings across parts of speech, not only expressions/interjections. The pinned
-JMdict source and CC BY-SA 4.0 attribution above apply.
-
-Japanese characters (japanese-basic.tsv): WanaKana 5.3.1 (MIT) supplies exhaustive
-single-kana mappings in hiragana and katakana, including aliases. KANJIDIC2,
-copyright James William BREEN and the Electronic Dictionary Research and
-Development Group, CC BY-SA 4.0, supplies frequency ranks 1-500 and complete
-Japanese on/kun readings. Changes: fixed rank filtering, standalone reading
-filtering, WanaKana Romanization and packaging. No names, reconstructed stems,
-SKIP codes or foreign readings are imported. Newspaper frequency is not spoken
-frequency. Pinned source/manifest: third_party/kanjidic; compiler:
-tools/compile_japanese_basics.py.
-https://www.edrdg.org/edrdg/licence.html
-https://www.edrdg.org/kanjidic/kanjidic2_ov_legacy.html
-https://www.edrdg.org/wiki/index.php/KANJIDIC_Project
-
-0.7.4 Taiwanese headword extension (addons.tsv): 台華線頂對照典 original POJ headwords and aligned variants, at the same ChhoeTaigi b33c6a1 pin and attribution above. Derived vocabulary and pairs retain CC BY-SA 4.0. Extraction changes and exclusions: docs/two-language-modes/SOURCES.md and tools/compile_addons.py.

@@ -313,7 +313,8 @@
       "report_by": [
         "raw-output-collision",
         "lookup-versus-composition",
-        "paired-metadata"
+        "paired-metadata",
+        "genre"
       ],
       "leakage": "Production-source retrieval probes; not independent language accuracy, commonness or a fresh holdout.",
       "limitations": "Does not measure source omissions, usage frequencies, spontaneous conversation, essay quality, partial-input coverage, or physical touch latency."

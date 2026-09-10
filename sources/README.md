@@ -32,6 +32,8 @@ cannot approve changed frozen data. There is no automatic promotion from pilot.
 ## Files and commands
 
 - `catalog.json`: source-level decisions and evidence. No handpicked entry list.
+- `release-policy.json`: unresolved distribution-rights questions. Separate from
+  editorial retain/replace decisions; compilation cannot close a rights review.
 - `lock.json`: source fingerprints, audit fingerprints and packaged provenance
   groups. Text line endings are normalized only for the ledger digest; original
   source manifests continue to check original bytes. Binary hashes are exact.
