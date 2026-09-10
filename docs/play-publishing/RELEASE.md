@@ -49,8 +49,9 @@ Do not publish the entire artifacts directory: device backups are private.
    rotation. Do not uninstall an existing debug build until its backup is verified.
 6. Measure release typing/touch latency and hit rate against PRODUCT_REQUIREMENTS.md;
    report conversation/essay coverage separately. Existing desktop results do not
-   close the previous phone latency gap. Prepare genuine app screenshots, the store
-   icon and feature graphic; complete the listing worksheet and Console declarations.
+   close the previous phone latency gap. Store copy, original graphics and genuine
+   keyboard screenshots are now provided in kit/. Review them against the final
+   release and complete the listing worksheet and Console declarations.
 
 Only then proceed to closed testing and production access under the requirements
 shown for the owner's account. The personal-account testing minimum, if applicable,

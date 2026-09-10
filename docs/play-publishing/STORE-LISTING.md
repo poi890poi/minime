@@ -55,9 +55,10 @@ MinIME 為獨立開發，並非 Google 產品。語言資料採用各自授權�
 - Privacy URL: awaiting stable public hosting of site/privacy.html and contact update.
 - Target audience/content rating: owner answers the actual Console questionnaires;
   do not infer an IARC rating from keyboard functionality alone.
-- Assets: use MinIME's own icon and real release screenshots. Capture the focused
-  modes, candidate selection and settings with nonpersonal sample text. A feature
-  graphic remains to be designed. Do not reuse Google screenshots or artwork.
+- Assets: kit/ contains the existing-icon export, localized feature graphics, four
+  genuine 0.8.0 keyboard screenshots and alt text. The screenshots use an example
+  editor from the debug build with unchanged production keyboard code. Review them
+  against the final release before uploading. No Google screenshots or artwork.
 - Release notes: Initial testing release. Offline input, focused language modes,
   local learning, dictionary source notices, and optional settings/dictionary transfer.
 
