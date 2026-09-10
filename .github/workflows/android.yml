@@ -22,7 +22,7 @@ jobs:
       - run: python3 tools/compile_paired_forms.py --check
       - run: python3 -m unittest discover -s tools -p test_sources.py
       - run: python3 -m unittest discover -s tools -p test_poj_readings.py
-      - run: ./gradlew :core:regression :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
+      - run: ./gradlew :core:regression :app:assembleDebug :app:assembleDebugAndroidTest :app:bundleRelease :app:lintDebug :app:lintRelease
       - uses: actions/upload-artifact@v4
         with:
           name: minime-debug

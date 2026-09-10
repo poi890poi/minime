@@ -52,7 +52,7 @@ target_compile_options(rime-static PRIVATE -Wno-error=deprecated-declarations)
 add_library(minime_rime SHARED rime_jni.cpp)
 target_include_directories(minime_rime PRIVATE "${RIME}/src" "${CMAKE_CURRENT_BINARY_DIR}/rime/src" "${BOOST_ROOT}")
 target_link_libraries(minime_rime PRIVATE rime-static)
-target_link_options(minime_rime PRIVATE "-Wl,-z,max-page-size=16384")
+target_link_options(minime_rime PRIVATE "-Wl,-z,max-page-size=16384" "-Wl,-z,common-page-size=16384")
 if(ANDROID_ABI STREQUAL "armeabi-v7a")
   # Boost's embedded GDB printer uses @progbits, which ARM treats as a comment.
   target_compile_definitions(rime-static PRIVATE BOOST_ALL_NO_EMBEDDED_GDB_SCRIPTS)

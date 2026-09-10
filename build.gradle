@@ -1,3 +1,8 @@
 plugins {
     id 'com.android.application' version '8.10.1' apply false
 }
+
+// Use the bundletool dependency already pinned by AGP; no downloaded executable.
+tasks.register('printBundletoolClasspath') {
+    doLast { println buildscript.configurations.classpath.asPath }
+}

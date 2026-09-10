@@ -1,0 +1,509 @@
+{
+  "format": 1,
+  "aab": "app-release.aab",
+  "sha256": "fb02e87acae52ba24549eb00f9a00c09177a62d11515966b9d056b3b60736b07",
+  "bytes": 92021000,
+  "application_id": "dev.minime.ime",
+  "target_sdk": 36,
+  "debuggable": false,
+  "signature_block_present": false,
+  "assets": [
+    {
+      "path": "base/assets/NOTICE.txt",
+      "bytes": 192191,
+      "sha256": "15a8e14c5b51e9bfedbf27939832cba92d698337bbd83852ff169861ff0e80d4"
+    },
+    {
+      "path": "base/assets/addon-japanese.bin",
+      "bytes": 3796074,
+      "sha256": "683b8b10093bd6e88dcb82f31d74c40fb3d4e58208f71b88b02bf4cc38331de6"
+    },
+    {
+      "path": "base/assets/addon-japanese.tsv",
+      "bytes": 2997234,
+      "sha256": "8641194b4ec0915bb70140bd506d684889eea874f787c2f23e1b657cd51d21cc"
+    },
+    {
+      "path": "base/assets/addon-poj.bin",
+      "bytes": 16913886,
+      "sha256": "380094ea94750b185c999c436b0d3d0b8dfb5b28f3045ea2d74d3122d35be2f3"
+    },
+    {
+      "path": "base/assets/addon-poj.tsv",
+      "bytes": 15062526,
+      "sha256": "5028a0ec14bfd297e78ebe3be91f412bb1077130a837589422249df7028fddf2"
+    },
+    {
+      "path": "base/assets/addon-sources.txt",
+      "bytes": 6334,
+      "sha256": "d54e1f81561b747e8349a17d3ba5601c16c2467c205b82fdb66a46f7746e814e"
+    },
+    {
+      "path": "base/assets/addon-taiwan.bin",
+      "bytes": 3575639,
+      "sha256": "e3e893aab652f3c2c8f6dcdcd7cf9747172f4bff8273bedc9a39f4ee56d40a65"
+    },
+    {
+      "path": "base/assets/addon-taiwan.tsv",
+      "bytes": 2621579,
+      "sha256": "97e817a9f71ee170d8eaf8efb03d8116ddcddf8c3e6a829f13e94bea43631106"
+    },
+    {
+      "path": "base/assets/emoji.tsv",
+      "bytes": 176362,
+      "sha256": "ef49552c5c117f28a1c7fd143d5fb59957f5ac28cf96de31ba60f4985e7ff36b"
+    },
+    {
+      "path": "base/assets/en_spelling.tsv",
+      "bytes": 11070,
+      "sha256": "9dc2823be8f18e4c12bbeccc1ef6deaf12322f980814efb37c79c605a519db76"
+    },
+    {
+      "path": "base/assets/geography.tsv",
+      "bytes": 5202694,
+      "sha256": "8969bee08d2315e349e8e53618ac2986b5a6632d95bee6aee8e772de00cd7040"
+    },
+    {
+      "path": "base/assets/japanese-basic.tsv",
+      "bytes": 43433,
+      "sha256": "b5631e890f96c82361925d1feee834c10f6789571582072469b7f7aa9e031c6d"
+    },
+    {
+      "path": "base/assets/model-report.json",
+      "bytes": 484,
+      "sha256": "19c1ad2e9d78a6d4450ebd07dbf994e3093a7a836b57130adc7e3f2c80a896c6"
+    },
+    {
+      "path": "base/assets/model.bin",
+      "bytes": 48943042,
+      "sha256": "1d1b9a2d5379eeb0099b38cb48695a22541300c765a0dd2d5851c25b049572f1"
+    },
+    {
+      "path": "base/assets/paired-forms.tsv",
+      "bytes": 1942155,
+      "sha256": "e5e6b29e35a829da7d5cb31135fa8ec33cb1a6e2394f8bea0f2103fa006799a3"
+    },
+    {
+      "path": "base/assets/privacy.txt",
+      "bytes": 3780,
+      "sha256": "57d4c9794bf70313433f6f34dfba22b7f881209371c4044131bd76360c8713b2"
+    },
+    {
+      "path": "base/assets/rime/bundle-id.txt",
+      "bytes": 66,
+      "sha256": "339a3ab0bdbb238621272e69ce10c6e5853aa20bb0a68921eece612decb7f610"
+    },
+    {
+      "path": "base/assets/rime/default.yaml",
+      "bytes": 5172,
+      "sha256": "c40862c0581b5fe13045bab6b79286bcb78bb63aea872d7ecb04d98937315977"
+    },
+    {
+      "path": "base/assets/rime/luna_pinyin.prism.bin",
+      "bytes": 31728,
+      "sha256": "acb7a8ea3b973cb9e5cabf43589956ac01f02c0738f0047101b65d3c543477e7"
+    },
+    {
+      "path": "base/assets/rime/luna_pinyin.reverse.bin",
+      "bytes": 252760,
+      "sha256": "bd314158c00bf36c9ba8f7321d7e6ab6dfbdaa283b11c4856adfd2f58a781179"
+    },
+    {
+      "path": "base/assets/rime/luna_pinyin.schema.yaml",
+      "bytes": 42823,
+      "sha256": "8625ef380b0c97394a65ededd77823c9f8bd99cec1dd4b60a06a9d325ddb8e8e"
+    },
+    {
+      "path": "base/assets/rime/luna_pinyin.table.bin",
+      "bytes": 13011464,
+      "sha256": "55a54e8e55deaade0e4d7646a7ad2b8602901f4007b60c637d993468eff64e03"
+    },
+    {
+      "path": "base/assets/rime/opencc/TWVariants.txt",
+      "bytes": 312,
+      "sha256": "30e6f8395edbfdd74e293fd8b9c62105d787c849fbb208d2a7832eac696734d7"
+    },
+    {
+      "path": "base/assets/rime/opencc/t2tw.json",
+      "bytes": 336,
+      "sha256": "42f5e400534ca615f22244b7fc32998d2ef8b566238bfca5ada7c6fbdb69eacc"
+    }
+  ],
+  "native": [
+    {
+      "path": "base/lib/arm64-v8a/libminime_rime.so",
+      "bytes": 4123704,
+      "sha256": "5edc994af09d80f50b48c2faab5947367a4d8cbb326d4538814f139a9051c928",
+      "load_segments": [
+        {
+          "alignment": 16384,
+          "offset": 0,
+          "address": 0,
+          "compatible_16kb": true
+        },
+        {
+          "alignment": 16384,
+          "offset": 4008960,
+          "address": 4025344,
+          "compatible_16kb": true
+        },
+        {
+          "alignment": 16384,
+          "offset": 4118512,
+          "address": 4151280,
+          "compatible_16kb": true
+        }
+      ]
+    },
+    {
+      "path": "base/lib/armeabi-v7a/libminime_rime.so",
+      "bytes": 2873056,
+      "sha256": "f89546b04ee4239ed10c9a5d4f0d5758613d668a4628395f173374444db05450",
+      "load_segments": [
+        {
+          "alignment": 16384,
+          "offset": 0,
+          "address": 0,
+          "compatible_16kb": true
+        },
+        {
+          "alignment": 16384,
+          "offset": 2814688,
+          "address": 2831072,
+          "compatible_16kb": true
+        },
+        {
+          "alignment": 16384,
+          "offset": 2870000,
+          "address": 2902768,
+          "compatible_16kb": true
+        }
+      ]
+    },
+    {
+      "path": "base/lib/x86/libminime_rime.so",
+      "bytes": 4151028,
+      "sha256": "178d263813c7706aaeb8b6b366dc3c801693a8673c9b7b04b66c7d747021f058",
+      "load_segments": [
+        {
+          "alignment": 16384,
+          "offset": 0,
+          "address": 0,
+          "compatible_16kb": true
+        },
+        {
+          "alignment": 16384,
+          "offset": 4092608,
+          "address": 4108992,
+          "compatible_16kb": true
+        },
+        {
+          "alignment": 16384,
+          "offset": 4147924,
+          "address": 4180692,
+          "compatible_16kb": true
+        }
+      ]
+    },
+    {
+      "path": "base/lib/x86_64/libminime_rime.so",
+      "bytes": 4158104,
+      "sha256": "f4cf4a298300f8d1b802128c400ed18d375aa5668f2d79d6258dff536e7149bf",
+      "load_segments": [
+        {
+          "alignment": 16384,
+          "offset": 0,
+          "address": 0,
+          "compatible_16kb": true
+        },
+        {
+          "alignment": 16384,
+          "offset": 4043248,
+          "address": 4059632,
+          "compatible_16kb": true
+        },
+        {
+          "alignment": 16384,
+          "offset": 4152896,
+          "address": 4185664,
+          "compatible_16kb": true
+        }
+      ]
+    }
+  ],
+  "source_components": [
+    {
+      "id": "mcbopomofo",
+      "license": {
+        "id": "MIT",
+        "status": "verified",
+        "evidence": "https://github.com/openvanilla/McBopomofo/tree/3.1/Source/Data"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "third_party/mcbopomofo/BPMF*.txt",
+        "third_party/mcbopomofo/phrase.occ"
+      ]
+    },
+    {
+      "id": "rudy",
+      "license": {
+        "id": "ODbL-1.0",
+        "status": "verified",
+        "evidence": "https://rudymap.tw/"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "third_party/rudy/extracted-names.json.gz",
+        "third_party/rudy/source.json"
+      ]
+    },
+    {
+      "id": "aosp",
+      "license": {
+        "id": "Apache-2.0",
+        "status": "verified",
+        "evidence": "https://android.googlesource.com/platform/packages/inputmethods/LatinIME/"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "third_party/aosp/*.gz"
+      ]
+    },
+    {
+      "id": "itaigi",
+      "license": {
+        "id": "CC0-1.0",
+        "status": "verified",
+        "evidence": "https://github.com/ChhoeTaigi/ChhoeTaigiDatabase"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "third_party/itaigi/itaigi.csv"
+      ]
+    },
+    {
+      "id": "taiwanese-basic",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/ChhoeTaigi/ChhoeTaigiDatabase"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "third_party/taiwanese_basic/vocabulary.csv"
+      ]
+    },
+    {
+      "id": "jmdict",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://www.edrdg.org/"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "third_party/jmdict/*.tgz"
+      ]
+    },
+    {
+      "id": "jmnedict",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://www.edrdg.org/"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "third_party/jmnedict/*.tgz"
+      ]
+    },
+    {
+      "id": "wanakana",
+      "license": {
+        "id": "MIT",
+        "status": "verified",
+        "evidence": "https://github.com/WaniKani/WanaKana"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "third_party/wanakana/*"
+      ]
+    },
+    {
+      "id": "cedict",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://www.mdbg.net/chinese/dictionary?page=cedict"
+      },
+      "source_decision": "replace",
+      "pins": [
+        "third_party/cedict/cedict.txt.gz"
+      ]
+    },
+    {
+      "id": "wikidata",
+      "license": {
+        "id": "CC0-1.0",
+        "status": "verified",
+        "evidence": "https://www.wikidata.org/wiki/Wikidata:Licensing"
+      },
+      "source_decision": "replace",
+      "pins": [
+        "third_party/wikidata/taiwan-*.json"
+      ]
+    },
+    {
+      "id": "taiwan-encyclopedia",
+      "license": {
+        "id": "CC-BY-SA-4.0 + CC0-1.0",
+        "status": "verified",
+        "evidence": "https://zh.wikipedia.org/"
+      },
+      "source_decision": "replace",
+      "pins": [
+        "third_party/taiwan_encyclopedia/*.gz",
+        "third_party/taiwan_encyclopedia/source.json"
+      ]
+    },
+    {
+      "id": "opencc-python",
+      "license": {
+        "id": "Apache-2.0",
+        "status": "verified",
+        "evidence": "https://github.com/yichen0831/opencc-python"
+      },
+      "source_decision": "replace",
+      "pins": [
+        "third_party/opencc_python/opencc/*.py",
+        "third_party/opencc_python/opencc/config/*.json",
+        "third_party/opencc_python/opencc/dictionary/*.txt"
+      ]
+    },
+    {
+      "id": "rime-data",
+      "license": {
+        "id": "LGPL-3.0 + Apache-2.0",
+        "status": "verified",
+        "evidence": "https://github.com/rime/rime-essay"
+      },
+      "source_decision": "replace",
+      "pins": [
+        "third_party/rime/data-sources/*.zip",
+        "third_party/rime/data-sources/*.yaml",
+        "third_party/rime/data-sources/opencc/*"
+      ]
+    },
+    {
+      "id": "ud-context",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/UniversalDependencies/UD_Chinese-GSD"
+      },
+      "source_decision": "replace",
+      "pins": [
+        "third_party/ud/sources.json"
+      ]
+    },
+    {
+      "id": "paired-taiwanese",
+      "license": {
+        "id": "CC-BY-SA-4.0 AND CC0-1.0 AND MIT",
+        "status": "verified",
+        "evidence": "docs/candidate-annotations/IMPLEMENTATION.md"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "app/src/main/assets/paired-forms.tsv",
+        "docs/candidate-annotations/pairs-manifest.json"
+      ]
+    },
+    {
+      "id": "taihoa",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/ChhoeTaigi/ChhoeTaigiDatabase#1-2002-%E5%8F%B0%E8%8F%AF%E7%B7%9A%E9%A0%82%E5%B0%8D%E7%85%A7%E5%85%B8"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "third_party/taihoa/taihoa.csv",
+        "third_party/taihoa/source.json"
+      ]
+    },
+    {
+      "id": "kanjidic",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://www.edrdg.org/edrdg/licence.html"
+      },
+      "source_decision": "retain",
+      "pins": [
+        "third_party/kanjidic/*"
+      ]
+    }
+  ],
+  "native_source_pins": [
+    {
+      "name": "librime",
+      "url": "https://codeload.github.com/rime/librime/zip/refs/tags/1.16.1",
+      "archive": "librime.zip",
+      "directory": "librime-1.16.1",
+      "sha256": "9e1d50e6490aac99de0404402524a3c1c910da5dc62a9b25e38c164bc2bf5d77"
+    },
+    {
+      "name": "leveldb",
+      "url": "https://codeload.github.com/google/leveldb/zip/99b3c03b3284f5886f9ef9a4ef703d57373e61be",
+      "archive": "leveldb.zip",
+      "directory": "leveldb-99b3c03b3284f5886f9ef9a4ef703d57373e61be",
+      "sha256": "4a8e9d7fbe2a33c48b9e71ae7142ec4cacfddcb90f69421e26af13033599c19e"
+    },
+    {
+      "name": "yaml-cpp",
+      "url": "https://codeload.github.com/jbeder/yaml-cpp/zip/2f86d13775d119edbb69af52e5f566fd65c6953b",
+      "archive": "yaml-cpp.zip",
+      "directory": "yaml-cpp-2f86d13775d119edbb69af52e5f566fd65c6953b",
+      "sha256": "a0fe4a51bdc90bf6070e59434a4bcd59a7e55def747c8749ac0103d152bb8072"
+    },
+    {
+      "name": "marisa-trie",
+      "url": "https://codeload.github.com/s-yata/marisa-trie/zip/3e87d53b78e15f2f43783d5e376561a8c9722051",
+      "archive": "marisa-trie.zip",
+      "directory": "marisa-trie-3e87d53b78e15f2f43783d5e376561a8c9722051",
+      "sha256": "dc1092edf2197f079576dad972fa6dadf0141ceb032ba3ffd52904c2ea9fb131"
+    },
+    {
+      "name": "opencc",
+      "url": "https://codeload.github.com/BYVoid/OpenCC/zip/556ed22496d650bd0b13b6c163be9814637970ae",
+      "archive": "opencc.zip",
+      "directory": "OpenCC-556ed22496d650bd0b13b6c163be9814637970ae",
+      "sha256": "7b37f479980e577da21427cd3b6a904dff942d19668cf5e6112b2d7905876129"
+    },
+    {
+      "name": "boost",
+      "url": "https://archives.boost.io/release/1.87.0/source/boost_1_87_0.tar.bz2",
+      "archive": "boost.tar.bz2",
+      "directory": "boost_1_87_0",
+      "sha256": "af57be25cb4c4f4b413ed692fe378affb4352ea50fbe294a11ef548f4d527d89"
+    }
+  ],
+  "release_rights_open_items": [
+    {
+      "id": "ud-underlying-text-rights",
+      "source_id": "ud-context",
+      "status": "review-required",
+      "affected_assets": [
+        "context.tsv",
+        "en_spelling.tsv",
+        "model.bin"
+      ],
+      "evidence": "third_party/ud/UD_English-EWT/README.md",
+      "resolution": "Document a rights decision for the exact derived outputs, obtain permission, or replace the source with a separately evaluated licensed source. Do not clear this item merely because compilation passes."
+    }
+  ],
+  "runtime_16kb_certified": false,
+  "status": "prepared-not-cleared-for-upload"
+}

@@ -1,7 +1,12 @@
 plugins { id 'com.android.application' }
+def uploadEnv = ['MINIME_UPLOAD_STORE_FILE', 'MINIME_UPLOAD_STORE_PASSWORD', 'MINIME_UPLOAD_KEY_ALIAS', 'MINIME_UPLOAD_KEY_PASSWORD']
+def uploadConfigured = uploadEnv.every { System.getenv(it) }
+if (uploadEnv.any { System.getenv(it) } && !uploadConfigured) {
+    throw new GradleException('Set all four MINIME_UPLOAD_* environment variables, or none for an unsigned release build.')
+}
 android {
     namespace 'dev.minime.ime'
-    compileSdk 35
+    compileSdk 36
     ndkVersion '27.2.12479018'
     if (rootProject.file('.tools/android-sdk/ndk/27.2.12479018').exists()) {
         ndkPath rootProject.file('.tools/android-sdk/ndk/27.2.12479018').absolutePath
@@ -9,15 +14,32 @@ android {
     defaultConfig {
         applicationId 'dev.minime.ime'
         minSdk 29
-        targetSdk 35
-        versionCode 27
-        versionName '0.7.9'
+        targetSdk 36
+        versionCode 28
+        versionName '0.8.0'
         testInstrumentationRunner 'android.test.InstrumentationTestRunner'
         ndk { abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64', 'x86' }
         externalNativeBuild { cmake { arguments '-DANDROID_STL=c++_static'; targets 'minime_rime' } }
     }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
-    buildTypes { release { minifyEnabled false } }
+    signingConfigs {
+        if (uploadConfigured) {
+            upload {
+                storeFile file(System.getenv('MINIME_UPLOAD_STORE_FILE'))
+                storePassword System.getenv('MINIME_UPLOAD_STORE_PASSWORD')
+                keyAlias System.getenv('MINIME_UPLOAD_KEY_ALIAS')
+                keyPassword System.getenv('MINIME_UPLOAD_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            ndk { debugSymbolLevel 'FULL' }
+            if (uploadConfigured) signingConfig signingConfigs.upload
+        }
+    }
     externalNativeBuild { cmake { path file('src/main/cpp/CMakeLists.txt'); version '3.22.1' } }
     sourceSets {
         main.assets.srcDirs = [layout.buildDirectory.dir('generated/minimeAssets'), 'src/main/rimeAssets']
@@ -43,6 +65,6 @@ def compileLanguageModel = tasks.register('compileLanguageModel', JavaExec) {
 tasks.named('preBuild').configure { dependsOn compileLanguageModel }
 dependencies {
     implementation project(':core')
-    androidTestCompileOnly files("${android.sdkDirectory}/platforms/android-35/optional/android.test.base.jar")
-    androidTestCompileOnly files("${android.sdkDirectory}/platforms/android-35/optional/android.test.runner.jar")
+    androidTestCompileOnly files("${android.sdkDirectory}/platforms/android-36/optional/android.test.base.jar")
+    androidTestCompileOnly files("${android.sdkDirectory}/platforms/android-36/optional/android.test.runner.jar")
 }
