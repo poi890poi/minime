@@ -40,3 +40,12 @@ No phone operations occurred; SHINE retained its exclusive reservation. Physical
 launcher and themed-icon behaviour on OEM devices are not claimed as tested.
 Local logs: `artifacts/icon-suite/android-final.txt`, `final-verify.txt` and
 `verification.json`. This work does not clear unrelated Play-release gates.
+
+
+Contrast follow-up, September 11: the cream face blended into white/light surfaces
+in transparent colour exports and feature graphics. A 0.75/48-unit teal outline
+now follows the existing face path in those uses. Solid launcher images, adaptive
+layers, shape and palette are unchanged. Regenerated all 90 suite files and store
+manifests; inspected light-background previews. The generator's mask, alpha and
+export checks pass. Android build/lint passed (17 existing warnings). Updated ZIP
+SHA-256: `c85a2d7e5f271a4b763583f5ae165eaaccc2c15688ea9b106fe6a9707fc1bc8b`.

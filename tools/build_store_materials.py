@@ -23,7 +23,7 @@ for locale,tag in [('en-US','Your words. Your keyboard.'),('zh-TW','自己的話
  d.text((92,319),'中文 · English · 台語 · 日本語',font=font(24,cjk=True),fill=TEAL)
  svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">',f'<rect width="1024" height="500" fill="{CREAM}"/>','<circle cx="1090" cy="50" r="190" fill="#d7e7df"/><circle cx="-10" cy="565" r="170" fill="#d7e7df"/>',f'<text x="88" y="190" font-family="Segoe UI" font-weight="700" font-size="76" fill="{TEAL}">MinIME</text>',f'<text x="92" y="265" font-family="Segoe UI,Microsoft JhengHei" font-size="30" fill="{INK}">{html.escape(tag)}</text>',f'<text x="92" y="347" font-family="Microsoft JhengHei" font-size="24" fill="{TEAL}">中文 · English · 台語 · 日本語</text>']
  mark=render_icon(310,None);im.paste(mark,(651,86),mark)
- svg.append('<g transform="translate(651 86) scale(6.4583333333)">'+svg_paths()+'</g>')
+ svg.append('<g transform="translate(651 86) scale(6.4583333333)">'+svg_paths(outline=True)+'</g>')
  im.save(G/('feature-'+locale+'.png'));(G/('feature-'+locale+'.svg')).write_text(''.join(svg)+'</svg>\n',encoding='utf-8')
 # Copy-ready listing fields, no Markdown headings or developer placeholders.
 source=(ROOT/'docs/play-publishing/STORE-LISTING.md').read_text(encoding='utf-8')

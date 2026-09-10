@@ -116,7 +116,8 @@ README='''# MinIME icon suite
 
 Approved design: a Taiwan farmer's broad bamboo-leaf hat over a friendly face,
 inspired by 台. Deep teal #006765; warm cream #FFF7E5; bamboo leaf #D9C28E.
-The face has continuous curves and a rounded V smile. Artwork is original;
+The face has continuous curves and a rounded V smile. Transparent colour marks
+include a thin teal face contour for visibility on white and light surfaces. Artwork is original;
 no party, flag or third-party logo artwork is included.
 
 - `source/`: editable SVG masters and the Python geometry source (Pillow needed
@@ -146,7 +147,8 @@ monochrome marks are transparent cutouts, so they survive arbitrary tinting.
 The themed preview colours are examples, not fixed app colours.
 
 Keep proportions and the spacing between hat and face. The solid-background icon
-is preferred on busy backgrounds. Use the black/white cutout marks when one ink
+is preferred on busy backgrounds. Transparent colour marks have a teal contour;
+adaptive foregrounds omit it because their background is already teal. Use the black/white cutout marks when one ink
 is required. The bamboo-leaf colour is part of the design, not a material texture.
 
 Rebuild from the repository with `python tools/build_icon_suite.py` (Pillow,

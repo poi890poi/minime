@@ -67,8 +67,9 @@ def data(path):
     def num(v):return f'{v:.5f}'.rstrip('0').rstrip('.') or '0'
     return ' '.join(c[0]+' '.join(num(v) for v in c[1:]) for c in path)
 
-def svg_paths(mono=None):
+def svg_paths(mono=None,outline=False):
     g=geometry()
+    if outline:g[0]=(g[0][0],CREAM,TEAL,.75)
     if mono:
         holes=g[0][0]+g[2][0]+g[3][0]+smile_outline()
         return f'<path fill="{mono}" fill-rule="evenodd" d="{data(holes)}"/><path fill="{mono}" d="{data(g[1][0])}"/>'
@@ -78,7 +79,7 @@ def svg(background='rounded',mono=None,adaptive=False):
     viewport=108 if adaptive else 48
     content=''
     if background:content=f'<path fill="{TEAL}" d="{data(rounded(0,0,48,48,13) if background=="rounded" else rounded(0,0,48,48,0))}"/>'
-    content+=svg_paths(mono)
+    content+=svg_paths(mono,outline=not background and not adaptive)
     if adaptive:content=f'<g transform="translate(18 18) scale(1.5)">{content}</g>'
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{viewport}" height="{viewport}" viewBox="0 0 {viewport} {viewport}">{content}</svg>\n'
 
@@ -101,7 +102,9 @@ def render(size=512,background='rounded',mono=None,adaptive=False):
         for i,(path,fill,stroke,width) in enumerate(geometry()):draw_path(md,path,255 if i<2 else (0 if fill else None),0 if stroke else None,width,s,offset)
         ink=Image.new('RGBA',im.size,mono);im.alpha_composite(Image.composite(ink,Image.new('RGBA',im.size),mask))
     else:
-        for path,fill,stroke,width in geometry():draw_path(d,path,fill,stroke,width,s,offset)
+        g=geometry()
+        if not background and not adaptive:g[0]=(g[0][0],CREAM,TEAL,.75)
+        for path,fill,stroke,width in g:draw_path(d,path,fill,stroke,width,s,offset)
     return im.resize((size,size),Image.Resampling.LANCZOS)
 
 def vector(mono=False,adaptive=True):
