@@ -49,6 +49,7 @@ public final class Regression {
         StaticDictionaryPrivacyRegression.run();
         FocusedChoiceRegression.run();
         AddonLoadBarrierRegression.run();
+        DecodePipelineRegression.run();
         ModeRegression.run();
         EnglishIsolationRegression.run();
         ModePriorityRegression.run();

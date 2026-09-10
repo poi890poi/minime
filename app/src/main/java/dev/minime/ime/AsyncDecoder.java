@@ -5,6 +5,7 @@ import dev.minime.core.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.Consumer;
+import java.util.function.BooleanSupplier;
 
 /** Single offline worker; superseded queued requests are coalesced before execution. */
 final class AsyncDecoder implements CompositionEngine.Decoder,AutoCloseable {
@@ -13,6 +14,8 @@ final class AsyncDecoder implements CompositionEngine.Decoder,AutoCloseable {
     private ScheduledFuture<?> queued;
     private volatile boolean closed;
     private volatile boolean rime;
+    private final DecodePipeline.Requests requests=new DecodePipeline.Requests();
+    final DecodePipeline.Stats stats=new DecodePipeline.Stats();
     AsyncDecoder(Handler main) {this.main=main;}
     void rime(boolean enabled) {rime=enabled;}
     public void convert(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,Consumer<List<Candidate>> result) {
@@ -20,22 +23,32 @@ final class AsyncDecoder implements CompositionEngine.Decoder,AutoCloseable {
     }
     public void query(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,boolean phonetic,
             AddonDictionary addons,Set<String> enabled,Consumer<List<Candidate>> result) {
-        if(queued!=null)queued.cancel(false);
+        if(closed)return;
+        cancel();BooleanSupplier current=requests.next();
         boolean useRime=phonetic && rime && !zhuyin;
+        stats.requests.incrementAndGet();
         queued=worker.schedule(()-> {
-            List<Candidate> found=phonetic?dictionary.convert(raw,zhuyin,context):new ArrayList<>();
-            if(useRime) {
-                List<Candidate> nativeChoices=RimeBackend.candidates(raw);
-                found=CandidateMerge.merge(nativeChoices,found);
-            }
-            found.addAll(addons.lookup(raw,enabled));
-            List<Candidate> choices=found;
-            main.post(()->{if(!closed)result.accept(choices);});
+            List<Candidate> choices=DecodePipeline.run(current,
+                ()->phonetic?dictionary.convert(raw,zhuyin,context):new ArrayList<>(),
+                useRime?()->RimeBackend.candidates(raw):null,()->addons.lookup(raw,enabled),stats);
+            if(choices!=null)deliver(current,choices,result);
         },8,TimeUnit.MILLISECONDS);
     }
-    public void close() {closed=true;worker.shutdownNow();}
+    public void cancel() {requests.cancel();if(queued!=null)queued.cancel(false);}
+    private void deliver(BooleanSupplier current,List<Candidate> choices,Consumer<List<Candidate>> result) {
+        main.post(()-> {
+            if(!closed && current.getAsBoolean()) {stats.delivered.incrementAndGet();result.accept(choices);}
+            else stats.staleDelivery.incrementAndGet();
+        });
+    }
+    public void close() {closed=true;cancel();worker.shutdownNow();}
     public void trace(PhoneticDictionary dictionary,float[] points,Consumer<List<Candidate>> result) {
-        if(queued!=null)queued.cancel(false);
-        queued=worker.schedule(()->{List<Candidate> found=dictionary.englishTrace(points);main.post(()->{if(!closed)result.accept(found);});},0,TimeUnit.MILLISECONDS);
+        if(closed)return;
+        cancel();BooleanSupplier current=requests.next();
+        queued=worker.schedule(()-> {
+            if(!current.getAsBoolean())return;
+            List<Candidate> found=dictionary.englishTrace(points);
+            if(current.getAsBoolean())deliver(current,found,result);
+        },0,TimeUnit.MILLISECONDS);
     }
 }

@@ -79,3 +79,20 @@ lifecycle cancellation, and independent Chinese specialist availability.
 Language assets are a packaging transformation of the same registered source,
 not a source refresh. Warm cache reuse and packaged-row equality have explicit
 Android/APK integration checks to run after compilation.
+
+### Obsolete decoder work
+
+`DecodePipeline` checks request generations before work, after base conversion,
+after native conversion, after add-on lookup, and again at Android delivery.
+Core refresh/lifecycle cancellation also invalidates the worker when the new mode
+needs no background query. The worker remains serialized. An in-flight provider
+is not interrupted; cancellation saves only subsequent stages and stale delivery.
+Existing revision checks and Space barriers remain.
+
+Deterministic controls supersede requests at every provider boundary and verify
+exactly which later stages do not execute, plus unchanged live merge order.
+In-memory aggregate counts/timings contain no input text. Android tests exercise
+the actual worker/main-thread delivery race, burst coalescing and close behavior.
+Core suite: 35,011 assertions. Pinned desktop Rime evaluation completed 628 native
+queries (p50 4.79 ms, p95 11.01 ms, max 54.26 ms including IPC). These timings
+are not Android touch latency and do not establish a user-visible speedup.

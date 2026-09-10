@@ -63,6 +63,7 @@ public final class CompositionEngine {
         if(!pending && !draining)drain();
     }
     public interface Decoder {
+        default void cancel() {}
         void convert(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,java.util.function.Consumer<List<Candidate>> result);
         default void query(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,boolean phonetic,
                 AddonDictionary addons,Set<String> enabled,java.util.function.Consumer<List<Candidate>> result) {
@@ -107,7 +108,7 @@ public final class CompositionEngine {
         finally {draining=false;}
         changed.run();
     }
-    private void cancelPending() {revision++;compositionId++;pending=false;barrier=false;waiting.clear();phraseSession.clear();}
+    private void cancelPending() {if(decoder!=null)decoder.cancel();revision++;compositionId++;pending=false;barrier=false;waiting.clear();phraseSession.clear();}
     public CompositionEngine(Editor editor, Learning learning) { this.editor = editor; this.learning = learning; }
     public void dictionary(PhoneticDictionary dictionary) { this.dictionary = dictionary; refresh(); }
     public void start(boolean zhuyin, boolean literalField, boolean privateField, boolean direct) {
@@ -300,6 +301,7 @@ public final class CompositionEngine {
     /** Call after cursor movement, external edits or lifecycle changes; never rewrite text at the new cursor. */
     public void abandon() { cancelPending();clearAssistance();completionBoundary=false;committedEnglishWord=false; editor.finish(); raw = ""; context = "";afterLatin=false; refresh(); }
     public void refresh() {
+        if(decoder!=null)decoder.cancel();
         automaticCorrection=false;
         traced=false;
         long query=++revision;pending=false;
