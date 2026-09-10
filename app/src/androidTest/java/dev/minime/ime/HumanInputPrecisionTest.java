@@ -62,7 +62,11 @@ public final class HumanInputPrecisionTest extends InstrumentationTestCase {
             pointers.put(new JSONArray().put(ids[i]).put(xy[2*i]).put(xy[2*i+1]));
         }
         events.put(new JSONObject().put("action",action).put("ms",at-downAt).put("pointers",pointers));
+        // Raw coordinates must be screen coordinates for the real trace recognizer.
+        int[] screen=new int[2];keyboard.getLocationOnScreen(screen);
+        for(MotionEvent.PointerCoords c:coords){c.x+=screen[0];c.y+=screen[1];}
         MotionEvent e=MotionEvent.obtain(downAt,at,action,ids.length,properties,coords,0,0,1,1,0,0,InputDevice.SOURCE_TOUCHSCREEN,0);
+        e.offsetLocation(-screen[0],-screen[1]);
         try {keyboard.dispatchTouchEvent(e);}finally{e.recycle();}
     }
     private void record(String id,String expected,boolean gate) throws JSONException {
@@ -113,6 +117,51 @@ public final class HumanInputPrecisionTest extends InstrumentationTestCase {
             record("outside-right:"+letter,String.valueOf(letter),false);
         }
     }
+    private void outerMargins() throws JSONException {
+        float width=keyboard.getWidth();
+        for(char edge:new char[]{'a','l'}) {
+            View view=find(keyboard,String.valueOf(edge));Rect r=keys.get(edge);
+            float visual=r.left+(r.width()+view.getPaddingLeft()-view.getPaddingRight())/2f;
+            assertEquals("Original glyph center "+edge,width*(edge=='a'?.1f:.9f),visual,2f);
+            for(float f:new float[]{.1f,.5f,.9f}) {
+                float x=width*(edge=='a'?f*.05f:1-f*.05f),y=r.exactCenterY();
+                for(int gesture=0;gesture<4;gesture++) {
+                    begin();event(MotionEvent.ACTION_DOWN,0,new int[]{3},x,y);
+                    if(gesture>=2)event(MotionEvent.ACTION_MOVE,30,new int[]{3},x,y+(gesture==2?-32:32)*density);
+                    event(gesture==1?MotionEvent.ACTION_CANCEL:MotionEvent.ACTION_UP,55,new int[]{3},x,y+(gesture>=2?(gesture==2?-32:32)*density:0));
+                    record("outer-margin:"+edge+":"+f+":"+gesture,
+                        gesture==0?String.valueOf(edge):gesture==1?"":"LITERAL:"+(gesture==2?String.valueOf(Character.toUpperCase(edge)):(edge=='a'?"@":config.startsWith("english")?")":"）")),true);
+                }
+            }
+            for(char other='a';other<='z';other++)for(boolean marginFirst:new boolean[]{false,true})for(boolean reverse:new boolean[]{false,true}) {
+                float[] margin={width*(edge=='a'?.025f:.975f),r.exactCenterY()},center=point(other,.5f,.5f);
+                float[] a=marginFirst?margin:center,b=marginFirst?center:margin;
+                begin();event(MotionEvent.ACTION_DOWN,0,new int[]{3},a[0],a[1]);
+                event(MotionEvent.ACTION_POINTER_DOWN|(1<<MotionEvent.ACTION_POINTER_INDEX_SHIFT),30,new int[]{3,17},a[0],a[1],b[0],b[1]);
+                event(MotionEvent.ACTION_MOVE,15,new int[]{17,3},b[0],b[1],a[0],a[1]);
+                event(MotionEvent.ACTION_POINTER_UP|((reverse?0:1)<<MotionEvent.ACTION_POINTER_INDEX_SHIFT),20,new int[]{17,3},b[0],b[1],a[0],a[1]);
+                float[] last=reverse?a:b;event(MotionEvent.ACTION_UP,20,new int[]{reverse?3:17},last[0],last[1]);
+                record("outer-overlap:"+edge+other+":"+marginFirst+":"+reverse,marginFirst?""+edge+other:""+other+edge,true);
+            }
+        }
+    }
+    public void testOuterMarginsStartEnglishTrace() throws Throwable {
+        for(int orientation:new int[]{Configuration.ORIENTATION_PORTRAIT,Configuration.ORIENTATION_LANDSCAPE}) {
+            Intent intent=new Intent(getInstrumentation().getTargetContext(),EditorTestActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            EditorTestActivity host=(EditorTestActivity)getInstrumentation().startActivitySync(intent);
+            try {runTestOnUiThread(()-> {try {
+                setup(host,true,orientation,1f);
+                for(String path:new String[]{"asd","lkj"}) {
+                    float x=keyboard.getWidth()*(path.charAt(0)=='a'?.025f:.975f),y=keys.get(path.charAt(0)).exactCenterY();
+                    begin();event(MotionEvent.ACTION_DOWN,0,new int[]{3},x,y);
+                    for(char c:path.toCharArray()) {float[] p=point(c,.5f,.5f);x=p[0];y=p[1];event(MotionEvent.ACTION_MOVE,30,new int[]{3},x,y);}
+                    event(MotionEvent.ACTION_UP,30,new int[]{3},x,y);
+                    assertEquals("Margin trace owns the stream "+path,Collections.singletonList("TRACE"),emitted);
+                }
+            }catch(JSONException failure){throw new RuntimeException(failure);} });}
+            finally {runTestOnUiThread(host::finish);getInstrumentation().waitForIdleSync();}
+        }
+    }
     public void testPortraitImprecisionMatrix() throws Throwable {matrix(Configuration.ORIENTATION_PORTRAIT,"portrait");}
     public void testLandscapeImprecisionMatrix() throws Throwable {matrix(Configuration.ORIENTATION_LANDSCAPE,"landscape");}
     private void matrix(int orientation,String name) throws Throwable {
@@ -123,7 +172,7 @@ public final class HumanInputPrecisionTest extends InstrumentationTestCase {
                 EditorTestActivity host=(EditorTestActivity)getInstrumentation().startActivitySync(intent);
                 getInstrumentation().waitForIdleSync();
                 try {runTestOnUiThread(()-> {
-                    try {setup(host,english,orientation,font);singles();pairs();controls();}
+                    try {setup(host,english,orientation,font);singles();pairs();controls();outerMargins();}
                     catch(JSONException failure) {throw new RuntimeException(failure);}
                 });} finally {runTestOnUiThread(host::finish);getInstrumentation().waitForIdleSync();}
             }
@@ -134,7 +183,7 @@ public final class HumanInputPrecisionTest extends InstrumentationTestCase {
             writeReport(getInstrumentation().getTargetContext(),"human-input-"+name+".json",report);
         }
         assertEquals("See per-case human-input-"+name+".json for full failing pointer streams",0,failures);
-        assertEquals("Every configuration and profile must run",6552,outcomes.length());
+        assertEquals("Every configuration and profile must run",7480,outcomes.length());
     }
     static void writeReport(Context context,String name,JSONObject report) throws Exception {
         File runId=new File(context.getExternalFilesDir(null),"human-input-run-id.txt");

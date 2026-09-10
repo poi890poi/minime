@@ -82,4 +82,24 @@ public final class TypingTouchTest extends InstrumentationTestCase {
         assertEquals("Google preserves overlapping repeated letters",Arrays.asList("w","w"),emitted);
     });}
 
+    /** A separate diagnostic: blank row margins, not dictionary acceptance. */
+    public void testOuterRowContacts() throws Throwable {onMain(()-> {
+        int contacts=0,misses=0;
+        // Check every letter first, at center and both near-edge positions.
+        for(char c='a';c<='z';c++)for(float f:new float[]{.02f,.5f,.98f}) {
+            String label=String.valueOf(c);Rect r=key(label);float x=r.left+r.width()*f,y=r.exactCenterY();
+            emitted.clear();event(MotionEvent.ACTION_DOWN,new int[]{3},x,y);event(MotionEvent.ACTION_UP,new int[]{3},x,y);
+            assertEquals("In-key contact "+label+" "+f,Collections.singletonList(label),emitted);
+        }
+        // The two symmetric row gutters are defined by layout, never by word examples.
+        for(String label:new String[]{"a","l"})for(float f:new float[]{.1f,.5f,.9f}) {
+            Rect r=key(label);float x=(label.equals("a")?f*.05f:1-f*.05f)*keyboard.getWidth(),y=r.exactCenterY();
+            emitted.clear();event(MotionEvent.ACTION_DOWN,new int[]{3},x,y);event(MotionEvent.ACTION_UP,new int[]{3},x,y);
+            contacts++;if(!emitted.equals(Collections.singletonList(label)))misses++;
+        }
+        android.util.Log.i("MinIME-EdgeProbe","in-key=78/78; outer-row="+(contacts-misses)+"/"+contacts);
+        assertEquals("All-letter controls pass; blank outer-row contacts lost",0,misses);
+    });}
+
+
 }

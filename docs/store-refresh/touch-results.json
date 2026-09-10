@@ -1,0 +1,32 @@
+{
+  "baseline": {
+    "commit": "d23f9c0",
+    "inKeyPassed": 78,
+    "inKeyTotal": 78,
+    "outerPassed": 0,
+    "outerTotal": 6
+  },
+  "fixed": [
+    {
+      "orientation": "portrait",
+      "configurations": 4,
+      "cases": 7480,
+      "gated": 7376,
+      "gatedFailures": 0,
+      "outerMarginCases": 928,
+      "ambiguousStress": 104,
+      "sha256": "737c64e441612628457ab77012462c6840face3526bdd666b84ea3599b83f704"
+    },
+    {
+      "orientation": "landscape",
+      "configurations": 4,
+      "cases": 7480,
+      "gated": 7376,
+      "gatedFailures": 0,
+      "outerMarginCases": 928,
+      "ambiguousStress": 104,
+      "sha256": "b42d1161532663d3301c09063b4be9bc447e548d69f60e13c4fc74f47a0f6499"
+    }
+  ],
+  "scope": "Direct attached Android View dispatch; virtual event timing. Not physical touch latency or human hit rate."
+}

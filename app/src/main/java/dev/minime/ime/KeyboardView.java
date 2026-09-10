@@ -132,7 +132,7 @@ final class KeyboardView extends LinearLayout {
         super.onWindowVisibilityChanged(visibility);
         if(annotationWindow!=null)queueAnnotation();
     }
-    private float[] center(View view) {int[] at=new int[2];view.getLocationOnScreen(at);return new float[]{at[0]+view.getWidth()/2f,at[1]+view.getHeight()/2f};}
+    private float[] center(View view) {int[] at=new int[2];view.getLocationOnScreen(at);return new float[]{at[0]+(view.getWidth()+view.getPaddingLeft()-view.getPaddingRight())/2f,at[1]+view.getHeight()/2f};}
     @Override public boolean dispatchTouchEvent(MotionEvent e) {
         int action=e.getActionMasked();
         if(action==MotionEvent.ACTION_DOWN) {
@@ -151,7 +151,7 @@ final class KeyboardView extends LinearLayout {
         if(action==MotionEvent.ACTION_DOWN) {
             tracePossible=false;tracing=false;points.clear();
             if(traceEnabled && letters['q'-'a']!=null) {
-                for(TextView key:letters)if(key!=null) {float[] c=center(key);if(Math.abs(e.getRawX()-c[0])<key.getWidth()/2f && Math.abs(e.getRawY()-c[1])<key.getHeight()/2f)tracePossible=true;}
+                for(TextView key:letters)if(key!=null) {int[] at=new int[2];key.getLocationOnScreen(at);if(e.getRawX()>=at[0] && e.getRawX()<at[0]+key.getWidth() && e.getRawY()>=at[1] && e.getRawY()<at[1]+key.getHeight())tracePossible=true;}
                 float[] q=center(letters['q'-'a']),w=center(letters['w'-'a']),a=center(letters[0]);
                 pitchX=w[0]-q[0];pitchY=a[1]-q[1];traceX=q[0]-.5f*pitchX;traceY=q[1];
                 tracePossible&=pitchX>0 && pitchY>0;
@@ -339,7 +339,6 @@ final class KeyboardView extends LinearLayout {
         LinearLayout row=new LinearLayout(getContext()); row.setMotionEventSplittingEnabled(true);
         keys.addView(row,new LayoutParams(-1,dp(height))); return row;
     }
-    private void spacer(LinearLayout row,float weight) { row.addView(new View(getContext()),new LayoutParams(0,1,weight)); }
     private void simpleRow(String text,int height) {
         LinearLayout r=row(height); text.codePoints().forEach(c->{String s=new String(Character.toChars(c)); r.addView(plain(s,s,height,1));});
     }
@@ -505,16 +504,16 @@ final class KeyboardView extends LinearLayout {
         } else {
             for(int r=0;r<3;r++) {
                 LinearLayout line=row(height);
-                if(r==1) spacer(line,.5f);
                 if(r==2) line.addView(plain(caps?"⇪":shifted?"⬆":"⇧","SHIFT",height,1.5f));
                 for(int i=0;i<QWERTY[r].length();i++) {
                     String lower=QWERTY[r].substring(i,i+1), upper=lower.toUpperCase(Locale.ROOT);
                     String label=shifted?upper:lower;
-                    TextView letter=button(label,label,upper,(english?EN_DOWN:Q_DOWN)[r].substring(i,i+1),false,height,1);
+                    boolean outer=r==1 && (i==0 || i==QWERTY[r].length()-1);
+                    TextView letter=button(label,label,upper,(english?EN_DOWN:Q_DOWN)[r].substring(i,i+1),false,height,outer?1.5f:1);
                     ((SlideKey)letter).qwertyStyle();
+                    if(outer)((SlideKey)letter).outerMargin(i==0);
                     letters[lower.charAt(0)-'a']=letter;line.addView(letter);
                 }
-                if(r==1) spacer(line,.5f);
                 if(r==2) line.addView(plain("⌫","DELETE",height,1.5f));
             }
         }
