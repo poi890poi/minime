@@ -468,7 +468,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
             click("Expand candidates");click("Choose chinese mode");expectText("ab");
             click("Expand candidates");click("Choose "+family.id+" mode");expectText("ab");
             assertEquals(family.secondaryEnglish(true),new ModePreferences(activity).selected());
-            click("Switch to English");expectText("ab");
+            click("Switch to Chinese");expectText("ab");
             click("Switch to "+(family.taiwanese()?"Taiwanese":"Japanese"));expectText("ab");
             assertEquals(family.secondaryEnglish(true),new ModePreferences(activity).selected());
             assertEquals("Pair switches keep keyboard bounds",stable,keyboardBounds());

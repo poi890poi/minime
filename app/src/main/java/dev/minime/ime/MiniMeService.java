@@ -142,7 +142,7 @@ public final class MiniMeService extends InputMethodService {
     private void render() {
         InputConnection input=getCurrentInputConnection();
         shift.automatic(english && !literalInput() && input!=null && input.getCursorCapsMode(editorInfo.inputType)!=0);
-        if(keyboard!=null) {keyboard.modeOptions(modes.mixed(),modes.configured());keyboard.render(engine,zhuyin && engine.inputMode()==InputMode.CHINESE && !literalInput() && !english,shift.upper(),shift.locked(),panel,policy.numeric,
+        if(keyboard!=null) {keyboard.modeOptions(modes.quickTarget(engine.inputMode()),modes.configured());keyboard.render(engine,zhuyin && engine.inputMode()==InputMode.CHINESE && !literalInput() && !english,shift.upper(),shift.locked(),panel,policy.numeric,
             literalInput() || policy.numeric || english || englishPunctuation,english || literalInput(),!policy.literal && !policy.numeric,!literalInput(),
             EditorPolicy.enterLabel(editorInfo),!ready?dictionaryStatus:addonLoading?"Loading "+engine.inputMode().label+" dictionary…":"");}
     }
@@ -179,7 +179,7 @@ public final class MiniMeService extends InputMethodService {
             case "PUNCTUATION": panel=3; break;
             case "LETTERS": panel=0; break;
             case "LANGUAGE":
-                switchMode(english?modes.mixed():InputMode.ENGLISH);
+                switchMode(modes.quickTarget(engine.inputMode()));
                 break;
             case "PUNCT_WIDTH":
                 englishPunctuation=!englishPunctuation;panel=0;

@@ -50,7 +50,7 @@ final class KeyboardView extends LinearLayout {
     void modeOptions(InputMode mixed,Set<String> configured) {
         returnMode=mixed;configuredModes=new HashSet<>(configured);
     }
-    private static String modeName(InputMode mode) {return mode.taiwanese()?"Taiwanese":mode.japanese()?"Japanese":"Chinese";}
+    private static String modeName(InputMode mode) {return mode.english()?"English":mode.taiwanese()?"Taiwanese":mode.japanese()?"Japanese":"Chinese";}
     private TextView modeBadge(InputMode current,Runnable show) {
         TextView badge=plain(current.label+"⌄","MODE_PICKER",48,1);badge.setTextSize(15);
         badge.setContentDescription("Choose language mode: "+current.family().id);
@@ -454,13 +454,13 @@ final class KeyboardView extends LinearLayout {
                 expandButton.setOnClickListener(v->{expanded=!expanded;render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading);});
             } else {
                 strip.removeAllViews();candidateScroll=null;candidateWords=null;expandButton=null;
-                TextView chinese=plain(returnMode.label,english?"LANGUAGE":"LAYOUT",48,1); chinese.setTextSize(23); ((SlideKey)chinese).icon(null);
-                chinese.setContentDescription(english?"Switch to "+modeName(returnMode):zhuyin?"拼音 layout":"注音 layout");
-                if(!english)chinese.setBackgroundColor(BACK);
+                TextView chinese=plain("中",engine.inputMode()==InputMode.CHINESE?"LAYOUT":"MODE:chinese",48,1); chinese.setTextSize(23); ((SlideKey)chinese).icon(null);
+                chinese.setContentDescription(engine.inputMode()!=InputMode.CHINESE?"Switch to Chinese":zhuyin?"拼音 layout":"注音 layout");
+                if(engine.inputMode()==InputMode.CHINESE)chinese.setBackgroundColor(BACK);
                 strip.addView(chinese,new LayoutParams(dp(75),dp(48)));
-                TextView latin=plain("En","LANGUAGE",48,1); latin.setTextSize(23); ((SlideKey)latin).icon(null);
+                TextView latin=plain("En","MODE:english",48,1); latin.setTextSize(23); ((SlideKey)latin).icon(null);
                 latin.setContentDescription(english?"English selected":"Switch to English");
-                latin.setOnClickListener(v->{if(!english)press.accept("LANGUAGE");});
+                latin.setOnClickListener(v->{if(!english)press.accept("MODE:english");});
                 if(english)latin.setBackgroundColor(BACK);
                 strip.addView(latin,new LayoutParams(dp(75),dp(48)));
                 if(allowLanguageSwitch)strip.addView(modeBadge(engine.inputMode(),()->render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading)),new LayoutParams(dp(48),dp(48)));
@@ -521,8 +521,8 @@ final class KeyboardView extends LinearLayout {
         TextView symbol=plain(panel>0?"ABC":"?123",panel>0?"LETTERS":"SYMBOLS",height,1.6f); symbol.setTextSize(16); bottom.addView(symbol);
         bottom.addView(punctuation(true,asciiPunctuation,allowLanguageSwitch && !english,height));
         if(allowLanguageSwitch) {
-            TextView language=plain(english?returnMode.label:"EN","LANGUAGE",height,.9f);language.setTextSize(15);((SlideKey)language).icon(null);
-            language.setContentDescription(english?"Switch to "+modeName(returnMode):"Switch to English");bottom.addView(language);
+            TextView language=plain(returnMode.label,"LANGUAGE",height,.9f);language.setTextSize(15);((SlideKey)language).icon(null);
+            language.setContentDescription("Switch to "+modeName(returnMode));bottom.addView(language);
         }
         String mixedLabel=engine.inputMode()==InputMode.CHINESE?(zhuyin?"注音":"拼音"):engine.inputMode().description();
         TextView space=plain(english?"English":mixedLabel,"SPACE",height,4); space.setTextSize(14); space.setTextColor(0xff6d7b80); space.setContentDescription("Space");
