@@ -1,0 +1,23 @@
+{
+  "asset_sha256": "6d1568929cdb70f348b61a93a6b576278819bee6be8a831ce6e372b82c3e3f10",
+  "japanese_rows": 43921,
+  "japanese_outputs": 40942,
+  "japanese_reading_keys": 21594,
+  "outputs_absent_from_source_fields": 0,
+  "source_hashes": {
+    "third_party\\jmdict\\jmdict-eng-common.json.tgz": "47555ec41e40d45e0207c2d253e8675d2cc400c02f8962682d9807892c3ba850",
+    "third_party\\jmnedict\\jmnedict.json.tgz": "bbc82a8a8650816430a3e1589a335de0a782af1a7165dba401ea8490eb2bc0a2"
+  },
+  "baseline_sha256": "be50401d9c4aa21982a595eba14bad423271c1072e9dd870969ee04adbbffaed",
+  "baseline_rows": 343769,
+  "rows": 319383,
+  "removed_rows": 24386,
+  "removed_by_source": {
+    "jmdict": 22838,
+    "jmnedict": 1548
+  },
+  "added_rows": 0,
+  "lost_reading_source_category_keys": 0,
+  "removed_native_source_spellings": 0,
+  "other_language_rows_changed": 0
+}

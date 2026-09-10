@@ -9,9 +9,9 @@ Generated from sources/catalog.json. Retain is scoped to the listed use; pilot i
 | AOSP LatinIME English | retain | vocabulary, frequency | Retain English-specific source. |
 | ChhoeTaigi iTaigi | retain | vocabulary, readings, evaluation | Retain original POJ and source attribution. |
 | Taiwanese beginner vocabulary | retain | vocabulary, readings, evaluation | Retain POJ; do not infer modern popularity. |
-| JMDICT | retain | vocabulary, readings, evaluation | Retain Japanese-specific sources. |
-| JMNEDICT | retain | vocabulary, readings, evaluation | Retain Japanese-specific sources. |
-| WanaKana | retain | tooling | Retain language tooling. |
+| JMDICT | retain | vocabulary, readings, evaluation | All source-common vocabulary without a word or part-of-speech allowlist; preserve reading/sense restrictions. Output source kana and compatible kanji only, retaining romanization as input aliases rather than generated output (docs/japanese-output/RESULTS.md). |
+| JMNEDICT | retain | vocabulary, readings, evaluation | Retain Japanese-specific sources and their existing eligibility rules. Output source kana and compatible spellings, not generated romanization; preserve romanized input aliases (docs/japanese-output/RESULTS.md). |
+| WanaKana | retain | tooling, readings, evaluation | Retain language tooling. |
 | CC-CEDICT legacy Taiwan filter | replace | vocabulary, readings, evaluation | Freeze existing contribution pending Taiwan-authored replacement. |
 | Wikidata legacy cultural labels | replace | vocabulary, discovery, evaluation | Freeze existing contribution; use specialist authored catalogs for wording. |
 | Wikipedia category-derived Taiwan pack | replace | vocabulary, discovery, evaluation | Freeze current data; stop treating volume and locale tags as quality. |
@@ -28,3 +28,6 @@ Generated from sources/catalog.json. Retain is scoped to the listed use; pilot i
 | National Cultural Memory Bank / Taiwan encyclopedia | hold | discovery | Evaluate compatible datasets individually, never scrape the whole portal into phrases. |
 | MOE / Moedict dictionary data | reference | evaluation | Use as a reference; establish permissible derivative use before adding an importer. |
 | UD English GUM evaluation | reference | evaluation | Reuse existing genre-separated regression evidence. |
+| Taiwanese source-attested paired output | retain | vocabulary, readings | Optional direct alternative output for existing Taiwanese candidates; does not change ranking or primary phonetic output. |
+| 台華線頂對照典 / Taihoa | retain | readings, vocabulary, evaluation | Dedicated Taiwanese mode needs an extensive authored dictionary; import original headwords and aligned variants without Mandarin gloss, length-in-syllables or frequency eligibility gates. |
+| KANJIDIC2 | retain | vocabulary, readings, frequency | User requested very common kanji in Japanese mode. Fixed top-500 source-rank cutoff before evaluation; no per-character selections. |

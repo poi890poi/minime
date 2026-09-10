@@ -372,6 +372,18 @@ its original event order.
 
 ---
 
+## 10.2 Japanese output forms
+
+The Japanese board accepts romaji input and suggests source kana/kanji forms.
+Generated Japanese romanizations must not appear as extra conversion candidates,
+in either the first row or expanded list, for complete or incomplete input.
+Retain romanized input aliases, single hiragana/katakana and common kanji, English
+secondary suggestions and exact raw recovery. Remove generated romanization
+outputs at dictionary extraction time so they do not consume lookup budgets.
+Preserve original source spellings and explicit user-authored custom entries.
+
+---
+
 # 11. Punctuation
 
 Punctuation handling should match natural Taiwan mixed-language typing.

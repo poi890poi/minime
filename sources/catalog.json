@@ -173,12 +173,13 @@
       "editorial": "Maintained Japanese dictionaries with reading/spelling relationships and source metadata.",
       "coverage": "All source-common Japanese vocabulary readings and compatible common spellings, including expressions/interjections, nouns, verbs and adjectives.",
       "limitations": "Common flags are not a complete frequency model. jmdict-simplified denotes a JSON format, not Simplified Chinese.",
-      "reason": "Expand the former expression/interjection-only filter systematically to all source-common vocabulary; no word or part-of-speech allowlist. Preserve reading/sense restrictions.",
+      "reason": "All source-common vocabulary without a word or part-of-speech allowlist; preserve reading/sense restrictions. Output source kana and compatible kanji only, retaining romanization as input aliases rather than generated output (docs/japanese-output/RESULTS.md).",
       "addon_prefixes": [
         "jmdict:"
       ],
       "audit_files": [
-        "docs/japanese-coverage/PLAN.md"
+        "docs/japanese-coverage/PLAN.md",
+        "docs/japanese-output/RESULTS.md"
       ]
     },
     {
@@ -205,9 +206,12 @@
       "editorial": "Maintained Japanese dictionaries with reading/spelling relationships and source metadata.",
       "coverage": "Common expressions for JMdict; names/works/professions for JMnedict.",
       "limitations": "Common flags are not a complete frequency model. jmdict-simplified denotes a JSON format, not Simplified Chinese.",
-      "reason": "Retain Japanese-specific sources.",
+      "reason": "Retain Japanese-specific sources and their existing eligibility rules. Output source kana and compatible spellings, not generated romanization; preserve romanized input aliases (docs/japanese-output/RESULTS.md).",
       "addon_prefixes": [
         "jmnedict:"
+      ],
+      "audit_files": [
+        "docs/japanese-output/RESULTS.md"
       ]
     },
     {

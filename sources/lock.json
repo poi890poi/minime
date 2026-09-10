@@ -248,7 +248,7 @@
     },
     "docs/candidate-annotations/pairs-manifest.json": {
       "source": "paired-taiwanese",
-      "sha256": "0111912726cede3bb5a956604b8e493f1173c97f384e103e717f948474cdf9e0"
+      "sha256": "abf0879d2bcc931f1425c8f1a74aea148b4cbe0d69e02c1909ac521b2d7b709f"
     },
     "third_party/taihoa/taihoa.csv": {
       "source": "taihoa",
@@ -273,12 +273,12 @@
   },
   "addon_rows": {
     "jmdict": {
-      "rows": 64082,
-      "sha256": "7e1c82d8dbe06a9951c49b84339e324d426d6c89f3031767e7fe97c356db161d"
+      "rows": 41244,
+      "sha256": "2e1c30babf6eb7169d8cb88b1f01ebe15cf5ca1279385541886a7c486275f0f2"
     },
     "jmnedict": {
-      "rows": 4225,
-      "sha256": "91384b32f0f06e890f4aa5c8d4fcf718da7ed8cf53ad0b3e2817b7eb9f88c863"
+      "rows": 2677,
+      "sha256": "2fc74af91b38663a7589d3ba548ed1a10020f46a7335eb0054b15bd8b7247926"
     },
     "itaigi": {
       "rows": 35405,
@@ -307,6 +307,7 @@
   },
   "audit_evidence": {
     "docs/japanese-coverage/PLAN.md": "773f17fe3b4a1262833d9a887f2551d2df83bba85ec4b0f910a5bd5ca7acd0ba",
+    "docs/japanese-output/RESULTS.md": "3db6eec35cd9dcaae7d6d9c1576d7597c030ec18db434dcbc6f943d2f08315ea",
     "docs/sources/audit-2026-09-08/artifacts.json": "e17a9b2b4c00803276a801eff540f603547acfbcd1e3aa90b1fdda6f141f3379",
     "docs/sources/audit-2026-09-08/cip.json.gz": "74d663ccc4da6f69e0441e5894e8a34b415fc7f2a22c4e4f647dc95c21893a04",
     "docs/sources/audit-2026-09-08/fetch-errors.json.gz": "9b04ff474c6714874d2e1e794867aa28188ae3622750745aa29e098a19740075",

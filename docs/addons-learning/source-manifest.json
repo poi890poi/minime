@@ -80,12 +80,12 @@
       "sha256": "29b11df86928b8cea357889e79f43d5989b1a5d3d029edddd47548bbc8877955"
     }
   ],
-  "asset_sha256": "be50401d9c4aa21982a595eba14bad423271c1072e9dd870969ee04adbbffaed",
-  "rows": 343769,
+  "asset_sha256": "6d1568929cdb70f348b61a93a6b576278819bee6be8a831ce6e372b82c3e3f10",
+  "rows": 319383,
   "outputs_by_pack": {
     "taiwan": 12458,
     "poj": 80289,
-    "japanese": 62547
+    "japanese": 40942
   },
   "taiwan_category_outputs": {
     "animals": 540,
@@ -165917,7 +165917,7 @@
     "taiwanese_beginner_outputs": 5470,
     "japanese_common_records": 22637,
     "japanese_expression_records": 590,
-    "japanese_everyday_outputs": 58521,
+    "japanese_everyday_outputs": 38390,
     "taihoa_source_records": 91339
   },
   "taiwan_encyclopedia": {
@@ -166084,6 +166084,6 @@
   },
   "selection_rules": {
     "poj": "All supported iTaigi and Taihoa headwords/variants and beginner headwords within the 96-character limit; complete beginner examples <=6 syllables; no Mandarin gloss or frequency eligibility gate",
-    "japanese": "All JMdict source-common readings and compatible common spellings across parts of speech, plus JMnedict works, creative professions and Taiwan metadata; no entity allowlist"
+    "japanese": "All JMdict source-common readings and compatible common spellings across parts of speech, plus JMnedict works, creative professions and Taiwan metadata; source kana/kanji outputs, romanized input aliases only; no entity allowlist"
   }
 }

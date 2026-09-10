@@ -1,0 +1,45 @@
+{
+  "full": {
+    "before": {
+      "count": 22953,
+      "available": 22953,
+      "top8": 22819
+    },
+    "after": {
+      "count": 22953,
+      "available": 22953,
+      "top8": 22848
+    }
+  },
+  "half": {
+    "before": {
+      "count": 1024,
+      "available": 418,
+      "top8": 191
+    },
+    "after": {
+      "count": 1024,
+      "available": 567,
+      "top8": 265
+    }
+  },
+  "initials": {
+    "before": {
+      "count": 1019,
+      "available": 948,
+      "top8": 766
+    },
+    "after": {
+      "count": 1019,
+      "available": 1000,
+      "top8": 867
+    }
+  },
+  "lost_available": 0,
+  "gained_available": 201,
+  "evidence_sha256": {
+    "docs/two-language-modes/japanese-final.tsv.gz": "6a933fc1628ccffaf2c3831eb0cefddf32bcd6c65ed46338167fb9b4c1c02764",
+    "docs/japanese-output/retrieval.tsv.gz": "1055f536e657a5a5597f3e970fa3a913a6e139acd466ab7456b43c7de576f1fc",
+    "docs/japanese-coverage/inputs.tsv": "5ed0f522d1ad723817e78dc312ba07ef8434c6f0d3d33e084be830e95b5c3440"
+  }
+}

@@ -97,11 +97,9 @@ kana_values=sorted({kana['text'] for item in selected_japanese for kana in item[
 converted=json.loads(subprocess.check_output(['node',str(ROOT/'tools/romanize_kana.cjs')],input=json.dumps(kana_values,ensure_ascii=False).encode('utf-8')).decode('utf-8'))
 for item in selected_japanese:
     for kana in item['kana']:
-        roman=converted[kana['text']]['romaji'].replace(' ', '').replace('・','')
         key=converted[kana['text']]['reading'];source='jmnedict:'+item['id']
         if not re.fullmatch("[a-z']+",key):skipped.append([source,kana['text'],'unsupported kana alias']);continue
         add('japanese',key,kana['text'],source,'taiwan_and_culture')
-        add('japanese',key,roman,source,'taiwan_and_culture')
         for name in item['kanji']:
             if '*' in kana['appliesToKanji'] or name['text'] in kana['appliesToKanji']:
                 add('japanese',key,name['text'],source,'taiwan_and_culture')
@@ -153,7 +151,7 @@ report['taiwan_encyclopedia']=encyclopedia
 report['sources'].append(dict(file='third_party/taiwan_encyclopedia/snapshot.json.gz',url='https://zh.wikipedia.org/',license='CC-BY-SA-4.0',sha256=encyclopedia['snapshot_sha256']))
 report['sources'].append(dict(file='third_party/taiwan_encyclopedia/entity-types.json.gz',url='https://www.wikidata.org/',license='CC0-1.0',sha256=encyclopedia['entity_types_sha256']))
 report['sources'].append(dict(file='third_party/taiwan_encyclopedia/traditional-labels.json.gz',url='https://www.wikidata.org/',license='CC0-1.0',sha256=encyclopedia['traditional_labels_sha256']))
-report['selection_rules']={'poj':'All supported iTaigi and Taihoa headwords/variants and beginner headwords within the 96-character limit; complete beginner examples <=6 syllables; no Mandarin gloss or frequency eligibility gate','japanese':'All JMdict source-common readings and compatible common spellings across parts of speech, plus JMnedict works, creative professions and Taiwan metadata; no entity allowlist'}
+report['selection_rules']={'poj':'All supported iTaigi and Taihoa headwords/variants and beginner headwords within the 96-character limit; complete beginner examples <=6 syllables; no Mandarin gloss or frequency eligibility gate','japanese':'All JMdict source-common readings and compatible common spellings across parts of speech, plus JMnedict works, creative professions and Taiwan metadata; source kana/kanji outputs, romanized input aliases only; no entity allowlist'}
 (OUT/'source-manifest.json').write_bytes((json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
 print(json.dumps({k:v for k,v in report.items() if k in ('rows','outputs_by_pack','taiwan_category_outputs')},ensure_ascii=False,indent=2))
 print('Skipped for review:',len(skipped))

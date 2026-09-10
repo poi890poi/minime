@@ -63,7 +63,7 @@ def append_everyday(add, skipped):
             key = aliases[kana['text']]['reading']
             if not re.fullmatch("[a-z']{1,64}", roman):
                 skipped.append([source, kana['text'], 'unsupported everyday kana alias']); continue
-            for output in [kana['text'], roman] + [k['text'] for k in item['kanji'] if k['common'] and ('*' in kana['appliesToKanji'] or k['text'] in kana['appliesToKanji']) and any('*' in s['appliesToKanji'] or k['text'] in s['appliesToKanji'] for s in senses)]:
+            for output in [kana['text']] + [k['text'] for k in item['kanji'] if k['common'] and ('*' in kana['appliesToKanji'] or k['text'] in kana['appliesToKanji']) and any('*' in s['appliesToKanji'] or k['text'] in s['appliesToKanji'] for s in senses)]:
                 add('japanese', key, output, source, category); accepted.add(output)
     counts['japanese_everyday_outputs'] = len(accepted)
     return counts
