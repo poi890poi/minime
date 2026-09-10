@@ -474,6 +474,23 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
             assertEquals("Pair switches keep keyboard bounds",stable,keyboardBounds());
         }
     }
+    public void testCategorySwipeDoesNotTurnContentPage() throws Exception {
+        // Wait for the system IME entrance animation before recording screen coordinates.
+        click("?123");SystemClock.sleep(350);getInstrumentation().waitForIdleSync();
+        Rect first=bounds("Category 常用 Common"),before=bounds("Symbol !");
+        Rect window=keyboardBounds();float x=window.right-20,y=first.exactCenterY();long start=SystemClock.uptimeMillis();
+        event(start,MotionEvent.ACTION_DOWN,x,y);
+        for(int step=1;step<=8;step++){SystemClock.sleep(20);event(start,MotionEvent.ACTION_MOVE,x-step*(window.width()*.6f/8),y);}
+        event(start,MotionEvent.ACTION_UP,x-window.width()*.6f,y);getInstrumentation().waitForIdleSync();
+        assertEquals("Category scrolling must not turn the content page",before,bounds("Symbol !"));
+        AccessibilityNodeInfo moved=null;
+        for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows()) {moved=find(w.getRoot(),"Category 常用 Common");if(moved!=null)break;}
+        boolean shifted=moved==null;
+        if(moved!=null) {Rect now=new Rect();moved.getBoundsInScreen(now);shifted=now.left<first.left || now.width()<first.width();moved.recycle();}
+        assertTrue("The category strip actually scrolls",shifted);
+        assertEquals("Palette gestures cannot insert a symbol","",activity.text.getText().toString());
+        capture("category-swipe");
+    }
     public void testJapaneseJoinedReadingKeepsCandidates() throws Exception {
         activity.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_japanese",true).commit();
         AddonRepository.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS);
@@ -821,9 +838,9 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         click("Collapse candidates");click("Space");sameKeyboardBounds(stable,"commit");
         click("Switch to English");type("hello");sameKeyboardBounds(stable,"English literal");assertEquals(q,bounds("q"));
         click("Space");click("Switch to Chinese");clear();
-        click("Emoji");sameKeyboardBounds(stable,"emoji");click("Emoji category");sameKeyboardBounds(stable,"emoji chooser");
+        click("Emoji");sameKeyboardBounds(stable,"emoji");capture("emoji-category-tabs");click("Emoji category");sameKeyboardBounds(stable,"emoji chooser");
         menuItem("Flags");sameKeyboardBounds(stable,"emoji category selected");click("ABC");
-        click("?123");sameKeyboardBounds(stable,"symbols");click("Symbol category");sameKeyboardBounds(stable,"symbol chooser");
+        click("?123");sameKeyboardBounds(stable,"symbols");capture("symbol-category-tabs");click("Symbol category");sameKeyboardBounds(stable,"symbol chooser");
         click("ABC");clear();click("注音 layout");zhuyin=true;sameKeyboardBounds(stable,"Zhuyin");
         click("拼音 layout");zhuyin=false;focus(activity.password);sameKeyboardBounds(stable,"password");
         focus(activity.number);sameKeyboardBounds(stable,"number");focus(activity.text);sameKeyboardBounds(stable,"return to editor");

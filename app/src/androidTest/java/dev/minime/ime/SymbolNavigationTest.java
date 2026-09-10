@@ -37,6 +37,21 @@ public final class SymbolNavigationTest extends InstrumentationTestCase {
             click(first,"Symbol category");assertEquals("Open chooser cannot overwrite saved content page",expected,entries(panel(false)));
         });
     }
+    public void testDirectCategoryTabsAndEmojiChooserCancellation() throws Throwable {
+        runTestOnUiThread(()-> {
+            SymbolPanel symbols=panel(false);click(symbols,"Category 箭頭 Arrows");assertTrue(find(symbols,"Category 箭頭 Arrows").isSelected());
+            click(symbols,"Next palette page");List<String> expected=entries(symbols);
+            click(symbols,"Category 數學 Math");click(symbols,"Category 箭頭 Arrows");assertEquals(expected,entries(symbols));
+            SymbolPanel emoji=new SymbolPanel(getInstrumentation().getTargetContext(),true,true,key->{});
+            click(emoji,"Next palette page");String before=((TextView)findCounter(emoji)).getText().toString();
+            click(emoji,"Emoji category");click(emoji,"Emoji category");assertEquals(before,((TextView)findCounter(emoji)).getText().toString());
+        });
+    }
+    private static View findCounter(View root) {
+        if(root instanceof TextView && ((TextView)root).getText().toString().matches("[0-9]+ / [0-9]+"))return root;
+        if(root instanceof ViewGroup)for(int i=0;i<((ViewGroup)root).getChildCount();i++) {View found=findCounter(((ViewGroup)root).getChildAt(i));if(found!=null)return found;}
+        return null;
+    }
     public void testInvalidNavigationClampsAndPrivateFieldsStayIsolated() throws Throwable {
         runTestOnUiThread(()-> {
             settings.edit().putString("symbol_category","removed category").putInt("symbol_page",Integer.MAX_VALUE).commit();
@@ -44,7 +59,7 @@ public final class SymbolNavigationTest extends InstrumentationTestCase {
             settings.edit().putString("symbol_category","箭頭 Arrows").putInt("symbol_page",Integer.MAX_VALUE).commit();
             SymbolPanel last=panel(false);assertFalse(find(last,"Next palette page").isEnabled());assertFalse(entries(last).isEmpty());
             Map<String,?> saved=new HashMap<>(settings.getAll());SymbolPanel privatePanel=panel(true);
-            assertEquals("Private panel starts at Common", "常用 Common ▾",((TextView)find(privatePanel,"Symbol category")).getText().toString());
+            assertTrue("Private panel starts at Common",find(privatePanel,"Category 常用 Common").isSelected());
             click(privatePanel,"Next palette page");click(privatePanel,"Symbol category");click(privatePanel,"數學 Math");
             assertEquals("Private navigation never changes saved state",saved,settings.getAll());assertEquals(entries(last),entries(panel(false)));
             settings.edit().putInt("symbol_page",-10).commit();assertFalse(find(panel(false),"Previous palette page").isEnabled());

@@ -26,6 +26,11 @@ final class SymbolPanel extends LinearLayout {
     private final boolean remember;
     private final android.content.SharedPreferences navigation;
     private float touchX,touchY;
+    private boolean pageGesture;
+    private final Map<String,Button> categoryTabs=new LinkedHashMap<>();
+    private final Map<String,Integer> visitedPages=new HashMap<>();
+    private final HorizontalScrollView categoryScroll;
+
     private static List<String[]> emojiRows;
     private List<Entry> entries=Collections.emptyList();
     private int page;
@@ -41,7 +46,7 @@ final class SymbolPanel extends LinearLayout {
         navigation=!emoji && !privateField?context.getSharedPreferences("settings",Context.MODE_PRIVATE):null;
         remember=emoji && !privateField && context.getSharedPreferences("settings",Context.MODE_PRIVATE).getBoolean("emoji_recents",false);
         landscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
-        int selectorHeight=landscape?28:40,navHeight=landscape?22:34;
+        int selectorHeight=landscape?36:48,navHeight=landscape?22:34;
         if(emoji) {
             loadEmoji();
             for(Map<String,List<Entry>> sections:catalog.values()) {List<Entry> all=new ArrayList<>();for(List<Entry> list:sections.values())all.addAll(list);
@@ -64,8 +69,17 @@ final class SymbolPanel extends LinearLayout {
         groups=new Button(context); groups.setContentDescription(emoji?"Emoji category":"Symbol category");
         sections=new Button(context); sections.setContentDescription("Emoji group");
         groups.setTextSize(12);sections.setTextSize(12);groups.setPadding(0,0,0,0);sections.setPadding(0,0,0,0);
-        selectors.addView(groups,new LayoutParams(0,dp(selectorHeight),1));
-        if(emoji) selectors.addView(sections,new LayoutParams(0,dp(selectorHeight),1));
+        groups.setText("☰");groups.setMinWidth(0);groups.setMinimumWidth(0);
+        selectors.addView(groups,new LayoutParams(dp(40),dp(selectorHeight)));
+        categoryScroll=new HorizontalScrollView(context);categoryScroll.setHorizontalScrollBarEnabled(false);
+        LinearLayout tabs=new LinearLayout(context);tabs.setBaselineAligned(false);
+        for(String name:catalog.keySet()) {
+            Button tab=navButton(name,"Category "+name,()->chooseGroup(name));
+            tab.setTextSize(12);tab.setAllCaps(false);tab.setMaxLines(2);tab.setPadding(dp(8),0,dp(8),0);
+            tabs.addView(tab,new LayoutParams(dp(100),dp(selectorHeight)));categoryTabs.put(name,tab);
+        }
+        categoryScroll.addView(tabs);selectors.addView(categoryScroll,new LayoutParams(0,dp(selectorHeight),1));
+        if(emoji)selectors.addView(sections,new LayoutParams(dp(90),dp(selectorHeight)));
         addView(selectors,new LayoutParams(-1,dp(selectorHeight)));
         grid=new LinearLayout(context);grid.setOrientation(VERTICAL);addView(grid,new LayoutParams(-1,0,1));
         LinearLayout nav=new LinearLayout(context);nav.setBaselineAligned(false);
@@ -81,9 +95,17 @@ final class SymbolPanel extends LinearLayout {
         }
         selectGroup(groupName);
         if(navigation!=null && groupName.equals(navigation.getString("symbol_category","")))page=navigation.getInt("symbol_page",0);
-        groups.setOnClickListener(v->{if(emoji) {chooser=chooser==1?0:1;page=0;render();}else toggleChooser(1);});
-        sections.setOnClickListener(v->{chooser=chooser==2?0:2;page=0;render();});
+        groups.setOnClickListener(v->toggleChooser(1));
+        sections.setOnClickListener(v->toggleChooser(2));
         render();
+        categoryScroll.post(()->categoryScroll.scrollTo(Math.max(0,categoryTabs.get(groupName).getLeft()-dp(20)),0));
+    }
+    private String pageKey() {return groupName+"\t"+sectionName;}
+    private void rememberPage() {visitedPages.put(pageKey(),chooser==0?page:contentPage);}
+    private void chooseGroup(String name) {
+        rememberPage();if(!name.equals(groupName))selectGroup(name);chooser=0;page=visitedPages.getOrDefault(pageKey(),0);render();
+        Button active=categoryTabs.get(name);
+        categoryScroll.post(()->categoryScroll.smoothScrollTo(Math.max(0,active.getLeft()-dp(20)),0));
     }
     private void toggleChooser(int target) {
         if(chooser==target) {chooser=0;page=contentPage;}
@@ -137,12 +159,12 @@ final class SymbolPanel extends LinearLayout {
         for(String[] p:emojiRows)add(p[0],p[1],p[2],p[3]);
     }
     @Override public boolean onInterceptTouchEvent(MotionEvent e) {
-        if(e.getActionMasked()==MotionEvent.ACTION_DOWN) {touchX=e.getX();touchY=e.getY();}
-        if(e.getActionMasked()==MotionEvent.ACTION_MOVE && Math.abs(e.getX()-touchX)>dp(48) && Math.abs(e.getX()-touchX)>1.5*Math.abs(e.getY()-touchY))return true;
+        if(e.getActionMasked()==MotionEvent.ACTION_DOWN) {touchX=e.getX();touchY=e.getY();pageGesture=touchY>=grid.getTop() && touchY<grid.getBottom();}
+        if(pageGesture && e.getActionMasked()==MotionEvent.ACTION_MOVE && Math.abs(e.getX()-touchX)>dp(48) && Math.abs(e.getX()-touchX)>1.5*Math.abs(e.getY()-touchY))return true;
         return super.onInterceptTouchEvent(e);
     }
     @Override public boolean onTouchEvent(MotionEvent e) {
-        if(e.getActionMasked()==MotionEvent.ACTION_UP) {if(Math.abs(e.getX()-touchX)>dp(48)) {page+=e.getX()<touchX?1:-1;render();}return true;}
+        if(e.getActionMasked()==MotionEvent.ACTION_UP) {if(pageGesture && Math.abs(e.getX()-touchX)>dp(48)) {page+=e.getX()<touchX?1:-1;render();}return true;}
         return true;
     }
     private void insert(Entry e) {
@@ -154,7 +176,14 @@ final class SymbolPanel extends LinearLayout {
         press.accept("INSERT:"+e.text);
     }
     private void render() {
-        groups.setText(groupName+" ▾");sections.setText(sectionName+" ▾");
+        groups.setText(chooser==1?"×":"☰");groups.setSelected(chooser==1);
+        groups.setTooltipText("Categories · "+groupName);
+        sections.setText(sectionName+(chooser==2?" ×":" ▾"));sections.setSelected(chooser==2);
+        for(Map.Entry<String,Button> tab:categoryTabs.entrySet()) {
+            boolean selected=tab.getKey().equals(groupName);tab.getValue().setSelected(selected);
+            tab.getValue().setTextColor(selected?Color.WHITE:0xff263238);
+            tab.getValue().setBackgroundTintList(android.content.res.ColorStateList.valueOf(selected?0xff006765:0xffeef2f3));
+        }
         List<String> choices=chooser==1?new ArrayList<>(catalog.keySet()):chooser==2?new ArrayList<>(catalog.get(groupName).keySet()):Collections.emptyList();
         int columns=chooser==0?6:3,perPage=columns*3,size=chooser==0?entries.size():choices.size();
         int count=Math.max(1,(size+perPage-1)/perPage);page=Math.max(0,Math.min(page,count-1));
@@ -168,16 +197,20 @@ final class SymbolPanel extends LinearLayout {
                 TextView key=new TextView(getContext());key.setText(e.text);key.setTextColor(Color.BLACK);key.setTextSize(chooser!=0?12:landscape?18:emoji?24:21);
                 key.setGravity(Gravity.CENTER);key.setMaxLines(chooser==0?1:3);key.setBackgroundColor(0xfff9fafb);key.setFocusable(true);key.setClickable(true);
                 key.setContentDescription(chooser==0?(emoji?"Emoji ":"Symbol ")+e.name:e.name);
+                if(chooser!=0 && e.text.equals(chooser==1?groupName:sectionName)) {
+                    key.setSelected(true);key.setBackgroundColor(0xff006765);key.setTextColor(Color.WHITE);
+                }
                 key.setOnClickListener(v->{
-                    if(chooser==0) insert(e);
-                    else {if(chooser==1) selectGroup(e.text);else {sectionName=e.text;entries=catalog.get(groupName).get(sectionName);}chooser=0;page=0;render();}
+                    if(chooser==0)insert(e);
+                    else if(chooser==1)chooseGroup(e.text);
+                    else {rememberPage();sectionName=e.text;entries=catalog.get(groupName).get(sectionName);chooser=0;page=visitedPages.getOrDefault(pageKey(),0);render();}
                 });
                 LayoutParams lp=new LayoutParams(0,-1,1);lp.setMargins(dp(1),dp(1),dp(1),dp(1));line.addView(key,lp);
             }
         }
         counter.setText(String.format(Locale.getDefault(),"%d / %d",page+1,count));previous.setEnabled(page>0);next.setEnabled(page+1<count);
         if(chooser==0) {
-            contentPage=page;
+            contentPage=page;visitedPages.put(pageKey(),page);
             if(navigation!=null && (!groupName.equals(navigation.getString("symbol_category","")) || page!=navigation.getInt("symbol_page",-1)))
                 navigation.edit().putString("symbol_category",groupName).putInt("symbol_page",page).apply();
         }
