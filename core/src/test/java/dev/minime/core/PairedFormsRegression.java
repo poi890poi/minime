@@ -37,7 +37,7 @@ final class PairedFormsRegression {
             equal(han?"abc-def":"甲乙",selected.alternateText(),"hint is exact alternate");
             if(hold)c.selectAlternative(selected,c.compositionId());else c.selectCandidate(selected,c.compositionId());
             equal(han!=hold?"甲乙":"abc-def",e.text,"direct output follows tap / hold preference");
-            equal("",c.raw(),"paired choice clears composition");equal(0,memory.votes.size(),"paired source does not train base ranking");
+            equal("",c.raw(),"paired choice clears composition");equal(1,memory.count("FOCUS:poj","abcdef","abc-def"),"paired source learns canonical language identity");
         }
         for(boolean han:Arrays.asList(false,true)) {
             Editor output=new Editor();CompositionEngine choice=engine(output,Learning.NONE,false);
@@ -50,7 +50,7 @@ final class PairedFormsRegression {
         collision.decoder((d,r,b,ctx,done)->done.accept(Collections.singletonList(new Candidate("甲乙",false,1000))),()->{});
         type(collision,"abcdef");Candidate pairedCollision=collision.candidates().stream().filter(v->v.pair!=null).findFirst().get();
         collision.selectCandidate(pairedCollision,collision.compositionId());equal("甲乙",collisionOutput.text,"paired primary can share Han text with another candidate");
-        equal(0,collisionMemory.votes.size(),"paired identity cannot select and learn unrelated homophone");
+        equal(1,collisionMemory.count("FOCUS:poj","abcdef","abc-def"),"paired identity cannot learn unrelated Han homophone");
         Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);
         c.addons(addons,Collections.singleton("poj"));c.switchMode(InputMode.TAIWANESE,false);type(c,"abcdef");
         Candidate stale=c.candidates().stream().filter(v->v.pair!=null).findFirst().get();long id=c.compositionId();

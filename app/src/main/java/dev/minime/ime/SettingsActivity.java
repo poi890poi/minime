@@ -42,6 +42,8 @@ public final class SettingsActivity extends Activity {
         text("Try it",21);
         EditText test=new EditText(this); test.setHint("這個 pronunciation 不對"); test.setMinLines(2); test.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_MULTI_LINE); body.addView(test);
         text("Local dictionary",21);
+        option("Remember Taiwanese and Japanese candidate choices", "focused_choice_learning",true);
+        text("Explicit candidate taps and holds improve ordering for the same typed reading in that language. Space does not train itself. Han and POJ alternatives share one preference. Turning this off hides these preferences and stops updates; Clear learned choices removes them.",16);
         option("Learn repeated Chinese phrases on this device", "phrase_learning",false);
         text("After three accepted occurrences, a phrase becomes an extra candidate for the same reading. Only accepted Chinese segments are observed, including parts you select separately. Edits and field changes break the chain. No surrounding text is collected. Up to 512 reading/phrase pairs are retained; turning this off stops learning and hides these suggestions.",16);
         button("View learned phrases",()-> {

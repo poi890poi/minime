@@ -7,7 +7,7 @@ public final class Candidate {
     final String reading;
     /** ASCII phonetic prefix consumed by an explicit choice; zero means the whole token. */
     public final int consumed;
-    /** Supplemental choices never train the base decoder's automatic preference. */
+    /** Supplemental identity; focused choices learn in their own language namespace. */
     public final boolean supplemental;
     public final boolean abbreviated;
     /** True only when the retained path joins more than one lexical unit. */

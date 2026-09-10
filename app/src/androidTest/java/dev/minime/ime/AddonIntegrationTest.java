@@ -51,6 +51,16 @@ public final class AddonIntegrationTest extends ActivityInstrumentationTestCase2
             data.edit().remove("phrases_v1").commit();settings.edit().putBoolean("phrase_learning",true).commit();assertTrue(learning.phrases("shanyu").isEmpty());
         });
     }
+    public void testFocusedChoicePersistenceAndClear() {
+        SharedPreferences data=context.getSharedPreferences("learning",Context.MODE_PRIVATE);
+        String key="FOCUS:poj\tfixture\tfixture-output";
+        data.edit().remove(key).commit();
+        LocalLearning learning=new LocalLearning(context);learning.choose("FOCUS:poj","fixture","fixture-output");
+        assertEquals(1,new LocalLearning(context).count("FOCUS:poj","fixture","fixture-output"));
+        assertEquals(0,new LocalLearning(context).count("FOCUS:japanese","fixture","fixture-output"));
+        data.edit().remove(key).commit();
+        assertEquals(0,learning.count("FOCUS:poj","fixture","fixture-output"));
+    }
     public void testSavedDictionaryCachesFollowEditsAndDeletion() {
         SharedPreferences settings=context.getSharedPreferences("settings",Context.MODE_PRIVATE),data=context.getSharedPreferences("learning",Context.MODE_PRIVATE);
         settings.edit().putBoolean("phrase_learning",true).commit();

@@ -23,6 +23,12 @@ public final class CompositionEngine {
     private boolean zhuyin, literalField, privateField, direct, englishMode;
     private InputMode inputMode=InputMode.CHINESE;
     private boolean pairedTaiwanese=true,hanPrimary;
+    private boolean focusedLearning=true;
+    public void focusedLearning(boolean enabled) {
+        if(focusedLearning==enabled)return;
+        if(deferUntilReady(()->focusedLearning(enabled),false))return;
+        focusedLearning=enabled;refresh();changed.run();
+    }
     public void pairedTaiwanese(boolean enabled,boolean primaryHan) {
         if(pairedTaiwanese==enabled && hanPrimary==primaryHan)return;
         if(deferUntilReady(()->pairedTaiwanese(enabled,primaryHan),false))return;
@@ -256,7 +262,10 @@ public final class CompositionEngine {
     }
     private void commit(Candidate c, boolean withSpace, boolean explicit) {
         acceptedPhrase(raw,c);
-        if (explicit && !privateField && !c.supplemental) learning.choose(contextKey(), raw, c.text);
+        if(explicit && !privateField && !literalField) {
+            if(focused(c) && focusedLearning)learning.choose("FOCUS:"+c.pack,raw,choiceIdentity(c));
+            else if(!c.supplemental)learning.choose(contextKey(),raw,c.text);
+        }
         editor.commit(c.text + (withSpace ? " " : ""));
         committedEnglishWord=false;
         if(englishMode && !literalField && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
@@ -272,6 +281,12 @@ public final class CompositionEngine {
     private String contextKey() {
         String base=englishMode?"EN:"+context:!context.isEmpty()?context:afterLatin?"AFTER_LATIN":"START_OR_LATIN";
         return !inputMode.pack.isEmpty()?"MODE:"+inputMode.id+":"+base:base;
+    }
+    private static String choiceIdentity(Candidate c) {return c.pair==null?c.text:c.pair.phonetic;}
+    private int choiceVotes(Candidate c) {
+        if(privateField)return 0;
+        if(focused(c))return focusedLearning?learning.count("FOCUS:"+c.pack,raw,choiceIdentity(c)):0;
+        return learning.count(contextKey(),raw,c.text);
     }
     private static String tail(String text, int n) {
         return text.substring(text.offsetByCodePoints(text.length(), -Math.min(n, text.codePointCount(0, text.length()))));
@@ -397,11 +412,14 @@ public final class CompositionEngine {
             Candidate defaultChoice=candidates.get(preferred);
             int insertion=1;
             List<Candidate> supplements=new ArrayList<>(custom);
-            if(!privateField && phraseLearning && !englishMode)supplements.addAll(learning.phrases(raw));
+            if(!privateField && phraseLearning && inputMode.chineseEnabled())supplements.addAll(learning.phrases(raw));
             // Dedicated modes express language preference, not merely pack scope.
             // Keep explicit overrides and apostrophe recovery, then use the
             // selected language's full and incomplete matches in source order.
             if(!inputMode.pack.isEmpty()) {
+                // Stable personal ordering inside each full/incomplete group.
+                // With no evidence, keep the existing source order.
+                if(!privateField && focusedLearning)addonMatches.sort(Comparator.comparingInt(this::choiceVotes).reversed());
                 for(Candidate c:addonMatches)if(focused(c) && !c.incomplete)supplements.add(c);
                 for(Candidate c:addonMatches)if(focused(c) && c.incomplete)supplements.add(c);
             }
@@ -454,7 +472,7 @@ public final class CompositionEngine {
             // valid English spellings, contractions and Mandarin glyphs. Explicit
             // raw recovery, manual entries and literal/private field policy remain.
             boolean focusAvailable=candidates.stream().skip(1).anyMatch(this::focused);
-            if(focusAvailable && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,candidates.get(1).text))) {
+            if(focusAvailable && (privateField || learning.count(contextKey(),raw,raw)<=choiceVotes(candidates.get(1)))) {
                 preferred=1;automaticCorrection=false;
             }
             if(preferred>0 && !automaticCorrection) {

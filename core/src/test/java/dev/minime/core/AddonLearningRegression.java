@@ -95,7 +95,7 @@ final class AddonLearningRegression {
         }
         for(boolean english:new boolean[]{false,true}) {
             Memory m=new Memory();Editor e=new Editor();CompositionEngine c=engine(e,m,false);c.start(false,false,false,false,english);c.switchMode(InputMode.TAIWANESE,false);c.addons(addon,all);
-            type(c,"liho");c.select(find(c,"lí hó"));equal("lí hó",e.text,"original POJ output");equal(0,m.votes,"POJ never trains base preference");
+            type(c,"liho");c.select(find(c,"lí hó"));equal("lí hó",e.text,"original POJ output");equal(1,m.votes,"POJ records an explicit focused preference");
             c.start(false,false,true,false,english);type(c,"liho");yes(c.candidates().stream().noneMatch(v->v.supplemental),"private hides all add-ons");
             c.start(false,true,false,false,english);type(c,"liho");yes(c.candidates().stream().noneMatch(v->v.supplemental),"literal fields exclude add-ons");
         }

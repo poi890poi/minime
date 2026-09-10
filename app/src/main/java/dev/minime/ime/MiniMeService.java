@@ -28,6 +28,7 @@ public final class MiniMeService extends InputMethodService {
     private void configureAddons() {
         java.util.Set<String> enabled=AddonRepository.enabled(this);
         engine.phraseLearning(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("phrase_learning",false));
+        engine.focusedLearning(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("focused_choice_learning",true));
         engine.pairedTaiwanese(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("paired_taiwanese",true),
             getSharedPreferences("settings",MODE_PRIVATE).getBoolean("taiwanese_han_primary",false));
         if(!enabled.equals(activeAddons)) {activeAddons=enabled;applyAddons();}

@@ -43,3 +43,29 @@ The new controls cover all six core modes, full/partial input, synchronous and
 decoder paths, forbidden personal-data access, literal fields and direct input.
 Static candidate order/defaults match a no-history normal editor. The number is
 a correctness check count, not vocabulary accuracy. No source assets changed.
+
+### Focused explicit-choice learning
+
+The original diagnostic recorded zero writes after 96 explicit selections. The
+same diagnostic now records 96 writes, and all 32 private-editor queries retain
+their focused static candidates (`probes-after.tsv`). Core regressions pass
+34,936 assertions, including tap/hold, paired identity, stable static order,
+language isolation, full-before-incomplete ranking, Space without self-training,
+and the off switch. Existing generic local preference storage supplies bounded
+persistence and clearing; focused keys use `FOCUS:<pack>`, not Chinese contexts.
+Learned Chinese phrase lookup now requires Chinese to be in the active mode.
+
+This learns preferences among retrieved candidates. It does not create vocabulary,
+infer omitted readings, join Taiwanese/Japanese phrases or provide grammatical
+continuation. The diagnostic still reports zero focused phrase observations and
+zero idle candidates. Those need an independently designed provider.
+
+### Duplicate-removal control: not shipped
+
+The frozen representation-only experiment remains reproducible: 43 affected
+queries, eight changed, nine gained and ten lost candidates. Removing repeated
+references changes competition at bounded terminal and outer search stages;
+equal source scores then use reading length/text order. It is not evidence that
+new winners are more useful. Keep the runtime representation for now instead of
+shipping a ranking change with no justified quality gate. No weights or entries
+were tuned to these losses. A source-frequency policy needs separate evidence.
