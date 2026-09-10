@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$Serial,[string]$SdkDir=$env:ANDROID_HOME,
+param([Parameter(Mandatory=$true)][ValidateSet('RFCR91GWXLX')][string]$Serial,[string]$SdkDir=$env:ANDROID_HOME,
     [string]$TestClass='dev.minime.ime.EditorIntegrationTest,dev.minime.ime.KeyboardInteractionTest,dev.minime.ime.RimeIntegrationTest',
     [string]$AppApk='app/build/outputs/apk/debug/app-debug.apk',
     [string]$TestApk='app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')
@@ -51,11 +51,22 @@ try {
             if($LASTEXITCODE -ne 0) {throw "Could not transfer $name preference backup"}
             & $adb -s $Serial shell run-as dev.minime.ime cp "/sdcard/Android/data/dev.minime.ime/files/restore-$name.xml" "shared_prefs/$name.xml"
             if($LASTEXITCODE -ne 0) {throw "Could not restore $name preferences"}
+            $restored=(& $adb -s $Serial shell run-as dev.minime.ime cat "shared_prefs/$name.xml") -join "`n"
+            if($LASTEXITCODE -ne 0 -or $restored.Trim() -cne ([IO.File]::ReadAllText((Join-Path $prefBackup "$name.xml"))).Trim()) {throw "$name preference readback mismatch"}
         }
     } finally { try {
-        if($previousIme -and $previousIme -ne 'null') { & $adb -s $Serial shell ime set $previousIme }
+        if($previousIme -and $previousIme -ne 'null') {
+            & $adb -s $Serial shell ime set $previousIme
+            if($LASTEXITCODE -ne 0 -or (& $adb -s $Serial shell settings get secure default_input_method).Trim() -ne $previousIme) {throw 'Previous IME restoration failed'}
+        }
     } finally {
         & $adb -s $Serial shell input keyevent KEYCODE_SLEEP
-        Pop-Location
+        try {
+            Start-Sleep -Milliseconds 500
+            $display=(& $adb -s $Serial shell dumpsys display) -join "`n"
+            [IO.File]::WriteAllText((Join-Path $prefBackup 'display-after.txt'),$display)
+            if($LASTEXITCODE -ne 0 -or $display -notmatch 'mScreenState=OFF|mActualState=OFF') {throw 'Display OFF could not be verified'}
+            Write-Output 'Cleanup verified: preferences, previous IME, display OFF.'
+        } finally {Pop-Location}
     } }
 }
