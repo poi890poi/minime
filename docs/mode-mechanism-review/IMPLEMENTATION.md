@@ -69,3 +69,13 @@ equal source scores then use reading length/text order. It is not evidence that
 new winners are more useful. Keep the runtime representation for now instead of
 shipping a ranking change with no justified quality gate. No weights or entries
 were tuned to these losses. A source-frequency policy needs separate evidence.
+
+### Optional loading and cache ownership
+
+See `loading/README.md` and its raw evidence. Two trial orders retain every
+candidate in 23,532 paired lookups; no ranking change is attributed to loading.
+Core tests pass 34,990 assertions, including queued Space, failed loading,
+lifecycle cancellation, and independent Chinese specialist availability.
+Language assets are a packaging transformation of the same registered source,
+not a source refresh. Warm cache reuse and packaged-row equality have explicit
+Android/APK integration checks to run after compilation.

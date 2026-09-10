@@ -20,34 +20,33 @@ public final class MiniMeService extends InputMethodService {
     private EditorPolicy policy=new EditorPolicy(editorInfo);
     private boolean literalInput() { return policy.literal(english); }
     private final SelectionState selection=new SelectionState();
-    private AddonDictionary addonDictionary=AddonDictionary.EMPTY;
-    private AddonDictionary geographyDictionary=AddonDictionary.EMPTY;
     private java.util.Set<String> activeAddons=java.util.Collections.emptySet();
-    private boolean addonRequested,geographyRequested;
-    private void applyAddons() {engine.addons(AddonDictionary.combine(addonDictionary,geographyDictionary),AddonRepository.enabled(this));}
+    private long addonRequest;
+    private boolean addonLoading;
     private void configureAddons() {
         java.util.Set<String> enabled=AddonRepository.enabled(this);
+        AddonRepository.retainEnabled(enabled);
         engine.phraseLearning(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("phrase_learning",false));
         engine.focusedLearning(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("focused_choice_learning",true));
         engine.pairedTaiwanese(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("paired_taiwanese",true),
             getSharedPreferences("settings",MODE_PRIVATE).getBoolean("taiwanese_han_primary",false));
-        if(!enabled.equals(activeAddons)) {activeAddons=enabled;applyAddons();}
-        if(enabled.stream().anyMatch(pack->!pack.equals("geography")) && !addonRequested) {
-            addonRequested=true;
-            AddonRepository.load(this).whenComplete((dictionary,error)->new Handler(Looper.getMainLooper()).post(()-> {
-                if(destroyed)return;
-                if(error==null) {addonDictionary=dictionary;applyAddons();render();}
-                else android.widget.Toast.makeText(this,"Optional dictionaries unavailable; check MinIME settings",android.widget.Toast.LENGTH_LONG).show();
-            }));
-        }
-        if(enabled.contains("geography") && !geographyRequested) {
-            geographyRequested=true;
-            AddonRepository.geography(this).whenComplete((dictionary,error)->new Handler(Looper.getMainLooper()).post(()-> {
-                if(destroyed)return;
-                if(error==null) {geographyDictionary=dictionary;applyAddons();render();}
-                else android.widget.Toast.makeText(this,"Optional geography dictionary unavailable",android.widget.Toast.LENGTH_LONG).show();
-            }));
-        }
+        java.util.Set<String> requested=literalInput() || policy.secure || policy.numeric
+            ?java.util.Collections.emptySet():engine.inputMode().packs(enabled);
+        if(requested.equals(activeAddons))return;
+        activeAddons=requested;long request=++addonRequest;
+        addonLoading=!requested.isEmpty();
+        if(requested.isEmpty()) {engine.addons(AddonDictionary.EMPTY,requested);return;}
+        engine.awaitAddons(requested);
+        AddonRepository.load(this,requested).whenComplete((dictionary,error)->new Handler(Looper.getMainLooper()).post(()-> {
+            if(destroyed || request!=addonRequest)return;
+            addonLoading=false;
+            if(error==null) {engine.addons(dictionary,requested);render();}
+            else {
+                activeAddons=java.util.Collections.emptySet();
+                engine.addons(AddonDictionary.EMPTY,requested);render();
+                android.widget.Toast.makeText(this,"Optional dictionaries unavailable; check MinIME settings",android.widget.Toast.LENGTH_LONG).show();
+            }
+        }));
     }
     @Override public void onCreate() {
         super.onCreate();
@@ -84,8 +83,7 @@ public final class MiniMeService extends InputMethodService {
                 && input.setComposingRegion(attribute.initialSelEnd-engine.raw().length(),attribute.initialSelEnd);
         }
         editorInfo=attribute; policy=nextPolicy;
-        configureAddons();
-        if(resume) {render();return;}
+        if(resume) {configureAddons();render();return;}
         zhuyin=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("zhuyin",false);
         decoder.rime(RimeBackend.enabled(this));
         if(RimeBackend.enabled(this))RimeBackend.load(this).whenComplete((loaded,error)->new Handler(Looper.getMainLooper()).post(()-> {
@@ -102,6 +100,7 @@ public final class MiniMeService extends InputMethodService {
         selection.start(attribute.initialSelStart,attribute.initialSelEnd);
         engine.start(zhuyin,literalInput(),policy.privateField,policy.secure || policy.numeric,english);
         engine.switchMode(english?InputMode.ENGLISH:modes.mixed(),literalInput());
+        configureAddons();
         engine.englishOptions(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_correction",false),
             getSharedPreferences("settings",MODE_PRIVATE).getBoolean("double_space_period",true));
         render();
@@ -112,8 +111,8 @@ public final class MiniMeService extends InputMethodService {
     }
     @Override public void onStartInputView(EditorInfo attribute,boolean restarting) {
         super.onStartInputView(attribute,restarting);
-        configureAddons();
         if(!english && engine.inputMode()!=modes.mixed())engine.switchMode(modes.mixed(),literalInput());
+        configureAddons();
         if(keyboard!=null)keyboard.inputActive(true);
         if(!engine.raw().isEmpty()) {
             InputConnection input=getCurrentInputConnection();int end=selection.cursor();
@@ -145,7 +144,7 @@ public final class MiniMeService extends InputMethodService {
         shift.automatic(english && !literalInput() && input!=null && input.getCursorCapsMode(editorInfo.inputType)!=0);
         if(keyboard!=null) {keyboard.modeOptions(modes.mixed(),modes.configured());keyboard.render(engine,zhuyin && engine.inputMode()==InputMode.CHINESE && !literalInput() && !english,shift.upper(),shift.locked(),panel,policy.numeric,
             literalInput() || policy.numeric || english || englishPunctuation,english || literalInput(),!policy.literal && !policy.numeric,!literalInput(),
-            EditorPolicy.enterLabel(editorInfo),ready ? "" : dictionaryStatus);}
+            EditorPolicy.enterLabel(editorInfo),!ready?dictionaryStatus:addonLoading?"Loading "+engine.inputMode().label+" dictionary…":"");}
     }
     private void switchMode(InputMode mode) {
         mode=modes.resolve(mode);

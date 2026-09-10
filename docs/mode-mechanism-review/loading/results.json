@@ -1,0 +1,553 @@
+{
+  "baseline": "fd2a358",
+  "corpus_sha256": "00aaa44a5036725e61ebeb1f6659fde15c2ed3682f678f4c480516b059e1e287",
+  "source_sha256": "803475ae4a4ebc35e2e01813465bb09ff01012619101b3a15eda68ff6372a477",
+  "trials": [
+    {
+      "trial": "load",
+      "pack": "poj",
+      "changed": 0,
+      "variants": {
+        "combined": {
+          "load_ms": 5638.8743,
+          "retained_bytes": 70964784,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 3.6572325418994414,
+              "p50_ms": 1.3229,
+              "p95_ms": 15.2204,
+              "max_ms": 55.523
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 2.649539779005525,
+              "p50_ms": 0.8616,
+              "p95_ms": 11.7174,
+              "max_ms": 24.7339
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 1.6998251442307692,
+              "p50_ms": 0.2332,
+              "p95_ms": 8.3536,
+              "max_ms": 36.191
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 2.8271046875,
+              "p50_ms": 0.9168,
+              "p95_ms": 13.2815,
+              "max_ms": 23.183
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 7.229146052631579,
+              "p50_ms": 4.8608,
+              "p95_ms": 19.7282,
+              "max_ms": 34.0095
+            }
+          }
+        },
+        "split": {
+          "load_ms": 4327.3493,
+          "retained_bytes": 51501712,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 3.9944036312849165,
+              "p50_ms": 1.347,
+              "p95_ms": 15.5449,
+              "max_ms": 76.6727
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 2.8885616022099447,
+              "p50_ms": 0.9559,
+              "p95_ms": 13.5429,
+              "max_ms": 25.6828
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 1.7018858173076923,
+              "p50_ms": 0.2794,
+              "p95_ms": 7.5861,
+              "max_ms": 39.4861
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 3.2266533854166664,
+              "p50_ms": 1.0328,
+              "p95_ms": 14.141,
+              "max_ms": 25.9113
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 7.820414210526316,
+              "p50_ms": 5.238,
+              "p95_ms": 21.7834,
+              "max_ms": 61.1499
+            }
+          }
+        }
+      }
+    },
+    {
+      "trial": "load",
+      "pack": "japanese",
+      "changed": 0,
+      "variants": {
+        "combined": {
+          "load_ms": 5563.7881,
+          "retained_bytes": 70964680,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 0.5986659217877095,
+              "p50_ms": 0.1182,
+              "p95_ms": 2.4621,
+              "max_ms": 31.124
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 0.5408124309392265,
+              "p50_ms": 0.0625,
+              "p95_ms": 1.9182,
+              "max_ms": 15.7083
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 0.157723125,
+              "p50_ms": 0.0411,
+              "p95_ms": 0.4159,
+              "max_ms": 28.8056
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 0.37048333333333333,
+              "p50_ms": 0.0629,
+              "p95_ms": 1.0828,
+              "max_ms": 16.5379
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 0.25750605263157894,
+              "p50_ms": 0.0527,
+              "p95_ms": 0.6967,
+              "max_ms": 18.6052
+            }
+          }
+        },
+        "split": {
+          "load_ms": 1212.4273,
+          "retained_bytes": 10143000,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 0.5460065642458101,
+              "p50_ms": 0.1287,
+              "p95_ms": 2.3982,
+              "max_ms": 14.1967
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 0.43750193370165746,
+              "p50_ms": 0.0798,
+              "p95_ms": 1.8402,
+              "max_ms": 9.8289
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 0.17250836538461536,
+              "p50_ms": 0.0419,
+              "p95_ms": 0.4046,
+              "max_ms": 13.6746
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 0.3862963541666667,
+              "p50_ms": 0.0659,
+              "p95_ms": 1.87,
+              "max_ms": 15.4816
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 0.22411526315789473,
+              "p50_ms": 0.0547,
+              "p95_ms": 0.7083,
+              "max_ms": 16.8281
+            }
+          }
+        }
+      }
+    },
+    {
+      "trial": "load",
+      "pack": "taiwan",
+      "changed": 0,
+      "variants": {
+        "combined": {
+          "load_ms": 5541.5551,
+          "retained_bytes": 70965336,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 0.2713268156424581,
+              "p50_ms": 0.0713,
+              "p95_ms": 0.8321,
+              "max_ms": 22.3821
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 0.1472024861878453,
+              "p50_ms": 0.0393,
+              "p95_ms": 0.6238,
+              "max_ms": 4.2507
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 0.12687225961538462,
+              "p50_ms": 0.0437,
+              "p95_ms": 0.3636,
+              "max_ms": 10.9082
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 0.10560234375,
+              "p50_ms": 0.0284,
+              "p95_ms": 0.3238,
+              "max_ms": 6.5327
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 0.17862815789473685,
+              "p50_ms": 0.0343,
+              "p95_ms": 0.4015,
+              "max_ms": 11.2098
+            }
+          }
+        },
+        "split": {
+          "load_ms": 1175.7398,
+          "retained_bytes": 10082512,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 0.4082082402234637,
+              "p50_ms": 0.0761,
+              "p95_ms": 1.096,
+              "max_ms": 20.1668
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 0.2875897790055249,
+              "p50_ms": 0.0378,
+              "p95_ms": 0.7641,
+              "max_ms": 22.7553
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 0.1256921153846154,
+              "p50_ms": 0.0382,
+              "p95_ms": 0.3245,
+              "max_ms": 15.3608
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 0.0523421875,
+              "p50_ms": 0.0213,
+              "p95_ms": 0.1484,
+              "max_ms": 3.7293
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 0.16956315789473686,
+              "p50_ms": 0.0361,
+              "p95_ms": 0.6027,
+              "max_ms": 6.1557
+            }
+          }
+        }
+      }
+    },
+    {
+      "trial": "repeat",
+      "pack": "poj",
+      "changed": 0,
+      "variants": {
+        "combined": {
+          "load_ms": 7753.7725,
+          "retained_bytes": 70965216,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 5.549811731843576,
+              "p50_ms": 1.1727,
+              "p95_ms": 25.7192,
+              "max_ms": 111.5759
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 3.623890883977901,
+              "p50_ms": 0.9508,
+              "p95_ms": 13.7609,
+              "max_ms": 68.6204
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 2.0722120192307694,
+              "p50_ms": 0.2761,
+              "p95_ms": 10.0158,
+              "max_ms": 43.5241
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 3.56085625,
+              "p50_ms": 1.0985,
+              "p95_ms": 14.4936,
+              "max_ms": 35.9308
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 8.799314736842105,
+              "p50_ms": 5.8888,
+              "p95_ms": 25.3711,
+              "max_ms": 53.9879
+            }
+          }
+        },
+        "split": {
+          "load_ms": 4271.8381,
+          "retained_bytes": 51462632,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 3.8927222067039104,
+              "p50_ms": 1.3425,
+              "p95_ms": 17.3458,
+              "max_ms": 46.8217
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 2.9650417127071824,
+              "p50_ms": 1.1145,
+              "p95_ms": 11.7482,
+              "max_ms": 60.0589
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 2.3684483173076925,
+              "p50_ms": 0.2719,
+              "p95_ms": 11.2417,
+              "max_ms": 60.5469
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 4.911996354166667,
+              "p50_ms": 1.2424,
+              "p95_ms": 23.8491,
+              "max_ms": 61.0905
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 10.48900447368421,
+              "p50_ms": 5.5016,
+              "p95_ms": 34.4746,
+              "max_ms": 89.3734
+            }
+          }
+        }
+      }
+    },
+    {
+      "trial": "repeat",
+      "pack": "japanese",
+      "changed": 0,
+      "variants": {
+        "combined": {
+          "load_ms": 5546.8649,
+          "retained_bytes": 70965168,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 0.6554744413407821,
+              "p50_ms": 0.1296,
+              "p95_ms": 2.4717,
+              "max_ms": 23.8321
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 0.7263417127071823,
+              "p50_ms": 0.0861,
+              "p95_ms": 2.6529,
+              "max_ms": 31.227
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 0.1651922596153846,
+              "p50_ms": 0.0442,
+              "p95_ms": 0.4141,
+              "max_ms": 29.9778
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 0.17225703125,
+              "p50_ms": 0.0591,
+              "p95_ms": 0.821,
+              "max_ms": 3.0563
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 0.29366078947368424,
+              "p50_ms": 0.0698,
+              "p95_ms": 1.111,
+              "max_ms": 11.052
+            }
+          }
+        },
+        "split": {
+          "load_ms": 1257.7821,
+          "retained_bytes": 10143592,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 0.8005879888268156,
+              "p50_ms": 0.1532,
+              "p95_ms": 3.3557,
+              "max_ms": 32.5464
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 0.4803483425414365,
+              "p50_ms": 0.1067,
+              "p95_ms": 2.3041,
+              "max_ms": 7.922
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 0.1462595192307692,
+              "p50_ms": 0.0361,
+              "p95_ms": 0.3346,
+              "max_ms": 14.3156
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 0.2922807291666667,
+              "p50_ms": 0.062,
+              "p95_ms": 1.0729,
+              "max_ms": 8.3087
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 0.2005228947368421,
+              "p50_ms": 0.0598,
+              "p95_ms": 0.7129,
+              "max_ms": 6.2545
+            }
+          }
+        }
+      }
+    },
+    {
+      "trial": "repeat",
+      "pack": "taiwan",
+      "changed": 0,
+      "variants": {
+        "combined": {
+          "load_ms": 5830.742,
+          "retained_bytes": 70964960,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 0.375952374301676,
+              "p50_ms": 0.07,
+              "p95_ms": 1.2507,
+              "max_ms": 30.0815
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 0.23696795580110497,
+              "p50_ms": 0.041,
+              "p95_ms": 0.7093,
+              "max_ms": 11.4501
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 0.15542899038461538,
+              "p50_ms": 0.0459,
+              "p95_ms": 0.3157,
+              "max_ms": 9.4221
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 0.1090546875,
+              "p50_ms": 0.03,
+              "p95_ms": 0.2509,
+              "max_ms": 10.5141
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 0.15171447368421054,
+              "p50_ms": 0.0402,
+              "p95_ms": 0.3586,
+              "max_ms": 14.1531
+            }
+          }
+        },
+        "split": {
+          "load_ms": 1293.2672,
+          "retained_bytes": 10082384,
+          "queries": 3922,
+          "lookup": {
+            "en-conversation": {
+              "n": 716,
+              "mean_ms": 0.25416941340782123,
+              "p50_ms": 0.0771,
+              "p95_ms": 0.9461,
+              "max_ms": 11.1086
+            },
+            "en-essay": {
+              "n": 362,
+              "mean_ms": 0.07438950276243095,
+              "p50_ms": 0.0308,
+              "p95_ms": 0.3097,
+              "max_ms": 1.7923
+            },
+            "zh-essay": {
+              "n": 2080,
+              "mean_ms": 0.09715807692307692,
+              "p50_ms": 0.0414,
+              "p95_ms": 0.1823,
+              "max_ms": 9.3068
+            },
+            "japanese-retrieval": {
+              "n": 384,
+              "mean_ms": 0.1287875,
+              "p50_ms": 0.0285,
+              "p95_ms": 0.1277,
+              "max_ms": 30.8737
+            },
+            "poj-retrieval": {
+              "n": 380,
+              "mean_ms": 0.06572263157894738,
+              "p50_ms": 0.0385,
+              "p95_ms": 0.2432,
+              "max_ms": 2.1131
+            }
+          }
+        }
+      }
+    }
+  ]
+}

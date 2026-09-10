@@ -22,6 +22,12 @@ with zipfile.ZipFile(str(app)) as z:
     assert 'assets/conversation-probes.tsv' not in names, 'Conversation evaluation must not ship'
     assert 'assets/human-input.json' not in names, 'Touch evaluation must not ship'
     assert z.read('assets/NOTICE.txt')==(ROOT/'app/src/main/assets/NOTICE.txt').read_bytes(), 'Packaged notices stale'
+    source=(ROOT/'app/src/main/assets/addons.tsv').read_text(encoding='utf-8').splitlines()
+    assert 'assets/addons.tsv' not in names, 'Obsolete combined optional asset shipped'
+    for pack in ('taiwan','poj','japanese'):
+        expected=[row for row in source if row.startswith(pack+'\t')]
+        actual=z.read('assets/addon-'+pack+'.tsv').decode('utf-8').splitlines()
+        assert actual==expected, 'Partition changed source rows/order: '+pack
     abis=sorted(n.split('/')[1] for n in names if n.startswith('lib/') and n.endswith('/libminime_rime.so'))
     assert abis, 'Native Rime library missing'
 if test:

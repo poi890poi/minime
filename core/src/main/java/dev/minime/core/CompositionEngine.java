@@ -52,9 +52,15 @@ public final class CompositionEngine {
         phraseSession.accept(reading,choice.text,learning::observePhrase);
     }
     private AddonDictionary addons=AddonDictionary.EMPTY;
+    private boolean addonsPending;
     private Set<String> enabledAddons=Collections.emptySet();
+    /** Keep owned spelling and queued acceptance while a cold language loads. */
+    public void awaitAddons(Set<String> enabled) {
+        addons=AddonDictionary.EMPTY;enabledAddons=new HashSet<>(enabled);addonsPending=true;refresh();
+    }
     public void addons(AddonDictionary dictionary,Set<String> enabled) {
-        addons=Objects.requireNonNull(dictionary);enabledAddons=new HashSet<>(enabled);refresh();
+        addons=Objects.requireNonNull(dictionary);enabledAddons=new HashSet<>(enabled);addonsPending=false;refresh();
+        if(!pending && !draining)drain();
     }
     public interface Decoder {
         void convert(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,java.util.function.Consumer<List<Candidate>> result);
@@ -328,6 +334,7 @@ public final class CompositionEngine {
         // No-personalized-learning editors still need their static language model.
         // Secure/direct and literal fields are excluded independently.
         Set<String> packs=!literalField?inputMode.packs(enabledAddons):Collections.emptySet();
+        if(addonsPending && !inputMode.pack.isEmpty() && !packs.isEmpty()) {pending=true;return;}
         if(decoder!=null && dictionary!=null && !literalField && (inputMode.chineseEnabled() || !packs.isEmpty())) {
             pending=true;
             decoder.query(dictionary,raw,bpmf,context,inputMode.chineseEnabled(),addons,packs,result->{

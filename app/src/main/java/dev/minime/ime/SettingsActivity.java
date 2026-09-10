@@ -68,7 +68,7 @@ public final class SettingsActivity extends Activity {
         button("Find add-on entry sources",()-> {
             String query=sourceQuery.getText().toString().trim().toLowerCase(java.util.Locale.ROOT);
             if(query.isEmpty()) {sourceQuery.setError("Enter a word or reading");return;}
-            try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(new java.io.SequenceInputStream(getAssets().open("addons.tsv"),getAssets().open("geography.tsv")),java.nio.charset.StandardCharsets.UTF_8))) {
+            try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(new java.io.SequenceInputStream(AddonRepository.openWords(this),getAssets().open("geography.tsv")),java.nio.charset.StandardCharsets.UTF_8))) {
                 StringBuilder matches=new StringBuilder();String line;int count=0;
                 while((line=reader.readLine())!=null)if(!line.startsWith("#") && line.toLowerCase(java.util.Locale.ROOT).contains(query)) {
                     matches.append(line).append("\n\n");if(++count==40) {matches.append("First 40 matches. Narrow the search for more specific results.");break;}

@@ -504,7 +504,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         settings.edit().putBoolean("addon_poj",true).putBoolean("paired_taiwanese",true).commit();
         dev.minime.core.AddonDictionary addon=AddonRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
         String spelling=null,phonetic=null,han=null;
-        try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(activity.getAssets().open("addons.tsv"),java.nio.charset.StandardCharsets.UTF_8))) {
+        try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(AddonRepository.openWords(activity),java.nio.charset.StandardCharsets.UTF_8))) {
             String line;while((line=reader.readLine())!=null && spelling==null) {
                 String[] p=line.split("\t");if(p.length!=5 || !p[0].equals("poj") || (beginner && !p[3].startsWith("taiwanese-basic:")))continue;
                 String key=p[1].replace("-","").replace("'","").replace(" ","");if(!key.matches("[a-z]{4,12}"))continue;

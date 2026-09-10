@@ -10,7 +10,7 @@ final class AddonTestData {
         return probe(context,pack,"");
     }
     static String[] probe(Context context,String pack,String categoryPrefix) throws IOException {
-        String asset=pack.equals("geography")?"geography.tsv":"addons.tsv";
+        String asset=pack.equals("geography")?"geography.tsv":"addon-"+pack+".tsv";
         try(BufferedReader in=new BufferedReader(new InputStreamReader(context.getAssets().open(asset),StandardCharsets.UTF_8))) {
             String line;while((line=in.readLine())!=null) {
                 String[] p=line.split("\t");if(p.length!=5 || !p[0].equals(pack) || !p[4].startsWith(categoryPrefix))continue;

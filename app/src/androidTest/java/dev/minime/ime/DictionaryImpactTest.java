@@ -12,7 +12,7 @@ import org.json.*;
 @SuppressWarnings("deprecation")
 public final class DictionaryImpactTest extends AndroidTestCase {
     private long heap() {Runtime r=Runtime.getRuntime();return r.totalMemory()-r.freeMemory();}
-    private Reader asset(String name)throws IOException {return new InputStreamReader(getContext().getAssets().open(name),StandardCharsets.UTF_8);}
+    private Reader asset(String name)throws IOException {return new InputStreamReader(name.equals("addons.tsv")?AddonRepository.openWords(getContext()):getContext().getAssets().open(name),StandardCharsets.UTF_8);}
     private JSONObject measure(Runnable action,int count)throws Exception {
         for(int i=0;i<15;i++)action.run();long[] times=new long[count];
         for(int i=0;i<count;i++) {long t=System.nanoTime();action.run();times[i]=(System.nanoTime()-t)/1000;}

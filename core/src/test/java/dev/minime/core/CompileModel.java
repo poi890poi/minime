@@ -25,5 +25,6 @@ public final class CompileModel {
             if(i++>0)manifest.append(',');manifest.append("\n    \"").append(name).append("\": \"").append(java.util.HexFormat.of().formatHex(digest.digest(Files.readAllBytes(source.resolve(name))))).append('"');
         }
         manifest.append("\n  }\n}\n");Files.writeString(output.resolveSibling("model-report.json"),manifest.toString());
+        CompileAddonPacks.partition(source.resolve("addons.tsv"),output.toAbsolutePath().getParent());
     }
 }
