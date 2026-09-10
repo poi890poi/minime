@@ -12,6 +12,8 @@ def generate():
     for item in mappings:
         for kind in ('hiragana','katakana'):
             rows.add((kind,item['key'],item[kind],0,'wanakana:5.3.1'))
+    grammar=json.loads(subprocess.check_output(['node',str(ROOT/'tools/extract_kana.cjs'),'--grammar']))
+    for item in grammar: rows.add(('romaji',item['key'],item['hiragana'],0,'wanakana:5.3.1'))
     path=ROOT/'third_party/kanjidic/kanjidic2-en.json.tgz'
     source=json.loads((path.parent/'source.json').read_text(encoding='utf8'))
     assert hashlib.sha256(path.read_bytes()).hexdigest()==source['sha256']
@@ -33,7 +35,7 @@ def generate():
             skipped.append([c['literal'],reading,'unsupported alias']);continue
         rows.add(('kanji',key,c['literal'],c['misc']['frequency'],'kanjidic:U%04X'%ord(c['literal'])))
     serialized='# kind\treading\toutput\tfrequency_rank\tsource\n'+''.join('\t'.join(map(str,r))+'\n' for r in sorted(rows))
-    report=dict(format=1,rows=len(rows),outputs={kind:len({r[2] for r in rows if r[0]==kind}) for kind in ('hiragana','katakana','kanji')},source_characters=len(data['characters']),selected_frequency_characters=len(selected),frequency_cutoff=500,skipped=skipped,asset_sha256=hashlib.sha256(serialized.encode()).hexdigest(),sources={str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in (path,ROOT/'third_party/wanakana/index.js')},policy='All single-kana mappings from WanaKana; KANJIDIC ranks 1-500, complete unmarked Japanese on/kun readings. No nanori or reconstructed stems.')
+    report=dict(format=1,rows=len(rows),outputs={kind:len({r[2] for r in rows if r[0]==kind}) for kind in ('hiragana','katakana','kanji')},source_characters=len(data['characters']),selected_frequency_characters=len(selected),frequency_cutoff=500,skipped=skipped,asset_sha256=hashlib.sha256(serialized.encode()).hexdigest(),sources={str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in (path,ROOT/'third_party/wanakana/index.js')},policy='All single-kana mappings and complete romanization grammar from WanaKana; KANJIDIC ranks 1-500, complete unmarked Japanese on/kun readings. No nanori or reconstructed stems.')
     return serialized.encode(),(json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode(),report
 
 def main():

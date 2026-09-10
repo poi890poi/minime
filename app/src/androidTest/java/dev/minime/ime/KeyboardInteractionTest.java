@@ -474,6 +474,12 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
             assertEquals("Pair switches keep keyboard bounds",stable,keyboardBounds());
         }
     }
+    public void testJapaneseJoinedReadingKeepsCandidates() throws Exception {
+        activity.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_japanese",true).commit();
+        AddonRepository.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS);
+        clear();activateMode(dev.minime.core.InputMode.JAPANESE);type("konnichiwasekai");capture("japanese-continuity");
+        click("Expand candidates");click("Candidate こんにちわせかい");expectText("こんにちわせかい");
+    }
     public void testJapaneseCharactersAndCommonVocabulary() throws Exception {
         activity.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_japanese",true).commit();
         dev.minime.core.AddonDictionary addon=AddonRepository.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS);
@@ -483,7 +489,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(activity.getAssets().open("japanese-basic.tsv"),java.nio.charset.StandardCharsets.UTF_8))) {
             String line;while((line=reader.readLine())!=null) {
                 if(line.startsWith("#"))continue;
-                String[] p=line.split("\t");if(p.length!=5 || !p[1].replace("'","").matches("[a-z]{1,8}"))continue;
+                String[] p=line.split("\t");if(p.length!=5 || p[0].equals("romaji") || !p[1].replace("'","").matches("[a-z]{1,8}"))continue;
                 if(p[0].equals("kanji")) {
                     java.util.List<dev.minime.core.Candidate> found=addon.lookup(p[1],java.util.Collections.singleton("japanese"));
                     if(found.isEmpty() || !found.get(0).text.equals(p[2]))continue;

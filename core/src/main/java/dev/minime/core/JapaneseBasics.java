@@ -9,17 +9,23 @@ public final class JapaneseBasics {
     private final Map<String,List<Candidate>> exact;
     private final ReadingIndex prefixes;
     private final ReadingUnitIndex units;
+    private final JapaneseKana kana=new JapaneseKana();
     private JapaneseBasics(Map<String,List<Candidate>> exact,Map<String,List<Candidate>> readings) {
         this.exact=exact;prefixes=new ReadingIndex(exact);units=new ReadingUnitIndex(readings,readings.keySet());
     }
     private static final Comparator<Candidate> ORDER=Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text);
     public static JapaneseBasics read(Reader input)throws IOException {
-        Map<String,List<Candidate>> exact=new HashMap<>(),readings=new HashMap<>();int count=0;
+        Map<String,List<Candidate>> exact=new HashMap<>(),readings=new HashMap<>();Map<String,String> grammar=new HashMap<>();int count=0;
         try(BufferedReader in=new BufferedReader(input)) {
             String line;while((line=in.readLine())!=null) {
                 if(line.isEmpty() || line.startsWith("#"))continue;
                 String[] p=line.split("\t",-1);
-                if(p.length!=5 || !p[1].matches("[a-z']{1,48}") || p[2].codePointCount(0,p[2].length())!=1 || ++count>10000)throw new IOException("Invalid Japanese character row");
+                if(p.length!=5 || !p[1].matches("[a-z'-]{1,48}") || ++count>10000)throw new IOException("Invalid Japanese character row");
+                if(p[0].equals("romaji")) {
+                    if(!p[2].matches("[\\u3041-\\u3096\\u30fc]{1,8}") || !p[3].equals("0") || !p[4].equals("wanakana:5.3.1"))throw new IOException("Invalid kana grammar row");
+                    grammar.put(p[1],p[2]);continue;
+                }
+                if(p[2].codePointCount(0,p[2].length())!=1)throw new IOException("Invalid Japanese character output");
                 int rank;try{rank=Integer.parseInt(p[3]);}catch(NumberFormatException e){throw new IOException("Invalid character rank",e);}
                 Character.UnicodeScript script=Character.UnicodeScript.of(p[2].codePointAt(0));
                 boolean kana=(p[0].equals("hiragana") && script==Character.UnicodeScript.HIRAGANA) || (p[0].equals("katakana") && script==Character.UnicodeScript.KATAKANA);
@@ -31,7 +37,7 @@ public final class JapaneseBasics {
             }
         }
         exact.values().forEach(v->v.sort(ORDER));readings.values().forEach(v->v.sort(ORDER));
-        return new JapaneseBasics(exact,readings);
+        JapaneseBasics result=new JapaneseBasics(exact,readings);grammar.forEach(result.kana::put);return result;
     }
     private static String normalize(String raw){return raw.toLowerCase(Locale.ROOT).replace("'","").replace("-","").replace(" ","");}
     public List<Candidate> lookup(String raw) {
@@ -50,6 +56,7 @@ public final class JapaneseBasics {
         for(boolean incomplete:new boolean[]{false,true}) {
             for(Candidate c:characters)if(c.incomplete==incomplete && seen.add(c.text))result.add(c);
             for(Candidate c:words)if(c.incomplete==incomplete && seen.add(c.text))result.add(c);
+            if(!incomplete)for(Candidate c:kana.lookup(raw))if(seen.add(c.text))result.add(c);
         }
         return result;
     }

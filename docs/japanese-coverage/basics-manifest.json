@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "rows": 1279,
+  "rows": 1824,
   "outputs": {
     "hiragana": 82,
     "katakana": 82,
@@ -4526,10 +4526,10 @@
       "non-standalone or marked reading"
     ]
   ],
-  "asset_sha256": "b5631e890f96c82361925d1feee834c10f6789571582072469b7f7aa9e031c6d",
+  "asset_sha256": "0405d3d65d7c8ed510bef67493e3bc37b9a6096cbd10b2163e3fb59d2c99bca0",
   "sources": {
     "third_party/kanjidic/kanjidic2-en.json.tgz": "f23fcb6bb13d4441a6187b225f9418ba5b68f5e89db5e1703f28ab201899aca3",
     "third_party/wanakana/index.js": "a560add93ab26ec70e850ed433070772824aa4cda1d0f4843b6063593b924682"
   },
-  "policy": "All single-kana mappings from WanaKana; KANJIDIC ranks 1-500, complete unmarked Japanese on/kun readings. No nanori or reconstructed stems."
+  "policy": "All single-kana mappings and complete romanization grammar from WanaKana; KANJIDIC ranks 1-500, complete unmarked Japanese on/kun readings. No nanori or reconstructed stems."
 }

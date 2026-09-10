@@ -13,6 +13,7 @@ final class JapaneseBasicsRegression {
         for(String line:Files.readAllLines(source)) {
             if(line.startsWith("#"))continue;
             String[] p=line.split("\t");
+            if(p[0].equals("romaji"))continue;
             List<Candidate> result=basics.lookup(p[1]);
             yes(result.size()<=8,"character search bounded");
             if(!p[0].equals("kanji")) {

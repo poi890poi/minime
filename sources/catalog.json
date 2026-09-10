@@ -242,7 +242,7 @@
         "https://github.com/WaniKani/WanaKana"
       ],
       "editorial": "Kana romanization library.",
-      "coverage": "Build-time aliases and exhaustive single-kana mappings in both scripts, including the library IME aliases.",
+      "coverage": "Build-time aliases, exhaustive single-kana mappings in both scripts, and the complete ASCII-to-kana grammar for bounded runtime kana fallback. Vocabulary and Kanji selection remain outside this grammar.",
       "limitations": "Does not establish vocabulary quality.",
       "reason": "Retain language tooling.",
       "addon_prefixes": []

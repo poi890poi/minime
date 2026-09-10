@@ -57,6 +57,7 @@ public final class Candidate {
     Candidate paired(PairedForms.Pair value) {return pair==value?this:new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,value,pack,languageCharacter);}
     Candidate inPack(String value) {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,value,languageCharacter);}
     Candidate asLanguageCharacter() {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,true);}
+    Candidate consuming(int count) {return new Candidate(text,literal,score,reading,count,supplemental,abbreviated,composed,incomplete,pair,pack,languageCharacter);}
     Candidate primary(boolean han) {return pair==null?this:pairedText(han?pair.han:pair.phonetic);}
     private Candidate pairedText(String value) {return text.equals(value)?this:new Candidate(value,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,languageCharacter);}
     public String alternateText() {return pair==null?"":text.equals(pair.phonetic)?pair.han:pair.phonetic;}

@@ -69,3 +69,6 @@ docs/play-publishing/kit/review/NOTICE.txt -whitespace
 
 # Preserve the icon suite payload and its SHA-256 manifest byte-for-byte.
 branding/minime/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+docs/japanese-continuity/*.tsv text eol=lf
+docs/japanese-continuity/*.json text eol=lf

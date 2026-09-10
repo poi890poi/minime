@@ -491,6 +491,7 @@ public final class CompositionEngine {
                 preferred=1;automaticCorrection=false;
             }
             if(preferred>0 && !automaticCorrection) {
+                preferred=0;
                 for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
             }
         }
