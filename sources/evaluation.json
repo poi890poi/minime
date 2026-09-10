@@ -292,6 +292,31 @@
       ],
       "leakage": "Targets and aliases share production sources. Not independent language accuracy or a fresh holdout.",
       "limitations": "Commonness, dialect coverage, modern conversation and intended sense are not measured. Five formerly reachable partial targets are displaced by recovered entries."
+    },
+    {
+      "id": "raw-lexical-identity-20260910",
+      "source_ids": [
+        "itaigi",
+        "taihoa",
+        "taiwanese-basic"
+      ],
+      "genre": [
+        "dictionary-headwords",
+        "beginner-expressions"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "All 546 distinct shipped POJ ASCII outputs equal to a normalized reading, plus 546 marked reading/output controls selected by SHA256 order before observing results. Frozen during the preceding diagnostic on ab296aa.",
+      "files": [
+        "docs/raw-candidate-identity/inputs.tsv.gz"
+      ],
+      "report_by": [
+        "raw-output-collision",
+        "lookup-versus-composition",
+        "paired-metadata"
+      ],
+      "leakage": "Production-source retrieval probes; not independent language accuracy, commonness or a fresh holdout.",
+      "limitations": "Does not measure source omissions, usage frequencies, spontaneous conversation, essay quality, partial-input coverage, or physical touch latency."
     }
   ]
 }

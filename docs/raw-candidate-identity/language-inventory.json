@@ -1,0 +1,59 @@
+{
+  "addons.tsv": {
+    "sha256": "803475ae4a4ebc35e2e01813465bb09ff01012619101b3a15eda68ff6372a477",
+    "groups": {
+      "japanese": {
+        "rows": 43921,
+        "distinct_raw_equal_outputs": 0
+      },
+      "poj": {
+        "rows": 244131,
+        "distinct_raw_equal_outputs": 546
+      },
+      "taiwan": {
+        "rows": 35667,
+        "distinct_raw_equal_outputs": 0
+      }
+    }
+  },
+  "geography.tsv": {
+    "sha256": "8969bee08d2315e349e8e53618ac2986b5a6632d95bee6aee8e772de00cd7040",
+    "groups": {
+      "geography": {
+        "rows": 54969,
+        "distinct_raw_equal_outputs": 0
+      }
+    }
+  },
+  "zh_tw.tsv": {
+    "sha256": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+    "groups": {
+      "chinese": {
+        "rows": 171708,
+        "distinct_raw_equal_outputs": 0
+      },
+      "zhuyin": {
+        "rows": 171708,
+        "distinct_raw_equal_outputs": 0
+      }
+    }
+  },
+  "japanese-basic.tsv": {
+    "sha256": "b5631e890f96c82361925d1feee834c10f6789571582072469b7f7aa9e031c6d",
+    "groups": {
+      "japanese-character": {
+        "rows": 1279,
+        "distinct_raw_equal_outputs": 0
+      }
+    }
+  },
+  "en_us.tsv": {
+    "sha256": "00fde127ac14cac7577b54b6f8a59b119456c3890c06667361bac5849dea6ff2",
+    "groups": {
+      "english-literal": {
+        "rows": 44127,
+        "distinct_raw_equal_outputs": 33644
+      }
+    }
+  }
+}

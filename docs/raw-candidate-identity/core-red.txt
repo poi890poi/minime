@@ -1,0 +1,6 @@
+PASS prefix-index parity: 768 generated queries against frozen full-sort reference
+Exception in thread "main" java.lang.AssertionError: one lexical identity survives raw collision in poj expected [1] actual [0]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.RawCandidateIdentityRegression.lexical(RawCandidateIdentityRegression.java:68)
+	at dev.minime.core.RawCandidateIdentityRegression.run(RawCandidateIdentityRegression.java:21)
+	at dev.minime.core.Regression.main(Regression.java:51)

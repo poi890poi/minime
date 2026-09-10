@@ -1,0 +1,23 @@
+PASS prefix-index parity: 768 generated queries against frozen full-sort reference
+PASS raw/lexical identity, paired tap/hold/Space, raw recovery and language isolation
+PASS explicit mode isolation, composition, callback, learning and acceptance boundaries
+PASS dedicated language priority, matching, fallback, overrides and acceptance
+PASS Japanese characters: 228 kana source aliases, bounded lookup, source frequency and mode isolation
+PASS paired output, shared partial matching, source isolation, stale and queued acceptance
+Dictionary startup 5273 ms
+PASS corpus A
+PASS corpus B
+PASS corpus C
+PASS corpus D
+PASS corpus meeting-transition
+PASS corpus technical
+PASS corpus url
+PASS corpus email
+PASS corpus code
+PASS corpus literal
+PASS corpus zhuyin-A
+PASS corpus zhuyin-transition
+Pinyin continuity: 411 frozen full/initial/mixed inputs, immediate and out-of-order callbacks
+PASS add-ons: 96 source-derived composition probes; bounded repeated learning and privacy
+PASS apostrophes: 1243 source pairs; 48 keys in both modes and three casing styles; 727 valid spellings; 52 source-annotated contractions
+PASS 35984 assertions; desktop key processing p50=0.16 ms p95=5.37 ms max=76.63 ms (8900 keys; not Android latency)

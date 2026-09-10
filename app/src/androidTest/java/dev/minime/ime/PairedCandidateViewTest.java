@@ -14,9 +14,12 @@ public final class PairedCandidateViewTest extends ActivityInstrumentationTestCa
     private KeyboardView view;private CompositionEngine engine;private String committed="";
     private float x,y;private long down;
     private void setup()throws Throwable {
+        setup("abc-def","abcdef");
+    }
+    private void setup(String output,String raw)throws Throwable {
         PhoneticDictionary dictionary=DictionaryRepository.load(getInstrumentation().getTargetContext()).get(30,java.util.concurrent.TimeUnit.SECONDS);
-        PairedForms pairs=PairedForms.read(new StringReader("poj\tabc-def\t甲乙\titaigi:1\n"));
-        AddonDictionary addon=AddonDictionary.read(new StringReader("poj\tabc-def\tabc-def\titaigi:1\tfixture\n"),pairs);
+        PairedForms pairs=PairedForms.read(new StringReader("poj\t"+output+"\t甲乙\titaigi:1\n"));
+        AddonDictionary addon=AddonDictionary.read(new StringReader("poj\t"+raw+"\t"+output+"\titaigi:1\tfixture\n"),pairs);
         EditorTestActivity host=getActivity();
         runTestOnUiThread(()-> {
             engine=new CompositionEngine(new CompositionEngine.Editor() {
@@ -24,10 +27,10 @@ public final class PairedCandidateViewTest extends ActivityInstrumentationTestCa
             },Learning.NONE);
             engine.dictionary(dictionary);engine.start(false,false,false,false);engine.addons(addon,Collections.singleton("poj"));engine.switchMode(InputMode.TAIWANESE,false);
             view=new KeyboardView(host,k->{},k->false,(p,c)->{},action->{action.run();render();});
-            "abcdef".codePoints().forEach(engine::type);render();host.setContentView(view);
+            raw.codePoints().forEach(engine::type);render();host.setContentView(view);
             int width=Math.round(400*view.getResources().getDisplayMetrics().density);
             view.measure(View.MeasureSpec.makeMeasureSpec(width,View.MeasureSpec.EXACTLY),View.MeasureSpec.makeMeasureSpec(0,View.MeasureSpec.UNSPECIFIED));view.layout(0,0,width,view.getMeasuredHeight());
-            View word=find(view,"Candidate abc-def");assertNotNull(word);
+            View word=find(view,"Candidate "+output);assertNotNull(word);
             android.graphics.Rect b=new android.graphics.Rect(0,0,word.getWidth(),word.getHeight());view.offsetDescendantRectToMyCoords(word,b);x=b.exactCenterX();y=b.exactCenterY();
         });
     }
@@ -50,6 +53,23 @@ public final class PairedCandidateViewTest extends ActivityInstrumentationTestCa
     public void testHeldPairCannotCrossModeChange()throws Throwable {
         setup();touch(MotionEvent.ACTION_DOWN,x,y);runTestOnUiThread(()->{engine.switchMode(InputMode.JAPANESE,false);render();});
         SystemClock.sleep(ViewConfiguration.getLongPressTimeout()+200);touch(MotionEvent.ACTION_UP,x,y);getInstrumentation().waitForIdleSync();assertEquals("",committed);
+    }
+    public void testRawTwinHoldRetainsHanAlternate()throws Throwable {
+        setup("zavora","zavora");touch(MotionEvent.ACTION_DOWN,x,y);
+        SystemClock.sleep(ViewConfiguration.getLongPressTimeout()+200);touch(MotionEvent.ACTION_UP,x,y);
+        getInstrumentation().waitForIdleSync();assertEquals("甲乙",committed);
+    }
+    public void testRawTwinTapRetainsPhonetics()throws Throwable {
+        setup("zavora","zavora");touch(MotionEvent.ACTION_DOWN,x,y);touch(MotionEvent.ACTION_UP,x,y);
+        getInstrumentation().waitForIdleSync();assertEquals("zavora",committed);
+    }
+    public void testRawTwinAccessibilityKeepsHanIdentity()throws Throwable {
+        setup("zavora","zavora");
+        runTestOnUiThread(()-> {
+            engine.pairedTaiwanese(true,true);render();
+            View word=find(view,"Candidate 甲乙");assertNotNull(word);word.performClick();
+        });
+        getInstrumentation().waitForIdleSync();assertEquals("甲乙",committed);
     }
     private static View find(View v,String description) {
         if(description.contentEquals(v.getContentDescription()==null?"":v.getContentDescription()))return v;

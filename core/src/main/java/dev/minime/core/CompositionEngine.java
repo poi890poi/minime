@@ -441,7 +441,10 @@ public final class CompositionEngine {
             Set<String> promoted=new HashSet<>();int partialPreviews=0;
             List<Candidate> unrankedGlyphs=new ArrayList<>();
             for(Candidate c:supplements) {
-                if(!promoted.add(c.text) || c.text.equals(raw))continue;
+                // Slot zero owns literal recovery, not a dictionary identity.
+                // Equal spelling must retain an add-on's pack, paired output
+                // and acceptance/learning semantics alongside the raw choice.
+                if((c.text.equals(raw) && !c.supplemental) || !promoted.add(c.text))continue;
                 int existing=-1;for(int i=1;i<candidates.size();i++)if(candidates.get(i).text.equals(c.text)) {existing=i;break;}
                 // A second source is not evidence that an already attested base
                 // entry is more frequent. Preserve its established homophone
@@ -472,7 +475,10 @@ public final class CompositionEngine {
             }
             preferred=candidates.indexOf(defaultChoice);
             if(preferred<0)for(int i=0;i<candidates.size();i++)if(candidates.get(i).text.equals(defaultChoice.text)) {preferred=i;break;}
-            if(preferred==0 && !addonMatches.isEmpty() && candidates.size()>1 && !candidates.get(1).incomplete && conversionInput(bpmf) && !dictionary.validEnglishSpelling(raw)
+            // Focused defaults use their language-scoped votes below. The
+            // legacy text-keyed fallback cannot distinguish a lexical twin
+            // from an explicit raw choice with exactly the same spelling.
+            if(preferred==0 && !addonMatches.isEmpty() && candidates.size()>1 && !focused(candidates.get(1)) && !candidates.get(1).incomplete && conversionInput(bpmf) && !dictionary.validEnglishSpelling(raw)
                     && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,candidates.get(1).text)))preferred=1;
             // Candidate ordering and automatic acceptance share one winner.
             // Raw recovery stays available; choices consuming only part of the

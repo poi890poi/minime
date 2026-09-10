@@ -48,6 +48,7 @@ public final class Regression {
         dictionary.englishSpelling(Files.newBufferedReader(assets.resolve("en_spelling.tsv")));
         StaticDictionaryPrivacyRegression.run();
         FocusedChoiceRegression.run();
+        RawCandidateIdentityRegression.run();
         AddonLoadBarrierRegression.run();
         DecodePipelineRegression.run();
         AddonBinaryRegression.run();

@@ -56,7 +56,9 @@ final class ModePriorityRegression {
         for(InputMode mode:Arrays.asList(InputMode.TAIWANESE_ENGLISH,InputMode.JAPANESE_ENGLISH)) {
             CompositionEngine self=engine(new Editor(),Learning.NONE,false);self.switchMode(mode,false);
             self.addons(AddonDictionary.read(new StringReader(mode.pack+"\ta\ta\tfixture\ttest\n")),Collections.singleton(mode.pack));
-            type(self,"a");equal(0,self.preferred(),"raw-only source match remains valid without an alternate");
+            type(self,"a");equal(1,self.preferred(),"source match retains focused identity without a Han alternate");
+            equal(mode.pack,self.candidates().get(self.preferred()).pack,"same spelling still belongs to the focused language");
+            yes(self.candidates().get(0).literal,"same spelling also retains explicit raw recovery");
         }
         PairedForms pairs=PairedForms.read(new StringReader("poj\tá-bé\t甲乙\titaigi:1\n"));
         AddonDictionary paired=AddonDictionary.read(new StringReader("poj\tab'cd\tá-bé\titaigi:1\tfixture\n"),pairs);
