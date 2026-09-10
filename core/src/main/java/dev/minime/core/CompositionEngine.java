@@ -310,7 +310,9 @@ public final class CompositionEngine {
                 preferred = 1; return;
             }
         }
-        Set<String> packs=!privateField && !literalField?inputMode.packs(enabledAddons):Collections.emptySet();
+        // No-personalized-learning editors still need their static language model.
+        // Secure/direct and literal fields are excluded independently.
+        Set<String> packs=!literalField?inputMode.packs(enabledAddons):Collections.emptySet();
         if(decoder!=null && dictionary!=null && !literalField && (inputMode.chineseEnabled() || !packs.isEmpty())) {
             pending=true;
             decoder.query(dictionary,raw,bpmf,context,inputMode.chineseEnabled(),addons,packs,result->{
@@ -407,10 +409,8 @@ public final class CompositionEngine {
             // a decoder guess. Keep it ahead of optional dictionary alternatives.
             if(!englishMode && dictionary!=null && candidates.size()>1 && dictionary.exactChinese(raw,bpmf,candidates.get(1).text))supplements.add(candidates.get(1));
             supplements.addAll(apostrophes);
-            if(!privateField) {
-                for(Candidate c:addonMatches)if(!c.incomplete)supplements.add(c);
-                for(Candidate c:addonMatches)if(c.incomplete)supplements.add(c);
-            }
+            for(Candidate c:addonMatches)if(!c.incomplete)supplements.add(c);
+            for(Candidate c:addonMatches)if(c.incomplete)supplements.add(c);
             Set<String> promoted=new HashSet<>();int partialPreviews=0;
             List<Candidate> unrankedGlyphs=new ArrayList<>();
             for(Candidate c:supplements) {

@@ -34,3 +34,12 @@ cover lifecycle and integration only, with authorized phone restoration and
 verified display sleep if used.
 
 Record each change, test result, remaining limit and rejected experiment below.
+
+### Static lookup privacy boundary
+
+The regression failed before the fix (normal static candidate present, private
+candidate absent). Afterward `tools/test-core.ps1` passed 34,784 assertions.
+The new controls cover all six core modes, full/partial input, synchronous and
+decoder paths, forbidden personal-data access, literal fields and direct input.
+Static candidate order/defaults match a no-history normal editor. The number is
+a correctness check count, not vocabulary accuracy. No source assets changed.
