@@ -72,3 +72,20 @@ Raw local evidence: `artifacts/english-isolation/{legacy-probe.txt,
 current-probe.txt,regression-before.txt,core-final.log,desktop-after.log,
 desktop-after.jsonl}`. The historical probe used only synthetic records; no
 production dictionary entries or ranking weights changed.
+
+## Release 0.7.5
+
+Version code 23 packages the fix. Android `assembleDebug` and `lintDebug` pass
+(zero lint errors, 17 warnings). APK asset/model verification, signature
+verification, version read-back, ZIP CRC and embedded-APK identity checks pass.
+The public Cloudflare download was fetched in full and matched the local ZIP's
+SHA-256. Exact sizes/hashes and test status are in [release.json](release.json).
+
+Additional source check: all 44,127 `en_us.tsv` entries match the Latin-word
+pattern; none of 46,225 English context records contains CJK output in the
+audited Han/kana ranges. This supports the identified scope/custom-entry cause;
+it is not a semantic English-vocabulary accuracy claim. No source data changed.
+
+No phone was awakened, installed or reconfigured during this change. Phone UI
+integration was not rerun, and this release does not claim the new performance
+acceptance gates pass.
