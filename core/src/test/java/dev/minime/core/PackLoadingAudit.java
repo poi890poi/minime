@@ -13,8 +13,9 @@ public final class PackLoadingAudit {
         String variant=args[0],scope=args[1];
         System.gc();Thread.sleep(100);
         long before=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory(),start=System.nanoTime();
-        PairedForms pairs=variant.equals("combined") || scope.equals("poj")?PairedForms.read(read(source.resolve("paired-forms.tsv"))):PairedForms.EMPTY;
-        AddonDictionary dictionary=AddonDictionary.read(read(variant.equals("combined")?source.resolve("addons.tsv"):split.resolve("addon-"+scope+".tsv")),pairs);
+        PairedForms pairs=!variant.equals("binary") && (variant.equals("combined") || scope.equals("poj"))?PairedForms.read(read(source.resolve("paired-forms.tsv"))):PairedForms.EMPTY;
+        AddonDictionary dictionary=variant.equals("binary")?AddonDictionary.readBinary(Files.newInputStream(split.resolve("addon-"+scope+".bin")))
+            :AddonDictionary.read(read(variant.equals("combined")?source.resolve("addons.tsv"):split.resolve("addon-"+scope+".tsv")),pairs);
         if(variant.equals("combined") || scope.equals("japanese"))dictionary=AddonDictionary.withJapaneseBasics(dictionary,JapaneseBasics.read(read(source.resolve("japanese-basic.tsv"))));
         long load=System.nanoTime()-start;pairs=null;
         System.gc();Thread.sleep(100);

@@ -22,6 +22,27 @@ public final class AddonDictionary {
     public static AddonDictionary read(Reader input) throws IOException {
         return read(input,PairedForms.EMPTY);
     }
+    /** Same shared pools/index representation as the base model; built off-device. */
+    public void writeBinary(OutputStream output)throws IOException {
+        if(first!=null || japaneseBasics!=JapaneseBasics.EMPTY)throw new IOException("Compile a single word index before attaching providers");
+        try(DataOutputStream stream=new DataOutputStream(new BufferedOutputStream(output))) {
+            stream.writeInt(0x4d414444);stream.writeInt(1);
+            BinaryModel.Writer out=new BinaryModel.Writer(stream,true);out.words(entries);
+            stream.writeInt(prefixes.size());for(String pack:new TreeSet<>(prefixes.keySet())) {out.string(pack);prefixes.get(pack).write(out);}
+            stream.writeInt(units.size());for(String pack:new TreeSet<>(units.keySet())) {out.string(pack);units.get(pack).write(out);}
+        }
+    }
+    public static AddonDictionary readBinary(InputStream input)throws IOException {
+        try(DataInputStream stream=new DataInputStream(new BufferedInputStream(input))) {
+            if(stream.readInt()!=0x4d414444 || stream.readInt()!=1)throw new IOException("Unsupported supplemental model");
+            BinaryModel.Reader in=new BinaryModel.Reader(stream,true);Map<String,List<Candidate>> entries=new HashMap<>();in.words(entries);
+            AddonDictionary result=new AddonDictionary(entries);
+            int count=in.size();for(int i=0;i<count;i++)result.prefixes.put(in.string(),new ReadingIndex(in));
+            count=in.size();for(int i=0;i<count;i++)result.units.put(in.string(),new ReadingUnitIndex(in));
+            if(stream.read()!=-1)throw new IOException("Trailing supplemental model data");
+            return result;
+        } catch(IndexOutOfBoundsException | NullPointerException malformed) {throw new IOException("Invalid supplemental references",malformed);}
+    }
     public static AddonDictionary read(Reader input,PairedForms pairs) throws IOException {
         Map<String,List<Candidate>> entries=new HashMap<>();
         Map<String,Candidate> values=new HashMap<>();Map<String,String> strings=new HashMap<>();

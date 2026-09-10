@@ -1,0 +1,102 @@
+{
+  "control": "split TSV indexes",
+  "candidate": "prebuilt indexes using BinaryModel",
+  "trials": [
+    {
+      "trial": "prebuilt",
+      "pack": "poj",
+      "queries": 3922,
+      "changed": 0,
+      "variants": {
+        "split": {
+          "load_ms": 4286.7237,
+          "retained_bytes": 51463272
+        },
+        "binary": {
+          "load_ms": 453.9802,
+          "retained_bytes": 44631240
+        }
+      }
+    },
+    {
+      "trial": "prebuilt",
+      "pack": "japanese",
+      "queries": 3922,
+      "changed": 0,
+      "variants": {
+        "split": {
+          "load_ms": 1155.8977,
+          "retained_bytes": 10145120
+        },
+        "binary": {
+          "load_ms": 327.9927,
+          "retained_bytes": 9386256
+        }
+      }
+    },
+    {
+      "trial": "prebuilt",
+      "pack": "taiwan",
+      "queries": 3922,
+      "changed": 0,
+      "variants": {
+        "split": {
+          "load_ms": 1172.6927,
+          "retained_bytes": 10083792
+        },
+        "binary": {
+          "load_ms": 221.0093,
+          "retained_bytes": 9296856
+        }
+      }
+    },
+    {
+      "trial": "prebuilt-repeat",
+      "pack": "poj",
+      "queries": 3922,
+      "changed": 0,
+      "variants": {
+        "split": {
+          "load_ms": 4250.4909,
+          "retained_bytes": 51464120
+        },
+        "binary": {
+          "load_ms": 391.8925,
+          "retained_bytes": 44528768
+        }
+      }
+    },
+    {
+      "trial": "prebuilt-repeat",
+      "pack": "japanese",
+      "queries": 3922,
+      "changed": 0,
+      "variants": {
+        "split": {
+          "load_ms": 1248.0103,
+          "retained_bytes": 10144944
+        },
+        "binary": {
+          "load_ms": 334.7038,
+          "retained_bytes": 9430536
+        }
+      }
+    },
+    {
+      "trial": "prebuilt-repeat",
+      "pack": "taiwan",
+      "queries": 3922,
+      "changed": 0,
+      "variants": {
+        "split": {
+          "load_ms": 1180.8189,
+          "retained_bytes": 10086008
+        },
+        "binary": {
+          "load_ms": 228.1637,
+          "retained_bytes": 9298496
+        }
+      }
+    }
+  ]
+}

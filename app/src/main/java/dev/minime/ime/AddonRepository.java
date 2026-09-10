@@ -2,7 +2,6 @@ package dev.minime.ime;
 
 import android.content.*;
 import dev.minime.core.AddonDictionary;
-import dev.minime.core.PairedForms;
 import dev.minime.core.JapaneseBasics;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -33,12 +32,10 @@ final class AddonRepository {
         if(future==null || future.isCompletedExceptionally()) {
             Context app=context.getApplicationContext();
             future=CompletableFuture.supplyAsync(()-> {
-                PairedForms pairs=PairedForms.EMPTY;
-                try {if(pack.equals("poj"))pairs=PairedForms.read(new InputStreamReader(app.getAssets().open("paired-forms.tsv"),StandardCharsets.UTF_8));}
-                catch(IOException e) {android.util.Log.w("MinIME","Paired forms unavailable",e);}
                 try {
-                    String asset=pack.equals("geography")?"geography.tsv":"addon-"+pack+".tsv";
-                    AddonDictionary words=AddonDictionary.read(new InputStreamReader(app.getAssets().open(asset),StandardCharsets.UTF_8),pairs);
+                    AddonDictionary words=pack.equals("geography")
+                        ?AddonDictionary.read(new InputStreamReader(app.getAssets().open("geography.tsv"),StandardCharsets.UTF_8))
+                        :AddonDictionary.readBinary(app.getAssets().open("addon-"+pack+".bin"));
                     if(!pack.equals("japanese"))return words;
                     try {return AddonDictionary.withJapaneseBasics(words,JapaneseBasics.read(new InputStreamReader(app.getAssets().open("japanese-basic.tsv"),StandardCharsets.UTF_8)));}
                     catch(IOException e) {android.util.Log.w("MinIME","Japanese characters unavailable",e);return words;}

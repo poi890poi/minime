@@ -10,7 +10,9 @@ final class BinaryModel {
         private final Map<String,Integer> strings=new HashMap<>();
         private final IdentityHashMap<Candidate,Integer> candidates=new IdentityHashMap<>();
         private final IdentityHashMap<List<Candidate>,Integer> lists=new IdentityHashMap<>();
-        Writer(DataOutputStream out) {this.out=out;}
+        private final boolean supplemental;
+        Writer(DataOutputStream out) {this(out,false);}
+        Writer(DataOutputStream out,boolean supplemental) {this.out=out;this.supplemental=supplemental;}
         void string(String value)throws IOException {
             if(value==null){out.writeInt(0);return;}Integer id=strings.get(value);
             if(id!=null){out.writeInt(id);return;}id=strings.size()+1;strings.put(value,id);out.writeInt(-id);out.writeUTF(value);
@@ -19,6 +21,12 @@ final class BinaryModel {
             Integer id=candidates.get(value);if(id!=null){out.writeInt(id);return;}
             id=candidates.size()+1;candidates.put(value,id);out.writeInt(-id);
             string(value.text);out.writeBoolean(value.literal);out.writeDouble(value.score);string(value.reading);
+            if(supplemental) {
+                if(!value.supplemental || value.literal || value.consumed!=0 || value.composed || value.languageCharacter
+                        || value.incomplete!=value.abbreviated || !value.reading.isEmpty())throw new IOException("Unsupported indexed supplemental candidate");
+                out.writeBoolean(value.abbreviated);string(value.pack);out.writeBoolean(value.pair!=null);
+                if(value.pair!=null) {string(value.pair.phonetic);string(value.pair.han);string(value.pair.source);}
+            }
         }
         void list(List<Candidate> value)throws IOException {
             if(value==null){out.writeInt(0);return;}Integer id=lists.get(value);if(id!=null){out.writeInt(id);return;}
@@ -36,10 +44,21 @@ final class BinaryModel {
         private final List<String> strings=new ArrayList<>();
         private final List<Candidate> candidates=new ArrayList<>();
         private final List<List<Candidate>> lists=new ArrayList<>();
-        Reader(DataInputStream in) {this.in=in;}
+        private final boolean supplemental;
+        Reader(DataInputStream in) {this(in,false);}
+        Reader(DataInputStream in,boolean supplemental) {this.in=in;this.supplemental=supplemental;}
         int size()throws IOException {int n=in.readInt();if(n<0 || n>4000000)throw new IOException("Invalid model size");return n;}
         String string()throws IOException {int id=in.readInt();if(id==0)return null;if(id>0)return strings.get(id-1);String value=in.readUTF();strings.add(value);return value;}
-        Candidate candidate()throws IOException {int id=in.readInt();if(id>0)return candidates.get(id-1);Candidate c=new Candidate(string(),in.readBoolean(),in.readDouble(),string());candidates.add(c);return c;}
+        Candidate candidate()throws IOException {
+            int id=in.readInt();if(id>0)return candidates.get(id-1);
+            Candidate c=new Candidate(string(),in.readBoolean(),in.readDouble(),string());
+            if(supplemental) {
+                if(c.literal || !c.reading.isEmpty())throw new IOException("Invalid supplemental candidate");
+                c=Candidate.supplement(c.text,c.score,in.readBoolean()).inPack(string());
+                if(in.readBoolean())c=c.paired(new PairedForms.Pair(string(),string(),string()));
+            }
+            candidates.add(c);return c;
+        }
         List<Candidate> list()throws IOException {
             int id=in.readInt();if(id==0)return null;if(id>0)return lists.get(id-1);
             int n=size();List<Candidate> value=new ArrayList<>(n);lists.add(value);for(int i=0;i<n;i++)value.add(candidate());return value;

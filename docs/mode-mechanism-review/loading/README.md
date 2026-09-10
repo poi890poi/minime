@@ -1,5 +1,8 @@
 # Optional language loading
 
+This records the intermediate split-TSV strategy. The phone exposed an excessive
+POJ cold-load cost, addressed by the follow-up in `PREBUILT.md`.
+
 One variable: combined optional asset versus verbatim per-pack asset/index loading.
 No dictionary entries, scores, quotas, search limits or ordering rules changed.
 `CompileAddonPacks` partitions all 323,719 admitted rows: Taiwan 35,667, POJ

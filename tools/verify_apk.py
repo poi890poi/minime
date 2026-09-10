@@ -28,6 +28,7 @@ with zipfile.ZipFile(str(app)) as z:
         expected=[row for row in source if row.startswith(pack+'\t')]
         actual=z.read('assets/addon-'+pack+'.tsv').decode('utf-8').splitlines()
         assert actual==expected, 'Partition changed source rows/order: '+pack
+        assert z.read('assets/addon-'+pack+'.bin')==(ROOT/'app/build/generated/minimeAssets'/('addon-'+pack+'.bin')).read_bytes(), 'Stale prebuilt language index: '+pack
     abis=sorted(n.split('/')[1] for n in names if n.startswith('lib/') and n.endswith('/libminime_rime.so'))
     assert abis, 'Native Rime library missing'
 if test:

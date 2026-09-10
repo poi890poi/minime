@@ -113,3 +113,14 @@ The deterministic test, all nine candidate-stability tests, and the original
 Japanese case pass (10 tests, 37.847 s). Both failed runs and the corrected run
 restored the prior IME/preferences and verified display OFF. Raw test results
 are retained in the release verification evidence; touch timing is checked next.
+
+### Prebuilt optional models after the phone cold-load failure
+
+The split TSV prototype still took 17.58 seconds to initialize POJ on the phone.
+Reuse the existing shared binary-index machinery instead of shipping that delay.
+`loading/PREBUILT.md` records two reversed desktop trials, 23,532 identical
+paired lookups, corruption/metadata controls, unchanged base-format checks, and
+the final phone measurements: POJ 461.5 ms, Japanese 251.6 ms, Taiwan 362.6 ms.
+All 20 targeted Android checks pass on that APK; the 6.70 MiB storage increase
+and retained source-inspection data are explicit. This changes initialization,
+not language ranking or matching coverage.

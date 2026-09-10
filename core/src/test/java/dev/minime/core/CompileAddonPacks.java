@@ -25,5 +25,11 @@ public final class CompileAddonPacks {
             }
         } finally {for(BufferedWriter writer:writers.values())writer.close();}
         System.out.println("Verbatim optional dictionary partition: "+counts);
+        for(String pack:counts.keySet()) {
+            PairedForms pairs=pack.equals("poj")?PairedForms.read(Files.newBufferedReader(source.resolveSibling("paired-forms.tsv"))):PairedForms.EMPTY;
+            AddonDictionary words=AddonDictionary.read(Files.newBufferedReader(output.resolve("addon-"+pack+".tsv")),pairs);
+            Path binary=output.resolve("addon-"+pack+".bin");words.writeBinary(Files.newOutputStream(binary));
+            System.out.println("Prebuilt "+pack+" index bytes="+Files.size(binary));
+        }
     }
 }

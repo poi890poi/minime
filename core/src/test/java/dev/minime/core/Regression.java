@@ -50,6 +50,7 @@ public final class Regression {
         FocusedChoiceRegression.run();
         AddonLoadBarrierRegression.run();
         DecodePipelineRegression.run();
+        AddonBinaryRegression.run();
         ModeRegression.run();
         EnglishIsolationRegression.run();
         ModePriorityRegression.run();
