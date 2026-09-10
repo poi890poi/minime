@@ -11,12 +11,16 @@ import android.widget.*;
 
 public final class SettingsActivity extends Activity {
     private LinearLayout body;
+    private static final int EXPORT_BACKUP=41,IMPORT_BACKUP=42;
+    private final java.util.concurrent.ExecutorService documents=java.util.concurrent.Executors.newSingleThreadExecutor();
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         ScrollView scroll=new ScrollView(this); body=new LinearLayout(this); body.setOrientation(LinearLayout.VERTICAL);
         int p=(int)(20*getResources().getDisplayMetrics().density); body.setPadding(p,p,p,p); scroll.addView(body); setContentView(scroll);
         scroll.setOnApplyWindowInsetsListener((view,insets)-> {
-            android.graphics.Insets bars=insets.getSystemWindowInsets();
+            android.graphics.Insets bars=android.os.Build.VERSION.SDK_INT>=30
+                ?insets.getInsets(WindowInsets.Type.systemBars()|WindowInsets.Type.displayCutout())
+                :insets.getSystemWindowInsets();
             body.setPadding(p+bars.left,p+bars.top,p+bars.right,p+bars.bottom); return insets;
         });
         text("MinIME 注音",28);
@@ -104,8 +108,13 @@ public final class SettingsActivity extends Activity {
             SharedPreferences data=getSharedPreferences("learning",MODE_PRIVATE); String entries=data.getString("custom","");
             data.edit().clear().putString("custom",entries).apply(); Toast.makeText(this,"Learned choices cleared",Toast.LENGTH_SHORT).show();
         });
+        text("Move or back up your dictionary",21);
+        text("Export settings, custom entries and learned choices before replacing a debug build with a Play build. The backup is readable JSON and may contain personal words. Choose a trusted location; a cloud document provider may upload it under its own policy. Import replaces saved settings and history only after confirmation.",16);
+        button("Export settings and learned words",()->pickBackup(true));
+        button("Import settings and learned words",()->pickBackup(false));
         text("Privacy",21);
-        text("Fully offline. No network permission, keystroke logs, telemetry, or cloud backup. Explicit choices are learned locally. English word-pair learning and recent emoji are optional and off by default. Password fields use direct input without composition, suggestions or learning. Private fields do not access personalized history. Restart recovery briefly checks only the keyboard's own composing text, up to 96 characters; it does not collect the rest of the editor.",16);
+        button("Privacy policy",()->showAsset("privacy.txt","MinIME privacy policy"));
+        text("Fully offline. No network permission, keystroke logs, telemetry, or automatic cloud backup. Explicit choices are learned locally. English word-pair learning and recent emoji are optional and off by default. Password fields use direct input without composition, suggestions or learning. Private fields do not access personalized history. Restart recovery briefly checks only the keyboard's own composing text, up to 96 characters; it does not collect the rest of the editor.",16);
         text("About this prototype",21);
         text("Independent implementation; not a Google product. Rime Pinyin is on by default and supports choosing part of a phrase. Long abbreviated sentences still need work. Language foundations: Rime, McBopomofo, AOSP LatinIME, Universal Dependencies and Unicode. See notices for complete sources, authors and licenses.",16);
         button("Open-source notices",()-> {
@@ -116,6 +125,48 @@ public final class SettingsActivity extends Activity {
             } catch(java.io.IOException e) { Toast.makeText(this,"Notices unavailable",Toast.LENGTH_SHORT).show(); }
         });
     }
+    private void pickBackup(boolean exporting) {
+        Intent intent=new Intent(exporting?Intent.ACTION_CREATE_DOCUMENT:Intent.ACTION_OPEN_DOCUMENT);
+        intent.setType("application/json");intent.addCategory(Intent.CATEGORY_OPENABLE);
+        if(exporting)intent.putExtra(Intent.EXTRA_TITLE,"MinIME-backup.json");
+        try {startActivityForResult(intent,exporting?EXPORT_BACKUP:IMPORT_BACKUP);}
+        catch(ActivityNotFoundException unavailable){Toast.makeText(this,"No document picker is available",Toast.LENGTH_LONG).show();}
+    }
+    @Override protected void onActivityResult(int request,int result,Intent data) {
+        super.onActivityResult(request,result,data);
+        if((request!=EXPORT_BACKUP&&request!=IMPORT_BACKUP)||result!=RESULT_OK||data==null||data.getData()==null)return;
+        android.net.Uri uri=data.getData();
+        documents.execute(()-> {
+            try {
+                SharedPreferences settings=getSharedPreferences("settings",MODE_PRIVATE),learning=getSharedPreferences("learning",MODE_PRIVATE);
+                if(request==EXPORT_BACKUP) {
+                    byte[] bytes=PreferenceBackup.encode(settings,learning);
+                    try(java.io.OutputStream output=getContentResolver().openOutputStream(uri,"wt")) {
+                        if(output==null)throw new java.io.IOException("Document could not be opened");output.write(bytes);
+                    }
+                    documentMessage("Backup saved. Keep it private and delete it when no longer needed.");
+                } else {
+                    PreferenceBackup.Snapshot snapshot;
+                    try(java.io.InputStream input=getContentResolver().openInputStream(uri)) {
+                        if(input==null)throw new java.io.IOException("Document could not be opened");snapshot=PreferenceBackup.decode(input);
+                    }
+                    runOnUiThread(()-> {
+                        if(isFinishing()||isDestroyed())return;
+                        new android.app.AlertDialog.Builder(this).setTitle("Replace saved settings and learned words?")
+                            .setMessage("This backup contains "+snapshot.settings.size()+" settings and "+snapshot.learning.size()+" dictionary/history records. Your current saved preferences will be replaced. Export them first if you want to keep a copy.")
+                            .setNegativeButton("Cancel",null).setPositiveButton("Replace",(dialog,which)->documents.execute(()-> {
+                                try {
+                                    PreferenceBackup.restore(snapshot,settings,learning);
+                                    runOnUiThread(()->{if(!isFinishing()&&!isDestroyed()){Toast.makeText(this,"Backup imported",Toast.LENGTH_SHORT).show();recreate();}});
+                                } catch(java.io.IOException error){documentMessage(error.getMessage());}
+                            })).show();
+                    });
+                }
+            } catch(java.io.IOException | SecurityException error){documentMessage("Backup could not be processed: "+error.getMessage());}
+        });
+    }
+    private void documentMessage(String message){runOnUiThread(()->{if(!isFinishing()&&!isDestroyed())Toast.makeText(this,message,Toast.LENGTH_LONG).show();});}
+    @Override protected void onDestroy(){documents.shutdown();super.onDestroy();}
     private void showAsset(String name,String title) {
         try(java.io.InputStream in=getAssets().open(name)) {
             java.io.ByteArrayOutputStream out=new java.io.ByteArrayOutputStream();byte[] b=new byte[4096];int n;

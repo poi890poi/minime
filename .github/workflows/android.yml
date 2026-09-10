@@ -16,6 +16,8 @@ jobs:
       - run: chmod +x gradlew
       - run: python3 tools/verify_assets.py
       - run: python3 tools/sources.py check
+      - run: python3 tools/write_addon_notices.py --check
+      - run: python3 tools/write_privacy_page.py --check
       - run: python3 tools/audit_japanese_output.py
       - run: python3 tools/compile_paired_forms.py --check
       - run: python3 -m unittest discover -s tools -p test_sources.py
