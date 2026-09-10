@@ -108,12 +108,30 @@ public final class CandidateStabilityTest extends ActivityInstrumentationTestCas
             if(cancel)assertNotNull(find(view,"Candidate 二"));
         });
     }
+    public void testStaleAccessibilityIdentityCannotSelectReplacement() throws Throwable {
+        runTestOnUiThread(()-> {
+            setup();View old=find(view,"Candidate 一");assertNotNull(old);
+            engine.refresh();replies.get(replies.size()-1).accept(Collections.singletonList(new Candidate("二",false,1000)));render();
+            assertEquals("A captured accessibility node must never become another word","Candidate 一",old.getContentDescription().toString());
+            old.performClick();assertEquals("Stale identity cannot accept the new occupant","",committed);
+            find(view,"Candidate 二").performClick();assertEquals("二",committed);
+        });
+    }
     public void testUnchangedRenderPreservesCandidateViews() throws Throwable {
         runTestOnUiThread(()-> {
             setup();View scroll=find(view,"Candidate list"),word=find(view,"Candidate 一");
             render();
             assertSame("Unchanged renders must preserve the scroller",scroll,find(view,"Candidate list"));
             assertSame("Unchanged renders must preserve the word",word,find(view,"Candidate 一"));
+        });
+    }
+    public void testCandidateReorderingReusesWordIdentity() throws Throwable {
+        runTestOnUiThread(()-> {
+            setup();View first=find(view,"Candidate 一"),scroll=find(view,"Candidate list");
+            engine.refresh();replies.get(replies.size()-1).accept(java.util.Arrays.asList(new Candidate("二",false,1100),new Candidate("一",false,1000)));render();
+            assertSame("Reordering preserves the same word's view",first,find(view,"Candidate 一"));
+            assertSame("Reordering preserves the scroller",scroll,find(view,"Candidate list"));
+            first.performClick();assertEquals("一",committed);
         });
     }
     private static View find(View v,String description) {

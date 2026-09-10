@@ -192,6 +192,14 @@ final class KeyboardView extends LinearLayout {
     }
     private int dp(float value) { return Math.round(value*getResources().getDisplayMetrics().density); }
     private static final class CandidateWord extends TextView {
+        CompositionEngine boundEngine;Candidate boundCandidate;long boundComposition;
+        boolean matches(CompositionEngine engine,Candidate value,long composition) {
+            Candidate prior=boundCandidate;
+            return boundEngine==engine && boundComposition==composition && prior!=null
+                && prior.text.equals(value.text) && prior.literal==value.literal && prior.pack.equals(value.pack)
+                && prior.consumed==value.consumed && (prior.pair==null?value.pair==null:value.pair!=null
+                    && prior.pair.phonetic.equals(value.pair.phonetic) && prior.pair.han.equals(value.pair.han) && prior.pair.source.equals(value.pair.source));
+        }
         Runnable selection=()->{},pressedSelection,alternate,pressedAlternate;
         private String hint="",phonetic="";
         private final android.text.TextPaint hintPaint=new android.text.TextPaint();
@@ -279,6 +287,7 @@ final class KeyboardView extends LinearLayout {
         return word;
     }
     private void bindCandidate(TextView word,CompositionEngine engine,Candidate value,long composition) {
+        CandidateWord bound=(CandidateWord)word;bound.boundEngine=engine;bound.boundCandidate=value;bound.boundComposition=composition;
         if(!value.text.contentEquals(word.getText()))word.setText(value.text);
         word.setContentDescription("Candidate "+value.text);
         ((CandidateWord)word).selection=()->{expanded=false;choose.accept(()->engine.selectCandidate(value,composition));};
@@ -289,19 +298,41 @@ final class KeyboardView extends LinearLayout {
     private void expandedCandidates(CompositionEngine engine,List<Candidate> candidates,int first,int preferred,String key) {
         if(key.equals(gridKey))return;
         gridKey=key;
+        List<TextView> available=candidatePool(candidateGrid);
         while(candidateGrid.getChildCount()>candidates.size()-first)candidateGrid.removeViewAt(candidateGrid.getChildCount()-1);
         for(int i=first;i<candidates.size();i++) {
-            TextView word;
-            if(i-first<candidateGrid.getChildCount())word=(TextView)candidateGrid.getChildAt(i-first);
-            else {
-                word=candidate(engine,candidates.get(i),snapshotComposition);
-                word.setTextSize(20);word.setMinWidth(dp(48));word.setMinHeight(dp(48));word.setPadding(dp(12),dp(4),dp(12),dp(4));
-                word.setSingleLine(false);word.setMaxLines(Integer.MAX_VALUE);
-                candidateGrid.addView(word,new ViewGroup.LayoutParams(-2,-2));
-            }
+            TextView word=reuseCandidate(available,engine,candidates.get(i),snapshotComposition);
+            word.setTextSize(20);word.setMinWidth(dp(48));word.setMinHeight(dp(48));word.setPadding(dp(12),dp(4),dp(12),dp(4));
+            word.setSingleLine(false);word.setMaxLines(Integer.MAX_VALUE);
+            placeCandidate(candidateGrid,word,i-first,new ViewGroup.LayoutParams(-2,-2));
             bindCandidate(word,engine,candidates.get(i),snapshotComposition);
             if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
             word.setTextColor(preferred==i && !engine.raw().isEmpty()?Color.BLACK:0xff5d6b71);
+        }
+    }
+    private static List<TextView> candidatePool(ViewGroup parent) {
+        List<TextView> result=new ArrayList<>();
+        for(int i=0;i<parent.getChildCount();i++)if(parent.getChildAt(i) instanceof CandidateWord)result.add((TextView)parent.getChildAt(i));
+        return result;
+    }
+    private TextView reuseCandidate(List<TextView> available,CompositionEngine engine,Candidate value,long composition) {
+        for(Iterator<TextView> it=available.iterator();it.hasNext();) {
+            TextView word=it.next();if(((CandidateWord)word).matches(engine,value,composition)) {it.remove();return word;}
+        }
+        return candidate(engine,value,composition);
+    }
+    /** Preserve accessibility identity when a word moves; never rebind it to another word. */
+    private static void placeCandidate(ViewGroup parent,TextView word,int index,ViewGroup.LayoutParams params) {
+        View displaced=parent.getChildAt(index);if(displaced==word)return;
+        int previous=parent.indexOfChild(word);
+        if(previous>=0 && displaced!=null) {
+            parent.removeView(word);parent.removeView(displaced);
+            if(previous<index) {parent.addView(displaced,previous);parent.addView(word,index,params);}
+            else {parent.addView(word,index,params);parent.addView(displaced,previous);}
+        } else {
+            if(previous>=0)parent.removeView(word);
+            if(displaced!=null)parent.removeView(displaced);
+            parent.addView(word,Math.min(index,parent.getChildCount()),params);
         }
     }
     private LinearLayout row(int height) {
@@ -403,12 +434,13 @@ final class KeyboardView extends LinearLayout {
                     expandButton=plain("⌄","EXPAND",42,1);strip.addView(expandButton,new LayoutParams(dp(40),dp(42)));
                 }
                 while(strip.getChildCount()>2)strip.removeViewAt(strip.getChildCount()-1);
+                List<TextView> available=candidatePool(candidateWords);
                 while(candidateWords.getChildCount()>(candidates.size()-from)*2)candidateWords.removeViewAt(candidateWords.getChildCount()-1);
                 for(int i=from;i<candidates.size();i++) {
-                    Candidate c=candidates.get(i);TextView word;
-                    if((i-from)*2<candidateWords.getChildCount())word=(TextView)candidateWords.getChildAt((i-from)*2);
+                    Candidate c=candidates.get(i);TextView word=reuseCandidate(available,engine,c,snapshotComposition);
+                    if((i-from)*2<candidateWords.getChildCount())placeCandidate(candidateWords,word,(i-from)*2,new LayoutParams(-2,dp(48)));
                     else {
-                        word=candidate(engine,c,snapshotComposition);candidateWords.addView(word,new LayoutParams(-2,dp(48)));
+                        candidateWords.addView(word,new LayoutParams(-2,dp(48)));
                         View divider=new View(getContext());divider.setBackgroundColor(0xffc3cbcf);LayoutParams rule=new LayoutParams(dp(1),dp(26));rule.gravity=Gravity.CENTER_VERTICAL;candidateWords.addView(divider,rule);
                     }
                     bindCandidate(word,engine,c,snapshotComposition);

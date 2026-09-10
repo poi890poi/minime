@@ -96,3 +96,20 @@ the actual worker/main-thread delivery race, burst coalescing and close behavior
 Core suite: 35,011 assertions. Pinned desktop Rime evaluation completed 628 native
 queries (p50 4.79 ms, p95 11.01 ms, max 54.26 ms including IPC). These timings
 are not Android touch latency and do not establish a user-visible speedup.
+
+### Candidate accessibility identity defect found during integration
+
+The six-case real-keyboard run exposed a wrong selection: a node found as `間`
+committed `アイネク`. This is an observation, not a production vocabulary rule.
+The deterministic replacement test then failed because a captured `Candidate 一`
+view became `Candidate 二`. `KeyboardView` reused candidate views by row index;
+an accessibility click has no DOWN event to freeze the old selection closure.
+
+Candidate views now reuse by engine/composition/candidate identity, preserving
+existing word views when they move and replacing a view when its word changes.
+The scroller and unchanged candidates remain stable. This fixes the general race
+without waiting arbitrary durations or teaching tests a particular source word.
+The deterministic test, all nine candidate-stability tests, and the original
+Japanese case pass (10 tests, 37.847 s). Both failed runs and the corrected run
+restored the prior IME/preferences and verified display OFF. Raw test results
+are retained in the release verification evidence; touch timing is checked next.
