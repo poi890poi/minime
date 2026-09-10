@@ -25,3 +25,14 @@
 - Test only the authorized phone RFCR91GWXLX. Restore its prior IME and MinIME
   preferences, sleep its display after every session (including failures), and
   verify its display state. Do not change always-on-display settings.
+
+- Coordinate shared-device ownership across Codex tasks before phone operations.
+  Use request → explicit acknowledgement → operate and clean up → explicit release.
+  The reservation covers state reads, install, launch, IME changes, viewport changes,
+  screenshots, restoration and sleep. Never infer release from thread idle status.
+  The other known phone task is “super birdlitz” in SHINE AAC. If it has reserved
+  the phone, do local work until it explicitly releases the window.
+- Wrap automated phone sessions in `tools/phone-lease.ps1`, using the shared Windows
+  mutex `Local\Codex.Android.RFCR91GWXLX` before the first ADB command and retaining
+  it through cleanup. A busy lock must fail without operating the phone. This lock
+  supplements the task handoff; it does not grant permission to interrupt a session.

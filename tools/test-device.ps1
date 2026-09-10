@@ -2,6 +2,8 @@ param([Parameter(Mandatory=$true)][ValidateSet('RFCR91GWXLX')][string]$Serial,[s
     [string]$TestClass='dev.minime.ime.EditorIntegrationTest,dev.minime.ime.KeyboardInteractionTest,dev.minime.ime.RimeIntegrationTest',
     [string]$AppApk='app/build/outputs/apk/debug/app-debug.apk',
     [string]$TestApk='app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')
+. "$PSScriptRoot/phone-lease.ps1"
+Invoke-WithPhoneLease {
 $ErrorActionPreference='Stop'
 if (!$SdkDir) { throw 'Pass -SdkDir or set ANDROID_HOME' }
 $adb=Join-Path $SdkDir 'platform-tools/adb.exe'
@@ -69,4 +71,6 @@ try {
             Write-Output 'Cleanup verified: preferences, previous IME, display OFF.'
         } finally {Pop-Location}
     } }
+}
+
 }
