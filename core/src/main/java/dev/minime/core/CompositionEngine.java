@@ -289,7 +289,7 @@ public final class CompositionEngine {
             if(englishMode && !literalField && dictionary!=null) {
                 if(!privateField)candidates.addAll(learning.predictEnglish(context));
                 candidates.addAll(dictionary.englishPredictions(context));
-                Set<String> seen=new HashSet<>();candidates.removeIf(c->!seen.add(c.text));
+                Set<String> seen=new HashSet<>();candidates.removeIf(c->!englishSuggestion(c) || !seen.add(c.text));
             }
             if (!privateField && dictionary != null && !literalField && inputMode.chineseEnabled()) candidates.addAll(dictionary.predict(context));
             return;
@@ -328,6 +328,11 @@ public final class CompositionEngine {
         converted.removeIf(c->c.supplemental);
         boolean bpmf=raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
         List<Candidate> custom=!privateField && !literalField?learning.custom(raw):Collections.emptyList();
+        if(englishMode) {
+            // Custom output has no language tag; literal controls acceptance, not language.
+            // Filter before it can influence ranking or suppress English restoration.
+            custom=new ArrayList<>(custom);custom.removeIf(c->!englishSuggestion(c));
+        }
         converted.removeIf(c->c.consumed<0 || c.consumed>raw.length() || (c.consumed>0 && (c.literal || bpmf || !raw.matches("[a-zv]+(?:'[a-zv]+)*"))));
         if (!englishMode) converted.addAll(custom);
         if (!privateField) converted.sort(Comparator.comparingInt((Candidate c) -> learning.count(contextKey(), raw, c.text)).reversed()
@@ -463,6 +468,15 @@ public final class CompositionEngine {
     }
     private boolean focused(Candidate candidate) {
         return !inputMode.pack.isEmpty() && inputMode.pack.equals(candidate.pack);
+    }
+    private static boolean englishSuggestion(Candidate candidate) {
+        if(!candidate.pack.isEmpty())return false;
+        for(int at=0;at<candidate.text.length();) {
+            int cp=candidate.text.codePointAt(at);at+=Character.charCount(cp);
+            Character.UnicodeScript script=Character.UnicodeScript.of(cp);
+            if(script!=Character.UnicodeScript.LATIN && script!=Character.UnicodeScript.COMMON && script!=Character.UnicodeScript.INHERITED)return false;
+        }
+        return true;
     }
     private static boolean hanGlyph(String text) {
         return text.codePointCount(0,text.length())==1 && Character.UnicodeScript.of(text.codePointAt(0))==Character.UnicodeScript.HAN;

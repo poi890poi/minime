@@ -347,6 +347,31 @@ Chinese candidates should dominate.
 
 ---
 
+## 10.1 Explicit English-board isolation
+
+The dedicated English board permits English suggestions only. Chinese, Taiwanese
+and Japanese conversion/add-on dictionaries must not run or contribute candidates
+in that board, even when globally enabled or used immediately beforehand.
+This restriction covers the collapsed row, expanded list, default Space result
+and idle next-word predictions, not just the top candidate.
+
+Custom entries, imported/saved predictions and choice counts cannot bypass the
+scope. Known foreign dictionary provenance is excluded even for romanized output.
+For untagged custom/predicted text, exclude non-Latin scripts; retain Latin
+letters, accents, numbers and ordinary punctuation/symbols. A candidate's
+`literal` flag describes acceptance, not its language. Do not guess the language
+of untagged Latin names or user-authored shortcuts from their spelling.
+
+Keep stored entries intact for other modes. Mixed/focused boards retain their
+specified languages and explicit custom entries. Exact raw input and deliberate
+literal/symbol insertion remain available even if their text is non-Latin.
+Switching to English must invalidate earlier foreign results and candidate taps
+without implicitly committing them, losing raw spelling or retaining the old
+candidate row. An acceptance explicitly requested before the switch still follows
+its original event order.
+
+---
+
 # 11. Punctuation
 
 Punctuation handling should match natural Taiwan mixed-language typing.

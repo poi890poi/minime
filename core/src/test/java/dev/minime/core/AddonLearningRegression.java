@@ -29,6 +29,15 @@ final class AddonLearningRegression {
             String[] p=row.split("\t");
             if(!p[1].matches("[a-z']{2,24}") || sampleCounts.getOrDefault(p[0],0)>=24)continue;
             sampleCounts.merge(p[0],1,Integer::sum);
+            // Existing hash-selected source sample: enabling every pack must leave
+            // English full and partial candidate order unchanged for every pack.
+            for(String input:new String[]{p[1],p[1].substring(0,Math.max(1,p[1].length()/2))}) {
+                CompositionEngine english=engine(new Editor(),Learning.NONE,false);english.start(false,false,false,false,true);type(english,input);
+                List<String> before=new ArrayList<>();for(Candidate value:english.candidates())before.add(value.text);
+                english.addons(addon,all);
+                List<String> after=new ArrayList<>();for(Candidate value:english.candidates())after.add(value.text);
+                equal(before,after,"production add-ons cannot pollute English full/partial candidates: "+p[0]);
+            }
             equal(0,addon.lookup(p[1],Collections.emptySet()).size(),"disabled add-on");
             Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.switchMode(InputMode.fromId(p[0].equals("poj")?"taiwanese":p[0]),false);type(c,p[1]);
             String before=c.candidates().get(c.preferred()).text;
@@ -64,7 +73,9 @@ final class AddonLearningRegression {
             };
             CompositionEngine c=engine(e,manual,false);c.start(false,false,false,false,english);
             c.decoder((d,r,b,context,done)->done.accept(Arrays.asList(new Candidate("推測詞",false,1000))),()->{});
-            type(c,"fixture");equal("自訂詞",c.candidates().get(1).text,"exact custom entry outranks decoder score scale");
+            type(c,"fixture");
+            if(english)yes(c.candidates().stream().noneMatch(v->v.text.equals("自訂詞")),"Chinese custom entries are excluded from the English board");
+            else equal("自訂詞",c.candidates().get(1).text,"exact custom entry outranks decoder score scale in mixed input");
         }
         // Orthographic round-trip fixtures are independent of production selection.
         // They cannot cause a dictionary entry to be imported or promoted.

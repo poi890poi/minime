@@ -37,6 +37,16 @@ final class ApostropheRegression {
             for(boolean english:new boolean[]{false,true}) {
                 Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.start(false,false,false,false,english);type(c,raw);c.space();
                 equal((dictionary.validEnglishSpelling(raw)?raw:dictionary.englishApostrophes(raw,english).get(0).text)+" ",e.text,"source-annotated contraction acceptance");
+                if(english) {
+                    Learning foreignCustom=new Learning() {
+                        public int count(String x,String r,String v){return 0;}
+                        public void choose(String x,String r,String v){}
+                        public List<Candidate> custom(String r){return Collections.singletonList(new Candidate("測試詞",true,1000));}
+                    };
+                    Editor isolated=new Editor();CompositionEngine scoped=engine(isolated,foreignCustom,false);
+                    scoped.start(false,false,false,false,true);type(scoped,raw);scoped.space();
+                    equal(e.text,isolated.text,"excluded foreign custom entry cannot suppress source-annotated apostrophe restoration");
+                }
             }
         }
         for(String raw:Arrays.asList("cant","well","were","ill","wont","blacks","cockatiels","shiite","ps"))for(boolean english:new boolean[]{false,true}) {
