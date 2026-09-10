@@ -793,16 +793,117 @@ An ambiguous Pinyin/English token can be committed either as literal Latin or co
 
 # 28. Performance
 
-Normal key-to-visible-composition latency should feel instantaneous.
+## 28.1 Latency acceptance
 
-Targets:
+The following are release acceptance targets for steady typing in every shipped
+language mode, with its complete enabled dictionaries. They are engineering
+budgets informed by UX research, not universal perceptual thresholds. A faster
+median or a faster pairing alone does not satisfy them.
 
-- local key processing: preferably <10 ms
-- candidate refresh: preferably <30 ms
-- no UI jank during ordinary typing
-- no network dependency
+| Measurement | p95 maximum | p99 maximum |
+| --- | ---: | ---: |
+| Key event received by IME to visible raw spelling | 33 ms | 50 ms |
+| Key event received by IME to stable suggestions for that spelling | 50 ms | 80 ms |
+| Space or candidate-selection event to visible committed text in the editor | 33 ms | 50 ms |
+| Suggestion request to current results applied by the core/main callback, including queues | 20 ms | 30 ms |
 
-Candidate generation may be asynchronous internally, but raw key feedback must never wait for a slow language-model operation.
+- Measure the originating event, not the later start of dictionary computation.
+  For a tap committed on release, use the release event; measure DOWN-to-key
+  feedback separately. For rollover, use the event that accepts the preceding
+  key. Report gesture dwell separately, never as compute latency.
+- Physical contact/release-to-display includes digitizer and input dispatch
+  overhead and must be reported separately using calibrated external observation
+  when available. Software timestamps or a callback are not proof of physical
+  touch-to-display latency. Record measurement resolution and uncertainty.
+- Visible means the frame presenting the changed spelling, candidates or editor
+  text, not a call to `setComposingText`, `invalidate`, or a result callback.
+  A held old row is not a fresh suggestion. Late, missing, superseded and timed-out
+  updates must be counted separately, with maximum age of held suggestions.
+- All observed steady-state spelling, suggestion and acceptance stalls exceeding
+  100 ms require investigation and resolution before a performance PASS. Preserve
+  such samples; do not hide them behind percentile cutoffs or successful-only data.
+- Rendering must meet the active refresh-rate deadline (approximately 16.7 ms at
+  60 Hz, 11.1 ms at 90 Hz, 8.3 ms at 120 Hz). Missed frame deadlines must be under
+  1% of typing frames, with no consecutive misses attributable to the IME. This
+  frame budget is separate from total interaction latency.
+- Candidate generation may be asynchronous, but raw key feedback must not wait
+  for it. Pending acceptance must retain the correct event order without losing,
+  duplicating or committing stale text. No blank-row flashes or changing the
+  identity of a candidate under an active selection gesture.
+- Core input remains offline. Speedups must not reduce dictionary coverage or
+  change ranking/acceptance without separate quality evidence and review.
+
+## 28.2 Touch hit-rate acceptance
+
+Hit rate is measured before autocorrection or manual repair: intended key actions
+that produce exactly the intended action, in order, divided by all intended key
+actions. Report missed actions, substitutions, duplicates, reordering and
+unintended gesture activation separately. Language-model correction cannot turn
+a touch miss into a touch hit. Candidate selection uses the candidate identity at
+touch-down, not its later position.
+
+| Evidence / input condition | Required outcome |
+| --- | --- |
+| Deterministic in-envelope taps, drift and thumb rollover | 100% correct actions; zero loss, duplicates or reordering |
+| Cancelled gestures, intentional slides, long-press and double-tap controls | 100% of their declared outcomes; no unintended extra tap |
+| Real human intended-key accuracy, before correction | At least 97% overall and 95% in every declared mode/posture/orientation group |
+| Valid OS-delivered taps assigned unambiguously to a target | At least 99.9% delivered exactly once to that target |
+
+These numerical touch targets are initial product requirements, not measured
+MinIME results or published human-performance constants.
+
+The deterministic envelope must include the existing [human-input matrix](human-input/RESULTS.md):
+all letters, off-center starts, 2%/98% edge starts with up to 2 dp release drift,
+all ordered letter pairs, both pointer release orders and reordered pointer IDs.
+Extend equivalent action checks to Space, Backspace, punctuation, language switch
+and candidate cells. Cover small/large layouts and font scale, portrait/landscape,
+and all shipped modes. Outside-envelope synthetic probes stay visible as a
+separate stress result; they must not be represented as passing accuracy tests.
+
+Human trials require intended text established independently of the keyboard's
+hit tester, with one-thumb and two-thumb entry, normal imprecision, corrections,
+and conversations and essays reported separately. Include real outside-key
+misses in human accuracy. Freeze assignment and scoring before evaluation; split
+by participant/session or source document/conversation as appropriate. Report
+counts and 95% confidence intervals (clustered by participant/session for human
+data); the lower confidence bound must meet the corresponding hit-rate target.
+Synthetic injection cannot certify human hit rate or digitizer performance.
+
+## 28.3 Verification and reporting
+
+- Record code/APK, dictionary and corpus hashes, device/OS, refresh rate, editor,
+  learning/settings state, thermal/power state, cache/load condition and input
+  timestamps. Test only authorized devices and restore their state afterward.
+- Freeze broad conversation and essay inputs before measurement. Include full,
+  initial and mixed phonetics, English words/identifiers, paced typing, rapid
+  bursts, backspaces, immediate Space/selection and language switching. Separate
+  warm steady typing from cold activation, dictionary loading and mode switching;
+  report those lifecycle delays without hiding their effect on concurrent input.
+- Collect at least 10,000 accepted key actions per mode across at least three
+  sessions for latency-tail assessment; balance test order. Report count, mean,
+  median, p95, p99, maximum, deadline misses and uncertainty per mode, genre,
+  editor and input condition. A favorable pooled number cannot hide a failing
+  group. Smaller or missing strata remain provisional.
+- Separate queue/debounce time, obsolete work, dictionary lookup, merge/ranking,
+  main-thread application and presentation. Test stale-result rejection and
+  pending acceptance, not only isolated queries with an idle worker.
+- Compare legacy Google Zhuyin on the same phone/editor with matched input
+  conditions when available. Relative superiority does not waive absolute
+  budgets. Include typing/correction effort and candidate stability in UX review.
+- Use shared-core and pinned desktop Rime checks for language logic before Android
+  builds; use device tests for input dispatch, lifecycle and visible frames.
+  Every gate must be marked PASS, FAIL or NOT MEASURED. Existing callback timing
+  and synthetic touch assertions do not establish visible latency or human hit
+  rate. This requirements update makes no claim that current builds pass.
+
+Research basis: [Google RAIL](https://web.dev/articles/rail) distinguishes processing
+from visible response; [Deber et al., CHI 2015](https://www.tactuallabs.com/papers/howMuchFasterIsFastEnoughCHI15.pdf)
+shows task-dependent touch sensitivity; [Schmid et al., 2023](https://epub.uni-regensburg.de/55007/1/text-input-latency.pdf)
+finds typing effort/correction costs at higher latency without establishing an
+IME threshold; [Alharbi et al., 2020](https://vvise.iat.sfu.ca/pubs/alharbi2020frustration)
+shows suggestion use has an attention cost; [Android rendering guidance](https://developer.android.com/topic/performance/vitals/render)
+defines refresh-rate frame deadlines. The exact budgets above are MinIME's
+engineering decisions, to be validated by measured UX.
 
 ---
 
