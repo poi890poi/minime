@@ -944,6 +944,32 @@ engineering decisions, to be validated by measured UX.
 
 ---
 
+## 28.4 Focused-language ownership and availability
+
+- No-personalized-learning editors must retain the active static dictionaries
+  while making no personal-history reads or writes. Secure/direct and literal
+  fields retain their independent conversion restrictions.
+- Explicit Taiwanese/Japanese choices must use separate language preferences.
+  Paired Han/POJ outputs share one candidate identity. Automatic acceptance must
+  not reinforce its own ranking. Preferences may reorder candidates within
+  full/incomplete groups; incomplete suggestions must not displace full matches.
+  The feature must have an off switch and use the existing clear-history action.
+- Learned Chinese phrases must not appear in English-secondary focused modes.
+  New language phrase/grammar providers require separate validation; admitting
+  arbitrary text through the Chinese phrase validator is not an implementation.
+- Load only requested optional languages. Preserve admitted source rows, their
+  order and source attribution through packaging. Warm switching may reuse
+  previously used enabled languages; disabling a pack releases cache ownership.
+  Measure cold loading and warm switching separately from per-key latency.
+- During a focused language's cold load, preserve spelling and queue acceptance
+  until that dictionary is available. Failure must release the queue safely.
+  Loading an optional Chinese specialist pack must not block base conversion.
+- Superseded prediction requests must skip remaining provider stages and stale
+  delivery, including transitions to modes that issue no background request.
+  Preserve serialized native work, revision checks and acceptance ordering.
+
+---
+
 # 29. First Development Milestone
 
 Do not start by building a complete polished keyboard.
