@@ -35,7 +35,8 @@ def memory(pid):
 class Engine:
     def __init__(self, name):
         self.name = name
-        command = [JAVA, '-Dfile.encoding=UTF-8', '-Xmx1g', '-cp', 'core/build/manual', 'dev.minime.core.MinimeServer'] if name == 'minime' else [str(WORK / 'build/converter-server.exe'), str(WORK / 'build')]
+        executable = 'converter-server-indexed.exe' if name == 'kazuma-indexed' else 'converter-server.exe'
+        command = [JAVA, '-Dfile.encoding=UTF-8', '-Xmx1g', '-cp', 'core/build/manual', 'dev.minime.core.MinimeServer'] if name == 'minime' else [str(WORK / 'build' / executable), str(WORK / 'build')]
         at = time.perf_counter_ns()
         self.log = (WORK / (name + '-stderr.txt')).open('w', encoding='utf8')
         self.proc = subprocess.Popen(command, cwd=ROOT, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
@@ -164,9 +165,10 @@ def distance(a, b):
     return prev[-1]
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument('engine', choices=['minime', 'kazuma'])
+    p = argparse.ArgumentParser(); p.add_argument('engine', choices=['minime', 'kazuma', 'kazuma-indexed'])
     p.add_argument('command', choices=['completion', 'probes', 'ajimee', 'perf'])
     p.add_argument('--role', default='development', choices=['development', 'holdout']); p.add_argument('--pass-number', type=int, default=1)
+    p.add_argument('--output-dir',type=Path,default=HERE)
     args = p.parse_args(); output = []; corpus = rows('utterances.jsonl.gz')
     e = Engine(args.engine)
     try:
@@ -206,7 +208,8 @@ def main():
     finally: e.close()
     suffix = str(args.pass_number) if args.command == 'perf' else args.role
     name = args.engine + '-' + args.command + '-' + suffix
-    write_rows(HERE / (name+'.jsonl.gz'), output); dump(HERE / (name+'-load.json'), e.load)
+    args.output_dir.mkdir(parents=True,exist_ok=True)
+    write_rows(args.output_dir / (name+'.jsonl.gz'), output); dump(args.output_dir / (name+'-load.json'), e.load)
     print(name, len(output), flush=True)
 
 if __name__ == '__main__': main()

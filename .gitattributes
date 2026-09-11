@@ -90,3 +90,7 @@ docs/japanese-engine-benchmark/*.jsonl.gz -text
 docs/japanese-engine-benchmark/*-gate.txt -text whitespace=cr-at-eol
 docs/japanese-engine-benchmark/*-LICENSE.txt -text -whitespace
 docs/japanese-engine-benchmark/AJIMEE-README.md -text -whitespace
+docs/japanese-predictive-review/*.json -text whitespace=cr-at-eol
+docs/japanese-predictive-review/*.jsonl.gz -text
+docs/japanese-predictive-review/*.txt -text whitespace=cr-at-eol
+docs/japanese-predictive-review/*.patch -text whitespace=-blank-at-eol,cr-at-eol
