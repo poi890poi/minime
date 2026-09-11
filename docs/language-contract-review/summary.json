@@ -1,0 +1,84 @@
+{
+  "revision": "d353be4a09c1b4485d88971ec6d92d3f4677816a",
+  "scope": "Review and deterministic core diagnostics; no production changes, Android build or phone operations.",
+  "partial_acceptance": {
+    "hyphen": {
+      "queries": 32,
+      "suffix_preserved": 0,
+      "suffix_lost": 32,
+      "unavailable": 0,
+      "default_uses_prefix": 32,
+      "namespaces": [
+        "FOCUS:japanese"
+      ]
+    },
+    "lower": {
+      "queries": 32,
+      "suffix_preserved": 32,
+      "suffix_lost": 0,
+      "unavailable": 0,
+      "default_uses_prefix": 0,
+      "namespaces": [
+        "MODE:japanese_english:START_OR_LATIN"
+      ]
+    },
+    "title": {
+      "queries": 32,
+      "suffix_preserved": 0,
+      "suffix_lost": 32,
+      "unavailable": 0,
+      "default_uses_prefix": 31,
+      "namespaces": [
+        "FOCUS:japanese"
+      ]
+    },
+    "upper": {
+      "queries": 32,
+      "suffix_preserved": 0,
+      "suffix_lost": 32,
+      "unavailable": 0,
+      "default_uses_prefix": 31,
+      "namespaces": [
+        "FOCUS:japanese"
+      ]
+    }
+  },
+  "english_continuation": {
+    "chinese": {
+      "queries": 32,
+      "provider_nonempty": 32,
+      "idle_nonempty": 0,
+      "learning_callbacks": 0
+    },
+    "english": {
+      "queries": 32,
+      "provider_nonempty": 32,
+      "idle_nonempty": 32,
+      "learning_callbacks": 32
+    },
+    "japanese_english": {
+      "queries": 32,
+      "provider_nonempty": 32,
+      "idle_nonempty": 0,
+      "learning_callbacks": 0
+    },
+    "taiwanese_english": {
+      "queries": 32,
+      "provider_nonempty": 32,
+      "idle_nonempty": 0,
+      "learning_callbacks": 0
+    }
+  },
+  "source_category_control": "In both POJ and Japanese, swapping only the category assigned to the same two readings/outputs reverses their order.",
+  "data_roles": {
+    "partial": "32 SHA-256-order-selected lowercase partial inputs of length 3–16 from the already exposed WanaKana oracle; each in lowercase, uppercase, title case and with ka- prepended. Full production add-ons and Japanese basics are loaded. Candidate consumed span is compared with remaining owned raw input after explicit selection. Tests acceptance mechanics, not Japanese meaning.",
+    "continuation": "32 SHA-256-order-selected distinct single-word contexts of length 2–16 from existing English context.tsv. Explicit raw selection identifies English unambiguously. Same static provider and input across four modes; no output labels enter ranking. Source-derived capability check, not accuracy.",
+    "category": "Two artificial lexical identities with equal scores/readings and unchanged row order. Swap only ordinary/expression category metadata. Diagnostic fixtures never enter production."
+  },
+  "limitations": [
+    "Partial probes do not exercise native Rime, async Android rendering or physical gestures.",
+    "Learning callbacks are recorded by a spy, not Android persistence. Existing phone persistence tests remain separate evidence.",
+    "No new coverage or latency benchmark is claimed. Prior measurements have their original revisions/genres/endpoints.",
+    "The confirmed suffix-loss defect remains present in 0.8.2; this review does not patch it."
+  ]
+}

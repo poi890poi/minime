@@ -72,3 +72,8 @@ branding/minime/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,c
 
 docs/japanese-continuity/*.tsv text eol=lf
 docs/japanese-continuity/*.json text eol=lf
+
+# Review TSVs retain empty final diagnostic fields.
+docs/language-contract-review/*.tsv -text whitespace=-blank-at-eol
+docs/language-contract-review/*.json -text
+docs/language-contract-review/*.java -text

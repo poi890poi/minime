@@ -1,0 +1,19 @@
+{
+  "revision": "d353be4a09c1b4485d88971ec6d92d3f4677816a",
+  "runtime": "Microsoft OpenJDK 17.0.11, Windows; freshly compiled current core sources",
+  "inputs": {
+    "app/build/generated/minimeAssets/model.bin": "1d1b9a2d5379eeb0099b38cb48695a22541300c765a0dd2d5851c25b049572f1",
+    "app/src/main/assets/en_spelling.tsv": "9dc2823be8f18e4c12bbeccc1ef6deaf12322f980814efb37c79c605a519db76",
+    "app/src/main/assets/addons.tsv": "803475ae4a4ebc35e2e01813465bb09ff01012619101b3a15eda68ff6372a477",
+    "app/src/main/assets/japanese-basic.tsv": "0405d3d65d7c8ed510bef67493e3bc37b9a6096cbd10b2163e3fb59d2c99bca0",
+    "app/src/main/assets/context.tsv": "0627a69373c47f8ffca381245fd48292a50316ff8cbca53efbfa70e545f60952",
+    "docs/japanese-continuity/kana-oracle.tsv": "28ed903bf8430bb180c6c2611352bec7981ef033ab59d72e800f34cdae39b835"
+  },
+  "outputs": {
+    "ContractProbe.java": "6609ba453b70484c71deb209958f3c131c35b75c35812eeb755de5952377019a",
+    "english-continuation.tsv": "b91bdd6c29efa3a0cb0fbce25d1c23afc6bcc47a09f2dd6245c9342f92c327c8",
+    "partial-acceptance.tsv": "b8ad7b0f40f2bad8106e46257014a2557563edc04a2d59df600dc4b8f8da228c",
+    "source-tier.tsv": "11330f3d26021bd73503b2fc8afa12677edda6ac6b4ccfe9f40621cb73a4afbf",
+    "summary.json": "6d685fce39678757262aa7fb747ac543452cf606e4142961f53921c6e60fb8a4"
+  }
+}

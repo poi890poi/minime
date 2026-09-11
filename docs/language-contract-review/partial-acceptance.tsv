@@ -1,0 +1,129 @@
+source_input	condition	input	choice	consumed	expected_remaining	actual_remaining	default_is_prefix	learning_namespace	status
+said	lower	said	さい	3	d	d	false	MODE:japanese_english:START_OR_LATIN	PASS
+said	upper	SAID	さい	3	D		true	FOCUS:japanese	SUFFIX_LOST
+said	title	Said	さい	3	d		true	FOCUS:japanese	SUFFIX_LOST
+said	hyphen	ka-said	かーさい	6	d		true	FOCUS:japanese	SUFFIX_LOST
+nougyouky	lower	nougyouky	のうぎょう	7	ky	ky	false	MODE:japanese_english:START_OR_LATIN	PASS
+nougyouky	upper	NOUGYOUKY	のうぎょう	7	KY		true	FOCUS:japanese	SUFFIX_LOST
+nougyouky	title	Nougyouky	のうぎょう	7	ky		true	FOCUS:japanese	SUFFIX_LOST
+nougyouky	hyphen	ka-nougyouky	かーのうぎょう	10	ky		true	FOCUS:japanese	SUFFIX_LOST
+kachik	lower	kachik	かち	5	k	k	false	MODE:japanese_english:START_OR_LATIN	PASS
+kachik	upper	KACHIK	かち	5	K		true	FOCUS:japanese	SUFFIX_LOST
+kachik	title	Kachik	かち	5	k		true	FOCUS:japanese	SUFFIX_LOST
+kachik	hyphen	ka-kachik	かーかち	8	k		true	FOCUS:japanese	SUFFIX_LOST
+shussh	lower	shussh	しゅ	3	ssh	ssh	false	MODE:japanese_english:START_OR_LATIN	PASS
+shussh	upper	SHUSSH	しゅ	3	SSH		true	FOCUS:japanese	SUFFIX_LOST
+shussh	title	Shussh	しゅ	3	ssh		true	FOCUS:japanese	SUFFIX_LOST
+shussh	hyphen	ka-shussh	かーしゅ	6	ssh		true	FOCUS:japanese	SUFFIX_LOST
+jos	lower	jos	じょ	2	s	s	false	MODE:japanese_english:START_OR_LATIN	PASS
+jos	upper	JOS	じょ	2	S		true	FOCUS:japanese	SUFFIX_LOST
+jos	title	Jos	じょ	2	s		true	FOCUS:japanese	SUFFIX_LOST
+jos	hyphen	ka-jos	かーじょ	5	s		true	FOCUS:japanese	SUFFIX_LOST
+mag	lower	mag	ま	2	g	g	false	MODE:japanese_english:START_OR_LATIN	PASS
+mag	upper	MAG	ま	2	G		true	FOCUS:japanese	SUFFIX_LOST
+mag	title	Mag	ま	2	g		true	FOCUS:japanese	SUFFIX_LOST
+mag	hyphen	ka-mag	かーま	5	g		true	FOCUS:japanese	SUFFIX_LOST
+kouh	lower	kouh	こう	3	h	h	false	MODE:japanese_english:START_OR_LATIN	PASS
+kouh	upper	KOUH	こう	3	H		true	FOCUS:japanese	SUFFIX_LOST
+kouh	title	Kouh	こう	3	h		true	FOCUS:japanese	SUFFIX_LOST
+kouh	hyphen	ka-kouh	かーこう	6	h		true	FOCUS:japanese	SUFFIX_LOST
+kad	lower	kad	か	2	d	d	false	MODE:japanese_english:START_OR_LATIN	PASS
+kad	upper	KAD	か	2	D		true	FOCUS:japanese	SUFFIX_LOST
+kad	title	Kad	か	2	d		true	FOCUS:japanese	SUFFIX_LOST
+kad	hyphen	ka-kad	かーか	5	d		true	FOCUS:japanese	SUFFIX_LOST
+ryouk	lower	ryouk	りょう	4	k	k	false	MODE:japanese_english:START_OR_LATIN	PASS
+ryouk	upper	RYOUK	りょう	4	K		true	FOCUS:japanese	SUFFIX_LOST
+ryouk	title	Ryouk	りょう	4	k		true	FOCUS:japanese	SUFFIX_LOST
+ryouk	hyphen	ka-ryouk	かーりょう	7	k		true	FOCUS:japanese	SUFFIX_LOST
+kyoug	lower	kyoug	きょう	4	g	g	false	MODE:japanese_english:START_OR_LATIN	PASS
+kyoug	upper	KYOUG	きょう	4	G		true	FOCUS:japanese	SUFFIX_LOST
+kyoug	title	Kyoug	きょう	4	g		true	FOCUS:japanese	SUFFIX_LOST
+kyoug	hyphen	ka-kyoug	かーきょう	7	g		true	FOCUS:japanese	SUFFIX_LOST
+fuank	lower	fuank	ふあん	4	k	k	false	MODE:japanese_english:START_OR_LATIN	PASS
+fuank	upper	FUANK	ふあん	4	K		true	FOCUS:japanese	SUFFIX_LOST
+fuank	title	Fuank	ふあん	4	k		true	FOCUS:japanese	SUFFIX_LOST
+fuank	hyphen	ka-fuank	かーふあん	7	k		true	FOCUS:japanese	SUFFIX_LOST
+magar	lower	magar	まが	4	r	r	false	MODE:japanese_english:START_OR_LATIN	PASS
+magar	upper	MAGAR	まが	4	R		true	FOCUS:japanese	SUFFIX_LOST
+magar	title	Magar	まが	4	r		true	FOCUS:japanese	SUFFIX_LOST
+magar	hyphen	ka-magar	かーまが	7	r		true	FOCUS:japanese	SUFFIX_LOST
+purodakut	lower	purodakut	ぷろだく	8	t	t	false	MODE:japanese_english:START_OR_LATIN	PASS
+purodakut	upper	PURODAKUT	ぷろだく	8	T		true	FOCUS:japanese	SUFFIX_LOST
+purodakut	title	Purodakut	ぷろだく	8	t		true	FOCUS:japanese	SUFFIX_LOST
+purodakut	hyphen	ka-purodakut	かーぷろだく	11	t		true	FOCUS:japanese	SUFFIX_LOST
+saif	lower	saif	さい	3	f	f	false	MODE:japanese_english:START_OR_LATIN	PASS
+saif	upper	SAIF	さい	3	F		true	FOCUS:japanese	SUFFIX_LOST
+saif	title	Saif	さい	3	f		true	FOCUS:japanese	SUFFIX_LOST
+saif	hyphen	ka-saif	かーさい	6	f		true	FOCUS:japanese	SUFFIX_LOST
+niat	lower	niat	にあ	3	t	t	false	MODE:japanese_english:START_OR_LATIN	PASS
+niat	upper	NIAT	にあ	3	T		true	FOCUS:japanese	SUFFIX_LOST
+niat	title	Niat	にあ	3	t		true	FOCUS:japanese	SUFFIX_LOST
+niat	hyphen	ka-niat	かーにあ	6	t		true	FOCUS:japanese	SUFFIX_LOST
+hek	lower	hek	へ	2	k	k	false	MODE:japanese_english:START_OR_LATIN	PASS
+hek	upper	HEK	へ	2	K		true	FOCUS:japanese	SUFFIX_LOST
+hek	title	Hek	へ	2	k		true	FOCUS:japanese	SUFFIX_LOST
+hek	hyphen	ka-hek	かーへ	5	k		true	FOCUS:japanese	SUFFIX_LOST
+gurekor	lower	gurekor	ぐれこ	6	r	r	false	MODE:japanese_english:START_OR_LATIN	PASS
+gurekor	upper	GUREKOR	ぐれこ	6	R		true	FOCUS:japanese	SUFFIX_LOST
+gurekor	title	Gurekor	ぐれこ	6	r		true	FOCUS:japanese	SUFFIX_LOST
+gurekor	hyphen	ka-gurekor	かーぐれこ	9	r		true	FOCUS:japanese	SUFFIX_LOST
+keiz	lower	keiz	けい	3	z	z	false	MODE:japanese_english:START_OR_LATIN	PASS
+keiz	upper	KEIZ	けい	3	Z		true	FOCUS:japanese	SUFFIX_LOST
+keiz	title	Keiz	けい	3	z		true	FOCUS:japanese	SUFFIX_LOST
+keiz	hyphen	ka-keiz	かーけい	6	z		true	FOCUS:japanese	SUFFIX_LOST
+touchak	lower	touchak	とうちゃ	6	k	k	false	MODE:japanese_english:START_OR_LATIN	PASS
+touchak	upper	TOUCHAK	とうちゃ	6	K		true	FOCUS:japanese	SUFFIX_LOST
+touchak	title	Touchak	とうちゃ	6	k		true	FOCUS:japanese	SUFFIX_LOST
+touchak	hyphen	ka-touchak	かーとうちゃ	9	k		true	FOCUS:japanese	SUFFIX_LOST
+emerarud	lower	emerarud	えめらる	7	d	d	false	MODE:japanese_english:START_OR_LATIN	PASS
+emerarud	upper	EMERARUD	えめらる	7	D		true	FOCUS:japanese	SUFFIX_LOST
+emerarud	title	Emerarud	えめらる	7	d		true	FOCUS:japanese	SUFFIX_LOST
+emerarud	hyphen	ka-emerarud	かーえめらる	10	d		true	FOCUS:japanese	SUFFIX_LOST
+morok	lower	morok	もろ	4	k	k	false	MODE:japanese_english:START_OR_LATIN	PASS
+morok	upper	MOROK	もろ	4	K		true	FOCUS:japanese	SUFFIX_LOST
+morok	title	Morok	もろ	4	k		true	FOCUS:japanese	SUFFIX_LOST
+morok	hyphen	ka-morok	かーもろ	7	k		true	FOCUS:japanese	SUFFIX_LOST
+chih	lower	chih	ち	3	h	h	false	MODE:japanese_english:START_OR_LATIN	PASS
+chih	upper	CHIH	ち	3	H		true	FOCUS:japanese	SUFFIX_LOST
+chih	title	Chih	ち	3	h		true	FOCUS:japanese	SUFFIX_LOST
+chih	hyphen	ka-chih	かーち	6	h		true	FOCUS:japanese	SUFFIX_LOST
+fuzaishatouh	lower	fuzaishatouh	ふざいしゃとう	11	h	h	false	MODE:japanese_english:START_OR_LATIN	PASS
+fuzaishatouh	upper	FUZAISHATOUH	ふざいしゃとう	11	H		true	FOCUS:japanese	SUFFIX_LOST
+fuzaishatouh	title	Fuzaishatouh	ふざいしゃとう	11	h		true	FOCUS:japanese	SUFFIX_LOST
+fuzaishatouh	hyphen	ka-fuzaishatouh	かーふざいしゃとう	14	h		true	FOCUS:japanese	SUFFIX_LOST
+shokush	lower	shokush	しょく	5	sh	sh	false	MODE:japanese_english:START_OR_LATIN	PASS
+shokush	upper	SHOKUSH	しょく	5	SH		true	FOCUS:japanese	SUFFIX_LOST
+shokush	title	Shokush	しょく	5	sh		true	FOCUS:japanese	SUFFIX_LOST
+shokush	hyphen	ka-shokush	かーしょく	8	sh		true	FOCUS:japanese	SUFFIX_LOST
+sandoitchi	lower	sandoitchi	さんどい	6	tchi	tchi	false	MODE:japanese_english:START_OR_LATIN	PASS
+sandoitchi	upper	SANDOITCHI	さんどい	6	TCHI		false	FOCUS:japanese	SUFFIX_LOST
+sandoitchi	title	Sandoitchi	さんどい	6	tchi		false	FOCUS:japanese	SUFFIX_LOST
+sandoitchi	hyphen	ka-sandoitchi	かーさんどい	9	tchi		true	FOCUS:japanese	SUFFIX_LOST
+senret	lower	senret	せんれ	5	t	t	false	MODE:japanese_english:START_OR_LATIN	PASS
+senret	upper	SENRET	せんれ	5	T		true	FOCUS:japanese	SUFFIX_LOST
+senret	title	Senret	せんれ	5	t		true	FOCUS:japanese	SUFFIX_LOST
+senret	hyphen	ka-senret	かーせんれ	8	t		true	FOCUS:japanese	SUFFIX_LOST
+machihaz	lower	machihaz	まちは	7	z	z	false	MODE:japanese_english:START_OR_LATIN	PASS
+machihaz	upper	MACHIHAZ	まちは	7	Z		true	FOCUS:japanese	SUFFIX_LOST
+machihaz	title	Machihaz	まちは	7	z		true	FOCUS:japanese	SUFFIX_LOST
+machihaz	hyphen	ka-machihaz	かーまちは	10	z		true	FOCUS:japanese	SUFFIX_LOST
+saigonob	lower	saigonob	さいごの	7	b	b	false	MODE:japanese_english:START_OR_LATIN	PASS
+saigonob	upper	SAIGONOB	さいごの	7	B		true	FOCUS:japanese	SUFFIX_LOST
+saigonob	title	Saigonob	さいごの	7	b		true	FOCUS:japanese	SUFFIX_LOST
+saigonob	hyphen	ka-saigonob	かーさいごの	10	b		true	FOCUS:japanese	SUFFIX_LOST
+sok	lower	sok	そ	2	k	k	false	MODE:japanese_english:START_OR_LATIN	PASS
+sok	upper	SOK	そ	2	K		true	FOCUS:japanese	SUFFIX_LOST
+sok	title	Sok	そ	2	k		true	FOCUS:japanese	SUFFIX_LOST
+sok	hyphen	ka-sok	かーそ	5	k		true	FOCUS:japanese	SUFFIX_LOST
+kenok	lower	kenok	けの	4	k	k	false	MODE:japanese_english:START_OR_LATIN	PASS
+kenok	upper	KENOK	けの	4	K		true	FOCUS:japanese	SUFFIX_LOST
+kenok	title	Kenok	けの	4	k		true	FOCUS:japanese	SUFFIX_LOST
+kenok	hyphen	ka-kenok	かーけの	7	k		true	FOCUS:japanese	SUFFIX_LOST
+furansur	lower	furansur	ふらんす	7	r	r	false	MODE:japanese_english:START_OR_LATIN	PASS
+furansur	upper	FURANSUR	ふらんす	7	R		true	FOCUS:japanese	SUFFIX_LOST
+furansur	title	Furansur	ふらんす	7	r		true	FOCUS:japanese	SUFFIX_LOST
+furansur	hyphen	ka-furansur	かーふらんす	10	r		true	FOCUS:japanese	SUFFIX_LOST
+baas	lower	baas	ばあ	3	s	s	false	MODE:japanese_english:START_OR_LATIN	PASS
+baas	upper	BAAS	ばあ	3	S		true	FOCUS:japanese	SUFFIX_LOST
+baas	title	Baas	ばあ	3	s		true	FOCUS:japanese	SUFFIX_LOST
+baas	hyphen	ka-baas	かーばあ	6	s		true	FOCUS:japanese	SUFFIX_LOST
