@@ -40,6 +40,11 @@ public final class JapaneseBasics {
         JapaneseBasics result=new JapaneseBasics(exact,readings);grammar.forEach(result.kana::put);return result;
     }
     private static String normalize(String raw){return raw.toLowerCase(Locale.ROOT).replace("'","").replace("-","").replace(" ","");}
+    /** A whole-buffer reading only; unfinished romanization is never dropped. */
+    String conversionReading(String raw) {
+        List<Candidate> forms=kana.lookup(raw);
+        return forms.isEmpty() || forms.get(0).consumed!=0?"":forms.get(0).text;
+    }
     public List<Candidate> lookup(String raw) {
         if(raw.length()>96 || !raw.matches("[a-zA-Z'-]+"))return Collections.emptyList();
         String key=normalize(raw);List<Candidate> result=new ArrayList<>();Set<String> seen=new HashSet<>();

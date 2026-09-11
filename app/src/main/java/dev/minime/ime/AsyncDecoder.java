@@ -14,10 +14,13 @@ final class AsyncDecoder implements CompositionEngine.Decoder,AutoCloseable {
     private ScheduledFuture<?> queued;
     private volatile boolean closed;
     private volatile boolean rime;
+    private volatile JapaneseConversion.Provider japanese;
     private final DecodePipeline.Requests requests=new DecodePipeline.Requests();
     final DecodePipeline.Stats stats=new DecodePipeline.Stats();
     AsyncDecoder(Handler main) {this.main=main;}
     void rime(boolean enabled) {rime=enabled;}
+    /** Optional injection; no native Japanese dependency is enabled by normal builds. */
+    void japanese(JapaneseConversion.Provider provider) {cancel();japanese=provider;}
     public void convert(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,Consumer<List<Candidate>> result) {
         query(dictionary,raw,zhuyin,context,true,AddonDictionary.EMPTY,Collections.emptySet(),result);
     }
@@ -26,11 +29,13 @@ final class AsyncDecoder implements CompositionEngine.Decoder,AutoCloseable {
         if(closed)return;
         cancel();BooleanSupplier current=requests.next();
         boolean useRime=phonetic && rime && !zhuyin;
+        JapaneseConversion.Provider conversion=japanese;
         stats.requests.incrementAndGet();
         queued=worker.schedule(()-> {
             List<Candidate> choices=DecodePipeline.run(current,
                 ()->phonetic?dictionary.convert(raw,zhuyin,context):new ArrayList<>(),
-                useRime?()->RimeBackend.candidates(raw):null,()->addons.lookup(raw,enabled),stats);
+                useRime?()->RimeBackend.candidates(raw):null,
+                ()->JapaneseConversion.merge(raw,enabled,addons,addons.lookup(raw,enabled),conversion,current),stats);
             if(choices!=null)deliver(current,choices,result);
         },8,TimeUnit.MILLISECONDS);
     }

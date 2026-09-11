@@ -15,6 +15,7 @@ public final class AddonDictionary {
     private AddonDictionary(AddonDictionary first,AddonDictionary second) {this(first,second,first.japaneseBasics!=JapaneseBasics.EMPTY?first.japaneseBasics:second.japaneseBasics);}
     private AddonDictionary(AddonDictionary first,AddonDictionary second,JapaneseBasics basics) {entries=Collections.emptyMap();this.first=first;this.second=second;japaneseBasics=basics;}
     public static AddonDictionary withJapaneseBasics(AddonDictionary words,JapaneseBasics basics) {return new AddonDictionary(words,EMPTY,Objects.requireNonNull(basics));}
+    public String japaneseConversionReading(String raw) {return japaneseBasics.conversionReading(raw);}
     public static AddonDictionary combine(AddonDictionary a,AddonDictionary b) {
         if(a==EMPTY)return b;if(b==EMPTY)return a;
         return new AddonDictionary(a,b);
