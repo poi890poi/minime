@@ -42,6 +42,7 @@ public final class Regression {
     }
     public static void main(String[] args) throws Exception {
         ReadingIndexParity.run();
+        ReadingUnitLookupRegression.run();
         Path assets = Paths.get("app/src/main/assets");
         long start = System.nanoTime();
         dictionary = args.length>0?PhoneticDictionary.readBinary(Files.newInputStream(Paths.get(args[0]))):PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")), Files.newBufferedReader(assets.resolve("en_us.tsv")), Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));

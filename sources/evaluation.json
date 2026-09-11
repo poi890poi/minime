@@ -3,6 +3,18 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "java-lookup-performance-20260912",
+      "source_ids": ["real-persona-chat", "asdc", "suisiann-thousand", "taiwanese-basic", "taiwan-md", "mcbopomofo", "itaigi", "taihoa", "jmdict", "jmnedict", "wanakana"],
+      "genre": ["human-casual-chat", "human-task-dialogue", "authored-everyday-utterance", "historical-teaching-example", "essay", "dictionary-retrieval"],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "SHA-256 order, up to 256 rows per existing source group/input condition, plus all 1311 prior phone typing keys. Phone Java lookup uses every sixteenth frozen row. No selection by measured latency or candidate quality.",
+      "files": ["docs/java-lookup-performance/manifest.json", "docs/java-lookup-performance/inputs.tsv", "docs/java-lookup-performance/phone-inputs.tsv"],
+      "report_by": ["source", "genre", "input-condition", "language-pack", "first-versus-warm", "latency", "allocation", "ordered-candidate-metadata", "empty-output"],
+      "leakage": "Consumed regression and source-retrieval evidence only. Production-overlapping source probes do not measure independent coverage. Runtime sees raw input and enabled pack only; no reference labels or target promotion.",
+      "limitations": "Direct Java lookup excludes base English lookup and full sentence decoding. Chinese add-on essay results are not overall Chinese IME coverage. No fresh holdout or physical touch latency claim. Existing source attribution remains applicable."
+    },
+    {
       "id": "taiwan-md-essay-audit-20260908",
       "source_ids": [
         "taiwan-md"

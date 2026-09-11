@@ -89,9 +89,12 @@ final class ReadingUnitIndex {
         }
     }
     private List<List<Candidate>> match(String raw,int start,int[] budget) {
+        return match(raw,start,budget,true);
+    }
+    private List<List<Candidate>> match(String raw,int start,int[] budget,boolean intermediateResults) {
         int limit=Math.min(raw.length(),start+MAX_WORD_INPUT);
         List<List<Candidate>> matches=new ArrayList<>();
-        for(int i=0;i<=limit;i++) matches.add(new ArrayList<>());
+        for(int i=0;i<=limit;i++) matches.add(intermediateResults || i==limit?new ArrayList<>():Collections.emptyList());
         PriorityQueue<State> queue=new PriorityQueue<>(Comparator.comparingDouble((State s)->s.bound).reversed()
             .thenComparingInt(s->s.node).thenComparingInt(s->s.at));
         queue.add(new State(0,start,0));
@@ -104,7 +107,11 @@ final class ReadingUnitIndex {
             Integer prior=visited.get(identity);
             if(prior!=null && prior<=state.missing) continue;
             visited.put(identity,state.missing);
-            if(words[state.node]!=null) {
+            // Single-entry lookup only returns the final offset. Materializing
+            // other offsets cannot affect traversal: queue bounds and visited
+            // states depend solely on source readings and omitted input.
+            // Sentence conversion still needs every intermediate word boundary.
+            if(words[state.node]!=null && (intermediateResults || state.at==limit)) {
                 List<Candidate> at=matches.get(state.at);
                 for(Candidate c:words[state.node].subList(0,Math.min(CANDIDATES,words[state.node].size())))
                     at.add(state.missing==0?c:c.completing(c.score-penalty(state.missing)));
@@ -135,7 +142,7 @@ final class ReadingUnitIndex {
     /** Match one stored entry using full or incomplete source reading units. */
     List<Candidate> lookup(String raw) {
         if(raw.isEmpty() || raw.length()>MAX_WORD_INPUT || !raw.matches("[a-z0-9]+(?:'[a-z0-9]+)*"))return Collections.emptyList();
-        return match(raw,0,new int[]{SEARCH_BUDGET}).get(raw.length());
+        return match(raw,0,new int[]{SEARCH_BUDGET},false).get(raw.length());
     }
     List<Candidate> convert(String raw) {
         if(!raw.matches("[a-zv]+(?:'[a-zv]+)*")) return Collections.emptyList();

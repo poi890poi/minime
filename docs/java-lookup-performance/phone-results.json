@@ -1,0 +1,1033 @@
+{
+  "direct_lookup": {
+    "baseline": {
+      "pack/japanese/first": {
+        "n": 426,
+        "mean_ms": 1.8237477018779342,
+        "p50_ms": 1.10474,
+        "p95_ms": 4.931511,
+        "p99_ms": 10.60349,
+        "max_ms": 13.329323,
+        "empty_outputs": 19
+      },
+      "group/japanese-conversation-asdc/first": {
+        "n": 128,
+        "mean_ms": 2.9531400625,
+        "p50_ms": 1.821407,
+        "p95_ms": 9.098021,
+        "p99_ms": 13.088177,
+        "max_ms": 13.329323,
+        "empty_outputs": 10
+      },
+      "condition/full/first": {
+        "n": 128,
+        "mean_ms": 10.787244875,
+        "p50_ms": 1.594323,
+        "p95_ms": 64.526511,
+        "p99_ms": 75.422917,
+        "max_ms": 87.043959,
+        "empty_outputs": 34
+      },
+      "condition/half/first": {
+        "n": 128,
+        "mean_ms": 13.642344171875,
+        "p50_ms": 2.947708,
+        "p95_ms": 68.4175,
+        "p99_ms": 72.789896,
+        "max_ms": 88.583385,
+        "empty_outputs": 22
+      },
+      "condition/initials/first": {
+        "n": 112,
+        "mean_ms": 12.153894580357143,
+        "p50_ms": 4.008333,
+        "p95_ms": 58.34448,
+        "p99_ms": 61.058073,
+        "max_ms": 78.017343,
+        "empty_outputs": 24
+      },
+      "condition/mixed/first": {
+        "n": 112,
+        "mean_ms": 10.655299982142857,
+        "p50_ms": 3.928698,
+        "p95_ms": 50.25,
+        "p99_ms": 56.247812,
+        "max_ms": 56.302031,
+        "empty_outputs": 36
+      },
+      "condition/neighbor/first": {
+        "n": 64,
+        "mean_ms": 8.473710078125,
+        "p50_ms": 2.492031,
+        "p95_ms": 26.463386,
+        "p99_ms": 75.333645,
+        "max_ms": 75.333645,
+        "empty_outputs": 27
+      },
+      "condition/omission/first": {
+        "n": 64,
+        "mean_ms": 14.744430359375,
+        "p50_ms": 3.101198,
+        "p95_ms": 66.156614,
+        "p99_ms": 73.17276,
+        "max_ms": 73.17276,
+        "empty_outputs": 17
+      },
+      "condition/three-quarter/first": {
+        "n": 64,
+        "mean_ms": 16.1914925,
+        "p50_ms": 3.594427,
+        "p95_ms": 65.760885,
+        "p99_ms": 69.357604,
+        "max_ms": 69.357604,
+        "empty_outputs": 19
+      },
+      "condition/transpose/first": {
+        "n": 96,
+        "mean_ms": 7.995735802083333,
+        "p50_ms": 1.44625,
+        "p95_ms": 41.409271,
+        "p99_ms": 72.342656,
+        "max_ms": 72.342656,
+        "empty_outputs": 45
+      },
+      "group/japanese-conversation-real-persona-chat/first": {
+        "n": 128,
+        "mean_ms": 1.956368,
+        "p50_ms": 1.538021,
+        "p95_ms": 3.928698,
+        "p99_ms": 5.05875,
+        "max_ms": 5.067864,
+        "empty_outputs": 9
+      },
+      "group/japanese-retrieval/first": {
+        "n": 24,
+        "mean_ms": 1.0736329166666667,
+        "p50_ms": 0.985313,
+        "p95_ms": 2.539792,
+        "p99_ms": 3.237969,
+        "max_ms": 3.237969,
+        "empty_outputs": 0
+      },
+      "group/japanese-source/first": {
+        "n": 64,
+        "mean_ms": 1.097770234375,
+        "p50_ms": 0.952657,
+        "p95_ms": 2.344115,
+        "p99_ms": 2.679531,
+        "max_ms": 2.679531,
+        "empty_outputs": 0
+      },
+      "pack/poj/first": {
+        "n": 344,
+        "mean_ms": 23.912966031976744,
+        "p50_ms": 14.406302,
+        "p95_ms": 68.588542,
+        "p99_ms": 75.422917,
+        "max_ms": 88.583385,
+        "empty_outputs": 135
+      },
+      "group/poj-conversation-suisiann-thousand/first": {
+        "n": 128,
+        "mean_ms": 24.1053279765625,
+        "p50_ms": 13.142708,
+        "p95_ms": 72.601667,
+        "p99_ms": 87.043959,
+        "max_ms": 88.583385,
+        "empty_outputs": 63
+      },
+      "group/poj-conversation-taiwanese-basic/first": {
+        "n": 128,
+        "mean_ms": 21.2577363984375,
+        "p50_ms": 12.216146,
+        "p95_ms": 69.80448,
+        "p99_ms": 72.50026,
+        "max_ms": 75.333645,
+        "empty_outputs": 66
+      },
+      "group/poj-retrieval/first": {
+        "n": 24,
+        "mean_ms": 24.28198791666667,
+        "p50_ms": 19.76526,
+        "p95_ms": 66.284323,
+        "p99_ms": 67.437447,
+        "max_ms": 67.437447,
+        "empty_outputs": 6
+      },
+      "group/poj-source/first": {
+        "n": 64,
+        "mean_ms": 28.700318203125,
+        "p50_ms": 22.840886,
+        "p95_ms": 63.295625,
+        "p99_ms": 67.636615,
+        "max_ms": 67.636615,
+        "empty_outputs": 0
+      },
+      "pack/taiwan/first": {
+        "n": 80,
+        "mean_ms": 0.261531275,
+        "p50_ms": 0.207291,
+        "p95_ms": 0.589271,
+        "p99_ms": 2.581146,
+        "max_ms": 2.581146,
+        "empty_outputs": 70
+      },
+      "group/zh-essay/first": {
+        "n": 80,
+        "mean_ms": 0.261531275,
+        "p50_ms": 0.207291,
+        "p95_ms": 0.589271,
+        "p99_ms": 2.581146,
+        "max_ms": 2.581146,
+        "empty_outputs": 70
+      },
+      "group/phone-replay/first": {
+        "n": 82,
+        "mean_ms": 0.6399390731707316,
+        "p50_ms": 0.510625,
+        "p95_ms": 1.628177,
+        "p99_ms": 2.142447,
+        "max_ms": 2.142447,
+        "empty_outputs": 0
+      },
+      "condition/typing/first": {
+        "n": 82,
+        "mean_ms": 0.6399390731707316,
+        "p50_ms": 0.510625,
+        "p95_ms": 1.628177,
+        "p99_ms": 2.142447,
+        "max_ms": 2.142447,
+        "empty_outputs": 0
+      },
+      "pack/japanese/warm": {
+        "n": 852,
+        "mean_ms": 0.8374980504694836,
+        "p50_ms": 0.499062,
+        "p95_ms": 2.286354,
+        "p99_ms": 3.04698,
+        "max_ms": 4.996302,
+        "empty_outputs": 38
+      },
+      "group/japanese-conversation-asdc/warm": {
+        "n": 256,
+        "mean_ms": 0.90028300390625,
+        "p50_ms": 0.509115,
+        "p95_ms": 2.352969,
+        "p99_ms": 3.140312,
+        "max_ms": 3.65099,
+        "empty_outputs": 20
+      },
+      "condition/full/warm": {
+        "n": 256,
+        "mean_ms": 9.87036295703125,
+        "p50_ms": 0.574792,
+        "p95_ms": 62.448802,
+        "p99_ms": 70.787187,
+        "max_ms": 73.629531,
+        "empty_outputs": 68
+      },
+      "condition/half/warm": {
+        "n": 256,
+        "mean_ms": 12.72726887109375,
+        "p50_ms": 1.778854,
+        "p95_ms": 68.300573,
+        "p99_ms": 74.028229,
+        "max_ms": 77.301666,
+        "empty_outputs": 44
+      },
+      "condition/initials/warm": {
+        "n": 224,
+        "mean_ms": 11.146870361607144,
+        "p50_ms": 2.229375,
+        "p95_ms": 55.409792,
+        "p99_ms": 63.373906,
+        "max_ms": 76.367292,
+        "empty_outputs": 48
+      },
+      "condition/mixed/warm": {
+        "n": 224,
+        "mean_ms": 10.355830111607144,
+        "p50_ms": 2.184167,
+        "p95_ms": 51.338333,
+        "p99_ms": 60.404896,
+        "max_ms": 63.074271,
+        "empty_outputs": 72
+      },
+      "condition/neighbor/warm": {
+        "n": 128,
+        "mean_ms": 8.0366495859375,
+        "p50_ms": 1.557396,
+        "p95_ms": 27.729271,
+        "p99_ms": 71.541563,
+        "max_ms": 72.182448,
+        "empty_outputs": 54
+      },
+      "condition/omission/warm": {
+        "n": 128,
+        "mean_ms": 14.66075884375,
+        "p50_ms": 1.920468,
+        "p95_ms": 66.368073,
+        "p99_ms": 76.031354,
+        "max_ms": 76.631719,
+        "empty_outputs": 34
+      },
+      "condition/three-quarter/warm": {
+        "n": 128,
+        "mean_ms": 16.086761046875,
+        "p50_ms": 2.496198,
+        "p95_ms": 68.232708,
+        "p99_ms": 73.140677,
+        "max_ms": 73.163646,
+        "empty_outputs": 38
+      },
+      "condition/transpose/warm": {
+        "n": 192,
+        "mean_ms": 7.848841109375,
+        "p50_ms": 0.474375,
+        "p95_ms": 44.382343,
+        "p99_ms": 73.954479,
+        "max_ms": 75.195157,
+        "empty_outputs": 90
+      },
+      "group/japanese-conversation-real-persona-chat/warm": {
+        "n": 256,
+        "mean_ms": 1.0879335625,
+        "p50_ms": 0.571979,
+        "p95_ms": 2.909636,
+        "p99_ms": 3.457917,
+        "max_ms": 4.996302,
+        "empty_outputs": 18
+      },
+      "group/japanese-retrieval/warm": {
+        "n": 48,
+        "mean_ms": 0.47752391666666666,
+        "p50_ms": 0.39599,
+        "p95_ms": 1.1575,
+        "p99_ms": 1.892396,
+        "max_ms": 1.892396,
+        "empty_outputs": 0
+      },
+      "group/japanese-source/warm": {
+        "n": 128,
+        "mean_ms": 0.6092773359375,
+        "p50_ms": 0.475261,
+        "p95_ms": 1.68099,
+        "p99_ms": 1.904271,
+        "max_ms": 2.927864,
+        "empty_outputs": 0
+      },
+      "pack/poj/warm": {
+        "n": 688,
+        "mean_ms": 23.878819331395352,
+        "p50_ms": 14.620156,
+        "p95_ms": 68.232708,
+        "p99_ms": 74.028229,
+        "max_ms": 77.301666,
+        "empty_outputs": 270
+      },
+      "group/poj-conversation-suisiann-thousand/warm": {
+        "n": 256,
+        "mean_ms": 23.68691181640625,
+        "p50_ms": 12.945729,
+        "p95_ms": 69.777447,
+        "p99_ms": 76.367292,
+        "max_ms": 77.301666,
+        "empty_outputs": 126
+      },
+      "group/poj-conversation-taiwanese-basic/warm": {
+        "n": 256,
+        "mean_ms": 21.3565429609375,
+        "p50_ms": 12.342865,
+        "p95_ms": 67.739062,
+        "p99_ms": 73.629531,
+        "max_ms": 75.195157,
+        "empty_outputs": 132
+      },
+      "group/poj-retrieval/warm": {
+        "n": 48,
+        "mean_ms": 24.205435125,
+        "p50_ms": 17.640052,
+        "p95_ms": 63.644792,
+        "p99_ms": 67.695052,
+        "max_ms": 67.695052,
+        "empty_outputs": 12
+      },
+      "group/poj-source/warm": {
+        "n": 128,
+        "mean_ms": 29.1847061796875,
+        "p50_ms": 23.064792,
+        "p95_ms": 66.130885,
+        "p99_ms": 71.473594,
+        "max_ms": 71.566666,
+        "empty_outputs": 0
+      },
+      "pack/taiwan/warm": {
+        "n": 160,
+        "mean_ms": 0.215187825,
+        "p50_ms": 0.186458,
+        "p95_ms": 0.555208,
+        "p99_ms": 0.622448,
+        "max_ms": 0.664687,
+        "empty_outputs": 140
+      },
+      "group/zh-essay/warm": {
+        "n": 160,
+        "mean_ms": 0.215187825,
+        "p50_ms": 0.186458,
+        "p95_ms": 0.555208,
+        "p99_ms": 0.622448,
+        "max_ms": 0.664687,
+        "empty_outputs": 140
+      },
+      "group/phone-replay/warm": {
+        "n": 164,
+        "mean_ms": 0.6320503109756098,
+        "p50_ms": 0.501146,
+        "p95_ms": 1.764114,
+        "p99_ms": 2.063125,
+        "max_ms": 2.068958,
+        "empty_outputs": 0
+      },
+      "condition/typing/warm": {
+        "n": 164,
+        "mean_ms": 0.6320503109756098,
+        "p50_ms": 0.501146,
+        "p95_ms": 1.764114,
+        "p99_ms": 2.063125,
+        "max_ms": 2.068958,
+        "empty_outputs": 0
+      }
+    },
+    "candidate": {
+      "pack/japanese/first": {
+        "n": 426,
+        "mean_ms": 1.4236189201877933,
+        "p50_ms": 0.71,
+        "p95_ms": 4.571041,
+        "p99_ms": 9.813021,
+        "max_ms": 17.440833,
+        "empty_outputs": 19
+      },
+      "group/japanese-conversation-asdc/first": {
+        "n": 128,
+        "mean_ms": 2.119993484375,
+        "p50_ms": 0.921354,
+        "p95_ms": 8.663646,
+        "p99_ms": 12.708594,
+        "max_ms": 17.440833,
+        "empty_outputs": 10
+      },
+      "condition/full/first": {
+        "n": 128,
+        "mean_ms": 2.487611859375,
+        "p50_ms": 1.012865,
+        "p95_ms": 8.651875,
+        "p99_ms": 17.440833,
+        "max_ms": 30.094063,
+        "empty_outputs": 34
+      },
+      "condition/half/first": {
+        "n": 128,
+        "mean_ms": 5.2542993125,
+        "p50_ms": 1.872708,
+        "p95_ms": 15.151719,
+        "p99_ms": 48.257135,
+        "max_ms": 78.768021,
+        "empty_outputs": 22
+      },
+      "condition/initials/first": {
+        "n": 112,
+        "mean_ms": 5.022025196428572,
+        "p50_ms": 3.139166,
+        "p95_ms": 22.22375,
+        "p99_ms": 28.421719,
+        "max_ms": 34.1475,
+        "empty_outputs": 24
+      },
+      "condition/mixed/first": {
+        "n": 112,
+        "mean_ms": 3.2392605803571426,
+        "p50_ms": 2.164427,
+        "p95_ms": 11.004323,
+        "p99_ms": 13.389791,
+        "max_ms": 17.580052,
+        "empty_outputs": 36
+      },
+      "condition/neighbor/first": {
+        "n": 64,
+        "mean_ms": 1.941830203125,
+        "p50_ms": 1.215677,
+        "p95_ms": 7.567032,
+        "p99_ms": 8.812187,
+        "max_ms": 8.812187,
+        "empty_outputs": 27
+      },
+      "condition/omission/first": {
+        "n": 64,
+        "mean_ms": 2.566258234375,
+        "p50_ms": 2.103073,
+        "p95_ms": 7.84323,
+        "p99_ms": 9.903021,
+        "max_ms": 9.903021,
+        "empty_outputs": 17
+      },
+      "condition/three-quarter/first": {
+        "n": 64,
+        "mean_ms": 3.841906734375,
+        "p50_ms": 1.632031,
+        "p95_ms": 14.234636,
+        "p99_ms": 24.66349,
+        "max_ms": 24.66349,
+        "empty_outputs": 19
+      },
+      "condition/transpose/first": {
+        "n": 96,
+        "mean_ms": 1.4235698645833332,
+        "p50_ms": 0.611718,
+        "p95_ms": 4.844271,
+        "p99_ms": 9.090468,
+        "max_ms": 9.090468,
+        "empty_outputs": 45
+      },
+      "group/japanese-conversation-real-persona-chat/first": {
+        "n": 128,
+        "mean_ms": 1.6196720546875,
+        "p50_ms": 0.855417,
+        "p95_ms": 4.007761,
+        "p99_ms": 5.263125,
+        "max_ms": 5.437031,
+        "empty_outputs": 9
+      },
+      "group/japanese-retrieval/first": {
+        "n": 24,
+        "mean_ms": 0.6741037083333333,
+        "p50_ms": 0.551406,
+        "p95_ms": 1.511406,
+        "p99_ms": 2.326094,
+        "max_ms": 2.326094,
+        "empty_outputs": 0
+      },
+      "group/japanese-source/first": {
+        "n": 64,
+        "mean_ms": 1.0855639375,
+        "p50_ms": 0.83198,
+        "p95_ms": 3.038072,
+        "p99_ms": 4.571041,
+        "max_ms": 4.571041,
+        "empty_outputs": 0
+      },
+      "pack/poj/first": {
+        "n": 344,
+        "mean_ms": 5.851896485465116,
+        "p50_ms": 3.443333,
+        "p95_ms": 16.651198,
+        "p99_ms": 38.067032,
+        "max_ms": 78.768021,
+        "empty_outputs": 135
+      },
+      "group/poj-conversation-suisiann-thousand/first": {
+        "n": 128,
+        "mean_ms": 6.7136429765625,
+        "p50_ms": 3.368697,
+        "p95_ms": 25.303125,
+        "p99_ms": 44.431979,
+        "max_ms": 78.768021,
+        "empty_outputs": 63
+      },
+      "group/poj-conversation-taiwanese-basic/first": {
+        "n": 128,
+        "mean_ms": 5.3049279609375,
+        "p50_ms": 3.366771,
+        "p95_ms": 14.26724,
+        "p99_ms": 34.02849,
+        "max_ms": 48.257135,
+        "empty_outputs": 66
+      },
+      "group/poj-retrieval/first": {
+        "n": 24,
+        "mean_ms": 5.138986541666667,
+        "p50_ms": 3.648125,
+        "p95_ms": 15.134166,
+        "p99_ms": 15.151719,
+        "max_ms": 15.151719,
+        "empty_outputs": 6
+      },
+      "group/poj-source/first": {
+        "n": 64,
+        "mean_ms": 5.48968178125,
+        "p50_ms": 4.225,
+        "p95_ms": 16.459063,
+        "p99_ms": 28.421719,
+        "max_ms": 28.421719,
+        "empty_outputs": 0
+      },
+      "pack/taiwan/first": {
+        "n": 80,
+        "mean_ms": 0.123835925,
+        "p50_ms": 0.105833,
+        "p95_ms": 0.252865,
+        "p99_ms": 0.343021,
+        "max_ms": 0.343021,
+        "empty_outputs": 70
+      },
+      "group/zh-essay/first": {
+        "n": 80,
+        "mean_ms": 0.123835925,
+        "p50_ms": 0.105833,
+        "p95_ms": 0.252865,
+        "p99_ms": 0.343021,
+        "max_ms": 0.343021,
+        "empty_outputs": 70
+      },
+      "group/phone-replay/first": {
+        "n": 82,
+        "mean_ms": 0.5137791463414635,
+        "p50_ms": 0.387864,
+        "p95_ms": 1.686458,
+        "p99_ms": 2.060885,
+        "max_ms": 2.060885,
+        "empty_outputs": 0
+      },
+      "condition/typing/first": {
+        "n": 82,
+        "mean_ms": 0.5137791463414635,
+        "p50_ms": 0.387864,
+        "p95_ms": 1.686458,
+        "p99_ms": 2.060885,
+        "max_ms": 2.060885,
+        "empty_outputs": 0
+      },
+      "pack/japanese/warm": {
+        "n": 852,
+        "mean_ms": 0.7238427922535211,
+        "p50_ms": 0.351927,
+        "p95_ms": 2.235937,
+        "p99_ms": 3.028021,
+        "max_ms": 3.875781,
+        "empty_outputs": 38
+      },
+      "group/japanese-conversation-asdc/warm": {
+        "n": 256,
+        "mean_ms": 0.7898524296875,
+        "p50_ms": 0.341875,
+        "p95_ms": 2.289583,
+        "p99_ms": 3.028021,
+        "max_ms": 3.048177,
+        "empty_outputs": 20
+      },
+      "condition/full/warm": {
+        "n": 256,
+        "mean_ms": 1.646274609375,
+        "p50_ms": 0.39,
+        "p95_ms": 7.791094,
+        "p99_ms": 10.701146,
+        "max_ms": 11.003646,
+        "empty_outputs": 68
+      },
+      "condition/half/warm": {
+        "n": 256,
+        "mean_ms": 4.24261680859375,
+        "p50_ms": 1.246563,
+        "p95_ms": 14.625729,
+        "p99_ms": 47.765625,
+        "max_ms": 54.439635,
+        "empty_outputs": 44
+      },
+      "condition/initials/warm": {
+        "n": 224,
+        "mean_ms": 4.28195965625,
+        "p50_ms": 1.909791,
+        "p95_ms": 21.25125,
+        "p99_ms": 28.47427,
+        "max_ms": 34.184427,
+        "empty_outputs": 48
+      },
+      "condition/mixed/warm": {
+        "n": 224,
+        "mean_ms": 2.7575574598214287,
+        "p50_ms": 1.620156,
+        "p95_ms": 9.835781,
+        "p99_ms": 14.30724,
+        "max_ms": 19.255989,
+        "empty_outputs": 72
+      },
+      "condition/neighbor/warm": {
+        "n": 128,
+        "mean_ms": 1.6270047890625,
+        "p50_ms": 1.068646,
+        "p95_ms": 7.417448,
+        "p99_ms": 8.603229,
+        "max_ms": 8.681459,
+        "empty_outputs": 54
+      },
+      "condition/omission/warm": {
+        "n": 128,
+        "mean_ms": 2.3231208984375,
+        "p50_ms": 1.469531,
+        "p95_ms": 8.468542,
+        "p99_ms": 9.583385,
+        "max_ms": 9.852135,
+        "empty_outputs": 34
+      },
+      "condition/three-quarter/warm": {
+        "n": 128,
+        "mean_ms": 3.6092858828125,
+        "p50_ms": 1.546719,
+        "p95_ms": 18.652395,
+        "p99_ms": 22.86948,
+        "max_ms": 31.346302,
+        "empty_outputs": 38
+      },
+      "condition/transpose/warm": {
+        "n": 192,
+        "mean_ms": 1.3028675260416667,
+        "p50_ms": 0.335469,
+        "p95_ms": 4.829687,
+        "p99_ms": 8.934114,
+        "max_ms": 9.007031,
+        "empty_outputs": 90
+      },
+      "group/japanese-conversation-real-persona-chat/warm": {
+        "n": 256,
+        "mean_ms": 1.00084941015625,
+        "p50_ms": 0.391771,
+        "p95_ms": 2.886979,
+        "p99_ms": 3.039427,
+        "max_ms": 3.875781,
+        "empty_outputs": 18
+      },
+      "group/japanese-retrieval/warm": {
+        "n": 48,
+        "mean_ms": 0.4700662083333333,
+        "p50_ms": 0.334219,
+        "p95_ms": 1.767604,
+        "p99_ms": 2.012083,
+        "max_ms": 2.012083,
+        "empty_outputs": 0
+      },
+      "group/japanese-source/warm": {
+        "n": 128,
+        "mean_ms": 0.438892890625,
+        "p50_ms": 0.340677,
+        "p95_ms": 1.437396,
+        "p99_ms": 1.8825,
+        "max_ms": 1.93073,
+        "empty_outputs": 0
+      },
+      "pack/poj/warm": {
+        "n": 688,
+        "mean_ms": 5.4468809098837205,
+        "p50_ms": 3.241719,
+        "p95_ms": 15.519896,
+        "p99_ms": 37.970156,
+        "max_ms": 54.439635,
+        "empty_outputs": 270
+      },
+      "group/poj-conversation-suisiann-thousand/warm": {
+        "n": 256,
+        "mean_ms": 5.89148643359375,
+        "p50_ms": 3.09099,
+        "p95_ms": 21.953125,
+        "p99_ms": 39.795625,
+        "max_ms": 48.053385,
+        "empty_outputs": 126
+      },
+      "group/poj-conversation-taiwanese-basic/warm": {
+        "n": 256,
+        "mean_ms": 5.16088338671875,
+        "p50_ms": 3.266979,
+        "p95_ms": 14.39724,
+        "p99_ms": 33.953542,
+        "max_ms": 54.439635,
+        "empty_outputs": 132
+      },
+      "group/poj-retrieval/warm": {
+        "n": 48,
+        "mean_ms": 4.9866916875,
+        "p50_ms": 3.406823,
+        "p95_ms": 14.589011,
+        "p99_ms": 14.737864,
+        "max_ms": 14.737864,
+        "empty_outputs": 12
+      },
+      "group/poj-source/warm": {
+        "n": 128,
+        "mean_ms": 5.3022358671875,
+        "p50_ms": 4.127344,
+        "p95_ms": 15.519896,
+        "p99_ms": 27.505729,
+        "max_ms": 27.862604,
+        "empty_outputs": 0
+      },
+      "pack/taiwan/warm": {
+        "n": 160,
+        "mean_ms": 0.1096754875,
+        "p50_ms": 0.097604,
+        "p95_ms": 0.222135,
+        "p99_ms": 0.301198,
+        "max_ms": 0.303698,
+        "empty_outputs": 140
+      },
+      "group/zh-essay/warm": {
+        "n": 160,
+        "mean_ms": 0.1096754875,
+        "p50_ms": 0.097604,
+        "p95_ms": 0.222135,
+        "p99_ms": 0.301198,
+        "max_ms": 0.303698,
+        "empty_outputs": 140
+      },
+      "group/phone-replay/warm": {
+        "n": 164,
+        "mean_ms": 0.4850787804878049,
+        "p50_ms": 0.361615,
+        "p95_ms": 1.524063,
+        "p99_ms": 1.972812,
+        "max_ms": 2.041771,
+        "empty_outputs": 0
+      },
+      "condition/typing/warm": {
+        "n": 164,
+        "mean_ms": 0.4850787804878049,
+        "p50_ms": 0.361615,
+        "p95_ms": 1.524063,
+        "p99_ms": 1.972812,
+        "max_ms": 2.041771,
+        "empty_outputs": 0
+      }
+    }
+  },
+  "pipeline": {
+    "baseline": {
+      "summary": {
+        "kind": "summary",
+        "native_p95_ns": 980678,
+        "native_p99_ns": 2065729,
+        "pipeline_p95_ns": 49978959,
+        "ordered_differences": 0,
+        "pss_kib": 297392,
+        "native_gate": true,
+        "pipeline_gate": true
+      },
+      "0": {
+        "elapsed_ns": {
+          "n": 64,
+          "mean_ms": 35.789590625,
+          "p50_ms": 36.614791,
+          "p95_ms": 55.082604,
+          "p99_ms": 61.852187,
+          "max_ms": 61.852187
+        },
+        "last_key_ns": {
+          "n": 64,
+          "mean_ms": 24.283260109375,
+          "p50_ms": 24.142343,
+          "p95_ms": 32.320313,
+          "p99_ms": 37.310573,
+          "max_ms": 37.310573
+        },
+        "dispatch_ns": {
+          "n": 64,
+          "mean_ms": 12.162342921875,
+          "p50_ms": 12.335886,
+          "p95_ms": 25.054167,
+          "p99_ms": 29.017135,
+          "max_ms": 29.017135
+        },
+        "addon_and_conversion_ns": {
+          "n": 64,
+          "mean_ms": 13.45964603125,
+          "p50_ms": 13.090417,
+          "p95_ms": 21.850052,
+          "p99_ms": 27.039271,
+          "max_ms": 27.039271
+        }
+      },
+      "1": {
+        "elapsed_ns": {
+          "n": 64,
+          "mean_ms": 33.029580859375,
+          "p50_ms": 32.863854,
+          "p95_ms": 49.978959,
+          "p99_ms": 56.459635,
+          "max_ms": 56.459635
+        },
+        "last_key_ns": {
+          "n": 64,
+          "mean_ms": 22.9455215625,
+          "p50_ms": 22.713438,
+          "p95_ms": 31.174531,
+          "p99_ms": 35.643854,
+          "max_ms": 35.643854
+        },
+        "dispatch_ns": {
+          "n": 64,
+          "mean_ms": 10.630599859375,
+          "p50_ms": 10.371718,
+          "p95_ms": 21.119792,
+          "p99_ms": 26.948542,
+          "max_ms": 26.948542
+        },
+        "addon_and_conversion_ns": {
+          "n": 64,
+          "mean_ms": 12.6337694375,
+          "p50_ms": 12.535208,
+          "p95_ms": 21.416823,
+          "p99_ms": 25.901406,
+          "max_ms": 25.901406
+        }
+      },
+      "2": {
+        "elapsed_ns": {
+          "n": 64,
+          "mean_ms": 33.406048140625,
+          "p50_ms": 32.641615,
+          "p95_ms": 49.375469,
+          "p99_ms": 56.123333,
+          "max_ms": 56.123333
+        },
+        "last_key_ns": {
+          "n": 64,
+          "mean_ms": 23.37662028125,
+          "p50_ms": 22.864844,
+          "p95_ms": 30.372187,
+          "p99_ms": 35.192344,
+          "max_ms": 35.192344
+        },
+        "dispatch_ns": {
+          "n": 64,
+          "mean_ms": 10.567616328125,
+          "p50_ms": 10.820937,
+          "p95_ms": 21.22849,
+          "p99_ms": 26.091927,
+          "max_ms": 26.091927
+        },
+        "addon_and_conversion_ns": {
+          "n": 64,
+          "mean_ms": 13.0350635,
+          "p50_ms": 12.651042,
+          "p95_ms": 20.363542,
+          "p99_ms": 24.902761,
+          "max_ms": 24.902761
+        }
+      }
+    },
+    "candidate": {
+      "summary": {
+        "kind": "summary",
+        "native_p95_ns": 990209,
+        "native_p99_ns": 2070885,
+        "pipeline_p95_ns": 50463750,
+        "ordered_differences": 0,
+        "pss_kib": 318625,
+        "native_gate": true,
+        "pipeline_gate": false
+      },
+      "0": {
+        "elapsed_ns": {
+          "n": 64,
+          "mean_ms": 35.0910693125,
+          "p50_ms": 35.912969,
+          "p95_ms": 56.339584,
+          "p99_ms": 63.346927,
+          "max_ms": 63.346927
+        },
+        "last_key_ns": {
+          "n": 64,
+          "mean_ms": 23.164750125,
+          "p50_ms": 23.205521,
+          "p95_ms": 31.744896,
+          "p99_ms": 40.073438,
+          "max_ms": 40.073438
+        },
+        "dispatch_ns": {
+          "n": 64,
+          "mean_ms": 12.629867375,
+          "p50_ms": 12.965313,
+          "p95_ms": 27.030052,
+          "p99_ms": 33.882917,
+          "max_ms": 33.882917
+        },
+        "addon_and_conversion_ns": {
+          "n": 64,
+          "mean_ms": 12.05753096875,
+          "p50_ms": 11.539323,
+          "p95_ms": 21.021562,
+          "p99_ms": 23.390156,
+          "max_ms": 23.390156
+        }
+      },
+      "1": {
+        "elapsed_ns": {
+          "n": 64,
+          "mean_ms": 32.186404578125,
+          "p50_ms": 30.892656,
+          "p95_ms": 50.46375,
+          "p99_ms": 56.409063,
+          "max_ms": 56.409063
+        },
+        "last_key_ns": {
+          "n": 64,
+          "mean_ms": 21.979926734375,
+          "p50_ms": 21.931615,
+          "p95_ms": 29.326041,
+          "p99_ms": 35.079062,
+          "max_ms": 35.079062
+        },
+        "dispatch_ns": {
+          "n": 64,
+          "mean_ms": 10.7156656875,
+          "p50_ms": 10.412031,
+          "p95_ms": 21.836354,
+          "p99_ms": 29.359844,
+          "max_ms": 29.359844
+        },
+        "addon_and_conversion_ns": {
+          "n": 64,
+          "mean_ms": 11.59556075,
+          "p50_ms": 10.925313,
+          "p95_ms": 19.471719,
+          "p99_ms": 25.577084,
+          "max_ms": 25.577084
+        }
+      },
+      "2": {
+        "elapsed_ns": {
+          "n": 64,
+          "mean_ms": 32.427639109375,
+          "p50_ms": 32.667031,
+          "p95_ms": 49.298229,
+          "p99_ms": 58.133177,
+          "max_ms": 58.133177
+        },
+        "last_key_ns": {
+          "n": 64,
+          "mean_ms": 22.094051890625,
+          "p50_ms": 21.280469,
+          "p95_ms": 30.634114,
+          "p99_ms": 34.234219,
+          "max_ms": 34.234219
+        },
+        "dispatch_ns": {
+          "n": 64,
+          "mean_ms": 10.88910965625,
+          "p50_ms": 10.935677,
+          "p95_ms": 24.134115,
+          "p99_ms": 26.754791,
+          "max_ms": 26.754791
+        },
+        "addon_and_conversion_ns": {
+          "n": 64,
+          "mean_ms": 11.6684521875,
+          "p50_ms": 11.141459,
+          "p95_ms": 20.531771,
+          "p99_ms": 23.698229,
+          "max_ms": 23.698229
+        }
+      }
+    }
+  },
+  "physical_touch_measured": false,
+  "ordered_public_candidate_metadata_comparisons": 2550,
+  "pipeline_acceptance_comparisons": 192
+}

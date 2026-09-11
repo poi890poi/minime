@@ -1,0 +1,41 @@
+{
+  "baseline_revision": "dce6ddb",
+  "build_property": "japaneseEvaluation=true; arm64-v8a",
+  "files": {
+    "baseline": {
+      "sha256": "3483b5aa7f2691ed0da61876953dbe995ffca43f6ecf00dcd6b728b4c5b1be00",
+      "bytes": 48779042,
+      "evaluation_assets": []
+    },
+    "candidate": {
+      "sha256": "a8d6b31656689de8bf964acac6fd963fc9d534c644d2f8bb558dd431fc91f041",
+      "bytes": 48914486,
+      "evaluation_assets": []
+    },
+    "tests": {
+      "sha256": "e1977c52e19eb27a8a423bc8b970fc0649f18c4c0ca85bde477df43a7d471429",
+      "bytes": 34854439,
+      "evaluation_assets": [
+        "assets/japanese-evaluation/connection_single_column.bin",
+        "assets/japanese-evaluation/pos_table.bin",
+        "assets/japanese-evaluation/tango.louds",
+        "assets/japanese-evaluation/token_array.bin",
+        "assets/japanese-evaluation/yomi_termid.louds",
+        "assets/japanese-evaluation/libminime_japanese_test.so",
+        "assets/japanese-evaluation/stream.jsonl",
+        "assets/japanese-evaluation/KAZUMA-LICENSE.txt",
+        "assets/japanese-evaluation/MOZC-LICENSE.txt",
+        "assets/japanese-evaluation/NOTICE.md",
+        "assets/japanese-evaluation/java-lookup.tsv"
+      ]
+    }
+  },
+  "runtime": "Microsoft OpenJDK 17.0.11; Windows; desktop -Xmx1g",
+  "test_input": {
+    "sha256": "1285923303b38cbc42b637b7a8ea12173482c94d3f5365c4ea625208c9c54313",
+    "same_frozen_rows": true,
+    "line_endings": "CRLF in APK; LF in repository; Android BufferedReader removes terminators"
+  },
+  "baseline_matches_previous_final_apk": true,
+  "compiled_dictionary_assets_unchanged": true
+}

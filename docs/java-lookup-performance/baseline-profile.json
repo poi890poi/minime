@@ -1,0 +1,89 @@
+{
+  "execution_samples": 3566,
+  "addon_lookup_stacks": 246,
+  "reading_unit_stacks": 2457,
+  "trim_in_reading_unit_stacks": 1052,
+  "reading_unit_top_frames": [
+    [
+      "java/util/HashMap.putVal",
+      553
+    ],
+    [
+      "java/lang/StringUTF16.codePointCount",
+      324
+    ],
+    [
+      "java/util/HashMap.resize",
+      312
+    ],
+    [
+      "dev/minime/core/ReadingUnitIndex.match",
+      235
+    ],
+    [
+      "java/util/HashMap.getNode",
+      206
+    ],
+    [
+      "java/util/HashMap.put",
+      182
+    ],
+    [
+      "dev.minime.core.ReadingUnitIndex$$Lambda$100+0x000001e201084208/1704629915.applyAsDouble",
+      95
+    ],
+    [
+      "java/util/PriorityQueue.siftUpUsingComparator",
+      88
+    ],
+    [
+      "dev.minime.core.ReadingUnitIndex$$Lambda$104+0x000001e201084850/1285524499.applyAsDouble",
+      82
+    ],
+    [
+      "dev/minime/core/ReadingUnitIndex.firstInitial",
+      70
+    ],
+    [
+      "java/util/TimSort.countRunAndMakeAscending",
+      69
+    ],
+    [
+      "java/util/PriorityQueue.siftDownUsingComparator",
+      56
+    ],
+    [
+      "java/util/TimSort.minRunLength",
+      40
+    ],
+    [
+      "dev.minime.core.ReadingUnitIndex$$Lambda$105+0x000001e201084a68/1524960486.apply",
+      28
+    ],
+    [
+      "java/util/TimSort.binarySort",
+      27
+    ],
+    [
+      "java/util/ArrayList.shiftTailOverGap",
+      18
+    ],
+    [
+      "java/util/ArrayList.removeIf",
+      14
+    ],
+    [
+      "dev/minime/core/ReadingUnitIndex.trim",
+      12
+    ],
+    [
+      "java/lang/invoke/DirectMethodHandle.allocateInstance",
+      12
+    ],
+    [
+      "java.util.Comparator$$Lambda$70+0x000001e201036730/1997963191.compare",
+      9
+    ]
+  ],
+  "limitation": "Sampling is causal profiling evidence, not an exact CPU accounting."
+}

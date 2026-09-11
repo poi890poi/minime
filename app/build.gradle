@@ -53,6 +53,7 @@ evaluationDependsOn(':core')
 if (providers.gradleProperty('japaneseEvaluation').orNull == 'true') {
     extensions.getByName('android').sourceSets.androidTest.assets.srcDir(layout.buildDirectory.dir('generated/japaneseEvaluationAssets'))
     extensions.getByName('android').sourceSets.androidTest.java.srcDir(rootProject.file('docs/japanese-provider-integration/android'))
+    extensions.getByName('android').sourceSets.androidTest.java.srcDir(rootProject.file('docs/java-lookup-performance/android'))
 }
 def compileLanguageModel = tasks.register('compileLanguageModel', JavaExec) {
     dependsOn ':core:testClasses'
