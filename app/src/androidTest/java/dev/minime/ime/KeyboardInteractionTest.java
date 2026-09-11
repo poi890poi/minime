@@ -226,15 +226,15 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         assertEquals("ni",activity.text.getText().toString());
         sameKeyboardBounds(stable,"Japanese mode");assertEquals(q,bounds("q"));assertEquals(space,bounds("Space"));
         getInstrumentation().runOnMainSync(()->assertTrue("Mode switch retains composing span",android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText())>=0));
-        click("Switch to English");node("Switch to Japanese").recycle();assertEquals("ni",activity.text.getText().toString());
+        click("Switch to Chinese");node("Switch to Japanese").recycle();assertEquals("ni",activity.text.getText().toString());
         click("Switch to Japanese");clear();node("Choose language mode: japanese").recycle();
         String[] japanese=AddonTestData.probe(context,"japanese","everyday_");type(japanese[0]);
         node("Candidate "+japanese[1]).recycle();capture("modes-japanese");clear();
         click("Choose language mode: japanese");click("Choose taiwanese mode");
         node("Choose language mode: taiwanese").recycle();sameKeyboardBounds(stable,"Taiwanese mode");
         String[] poj=AddonTestData.probe(context,"poj","everyday_");type(poj[0]);node("Candidate "+poj[1]).recycle();capture("modes-taiwanese");
-        click("Switch to English");node("Switch to Taiwanese").recycle();click("Switch to Taiwanese");assertEquals(poj[0],activity.text.getText().toString());
-        clear();focus(activity.url);node("Switch to Taiwanese").recycle();focus(activity.text);node("Choose language mode: taiwanese").recycle();
+        click("Switch to Chinese");node("Switch to Taiwanese").recycle();click("Switch to Taiwanese");assertEquals(poj[0],activity.text.getText().toString());
+        clear();focus(activity.url);node("Switch to Chinese").recycle();focus(activity.text);node("Choose language mode: taiwanese").recycle();
         context.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_poj",false).commit();
         focus(activity.url);focus(activity.text);node("Choose language mode: chinese").recycle();sameKeyboardBounds(stable,"disabled optional mode");
     }
@@ -313,7 +313,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         node("Exact input hao").recycle();click("Candidate 好");expectText("你好");
         clear();type("nihao");click("Candidate 你");click("⌫");expectText("你ha");type("o ");expectText("你好");
         clear();type("nihao");click("Candidate 你");click("Exact input hao");expectText("你hao");
-        clear();type("nihao");click("Candidate 你");click("Switch to English");expectText("你好");type(" hello ");expectText("你好 hello ");
+        clear();type("nihao");click("Candidate 你");click("Switch to English");expectText("你hao");type(" hello ");expectText("你hao hello ");
         click("Switch to Chinese");clear();type("womenmingtianjian");
         // Wait for the asynchronous phrase result before measuring its raw recovery row.
         Rect phrase=bounds("Candidate 我們明天見"),raw=bounds("Exact input womenmingtianjian");
@@ -329,7 +329,8 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         getInstrumentation().getUiAutomation().waitForIdle(200,3000);capture("rime-phone-phrase");
         clear();type("womenmtjian ");expectText("我們明天見");
         clear();type("woyaohekafei");click("。");expectText("我要喝咖啡。");
-        clear();type("qingbangwokanyixia");click("Switch to English");expectText("請幫我看一下");
+        clear();type("qingbangwokanyixia");click("Switch to English");expectText("qingbangwokanyixia");
+        click("Switch to Chinese");click("Space");expectText("請幫我看一下");click("Switch to English");
         type(" hello ");expectText("請幫我看一下 hello ");click("Switch to Chinese");
         clear();type("ssh ");expectText("ssh ");
         clear();type("womenmtjian");click("Exact input womenmtjian");expectText("womenmtjian");
@@ -597,10 +598,12 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         activateMode(dev.minime.core.InputMode.JAPANESE);
         type(phrase[0]);node("Candidate "+phrase[1]).recycle();AccessibilityNodeInfo list=node("Candidate list");assertEquals("Candidate "+phrase[1],firstNonRawCandidate(list));list.recycle();
         click("Candidate "+phrase[1]);expectText(phrase[1]);clear();
+        // Contraction defaults are tested in Chinese/English, not Japanese focus.
+        activateMode(dev.minime.core.InputMode.CHINESE);
         for(int language=0;language<2;language++) {
             type("dont ");expectText("don't ");click("⌫");node("Exact input dont").recycle();clear();
             type("cant");node("Candidate can't").recycle();list=node("Candidate list");assertEquals("Candidate can't",firstNonRawCandidate(list));list.recycle();click("Space");expectText("cant ");clear();
-            if(language==0)click("Switch to English");
+            if(language==0)activateMode(dev.minime.core.InputMode.ENGLISH);
         }
     }
     public void testSymbolPageSurvivesMainBoardAndEmojiSwitches() {
