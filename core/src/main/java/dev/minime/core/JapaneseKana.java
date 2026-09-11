@@ -28,7 +28,7 @@ final class JapaneseKana {
         String hira=text.toString();StringBuilder kata=new StringBuilder();
         hira.codePoints().forEach(cp->kata.appendCodePoint(cp>=0x3041 && cp<=0x3096?cp+0x60:cp));
         int consumed=cursor==raw.length()?0:cursor;
-        return Arrays.asList(Candidate.supplement(hira,-10).inPack("japanese").consuming(consumed),
-            Candidate.supplement(kata.toString(),-10).inPack("japanese").consuming(consumed));
+        return Arrays.asList(Candidate.supplement(hira,-10).inPack("japanese").consuming(consumed).asTransliteration(),
+            Candidate.supplement(kata.toString(),-10).inPack("japanese").consuming(consumed).asTransliteration());
     }
 }

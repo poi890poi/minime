@@ -19,6 +19,11 @@ final class JapaneseConversionRegression {
         List<Candidate> whole=addons.lookup("sakurasekai",enabled);
         List<Candidate> merged=JapaneseConversion.merge("sakurasekai",enabled,addons,whole,provider,()->true);
         equal("試験候補",merged.get(0).text,"conversion precedes whole-kana recovery");
+        Candidate lexicalKana=Candidate.supplement("さくらせかい",0).inPack("japanese");
+        List<Candidate> lexical=new ArrayList<>(whole);lexical.add(0,lexicalKana);
+        equal(lexicalKana,JapaneseConversion.merge("sakurasekai",enabled,addons,lexical,provider,()->true).get(0),"attested kana stays before conversion");
+        Candidate recovery=whole.stream().filter(c->c.transliteration).findFirst().orElseThrow(AssertionError::new);
+        yes(recovery.withScore(1).inPack("japanese").consuming(2).paired(null).completing(2).transliteration,"immutable transformations preserve recovery identity");
         equal(1L,merged.stream().filter(c->c.text.equals("試験候補")).count(),"native duplicates removed");
         yes(merged.stream().noneMatch(c->c.text.equals("romanization")),"native Latin pollution rejected");
         for(Candidate c:whole)yes(merged.stream().anyMatch(v->v.text.equals(c.text)),"fallback retained");

@@ -25,15 +25,10 @@ public final class JapaneseConversion {
         List<Candidate> result=new ArrayList<>();Set<String> seen=new HashSet<>();
         // Preserve attested full words and source-ranked single characters.
         for(Candidate c:fallback)if(c.pack.equals("japanese") && !c.incomplete && c.consumed==0
-                && (c.languageCharacter || !kanaForm(c.text,kana))) {result.add(c);seen.add(c.text);}
+                && !c.transliteration) {result.add(c);seen.add(c.text);}
         for(Candidate c:converted)if(seen.add(c.text))result.add(c);
         for(Candidate c:fallback)if(!c.pack.equals("japanese") || seen.add(c.text))result.add(c);
         return result;
-    }
-    private static boolean kanaForm(String surface,String kana) {
-        StringBuilder hira=new StringBuilder();
-        surface.codePoints().forEach(cp->hira.appendCodePoint(cp>=0x30a1 && cp<=0x30f6?cp-0x60:cp));
-        return hira.toString().equals(kana);
     }
     private static boolean validJapanese(String text) {
         boolean japanese=false;

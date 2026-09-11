@@ -15,14 +15,16 @@ The merge preserves existing full lexical and source-ranked character choices,
 then adds at most eight whole conversions before kana recovery/incomplete matches.
 Native duplicates and Latin-only output are excluded. Current source dictionaries
 and their partial candidates remain intact. Costs from different providers are
-not compared or tuned. The native provider receives kana alone, not evaluation
+not compared or tuned. Generated recovery carries an explicit transliteration
+flag, preserved through candidate transformations; surface equality is not used
+to demote an attested kana word. The native provider receives kana alone, not evaluation
 labels, learning data, surrounding text or personal context.
 
 Existing request generations suppress late callbacks. Candidate display and Space
 acceptance share CompositionEngine's winner. Core regressions cover incomplete
 spelling, mode exclusion, fallback, duplicate/malformed output, cancellation,
 queued Space and late results after switching to English. The full core suite
-passes 289,498 assertions; these are mechanism checks, not language-model accuracy.
+passes 289,500 assertions; these are mechanism checks, not language-model accuracy.
 The pinned desktop Rime evaluator also completed all 13,014 regression inputs.
 
 The phone test exercises the actual core and AsyncDecoder with a JNI provider;
