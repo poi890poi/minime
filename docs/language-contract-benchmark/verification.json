@@ -1,0 +1,33 @@
+{
+  "baseline": "5dd9bb8dd6ee24500a6e66cd182ae640647ef026",
+  "core": {
+    "command": "tools/test-core.ps1",
+    "exit_code": 0,
+    "assertions": 85936,
+    "meaning": "Mechanical invariants, not model accuracy"
+  },
+  "desktop": {
+    "command": "tools/test-desktop.ps1",
+    "exit_code": 0,
+    "inputs": 13014,
+    "native_queries": 11272,
+    "meaning": "Pinned native evaluator completed; not a passing language-quality threshold"
+  },
+  "sources": {
+    "check": "PASS",
+    "unit_tests": 19,
+    "production_input_ledger_unchanged": true
+  },
+  "host": {
+    "os": "Windows-10-10.0.26100-SP0",
+    "processor": "Intel64 Family 6 Model 158 Stepping 13, GenuineIntel",
+    "logical_processors": 6,
+    "java": "Microsoft OpenJDK 17.0.11",
+    "max_heap": "2g",
+    "timing_confound": "Corpus preparation overlapped portions of timing run; small differences inconclusive."
+  },
+  "phone": "No operations",
+  "app": "No build or production changes",
+  "core-gate.log_sha256": "aac42248cad3bbc675e978a651b01c4c13bba9bc92be90fb84d354facd75290b",
+  "desktop-gate.log_sha256": "a97d0dfb91cf240dcd48928b1978840e2bcb6aff08ca8bae86e066f70de3d049"
+}

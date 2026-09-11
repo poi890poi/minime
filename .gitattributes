@@ -79,6 +79,7 @@ docs/language-contract-review/*.json -text
 docs/language-contract-review/*.java -text
 
 # Freeze evaluation input bytes and preserve empty context columns in TSVs.
-docs/language-contract-benchmark/*.tsv -text whitespace=-blank-at-eol
-docs/language-contract-benchmark/*.json -text
+docs/language-contract-benchmark/*.tsv -text whitespace=-blank-at-eol,cr-at-eol
+docs/language-contract-benchmark/*.json -text whitespace=cr-at-eol
+docs/language-contract-benchmark/*-gate.txt -text whitespace=cr-at-eol
 docs/language-contract-benchmark/conversations/** -text -whitespace
