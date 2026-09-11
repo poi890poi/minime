@@ -355,6 +355,40 @@
       ],
       "leakage": "Japanese conversations and modern Taiwanese source files disjoint between development and initial holdout, with recurring speakers/phrases explicitly allowed. Historical beginner material shares production lineage. No new corpus text is used as production vocabulary or training.",
       "limitations": "Japanese Kanji reading annotations are silver. Modern Taiwanese examples are authored situations rather than spontaneous multi-turn dialogue. No physical touch observations or human community-usage labels."
+    },
+    {
+      "id": "japanese-utterance-completion-20260911",
+      "source_ids": [
+        "real-persona-chat",
+        "asdc",
+        "ajimee-bench"
+      ],
+      "genre": [
+        "human-casual-chat",
+        "human-task-dialogue",
+        "encyclopedia"
+      ],
+      "role": "development",
+      "exposure": "inspected",
+      "selection": "Frozen before provider queries: 128 new source dialogues, eight hash-selected turns each, document-disjoint development/initial holdout. All 200 external AJIMEE items. After this run all partitions are consumed evaluation data.",
+      "files": [
+        "docs/japanese-engine-benchmark/utterances.jsonl.gz",
+        "docs/japanese-engine-benchmark/ajimee.jsonl.gz",
+        "docs/japanese-engine-benchmark/corpus-manifest.json",
+        "docs/japanese-engine-benchmark/split-plan.json"
+      ],
+      "report_by": [
+        "source",
+        "role",
+        "reference-status",
+        "input-condition",
+        "completion-policy",
+        "repeated-text",
+        "input-length",
+        "genre"
+      ],
+      "leakage": "Exclude prior conversation files; flag repeated texts and cross-role repeats. No evaluation text enters production. Public AJIMEE may have upstream-author exposure; no speaker-disjoint claim.",
+      "limitations": "Oracle user selection and Sudachi word boundaries. Silver conversation readings, simulated romanization/errors, explicit unreadable failures. Desktop timing excludes physical touch/rendering."
     }
   ]
 }

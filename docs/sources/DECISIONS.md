@@ -35,3 +35,6 @@ Generated from sources/catalog.json. Retain is scoped to the listed use; pilot i
 | Accommodation Search Dialog Corpus | reference | evaluation, discovery | Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md. |
 | 媠聲一千：阮家己的造句 | reference | evaluation, discovery | Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md. |
 | Tsay / TAICORP spontaneous Taiwanese conversations | hold | evaluation, discovery | Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md. |
+| Kazuma Naka kana-kanji-conversion-c-plus-plus | reference | evaluation, tooling | Isolated engine and completion evaluation; SOURCES.md records scope and no production promotion. |
+| Google Mozc OSS dictionary and costs | reference | evaluation, tooling | Isolated engine and completion evaluation; SOURCES.md records scope and no production promotion. |
+| AJIMEE-Bench Japanese conversion evaluation | reference | evaluation, tooling | Isolated engine and completion evaluation; SOURCES.md records scope and no production promotion. |

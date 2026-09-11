@@ -1,0 +1,31 @@
+{
+  "versions": {
+    "sudachipy": "0.6.10",
+    "sudachidict_core": "20250129",
+    "jaconv": "0.4.0"
+  },
+  "sources": {
+    "real-persona-chat": "2fb4fe5c16e6722a0840fe6924113965cffe0b6b9957e436fdb3886fae2743dc",
+    "asdc": "9dc1b4a7c8cd72b65b889f630f57a3b585ae6c963773b97720f6e2777b27171b"
+  },
+  "utterances": 1024,
+  "counts": {
+    "real-persona-chat/development": 128,
+    "real-persona-chat/holdout": 384,
+    "asdc/development": 128,
+    "asdc/holdout": 384
+  },
+  "previously_seen_text": 96,
+  "cross_role_repeat": 31,
+  "exclusions": {
+    "real-persona-chat/unreadable-token": 160,
+    "asdc/unreadable-token": 268
+  },
+  "ajimee_items": 200,
+  "ajimee_sha256": "e9eb668fd6aa14b1e26436f429b5550108af0a1dfd443b8cea0bcb3ab3028fca",
+  "files": {
+    "utterances.jsonl.gz": "4079533344f590d697a163484901301d74e46cf9e525d1af6da8535905ab0d4d",
+    "ajimee.jsonl.gz": "69c49969f0a68eb6d0acb377eb96ff7b2a435d659ae6e05ccf179bb72f32e6df",
+    "split-plan.json": "90e3aed3a0a7ed84b1847940862f3d8e663debe2ae445fae7792f110d475c032"
+  }
+}

@@ -921,6 +921,93 @@
       "reason": "Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md.",
       "addon_prefixes": [],
       "audit_files": []
+    },
+    {
+      "id": "kazuma-kana-kanji-evaluation",
+      "name": "Kazuma Naka kana-kanji-conversion-c-plus-plus",
+      "origin": "japanese-authored",
+      "decision": "reference",
+      "uses": [
+        "evaluation",
+        "tooling"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "MIT",
+        "status": "verified",
+        "evidence": "https://github.com/KazumaProject/kana-kanji-conversion-c-plus-plus"
+      },
+      "evidence": [
+        "https://github.com/KazumaProject/kana-kanji-conversion-c-plus-plus"
+      ],
+      "editorial": "Existing Japanese A* converter and reproducible compressed dictionary builders.",
+      "coverage": "Non-neural C++ converter; pinned source, no production dependency.",
+      "limitations": "Uses Mozc data but is not the Mozc engine; no native Android timing established.",
+      "reason": "Isolated engine and completion evaluation; SOURCES.md records scope and no production promotion.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/japanese-engine-benchmark/SOURCES.md",
+        "docs/japanese-engine-benchmark/source-manifest.json",
+        "docs/japanese-engine-benchmark/NOTICE.md"
+      ]
+    },
+    {
+      "id": "mozc-conversion-evaluation",
+      "name": "Google Mozc OSS dictionary and costs",
+      "origin": "japanese-authored",
+      "decision": "reference",
+      "uses": [
+        "evaluation",
+        "tooling"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "BSD-3-Clause AND LicenseRef-NAIST-ICOT AND LicenseRef-Public-Domain",
+        "status": "verified",
+        "evidence": "https://github.com/google/mozc"
+      },
+      "evidence": [
+        "https://github.com/google/mozc"
+      ],
+      "editorial": "Google Mozc OSS releases include attributed dictionary and connection-cost data.",
+      "coverage": "All ten dictionary shards and connection matrix, frozen before reference queries.",
+      "limitations": "Not Google Japanese Input proprietary data; actual Mozc engine not run. Retain all dictionary-specific notices.",
+      "reason": "Isolated engine and completion evaluation; SOURCES.md records scope and no production promotion.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/japanese-engine-benchmark/SOURCES.md",
+        "docs/japanese-engine-benchmark/source-manifest.json",
+        "docs/japanese-engine-benchmark/NOTICE.md"
+      ]
+    },
+    {
+      "id": "ajimee-bench",
+      "name": "AJIMEE-Bench Japanese conversion evaluation",
+      "origin": "japanese-authored",
+      "decision": "reference",
+      "uses": [
+        "evaluation",
+        "tooling"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-SA-3.0",
+        "status": "verified",
+        "evidence": "https://github.com/azooKey/AJIMEE-Bench"
+      },
+      "evidence": [
+        "https://github.com/azooKey/AJIMEE-Bench"
+      ],
+      "editorial": "Human-reviewed readings and acceptable forms derived from Japanese Wikipedia Input Error Dataset v2.",
+      "coverage": "All 200 conversion items; contexts and original indices retained.",
+      "limitations": "Public benchmark, potentially exposed to engine authors; encyclopedia genre only, context disabled for this comparison.",
+      "reason": "Isolated engine and completion evaluation; SOURCES.md records scope and no production promotion.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/japanese-engine-benchmark/SOURCES.md",
+        "docs/japanese-engine-benchmark/source-manifest.json",
+        "docs/japanese-engine-benchmark/NOTICE.md"
+      ]
     }
   ]
 }
