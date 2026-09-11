@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.AssertionError: Static continuation follows accepted English in CHINESE expected [true] actual [false]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.EnglishContextRegression.run(EnglishContextRegression.java:37)
+	at dev.minime.core.EnglishContextRegression.main(EnglishContextRegression.java:28)

@@ -19,6 +19,9 @@ public final class CompositionEngine {
     private final Learning learning;
     private PhoneticDictionary dictionary;
     private String raw = "", context = "";
+    // English continuation is independent of Chinese conversion/choice context.
+    private String englishContext="";
+    private void clearContext() {context="";englishContext="";}
     private boolean afterLatin;
     private boolean zhuyin, literalField, privateField, direct, englishMode;
     private InputMode inputMode=InputMode.CHINESE;
@@ -115,7 +118,7 @@ public final class CompositionEngine {
         start(zhuyin,literalField,privateField,direct,false);
     }
     public void start(boolean zhuyin, boolean literalField, boolean privateField, boolean direct, boolean englishMode) {
-        cancelPending();raw = ""; context = ""; afterLatin=false;completionBoundary=false;committedEnglishWord=false; clearAssistance(); this.zhuyin = zhuyin; this.literalField = literalField;
+        cancelPending();raw = ""; clearContext(); afterLatin=false;completionBoundary=false;committedEnglishWord=false; clearAssistance(); this.zhuyin = zhuyin; this.literalField = literalField;
         this.privateField = privateField; this.direct = direct; this.englishMode=englishMode; inputMode=englishMode?InputMode.ENGLISH:InputMode.CHINESE; refresh();
     }
     public InputMode inputMode() {return inputMode;}
@@ -126,12 +129,14 @@ public final class CompositionEngine {
         if(inputMode==mode && literalField==literal)return;
         revision++;compositionId++;pending=false;phraseSession.clear();clearAssistance();
         inputMode=mode;englishMode=mode.english();literalField=literal;
-        context="";afterLatin=false;completionBoundary=false;committedEnglishWord=false;
+        clearContext();afterLatin=false;completionBoundary=false;committedEnglishWord=false;
         refresh();changed.run();
     }
     public void layout(boolean zhuyin) { commitDefault(false); this.zhuyin = zhuyin; refresh(); }
     public String raw() { return raw; }
     public String context() { return context; }
+    /** Editor lifecycle must account for both conversion and English continuation. */
+    public boolean hasContext() {return !context.isEmpty() || !englishContext.isEmpty();}
     public Intent intent() { return intent; }
     public List<Candidate> candidates() { return Collections.unmodifiableList(candidates); }
     public int preferred() { return preferred; }
@@ -156,7 +161,7 @@ public final class CompositionEngine {
         if (!phonetic && !Character.isLetterOrDigit(codePoint) && (codePoint > 126 || codePoint < 33)) {
             commitDefault(false);
             phraseSession.clear();
-            editor.commit(letter); context = "";afterLatin=false; refresh(); return;
+            editor.commit(letter); clearContext();afterLatin=false; refresh(); return;
         }
         if (raw.length() + letter.length() > 96) commitRaw(false);
         raw += letter; editor.composing(raw); refresh();
@@ -168,7 +173,7 @@ public final class CompositionEngine {
         if(deferUntilReady(()->space(now),true))return;
         completionBoundary=false;
         if(doubleSpace && englishMode && !literalField && !direct && raw.isEmpty() && spaceAt>=0 && now-spaceAt<=1000 && now>=spaceAt) {
-            clearAssistance();editor.replacePrevious(1,". ");context="";refresh();return;
+            clearAssistance();editor.replacePrevious(1,". ");clearContext();refresh();return;
         }
         String spelling=raw;
         clearAssistance();
@@ -186,8 +191,8 @@ public final class CompositionEngine {
     }
     public void confirm() { if(deferUntilReady(this::confirm,true))return;clearAssistance();completionBoundary=false; commitDefault(false); }
     /** An explicit slide commits its literal output, independent of token inference. */
-    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();resolveCompletionBoundary(text); commitDefault(false);phraseSession.clear(); editor.commit(text);committedEnglishWord=false; context="";afterLatin=latinBoundary(text); refresh(); }
-    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();completionBoundary=false; commitDefault(false);phraseSession.clear(); editor.enter();committedEnglishWord=false; context = "";afterLatin=false; refresh(); }
+    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();resolveCompletionBoundary(text); commitDefault(false);phraseSession.clear(); editor.commit(text);committedEnglishWord=false; clearContext();afterLatin=latinBoundary(text); refresh(); }
+    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();completionBoundary=false; commitDefault(false);phraseSession.clear(); editor.enter();committedEnglishWord=false; clearContext();afterLatin=false; refresh(); }
     private void resolveCompletionBoundary(String text) {
         if(completionBoundary) {
             completionBoundary=false;
@@ -206,10 +211,10 @@ public final class CompositionEngine {
         committedEnglishWord=false;
         if(!undoSpelling.isEmpty() && raw.isEmpty()) {
             String spelling=undoSpelling;int count=undoOutput.length();clearAssistance();
-            raw=spelling;context="";editor.restoreSpelling(count,raw);refresh();preferred=0;return;
+            raw=spelling;clearContext();editor.restoreSpelling(count,raw);refresh();preferred=0;return;
         }
         clearAssistance();
-        if (raw.isEmpty()) { editor.delete(); context = "";afterLatin=false; }
+        if (raw.isEmpty()) { editor.delete(); clearContext();afterLatin=false; }
         else {
             raw = raw.substring(0, raw.offsetByCodePoints(raw.length(), -1));
             editor.composing(raw);
@@ -232,7 +237,7 @@ public final class CompositionEngine {
             if(!choice.supplemental && raw.matches("[a-zv]+(?:'[a-zv]+)*"))rest=rest.replaceFirst("^'+","");
             acceptedPhrase(reading,choice);
             learnChoice(reading,choice);
-            editor.commit(choice.text);context=privateField?"":tail(context+choice.text,3);afterLatin=false;
+            editor.commit(choice.text);englishContext="";context=privateField?"":tail(context+choice.text,3);afterLatin=false;
             raw=rest;completionBoundary=false;committedEnglishWord=false;
             editor.composing(raw);refresh();return;
         }
@@ -276,12 +281,18 @@ public final class CompositionEngine {
         if(explicit)learnChoice(raw,c);
         editor.commit(c.text + (withSpace ? " " : ""));
         committedEnglishWord=false;
-        if(englishMode && !literalField && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
-            committedEnglishWord=!withSpace;
-            if(!privateField && !c.supplemental)learning.rememberEnglish(context,c.text.toLowerCase(Locale.ROOT));
-            String[] words=(context+" "+c.text.toLowerCase(Locale.ROOT)).trim().split(" ");
-            context=words.length>1?words[words.length-2]+" "+words[words.length-1]:words[0];
-        } else context = c.literal || privateField ? "" : tail(context + c.text, 3);
+        if(inputMode.englishEnabled() && !literalField && !c.supplemental && c.pack.isEmpty()
+                && c.literal && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
+            committedEnglishWord=englishMode && !withSpace;
+            if(!privateField)learning.rememberEnglish(englishContext,c.text.toLowerCase(Locale.ROOT));
+            String[] words=(englishContext+" "+c.text.toLowerCase(Locale.ROOT)).trim().split(" ");
+            englishContext=words.length>1?words[words.length-2]+" "+words[words.length-1]:words[0];
+            // Preserve established AFTER_LATIN votes and Chinese decoder inputs.
+            context=englishMode?englishContext:"";
+        } else {
+            englishContext="";
+            context = c.literal || privateField ? "" : tail(context + c.text, 3);
+        }
         afterLatin=c.literal && latinBoundary(c.text);
         raw = ""; refresh();
     }
@@ -305,7 +316,7 @@ public final class CompositionEngine {
         return text.substring(text.offsetByCodePoints(text.length(), -Math.min(n, text.codePointCount(0, text.length()))));
     }
     /** Call after cursor movement, external edits or lifecycle changes; never rewrite text at the new cursor. */
-    public void abandon() { cancelPending();clearAssistance();completionBoundary=false;committedEnglishWord=false; editor.finish(); raw = ""; context = "";afterLatin=false; refresh(); }
+    public void abandon() { cancelPending();clearAssistance();completionBoundary=false;committedEnglishWord=false; editor.finish(); raw = ""; clearContext();afterLatin=false; refresh(); }
     public void refresh() {
         if(decoder!=null)decoder.cancel();
         automaticCorrection=false;
@@ -315,9 +326,9 @@ public final class CompositionEngine {
         if (direct) return;
         if (raw.isEmpty()) {
             compositionId++;
-            if(englishMode && !literalField && dictionary!=null) {
-                if(!privateField)candidates.addAll(learning.predictEnglish(context));
-                candidates.addAll(dictionary.englishPredictions(context));
+            if(inputMode.englishEnabled() && !literalField && dictionary!=null && (englishMode || !englishContext.isEmpty())) {
+                if(!privateField)candidates.addAll(learning.predictEnglish(englishContext));
+                candidates.addAll(dictionary.englishPredictions(englishContext));
                 Set<String> seen=new HashSet<>();candidates.removeIf(c->!englishSuggestion(c) || !seen.add(c.text));
             }
             if (!privateField && dictionary != null && !literalField && inputMode.chineseEnabled()) candidates.addAll(dictionary.predict(context));

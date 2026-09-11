@@ -128,7 +128,7 @@ public final class MiniMeService extends InputMethodService {
     }
     @Override public void onUpdateSelection(int oldStart,int oldEnd,int newStart,int newEnd,int candidatesStart,int candidatesEnd) {
         super.onUpdateSelection(oldStart,oldEnd,newStart,newEnd,candidatesStart,candidatesEnd);
-        if(selection.update(newStart,newEnd) && (!engine.raw().isEmpty() || !engine.context().isEmpty())) {
+        if(selection.update(newStart,newEnd) && (!engine.raw().isEmpty() || engine.hasContext())) {
             engine.abandon(); render();
         }
         else if(english) {

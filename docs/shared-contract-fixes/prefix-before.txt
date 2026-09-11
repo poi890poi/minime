@@ -1,0 +1,10 @@
+PASS prefix-index parity: 768 generated queries against frozen full-sort reference
+PASS raw/lexical identity, paired tap/hold/Space, raw recovery and language isolation
+PASS explicit mode isolation, composition, callback, learning and acceptance boundaries
+PASS dedicated language priority, matching, fallback, overrides and acceptance
+PASS Japanese characters: 228 kana source aliases, bounded lookup, source frequency and mode isolation
+PASS Japanese kana differential probes=24989; acceptance, suffix and mode isolation
+Exception in thread "main" java.lang.AssertionError: Partial focused choice learning expected [1] actual [0]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.PrefixAcceptanceRegression.run(PrefixAcceptanceRegression.java:29)
+	at dev.minime.core.Regression.main(Regression.java:60)

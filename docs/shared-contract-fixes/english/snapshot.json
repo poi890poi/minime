@@ -1,0 +1,30 @@
+{
+  "revision": "035df9fd32189e8b58516a29a5bb3ab1c4881853",
+  "source_hashes": {
+    "AddonDictionary.java": "a4e54ed0df77bc1dc85e4da1ce029ad5f9ec24ddc7b8fa987ca2ffcd6bb9c5e6",
+    "BinaryModel.java": "b4c99a683ba60974447cc571555b7775443286e81d0d986284c29b0311a0391c",
+    "Candidate.java": "fdb719825c10618d4912f863f37f389d7fc4ca4a548b7186eb6ad8c0a8b2c1ce",
+    "CandidateMerge.java": "77a3683a9b0386aeaede9dadce52ed4747debb6779cbf60ca365eb7bcda2bc5f",
+    "CompositionEngine.java": "8879d1dfb1b2ef95f20aca4e1b785b99180b11c35be1e1b42a1a9463d036f1e6",
+    "ContextModel.java": "bad4561637e8090393a0115da5753c79f31e6a6d12c9a1c44887bce371d6ca97",
+    "DecodePipeline.java": "22e5d5671178b8b9597fafa222f83a9369dc4a577f82ec440921522fbfcc1712",
+    "EnglishTrace.java": "a3a5baec4c22b4ca29e1fa93738df0322f749a4653c32a94bf23e86b4c1fe410",
+    "InputMode.java": "d4d275f9d5736d694cec2efef7a81bfdb8322ea72273cebc2f5868861de084b6",
+    "IntentClassifier.java": "5f77ae4f5d19bbf7cb935da6195dc24417ecdcd0ba21755bbac13f865b5acbe7",
+    "JapaneseBasics.java": "7e6321a3fbe51a5f403999b07a5fc2c17e81c3aa948a7e64e3920c99e08703b8",
+    "JapaneseKana.java": "25b393c3dbb24641152ba9f004c1babf37fc5f1c28e9b180d403da3674dc50cd",
+    "Learning.java": "e655812ac2eda2b0750ca79cce57153fde7659b778f8da7aa13e094b47529a4b",
+    "PairedForms.java": "e89d7dfa110d84f947ea895b7036fff5389d2ab56817d974ff6d54448b315d08",
+    "PhoneticDictionary.java": "0c5f25716561e183c7c6f01497dfdac6e928a0b1cd76f079db93037fc012d813",
+    "PhraseLexicon.java": "86745b10ac3b2e37b1c3fdff925924d21eb529edd238cf24df6931ae11f391a5",
+    "PhraseSession.java": "f9b50a69fcf2f68aef708038146ed2e518d1f4d1c0b2f15a3150c0d0ea488439",
+    "ReadingIndex.java": "f57141f44f6358c3fb0a7c66f88c837074aebaec1dadff798a153a68d14f34ff",
+    "ReadingUnitIndex.java": "63acb41544d8a1aa42c3e3092fc5d7e32c32f92fe63a6aea6358ece5db758abf",
+    "ShiftState.java": "b4f5f049385ea4b57ac3eb25a3640c9bb03796d85dc424fa1e4d1b24eb83fcbf"
+  },
+  "frozen_input_hashes": {
+    "docs\\language-contract-benchmark\\inputs.tsv": "bdc152fd1ff97d1dbec1bb9a7230b6815b5587e1b7ea37b5ab97f53319e907f3",
+    "docs\\language-contract-benchmark\\conversations\\inputs.tsv": "92fed5d6b03e2dc9adc5c594f8ecb39f9fcfa756ecd636879def90005b0cda3a"
+  },
+  "role": "Regression replay; these corpora were already inspected. No new holdout or lexical-quality change."
+}

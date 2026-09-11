@@ -54,6 +54,7 @@ public final class Regression {
         AddonBinaryRegression.run();
         ModeRegression.run();
         EnglishIsolationRegression.run();
+        EnglishContextRegression.run();
         ModePriorityRegression.run();
         JapaneseBasicsRegression.run();
         JapaneseKanaRegression.run();
