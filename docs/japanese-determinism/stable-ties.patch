@@ -1,0 +1,50 @@
+--- a/src/path_algorithm/find_path.cpp
++++ b/src/path_algorithm/find_path.cpp
+@@ -45,15 +45,16 @@
+         const Node *node;            // points to a Node in graph
+         int g;                       // accumulated cost from this node to EOS
+         int total;                   // priority (g + f)
++        uint64_t ordinal;            // MinIME: stable order within this search
+         std::shared_ptr<State> next; // successor state (towards EOS)
+ 
+-        State(const Node *n_, int g_, int total_, std::shared_ptr<State> next_)
+-            : node(n_), g(g_), total(total_), next(std::move(next_))
++        State(const Node *n_, int g_, int total_, std::shared_ptr<State> next_, uint64_t ordinal_)
++            : node(n_), g(g_), total(total_), ordinal(ordinal_), next(std::move(next_))
+         {
+         }
+     };
+ 
+-    // priority: smaller total first, then smaller sPos, then smaller len, then pointer address
++    // priority: smaller total first, then smaller sPos, then smaller len, then per-search insertion order
+     struct StateLess
+     {
+         bool operator()(const std::shared_ptr<State> &a, const std::shared_ptr<State> &b) const
+@@ -64,7 +65,7 @@
+                 return a->node->sPos > b->node->sPos;
+             if (a->node->len != b->node->len)
+                 return a->node->len > b->node->len;
+-            return a.get() > b.get();
++            return a->ordinal > b->ordinal;
+         }
+     };
+ 
+@@ -324,7 +325,8 @@
+         const Node *eos = &graph[static_cast<size_t>(length + 1)][0];
+ 
+         std::priority_queue<std::shared_ptr<State>, std::vector<std::shared_ptr<State>>, StateLess> pq;
+-        pq.push(std::make_shared<State>(eos, /*g=*/0, /*total=*/0, /*next=*/nullptr));
++        uint64_t nextOrdinal = 0;
++        pq.push(std::make_shared<State>(eos, /*g=*/0, /*total=*/0, /*next=*/nullptr, nextOrdinal++));
+ 
+         std::vector<Candidate> results;
+         results.reserve(static_cast<size_t>(nBest));
+@@ -392,7 +394,7 @@
+                 const int newG = cur->g + edge + curNode->score;
+                 const int newTotal = newG + p->f;
+ 
+-                auto st = std::make_shared<State>(p, newG, newTotal, cur);
++                auto st = std::make_shared<State>(p, newG, newTotal, cur, nextOrdinal++);
+                 pq.push(std::move(st));
+             }
+         }

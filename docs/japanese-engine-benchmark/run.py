@@ -35,7 +35,7 @@ def memory(pid):
 class Engine:
     def __init__(self, name):
         self.name = name
-        executable = 'converter-server-indexed.exe' if name == 'kazuma-indexed' else 'converter-server.exe'
+        executable = 'converter-server'+name.removeprefix('kazuma')+'.exe' if name.startswith('kazuma') else 'converter-server.exe'
         command = [JAVA, '-Dfile.encoding=UTF-8', '-Xmx1g', '-cp', 'core/build/manual', 'dev.minime.core.MinimeServer'] if name == 'minime' else [str(WORK / 'build' / executable), str(WORK / 'build')]
         at = time.perf_counter_ns()
         self.log = (WORK / (name + '-stderr.txt')).open('w', encoding='utf8')
@@ -165,7 +165,7 @@ def distance(a, b):
     return prev[-1]
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument('engine', choices=['minime', 'kazuma', 'kazuma-indexed'])
+    p = argparse.ArgumentParser(); p.add_argument('engine', choices=['minime', 'kazuma', 'kazuma-indexed', 'kazuma-stable', 'kazuma-indexed-stable'])
     p.add_argument('command', choices=['completion', 'probes', 'ajimee', 'perf'])
     p.add_argument('--role', default='development', choices=['development', 'holdout']); p.add_argument('--pass-number', type=int, default=1)
     p.add_argument('--output-dir',type=Path,default=HERE)

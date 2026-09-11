@@ -94,3 +94,8 @@ docs/japanese-predictive-review/*.json -text whitespace=cr-at-eol
 docs/japanese-predictive-review/*.jsonl.gz -text
 docs/japanese-predictive-review/*.txt -text whitespace=cr-at-eol
 docs/japanese-predictive-review/*.patch -text whitespace=-blank-at-eol,cr-at-eol
+
+docs/japanese-determinism/*.json -text whitespace=cr-at-eol
+docs/japanese-determinism/*.jsonl.gz -text
+docs/japanese-determinism/*.txt -text whitespace=cr-at-eol
+docs/japanese-determinism/*.patch -text whitespace=-blank-at-eol,cr-at-eol

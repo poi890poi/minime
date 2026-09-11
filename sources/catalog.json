@@ -942,7 +942,7 @@
       ],
       "editorial": "Existing Japanese A* converter and reproducible compressed dictionary builders.",
       "coverage": "Non-neural C++ converter; pinned source, no production dependency.",
-      "limitations": "Uses Mozc data but is not the Mozc engine; no native Android timing established. Predictive APIs rejected on latency/semantics; isolated posting-index experiment fails candidate-order parity due to upstream address-based ties.",
+      "limitations": "Uses Mozc data but is not the Mozc engine; no native Android timing established. Unbounded predictive APIs rejected on latency/semantics. Stable A* ties resolve the isolated posting-index parity failure across 18,730 regression records; no production promotion.",
       "reason": "Isolated engine and completion evaluation; SOURCES.md records scope and no production promotion.",
       "addon_prefixes": [],
       "audit_files": [
@@ -951,7 +951,10 @@
         "docs/japanese-engine-benchmark/NOTICE.md",
         "docs/japanese-predictive-review/README.md",
         "docs/japanese-predictive-review/NOTICE.md",
-        "docs/japanese-predictive-review/posting-index.patch"
+        "docs/japanese-predictive-review/posting-index.patch",
+        "docs/japanese-determinism/README.md",
+        "docs/japanese-determinism/NOTICE.md",
+        "docs/japanese-determinism/stable-ties.patch"
       ]
     },
     {
