@@ -1,0 +1,96 @@
+{
+  "passes": {
+    "1": {
+      "completed-empty": 102,
+      "deadline": 123,
+      "work-cap": 69,
+      "completed-nonempty": 90
+    },
+    "2": {
+      "completed-empty": 102,
+      "deadline": 123,
+      "work-cap": 69,
+      "completed-nonempty": 90
+    },
+    "3": {
+      "completed-empty": 102,
+      "deadline": 123,
+      "work-cap": 69,
+      "completed-nonempty": 90
+    }
+  },
+  "comparison": {
+    "real-persona-chat/clause/full": {
+      "n": 32,
+      "bounded_available": 28,
+      "bounded_hits": 4,
+      "prior_minime_hits": 21
+    },
+    "real-persona-chat/clause/half": {
+      "n": 32,
+      "bounded_available": 18,
+      "bounded_hits": 0,
+      "prior_minime_hits": 7
+    },
+    "real-persona-chat/clause/three-quarter": {
+      "n": 32,
+      "bounded_available": 28,
+      "bounded_hits": 1,
+      "prior_minime_hits": 10
+    },
+    "asdc/clause/full": {
+      "n": 32,
+      "bounded_available": 26,
+      "bounded_hits": 10,
+      "prior_minime_hits": 18
+    },
+    "asdc/clause/half": {
+      "n": 32,
+      "bounded_available": 15,
+      "bounded_hits": 2,
+      "prior_minime_hits": 11
+    },
+    "asdc/clause/three-quarter": {
+      "n": 32,
+      "bounded_available": 25,
+      "bounded_hits": 9,
+      "prior_minime_hits": 14
+    },
+    "real-persona-chat/word/full": {
+      "n": 32,
+      "bounded_available": 4,
+      "bounded_hits": 4,
+      "prior_minime_hits": 28
+    },
+    "real-persona-chat/word/half": {
+      "n": 32,
+      "bounded_available": 10,
+      "bounded_hits": 0,
+      "prior_minime_hits": 13
+    },
+    "real-persona-chat/word/three-quarter": {
+      "n": 32,
+      "bounded_available": 13,
+      "bounded_hits": 1,
+      "prior_minime_hits": 14
+    },
+    "asdc/word/full": {
+      "n": 32,
+      "bounded_available": 5,
+      "bounded_hits": 5,
+      "prior_minime_hits": 31
+    },
+    "asdc/word/half": {
+      "n": 32,
+      "bounded_available": 8,
+      "bounded_hits": 0,
+      "prior_minime_hits": 11
+    },
+    "asdc/word/three-quarter": {
+      "n": 32,
+      "bounded_available": 12,
+      "bounded_hits": 1,
+      "prior_minime_hits": 18
+    }
+  }
+}

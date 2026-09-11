@@ -1,0 +1,72 @@
+--- a/src/dictionary_builder/louds_builder/louds/louds_utf16_reader.cpp
++++ b/src/dictionary_builder/louds_builder/louds/louds_utf16_reader.cpp
+@@ -1,3 +1,4 @@
++#include "Budget.hpp"
+ #include "louds/louds_utf16_reader.hpp"
+ 
+ #include <fstream>
+@@ -107,6 +108,7 @@
+ 
+ void LOUDSReaderUtf16::collectWords(int pos, std::u16string &prefix, std::vector<std::u16string> &out) const
+ {
++    PredictionBudget::check();
+     if (pos < 0)
+         return;
+     if (static_cast<size_t>(pos) >= LBS_.size())
+@@ -122,6 +124,7 @@
+            static_cast<size_t>(childPos) < LBS_.size() &&
+            LBS_.get(static_cast<size_t>(childPos)))
+     {
++        PredictionBudget::check();
+         const int labelIndex = lbsSucc_.rank1(childPos);
+         if (labelIndex < 0 || static_cast<size_t>(labelIndex) >= labels_.size())
+             break;
+@@ -144,7 +147,9 @@
+ 
+     for (char16_t c : prefix)
+     {
++        PredictionBudget::check();
+         n = traverse(n, c);
++        PredictionBudget::check();
+         if (n < 0)
+             return out;
+ 
+--- a/cli/kana_kanji/astar_bunsetsu_cli.cpp
++++ b/cli/kana_kanji/astar_bunsetsu_cli.cpp
+@@ -1,3 +1,4 @@
++#include "Budget.hpp"
+ // cli/kana_kanji/astar_bunsetsu_cli.cpp
+ #include <cstdint>
+ #include <iostream>
+@@ -310,6 +311,7 @@
+ 
+     for (const auto &yomi : preds)
+     {
++        PredictionBudget::check();
+         if (!starts_with_u16(yomi, q16))
+             continue;
+ 
+@@ -321,6 +323,7 @@
+ 
+         for (const auto &t : listToken)
+         {
++            PredictionBudget::check();
+             std::u16string surface;
+ 
+             if (t.nodeIndex == TokenArray::HIRAGANA_SENTINEL)
+@@ -360,6 +363,7 @@
+ 
+     std::sort(rows.begin(), rows.end(), [](const PredRow &a, const PredRow &b)
+               {
++                  PredictionBudget::check();
+                   if (a.score != b.score)
+                       return a.score < b.score;
+                   // stable-ish tie-break
+@@ -367,6 +371,7 @@
+                       return a.surface < b.surface;
+                   return a.yomi < b.yomi; });
+ 
++    PredictionBudget::check();
+     if (rows.empty())
+     {
+         std::cout << "prediction_candidates: (none)\n";

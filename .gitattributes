@@ -99,3 +99,7 @@ docs/japanese-determinism/*.json -text whitespace=cr-at-eol
 docs/japanese-determinism/*.jsonl.gz -text
 docs/japanese-determinism/*.txt -text whitespace=cr-at-eol
 docs/japanese-determinism/*.patch -text whitespace=-blank-at-eol,cr-at-eol
+docs/japanese-bounded-prediction/*.json -text whitespace=cr-at-eol
+docs/japanese-bounded-prediction/*.jsonl.gz -text
+docs/japanese-bounded-prediction/*.txt -text whitespace=cr-at-eol
+docs/japanese-bounded-prediction/*.patch -text whitespace=-blank-at-eol,cr-at-eol

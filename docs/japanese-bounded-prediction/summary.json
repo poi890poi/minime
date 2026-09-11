@@ -1,0 +1,256 @@
+{
+  "passes": {
+    "1": {
+      "engine_ms": {
+        "n": 384,
+        "mean": 3.7135947916666665,
+        "p50": 1.29735,
+        "p95": 9.0225,
+        "p99": 9.7005,
+        "max": 10.6446
+      },
+      "wall_ms": {
+        "n": 384,
+        "mean": 3.8117815104166666,
+        "p50": 1.4176,
+        "p95": 9.1433,
+        "p99": 9.8214,
+        "max": 10.796
+      },
+      "unavailable": 192,
+      "groups": {
+        "real-persona-chat/clause/full": {
+          "n": 32,
+          "available": 28,
+          "hits": 4
+        },
+        "real-persona-chat/clause/half": {
+          "n": 32,
+          "available": 18,
+          "hits": 0
+        },
+        "real-persona-chat/clause/three-quarter": {
+          "n": 32,
+          "available": 28,
+          "hits": 1
+        },
+        "asdc/clause/full": {
+          "n": 32,
+          "available": 26,
+          "hits": 10
+        },
+        "asdc/clause/half": {
+          "n": 32,
+          "available": 15,
+          "hits": 2
+        },
+        "asdc/clause/three-quarter": {
+          "n": 32,
+          "available": 25,
+          "hits": 9
+        },
+        "real-persona-chat/word/full": {
+          "n": 32,
+          "available": 4,
+          "hits": 4
+        },
+        "real-persona-chat/word/half": {
+          "n": 32,
+          "available": 10,
+          "hits": 0
+        },
+        "real-persona-chat/word/three-quarter": {
+          "n": 32,
+          "available": 13,
+          "hits": 1
+        },
+        "asdc/word/full": {
+          "n": 32,
+          "available": 5,
+          "hits": 5
+        },
+        "asdc/word/half": {
+          "n": 32,
+          "available": 8,
+          "hits": 0
+        },
+        "asdc/word/three-quarter": {
+          "n": 32,
+          "available": 12,
+          "hits": 1
+        }
+      },
+      "latency_gate": true
+    },
+    "2": {
+      "engine_ms": {
+        "n": 384,
+        "mean": 3.7047236979166667,
+        "p50": 1.3026,
+        "p95": 9.0183,
+        "p99": 9.6753,
+        "max": 10.5349
+      },
+      "wall_ms": {
+        "n": 384,
+        "mean": 3.7999455729166667,
+        "p50": 1.4157,
+        "p95": 9.1099,
+        "p99": 9.77,
+        "max": 10.6755
+      },
+      "unavailable": 192,
+      "groups": {
+        "real-persona-chat/clause/full": {
+          "n": 32,
+          "available": 28,
+          "hits": 4
+        },
+        "real-persona-chat/clause/half": {
+          "n": 32,
+          "available": 18,
+          "hits": 0
+        },
+        "real-persona-chat/clause/three-quarter": {
+          "n": 32,
+          "available": 28,
+          "hits": 1
+        },
+        "asdc/clause/full": {
+          "n": 32,
+          "available": 26,
+          "hits": 10
+        },
+        "asdc/clause/half": {
+          "n": 32,
+          "available": 15,
+          "hits": 2
+        },
+        "asdc/clause/three-quarter": {
+          "n": 32,
+          "available": 25,
+          "hits": 9
+        },
+        "real-persona-chat/word/full": {
+          "n": 32,
+          "available": 4,
+          "hits": 4
+        },
+        "real-persona-chat/word/half": {
+          "n": 32,
+          "available": 10,
+          "hits": 0
+        },
+        "real-persona-chat/word/three-quarter": {
+          "n": 32,
+          "available": 13,
+          "hits": 1
+        },
+        "asdc/word/full": {
+          "n": 32,
+          "available": 5,
+          "hits": 5
+        },
+        "asdc/word/half": {
+          "n": 32,
+          "available": 8,
+          "hits": 0
+        },
+        "asdc/word/three-quarter": {
+          "n": 32,
+          "available": 12,
+          "hits": 1
+        }
+      },
+      "latency_gate": true
+    },
+    "3": {
+      "engine_ms": {
+        "n": 384,
+        "mean": 3.6937005208333336,
+        "p50": 1.28815,
+        "p95": 9.0109,
+        "p99": 9.7291,
+        "max": 10.557
+      },
+      "wall_ms": {
+        "n": 384,
+        "mean": 3.786437760416667,
+        "p50": 1.37885,
+        "p95": 9.111,
+        "p99": 9.8727,
+        "max": 10.6962
+      },
+      "unavailable": 192,
+      "groups": {
+        "real-persona-chat/clause/full": {
+          "n": 32,
+          "available": 28,
+          "hits": 4
+        },
+        "real-persona-chat/clause/half": {
+          "n": 32,
+          "available": 18,
+          "hits": 0
+        },
+        "real-persona-chat/clause/three-quarter": {
+          "n": 32,
+          "available": 28,
+          "hits": 1
+        },
+        "asdc/clause/full": {
+          "n": 32,
+          "available": 26,
+          "hits": 10
+        },
+        "asdc/clause/half": {
+          "n": 32,
+          "available": 15,
+          "hits": 2
+        },
+        "asdc/clause/three-quarter": {
+          "n": 32,
+          "available": 25,
+          "hits": 9
+        },
+        "real-persona-chat/word/full": {
+          "n": 32,
+          "available": 4,
+          "hits": 4
+        },
+        "real-persona-chat/word/half": {
+          "n": 32,
+          "available": 10,
+          "hits": 0
+        },
+        "real-persona-chat/word/three-quarter": {
+          "n": 32,
+          "available": 13,
+          "hits": 1
+        },
+        "asdc/word/full": {
+          "n": 32,
+          "available": 5,
+          "hits": 5
+        },
+        "asdc/word/half": {
+          "n": 32,
+          "available": 8,
+          "hits": 0
+        },
+        "asdc/word/three-quarter": {
+          "n": 32,
+          "available": 12,
+          "hits": 1
+        }
+      },
+      "latency_gate": true
+    }
+  },
+  "probe_sha256": "bb9be9137a1a8c3c1379a8ec817be2325948b0b71f2eba71011ab6e1789fd758",
+  "parity": {
+    "unique_completed_inputs": 138,
+    "differences": 0
+  },
+  "availability_changed_between_passes": 0
+}
