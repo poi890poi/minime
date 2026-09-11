@@ -1,0 +1,8 @@
+Exact behavior parity: {'completion-development': {'rows': 512, 'changed': 18, 'changed_completion_or_hit_outcome': 0}, 'probes-development': {'rows': 3876, 'changed': 33, 'changed_completion_or_hit_outcome': 0}, 'completion-holdout': {'rows': 1536, 'changed': 48, 'changed_completion_or_hit_outcome': 0}, 'probes-holdout': {'rows': 12606, 'changed': 96, 'changed_completion_or_hit_outcome': 0}, 'ajimee': {'rows': 200, 'changed': 0}, 'screen-clause': {'rows': 192, 'changed': 2}, 'lexical-clause': {'completed_compared': 4, 'changed': 0, 'unavailable_not_counted': 1}, 'lexical-fullprefix-clause': {'completed_compared': 4, 'changed': 0, 'unavailable_not_counted': 1}, 'screen-word': {'rows': 192, 'changed': 2}, 'lexical-word': {'completed_compared': 0, 'changed': 0, 'unavailable_not_counted': 1}, 'lexical-fullprefix-word': {'completed_compared': 0, 'changed': 0, 'unavailable_not_counted': 1}}
+kazuma 1 {'n': 1311, 'p50': 4.5355, 'p95': 36.6795, 'p99': 62.6498, 'max': 73.4292}
+kazuma 2 {'n': 1311, 'p50': 4.5286, 'p95': 36.7838, 'p99': 65.3088, 'max': 100.9944}
+kazuma 3 {'n': 1311, 'p50': 4.5485, 'p95': 36.6909, 'p99': 62.8648, 'max': 73.0678}
+kazuma-indexed 1 {'n': 1311, 'p50': 0.4595, 'p95': 3.246, 'p99': 9.4582, 'max': 10.2245}
+kazuma-indexed 2 {'n': 1311, 'p50': 0.4597, 'p95': 3.2358, 'p99': 9.42, 'max': 10.0466}
+kazuma-indexed 3 {'n': 1311, 'p50': 0.4813, 'p95': 3.2997, 'p99': 9.6181, 'max': 11.034}
+FAIL exact candidate-order parity: 199 changed rows. Experiment must not be integrated.

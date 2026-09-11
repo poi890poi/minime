@@ -1,0 +1,690 @@
+{
+  "screen": {
+    "cps/clause": {
+      "attempted": 192,
+      "planned": 192,
+      "unrun": 0,
+      "timeouts": 0,
+      "stopped": false,
+      "completed_engine_ms": {
+        "n": 192,
+        "p50": 1.7029999999999998,
+        "p95": 13.0851,
+        "p99": 23.5407,
+        "max": 23.5811
+      },
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 32,
+          "hits": 32
+        },
+        "real-persona-chat/half": {
+          "n": 32,
+          "hits": 0
+        },
+        "real-persona-chat/three-quarter": {
+          "n": 32,
+          "hits": 0
+        },
+        "asdc/full": {
+          "n": 32,
+          "hits": 32
+        },
+        "asdc/half": {
+          "n": 32,
+          "hits": 0
+        },
+        "asdc/three-quarter": {
+          "n": 32,
+          "hits": 0
+        }
+      }
+    },
+    "cps/word": {
+      "attempted": 192,
+      "planned": 192,
+      "unrun": 0,
+      "timeouts": 0,
+      "stopped": false,
+      "completed_engine_ms": {
+        "n": 192,
+        "p50": 0.0348,
+        "p95": 2.0123,
+        "p99": 9.7183,
+        "max": 14.5038
+      },
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 32,
+          "hits": 32
+        },
+        "real-persona-chat/half": {
+          "n": 32,
+          "hits": 0
+        },
+        "real-persona-chat/three-quarter": {
+          "n": 32,
+          "hits": 0
+        },
+        "asdc/full": {
+          "n": 32,
+          "hits": 32
+        },
+        "asdc/half": {
+          "n": 32,
+          "hits": 0
+        },
+        "asdc/three-quarter": {
+          "n": 32,
+          "hits": 0
+        }
+      }
+    },
+    "minime/clause": {
+      "attempted": 192,
+      "planned": 192,
+      "unrun": 0,
+      "timeouts": 0,
+      "stopped": false,
+      "completed_engine_ms": {
+        "n": 192,
+        "p50": 0.18869999999999998,
+        "p95": 0.8115,
+        "p99": 1.4139,
+        "max": 1.8558
+      },
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 32,
+          "hits": 21
+        },
+        "real-persona-chat/half": {
+          "n": 32,
+          "hits": 7
+        },
+        "real-persona-chat/three-quarter": {
+          "n": 32,
+          "hits": 10
+        },
+        "asdc/full": {
+          "n": 32,
+          "hits": 18
+        },
+        "asdc/half": {
+          "n": 32,
+          "hits": 11
+        },
+        "asdc/three-quarter": {
+          "n": 32,
+          "hits": 14
+        }
+      }
+    },
+    "minime/word": {
+      "attempted": 192,
+      "planned": 192,
+      "unrun": 0,
+      "timeouts": 0,
+      "stopped": false,
+      "completed_engine_ms": {
+        "n": 192,
+        "p50": 0.61605,
+        "p95": 1.6125,
+        "p99": 3.1026,
+        "max": 7.5991
+      },
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 32,
+          "hits": 28
+        },
+        "real-persona-chat/half": {
+          "n": 32,
+          "hits": 13
+        },
+        "real-persona-chat/three-quarter": {
+          "n": 32,
+          "hits": 14
+        },
+        "asdc/full": {
+          "n": 32,
+          "hits": 31
+        },
+        "asdc/half": {
+          "n": 32,
+          "hits": 11
+        },
+        "asdc/three-quarter": {
+          "n": 32,
+          "hits": 18
+        }
+      }
+    },
+    "graph/clause": {
+      "attempted": 1,
+      "planned": 192,
+      "unrun": 191,
+      "timeouts": 1,
+      "stopped": true,
+      "completed_engine_ms": {},
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 1,
+          "hits": 0
+        }
+      }
+    },
+    "lexical/clause": {
+      "attempted": 5,
+      "planned": 192,
+      "unrun": 187,
+      "timeouts": 1,
+      "stopped": true,
+      "completed_engine_ms": {
+        "n": 4,
+        "p50": 186.50949999999997,
+        "p95": 1004.5893,
+        "p99": 1004.5893,
+        "max": 1004.5893
+      },
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 2,
+          "hits": 1
+        },
+        "real-persona-chat/half": {
+          "n": 2,
+          "hits": 0
+        },
+        "real-persona-chat/three-quarter": {
+          "n": 1,
+          "hits": 0
+        }
+      }
+    },
+    "lexical/word": {
+      "attempted": 1,
+      "planned": 192,
+      "unrun": 191,
+      "timeouts": 1,
+      "stopped": true,
+      "completed_engine_ms": {},
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 1,
+          "hits": 0
+        }
+      }
+    },
+    "lexical-fullprefix/clause": {
+      "attempted": 5,
+      "planned": 192,
+      "unrun": 187,
+      "timeouts": 1,
+      "stopped": true,
+      "completed_engine_ms": {
+        "n": 4,
+        "p50": 180.67425,
+        "p95": 1006.8253,
+        "p99": 1006.8253,
+        "max": 1006.8253
+      },
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 2,
+          "hits": 1
+        },
+        "real-persona-chat/half": {
+          "n": 2,
+          "hits": 0
+        },
+        "real-persona-chat/three-quarter": {
+          "n": 1,
+          "hits": 0
+        }
+      }
+    },
+    "lexical-fullprefix/word": {
+      "attempted": 1,
+      "planned": 192,
+      "unrun": 191,
+      "timeouts": 1,
+      "stopped": true,
+      "completed_engine_ms": {},
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 1,
+          "hits": 0
+        }
+      }
+    },
+    "indexed-cps/clause": {
+      "attempted": 192,
+      "planned": 192,
+      "unrun": 0,
+      "timeouts": 0,
+      "stopped": false,
+      "completed_engine_ms": {
+        "n": 192,
+        "p50": 0.24864999999999998,
+        "p95": 1.4564,
+        "p99": 2.6784,
+        "max": 2.7083
+      },
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 32,
+          "hits": 32
+        },
+        "real-persona-chat/half": {
+          "n": 32,
+          "hits": 0
+        },
+        "real-persona-chat/three-quarter": {
+          "n": 32,
+          "hits": 0
+        },
+        "asdc/full": {
+          "n": 32,
+          "hits": 32
+        },
+        "asdc/half": {
+          "n": 32,
+          "hits": 0
+        },
+        "asdc/three-quarter": {
+          "n": 32,
+          "hits": 0
+        }
+      }
+    },
+    "indexed-cps/word": {
+      "attempted": 192,
+      "planned": 192,
+      "unrun": 0,
+      "timeouts": 0,
+      "stopped": false,
+      "completed_engine_ms": {
+        "n": 192,
+        "p50": 0.03425,
+        "p95": 0.2154,
+        "p99": 1.2023,
+        "max": 1.4042
+      },
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 32,
+          "hits": 32
+        },
+        "real-persona-chat/half": {
+          "n": 32,
+          "hits": 0
+        },
+        "real-persona-chat/three-quarter": {
+          "n": 32,
+          "hits": 0
+        },
+        "asdc/full": {
+          "n": 32,
+          "hits": 32
+        },
+        "asdc/half": {
+          "n": 32,
+          "hits": 0
+        },
+        "asdc/three-quarter": {
+          "n": 32,
+          "hits": 0
+        }
+      }
+    },
+    "indexed-lexical/clause": {
+      "attempted": 8,
+      "planned": 192,
+      "unrun": 184,
+      "timeouts": 0,
+      "stopped": true,
+      "completed_engine_ms": {
+        "n": 8,
+        "p50": 92.8038,
+        "p95": 4979.2629,
+        "p99": 4979.2629,
+        "max": 4979.2629
+      },
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 3,
+          "hits": 1
+        },
+        "real-persona-chat/half": {
+          "n": 3,
+          "hits": 0
+        },
+        "real-persona-chat/three-quarter": {
+          "n": 2,
+          "hits": 0
+        }
+      }
+    },
+    "indexed-lexical/word": {
+      "attempted": 1,
+      "planned": 192,
+      "unrun": 191,
+      "timeouts": 1,
+      "stopped": true,
+      "completed_engine_ms": {},
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 1,
+          "hits": 0
+        }
+      }
+    },
+    "indexed-lexical-fullprefix/clause": {
+      "attempted": 8,
+      "planned": 192,
+      "unrun": 184,
+      "timeouts": 0,
+      "stopped": true,
+      "completed_engine_ms": {
+        "n": 8,
+        "p50": 85.42525,
+        "p95": 4969.843,
+        "p99": 4969.843,
+        "max": 4969.843
+      },
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 3,
+          "hits": 1
+        },
+        "real-persona-chat/half": {
+          "n": 3,
+          "hits": 0
+        },
+        "real-persona-chat/three-quarter": {
+          "n": 2,
+          "hits": 0
+        }
+      }
+    },
+    "indexed-lexical-fullprefix/word": {
+      "attempted": 1,
+      "planned": 192,
+      "unrun": 191,
+      "timeouts": 1,
+      "stopped": true,
+      "completed_engine_ms": {},
+      "groups": {
+        "real-persona-chat/full": {
+          "n": 1,
+          "hits": 0
+        }
+      }
+    }
+  },
+  "parity": {
+    "completion-development": {
+      "rows": 512,
+      "changed": 18,
+      "changed_completion_or_hit_outcome": 0
+    },
+    "probes-development": {
+      "rows": 3876,
+      "changed": 33,
+      "changed_completion_or_hit_outcome": 0
+    },
+    "completion-holdout": {
+      "rows": 1536,
+      "changed": 48,
+      "changed_completion_or_hit_outcome": 0
+    },
+    "probes-holdout": {
+      "rows": 12606,
+      "changed": 96,
+      "changed_completion_or_hit_outcome": 0
+    },
+    "ajimee": {
+      "rows": 200,
+      "changed": 0
+    },
+    "screen-clause": {
+      "rows": 192,
+      "changed": 2
+    },
+    "lexical-clause": {
+      "completed_compared": 4,
+      "changed": 0,
+      "unavailable_not_counted": 1
+    },
+    "lexical-fullprefix-clause": {
+      "completed_compared": 4,
+      "changed": 0,
+      "unavailable_not_counted": 1
+    },
+    "screen-word": {
+      "rows": 192,
+      "changed": 2
+    },
+    "lexical-word": {
+      "completed_compared": 0,
+      "changed": 0,
+      "unavailable_not_counted": 1
+    },
+    "lexical-fullprefix-word": {
+      "completed_compared": 0,
+      "changed": 0,
+      "unavailable_not_counted": 1
+    }
+  },
+  "performance": {
+    "kazuma": {
+      "1": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 4.5479,
+            "p95": 36.6011,
+            "p99": 62.7369,
+            "max": 73.3491
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 4.7008,
+            "p95": 36.8322,
+            "p99": 62.9547,
+            "max": 73.5577
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 4.5355,
+            "p95": 36.6795,
+            "p99": 62.6498,
+            "max": 73.4292
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 4.6833,
+            "p95": 36.8473,
+            "p99": 62.817,
+            "max": 73.6472
+          }
+        }
+      },
+      "2": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 4.5198,
+            "p95": 36.474,
+            "p99": 62.7455,
+            "max": 73.7526
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 4.6741,
+            "p95": 36.6651,
+            "p99": 62.9499,
+            "max": 73.9596
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 4.5286,
+            "p95": 36.7838,
+            "p99": 65.3088,
+            "max": 100.9944
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 4.6504,
+            "p95": 36.9708,
+            "p99": 65.5231,
+            "max": 101.2098
+          }
+        }
+      },
+      "3": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 4.5256,
+            "p95": 36.6007,
+            "p99": 62.7395,
+            "max": 74.2048
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 4.6774,
+            "p95": 36.7958,
+            "p99": 62.9403,
+            "max": 74.4188
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 4.5485,
+            "p95": 36.6909,
+            "p99": 62.8648,
+            "max": 73.0678
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 4.6857,
+            "p95": 36.8864,
+            "p99": 63.0638,
+            "max": 73.2736
+          }
+        }
+      }
+    },
+    "kazuma-indexed": {
+      "1": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 0.462,
+            "p95": 3.2712,
+            "p99": 9.4111,
+            "max": 10.1589
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 0.5486,
+            "p95": 3.4087,
+            "p99": 9.5951,
+            "max": 10.3843
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 0.4595,
+            "p95": 3.246,
+            "p99": 9.4582,
+            "max": 10.2245
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 0.5314,
+            "p95": 3.4018,
+            "p99": 9.6701,
+            "max": 10.4044
+          }
+        }
+      },
+      "2": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 0.4539,
+            "p95": 3.2638,
+            "p99": 9.3675,
+            "max": 10.3195
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 0.5324,
+            "p95": 3.4102,
+            "p99": 9.5595,
+            "max": 10.5379
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 0.4597,
+            "p95": 3.2358,
+            "p99": 9.42,
+            "max": 10.0466
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 0.5401,
+            "p95": 3.3804,
+            "p99": 9.6014,
+            "max": 10.2441
+          }
+        }
+      },
+      "3": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 0.4576,
+            "p95": 3.2905,
+            "p99": 9.4235,
+            "max": 10.1783
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 0.5365,
+            "p95": 3.4286,
+            "p99": 9.6242,
+            "max": 10.3877
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "p50": 0.4813,
+            "p95": 3.2997,
+            "p99": 9.6181,
+            "max": 11.034
+          },
+          "wall_ms": {
+            "n": 1311,
+            "p50": 0.5766,
+            "p95": 3.4488,
+            "p99": 9.7812,
+            "max": 11.1973
+          }
+        }
+      }
+    }
+  }
+}

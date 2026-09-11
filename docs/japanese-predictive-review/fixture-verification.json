@@ -1,0 +1,225 @@
+{
+  "synthetic_fixture_only": true,
+  "graph_untyped_substitution_confirmed": true,
+  "graph_excludes_longer_completion": true,
+  "full_prefix_ordered_parity_queries": 6,
+  "adapter_matches_pinned_cli": true,
+  "raw": {
+    "cps": {
+      "か": {
+        "engine_ns": 50300,
+        "wall_ns": 146400,
+        "nodes": 1,
+        "mismatched_nodes": 0,
+        "choices": [
+          "か"
+        ]
+      },
+      "かき": {
+        "engine_ns": 15500,
+        "wall_ns": 83700,
+        "nodes": 3,
+        "mismatched_nodes": 0,
+        "choices": [
+          "かき"
+        ]
+      },
+      "かく": {
+        "engine_ns": 13200,
+        "wall_ns": 73200,
+        "nodes": 3,
+        "mismatched_nodes": 0,
+        "choices": [
+          "かく"
+        ]
+      },
+      "さし": {
+        "engine_ns": 11000,
+        "wall_ns": 70400,
+        "nodes": 2,
+        "mismatched_nodes": 0,
+        "choices": [
+          "さし"
+        ]
+      },
+      "さしすせそ": {
+        "engine_ns": 11200,
+        "wall_ns": 70200,
+        "nodes": 4,
+        "mismatched_nodes": 0,
+        "choices": []
+      },
+      "あ": {
+        "engine_ns": 6000,
+        "wall_ns": 66000,
+        "nodes": 1,
+        "mismatched_nodes": 0,
+        "choices": [
+          "あ"
+        ]
+      }
+    },
+    "graph": {
+      "か": {
+        "engine_ns": 56800,
+        "wall_ns": 144400,
+        "nodes": 1,
+        "mismatched_nodes": 0,
+        "choices": [
+          "か"
+        ]
+      },
+      "かき": {
+        "engine_ns": 23000,
+        "wall_ns": 83300,
+        "nodes": 4,
+        "mismatched_nodes": 1,
+        "choices": [
+          "かき",
+          "かく"
+        ]
+      },
+      "かく": {
+        "engine_ns": 25800,
+        "wall_ns": 81300,
+        "nodes": 4,
+        "mismatched_nodes": 1,
+        "choices": [
+          "かく",
+          "かき"
+        ]
+      },
+      "さし": {
+        "engine_ns": 9600,
+        "wall_ns": 60700,
+        "nodes": 1,
+        "mismatched_nodes": 0,
+        "choices": []
+      },
+      "さしすせそ": {
+        "engine_ns": 15500,
+        "wall_ns": 70900,
+        "nodes": 4,
+        "mismatched_nodes": 0,
+        "choices": []
+      },
+      "あ": {
+        "engine_ns": 8100,
+        "wall_ns": 57400,
+        "nodes": 1,
+        "mismatched_nodes": 0,
+        "choices": [
+          "あ"
+        ]
+      }
+    },
+    "lexical": {
+      "か": {
+        "engine_ns": 57700,
+        "wall_ns": 141000,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": [
+          "か",
+          "かき",
+          "かきく",
+          "かく"
+        ]
+      },
+      "かき": {
+        "engine_ns": 10700,
+        "wall_ns": 71700,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": [
+          "かき",
+          "かきく"
+        ]
+      },
+      "かく": {
+        "engine_ns": 8600,
+        "wall_ns": 61700,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": [
+          "かく"
+        ]
+      },
+      "さし": {
+        "engine_ns": 7800,
+        "wall_ns": 67300,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": []
+      },
+      "さしすせそ": {
+        "engine_ns": 7500,
+        "wall_ns": 79300,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": []
+      },
+      "あ": {
+        "engine_ns": 5100,
+        "wall_ns": 65900,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": []
+      }
+    },
+    "lexical-fullprefix": {
+      "か": {
+        "engine_ns": 132900,
+        "wall_ns": 263000,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": [
+          "か",
+          "かき",
+          "かきく",
+          "かく"
+        ]
+      },
+      "かき": {
+        "engine_ns": 13400,
+        "wall_ns": 108200,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": [
+          "かき",
+          "かきく"
+        ]
+      },
+      "かく": {
+        "engine_ns": 9000,
+        "wall_ns": 84000,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": [
+          "かく"
+        ]
+      },
+      "さし": {
+        "engine_ns": 6400,
+        "wall_ns": 73800,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": []
+      },
+      "さしすせそ": {
+        "engine_ns": 5600,
+        "wall_ns": 66600,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": []
+      },
+      "あ": {
+        "engine_ns": 4500,
+        "wall_ns": 58800,
+        "nodes": 0,
+        "mismatched_nodes": 0,
+        "choices": []
+      }
+    }
+  }
+}

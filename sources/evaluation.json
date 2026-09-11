@@ -389,6 +389,37 @@
       ],
       "leakage": "Exclude prior conversation files; flag repeated texts and cross-role repeats. No evaluation text enters production. Public AJIMEE may have upstream-author exposure; no speaker-disjoint claim.",
       "limitations": "Oracle user selection and Sudachi word boundaries. Silver conversation readings, simulated romanization/errors, explicit unreadable failures. Desktop timing excludes physical touch/rendering."
+    },
+    {
+      "id": "japanese-predictive-screen-20260911",
+      "source_ids": [
+        "real-persona-chat",
+        "asdc",
+        "kazuma-kana-kanji-evaluation"
+      ],
+      "genre": [
+        "human-casual-chat",
+        "human-task-dialogue"
+      ],
+      "role": "development",
+      "exposure": "previously-evaluated",
+      "selection": "SHA256 predictive-v1 order; 32 valid clauses and 32 words per source from prior development conversations, 2-24 raw keys, full/half/three-quarter conditions. Stop slow candidates using frozen deadlines.",
+      "files": [
+        "docs/japanese-predictive-review/manifest.json",
+        "docs/japanese-predictive-review/probes.jsonl.gz"
+      ],
+      "report_by": [
+        "source",
+        "genre",
+        "unit",
+        "input-condition",
+        "timeouts",
+        "unrun",
+        "candidate-order",
+        "latency"
+      ],
+      "leakage": "Consumed development references; no new holdout claim. Prior holdouts reused only as explicit behavior-parity regression. No production use.",
+      "limitations": "Early rejection prevents population coverage estimates for predictive modes. Synthetic trie validates mechanism only. No phone latency measured."
     }
   ]
 }

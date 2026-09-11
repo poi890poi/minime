@@ -1,0 +1,21 @@
+{
+  "baseline": "1b3aa8d",
+  "screen_tests": 3,
+  "existing_evaluator_tests": 7,
+  "source_tests": 19,
+  "posting_lists_verified": 745964,
+  "posting_tokens_verified": 1289075,
+  "unreachable_final_tokens_preserved": 1,
+  "synthetic_fixture": "passed graph contract, six prefix-equivalence queries and pinned CLI output comparison",
+  "candidate_list_parity": "FAIL: 195 primary regression rows plus 4 development screen rows differ",
+  "primary_changed_query_events": 201,
+  "primary_changed_top8_membership_events": 28,
+  "primary_changed_reference_ranks_or_outcomes": 0,
+  "timing_passes_per_variant": 3,
+  "performance_accepted_for_integration": false,
+  "production_input_ledger": "unchanged",
+  "dictionary_bytes": "unchanged",
+  "phone": "explicit release acknowledged; no reservation or operations",
+  "core_and_android_code": "unchanged; prior core/native gates not rerun for evaluation-only work",
+  "candidate_decision": "retain isolated experiment; do not integrate until ordering is deterministic and prediction work is bounded"
+}
