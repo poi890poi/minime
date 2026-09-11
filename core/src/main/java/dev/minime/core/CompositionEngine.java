@@ -222,12 +222,16 @@ public final class CompositionEngine {
         selectChoice(candidates.get(index));
     }
     private void selectChoice(Candidate choice) {
+        if(!choice.validConsumption(raw))return;
         clearAssistance();
         if(partial(choice) && !literalField && !englishMode && !choice.literal) {
             compositionId++;
-            String reading=raw.substring(0,choice.consumed),rest=raw.substring(choice.consumed).replaceFirst("^'+","");
+            String reading=raw.substring(0,choice.consumed),rest=raw.substring(choice.consumed);
+            // Legacy Pinyin decoder offsets exclude their following delimiter.
+            // Other providers own their exact raw span, including separators.
+            if(!choice.supplemental && raw.matches("[a-zv]+(?:'[a-zv]+)*"))rest=rest.replaceFirst("^'+","");
             acceptedPhrase(reading,choice);
-            if(!privateField)learning.choose(contextKey(),reading,choice.text);
+            learnChoice(reading,choice);
             editor.commit(choice.text);context=privateField?"":tail(context+choice.text,3);afterLatin=false;
             raw=rest;completionBoundary=false;committedEnglishWord=false;
             editor.composing(raw);refresh();return;
@@ -259,20 +263,17 @@ public final class CompositionEngine {
         }
     }
     private boolean partial(Candidate c) {
-        return c.consumed>0 && c.consumed<raw.length() && raw.matches("[a-zv]+(?:'[a-zv]+)*");
+        return c.validConsumption(raw) && c.consumed>0 && c.consumed<raw.length();
     }
     private void commitDefault(boolean withSpace) {
         if (raw.isEmpty()) return;
         Candidate c = candidates.isEmpty() || (automaticCorrection && !withSpace) ? new Candidate(raw, true, 0) : candidates.get(preferred);
-        if(partial(c))c=new Candidate(raw,true,0);
+        if(!c.validConsumption(raw) || partial(c))c=new Candidate(raw,true,0);
         commit(c, withSpace && c.literal, false);
     }
     private void commit(Candidate c, boolean withSpace, boolean explicit) {
         acceptedPhrase(raw,c);
-        if(explicit && !privateField && !literalField) {
-            if(focused(c) && focusedLearning)learning.choose("FOCUS:"+c.pack,raw,choiceIdentity(c));
-            else if(!c.supplemental)learning.choose(contextKey(),raw,c.text);
-        }
+        if(explicit)learnChoice(raw,c);
         editor.commit(c.text + (withSpace ? " " : ""));
         committedEnglishWord=false;
         if(englishMode && !literalField && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
@@ -290,6 +291,11 @@ public final class CompositionEngine {
         return !inputMode.pack.isEmpty()?"MODE:"+inputMode.id+":"+base:base;
     }
     private static String choiceIdentity(Candidate c) {return c.pair==null?c.text:c.pair.phonetic;}
+    private void learnChoice(String reading,Candidate c) {
+        if(privateField || literalField)return;
+        if(focused(c) && focusedLearning)learning.choose("FOCUS:"+c.pack,reading,choiceIdentity(c));
+        else if(!c.supplemental)learning.choose(contextKey(),reading,c.text);
+    }
     private int choiceVotes(Candidate c) {
         if(privateField)return 0;
         if(focused(c))return focusedLearning?learning.count("FOCUS:"+c.pack,raw,choiceIdentity(c)):0;
@@ -349,17 +355,18 @@ public final class CompositionEngine {
         }
     }
     private void applyCandidates(List<Candidate> converted) {
+        converted.removeIf(c->!c.validConsumption(raw));
         List<Candidate> addonMatches=new ArrayList<>();
         for(Candidate c:converted)if(c.supplemental)addonMatches.add(c);
         converted.removeIf(c->c.supplemental);
         boolean bpmf=raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
-        List<Candidate> custom=!privateField && !literalField?learning.custom(raw):Collections.emptyList();
+        List<Candidate> custom=new ArrayList<>(!privateField && !literalField?learning.custom(raw):Collections.emptyList());
+        custom.removeIf(c->!c.validConsumption(raw));
         if(englishMode) {
             // Custom output has no language tag; literal controls acceptance, not language.
             // Filter before it can influence ranking or suppress English restoration.
             custom=new ArrayList<>(custom);custom.removeIf(c->!englishSuggestion(c));
         }
-        converted.removeIf(c->c.consumed<0 || c.consumed>raw.length() || (c.consumed>0 && (c.literal || bpmf || !raw.matches("[a-zv]+(?:'[a-zv]+)*"))));
         if (!englishMode) converted.addAll(custom);
         if (!privateField) converted.sort(Comparator.comparingInt((Candidate c) -> learning.count(contextKey(), raw, c.text)).reversed()
             .thenComparing(Comparator.comparingDouble((Candidate c) -> c.score).reversed()));
@@ -441,6 +448,7 @@ public final class CompositionEngine {
             Set<String> promoted=new HashSet<>();int partialPreviews=0;
             List<Candidate> unrankedGlyphs=new ArrayList<>();
             for(Candidate c:supplements) {
+                if(!c.validConsumption(raw))continue;
                 // Slot zero owns literal recovery, not a dictionary identity.
                 // Equal spelling must retain an add-on's pack, paired output
                 // and acceptance/learning semantics alongside the raw choice.

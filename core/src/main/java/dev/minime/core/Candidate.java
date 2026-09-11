@@ -5,7 +5,8 @@ public final class Candidate {
     public final boolean literal;
     public final double score;
     final String reading;
-    /** ASCII phonetic prefix consumed by an explicit choice; zero means the whole token. */
+    /** Raw UTF-16 offset consumed by an explicit choice; zero means the whole token.
+     * Providers own alignment; a nonzero offset must lie on a code-point boundary. */
     public final int consumed;
     /** Supplemental identity; focused choices learn in their own language namespace. */
     public final boolean supplemental;
@@ -58,6 +59,10 @@ public final class Candidate {
     Candidate inPack(String value) {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,value,languageCharacter);}
     Candidate asLanguageCharacter() {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,true);}
     Candidate consuming(int count) {return new Candidate(text,literal,score,reading,count,supplemental,abbreviated,composed,incomplete,pair,pack,languageCharacter);}
+    boolean validConsumption(String raw) {
+        return consumed==0 || (!literal && consumed>0 && consumed<=raw.length()
+            && !(consumed<raw.length() && Character.isHighSurrogate(raw.charAt(consumed-1)) && Character.isLowSurrogate(raw.charAt(consumed))));
+    }
     Candidate primary(boolean han) {return pair==null?this:pairedText(han?pair.han:pair.phonetic);}
     private Candidate pairedText(String value) {return text.equals(value)?this:new Candidate(value,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,languageCharacter);}
     public String alternateText() {return pair==null?"":text.equals(pair.phonetic)?pair.han:pair.phonetic;}

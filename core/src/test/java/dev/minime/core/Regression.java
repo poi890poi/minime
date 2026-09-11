@@ -57,6 +57,7 @@ public final class Regression {
         ModePriorityRegression.run();
         JapaneseBasicsRegression.run();
         JapaneseKanaRegression.run();
+        PrefixAcceptanceRegression.run();
         PairedFormsRegression.run();
         System.out.printf(Locale.ROOT, "Dictionary startup %.0f ms%n", (System.nanoTime()-start)/1e6);
         for (String line : Files.readAllLines(Paths.get("core/src/test/resources/mixed-corpus.tsv"), StandardCharsets.UTF_8)) {
