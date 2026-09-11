@@ -1,0 +1,96 @@
+{
+  "rows": 61941,
+  "examples": {
+    "real-persona-chat/development/word": 384,
+    "real-persona-chat/development/two-token": 128,
+    "real-persona-chat/development/clause": 128,
+    "real-persona-chat/holdout/word": 768,
+    "real-persona-chat/holdout/two-token": 256,
+    "real-persona-chat/holdout/clause": 256,
+    "asdc/development/word": 384,
+    "asdc/development/two-token": 128,
+    "asdc/development/clause": 128,
+    "asdc/holdout/word": 768,
+    "asdc/holdout/two-token": 256,
+    "asdc/holdout/clause": 256,
+    "suisiann-thousand/development/word": 338,
+    "suisiann-thousand/development/clause": 249,
+    "suisiann-thousand/holdout/word": 720,
+    "suisiann-thousand/holdout/clause": 580,
+    "taiwanese-basic/regression/clause": 1024,
+    "taiwanese-basic/regression/word": 1024
+  },
+  "excluded": {
+    "real-persona-chat/unreadable_or_oov_token": 677,
+    "real-persona-chat/romanization_roundtrip": 123,
+    "asdc/romanization_roundtrip": 264,
+    "asdc/unreadable_or_oov_token": 731,
+    "suisiann-thousand/non_taiwanese_or_unconvertible_word": 235,
+    "taiwanese-basic/unsupported_example_syntax": 4624,
+    "real-persona-chat/empty_error_input": 31,
+    "asdc/empty_error_input": 52,
+    "suisiann-thousand/empty_error_input": 79,
+    "taiwanese-basic/empty_error_input": 97
+  },
+  "turns": 6935,
+  "versions": {
+    "sudachipy": "0.6.10",
+    "sudachidict_core": "20250129",
+    "jaconv": "0.4.0",
+    "tai5-uan5-gian5-gi2-kang1-ku7": "1.1.1",
+    "KeSi": "1.6.0"
+  },
+  "input_sha256": "92fed5d6b03e2dc9adc5c594f8ecb39f9fcfa756ecd636879def90005b0cda3a",
+  "source_downloads": [
+    {
+      "repo": "nu-dialogue/real-persona-chat",
+      "revision": "28d0b6b3865b29cabc26c230a2db37cdf315e937",
+      "url": "https://codeload.github.com/nu-dialogue/real-persona-chat/zip/28d0b6b3865b29cabc26c230a2db37cdf315e937",
+      "sha256": "2fb4fe5c16e6722a0840fe6924113965cffe0b6b9957e436fdb3886fae2743dc",
+      "bytes": 25981430
+    },
+    {
+      "repo": "megagonlabs/asdc",
+      "revision": "f37d6575c73602adcb8ae3687520726793baa672",
+      "url": "https://codeload.github.com/megagonlabs/asdc/zip/f37d6575c73602adcb8ae3687520726793baa672",
+      "sha256": "9dc1b4a7c8cd72b65b889f630f57a3b585ae6c963773b97720f6e2777b27171b",
+      "bytes": 10539865
+    },
+    {
+      "repo": "Taiwanese-Corpus/Lan-Lai-Oh-Taigi",
+      "revision": "3a8ffeb6e2e9d5c7eeb54173a41d6ad06b325d8b",
+      "url": "https://raw.githubusercontent.com/Taiwanese-Corpus/Lan-Lai-Oh-Taigi/3a8ffeb6e2e9d5c7eeb54173a41d6ad06b325d8b/README.md",
+      "sha256": "d256f3b203a3da8740394588a41ec832850eb41c973012a0676a48c92ce0cfa7",
+      "bytes": 2149
+    },
+    {
+      "repo": "Taiwanese-Corpus/Lan-Lai-Oh-Taigi",
+      "revision": "3a8ffeb6e2e9d5c7eeb54173a41d6ad06b325d8b",
+      "url": "https://raw.githubusercontent.com/Taiwanese-Corpus/Lan-Lai-Oh-Taigi/3a8ffeb6e2e9d5c7eeb54173a41d6ad06b325d8b/csv/3-1.csv",
+      "sha256": "ff938f81603feea4c61a0868bba3b41b2df299742ec9897d97933a89066b4059",
+      "bytes": 59632
+    },
+    {
+      "repo": "Taiwanese-Corpus/Lan-Lai-Oh-Taigi",
+      "revision": "3a8ffeb6e2e9d5c7eeb54173a41d6ad06b325d8b",
+      "url": "https://raw.githubusercontent.com/Taiwanese-Corpus/Lan-Lai-Oh-Taigi/3a8ffeb6e2e9d5c7eeb54173a41d6ad06b325d8b/csv/3-2.csv",
+      "sha256": "d7f9f288af1636b9d9284e992cba20ddef75011e9579b4517eb53cd3f98dde63",
+      "bytes": 72061
+    },
+    {
+      "repo": "SuiSiann/SuiSiann-TsitTshing",
+      "revision": "242cf1ef7ce4679e7301f08353bc054791b79840",
+      "url": "https://codeload.github.com/SuiSiann/SuiSiann-TsitTshing/zip/242cf1ef7ce4679e7301f08353bc054791b79840",
+      "sha256": "99483bdbfbcfd12d6964c80d6ee1287188fc810cc69170080989bb005b728c72",
+      "bytes": 2543937
+    }
+  ],
+  "taiwanese_source_sha256": "16e9c0e20b08a6e46eeb3c49f8181f4973c1bd4a36a2bb6adf40eef39ab8c6a5",
+  "modern_taiwanese_source_sha256": "99483bdbfbcfd12d6964c80d6ee1287188fc810cc69170080989bb005b728c72",
+  "holdout_targets_also_in_development": 287,
+  "limitations": [
+    "Japanese kanji readings are silver, not human gold; source words/clauses are naturally occurring but the typed romanization/errors are simulated.",
+    "Modern Taiwanese is authored situational text, not spontaneous multi-turn conversation; historical Taiwanese examples additionally share production lineage.",
+    "Conversation split preserves whole dialogues but does not enforce speaker-disjoint or phrase-disjoint partitions. Repeated greetings are not removed to game natural coverage."
+  ]
+}

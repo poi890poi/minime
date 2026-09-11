@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "inputs.tsv": true,
+    "manifest.json": true,
+    "split-plan.json": true,
+    "orthography-audit.json": true,
+    "references.jsonl.gz": true,
+    "turns.jsonl.gz": true
+  },
+  "comparison": "Exact bytes; gzip decompressed before comparison. Regenerated from pinned sources and tool versions; no IME calls."
+}

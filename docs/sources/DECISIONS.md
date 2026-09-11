@@ -7,8 +7,8 @@ Generated from sources/catalog.json. Retain is scoped to the listed use; pilot i
 | McBopomofo | retain | vocabulary, readings, frequency, evaluation | Retain the Taiwan input-method foundation. |
 | Rudy / OSM Taiwan POI | retain | vocabulary, readings, evaluation | Preserve the high-quality geography source and separate ODbL pack. |
 | AOSP LatinIME English | retain | vocabulary, frequency | Retain English-specific source. |
-| ChhoeTaigi iTaigi | retain | vocabulary, readings, evaluation | Retain original POJ and source attribution. |
-| Taiwanese beginner vocabulary | retain | vocabulary, readings, evaluation | Retain POJ; do not infer modern popularity. |
+| ChhoeTaigi iTaigi | retain | vocabulary, readings, evaluation | Retain original POJ and source attribution. Recover all aligned slash-separated POJ readings and supported Unicode-input spellings through a shared parser; preserve source tones and numeric aliases. |
+| Taiwanese beginner vocabulary | retain | vocabulary, readings, evaluation | Retain POJ; do not infer modern popularity. Recover all aligned slash-separated POJ readings and supported Unicode-input spellings through a shared parser; preserve source tones and numeric aliases. |
 | JMDICT | retain | vocabulary, readings, evaluation | All source-common vocabulary without a word or part-of-speech allowlist; preserve reading/sense restrictions. Output source kana and compatible kanji only, retaining romanization as input aliases rather than generated output (docs/japanese-output/RESULTS.md). |
 | JMNEDICT | retain | vocabulary, readings, evaluation | Retain Japanese-specific sources and their existing eligibility rules. Output source kana and compatible spellings, not generated romanization; preserve romanized input aliases (docs/japanese-output/RESULTS.md). |
 | WanaKana | retain | tooling, readings, evaluation | Retain language tooling. |
@@ -29,5 +29,9 @@ Generated from sources/catalog.json. Retain is scoped to the listed use; pilot i
 | MOE / Moedict dictionary data | reference | evaluation | Use as a reference; establish permissible derivative use before adding an importer. |
 | UD English GUM evaluation | reference | evaluation | Reuse existing genre-separated regression evidence. |
 | Taiwanese source-attested paired output | retain | vocabulary, readings | Optional direct alternative output for existing Taiwanese candidates; does not change ranking or primary phonetic output. |
-| 台華線頂對照典 / Taihoa | retain | readings, vocabulary, evaluation | Dedicated Taiwanese mode needs an extensive authored dictionary; import original headwords and aligned variants without Mandarin gloss, length-in-syllables or frequency eligibility gates. |
+| 台華線頂對照典 / Taihoa | retain | readings, vocabulary, evaluation | Dedicated Taiwanese mode needs an extensive authored dictionary; import original headwords and aligned variants without Mandarin gloss, length-in-syllables or frequency eligibility gates. Recover all aligned slash-separated POJ readings and supported Unicode-input spellings through a shared parser; preserve source tones and numeric aliases. |
 | KANJIDIC2 | retain | vocabulary, readings, frequency | User requested very common kanji in Japanese mode. Fixed top-500 source-rank cutoff before evaluation; no per-character selections. |
+| RealPersonaChat | reference | evaluation, discovery | Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md. |
+| Accommodation Search Dialog Corpus | reference | evaluation, discovery | Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md. |
+| 媠聲一千：阮家己的造句 | reference | evaluation, discovery | Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md. |
+| Tsay / TAICORP spontaneous Taiwanese conversations | hold | evaluation, discovery | Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md. |

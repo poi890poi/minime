@@ -813,6 +813,114 @@
       "limitations": "Historical newspaper frequency is not modern conversation frequency or a reading-level popularity ranking. Dotted and affix readings are excluded.",
       "reason": "User requested very common kanji in Japanese mode. Fixed top-500 source-rank cutoff before evaluation; no per-character selections.",
       "addon_prefixes": []
+    },
+    {
+      "id": "real-persona-chat",
+      "name": "RealPersonaChat",
+      "origin": "japan-authored",
+      "decision": "reference",
+      "uses": [
+        "evaluation",
+        "discovery"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/nu-dialogue/real-persona-chat"
+      },
+      "evidence": [
+        "https://github.com/nu-dialogue/real-persona-chat"
+      ],
+      "editorial": "Public anonymized human casual dialogue collected by the Nagoya University dialogue group.",
+      "coverage": "192 Japanese conversations total across this source and ASDC; exact source splits in split-plan.json.",
+      "limitations": "Not spontaneous speech; speakers recur across conversations. Kanji readings are independently generated silver annotations.",
+      "reason": "Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/language-contract-benchmark/conversations/real-persona-chat-README.md",
+        "docs/language-contract-benchmark/conversations/real-persona-chat-LICENSE"
+      ]
+    },
+    {
+      "id": "asdc",
+      "name": "Accommodation Search Dialog Corpus",
+      "origin": "japan-authored",
+      "decision": "reference",
+      "uses": [
+        "evaluation",
+        "discovery"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/megagonlabs/asdc"
+      },
+      "evidence": [
+        "https://github.com/megagonlabs/asdc"
+      ],
+      "editorial": "Human customer/operator role-play collected and documented by Megagon Labs.",
+      "coverage": "210 main source dialogues; 96 systematically selected, separate casual/task reporting.",
+      "limitations": "Accommodation-only role-play; formal style and repeated templates. Not broad spontaneous conversation.",
+      "reason": "Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/language-contract-benchmark/conversations/asdc-README.md",
+        "docs/language-contract-benchmark/conversations/asdc-LICENSE.txt"
+      ]
+    },
+    {
+      "id": "suisiann-thousand",
+      "name": "媠聲一千：阮家己的造句",
+      "origin": "taiwan-authored",
+      "decision": "reference",
+      "uses": [
+        "evaluation",
+        "discovery"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/SuiSiann/SuiSiann-TsitTshing"
+      },
+      "evidence": [
+        "https://github.com/SuiSiann/SuiSiann-TsitTshing"
+      ],
+      "editorial": "Locally authored everyday examples with parallel Han and supplied Tâi-lô; named contributors in upstream README.",
+      "coverage": "18 aligned source files; 1,887 word/clause references selected by general rules before query evaluation.",
+      "limitations": "Authored situations, not recorded multi-turn conversation; loanword lists acknowledge iTaigi/MOE. Supplied readings converted to POJ with pinned independent tools.",
+      "reason": "Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/language-contract-benchmark/conversations/suisiann-thousand-README.md"
+      ]
+    },
+    {
+      "id": "tsay-conversation-evaluation",
+      "name": "Tsay / TAICORP spontaneous Taiwanese conversations",
+      "origin": "taiwan-authored",
+      "decision": "hold",
+      "uses": [
+        "evaluation",
+        "discovery"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-NC-SA-3.0",
+        "status": "restricted",
+        "evidence": "https://talkbank.org/phon/access/Chinese/Taiwanese/Tsay.html"
+      },
+      "evidence": [
+        "https://talkbank.org/phon/access/Chinese/Taiwanese/Tsay.html"
+      ],
+      "editorial": "Documented family conversations collected in Chiayi by Jane Tsay and collaborators.",
+      "coverage": "No transcript data acquired: official download returned an authentication page.",
+      "limitations": "Access and restricted use unresolved; external-processing restrictions. No corpus text may be added to evaluation or production from this entry.",
+      "reason": "Evaluation only; source/reading independence and rights audited in docs/language-contract-benchmark/CONVERSATION_DATA.md.",
+      "addon_prefixes": [],
+      "audit_files": []
     }
   ]
 }

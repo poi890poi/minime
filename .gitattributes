@@ -77,3 +77,8 @@ docs/japanese-continuity/*.json text eol=lf
 docs/language-contract-review/*.tsv -text whitespace=-blank-at-eol
 docs/language-contract-review/*.json -text
 docs/language-contract-review/*.java -text
+
+# Freeze evaluation input bytes and preserve empty context columns in TSVs.
+docs/language-contract-benchmark/*.tsv -text whitespace=-blank-at-eol
+docs/language-contract-benchmark/*.json -text
+docs/language-contract-benchmark/conversations/** -text -whitespace

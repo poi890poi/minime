@@ -318,6 +318,43 @@
       ],
       "leakage": "Production-source retrieval probes; not independent language accuracy, commonness or a fresh holdout.",
       "limitations": "Does not measure source omissions, usage frequencies, spontaneous conversation, essay quality, partial-input coverage, or physical touch latency."
+    },
+    {
+      "id": "language-contract-conversations-20260911",
+      "source_ids": [
+        "real-persona-chat",
+        "asdc",
+        "suisiann-thousand",
+        "taiwanese-basic"
+      ],
+      "genre": [
+        "human-casual-chat",
+        "human-task-dialogue",
+        "authored-everyday-utterance",
+        "historical-teaching-example"
+      ],
+      "role": "development",
+      "exposure": "inspected",
+      "selection": "Frozen source-conversation/file SHA256 splits; source-bound word/two-token/clause sampling and deterministic error conditions. Separate originally fresh holdout partition in references. No production queries used for reference selection.",
+      "files": [
+        "docs/language-contract-benchmark/conversations/manifest.json",
+        "docs/language-contract-benchmark/conversations/split-plan.json",
+        "docs/language-contract-benchmark/conversations/inputs.tsv",
+        "docs/language-contract-benchmark/conversations/references.jsonl.gz",
+        "docs/language-contract-benchmark/conversations/turns.jsonl.gz",
+        "docs/language-contract-benchmark/conversations/orthography-audit.json"
+      ],
+      "report_by": [
+        "source",
+        "genre",
+        "role",
+        "reference-status",
+        "input-condition",
+        "unit",
+        "production-overlap"
+      ],
+      "leakage": "Japanese conversations and modern Taiwanese source files disjoint between development and initial holdout, with recurring speakers/phrases explicitly allowed. Historical beginner material shares production lineage. No new corpus text is used as production vocabulary or training.",
+      "limitations": "Japanese Kanji reading annotations are silver. Modern Taiwanese examples are authored situations rather than spontaneous multi-turn dialogue. No physical touch observations or human community-usage labels."
     }
   ]
 }
