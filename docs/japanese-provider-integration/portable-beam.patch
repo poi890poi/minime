@@ -1,0 +1,11 @@
+--- a/src/path_algorithm/find_path.cpp
++++ b/src/path_algorithm/find_path.cpp
+@@ -178,7 +178,7 @@
+             // pruning (do not prune EOS layer)
+             if (i <= length && beamWidth > 0 && static_cast<int>(nodes.size()) > beamWidth)
+             {
+-                std::sort(nodes.begin(), nodes.end(), [](const Node &a, const Node &b)
++                std::stable_sort(nodes.begin(), nodes.end(), [](const Node &a, const Node &b)
+                           { return a.f < b.f; });
+                 nodes.resize(static_cast<size_t>(beamWidth));
+             }

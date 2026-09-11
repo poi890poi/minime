@@ -103,3 +103,8 @@ docs/japanese-bounded-prediction/*.json -text whitespace=cr-at-eol
 docs/japanese-bounded-prediction/*.jsonl.gz -text
 docs/japanese-bounded-prediction/*.txt -text whitespace=cr-at-eol
 docs/japanese-bounded-prediction/*.patch -text whitespace=-blank-at-eol,cr-at-eol
+
+docs/japanese-provider-integration/*.json -text whitespace=cr-at-eol
+docs/japanese-provider-integration/*.jsonl.gz -text
+docs/japanese-provider-integration/*.txt -text whitespace=cr-at-eol
+docs/japanese-provider-integration/*.patch -text whitespace=-blank-at-eol,cr-at-eol
