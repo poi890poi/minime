@@ -942,7 +942,7 @@
       ],
       "editorial": "Existing Japanese A* converter and reproducible compressed dictionary builders.",
       "coverage": "Non-neural C++ converter; pinned source, no production dependency.",
-      "limitations": "Uses Mozc data but is not the Mozc engine; no native Android timing established. Unbounded predictive APIs rejected on latency/semantics. Stable A* ties resolve the isolated posting-index parity failure across 18,730 regression records; no production promotion. Capped lexical prediction meets its desktop latency screen but aborts half the development probes and loses coverage; rejected as the main predictor.",
+      "limitations": "Uses Mozc data but is not the Mozc engine. Unbounded/capped lexical prediction rejected. Stable A* and beam ties pass consumed-regression and phone ordering checks. Instrumentation-only SM-G781B native p95 about 1 ms; full burst pipeline p95 51-54 ms misses its admission gate. No ordinary/release provider activation or fresh ranking holdout.",
       "reason": "Isolated engine and completion evaluation; SOURCES.md records scope and no production promotion.",
       "addon_prefixes": [],
       "audit_files": [
@@ -958,7 +958,11 @@
         "docs/japanese-bounded-prediction/README.md",
         "docs/japanese-bounded-prediction/NOTICE.md",
         "docs/japanese-bounded-prediction/cooperative-budget.patch",
-        "docs/japanese-bounded-prediction/Budget.hpp"
+        "docs/japanese-bounded-prediction/Budget.hpp",
+        "docs/japanese-provider-integration/PLAN.md",
+        "docs/japanese-provider-integration/NOTICE.md",
+        "docs/japanese-provider-integration/README.md",
+        "docs/japanese-provider-integration/portable-beam.patch"
       ]
     },
     {

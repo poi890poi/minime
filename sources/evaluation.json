@@ -420,6 +420,40 @@
       ],
       "leakage": "Consumed development references; no new holdout claim. Prior holdouts reused only as explicit behavior-parity regression. No production use.",
       "limitations": "Early rejection prevents population coverage estimates for predictive modes. Synthetic trie validates mechanism only. No phone latency measured."
+    },
+    {
+      "id": "japanese-provider-phone-stream-20260912",
+      "source_ids": [
+        "real-persona-chat",
+        "asdc",
+        "kazuma-kana-kanji-evaluation",
+        "mozc-conversion-evaluation"
+      ],
+      "genre": [
+        "human-casual-chat",
+        "human-task-dialogue"
+      ],
+      "role": "development",
+      "exposure": "previously-evaluated",
+      "selection": "Exact replay of the previously frozen 64-clause/1311-key development timing stream. Preserve initial desktop references and phone results; stable beam follow-up changes only expected converter output, not inputs.",
+      "files": [
+        "docs/japanese-provider-integration/manifest.json",
+        "docs/japanese-provider-integration/stream.jsonl.gz",
+        "docs/japanese-provider-integration/manifest-initial.json",
+        "docs/japanese-provider-integration/stream-initial.jsonl.gz"
+      ],
+      "report_by": [
+        "source",
+        "input-length",
+        "cold-versus-repeat",
+        "native-versus-pipeline",
+        "candidate-order",
+        "unavailable",
+        "acceptance",
+        "genre"
+      ],
+      "leakage": "Consumed regression evidence; labels are not runtime inputs. No production corpus use or fresh holdout claim.",
+      "limitations": "Simulated romanization prefixes and burst typing; native query/worker delivery are not physical touch or display latency. No language accuracy estimate."
     }
   ]
 }

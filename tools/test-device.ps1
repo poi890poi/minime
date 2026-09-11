@@ -1,7 +1,13 @@
 param([Parameter(Mandatory=$true)][ValidateSet('RFCR91GWXLX')][string]$Serial,[string]$SdkDir=$env:ANDROID_HOME,
     [string]$TestClass='dev.minime.ime.EditorIntegrationTest,dev.minime.ime.KeyboardInteractionTest,dev.minime.ime.RimeIntegrationTest',
     [string]$AppApk='app/build/outputs/apk/debug/app-debug.apk',
-    [string]$TestApk='app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')
+    [string]$TestApk='app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk',
+    [ValidateRange(30,900)][int]$TimeoutSeconds=180,
+    [string[]]$Reports=@())
+foreach($report in $Reports) {if($report -notmatch '^[a-zA-Z0-9][a-zA-Z0-9_.-]*$'){throw 'Report must be a plain file name'}}
+# Resolve install inputs before taking a device lease or issuing any ADB command.
+$AppApk=(Resolve-Path -LiteralPath $AppApk -ErrorAction Stop).Path
+$TestApk=(Resolve-Path -LiteralPath $TestApk -ErrorAction Stop).Path
 . "$PSScriptRoot/phone-lease.ps1"
 Invoke-WithPhoneLease {
 $ErrorActionPreference='Stop'
@@ -36,10 +42,10 @@ try {
     $testProcess=Start-Process -FilePath $adb -ArgumentList @('-s',$Serial,'shell','am','instrument','-w','-e','class',$TestClass,'dev.minime.ime.test/android.test.InstrumentationTestRunner') -WindowStyle Hidden -PassThru -RedirectStandardOutput $outFile -RedirectStandardError $errFile
     $timer=[Diagnostics.Stopwatch]::StartNew()
     while(!$testProcess.WaitForExit(1000)) {
-        if($timer.Elapsed.TotalSeconds -gt 180) {
+        if($timer.Elapsed.TotalSeconds -gt $TimeoutSeconds) {
             & $adb -s $Serial shell am force-stop dev.minime.ime
             if(!$testProcess.WaitForExit(5000)) {$testProcess.Kill()}
-            throw 'Phone test exceeded 180 seconds; original preferences will be restored'
+            throw "Phone test exceeded $TimeoutSeconds seconds; original preferences will be restored"
         }
     }
     $result=Get-Content -LiteralPath $outFile
@@ -48,6 +54,10 @@ try {
 } finally {
     try {
         & $adb -s $Serial shell am force-stop dev.minime.ime
+        foreach($report in $Reports) {
+            & $adb -s $Serial pull "/sdcard/Android/data/dev.minime.ime/files/$report" (Join-Path $prefBackup $report)
+            if($LASTEXITCODE -ne 0){Write-Warning "Test report unavailable: $report"}
+        }
         foreach($name in $backedUp) {
             & $adb -s $Serial push (Join-Path $prefBackup "$name.xml") "/sdcard/Android/data/dev.minime.ime/files/restore-$name.xml" | Out-Null
             if($LASTEXITCODE -ne 0) {throw "Could not transfer $name preference backup"}
@@ -69,6 +79,7 @@ try {
             [IO.File]::WriteAllText((Join-Path $prefBackup 'display-after.txt'),$display)
             if($LASTEXITCODE -ne 0 -or $display -notmatch 'mScreenState=OFF|mActualState=OFF') {throw 'Display OFF could not be verified'}
             Write-Output 'Cleanup verified: preferences, previous IME, display OFF.'
+            Write-Output "Session evidence: $prefBackup"
         } finally {Pop-Location}
     } }
 }

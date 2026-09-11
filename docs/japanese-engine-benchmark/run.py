@@ -165,7 +165,7 @@ def distance(a, b):
     return prev[-1]
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument('engine', choices=['minime', 'kazuma', 'kazuma-indexed', 'kazuma-stable', 'kazuma-indexed-stable'])
+    p = argparse.ArgumentParser(); p.add_argument('engine', choices=['minime', 'kazuma', 'kazuma-indexed', 'kazuma-stable', 'kazuma-indexed-stable', 'kazuma-portable'])
     p.add_argument('command', choices=['completion', 'probes', 'ajimee', 'perf'])
     p.add_argument('--role', default='development', choices=['development', 'holdout']); p.add_argument('--pass-number', type=int, default=1)
     p.add_argument('--output-dir',type=Path,default=HERE)

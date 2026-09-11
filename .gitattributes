@@ -108,3 +108,5 @@ docs/japanese-provider-integration/*.json -text whitespace=cr-at-eol
 docs/japanese-provider-integration/*.jsonl.gz -text
 docs/japanese-provider-integration/*.txt -text whitespace=cr-at-eol
 docs/japanese-provider-integration/*.patch -text whitespace=-blank-at-eol,cr-at-eol
+# Keep instrumentation output verbatim, including its terminating blank lines.
+docs/japanese-provider-integration/instrumentation-*.txt -text whitespace=-blank-at-eof,cr-at-eol

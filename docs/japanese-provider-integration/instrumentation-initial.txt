@@ -1,0 +1,74 @@
+
+dev.minime.ime.JapaneseProviderPhoneTest:
+Failure in testNativeParityAndCompositionAdmission:
+junit.framework.AssertionFailedError: Desktop/phone ordered native parity expected:<0> but was:<3>
+	at dev.minime.ime.JapaneseProviderPhoneTest.testNativeParityAndCompositionAdmission(JapaneseProviderPhoneTest.java:81)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+
+dev.minime.ime.AsyncDecoderTest:..
+dev.minime.ime.EditorIntegrationTest:.......
+dev.minime.ime.KeyboardInteractionTest:.....
+Failure in testDefaultRimeAndPartialSelection:
+junit.framework.ComparisonFailure: destroyed=false focused=true attached=true expected:<你[好]> but was:<你[hao]>
+	at dev.minime.ime.KeyboardInteractionTest.expectText(KeyboardInteractionTest.java:267)
+	at dev.minime.ime.KeyboardInteractionTest.testDefaultRimeAndPartialSelection(KeyboardInteractionTest.java:316)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+........
+Failure in testExactAndApostropheChoicesLeadThroughService:
+junit.framework.ComparisonFailure: destroyed=false focused=true attached=true expected:<[don't ]> but was:<[どなた]>
+	at dev.minime.ime.KeyboardInteractionTest.expectText(KeyboardInteractionTest.java:267)
+	at dev.minime.ime.KeyboardInteractionTest.testExactAndApostropheChoicesLeadThroughService(KeyboardInteractionTest.java:601)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+.
+Error in testExplicitMixedModesKeepCompositionAndGeometry:
+java.lang.AssertionError: Visible control missing: Switch to English
+	at dev.minime.ime.KeyboardInteractionTest.node(KeyboardInteractionTest.java:86)
+	at dev.minime.ime.KeyboardInteractionTest.click(KeyboardInteractionTest.java:100)
+	at dev.minime.ime.KeyboardInteractionTest.testExplicitMixedModesKeepCompositionAndGeometry(KeyboardInteractionTest.java:229)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+..............
+Failure in testRimePhrasesAndLiteralRecovery:
+junit.framework.ComparisonFailure: destroyed=false focused=true attached=true expected:<[請幫我看一下]> but was:<[qingbangwokanyixia]>
+	at dev.minime.ime.KeyboardInteractionTest.expectText(KeyboardInteractionTest.java:267)
+	at dev.minime.ime.KeyboardInteractionTest.testRimePhrasesAndLiteralRecovery(KeyboardInteractionTest.java:332)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+...........
+dev.minime.ime.CandidateStabilityTest:.........
+dev.minime.ime.HumanInputPrecisionTest:...
+Test results for InstrumentationTestRunner=.F...............F.........F..E..............
+.F.......................
+Time: 306.635
+
+FAILURES!!!
+Tests run: 65,  Failures: 4,  Errors: 1
+
+

@@ -1,0 +1,22 @@
+[
+  {
+    "path": "app\\build\\intermediates\\apk\\debug\\app-debug.apk",
+    "bytes": 48779042,
+    "sha256": "d280af168ece8cb0a55b8a8027b6022510c703138bc9a0f5422ea313091ccf04",
+    "evaluation_assets": []
+  },
+  {
+    "path": "app\\build\\intermediates\\apk\\androidTest\\debug\\app-debug-androidTest.apk",
+    "bytes": 29204945,
+    "sha256": "eaefed84b1cec905c5db2ff1cb804ec1f839ea44fabb030e77533b8a76366c10",
+    "evaluation_assets": [
+      "assets/japanese-evaluation/connection_single_column.bin",
+      "assets/japanese-evaluation/libminime_japanese_test.so",
+      "assets/japanese-evaluation/pos_table.bin",
+      "assets/japanese-evaluation/stream.jsonl",
+      "assets/japanese-evaluation/tango.louds",
+      "assets/japanese-evaluation/token_array.bin",
+      "assets/japanese-evaluation/yomi_termid.louds"
+    ]
+  }
+]
