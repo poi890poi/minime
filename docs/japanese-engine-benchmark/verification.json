@@ -1,0 +1,46 @@
+{
+  "baseline": "52e083d",
+  "scope": "Evaluation tooling/data only; no production code, dictionary, APK or phone changes",
+  "checks": {
+    "evaluator_behavior_and_partition_tests": 7,
+    "source_framework_tests": 19,
+    "shared_core_assertions": 289460,
+    "desktop_rime_inputs": 13014,
+    "desktop_rime_native_queries": 11272,
+    "regenerated_corpus_hashes": "identical",
+    "rebuilt_converter_data_hashes": "identical",
+    "production_input_and_addon_ledgers": "unchanged",
+    "source_catalog": "34 sources, 67 pinned inputs, 8 addon groups"
+  },
+  "runs": {
+    "completion_sessions": 4096,
+    "lookup_condition_probes": 32964,
+    "external_ajimee_queries": 400,
+    "per_key_timing_samples": 15732,
+    "timing_processes": 6
+  },
+  "limits": [
+    "No Android installation or device measurements; SHINE phone reservation unreleased.",
+    "Oracle user actions are not human timings; Japanese reference readings remain silver.",
+    "Mozc actual engine and azooKey not run.",
+    "Existing converter prediction mode not run; current experiment uses CommonPrefixOnly.",
+    "Prior and newly evaluated data are now consumed regression data."
+  ],
+  "environment": {
+    "cpu_identifier": "Intel64 Family 6 Model 158 Stepping 13, GenuineIntel",
+    "timing_order": [
+      "minime-1",
+      "kazuma-1",
+      "kazuma-2",
+      "minime-2",
+      "minime-3",
+      "kazuma-3"
+    ],
+    "jvm_max_heap": "1 GiB; process RSS is not Android retained heap"
+  },
+  "failed_setup_paths": [
+    "Hechima release metadata HTTP 404; unavailable.",
+    "Sandbox blocked compiler filesystem access; build completed with approved installed-toolchain access.",
+    "VS2019 probe was not used; final source build uses GCC 10.3.0."
+  ]
+}

@@ -1,0 +1,1746 @@
+{
+  "minime": {
+    "completion": {
+      "real-persona-chat/development/clause-first": {
+        "turns": 128,
+        "complete_turns": 50,
+        "turn_rate": 0.390625,
+        "non_repeated_turns": 118,
+        "non_repeated_success": 40,
+        "clause_attempts": 188,
+        "clause_hits": 73,
+        "actions_all_attempts": {
+          "n": 128,
+          "mean": 85.9375,
+          "p50": 77,
+          "p95": 215,
+          "p99": 288,
+          "max": 290
+        },
+        "actions_successes": {
+          "n": 50,
+          "mean": 57.88,
+          "p50": 47,
+          "p95": 136,
+          "p99": 152,
+          "max": 152
+        },
+        "actions_per_reference_char_all": 4.4989775051124745,
+        "totals": {
+          "typed": 6675,
+          "selections": 754,
+          "clause_success": 73,
+          "literal_keys": 220,
+          "actions": 11000,
+          "output_chars": 2445,
+          "deletes": 3351,
+          "clause_retry": 115,
+          "missing_word": 83,
+          "unreadable_clause": 35
+        }
+      },
+      "real-persona-chat/development/word-first": {
+        "turns": 128,
+        "complete_turns": 42,
+        "turn_rate": 0.328125,
+        "non_repeated_turns": 118,
+        "non_repeated_success": 34,
+        "clause_attempts": 0,
+        "clause_hits": 0,
+        "actions_all_attempts": {
+          "n": 128,
+          "mean": 41.984375,
+          "p50": 39,
+          "p95": 95,
+          "p99": 124,
+          "max": 128
+        },
+        "actions_successes": {
+          "n": 42,
+          "mean": 29.404761904761905,
+          "p50": 26,
+          "p95": 56,
+          "p99": 58,
+          "max": 58
+        },
+        "actions_per_reference_char_all": 2.1979550102249488,
+        "totals": {
+          "typed": 3776,
+          "selections": 866,
+          "literal_keys": 220,
+          "actions": 5374,
+          "output_chars": 2445,
+          "deletes": 512,
+          "missing_word": 104,
+          "unreadable_clause": 35
+        }
+      },
+      "asdc/development/clause-first": {
+        "turns": 128,
+        "complete_turns": 22,
+        "turn_rate": 0.171875,
+        "non_repeated_turns": 113,
+        "non_repeated_success": 18,
+        "clause_attempts": 458,
+        "clause_hits": 160,
+        "actions_all_attempts": {
+          "n": 128,
+          "mean": 248.6875,
+          "p50": 217,
+          "p95": 550,
+          "p99": 810,
+          "max": 898
+        },
+        "actions_successes": {
+          "n": 22,
+          "mean": 157.1818181818182,
+          "p50": 150,
+          "p95": 290,
+          "p99": 352,
+          "max": 352
+        },
+        "actions_per_reference_char_all": 4.853918877706618,
+        "totals": {
+          "typed": 18947,
+          "deletes": 10063,
+          "clause_retry": 298,
+          "selections": 2134,
+          "missing_word": 202,
+          "literal_keys": 688,
+          "clause_success": 160,
+          "actions": 31832,
+          "output_chars": 6558,
+          "unreadable_clause": 71
+        }
+      },
+      "asdc/development/word-first": {
+        "turns": 128,
+        "complete_turns": 20,
+        "turn_rate": 0.15625,
+        "non_repeated_turns": 113,
+        "non_repeated_success": 16,
+        "clause_attempts": 0,
+        "clause_hits": 0,
+        "actions_all_attempts": {
+          "n": 128,
+          "mean": 115.9921875,
+          "p50": 102,
+          "p95": 258,
+          "p99": 382,
+          "max": 412
+        },
+        "actions_successes": {
+          "n": 20,
+          "mean": 75.3,
+          "p50": 70,
+          "p95": 162,
+          "p99": 162,
+          "max": 162
+        },
+        "actions_per_reference_char_all": 2.2639524245196707,
+        "totals": {
+          "typed": 10338,
+          "selections": 2343,
+          "deletes": 1478,
+          "missing_word": 210,
+          "literal_keys": 688,
+          "actions": 14847,
+          "output_chars": 6558,
+          "unreadable_clause": 71
+        }
+      },
+      "real-persona-chat/holdout/clause-first": {
+        "turns": 384,
+        "complete_turns": 113,
+        "turn_rate": 0.2942708333333333,
+        "non_repeated_turns": 363,
+        "non_repeated_success": 96,
+        "clause_attempts": 653,
+        "clause_hits": 196,
+        "actions_all_attempts": {
+          "n": 384,
+          "mean": 118.35677083333333,
+          "p50": 107,
+          "p95": 277,
+          "p99": 319,
+          "max": 422
+        },
+        "actions_successes": {
+          "n": 113,
+          "mean": 88.57522123893806,
+          "p50": 85,
+          "p95": 201,
+          "p99": 266,
+          "max": 312
+        },
+        "actions_per_reference_char_all": 4.954649514880628,
+        "totals": {
+          "typed": 27345,
+          "selections": 3216,
+          "clause_success": 196,
+          "actions": 45449,
+          "output_chars": 9173,
+          "deletes": 14111,
+          "clause_retry": 457,
+          "literal_keys": 777,
+          "unreadable_clause": 124,
+          "missing_word": 291
+        }
+      },
+      "real-persona-chat/holdout/word-first": {
+        "turns": 384,
+        "complete_turns": 100,
+        "turn_rate": 0.2604166666666667,
+        "non_repeated_turns": 363,
+        "non_repeated_success": 83,
+        "clause_attempts": 0,
+        "clause_hits": 0,
+        "actions_all_attempts": {
+          "n": 384,
+          "mean": 54.908854166666664,
+          "p50": 50,
+          "p95": 118,
+          "p99": 147,
+          "max": 184
+        },
+        "actions_successes": {
+          "n": 100,
+          "mean": 41.57,
+          "p50": 38,
+          "p95": 82,
+          "p99": 104,
+          "max": 104
+        },
+        "actions_per_reference_char_all": 2.2985936988989426,
+        "totals": {
+          "typed": 14945,
+          "selections": 3559,
+          "actions": 21085,
+          "output_chars": 9173,
+          "literal_keys": 777,
+          "deletes": 1804,
+          "missing_word": 340,
+          "unreadable_clause": 124
+        }
+      },
+      "asdc/holdout/clause-first": {
+        "turns": 384,
+        "complete_turns": 82,
+        "turn_rate": 0.21354166666666666,
+        "non_repeated_turns": 332,
+        "non_repeated_success": 67,
+        "clause_attempts": 1448,
+        "clause_hits": 496,
+        "actions_all_attempts": {
+          "n": 384,
+          "mean": 255.2421875,
+          "p50": 211,
+          "p95": 623,
+          "p99": 895,
+          "max": 1060
+        },
+        "actions_successes": {
+          "n": 82,
+          "mean": 123.89024390243902,
+          "p50": 110,
+          "p95": 243,
+          "p99": 551,
+          "max": 551
+        },
+        "actions_per_reference_char_all": 5.02476161181175,
+        "totals": {
+          "typed": 58627,
+          "selections": 6561,
+          "clause_success": 496,
+          "literal_keys": 2153,
+          "deletes": 30672,
+          "clause_retry": 952,
+          "actions": 98013,
+          "output_chars": 19506,
+          "missing_word": 600,
+          "unreadable_clause": 191
+        }
+      },
+      "asdc/holdout/word-first": {
+        "turns": 384,
+        "complete_turns": 73,
+        "turn_rate": 0.19010416666666666,
+        "non_repeated_turns": 332,
+        "non_repeated_success": 58,
+        "clause_attempts": 0,
+        "clause_hits": 0,
+        "actions_all_attempts": {
+          "n": 384,
+          "mean": 119.4609375,
+          "p50": 102,
+          "p95": 279,
+          "p99": 411,
+          "max": 480
+        },
+        "actions_successes": {
+          "n": 73,
+          "mean": 57.71232876712329,
+          "p50": 55,
+          "p95": 120,
+          "p99": 236,
+          "max": 236
+        },
+        "actions_per_reference_char_all": 2.351737926791756,
+        "totals": {
+          "typed": 32151,
+          "selections": 7304,
+          "literal_keys": 2153,
+          "actions": 45873,
+          "output_chars": 19506,
+          "deletes": 4265,
+          "missing_word": 623,
+          "unreadable_clause": 191
+        }
+      }
+    },
+    "probes": {
+      "real-persona-chat/development/original-kana/full": {
+        "n": 71,
+        "initial_hits": 68,
+        "after_retry_hits": 68,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 11.295774647887324,
+        "mean_deletes": 1.1126760563380282
+      },
+      "real-persona-chat/development/original-kana/half": {
+        "n": 71,
+        "initial_hits": 18,
+        "after_retry_hits": 18,
+        "changed_n": 70,
+        "changed_hits": 17,
+        "mean_typed": 5.380281690140845,
+        "mean_deletes": 4.112676056338028
+      },
+      "real-persona-chat/development/original-kana/three-quarter": {
+        "n": 71,
+        "initial_hits": 24,
+        "after_retry_hits": 24,
+        "changed_n": 70,
+        "changed_hits": 23,
+        "mean_typed": 8.056338028169014,
+        "mean_deletes": 5.71830985915493
+      },
+      "real-persona-chat/development/original-kana/omission": {
+        "n": 71,
+        "initial_hits": 9,
+        "after_retry_hits": 68,
+        "changed_n": 71,
+        "changed_hits": 9,
+        "mean_typed": 20.450704225352112,
+        "mean_deletes": 10.394366197183098
+      },
+      "real-persona-chat/development/original-kana/neighbor": {
+        "n": 71,
+        "initial_hits": 0,
+        "after_retry_hits": 68,
+        "changed_n": 71,
+        "changed_hits": 0,
+        "mean_typed": 22.591549295774648,
+        "mean_deletes": 12.408450704225352
+      },
+      "real-persona-chat/development/original-kana/transpose": {
+        "n": 71,
+        "initial_hits": 3,
+        "after_retry_hits": 68,
+        "changed_n": 68,
+        "changed_hits": 0,
+        "mean_typed": 22.52112676056338,
+        "mean_deletes": 12.338028169014084
+      },
+      "real-persona-chat/development/sudachi-silver/full": {
+        "n": 117,
+        "initial_hits": 5,
+        "after_retry_hits": 5,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 24.752136752136753,
+        "mean_deletes": 24.128205128205128
+      },
+      "real-persona-chat/development/sudachi-silver/half": {
+        "n": 117,
+        "initial_hits": 3,
+        "after_retry_hits": 3,
+        "changed_n": 117,
+        "changed_hits": 3,
+        "mean_typed": 12.128205128205128,
+        "mean_deletes": 11.88888888888889
+      },
+      "real-persona-chat/development/sudachi-silver/three-quarter": {
+        "n": 117,
+        "initial_hits": 5,
+        "after_retry_hits": 5,
+        "changed_n": 117,
+        "changed_hits": 5,
+        "mean_typed": 18.23076923076923,
+        "mean_deletes": 17.77777777777778
+      },
+      "real-persona-chat/development/sudachi-silver/omission": {
+        "n": 117,
+        "initial_hits": 3,
+        "after_retry_hits": 5,
+        "changed_n": 117,
+        "changed_hits": 3,
+        "mean_typed": 48.136752136752136,
+        "mean_deletes": 47.53846153846154
+      },
+      "real-persona-chat/development/sudachi-silver/neighbor": {
+        "n": 117,
+        "initial_hits": 0,
+        "after_retry_hits": 5,
+        "changed_n": 117,
+        "changed_hits": 0,
+        "mean_typed": 49.504273504273506,
+        "mean_deletes": 48.88034188034188
+      },
+      "real-persona-chat/development/sudachi-silver/transpose": {
+        "n": 117,
+        "initial_hits": 1,
+        "after_retry_hits": 5,
+        "changed_n": 113,
+        "changed_hits": 0,
+        "mean_typed": 49.43589743589744,
+        "mean_deletes": 48.81196581196581
+      },
+      "asdc/development/sudachi-silver/full": {
+        "n": 339,
+        "initial_hits": 46,
+        "after_retry_hits": 46,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 25.914454277286136,
+        "mean_deletes": 25
+      },
+      "asdc/development/sudachi-silver/half": {
+        "n": 339,
+        "initial_hits": 9,
+        "after_retry_hits": 9,
+        "changed_n": 339,
+        "changed_hits": 9,
+        "mean_typed": 12.728613569321533,
+        "mean_deletes": 12.501474926253687
+      },
+      "asdc/development/sudachi-silver/three-quarter": {
+        "n": 339,
+        "initial_hits": 24,
+        "after_retry_hits": 24,
+        "changed_n": 339,
+        "changed_hits": 24,
+        "mean_typed": 19.07669616519174,
+        "mean_deletes": 18.601769911504423
+      },
+      "asdc/development/sudachi-silver/omission": {
+        "n": 339,
+        "initial_hits": 6,
+        "after_retry_hits": 46,
+        "changed_n": 339,
+        "changed_hits": 6,
+        "mean_typed": 50.68141592920354,
+        "mean_deletes": 49.78466076696165
+      },
+      "asdc/development/sudachi-silver/neighbor": {
+        "n": 339,
+        "initial_hits": 0,
+        "after_retry_hits": 46,
+        "changed_n": 339,
+        "changed_hits": 0,
+        "mean_typed": 51.82890855457227,
+        "mean_deletes": 50.91445427728613
+      },
+      "asdc/development/sudachi-silver/transpose": {
+        "n": 339,
+        "initial_hits": 3,
+        "after_retry_hits": 46,
+        "changed_n": 324,
+        "changed_hits": 0,
+        "mean_typed": 51.73746312684366,
+        "mean_deletes": 50.823008849557525
+      },
+      "asdc/development/original-kana/full": {
+        "n": 119,
+        "initial_hits": 114,
+        "after_retry_hits": 114,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 12.77310924369748,
+        "mean_deletes": 1.1260504201680672
+      },
+      "asdc/development/original-kana/half": {
+        "n": 119,
+        "initial_hits": 80,
+        "after_retry_hits": 80,
+        "changed_n": 119,
+        "changed_hits": 80,
+        "mean_typed": 6.2521008403361344,
+        "mean_deletes": 1.361344537815126
+      },
+      "asdc/development/original-kana/three-quarter": {
+        "n": 119,
+        "initial_hits": 89,
+        "after_retry_hits": 89,
+        "changed_n": 119,
+        "changed_hits": 89,
+        "mean_typed": 9.252100840336135,
+        "mean_deletes": 1.781512605042017
+      },
+      "asdc/development/original-kana/omission": {
+        "n": 119,
+        "initial_hits": 48,
+        "after_retry_hits": 114,
+        "changed_n": 119,
+        "changed_hits": 48,
+        "mean_typed": 19.058823529411764,
+        "mean_deletes": 7.815126050420168
+      },
+      "asdc/development/original-kana/neighbor": {
+        "n": 119,
+        "initial_hits": 0,
+        "after_retry_hits": 114,
+        "changed_n": 119,
+        "changed_hits": 0,
+        "mean_typed": 25.54621848739496,
+        "mean_deletes": 13.899159663865547
+      },
+      "asdc/development/original-kana/transpose": {
+        "n": 119,
+        "initial_hits": 0,
+        "after_retry_hits": 114,
+        "changed_n": 119,
+        "changed_hits": 0,
+        "mean_typed": 25.54621848739496,
+        "mean_deletes": 13.899159663865547
+      },
+      "real-persona-chat/holdout/original-kana/full": {
+        "n": 197,
+        "initial_hits": 179,
+        "after_retry_hits": 179,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 11.274111675126903,
+        "mean_deletes": 1.6852791878172588
+      },
+      "real-persona-chat/holdout/original-kana/half": {
+        "n": 197,
+        "initial_hits": 45,
+        "after_retry_hits": 45,
+        "changed_n": 190,
+        "changed_hits": 38,
+        "mean_typed": 5.431472081218274,
+        "mean_deletes": 4.436548223350254
+      },
+      "real-persona-chat/holdout/original-kana/three-quarter": {
+        "n": 197,
+        "initial_hits": 58,
+        "after_retry_hits": 58,
+        "changed_n": 190,
+        "changed_hits": 51,
+        "mean_typed": 8.137055837563452,
+        "mean_deletes": 6.380710659898477
+      },
+      "real-persona-chat/holdout/original-kana/omission": {
+        "n": 197,
+        "initial_hits": 21,
+        "after_retry_hits": 179,
+        "changed_n": 197,
+        "changed_hits": 21,
+        "mean_typed": 20.730964467005077,
+        "mean_deletes": 11.248730964467006
+      },
+      "real-persona-chat/holdout/original-kana/neighbor": {
+        "n": 197,
+        "initial_hits": 0,
+        "after_retry_hits": 179,
+        "changed_n": 197,
+        "changed_hits": 0,
+        "mean_typed": 22.548223350253807,
+        "mean_deletes": 12.959390862944163
+      },
+      "real-persona-chat/holdout/original-kana/transpose": {
+        "n": 197,
+        "initial_hits": 17,
+        "after_retry_hits": 179,
+        "changed_n": 178,
+        "changed_hits": 0,
+        "mean_typed": 22.00507614213198,
+        "mean_deletes": 12.416243654822335
+      },
+      "real-persona-chat/holdout/sudachi-silver/full": {
+        "n": 456,
+        "initial_hits": 17,
+        "after_retry_hits": 17,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 27.12719298245614,
+        "mean_deletes": 26.583333333333332
+      },
+      "real-persona-chat/holdout/sudachi-silver/half": {
+        "n": 456,
+        "initial_hits": 10,
+        "after_retry_hits": 10,
+        "changed_n": 456,
+        "changed_hits": 10,
+        "mean_typed": 13.326754385964913,
+        "mean_deletes": 13.109649122807017
+      },
+      "real-persona-chat/holdout/sudachi-silver/three-quarter": {
+        "n": 456,
+        "initial_hits": 14,
+        "after_retry_hits": 14,
+        "changed_n": 456,
+        "changed_hits": 14,
+        "mean_typed": 19.971491228070175,
+        "mean_deletes": 19.607456140350877
+      },
+      "real-persona-chat/holdout/sudachi-silver/omission": {
+        "n": 456,
+        "initial_hits": 2,
+        "after_retry_hits": 17,
+        "changed_n": 456,
+        "changed_hits": 2,
+        "mean_typed": 53.18859649122807,
+        "mean_deletes": 52.64912280701754
+      },
+      "real-persona-chat/holdout/sudachi-silver/neighbor": {
+        "n": 456,
+        "initial_hits": 0,
+        "after_retry_hits": 17,
+        "changed_n": 456,
+        "changed_hits": 0,
+        "mean_typed": 54.25438596491228,
+        "mean_deletes": 53.71052631578947
+      },
+      "real-persona-chat/holdout/sudachi-silver/transpose": {
+        "n": 456,
+        "initial_hits": 0,
+        "after_retry_hits": 17,
+        "changed_n": 445,
+        "changed_hits": 0,
+        "mean_typed": 54.25438596491228,
+        "mean_deletes": 53.71052631578947
+      },
+      "asdc/holdout/original-kana/full": {
+        "n": 357,
+        "initial_hits": 350,
+        "after_retry_hits": 350,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 12.991596638655462,
+        "mean_deletes": 0.3277310924369748
+      },
+      "asdc/holdout/original-kana/half": {
+        "n": 357,
+        "initial_hits": 215,
+        "after_retry_hits": 215,
+        "changed_n": 357,
+        "changed_hits": 215,
+        "mean_typed": 6.350140056022409,
+        "mean_deletes": 1.792717086834734
+      },
+      "asdc/holdout/original-kana/three-quarter": {
+        "n": 357,
+        "initial_hits": 244,
+        "after_retry_hits": 244,
+        "changed_n": 357,
+        "changed_hits": 244,
+        "mean_typed": 9.38935574229692,
+        "mean_deletes": 2.403361344537815
+      },
+      "asdc/holdout/original-kana/omission": {
+        "n": 357,
+        "initial_hits": 123,
+        "after_retry_hits": 350,
+        "changed_n": 357,
+        "changed_hits": 123,
+        "mean_typed": 20.019607843137255,
+        "mean_deletes": 7.700280112044818
+      },
+      "asdc/holdout/original-kana/neighbor": {
+        "n": 357,
+        "initial_hits": 0,
+        "after_retry_hits": 350,
+        "changed_n": 357,
+        "changed_hits": 0,
+        "mean_typed": 25.983193277310924,
+        "mean_deletes": 13.319327731092438
+      },
+      "asdc/holdout/original-kana/transpose": {
+        "n": 357,
+        "initial_hits": 1,
+        "after_retry_hits": 350,
+        "changed_n": 356,
+        "changed_hits": 0,
+        "mean_typed": 25.96078431372549,
+        "mean_deletes": 13.296918767507004
+      },
+      "asdc/holdout/sudachi-silver/full": {
+        "n": 1091,
+        "initial_hits": 146,
+        "after_retry_hits": 146,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 25.127406049495875,
+        "mean_deletes": 24.160403299725022
+      },
+      "asdc/holdout/sudachi-silver/half": {
+        "n": 1091,
+        "initial_hits": 30,
+        "after_retry_hits": 30,
+        "changed_n": 1091,
+        "changed_hits": 30,
+        "mean_typed": 12.303391384051329,
+        "mean_deletes": 12.047662694775436
+      },
+      "asdc/holdout/sudachi-silver/three-quarter": {
+        "n": 1091,
+        "initial_hits": 78,
+        "after_retry_hits": 78,
+        "changed_n": 1091,
+        "changed_hits": 78,
+        "mean_typed": 18.461044912923924,
+        "mean_deletes": 17.94133822181485
+      },
+      "asdc/holdout/sudachi-silver/omission": {
+        "n": 1091,
+        "initial_hits": 34,
+        "after_retry_hits": 146,
+        "changed_n": 1091,
+        "changed_hits": 34,
+        "mean_typed": 48.9083409715857,
+        "mean_deletes": 47.97250229147571
+      },
+      "asdc/holdout/sudachi-silver/neighbor": {
+        "n": 1091,
+        "initial_hits": 0,
+        "after_retry_hits": 146,
+        "changed_n": 1091,
+        "changed_hits": 0,
+        "mean_typed": 50.25481209899175,
+        "mean_deletes": 49.2878093492209
+      },
+      "asdc/holdout/sudachi-silver/transpose": {
+        "n": 1091,
+        "initial_hits": 3,
+        "after_retry_hits": 146,
+        "changed_n": 1059,
+        "changed_hits": 0,
+        "mean_typed": 50.24656278643447,
+        "mean_deletes": 49.27956003666361
+      }
+    },
+    "performance": {
+      "1": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 0.32885166514111364,
+            "p50": 0.1981,
+            "p95": 0.888401,
+            "p99": 1.398699,
+            "max": 29.0974
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 0.4706800152555301,
+            "p50": 0.3152,
+            "p95": 1.1231,
+            "p99": 1.7264,
+            "max": 30.7858
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 0.21344135774218154,
+            "p50": 0.140199,
+            "p95": 0.769501,
+            "p99": 1.0484,
+            "max": 1.405799
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 0.3257588863463005,
+            "p50": 0.2351,
+            "p95": 0.9985,
+            "p99": 1.2583,
+            "max": 1.6945
+          }
+        }
+      },
+      "2": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 0.3165919046529367,
+            "p50": 0.1867,
+            "p95": 0.8854,
+            "p99": 1.449599,
+            "max": 28.2336
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 0.4521173913043478,
+            "p50": 0.2966,
+            "p95": 1.1103,
+            "p99": 1.7414,
+            "max": 29.5406
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 0.20773294508009155,
+            "p50": 0.141999,
+            "p95": 0.723,
+            "p99": 1.0193,
+            "max": 1.194601
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 0.31794057971014494,
+            "p50": 0.2366,
+            "p95": 0.9449,
+            "p99": 1.2639,
+            "max": 1.4018
+          }
+        }
+      },
+      "3": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 0.32592914950419527,
+            "p50": 0.198,
+            "p95": 0.8812,
+            "p99": 1.330299,
+            "max": 30.9891
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 0.46511334858886344,
+            "p50": 0.3145,
+            "p95": 1.133,
+            "p99": 1.6114,
+            "max": 32.3805
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 0.21548338520213578,
+            "p50": 0.1392,
+            "p95": 0.769001,
+            "p99": 1.1219,
+            "max": 1.2461
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 0.3285949656750572,
+            "p50": 0.2389,
+            "p95": 0.9848,
+            "p99": 1.3564,
+            "max": 1.5361
+          }
+        }
+      }
+    },
+    "ajimee": {
+      "True": {
+        "n": 100,
+        "top8": 2,
+        "default": 2,
+        "mean_min_cer": 0.9683637808326777,
+        "raw_over_96": 14
+      },
+      "False": {
+        "n": 100,
+        "top8": 0,
+        "default": 0,
+        "mean_min_cer": 1.0570234995462144,
+        "raw_over_96": 13
+      },
+      "within_96_keys": {
+        "n": 173,
+        "top8": 2,
+        "default": 2,
+        "mean_min_cer": 1.0184546181625491
+      }
+    }
+  },
+  "kazuma": {
+    "completion": {
+      "real-persona-chat/development/clause-first": {
+        "turns": 128,
+        "complete_turns": 91,
+        "turn_rate": 0.7109375,
+        "non_repeated_turns": 118,
+        "non_repeated_success": 81,
+        "clause_attempts": 188,
+        "clause_hits": 178,
+        "actions_all_attempts": {
+          "n": 128,
+          "mean": 38.796875,
+          "p50": 31,
+          "p95": 100,
+          "p99": 226,
+          "max": 258
+        },
+        "actions_successes": {
+          "n": 91,
+          "mean": 42.67032967032967,
+          "p50": 34,
+          "p95": 101,
+          "p99": 258,
+          "max": 258
+        },
+        "actions_per_reference_char_all": 2.031083844580777,
+        "totals": {
+          "typed": 4079,
+          "selections": 272,
+          "clause_success": 178,
+          "literal_keys": 220,
+          "actions": 4966,
+          "output_chars": 2445,
+          "deletes": 395,
+          "clause_retry": 10,
+          "unreadable_clause": 35,
+          "missing_word": 5
+        }
+      },
+      "real-persona-chat/development/word-first": {
+        "turns": 128,
+        "complete_turns": 91,
+        "turn_rate": 0.7109375,
+        "non_repeated_turns": 118,
+        "non_repeated_success": 81,
+        "clause_attempts": 0,
+        "clause_hits": 0,
+        "actions_all_attempts": {
+          "n": 128,
+          "mean": 38.9375,
+          "p50": 37,
+          "p95": 86,
+          "p99": 120,
+          "max": 126
+        },
+        "actions_successes": {
+          "n": 91,
+          "mean": 44.84615384615385,
+          "p50": 41,
+          "p95": 93,
+          "p99": 126,
+          "max": 126
+        },
+        "actions_per_reference_char_all": 2.038445807770961,
+        "totals": {
+          "typed": 3776,
+          "selections": 965,
+          "literal_keys": 220,
+          "actions": 4984,
+          "output_chars": 2445,
+          "unreadable_clause": 35,
+          "deletes": 23,
+          "missing_word": 5
+        }
+      },
+      "asdc/development/clause-first": {
+        "turns": 128,
+        "complete_turns": 77,
+        "turn_rate": 0.6015625,
+        "non_repeated_turns": 113,
+        "non_repeated_success": 64,
+        "clause_attempts": 458,
+        "clause_hits": 445,
+        "actions_all_attempts": {
+          "n": 128,
+          "mean": 97.6328125,
+          "p50": 79,
+          "p95": 230,
+          "p99": 363,
+          "max": 367
+        },
+        "actions_successes": {
+          "n": 77,
+          "mean": 99.59740259740259,
+          "p50": 89,
+          "p95": 222,
+          "p99": 367,
+          "max": 367
+        },
+        "actions_per_reference_char_all": 1.9056114669106434,
+        "totals": {
+          "typed": 10770,
+          "selections": 563,
+          "clause_success": 445,
+          "literal_keys": 688,
+          "actions": 12497,
+          "output_chars": 6558,
+          "unreadable_clause": 71,
+          "deletes": 476,
+          "clause_retry": 13,
+          "missing_word": 3
+        }
+      },
+      "asdc/development/word-first": {
+        "turns": 128,
+        "complete_turns": 77,
+        "turn_rate": 0.6015625,
+        "non_repeated_turns": 113,
+        "non_repeated_success": 64,
+        "clause_attempts": 0,
+        "clause_hits": 0,
+        "actions_all_attempts": {
+          "n": 128,
+          "mean": 106.1875,
+          "p50": 96,
+          "p95": 227,
+          "p99": 318,
+          "max": 369
+        },
+        "actions_successes": {
+          "n": 77,
+          "mean": 111.72727272727273,
+          "p50": 106,
+          "p95": 215,
+          "p99": 259,
+          "max": 259
+        },
+        "actions_per_reference_char_all": 2.0725831046050627,
+        "totals": {
+          "typed": 10338,
+          "selections": 2549,
+          "literal_keys": 688,
+          "actions": 13592,
+          "output_chars": 6558,
+          "unreadable_clause": 71,
+          "deletes": 17,
+          "missing_word": 4
+        }
+      },
+      "real-persona-chat/holdout/clause-first": {
+        "turns": 384,
+        "complete_turns": 269,
+        "turn_rate": 0.7005208333333334,
+        "non_repeated_turns": 363,
+        "non_repeated_success": 252,
+        "clause_attempts": 653,
+        "clause_hits": 623,
+        "actions_all_attempts": {
+          "n": 384,
+          "mean": 47.4921875,
+          "p50": 39,
+          "p95": 109,
+          "p99": 183,
+          "max": 225
+        },
+        "actions_successes": {
+          "n": 269,
+          "mean": 52.50185873605948,
+          "p50": 43,
+          "p95": 107,
+          "p99": 193,
+          "max": 225
+        },
+        "actions_per_reference_char_all": 1.9881173007740107,
+        "totals": {
+          "typed": 15575,
+          "selections": 874,
+          "clause_success": 623,
+          "actions": 18237,
+          "output_chars": 9173,
+          "deletes": 1011,
+          "clause_retry": 30,
+          "literal_keys": 777,
+          "unreadable_clause": 124,
+          "missing_word": 9
+        }
+      },
+      "real-persona-chat/holdout/word-first": {
+        "turns": 384,
+        "complete_turns": 266,
+        "turn_rate": 0.6927083333333334,
+        "non_repeated_turns": 363,
+        "non_repeated_success": 249,
+        "clause_attempts": 0,
+        "clause_hits": 0,
+        "actions_all_attempts": {
+          "n": 384,
+          "mean": 51.2265625,
+          "p50": 47,
+          "p95": 107,
+          "p99": 134,
+          "max": 171
+        },
+        "actions_successes": {
+          "n": 266,
+          "mean": 58.58270676691729,
+          "p50": 52,
+          "p95": 111,
+          "p99": 134,
+          "max": 171
+        },
+        "actions_per_reference_char_all": 2.144445655728769,
+        "totals": {
+          "typed": 14945,
+          "selections": 3887,
+          "actions": 19671,
+          "output_chars": 9173,
+          "literal_keys": 777,
+          "unreadable_clause": 124,
+          "deletes": 62,
+          "missing_word": 12
+        }
+      },
+      "asdc/holdout/clause-first": {
+        "turns": 384,
+        "complete_turns": 254,
+        "turn_rate": 0.6614583333333334,
+        "non_repeated_turns": 332,
+        "non_repeated_success": 210,
+        "clause_attempts": 1448,
+        "clause_hits": 1406,
+        "actions_all_attempts": {
+          "n": 384,
+          "mean": 101.86458333333333,
+          "p50": 82,
+          "p95": 269,
+          "p99": 396,
+          "max": 416
+        },
+        "actions_successes": {
+          "n": 254,
+          "mean": 91.38582677165354,
+          "p50": 80,
+          "p95": 197,
+          "p99": 302,
+          "max": 376
+        },
+        "actions_per_reference_char_all": 2.005331692812468,
+        "totals": {
+          "typed": 33587,
+          "selections": 1811,
+          "clause_success": 1406,
+          "literal_keys": 2153,
+          "actions": 39116,
+          "output_chars": 19506,
+          "unreadable_clause": 191,
+          "deletes": 1565,
+          "clause_retry": 42,
+          "missing_word": 5
+        }
+      },
+      "asdc/holdout/word-first": {
+        "turns": 384,
+        "complete_turns": 253,
+        "turn_rate": 0.6588541666666666,
+        "non_repeated_turns": 332,
+        "non_repeated_success": 209,
+        "clause_attempts": 0,
+        "clause_hits": 0,
+        "actions_all_attempts": {
+          "n": 384,
+          "mean": 110.08072916666667,
+          "p50": 96,
+          "p95": 255,
+          "p99": 362,
+          "max": 418
+        },
+        "actions_successes": {
+          "n": 253,
+          "mean": 100.71936758893281,
+          "p50": 96,
+          "p95": 201,
+          "p99": 236,
+          "max": 257
+        },
+        "actions_per_reference_char_all": 2.1670767968830105,
+        "totals": {
+          "typed": 32151,
+          "selections": 7921,
+          "literal_keys": 2153,
+          "actions": 42271,
+          "output_chars": 19506,
+          "unreadable_clause": 191,
+          "deletes": 46,
+          "missing_word": 6
+        }
+      }
+    },
+    "probes": {
+      "real-persona-chat/development/original-kana/full": {
+        "n": 71,
+        "initial_hits": 70,
+        "after_retry_hits": 70,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 11.295774647887324,
+        "mean_deletes": 0.2112676056338028
+      },
+      "real-persona-chat/development/original-kana/half": {
+        "n": 71,
+        "initial_hits": 1,
+        "after_retry_hits": 1,
+        "changed_n": 70,
+        "changed_hits": 0,
+        "mean_typed": 5.380281690140845,
+        "mean_deletes": 5.366197183098592
+      },
+      "real-persona-chat/development/original-kana/three-quarter": {
+        "n": 71,
+        "initial_hits": 1,
+        "after_retry_hits": 1,
+        "changed_n": 70,
+        "changed_hits": 0,
+        "mean_typed": 8.056338028169014,
+        "mean_deletes": 8.04225352112676
+      },
+      "real-persona-chat/development/original-kana/omission": {
+        "n": 71,
+        "initial_hits": 0,
+        "after_retry_hits": 70,
+        "changed_n": 71,
+        "changed_hits": 0,
+        "mean_typed": 21.591549295774648,
+        "mean_deletes": 10.507042253521126
+      },
+      "real-persona-chat/development/original-kana/neighbor": {
+        "n": 71,
+        "initial_hits": 1,
+        "after_retry_hits": 70,
+        "changed_n": 71,
+        "changed_hits": 1,
+        "mean_typed": 22.47887323943662,
+        "mean_deletes": 11.394366197183098
+      },
+      "real-persona-chat/development/original-kana/transpose": {
+        "n": 71,
+        "initial_hits": 3,
+        "after_retry_hits": 70,
+        "changed_n": 68,
+        "changed_hits": 0,
+        "mean_typed": 22.52112676056338,
+        "mean_deletes": 11.43661971830986
+      },
+      "real-persona-chat/development/sudachi-silver/full": {
+        "n": 117,
+        "initial_hits": 108,
+        "after_retry_hits": 108,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 24.752136752136753,
+        "mean_deletes": 3.051282051282051
+      },
+      "real-persona-chat/development/sudachi-silver/half": {
+        "n": 117,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 117,
+        "changed_hits": 0,
+        "mean_typed": 12.128205128205128,
+        "mean_deletes": 12.128205128205128
+      },
+      "real-persona-chat/development/sudachi-silver/three-quarter": {
+        "n": 117,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 117,
+        "changed_hits": 0,
+        "mean_typed": 18.23076923076923,
+        "mean_deletes": 18.23076923076923
+      },
+      "real-persona-chat/development/sudachi-silver/omission": {
+        "n": 117,
+        "initial_hits": 0,
+        "after_retry_hits": 108,
+        "changed_n": 117,
+        "changed_hits": 0,
+        "mean_typed": 48.504273504273506,
+        "mean_deletes": 26.803418803418804
+      },
+      "real-persona-chat/development/sudachi-silver/neighbor": {
+        "n": 117,
+        "initial_hits": 3,
+        "after_retry_hits": 108,
+        "changed_n": 117,
+        "changed_hits": 3,
+        "mean_typed": 48.93162393162393,
+        "mean_deletes": 27.23076923076923
+      },
+      "real-persona-chat/development/sudachi-silver/transpose": {
+        "n": 117,
+        "initial_hits": 4,
+        "after_retry_hits": 108,
+        "changed_n": 113,
+        "changed_hits": 0,
+        "mean_typed": 48.717948717948715,
+        "mean_deletes": 27.017094017094017
+      },
+      "asdc/development/sudachi-silver/full": {
+        "n": 339,
+        "initial_hits": 327,
+        "after_retry_hits": 327,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 25.914454277286136,
+        "mean_deletes": 1.3421828908554572
+      },
+      "asdc/development/sudachi-silver/half": {
+        "n": 339,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 339,
+        "changed_hits": 0,
+        "mean_typed": 12.728613569321533,
+        "mean_deletes": 12.728613569321533
+      },
+      "asdc/development/sudachi-silver/three-quarter": {
+        "n": 339,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 339,
+        "changed_hits": 0,
+        "mean_typed": 19.07669616519174,
+        "mean_deletes": 19.07669616519174
+      },
+      "asdc/development/sudachi-silver/omission": {
+        "n": 339,
+        "initial_hits": 3,
+        "after_retry_hits": 327,
+        "changed_n": 339,
+        "changed_hits": 3,
+        "mean_typed": 50.50737463126843,
+        "mean_deletes": 25.94395280235988
+      },
+      "asdc/development/sudachi-silver/neighbor": {
+        "n": 339,
+        "initial_hits": 15,
+        "after_retry_hits": 327,
+        "changed_n": 339,
+        "changed_hits": 15,
+        "mean_typed": 50.54277286135693,
+        "mean_deletes": 25.970501474926255
+      },
+      "asdc/development/sudachi-silver/transpose": {
+        "n": 339,
+        "initial_hits": 15,
+        "after_retry_hits": 327,
+        "changed_n": 324,
+        "changed_hits": 0,
+        "mean_typed": 50.51327433628319,
+        "mean_deletes": 25.941002949852507
+      },
+      "asdc/development/original-kana/full": {
+        "n": 119,
+        "initial_hits": 118,
+        "after_retry_hits": 118,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 12.77310924369748,
+        "mean_deletes": 0.058823529411764705
+      },
+      "asdc/development/original-kana/half": {
+        "n": 119,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 119,
+        "changed_hits": 0,
+        "mean_typed": 6.2521008403361344,
+        "mean_deletes": 6.2521008403361344
+      },
+      "asdc/development/original-kana/three-quarter": {
+        "n": 119,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 119,
+        "changed_hits": 0,
+        "mean_typed": 9.252100840336135,
+        "mean_deletes": 9.252100840336135
+      },
+      "asdc/development/original-kana/omission": {
+        "n": 119,
+        "initial_hits": 0,
+        "after_retry_hits": 118,
+        "changed_n": 119,
+        "changed_hits": 0,
+        "mean_typed": 24.54621848739496,
+        "mean_deletes": 11.831932773109244
+      },
+      "asdc/development/original-kana/neighbor": {
+        "n": 119,
+        "initial_hits": 0,
+        "after_retry_hits": 118,
+        "changed_n": 119,
+        "changed_hits": 0,
+        "mean_typed": 25.54621848739496,
+        "mean_deletes": 12.831932773109244
+      },
+      "asdc/development/original-kana/transpose": {
+        "n": 119,
+        "initial_hits": 0,
+        "after_retry_hits": 118,
+        "changed_n": 119,
+        "changed_hits": 0,
+        "mean_typed": 25.54621848739496,
+        "mean_deletes": 12.831932773109244
+      },
+      "real-persona-chat/holdout/original-kana/full": {
+        "n": 197,
+        "initial_hits": 192,
+        "after_retry_hits": 192,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 11.274111675126903,
+        "mean_deletes": 0.47715736040609136
+      },
+      "real-persona-chat/holdout/original-kana/half": {
+        "n": 197,
+        "initial_hits": 7,
+        "after_retry_hits": 7,
+        "changed_n": 190,
+        "changed_hits": 0,
+        "mean_typed": 5.431472081218274,
+        "mean_deletes": 5.395939086294416
+      },
+      "real-persona-chat/holdout/original-kana/three-quarter": {
+        "n": 197,
+        "initial_hits": 7,
+        "after_retry_hits": 7,
+        "changed_n": 190,
+        "changed_hits": 0,
+        "mean_typed": 8.137055837563452,
+        "mean_deletes": 8.101522842639595
+      },
+      "real-persona-chat/holdout/original-kana/omission": {
+        "n": 197,
+        "initial_hits": 1,
+        "after_retry_hits": 192,
+        "changed_n": 197,
+        "changed_hits": 1,
+        "mean_typed": 21.517766497461928,
+        "mean_deletes": 10.725888324873097
+      },
+      "real-persona-chat/holdout/original-kana/neighbor": {
+        "n": 197,
+        "initial_hits": 9,
+        "after_retry_hits": 192,
+        "changed_n": 197,
+        "changed_hits": 9,
+        "mean_typed": 22.0253807106599,
+        "mean_deletes": 11.228426395939087
+      },
+      "real-persona-chat/holdout/original-kana/transpose": {
+        "n": 197,
+        "initial_hits": 17,
+        "after_retry_hits": 192,
+        "changed_n": 178,
+        "changed_hits": 0,
+        "mean_typed": 22.096446700507613,
+        "mean_deletes": 11.299492385786802
+      },
+      "real-persona-chat/holdout/sudachi-silver/full": {
+        "n": 456,
+        "initial_hits": 431,
+        "after_retry_hits": 431,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 27.12719298245614,
+        "mean_deletes": 1.8991228070175439
+      },
+      "real-persona-chat/holdout/sudachi-silver/half": {
+        "n": 456,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 456,
+        "changed_hits": 0,
+        "mean_typed": 13.326754385964913,
+        "mean_deletes": 13.326754385964913
+      },
+      "real-persona-chat/holdout/sudachi-silver/three-quarter": {
+        "n": 456,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 456,
+        "changed_hits": 0,
+        "mean_typed": 19.971491228070175,
+        "mean_deletes": 19.971491228070175
+      },
+      "real-persona-chat/holdout/sudachi-silver/omission": {
+        "n": 456,
+        "initial_hits": 4,
+        "after_retry_hits": 431,
+        "changed_n": 456,
+        "changed_hits": 4,
+        "mean_typed": 53.06359649122807,
+        "mean_deletes": 27.844298245614034
+      },
+      "real-persona-chat/holdout/sudachi-silver/neighbor": {
+        "n": 456,
+        "initial_hits": 9,
+        "after_retry_hits": 431,
+        "changed_n": 456,
+        "changed_hits": 9,
+        "mean_typed": 53.78947368421053,
+        "mean_deletes": 28.56140350877193
+      },
+      "real-persona-chat/holdout/sudachi-silver/transpose": {
+        "n": 456,
+        "initial_hits": 11,
+        "after_retry_hits": 431,
+        "changed_n": 445,
+        "changed_hits": 0,
+        "mean_typed": 53.60964912280702,
+        "mean_deletes": 28.38157894736842
+      },
+      "asdc/holdout/original-kana/full": {
+        "n": 357,
+        "initial_hits": 351,
+        "after_retry_hits": 351,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 12.991596638655462,
+        "mean_deletes": 0.3025210084033613
+      },
+      "asdc/holdout/original-kana/half": {
+        "n": 357,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 357,
+        "changed_hits": 0,
+        "mean_typed": 6.350140056022409,
+        "mean_deletes": 6.350140056022409
+      },
+      "asdc/holdout/original-kana/three-quarter": {
+        "n": 357,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 357,
+        "changed_hits": 0,
+        "mean_typed": 9.38935574229692,
+        "mean_deletes": 9.38935574229692
+      },
+      "asdc/holdout/original-kana/omission": {
+        "n": 357,
+        "initial_hits": 0,
+        "after_retry_hits": 351,
+        "changed_n": 357,
+        "changed_hits": 0,
+        "mean_typed": 24.983193277310924,
+        "mean_deletes": 12.294117647058824
+      },
+      "asdc/holdout/original-kana/neighbor": {
+        "n": 357,
+        "initial_hits": 0,
+        "after_retry_hits": 351,
+        "changed_n": 357,
+        "changed_hits": 0,
+        "mean_typed": 25.983193277310924,
+        "mean_deletes": 13.294117647058824
+      },
+      "asdc/holdout/original-kana/transpose": {
+        "n": 357,
+        "initial_hits": 1,
+        "after_retry_hits": 351,
+        "changed_n": 356,
+        "changed_hits": 0,
+        "mean_typed": 25.96078431372549,
+        "mean_deletes": 13.27170868347339
+      },
+      "asdc/holdout/sudachi-silver/full": {
+        "n": 1091,
+        "initial_hits": 1055,
+        "after_retry_hits": 1055,
+        "changed_n": 0,
+        "changed_hits": 0,
+        "mean_typed": 25.127406049495875,
+        "mean_deletes": 1.296975252062328
+      },
+      "asdc/holdout/sudachi-silver/half": {
+        "n": 1091,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 1091,
+        "changed_hits": 0,
+        "mean_typed": 12.303391384051329,
+        "mean_deletes": 12.303391384051329
+      },
+      "asdc/holdout/sudachi-silver/three-quarter": {
+        "n": 1091,
+        "initial_hits": 0,
+        "after_retry_hits": 0,
+        "changed_n": 1091,
+        "changed_hits": 0,
+        "mean_typed": 18.461044912923924,
+        "mean_deletes": 18.461044912923924
+      },
+      "asdc/holdout/sudachi-silver/omission": {
+        "n": 1091,
+        "initial_hits": 17,
+        "after_retry_hits": 1055,
+        "changed_n": 1091,
+        "changed_hits": 17,
+        "mean_typed": 48.90559120073327,
+        "mean_deletes": 25.090742438130157
+      },
+      "asdc/holdout/sudachi-silver/neighbor": {
+        "n": 1091,
+        "initial_hits": 28,
+        "after_retry_hits": 1055,
+        "changed_n": 1091,
+        "changed_hits": 28,
+        "mean_typed": 49.63519706691109,
+        "mean_deletes": 25.804766269477543
+      },
+      "asdc/holdout/sudachi-silver/transpose": {
+        "n": 1091,
+        "initial_hits": 32,
+        "after_retry_hits": 1055,
+        "changed_n": 1059,
+        "changed_hits": 0,
+        "mean_typed": 49.483959670027495,
+        "mean_deletes": 25.65352887259395
+      }
+    },
+    "performance": {
+      "1": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 9.660606864988559,
+            "p50": 4.5563,
+            "p95": 36.6207,
+            "p99": 63.4893,
+            "max": 74.0625
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 9.797524485125859,
+            "p50": 4.7173,
+            "p95": 36.8499,
+            "p99": 63.6775,
+            "max": 74.261
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 9.66701281464531,
+            "p50": 4.5463,
+            "p95": 36.6739,
+            "p99": 62.7693,
+            "max": 90.9709
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 9.802841647597255,
+            "p50": 4.7214,
+            "p95": 36.8673,
+            "p99": 62.9751,
+            "max": 91.1941
+          }
+        }
+      },
+      "2": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 9.656107780320367,
+            "p50": 4.5534,
+            "p95": 36.5917,
+            "p99": 62.7894,
+            "max": 73.4786
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 9.792596643783371,
+            "p50": 4.6854,
+            "p95": 36.8272,
+            "p99": 62.9983,
+            "max": 73.6986
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 9.656689092295958,
+            "p50": 4.57,
+            "p95": 36.7566,
+            "p99": 62.8052,
+            "max": 73.5897
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 9.792405568268498,
+            "p50": 4.6995,
+            "p95": 36.9488,
+            "p99": 63.0246,
+            "max": 73.8031
+          }
+        }
+      },
+      "3": {
+        "first": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 9.645883905415713,
+            "p50": 4.5436,
+            "p95": 36.6717,
+            "p99": 62.8111,
+            "max": 73.3608
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 9.779920442410374,
+            "p50": 4.6932,
+            "p95": 36.886,
+            "p99": 63.0639,
+            "max": 73.5735
+          }
+        },
+        "repeat": {
+          "engine_ms": {
+            "n": 1311,
+            "mean": 9.699670099160945,
+            "p50": 4.5539,
+            "p95": 36.7004,
+            "p99": 63.2455,
+            "max": 73.6269
+          },
+          "transport_inclusive_ms": {
+            "n": 1311,
+            "mean": 9.836124027459954,
+            "p50": 4.6601,
+            "p95": 36.9361,
+            "p99": 63.414,
+            "max": 73.8329
+          }
+        }
+      }
+    },
+    "ajimee": {
+      "True": {
+        "n": 100,
+        "top8": 70,
+        "default": 41,
+        "mean_min_cer": 0.10062342873397752,
+        "raw_over_96": 14
+      },
+      "False": {
+        "n": 100,
+        "top8": 75,
+        "default": 48,
+        "mean_min_cer": 0.07675313410184281,
+        "raw_over_96": 13
+      },
+      "within_96_keys": {
+        "n": 173,
+        "top8": 134,
+        "default": 82,
+        "mean_min_cer": 0.09132169396612459
+      }
+    }
+  }
+}

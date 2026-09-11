@@ -1,0 +1,4626 @@
+{
+  "normalization": "NFKC casefold; remove Unicode punctuation, separators and symbols",
+  "near_rule": "At least 12 normalized characters; trigram Jaccard >=0.8 against prior turns or new development turns. Audit only, not an input filter.",
+  "counts": {
+    "real-persona-chat": {
+      "turns": 384,
+      "normalized_exact": 28,
+      "near": 8
+    },
+    "asdc": {
+      "turns": 384,
+      "normalized_exact": 55,
+      "near": 45
+    }
+  },
+  "rows": [
+    {
+      "id": "real-persona-chat:05131:4",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05131:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05131:14",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05131:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05131:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05131:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05131:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05131:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05046:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05046:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05046:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05046:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05046:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05046:22",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05046:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05046:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07497:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07497:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07497:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07497:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07497:22",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07497:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07497:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07497:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10008:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10008:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10008:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10008:14",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10008:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10008:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10008:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10008:30",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "real-persona-chat:11834:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11834:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11834:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11834:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11834:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11834:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11834:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11834:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05441:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05441:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05441:9",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05441:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05441:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05441:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05441:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05441:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04075:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04075:13",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04075:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04075:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04075:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04075:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04075:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04075:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08635:3",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08635:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08635:9",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08635:14",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08635:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08635:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08635:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08635:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:01751:4",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:01751:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:01751:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:01751:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:01751:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:01751:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:01751:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:01751:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08180:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "real-persona-chat:08180:9",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08180:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08180:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08180:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08180:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08180:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08180:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08335:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08335:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08335:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08335:14",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08335:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08335:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08335:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08335:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08157:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08157:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08157:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08157:14",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08157:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08157:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08157:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08157:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09626:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09626:4",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09626:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09626:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09626:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09626:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09626:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09626:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02144:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "real-persona-chat:02144:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "real-persona-chat:02144:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02144:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02144:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02144:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02144:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02144:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07163:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07163:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07163:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07163:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07163:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07163:22",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07163:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:07163:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08217:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08217:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08217:9",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08217:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08217:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08217:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08217:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08217:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05969:4",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05969:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05969:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05969:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05969:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05969:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05969:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05969:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06715:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06715:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06715:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06715:9",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06715:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06715:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06715:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06715:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06927:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06927:2",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06927:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06927:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06927:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06927:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06927:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:06927:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05697:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "real-persona-chat:05697:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05697:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05697:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05697:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05697:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05697:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05697:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12964:2",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12964:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12964:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12964:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12964:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12964:14",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12964:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12964:22",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10659:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10659:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10659:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10659:13",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10659:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10659:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10659:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10659:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12466:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12466:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12466:13",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12466:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12466:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12466:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12466:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12466:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10152:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10152:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10152:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10152:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10152:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10152:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10152:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:10152:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09141:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09141:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09141:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09141:13",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09141:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09141:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09141:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09141:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11478:2",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11478:3",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11478:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11478:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11478:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11478:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11478:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11478:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02642:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "real-persona-chat:02642:2",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02642:3",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02642:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02642:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02642:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02642:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02642:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12350:2",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12350:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12350:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12350:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12350:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12350:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12350:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12350:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03088:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03088:9",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03088:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03088:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03088:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03088:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03088:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03088:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12598:4",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12598:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12598:9",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12598:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12598:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12598:22",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12598:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12598:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03245:4",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03245:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03245:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03245:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03245:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03245:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03245:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:03245:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08156:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "real-persona-chat:08156:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08156:9",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08156:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08156:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08156:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08156:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08156:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00506:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00506:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00506:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00506:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00506:22",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00506:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00506:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00506:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11089:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11089:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11089:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11089:14",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11089:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11089:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11089:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11089:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09193:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "real-persona-chat:09193:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09193:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09193:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09193:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09193:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09193:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:09193:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:13165:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:13165:3",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:13165:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:13165:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:13165:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:13165:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:13165:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:13165:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08014:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08014:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08014:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08014:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08014:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08014:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08014:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08014:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02733:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02733:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02733:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02733:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02733:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02733:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02733:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02733:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11424:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11424:3",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11424:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11424:13",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11424:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11424:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11424:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11424:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04655:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04655:2",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04655:8",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04655:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04655:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04655:22",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04655:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04655:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08150:3",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08150:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08150:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08150:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08150:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08150:22",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08150:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:08150:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00088:3",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00088:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00088:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00088:11",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00088:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00088:24",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00088:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:00088:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04156:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04156:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04156:4",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04156:17",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04156:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04156:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04156:21",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04156:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12033:3",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12033:9",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12033:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12033:13",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12033:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12033:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12033:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:12033:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05614:2",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05614:4",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05614:10",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05614:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05614:14",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05614:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05614:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:05614:29",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02879:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02879:1",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02879:4",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02879:12",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02879:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02879:20",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02879:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:02879:28",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04380:0",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04380:5",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04380:15",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04380:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04380:18",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04380:19",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04380:26",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:04380:27",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11521:4",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11521:6",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11521:7",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11521:9",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11521:14",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11521:16",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11521:23",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "real-persona-chat:11521:25",
+      "source": "real-persona-chat",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:048:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:048:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:048:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:048:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:048:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:048:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:048:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:048:22",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:161:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:161:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:161:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:161:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:161:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:161:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:161:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:161:19",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:168:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:168:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:168:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:168:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:168:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:168:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:168:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:168:12",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:033:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:033:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:033:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:033:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:033:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:033:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:033:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:033:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:014:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:014:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:014:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:014:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:014:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:014:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:014:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:014:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:126:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:126:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:126:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:126:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:126:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:126:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:126:13",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:126:18",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:186:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:186:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:186:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:186:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:186:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:186:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:186:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:186:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:106:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:106:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:106:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:106:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:106:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:106:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:106:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:106:22",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:095:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:095:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:095:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:095:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:095:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:095:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:095:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:095:18",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:171:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:171:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:171:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:171:11",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:171:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:171:15",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:171:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:171:20",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:199:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:199:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:199:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:199:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:199:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:199:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:199:14",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:199:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:114:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:114:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:114:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:114:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:114:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:114:17",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:114:22",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:114:29",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:017:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:017:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:017:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:017:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:017:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:017:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:017:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:017:17",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:202:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:202:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:202:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:202:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:202:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:202:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:202:11",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:202:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:019:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:019:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:019:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:019:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:019:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:019:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:019:18",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:019:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:094:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:094:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:094:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:094:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:094:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:094:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:094:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:094:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:043:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:043:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:043:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:043:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:043:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:043:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:043:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:043:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:054:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:054:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:054:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:054:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:054:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:054:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:054:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:054:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:174:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:174:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:174:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:174:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:174:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:174:15",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:174:17",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:174:18",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:178:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:178:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:178:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:178:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:178:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:178:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:178:12",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:178:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:105:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:105:9",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:105:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:105:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:105:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:105:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:105:20",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:105:23",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:182:2",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:182:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:182:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:182:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:182:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:182:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:182:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:182:14",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:147:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:147:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:147:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:147:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:147:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:147:14",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:147:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:147:17",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:013:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:013:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:013:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:013:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:013:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:013:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:013:18",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:013:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:064:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:064:4",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:064:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:064:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:064:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:064:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:064:18",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:064:21",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:159:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:159:4",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:159:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:159:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:159:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:159:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:159:16",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:159:17",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:103:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:103:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:103:17",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:103:21",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:103:23",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:103:26",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:103:27",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:103:28",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:053:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:053:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:053:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:053:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:053:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:053:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:053:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:053:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:097:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:097:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:097:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:097:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:097:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:097:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:097:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:097:17",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:197:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:197:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:197:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:197:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:197:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:197:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:197:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:197:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:077:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:077:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:077:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:077:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:077:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:077:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:077:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:077:17",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:081:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:081:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:081:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:081:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:081:8",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:081:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:081:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:081:16",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:005:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:005:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:005:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:005:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:005:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:005:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:005:18",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:005:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:112:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:112:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:112:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:112:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:112:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:112:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:112:20",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:112:21",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:173:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:173:3",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:173:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:173:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:173:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:173:9",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:173:13",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:173:16",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:169:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:169:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:169:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:169:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:169:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:169:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:169:15",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:169:17",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:189:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:189:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:189:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:189:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:189:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:189:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:189:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:189:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:049:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:049:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:049:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:049:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:049:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:049:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:049:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:049:18",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:011:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:011:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:011:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:011:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:011:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:011:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:011:17",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:011:18",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:102:2",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:102:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:102:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:102:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:102:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:102:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:102:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:102:25",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:025:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:025:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:025:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:025:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:025:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:025:17",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:025:18",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:025:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:085:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:085:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:085:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:085:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:085:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:085:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:085:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:085:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:023:1",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:023:3",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:023:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:023:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:023:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:023:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:023:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:023:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:020:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:020:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:020:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:020:11",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:020:14",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:020:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:020:21",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:020:23",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:018:0",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:018:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:018:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:018:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:018:9",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:018:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:018:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:018:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:028:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:028:2",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:028:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:028:9",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:028:10",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:028:14",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:028:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:028:21",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:148:0",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:148:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:148:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:148:12",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:148:15",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:148:16",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:148:19",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:148:20",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:135:4",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:135:5",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:135:6",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:135:7",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:135:8",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:135:11",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    },
+    {
+      "id": "asdc:135:12",
+      "source": "asdc",
+      "normalized_exact_exposed": true,
+      "near_3gram_jaccard_0_8": true
+    },
+    {
+      "id": "asdc:135:13",
+      "source": "asdc",
+      "normalized_exact_exposed": false,
+      "near_3gram_jaccard_0_8": false
+    }
+  ]
+}
