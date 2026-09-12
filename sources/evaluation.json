@@ -9,7 +9,7 @@
       "role": "regression",
       "exposure": "previously-evaluated",
       "selection": "Replay every prior null construction query under both add-on settings. Compare visible-default, single-entry lookup and whole-input ordering independently. Reuse all 18 fixed-delay Google/MinIME phone cases without reselection.",
-      "files": ["docs/null-review/PLAN.md", "docs/null-review/visible-sources.json", "docs/null-review/stored-sources.json", "docs/null-review/ordered-sources.json", "docs/null-construction/reference-sample.json", "docs/null-construction/reference-delayed-plan.json"],
+      "files": ["docs/null-review/PLAN.md", "docs/null-review/visible-sources.json", "docs/null-review/stored-sources.json", "docs/null-review/ordered-sources.json", "docs/null-construction/reference-sample.json", "docs/null-construction/reference-delayed-plan.json", "docs/null-review/phone/manifest.json", "docs/null-review/android/manifest.json", "docs/null-review/touch/summary.json"],
       "report_by": ["genre", "role", "stage", "input-condition", "add-ons", "first-choice", "reference-recall", "automatic-acceptance", "hidden-defaults", "latency", "missing-observations"],
       "leakage": "Consumed regression; original references and queries unchanged. Labels are scoring inputs only. No production vocabulary or source-weight changes. Google remains an observed comparator, not training data.",
       "limitations": "Reference reconstruction is not semantic precision. No fresh Mandarin conversation holdout. Phone comparison is a small frozen sample. Injected event/frame callbacks do not measure physical touch or display presentation, and missing frames remain unobserved."
