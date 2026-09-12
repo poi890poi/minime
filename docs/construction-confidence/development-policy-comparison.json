@@ -1,0 +1,121 @@
+{
+  "scope": "native-only counterfactual, bounded like Android; no Java/addon merge, no human semantic judgement",
+  "results": {
+    "full": {
+      "baseline": {
+        "inputs": 1275,
+        "top1_reference_hits": 593,
+        "top3_reference_hits": 596,
+        "top8_reference_hits": 596,
+        "automatic_reference_hits": 593,
+        "automatic_nonreference_conversion": 682,
+        "literal_recovery": 0
+      },
+      "after-all-attested": {
+        "inputs": 1275,
+        "top1_reference_hits": 165,
+        "top3_reference_hits": 168,
+        "top8_reference_hits": 168,
+        "automatic_reference_hits": 165,
+        "automatic_nonreference_conversion": 16,
+        "literal_recovery": 1094
+      },
+      "after-early-attested": {
+        "inputs": 1275,
+        "top1_reference_hits": 165,
+        "top3_reference_hits": 168,
+        "top8_reference_hits": 596,
+        "automatic_reference_hits": 165,
+        "automatic_nonreference_conversion": 16,
+        "literal_recovery": 1094
+      }
+    },
+    "partial": {
+      "baseline": {
+        "inputs": 1275,
+        "top1_reference_hits": 0,
+        "top3_reference_hits": 7,
+        "top8_reference_hits": 7,
+        "automatic_reference_hits": 0,
+        "automatic_nonreference_conversion": 1275,
+        "literal_recovery": 0
+      },
+      "after-all-attested": {
+        "inputs": 1275,
+        "top1_reference_hits": 4,
+        "top3_reference_hits": 7,
+        "top8_reference_hits": 7,
+        "automatic_reference_hits": 4,
+        "automatic_nonreference_conversion": 277,
+        "literal_recovery": 994
+      },
+      "after-early-attested": {
+        "inputs": 1275,
+        "top1_reference_hits": 4,
+        "top3_reference_hits": 7,
+        "top8_reference_hits": 7,
+        "automatic_reference_hits": 4,
+        "automatic_nonreference_conversion": 277,
+        "literal_recovery": 994
+      }
+    },
+    "initials": {
+      "baseline": {
+        "inputs": 1275,
+        "top1_reference_hits": 89,
+        "top3_reference_hits": 121,
+        "top8_reference_hits": 138,
+        "automatic_reference_hits": 89,
+        "automatic_nonreference_conversion": 1186,
+        "literal_recovery": 0
+      },
+      "after-all-attested": {
+        "inputs": 1275,
+        "top1_reference_hits": 84,
+        "top3_reference_hits": 116,
+        "top8_reference_hits": 133,
+        "automatic_reference_hits": 84,
+        "automatic_nonreference_conversion": 412,
+        "literal_recovery": 779
+      },
+      "after-early-attested": {
+        "inputs": 1275,
+        "top1_reference_hits": 84,
+        "top3_reference_hits": 116,
+        "top8_reference_hits": 138,
+        "automatic_reference_hits": 84,
+        "automatic_nonreference_conversion": 412,
+        "literal_recovery": 779
+      }
+    },
+    "mixed": {
+      "baseline": {
+        "inputs": 1275,
+        "top1_reference_hits": 222,
+        "top3_reference_hits": 257,
+        "top8_reference_hits": 258,
+        "automatic_reference_hits": 222,
+        "automatic_nonreference_conversion": 1053,
+        "literal_recovery": 0
+      },
+      "after-all-attested": {
+        "inputs": 1275,
+        "top1_reference_hits": 132,
+        "top3_reference_hits": 167,
+        "top8_reference_hits": 168,
+        "automatic_reference_hits": 132,
+        "automatic_nonreference_conversion": 146,
+        "literal_recovery": 997
+      },
+      "after-early-attested": {
+        "inputs": 1275,
+        "top1_reference_hits": 132,
+        "top3_reference_hits": 167,
+        "top8_reference_hits": 258,
+        "automatic_reference_hits": 132,
+        "automatic_nonreference_conversion": 146,
+        "literal_recovery": 997
+      }
+    }
+  }
+}

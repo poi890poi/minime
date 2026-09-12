@@ -36,8 +36,10 @@ public final class DesktopEvaluation {
             try {
                 long start=System.nanoTime();input.write(raw);input.newLine();input.flush();List<Candidate> found=new ArrayList<>();
                 String line;while((line=output.readLine())!=null && !line.equals("END")) {
-                    if(line.isEmpty())continue;int tab=line.indexOf('\t'),end=Integer.parseInt(line.substring(0,tab));
-                    found.add(new Candidate(line.substring(tab+1),false,100-found.size(),end==raw.length()?0:end));
+                    if(line.isEmpty())continue;
+                    Candidate candidate=NativeCandidateCodec.decode(raw,line,found.size());
+                    if(candidate==null)throw new IOException("Invalid native candidate provenance");
+                    found.add(candidate);
                 }
                 if(line==null)throw new EOFException("Desktop Rime exited");
                 micros.add((System.nanoTime()-start)/1000);cache.put(raw,found);return found;

@@ -53,6 +53,9 @@ public final class Candidate {
     public Candidate(String text, boolean literal, double score) {
         this(text,literal,score,"");
     }
+    /** Unverified lexical assembly, not a calibrated confidence probability. */
+    public Candidate asConstructed() {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,true,incomplete,pair,pack,languageCharacter,transliteration);}
+    Candidate asAttested() {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,false,incomplete,pair,pack,languageCharacter,transliteration);}
     Candidate(String text, boolean literal, double score,String reading) {
         this(text,literal,score,reading,0,false,false,false);
     }

@@ -5,6 +5,7 @@
 #include <rime/composition.h>
 #include <rime/menu.h>
 #include <rime/candidate.h>
+#include "rime_candidate_origin.h"
 #include <mutex>
 #include <string>
 #include <vector>
@@ -62,9 +63,9 @@ Java_dev_minime_ime_RimeBackend_query(JNIEnv* env,jclass,jstring raw,jboolean in
                     if(!candidate)break;
                     if(candidate->start()!=0 || candidate->end()==0 || candidate->end()>input.size())continue;
                     if(candidate->end()==input.size() && words.size()<24)
-                        words.push_back(includePrefixes?std::to_string(candidate->end())+"\t"+candidate->text():candidate->text());
+                        words.push_back(minimeCandidateRecord(candidate));
                     else if(includePrefixes && candidate->end()<input.size() && prefixes.size()<12)
-                        prefixes.push_back(std::to_string(candidate->end())+"\t"+candidate->text());
+                        prefixes.push_back(minimeCandidateRecord(candidate));
                 }
             }
         }

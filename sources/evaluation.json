@@ -3,6 +3,18 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "chinese-live-construction-20260912",
+      "source_ids": ["taiwan-md", "mcbopomofo"],
+      "genre": ["taiwan-md-prose"],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "Frozen SHA-256 document/span order: 40 previously audited development documents and 48 disjoint validation documents, selected before native decoding. Up to 32 Han spans per document; 3–16 glyphs; unique original McBopomofo readings. 11220 full/partial/initial/mixed inputs. Validation documents were unseen before the policy freeze, and are consumed regression evidence now.",
+      "files": ["docs/construction-confidence/PLAN.md", "docs/construction-confidence/reserved-documents.json", "docs/construction-confidence/reserved-articles.json.gz", "docs/construction-confidence/corpus-manifest.json", "docs/construction-confidence/inputs.json.gz"],
+      "report_by": ["genre", "development-versus-reserved", "input-condition", "construction-emission", "reference-reconstruction", "prefix-support", "first-three-and-eight", "automatic-acceptance", "latency"],
+      "leakage": "Han reference comes from source prose, not decoder output. Runtime sees raw input, fixed dictionaries and native origin only. Reading annotation shares McBopomofo lexical lineage with production; no reference labels or phrase-specific promotions enter ranking. No production data refresh.",
+      "limitations": "Exact reconstruction is not a human semantic judgement. Taiwan.md editorial provenance varies and can include AI assistance. Ambiguous/unmapped readings and long spans are excluded. No natural Taiwan Mandarin conversation coverage. Core replay excludes live native/UI latency; desktop native timing excludes physical touch."
+    },
+    {
       "id": "japanese-pipeline-performance-20260912",
       "source_ids": ["real-persona-chat", "asdc"],
       "genre": ["human-casual-chat", "human-task-dialogue"],

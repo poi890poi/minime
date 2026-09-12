@@ -1,0 +1,495 @@
+{
+  "development": {
+    "baseline": {
+      "full;addons=false": {
+        "inputs": 1275,
+        "top1_hits": 593,
+        "top3_hits": 596,
+        "top8_hits": 596,
+        "automatic_hits": 593,
+        "automatic_nonreference_conversion": 682,
+        "literal_default": 0,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 4.0738,
+          "p95": 10.5448,
+          "maximum": 37.588101
+        }
+      },
+      "full;addons=true": {
+        "inputs": 1275,
+        "top1_hits": 600,
+        "top3_hits": 603,
+        "top8_hits": 603,
+        "automatic_hits": 600,
+        "automatic_nonreference_conversion": 675,
+        "literal_default": 0,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 4.1398,
+          "p95": 10.582999,
+          "maximum": 26.3767
+        }
+      },
+      "partial;addons=false": {
+        "inputs": 1275,
+        "top1_hits": 0,
+        "top3_hits": 7,
+        "top8_hits": 7,
+        "automatic_hits": 0,
+        "automatic_nonreference_conversion": 1275,
+        "literal_default": 0,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 2.963,
+          "p95": 9.6331,
+          "maximum": 26.3228
+        }
+      },
+      "partial;addons=true": {
+        "inputs": 1275,
+        "top1_hits": 0,
+        "top3_hits": 18,
+        "top8_hits": 18,
+        "automatic_hits": 0,
+        "automatic_nonreference_conversion": 1275,
+        "literal_default": 0,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 3.0607,
+          "p95": 9.421,
+          "maximum": 19.582599
+        }
+      },
+      "initials;addons=false": {
+        "inputs": 1275,
+        "top1_hits": 87,
+        "top3_hits": 121,
+        "top8_hits": 137,
+        "automatic_hits": 87,
+        "automatic_nonreference_conversion": 1178,
+        "literal_default": 10,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 2.1236,
+          "p95": 5.8813,
+          "maximum": 14.82
+        }
+      },
+      "initials;addons=true": {
+        "inputs": 1275,
+        "top1_hits": 87,
+        "top3_hits": 128,
+        "top8_hits": 144,
+        "automatic_hits": 87,
+        "automatic_nonreference_conversion": 1178,
+        "literal_default": 10,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 2.1578,
+          "p95": 5.7982,
+          "maximum": 21.9889
+        }
+      },
+      "mixed;addons=false": {
+        "inputs": 1275,
+        "top1_hits": 221,
+        "top3_hits": 257,
+        "top8_hits": 258,
+        "automatic_hits": 221,
+        "automatic_nonreference_conversion": 1053,
+        "literal_default": 1,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 3.1489,
+          "p95": 8.575601,
+          "maximum": 17.6848
+        }
+      },
+      "mixed;addons=true": {
+        "inputs": 1275,
+        "top1_hits": 221,
+        "top3_hits": 267,
+        "top8_hits": 268,
+        "automatic_hits": 221,
+        "automatic_nonreference_conversion": 1053,
+        "literal_default": 1,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 3.233,
+          "p95": 8.833601,
+          "maximum": 20.8417
+        }
+      }
+    },
+    "policy": {
+      "full;addons=false": {
+        "inputs": 1275,
+        "top1_hits": 170,
+        "top3_hits": 173,
+        "top8_hits": 596,
+        "automatic_hits": 184,
+        "automatic_nonreference_conversion": 20,
+        "literal_default": 1071,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 4.1203,
+          "p95": 10.9159,
+          "maximum": 40.6099
+        }
+      },
+      "full;addons=true": {
+        "inputs": 1275,
+        "top1_hits": 177,
+        "top3_hits": 180,
+        "top8_hits": 603,
+        "automatic_hits": 191,
+        "automatic_nonreference_conversion": 20,
+        "literal_default": 1064,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 4.1714,
+          "p95": 10.915699,
+          "maximum": 22.1091
+        }
+      },
+      "partial;addons=false": {
+        "inputs": 1275,
+        "top1_hits": 4,
+        "top3_hits": 7,
+        "top8_hits": 7,
+        "automatic_hits": 32,
+        "automatic_nonreference_conversion": 307,
+        "literal_default": 936,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 3.0552,
+          "p95": 9.732599,
+          "maximum": 25.4408
+        }
+      },
+      "partial;addons=true": {
+        "inputs": 1275,
+        "top1_hits": 4,
+        "top3_hits": 18,
+        "top8_hits": 18,
+        "automatic_hits": 31,
+        "automatic_nonreference_conversion": 322,
+        "literal_default": 922,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 3.159401,
+          "p95": 10.0652,
+          "maximum": 29.0062
+        }
+      },
+      "initials;addons=false": {
+        "inputs": 1275,
+        "top1_hits": 82,
+        "top3_hits": 116,
+        "top8_hits": 137,
+        "automatic_hits": 84,
+        "automatic_nonreference_conversion": 407,
+        "literal_default": 784,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 2.1358,
+          "p95": 6.0616,
+          "maximum": 17.0835
+        }
+      },
+      "initials;addons=true": {
+        "inputs": 1275,
+        "top1_hits": 82,
+        "top3_hits": 123,
+        "top8_hits": 144,
+        "automatic_hits": 86,
+        "automatic_nonreference_conversion": 408,
+        "literal_default": 781,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 2.1593,
+          "p95": 5.9623,
+          "maximum": 11.674
+        }
+      },
+      "mixed;addons=false": {
+        "inputs": 1275,
+        "top1_hits": 131,
+        "top3_hits": 167,
+        "top8_hits": 258,
+        "automatic_hits": 137,
+        "automatic_nonreference_conversion": 149,
+        "literal_default": 989,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 3.197201,
+          "p95": 8.8106,
+          "maximum": 19.7248
+        }
+      },
+      "mixed;addons=true": {
+        "inputs": 1275,
+        "top1_hits": 131,
+        "top3_hits": 177,
+        "top8_hits": 268,
+        "automatic_hits": 139,
+        "automatic_nonreference_conversion": 157,
+        "literal_default": 979,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 3.4041,
+          "p95": 9.0308,
+          "maximum": 16.7145
+        }
+      }
+    }
+  },
+  "reserved": {
+    "baseline": {
+      "full;addons=false": {
+        "inputs": 1530,
+        "top1_hits": 657,
+        "top3_hits": 660,
+        "top8_hits": 660,
+        "automatic_hits": 657,
+        "automatic_nonreference_conversion": 873,
+        "literal_default": 0,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 4.039601,
+          "p95": 11.0911,
+          "maximum": 37.8276
+        }
+      },
+      "full;addons=true": {
+        "inputs": 1530,
+        "top1_hits": 671,
+        "top3_hits": 674,
+        "top8_hits": 674,
+        "automatic_hits": 671,
+        "automatic_nonreference_conversion": 859,
+        "literal_default": 0,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 4.1284,
+          "p95": 10.9735,
+          "maximum": 27.9804
+        }
+      },
+      "partial;addons=false": {
+        "inputs": 1530,
+        "top1_hits": 0,
+        "top3_hits": 6,
+        "top8_hits": 6,
+        "automatic_hits": 0,
+        "automatic_nonreference_conversion": 1529,
+        "literal_default": 1,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 2.8742,
+          "p95": 9.8368,
+          "maximum": 29.6218
+        }
+      },
+      "partial;addons=true": {
+        "inputs": 1530,
+        "top1_hits": 0,
+        "top3_hits": 35,
+        "top8_hits": 35,
+        "automatic_hits": 0,
+        "automatic_nonreference_conversion": 1529,
+        "literal_default": 1,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 3.1411,
+          "p95": 9.912899,
+          "maximum": 24.4015
+        }
+      },
+      "initials;addons=false": {
+        "inputs": 1530,
+        "top1_hits": 113,
+        "top3_hits": 144,
+        "top8_hits": 153,
+        "automatic_hits": 113,
+        "automatic_nonreference_conversion": 1408,
+        "literal_default": 9,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 2.0449,
+          "p95": 6.071099,
+          "maximum": 26.1369
+        }
+      },
+      "initials;addons=true": {
+        "inputs": 1530,
+        "top1_hits": 113,
+        "top3_hits": 160,
+        "top8_hits": 173,
+        "automatic_hits": 113,
+        "automatic_nonreference_conversion": 1408,
+        "literal_default": 9,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 2.0714,
+          "p95": 6.0622,
+          "maximum": 21.444
+        }
+      },
+      "mixed;addons=false": {
+        "inputs": 1530,
+        "top1_hits": 245,
+        "top3_hits": 276,
+        "top8_hits": 279,
+        "automatic_hits": 245,
+        "automatic_nonreference_conversion": 1284,
+        "literal_default": 1,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 3.223301,
+          "p95": 8.747501,
+          "maximum": 25.118201
+        }
+      },
+      "mixed;addons=true": {
+        "inputs": 1530,
+        "top1_hits": 245,
+        "top3_hits": 300,
+        "top8_hits": 307,
+        "automatic_hits": 245,
+        "automatic_nonreference_conversion": 1284,
+        "literal_default": 1,
+        "constructed_default": null,
+        "replay_flush_ms": {
+          "p50": 3.298199,
+          "p95": 8.998201,
+          "maximum": 27.502199
+        }
+      }
+    },
+    "policy": {
+      "full;addons=false": {
+        "inputs": 1530,
+        "top1_hits": 190,
+        "top3_hits": 193,
+        "top8_hits": 660,
+        "automatic_hits": 219,
+        "automatic_nonreference_conversion": 39,
+        "literal_default": 1272,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 3.9542,
+          "p95": 10.653101,
+          "maximum": 33.8155
+        }
+      },
+      "full;addons=true": {
+        "inputs": 1530,
+        "top1_hits": 204,
+        "top3_hits": 207,
+        "top8_hits": 674,
+        "automatic_hits": 231,
+        "automatic_nonreference_conversion": 46,
+        "literal_default": 1253,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 4.098001,
+          "p95": 10.6255,
+          "maximum": 43.5601
+        }
+      },
+      "partial;addons=false": {
+        "inputs": 1530,
+        "top1_hits": 4,
+        "top3_hits": 6,
+        "top8_hits": 6,
+        "automatic_hits": 63,
+        "automatic_nonreference_conversion": 373,
+        "literal_default": 1094,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 2.896099,
+          "p95": 9.5904,
+          "maximum": 26.184099
+        }
+      },
+      "partial;addons=true": {
+        "inputs": 1530,
+        "top1_hits": 4,
+        "top3_hits": 35,
+        "top8_hits": 35,
+        "automatic_hits": 68,
+        "automatic_nonreference_conversion": 385,
+        "literal_default": 1077,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 3.0136,
+          "p95": 9.3786,
+          "maximum": 25.3464
+        }
+      },
+      "initials;addons=false": {
+        "inputs": 1530,
+        "top1_hits": 107,
+        "top3_hits": 138,
+        "top8_hits": 153,
+        "automatic_hits": 120,
+        "automatic_nonreference_conversion": 499,
+        "literal_default": 911,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 2.0788,
+          "p95": 6.036,
+          "maximum": 22.390799
+        }
+      },
+      "initials;addons=true": {
+        "inputs": 1530,
+        "top1_hits": 107,
+        "top3_hits": 154,
+        "top8_hits": 173,
+        "automatic_hits": 124,
+        "automatic_nonreference_conversion": 507,
+        "literal_default": 899,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 2.110101,
+          "p95": 5.961701,
+          "maximum": 15.527899
+        }
+      },
+      "mixed;addons=false": {
+        "inputs": 1530,
+        "top1_hits": 147,
+        "top3_hits": 178,
+        "top8_hits": 279,
+        "automatic_hits": 174,
+        "automatic_nonreference_conversion": 206,
+        "literal_default": 1150,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 3.1531,
+          "p95": 8.4136,
+          "maximum": 29.396
+        }
+      },
+      "mixed;addons=true": {
+        "inputs": 1530,
+        "top1_hits": 147,
+        "top3_hits": 202,
+        "top8_hits": 307,
+        "automatic_hits": 184,
+        "automatic_nonreference_conversion": 211,
+        "literal_default": 1135,
+        "constructed_default": 0,
+        "replay_flush_ms": {
+          "p50": 3.2899,
+          "p95": 8.6447,
+          "maximum": 30.0749
+        }
+      }
+    }
+  },
+  "scope": "Real core merge, Java conversion, English competition and optional Taiwan/geography add-ons; frozen native replay. Flush timing excludes native decoding, typing, UI and physical touch. Parallel runs are not a speedup claim."
+}

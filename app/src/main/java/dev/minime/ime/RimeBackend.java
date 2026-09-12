@@ -2,6 +2,7 @@ package dev.minime.ime;
 
 import android.content.Context;
 import dev.minime.core.Candidate;
+import dev.minime.core.NativeCandidateCodec;
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.*;
@@ -52,16 +53,16 @@ final class RimeBackend {
     static List<Candidate> convert(String raw) {
         if(!available || !raw.matches("[a-zv]+(?:'[a-zv]+)*") || raw.length()>96)return Collections.emptyList();
         String[] words=query(raw,false);List<Candidate> result=new ArrayList<>();
-        for(int i=0;i<words.length;i++)result.add(new Candidate(words[i],false,100-i));
+        for(int i=0;i<words.length;i++) {
+            Candidate c=NativeCandidateCodec.decode(raw,words[i],i);if(c!=null)result.add(c);
+        }
         return result;
     }
     static List<Candidate> candidates(String raw) {
         if(!available || !raw.matches("[a-zv]+(?:'[a-zv]+)*") || raw.length()>96)return Collections.emptyList();
         String[] words=query(raw,true);List<Candidate> result=new ArrayList<>();
         for(int i=0;i<words.length;i++) {
-            int tab=words[i].indexOf('\t');if(tab<1)continue;
-            int end=Integer.parseInt(words[i].substring(0,tab));
-            if(end>0 && end<=raw.length())result.add(new Candidate(words[i].substring(tab+1),false,100-i,end==raw.length()?0:end));
+            Candidate c=NativeCandidateCodec.decode(raw,words[i],i);if(c!=null)result.add(c);
         }
         return result;
     }

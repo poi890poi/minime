@@ -1,0 +1,228 @@
+{
+  "role": "reserved",
+  "groups": {
+    "full": {
+      "inputs": 1530,
+      "constructed": 1324,
+      "construction_hits": 476,
+      "construction_target_prefix": 476,
+      "top1_reference_hits": 657,
+      "top8_reference_hits": 660,
+      "quality_values": {
+        "0.0": 1324
+      },
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 3,
+          "hits": 2
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 60,
+          "hits": 18
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 433,
+          "hits": 164
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 700,
+          "hits": 221
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 128,
+          "hits": 71
+        }
+      ],
+      "query_us": {
+        "p50": 2237.0,
+        "p95": 2960,
+        "maximum": 56746
+      }
+    },
+    "partial": {
+      "inputs": 1530,
+      "constructed": 1190,
+      "construction_hits": 0,
+      "construction_target_prefix": 247,
+      "top1_reference_hits": 0,
+      "top8_reference_hits": 6,
+      "quality_values": {
+        "0.0": 1190
+      },
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 4,
+          "hits": 0
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 42,
+          "hits": 0
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 330,
+          "hits": 0
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 668,
+          "hits": 0
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 146,
+          "hits": 0
+        }
+      ],
+      "query_us": {
+        "p50": 2179.0,
+        "p95": 2934,
+        "maximum": 5095
+      }
+    },
+    "initials": {
+      "inputs": 1530,
+      "constructed": 929,
+      "construction_hits": 6,
+      "construction_target_prefix": 6,
+      "top1_reference_hits": 114,
+      "top8_reference_hits": 166,
+      "quality_values": {
+        "0.0": 929
+      },
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 11,
+          "hits": 1
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 107,
+          "hits": 0
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 220,
+          "hits": 2
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 373,
+          "hits": 2
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 206,
+          "hits": 1
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 12,
+          "hits": 0
+        }
+      ],
+      "query_us": {
+        "p50": 3920.5,
+        "p95": 7487,
+        "maximum": 52747
+      }
+    },
+    "mixed": {
+      "inputs": 1530,
+      "constructed": 1190,
+      "construction_hits": 100,
+      "construction_target_prefix": 100,
+      "top1_reference_hits": 245,
+      "top8_reference_hits": 282,
+      "quality_values": {
+        "0.0": 1190
+      },
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 1,
+          "hits": 1
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 21,
+          "hits": 0
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 146,
+          "hits": 12
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 489,
+          "hits": 34
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 455,
+          "hits": 45
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 78,
+          "hits": 8
+        }
+      ],
+      "query_us": {
+        "p50": 3535.0,
+        "p95": 6831,
+        "maximum": 44830
+      }
+    }
+  },
+  "corpus_sha256": "d94d89a26e07b7a546235a3b5d2c59a77e202020dde7630ac86e0c2c3e561361",
+  "limitations": [
+    "exact source reconstruction, not semantic judgement",
+    "prose only; no natural Mandarin conversation coverage",
+    "not Android touch latency",
+    "reading coverage excludes ambiguous/unmapped source spans"
+  ]
+}

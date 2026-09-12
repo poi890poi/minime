@@ -12,6 +12,12 @@ extraction rules and detailed counts. This catalog adds stable source IDs, edito
 evidence, known coverage, limitations, intended uses and lifecycle decisions.
 It is build tooling; it neither runs on Android nor changes candidate scores.
 
+The September 12 live-construction experiment is registered in `evaluation.json`
+and documented in `../docs/construction-confidence/README.md`. Taiwan.md stays
+evaluation-only for this experiment; neither source prose nor decoder-generated
+sequences become production entries. Its disjoint validation documents are now
+consumed evidence, and may not be advertised as a fresh holdout again.
+
 ## Decisions
 
 | Decision | Meaning |

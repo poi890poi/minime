@@ -1,0 +1,52 @@
+Local validation, September 12, 2026
+
+Baseline source: 385a7f0 (exported without switching the checkout)
+Windows desktop, Microsoft OpenJDK 17.0.11, pinned MSVC Rime 1.16.1.
+No GitHub Actions or hosted CI. No phone operations in this change.
+
+tools/test-core.ps1:
+PASS 306540 assertions. This is regression coverage, not language-model accuracy.
+Includes origin/merge/acceptance/explicit learning/private-field tests, existing
+English isolation, prefix acceptance, 411-input continuity and add-on tests.
+Intentional changed expectations: constructed Zhuyin requires explicit selection;
+adding attested options may defer generated choices across provenance groups.
+
+tools/test-desktop.ps1:
+13014 existing corpus inputs, 11272 uncached native queries.
+Native IPC + decoder: p50 2386 us, p95 3913 us, max 128348 us.
+No missing or malformed origin transport. This corpus is not a fresh holdout.
+
+tools/verify_construction_transport.py:
+PASS 11220 inputs, 159382 records with exact endpoint/origin/text/order parity.
+PASS wrapped construction / lexical duplicate self-test.
+PASS invalid/empty/overlong/non-Pinyin transport guards.
+Uses the shared Android serializer, not Android JNI/device execution.
+
+Frozen core replay:
+5100 development + 6120 reserved inputs, each with Taiwan/geography add-ons off
+and on, each before and after policy. Raw results and summaries committed here.
+The old bridge erased constructed-default identity: its count is unavailable.
+Do not interpret a reference mismatch as a human semantic rejection.
+
+Isolated ConstructionPolicy.rank overhead, reserved native candidate lists:
+5 warmup passes followed by 3 measured passes, 6120 inputs per pass.
+pass=0 p50=2.000 us p95=3.201 us max=505.699 us
+pass=1 p50=2.000 us p95=3.200 us max=171.600 us
+pass=2 p50=2.000 us p95=3.300 us max=483.100 us
+Includes ranking-list work only; excludes native lookup, add-on lookup, learned
+vote lookup, Android worker dispatch, rendering and physical touch. No overall
+typing speedup is claimed. Concurrent core replay timing is descriptive only.
+
+Local gradlew --offline --no-daemon :app:assembleDebug:
+PASS all four ABIs: arm64-v8a, armeabi-v7a, x86, x86_64.
+BUILD SUCCESSFUL in 1m 44s; 47 tasks, 21 executed, 26 up-to-date.
+The first attempt used an empty cache and could not fetch Gradle in the sandbox;
+the successful build used the existing local cache. No build dependency changed.
+
+Source catalog: PASS 34 sources / 67 pinned inputs / 8 add-on source groups.
+Source-management unit tests: PASS 19.
+No production dictionary refresh, model reweighting or per-word exceptions.
+
+Not verified: natural Taiwan Mandarin conversation accuracy, semantic human
+ratings, signed release installation, physical touch latency and phone-visible
+candidate layout/acceptance after this change. Prior Play publication gates remain.
