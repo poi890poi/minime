@@ -1,0 +1,3863 @@
+{
+  "scope": "origin and lexical-attestation diagnostic; existing production/evaluated data, not a fresh holdout",
+  "selection": "first 256 names/rows by SHA-256 ordering; Rudy names 3–7 explicit syllables; full and omit-last-syllable inputs",
+  "sources": {
+    "app\\src\\main\\assets\\geography.tsv": "8969bee08d2315e349e8e53618ac2986b5a6632d95bee6aee8e772de00cd7040",
+    "docs\\conversation-ranking\\corpus\\inputs.tsv": "14c186c6589c4081f709f6aa237bb9a0d61a0d5ad32754dad8d72976d478004d",
+    "third_party\\rime\\data-sources\\rime-essay.zip": "4eacdf2018805883d8e63da4a33db6947ccc698f28d7cf78e5493c1892cbf5ac",
+    "third_party\\rime\\data-sources\\rime-luna-pinyin.zip": "96f96206361a9f5e9ec5af7f102cb1c6b04e3f394746150e5fa62ae87290f9c2",
+    "third_party\\rime\\data-sources\\rime-prelude.zip": "624be6ea2a2abbf743d9c69c6e9ad4784932f36abd0922a655af38710e1c8695"
+  },
+  "inputs": [
+    {
+      "group": "rudy-full",
+      "raw": "datunshan",
+      "reference": "大屯山"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "datun",
+      "reference": "大屯山"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "renzhuqiao",
+      "reference": "仁竹橋"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "renzhu",
+      "reference": "仁竹橋"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jinshanlaojie",
+      "reference": "金山老街"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jinshanlao",
+      "reference": "金山老街"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qianduanqi",
+      "reference": "千段崎"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qianduan",
+      "reference": "千段崎"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "haohanbudao",
+      "reference": "好漢步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "haohanbu",
+      "reference": "好漢步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yuliaodong",
+      "reference": "魚寮東"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yuliao",
+      "reference": "魚寮東"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "takejinxi",
+      "reference": "塔克金溪"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "takejin",
+      "reference": "塔克金溪"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "minonghu",
+      "reference": "瀰濃湖"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "minong",
+      "reference": "瀰濃湖"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "chishangwenhuaguan",
+      "reference": "池上文化館"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "chishangwenhua",
+      "reference": "池上文化館"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "longshanyanbudao",
+      "reference": "籠山巖步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "longshanyanbu",
+      "reference": "籠山巖步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "sikouzhijia",
+      "reference": "四口之家"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "sikouzhi",
+      "reference": "四口之家"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wanggongkeng",
+      "reference": "王公坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wanggong",
+      "reference": "王公坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "huoyanshanyoulequ",
+      "reference": "火炎山遊樂區"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "huoyanshanyoule",
+      "reference": "火炎山遊樂區"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "youcailiao",
+      "reference": "有才寮"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "youcai",
+      "reference": "有才寮"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yangtianling",
+      "reference": "仰天嶺"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yangtian",
+      "reference": "仰天嶺"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qingbianlu",
+      "reference": "輕便路"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qingbian",
+      "reference": "輕便路"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yiyinpubu",
+      "reference": "藝音瀑布"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yiyinpu",
+      "reference": "藝音瀑布"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhukengdengshankou",
+      "reference": "竹坑登山口"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhukengdengshan",
+      "reference": "竹坑登山口"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "nanshili",
+      "reference": "南勢里"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "nanshi",
+      "reference": "南勢里"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "huajiamupingtai",
+      "reference": "花架木平台"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "huajiamuping",
+      "reference": "花架木平台"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yuangangcaihongqiao",
+      "reference": "苑港彩虹橋"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yuangangcaihong",
+      "reference": "苑港彩虹橋"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qiannianhongkuai",
+      "reference": "千年紅檜"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qiannianhong",
+      "reference": "千年紅檜"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "kangrifengchating",
+      "reference": "抗日奉茶亭"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "kangrifengcha",
+      "reference": "抗日奉茶亭"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "gangshanqu",
+      "reference": "岡山區"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "gangshan",
+      "reference": "岡山區"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "bachimen",
+      "reference": "八尺門"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "bachi",
+      "reference": "八尺門"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tainanlaojia",
+      "reference": "台南老家"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tainanlao",
+      "reference": "台南老家"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yansangkeng",
+      "reference": "鹽桑坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yansang",
+      "reference": "鹽桑坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "libeijiansi",
+      "reference": "立碑建嗣"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "libeijian",
+      "reference": "立碑建嗣"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "guanlubian",
+      "reference": "官路邊"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "guanlu",
+      "reference": "官路邊"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "bajiahu",
+      "reference": "八甲湖"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "bajia",
+      "reference": "八甲湖"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wuzhiliao",
+      "reference": "五指寮"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wuzhi",
+      "reference": "五指寮"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "nanzhoutangchang",
+      "reference": "南州糖廠"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "nanzhoutang",
+      "reference": "南州糖廠"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tidailuduan",
+      "reference": "替代路段"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tidailu",
+      "reference": "替代路段"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shuyinxiaojing",
+      "reference": "樹陰小徑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shuyinxiao",
+      "reference": "樹陰小徑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "laomeipubuluxian",
+      "reference": "老梅瀑布路線"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "laomeipubulu",
+      "reference": "老梅瀑布路線"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tiantanglumijing",
+      "reference": "天堂路秘境"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tiantanglumi",
+      "reference": "天堂路秘境"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "lusichao",
+      "reference": "鷺鷥巢"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "lusi",
+      "reference": "鷺鷥巢"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "liuzhangli",
+      "reference": "六張犂"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "liuzhang",
+      "reference": "六張犂"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shunvpo",
+      "reference": "淑女坡"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shunv",
+      "reference": "淑女坡"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "linfengchijurenmuzhi",
+      "reference": "林鳳池舉人墓誌"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "linfengchijurenmu",
+      "reference": "林鳳池舉人墓誌"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tabanchi",
+      "reference": "塔班池"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "taban",
+      "reference": "塔班池"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "daerwenlvdi",
+      "reference": "達爾文綠地"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "daerwenlv",
+      "reference": "達爾文綠地"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "taiyuanyougu",
+      "reference": "泰源幽谷"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "taiyuanyou",
+      "reference": "泰源幽谷"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shoufengxiang",
+      "reference": "壽豐鄉"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shoufeng",
+      "reference": "壽豐鄉"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "guanggoucuo",
+      "reference": "廣溝厝"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "guanggou",
+      "reference": "廣溝厝"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "youkezhibu",
+      "reference": "遊客止步"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "youkezhi",
+      "reference": "遊客止步"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "youeryuan",
+      "reference": "幼兒園"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "youer",
+      "reference": "幼兒園"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tutanlun",
+      "reference": "塗潭崙"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tutan",
+      "reference": "塗潭崙"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xinlinbudaowuduan",
+      "reference": "新林步道五段"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xinlinbudaowu",
+      "reference": "新林步道五段"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "laofoshanbudao",
+      "reference": "老佛山步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "laofoshanbu",
+      "reference": "老佛山步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "aodijian",
+      "reference": "澳底尖"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "aodi",
+      "reference": "澳底尖"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "lunbeixiang",
+      "reference": "崙背鄉"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "lunbei",
+      "reference": "崙背鄉"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "longanluqiao",
+      "reference": "龍安陸橋"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "longanlu",
+      "reference": "龍安陸橋"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "mingdaoshuyuanjiuzhibei",
+      "reference": "明道書院舊址碑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "mingdaoshuyuanjiuzhi",
+      "reference": "明道書院舊址碑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "kangriyiji",
+      "reference": "抗日遺跡"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "kangriyi",
+      "reference": "抗日遺跡"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tiaojiechi",
+      "reference": "調節池"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tiaojie",
+      "reference": "調節池"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "mawudupubu",
+      "reference": "馬武督瀑布"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "mawudupu",
+      "reference": "馬武督瀑布"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "nanqiaojudian",
+      "reference": "南僑據點"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "nanqiaoju",
+      "reference": "南僑據點"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qingrenqiao",
+      "reference": "情人橋"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qingren",
+      "reference": "情人橋"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "sanbalingmijing",
+      "reference": "三八嶺秘境"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "sanbalingmi",
+      "reference": "三八嶺秘境"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "neihulusanduan",
+      "reference": "內湖路三段"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "neihulusan",
+      "reference": "內湖路三段"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "sanxiantaiyouqiqu",
+      "reference": "三仙台遊憩區"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "sanxiantaiyouqi",
+      "reference": "三仙台遊憩區"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "bumingyiji",
+      "reference": "不明遺跡"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "bumingyi",
+      "reference": "不明遺跡"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "chuguanbudao",
+      "reference": "出關步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "chuguanbu",
+      "reference": "出關步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhulinbudao",
+      "reference": "竹林步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhulinbu",
+      "reference": "竹林步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "lashenggou",
+      "reference": "拉繩溝"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "lasheng",
+      "reference": "拉繩溝"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jiguopailaojiaotang",
+      "reference": "基國派老教堂"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jiguopailaojiao",
+      "reference": "基國派老教堂"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "meicunbuluo",
+      "reference": "梅村部落"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "meicunbu",
+      "reference": "梅村部落"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wuliaojianbudao",
+      "reference": "五寮尖步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wuliaojianbu",
+      "reference": "五寮尖步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "huanghouzhensenlin",
+      "reference": "皇后鎮森林"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "huanghouzhensen",
+      "reference": "皇后鎮森林"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zuoyoudouyouchukou",
+      "reference": "左右都有出口"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zuoyoudouyouchu",
+      "reference": "左右都有出口"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "chensiqiao",
+      "reference": "沉思橋"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "chensi",
+      "reference": "沉思橋"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shuangxikou",
+      "reference": "雙溪口"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shuangxi",
+      "reference": "雙溪口"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xinrongyuchi",
+      "reference": "新榮魚池"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xinrongyu",
+      "reference": "新榮魚池"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dingwucuo",
+      "reference": "頂吾厝"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dingwu",
+      "reference": "頂吾厝"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "liushunan",
+      "reference": "柳樹南"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "liushu",
+      "reference": "柳樹南"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jiazouliao",
+      "reference": "加走寮"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jiazou",
+      "reference": "加走寮"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhangshuerlu",
+      "reference": "樟樹二路"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhangshuer",
+      "reference": "樟樹二路"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tonghouyuelingdao",
+      "reference": "桶后越嶺道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tonghouyueling",
+      "reference": "桶后越嶺道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhanghubudao",
+      "reference": "樟湖步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhanghubu",
+      "reference": "樟湖步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tanhuangxiaojing",
+      "reference": "彈簧小徑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tanhuangxiao",
+      "reference": "彈簧小徑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "anwusuodaofasongdian",
+      "reference": "暗霧索道發送點"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "anwusuodaofasong",
+      "reference": "暗霧索道發送點"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jinshashuiku",
+      "reference": "津沙水庫"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jinshashui",
+      "reference": "津沙水庫"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "niupingkeng",
+      "reference": "牛坪坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "niuping",
+      "reference": "牛坪坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tianchishanzhuang",
+      "reference": "天池山莊"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tianchishan",
+      "reference": "天池山莊"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yushanbeifeng",
+      "reference": "玉山北峰"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yushanbei",
+      "reference": "玉山北峰"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wupiaokeng",
+      "reference": "五票坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wupiao",
+      "reference": "五票坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "pinghecuo",
+      "reference": "平和厝"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "pinghe",
+      "reference": "平和厝"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "taoyuanqu",
+      "reference": "桃源區"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "taoyuan",
+      "reference": "桃源區"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "ruanqiaoli",
+      "reference": "軟橋里"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "ruanqiao",
+      "reference": "軟橋里"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "hongwazhen",
+      "reference": "紅瓦鎮"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "hongwa",
+      "reference": "紅瓦鎮"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "pinghecun",
+      "reference": "平和村"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "pinghe",
+      "reference": "平和村"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "neimazutian",
+      "reference": "內媽祖田"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "neimazu",
+      "reference": "內媽祖田"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "ganzhelun",
+      "reference": "甘蔗崙"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "ganzhe",
+      "reference": "甘蔗崙"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yimincun",
+      "reference": "移民村"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yimin",
+      "reference": "移民村"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "sandimen",
+      "reference": "三地門"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "sandi",
+      "reference": "三地門"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "diaobaokeng",
+      "reference": "掉堡坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "diaobao",
+      "reference": "掉堡坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "huangxishuyuan",
+      "reference": "磺溪書院"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "huangxishu",
+      "reference": "磺溪書院"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "fenshuilong",
+      "reference": "分水龍"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "fenshui",
+      "reference": "分水龍"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "madoueyudawang",
+      "reference": "麻豆鱷魚大王"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "madoueyuda",
+      "reference": "麻豆鱷魚大王"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "ligangxiang",
+      "reference": "里港鄉"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "ligang",
+      "reference": "里港鄉"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "hetangxiaofeng",
+      "reference": "荷塘曉風"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "hetangxiao",
+      "reference": "荷塘曉風"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shibihou",
+      "reference": "石壁後"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shibi",
+      "reference": "石壁後"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dongwopingshan",
+      "reference": "東窩坪山"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dongwoping",
+      "reference": "東窩坪山"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yongchenggucuo",
+      "reference": "永成古厝"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yongchenggu",
+      "reference": "永成古厝"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "caoshanbudao",
+      "reference": "草山步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "caoshanbu",
+      "reference": "草山步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "chulumuchang",
+      "reference": "初鹿牧場"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "chulumu",
+      "reference": "初鹿牧場"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yimenkeng",
+      "reference": "義門坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yimen",
+      "reference": "義門坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qinglongjing",
+      "reference": "青龍井"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qinglong",
+      "reference": "青龍井"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "siweidao",
+      "reference": "四維道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "siwei",
+      "reference": "四維道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "daluqi",
+      "reference": "大路墘"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dalu",
+      "reference": "大路墘"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhutaishuangyu",
+      "reference": "燭臺雙嶼"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhutaishuang",
+      "reference": "燭臺雙嶼"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jitayingdi",
+      "reference": "吉他營地"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jitaying",
+      "reference": "吉他營地"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "guanyintai",
+      "reference": "觀音台"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "guanyin",
+      "reference": "觀音台"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dahanjudian",
+      "reference": "大漢據點"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dahanju",
+      "reference": "大漢據點"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "huitouling",
+      "reference": "回頭嶺"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "huitou",
+      "reference": "回頭嶺"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jiangongli",
+      "reference": "建功里"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jiangong",
+      "reference": "建功里"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "muxiajingyaguju",
+      "reference": "木下靜涯故居"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "muxiajingyagu",
+      "reference": "木下靜涯故居"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "diercengshuoming",
+      "reference": "第二層說明"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "diercengshuo",
+      "reference": "第二層說明"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shuqiaowo",
+      "reference": "樹橋窩"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shuqiao",
+      "reference": "樹橋窩"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shimenxiang",
+      "reference": "石門鄉"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shimen",
+      "reference": "石門鄉"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wushuikeng",
+      "reference": "無水坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wushui",
+      "reference": "無水坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jiuzhaojiapaishui",
+      "reference": "舊趙甲排水"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jiuzhaojiapai",
+      "reference": "舊趙甲排水"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "fuwanshanlujing",
+      "reference": "釜碗山路徑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "fuwanshanlu",
+      "reference": "釜碗山路徑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "neiliuliao",
+      "reference": "內六寮"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "neiliu",
+      "reference": "內六寮"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "haiqiancuo",
+      "reference": "海漧厝"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "haiqian",
+      "reference": "海漧厝"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "baizikenggou",
+      "reference": "百字坑溝"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "baizikeng",
+      "reference": "百字坑溝"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shengdexiang",
+      "reference": "聖德巷"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shengde",
+      "reference": "聖德巷"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xinshengbuluo",
+      "reference": "新生部落"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xinshengbu",
+      "reference": "新生部落"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qianrendongyingdi",
+      "reference": "千人洞營地"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qianrendongying",
+      "reference": "千人洞營地"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "miaoqianpengjia",
+      "reference": "廟前棚架"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "miaoqianpeng",
+      "reference": "廟前棚架"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "pozhulin",
+      "reference": "破竹林"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "pozhu",
+      "reference": "破竹林"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yunvshan",
+      "reference": "玉女山"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yunv",
+      "reference": "玉女山"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shiergu",
+      "reference": "十二股"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shier",
+      "reference": "十二股"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shuicheshengtaichi",
+      "reference": "水車生態池"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shuicheshengtai",
+      "reference": "水車生態池"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xigushuiyuan",
+      "reference": "溪谷水源"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xigushui",
+      "reference": "溪谷水源"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhongxingzhiye",
+      "reference": "中興紙業"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhongxingzhi",
+      "reference": "中興紙業"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dachengdianbudao",
+      "reference": "大成殿步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dachengdianbu",
+      "reference": "大成殿步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "alimei",
+      "reference": "阿里眉"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "ali",
+      "reference": "阿里眉"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "pangongchougumu",
+      "reference": "潘宮籌古墓"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "pangongchougu",
+      "reference": "潘宮籌古墓"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "bantianqiao",
+      "reference": "半天橋"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "bantian",
+      "reference": "半天橋"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dingxinshekeng",
+      "reference": "頂新社坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dingxinshe",
+      "reference": "頂新社坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "weidanchi",
+      "reference": "偉蛋池"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "weidan",
+      "reference": "偉蛋池"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "baiyekeng",
+      "reference": "百葉坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "baiye",
+      "reference": "百葉坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhangdarenying",
+      "reference": "張大人營"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhangdaren",
+      "reference": "張大人營"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "erliaokeng",
+      "reference": "二寮坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "erliao",
+      "reference": "二寮坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qilinshansenlinbudao",
+      "reference": "麒麟山森林步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qilinshansenlinbu",
+      "reference": "麒麟山森林步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhongxiaojieyihuilang",
+      "reference": "忠孝節義迴廊"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhongxiaojieyihui",
+      "reference": "忠孝節義迴廊"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "hualiangangdamen",
+      "reference": "花蓮港大門"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "hualiangangda",
+      "reference": "花蓮港大門"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jilongshandengshanbudao",
+      "reference": "雞籠山登山步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jilongshandengshanbu",
+      "reference": "雞籠山登山步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "chenggongli",
+      "reference": "成功里"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "chenggong",
+      "reference": "成功里"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "songlinbuluo",
+      "reference": "松林部落"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "songlinbu",
+      "reference": "松林部落"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "nanxiwei",
+      "reference": "南溪尾"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "nanxi",
+      "reference": "南溪尾"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "disanqihuitang",
+      "reference": "第三期灰塘"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "disanqihui",
+      "reference": "第三期灰塘"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "luliaoshandongnan",
+      "reference": "鹿寮山東南"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "luliaoshandong",
+      "reference": "鹿寮山東南"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wanshanshenchi",
+      "reference": "萬山神池"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wanshanshen",
+      "reference": "萬山神池"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "fuliupubu",
+      "reference": "伏流瀑布"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "fuliupu",
+      "reference": "伏流瀑布"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "fenggangtifang",
+      "reference": "鳳岡堤防"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "fenggangti",
+      "reference": "鳳岡堤防"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dongxiyankou",
+      "reference": "東西煙口"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dongxiyan",
+      "reference": "東西煙口"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jinganlusanduan",
+      "reference": "靜安路三段"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jinganlusan",
+      "reference": "靜安路三段"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "houanliao",
+      "reference": "後安寮"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "houan",
+      "reference": "後安寮"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "foguangshan",
+      "reference": "佛光山"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "foguang",
+      "reference": "佛光山"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dadiyuan",
+      "reference": "大地園"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dadi",
+      "reference": "大地園"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shengtaixiliubudao",
+      "reference": "生態溪流步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shengtaixiliubu",
+      "reference": "生態溪流步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "siniantangfangjianbei",
+      "reference": "斯年堂方尖碑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "siniantangfangjian",
+      "reference": "斯年堂方尖碑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "nihuoshanwangbeijidian",
+      "reference": "泥火山往北極殿"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "nihuoshanwangbeiji",
+      "reference": "泥火山往北極殿"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "sanwanxiang",
+      "reference": "三灣鄉"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "sanwan",
+      "reference": "三灣鄉"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jinmenchengximen",
+      "reference": "金門城西門"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jinmenchengxi",
+      "reference": "金門城西門"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jiamuziwan",
+      "reference": "加母子灣"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jiamuzi",
+      "reference": "加母子灣"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "momonaerpubu",
+      "reference": "摩摩納爾瀑布"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "momonaerpu",
+      "reference": "摩摩納爾瀑布"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "maanliao",
+      "reference": "馬鞍寮"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "maan",
+      "reference": "馬鞍寮"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "erkuaicuo",
+      "reference": "二塊厝"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "erkuai",
+      "reference": "二塊厝"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xindianshi",
+      "reference": "新店市"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xindian",
+      "reference": "新店市"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "fuganghaitibudao",
+      "reference": "富岡海堤步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "fuganghaitibu",
+      "reference": "富岡海堤步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jiquanqiao",
+      "reference": "集泉橋"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jiquan",
+      "reference": "集泉橋"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhishanyuanhoumen",
+      "reference": "至善圓後門"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhishanyuanhou",
+      "reference": "至善圓後門"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "haishenhao",
+      "reference": "海神號"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "haishen",
+      "reference": "海神號"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "houwanqiao",
+      "reference": "后灣橋"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "houwan",
+      "reference": "后灣橋"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xiuqipingtai",
+      "reference": "休憩平台"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xiuqiping",
+      "reference": "休憩平台"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yuanyuanyuannongzhuang",
+      "reference": "圓緣園農莊"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yuanyuanyuannong",
+      "reference": "圓緣園農莊"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "juziyuan",
+      "reference": "橘子園"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "juzi",
+      "reference": "橘子園"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "buyaodaqiu",
+      "reference": "不要打球"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "buyaoda",
+      "reference": "不要打球"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "fudegong",
+      "reference": "福德宮"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "fude",
+      "reference": "福德宮"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "hutonggudao",
+      "reference": "湖桶古道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "hutonggu",
+      "reference": "湖桶古道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "linluoxiang",
+      "reference": "麟洛鄉"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "linluo",
+      "reference": "麟洛鄉"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "lichengzhishipai",
+      "reference": "里程指示牌"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "lichengzhishi",
+      "reference": "里程指示牌"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "rishiyanloujiuzhi",
+      "reference": "日式菸樓舊址"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "rishiyanloujiu",
+      "reference": "日式菸樓舊址"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "mingxinyuan",
+      "reference": "明心園"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "mingxin",
+      "reference": "明心園"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shangshimen",
+      "reference": "上石門"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shangshi",
+      "reference": "上石門"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xingnongxiang",
+      "reference": "興農巷"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xingnong",
+      "reference": "興農巷"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "niaowanxitou",
+      "reference": "鳥萬溪頭"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "niaowanxi",
+      "reference": "鳥萬溪頭"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "daxuefenglv",
+      "reference": "大學風呂"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "daxuefeng",
+      "reference": "大學風呂"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "meinongminsucun",
+      "reference": "美濃民俗村"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "meinongminsu",
+      "reference": "美濃民俗村"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "datieshan",
+      "reference": "打鐵山"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "datie",
+      "reference": "打鐵山"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhutoujiao",
+      "reference": "竹頭角"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhutou",
+      "reference": "竹頭角"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zhongxingxiang",
+      "reference": "中興巷"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zhongxing",
+      "reference": "中興巷"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tianehu",
+      "reference": "天鵝湖"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tiane",
+      "reference": "天鵝湖"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "huangcuoke",
+      "reference": "黃厝科"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "huangcuo",
+      "reference": "黃厝科"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "gouzikouzhixian",
+      "reference": "溝子口支線"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "gouzikouzhi",
+      "reference": "溝子口支線"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "beiwopaishui",
+      "reference": "北窩排水"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "beiwopai",
+      "reference": "北窩排水"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "mingxincun",
+      "reference": "明新村"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "mingxin",
+      "reference": "明新村"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "renwenxueyuanyinshuiji",
+      "reference": "人文學院飲水機"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "renwenxueyuanyinshui",
+      "reference": "人文學院飲水機"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qinhecun",
+      "reference": "勤和村"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qinhe",
+      "reference": "勤和村"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xianggongshan",
+      "reference": "相公山"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xianggong",
+      "reference": "相公山"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tianlongbudao",
+      "reference": "天龍步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tianlongbu",
+      "reference": "天龍步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "kuaimuyingdi",
+      "reference": "檜木營地"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "kuaimuying",
+      "reference": "檜木營地"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qilaishanbudao",
+      "reference": "奇萊山步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qilaishanbu",
+      "reference": "奇萊山步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dingnankan",
+      "reference": "頂南崁"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dingnan",
+      "reference": "頂南崁"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qingrendong",
+      "reference": "情人洞"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qingren",
+      "reference": "情人洞"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "caihongpenquan",
+      "reference": "彩虹噴泉"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "caihongpen",
+      "reference": "彩虹噴泉"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "huadongbiandao",
+      "reference": "華東便道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "huadongbian",
+      "reference": "華東便道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tailugechawu",
+      "reference": "太魯閣茶屋"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tailugecha",
+      "reference": "太魯閣茶屋"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wangdajianshanpubu",
+      "reference": "往大尖山瀑布"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wangdajianshanpu",
+      "reference": "往大尖山瀑布"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "zongdufuhefujie",
+      "reference": "總督府河敷界"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "zongdufuhefu",
+      "reference": "總督府河敷界"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tukuyuedengshankou",
+      "reference": "土庫岳登山口"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tukuyuedengshan",
+      "reference": "土庫岳登山口"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "kewangcun",
+      "reference": "渴望村"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "kewang",
+      "reference": "渴望村"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "beidawuxindengshankou",
+      "reference": "北大武新登山口"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "beidawuxindengshan",
+      "reference": "北大武新登山口"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dingsisheliaoshan",
+      "reference": "頂四社寮山"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dingsisheliao",
+      "reference": "頂四社寮山"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xinputifang",
+      "reference": "新埔堤防"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xinputi",
+      "reference": "新埔堤防"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "fenggangxi",
+      "reference": "楓港溪"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "fenggang",
+      "reference": "楓港溪"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "qianfengyuan",
+      "reference": "千楓園"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "qianfeng",
+      "reference": "千楓園"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dapikeng",
+      "reference": "大埤坑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dapi",
+      "reference": "大埤坑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xiaotiantibudao",
+      "reference": "小天梯步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xiaotiantibu",
+      "reference": "小天梯步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "youtiancun",
+      "reference": "油田村"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "youtian",
+      "reference": "油田村"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shulinzhanjianpiaokou",
+      "reference": "樹林站剪票口"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shulinzhanjianpiao",
+      "reference": "樹林站剪票口"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dahutongshanlujing",
+      "reference": "大湖桶山路徑"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dahutongshanlu",
+      "reference": "大湖桶山路徑"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xiongfengqiaobi",
+      "reference": "雄風峭壁"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xiongfengqiao",
+      "reference": "雄風峭壁"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wenlinshengtaigudao",
+      "reference": "文林生態古道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wenlinshengtaigu",
+      "reference": "文林生態古道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "daxingcun",
+      "reference": "大興村"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "daxing",
+      "reference": "大興村"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "houbiqu",
+      "reference": "後壁區"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "houbi",
+      "reference": "後壁區"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jiufenershandengshankou",
+      "reference": "九份二山登山口"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jiufenershandengshan",
+      "reference": "九份二山登山口"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wangyongqingjiniandiaoxiang",
+      "reference": "王永慶紀念雕像"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wangyongqingjiniandiao",
+      "reference": "王永慶紀念雕像"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "gangkoulun",
+      "reference": "港口崙"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "gangkou",
+      "reference": "港口崙"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xiluozhen",
+      "reference": "西螺鎮"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xiluo",
+      "reference": "西螺鎮"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shibaotai",
+      "reference": "十胞胎"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shibao",
+      "reference": "十胞胎"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dazhongmiaobeiying",
+      "reference": "大眾廟北營"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dazhongmiaobei",
+      "reference": "大眾廟北營"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "alabohuanggong",
+      "reference": "阿拉伯皇宮"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "alabohuang",
+      "reference": "阿拉伯皇宮"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wanluanxiang",
+      "reference": "萬巒鄉"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wanluan",
+      "reference": "萬巒鄉"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "huayucun",
+      "reference": "花嶼村"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "huayu",
+      "reference": "花嶼村"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wulintoubudao",
+      "reference": "烏林投步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wulintoubu",
+      "reference": "烏林投步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xiaopinglin",
+      "reference": "小坪林"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xiaoping",
+      "reference": "小坪林"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "wanggongyuan",
+      "reference": "王公園"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "wanggong",
+      "reference": "王公園"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "yuanshanhu",
+      "reference": "鳶山湖"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "yuanshan",
+      "reference": "鳶山湖"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "xiejinnongchang",
+      "reference": "協進農場"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "xiejinnong",
+      "reference": "協進農場"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "diaoqiaoyizhi",
+      "reference": "吊橋遺址"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "diaoqiaoyi",
+      "reference": "吊橋遺址"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "beishitou",
+      "reference": "北勢頭"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "beishi",
+      "reference": "北勢頭"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "dingganshe",
+      "reference": "鐤橄社"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "dinggan",
+      "reference": "鐤橄社"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "sandengweixingdian",
+      "reference": "三等衛星點"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "sandengweixing",
+      "reference": "三等衛星點"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shuangrushankengdao",
+      "reference": "雙乳山坑道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shuangrushankeng",
+      "reference": "雙乳山坑道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "beisikou",
+      "reference": "北四口"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "beisi",
+      "reference": "北四口"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "jushiyuan",
+      "reference": "巨石園"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "jushi",
+      "reference": "巨石園"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "guirenqu",
+      "reference": "歸仁區"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "guiren",
+      "reference": "歸仁區"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "tianmushanbudao",
+      "reference": "天母山步道"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "tianmushanbu",
+      "reference": "天母山步道"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shifendong",
+      "reference": "十份崠"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shifen",
+      "reference": "十份崠"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "nuannuanpaotai",
+      "reference": "暖暖砲台"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "nuannuanpao",
+      "reference": "暖暖砲台"
+    },
+    {
+      "group": "rudy-full",
+      "raw": "shuangshiyan",
+      "reference": "雙獅岩"
+    },
+    {
+      "group": "rudy-prefix",
+      "raw": "shuangshi",
+      "reference": "雙獅岩"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "hubei",
+      "reference": "湖北"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "b",
+      "reference": "白"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "minga",
+      "reference": "明暗"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "manhua",
+      "reference": "漫畫"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "shigong",
+      "reference": "施工"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "guocheng",
+      "reference": "過程"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dd",
+      "reference": "大大"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "wc",
+      "reference": "誤差"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dand",
+      "reference": "擔當"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dianh",
+      "reference": "電話"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "bian",
+      "reference": "編"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zhaoh",
+      "reference": "召喚"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "xin",
+      "reference": "尋"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "cti",
+      "reference": "車體"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zhixing",
+      "reference": "執行"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zda",
+      "reference": "重大"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gming",
+      "reference": "更名"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "nz",
+      "reference": "內戰"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zjia",
+      "reference": "追加"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kn",
+      "reference": "困難"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "shuoming",
+      "reference": "說明"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "tongn",
+      "reference": "同年"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "nin",
+      "reference": "您"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ss",
+      "reference": "上述"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "tonghong",
+      "reference": "通紅"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "guanx",
+      "reference": "關係"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "mianfei",
+      "reference": "免費"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yuanzi",
+      "reference": "原子"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "anquan",
+      "reference": "安全"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "cy",
+      "reference": "持有"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "tzhu",
+      "reference": "土著"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "chongtu",
+      "reference": "衝突"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dxu",
+      "reference": "斷續"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kej",
+      "reference": "客機"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ke",
+      "reference": "棵"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "quyu",
+      "reference": "區域"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ri",
+      "reference": "日"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "guoji",
+      "reference": "國際"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "hu",
+      "reference": "湖"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zim",
+      "reference": "字母"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kant",
+      "reference": "勘探"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "s",
+      "reference": "韶"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "qguo",
+      "reference": "全國"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "feiji",
+      "reference": "飛機"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "bt",
+      "reference": "白塔"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "mh",
+      "reference": "漫畫"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "txian",
+      "reference": "體現"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zoulang",
+      "reference": "走廊"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "diz",
+      "reference": "地質"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "sheli",
+      "reference": "設立"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "weil",
+      "reference": "威廉"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "baoz",
+      "reference": "保障"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "sai",
+      "reference": "賽"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "phuai",
+      "reference": "破壞"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dany",
+      "reference": "單元"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zb",
+      "reference": "裝備"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "sm",
+      "reference": "說明"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yantao",
+      "reference": "研討"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "mengy",
+      "reference": "盟約"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "qiw",
+      "reference": "齊王"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jy",
+      "reference": "具有"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zhil",
+      "reference": "質量"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "sgu",
+      "reference": "事故"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "xb",
+      "reference": "宣布"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zhounian",
+      "reference": "週年"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "th",
+      "reference": "天后"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "guojia",
+      "reference": "國家"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "juejin",
+      "reference": "掘金"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gr",
+      "reference": "干擾"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gf",
+      "reference": "國防"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ceng",
+      "reference": "層"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jiazhou",
+      "reference": "加州"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "laiw",
+      "reference": "來往"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zhao",
+      "reference": "朝"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gongye",
+      "reference": "工業"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "lujun",
+      "reference": "陸軍"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "chu",
+      "reference": "除"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "sbao",
+      "reference": "時報"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "hcheng",
+      "reference": "航程"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "lei",
+      "reference": "類"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "cixing",
+      "reference": "雌性"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "chongb",
+      "reference": "崇拜"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yb",
+      "reference": "預備"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ffa",
+      "reference": "方法"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "xiang",
+      "reference": "相"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "c",
+      "reference": "程"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "fd",
+      "reference": "復旦"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "wliu",
+      "reference": "物流"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "lt",
+      "reference": "龍頭"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kaogu",
+      "reference": "考古"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "xi",
+      "reference": "吸"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "bsim",
+      "reference": "俾斯麥"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "mling",
+      "reference": "命令"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "f",
+      "reference": "房"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "junzhu",
+      "reference": "君主"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "chuan",
+      "reference": "穿"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "br",
+      "reference": "本人"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ss",
+      "reference": "世俗"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gui",
+      "reference": "貴"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "lru",
+      "reference": "例如"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "xialai",
+      "reference": "下來"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ju",
+      "reference": "車"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kz",
+      "reference": "抗戰"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "g",
+      "reference": "館"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "chong",
+      "reference": "蟲"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zheng",
+      "reference": "政"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "quanb",
+      "reference": "全部"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jie",
+      "reference": "接"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dian",
+      "reference": "電"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "sji",
+      "reference": "設計"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dong",
+      "reference": "動"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yij",
+      "reference": "以及"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "cchan",
+      "reference": "出產"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "chen",
+      "reference": "沈"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gairen",
+      "reference": "改任"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "shi",
+      "reference": "室"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "qd",
+      "reference": "取得"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jshang",
+      "reference": "加上"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "guoj",
+      "reference": "國軍"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jishu",
+      "reference": "技術"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "chuangli",
+      "reference": "創立"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "nhai",
+      "reference": "男孩"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "le",
+      "reference": "了"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "hx",
+      "reference": "合校"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "chengk",
+      "reference": "乘客"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "sxing",
+      "reference": "實行"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ke",
+      "reference": "棵"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "hde",
+      "reference": "獲得"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "qiz",
+      "reference": "棋子"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "tong",
+      "reference": "痛"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gurou",
+      "reference": "骨肉"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "lu",
+      "reference": "路"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yshi",
+      "reference": "於是"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "qus",
+      "reference": "去世"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "sshui",
+      "reference": "縮水"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kdu",
+      "reference": "寬度"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ptong",
+      "reference": "普通"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "qin",
+      "reference": "秦"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "guj",
+      "reference": "故居"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "caifang",
+      "reference": "採訪"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dy",
+      "reference": "隊員"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "cai",
+      "reference": "材"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "pqi",
+      "reference": "拋棄"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zxin",
+      "reference": "徵信"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "di",
+      "reference": "低"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dizhong",
+      "reference": "地中"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "junx",
+      "reference": "軍校"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "xi",
+      "reference": "希"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "y",
+      "reference": "儀"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "s",
+      "reference": "誦"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gren",
+      "reference": "國人"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yy",
+      "reference": "由於"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gye",
+      "reference": "工業"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "c",
+      "reference": "出"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kecheng",
+      "reference": "課程"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jm",
+      "reference": "減慢"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "huos",
+      "reference": "伙食"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ts",
+      "reference": "貼身"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zhufang",
+      "reference": "住房"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zhishu",
+      "reference": "直屬"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "q",
+      "reference": "前"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "j",
+      "reference": "教"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "wc",
+      "reference": "完成"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "tezheng",
+      "reference": "特徵"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "sxia",
+      "reference": "屬下"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yuan",
+      "reference": "原"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "nvz",
+      "reference": "女真"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "nanqu",
+      "reference": "南區"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "b",
+      "reference": "部"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "shi",
+      "reference": "室"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "szhang",
+      "reference": "省長"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jl",
+      "reference": "激勵"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "minzhong",
+      "reference": "民眾"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gbi",
+      "reference": "關閉"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ltou",
+      "reference": "龍頭"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "he",
+      "reference": "喝"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kec",
+      "reference": "客車"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dy",
+      "reference": "定義"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "mjial",
+      "reference": "孟加拉"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "z",
+      "reference": "最"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kongz",
+      "reference": "控制"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "d",
+      "reference": "地"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "by",
+      "reference": "畢業"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zd",
+      "reference": "阻斷"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kaolv",
+      "reference": "考慮"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "shengx",
+      "reference": "生下"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "ct",
+      "reference": "車體"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "fuzhou",
+      "reference": "符咒"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jguan",
+      "reference": "接管"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "qins",
+      "reference": "寢室"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "mai",
+      "reference": "賣"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "dingbu",
+      "reference": "頂部"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "danc",
+      "reference": "單詞"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "fc",
+      "reference": "費城"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "bs",
+      "reference": "變數"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "lx",
+      "reference": "理想"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "cha",
+      "reference": "茶"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "weiz",
+      "reference": "位置"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jwang",
+      "reference": "君王"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "wzhi",
+      "reference": "位置"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "fengkuang",
+      "reference": "瘋狂"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jk",
+      "reference": "接客"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "guoj",
+      "reference": "國軍"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "anz",
+      "reference": "按照"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kec",
+      "reference": "課程"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gxia",
+      "reference": "管轄"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zhen",
+      "reference": "針"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yn",
+      "reference": "園內"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "shangwang",
+      "reference": "傷亡"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "shi",
+      "reference": "式"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "qhao",
+      "reference": "恰好"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "wu",
+      "reference": "於"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "chongxin",
+      "reference": "重新"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "bos",
+      "reference": "柏樹"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gang",
+      "reference": "剛"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zh",
+      "reference": "總會"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jt",
+      "reference": "集團"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "xx",
+      "reference": "信息"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "kzhan",
+      "reference": "開展"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "guangdong",
+      "reference": "廣東"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gz",
+      "reference": "高中"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zz",
+      "reference": "抓住"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yuangu",
+      "reference": "緣故"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "tiant",
+      "reference": "天台"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "b",
+      "reference": "把"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jiaoh",
+      "reference": "教會"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "chiy",
+      "reference": "持有"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "mud",
+      "reference": "目睹"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "shel",
+      "reference": "設立"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "hh",
+      "reference": "黃昏"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "hfa",
+      "reference": "合法"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "qxie",
+      "reference": "傾斜"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "r",
+      "reference": "日"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jiaogao",
+      "reference": "較高"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "bai",
+      "reference": "百"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gou",
+      "reference": "狗"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jb",
+      "reference": "具備"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "minhang",
+      "reference": "民航"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "shang",
+      "reference": "賞"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "d",
+      "reference": "得"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zimu",
+      "reference": "字母"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "pingjun",
+      "reference": "平均"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "roushi",
+      "reference": "肉食"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "wo",
+      "reference": "我"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yy",
+      "reference": "英勇"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jcang",
+      "reference": "機艙"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "zh",
+      "reference": "做好"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "jke",
+      "reference": "接客"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yjiu",
+      "reference": "研究"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "wuliu",
+      "reference": "物流"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "shi",
+      "reference": "室"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "tz",
+      "reference": "特徵"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "yan",
+      "reference": "言"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "fad",
+      "reference": "發動"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "cli",
+      "reference": "成立"
+    },
+    {
+      "group": "existing-zh-audit",
+      "raw": "gf",
+      "reference": "供奉"
+    },
+    {
+      "group": "reported",
+      "raw": "jianianduan",
+      "reference": "加年端社"
+    },
+    {
+      "group": "reported",
+      "raw": "jianianduanshe",
+      "reference": "加年端社"
+    }
+  ]
+}
