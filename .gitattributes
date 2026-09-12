@@ -120,3 +120,7 @@ docs/japanese-pipeline-performance/*.json -text whitespace=cr-at-eol
 docs/japanese-pipeline-performance/*.txt -text whitespace=cr-at-eol
 docs/japanese-pipeline-performance/*.gz -text
 docs/japanese-pipeline-performance/instrumentation-*.txt -text whitespace=-blank-at-eof,cr-at-eol
+
+# Keep review evidence hashes stable across Windows checkouts.
+docs/null-review/** -text whitespace=cr-at-eol
+docs/null-review/android/*-instrumentation.txt whitespace=-blank-at-eof,cr-at-eol
