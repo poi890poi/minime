@@ -51,7 +51,7 @@ MinIME 為獨立開發，並非 Google 產品。語言資料採用各自授權�
 
 ## Console fields requiring completion
 
-- Category suggestion: Tools. Price: free. Ads: no. No account/login or in-app purchases.
+- Category: Productivity (Google's category guidance lists keyboards here). Price: free. Ads: no. No account/login or in-app purchases.
 - Publisher name and support email: awaiting owner; do not submit placeholders.
 - Privacy URL: https://github.com/poi890poi/minime/blob/codex/close-ime-gaps/PRIVACY.md
   Anonymous HTTPS access verified September 12, 2026 (HTTP 200).

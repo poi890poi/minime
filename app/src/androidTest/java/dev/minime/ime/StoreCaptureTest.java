@@ -11,12 +11,28 @@ import android.view.accessibility.*;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 import java.io.*;
+import java.util.*;
+import org.json.*;
 
 /** Authored store examples, never language-quality benchmarks or training inputs. */
 @SuppressWarnings("deprecation")
 public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<EditorTestActivity> {
     public StoreCaptureTest(){super(EditorTestActivity.class);}
     private EditorTestActivity host;
+    private final JSONArray capturedCandidates=new JSONArray();
+    private void collectCandidates(AccessibilityNodeInfo node,Set<String> labels,Set<String> exactInputs) {
+        if(node==null)return;
+        CharSequence description=node.getContentDescription();
+        // Inspect actionable word leaves, not the scroll container named
+        // "Candidate list". Exact literal input has its own accessibility role.
+        if(node.isVisibleToUser() && node.isClickable() && node.getChildCount()==0 && description!=null) {
+            String label=description.toString();
+            if(label.startsWith("Candidate "))labels.add(label.substring("Candidate ".length()));
+            if(label.startsWith("Exact input "))exactInputs.add(label.substring("Exact input ".length()));
+        }
+        for(int i=0;i<node.getChildCount();i++)collectCandidates(node.getChild(i),labels,exactInputs);
+        node.recycle();
+    }
     private AccessibilityNodeInfo find(AccessibilityNodeInfo node,String label) {
         if(node==null)return null;
         AccessibilityNodeInfo found=null;
@@ -80,6 +96,21 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
     private void capture(String name)throws Exception {
         ownIme();
         getInstrumentation().waitForIdleSync();SystemClock.sleep(1200);
+        Set<String> labels=new LinkedHashSet<>(),exactInputs=new LinkedHashSet<>();
+        for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows())if(w.getType()==AccessibilityWindowInfo.TYPE_INPUT_METHOD)collectCandidates(w.getRoot(),labels,exactInputs);
+        if(!name.equals("diagnostic")) {
+            capturedCandidates.put(new JSONObject().put("screenshot",name).put("visibleCandidateLabels",new JSONArray(labels)).put("visibleExactInputs",new JSONArray(exactInputs)));
+            try(OutputStream out=new FileOutputStream(new File(host.getExternalFilesDir(null),"store-candidates.json"))) {
+                out.write(capturedCandidates.toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));
+            }
+            assertTrue("Store screenshot needs a visible word choice",!labels.isEmpty() || !exactInputs.isEmpty());
+            if(name.equals("05-geography")) {
+                Set<String> attested=new HashSet<>();
+                for(dev.minime.core.Candidate c:AddonRepository.geography(host).get(60,java.util.concurrent.TimeUnit.SECONDS).lookup("jianianduan",Collections.singleton("geography")))attested.add(c.text);
+                assertTrue("Same geography input must visibly include the requested place",labels.contains("加年端社"));
+                assertTrue("Every visible geography candidate must be backed by the matching source entries",attested.containsAll(labels));
+            }
+        }
         Bitmap b=getInstrumentation().getUiAutomation().takeScreenshot();assertNotNull(b);b.setHasAlpha(false);
         try(FileOutputStream out=new FileOutputStream(new File(host.getExternalFilesDir(null),"store-"+name+".png"))){assertTrue(b.compress(Bitmap.CompressFormat.PNG,100,out));}finally{b.recycle();}
     }

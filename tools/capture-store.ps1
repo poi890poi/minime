@@ -11,7 +11,9 @@ $override=if($size -match 'Override size: (\d+x\d+)'){$Matches[1]}else{$null}
 try {
     & $adb -s $serial shell wm size 1080x1920
     if($LASTEXITCODE -ne 0){throw 'Could not set capture viewport'}
-    & "$PSScriptRoot/test-device.ps1" -Serial $serial -SdkDir $SdkDir -TestClass dev.minime.ime.StoreCaptureTest
+    & "$PSScriptRoot/test-device.ps1" -Serial $serial -SdkDir $SdkDir -TestClass dev.minime.ime.StoreCaptureTest -Reports store-candidates.json
+    & $adb -s $serial pull /sdcard/Android/data/app.minime.keyboard/files/store-candidates.json artifacts/play-materials/store-candidates.json
+    if($LASTEXITCODE -ne 0){throw 'Missing visible-candidate capture evidence'}
     foreach($name in @('01-chinese','02-english','03-taiwanese','04-japanese','05-geography')) {
         & $adb -s $serial pull "/sdcard/Android/data/app.minime.keyboard/files/store-$name.png" "docs/play-publishing/kit/screenshots/$name.png"
         if($LASTEXITCODE -ne 0){throw "Missing screenshot $name"}

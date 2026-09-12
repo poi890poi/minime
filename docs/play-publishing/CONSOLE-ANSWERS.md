@@ -12,7 +12,7 @@ not declarations already submitted to Google. Resolve RELEASE-CHECKLIST.md first
 | English title | MinIME — Pinyin for Taiwan |
 | Traditional Chinese title | MinIME — 台灣多語拼音鍵盤 |
 | Default listing language | zh-TW recommended; en-US localization supplied |
-| App or game / category | App / Tools |
+| App or game / category | App / Productivity |
 | Price | Free launch proposed |
 | Ads / purchases | No ads; no in-app purchases |
 | Website | https://github.com/poi890poi/minime |
