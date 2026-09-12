@@ -1,0 +1,124 @@
+{
+  "inventory": {
+    "1": {
+      "rows": 35149,
+      "min_host_support": 40,
+      "max_host_support": 144415
+    },
+    "2": {
+      "rows": 604187,
+      "min_host_support": 40,
+      "max_host_support": 49061
+    },
+    "3": {
+      "rows": 292666,
+      "min_host_support": 40,
+      "max_host_support": 15322
+    },
+    "4": {
+      "rows": 101914,
+      "min_host_support": 40,
+      "max_host_support": 5174
+    }
+  },
+  "distinct_concatenated_forms": 1033424,
+  "distinct_tokens": 35149,
+  "tokens_in_base": 33108,
+  "groups": {
+    "development/full": {
+      "inputs": 1275,
+      "reference_in_base": 139,
+      "reference_in_ngram_forms": 264,
+      "assembled": 1094,
+      "assembled_reference_hits": 428,
+      "whole_form_support": 76,
+      "whole_form_support_reference_hits": 68,
+      "every_boundary_support": 89,
+      "every_boundary_support_reference_hits": 81
+    },
+    "development/initials": {
+      "inputs": 1275,
+      "reference_in_base": 139,
+      "reference_in_ngram_forms": 264,
+      "assembled": 796,
+      "assembled_reference_hits": 5,
+      "whole_form_support": 15,
+      "whole_form_support_reference_hits": 1,
+      "every_boundary_support": 14,
+      "every_boundary_support_reference_hits": 1
+    },
+    "development/mixed": {
+      "inputs": 1275,
+      "reference_in_base": 139,
+      "reference_in_ngram_forms": 264,
+      "assembled": 997,
+      "assembled_reference_hits": 90,
+      "whole_form_support": 36,
+      "whole_form_support_reference_hits": 15,
+      "every_boundary_support": 40,
+      "every_boundary_support_reference_hits": 18
+    },
+    "development/partial": {
+      "inputs": 1275,
+      "reference_in_base": 139,
+      "reference_in_ngram_forms": 264,
+      "assembled": 998,
+      "assembled_reference_hits": 0,
+      "whole_form_support": 56,
+      "whole_form_support_reference_hits": 0,
+      "every_boundary_support": 60,
+      "every_boundary_support_reference_hits": 0
+    },
+    "reserved/full": {
+      "inputs": 1530,
+      "reference_in_base": 162,
+      "reference_in_ngram_forms": 312,
+      "assembled": 1324,
+      "assembled_reference_hits": 476,
+      "whole_form_support": 93,
+      "whole_form_support_reference_hits": 68,
+      "every_boundary_support": 101,
+      "every_boundary_support_reference_hits": 74
+    },
+    "reserved/initials": {
+      "inputs": 1530,
+      "reference_in_base": 162,
+      "reference_in_ngram_forms": 312,
+      "assembled": 929,
+      "assembled_reference_hits": 6,
+      "whole_form_support": 20,
+      "whole_form_support_reference_hits": 2,
+      "every_boundary_support": 18,
+      "every_boundary_support_reference_hits": 2
+    },
+    "reserved/mixed": {
+      "inputs": 1530,
+      "reference_in_base": 162,
+      "reference_in_ngram_forms": 312,
+      "assembled": 1190,
+      "assembled_reference_hits": 100,
+      "whole_form_support": 59,
+      "whole_form_support_reference_hits": 19,
+      "every_boundary_support": 60,
+      "every_boundary_support_reference_hits": 19
+    },
+    "reserved/partial": {
+      "inputs": 1530,
+      "reference_in_base": 162,
+      "reference_in_ngram_forms": 312,
+      "assembled": 1190,
+      "assembled_reference_hits": 0,
+      "whole_form_support": 79,
+      "whole_form_support_reference_hits": 0,
+      "every_boundary_support": 83,
+      "every_boundary_support_reference_hits": 0
+    }
+  },
+  "limitations": [
+    "No token sequence becomes a production entry or score.",
+    "Reference mismatch is not synonymous with meaningless output.",
+    "Attestation is web support, not semantic judgment or conversational frequency.",
+    "Existing source documents may overlap web training; this cannot establish held-out generalization.",
+    "Boundary support audits the existing chosen path, not alternative-path decoding."
+  ]
+}

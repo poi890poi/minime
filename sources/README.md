@@ -125,3 +125,17 @@ provenance. Existing native Rime and context-model limitations remain explicit.
 The framework covers the registered language-data inputs and add-on provenance;
 native dependency security and a universal software supply-chain catalog are outside
 its scope. Dataset-specific parsing and source-rights details stay with their owners.
+
+## Context-model pilot (September 12, 2026)
+
+`twngrams-audit` pins the complete Taiwan-filtered web 1–4-gram tables and their
+published limitations for research only. It adds no production vocabulary or
+weights. Host-support counts are not conversational occurrence probabilities;
+residual boilerplate, authorship, underlying rights and document overlap remain
+unresolved. See [the joint recall/precision audit](../docs/whole-input-quality/RECALL-PRECISION.md).
+
+Both removing all construction and requiring attested word boundaries failed the
+joint coverage/first-choice requirement. Neither is approved for production.
+Evaluate contextual scoring during alternative-path decoding before replacing
+the existing decoder or its useful coverage. A fresh, independent conversation
+and essay evaluation is required before a generalization claim.

@@ -17,7 +17,9 @@
 #include <fcntl.h>
 // The DLL exports Service but not this accessor. Exact implementation from the
 // pinned BSD-licensed librime src/rime/service.cc, copyright RIME Developers.
+#ifndef MINIME_STATIC_RIME
 namespace rime {Context* Session::context() const {return engine_?engine_->active_engine()->context():nullptr;}}
+#endif
 static rime::an<rime::Candidate> genuine(rime::an<rime::Candidate> c) {
     for(int i=0;i<8;i++) {
         if(auto u=std::dynamic_pointer_cast<rime::UniquifiedCandidate>(c)){c=u->items().front();continue;}

@@ -1,0 +1,692 @@
+diff --git a/app/src/androidTest/java/dev/minime/ime/RimeIntegrationTest.java b/app/src/androidTest/java/dev/minime/ime/RimeIntegrationTest.java
+index 47e3cbc..1ae57b2 100644
+--- a/app/src/androidTest/java/dev/minime/ime/RimeIntegrationTest.java
++++ b/app/src/androidTest/java/dev/minime/ime/RimeIntegrationTest.java
+@@ -15,7 +15,8 @@ public final class RimeIntegrationTest extends AndroidTestCase {
+         assertTrue(RimeBackend.load(getContext()).get(60,TimeUnit.SECONDS));
+         for(String input:new String[]{"nihao","ni'hao","womenmingtianjian","womenmtjian"}) {
+             List<Candidate> complete=RimeBackend.convert(input),choices=RimeBackend.candidates(input);
+-            assertEquals("Whole-phrase default preserved",complete.get(0).text,choices.get(0).text);
++            if(!complete.isEmpty())assertEquals("Stored whole-phrase default preserved",complete.get(0).text,choices.get(0).text);
++            assertTrue("No native sentence assembly",choices.stream().noneMatch(c->c.composed));
+             assertTrue("Every native consumption offset is bounded",choices.stream().allMatch(c->c.consumed>=0 && c.consumed<input.length()));
+         }
+         assertTrue("Prefix 你 consumes ni",RimeBackend.candidates("nihao").stream().anyMatch(c->c.text.equals("你") && c.consumed==2));
+@@ -30,7 +31,8 @@ public final class RimeIntegrationTest extends AndroidTestCase {
+             long micros=(System.nanoTime()-begin)/1000;
+             samples.put(new JSONObject().put("input",raw).put("microseconds",micros).put("candidates",choices.size()));
+             assertTrue("Bounded query: "+raw.length()+" characters took "+micros+" us",micros<1000000);
+-            assertEquals("Query isolation after noise","我們明天見",RimeBackend.convert("womenmingtianjian").get(0).text);
++            assertTrue("No native sentence assembly after noise",choices.stream().noneMatch(c->c.composed));
++            assertEquals("Stored phrase remains isolated after noise","你好",RimeBackend.convert("nihao").get(0).text);
+         }
+         try(OutputStream out=new FileOutputStream(new File(getContext().getExternalFilesDir(null),"rime-stress.json"))) {out.write(samples.toString(2).getBytes(StandardCharsets.UTF_8));}
+     }
+@@ -44,6 +46,7 @@ public final class RimeIntegrationTest extends AndroidTestCase {
+                 String[] p=line.split("\t",-1);long at=System.nanoTime();
+                 List<Candidate> choices=RimeBackend.convert(p[3]);long micros=(System.nanoTime()-at)/1000;
+                 long uiAt=System.nanoTime();List<Candidate> uiChoices=RimeBackend.candidates(p[3]);long uiMicros=(System.nanoTime()-uiAt)/1000;
++                assertTrue("Quality defect: assembled native output for "+p[3],uiChoices.stream().noneMatch(c->c.composed));
+                 if(!choices.isEmpty())assertEquals("UI retains complete-phrase default for "+p[3],choices.get(0).text,uiChoices.get(0).text);
+                 String first=choices.isEmpty()?"":choices.get(0).text;
+                 if(first.equals(p[4]))hits.merge(p[0],1,Integer::sum);
+@@ -53,9 +56,10 @@ public final class RimeIntegrationTest extends AndroidTestCase {
+         }
+         JSONObject report=new JSONObject().put("loadMs",loadMs).put("firstChoiceHits",new JSONObject(hits)).put("samples",samples);
+         try(OutputStream out=new FileOutputStream(new File(getContext().getExternalFilesDir(null),"rime-phone.json"))) {out.write(report.toString(2).getBytes(StandardCharsets.UTF_8));}
+-        assertTrue("Reference baseline coverage",hits.getOrDefault("reference",0)>=14);
+-        assertTrue("Development baseline coverage",hits.getOrDefault("development",0)>=20);
+-        assertTrue("Fresh baseline coverage",hits.getOrDefault("fresh",0)>=15);
++        // The previous hit floors included generated sentences. Keep every
++        // frozen target in the report; evaluate coverage in the broad desktop
++        // comparison rather than relabel missing phrases as successful output.
++        assertEquals("Known whole dictionary phrase remains available","你好",RimeBackend.convert("nihao").get(0).text);
+         assertTrue(RimeBackend.convert("ssh://host").isEmpty());
+         assertTrue(RimeBackend.convert("a".repeat(97)).isEmpty());
+         assertFalse(RimeBackend.convert("womenmingtianjian").stream().anyMatch(c->c.text.equals("我們")));
+diff --git a/app/src/main/cpp/CMakeLists.txt b/app/src/main/cpp/CMakeLists.txt
+index 1694f90..6892340 100644
+--- a/app/src/main/cpp/CMakeLists.txt
++++ b/app/src/main/cpp/CMakeLists.txt
+@@ -48,6 +48,8 @@ set(Boost_INCLUDE_DIR "${BOOST_ROOT}" CACHE PATH "" FORCE)
+ set(Boost_NO_BOOST_CMAKE ON)
+ set(X11Keysym "${RIME}/include")
+ add_subdirectory("${RIME}" rime)
++include("${ROOT}/tools/native-source-only.cmake")
++minime_source_only(rime-static)
+ target_compile_options(rime-static PRIVATE -Wno-error=deprecated-declarations)
+ add_library(minime_rime SHARED rime_jni.cpp)
+ target_include_directories(minime_rime PRIVATE "${RIME}/src" "${CMAKE_CURRENT_BINARY_DIR}/rime/src" "${BOOST_ROOT}")
+diff --git a/core/src/main/java/dev/minime/core/Candidate.java b/core/src/main/java/dev/minime/core/Candidate.java
+index d1ad616..39037ab 100644
+--- a/core/src/main/java/dev/minime/core/Candidate.java
++++ b/core/src/main/java/dev/minime/core/Candidate.java
+@@ -55,13 +55,9 @@ public final class Candidate {
+     }
+     /** Unverified lexical assembly, not a calibrated confidence probability. */
+     public Candidate asConstructed() {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,true,incomplete,pair,pack,languageCharacter,transliteration);}
+-    Candidate asAttested() {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,false,incomplete,pair,pack,languageCharacter,transliteration);}
+     Candidate(String text, boolean literal, double score,String reading) {
+         this(text,literal,score,reading,0,false,false,false);
+     }
+-    static Candidate concatenate(Candidate prefix,Candidate word) {
+-        return new Candidate(prefix.text+word.text,false,prefix.score+word.score,"",0,false,false,prefix.composed || word.composed || !prefix.text.isEmpty(),prefix.incomplete || word.incomplete);
+-    }
+     Candidate withScore(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,languageCharacter,transliteration);}
+     Candidate completing(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,true,pair,pack,languageCharacter,transliteration);}
+     Candidate paired(PairedForms.Pair value) {return pair==value?this:new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,value,pack,languageCharacter,transliteration);}
+diff --git a/core/src/main/java/dev/minime/core/CandidateMerge.java b/core/src/main/java/dev/minime/core/CandidateMerge.java
+index d3f25f0..27d9de5 100644
+--- a/core/src/main/java/dev/minime/core/CandidateMerge.java
++++ b/core/src/main/java/dev/minime/core/CandidateMerge.java
+@@ -2,26 +2,13 @@ package dev.minime.core;
+ 
+ import java.util.*;
+ 
+-/** Keep the primary decoder's hypotheses; supplement them with stored entries. */
++/** Preserve primary dictionary order, then append distinct fallback entries. */
+ public final class CandidateMerge {
+     private CandidateMerge() {}
+     public static List<Candidate> merge(List<Candidate> primary,List<Candidate> fallback) {
+-        boolean full=primary.stream().anyMatch(c->c.consumed==0);
+         List<Candidate> result=new ArrayList<>(primary);Set<String> seen=new HashSet<>();
+         for(Candidate c:result)seen.add(c.text);
+-        for(Candidate c:fallback) {
+-            if(full && c.composed)continue;
+-            if(seen.add(c.text))result.add(c);
+-            else if(!c.composed) {
+-                // The same output/read-span can have both a generated native
+-                // path and a real fallback dictionary entry. Retain that evidence.
+-                for(int i=0;i<result.size();i++) {
+-                    Candidate existing=result.get(i);
+-                    if(existing.composed && existing.consumed==c.consumed && existing.text.equals(c.text))
+-                        result.set(i,existing.asAttested());
+-                }
+-            }
+-        }
++        for(Candidate c:fallback)if(seen.add(c.text))result.add(c);
+         return result;
+     }
+ }
+diff --git a/core/src/main/java/dev/minime/core/CompositionEngine.java b/core/src/main/java/dev/minime/core/CompositionEngine.java
+index b99b7cd..feb82c5 100644
+--- a/core/src/main/java/dev/minime/core/CompositionEngine.java
++++ b/core/src/main/java/dev/minime/core/CompositionEngine.java
+@@ -50,9 +50,8 @@ public final class CompositionEngine {
+     private final PhraseSession phraseSession=new PhraseSession();
+     private boolean phraseLearning;
+     public void phraseLearning(boolean enabled) {if(phraseLearning!=enabled) {phraseLearning=enabled;phraseSession.clear();refresh();}}
+-    private void acceptedPhrase(String reading,Candidate choice,boolean explicit) {
+-        if(!phraseLearning || privateField || literalField || englishMode || choice.literal || choice.supplemental
+-                || (choice.composed && !explicit)) {phraseSession.clear();return;}
++    private void acceptedPhrase(String reading,Candidate choice) {
++        if(!phraseLearning || privateField || literalField || englishMode || choice.literal || choice.supplemental) {phraseSession.clear();return;}
+         phraseSession.accept(reading,choice.text,learning::observePhrase);
+     }
+     private AddonDictionary addons=AddonDictionary.EMPTY;
+@@ -236,7 +235,7 @@ public final class CompositionEngine {
+             // Legacy Pinyin decoder offsets exclude their following delimiter.
+             // Other providers own their exact raw span, including separators.
+             if(!choice.supplemental && raw.matches("[a-zv]+(?:'[a-zv]+)*"))rest=rest.replaceFirst("^'+","");
+-            acceptedPhrase(reading,choice,true);
++            acceptedPhrase(reading,choice);
+             learnChoice(reading,choice);
+             editor.commit(choice.text);englishContext="";context=privateField?"":tail(context+choice.text,3);afterLatin=false;
+             raw=rest;completionBoundary=false;committedEnglishWord=false;
+@@ -278,7 +277,7 @@ public final class CompositionEngine {
+         commit(c, withSpace && c.literal, false);
+     }
+     private void commit(Candidate c, boolean withSpace, boolean explicit) {
+-        acceptedPhrase(raw,c,explicit);
++        acceptedPhrase(raw,c);
+         if(explicit)learnChoice(raw,c);
+         editor.commit(c.text + (withSpace ? " " : ""));
+         committedEnglishWord=false;
+@@ -515,16 +514,13 @@ public final class CompositionEngine {
+                 for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
+             }
+         }
+-        if(!literalField && !englishMode && inputMode.chineseEnabled()) {
+-            Candidate defaultChoice=candidates.get(preferred);
+-            candidates=ConstructionPolicy.rank(candidates,this::unverifiedConstruction);
+-            preferred=candidates.indexOf(defaultChoice);
+-            if(unverifiedConstruction(defaultChoice)) {
+-                preferred=0;
+-                for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i)) && !unverifiedConstruction(candidates.get(i))) {
+-                    preferred=i;break;
+-                }
+-            }
++        if(!literalField && !englishMode && inputMode.chineseEnabled()
++                && !candidates.get(preferred).literal && !focused(candidates.get(preferred))) {
++            // Stored phrases covering all input precede shorter-prefix recovery.
++            List<Candidate> ordered=new ArrayList<>();ordered.add(candidates.get(0));
++            for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i)))ordered.add(candidates.get(i));
++            for(int i=1;i<candidates.size();i++)if(partial(candidates.get(i)))ordered.add(candidates.get(i));
++            Candidate choice=candidates.get(preferred);candidates=ordered;preferred=candidates.indexOf(choice);
+         }
+         for(int i=0;i<candidates.size();i++) {
+             Candidate c=candidates.get(i);
+@@ -534,9 +530,6 @@ public final class CompositionEngine {
+     private boolean focused(Candidate candidate) {
+         return !inputMode.pack.isEmpty() && inputMode.pack.equals(candidate.pack);
+     }
+-    private boolean unverifiedConstruction(Candidate candidate) {
+-        return candidate.composed && (privateField || learning.count(contextKey(),raw,candidate.text)==0);
+-    }
+     private static boolean englishSuggestion(Candidate candidate) {
+         if(!candidate.pack.isEmpty())return false;
+         for(int at=0;at<candidate.text.length();) {
+diff --git a/core/src/main/java/dev/minime/core/ConstructionPolicy.java b/core/src/main/java/dev/minime/core/ConstructionPolicy.java
+deleted file mode 100644
+index 4506506..0000000
+--- a/core/src/main/java/dev/minime/core/ConstructionPolicy.java
++++ /dev/null
+@@ -1,25 +0,0 @@
+-package dev.minime.core;
+-
+-import java.util.*;
+-import java.util.function.Predicate;
+-
+-/** Unknown-confidence Chinese assembly keeps a first-page recovery slot but
+- * cannot displace the first three dictionary choices. Never promotes a late
+- * construction. Raw input at zero retains its independent recovery identity. */
+-final class ConstructionPolicy {
+-    private ConstructionPolicy() {}
+-    static List<Candidate> rank(List<Candidate> input,Predicate<Candidate> unverified) {
+-        if(input.size()<2)return input;
+-        List<Candidate> output=new ArrayList<>(input.size()),deferred=new ArrayList<>();
+-        output.add(input.get(0));int early=0;
+-        for(int i=1;i<input.size();i++) {
+-            Candidate c=input.get(i);
+-            if(early<3 && unverified.test(c))deferred.add(c);
+-            else {
+-                output.add(c);
+-                if(++early==3){output.addAll(deferred);deferred.clear();}
+-            }
+-        }
+-        output.addAll(deferred);return output;
+-    }
+-}
+diff --git a/core/src/main/java/dev/minime/core/PhoneticDictionary.java b/core/src/main/java/dev/minime/core/PhoneticDictionary.java
+index 159b2cc..b883acf 100644
+--- a/core/src/main/java/dev/minime/core/PhoneticDictionary.java
++++ b/core/src/main/java/dev/minime/core/PhoneticDictionary.java
+@@ -5,7 +5,6 @@ import java.util.*;
+ 
+ /** Immutable after loading; all language data comes from attributed offline sources. */
+ public final class PhoneticDictionary {
+-    private static final int BEAM = 6;
+     private static final int MAX_KEY = 32;
+     private final Map<String, List<Candidate>> pinyin = new HashMap<>();
+     private final Map<String, List<Candidate>> zhuyin = new HashMap<>();
+@@ -167,33 +166,9 @@ public final class PhoneticDictionary {
+             List<Candidate> relaxed = index.get("~" + toneless(key));
+             if (relaxed != null) for(Candidate c:relaxed) if(firstTonesMatch(key,c.reading)) result.add(c);
+         }
+-        List<List<Candidate>> paths = new ArrayList<>();
+-        for (int i = 0; i <= key.length(); i++) paths.add(new ArrayList<>());
+-        paths.get(0).add(new Candidate("", false, 0));
+-        for (int end = 1; end <= key.length(); end++) {
+-            List<Candidate> choices = paths.get(end);
+-            if (!bpmf && key.charAt(end - 1) == '\'') choices.addAll(paths.get(end - 1));
+-            for (int start = Math.max(0, end - MAX_KEY); start < end; start++) {
+-                if (paths.get(start).isEmpty()) continue;
+-                String part=key.substring(start,end);
+-                List<Candidate> words = index.get(bpmf?part.replace("ˉ", ""):part);
+-                if (words == null) continue;
+-                if(bpmf && part.indexOf('ˉ')>=0) {
+-                    words=new ArrayList<>(words); words.removeIf(c->!firstTonesMatch(part,c.reading));
+-                }
+-                for (Candidate before : paths.get(start)) for (int w = 0; w < Math.min(3, words.size()); w++) {
+-                    Candidate word = words.get(w);
+-                    choices.add(Candidate.concatenate(before,word));
+-                }
+-            }
+-            choices.sort(Comparator.comparingDouble((Candidate c) -> c.score).reversed());
+-            Set<String> seen = new HashSet<>(); choices.removeIf(c -> !seen.add(c.text));
+-            if (choices.size() > BEAM) choices.subList(BEAM, choices.size()).clear();
+-        }
+-        result.addAll(paths.get(key.length()));
+         if(bpmf) result.addAll(zhuyinPrefixes.complete(key.replace("ˉ", ""),(reading,c)->firstTonesMatch(key,c.reading)));
+         else {
+-            result.addAll(pinyinSyllables.convert(key));
++            result.addAll(pinyinSyllables.lookup(key));
+             result.addAll(pinyinPrefixes.complete(key,(reading,c)->true));
+         }
+         // Apply only the boundary signal; retain dictionary word probabilities.
+diff --git a/core/src/main/java/dev/minime/core/ReadingUnitIndex.java b/core/src/main/java/dev/minime/core/ReadingUnitIndex.java
+index 137c500..e10ec52 100644
+--- a/core/src/main/java/dev/minime/core/ReadingUnitIndex.java
++++ b/core/src/main/java/dev/minime/core/ReadingUnitIndex.java
+@@ -12,7 +12,7 @@ final class ReadingUnitIndex {
+     private double[] best;
+     private int[][] branches;
+     private int size=1;
+-    private static final int BEAM=6, CANDIDATES=24, SEARCH_BUDGET=2048, MAX_WORD_INPUT=32;
++    private static final int PER_LENGTH_LIMIT=6, CANDIDATES=24, SEARCH_BUDGET=2048, MAX_WORD_INPUT=32;
+     ReadingUnitIndex(BinaryModel.Reader in)throws java.io.IOException {syllable=in.strings();child=in.ints();sibling=in.ints();words=in.lists();best=in.doubles();size=syllable.length;indexBranches();}
+     void write(BinaryModel.Writer out)throws java.io.IOException {out.strings(syllable);out.ints(child);out.ints(sibling);out.lists(words);out.doubles(best);}
+ 
+@@ -72,13 +72,9 @@ final class ReadingUnitIndex {
+         final double bound;
+         State(int node,int at,int missing) {this.node=node;this.at=at;this.missing=missing;bound=best[node]-penalty(missing);}
+     }
+-    private static void trim(List<Candidate> list,int limit,boolean diverse) {
++    private static void trim(List<Candidate> list) {
+         list.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text));
+         Set<String> seen=new HashSet<>();list.removeIf(c->!seen.add(c.text));
+-        if(!diverse) {
+-            if(list.size()>limit) list.subList(limit,list.size()).clear();
+-            return;
+-        }
+         // A digraph such as sh can be one syllable or two initials. Do not let
+         // high-frequency single glyphs evict every multi-syllable interpretation.
+         Map<Integer,Integer> lengths=new HashMap<>();
+@@ -86,38 +82,29 @@ final class ReadingUnitIndex {
+         for(Iterator<Candidate> it=list.iterator();it.hasNext();) {
+             Candidate c=it.next(); int length=c.text.codePointCount(0,c.text.length());
+             int count=lengths.getOrDefault(length,0);
+-            if(kept>=limit && count>=BEAM) it.remove();
++            if(kept>=CANDIDATES && count>=PER_LENGTH_LIMIT) it.remove();
+             else { lengths.put(length,count+1); kept++; }
+         }
+     }
+-    private List<List<Candidate>> match(String raw,int start,int[] budget) {
+-        return match(raw,start,budget,true);
+-    }
+-    private List<List<Candidate>> match(String raw,int start,int[] budget,boolean intermediateResults) {
+-        int limit=Math.min(raw.length(),start+MAX_WORD_INPUT);
+-        List<List<Candidate>> matches=new ArrayList<>();
+-        for(int i=0;i<=limit;i++) matches.add(intermediateResults || i==limit?new ArrayList<>():Collections.emptyList());
++    private List<Candidate> match(String raw) {
++        int limit=raw.length();
++        List<Candidate> matches=new ArrayList<>();
+         PriorityQueue<State> queue=new PriorityQueue<>(Comparator.comparingDouble((State s)->s.bound).reversed()
+             .thenComparingInt(s->s.node).thenComparingInt(s->s.at));
+-        queue.add(new State(0,start,0));
++        queue.add(new State(0,0,0));
+         // A node fixes the source reading; only the least omitted input at an offset matters.
+         Map<Long,Integer> visited=new HashMap<>();
+         int explored=0;
+-        while(!queue.isEmpty() && explored++<SEARCH_BUDGET && budget[0]-->0) {
++        while(!queue.isEmpty() && explored++<SEARCH_BUDGET) {
+             State state=queue.remove();
+             long identity=((long)state.node<<32)|state.at;
+             Integer prior=visited.get(identity);
+             if(prior!=null && prior<=state.missing) continue;
+             visited.put(identity,state.missing);
+-            // Single-entry lookup only returns the final offset. Materializing
+-            // other offsets cannot affect traversal: queue bounds and visited
+-            // states depend solely on source readings and omitted input.
+-            // Sentence conversion still needs every intermediate word boundary.
+-            if(words[state.node]!=null && (intermediateResults || state.at==limit)) {
+-                List<Candidate> at=matches.get(state.at);
++            if(words[state.node]!=null && state.at==limit) {
+                 for(Candidate c:words[state.node].subList(0,Math.min(CANDIDATES,words[state.node].size())))
+-                    at.add(state.missing==0?c:c.completing(c.score-penalty(state.missing)));
+-                trim(at,CANDIDATES,true);
++                    matches.add(state.missing==0?c:c.completing(c.score-penalty(state.missing)));
++                trim(matches);
+             }
+             if(state.at==limit) continue;
+             int[] indexed=branches[state.node];
+@@ -144,27 +131,6 @@ final class ReadingUnitIndex {
+     /** Match one stored entry using full or incomplete source reading units. */
+     List<Candidate> lookup(String raw) {
+         if(raw.isEmpty() || raw.length()>MAX_WORD_INPUT || !WORD_INPUT.matcher(raw).matches())return Collections.emptyList();
+-        return match(raw,0,new int[]{SEARCH_BUDGET},false).get(raw.length());
+-    }
+-    List<Candidate> convert(String raw) {
+-        if(!raw.matches("[a-zv]+(?:'[a-zv]+)*")) return Collections.emptyList();
+-        List<List<Candidate>> paths=new ArrayList<>();
+-        for(int i=0;i<=raw.length();i++) paths.add(new ArrayList<>());
+-        paths.get(0).add(new Candidate("",false,0));
+-        int[] budget={16384};
+-        for(int start=0;start<raw.length();start++) {
+-            List<Candidate> before=paths.get(start); trim(before,BEAM,false);
+-            if(before.isEmpty()) continue;
+-            List<List<Candidate>> matches=match(raw,start,budget);
+-            for(int end=start+1;end<matches.size();end++) {
+-                List<Candidate> next=paths.get(end);
+-                for(Candidate prefix:before) for(Candidate word:matches.get(end))
+-                    next.add(Candidate.concatenate(prefix,word));
+-                // Intermediate paths have a strict beam. Display diversity belongs
+-                // only to the final candidate list, not every partial sentence.
+-                trim(next,end==raw.length()?CANDIDATES:BEAM,end==raw.length());
+-            }
+-        }
+-        return paths.get(raw.length());
++        return match(raw);
+     }
+ }
+diff --git a/core/src/test/java/dev/minime/core/AddonLearningRegression.java b/core/src/test/java/dev/minime/core/AddonLearningRegression.java
+index 1b42fd1..453552a 100644
+--- a/core/src/test/java/dev/minime/core/AddonLearningRegression.java
++++ b/core/src/test/java/dev/minime/core/AddonLearningRegression.java
+@@ -41,17 +41,12 @@ final class AddonLearningRegression {
+             equal(0,addon.lookup(p[1],Collections.emptySet()).size(),"disabled add-on");
+             Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.switchMode(InputMode.fromId(p[0].equals("poj")?"taiwanese":p[0]),false);type(c,p[1]);
+             String before=c.candidates().get(c.preferred()).text;
+-            List<String> base=new ArrayList<>();Set<String> constructed=new HashSet<>();
+-            for(Candidate value:c.candidates()){base.add(value.text);if(value.composed)constructed.add(value.text);}
++            List<String> base=new ArrayList<>();
++            for(Candidate value:c.candidates())base.add(value.text);
+             c.addons(addon,all);coherentDefault(c,before);
+             List<String> retained=new ArrayList<>();for(Candidate value:c.candidates())if(!value.supplemental)retained.add(value.text);
+             List<String> unpromoted=new ArrayList<>();for(String value:base)if(retained.contains(value))unpromoted.add(value);
+-            // Adding attested choices can defer an early construction. Relative
+-            // order within each provenance group must still remain unchanged.
+-            for(boolean assembled:new boolean[]{false,true})equal(
+-                unpromoted.stream().filter(v->constructed.contains(v)==assembled).collect(java.util.stream.Collectors.toList()),
+-                retained.stream().filter(v->constructed.contains(v)==assembled).collect(java.util.stream.Collectors.toList()),
+-                "unpromoted candidates retain order within construction/attestation groups");
++            equal(unpromoted,retained,"unpromoted stored candidates retain order");
+             c.addons(addon,Collections.emptySet());equal(base,c.candidates().stream().map(v->v.text).collect(java.util.stream.Collectors.toList()),"off removes supplemental results");samples++;
+         }
+         yes(samples>30,"source-diverse composition checks");
+diff --git a/core/src/test/java/dev/minime/core/CandidateMergeRegression.java b/core/src/test/java/dev/minime/core/CandidateMergeRegression.java
+index 6dd6d01..f8e4652 100644
+--- a/core/src/test/java/dev/minime/core/CandidateMergeRegression.java
++++ b/core/src/test/java/dev/minime/core/CandidateMergeRegression.java
+@@ -5,13 +5,12 @@ import static dev.minime.core.Regression.*;
+ 
+ final class CandidateMergeRegression {
+     static void run() {
+-        Candidate lexical=new Candidate("甲乙",false,1),a=new Candidate("丙",false,1),b=new Candidate("丁",false,1);
+-        Candidate sequence=Candidate.concatenate(a,b),nativeChoice=new Candidate("戊己",false,100);
+-        List<Candidate> fallback=Arrays.asList(sequence,lexical);
+-        equal(Arrays.asList(nativeChoice,lexical),CandidateMerge.merge(Arrays.asList(nativeChoice),fallback),"native success excludes extra fallback combinations");
++        Candidate lexical=new Candidate("甲乙",false,1),nativeChoice=new Candidate("戊己",false,100);
++        List<Candidate> fallback=Arrays.asList(lexical);
++        equal(Arrays.asList(nativeChoice,lexical),CandidateMerge.merge(Arrays.asList(nativeChoice),fallback),"primary order precedes additional stored entries");
+         equal(fallback,CandidateMerge.merge(Collections.emptyList(),fallback),"native unavailable preserves complete fallback");
+         Candidate prefix=new Candidate("丙",false,100,2);
+-        equal(Arrays.asList(prefix,sequence,lexical),CandidateMerge.merge(Arrays.asList(prefix),fallback),"prefix-only native result still needs whole-token fallback");
++        equal(Arrays.asList(prefix,lexical),CandidateMerge.merge(Arrays.asList(prefix),fallback),"prefix-only native result still needs whole-token fallback");
+         equal(Arrays.asList(lexical),CandidateMerge.merge(Arrays.asList(lexical),fallback),"lexical supplement deduplicates primary without mutating it");
+     }
+ }
+diff --git a/core/src/test/java/dev/minime/core/ConstructionPolicyBenchmark.java b/core/src/test/java/dev/minime/core/ConstructionPolicyBenchmark.java
+deleted file mode 100644
+index d86cc32..0000000
+--- a/core/src/test/java/dev/minime/core/ConstructionPolicyBenchmark.java
++++ /dev/null
+@@ -1,28 +0,0 @@
+-package dev.minime.core;
+-import java.io.*;
+-import java.nio.charset.StandardCharsets;
+-import java.nio.file.*;
+-import java.util.*;
+-import java.util.zip.GZIPInputStream;
+-
+-/** Isolated ranking overhead, not end-to-end input latency. */
+-public final class ConstructionPolicyBenchmark {
+-    static volatile long sink;
+-    public static void main(String[] args) throws Exception {
+-        List<List<Candidate>> samples=new ArrayList<>();
+-        try(BufferedReader in=new BufferedReader(new InputStreamReader(new GZIPInputStream(Files.newInputStream(Paths.get(args[0]))),StandardCharsets.UTF_8))) {
+-            String line;while((line=in.readLine())!=null) {
+-                String raw=line.split("\t")[2];List<Candidate> choices=new ArrayList<>();choices.add(new Candidate(raw,true,0));
+-                while(!(line=in.readLine()).equals("END"))choices.add(NativeCandidateCodec.decode(raw,line,choices.size()-1));samples.add(choices);
+-            }
+-        }
+-        for(int pass=0;pass<5;pass++)for(List<Candidate> row:samples)sink+=ConstructionPolicy.rank(row,c->c.composed).get(row.size()-1).text.length();
+-        for(int pass=0;pass<3;pass++) {
+-            long[] times=new long[samples.size()];int i=0;
+-            for(List<Candidate> row:samples) {
+-                long before=System.nanoTime();List<Candidate> ranked=ConstructionPolicy.rank(row,c->c.composed);times[i++]=System.nanoTime()-before;sink+=ranked.get(ranked.size()-1).text.length();
+-            }
+-            Arrays.sort(times);System.out.printf(Locale.ROOT,"pass=%d inputs=%d p50_us=%.3f p95_us=%.3f max_us=%.3f%n",pass,times.length,times[times.length/2]/1000.,times[(int)Math.ceil(times.length*.95)-1]/1000.,times[times.length-1]/1000.);
+-        }
+-    }
+-}
+diff --git a/core/src/test/java/dev/minime/core/ConstructionRegression.java b/core/src/test/java/dev/minime/core/ConstructionRegression.java
+index 91deadc..3270c4a 100644
+--- a/core/src/test/java/dev/minime/core/ConstructionRegression.java
++++ b/core/src/test/java/dev/minime/core/ConstructionRegression.java
+@@ -1,51 +1,24 @@
+ package dev.minime.core;
+-
++import java.io.StringReader;
+ import java.util.*;
+-
++/** Generation stops at a stored entry, without an output blacklist. */
+ final class ConstructionRegression {
+-    static void run(PhoneticDictionary dictionary) {
++    static void run(PhoneticDictionary dictionary) throws Exception {
+         Candidate generated=NativeCandidateCodec.decode("nihaoshijie","11\tS\t你好世界",0);
+-        Regression.yes(generated.composed,"native sentence provenance survives bridge");
+-        Regression.yes(generated.withScore(5).consuming(4).composed,"candidate transformations retain origin");
+-        Regression.yes(!CandidateMerge.merge(Collections.singletonList(generated),Collections.singletonList(new Candidate(generated.text,false,3))).get(0).composed,"lexical duplicate is attested even when native assembled it");
+-        Regression.yes(CandidateMerge.merge(Collections.singletonList(generated),Collections.singletonList(new Candidate(generated.text,false,3,2))).get(0).composed,"different consumed span cannot attest a whole construction");
+-        Regression.equal(null,NativeCandidateCodec.decode("nihao","5\t你好",0),"unversioned originless transport rejected");
++        Regression.yes(generated.composed,"evaluation transport retains native sentence provenance");
++        Regression.equal(null,NativeCandidateCodec.decode("nihao","5\t你好",0),"unversioned transport rejected");
+         Regression.equal(null,NativeCandidateCodec.decode("nihao","9\tL\t你好",0),"invalid native endpoint rejected");
+-        List<Candidate> choices=Arrays.asList(generated,new Candidate("你好",false,99,5),new Candidate("你",false,98,2),new Candidate("妳",false,97,2));
+-        Regression.Editor editor=new Regression.Editor();Regression.Memory memory=new Regression.Memory();
+-        CompositionEngine engine=new CompositionEngine(editor,memory);engine.dictionary(dictionary);engine.start(false,false,false,false);
+-        engine.decoder((d,r,b,c,result)->result.accept(choices),()->{});
+-        Regression.type(engine,"nihaoshijie");
+-        Regression.equal(4,Regression.find(engine,generated.text),"unknown construction follows three attested prefixes");
+-        Regression.equal(0,engine.preferred(),"prefix-only alternatives cannot auto-accept unknown assembly");
+-        engine.space();Regression.equal("nihaoshijie ",editor.text,"space preserves raw when only whole choice is unverified");
+-        engine.start(false,false,false,false);Regression.type(engine,"nihaoshijie");engine.select(Regression.find(engine,generated.text));
+-        // Explicit choices are context-scoped; fresh context repeats that intent.
+-        engine.start(false,false,false,false);Regression.type(engine,"nihaoshijie");
+-        Regression.equal(generated.text,engine.candidates().get(engine.preferred()).text,"explicit user choice remains usable");
+-        Regression.Editor e2=new Regression.Editor();CompositionEngine e=new CompositionEngine(e2,Learning.NONE);e.dictionary(dictionary);e.start(false,false,false,false);
+-        e.decoder((d,r,b,c,result)->result.accept(Arrays.asList(generated,new Candidate("您好世界",false,90))),()->{});
+-        Regression.type(e,"nihaoshijie");e.space();Regression.equal("您好世界",e2.text,"attested whole choice wins over unverified construction");
+-        Candidate raw=new Candidate("raw",true,0),one=new Candidate("one",false,1),two=new Candidate("two",false,1),three=new Candidate("three",false,1),four=new Candidate("four",false,1);
+-        List<Candidate> late=Arrays.asList(raw,one,two,three,four,generated);
+-        Regression.equal(late,ConstructionPolicy.rank(late,c->c.composed),"late constructions never promoted");
+-        int[] observations={0};Regression.Memory votes=new Regression.Memory();
+-        Learning learning=new Learning() {
+-            public int count(String c,String r,String v){return votes.count(c,r,v);}
+-            public void choose(String c,String r,String v){votes.choose(c,r,v);}
+-            public void observePhrase(String r,String v){observations[0]++;}
+-        };
+-        CompositionEngine history=new CompositionEngine(new Regression.Editor(),learning);history.dictionary(dictionary);history.phraseLearning(true);
+-        history.decoder((d,r,b,c,result)->result.accept(Collections.singletonList(generated)),()->{});
+-        history.start(false,false,false,false);Regression.type(history,"nihaoshijie");history.select(Regression.find(history,generated.text));
+-        Regression.equal(1,observations[0],"explicit construction selection can teach a phrase");
+-        for(int i=0;i<3;i++) {
+-            history.start(false,false,false,false);Regression.type(history,"nihaoshijie");
+-            Regression.equal(generated.text,history.candidates().get(history.preferred()).text,"confirmed construction remains automatic for same context");history.space();
++        PhoneticDictionary isolated=PhoneticDictionary.load(new StringReader(
++            "ni\tㄋㄧˇ\t你\t100\tㄋㄧˇ\nhao\tㄏㄠˇ\t好\t100\tㄏㄠˇ\n"),
++            new StringReader("hello\t100\n"),new StringReader("ni\nhao\n"));
++        for(String raw:Arrays.asList("nihao","nh","ni'h","n'hao"))
++            Regression.yes(isolated.convert(raw,false).stream().noneMatch(c->c.text.equals("你好") || c.composed),"separate entries cannot manufacture a phrase: "+raw);
++        Regression.yes(isolated.convert("ㄋㄧˇㄏㄠˇ",true).isEmpty(),"Zhuyin cannot concatenate separate entries");
++        for(String raw:Arrays.asList("nihao","nh","ni'h","n'hao")) {
++            List<Candidate> values=dictionary.convert(raw,false);
++            Regression.yes(values.stream().anyMatch(c->c.text.equals("你好")),"stored phrase keeps complete/mixed/initial lookup: "+raw);
++            Regression.yes(values.stream().noneMatch(c->c.composed),"dictionary lookup has no assembly output");
+         }
+-        Regression.equal(1,observations[0],"automatic repetition cannot attest a constructed phrase");
+-        history.start(false,false,true,false);Regression.type(history,"nihaoshijie");
+-        Regression.equal(0,history.preferred(),"private field cannot use previous confirmations");
+-        history.select(Regression.find(history,generated.text));Regression.equal(1,observations[0],"private explicit selection cannot learn");
++        Regression.yes(dictionary.convert("ㄅㄨˋㄉㄨㄟˋ",true).stream().anyMatch(c->c.text.equals("不對")),"relaxed source tones remain available");
+     }
+ }
+diff --git a/core/src/test/java/dev/minime/core/DesktopEvaluation.java b/core/src/test/java/dev/minime/core/DesktopEvaluation.java
+index 948cdb9..3ad5b15 100644
+--- a/core/src/test/java/dev/minime/core/DesktopEvaluation.java
++++ b/core/src/test/java/dev/minime/core/DesktopEvaluation.java
+@@ -39,6 +39,7 @@ public final class DesktopEvaluation {
+                     if(line.isEmpty())continue;
+                     Candidate candidate=NativeCandidateCodec.decode(raw,line,found.size());
+                     if(candidate==null)throw new IOException("Invalid native candidate provenance");
++                    if(candidate.composed)throw new IOException("Quality regression: native sentence assembly is enabled");
+                     found.add(candidate);
+                 }
+                 if(line==null)throw new EOFException("Desktop Rime exited");
+diff --git a/core/src/test/java/dev/minime/core/ProvenanceRegression.java b/core/src/test/java/dev/minime/core/ProvenanceRegression.java
+index fe44f98..296f435 100644
+--- a/core/src/test/java/dev/minime/core/ProvenanceRegression.java
++++ b/core/src/test/java/dev/minime/core/ProvenanceRegression.java
+@@ -10,8 +10,7 @@ final class ProvenanceRegression {
+             Candidate single=fixture.convert("jia",false,context).stream().filter(c->c.text.equals("甲")).findFirst().get();
+             yes(!single.composed,"one lexical unit is not a speculative sequence");
+             for(String raw:new String[]{"jiayi","jy","jiay"}) {
+-                Candidate joined=fixture.convert(raw,false,context).stream().filter(c->c.text.equals("甲乙")).findFirst().get();
+-                yes(joined.composed,"joined units retain provenance through full/partial/context paths");
++                yes(fixture.convert(raw,false,context).stream().noneMatch(c->c.text.equals("甲乙") || c.composed),"separate units stay separate through full/partial/context lookup");
+             }
+         }
+     }
+diff --git a/core/src/test/java/dev/minime/core/ReadingUnitLookupRegression.java b/core/src/test/java/dev/minime/core/ReadingUnitLookupRegression.java
+index 777834b..8b189d5 100644
+--- a/core/src/test/java/dev/minime/core/ReadingUnitLookupRegression.java
++++ b/core/src/test/java/dev/minime/core/ReadingUnitLookupRegression.java
+@@ -1,32 +1,22 @@
+ package dev.minime.core;
+-
+-import java.lang.reflect.Method;
+ import java.util.*;
+-
+-/** Compare single-entry results to the sentence matcher's retained-offset path. */
++/** A trie may shorten input readings, but never join output entries. */
+ final class ReadingUnitLookupRegression {
+-    @SuppressWarnings("unchecked")
+-    static void run() throws Exception {
++    static void run() {
+         Map<String,List<Candidate>> source=new HashMap<>();
+-        String[] syllables={"a","aa","ab","aba","b","ba","bb","c","ca","da","ea","fa"};
+-        for(String a:syllables)for(String b:syllables) {
+-            source.put(a+"'"+b,Arrays.asList(new Candidate(a+b,false,2),new Candidate(a+"-"+b,false,1)));
+-            source.put(a,Collections.singletonList(new Candidate(a,false,3)));
++        String[] units={"alfa","bravo","charlie","delta","echo","foxtrot"};
++        Set<String> texts=new HashSet<>();
++        for(String a:units)for(String b:units) {
++            String text=a+"-"+b;texts.add(text);
++            source.put(a+"'"+b,Collections.singletonList(new Candidate(text,false,2)));
+         }
+         ReadingUnitIndex index=new ReadingUnitIndex(source,source.keySet());
+-        Method match=ReadingUnitIndex.class.getDeclaredMethod("match",String.class,int.class,int[].class);
+-        match.setAccessible(true);
+-        for(String a:syllables)for(String b:syllables)for(String raw:Arrays.asList(a+b,a+"'"+b,a.substring(0,1)+b,a+b.substring(0,1))) {
+-            List<Candidate> expected=((List<List<Candidate>>)match.invoke(index,raw,0,new int[]{2048})).get(raw.length());
++        for(String a:units)for(String b:units)for(String raw:Arrays.asList(a+b,a+"'"+b,a.substring(0,1)+b,a+b.substring(0,1),a.substring(0,1)+b.substring(0,1))) {
+             List<Candidate> actual=index.lookup(raw);
+-            Regression.equal(describe(expected),describe(actual),"lookup preserves full and partial terminal matches");
++            Regression.yes(actual.stream().anyMatch(c->c.text.equals(a+"-"+b)),"source phrase survives reading omissions: "+raw);
++            Regression.yes(actual.stream().allMatch(c->texts.contains(c.text) && !c.composed),"every output is one source entry");
+         }
+-        Regression.yes(index.convert("abc").stream().anyMatch(c->c.text.equals("abc") && c.composed),"sentence conversion retains intermediate word boundaries");
++        Regression.equal(Collections.emptyList(),index.lookup("alfabravocharliedelta"),"two complete entries cannot be joined");
+         Regression.equal(Collections.emptyList(),index.lookup("a'"),"unfinished separated input remains unavailable");
+     }
+-    private static List<String> describe(List<Candidate> values) {
+-        List<String> result=new ArrayList<>();
+-        for(Candidate c:values)result.add(c.text+"|"+c.score+"|"+c.incomplete+"|"+c.composed);
+-        return result;
+-    }
+ }
+diff --git a/core/src/test/java/dev/minime/core/Regression.java b/core/src/test/java/dev/minime/core/Regression.java
+index 64d24bb..97d36d3 100644
+--- a/core/src/test/java/dev/minime/core/Regression.java
++++ b/core/src/test/java/dev/minime/core/Regression.java
+@@ -111,7 +111,7 @@ public final class Regression {
+         }
+         yes(dictionary.convert("xi'an",false).stream().anyMatch(v -> v.text.equals("西安")),"explicit syllable boundary");
+         yes(dictionary.convert("xi'an",false).stream().noneMatch(v -> v.text.equals("先")),"apostrophe prevents merged syllable");
+-        yes(dictionary.convert("wo'xiang'chifan",false).stream().anyMatch(v -> v.text.equals("我想吃飯")),"phrase segmentation");
++        yes(dictionary.convert("wo'xiang'chifan",false).stream().noneMatch(v -> v.text.equals("我想吃飯")),"absent whole phrase is not assembled from entries");
+         e=new Editor(); memory=new Memory(); c=engine(e,memory,false);
+         c.start(false,false,true,false); type(c,"ming"); c.select(find(c,"明")); equal(0,memory.votes.size(),"no-personalized-learning choice ignored");
+         e=new Editor(); c=engine(e,Learning.NONE,false); type(c,"ming"); c.select(0); c.space(); type(c,"zhongwen"); c.space();
+@@ -138,7 +138,7 @@ public final class Regression {
+         // Real source readings, independently observed reference behaviors; no expected words in runtime rules.
+         for(String[] pair:new String[][]{{"nh","你好"},{"nih","你好"},{"nhao","你好"},{"jt","今天"},{"jtian","今天"},
+                 {"srf","輸入法"},{"shrf","輸入法"},{"srufa","輸入法"},{"mwt","沒問題"},{"mwenti","沒問題"},
+-                {"wxsrf","我想輸入法"},{"sh","生活"},{"n'h","你好"},{"ni'h","你好"},{"meiwen","沒問題"}}) {
++                {"sh","生活"},{"n'h","你好"},{"ni'h","你好"},{"meiwen","沒問題"}}) {
+             e=new Editor(); c=engine(e,Learning.NONE,false); type(c,pair[0]);
+             equal("",e.text,"partial phonetics remain uncommitted");
+             c.select(find(c,pair[1])); equal(pair[1],e.text,"select abbreviated phrase "+pair[0]);
+diff --git a/core/src/test/resources/mixed-corpus.tsv b/core/src/test/resources/mixed-corpus.tsv
+index b7cc569..e8dca7b 100644
+--- a/core/src/test/resources/mixed-corpus.tsv
++++ b/core/src/test/resources/mixed-corpus.tsv
+@@ -10,6 +10,6 @@ email	pinyin	name@example.com 	name@example.com
+ code	pinyin	adb shell C:\Users\Lee foo_bar MainActivity.kt git checkout main 	adb shell C:\Users\Lee foo_bar MainActivity.kt git checkout main 
+ literal	pinyin	meeting input python typing pin 	meeting input python typing pin 
+ zhuyin-A	zhuyin	ㄓㄜˋㄍㄜ˙ <SP>pronunciation ㄅㄨˋㄉㄨㄟˋ<PICK:不對>	這個 pronunciation 不對
+-# Multi-entry construction now requires explicit selection, including Zhuyin.
++# Out-of-dictionary phrases require word-by-word input, including Zhuyin.
+ zhuyin-transition	zhuyin	USB debugging ㄇㄟˊㄧㄡˇㄎㄞ  	USB debugging ㄇㄟˊㄧㄡˇㄎㄞˉ<SP>
+-zhuyin-construction-choice	zhuyin	USB debugging ㄇㄟˊㄧㄡˇㄎㄞ <PICK:沒有開>	USB debugging 沒有開
++zhuyin-word-selection	zhuyin	USB debugging ㄇㄟˊㄧㄡˇ<PICK:沒有>ㄎㄞ <PICK:開>	USB debugging 沒有開
+diff --git a/docs/PRODUCT_REQUIREMENTS.md b/docs/PRODUCT_REQUIREMENTS.md
+index 3c34d99..4d24845 100644
+--- a/docs/PRODUCT_REQUIREMENTS.md
++++ b/docs/PRODUCT_REQUIREMENTS.md
+@@ -1032,3 +1032,20 @@ The project is done only when a user familiar with legacy Google Zhuyin can type
+ The defining property is:
+ 
+ **The user thinks about the text they want to type, not which language mode the keyboard is currently in.**
++
++## Chinese candidate quality: stored-entry boundary (2026-09-12)
++
++Meaningless generated sequences are quality defects. Chinese decoders must not
++join separate dictionary entries into novel phrase candidates. Native and Java
++fallback implementations must enforce this at generation, rather than maintain
++blacklists or construction-specific ranking repairs. Full, partial, initial and
++mixed phonetics must continue to find stored phrases. Explicit word selection and
++opt-in user phrase learning remain supported. Whole-input phrase choices precede
++shorter consumed-prefix recovery choices without discarding those choices.
++
++Local quality control must assert zero native sentence and Java assembly outputs,
++then report first-line/page coverage losses and gains on frozen corpora. This
++invariant does not establish the semantic quality of every existing dictionary
++entry. Dictionaries still require attributed source audits, and conversations and
++essays require separate coverage reports. Marketing screenshots use real output
++and must be recaptured after defects are fixed; never retouch or tune to hide them.
+diff --git a/sources/README.md b/sources/README.md
+index b592e89..8b835db 100644
+--- a/sources/README.md
++++ b/sources/README.md
+@@ -20,6 +20,13 @@ consumed evidence, and may not be advertised as a fresh holdout again.
+ 
+ ## Decisions
+ 
++2026-09-12 configuration decision: retain the pinned Rime vocabulary unchanged,
++but disable the active script translator's sentence assembly. This is a runtime
++native behavior change, not a corpus refresh. `tools/native-source-only.cmake`
++removes the assembly call in a generated translation unit for both desktop and
++Android. The schema, source archives and vocabulary remain unchanged. See
++`../docs/whole-input-quality/SOURCE-ONLY.md` for scope and evaluation.
++
+ | Decision | Meaning |
+ |---|---|
+ | retain | Continue the reviewed use of an established source. Other uses need review. |
+diff --git a/third_party/rime/README.md b/third_party/rime/README.md
+index 8cf44f8..34ac4d1 100644
+--- a/third_party/rime/README.md
++++ b/third_party/rime/README.md
+@@ -13,7 +13,10 @@ disabled, static C++ runtime, and 16 KB ELF alignment. No Trime code or binaries
+ are included. Compatibility flags demote OpenCC's deprecated C++17 iterator
+ warning from an upstream `-Werror` and disable Boost's embedded GDB printer on
+ ARMv7 (its assembler section syntax is incompatible with ARM). Dependency source
+-and language behavior are unchanged.
++is pinned. MinIME's shared `tools/native-source-only.cmake` removes the script
++translator's sentence-assembly call in a generated source file before compilation.
++It is applied to both Android and the desktop evaluator. No candidate is removed
++after generation, and upstream source archives and dictionaries stay unchanged.
+ 
+ Native licenses: librime BSD-3-Clause, Boost BSL-1.0, yaml-cpp MIT, LevelDB
+ BSD-3-Clause, Marisa's BSD-2-Clause option, OpenCC Apache-2.0, and RapidJSON's
+@@ -50,3 +53,9 @@ spelling. The first three full choices precede three prefix previews, followed b
+ the remaining full and prefix choices. The order within each group is preserved.
+ Original MinIME candidates remain
+ available as alternatives and as fallback if the native engine is unavailable.
++
++`tools/test-desktop.ps1` now builds the pinned native sources and dependencies
++locally with the same assembly removal as Android. `build-desktop-metadata.ps1
++-Upstream` retains the unmodified DLL evaluator for historical comparisons.
++The active script translator ignores `translator/enable_sentence`; a schema-only
++switch is insufficient. The desktop quality gate fails if a sentence is emitted.

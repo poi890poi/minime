@@ -1027,6 +1027,21 @@ These are irrelevant until the core mixed-language behavior works.
 
 # 31. Definition of Done
 
+Candidate-quality changes must improve both intended first-choice hit rate and
+recall@8 against the same frozen baseline. Also report reciprocal rank, full
+bounded-list recall, and lost/gained references. Separate conversation and essay
+results, stored phrases and multi-word clauses, and full/initial/mixed/incomplete
+phonetics; aggregate gains must not conceal material regressions. Publish paired
+uncertainty estimates by document or conversation, not independent keystrokes.
+
+An alternative homophone is not automatically meaningless. Sample candidate lists
+independently for blinded naturalness and phonetic-relevance review, retaining
+disagreement and abstention. Report literal-English false conversions, stability,
+latency, memory and model size alongside quality. Keep training, development and
+holdout roles distinct. Passing assertion counts or clean screenshots cannot
+substitute for these gates. The current rejected experiments and contextual
+decoder proposal are recorded in [the quality audit](whole-input-quality/RECALL-PRECISION.md).
+
 The project is done only when a user familiar with legacy Google Zhuyin can type ordinary Taiwan Chinese mixed with arbitrary English words, acronyms, technical terminology, numbers, and spaces without consciously managing an input-language state.
 
 The defining property is:

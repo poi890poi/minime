@@ -1023,6 +1023,36 @@
         "docs/japanese-engine-benchmark/source-manifest.json",
         "docs/japanese-engine-benchmark/NOTICE.md"
       ]
+    },
+    {
+      "id": "twngrams-audit",
+      "name": "Taiwanese Mandarin Corpus Initiative word n-grams",
+      "origin": "taiwan-filtered-web",
+      "decision": "pilot",
+      "uses": [
+        "discovery",
+        "evaluation"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC0-1.0 (publisher claim)",
+        "status": "review",
+        "evidence": "https://huggingface.co/datasets/taiwan-corpora/twngrams"
+      },
+      "evidence": [
+        "https://huggingface.co/datasets/taiwan-corpora/twngrams",
+        "https://github.com/taiwan-corpora/twpipeline"
+      ],
+      "editorial": "Published automated Taiwan-specific admission and cleaning pipeline; independent editorial audit still needed.",
+      "coverage": "Pinned full 1–4-gram tables; host-support counts, not conversational occurrence frequencies.",
+      "limitations": "Web register, segmentation dependence, boilerplate and underlying-content rights remain audit questions. No production entries or weights approved.",
+      "reason": "Audit an existing compact context-data source for joint recall and precision experiments; no source conversion or per-word curation.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/whole-input-quality/RECALL-PRECISION.md",
+        "docs/whole-input-quality/ngram-source/manifest.json",
+        "docs/whole-input-quality/ngram-source/audit.json"
+      ]
     }
   ]
 }

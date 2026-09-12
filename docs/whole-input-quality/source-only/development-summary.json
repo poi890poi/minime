@@ -1,0 +1,234 @@
+{
+  "role": "development",
+  "groups": {
+    "full": {
+      "inputs": 1275,
+      "constructed": 0,
+      "construction_hits": 0,
+      "construction_target_prefix": 0,
+      "top1_reference_hits": 165,
+      "top8_reference_hits": 168,
+      "quality_values": {},
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 0,
+          "hits": 0
+        }
+      ],
+      "query_us": {
+        "p50": 2008,
+        "p95": 2717,
+        "maximum": 51417
+      }
+    },
+    "partial": {
+      "inputs": 1275,
+      "constructed": 0,
+      "construction_hits": 0,
+      "construction_target_prefix": 0,
+      "top1_reference_hits": 4,
+      "top8_reference_hits": 7,
+      "quality_values": {},
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 0,
+          "hits": 0
+        }
+      ],
+      "query_us": {
+        "p50": 1974,
+        "p95": 2689,
+        "maximum": 13652
+      }
+    },
+    "initials": {
+      "inputs": 1275,
+      "constructed": 0,
+      "construction_hits": 0,
+      "construction_target_prefix": 0,
+      "top1_reference_hits": 84,
+      "top8_reference_hits": 138,
+      "quality_values": {},
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 0,
+          "hits": 0
+        }
+      ],
+      "query_us": {
+        "p50": 2690,
+        "p95": 3597,
+        "maximum": 72393
+      }
+    },
+    "mixed": {
+      "inputs": 1275,
+      "constructed": 0,
+      "construction_hits": 0,
+      "construction_target_prefix": 0,
+      "top1_reference_hits": 132,
+      "top8_reference_hits": 168,
+      "quality_values": {},
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 0,
+          "hits": 0
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 0,
+          "hits": 0
+        }
+      ],
+      "query_us": {
+        "p50": 2420,
+        "p95": 3397,
+        "maximum": 58775
+      }
+    }
+  },
+  "corpus_sha256": "d94d89a26e07b7a546235a3b5d2c59a77e202020dde7630ac86e0c2c3e561361",
+  "model": {
+    "librime": "1.16.1",
+    "bundle": "145b3f69c8be5be50929587e5dede33300385ddf22aa326f840d12972128fb94",
+    "assets": {
+      "default.yaml": "c40862c0581b5fe13045bab6b79286bcb78bb63aea872d7ecb04d98937315977",
+      "luna_pinyin.prism.bin": "acb7a8ea3b973cb9e5cabf43589956ac01f02c0738f0047101b65d3c543477e7",
+      "luna_pinyin.reverse.bin": "bd314158c00bf36c9ba8f7321d7e6ab6dfbdaa283b11c4856adfd2f58a781179",
+      "luna_pinyin.schema.yaml": "8625ef380b0c97394a65ededd77823c9f8bd99cec1dd4b60a06a9d325ddb8e8e",
+      "luna_pinyin.table.bin": "55a54e8e55deaade0e4d7646a7ad2b8602901f4007b60c637d993468eff64e03",
+      "opencc/t2tw.json": "42f5e400534ca615f22244b7fc32998d2ef8b566238bfca5ada7c6fbdb69eacc",
+      "opencc/TWVariants.txt": "30e6f8395edbfdd74e293fd8b9c62105d787c849fbb208d2a7832eac696734d7"
+    }
+  },
+  "evaluator_sha256": "98c147266c4d294de3d2ea7f44166595cf03ca7c543735a3a9b66a13234a9942",
+  "limitations": [
+    "exact source reconstruction, not semantic judgement",
+    "prose only; no natural Mandarin conversation coverage",
+    "not Android touch latency",
+    "reading coverage excludes ambiguous/unmapped source spans"
+  ]
+}

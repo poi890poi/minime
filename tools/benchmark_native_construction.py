@@ -3,11 +3,16 @@ from pathlib import Path
 from collections import defaultdict,Counter
 import argparse,json,gzip,subprocess,os,hashlib,statistics,math
 ROOT=Path(__file__).resolve().parent.parent;OUT=ROOT/'docs/construction-confidence'
-parser=argparse.ArgumentParser();parser.add_argument('--role',choices=['development','reserved'],required=True);args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--role',choices=['development','reserved'],required=True)
+parser.add_argument('--output-dir',type=Path,default=OUT)
+parser.add_argument('--probe',type=Path,default=ROOT/'artifacts/native-metadata/probe.exe')
+parser.add_argument('--require-no-assembly',action='store_true');args=parser.parse_args()
 inputs=[r for r in json.loads(gzip.decompress((OUT/'inputs.json.gz').read_bytes())) if r['role']==args.role]
+corpus_hash=hashlib.sha256((OUT/'inputs.json.gz').read_bytes()).hexdigest()
+OUT=args.output_dir;OUT.mkdir(parents=True,exist_ok=True)
 env=os.environ.copy();env['PATH']=str(ROOT/'.tools/rime-evaluation/msvc/dist/lib')+os.pathsep+env['PATH']
 user=ROOT/('artifacts/native-metadata/user-'+args.role);user.mkdir(exist_ok=True)
-p=subprocess.Popen([str(ROOT/'artifacts/native-metadata/probe.exe'),str(ROOT/'app/src/main/rimeAssets/rime'),str(user)],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,encoding='utf-8',env=env)
+p=subprocess.Popen([str(args.probe.resolve()),str(ROOT/'app/src/main/rimeAssets/rime'),str(user)],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,encoding='utf-8',env=env)
 assert p.stdout.readline().strip()=='READY 1.16.1'
 results=[]
 try:
@@ -20,6 +25,7 @@ try:
             end,kind,quality,weight,parts,text,components=line.rstrip('\n').split('\t')
             choices.append(dict(end=int(end),kind=kind,quality=float(quality),weight=float(weight),parts=int(parts),text=text,components=components.rstrip('|').split('|') if components else []))
         sentence=next((c for c in choices if c['kind']=='sentence'),None)
+        if args.require_no_assembly and sentence:raise AssertionError('Native assembly still enabled: '+row['raw'])
         if sentence:
             sentence['mean_entry_log_weight']=sentence['weight']/sentence['parts']+13.815510557964274
             sentence['hit']=sentence['text']==row['target']
@@ -44,7 +50,9 @@ for condition in dict.fromkeys(r['condition'] for r in results):
         top8_reference_hits=sum(any(c['text']==r['target'] for c in r['choices'][:8]) for r in rows),
         quality_values=dict(Counter(str(c['quality']) for c in generated)),mean_entry_weight_bins=bins,
         query_us=dict(p50=statistics.median(latency),p95=latency[math.ceil(len(latency)*.95)-1],maximum=max(latency)))
-report={'role':args.role,'groups':groups,'corpus_sha256':hashlib.sha256((OUT/'inputs.json.gz').read_bytes()).hexdigest(),
+report={'role':args.role,'groups':groups,'corpus_sha256':corpus_hash,
+        'model':json.loads((ROOT/'third_party/rime/model.json').read_text()),
+        'evaluator_sha256':hashlib.sha256(args.probe.read_bytes()).hexdigest(),
         'limitations':['exact source reconstruction, not semantic judgement','prose only; no natural Mandarin conversation coverage','not Android touch latency','reading coverage excludes ambiguous/unmapped source spans']}
 (OUT/(args.role+'-summary.json')).write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(report,indent=2))
