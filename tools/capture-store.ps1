@@ -12,7 +12,7 @@ try {
     & $adb -s $serial shell wm size 1080x1920
     if($LASTEXITCODE -ne 0){throw 'Could not set capture viewport'}
     & "$PSScriptRoot/test-device.ps1" -Serial $serial -SdkDir $SdkDir -TestClass dev.minime.ime.StoreCaptureTest
-    foreach($name in @('01-chinese','02-english','03-taiwanese','04-japanese')) {
+    foreach($name in @('01-chinese','02-english','03-taiwanese','04-japanese','05-geography')) {
         & $adb -s $serial pull "/sdcard/Android/data/app.minime.keyboard/files/store-$name.png" "docs/play-publishing/kit/screenshots/$name.png"
         if($LASTEXITCODE -ne 0){throw "Missing screenshot $name"}
     }
@@ -27,7 +27,7 @@ try {
         & $adb -s $serial shell input keyevent KEYCODE_SLEEP
         Start-Sleep -Milliseconds 500
         $display=(& $adb -s $serial shell dumpsys display) -join "`n"
-        if($display -notmatch 'mScreenState=OFF|mActualState=OFF'){throw 'Display OFF not verified'}
+        if($LASTEXITCODE -ne 0 -or !(Test-PhoneDisplayOff $display)){throw 'Display OFF not verified'}
         Write-Output 'Display OFF verified after viewport restoration.'
     }
 }

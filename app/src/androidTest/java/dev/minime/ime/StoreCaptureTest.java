@@ -58,6 +58,19 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
         long focusUntil=SystemClock.uptimeMillis()+5000;
         while(!host.hasWindowFocus()&&SystemClock.uptimeMillis()<focusUntil)SystemClock.sleep(50);
         assertTrue("Capture editor owns window focus",host.hasWindowFocus());
+        getInstrumentation().waitForIdleSync();
+        // The replacement editor must be attached and served before requesting IME visibility.
+        getInstrumentation().runOnMainSync(()->((InputMethodManager)host.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(host.text));
+        int[] position=new int[2];getInstrumentation().runOnMainSync(()->host.text.getLocationOnScreen(position));
+        long tap=SystemClock.uptimeMillis();
+        for(int action:new int[]{MotionEvent.ACTION_DOWN,MotionEvent.ACTION_UP}) {
+            MotionEvent e=MotionEvent.obtain(tap,SystemClock.uptimeMillis(),action,position[0]+40,position[1]+40,0);e.setSource(InputDevice.SOURCE_TOUCHSCREEN);
+            assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(e,true));e.recycle();
+        }
+        getInstrumentation().runOnMainSync(()->host.text.setSelection(host.text.length()));
+        // Samsung may restore its IME while instrumentation's target starts.
+        // Select after the replacement editor has completed its first interaction.
+        try(android.os.ParcelFileDescriptor fd=getInstrumentation().getUiAutomation().executeShellCommand("ime set app.minime.keyboard/dev.minime.ime.MiniMeService");InputStream in=new android.os.ParcelFileDescriptor.AutoCloseInputStream(fd)){while(in.read()!=-1){}}
         getInstrumentation().runOnMainSync(()->((InputMethodManager)host.getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(host.text,InputMethodManager.SHOW_IMPLICIT));
         long until=SystemClock.uptimeMillis()+8000;
         while(key("q")==null&&key("Q")==null&&SystemClock.uptimeMillis()<until)SystemClock.sleep(100);
@@ -71,10 +84,11 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
         try(FileOutputStream out=new FileOutputStream(new File(host.getExternalFilesDir(null),"store-"+name+".png"))){assertTrue(b.compress(Bitmap.CompressFormat.PNG,100,out));}finally{b.recycle();}
     }
     public void testCaptureStoreExamples()throws Exception {
-        host=getActivity();AccessibilityServiceInfo info=getInstrumentation().getUiAutomation().getServiceInfo();info.flags|=AccessibilityServiceInfo.FLAG_RETRIEVE_INTERACTIVE_WINDOWS;getInstrumentation().getUiAutomation().setServiceInfo(info);
+        host=getActivity();DictionaryRepository.load(host).get(60,java.util.concurrent.TimeUnit.SECONDS);AccessibilityServiceInfo info=getInstrumentation().getUiAutomation().getServiceInfo();info.flags|=AccessibilityServiceInfo.FLAG_RETRIEVE_INTERACTIVE_WINDOWS;getInstrumentation().getUiAutomation().setServiceInfo(info);
         show("chinese","週末想去散步。\n");for(char c:"mingtian".toCharArray())press(String.valueOf(c));capture("01-chinese");
         show("english","A little note for tomorrow.\n");for(char c:"hello".toCharArray())press(String.valueOf(c));capture("02-english");
         show("taiwanese_english","台語白話字\n");for(char c:"liho".toCharArray())press(String.valueOf(c));capture("03-taiwanese");
         show("japanese_english","日本語\n");for(char c:"arigatou".toCharArray())press(String.valueOf(c));capture("04-japanese");
+        show("chinese","山林與舊聚落\nTaiwan trails and history\n");for(char c:"jianianduan".toCharArray())press(String.valueOf(c));capture("05-geography");
     }
 }
