@@ -77,7 +77,7 @@ try {
             Start-Sleep -Milliseconds 500
             $display=(& $adb -s $Serial shell dumpsys display) -join "`n"
             [IO.File]::WriteAllText((Join-Path $prefBackup 'display-after.txt'),$display)
-            if($LASTEXITCODE -ne 0 -or $display -notmatch 'mScreenState=OFF|mActualState=OFF') {throw 'Display OFF could not be verified'}
+            if($LASTEXITCODE -ne 0 -or !(Test-PhoneDisplayOff $display)) {throw 'Display OFF could not be verified'}
             Write-Output 'Cleanup verified: preferences, previous IME, display OFF.'
             Write-Output "Session evidence: $prefBackup"
         } finally {Pop-Location}

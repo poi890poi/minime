@@ -1,5 +1,12 @@
 # Cross-project Windows exclusion for the shared authorized phone. The owner must
 # also obtain the explicit task handoff described in AGENTS.md before entering.
+function Test-PhoneDisplayOff {
+    param([Parameter(Mandatory=$true)][string]$Display)
+    # Prefer the primary display's actual state, never a requested DOZE policy.
+    $primary=[regex]::Match($Display,'(?m)^\s*Display Id=0\r?\n\s*Display State=(\w+)\s*$')
+    if($primary.Success){return $primary.Groups[1].Value -ceq 'OFF'}
+    return $Display -match '(?m)^\s*(mScreenState|mActualState)=OFF\s*$'
+}
 function Invoke-WithPhoneLease {
     param([Parameter(Mandatory=$true)][scriptblock]$Action)
     $lease=[Threading.Mutex]::new($false,'Local\Codex.Android.RFCR91GWXLX')
