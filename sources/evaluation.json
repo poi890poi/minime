@@ -3,6 +3,18 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "null-construction-20260912",
+      "source_ids": ["taiwan-md", "mcbopomofo", "ud-gum-evaluation"],
+      "genre": ["taiwan-md-prose", "english-conversation", "english-essay"],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "All 11220 existing construction queries; GUM conversation/essay rows retained verbatim. Hash-selected 64 queries per role/condition for ideal-user incremental entry, 32 per development condition for repeated timing, and 18 reference phone cases. Original and fixed-delay phone runs use every same case.",
+      "files": ["docs/null-construction/PLAN.md", "docs/null-construction/java-export.json", "docs/null-construction/english.tsv", "docs/null-construction/effort.tsv", "docs/null-construction/reference-sample.json", "docs/null-construction/reference-plan.json", "docs/null-construction/reference-delayed-plan.json"],
+      "report_by": ["genre", "role", "construction-provider", "input-condition", "add-ons", "first-choice", "reference-recall", "automatic-acceptance", "incremental-selection", "latency"],
+      "leakage": "Previously consumed reference material. Targets enter scoring and an explicitly reference-guided ideal-user selector, never candidate generation or ranking. No production entries, source weights or default changes. Google output is a comparator, not a training source or expected label.",
+      "limitations": "No natural Mandarin conversation corpus, independent semantic precision grading, real human correction/time measurement, or phone testing of the experimental null decoder. Greedy reference-guided selection is not an optimal-path guarantee. Static native controls differ from the upstream DLL on two reserved queries; within-experiment native builds share the same toolchain and dependencies."
+    },
+    {
       "id": "chinese-live-construction-20260912",
       "source_ids": ["taiwan-md", "mcbopomofo"],
       "genre": ["taiwan-md-prose"],

@@ -132,3 +132,14 @@ counts directly measure spoken probability. No construction implementation,
 including the existing Java paths, is entitled to retention before demonstrating
 benefit over null. Prefer the smallest addition that passes the joint quality,
 typing-effort and resource gates; adding no construction remains a valid outcome.
+
+## Controlled null results
+
+The [controlled null experiment](../null-construction/README.md) now isolates
+generation from ranking. Java construction adds deep-list coverage but no
+first-eight or incremental-selection advantage in these replays, with a substantial
+core processing cost. Native construction adds selectable clauses but has not
+established net benefit across conditions. Neither earns default inclusion from
+these results. Null stays the experimental default; production remains unchanged.
+Google Zhuyin phone comparisons are retained as reference behavior, alongside
+independent source targets and explicit timing/genre limitations.

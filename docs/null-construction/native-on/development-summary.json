@@ -1,0 +1,242 @@
+{
+  "role": "development",
+  "groups": {
+    "full": {
+      "inputs": 1275,
+      "constructed": 1094,
+      "construction_hits": 428,
+      "construction_target_prefix": 428,
+      "top1_reference_hits": 593,
+      "top8_reference_hits": 596,
+      "quality_values": {
+        "0.0": 1094
+      },
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 2,
+          "hits": 2
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 32,
+          "hits": 10
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 328,
+          "hits": 108
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 597,
+          "hits": 229
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 134,
+          "hits": 79
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 1,
+          "hits": 0
+        }
+      ],
+      "query_us": {
+        "p50": 2182,
+        "p95": 3561,
+        "maximum": 129332
+      }
+    },
+    "partial": {
+      "inputs": 1275,
+      "constructed": 998,
+      "construction_hits": 0,
+      "construction_target_prefix": 196,
+      "top1_reference_hits": 0,
+      "top8_reference_hits": 7,
+      "quality_values": {
+        "0.0": 998
+      },
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 1,
+          "hits": 0
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 28,
+          "hits": 0
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 233,
+          "hits": 0
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 565,
+          "hits": 0
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 168,
+          "hits": 0
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 3,
+          "hits": 0
+        }
+      ],
+      "query_us": {
+        "p50": 2135,
+        "p95": 3306,
+        "maximum": 145890
+      }
+    },
+    "initials": {
+      "inputs": 1275,
+      "constructed": 796,
+      "construction_hits": 5,
+      "construction_target_prefix": 5,
+      "top1_reference_hits": 89,
+      "top8_reference_hits": 143,
+      "quality_values": {
+        "0.0": 796
+      },
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 76,
+          "hits": 0
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 213,
+          "hits": 1
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 311,
+          "hits": 0
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 186,
+          "hits": 4
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 10,
+          "hits": 0
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 0,
+          "hits": 0
+        }
+      ],
+      "query_us": {
+        "p50": 3944,
+        "p95": 7873,
+        "maximum": 56766
+      }
+    },
+    "mixed": {
+      "inputs": 1275,
+      "constructed": 997,
+      "construction_hits": 90,
+      "construction_target_prefix": 90,
+      "top1_reference_hits": 222,
+      "top8_reference_hits": 258,
+      "quality_values": {
+        "0.0": 997
+      },
+      "mean_entry_weight_bins": [
+        {
+          "low": -100,
+          "high": -14,
+          "n": 18,
+          "hits": 2
+        },
+        {
+          "low": -14,
+          "high": -12,
+          "n": 119,
+          "hits": 7
+        },
+        {
+          "low": -12,
+          "high": -10,
+          "n": 372,
+          "hits": 26
+        },
+        {
+          "low": -10,
+          "high": -8,
+          "n": 414,
+          "hits": 50
+        },
+        {
+          "low": -8,
+          "high": -6,
+          "n": 73,
+          "hits": 5
+        },
+        {
+          "low": -6,
+          "high": 0,
+          "n": 1,
+          "hits": 0
+        }
+      ],
+      "query_us": {
+        "p50": 3502,
+        "p95": 7424,
+        "maximum": 64116
+      }
+    }
+  },
+  "corpus_sha256": "d94d89a26e07b7a546235a3b5d2c59a77e202020dde7630ac86e0c2c3e561361",
+  "model": {
+    "librime": "1.16.1",
+    "bundle": "145b3f69c8be5be50929587e5dede33300385ddf22aa326f840d12972128fb94",
+    "assets": {
+      "default.yaml": "c40862c0581b5fe13045bab6b79286bcb78bb63aea872d7ecb04d98937315977",
+      "luna_pinyin.prism.bin": "acb7a8ea3b973cb9e5cabf43589956ac01f02c0738f0047101b65d3c543477e7",
+      "luna_pinyin.reverse.bin": "bd314158c00bf36c9ba8f7321d7e6ab6dfbdaa283b11c4856adfd2f58a781179",
+      "luna_pinyin.schema.yaml": "8625ef380b0c97394a65ededd77823c9f8bd99cec1dd4b60a06a9d325ddb8e8e",
+      "luna_pinyin.table.bin": "55a54e8e55deaade0e4d7646a7ad2b8602901f4007b60c637d993468eff64e03",
+      "opencc/t2tw.json": "42f5e400534ca615f22244b7fc32998d2ef8b566238bfca5ada7c6fbdb69eacc",
+      "opencc/TWVariants.txt": "30e6f8395edbfdd74e293fd8b9c62105d787c849fbb208d2a7832eac696734d7"
+    }
+  },
+  "evaluator_sha256": "c61d29062d3a16f327f3a3026ef23667f261eed5be1308b88a8044e9246c52b5",
+  "limitations": [
+    "exact source reconstruction, not semantic judgement",
+    "prose only; no natural Mandarin conversation coverage",
+    "not Android touch latency",
+    "reading coverage excludes ambiguous/unmapped source spans"
+  ]
+}

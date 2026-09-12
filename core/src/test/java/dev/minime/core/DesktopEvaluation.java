@@ -21,7 +21,7 @@ public final class DesktopEvaluation {
         public int count(String c,String r,String v) {return counts.getOrDefault(c+'\t'+r+'\t'+v,0);}
         public void choose(String c,String r,String v) {counts.merge(c+'\t'+r+'\t'+v,1,Integer::sum);}
     }
-    private static final class Native implements AutoCloseable {
+    static final class Native implements AutoCloseable {
         Process process;BufferedWriter input;BufferedReader output;
         Map<String,List<Candidate>> cache=new HashMap<>();List<Long> micros=new ArrayList<>();
         Native(String exe,String dll,String model,String user) throws Exception {
