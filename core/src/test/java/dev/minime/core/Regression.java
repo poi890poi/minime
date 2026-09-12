@@ -47,6 +47,7 @@ public final class Regression {
         long start = System.nanoTime();
         dictionary = args.length>0?PhoneticDictionary.readBinary(Files.newInputStream(Paths.get(args[0]))):PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")), Files.newBufferedReader(assets.resolve("en_us.tsv")), Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));
         dictionary.englishSpelling(Files.newBufferedReader(assets.resolve("en_spelling.tsv")));
+        ConstructionRegression.run(dictionary);
         FocusedIntentRegression.run(dictionary);
         StaticDictionaryPrivacyRegression.run();
         FocusedChoiceRegression.run();
@@ -77,7 +78,7 @@ public final class Regression {
                 c.select(find(c,script.substring(pick+6,end)));
                 script = script.substring(end+1);
             }
-            equal(p[3], e.text, p[0]); equal("",c.raw(),p[0]+" ends committed");
+            equal(p[3].replace("<SP>"," "), e.text, p[0]); equal("",c.raw(),p[0]+" ends committed");
             System.out.println("PASS corpus "+p[0]);
         }
         Editor e = new Editor(); Memory memory = new Memory(); CompositionEngine c = engine(e,memory,false);

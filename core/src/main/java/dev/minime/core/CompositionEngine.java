@@ -50,8 +50,9 @@ public final class CompositionEngine {
     private final PhraseSession phraseSession=new PhraseSession();
     private boolean phraseLearning;
     public void phraseLearning(boolean enabled) {if(phraseLearning!=enabled) {phraseLearning=enabled;phraseSession.clear();refresh();}}
-    private void acceptedPhrase(String reading,Candidate choice) {
-        if(!phraseLearning || privateField || literalField || englishMode || choice.literal || choice.supplemental) {phraseSession.clear();return;}
+    private void acceptedPhrase(String reading,Candidate choice,boolean explicit) {
+        if(!phraseLearning || privateField || literalField || englishMode || choice.literal || choice.supplemental
+                || (choice.composed && !explicit)) {phraseSession.clear();return;}
         phraseSession.accept(reading,choice.text,learning::observePhrase);
     }
     private AddonDictionary addons=AddonDictionary.EMPTY;
@@ -235,7 +236,7 @@ public final class CompositionEngine {
             // Legacy Pinyin decoder offsets exclude their following delimiter.
             // Other providers own their exact raw span, including separators.
             if(!choice.supplemental && raw.matches("[a-zv]+(?:'[a-zv]+)*"))rest=rest.replaceFirst("^'+","");
-            acceptedPhrase(reading,choice);
+            acceptedPhrase(reading,choice,true);
             learnChoice(reading,choice);
             editor.commit(choice.text);englishContext="";context=privateField?"":tail(context+choice.text,3);afterLatin=false;
             raw=rest;completionBoundary=false;committedEnglishWord=false;
@@ -277,7 +278,7 @@ public final class CompositionEngine {
         commit(c, withSpace && c.literal, false);
     }
     private void commit(Candidate c, boolean withSpace, boolean explicit) {
-        acceptedPhrase(raw,c);
+        acceptedPhrase(raw,c,explicit);
         if(explicit)learnChoice(raw,c);
         editor.commit(c.text + (withSpace ? " " : ""));
         committedEnglishWord=false;
@@ -514,6 +515,17 @@ public final class CompositionEngine {
                 for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
             }
         }
+        if(!literalField && !englishMode && inputMode.chineseEnabled()) {
+            Candidate defaultChoice=candidates.get(preferred);
+            candidates=ConstructionPolicy.rank(candidates,this::unverifiedConstruction);
+            preferred=candidates.indexOf(defaultChoice);
+            if(unverifiedConstruction(defaultChoice)) {
+                preferred=0;
+                for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i)) && !unverifiedConstruction(candidates.get(i))) {
+                    preferred=i;break;
+                }
+            }
+        }
         for(int i=0;i<candidates.size();i++) {
             Candidate c=candidates.get(i);
             if(c.pair!=null)candidates.set(i,pairedTaiwanese && inputMode.taiwanese()?c.primary(hanPrimary):c.paired(null));
@@ -521,6 +533,9 @@ public final class CompositionEngine {
     }
     private boolean focused(Candidate candidate) {
         return !inputMode.pack.isEmpty() && inputMode.pack.equals(candidate.pack);
+    }
+    private boolean unverifiedConstruction(Candidate candidate) {
+        return candidate.composed && (privateField || learning.count(contextKey(),raw,candidate.text)==0);
     }
     private static boolean englishSuggestion(Candidate candidate) {
         if(!candidate.pack.isEmpty())return false;

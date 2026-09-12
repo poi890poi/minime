@@ -10,4 +10,6 @@ email	pinyin	name@example.com 	name@example.com
 code	pinyin	adb shell C:\Users\Lee foo_bar MainActivity.kt git checkout main 	adb shell C:\Users\Lee foo_bar MainActivity.kt git checkout main 
 literal	pinyin	meeting input python typing pin 	meeting input python typing pin 
 zhuyin-A	zhuyin	ㄓㄜˋㄍㄜ˙ <SP>pronunciation ㄅㄨˋㄉㄨㄟˋ<PICK:不對>	這個 pronunciation 不對
-zhuyin-transition	zhuyin	USB debugging ㄇㄟˊㄧㄡˇㄎㄞ  	USB debugging 沒有開
+# Multi-entry construction now requires explicit selection, including Zhuyin.
+zhuyin-transition	zhuyin	USB debugging ㄇㄟˊㄧㄡˇㄎㄞ  	USB debugging ㄇㄟˊㄧㄡˇㄎㄞˉ<SP>
+zhuyin-construction-choice	zhuyin	USB debugging ㄇㄟˊㄧㄡˇㄎㄞ <PICK:沒有開>	USB debugging 沒有開
