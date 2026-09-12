@@ -1,7 +1,9 @@
 """Generate public HTML from the exact offline policy bundled by Android."""
 import argparse
 import html
+import re
 from pathlib import Path
+from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -27,12 +29,33 @@ def main():
                'margin-top:2em}a{color:#005db3}</style></head><body><main>'
                + body + '</main></body></html>\n').encode('utf-8')
     target = ROOT / 'site/privacy.html'
+    # The repository URL is a public, readable policy location without Pages/CI.
+    names = []
+    for locale in ('values', 'values-zh-rTW'):
+        strings = ElementTree.parse(ROOT / 'app/src/main/res' / locale / 'strings.xml')
+        names.append(strings.find("string[@name='app_name']").text)
+    application_id = re.search(r"applicationId\s+'([^']+)'", (ROOT / 'app/build.gradle').read_text(encoding='utf-8')).group(1)
+    markdown = '# ' + title + '\n\n' + date + '\n\n'
+    markdown += '**App:** ' + ' / '.join(names) + '\n\n'
+    markdown += '**Android package:** `' + application_id + '`\n\n'
+    markdown += '**Developer/project:** [poi890poi / MinIME](https://github.com/poi890poi/minime)\n\n'
+    for i, section in enumerate(sections[1:]):
+        if i and '\n' in section:
+            heading, text = section.split('\n', 1)
+            markdown += '## ' + heading + '\n\n' + text + '\n\n'
+        else:
+            markdown += section + '\n\n'
+    markdown = markdown.rstrip() + '\n'
+    repository_policy = ROOT / 'PRIVACY.md'
     if args.check:
         if target.read_bytes() != content:
             raise SystemExit('Privacy HTML differs from the offline policy; regenerate it')
+        if not repository_policy.exists() or repository_policy.read_bytes() != markdown.encode('utf-8'):
+            raise SystemExit('Repository privacy policy differs from offline policy/app identity; regenerate it')
     else:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(content)
+        repository_policy.write_bytes(markdown.encode('utf-8'))
 
 if __name__ == '__main__':
     main()

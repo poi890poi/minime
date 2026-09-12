@@ -1,5 +1,7 @@
 # MinIME — 台灣多語拼音鍵盤
 
+[Privacy policy](PRIVACY.md)
+
 An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Zhuyin. Chinese mode also supports mixed English. This repository implements the functional prototype in the product specification. It does **not** claim verified equivalence to legacy Google Zhuyin or production language-model quality.
 
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
