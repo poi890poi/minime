@@ -210,6 +210,7 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
         try(FileOutputStream out=new FileOutputStream(new File(dir,"parity-"+provider+"-"+caseId+"-"+stage+".png"))){b.compress(Bitmap.CompressFormat.PNG,100,out);}finally{b.recycle();}
     }
     private void action(JSONObject action)throws Exception{
+        if(action.has("waitMs"))SystemClock.sleep(Math.max(0,Math.min(3000,action.getInt("waitMs"))));
         if(action.has("type"))text(action.getString("type"));
         else if(action.has("trace")){
             ArrayList<PointF> points=new ArrayList<>();for(char letter:action.getString("trace").toCharArray()){
