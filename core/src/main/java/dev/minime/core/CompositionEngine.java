@@ -530,6 +530,14 @@ public final class CompositionEngine {
             Candidate c=candidates.get(i);
             if(c.pair!=null)candidates.set(i,pairedTaiwanese && inputMode.taiwanese()?c.primary(hanPrimary):c.paired(null));
         }
+        if(inputMode==InputMode.CHINESE && preferred>0 && !candidates.get(preferred).literal) {
+            Candidate accepted=candidates.get(preferred);
+            List<Candidate> whole=new ArrayList<>(),prefix=new ArrayList<>();
+            for(int i=1;i<candidates.size();i++)(partial(candidates.get(i))?prefix:whole).add(candidates.get(i));
+            candidates.subList(1,candidates.size()).clear();
+            candidates.addAll(whole);candidates.addAll(prefix);
+            preferred=candidates.indexOf(accepted);
+        }
         // The Space choice must be visible before prefix-recovery alternatives.
         // Preserve acceptance and every other candidate's relative order.
         if(preferred>1) {
