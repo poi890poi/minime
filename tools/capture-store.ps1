@@ -13,11 +13,11 @@ try {
     if($LASTEXITCODE -ne 0){throw 'Could not set capture viewport'}
     & "$PSScriptRoot/test-device.ps1" -Serial $serial -SdkDir $SdkDir -TestClass dev.minime.ime.StoreCaptureTest
     foreach($name in @('01-chinese','02-english','03-taiwanese','04-japanese')) {
-        & $adb -s $serial pull "/sdcard/Android/data/dev.minime.ime/files/store-$name.png" "docs/play-publishing/kit/screenshots/$name.png"
+        & $adb -s $serial pull "/sdcard/Android/data/app.minime.keyboard/files/store-$name.png" "docs/play-publishing/kit/screenshots/$name.png"
         if($LASTEXITCODE -ne 0){throw "Missing screenshot $name"}
     }
 } finally {
-    & $adb -s $serial pull /sdcard/Android/data/dev.minime.ime/files/store-diagnostic.png artifacts/play-materials/diagnostic.png | Out-Null
+    & $adb -s $serial pull /sdcard/Android/data/app.minime.keyboard/files/store-diagnostic.png artifacts/play-materials/diagnostic.png | Out-Null
     try {
         if($override){& $adb -s $serial shell wm size $override}else{& $adb -s $serial shell wm size reset}
         $after=(& $adb -s $serial shell wm size) -join "`n"

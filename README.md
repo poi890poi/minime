@@ -1,4 +1,4 @@
-# MinIME 注音
+# MinIME — 台灣多語拼音鍵盤
 
 An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Zhuyin. Chinese mode also supports mixed English. This repository implements the functional prototype in the product specification. It does **not** claim verified equivalence to legacy Google Zhuyin or production language-model quality.
 
@@ -108,7 +108,7 @@ is preserved. See [first-use results](docs/first-impressions/RESULTS.md) and the
 
 ## Build and run
 
-Install JDK 17, Android SDK platform 35, NDK 27.2.12479018 and CMake 3.22.1. Set `ANDROID_HOME`, or create an ignored `local.properties` with `sdk.dir=E\:/Android/Sdk` on this Windows setup. Fetch pinned native sources once before building:
+Install JDK 17, Android SDK platform 36, NDK 27.2.12479018 and CMake 3.22.1. Set `ANDROID_HOME`, or create an ignored `local.properties` with `sdk.dir=E\:/Android/Sdk` on this Windows setup. Fetch pinned native sources once before building:
 
 ```powershell
 python tools/fetch_rime_sources.py
@@ -117,7 +117,7 @@ python tools/fetch_rime_sources.py
 
 On Linux/macOS use `./gradlew` instead. The debug APK is `app/build/outputs/apk/debug/app-debug.apk`. Release builds are unsigned until the project owner supplies their signing configuration; the reference APKs and their signing keys are never reused.
 
-Install the debug APK, open **MinIME 注音**, enable it in Android settings, then choose it from the input-method picker. The setup screen includes a test field, local dictionary editor, learning reset and open-source notices.
+Install the debug APK, open **MinIME — Pinyin for Taiwan** (繁體中文：**MinIME — 台灣多語拼音鍵盤**), enable it in Android settings, then choose it from the input-method picker. The setup screen includes a test field, local dictionary editor, learning reset and open-source notices. Since 0.8.4 the application ID is `app.minime.keyboard`; it installs separately from `dev.minime.ime`. Export settings and learned words from the old app and import them into the new one before removing the old installation.
 
 Type `zhege`, Space, Space, `pronunciation`, Space, `budui`, Space to produce `這個 pronunciation 不對`. No language key is involved. Chinese homophones may need a candidate tap, such as selecting `請` for `qing`. To keep `ming` literal, tap the exact-input control. Hold Space also commits exact input plus a space.
 

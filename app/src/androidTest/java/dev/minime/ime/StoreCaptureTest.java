@@ -30,7 +30,7 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
     private AccessibilityNodeInfo key(String label) {
         for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows())if(w.getType()==AccessibilityWindowInfo.TYPE_INPUT_METHOD){AccessibilityNodeInfo n=find(w.getRoot(),label);if(n!=null)return n;}return null;
     }
-    private void ownIme() {assertEquals("Only MinIME may appear in store captures","dev.minime.ime/.MiniMeService",android.provider.Settings.Secure.getString(host.getContentResolver(),android.provider.Settings.Secure.DEFAULT_INPUT_METHOD));}
+    private void ownIme() {assertEquals("Only MinIME may appear in store captures","app.minime.keyboard/dev.minime.ime.MiniMeService",android.provider.Settings.Secure.getString(host.getContentResolver(),android.provider.Settings.Secure.DEFAULT_INPUT_METHOD));}
     private void press(String label)throws Exception {
         ownIme();
         AccessibilityNodeInfo n=key(label);if(n==null)n=key(label.toUpperCase(java.util.Locale.ROOT));assertNotNull("Visible IME key "+label,n);
@@ -41,7 +41,7 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
         }
     }
     private void show(String mode,String note)throws Exception {
-        try(android.os.ParcelFileDescriptor fd=getInstrumentation().getUiAutomation().executeShellCommand("ime set dev.minime.ime/.MiniMeService");InputStream in=new android.os.ParcelFileDescriptor.AutoCloseInputStream(fd)){while(in.read()!=-1){}}
+        try(android.os.ParcelFileDescriptor fd=getInstrumentation().getUiAutomation().executeShellCommand("ime set app.minime.keyboard/dev.minime.ime.MiniMeService");InputStream in=new android.os.ParcelFileDescriptor.AutoCloseInputStream(fd)){while(in.read()!=-1){}}
         ownIme();
         host.getSharedPreferences("settings",0).edit().clear().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).putBoolean("addon_taiwan",true).putBoolean("addon_geography",true).putString("mixed_mode",mode).putBoolean("english_mode",mode.equals("english")).commit();
         host.getSharedPreferences("learning",0).edit().clear().commit();

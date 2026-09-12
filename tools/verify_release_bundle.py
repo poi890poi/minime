@@ -22,7 +22,7 @@ def elf_segments(data):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--aab',required=True);parser.add_argument('--manifest',required=True);parser.add_argument('--output',required=True);parser.add_argument('--strict',action='store_true');args=parser.parse_args()
     path=Path(args.aab);ns='{http://schemas.android.com/apk/res/android}';manifest=ET.parse(args.manifest).getroot();app=manifest.find('application');sdk=manifest.find('uses-sdk')
-    assert manifest.attrib['package']=='dev.minime.ime','Unexpected package'
+    assert manifest.attrib['package']=='app.minime.keyboard','Unexpected package'
     assert int(sdk.attrib[ns+'targetSdkVersion'])>=36,'Target API below 36'
     assert app.attrib.get(ns+'debuggable','false')=='false','Debuggable release'
     assert app.attrib.get(ns+'allowBackup')=='false','Automatic backup enabled'

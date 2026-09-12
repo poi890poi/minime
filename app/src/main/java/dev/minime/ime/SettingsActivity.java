@@ -23,8 +23,8 @@ public final class SettingsActivity extends Activity {
                 :insets.getSystemWindowInsets();
             body.setPadding(p+bars.left,p+bars.top,p+bars.right,p+bars.bottom); return insets;
         });
-        text("MinIME 注音",28);
-        text("Traditional Chinese and English, in one typing flow.",18);
+        text(getString(R.string.app_name),28);
+        text(getString(R.string.app_summary),18);
         button("1 · Enable MinIME",()->startActivity(new Intent(Settings.ACTION_INPUT_METHOD_SETTINGS)));
         button("2 · Choose keyboard",()->((InputMethodManager)getSystemService(INPUT_METHOD_SERVICE)).showInputMethodPicker());
         Switch layout=new Switch(this); layout.setText("Show Zhuyin + English layout");

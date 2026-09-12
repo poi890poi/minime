@@ -52,12 +52,12 @@ public final class ChromeBrowserTest extends ActivityInstrumentationTestCase2<Ed
         getInstrumentation().getUiAutomation().setServiceInfo(service);
         Intent chrome=new Intent(Intent.ACTION_VIEW,Uri.parse("about:blank")).setPackage("com.android.chrome").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         try {
-            shell("ime set dev.minime.ime/.MiniMeService");
+            shell("ime set app.minime.keyboard/dev.minime.ime.MiniMeService");
             activity.startActivity(chrome);
             node("com.android.chrome:id/url_bar",true).recycle();
             getInstrumentation().getUiAutomation().waitForIdle(700,5000);
             tap("com.android.chrome:id/url_bar",true);
-            assertEquals("dev.minime.ime/.MiniMeService",android.provider.Settings.Secure.getString(activity.getContentResolver(),android.provider.Settings.Secure.DEFAULT_INPUT_METHOD));
+            assertEquals("app.minime.keyboard/dev.minime.ime.MiniMeService",android.provider.Settings.Secure.getString(activity.getContentResolver(),android.provider.Settings.Secure.DEFAULT_INPUT_METHOD));
             tap("Switch to Chinese",false);node("Switch to English",false).recycle();
             for(char letter:"nihao".toCharArray())tap(String.valueOf(letter),false);
             tap("Space",false);

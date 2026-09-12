@@ -20,7 +20,7 @@ public final class SuggestionLatencyTest extends AndroidTestCase {
         assertTrue(RimeBackend.load(getContext()).get(60,TimeUnit.SECONDS));
         long loadUs=(System.nanoTime()-start)/1000;
         List<String[]> inputs=new ArrayList<>();
-        try(BufferedReader in=new BufferedReader(new InputStreamReader(getContext().createPackageContext("dev.minime.ime.test",0).getAssets().open("latency-inputs.tsv"),StandardCharsets.UTF_8))) {
+        try(BufferedReader in=new BufferedReader(new InputStreamReader(getContext().createPackageContext("app.minime.keyboard.test",0).getAssets().open("latency-inputs.tsv"),StandardCharsets.UTF_8))) {
             String line;int index=0;while((line=in.readLine())!=null) {
                 // First hash-selected full/half/first triple from each 48-row group.
                 if(index++%48<3)inputs.add(line.split("\t"));

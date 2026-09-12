@@ -12,7 +12,7 @@ import org.json.*;
 @SuppressWarnings("deprecation")
 public final class PredictionPerformanceTest extends AndroidTestCase {
     private Reader asset(String name) throws IOException {
-        try {return new InputStreamReader(getContext().createPackageContext("dev.minime.ime.test",0).getAssets().open(name),StandardCharsets.UTF_8);}
+        try {return new InputStreamReader(getContext().createPackageContext("app.minime.keyboard.test",0).getAssets().open(name),StandardCharsets.UTF_8);}
         catch(android.content.pm.PackageManager.NameNotFoundException e) {throw new IOException(e);}
     }
     private long heap() { Runtime r=Runtime.getRuntime();return r.totalMemory()-r.freeMemory(); }

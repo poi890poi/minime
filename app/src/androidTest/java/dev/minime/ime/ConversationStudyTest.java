@@ -23,7 +23,7 @@ public final class ConversationStudyTest extends AndroidTestCase {
         PhoneticDictionary dictionary=DictionaryRepository.load(getContext()).get(60,TimeUnit.SECONDS);
         assertTrue(RimeBackend.load(getContext()).get(60,TimeUnit.SECONDS));
         JSONArray rows=new JSONArray();
-        try(BufferedReader reader=new BufferedReader(new InputStreamReader(getContext().createPackageContext("dev.minime.ime.test",0).getAssets().open("conversation-probes.tsv"),StandardCharsets.UTF_8))) {
+        try(BufferedReader reader=new BufferedReader(new InputStreamReader(getContext().createPackageContext("app.minime.keyboard.test",0).getAssets().open("conversation-probes.tsv"),StandardCharsets.UTF_8))) {
             String line;while((line=reader.readLine())!=null) {
                 if(line.isEmpty() || line.startsWith("#"))continue;
                 String[] p=line.split("\t",-1);

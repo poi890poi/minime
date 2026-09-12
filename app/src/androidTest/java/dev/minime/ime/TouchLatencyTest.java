@@ -66,7 +66,7 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
         DictionaryRepository.load(context).get(60,TimeUnit.SECONDS);
         AddonRepository.load(context).get(60,TimeUnit.SECONDS);
         assertTrue(RimeBackend.load(context).get(60,TimeUnit.SECONDS));
-        try(ParcelFileDescriptor fd=getInstrumentation().getUiAutomation().executeShellCommand("ime set dev.minime.ime/.MiniMeService");InputStream in=new ParcelFileDescriptor.AutoCloseInputStream(fd)){while(in.read()!=-1){}}
+        try(ParcelFileDescriptor fd=getInstrumentation().getUiAutomation().executeShellCommand("ime set app.minime.keyboard/dev.minime.ime.MiniMeService");InputStream in=new ParcelFileDescriptor.AutoCloseInputStream(fd)){while(in.read()!=-1){}}
         focus(activity.text);
         getInstrumentation().runOnMainSync(()-> {
             for(View root:WindowInspector.getGlobalWindowViews()){keyboard=keyboard(root);if(keyboard!=null)break;}

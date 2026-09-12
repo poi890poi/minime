@@ -20,7 +20,7 @@ foreach($part in $phases) {
     $runId=[guid]::NewGuid().ToString()
     $runFile=Join-Path $rootOutput ($part+'-run-id.txt')
     [IO.File]::WriteAllText($runFile,$runId,[Text.UTF8Encoding]::new($false))
-    & $adb -s $Serial push $runFile /sdcard/Android/data/dev.minime.ime/files/human-input-run-id.txt
+    & $adb -s $Serial push $runFile /sdcard/Android/data/app.minime.keyboard/files/human-input-run-id.txt
     if($LASTEXITCODE -ne 0){throw 'Cannot transfer run identity'}
     $classes=switch($part) {
         Matrix {'dev.minime.ime.HumanInputPrecisionTest,dev.minime.ime.CandidateStabilityTest'}
@@ -36,7 +36,7 @@ foreach($part in $phases) {
         if(($power -join '') -notmatch 'mWakefulness=Dozing|mWakefulness=Asleep'){throw 'Phone display did not sleep'}
         foreach($name in $files) {
             $target=Join-Path $rootOutput ('human-input-'+$name+'.json')
-            & $adb -s $Serial pull ('/sdcard/Android/data/dev.minime.ime/files/human-input-'+$name+'.json') $target
+            & $adb -s $Serial pull ('/sdcard/Android/data/app.minime.keyboard/files/human-input-'+$name+'.json') $target
             if($LASTEXITCODE -ne 0){throw "Missing report for $part"}
             $record=Get-Content -Raw -LiteralPath $target | ConvertFrom-Json
             if($record.runId -ne $runId){throw "Stale report for $part"}

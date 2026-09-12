@@ -24,9 +24,9 @@ try {
     if($LASTEXITCODE -ne 0) { throw 'App installation failed' }
     & $adb -s $Serial install -r -t $TestApk
     if($LASTEXITCODE -ne 0) { throw 'Test installation failed' }
-    & $adb -s $Serial shell am force-stop dev.minime.ime
+    & $adb -s $Serial shell am force-stop app.minime.keyboard
     foreach($name in @('settings','learning')) {
-        $xml=& $adb -s $Serial shell run-as dev.minime.ime cat "shared_prefs/$name.xml" 2>&1
+        $xml=& $adb -s $Serial shell run-as app.minime.keyboard cat "shared_prefs/$name.xml" 2>&1
         if($LASTEXITCODE -ne 0) {
             if(($xml -join '') -notmatch 'No such file') {throw "Could not back up $name preferences"}
             $xml='<map />'
@@ -35,15 +35,15 @@ try {
         $backedUp+=$name
     }
     & $adb -s $Serial shell input keyevent KEYCODE_WAKEUP
-    & $adb -s $Serial shell ime enable dev.minime.ime/.MiniMeService
-    & $adb -s $Serial shell ime set dev.minime.ime/.MiniMeService
+    & $adb -s $Serial shell ime enable app.minime.keyboard/dev.minime.ime.MiniMeService
+    & $adb -s $Serial shell ime set app.minime.keyboard/dev.minime.ime.MiniMeService
     $outFile=Join-Path $prefBackup 'instrumentation.txt'
     $errFile=Join-Path $prefBackup 'instrumentation-errors.txt'
-    $testProcess=Start-Process -FilePath $adb -ArgumentList @('-s',$Serial,'shell','am','instrument','-w','-e','class',$TestClass,'dev.minime.ime.test/android.test.InstrumentationTestRunner') -WindowStyle Hidden -PassThru -RedirectStandardOutput $outFile -RedirectStandardError $errFile
+    $testProcess=Start-Process -FilePath $adb -ArgumentList @('-s',$Serial,'shell','am','instrument','-w','-e','class',$TestClass,'app.minime.keyboard.test/android.test.InstrumentationTestRunner') -WindowStyle Hidden -PassThru -RedirectStandardOutput $outFile -RedirectStandardError $errFile
     $timer=[Diagnostics.Stopwatch]::StartNew()
     while(!$testProcess.WaitForExit(1000)) {
         if($timer.Elapsed.TotalSeconds -gt $TimeoutSeconds) {
-            & $adb -s $Serial shell am force-stop dev.minime.ime
+            & $adb -s $Serial shell am force-stop app.minime.keyboard
             if(!$testProcess.WaitForExit(5000)) {$testProcess.Kill()}
             throw "Phone test exceeded $TimeoutSeconds seconds; original preferences will be restored"
         }
@@ -53,17 +53,17 @@ try {
     if($testProcess.ExitCode -ne 0 -or ($result -join "`n") -notmatch 'OK \(\d+ tests?\)') { throw 'Device checks failed; see artifacts/device-tests' }
 } finally {
     try {
-        & $adb -s $Serial shell am force-stop dev.minime.ime
+        & $adb -s $Serial shell am force-stop app.minime.keyboard
         foreach($report in $Reports) {
-            & $adb -s $Serial pull "/sdcard/Android/data/dev.minime.ime/files/$report" (Join-Path $prefBackup $report)
+            & $adb -s $Serial pull "/sdcard/Android/data/app.minime.keyboard/files/$report" (Join-Path $prefBackup $report)
             if($LASTEXITCODE -ne 0){Write-Warning "Test report unavailable: $report"}
         }
         foreach($name in $backedUp) {
-            & $adb -s $Serial push (Join-Path $prefBackup "$name.xml") "/sdcard/Android/data/dev.minime.ime/files/restore-$name.xml" | Out-Null
+            & $adb -s $Serial push (Join-Path $prefBackup "$name.xml") "/sdcard/Android/data/app.minime.keyboard/files/restore-$name.xml" | Out-Null
             if($LASTEXITCODE -ne 0) {throw "Could not transfer $name preference backup"}
-            & $adb -s $Serial shell run-as dev.minime.ime cp "/sdcard/Android/data/dev.minime.ime/files/restore-$name.xml" "shared_prefs/$name.xml"
+            & $adb -s $Serial shell run-as app.minime.keyboard cp "/sdcard/Android/data/app.minime.keyboard/files/restore-$name.xml" "shared_prefs/$name.xml"
             if($LASTEXITCODE -ne 0) {throw "Could not restore $name preferences"}
-            $restored=(& $adb -s $Serial shell run-as dev.minime.ime cat "shared_prefs/$name.xml") -join "`n"
+            $restored=(& $adb -s $Serial shell run-as app.minime.keyboard cat "shared_prefs/$name.xml") -join "`n"
             if($LASTEXITCODE -ne 0 -or $restored.Trim() -cne ([IO.File]::ReadAllText((Join-Path $prefBackup "$name.xml"))).Trim()) {throw "$name preference readback mismatch"}
         }
     } finally { try {

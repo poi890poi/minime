@@ -1,0 +1,39 @@
+{
+  "version": "0.8.4",
+  "version_code": 32,
+  "application_id": "app.minime.keyboard",
+  "display_name_en": "MinIME — Pinyin for Taiwan",
+  "display_name_zh_TW": "MinIME — 台灣多語拼音鍵盤",
+  "artifacts": [
+    {
+      "file": "MinIME-0.8.4-release.apk",
+      "bytes": 50403156,
+      "sha256": "fffd3259169368212c0be0b686dbe658e82a7fa707096cc9b08db948e2598b5c"
+    },
+    {
+      "file": "MinIME-0.8.4-play-signed.aab",
+      "bytes": 92162736,
+      "sha256": "f3c5913c493a68d0305b266e5036ee16f194c7ce2b0d87e3db9c0162b23eac1f"
+    },
+    {
+      "file": "MinIME-0.8.4-release-apk.zip",
+      "bytes": 50404190,
+      "sha256": "c11878fcd7efe378528d9cc4c6d4db95a6c76385b6db0f9c2b975b901dd9beec"
+    },
+    {
+      "file": "MinIME-0.8.4-release-notes.txt",
+      "bytes": 778,
+      "sha256": "3ebfb0f8ec8c2340a004c824e3fde9bcac0aac64208cf7298a0741135a6b4356"
+    }
+  ],
+  "upload_certificate_sha256": "0037dcd3ae7a98b77fa5ce8c441600d59c849e15f789318fa460a632af8c6a1b",
+  "core_assertions": 306303,
+  "desktop_inputs": 13014,
+  "desktop_uncached_queries": 11272,
+  "lint_errors": 0,
+  "lint_warnings": 15,
+  "assets_unchanged_from_0_8_3": true,
+  "phone_tested": false,
+  "play_uploaded": false,
+  "release_status": "signed; rights and runtime review remain open"
+}

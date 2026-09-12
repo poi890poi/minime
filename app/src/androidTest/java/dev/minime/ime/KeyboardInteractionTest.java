@@ -33,11 +33,11 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         DictionaryRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
         // Samsung can restore the previous IME while instrumentation restarts its target.
         // Select only after the instrumented activity exists.
-        try(android.os.ParcelFileDescriptor command=getInstrumentation().getUiAutomation().executeShellCommand("ime set dev.minime.ime/.MiniMeService");
+        try(android.os.ParcelFileDescriptor command=getInstrumentation().getUiAutomation().executeShellCommand("ime set app.minime.keyboard/dev.minime.ime.MiniMeService");
             java.io.InputStream output=new android.os.ParcelFileDescriptor.AutoCloseInputStream(command)) {
             while(output.read()!=-1) { }
         }
-        assertEquals("MinIME selected after instrumentation restart", "dev.minime.ime/.MiniMeService",
+        assertEquals("MinIME selected after instrumentation restart", "app.minime.keyboard/dev.minime.ime.MiniMeService",
             Settings.Secure.getString(activity.getContentResolver(),Settings.Secure.DEFAULT_INPUT_METHOD));
         getInstrumentation().runOnMainSync(()-> {
             activity.text.requestFocus();

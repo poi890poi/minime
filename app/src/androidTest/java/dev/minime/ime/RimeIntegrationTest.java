@@ -39,7 +39,7 @@ public final class RimeIntegrationTest extends AndroidTestCase {
         assertTrue("Native Rime must load; fallback cannot pass this test",RimeBackend.load(getContext()).get(60,TimeUnit.SECONDS));
         long loadMs=SystemClock.elapsedRealtime()-begin;
         JSONArray samples=new JSONArray();Map<String,Integer> hits=new HashMap<>();
-        try(BufferedReader in=new BufferedReader(new InputStreamReader(getContext().createPackageContext("dev.minime.ime.test",0).getAssets().open("rime-probes.tsv"),StandardCharsets.UTF_8))) {
+        try(BufferedReader in=new BufferedReader(new InputStreamReader(getContext().createPackageContext("app.minime.keyboard.test",0).getAssets().open("rime-probes.tsv"),StandardCharsets.UTF_8))) {
             String line;while((line=in.readLine())!=null) {
                 String[] p=line.split("\t",-1);long at=System.nanoTime();
                 List<Candidate> choices=RimeBackend.convert(p[3]);long micros=(System.nanoTime()-at)/1000;

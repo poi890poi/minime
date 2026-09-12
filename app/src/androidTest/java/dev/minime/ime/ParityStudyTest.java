@@ -23,7 +23,7 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
     private File dir;
     private String provider,mode,caseId;
     private final JSONArray records=new JSONArray();
-    private String ime(){return provider.equals("google")?"com.google.android.apps.inputmethod.zhuyin/.ZhuyinInputMethodService":"dev.minime.ime/.MiniMeService";}
+    private String ime(){return provider.equals("google")?"com.google.android.apps.inputmethod.zhuyin/.ZhuyinInputMethodService":"app.minime.keyboard/dev.minime.ime.MiniMeService";}
     private String selectedIme(){return Settings.Secure.getString(activity.getContentResolver(),Settings.Secure.DEFAULT_INPUT_METHOD);}
     private void shell(String command)throws Exception {
         try(ParcelFileDescriptor fd=getInstrumentation().getUiAutomation().executeShellCommand(command);
