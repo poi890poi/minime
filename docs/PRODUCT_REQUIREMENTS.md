@@ -1027,12 +1027,24 @@ These are irrelevant until the core mixed-language behavior works.
 
 # 31. Definition of Done
 
-Candidate-quality changes must improve both intended first-choice hit rate and
-recall@8 against the same frozen baseline. Also report reciprocal rank, full
+For automatic construction, the baseline is null: retain stored-entry lookup,
+incomplete phonetics, explicit incremental selection and literal input, but join
+no separate entries automatically. Each construction mechanism, including one
+already implemented, must earn inclusion through evidence against that baseline.
+Inconclusive evidence favors null; lost feature-specific capability on removal
+is not sufficient evidence to retain a feature.
+
+Candidate-quality additions must improve both intended first-choice hit rate and
+recall@8 against the same frozen null baseline. Also report reciprocal rank, full
 bounded-list recall, and lost/gained references. Separate conversation and essay
 results, stored phrases and multi-word clauses, and full/initial/mixed/incomplete
 phonetics; aggregate gains must not conceal material regressions. Publish paired
 uncertainty estimates by document or conversation, not independent keystrokes.
+Measure completed-text success, keystrokes, selections, corrections and task time,
+including incremental input in null; whole-clause recall alone cannot establish
+net typing benefit. Freeze meaningful gains and acceptable error/resource margins
+before holdout evaluation. The released build is a historical comparator, not an
+automatic acceptance standard.
 
 An alternative homophone is not automatically meaningless. Sample candidate lists
 independently for blinded naturalness and phonetic-relevance review, retaining

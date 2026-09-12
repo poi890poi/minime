@@ -1,5 +1,11 @@
 # Capture refresh and whole-input candidate quality
 
+Current decision correction: no automatic construction is the null baseline;
+existing and proposed construction must earn inclusion against it. The earlier
+rejection of removal below is historical and withdrawn. See
+../whole-input-quality/RECALL-PRECISION.md. Runtime remains at the restored build;
+no corrected capture or new release is claimed.
+
 Request: recapture Play images without meaningless suggested sequences; treat
 those outputs as quality-control defects, not screenshot styling problems.
 

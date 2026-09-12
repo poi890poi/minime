@@ -134,8 +134,10 @@ weights. Host-support counts are not conversational occurrence probabilities;
 residual boilerplate, authorship, underlying rights and document overlap remain
 unresolved. See [the joint recall/precision audit](../docs/whole-input-quality/RECALL-PRECISION.md).
 
-Both removing all construction and requiring attested word boundaries failed the
-joint coverage/first-choice requirement. Neither is approved for production.
-Evaluate contextual scoring during alternative-path decoding before replacing
-the existing decoder or its useful coverage. A fresh, independent conversation
-and essay evaluation is required before a generalization claim.
+No automatic construction is the null baseline. Existing construction and the
+proposed contextual model must each demonstrate benefit over it; incumbency and
+lost whole-clause matches on removal do not establish net value. The previous
+rejection of null is withdrawn. Strict boundary attestation likewise has not
+proved net benefit. No model data is approved for production by these comparisons.
+A fresh, independent conversation and essay evaluation is required before a
+generalization claim.

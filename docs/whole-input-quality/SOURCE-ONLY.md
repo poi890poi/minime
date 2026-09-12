@@ -1,8 +1,13 @@
 # Stop assembly at its source
 
-**Rejected for shipping:** the user requires recall and precision to improve
-together. The production edits were reverted; the complete experimental change
-is preserved in `source-only/implementation.patch`. See `RECALL-PRECISION.md`.
+**Decision corrected:** no automatic construction is the null baseline. The
+earlier rejection below relied on lost whole-clause recall relative to an
+unvalidated incumbent; that does not prove the incumbent deserves inclusion.
+The measurements remain valid diagnostic evidence, not a net-benefit verdict.
+The production edits were reverted; the complete experimental change is preserved
+in `source-only/implementation.patch`. See `RECALL-PRECISION.md` for the current
+contract and the need for a controlled null comparison. The following describes
+the historical experiment, not current runtime behavior.
 
 September 12, 2026. Behavior change requested after the construction-confidence
 experiment: Chinese decoders return stored entries rather than constructing new
@@ -76,8 +81,10 @@ contract and known stored-phrase/offset/lifecycle checks.
 No fresh Mandarin conversation corpus was available for this turn. The older
 desktop corpus name includes “conversation” but much Chinese material is prose.
 
-Decision: reject as a production solution because full-spelling recall drops
-substantially. Retain this as a diagnostic ablation, not a release improvement.
+Original decision (withdrawn): reject because full-spelling recall drops.
+Current decision: retain as a diagnostic ablation; evaluate construction as an
+addition to null. This patch also changed ranking and policy, so it must not be
+mistaken for a controlled single-variable baseline or a release-ready change.
 
 Reproduction (local only):
 ```powershell
