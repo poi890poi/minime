@@ -335,7 +335,7 @@ public final class CompositionEngine {
             return;
         }
         boolean bpmf = raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
-        intent = classifier.classify(raw, zhuyin, literalField || englishMode, dictionary,afterLatin);
+        intent = classifier.classify(raw, zhuyin, literalField || englishMode, dictionary,afterLatin,inputMode.chineseEnabled());
         // An excluded language cannot suppress the active English dictionary.
         if(!inputMode.chineseEnabled() && !bpmf && intent==Intent.CHINESE_PHONETIC)intent=Intent.LATIN_LITERAL;
         // Raw is always slot zero. The default highlight can point elsewhere without moving it.

@@ -15,6 +15,9 @@ public final class IntentClassifier {
         return classify(raw,zhuyin,literalField,dictionary,false);
     }
     public Intent classify(String raw, boolean zhuyin, boolean literalField, PhoneticDictionary dictionary,boolean latinContext) {
+        return classify(raw,zhuyin,literalField,dictionary,latinContext,true);
+    }
+    public Intent classify(String raw, boolean zhuyin, boolean literalField, PhoneticDictionary dictionary,boolean latinContext,boolean chineseEnabled) {
         if (literalField) return Intent.LATIN_LITERAL;
         if (technicalWord(raw)) return Intent.CODE_IDENTIFIER;
         if (raw.contains("@") || raw.contains("://")) return Intent.URL_EMAIL;
@@ -23,8 +26,11 @@ public final class IntentClassifier {
         if (raw.codePoints().anyMatch(IntentClassifier::isZhuyin)) return Intent.CHINESE_PHONETIC;
         if (zhuyin || raw.codePoints().anyMatch(Character::isUpperCase)) return Intent.LATIN_LITERAL;
         if (dictionary == null) return Intent.LATIN_LITERAL;
-        boolean legal = dictionary.legalPinyin(raw);
         boolean english = dictionary.isEnglish(raw,latinContext);
+        // Without Chinese, non-English phonetics always resolve to literal intent.
+        // Keep the legality check for English ambiguity; it remains observable.
+        if(!chineseEnabled && !english)return Intent.LATIN_LITERAL;
+        boolean legal = dictionary.legalPinyin(raw);
         if (english && legal) return Intent.AMBIGUOUS;
         if (english || !legal) return Intent.LATIN_LITERAL;
         return dictionary.hasCompletePinyin(raw) ? Intent.CHINESE_PHONETIC : Intent.LATIN_LITERAL;

@@ -3,6 +3,18 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "japanese-pipeline-performance-20260912",
+      "source_ids": ["real-persona-chat", "asdc"],
+      "genre": ["human-casual-chat", "human-task-dialogue"],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "All 64 clauses from the existing 1311-key phone stream, retaining source order and final raw input per clause; no selection by timing or matching output.",
+      "files": ["docs/japanese-pipeline-performance/manifest.json", "docs/japanese-pipeline-performance/clauses.txt"],
+      "report_by": ["source", "genre", "first-versus-warm", "dispatch-versus-delivery", "latency", "candidate-order", "acceptance"],
+      "leakage": "Consumed development stream. Runtime sees typed input and fixed dictionaries only. No reference promotion, vocabulary changes, or new accuracy claim.",
+      "limitations": "Desktop dispatch uses a deferred worker stand-in; Android comparisons exercise real AsyncDecoder and the test-only native provider. Neither measures physical touch-to-display latency."
+    },
+    {
       "id": "java-lookup-performance-20260912",
       "source_ids": ["real-persona-chat", "asdc", "suisiann-thousand", "taiwanese-basic", "taiwan-md", "mcbopomofo", "itaigi", "taihoa", "jmdict", "jmnedict", "wanakana"],
       "genre": ["human-casual-chat", "human-task-dialogue", "authored-everyday-utterance", "historical-teaching-example", "essay", "dictionary-retrieval"],

@@ -942,7 +942,7 @@
       ],
       "editorial": "Existing Japanese A* converter and reproducible compressed dictionary builders.",
       "coverage": "Non-neural C++ converter; pinned source, no production dependency.",
-      "limitations": "Uses Mozc data but is not the Mozc engine. Unbounded/capped lexical prediction rejected. Stable A* and beam ties pass consumed-regression and phone ordering checks. Instrumentation-only SM-G781B native p95 about 1 ms; full burst pipeline p95 51-54 ms misses its admission gate. No ordinary/release provider activation or fresh ranking holdout.",
+      "limitations": "Uses Mozc data but is not the Mozc engine. Unbounded/capped lexical prediction rejected. Stable A* and beam ties pass consumed-regression and phone ordering checks. Instrumentation-only SM-G781B native p95 about 1 ms; shared-core optimizations bring aggregate full-burst warm p95 to 42.8-43.7 ms in repeated sessions, passing the unchanged 50 ms gate. Sparse casual-chat tail remains above 50 ms. No ordinary/release provider activation or fresh ranking holdout.",
       "reason": "Isolated engine and completion evaluation; SOURCES.md records scope and no production promotion.",
       "addon_prefixes": [],
       "audit_files": [
@@ -962,7 +962,8 @@
         "docs/japanese-provider-integration/PLAN.md",
         "docs/japanese-provider-integration/NOTICE.md",
         "docs/japanese-provider-integration/README.md",
-        "docs/japanese-provider-integration/portable-beam.patch"
+        "docs/japanese-provider-integration/portable-beam.patch",
+        "docs/japanese-pipeline-performance/README.md"
       ]
     },
     {

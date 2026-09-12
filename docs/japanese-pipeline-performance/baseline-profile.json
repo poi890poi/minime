@@ -1,0 +1,92 @@
+{
+  "samples": 70,
+  "stacks_containing": {
+    "regex": 5,
+    "kana": 2,
+    "classify": 11,
+    "refresh": 10
+  },
+  "top_frames": [
+    [
+      "java/io/BufferedInputStream.fill",
+      8
+    ],
+    [
+      "java/io/DataInputStream.readFully",
+      5
+    ],
+    [
+      "java/util/HashMap.resize",
+      4
+    ],
+    [
+      "java/io/DataInputStream.readUTF",
+      4
+    ],
+    [
+      "java/lang/StringLatin1.newString",
+      4
+    ],
+    [
+      "java/lang/StringLatin1.hashCode",
+      3
+    ],
+    [
+      "java/util/HashMap.getNode",
+      3
+    ],
+    [
+      "java/io/BufferedInputStream.getBufIfOpen",
+      2
+    ],
+    [
+      "java/util/Arrays.copyOf",
+      2
+    ],
+    [
+      "java/util/HashMap.putVal",
+      2
+    ],
+    [
+      "dev/minime/core/BinaryModel$Reader.size",
+      2
+    ],
+    [
+      "java/util/TreeMap.merge",
+      2
+    ],
+    [
+      "java/util/PriorityQueue.siftDownUsingComparator",
+      2
+    ],
+    [
+      "dev/minime/core/PhoneticDictionary.legalPinyin",
+      2
+    ],
+    [
+      "java/util/regex/Pattern.clazz",
+      2
+    ],
+    [
+      "java/io/DataInputStream.readInt",
+      1
+    ],
+    [
+      "sun/nio/ch/NativeThreadSet.add",
+      1
+    ],
+    [
+      "dev/minime/core/Candidate.<init>",
+      1
+    ],
+    [
+      "java/util/LinkedHashMap.afterNodeInsertion",
+      1
+    ],
+    [
+      "java/io/ByteArrayInputStream.read",
+      1
+    ]
+  ],
+  "limitation": "Desktop samples, including startup; Android effect needs old/new APK measurement."
+}

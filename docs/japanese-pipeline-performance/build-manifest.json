@@ -1,0 +1,38 @@
+{
+  "baseline_revision": "8f2003b",
+  "files": {
+    "baseline": {
+      "sha256": "a8d6b31656689de8bf964acac6fd963fc9d534c644d2f8bb558dd431fc91f041",
+      "bytes": 48914486,
+      "evaluation_assets": []
+    },
+    "candidate": {
+      "sha256": "c18aa1c764cba9e4356e3cdd658afb1f456da17af3fce374bd19c05b8cf60973",
+      "bytes": 48914978,
+      "evaluation_assets": []
+    },
+    "focused": {
+      "sha256": "84ac4c4e10b5018adb31190da91af7e5a0bfcfab9fcddccba9661a4c9281e7a0",
+      "bytes": 48915170,
+      "evaluation_assets": []
+    },
+    "tests": {
+      "sha256": "e1977c52e19eb27a8a423bc8b970fc0649f18c4c0ca85bde477df43a7d471429",
+      "bytes": 34854439,
+      "evaluation_assets": [
+        "assets/japanese-evaluation/connection_single_column.bin",
+        "assets/japanese-evaluation/pos_table.bin",
+        "assets/japanese-evaluation/tango.louds",
+        "assets/japanese-evaluation/token_array.bin",
+        "assets/japanese-evaluation/yomi_termid.louds",
+        "assets/japanese-evaluation/libminime_japanese_test.so",
+        "assets/japanese-evaluation/stream.jsonl",
+        "assets/japanese-evaluation/KAZUMA-LICENSE.txt",
+        "assets/japanese-evaluation/MOZC-LICENSE.txt",
+        "assets/japanese-evaluation/NOTICE.md",
+        "assets/japanese-evaluation/java-lookup.tsv"
+      ]
+    }
+  },
+  "compiled_dictionaries_unchanged": true
+}

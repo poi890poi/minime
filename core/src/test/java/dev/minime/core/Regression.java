@@ -47,6 +47,7 @@ public final class Regression {
         long start = System.nanoTime();
         dictionary = args.length>0?PhoneticDictionary.readBinary(Files.newInputStream(Paths.get(args[0]))):PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")), Files.newBufferedReader(assets.resolve("en_us.tsv")), Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));
         dictionary.englishSpelling(Files.newBufferedReader(assets.resolve("en_spelling.tsv")));
+        FocusedIntentRegression.run(dictionary);
         StaticDictionaryPrivacyRegression.run();
         FocusedChoiceRegression.run();
         RawCandidateIdentityRegression.run();

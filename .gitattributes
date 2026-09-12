@@ -116,3 +116,7 @@ docs/java-lookup-performance/*.tsv -text whitespace=cr-at-eol
 docs/java-lookup-performance/*.json -text whitespace=cr-at-eol
 docs/java-lookup-performance/*.gz -text
 docs/java-lookup-performance/instrumentation-*.txt -text whitespace=-blank-at-eof,cr-at-eol
+docs/japanese-pipeline-performance/*.json -text whitespace=cr-at-eol
+docs/japanese-pipeline-performance/*.txt -text whitespace=cr-at-eol
+docs/japanese-pipeline-performance/*.gz -text
+docs/japanese-pipeline-performance/instrumentation-*.txt -text whitespace=-blank-at-eof,cr-at-eol
