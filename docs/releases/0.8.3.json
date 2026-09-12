@@ -1,0 +1,40 @@
+{
+  "version": "0.8.3",
+  "version_code": 31,
+  "runtime_commit": "21fefdc",
+  "status": "prepared-not-cleared-for-upload",
+  "artifacts": [
+    {
+      "file": "MinIME-0.8.3-release-package.zip",
+      "bytes": 329444886,
+      "sha256": "801c8905749a37113cf6652b299bad78b6f3e8b70fdd548b4b7c76f0cd26614b"
+    },
+    {
+      "file": "MinIME-0.8.3-test-apk.zip",
+      "bytes": 76970697,
+      "sha256": "9d304c8439c49df1d3f6c9a536aa55285aba9aaeeb2587adf038352955db4a5c"
+    }
+  ],
+  "binaries": [
+    {
+      "file": "production/MinIME-0.8.3-unsigned.aab",
+      "bytes": 92156321,
+      "sha256": "ba025ed26727c591a033f1a8bd4197714fb72b78918a9463ad51b6a2ba5122d5"
+    },
+    {
+      "file": "production/MinIME-0.8.3-unsigned.apk",
+      "bytes": 50398636,
+      "sha256": "61d001811014492a2cc511eeab7cf129be1ab1691164bd5549795180a872a968"
+    },
+    {
+      "file": "testing/MinIME-0.8.3-test.apk",
+      "bytes": 76970298,
+      "sha256": "b23f4414d4c80009a67c260e9551856c02c7dbadcad6cd4a0a10c141219f88ff"
+    }
+  ],
+  "lint": {
+    "errors": 0,
+    "warnings": 15
+  },
+  "phone_tested_this_package": false
+}
