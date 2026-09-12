@@ -308,29 +308,33 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
     public void testDefaultRimeAndPartialSelection() throws Exception {
         SharedPreferences prefs=getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE);
         prefs.edit().remove("rime_pinyin").commit();assertTrue("Rime enabled when no preference exists",RimeBackend.enabled(activity));
-        focus(activity.url);focus(activity.text);type("womenmtjian ");expectText("我們明天見");
-        clear();type("nihao");click("Candidate 你");expectText("你hao");
+        focus(activity.url);focus(activity.text);
+        // Automatic multi-entry assembly is intentionally disabled. Preserve the
+        // sentence target through explicit stored selections instead.
+        type("women");click("Candidate 我們");type("mt");click("Candidate 明天");type("jian");click("Candidate 見");expectText("我們明天見");
+        clear();type("nihao");click("Expand candidates");click("Candidate 你");expectText("你hao");
         node("Exact input hao").recycle();click("Candidate 好");expectText("你好");
-        clear();type("nihao");click("Candidate 你");click("⌫");expectText("你ha");type("o ");expectText("你好");
-        clear();type("nihao");click("Candidate 你");click("Exact input hao");expectText("你hao");
-        clear();type("nihao");click("Candidate 你");click("Switch to English");expectText("你hao");type(" hello ");expectText("你hao hello ");
-        click("Switch to Chinese");clear();type("womenmingtianjian");
+        clear();type("nihao");click("Expand candidates");click("Candidate 你");click("⌫");expectText("你ha");type("o ");expectText("你好");
+        clear();type("nihao");click("Expand candidates");click("Candidate 你");click("Exact input hao");expectText("你hao");
+        clear();type("nihao");click("Expand candidates");click("Candidate 你");click("Switch to English");expectText("你hao");type(" hello ");expectText("你hao hello ");
+        click("Switch to Chinese");clear();type("nihao");
         // Wait for the asynchronous phrase result before measuring its raw recovery row.
-        Rect phrase=bounds("Candidate 我們明天見"),raw=bounds("Exact input womenmingtianjian");
+        Rect phrase=bounds("Candidate 你好"),raw=bounds("Exact input nihao");
         capture("stable-height-raw");assertTrue("Raw recovery is above the candidate strip: "+raw+" / "+phrase,raw.bottom<=phrase.top);
-        click("Expand candidates");capture("first-impression-expanded");click("Candidate 我們明天見");expectText("我們明天見");
+        click("Expand candidates");capture("first-impression-expanded");click("Candidate 你好");expectText("你好");
         prefs.edit().putBoolean("rime_pinyin",false).commit();assertFalse("Explicit original backend choice retained",RimeBackend.enabled(activity));
     }
     public void testRimePhrasesAndLiteralRecovery() throws Exception {
         assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));
         getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",true).commit();
         focus(activity.url);focus(activity.text);
-        type("womenmingtianjian ");expectText("我們明天見");
+        type("women");click("Candidate 我們");type("mingtian");click("Candidate 明天");type("jian");click("Candidate 見");expectText("我們明天見");
         getInstrumentation().getUiAutomation().waitForIdle(200,3000);capture("rime-phone-phrase");
-        clear();type("womenmtjian ");expectText("我們明天見");
-        clear();type("woyaohekafei");click("。");expectText("我要喝咖啡。");
+        clear();type("women");click("Candidate 我們");type("mt");click("Candidate 明天");type("jian");click("Candidate 見");expectText("我們明天見");
+        clear();type("wo");click("Candidate 我");type("yao");click("Candidate 要");type("he");click("Candidate 喝");type("kafei");click("。");expectText("我要喝咖啡。");
         clear();type("qingbangwokanyixia");click("Switch to English");expectText("qingbangwokanyixia");
-        click("Switch to Chinese");click("Space");expectText("請幫我看一下");click("Switch to English");
+        click("Switch to Chinese");click("Space");expectText("qingbangwokanyixia ");
+        clear();type("qing");click("Candidate 請");type("bang");click("Candidate 幫");type("wo");click("Candidate 我");type("kan");click("Candidate 看");type("yixia");click("Candidate 一下");expectText("請幫我看一下");click("Switch to English");
         type(" hello ");expectText("請幫我看一下 hello ");click("Switch to Chinese");
         clear();type("ssh ");expectText("ssh ");
         clear();type("womenmtjian");click("Exact input womenmtjian");expectText("womenmtjian");
@@ -342,8 +346,8 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         clear(); type("srufa"); click("Candidate 輸入法"); assertEquals("輸入法",activity.text.getText().toString());
         clear(); type("shrf"); click("⌫"); type("fa");
         node("Exact input shrfa").recycle(); click("Candidate 輸入法"); assertEquals("輸入法",activity.text.getText().toString());
-        clear(); type("wxsrf"); capture("review-pinyin-abbreviations");
-        click("Candidate 我想輸入法"); assertEquals("我想輸入法",activity.text.getText().toString());
+        clear(); type("wo");click("Candidate 我");type("xiang");click("Candidate 想");type("srf");capture("review-pinyin-abbreviations");
+        click("Candidate 輸入法"); assertEquals("我想輸入法",activity.text.getText().toString());
         clear(); type("nh"); click("Exact input nh"); type(" meeting "); assertEquals("nh meeting ",activity.text.getText().toString());
     }
     public void testSlidesCaseNumbersAndCancellation() {
@@ -714,7 +718,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
             assertNotNull("Expansion retains the literal choice",exact);exact.recycle();
             click("Collapse candidates");click("Space");expectText(raw+" ");
         }
-        clear();type("nihao");click("Candidate 你");click("Candidate 好");expectText("你好");
+        clear();type("nihao");click("Expand candidates");click("Candidate 你");click("Candidate 好");expectText("你好");
     }
 
     private void pointers(long start,int action,int[] ids,float... xy) {
