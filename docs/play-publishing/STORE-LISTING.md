@@ -1,6 +1,7 @@
 # Store submission worksheet — draft
 
-App name: MinIME
+App names: MinIME — Pinyin for Taiwan / MinIME — 台灣多語拼音鍵盤
+Application ID: app.minime.keyboard. Version: 0.8.4 (32).
 
 English short description:
 Offline keyboard for Chinese, English, Taiwanese POJ and Japanese words.
@@ -52,15 +53,15 @@ MinIME 為獨立開發，並非 Google 產品。語言資料採用各自授權�
 
 - Category suggestion: Tools. Price: free. Ads: no. No account/login or in-app purchases.
 - Publisher name and support email: awaiting owner; do not submit placeholders.
-- Privacy URL: awaiting stable public hosting of site/privacy.html and contact update.
+- Privacy URL: https://github.com/poi890poi/minime/blob/codex/close-ime-gaps/PRIVACY.md
+  Anonymous HTTPS access verified September 12, 2026 (HTTP 200).
 - Target audience/content rating: owner answers the actual Console questionnaires;
   do not infer an IARC rating from keyboard functionality alone.
-- Assets: kit/ contains the existing-icon export, localized feature graphics, four
-  genuine 0.8.0 keyboard screenshots and alt text. The screenshots use an example
-  editor from the debug build with unchanged production keyboard code. Review them
-  against the final release before uploading. No Google screenshots or artwork.
-- Release notes: Initial testing release. Offline input, focused language modes,
-  local learning, dictionary source notices, and optional settings/dictionary transfer.
+- Assets: kit/ contains the approved icon, localized feature graphics and actual
+  keyboard screenshots. Provenance is in SCREENSHOT-PROVENANCE.md. The Notes editor
+  is a capture host, not an advertised app feature. No Google artwork.
+- Release notes: localized copy-ready files in kit/listing/, including new identity
+  and old-package migration guidance. Full Console worksheet: CONSOLE-ANSWERS.md.
 
 ## Reviewer instructions
 

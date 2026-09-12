@@ -20,11 +20,11 @@ def main():
     candidates=set(filter(None,tracked))
     for base in ['app/src/main','core/src/main','tools','sources']:
         candidates.update(str(p.relative_to(ROOT)).replace('\\','/') for p in (ROOT/base).rglob('*') if p.is_file() and '__pycache__' not in p.parts)
-    candidates.update(['LICENSE','NOTICE','LICENSING.md','README.md','build.gradle','settings.gradle','gradle.properties','gradlew','gradlew.bat'])
+    candidates.update(['LICENSE','NOTICE','LICENSING.md','README.md','PRIVACY.md','build.gradle','settings.gradle','gradle.properties','gradlew','gradlew.bat'])
     files={}
     for name in sorted(candidates):
         p=ROOT/name
-        admitted=name in ('LICENSE','NOTICE','LICENSING.md','README.md','build.gradle','settings.gradle','gradle.properties','gradlew','gradlew.bat','app/build.gradle','core/build.gradle') or name.startswith(('app/src/main/','core/src/main/','gradle/','sources/')) or (name.startswith('tools/') and p.suffix in ('.py','.ps1','.cpp','.java')) or (name.startswith('third_party/') and not name.startswith('third_party/ud/UD_English-GUM/'))
+        admitted=name in ('LICENSE','NOTICE','LICENSING.md','README.md','PRIVACY.md','build.gradle','settings.gradle','gradle.properties','gradlew','gradlew.bat','app/build.gradle','core/build.gradle') or name.startswith(('app/src/main/','core/src/main/','gradle/','sources/')) or (name.startswith('tools/') and p.suffix in ('.py','.ps1','.cpp','.java')) or (name.startswith('third_party/') and not name.startswith('third_party/ud/UD_English-GUM/'))
         if admitted and p.is_file() and not name.endswith(('.apk','.jks','.keystore','.conllu.gz')):files[name]=p
     # Reproduction manifests, not evaluation text. Detailed add-on extraction
     # ledgers include source IDs, selections and upstream pins.

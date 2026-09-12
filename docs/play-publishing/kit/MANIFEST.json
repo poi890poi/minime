@@ -1,10 +1,12 @@
 {
-  "status": "store materials; app-release gates remain open",
+  "status": "review only; native sentence ranking, rights and runtime gates remain open",
+  "version": "0.8.4",
+  "application_id": "app.minime.keyboard",
   "files": [
     {
       "path": "alt-text.json",
-      "bytes": 1645,
-      "sha256": "ddc2e3f00f1be6145ed3a01701121c43d88c191ee2db400120df3efec06e8eb1"
+      "bytes": 1917,
+      "sha256": "f80ddef8e22ab98ce5b024cfd27c626ba9e3fa41911f559408267ed9c34ece7b"
     },
     {
       "path": "graphics/feature-en-US.png",
@@ -38,48 +40,53 @@
     },
     {
       "path": "listing/en-US/full-description.txt",
-      "bytes": 1133,
-      "sha256": "afd6051e1bfe64829b65eca3844f2deaf69e85956439934527f45325dd4ea075"
+      "bytes": 1127,
+      "sha256": "8cb332f6dca9d18730e196e3d737ea4859ff4adbd70684f21ae4c4c7edf8e699"
     },
     {
       "path": "listing/en-US/release-notes.txt",
-      "bytes": 123,
-      "sha256": "aeb9d5cdd2c29940dcc49c64d89e1f25aa1565f7fda8c58ba61ce92f7f3c1f9d"
+      "bytes": 371,
+      "sha256": "f2254962c1273d1e04733071662f9d0cf97a5fdb0550903d6f2cd6244da0ab75"
     },
     {
       "path": "listing/en-US/short-description.txt",
-      "bytes": 73,
-      "sha256": "2e36efd5c31834bf841ad6521b8e3438c6e4add156682132f8bcc82a16095c4c"
+      "bytes": 75,
+      "sha256": "c8e621a606bb92ac2f9dc016afa3351ed0b06e5ec50b5709f1f521cc00a7c8c9"
     },
     {
       "path": "listing/en-US/title.txt",
-      "bytes": 8,
-      "sha256": "155610ebf9bed96dd329906bf8998d893600a9d1c80cf23033797119b0afc855"
+      "bytes": 32,
+      "sha256": "e2163aa972b000602a9a000b5ae3c6242fb06bac902d2adcc00eba2fff5c636a"
     },
     {
       "path": "listing/zh-TW/full-description.txt",
-      "bytes": 1018,
-      "sha256": "0b42ead75b9510ce3521f6a4cc29d24102f7ac29cb5c30ef4075344c77321834"
+      "bytes": 1012,
+      "sha256": "87b96131519e4ec280f9020910a32f7ea08b36cf25293d9a3ee83ef29f08790f"
     },
     {
       "path": "listing/zh-TW/release-notes.txt",
-      "bytes": 116,
-      "sha256": "5370909eebfac638e04df40796f00ee546ebb597c38e48d8bcafa1bb7963d8bb"
+      "bytes": 365,
+      "sha256": "4af4990447d373a146049ba1656e807e79f5d4fb018437b4a5a9f32724fd49d9"
     },
     {
       "path": "listing/zh-TW/short-description.txt",
-      "bytes": 89,
-      "sha256": "89c374f7c167f16765cb727db03cf095f8e2e026218a4cddd9516a4e1afedcfa"
+      "bytes": 91,
+      "sha256": "e41bd0714077e2352bb8fc9bb1cb9f19b5fcc1ba2219d32f2aef2dc3826085f9"
     },
     {
       "path": "listing/zh-TW/title.txt",
-      "bytes": 8,
-      "sha256": "155610ebf9bed96dd329906bf8998d893600a9d1c80cf23033797119b0afc855"
+      "bytes": 39,
+      "sha256": "155627a2a722a3f83f80cf123a32e5944962b90c5e3dafc341ae64d9888206a7"
     },
     {
       "path": "privacy/privacy.html",
       "bytes": 4356,
       "sha256": "03452f432ecfa537216a985b7f082b83e8ea2254174238c46bd6e5a8fd754b50"
+    },
+    {
+      "path": "privacy/PRIVACY.md",
+      "bytes": 4017,
+      "sha256": "843192bedae0c3c82e35394220743e76666117821d519ff8483bcc79fc0252d3"
     },
     {
       "path": "privacy/privacy.txt",
@@ -88,8 +95,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 4453,
-      "sha256": "e649173a3283f7aadfac67dea2de36ad2c5ff7740432a9678c5d697eb9a737e4"
+      "bytes": 2960,
+      "sha256": "5929089d8a78aad7edc820921014470097bd565b022d02bfbbcabad36e28e23c"
+    },
+    {
+      "path": "review/CONSOLE-ANSWERS.md",
+      "bytes": 7302,
+      "sha256": "2d8dfb8d3599d24624d6d41d85e745f56480d4a0cef5d9d73198dce4c92dc3bc"
     },
     {
       "path": "review/LICENSE",
@@ -108,33 +120,43 @@
     },
     {
       "path": "review/RELEASE-CHECKLIST.md",
-      "bytes": 1938,
-      "sha256": "e72a438d654549770cc96a2755271271ffcd6ebdd3887c615bcf37a9d7d3d59d"
+      "bytes": 2597,
+      "sha256": "42b2b27307465306288e27bcd185b9c9eeac0dfe11dda522bcb30061200c4e42"
+    },
+    {
+      "path": "review/RIGHTS-REVIEW.md",
+      "bytes": 3324,
+      "sha256": "fb5dfd2d8785eb98cf72bd4952f4bef9ecc19be566ae1acf6649ed8f6a224593"
     },
     {
       "path": "review/STORE-LISTING.md",
-      "bytes": 6028,
-      "sha256": "647f7b8875d99eb6c3b9613d0cb9e9297492b4964fda2325e440f05cc3f3da52"
+      "bytes": 6110,
+      "sha256": "76894a96e41f5132e3c5ed4ad8b367522c44021e5101a63a4fe7183122346302"
     },
     {
       "path": "screenshots/01-chinese.png",
-      "bytes": 98484,
-      "sha256": "01cb61d9c9f750f6bedaf2cbdc104e7b3a065de7ba2f73cfc70bd1dda7141e26"
+      "bytes": 98483,
+      "sha256": "b6a036915175aa2f361eb93e7dc0966049df8e56d5b104c41763322c8f6e53ca"
     },
     {
       "path": "screenshots/02-english.png",
-      "bytes": 79773,
-      "sha256": "cd2b43d1d23fb6db5e089fb1ae28974b8f61e7033e291645f2b001d4fdccc5af"
+      "bytes": 79776,
+      "sha256": "06c15213da0b15d20ce6e034e873184ba86996765558b247c6bff044baa75dbe"
     },
     {
       "path": "screenshots/03-taiwanese.png",
-      "bytes": 89451,
-      "sha256": "f6ff761c7f2e85a4c65c893f7f474a1b1524d2dbcf8b1c082b887e3199ad3110"
+      "bytes": 89058,
+      "sha256": "95ae84ef76e4f5c2749293677894c360042f20521c5339a3ebc9fe157d300b72"
     },
     {
       "path": "screenshots/04-japanese.png",
-      "bytes": 105622,
-      "sha256": "45909514688a817f7c362bdc6324d02d400ecca0a2a925cc1c20154025833363"
+      "bytes": 101551,
+      "sha256": "07af28a2b33927085507998d725b6290ade6cda4ebbcdc7f5013b7716edbf0c1"
+    },
+    {
+      "path": "screenshots/05-geography.png",
+      "bytes": 109586,
+      "sha256": "8805b60066096e1d33ed8121fa05bd63f6e20ae62193601733432d1af2d55a1d"
     }
   ]
 }

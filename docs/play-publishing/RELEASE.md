@@ -1,3 +1,7 @@
+> Historical 0.8.0 preparation report. Current 0.8.4 materials and remaining gates:
+> [Console worksheet](CONSOLE-ANSWERS.md) and [release checklist](kit/review/RELEASE-CHECKLIST.md).
+> Candidate-construction quality investigation currently blocks publication.
+
 # 0.8.0 publishing preparation
 
 Status: local preparation complete; not submitted or cleared for Google Play.

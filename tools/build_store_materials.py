@@ -3,7 +3,7 @@ Requires Pillow; fonts use Windows Segoe UI and Microsoft JhengHei. PNGs are new
 raster exports of original geometry, not alterations to captured UI screenshots.
 """
 from pathlib import Path
-import html,json,hashlib,zipfile,shutil
+import html,json,hashlib,zipfile,shutil,re,xml.etree.ElementTree as ET
 from PIL import Image,ImageDraw,ImageFont
 ROOT=Path(__file__).resolve().parent.parent
 KIT=ROOT/'docs/play-publishing/kit'
@@ -27,16 +27,20 @@ for locale,tag in [('en-US','Your words. Your keyboard.'),('zh-TW','自己的話
  im.save(G/('feature-'+locale+'.png'));(G/('feature-'+locale+'.svg')).write_text(''.join(svg)+'</svg>\n',encoding='utf-8')
 # Copy-ready listing fields, no Markdown headings or developer placeholders.
 source=(ROOT/'docs/play-publishing/STORE-LISTING.md').read_text(encoding='utf-8')
+notes=(ROOT/'docs/releases/0.8.4.md').read_text(encoding='utf-8')
 for locale,prefix,end in [('en-US','English','Traditional Chinese short description:'),('zh-TW','Traditional Chinese','## Console fields')]:
  out=KIT/'listing'/locale;out.mkdir(parents=True,exist_ok=True)
  short=source.split(prefix+' short description:\n',1)[1].split('\n\n',1)[0].strip().rstrip('。.')
  full=source.split(prefix+' full description:\n',1)[1].split(end,1)[0].strip()
  full='\n\n'.join(''.join(p.splitlines()) if locale=='zh-TW' else ' '.join(p.splitlines()) for p in full.split('\n\n'))
- fields={'title':'MinIME','short-description':short,'full-description':full,'release-notes':('Offline input with focused language modes, local learning, source notices, and optional settings and dictionary transfer.' if locale=='en-US' else '離線輸入、主要語言模式、本機學習、來源授權聲明，以及自選設定與詞典匯出匯入。')}
+ resource='values-zh-rTW' if locale=='zh-TW' else 'values'
+ title=ET.parse(ROOT/'app/src/main/res'/resource/'strings.xml').find("string[@name='app_name']").text
+ release_notes=notes.split('## Release notes ('+locale+')',1)[1].strip().split('\n\n',1)[0]
+ fields={'title':title,'short-description':short,'full-description':full,'release-notes':release_notes}
  for name,text in fields.items():
   assert len(text)<={'title':30,'short-description':80,'full-description':4000,'release-notes':500}[name]
-  (out/(name+'.txt')).write_text(text+'\n',encoding='utf-8')
-for name,src in [('privacy/privacy.html','site/privacy.html'),('privacy/privacy.txt','app/src/main/assets/privacy.txt'),('review/STORE-LISTING.md','docs/play-publishing/STORE-LISTING.md'),('review/LICENSING.md','LICENSING.md'),('review/LICENSE','LICENSE'),('review/NOTICE.txt','app/src/main/assets/NOTICE.txt')]:
+  (out/(name+'.txt')).write_bytes((text+'\n').encode('utf-8-sig'))
+for name,src in [('privacy/PRIVACY.md','PRIVACY.md'),('privacy/privacy.html','site/privacy.html'),('privacy/privacy.txt','app/src/main/assets/privacy.txt'),('review/CONSOLE-ANSWERS.md','docs/play-publishing/CONSOLE-ANSWERS.md'),('review/RIGHTS-REVIEW.md','docs/play-publishing/RIGHTS-REVIEW.md'),('review/STORE-LISTING.md','docs/play-publishing/STORE-LISTING.md'),('review/LICENSING.md','LICENSING.md'),('review/LICENSE','LICENSE'),('review/NOTICE.txt','app/src/main/assets/NOTICE.txt')]:
  dest=KIT/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/src,dest)
 print('Generated original graphics and listing fields')
 
@@ -46,17 +50,17 @@ for p in G.glob('*.png'):
         if p.name=='icon-512.png':assert image.size==(512,512) and image.mode=='RGBA' and p.stat().st_size<=1024*1024
         else:assert image.size==(1024,500) and image.mode=='RGB'
 shots=sorted((KIT/'screenshots').glob('*.png'))
-assert len(shots)==4,'Four reviewed real screenshots are required'
+assert len(shots)==5,'Five reviewed real screenshots are required'
 for p in shots:
     with Image.open(p) as image:assert image.size==(1080,1920) and image.mode=='RGB'
 alt=json.loads((KIT/'alt-text.json').read_text(encoding='utf-8-sig'))
 assert all(len(t)<=140 for row in alt.values() for t in row.values())
-expected={'README.md','alt-text.json','privacy/privacy.html','privacy/privacy.txt',
+expected={'README.md','alt-text.json','privacy/privacy.html','privacy/privacy.txt','privacy/PRIVACY.md',
           'review/LICENSE','review/LICENSING.md','review/NOTICE.txt',
-          'review/RELEASE-CHECKLIST.md','review/STORE-LISTING.md'}
+          'review/RELEASE-CHECKLIST.md','review/STORE-LISTING.md','review/CONSOLE-ANSWERS.md','review/RIGHTS-REVIEW.md'}
 expected.update('graphics/'+n for n in ['icon-512.png','icon.svg','feature-en-US.png','feature-en-US.svg','feature-zh-TW.png','feature-zh-TW.svg'])
 expected.update('listing/'+locale+'/'+name+'.txt' for locale in ['en-US','zh-TW'] for name in ['title','short-description','full-description','release-notes'])
-expected.update('screenshots/'+name+'.png' for name in ['01-chinese','02-english','03-taiwanese','04-japanese'])
+expected.update('screenshots/'+name+'.png' for name in ['01-chinese','02-english','03-taiwanese','04-japanese','05-geography'])
 actual={p.relative_to(KIT).as_posix() for p in KIT.rglob('*') if p.is_file() and p.name!='MANIFEST.json'}
 assert actual==expected,'Unexpected or missing kit file: '+repr(actual.symmetric_difference(expected))
 entries=[]
@@ -64,11 +68,11 @@ for p in sorted(KIT.rglob('*')):
     if not p.is_file() or p.name=='MANIFEST.json':continue
     assert p.suffix.lower() in ('.txt','.md','.html','.json','.svg','.png') or p.name=='LICENSE'
     entries.append({'path':p.relative_to(KIT).as_posix(),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
-(KIT/'MANIFEST.json').write_text(json.dumps({'status':'store materials; app-release gates remain open','files':entries},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+(KIT/'MANIFEST.json').write_text(json.dumps({'status':'review only; native sentence ranking, rights and runtime gates remain open','version':'0.8.4','application_id':'app.minime.keyboard','files':entries},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 out=ROOT/'artifacts/downloads/MinIME-Google-Play-kit.zip';out.parent.mkdir(parents=True,exist_ok=True)
 with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED) as z:
     for p in sorted(KIT.rglob('*')):
         if p.is_file():
-            info=zipfile.ZipInfo('MinIME-Google-Play-kit/'+p.relative_to(KIT).as_posix(),date_time=(2026,9,10,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED
+            info=zipfile.ZipInfo('MinIME-Google-Play-kit/'+p.relative_to(KIT).as_posix(),date_time=(2026,9,12,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED
             z.writestr(info,p.read_bytes())
 print('ZIP:',out,'bytes:',out.stat().st_size,'SHA256:',hashlib.sha256(out.read_bytes()).hexdigest())
