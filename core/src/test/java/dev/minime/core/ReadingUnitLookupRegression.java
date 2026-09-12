@@ -21,7 +21,7 @@ final class ReadingUnitLookupRegression {
             List<Candidate> actual=index.lookup(raw);
             Regression.equal(describe(expected),describe(actual),"lookup preserves full and partial terminal matches");
         }
-        Regression.yes(index.convert("abc").stream().anyMatch(c->c.text.equals("abc") && c.composed),"sentence conversion retains intermediate word boundaries");
+        Regression.yes(index.lookup("abc").stream().noneMatch(c->c.composed),"single-entry lookup never joins words");
         Regression.equal(Collections.emptyList(),index.lookup("a'"),"unfinished separated input remains unavailable");
     }
     private static List<String> describe(List<Candidate> values) {

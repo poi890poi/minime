@@ -146,25 +146,4 @@ final class ReadingUnitIndex {
         if(raw.isEmpty() || raw.length()>MAX_WORD_INPUT || !WORD_INPUT.matcher(raw).matches())return Collections.emptyList();
         return match(raw,0,new int[]{SEARCH_BUDGET},false).get(raw.length());
     }
-    List<Candidate> convert(String raw) {
-        if(!raw.matches("[a-zv]+(?:'[a-zv]+)*")) return Collections.emptyList();
-        List<List<Candidate>> paths=new ArrayList<>();
-        for(int i=0;i<=raw.length();i++) paths.add(new ArrayList<>());
-        paths.get(0).add(new Candidate("",false,0));
-        int[] budget={16384};
-        for(int start=0;start<raw.length();start++) {
-            List<Candidate> before=paths.get(start); trim(before,BEAM,false);
-            if(before.isEmpty()) continue;
-            List<List<Candidate>> matches=match(raw,start,budget);
-            for(int end=start+1;end<matches.size();end++) {
-                List<Candidate> next=paths.get(end);
-                for(Candidate prefix:before) for(Candidate word:matches.get(end))
-                    next.add(Candidate.concatenate(prefix,word));
-                // Intermediate paths have a strict beam. Display diversity belongs
-                // only to the final candidate list, not every partial sentence.
-                trim(next,end==raw.length()?CANDIDATES:BEAM,end==raw.length());
-            }
-        }
-        return paths.get(raw.length());
-    }
 }

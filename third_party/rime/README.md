@@ -50,3 +50,10 @@ spelling. The first three full choices precede three prefix previews, followed b
 the remaining full and prefix choices. The order within each group is preserved.
 Original MinIME candidates remain
 available as alternatives and as fallback if the native engine is unavailable.
+
+The null review build disables `script_translator` sentence assembly at its
+`MakeSentence` call using `tools/native-source-only.cmake`. The pinned source hash
+is checked and only a generated translation unit is changed; upstream archives
+and dictionary data remain unchanged. Android and the default desktop evaluator
+apply the same patch. `build-desktop-metadata.ps1 -SourceBaseline` retains native
+construction solely for isolated comparison. See `docs/null-review/PLAN.md`.

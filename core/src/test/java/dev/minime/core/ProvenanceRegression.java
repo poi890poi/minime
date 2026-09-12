@@ -10,8 +10,7 @@ final class ProvenanceRegression {
             Candidate single=fixture.convert("jia",false,context).stream().filter(c->c.text.equals("甲")).findFirst().get();
             yes(!single.composed,"one lexical unit is not a speculative sequence");
             for(String raw:new String[]{"jiayi","jy","jiay"}) {
-                Candidate joined=fixture.convert(raw,false,context).stream().filter(c->c.text.equals("甲乙")).findFirst().get();
-                yes(joined.composed,"joined units retain provenance through full/partial/context paths");
+                yes(fixture.convert(raw,false,context).stream().noneMatch(c->c.composed || c.text.equals("甲乙")),"full/partial/context lookup never joins separate stored units");
             }
         }
     }

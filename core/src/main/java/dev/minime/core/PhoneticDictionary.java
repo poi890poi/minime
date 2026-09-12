@@ -5,7 +5,6 @@ import java.util.*;
 
 /** Immutable after loading; all language data comes from attributed offline sources. */
 public final class PhoneticDictionary {
-    private static final int BEAM = 6;
     private static final int MAX_KEY = 32;
     private final Map<String, List<Candidate>> pinyin = new HashMap<>();
     private final Map<String, List<Candidate>> zhuyin = new HashMap<>();
@@ -167,33 +166,9 @@ public final class PhoneticDictionary {
             List<Candidate> relaxed = index.get("~" + toneless(key));
             if (relaxed != null) for(Candidate c:relaxed) if(firstTonesMatch(key,c.reading)) result.add(c);
         }
-        List<List<Candidate>> paths = new ArrayList<>();
-        for (int i = 0; i <= key.length(); i++) paths.add(new ArrayList<>());
-        paths.get(0).add(new Candidate("", false, 0));
-        for (int end = 1; end <= key.length(); end++) {
-            List<Candidate> choices = paths.get(end);
-            if (!bpmf && key.charAt(end - 1) == '\'') choices.addAll(paths.get(end - 1));
-            for (int start = Math.max(0, end - MAX_KEY); start < end; start++) {
-                if (paths.get(start).isEmpty()) continue;
-                String part=key.substring(start,end);
-                List<Candidate> words = index.get(bpmf?part.replace("ˉ", ""):part);
-                if (words == null) continue;
-                if(bpmf && part.indexOf('ˉ')>=0) {
-                    words=new ArrayList<>(words); words.removeIf(c->!firstTonesMatch(part,c.reading));
-                }
-                for (Candidate before : paths.get(start)) for (int w = 0; w < Math.min(3, words.size()); w++) {
-                    Candidate word = words.get(w);
-                    choices.add(Candidate.concatenate(before,word));
-                }
-            }
-            choices.sort(Comparator.comparingDouble((Candidate c) -> c.score).reversed());
-            Set<String> seen = new HashSet<>(); choices.removeIf(c -> !seen.add(c.text));
-            if (choices.size() > BEAM) choices.subList(BEAM, choices.size()).clear();
-        }
-        result.addAll(paths.get(key.length()));
         if(bpmf) result.addAll(zhuyinPrefixes.complete(key.replace("ˉ", ""),(reading,c)->firstTonesMatch(key,c.reading)));
         else {
-            result.addAll(pinyinSyllables.convert(key));
+            result.addAll(pinyinSyllables.lookup(key));
             result.addAll(pinyinPrefixes.complete(key,(reading,c)->true));
         }
         // Apply only the boundary signal; retain dictionary word probabilities.

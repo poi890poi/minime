@@ -112,7 +112,10 @@ public final class Regression {
         }
         yes(dictionary.convert("xi'an",false).stream().anyMatch(v -> v.text.equals("西安")),"explicit syllable boundary");
         yes(dictionary.convert("xi'an",false).stream().noneMatch(v -> v.text.equals("先")),"apostrophe prevents merged syllable");
-        yes(dictionary.convert("wo'xiang'chifan",false).stream().anyMatch(v -> v.text.equals("我想吃飯")),"phrase segmentation");
+        yes(dictionary.convert("wo'xiang'chifan",false).stream().noneMatch(v -> v.composed),"multi-word input never constructs a new sequence");
+        e=new Editor();c=engine(e,Learning.NONE,false);
+        for(String[] word:new String[][]{{"wo","我"},{"xiang","想"},{"chifan","吃飯"}}) {type(c,word[0]);c.select(find(c,word[1]));}
+        equal("我想吃飯",e.text,"explicit word entry preserves multi-word typing");
         e=new Editor(); memory=new Memory(); c=engine(e,memory,false);
         c.start(false,false,true,false); type(c,"ming"); c.select(find(c,"明")); equal(0,memory.votes.size(),"no-personalized-learning choice ignored");
         e=new Editor(); c=engine(e,Learning.NONE,false); type(c,"ming"); c.select(0); c.space(); type(c,"zhongwen"); c.space();
@@ -139,7 +142,7 @@ public final class Regression {
         // Real source readings, independently observed reference behaviors; no expected words in runtime rules.
         for(String[] pair:new String[][]{{"nh","你好"},{"nih","你好"},{"nhao","你好"},{"jt","今天"},{"jtian","今天"},
                 {"srf","輸入法"},{"shrf","輸入法"},{"srufa","輸入法"},{"mwt","沒問題"},{"mwenti","沒問題"},
-                {"wxsrf","我想輸入法"},{"sh","生活"},{"n'h","你好"},{"ni'h","你好"},{"meiwen","沒問題"}}) {
+                {"sh","生活"},{"n'h","你好"},{"ni'h","你好"},{"meiwen","沒問題"}}) {
             e=new Editor(); c=engine(e,Learning.NONE,false); type(c,pair[0]);
             equal("",e.text,"partial phonetics remain uncommitted");
             c.select(find(c,pair[1])); equal(pair[1],e.text,"select abbreviated phrase "+pair[0]);
@@ -148,6 +151,9 @@ public final class Regression {
         equal("sr",c.raw(),"abbreviation backspace keeps exact input"); type(c,"ufa");
         c.select(find(c,"輸入法")); equal("輸入法",e.text,"refine an abbreviation without restarting");
         yes(dictionary.convert("n'h",false).stream().noneMatch(v->v.text.codePointCount(0,v.text.length())==1),"apostrophe forces two syllables even when abbreviated");
+        e=new Editor();c=engine(e,Learning.NONE,false);
+        for(String[] word:new String[][]{{"wo","我"},{"xiang","想"},{"srf","輸入法"}}) {type(c,word[0]);c.select(find(c,word[1]));}
+        equal("我想輸入法",e.text,"explicit entry can mix full and abbreviated stored words");
         e=new Editor(); memory=new Memory(); c=engine(e,memory,false); type(c,"nh"); c.select(find(c,"你好"));
         c.start(false,false,false,false); type(c,"nh"); c.space(); equal("你好你好",e.text,"explicit abbreviation choice can become local default");
         c.start(false,false,true,false); type(c,"nh");

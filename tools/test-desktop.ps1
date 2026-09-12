@@ -7,7 +7,7 @@ try {
         $sources=@(Get-ChildItem core/src/main/java -Recurse -Filter '*.java' | ForEach-Object FullName)
         & javac -encoding UTF-8 -d $Classes @sources core/src/test/java/dev/minime/core/DesktopEvaluation.java
         if($LASTEXITCODE -ne 0){throw 'Desktop Java compilation failed'}
-        & tools/build-desktop-metadata.ps1 -Output artifacts/desktop-rime.exe
+        & tools/build-desktop-metadata.ps1 -SourceOnly -Output artifacts/desktop-rime.exe
     }
     $env:PATH=(Join-Path (Get-Location) '.tools/rime-evaluation/msvc/dist/lib')+';'+$env:PATH
     & java '-Dfile.encoding=UTF-8' -Xmx2g -cp $Classes dev.minime.core.DesktopEvaluation $Corpus $Output (Join-Path (Get-Location) 'artifacts/desktop-rime.exe') (Join-Path (Get-Location) '.tools/rime-evaluation/msvc/dist/lib/rime.dll') (Join-Path (Get-Location) 'app/src/main/rimeAssets/rime') (Join-Path (Get-Location) 'artifacts/desktop-rime-user')
