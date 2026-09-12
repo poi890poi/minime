@@ -1,0 +1,727 @@
+{
+  "scope": "Consumed prose regression. Reference reconstruction, not semantic precision or a fresh conversation holdout.",
+  "groups": {
+    "development/full/addons=false": {
+      "baseline": {
+        "n": 1275,
+        "rank1": 165,
+        "recall8": 168,
+        "recall_all": 192,
+        "space_hits": 184,
+        "mrr": 0.132014652014652,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1275,
+        "rank1": 184,
+        "recall8": 187,
+        "recall_all": 192,
+        "space_hits": 184,
+        "mrr": 0.14577030812324931,
+        "lost8": 0,
+        "gained8": 19
+      },
+      "stored": {
+        "n": 1275,
+        "rank1": 184,
+        "recall8": 187,
+        "recall_all": 192,
+        "space_hits": 184,
+        "mrr": 0.14577030812324931,
+        "lost8": 0,
+        "gained8": 19
+      },
+      "ordered": {
+        "n": 1275,
+        "rank1": 184,
+        "recall8": 192,
+        "recall_all": 192,
+        "space_hits": 184,
+        "mrr": 0.14745098039215687,
+        "lost8": 0,
+        "gained8": 24
+      }
+    },
+    "development/full/addons=true": {
+      "baseline": {
+        "n": 1275,
+        "rank1": 172,
+        "recall8": 175,
+        "recall_all": 199,
+        "space_hits": 189,
+        "mrr": 0.13747568771098181,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1275,
+        "rank1": 189,
+        "recall8": 192,
+        "recall_all": 199,
+        "space_hits": 189,
+        "mrr": 0.14978338001867414,
+        "lost8": 0,
+        "gained8": 17
+      },
+      "stored": {
+        "n": 1275,
+        "rank1": 189,
+        "recall8": 192,
+        "recall_all": 199,
+        "space_hits": 189,
+        "mrr": 0.14978338001867414,
+        "lost8": 0,
+        "gained8": 17
+      },
+      "ordered": {
+        "n": 1275,
+        "rank1": 189,
+        "recall8": 199,
+        "recall_all": 199,
+        "space_hits": 189,
+        "mrr": 0.15173202614379086,
+        "lost8": 0,
+        "gained8": 24
+      }
+    },
+    "development/initials/addons=false": {
+      "baseline": {
+        "n": 1275,
+        "rank1": 82,
+        "recall8": 132,
+        "recall_all": 190,
+        "space_hits": 84,
+        "mrr": 0.08028682383120081,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1275,
+        "rank1": 84,
+        "recall8": 134,
+        "recall_all": 190,
+        "space_hits": 84,
+        "mrr": 0.08173478763210579,
+        "lost8": 0,
+        "gained8": 2
+      },
+      "stored": {
+        "n": 1275,
+        "rank1": 84,
+        "recall8": 134,
+        "recall_all": 190,
+        "space_hits": 84,
+        "mrr": 0.08173478763210579,
+        "lost8": 0,
+        "gained8": 2
+      },
+      "ordered": {
+        "n": 1275,
+        "rank1": 84,
+        "recall8": 141,
+        "recall_all": 190,
+        "space_hits": 84,
+        "mrr": 0.08419670698772028,
+        "lost8": 0,
+        "gained8": 9
+      }
+    },
+    "development/initials/addons=true": {
+      "baseline": {
+        "n": 1275,
+        "rank1": 82,
+        "recall8": 139,
+        "recall_all": 197,
+        "space_hits": 86,
+        "mrr": 0.08326471944892726,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1275,
+        "rank1": 86,
+        "recall8": 141,
+        "recall_all": 197,
+        "space_hits": 86,
+        "mrr": 0.08575843488381917,
+        "lost8": 0,
+        "gained8": 2
+      },
+      "stored": {
+        "n": 1275,
+        "rank1": 86,
+        "recall8": 141,
+        "recall_all": 197,
+        "space_hits": 86,
+        "mrr": 0.08575843488381917,
+        "lost8": 0,
+        "gained8": 2
+      },
+      "ordered": {
+        "n": 1275,
+        "rank1": 86,
+        "recall8": 162,
+        "recall_all": 197,
+        "space_hits": 86,
+        "mrr": 0.08805560485936326,
+        "lost8": 0,
+        "gained8": 23
+      }
+    },
+    "development/mixed/addons=false": {
+      "baseline": {
+        "n": 1275,
+        "rank1": 131,
+        "recall8": 168,
+        "recall_all": 192,
+        "space_hits": 137,
+        "mrr": 0.11617274139419469,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1275,
+        "rank1": 137,
+        "recall8": 174,
+        "recall_all": 192,
+        "space_hits": 137,
+        "mrr": 0.1205166327969096,
+        "lost8": 0,
+        "gained8": 6
+      },
+      "stored": {
+        "n": 1275,
+        "rank1": 137,
+        "recall8": 174,
+        "recall_all": 192,
+        "space_hits": 137,
+        "mrr": 0.1205166327969096,
+        "lost8": 0,
+        "gained8": 6
+      },
+      "ordered": {
+        "n": 1275,
+        "rank1": 137,
+        "recall8": 192,
+        "recall_all": 192,
+        "space_hits": 137,
+        "mrr": 0.12461437908496731,
+        "lost8": 0,
+        "gained8": 24
+      }
+    },
+    "development/mixed/addons=true": {
+      "baseline": {
+        "n": 1275,
+        "rank1": 131,
+        "recall8": 178,
+        "recall_all": 199,
+        "space_hits": 139,
+        "mrr": 0.11880682631074181,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1275,
+        "rank1": 139,
+        "recall8": 183,
+        "recall_all": 199,
+        "space_hits": 139,
+        "mrr": 0.12399536326398465,
+        "lost8": 0,
+        "gained8": 5
+      },
+      "stored": {
+        "n": 1275,
+        "rank1": 139,
+        "recall8": 183,
+        "recall_all": 199,
+        "space_hits": 139,
+        "mrr": 0.12399536326398465,
+        "lost8": 0,
+        "gained8": 5
+      },
+      "ordered": {
+        "n": 1275,
+        "rank1": 139,
+        "recall8": 199,
+        "recall_all": 199,
+        "space_hits": 139,
+        "mrr": 0.12741923436041083,
+        "lost8": 0,
+        "gained8": 21
+      }
+    },
+    "development/partial/addons=false": {
+      "baseline": {
+        "n": 1275,
+        "rank1": 4,
+        "recall8": 7,
+        "recall_all": 136,
+        "space_hits": 32,
+        "mrr": 0.010529778460972397,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1275,
+        "rank1": 32,
+        "recall8": 35,
+        "recall_all": 136,
+        "space_hits": 32,
+        "mrr": 0.03080127167364208,
+        "lost8": 0,
+        "gained8": 28
+      },
+      "stored": {
+        "n": 1275,
+        "rank1": 32,
+        "recall8": 35,
+        "recall_all": 136,
+        "space_hits": 32,
+        "mrr": 0.03080127167364208,
+        "lost8": 0,
+        "gained8": 28
+      },
+      "ordered": {
+        "n": 1275,
+        "rank1": 32,
+        "recall8": 114,
+        "recall_all": 136,
+        "space_hits": 32,
+        "mrr": 0.04515677943656731,
+        "lost8": 0,
+        "gained8": 107
+      }
+    },
+    "development/partial/addons=true": {
+      "baseline": {
+        "n": 1275,
+        "rank1": 4,
+        "recall8": 18,
+        "recall_all": 143,
+        "space_hits": 31,
+        "mrr": 0.013753142138815871,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1275,
+        "rank1": 31,
+        "recall8": 41,
+        "recall_all": 143,
+        "space_hits": 31,
+        "mrr": 0.03249622911719697,
+        "lost8": 0,
+        "gained8": 23
+      },
+      "stored": {
+        "n": 1275,
+        "rank1": 31,
+        "recall8": 41,
+        "recall_all": 143,
+        "space_hits": 31,
+        "mrr": 0.03249622911719697,
+        "lost8": 0,
+        "gained8": 23
+      },
+      "ordered": {
+        "n": 1275,
+        "rank1": 31,
+        "recall8": 116,
+        "recall_all": 143,
+        "space_hits": 31,
+        "mrr": 0.04520776945725043,
+        "lost8": 0,
+        "gained8": 98
+      }
+    },
+    "reserved/full/addons=false": {
+      "baseline": {
+        "n": 1530,
+        "rank1": 181,
+        "recall8": 184,
+        "recall_all": 229,
+        "space_hits": 219,
+        "mrr": 0.12151835093011565,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1530,
+        "rank1": 219,
+        "recall8": 222,
+        "recall_all": 229,
+        "space_hits": 219,
+        "mrr": 0.14444444444444443,
+        "lost8": 0,
+        "gained8": 38
+      },
+      "stored": {
+        "n": 1530,
+        "rank1": 219,
+        "recall8": 222,
+        "recall_all": 229,
+        "space_hits": 219,
+        "mrr": 0.14444444444444443,
+        "lost8": 0,
+        "gained8": 38
+      },
+      "ordered": {
+        "n": 1530,
+        "rank1": 219,
+        "recall8": 229,
+        "recall_all": 229,
+        "space_hits": 219,
+        "mrr": 0.14640522875816994,
+        "lost8": 0,
+        "gained8": 45
+      }
+    },
+    "reserved/full/addons=true": {
+      "baseline": {
+        "n": 1530,
+        "rank1": 196,
+        "recall8": 199,
+        "recall_all": 244,
+        "space_hits": 231,
+        "mrr": 0.13129528877077895,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1530,
+        "rank1": 231,
+        "recall8": 234,
+        "recall_all": 244,
+        "space_hits": 231,
+        "mrr": 0.15241142753397655,
+        "lost8": 0,
+        "gained8": 35
+      },
+      "stored": {
+        "n": 1530,
+        "rank1": 231,
+        "recall8": 234,
+        "recall_all": 244,
+        "space_hits": 231,
+        "mrr": 0.15241142753397655,
+        "lost8": 0,
+        "gained8": 35
+      },
+      "ordered": {
+        "n": 1530,
+        "rank1": 231,
+        "recall8": 244,
+        "recall_all": 244,
+        "space_hits": 231,
+        "mrr": 0.1548474945533769,
+        "lost8": 0,
+        "gained8": 45
+      }
+    },
+    "reserved/initials/addons=false": {
+      "baseline": {
+        "n": 1530,
+        "rank1": 107,
+        "recall8": 147,
+        "recall_all": 223,
+        "space_hits": 120,
+        "mrr": 0.08183585394652813,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1530,
+        "rank1": 120,
+        "recall8": 160,
+        "recall_all": 223,
+        "space_hits": 120,
+        "mrr": 0.08967899120143008,
+        "lost8": 0,
+        "gained8": 13
+      },
+      "stored": {
+        "n": 1530,
+        "rank1": 120,
+        "recall8": 160,
+        "recall_all": 223,
+        "space_hits": 120,
+        "mrr": 0.08967899120143008,
+        "lost8": 0,
+        "gained8": 13
+      },
+      "ordered": {
+        "n": 1530,
+        "rank1": 120,
+        "recall8": 189,
+        "recall_all": 223,
+        "space_hits": 120,
+        "mrr": 0.09261987497215658,
+        "lost8": 0,
+        "gained8": 42
+      }
+    },
+    "reserved/initials/addons=true": {
+      "baseline": {
+        "n": 1530,
+        "rank1": 107,
+        "recall8": 167,
+        "recall_all": 238,
+        "space_hits": 124,
+        "mrr": 0.08633496950061356,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1530,
+        "rank1": 124,
+        "recall8": 179,
+        "recall_all": 238,
+        "space_hits": 124,
+        "mrr": 0.0957534377426112,
+        "lost8": 0,
+        "gained8": 12
+      },
+      "stored": {
+        "n": 1530,
+        "rank1": 124,
+        "recall8": 179,
+        "recall_all": 238,
+        "space_hits": 124,
+        "mrr": 0.0957534377426112,
+        "lost8": 0,
+        "gained8": 12
+      },
+      "ordered": {
+        "n": 1530,
+        "rank1": 124,
+        "recall8": 208,
+        "recall_all": 238,
+        "space_hits": 124,
+        "mrr": 0.09835786445904762,
+        "lost8": 0,
+        "gained8": 41
+      }
+    },
+    "reserved/mixed/addons=false": {
+      "baseline": {
+        "n": 1530,
+        "rank1": 145,
+        "recall8": 179,
+        "recall_all": 229,
+        "space_hits": 174,
+        "mrr": 0.10561426617510816,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1530,
+        "rank1": 174,
+        "recall8": 208,
+        "recall_all": 229,
+        "space_hits": 174,
+        "mrr": 0.1231104954360433,
+        "lost8": 0,
+        "gained8": 29
+      },
+      "stored": {
+        "n": 1530,
+        "rank1": 174,
+        "recall8": 208,
+        "recall_all": 229,
+        "space_hits": 174,
+        "mrr": 0.1231104954360433,
+        "lost8": 0,
+        "gained8": 29
+      },
+      "ordered": {
+        "n": 1530,
+        "rank1": 174,
+        "recall8": 224,
+        "recall_all": 229,
+        "space_hits": 174,
+        "mrr": 0.12615105301379811,
+        "lost8": 0,
+        "gained8": 45
+      }
+    },
+    "reserved/mixed/addons=true": {
+      "baseline": {
+        "n": 1530,
+        "rank1": 145,
+        "recall8": 207,
+        "recall_all": 244,
+        "space_hits": 184,
+        "mrr": 0.11100943866552743,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1530,
+        "rank1": 184,
+        "recall8": 227,
+        "recall_all": 244,
+        "space_hits": 184,
+        "mrr": 0.1313546707754654,
+        "lost8": 0,
+        "gained8": 20
+      },
+      "stored": {
+        "n": 1530,
+        "rank1": 184,
+        "recall8": 227,
+        "recall_all": 244,
+        "space_hits": 184,
+        "mrr": 0.1313546707754654,
+        "lost8": 0,
+        "gained8": 20
+      },
+      "ordered": {
+        "n": 1530,
+        "rank1": 184,
+        "recall8": 241,
+        "recall_all": 244,
+        "space_hits": 184,
+        "mrr": 0.13388759207386658,
+        "lost8": 0,
+        "gained8": 34
+      }
+    },
+    "reserved/partial/addons=false": {
+      "baseline": {
+        "n": 1530,
+        "rank1": 4,
+        "recall8": 6,
+        "recall_all": 159,
+        "space_hits": 63,
+        "mrr": 0.009761289181408953,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1530,
+        "rank1": 63,
+        "recall8": 65,
+        "recall_all": 159,
+        "space_hits": 63,
+        "mrr": 0.04535706595365631,
+        "lost8": 0,
+        "gained8": 59
+      },
+      "stored": {
+        "n": 1530,
+        "rank1": 63,
+        "recall8": 65,
+        "recall_all": 159,
+        "space_hits": 63,
+        "mrr": 0.04535706595365631,
+        "lost8": 0,
+        "gained8": 59
+      },
+      "ordered": {
+        "n": 1530,
+        "rank1": 63,
+        "recall8": 136,
+        "recall_all": 159,
+        "space_hits": 63,
+        "mrr": 0.05713459351508329,
+        "lost8": 0,
+        "gained8": 130
+      }
+    },
+    "reserved/partial/addons=true": {
+      "baseline": {
+        "n": 1530,
+        "rank1": 4,
+        "recall8": 35,
+        "recall_all": 178,
+        "space_hits": 68,
+        "mrr": 0.016051502815266457,
+        "lost8": 0,
+        "gained8": 0
+      },
+      "visible": {
+        "n": 1530,
+        "rank1": 68,
+        "recall8": 88,
+        "recall_all": 178,
+        "space_hits": 68,
+        "mrr": 0.05282039840769146,
+        "lost8": 0,
+        "gained8": 53
+      },
+      "stored": {
+        "n": 1530,
+        "rank1": 68,
+        "recall8": 88,
+        "recall_all": 178,
+        "space_hits": 68,
+        "mrr": 0.05282039840769146,
+        "lost8": 0,
+        "gained8": 53
+      },
+      "ordered": {
+        "n": 1530,
+        "rank1": 68,
+        "recall8": 150,
+        "recall_all": 178,
+        "space_hits": 68,
+        "mrr": 0.06374769804594366,
+        "lost8": 0,
+        "gained8": 115
+      }
+    }
+  },
+  "invariants": {
+    "development/baseline": {
+      "observations": 10200,
+      "constructed": 0,
+      "space_changes": 0,
+      "hidden_defaults": 216
+    },
+    "development/visible": {
+      "observations": 10200,
+      "constructed": 0,
+      "space_changes": 0,
+      "hidden_defaults": 0
+    },
+    "development/stored": {
+      "observations": 10200,
+      "constructed": 0,
+      "space_changes": 0,
+      "hidden_defaults": 0
+    },
+    "development/ordered": {
+      "observations": 10200,
+      "constructed": 0,
+      "space_changes": 0,
+      "hidden_defaults": 0
+    },
+    "reserved/baseline": {
+      "observations": 12240,
+      "constructed": 0,
+      "space_changes": 0,
+      "hidden_defaults": 446
+    },
+    "reserved/visible": {
+      "observations": 12240,
+      "constructed": 0,
+      "space_changes": 0,
+      "hidden_defaults": 0
+    },
+    "reserved/stored": {
+      "observations": 12240,
+      "constructed": 0,
+      "space_changes": 0,
+      "hidden_defaults": 0
+    },
+    "reserved/ordered": {
+      "observations": 12240,
+      "constructed": 0,
+      "space_changes": 0,
+      "hidden_defaults": 0
+    }
+  }
+}
