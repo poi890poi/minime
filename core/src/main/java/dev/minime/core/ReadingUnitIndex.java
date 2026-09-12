@@ -1,9 +1,11 @@
 package dev.minime.core;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 /** Source syllable boundaries, not generated abbreviation combinations. Immutable after load. */
 final class ReadingUnitIndex {
+    private static final Pattern WORD_INPUT=Pattern.compile("[a-z0-9]+(?:'[a-z0-9]+)*");
     private String[] syllable;
     private int[] child, sibling;
     private List<Candidate>[] words;
@@ -141,7 +143,7 @@ final class ReadingUnitIndex {
     }
     /** Match one stored entry using full or incomplete source reading units. */
     List<Candidate> lookup(String raw) {
-        if(raw.isEmpty() || raw.length()>MAX_WORD_INPUT || !raw.matches("[a-z0-9]+(?:'[a-z0-9]+)*"))return Collections.emptyList();
+        if(raw.isEmpty() || raw.length()>MAX_WORD_INPUT || !WORD_INPUT.matcher(raw).matches())return Collections.emptyList();
         return match(raw,0,new int[]{SEARCH_BUDGET},false).get(raw.length());
     }
     List<Candidate> convert(String raw) {

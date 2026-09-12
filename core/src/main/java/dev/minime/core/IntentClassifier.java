@@ -1,8 +1,10 @@
 package dev.minime.core;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 public final class IntentClassifier {
+    private static final Pattern CODE=Pattern.compile(".*[_/\\\\.:#=+{}\\[\\]();<>$%&*?!,\"-].*");
     // Domain vocabulary for mixed technical typing, not Chinese ranking overrides.
     private static final Set<String> COMMANDS=new HashSet<>(Arrays.asList(
         "adb","git","ssh","scp","sftp","curl","wget","npm","npx","pnpm","yarn","pip","gradle",
@@ -17,7 +19,7 @@ public final class IntentClassifier {
         if (technicalWord(raw)) return Intent.CODE_IDENTIFIER;
         if (raw.contains("@") || raw.contains("://")) return Intent.URL_EMAIL;
         if (raw.codePoints().anyMatch(Character::isDigit)) return Intent.NUMBER_ALNUM;
-        if (raw.matches(".*[_/\\\\.:#=+{}\\[\\]();<>$%&*?!,\"-].*")) return Intent.CODE_IDENTIFIER;
+        if (CODE.matcher(raw).matches()) return Intent.CODE_IDENTIFIER;
         if (raw.codePoints().anyMatch(IntentClassifier::isZhuyin)) return Intent.CHINESE_PHONETIC;
         if (zhuyin || raw.codePoints().anyMatch(Character::isUpperCase)) return Intent.LATIN_LITERAL;
         if (dictionary == null) return Intent.LATIN_LITERAL;

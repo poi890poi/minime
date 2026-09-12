@@ -2,9 +2,11 @@ package dev.minime.core;
 
 import java.io.*;
 import java.util.*;
+import java.util.regex.Pattern;
 
 /** Optional source-ranked character choices, separate from the general word lexicon. */
 public final class JapaneseBasics {
+    private static final Pattern INPUT=Pattern.compile("[a-zA-Z'-]+");
     public static final JapaneseBasics EMPTY=new JapaneseBasics(Collections.emptyMap(),Collections.emptyMap());
     private final Map<String,List<Candidate>> exact;
     private final ReadingIndex prefixes;
@@ -46,7 +48,7 @@ public final class JapaneseBasics {
         return forms.isEmpty() || forms.get(0).consumed!=0?"":forms.get(0).text;
     }
     public List<Candidate> lookup(String raw) {
-        if(raw.length()>96 || !raw.matches("[a-zA-Z'-]+"))return Collections.emptyList();
+        if(raw.length()>96 || !INPUT.matcher(raw).matches())return Collections.emptyList();
         String key=normalize(raw);List<Candidate> result=new ArrayList<>();Set<String> seen=new HashSet<>();
         for(Candidate c:exact.getOrDefault(key,Collections.emptyList()))if(seen.add(c.text)) {result.add(c);if(result.size()==8)return result;}
         List<Candidate> partials=new ArrayList<>(prefixes.complete(key,(k,c)->true));partials.addAll(units.lookup(raw.toLowerCase(Locale.ROOT).replace('-', '\'')));

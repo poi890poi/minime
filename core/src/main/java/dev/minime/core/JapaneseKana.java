@@ -1,10 +1,13 @@
 package dev.minime.core;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 /** Bounded transduction of the pinned WanaKana mapping tree (MIT).
  * Mirrors its applyMapping fallback; never guesses lexical Kanji. */
 final class JapaneseKana {
+    private static final Pattern INPUT=Pattern.compile("[a-zA-Z'-]+");
+    private static final Pattern HIRAGANA=Pattern.compile("[\\u3041-\\u3096\\u30fc]+");
     private static final class Node {
         final Map<Character,Node> children=new HashMap<>();String output;
     }
@@ -13,7 +16,7 @@ final class JapaneseKana {
         Node at=root;for(char c:key.toCharArray())at=at.children.computeIfAbsent(c,k->new Node());at.output=output;
     }
     List<Candidate> lookup(String raw) {
-        if(raw.isEmpty() || raw.length()>96 || !raw.matches("[a-zA-Z'-]+"))return Collections.emptyList();
+        if(raw.isEmpty() || raw.length()>96 || !INPUT.matcher(raw).matches())return Collections.emptyList();
         String input=raw.toLowerCase(Locale.ROOT);StringBuilder text=new StringBuilder();int cursor=0;
         while(cursor<input.length()) {
             Node at=root;String value="";int end=cursor;
@@ -21,7 +24,7 @@ final class JapaneseKana {
                 char c=input.charAt(end);Node child=at.children.get(c);if(child==null)break;
                 value=child.output==null?value+c:child.output;at=child;end++;
             }
-            if(end==cursor || !value.matches("[\\u3041-\\u3096\\u30fc]+"))break;
+            if(end==cursor || !HIRAGANA.matcher(value).matches())break;
             text.append(value);cursor=end;
         }
         if(text.length()==0)return Collections.emptyList();

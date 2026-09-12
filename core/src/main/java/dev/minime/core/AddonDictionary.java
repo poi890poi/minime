@@ -2,9 +2,11 @@ package dev.minime.core;
 
 import java.io.*;
 import java.util.*;
+import java.util.regex.Pattern;
 
 /** Immutable pack indexes sharing the core's bounded prefix and reading-unit searches. */
 public final class AddonDictionary {
+    private static final Pattern UNIT_SEPARATORS=Pattern.compile("[- ']+");
     public static final AddonDictionary EMPTY=new AddonDictionary(Collections.emptyMap());
     private final Map<String,List<Candidate>> entries;
     private final Map<String,ReadingIndex> prefixes=new HashMap<>();
@@ -142,7 +144,7 @@ public final class AddonDictionary {
         if(first!=null) {first.complete(pack,raw,result,limit);second.complete(pack,raw,result,limit);return;}
         ReadingIndex prefix=prefixes.get(pack);ReadingUnitIndex unit=units.get(pack);
         if(prefix!=null)result.addAll(prefix.complete(normalize(raw),(key,c)->true,limit));
-        if(unit!=null)result.addAll(unit.lookup(raw.toLowerCase(Locale.ROOT).replaceAll("[- ']+","'")));
+        if(unit!=null)result.addAll(unit.lookup(UNIT_SEPARATORS.matcher(raw.toLowerCase(Locale.ROOT)).replaceAll("'")));
     }
     private boolean append(String key,List<Candidate> result,Set<String> seen,int limit) {
         if(first!=null)return first.append(key,result,seen,limit) || second.append(key,result,seen,limit);
