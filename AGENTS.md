@@ -1,5 +1,7 @@
 # MinIME engineering rules
 
+- Never use GitHub CI or GitHub Actions for this project. Do not add, enable or
+  trigger hosted workflows. Run builds, tests and release checks locally.
 - Verify suggestion, ranking, composition and acceptance logic in the shared core
   before building the Android app. Use `tools/test-core.ps1` and the pinned desktop
   Rime evaluator in `tools/test-desktop.ps1`. Reserve device tests for Android
