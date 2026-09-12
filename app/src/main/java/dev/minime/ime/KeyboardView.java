@@ -382,11 +382,13 @@ final class KeyboardView extends LinearLayout {
         }
         List<Candidate> candidates=new ArrayList<>(snapshot);
         if(retain && !candidates.isEmpty())candidates.set(0,new Candidate(engine.raw(),true,0));
-        int preferred=snapshotPreferred;
+        // Retained candidates belong to the previous query, not the current Space
+        // decision. Keep their text stable without advertising a stale default.
+        int preferred=retain?-1:snapshotPreferred;
         int previousScroll=candidateScroll==null?0:candidateScroll.getScrollX();
         if(!lastRaw.equals(engine.raw()))previousScroll=0;
         final int restoreScroll=previousScroll;
-        boolean separatePhonetics=!english && !engine.raw().isEmpty() && preferred!=0;
+        boolean separatePhonetics=!english && !engine.raw().isEmpty() && snapshotPreferred!=0;
         phonetics.setText(engine.raw());phonetics.setContentDescription((separatePhonetics?"Exact input ":"Composition buffer ")+engine.raw());
         // Prediction intent may change at every prefix; composition visibility must not.
         boolean showPhonetics=!english && !engine.raw().isEmpty() && panel==0;

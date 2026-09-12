@@ -530,6 +530,12 @@ public final class CompositionEngine {
             Candidate c=candidates.get(i);
             if(c.pair!=null)candidates.set(i,pairedTaiwanese && inputMode.taiwanese()?c.primary(hanPrimary):c.paired(null));
         }
+        // The Space choice must be visible before prefix-recovery alternatives.
+        // Preserve acceptance and every other candidate's relative order.
+        if(preferred>1) {
+            candidates.add(1,candidates.remove(preferred));
+            preferred=1;
+        }
     }
     private boolean focused(Candidate candidate) {
         return !inputMode.pack.isEmpty() && inputMode.pack.equals(candidate.pack);
