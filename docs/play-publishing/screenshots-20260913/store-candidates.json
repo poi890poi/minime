@@ -1,0 +1,131 @@
+[
+  {
+    "screenshot": "01-chinese",
+    "mode": "chinese",
+    "prefilledExampleContext": "週末一起去走走？\n好啊！先喝咖啡，再散步。\nSee you tomorrow!\n時間、地點，一次說清楚。\n",
+    "typedInput": "mingtian",
+    "completedInteractions": "",
+    "expanded": false,
+    "visibleCandidateLabels": [
+      "明天",
+      "明天二十歲",
+      "明天記得愛上我"
+    ],
+    "visibleExactInputs": []
+  },
+  {
+    "screenshot": "02-english",
+    "mode": "english",
+    "prefilledExampleContext": "Thanks for your help!\nI can't wait to see you.\nLet's meet after work.\nHave a wonderful weekend.\n",
+    "typedInput": "thank",
+    "completedInteractions": "",
+    "expanded": false,
+    "visibleCandidateLabels": [
+      "thanks",
+      "thanked",
+      "thanksgiving"
+    ],
+    "visibleExactInputs": [
+      "thank"
+    ]
+  },
+  {
+    "screenshot": "03-taiwanese",
+    "mode": "taiwanese_english",
+    "prefilledExampleContext": "lí hó　你好\nto-siā　多謝\nchài-hōe　再會\nchia̍h-pá--bōe　食飽未\n",
+    "typedInput": "liho",
+    "completedInteractions": "",
+    "expanded": false,
+    "visibleCandidateLabels": [
+      "lí hó",
+      "liô-hoe",
+      "Lí-hî-ông",
+      "liàm-hoe"
+    ],
+    "visibleExactInputs": []
+  },
+  {
+    "screenshot": "04-japanese",
+    "mode": "japanese_english",
+    "prefilledExampleContext": "おはようございます。\nこんにちは。Hello!\nありがとうございます。\nまた明日。See you tomorrow!\n",
+    "typedInput": "arigatou",
+    "completedInteractions": "",
+    "expanded": false,
+    "visibleCandidateLabels": [
+      "ありがとう",
+      "アリガトウ",
+      "ありがとうございます"
+    ],
+    "visibleExactInputs": []
+  },
+  {
+    "screenshot": "05-geography",
+    "mode": "chinese",
+    "prefilledExampleContext": "山林裡，也有值得記住的名字。\n加年端社・加年端部落舊址\n八通關古道・八通關駐在所\nTaiwan trails & history\n",
+    "typedInput": "jianianduan",
+    "completedInteractions": "",
+    "expanded": false,
+    "visibleCandidateLabels": [
+      "加年端社",
+      "加年端山",
+      "加年端溫泉"
+    ],
+    "visibleExactInputs": []
+  },
+  {
+    "screenshot": "06-trails",
+    "mode": "chinese",
+    "prefilledExampleContext": "下次想認識的山林地名\n八通關古道・八通關山\n八通關駐在所・八通關山西峰\n舊路線，也有新的發現。\n",
+    "typedInput": "batongguan",
+    "completedInteractions": "",
+    "expanded": true,
+    "visibleCandidateLabels": [
+      "八通關",
+      "八通關山",
+      "八通關古道",
+      "八通關駐在所",
+      "八通關山西峰",
+      "八通關古道西段",
+      "八通關古道東段",
+      "八通關山登山口",
+      "八通關古道社寮線"
+    ],
+    "visibleExactInputs": []
+  },
+  {
+    "screenshot": "07-taiwanese-choices",
+    "mode": "taiwanese_english",
+    "prefilledExampleContext": "同一個候選，兩種輸出。\n點選白話字，長按輸出漢字。\n",
+    "typedInput": "tosia",
+    "completedInteractions": "Typed liho, tapped lí hó, Enter; typed liho, held lí hó to insert 你好, Enter. Both outputs asserted against the actual editor.",
+    "expanded": false,
+    "visibleCandidateLabels": [
+      "to-siā",
+      "Tōa-siā",
+      "to-siā--kí",
+      "tōa siaⁿ"
+    ],
+    "visibleExactInputs": []
+  },
+  {
+    "screenshot": "08-japanese-choices",
+    "mode": "japanese_english",
+    "prefilledExampleContext": "気持ちを、ことばに。\nきもち・キモチ・気持ち\n日常のひとことを日本語で。\nA few words, every day.\n",
+    "typedInput": "kimochi",
+    "completedInteractions": "",
+    "expanded": true,
+    "visibleCandidateLabels": [
+      "きもち",
+      "気持ち",
+      "キモチ",
+      "きもちいい",
+      "気持ちいい",
+      "気持ち良い",
+      "きもちがいい",
+      "気持ちがいい",
+      "きもちわるい",
+      "気持ち悪い"
+    ],
+    "visibleExactInputs": []
+  }
+]

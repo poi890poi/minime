@@ -64,6 +64,7 @@ with (OUT / 'README.md').open('a', encoding='utf-8', newline='\n') as out:
         for name, title, description in SCENES[first:first+2]:
             out.write(f'<a href="{name}.png"><img src="{name}.png" width="280" alt="{html.escape(title + ": " + description)}"></a>\n')
         out.write('</p>\n\n')
+(OUT / 'README.md').write_text((OUT / 'README.md').read_text(encoding='utf-8').rstrip() + '\n', encoding='utf-8', newline='\n')
 names = [s[0] + '.png' for s in SCENES] + ['README.md', 'CAPTURE.md', 'alt-text.json', 'index.html', 'store-candidates.json']
 manifest = {'app_version': '0.8.5-review1', 'app_sha256': '9a8e5fccbfe2306b9209b79241c734bc6f2dda7b8efec5aa26824121e2c20d54',
     'images': 'Unmodified phone captures; prefilled context disclosed separately',
