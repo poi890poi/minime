@@ -20,6 +20,9 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
     public StoreCaptureTest(){super(EditorTestActivity.class);}
     private EditorTestActivity host;
     private final JSONArray capturedCandidates=new JSONArray();
+    private String currentMode,currentNote,typedInput="";
+    private boolean expanded;
+    private String completedInteractions="";
     private void collectCandidates(AccessibilityNodeInfo node,Set<String> labels,Set<String> exactInputs) {
         if(node==null)return;
         CharSequence description=node.getContentDescription();
@@ -48,15 +51,19 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
     }
     private void ownIme() {assertEquals("Only MinIME may appear in store captures","app.minime.keyboard/dev.minime.ime.MiniMeService",android.provider.Settings.Secure.getString(host.getContentResolver(),android.provider.Settings.Secure.DEFAULT_INPUT_METHOD));}
     private void press(String label)throws Exception {
+        press(label,45);
+    }
+    private void press(String label,long holdMs)throws Exception {
         ownIme();
         AccessibilityNodeInfo n=key(label);if(n==null)n=key(label.toUpperCase(java.util.Locale.ROOT));assertNotNull("Visible IME key "+label,n);
         Rect r=new Rect();n.getBoundsInScreen(r);n.recycle();long t=SystemClock.uptimeMillis();
         for(int action:new int[]{MotionEvent.ACTION_DOWN,MotionEvent.ACTION_UP}){
             MotionEvent e=MotionEvent.obtain(t,SystemClock.uptimeMillis(),action,r.exactCenterX(),r.exactCenterY(),0);e.setSource(InputDevice.SOURCE_TOUCHSCREEN);
-            assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(e,true));e.recycle();SystemClock.sleep(45);
+            assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(e,true));e.recycle();SystemClock.sleep(action==MotionEvent.ACTION_DOWN?holdMs:45);
         }
     }
     private void show(String mode,String note)throws Exception {
+        currentMode=mode;currentNote=note;typedInput="";expanded=false;completedInteractions="";
         try(android.os.ParcelFileDescriptor fd=getInstrumentation().getUiAutomation().executeShellCommand("ime set app.minime.keyboard/dev.minime.ime.MiniMeService");InputStream in=new android.os.ParcelFileDescriptor.AutoCloseInputStream(fd)){while(in.read()!=-1){}}
         ownIme();
         host.getSharedPreferences("settings",0).edit().clear().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).putBoolean("addon_taiwan",true).putBoolean("addon_geography",true).putString("mixed_mode",mode).putBoolean("english_mode",mode.equals("english")).commit();
@@ -67,7 +74,8 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
             LinearLayout body=new LinearLayout(host);body.setOrientation(LinearLayout.VERTICAL);body.setBackgroundColor(Color.rgb(249,248,242));
             int p=Math.round(24*host.getResources().getDisplayMetrics().density);body.setPadding(p,p,p,p);
             TextView title=new TextView(host);title.setText("筆記  Notes");title.setTextSize(26);title.setTextColor(Color.rgb(0,103,101));body.addView(title);
-            host.text=new EditText(host);host.text.setTextSize(22);host.text.setGravity(Gravity.TOP);host.text.setBackgroundColor(Color.TRANSPARENT);host.text.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_MULTI_LINE);host.text.setText(note);host.text.setSelection(note.length());
+            TextView subtitle=new TextView(host);subtitle.setText("多語日常 · 範例文字");subtitle.setTextSize(13);subtitle.setTextColor(Color.rgb(90,111,108));body.addView(subtitle);
+            host.text=new EditText(host);host.text.setTextSize(20);host.text.setGravity(Gravity.TOP);host.text.setBackgroundColor(Color.TRANSPARENT);host.text.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_MULTI_LINE);host.text.setText(note);host.text.setSelection(note.length());
             body.addView(host.text,new LinearLayout.LayoutParams(-1,0,1));host.setContentView(body);host.text.requestFocus();
             host.text.post(()->((InputMethodManager)host.getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(host.text,InputMethodManager.SHOW_IMPLICIT));
         });
@@ -99,7 +107,7 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
         Set<String> labels=new LinkedHashSet<>(),exactInputs=new LinkedHashSet<>();
         for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows())if(w.getType()==AccessibilityWindowInfo.TYPE_INPUT_METHOD)collectCandidates(w.getRoot(),labels,exactInputs);
         if(!name.equals("diagnostic")) {
-            capturedCandidates.put(new JSONObject().put("screenshot",name).put("visibleCandidateLabels",new JSONArray(labels)).put("visibleExactInputs",new JSONArray(exactInputs)));
+            capturedCandidates.put(new JSONObject().put("screenshot",name).put("mode",currentMode).put("prefilledExampleContext",currentNote).put("typedInput",typedInput).put("completedInteractions",completedInteractions).put("expanded",expanded).put("visibleCandidateLabels",new JSONArray(labels)).put("visibleExactInputs",new JSONArray(exactInputs)));
             try(OutputStream out=new FileOutputStream(new File(host.getExternalFilesDir(null),"store-candidates.json"))) {
                 out.write(capturedCandidates.toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));
             }
@@ -114,12 +122,26 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
         Bitmap b=getInstrumentation().getUiAutomation().takeScreenshot();assertNotNull(b);b.setHasAlpha(false);
         try(FileOutputStream out=new FileOutputStream(new File(host.getExternalFilesDir(null),"store-"+name+".png"))){assertTrue(b.compress(Bitmap.CompressFormat.PNG,100,out));}finally{b.recycle();}
     }
+    private void example(String name,String mode,String note,String input,boolean expand)throws Exception {
+        show(mode,note);typedInput=input;
+        for(char c:input.toCharArray())press(String.valueOf(c));
+        if(expand){SystemClock.sleep(1200);press("Expand candidates");expanded=true;}
+        capture(name);
+    }
     public void testCaptureStoreExamples()throws Exception {
         host=getActivity();DictionaryRepository.load(host).get(60,java.util.concurrent.TimeUnit.SECONDS);AccessibilityServiceInfo info=getInstrumentation().getUiAutomation().getServiceInfo();info.flags|=AccessibilityServiceInfo.FLAG_RETRIEVE_INTERACTIVE_WINDOWS;getInstrumentation().getUiAutomation().setServiceInfo(info);
-        show("chinese","週末想去散步。\n");for(char c:"mingtian".toCharArray())press(String.valueOf(c));capture("01-chinese");
-        show("english","A little note for tomorrow.\n");for(char c:"hello".toCharArray())press(String.valueOf(c));capture("02-english");
-        show("taiwanese_english","台語白話字\n");for(char c:"liho".toCharArray())press(String.valueOf(c));capture("03-taiwanese");
-        show("japanese_english","日本語\n");for(char c:"arigatou".toCharArray())press(String.valueOf(c));capture("04-japanese");
-        show("chinese","山林與舊聚落\nTaiwan trails and history\n");for(char c:"jianianduan".toCharArray())press(String.valueOf(c));capture("05-geography");
+        example("01-chinese","chinese","週末一起去走走？\n好啊！先喝咖啡，再散步。\nSee you tomorrow!\n時間、地點，一次說清楚。\n","mingtian",false);
+        example("02-english","english","Thanks for your help!\nI can't wait to see you.\nLet's meet after work.\nHave a wonderful weekend.\n","thank",false);
+        example("03-taiwanese","taiwanese_english","lí hó　你好\nto-siā　多謝\nchài-hōe　再會\nchia̍h-pá--bōe　食飽未\n","liho",false);
+        example("04-japanese","japanese_english","おはようございます。\nこんにちは。Hello!\nありがとうございます。\nまた明日。See you tomorrow!\n","arigatou",false);
+        example("05-geography","chinese","山林裡，也有值得記住的名字。\n加年端社・加年端部落舊址\n八通關古道・八通關駐在所\nTaiwan trails & history\n","jianianduan",false);
+        example("06-trails","chinese","下次想認識的山林地名\n八通關古道・八通關山\n八通關駐在所・八通關山西峰\n舊路線，也有新的發現。\n","batongguan",true);
+        show("taiwanese_english","同一個候選，兩種輸出。\n點選白話字，長按輸出漢字。\n");
+        for(char c:"liho".toCharArray())press(String.valueOf(c));SystemClock.sleep(1200);press("Candidate lí hó");press("↵");
+        for(char c:"liho".toCharArray())press(String.valueOf(c));SystemClock.sleep(1200);press("Candidate lí hó",ViewConfiguration.getLongPressTimeout()+120);press("↵");
+        getInstrumentation().runOnMainSync(()->assertEquals("Both forms are actual keyboard output",currentNote+"lí hó\n你好\n",host.text.getText().toString()));
+        completedInteractions="Typed liho, tapped lí hó, Enter; typed liho, held lí hó to insert 你好, Enter. Both outputs asserted against the actual editor.";
+        typedInput="tosia";for(char c:typedInput.toCharArray())press(String.valueOf(c));capture("07-taiwanese-choices");
+        example("08-japanese-choices","japanese_english","気持ちを、ことばに。\nきもち・キモチ・気持ち\n日常のひとことを日本語で。\nA few words, every day.\n","kimochi",true);
     }
 }

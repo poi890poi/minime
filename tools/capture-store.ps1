@@ -1,4 +1,7 @@
-param([string]$SdkDir='E:\Android\Sdk')
+param([string]$SdkDir='E:\Android\Sdk',
+    [string]$Output='docs/play-publishing/screenshots-20260913',
+    [string[]]$Names=@('01-chinese','02-english','03-taiwanese','04-japanese','05-geography','06-trails','07-taiwanese-choices','08-japanese-choices'))
+New-Item -ItemType Directory -Force $Output,artifacts/play-materials | Out-Null
 . "$PSScriptRoot/phone-lease.ps1"
 Invoke-WithPhoneLease {
 $ErrorActionPreference='Stop'
@@ -11,11 +14,11 @@ $override=if($size -match 'Override size: (\d+x\d+)'){$Matches[1]}else{$null}
 try {
     & $adb -s $serial shell wm size 1080x1920
     if($LASTEXITCODE -ne 0){throw 'Could not set capture viewport'}
-    & "$PSScriptRoot/test-device.ps1" -Serial $serial -SdkDir $SdkDir -TestClass dev.minime.ime.StoreCaptureTest -Reports store-candidates.json
-    & $adb -s $serial pull /sdcard/Android/data/app.minime.keyboard/files/store-candidates.json artifacts/play-materials/store-candidates.json
+    & "$PSScriptRoot/test-device.ps1" -Serial $serial -SdkDir $SdkDir -TestClass dev.minime.ime.StoreCaptureTest -Reports store-candidates.json -TimeoutSeconds 300
+    & $adb -s $serial pull /sdcard/Android/data/app.minime.keyboard/files/store-candidates.json (Join-Path $Output 'store-candidates.json')
     if($LASTEXITCODE -ne 0){throw 'Missing visible-candidate capture evidence'}
-    foreach($name in @('01-chinese','02-english','03-taiwanese','04-japanese','05-geography')) {
-        & $adb -s $serial pull "/sdcard/Android/data/app.minime.keyboard/files/store-$name.png" "docs/play-publishing/kit/screenshots/$name.png"
+    foreach($name in $Names) {
+        & $adb -s $serial pull "/sdcard/Android/data/app.minime.keyboard/files/store-$name.png" (Join-Path $Output "$name.png")
         if($LASTEXITCODE -ne 0){throw "Missing screenshot $name"}
     }
 } finally {
@@ -29,6 +32,7 @@ try {
         & $adb -s $serial shell input keyevent KEYCODE_SLEEP
         Start-Sleep -Milliseconds 500
         $display=(& $adb -s $serial shell dumpsys display) -join "`n"
+        [IO.File]::WriteAllText((Join-Path $Output 'display-after.txt'),$display)
         if($LASTEXITCODE -ne 0 -or !(Test-PhoneDisplayOff $display)){throw 'Display OFF not verified'}
         Write-Output 'Display OFF verified after viewport restoration.'
     }
