@@ -705,6 +705,22 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         try { getInstrumentation().getUiAutomation().waitForIdle(300,3000); }
         catch(java.util.concurrent.TimeoutException e) { throw new AssertionError(e); }
     }
+    public void testFirstCharacterMixedWithMatchingPhrases() throws Exception {
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
+        assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
+        for(String[] sample:new String[][]{{"nihao","你","hao"},{"jintian","金","tian"},{"xianzai","先","zai"},{"zhongguo","中","guo"}}) {
+            clear();type(sample[0]);
+            Rect glyph=bounds("Candidate "+sample[1]),strip=bounds("Candidate list");
+            assertTrue("First character is tappable without expansion for "+sample[0],strip.contains(glyph.centerX(),glyph.centerY()));
+            long down=SystemClock.uptimeMillis();
+            event(down,MotionEvent.ACTION_DOWN,glyph.centerX(),glyph.centerY());
+            event(down,MotionEvent.ACTION_UP,glyph.centerX(),glyph.centerY());
+            expectText(sample[1]+sample[2]);node("Exact input "+sample[2]).recycle();
+            assertEquals("Only the chosen character is committed",sample[1].length(),android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText()));
+            click("Space");
+            assertTrue("Rest finishes after the chosen character",activity.text.getText().toString().startsWith(sample[1]));
+        }
+    }
     public void testMixedEnglishDefaultVisible() throws Exception {
         getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
         assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);

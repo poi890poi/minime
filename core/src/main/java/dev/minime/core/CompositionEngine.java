@@ -544,6 +544,20 @@ public final class CompositionEngine {
             candidates.add(1,candidates.remove(preferred));
             preferred=1;
         }
+        // Match the reference's mixed row: keep two leading phrase choices,
+        // then expose two first-character choices without changing Space.
+        // Only reorder existing, decoder-owned prefix spans; never construct text.
+        if(inputMode==InputMode.CHINESE && preferred==1 && !candidates.get(1).literal) {
+            List<Candidate> glyphs=new ArrayList<>();
+            for(int i=2;i<candidates.size() && glyphs.size()<2;) {
+                Candidate c=candidates.get(i);
+                if(partial(c) && c.text.codePointCount(0,c.text.length())==1
+                        && Character.UnicodeScript.of(c.text.codePointAt(0))==Character.UnicodeScript.HAN) {
+                    glyphs.add(candidates.remove(i));
+                } else i++;
+            }
+            candidates.addAll(Math.min(3,candidates.size()),glyphs);
+        }
     }
     private boolean focused(Candidate candidate) {
         return !inputMode.pack.isEmpty() && inputMode.pack.equals(candidate.pack);
