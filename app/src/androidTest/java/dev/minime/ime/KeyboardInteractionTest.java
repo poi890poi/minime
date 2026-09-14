@@ -26,8 +26,12 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
             SharedPreferences prefs=getInstrumentation().getTargetContext().getSharedPreferences(name,Context.MODE_PRIVATE);
             saved.put(name,new HashMap<>(prefs.getAll())); prefs.edit().clear().commit();
         }
-        // Legacy behavior cases keep their established decoder; defaults have a dedicated test.
-        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",false).commit();
+        // Legacy behavior cases keep their established configuration. Fresh-install
+        // defaults and explicit overrides are exercised by SettingsDefaultsTest.
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit()
+            .putBoolean("rime_pinyin",false).putBoolean("phrase_learning",false)
+            .putBoolean("addon_taiwan",false).putBoolean("addon_geography",false)
+            .putBoolean("addon_japanese",false).putBoolean("addon_poj",false).commit();
         zhuyin=false;
         activity=getActivity();
         DictionaryRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
@@ -305,9 +309,9 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         assertEquals("這個 pronunciation 不對",activity.text.getText().toString());
         capture("review-zhuyin");
     }
-    public void testDefaultRimeAndPartialSelection() throws Exception {
+    public void testExplicitRimeAndPartialSelection() throws Exception {
         SharedPreferences prefs=getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE);
-        prefs.edit().remove("rime_pinyin").commit();assertTrue("Rime enabled when no preference exists",RimeBackend.enabled(activity));
+        prefs.edit().putBoolean("rime_pinyin",true).commit();assertTrue("Explicit Rime preference is honored",RimeBackend.enabled(activity));
         focus(activity.url);focus(activity.text);
         // Automatic multi-entry assembly is intentionally disabled. Preserve the
         // sentence target through explicit stored selections instead.
@@ -706,7 +710,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         catch(java.util.concurrent.TimeoutException e) { throw new AssertionError(e); }
     }
     public void testFirstCharacterMixedWithMatchingPhrases() throws Exception {
-        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",true).commit();
         assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
         for(String[] sample:new String[][]{{"nihao","你","hao"},{"jintian","金","tian"},{"xianzai","先","zai"},{"zhongguo","中","guo"}}) {
             clear();type(sample[0]);
@@ -722,7 +726,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         }
     }
     public void testMixedEnglishDefaultVisible() throws Exception {
-        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",true).commit();
         assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
         for(String raw:new String[]{"hello","time","thanks","morning"}) {
             clear();type(raw);
@@ -746,7 +750,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         try {assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(e,true));}finally{e.recycle();}
     }
     public void testPinyinThumbOverlapKeepsEveryLetterComposing() throws Throwable {
-        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",true).commit();
         assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
         Map<Character,Rect> keys=new HashMap<>();for(char c='a';c<='z';c++)keys.put(c,bounds(String.valueOf(c)));
         int ordinal=0,samples=0;
@@ -777,7 +781,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         capture("typing-overlap-final");
     }
     protected void humanReplay(String split) throws Throwable {
-        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",true).commit();
         assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
         String fixture;
         try(java.io.InputStream input=getInstrumentation().getContext().getAssets().open("human-input.json")) {
@@ -870,7 +874,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         capture("stable-height-final");
     }
     public void testLearnedChineseDoesNotReplaceEnglishContinuation() throws Exception {
-        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().remove("rime_pinyin").commit();
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",true).commit();
         assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
         type("you");click("Candidate 有");expectText("有");clear();focus(activity.url);focus(activity.text);
         type("see you tomorrow ");expectText("see you tomorrow ");

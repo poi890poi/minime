@@ -31,8 +31,8 @@ public final class SettingsActivity extends Activity {
         layout.setChecked(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("zhuyin",false));
         layout.setOnCheckedChangeListener((b,value)->getSharedPreferences("settings",MODE_PRIVATE).edit().putBoolean("zhuyin",value).apply()); body.addView(layout);
         text("Typing",21);
-        option("Use Rime for Pinyin phrase prediction", "rime_pinyin",true);
-        text("Rime is on by default and offers stronger sentence prediction in our tests, with different candidate ordering. Turn it off to use the original MinIME decoder. It works offline and does not keep its own typing history.",16);
+        option("Use Rime for Pinyin phrase prediction", "rime_pinyin",false);
+        text("The original MinIME decoder is used by default. Enable Rime to use its alternative Pinyin phrase candidates and partial-phrase selection. Both work offline; Rime does not keep its own typing history.",16);
         option("Correct English spelling on Space", "english_correction",false);
         text("Missing apostrophes are restored on Space in ordinary text fields even with spelling correction off. Valid source-dictionary spellings stay unchanged; Backspace immediately restores your original input. Pinyin restores annotated English contractions, avoiding possessive guesses over Chinese initials. Exact custom and enabled-pack matches appear before decoder guesses.",16);
         option("Double Space inserts a period in English", "double_space_period",true);
@@ -48,8 +48,8 @@ public final class SettingsActivity extends Activity {
         text("Local dictionary",21);
         option("Remember Taiwanese and Japanese candidate choices", "focused_choice_learning",true);
         text("Explicit candidate taps and holds improve ordering for the same typed reading in that language. Space does not train itself. Han and POJ alternatives share one preference. Turning this off hides these preferences and stops updates; Clear learned choices removes them.",16);
-        option("Learn repeated Chinese phrases on this device", "phrase_learning",false);
-        text("After three accepted occurrences, a phrase becomes an extra candidate for the same reading. Only accepted Chinese segments are observed, including parts you select separately. Edits and field changes break the chain. No surrounding text is collected. Up to 512 reading/phrase pairs are retained; turning this off stops learning and hides these suggestions.",16);
+        option("Learn repeated Chinese phrases on this device", "phrase_learning",true);
+        text("Enabled by default. After three accepted occurrences, a phrase becomes an extra candidate for the same reading. Only accepted Chinese segments are observed, including parts you select separately. Edits and field changes break the chain. No surrounding text is collected. Up to 512 reading/phrase pairs are retained; turning this off stops learning and hides these suggestions.",16);
         button("View learned phrases",()-> {
             String saved=getSharedPreferences("learning",MODE_PRIVATE).getString("phrases_v1","");
             new android.app.AlertDialog.Builder(this).setTitle("Reading · phrase · occurrences")
@@ -57,13 +57,13 @@ public final class SettingsActivity extends Activity {
                 .setPositiveButton("Close",null).setNeutralButton("Clear phrase learning",(d,w)->getSharedPreferences("learning",MODE_PRIVATE).edit().remove("phrases_v1").apply()).show();
         });
         text("Optional dictionaries",21);
-        option("Taiwan names, culture and local vocabulary", "addon_taiwan",false);
-        option("Taiwan geography and history · Rudy Map / OSM", "addon_geography",false);
-        option("Enable 日 mode · Japanese + English", "addon_japanese",false);
-        option("Enable 台 mode · Taiwanese (POJ) + English", "addon_poj",false);
+        option("Taiwan names, culture and local vocabulary", "addon_taiwan",true);
+        option("Taiwan geography and history · Rudy Map / OSM", "addon_geography",true);
+        option("Enable 日 mode · Japanese + English", "addon_japanese",true);
+        option("Enable 台 mode · Taiwanese (POJ) + English", "addon_poj",true);
         option("Show Taiwanese Han alternatives · hold a candidate to insert its second line", "paired_taiwanese",true);
         option("Prefer Taiwanese Han output · tap Han, hold for POJ", "taiwanese_han_primary",false);
-        text("Optional modes and dictionaries work offline and are off by default. 中 uses Chinese and English. 台 uses Taiwanese + English; 日 uses Japanese + English. Tap 中 for Chinese. Focused matches lead, including incomplete readings and collisions with English words. English-focused mode queries neither Chinese nor third-language packs. Taiwan culture and geography options apply only when Chinese is one of the two languages. Disabling an optional mode returns its mixed-mode selection to 中; existing pack settings and manual entries are retained. Full, initial and mixed reading matches follow the shared matching rules. Space accepts the dark highlighted candidate; prefix choices that consume only part of your input require a tap.",16);
+        text("These modes and dictionaries work offline and are enabled by default. Each can be turned off separately. 中 uses Chinese and English. 台 uses Taiwanese + English; 日 uses Japanese + English. Tap 中 for Chinese. Focused matches lead, including incomplete readings and collisions with English words. English-focused mode queries neither Chinese nor third-language packs. Taiwan culture and geography options apply only when Chinese is one of the two languages. Disabling an optional mode returns its mixed-mode selection to 中; existing pack settings and manual entries are retained. Full, initial and mixed reading matches follow the shared matching rules. Space accepts the dark highlighted candidate; prefix choices that consume only part of your input require a tap.",16);
         text("Taiwanese uses the complete POJ spelling system, including ch/chh, oe/oa, o͘, ⁿ and tone marks. On the letter board, omit tone numbers, spaces and hyphens; type oo for o͘ and nn for ⁿ. Original numbered POJ keys are retained in the source data. Everyday vocabulary and short examples are selected automatically from source dictionaries, with eligible source variants retained. This is not a full Taiwanese decoder.",16);
         text("Japanese mode prioritizes Japanese matches and offers common vocabulary across parts of speech, single hiragana and katakana, and 500 kanji selected by source frequency rank. The raw candidate keeps your Romanization. Source commonness and newspaper frequency are imperfect guides to everyday use. This does not provide Japanese grammar or sentence conversion.",16);
         text("The geography pack systematically imports Rudy Map's hiking, nature, settlement, waterway and historical-site categories. Dataset version, licence, extraction rules and coverage are recorded together. Available source Pinyin/Zhuyin takes precedence; other readings use existing dictionary units. Missing or ambiguous readings are reported rather than guessed.",16);
@@ -116,7 +116,7 @@ public final class SettingsActivity extends Activity {
         button("Privacy policy",()->showAsset("privacy.txt","MinIME privacy policy"));
         text("Fully offline. No network permission, keystroke logs, telemetry, or automatic cloud backup. Explicit choices are learned locally. English word-pair learning and recent emoji are optional and off by default. Password fields use direct input without composition, suggestions or learning. Private fields do not access personalized history. Restart recovery briefly checks only the keyboard's own composing text, up to 96 characters; it does not collect the rest of the editor.",16);
         text("About this prototype",21);
-        text("Independent implementation; not a Google product. Rime Pinyin is on by default and supports choosing part of a phrase. Long abbreviated sentences still need work. Language foundations: Rime, McBopomofo, AOSP LatinIME, Universal Dependencies and Unicode. See notices for complete sources, authors and licenses.",16);
+        text("Independent implementation; not a Google product. Optional Rime Pinyin supports choosing part of a phrase. Long abbreviated sentences still need work. Language foundations: Rime, McBopomofo, AOSP LatinIME, Universal Dependencies and Unicode. See notices for complete sources, authors and licenses.",16);
         button("Open-source notices",()-> {
             try(java.io.InputStream in=getAssets().open("NOTICE.txt")) {
                 java.io.ByteArrayOutputStream out=new java.io.ByteArrayOutputStream(); byte[] b=new byte[4096]; int n;

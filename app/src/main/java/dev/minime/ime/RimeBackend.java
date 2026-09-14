@@ -11,7 +11,7 @@ import java.util.concurrent.*;
 final class RimeBackend {
     private static CompletableFuture<Boolean> loading;
     private static volatile boolean available;
-    static boolean enabled(Context context) {return context.getSharedPreferences("settings",Context.MODE_PRIVATE).getBoolean("rime_pinyin",true);}
+    static boolean enabled(Context context) {return context.getSharedPreferences("settings",Context.MODE_PRIVATE).getBoolean("rime_pinyin",false);}
     static synchronized CompletableFuture<Boolean> load(Context context) {
         if(loading==null) {
             Context app=context.getApplicationContext();

@@ -58,7 +58,7 @@ final class AddonRepository {
     static Set<String> enabled(Context context) {
         SharedPreferences settings=context.getSharedPreferences("settings",Context.MODE_PRIVATE);
         Set<String> enabled=new HashSet<>();
-        for(String pack:Arrays.asList("taiwan","japanese","poj","geography"))if(settings.getBoolean("addon_"+pack,false))enabled.add(pack);
+        for(String pack:Arrays.asList("taiwan","japanese","poj","geography"))if(settings.getBoolean("addon_"+pack,true))enabled.add(pack);
         return enabled;
     }
 }

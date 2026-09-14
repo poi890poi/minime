@@ -17,12 +17,12 @@ final class LocalLearning implements Learning {
         return phraseCache;
     }
     public void observePhrase(String reading,String output) {
-        if(!settings.getBoolean("phrase_learning",false))return;
+        if(!settings.getBoolean("phrase_learning",true))return;
         PhraseLexicon lexicon=phraseLexicon();
         lexicon.observe(reading,output);phraseSource=lexicon.serialize();preferences.edit().putString("phrases_v1",phraseSource).apply();
     }
     public List<Candidate> phrases(String raw) {
-        if(!settings.getBoolean("phrase_learning",false))return Collections.emptyList();
+        if(!settings.getBoolean("phrase_learning",true))return Collections.emptyList();
         return phraseLexicon().lookup(raw);
     }
     public void rememberEnglish(String context,String word) {

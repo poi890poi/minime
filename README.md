@@ -4,6 +4,14 @@
 
 An offline Android IME with Pinyin and English as primary layouts, plus Taiwan Zhuyin. Chinese mode also supports mixed English. This repository implements the functional prototype in the product specification. It does **not** claim verified equivalence to legacy Google Zhuyin or production language-model quality.
 
+Current defaults use the original MinIME Pinyin decoder (Rime off), with Taiwan
+vocabulary, Rudy geography, Taiwanese and Japanese modes enabled. Repeated Chinese
+phrase learning, Taiwanese/Japanese choice learning, Taiwanese Han alternatives,
+and double-Space periods are on. English autocorrection, English word-pair learning,
+recent emoji history, Zhuyin layout, and Han-first Taiwanese output are off.
+Explicitly saved settings are preserved. See the [complete defaults and verification](docs/default-settings/README.md).
+Version notes below describe the defaults at the time of each release.
+
 The [September 7 comparative review](docs/GOOGLE_MINIME_GAP_REVIEW.md) covers 90 paired Google/MinIME scenarios, targeted rechecks, screenshots, and prioritized remaining gaps. Production behavior was held unchanged during that review.
 
 Version **0.7.4** uses Chinese/English, Taiwanese/English and Japanese/English
