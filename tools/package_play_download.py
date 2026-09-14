@@ -40,7 +40,7 @@ def package(output,checks,version):
         assert len(notes[locale])<=500 and '\ufffd' not in notes[locale]
     note_text='\n\n'.join(f'<{locale}>\n{text}\n</{locale}>' for locale,text in notes.items())+'\n'
     note_name=f'MinIME-{version}-release-notes.txt'
-    (output/note_name).write_text(note_text,encoding='utf-8-sig')
+    (output/note_name).write_text(note_text,encoding='utf-8-sig',newline='\n')
     metadata={'version':version,'version_code':int(manifest.attrib[ns+'versionCode']),
               'package':'app.minime.keyboard','source_commit':revision,
               'source_url':f'https://github.com/poi890poi/minime/tree/{revision}',
