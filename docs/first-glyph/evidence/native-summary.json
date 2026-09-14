@@ -1,0 +1,29 @@
+{
+  "corpus_sha256": "14c186c6589c4081f709f6aa237bb9a0d61a0d5ad32754dad8d72976d478004d",
+  "before_sha256": "dcfda13ec36a47edbd37953dd26a0212f35b2b21bff6f73d7cd10b62b52c23c6",
+  "after_sha256": "a958e942c2233ce74f052821219e3f072cf0e3305a0b9811afb11f75bb581b79",
+  "queries": 4237,
+  "removed_candidates": 0,
+  "changed_full_order": 0,
+  "gained_first_character": 1437,
+  "lost_first_character": 0,
+  "constructed_after": 0,
+  "before": {
+    "with_first_character": 2492,
+    "total_candidates": 108309,
+    "latency_us": {
+      "50": 1974.2,
+      "95": 3211.3,
+      "99": 4493.2
+    }
+  },
+  "after": {
+    "with_first_character": 3929,
+    "total_candidates": 128095,
+    "latency_us": {
+      "50": 2087.5,
+      "95": 4411.6,
+      "99": 5614.3
+    }
+  }
+}

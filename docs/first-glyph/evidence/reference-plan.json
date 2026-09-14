@@ -1,0 +1,104 @@
+[
+  {
+    "actions": [
+      {
+        "capture": true,
+        "type": "nihao",
+        "label": "strip"
+      },
+      {
+        "key": "EXPAND",
+        "capture": true,
+        "label": "expanded"
+      }
+    ],
+    "mode": "pinyin",
+    "field": "private",
+    "id": "nihao"
+  },
+  {
+    "actions": [
+      {
+        "capture": true,
+        "type": "jintian",
+        "label": "strip"
+      },
+      {
+        "key": "EXPAND",
+        "capture": true,
+        "label": "expanded"
+      }
+    ],
+    "mode": "pinyin",
+    "field": "private",
+    "id": "jintian"
+  },
+  {
+    "actions": [
+      {
+        "capture": true,
+        "type": "xianzai",
+        "label": "strip"
+      },
+      {
+        "key": "EXPAND",
+        "capture": true,
+        "label": "expanded"
+      }
+    ],
+    "mode": "pinyin",
+    "field": "private",
+    "id": "xianzai"
+  },
+  {
+    "actions": [
+      {
+        "capture": true,
+        "type": "zhongguo",
+        "label": "strip"
+      },
+      {
+        "key": "EXPAND",
+        "capture": true,
+        "label": "expanded"
+      }
+    ],
+    "mode": "pinyin",
+    "field": "private",
+    "id": "zhongguo"
+  },
+  {
+    "actions": [
+      {
+        "capture": true,
+        "type": "woaini",
+        "label": "strip"
+      },
+      {
+        "key": "EXPAND",
+        "capture": true,
+        "label": "expanded"
+      }
+    ],
+    "mode": "pinyin",
+    "field": "private",
+    "id": "woaini"
+  },
+  {
+    "actions": [
+      {
+        "capture": true,
+        "type": "zhongyangshebaodao",
+        "label": "strip"
+      },
+      {
+        "key": "EXPAND",
+        "capture": true,
+        "label": "expanded"
+      }
+    ],
+    "mode": "pinyin",
+    "field": "private",
+    "id": "zhongyangshebaodao"
+  }
+]

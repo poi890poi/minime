@@ -1,0 +1,23 @@
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+Input method app.minime.keyboard/dev.minime.ime.MiniMeService: already enabled for user #0
+Input method app.minime.keyboard/dev.minime.ime.MiniMeService selected for user #0
+
+dev.minime.ime.KeyboardInteractionTest:...
+dev.minime.ime.RimeIntegrationTest:...
+Test results for InstrumentationTestRunner=......
+Time: 31.174
+
+OK (6 tests)
+
+
+/sdcard/Android/data/app.minime.keyboard/files/rime-stress.json: 1 file pulled, 0 skipped. 0.2 MB/s (442 bytes in 0.002s)
+adb: error: failed to stat remote object '/sdcard/Android/data/app.minime.keyboard/files/rime-results.json': No such file or directory
+Test report unavailable: rime-results.json
+E:\workspace\minime\artifacts\device-tests\639d6294-e147-4a23-b0b1-ae820f450be7\settings.xml: 1 file pushed, 0 skipped. 0.0 MB/s (7 bytes in 0.000s)
+E:\workspace\minime\artifacts\device-tests\639d6294-e147-4a23-b0b1-ae820f450be7\learning.xml: 1 file pushed, 0 skipped. 0.0 MB/s (7 bytes in 0.000s)
+Input method com.samsung.android.honeyboard/.service.HoneyBoardService selected for user #0
+Cleanup verified: preferences, previous IME, display OFF.
+Session evidence: E:\workspace\minime\artifacts\device-tests\639d6294-e147-4a23-b0b1-ae820f450be7

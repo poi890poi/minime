@@ -1,0 +1,5 @@
+PASS prefix-index parity: 768 generated queries against frozen full-sort reference
+Exception in thread "main" java.lang.AssertionError: first character stays reachable despite 24 phrases expected [甲] actual [詞組2]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.VisibleDefaultRegression.run(VisibleDefaultRegression.java:32)
+	at dev.minime.core.Regression.main(Regression.java:50)

@@ -1,0 +1,90 @@
+[
+  {
+    "field": "private",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "strip",
+        "capture": true
+      },
+      {
+        "label": "selected-first",
+        "choose": "你",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted-rest",
+        "capture": true
+      }
+    ],
+    "id": "nihao"
+  },
+  {
+    "field": "private",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "jintian",
+        "label": "strip",
+        "capture": true
+      },
+      {
+        "label": "selected-first",
+        "choose": "金",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted-rest",
+        "capture": true
+      }
+    ],
+    "id": "jintian"
+  },
+  {
+    "field": "private",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "xianzai",
+        "label": "strip",
+        "capture": true
+      },
+      {
+        "label": "selected-first",
+        "choose": "先",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted-rest",
+        "capture": true
+      }
+    ],
+    "id": "xianzai"
+  },
+  {
+    "field": "private",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "zhongguo",
+        "label": "strip",
+        "capture": true
+      },
+      {
+        "label": "selected-first",
+        "choose": "中",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted-rest",
+        "capture": true
+      }
+    ],
+    "id": "zhongguo"
+  }
+]
