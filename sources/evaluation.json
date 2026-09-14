@@ -3,6 +3,52 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "kalq-layout-imprecision-20260914",
+      "source_ids": [
+        "ud-gum-evaluation"
+      ],
+      "decoder_source_ids": [
+        "aosp"
+      ],
+      "genre": [
+        "all-15-existing-gum-genres",
+        "conversation",
+        "essay"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "Same complete eligible token stream, dictionary, noise profiles and seeds as the frozen layout pilot. Two KALQ adaptations preserve published block letter/space-hole positions with rectangular cells, at 30 and 40 mm height; QWERTY rerun unchanged.",
+      "files": [
+        "docs/two-thumb-english/kalq/PLAN.md",
+        "docs/two-thumb-english/kalq/RESULTS.md",
+        "docs/two-thumb-english/kalq/DECISION.md",
+        "docs/two-thumb-english/kalq/manifest.json",
+        "docs/two-thumb-english/kalq/summary.json.gz",
+        "docs/two-thumb-english/kalq/documents.jsonl.gz",
+        "docs/two-thumb-english/kalq/index.html",
+        "tools/simulate_kalq_layout.py",
+        "tools/report_kalq_layout.py"
+      ],
+      "report_by": [
+        "layout",
+        "width-mm",
+        "height-mm",
+        "noise-profile",
+        "genre",
+        "seed",
+        "decoder",
+        "document",
+        "incorrect-words",
+        "attempted-words",
+        "harmful-correction"
+      ],
+      "leakage": "No changes to original decoder, priors or production vocabulary. Published KALQ geometry is not optimized against the corpus. Reference words score outcomes only.",
+      "limitations": "Letter-only assumed-noise screen, not complete KALQ behavior. Internal space activations are excluded despite preserved space holes. Extra-height variant is not equal-height. Corpus already consumed; no human accuracy, WPM or latency claim.",
+      "geometry_source": "https://www.pokristensson.com/pubs/OulasvirtaEtAlCHI2013.pdf",
+      "geometry_source_figure": 1,
+      "plan_sha256": "82fff2693e2c8e905e639d57266e1c7156e138cc137cb0136fa4125233047477"
+    },
+    {
       "id": "two-thumb-layout-imprecision-20260914",
       "source_ids": [
         "ud-gum-evaluation"

@@ -6,6 +6,8 @@ Completed follow-ups: [overlap fix](OVERLAP.md) and the
 [four-layout imprecision simulation](simulation/RESULTS.md), with
 [layout diagrams](simulation/index.html) and [decisions](simulation/DECISION.md).
 The latter is synthetic sensitivity evidence, not a human typing benchmark.
+The subsequent [KALQ comparison](kalq/RESULTS.md) adds two phone-width adaptations
+of the published two-thumb layout, with explicit word-error denominators.
 
 ## Recommendation
 

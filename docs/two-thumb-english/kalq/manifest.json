@@ -1,0 +1,229 @@
+{
+  "code_sha256": "9b85020698912fef253eec0757c9a6503849e29b6fae93e959cd0a032331a180",
+  "plan_sha256": "bbe54c3df279e49719a69ce402f8ea3d7605517e092ce79c6bee36441ede7250",
+  "input_sha256": {
+    "app\\src\\main\\assets\\en_us.tsv": "00fde127ac14cac7577b54b6f8a59b119456c3890c06667361bac5849dea6ff2",
+    "docs\\conversation-ranking\\corpus\\gum-test.tsv": "eade8de35b75a5124f74d3a9bec755a87fde50fab0de298523689763c0257faa"
+  },
+  "numpy": "2.3.5",
+  "rows": {
+    "qwerty": [
+      "qwertyuiop",
+      "asdfghjkl",
+      "zxcvbnm"
+    ],
+    "kalq-30mm": [
+      "mbwhpxcryszdnfvgtojieukalq"
+    ],
+    "kalq-40mm": [
+      "mbwhpxcryszdnfvgtojieukalq"
+    ]
+  },
+  "widths_mm": [
+    60,
+    70
+  ],
+  "profiles": [
+    "center",
+    "scatter-1.5",
+    "scatter-2.5",
+    "thumb-bias",
+    "slips"
+  ],
+  "seeds": [
+    20260914,
+    20260915,
+    20260916
+  ],
+  "documents": [
+    {
+      "id": "GUM_academic_discrimination",
+      "genre": "en-gum-academic",
+      "index": 0
+    },
+    {
+      "id": "GUM_academic_eegimaa",
+      "genre": "en-gum-academic",
+      "index": 1
+    },
+    {
+      "id": "GUM_bio_dvorak",
+      "genre": "en-gum-bio",
+      "index": 2
+    },
+    {
+      "id": "GUM_bio_jespersen",
+      "genre": "en-gum-bio",
+      "index": 3
+    },
+    {
+      "id": "GUM_conversation_lambada",
+      "genre": "en-gum-conversation",
+      "index": 4
+    },
+    {
+      "id": "GUM_conversation_retirement",
+      "genre": "en-gum-conversation",
+      "index": 5
+    },
+    {
+      "id": "GUM_court_mitigation",
+      "genre": "en-gum-court",
+      "index": 6
+    },
+    {
+      "id": "GUM_essay_fear",
+      "genre": "en-gum-essay",
+      "index": 7
+    },
+    {
+      "id": "GUM_fiction_falling",
+      "genre": "en-gum-fiction",
+      "index": 8
+    },
+    {
+      "id": "GUM_fiction_teeth",
+      "genre": "en-gum-fiction",
+      "index": 9
+    },
+    {
+      "id": "GUM_interview_hill",
+      "genre": "en-gum-interview",
+      "index": 10
+    },
+    {
+      "id": "GUM_interview_libertarian",
+      "genre": "en-gum-interview",
+      "index": 11
+    },
+    {
+      "id": "GUM_letter_mandela",
+      "genre": "en-gum-letter",
+      "index": 12
+    },
+    {
+      "id": "GUM_news_nasa",
+      "genre": "en-gum-news",
+      "index": 13
+    },
+    {
+      "id": "GUM_news_sensitive",
+      "genre": "en-gum-news",
+      "index": 14
+    },
+    {
+      "id": "GUM_podcast_bezos",
+      "genre": "en-gum-podcast",
+      "index": 15
+    },
+    {
+      "id": "GUM_speech_austria",
+      "genre": "en-gum-speech",
+      "index": 16
+    },
+    {
+      "id": "GUM_speech_newzealand",
+      "genre": "en-gum-speech",
+      "index": 17
+    },
+    {
+      "id": "GUM_textbook_chemistry",
+      "genre": "en-gum-textbook",
+      "index": 18
+    },
+    {
+      "id": "GUM_textbook_union",
+      "genre": "en-gum-textbook",
+      "index": 19
+    },
+    {
+      "id": "GUM_vlog_london",
+      "genre": "en-gum-vlog",
+      "index": 20
+    },
+    {
+      "id": "GUM_vlog_studying",
+      "genre": "en-gum-vlog",
+      "index": 21
+    },
+    {
+      "id": "GUM_voyage_oakland",
+      "genre": "en-gum-voyage",
+      "index": 22
+    },
+    {
+      "id": "GUM_voyage_vavau",
+      "genre": "en-gum-voyage",
+      "index": 23
+    },
+    {
+      "id": "GUM_whow_cactus",
+      "genre": "en-gum-whow",
+      "index": 24
+    },
+    {
+      "id": "GUM_whow_mice",
+      "genre": "en-gum-whow",
+      "index": 25
+    }
+  ],
+  "eligible_tokens": 20096,
+  "lexicon_words": 42025,
+  "oov_tokens": 738,
+  "excluded_tokens_by_genre": {
+    "en-gum-academic": 1,
+    "en-gum-bio": 8,
+    "en-gum-conversation": 65,
+    "en-gum-court": 17,
+    "en-gum-fiction": 38,
+    "en-gum-interview": 5,
+    "en-gum-letter": 4,
+    "en-gum-news": 22,
+    "en-gum-podcast": 20,
+    "en-gum-speech": 8,
+    "en-gum-textbook": 17,
+    "en-gum-vlog": 74,
+    "en-gum-voyage": 22,
+    "en-gum-whow": 4
+  },
+  "role": "previously evaluated regression; synthetic imprecision",
+  "fields": [
+    "words",
+    "characters",
+    "raw_key_errors",
+    "raw_word_errors",
+    "raw_valid_word_errors",
+    "oov_words",
+    "word_errors",
+    "damaged_correct_words",
+    "recovered_errors",
+    "recovered_valid_word_errors",
+    "unavailable_words"
+  ],
+  "runtime": "desktop Python experiment; not Android latency",
+  "extension_code_sha256": "a02b730d1723f24f06e796fbd009a3e5b20620afdc979b225a27d7e2cb71bb11",
+  "extension_plan_sha256": "82fff2693e2c8e905e639d57266e1c7156e138cc137cb0136fa4125233047477",
+  "blocks": [
+    [
+      "mbwh",
+      "p xc",
+      "rysz",
+      "dnfv"
+    ],
+    [
+      "gtoj",
+      "ie u",
+      "kalq"
+    ]
+  ],
+  "heights_mm": {
+    "kalq-30mm": 30,
+    "kalq-40mm": 40
+  },
+  "gap_mm": 8,
+  "published_layout_source": "https://www.pokristensson.com/pubs/OulasvirtaEtAlCHI2013.pdf",
+  "source_figure": 1,
+  "source_pdf_sha256": "bd6f4feefcc2a7980e49a6699dd7f205f12327512170dee3a58a9595bbbf75d5",
+  "geometry_rule": "Four columns each block, fixed 8 mm gap, top-aligned blocks; holes retained; no within-block row stagger.",
+  "omitted_behavior": "Internal space-key activation and word segmentation, motor learning, movement time and physical grip are not simulated."
+}
