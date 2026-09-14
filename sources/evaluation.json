@@ -3,6 +3,52 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "two-thumb-layout-imprecision-20260914",
+      "source_ids": [
+        "ud-gum-evaluation"
+      ],
+      "decoder_source_ids": ["aosp"],
+      "genre": [
+        "all-15-existing-gum-genres",
+        "conversation",
+        "essay"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "All existing GUM TSV tokens matching lowercase ASCII letters, length 1-20; entire apostrophe tokens excluded and counted. All layouts, widths, profiles and seeds frozen before results. No production import.",
+      "files": [
+        "docs/two-thumb-english/simulation/PLAN.md",
+        "docs/conversation-ranking/corpus/gum-test.tsv",
+        "tools/simulate_english_layouts.py",
+        "tools/report_english_layouts.py",
+        "docs/two-thumb-english/simulation/RESULTS.md",
+        "docs/two-thumb-english/simulation/DECISION.md",
+        "docs/two-thumb-english/simulation/manifest.json",
+        "docs/two-thumb-english/simulation/summary.json.gz",
+        "docs/two-thumb-english/simulation/documents.jsonl.gz",
+        "docs/two-thumb-english/simulation/valid-word-confusions.json"
+      ],
+      "report_by": [
+        "layout",
+        "width-mm",
+        "noise-profile",
+        "genre",
+        "seed",
+        "decoder",
+        "document",
+        "vocabulary-coverage",
+        "valid-word-errors",
+        "harmful-replacements"
+      ],
+      "leakage": "Decoder sees tap coordinates, geometry, observed length and production lexicon only. Expected text scores outcomes. GUM does not supply word priors, layout weights or thresholds.",
+      "limitations": "Synthetic contact distributions, letter-only adapted layouts, oracle word boundaries. No measured human accuracy, WPM, Android latency or fresh holdout.",
+      "input_sha256": {
+        "docs\\conversation-ranking\\corpus\\gum-test.tsv": "eade8de35b75a5124f74d3a9bec755a87fde50fab0de298523689763c0257faa",
+        "app\\src\\main\\assets\\en_us.tsv": "00fde127ac14cac7577b54b6f8a59b119456c3890c06667361bac5849dea6ff2",
+        "docs\\two-thumb-english\\simulation\\PLAN.md": "bbe54c3df279e49719a69ce402f8ea3d7605517e092ce79c6bee36441ede7250"
+      }
+    },
+    {
       "id": "null-review-20260912",
       "source_ids": ["taiwan-md", "mcbopomofo", "ud-gum-evaluation"],
       "genre": ["taiwan-md-prose", "english-conversation", "english-essay"],

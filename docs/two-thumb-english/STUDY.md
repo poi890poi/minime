@@ -2,6 +2,11 @@
 
 Research date: 2026-09-14. MinIME baseline: `8a4a690`.
 
+Completed follow-ups: [overlap fix](OVERLAP.md) and the
+[four-layout imprecision simulation](simulation/RESULTS.md), with
+[layout diagrams](simulation/index.html) and [decisions](simulation/DECISION.md).
+The latter is synthetic sensitivity evidence, not a human typing benchmark.
+
 ## Recommendation
 
 Keep familiar, full-width QWERTY as the shipping default and experimental baseline,
