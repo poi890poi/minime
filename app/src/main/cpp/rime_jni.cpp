@@ -6,6 +6,7 @@
 #include <rime/menu.h>
 #include <rime/candidate.h>
 #include "rime_candidate_origin.h"
+#include "rime_prefix_choices.h"
 #include <mutex>
 #include <string>
 #include <vector>
@@ -48,6 +49,7 @@ extern "C" JNIEXPORT jobjectArray JNICALL
 Java_dev_minime_ime_RimeBackend_query(JNIEnv* env,jclass,jstring raw,jboolean includePrefixes) {
     std::lock_guard<std::mutex> guard(lock);
     std::vector<std::string> words,prefixes;
+    MinimePrefixChoices characterChoices;
     auto input=utf8(env,raw);
     try {
     if(ready && !input.empty() && input.size()<=96) {
@@ -62,11 +64,13 @@ Java_dev_minime_ime_RimeBackend_query(JNIEnv* env,jclass,jstring raw,jboolean in
                     auto candidate=segment.menu->GetCandidateAt(i);
                     if(!candidate)break;
                     if(candidate->start()!=0 || candidate->end()==0 || candidate->end()>input.size())continue;
+                    if(includePrefixes)characterChoices.observe(candidate,input.size());
                     if(candidate->end()==input.size() && words.size()<24)
                         words.push_back(minimeCandidateRecord(candidate));
                     else if(includePrefixes && candidate->end()<input.size() && prefixes.size()<12)
                         prefixes.push_back(minimeCandidateRecord(candidate));
                 }
+                if(includePrefixes)characterChoices.append(api,input,prefixes);
             }
         }
     }

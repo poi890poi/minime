@@ -9,6 +9,7 @@
 #include <rime/candidate.h>
 #include <rime/gear/translator_commons.h>
 #include "../app/src/main/cpp/rime_candidate_origin.h"
+#include "../app/src/main/cpp/rime_prefix_choices.h"
 #include <iostream>
 #include <iomanip>
 #include <chrono>
@@ -59,6 +60,7 @@ int main(int argc,char** argv) {
         }
         auto start=std::chrono::steady_clock::now();
         std::vector<std::string> full,prefix;
+        MinimePrefixChoices characterChoices;
         auto id=api->create_session();api->select_schema(id,"luna_pinyin");api->set_input(id,input.c_str());
         RIME_STRUCT(RimeContext,apiContext);
         if(!api->get_context(id,&apiContext))return 4;
@@ -74,6 +76,7 @@ int main(int argc,char** argv) {
                         if(c->text()!=apiContext.menu.candidates[i].text)return 6;
                         if(android) {
                             if(c->start()!=0 || c->end()==0 || c->end()>input.size())continue;
+                            characterChoices.observe(c,input.size());
                             if(c->end()==input.size() && full.size()<24)full.push_back(minimeCandidateRecord(c));
                             else if(c->end()<input.size() && prefix.size()<12)prefix.push_back(minimeCandidateRecord(c));
                             continue;
@@ -87,6 +90,7 @@ int main(int argc,char** argv) {
                 }
             }
         }
+        if(android)characterChoices.append(api,input,prefix);
         api->free_context(&apiContext);api->destroy_session(id);
         if(android) {
             size_t preview=std::min<size_t>(3,prefix.size());
