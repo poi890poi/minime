@@ -3,6 +3,31 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "compact-layout-imprecision-20260914",
+      "source_ids": ["ud-gum-evaluation"],
+      "decoder_source_ids": ["aosp"],
+      "genre": ["all-15-existing-gum-genres", "conversation", "essay"],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "Same pinned corpus, vocabulary, profiles and matched seeds as the earlier pilot. Freeze gap removal, 9/8/9 reflow and aligned-versus-staggered packing before evaluation. Reproduce QWERTY and split KALQ; reuse pinned Colemak and Dvorak results.",
+      "files": [
+        "docs/two-thumb-english/compact/PLAN.md",
+        "docs/two-thumb-english/compact/RESULTS.md",
+        "docs/two-thumb-english/compact/DECISION.md",
+        "docs/two-thumb-english/compact/manifest.json",
+        "docs/two-thumb-english/compact/summary.json.gz",
+        "docs/two-thumb-english/compact/controls.json.gz",
+        "docs/two-thumb-english/compact/documents.jsonl.gz",
+        "docs/two-thumb-english/compact/index.html",
+        "docs/two-thumb-english/compact/layouts.png",
+        "tools/simulate_compact_layouts.py",
+        "tools/report_compact_layouts.py"
+      ],
+      "report_by": ["layout", "width-mm", "noise-profile", "genre", "seed", "decoder", "document", "wrong-words", "word-attempts", "valid-word-confusion", "harmful-correction", "control-hit-errors"],
+      "leakage": "No layout optimization or dictionary weighting against evaluation text. Expected words only generate intended contacts and score results. No production data or behavior changes.",
+      "limitations": "Synthetic nearest-center geometry and already consumed corpus. Control-boundary audit is separate from the word decoder and does not establish end-to-end segmentation accuracy. Reflow is not published KALQ; staggered cells are not regular hexagons. No human speed, learning, latency or fresh holdout claim."
+    },
+    {
       "id": "kalq-layout-imprecision-20260914",
       "source_ids": [
         "ud-gum-evaluation"
