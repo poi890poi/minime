@@ -4,11 +4,14 @@ Research date: 2026-09-14. MinIME baseline: `8a4a690`.
 
 ## Recommendation
 
-Keep familiar, full-width QWERTY as the default. First investigate overlapping
-thumb contacts, correction effort, and accidental gestures. Compare an existing
-alternative keyboard before developing a new letter arrangement. The evidence
-reviewed here does not establish that an unfamiliar layout beats practiced QWERTY
-on a small portrait phone after accounting for learning and correcting mistakes.
+Keep familiar, full-width QWERTY as the shipping default and experimental baseline,
+not as a constraint on alternative designs. First investigate overlapping thumb
+contacts, correction effort, and accidental gestures. Compare an existing
+alternative keyboard before developing a new letter arrangement. An alternative
+must be evaluated together with nearby-key correction, including mistakes that
+produce other valid words. The evidence reviewed here does not establish that an
+unfamiliar layout beats practiced QWERTY on a small portrait phone after accounting
+for learning and correcting mistakes.
 
 Efficiency means completing the intended message accurately and comfortably. Fewer
 taps, shorter calculated thumb travel, and more prediction hits are intermediate
@@ -69,8 +72,9 @@ physical dimensions as well as dp; shrinking an emulator does not reproduce grip
 
 ## What MinIME already does, and what needs investigation
 
-The following are static code findings at the named baseline. They identify
-experiments; they do not establish user-visible defects.
+The following were static code findings at the named baseline. Subsequent overlap
+reproduction and fixes are recorded separately in [OVERLAP.md](OVERLAP.md); other
+items remain hypotheses requiring experiments.
 
 1. **Letter overlap has special handling.** In
    [KeyboardView.java](../../app/src/main/java/dev/minime/ime/KeyboardView.java),
@@ -196,3 +200,77 @@ Zhuyin and MinIME, extending the existing
 before choosing geometry or correction changes. Retain Thumb-Key as the first
 existing alternative-layout trial if the user accepts relearning. No production
 change or claimed speedup follows from this research alone.
+
+## Spatial correction proposal (user clarification, 2026-09-14)
+
+The user wants an alternative layout evaluated together with nearby-key error
+correction. For example, a tap sequence producing `thos` on QWERTY may support
+`this` because I and O are adjacent. This is an illustrative requirement, never a
+production exception or a tuning sample. Actual dictionary membership must be
+queried rather than assumed from this example.
+
+Evaluate three separate conditions: literal input, current spelling correction,
+and spelling correction using touch geometry. Compare layouts with the same
+decoder/data budget, and report each layout's unassisted accuracy as well. This
+distinguishes a layout benefit from more aggressive replacement.
+
+Proposed contract:
+
+- Supply tap coordinates, timestamps, and an immutable geometry identifier from
+  the actual displayed layout. Do not hard-code QWERTY adjacency into a decoder
+  intended for multiple layouts. Accessibility and physical-key events without
+  coordinates retain a text-only path; do not fabricate touch evidence.
+- Rank bounded source-dictionary word alternatives using spatial likelihood and
+  lexical evidence. Include the literal spelling as a competing hypothesis.
+  Unknown dictionary membership permits consideration; it does not prove error.
+  Start with substitutions, then evaluate insertions, omissions, and transpositions
+  independently rather than adding an unrestricted sentence constructor.
+- Suggest while typing; automatically replace at a word boundary only when the
+  correction option is enabled and evidence clears a calibrated confidence and
+  margin threshold. Preserve a low-confidence literal spelling, including names
+  and unfamiliar words. Valid-word replacement is a separate, higher-risk study.
+- Keep the raw spelling selectable and the existing immediate Backspace undo
+  behavior. Preserve casing and apostrophe handling. Respect password, URL,
+  technical-input, and privacy rules; never persist raw touch traces in normal use.
+- Calibrate on independently labelled development contacts, then evaluate on
+  disjoint users/sessions, vocabulary strata, and a fresh holdout. Report harmful
+  replacements and failure to correct separately. Synthetic adjacent-key errors
+  are useful controls, not a measurement of human touch distributions.
+
+The first spatial-correction implementation experiment should be an offline shared-core replay. A
+layout optimizer's own movement model must not also supply the only simulated
+errors used to declare that layout superior. Retain autocorrection off as the
+requested default; this proposal does not change that preference.
+
+### Optimize distinguishability as well as thumb movement
+
+The user's second clarification identifies real-word ambiguity: neighboring
+letters can turn an intended word into another valid word. A dictionary-membership
+gate cannot detect that problem. The alternative-layout search should be free to
+separate highly confusable letters even when that increases some travel distances.
+Whether that tradeoff improves message completion time remains to be measured.
+
+Build a source-derived confusion graph by enumerating one-substitution word pairs
+from the complete frozen English lexicon, weighted by separately sourced usage
+evidence and measured spatial error distributions. Evaluate omissions and other
+edit classes separately. Do not select troublesome letter pairs by hand. An I/O
+complaint motivates the general audit; it does not supply a special layout weight.
+
+Compare a travel-only layout objective with an objective that also accounts for
+frequency-weighted, hard-to-disambiguate word alternatives. Report movement,
+thumb alternation, predicted ambiguity, observed errors, and correction-inclusive
+human speed separately. Do not declare a winner from a weighted sum alone or
+choose its weights on the final test set. A layout can produce fewer valid-word
+errors while still being slower or less comfortable.
+
+For real-word errors, context may help rank alternatives but may also replace a
+correct, less common meaning with a frequent one. Measure false replacement of
+correct words explicitly. Start by displaying alternatives; automatic real-word
+replacement needs separate evidence and confidence calibration. Keep raw recovery
+available. Absence of sufficient evidence should retain the user's input.
+
+Freeze candidate layouts after development. Use new users/sessions and disjoint
+conversation/essay documents to evaluate them, with equal decoder resources and
+reported learning time. The first comparison should include an existing
+two-thumb alternative, a travel-only proposal, and a proposal that accounts for
+word ambiguity; use QWERTY to measure the practical gain, not to limit the search.
