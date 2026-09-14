@@ -41,6 +41,7 @@ public final class Regression {
         throw new AssertionError("Missing candidate "+value+" for "+c.raw()+": "+c.candidates());
     }
     public static void main(String[] args) throws Exception {
+        JoinedKalqRegression.run();
         ReadingIndexParity.run();
         ReadingUnitLookupRegression.run();
         Path assets = Paths.get("app/src/main/assets");

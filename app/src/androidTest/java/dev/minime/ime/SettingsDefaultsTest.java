@@ -11,6 +11,22 @@ import java.util.*;
 public final class SettingsDefaultsTest extends ActivityInstrumentationTestCase2<SettingsActivity> {
     public SettingsDefaultsTest() {super(SettingsActivity.class);}
     private final List<Switch> switches=new ArrayList<>();
+    private final Map<String,Map<String,?>> saved=new HashMap<>();
+    @Override protected void setUp() throws Exception {
+        super.setUp();for(String file:new String[]{"settings","learning"})saved.put(file,new HashMap<>(getInstrumentation().getTargetContext().getSharedPreferences(file,Context.MODE_PRIVATE).getAll()));
+    }
+    @Override protected void tearDown() throws Exception {
+        try {for(Map.Entry<String,Map<String,?>> file:saved.entrySet()) {
+            SharedPreferences.Editor edit=getInstrumentation().getTargetContext().getSharedPreferences(file.getKey(),Context.MODE_PRIVATE).edit().clear();
+            for(Map.Entry<String,?> entry:file.getValue().entrySet()) {
+                String k=entry.getKey();Object v=entry.getValue();
+                if(v instanceof Boolean)edit.putBoolean(k,(Boolean)v);else if(v instanceof String)edit.putString(k,(String)v);
+                else if(v instanceof Integer)edit.putInt(k,(Integer)v);else if(v instanceof Long)edit.putLong(k,(Long)v);
+                else if(v instanceof Float)edit.putFloat(k,(Float)v);else if(v instanceof Set)edit.putStringSet(k,new HashSet<>((Set<String>)v));
+            }
+            assertTrue("Restore "+file.getKey(),edit.commit());
+        }} finally {super.tearDown();}
+    }
     private void collect(View view) {
         if(view instanceof Switch)switches.add((Switch)view);
         if(view instanceof ViewGroup)for(int i=0;i<((ViewGroup)view).getChildCount();i++)collect(((ViewGroup)view).getChildAt(i));
@@ -21,9 +37,9 @@ public final class SettingsDefaultsTest extends ActivityInstrumentationTestCase2
         // tools/test-device.ps1 preserves settings/learning around this session.
         settings.edit().clear().commit();
         SettingsActivity activity=getActivity();
-        String[] keys={"zhuyin","rime_pinyin","english_correction","double_space_period","emoji_recents","english_learning",
+        String[] keys={"zhuyin","joined_kalq","rime_pinyin","english_correction","double_space_period","emoji_recents","english_learning",
             "focused_choice_learning","phrase_learning","addon_taiwan","addon_geography","addon_japanese","addon_poj","paired_taiwanese","taiwanese_han_primary"};
-        boolean[] expected={false,false,false,true,false,false,true,true,true,true,true,true,true,false};
+        boolean[] expected={false,false,false,false,true,false,false,true,true,true,true,true,true,true,false};
         runTestOnUiThread(()-> {
             collect(activity.getWindow().getDecorView());
             assertEquals("Every screenshot switch is represented",keys.length,switches.size());

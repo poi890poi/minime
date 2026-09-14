@@ -74,6 +74,11 @@ final class KeyboardView extends LinearLayout {
         if(!zhuyin || numeric)addSymbols(result,".。…");
         return result;
     }
+    static Set<String> mainBoardSymbols(boolean zhuyin,boolean english,boolean numeric,boolean joined,boolean ascii) {
+        if(!joined || zhuyin || numeric)return mainBoardSymbols(zhuyin,english,numeric);
+        Set<String> result=new LinkedHashSet<>();addSymbols(result,JoinedKalq.symbols(ascii));
+        addSymbols(result,",，、.。…");return result;
+    }
     private static void addSymbols(Set<String> result,String text) {
         text.codePoints().filter(cp->!Character.isLetter(cp) && !Character.isWhitespace(cp))
             .forEach(cp->result.add(new String(Character.toChars(cp))));
@@ -404,7 +409,8 @@ final class KeyboardView extends LinearLayout {
         annotationRequested=showPhonetics || status.getVisibility()==VISIBLE;queueAnnotation();
         strip.setVisibility(panel==0?VISIBLE:GONE);
         if(candidates.isEmpty() || panel!=0)expanded=false;
-        traceEnabled=english && allowTrace && !numeric && !zhuyin && panel==0 && !expanded;
+        boolean joined=!zhuyin && !numeric && getContext().getSharedPreferences("settings",Context.MODE_PRIVATE).getBoolean("joined_kalq",false);
+        traceEnabled=english && allowTrace && !numeric && !zhuyin && !joined && panel==0 && !expanded;
         traceCase=caps?2:shifted?1:0;
         StringBuilder presentation=new StringBuilder(mode).append(':').append(shifted).append(':').append(caps)
             .append(':').append(asciiPunctuation).append(':').append(allowLanguageSwitch).append(':').append(enter)
@@ -484,7 +490,7 @@ final class KeyboardView extends LinearLayout {
         int height=landscape?34:59;
         // Every layout shares the QWERTY budget; only orientation and system insets resize it.
         keys.setLayoutParams(new LayoutParams(-1,dp(height)*4+(panel==0?0:dp(48))));
-        String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+":"+engine.inputMode()+":"+returnMode;
+        String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+":"+engine.inputMode()+":"+returnMode+":"+joined;
         if(nextLayout.equals(layoutKey)) {
             if(expanded)expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);
             return;
@@ -498,7 +504,7 @@ final class KeyboardView extends LinearLayout {
         } else if(panel==3) {
             punctuationChoices(asciiPunctuation,allowLanguageSwitch && !english,height);
         } else if(panel>0) {
-            keys.addView(new SymbolPanel(getContext(),panel==2,engine.privateField(),press,mainBoardSymbols(zhuyin,english,numeric)));
+            keys.addView(new SymbolPanel(getContext(),panel==2,engine.privateField(),press,mainBoardSymbols(zhuyin,english,numeric,joined,asciiPunctuation)));
         } else if(numeric) {
             simpleRow("123",height); simpleRow("456",height); simpleRow("789",height);
             simpleRow("+0.-",height);
@@ -508,6 +514,25 @@ final class KeyboardView extends LinearLayout {
                 for(int i=0;i<10;i++) {
                     String label=ZHUYIN[r].substring(i,i+1), up=ZH_UP[r].substring(i,i+1).trim(), down=ZH_DOWN[r].substring(i,i+1);
                     line.addView(button(label,label,up,down,false,height,1));
+                }
+            }
+        } else if(joined) {
+            int keyHeight=height*3/4;
+            for(int r=0;r<JoinedKalq.rows();r++) {
+                LinearLayout line=row(keyHeight);String text=JoinedKalq.row(r);
+                for(int c=0;c<text.length();c++) {
+                    char lower=text.charAt(c);
+                    if(lower==' ') {
+                        TextView space=plain("␣","SPACE",keyHeight,1);space.setContentDescription("Space");line.addView(space);
+                    } else {
+                        String upper=String.valueOf(Character.toUpperCase(lower)),label=shifted?upper:String.valueOf(lower);
+                        TextView key=button(label,label,upper,JoinedKalq.symbol(r,c,asciiPunctuation),false,keyHeight,1);
+                        ((SlideKey)key).compactLetterStyle();letters[lower-'a']=key;line.addView(key);
+                    }
+                }
+                if(r==3) {
+                    line.addView(plain(caps?"⇪":shifted?"⬆":"⇧","SHIFT",keyHeight,2));
+                    line.addView(plain("⌫","DELETE",keyHeight,2));
                 }
             }
         } else {

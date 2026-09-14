@@ -31,6 +31,8 @@ public final class SettingsActivity extends Activity {
         layout.setChecked(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("zhuyin",false));
         layout.setOnCheckedChangeListener((b,value)->getSharedPreferences("settings",MODE_PRIVATE).edit().putBoolean("zhuyin",value).apply()); body.addView(layout);
         text("Typing",21);
+        option("Use joined KALQ letter layout", "joined_kalq",false);
+        text("Applies to Chinese Pinyin, Taiwanese, Japanese and English. Turn off for QWERTY. Slide up for capitals and down for the small symbol; digits run 1–8 across the top, then 9 and 0 on the next row. Both internal Space keys work like the bottom Space key. Shift and Backspace sit at the lower right. Keyboard height stays fixed. Whole-word tracing is available with QWERTY only.",16);
         option("Use Rime for Pinyin phrase prediction", "rime_pinyin",false);
         text("The original MinIME decoder is used by default. Enable Rime to use its alternative Pinyin phrase candidates and partial-phrase selection. Both work offline; Rime does not keep its own typing history.",16);
         option("Correct English spelling on Space", "english_correction",false);

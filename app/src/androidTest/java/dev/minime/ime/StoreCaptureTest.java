@@ -22,6 +22,7 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
     private final JSONArray capturedCandidates=new JSONArray();
     private String currentMode,currentNote,typedInput="";
     private boolean expanded;
+    private boolean joinedLayout;
     private String completedInteractions="";
     private void collectCandidates(AccessibilityNodeInfo node,Set<String> labels,Set<String> exactInputs) {
         if(node==null)return;
@@ -66,7 +67,7 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
         currentMode=mode;currentNote=note;typedInput="";expanded=false;completedInteractions="";
         try(android.os.ParcelFileDescriptor fd=getInstrumentation().getUiAutomation().executeShellCommand("ime set app.minime.keyboard/dev.minime.ime.MiniMeService");InputStream in=new android.os.ParcelFileDescriptor.AutoCloseInputStream(fd)){while(in.read()!=-1){}}
         ownIme();
-        host.getSharedPreferences("settings",0).edit().clear().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).putBoolean("addon_taiwan",true).putBoolean("addon_geography",true).putString("mixed_mode",mode).putBoolean("english_mode",mode.equals("english")).commit();
+        host.getSharedPreferences("settings",0).edit().clear().putBoolean("joined_kalq",joinedLayout).putBoolean("addon_poj",true).putBoolean("addon_japanese",true).putBoolean("addon_taiwan",true).putBoolean("addon_geography",true).putString("mixed_mode",mode).putBoolean("english_mode",mode.equals("english")).commit();
         host.getSharedPreferences("learning",0).edit().clear().commit();
         getInstrumentation().runOnMainSync(()->{
             host.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -143,5 +144,14 @@ public final class StoreCaptureTest extends ActivityInstrumentationTestCase2<Edi
         completedInteractions="Typed liho, tapped lí hó, Enter; typed liho, held lí hó to insert 你好, Enter. Both outputs asserted against the actual editor.";
         typedInput="tosia";for(char c:typedInput.toCharArray())press(String.valueOf(c));capture("07-taiwanese-choices");
         example("08-japanese-choices","japanese_english","気持ちを、ことばに。\nきもち・キモチ・気持ち\n日常のひとことを日本語で。\nA few words, every day.\n","kimochi",true);
+    }
+    public void testCaptureJoinedKalq()throws Exception {
+        joinedLayout=true;host=getActivity();DictionaryRepository.load(host).get(60,java.util.concurrent.TimeUnit.SECONDS);
+        AccessibilityServiceInfo info=getInstrumentation().getUiAutomation().getServiceInfo();info.flags|=AccessibilityServiceInfo.FLAG_RETRIEVE_INTERACTIVE_WINDOWS;getInstrumentation().getUiAutomation().setServiceInfo(info);
+        example("joined-kalq-chinese","chinese","週末一起去走走？\n先喝咖啡，再散步。\nSee you tomorrow!\n","mingtian",false);
+        AccessibilityNodeInfo m=key("m"),q=key("q");assertNotNull(m);assertNotNull(q);Rect mr=new Rect(),qr=new Rect();m.getBoundsInScreen(mr);q.getBoundsInScreen(qr);m.recycle();q.recycle();assertTrue("Real Pinyin IME uses joined KALQ",mr.top<qr.top);
+        example("joined-kalq-english","english","Thanks for your help!\nLet's meet after work.\nHave a wonderful weekend.\n","thank",false);
+        final String[] before={""};getInstrumentation().runOnMainSync(()->before[0]=host.text.getText().toString());
+        press("Space");getInstrumentation().runOnMainSync(()->assertEquals("Space preserves literal spelling with correction off",before[0]+" ",host.text.getText().toString()));
     }
 }

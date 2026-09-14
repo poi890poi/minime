@@ -18,6 +18,7 @@ final class SlideKey extends TextView {
     private final Paint hintPaint=new Paint(Paint.ANTI_ALIAS_FLAG);
     private KeyboardIcon icon;
     private boolean centeredHint,emojiHint;
+    private float hintBottom=9;
     private int outerMargin;
     // Absorb the row's former half-key gutter. Padding preserves the original
     // glyph/hint center; the whole View owns touches, including multi-pointer streams.
@@ -29,6 +30,11 @@ final class SlideKey extends TextView {
     }
     void icon(KeyboardIcon value) {icon=value;}
     void qwertyStyle() {centeredHint=true;setPadding(0,0,0,Math.round(15*getResources().getDisplayMetrics().density));}
+    void compactLetterStyle() {
+        centeredHint=true;hintBottom=3;setIncludeFontPadding(false);
+        setPadding(0,0,0,Math.round(12*getResources().getDisplayMetrics().density));
+        hintPaint.setTextSize(8*getResources().getDisplayMetrics().scaledDensity);
+    }
     void emojiHint() {emojiHint=true;setPadding(0,Math.round(14*getResources().getDisplayMetrics().density),0,0);}
     private float originX,originY;
     private int direction, activePointer=-1;
@@ -100,7 +106,7 @@ final class SlideKey extends TextView {
         else {icon.setBounds(0,0,getWidth(),getHeight());icon.draw(canvas);}
         if(direction==0 && centeredHint) {
             hintPaint.setTextAlign(Paint.Align.CENTER);hintPaint.setFakeBoldText(true);
-            canvas.drawText(down,(getWidth()+getPaddingLeft()-getPaddingRight())/2f,getHeight()-9*getResources().getDisplayMetrics().density-hintPaint.descent(),hintPaint);
+            canvas.drawText(down,(getWidth()+getPaddingLeft()-getPaddingRight())/2f,getHeight()-hintBottom*getResources().getDisplayMetrics().density-hintPaint.descent(),hintPaint);
         } else if(direction==0 && emojiHint) {
             hintPaint.setTextAlign(Paint.Align.CENTER);hintPaint.setFakeBoldText(false);
             float density=getResources().getDisplayMetrics().density,x=getWidth()/2f,y=12*density;

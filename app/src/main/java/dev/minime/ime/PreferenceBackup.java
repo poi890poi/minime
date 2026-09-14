@@ -9,7 +9,7 @@ import java.util.*;
 /** Explicit user document transfer. No network, automatic export or stored URI. */
 final class PreferenceBackup {
     static final int MAX_BYTES=4*1024*1024;
-    private static final Set<String> BOOL=new HashSet<>(Arrays.asList("zhuyin","rime_pinyin","english_correction","double_space_period","emoji_recents","english_learning","focused_choice_learning","phrase_learning","addon_taiwan","addon_geography","addon_japanese","addon_poj","paired_taiwanese","taiwanese_han_primary","english_mode","english_punctuation"));
+    private static final Set<String> BOOL=new HashSet<>(Arrays.asList("zhuyin","joined_kalq","rime_pinyin","english_correction","double_space_period","emoji_recents","english_learning","focused_choice_learning","phrase_learning","addon_taiwan","addon_geography","addon_japanese","addon_poj","paired_taiwanese","taiwanese_han_primary","english_mode","english_punctuation"));
     static final class Snapshot {
         final Map<String,Object> settings,learning;
         Snapshot(Map<String,Object> s,Map<String,Object> l){settings=Collections.unmodifiableMap(s);learning=Collections.unmodifiableMap(l);}
