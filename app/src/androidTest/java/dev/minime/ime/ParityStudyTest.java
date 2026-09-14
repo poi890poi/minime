@@ -93,7 +93,10 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
         try{assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(e,true));}finally{e.recycle();}
     }
     private void overlap(String pair,boolean reverse)throws Exception {
-        AccessibilityNodeInfo first=node(labels(pair.substring(0,1))),second=node(labels(pair.substring(1,2)));
+        overlap(pair.substring(0,1),pair.substring(1,2),reverse);
+    }
+    private void overlap(String firstKey,String secondKey,boolean reverse)throws Exception {
+        AccessibilityNodeInfo first=node(labels(firstKey)),second=node(labels(secondKey));
         if(first==null || second==null)throw new IllegalStateException("Overlap keys missing");
         Rect a=new Rect(),b=new Rect();first.getBoundsInScreen(a);second.getBoundsInScreen(b);first.recycle();second.recycle();
         long start=SystemClock.uptimeMillis();pointers(start,MotionEvent.ACTION_DOWN,new int[]{3},a.exactCenterX(),a.exactCenterY());SystemClock.sleep(20);
@@ -220,6 +223,10 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
             long at=SystemClock.uptimeMillis();PointF first=points.get(0),last=points.get(points.size()-1);event(at,MotionEvent.ACTION_DOWN,first.x,first.y);
             try{for(int i=1;i<points.size();i++)for(int j=1;j<=6;j++){PointF a=points.get(i-1),b=points.get(i);SystemClock.sleep(15);event(at,MotionEvent.ACTION_MOVE,a.x+(b.x-a.x)*j/6,a.y+(b.y-a.y)*j/6);}}
             finally{event(at,MotionEvent.ACTION_UP,last.x,last.y);}
+        }
+        else if(action.has("overlapKeys")){
+            JSONArray pair=action.getJSONArray("overlapKeys");
+            overlap(pair.getString(0),pair.getString(1),action.optBoolean("reverse",false));
         }
         else if(action.has("overlap"))overlap(action.getString("overlap"),action.optBoolean("reverse",false));
         else if(action.has("key"))press(action.getString("key"),action.optInt("slide",0),action.optInt("hold",0),action.optBoolean("double",false),(float)action.optDouble("travel",.8));

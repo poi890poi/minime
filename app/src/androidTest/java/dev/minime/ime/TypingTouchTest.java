@@ -13,6 +13,9 @@ public final class TypingTouchTest extends InstrumentationTestCase {
     private KeyboardView keyboard;
     private final List<String> emitted=new ArrayList<>();
     private void onMain(Runnable test) throws Throwable {
+        onMain(false,test);
+    }
+    private void onMain(boolean english,Runnable test) throws Throwable {
         java.util.concurrent.atomic.AtomicReference<Throwable> failure=new java.util.concurrent.atomic.AtomicReference<>();
         getInstrumentation().runOnMainSync(()-> {try {
             keyboard=new KeyboardView(getInstrumentation().getTargetContext(),emitted::add,key->false,(path,caps)->{});
@@ -20,8 +23,8 @@ public final class TypingTouchTest extends InstrumentationTestCase {
                 public void composing(String s) {} public void commit(String s) {} public void delete() {}
                 public void enter() {} public void finish() {}
             },Learning.NONE);
-            engine.start(false,false,false,false);
-            keyboard.render(engine,false,false,false,0,false,false,false,true,true,"Enter","");
+            engine.start(false,false,false,false,english);
+            keyboard.render(engine,false,false,false,0,false,english,english,true,true,"Enter","");
             int width=getInstrumentation().getTargetContext().getResources().getDisplayMetrics().widthPixels;
             keyboard.measure(View.MeasureSpec.makeMeasureSpec(width,View.MeasureSpec.EXACTLY),View.MeasureSpec.makeMeasureSpec(0,View.MeasureSpec.UNSPECIFIED));
             keyboard.layout(0,0,width,keyboard.getMeasuredHeight());test.run();
@@ -53,6 +56,24 @@ public final class TypingTouchTest extends InstrumentationTestCase {
             event(MotionEvent.ACTION_UP,new int[]{7},b.exactCenterX(),b.exactCenterY());
             assertEquals("Overlapping keys "+Arrays.toString(pair),Arrays.asList(pair),emitted);
         }
+    });}
+    public void testEnglishLetterBoundaryOverlap() throws Throwable {onMain(true,()-> {
+        List<String> failures=new ArrayList<>();int cases=0;
+        for(char letter='a';letter<='z';letter++)for(String[] boundary:new String[][]{
+            {"Space","SPACE"},{"⌫","DELETE"},{",","INSERT:,"},{".","INSERT:."}
+        })for(boolean boundaryFirst:new boolean[]{false,true})for(boolean reverse:new boolean[]{false,true}) {
+            String first=boundaryFirst?boundary[0]:String.valueOf(letter),second=boundaryFirst?String.valueOf(letter):boundary[0];
+            List<String> expected=boundaryFirst?Arrays.asList(boundary[1],String.valueOf(letter)):Arrays.asList(String.valueOf(letter),boundary[1]);
+            emitted.clear();Rect a=key(first),b=key(second);
+            event(MotionEvent.ACTION_DOWN,new int[]{3},a.exactCenterX(),a.exactCenterY());
+            event(MotionEvent.ACTION_POINTER_DOWN|(1<<MotionEvent.ACTION_POINTER_INDEX_SHIFT),new int[]{3,7},a.exactCenterX(),a.exactCenterY(),b.exactCenterX(),b.exactCenterY());
+            event(MotionEvent.ACTION_POINTER_UP|((reverse?1:0)<<MotionEvent.ACTION_POINTER_INDEX_SHIFT),new int[]{3,7},a.exactCenterX(),a.exactCenterY(),b.exactCenterX(),b.exactCenterY());
+            Rect last=reverse?a:b;
+            event(MotionEvent.ACTION_UP,new int[]{reverse?3:7},last.exactCenterX(),last.exactCenterY());
+            cases++;if(!expected.equals(emitted))failures.add(first+"/"+second+" reverse="+reverse+" expected="+expected+" actual="+emitted);
+        }
+        android.util.Log.i("MinIME-OverlapProbe","cases="+cases+" failures="+failures.size());
+        assertTrue("Boundary overlap failures "+failures.size()+"/"+cases+": "+failures,failures.isEmpty());
     });}
     public void testNearEdgeReleaseWithinPlatformSlop() throws Throwable {onMain(()-> {
         float slop=ViewConfiguration.get(keyboard.getContext()).getScaledTouchSlop();

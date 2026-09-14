@@ -113,7 +113,7 @@ final class SlideKey extends TextView {
             if(!down.isEmpty()) canvas.drawText(down,getWidth()-pad,getHeight()-pad-hintPaint.descent(),hintPaint);
         }
     }
-    // A new letter contact completes the older plain tap in finger-down order.
+    // A new typing-key contact completes the older plain tap in finger-down order.
     // Slides, holds and cancelled gestures retain their own lifecycle.
     void finishTapForOverlap() {
         if(active && !consumed && !cancelled && direction==0) {reset();performClick();}

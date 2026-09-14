@@ -1,0 +1,504 @@
+{
+  "baselineCommit": "75ac63c",
+  "device": "RFCR91GWXLX",
+  "googleVersion": "2.4.5.164561151-arm64-v8a",
+  "googleVersionCode": 2451413,
+  "measure": "final editor text equality; not language accuracy or human typing speed",
+  "matrix": {
+    "cases": 416,
+    "baselineFailures": 208,
+    "fixedFailures": 0
+  },
+  "paired": {
+    "baseline": {
+      "observationSha256": "eafca508bbea2dedb3390504ca094da3421e7dd0cc578f7e1c8b1046a81b718c",
+      "matches": 8,
+      "cases": [
+        {
+          "id": "space-False-False",
+          "googleText": "ba ",
+          "minimeText": "ba ",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "space-False-True",
+          "googleText": "ba ",
+          "minimeText": "b a",
+          "sameText": false,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "space-True-False",
+          "googleText": "b a",
+          "minimeText": "b a",
+          "sameText": true,
+          "googleComposition": [
+            2,
+            3
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "space-True-True",
+          "googleText": "b a",
+          "minimeText": "ba ",
+          "sameText": false,
+          "googleComposition": [
+            2,
+            3
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "delete-False-False",
+          "googleText": "b",
+          "minimeText": "b",
+          "sameText": true,
+          "googleComposition": [
+            0,
+            1
+          ],
+          "minimeComposition": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "delete-False-True",
+          "googleText": "b",
+          "minimeText": "a",
+          "sameText": false,
+          "googleComposition": [
+            0,
+            1
+          ],
+          "minimeComposition": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "delete-True-False",
+          "googleText": "a",
+          "minimeText": "a",
+          "sameText": true,
+          "googleComposition": [
+            0,
+            1
+          ],
+          "minimeComposition": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "delete-True-True",
+          "googleText": "a",
+          "minimeText": "b",
+          "sameText": false,
+          "googleComposition": [
+            0,
+            1
+          ],
+          "minimeComposition": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "comma-False-False",
+          "googleText": "ba,",
+          "minimeText": "ba,",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "comma-False-True",
+          "googleText": "ba,",
+          "minimeText": "b,a",
+          "sameText": false,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "comma-True-False",
+          "googleText": "b,a",
+          "minimeText": "b,a",
+          "sameText": true,
+          "googleComposition": [
+            2,
+            3
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "comma-True-True",
+          "googleText": "b,a",
+          "minimeText": "ba,",
+          "sameText": false,
+          "googleComposition": [
+            2,
+            3
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "period-False-False",
+          "googleText": "ba.",
+          "minimeText": "ba.",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "period-False-True",
+          "googleText": "ba.",
+          "minimeText": "b.a",
+          "sameText": false,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "period-True-False",
+          "googleText": "b.a",
+          "minimeText": "b.a",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "period-True-True",
+          "googleText": "b.a",
+          "minimeText": "ba.",
+          "sameText": false,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        }
+      ]
+    },
+    "fixed": {
+      "observationSha256": "5ab98913291f9fb478cb9f486bd9ea4238277f088c5f68836026371c56e8e53e",
+      "matches": 16,
+      "cases": [
+        {
+          "id": "space-False-False",
+          "googleText": "ba ",
+          "minimeText": "ba ",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "space-False-True",
+          "googleText": "ba ",
+          "minimeText": "ba ",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "space-True-False",
+          "googleText": "b a",
+          "minimeText": "b a",
+          "sameText": true,
+          "googleComposition": [
+            2,
+            3
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "space-True-True",
+          "googleText": "b a",
+          "minimeText": "b a",
+          "sameText": true,
+          "googleComposition": [
+            2,
+            3
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "delete-False-False",
+          "googleText": "b",
+          "minimeText": "b",
+          "sameText": true,
+          "googleComposition": [
+            0,
+            1
+          ],
+          "minimeComposition": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "delete-False-True",
+          "googleText": "b",
+          "minimeText": "b",
+          "sameText": true,
+          "googleComposition": [
+            0,
+            1
+          ],
+          "minimeComposition": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "delete-True-False",
+          "googleText": "a",
+          "minimeText": "a",
+          "sameText": true,
+          "googleComposition": [
+            0,
+            1
+          ],
+          "minimeComposition": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "delete-True-True",
+          "googleText": "a",
+          "minimeText": "a",
+          "sameText": true,
+          "googleComposition": [
+            0,
+            1
+          ],
+          "minimeComposition": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "comma-False-False",
+          "googleText": "ba,",
+          "minimeText": "ba,",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "comma-False-True",
+          "googleText": "ba,",
+          "minimeText": "ba,",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "comma-True-False",
+          "googleText": "b,a",
+          "minimeText": "b,a",
+          "sameText": true,
+          "googleComposition": [
+            2,
+            3
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "comma-True-True",
+          "googleText": "b,a",
+          "minimeText": "b,a",
+          "sameText": true,
+          "googleComposition": [
+            2,
+            3
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "period-False-False",
+          "googleText": "ba.",
+          "minimeText": "ba.",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "period-False-True",
+          "googleText": "ba.",
+          "minimeText": "ba.",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "id": "period-True-False",
+          "googleText": "b.a",
+          "minimeText": "b.a",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "period-True-True",
+          "googleText": "b.a",
+          "minimeText": "b.a",
+          "sameText": true,
+          "googleComposition": [
+            -1,
+            -1
+          ],
+          "minimeComposition": [
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "id": "91ebf0b8-2b03-4181-a7ee-b327ce7afc89",
+      "purpose": "baseline-matrix",
+      "displayOffVerified": true,
+      "displayEvidenceSha256": "12bea0c27c68d5eba9eaca282a8750418513b85f996b1cf8484108aac102b2d3"
+    },
+    {
+      "id": "87c60981-1e27-4eb7-b358-6faf75740e8c",
+      "purpose": "baseline-paired",
+      "displayOffVerified": true,
+      "displayEvidenceSha256": "a6282f9f881632a7c9e58c07c20f8ce48dc4cdb818b2e32fb5c52c937c7e7a09"
+    },
+    {
+      "id": "752ed77f-5a28-496c-90d1-a58efe1d0ce8",
+      "purpose": "fixed-controls",
+      "displayOffVerified": true,
+      "displayEvidenceSha256": "a2fe7bf86ae9e9e247780c725b73af7a759eaa3cb3c1755604a01cb40b4c31f0"
+    },
+    {
+      "id": "b0edd8fa-0b85-4828-9841-c086ca55d9bd",
+      "purpose": "fixed-paired",
+      "displayOffVerified": true,
+      "displayEvidenceSha256": "881211a347fbbf0d4507bdc3476f67124b5fe49305427b53adaf0b2414510988"
+    }
+  ],
+  "fixedApks": {
+    "app\\build\\outputs\\apk\\debug\\app-debug.apk": "91771c7e645dbca4a60dd8c0463e4cd40662847db12390d95b7b619f283f82fe",
+    "app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk": "1f41468fa112454ca1034234b32ac95bbbbc53a5ce86e75be4c482be4cbf0c09"
+  }
+}

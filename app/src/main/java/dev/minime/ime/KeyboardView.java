@@ -18,6 +18,7 @@ final class KeyboardView extends LinearLayout {
     private final BiConsumer<float[],Integer> trace;
     private final Consumer<Runnable> choose;
     private final TextView[] letters=new TextView[26];
+    private final List<SlideKey> typingKeys=new ArrayList<>();
     private final List<Float> points=new ArrayList<>();
     private boolean traceEnabled,tracePossible,tracing;
     private int traceCase;
@@ -139,14 +140,16 @@ final class KeyboardView extends LinearLayout {
             candidateGesture=(strip.getVisibility()==VISIBLE && e.getY()>=strip.getTop() && e.getY()<strip.getBottom())
                 || (expanded && e.getY()>=keys.getTop());
         }
-        if(action==MotionEvent.ACTION_POINTER_DOWN && !tracing) {
-            int pointer=e.getActionIndex();boolean nextLetter=false;
-            for(TextView key:letters)if(key!=null && key.getParent()!=null) {
+        if(action==MotionEvent.ACTION_POINTER_DOWN && !tracing && letters[0]!=null) {
+            int pointer=e.getActionIndex();boolean nextTypingKey=false;
+            for(SlideKey key:typingKeys)if(key.getParent()!=null) {
                 android.graphics.Rect bounds=new android.graphics.Rect(0,0,key.getWidth(),key.getHeight());
                 offsetDescendantRectToMyCoords(key,bounds);
-                if(bounds.contains((int)e.getX(pointer),(int)e.getY(pointer))) {nextLetter=true;break;}
+                if(bounds.contains((int)e.getX(pointer),(int)e.getY(pointer))) {nextTypingKey=true;break;}
             }
-            if(nextLetter)for(TextView key:letters.clone())if(key instanceof SlideKey)((SlideKey)key).finishTapForOverlap();
+            // A word boundary or deletion must keep the same contact order as letters.
+            // Snapshot because a completed tap can synchronously render the keyboard.
+            if(nextTypingKey)for(SlideKey key:new ArrayList<>(typingKeys))key.finishTapForOverlap();
         }
         if(action==MotionEvent.ACTION_DOWN) {
             tracePossible=false;tracing=false;points.clear();
@@ -270,7 +273,11 @@ final class KeyboardView extends LinearLayout {
             b=new CandidateWord(getContext()); b.setText(label); b.setGravity(Gravity.CENTER);
             b.setMaxLines(1); b.setFocusable(true); b.setClickable(true);
             b.setOnClickListener(v->{});
-        } else b=new SlideKey(getContext(),label,command,up,down,press,longPress);
+        } else {
+            b=new SlideKey(getContext(),label,command,up,down,press,longPress);
+            if(command.matches("[a-zA-Z]") || command.equals("SPACE") || command.equals("DELETE") || command.startsWith("INSERT:"))
+                typingKeys.add((SlideKey)b);
+        }
         b.setTextColor(accent?Color.BLACK:INK);
         b.setTextSize(Math.min(21,height*.43f));
         b.setContentDescription(command.startsWith("CANDIDATE:")?"Candidate "+label:label);
@@ -482,7 +489,7 @@ final class KeyboardView extends LinearLayout {
             if(expanded)expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);
             return;
         }
-        layoutKey=nextLayout; keys.removeAllViews();Arrays.fill(letters,null);candidateGrid=null;gridKey="";
+        layoutKey=nextLayout; keys.removeAllViews();Arrays.fill(letters,null);typingKeys.clear();candidateGrid=null;gridKey="";
         if(expanded) {
             ScrollView scroll=new ScrollView(getContext());scroll.setContentDescription("Expanded candidate list");
             candidateGrid=new CandidateFlowLayout(getContext());scroll.addView(candidateGrid);

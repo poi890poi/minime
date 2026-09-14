@@ -1,0 +1,322 @@
+[
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "a",
+          "SPACE"
+        ],
+        "reverse": false,
+        "label": "overlap"
+      }
+    ],
+    "id": "space-False-False",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "a",
+          "SPACE"
+        ],
+        "reverse": true,
+        "label": "overlap"
+      }
+    ],
+    "id": "space-False-True",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "SPACE",
+          "a"
+        ],
+        "reverse": false,
+        "label": "overlap"
+      }
+    ],
+    "id": "space-True-False",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "SPACE",
+          "a"
+        ],
+        "reverse": true,
+        "label": "overlap"
+      }
+    ],
+    "id": "space-True-True",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "a",
+          "DELETE"
+        ],
+        "reverse": false,
+        "label": "overlap"
+      }
+    ],
+    "id": "delete-False-False",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "a",
+          "DELETE"
+        ],
+        "reverse": true,
+        "label": "overlap"
+      }
+    ],
+    "id": "delete-False-True",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "DELETE",
+          "a"
+        ],
+        "reverse": false,
+        "label": "overlap"
+      }
+    ],
+    "id": "delete-True-False",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "DELETE",
+          "a"
+        ],
+        "reverse": true,
+        "label": "overlap"
+      }
+    ],
+    "id": "delete-True-True",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "a",
+          "COMMA"
+        ],
+        "reverse": false,
+        "label": "overlap"
+      }
+    ],
+    "id": "comma-False-False",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "a",
+          "COMMA"
+        ],
+        "reverse": true,
+        "label": "overlap"
+      }
+    ],
+    "id": "comma-False-True",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "COMMA",
+          "a"
+        ],
+        "reverse": false,
+        "label": "overlap"
+      }
+    ],
+    "id": "comma-True-False",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "COMMA",
+          "a"
+        ],
+        "reverse": true,
+        "label": "overlap"
+      }
+    ],
+    "id": "comma-True-True",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "a",
+          "PERIOD"
+        ],
+        "reverse": false,
+        "label": "overlap"
+      }
+    ],
+    "id": "period-False-False",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "a",
+          "PERIOD"
+        ],
+        "reverse": true,
+        "label": "overlap"
+      }
+    ],
+    "id": "period-False-True",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "PERIOD",
+          "a"
+        ],
+        "reverse": false,
+        "label": "overlap"
+      }
+    ],
+    "id": "period-True-False",
+    "field": "private"
+  },
+  {
+    "mode": "english",
+    "actions": [
+      {
+        "type": "b",
+        "label": "seed"
+      },
+      {
+        "capture": false,
+        "overlapKeys": [
+          "PERIOD",
+          "a"
+        ],
+        "reverse": true,
+        "label": "overlap"
+      }
+    ],
+    "id": "period-True-True",
+    "field": "private"
+  }
+]
