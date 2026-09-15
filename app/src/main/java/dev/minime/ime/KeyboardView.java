@@ -527,7 +527,7 @@ final class KeyboardView extends LinearLayout {
                     } else {
                         String upper=String.valueOf(Character.toUpperCase(lower)),label=shifted?upper:String.valueOf(lower);
                         TextView key=button(label,label,upper,JoinedKalq.symbol(r,c,asciiPunctuation),false,keyHeight,1);
-                        ((SlideKey)key).compactLetterStyle();letters[lower-'a']=key;line.addView(key);
+                        ((SlideKey)key).compactLetterStyle(keyHeight);letters[lower-'a']=key;line.addView(key);
                     }
                 }
                 if(r==3) {
@@ -544,7 +544,7 @@ final class KeyboardView extends LinearLayout {
                     String label=shifted?upper:lower;
                     boolean outer=r==1 && (i==0 || i==QWERTY[r].length()-1);
                     TextView letter=button(label,label,upper,(english?EN_DOWN:Q_DOWN)[r].substring(i,i+1),false,height,outer?1.5f:1);
-                    ((SlideKey)letter).qwertyStyle();
+                    ((SlideKey)letter).qwertyStyle(height);
                     if(outer)((SlideKey)letter).outerMargin(i==0);
                     letters[lower.charAt(0)-'a']=letter;line.addView(letter);
                 }

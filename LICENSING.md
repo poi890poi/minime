@@ -5,6 +5,9 @@ Original MinIME code and original project documentation are licensed under
 third-party licences or confer ownership of imported material.
 
 - `third_party/`: original upstream licences, copyright, pins and source notices.
+- `app/src/main/res/font/ibm_plex_sans_condensed.ttf`: unmodified IBM Plex Sans
+  Condensed Regular under SIL OFL 1.1; original licence in
+  `third_party/fonts/ibm-plex/OFL.txt` and the packaged third-party notices.
 - `app/src/main/assets/` and generated models: source-derived data with separate
   MIT, Apache-2.0, CC0, CC BY-SA 4.0, ODbL and Unicode terms. The source catalog,
   compilation reports and packaged notices identify the applicable components.

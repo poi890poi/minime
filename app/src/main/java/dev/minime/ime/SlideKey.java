@@ -16,6 +16,7 @@ final class SlideKey extends TextView {
     private final Consumer<String> press;
     private final Predicate<String> hold;
     private final Paint hintPaint=new Paint(Paint.ANTI_ALIAS_FLAG);
+    private PortraitKeyLabels portraitLabels;
     private KeyboardIcon icon;
     private boolean centeredHint,emojiHint;
     private float hintBottom=9;
@@ -29,11 +30,46 @@ final class SlideKey extends TextView {
             outerMargin>0?Math.round(w/3f):0,getPaddingBottom());
     }
     void icon(KeyboardIcon value) {icon=value;}
-    void qwertyStyle() {centeredHint=true;setPadding(0,0,0,Math.round(15*getResources().getDisplayMetrics().density));}
-    void compactLetterStyle() {
-        centeredHint=true;hintBottom=3;setIncludeFontPadding(false);
-        setPadding(0,0,0,Math.round(12*getResources().getDisplayMetrics().density));
-        hintPaint.setTextSize(8*getResources().getDisplayMetrics().scaledDensity);
+    void qwertyStyle(int height) {letterStyle(height,false);}
+    void compactLetterStyle(int height) {letterStyle(height,true);}
+    private void letterStyle(int height,boolean compact) {
+        centeredHint=true;hintBottom=compact?3:9;setIncludeFontPadding(false);
+        float density=getResources().getDisplayMetrics().density;
+        float scaled=getResources().getDisplayMetrics().scaledDensity;
+        // This change targets portrait readability. Preserve the existing
+        // short-row landscape typography until its geometry is studied.
+        if(height<44) {
+            setIncludeFontPadding(!compact);
+            setPadding(0,0,0,Math.round((compact?12:15)*density));
+            hintPaint.setTextSize((compact?8:10)*scaled);
+            hintPaint.setFakeBoldText(true);
+            return;
+        }
+        setTypeface(getResources().getFont(R.font.ibm_plex_sans_condensed));
+        hintPaint.setTypeface(getTypeface());
+        hintPaint.setColor(0xff9aa6aa);hintPaint.setFakeBoldText(false);
+        // Larger accessibility text keeps a fitted stacked arrangement instead
+        // of crowding the fixed-height diagonal geometry approved at normal scale.
+        if(getResources().getConfiguration().fontScale<=1.05f) {
+            setPadding(0,0,0,0);
+            setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX,26*scaled);
+            getPaint().setFlags(Paint.ANTI_ALIAS_FLAG);
+            getPaint().setTextAlign(Paint.Align.LEFT);
+            hintPaint.setTextSize(18*scaled);hintPaint.setTextAlign(Paint.Align.LEFT);
+            portraitLabels=new PortraitKeyLabels(getPaint(),hintPaint,density);
+            return;
+        }
+        hintPaint.setTextSize(10*scaled);
+        Paint.FontMetrics hint=hintPaint.getFontMetrics();
+        // Keep a real gap between the two font boxes, including at enlarged
+        // system font scales. Short landscape rows still use the same budget.
+        int reserved=(int)Math.ceil(hint.descent-hint.ascent+(hintBottom+2)*density);
+        setPadding(0,0,0,reserved);
+        setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX,23*scaled);
+        Paint.FontMetrics main=getPaint().getFontMetrics();
+        float available=Math.max(density,height*density-reserved);
+        if(main.descent-main.ascent>available)
+            setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX,getTextSize()*available/(main.descent-main.ascent));
     }
     void emojiHint() {emojiHint=true;setPadding(0,Math.round(14*getResources().getDisplayMetrics().density),0,0);}
     private float originX,originY;
@@ -102,10 +138,15 @@ final class SlideKey extends TextView {
         hintPaint.setTextSize(10*getResources().getDisplayMetrics().scaledDensity);
     }
     @Override protected void onDraw(Canvas canvas) {
+        if(portraitLabels!=null) {
+            getPaint().setColor(getCurrentTextColor());
+            portraitLabels.draw(canvas,getText().toString(),down,getWidth(),getHeight(),direction!=0);
+            return;
+        }
         if(icon==null)super.onDraw(canvas);
         else {icon.setBounds(0,0,getWidth(),getHeight());icon.draw(canvas);}
         if(direction==0 && centeredHint) {
-            hintPaint.setTextAlign(Paint.Align.CENTER);hintPaint.setFakeBoldText(true);
+            hintPaint.setTextAlign(Paint.Align.CENTER);
             canvas.drawText(down,(getWidth()+getPaddingLeft()-getPaddingRight())/2f,getHeight()-hintBottom*getResources().getDisplayMetrics().density-hintPaint.descent(),hintPaint);
         } else if(direction==0 && emojiHint) {
             hintPaint.setTextAlign(Paint.Align.CENTER);hintPaint.setFakeBoldText(false);
