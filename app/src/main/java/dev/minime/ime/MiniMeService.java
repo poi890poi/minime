@@ -52,6 +52,7 @@ public final class MiniMeService extends InputMethodService {
         super.onCreate();
         modes=new ModePreferences(this);
         engine=new CompositionEngine(new AndroidEditor(this::getCurrentInputConnection,()->editorInfo,selection),new LocalLearning(this));
+        engine.candidateDisplay(new CandidateGlyphs(new android.widget.TextView(this).getPaint()));
         decoder=new AsyncDecoder(new Handler(Looper.getMainLooper()));engine.decoder(decoder,this::render);
         DictionaryRepository.load(this).whenComplete((dictionary,error)->new Handler(Looper.getMainLooper()).post(()-> {
             if(destroyed) return;
@@ -61,6 +62,8 @@ public final class MiniMeService extends InputMethodService {
         }));
     }
     @Override public View onCreateInputView() {
+        // Recreate font capability cache with the input view after configuration changes.
+        engine.candidateDisplay(new CandidateGlyphs(new android.widget.TextView(this).getPaint()));
         keyboard=new KeyboardView(this,this::key,this::longKey,(points,capitalization)->{engine.trace(points,capitalization);shift.consume();render();},action->{
             if(getCurrentInputConnection()==null)return;
             shift.interrupt();action.run();render();

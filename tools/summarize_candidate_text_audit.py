@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 
 
@@ -19,6 +20,13 @@ def summarize(path):
             'missing_clusters':sorted({g for r in rows for g in r['missingGlyphs']}),
             'malformed_view_occurrences':sum(bool(r['malformed']) for r in rows),
         }
+        costs=sorted(q['glyphCheckMicros'] for q in data['queries'] if q['provider']==provider and 'glyphCheckMicros' in q)
+        if costs:
+            groups[provider]['glyph_check_microseconds_per_probe']={
+                'n':len(costs),'p50':costs[math.ceil(len(costs)*.5)-1],
+                'p95':costs[math.ceil(len(costs)*.95)-1],'max':costs[-1],
+                'conditions':'Fresh capability cache per probe; summed checks across all typed prefixes. Nearest-rank percentiles. Excludes lookup, rendering and touch latency.',
+            }
     return {
         'report_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
         'device':data['device'],'sdk':data['sdk'],

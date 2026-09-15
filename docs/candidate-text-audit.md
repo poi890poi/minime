@@ -1,5 +1,9 @@
 # Candidate text and font audit
 
+This document preserves the pre-fix failure evidence. See
+[the device-readable candidate fix](candidate-text-audit/fix.md) for the subsequent
+implementation and verification results.
+
 ## Scope and diagnosis
 
 Test/tooling change prompted by the expanded Chinese candidate screenshot for

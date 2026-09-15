@@ -64,6 +64,10 @@ public final class CandidateTextAuditTest extends InstrumentationTestCase {
             String valid="台灣 かな カナ chhiu\u0301 o\u0358";word.setText(valid);
             assertEquals(valid,word.getText().toString());assertTrue(TextIntegrity.problems(valid).isEmpty());
             assertTrue("Common Han, kana and combining POJ must render: "+missing(word.getPaint(),valid),missing(word.getPaint(),valid).isEmpty());
+            CandidateGlyphs policy=new CandidateGlyphs(word.getPaint());
+            assertTrue("Runtime policy preserves readable combined text",policy.test(valid));
+            assertTrue("Runtime policy preserves emoji joiners and selectors",policy.test("\ud83d\udc69\u200d\ud83d\udcbb\u2764\ufe0f"));
+            assertFalse("Runtime policy rejects unsupported text",policy.test(new String(Character.toChars(0x10ffff))));
             String supplementary="\ud840\udc00";word.setText(supplementary);
             assertEquals("A valid surrogate pair must survive TextView binding",supplementary,word.getText().toString());
         });
@@ -93,6 +97,8 @@ public final class CandidateTextAuditTest extends InstrumentationTestCase {
     private void render(String raw,String provider,PhoneticDictionary dictionary,List<Candidate> nativeChoices) throws Throwable {
         main(()->{
             CompositionEngine engine=new CompositionEngine(EDITOR,Learning.NONE);engine.dictionary(dictionary);engine.start(false,false,false,false);
+            CandidateGlyphs capability=new CandidateGlyphs(new TextView(target).getPaint());long[] cost={0,0};
+            engine.candidateDisplay(text->{long begin=System.nanoTime();boolean allowed=capability.test(text);cost[0]+=System.nanoTime()-begin;cost[1]++;return allowed;});
             if(nativeChoices!=null)engine.decoder((d,r,b,c,done)->done.accept(r.equals(raw)?CandidateMerge.merge(nativeChoices,d.convert(r,b,c)):Collections.emptyList()),()->{});
             raw.codePoints().forEach(engine::type);
             KeyboardView keyboard=new KeyboardView(target,k->{},k->false,(p,c)->{});
@@ -107,7 +113,8 @@ public final class CandidateTextAuditTest extends InstrumentationTestCase {
                 }finally{bitmap.recycle();}
             }catch(IOException e){throw new UncheckedIOException(e);}
             for(Candidate c:engine.candidates())if(!c.literal)assertTrue("Expanded panel lost exact text "+TextIntegrity.codePoints(c.text),grid.contains(c.text));
-            try {queries.put(new JSONObject().put("input",raw).put("provider",provider).put("strip",new JSONArray(strip)).put("expanded",new JSONArray(grid)));}
+            try {queries.put(new JSONObject().put("input",raw).put("provider",provider).put("strip",new JSONArray(strip)).put("expanded",new JSONArray(grid))
+                .put("glyphCheckMicros",cost[0]/1000).put("glyphChecks",cost[1]));}
             catch(JSONException e){throw new RuntimeException(e);}
         });
     }

@@ -1,0 +1,84 @@
+{
+  "report_sha256": "c2f4485144a976b2c7d445042ffcb93d5d14f6c81138c7caf7ce9ca1442282ae",
+  "device": "SM-G781B",
+  "sdk": 33,
+  "source_rows": 647768,
+  "source_code_points": 22162,
+  "source_font_census_gaps": 674,
+  "candidate_view_occurrences_checked": 129614,
+  "definition": "View occurrences include repeated candidates and offscreen strip/grid entries; they are not unique glyph counts or typing accuracy.",
+  "providers": {
+    "java": {
+      "queries": 427,
+      "failing_view_occurrences": 0,
+      "unique_affected_inputs": 0,
+      "unique_unreadable_texts": 0,
+      "missing_clusters": [],
+      "malformed_view_occurrences": 0,
+      "glyph_check_microseconds_per_probe": {
+        "n": 427,
+        "p50": 4123,
+        "p95": 10970,
+        "max": 22294,
+        "conditions": "Fresh capability cache per probe; summed checks across all typed prefixes. Nearest-rank percentiles. Excludes lookup, rendering and touch latency."
+      }
+    },
+    "rime+java": {
+      "queries": 427,
+      "failing_view_occurrences": 0,
+      "unique_affected_inputs": 0,
+      "unique_unreadable_texts": 0,
+      "missing_clusters": [],
+      "malformed_view_occurrences": 0,
+      "glyph_check_microseconds_per_probe": {
+        "n": 427,
+        "p50": 1310,
+        "p95": 2758,
+        "max": 5834,
+        "conditions": "Fresh capability cache per probe; summed checks across all typed prefixes. Nearest-rank percentiles. Excludes lookup, rendering and touch latency."
+      }
+    }
+  },
+  "display_gate_passed": true,
+  "screenshot_input": {
+    "java": {
+      "input": "rime",
+      "provider": "java",
+      "strip": [],
+      "expanded": [],
+      "glyphCheckMicros": 659,
+      "glyphChecks": 51
+    },
+    "rime+java": {
+      "input": "rime",
+      "provider": "rime+java",
+      "strip": [
+        "日",
+        "鈤",
+        "馹",
+        "囸",
+        "釰",
+        "衵",
+        "ㄖ",
+        "䒤",
+        "入",
+        "驲"
+      ],
+      "expanded": [
+        "日",
+        "鈤",
+        "馹",
+        "囸",
+        "釰",
+        "衵",
+        "ㄖ",
+        "䒤",
+        "入",
+        "驲"
+      ],
+      "glyphCheckMicros": 257,
+      "glyphChecks": 14
+    }
+  },
+  "screenshot_failures": []
+}

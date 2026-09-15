@@ -47,6 +47,22 @@ public final class CompositionEngine {
     private Intent intent = Intent.LATIN_LITERAL;
     private List<Candidate> candidates = new ArrayList<>();
     private int preferred;
+    private java.util.function.Predicate<String> displayable;
+    /** Platform font capability, independent of dictionary scores and language. */
+    public void candidateDisplay(java.util.function.Predicate<String> supported) {
+        displayable=Objects.requireNonNull(supported);compositionId++;refresh();
+    }
+    private void retainDisplayableCandidates() {
+        if(displayable==null)return;
+        List<Candidate> readable=new ArrayList<>();int nextPreferred=0;
+        for(int i=0;i<candidates.size();i++) {
+            // The user's exact input is always recoverable, even on a font-poor device.
+            Candidate value=!raw.isEmpty() && i==0?candidates.get(i):candidates.get(i).readable(displayable);
+            if(value!=null) {if(i==preferred)nextPreferred=readable.size();readable.add(value);}
+        }
+        if(!candidates.isEmpty() && (readable.isEmpty() || !readable.contains(candidates.get(preferred))))automaticCorrection=false;
+        candidates=readable;preferred=nextPreferred;
+    }
     private final PhraseSession phraseSession=new PhraseSession();
     private boolean phraseLearning;
     public void phraseLearning(boolean enabled) {if(phraseLearning!=enabled) {phraseLearning=enabled;phraseSession.clear();refresh();}}
@@ -86,8 +102,13 @@ public final class CompositionEngine {
         long query=++revision;pending=true;barrier=true;
         java.util.function.Consumer<List<Candidate>> done=found->{
             if(query!=revision)return;pending=false;
-            if(!found.isEmpty()) {
-                candidates=new ArrayList<>();for(Candidate c:found)candidates.add(new Candidate(capitalization==2?c.text.toUpperCase(Locale.ROOT):capitalization==1?Character.toUpperCase(c.text.charAt(0))+c.text.substring(1):c.text,true,c.score));
+            List<Candidate> readable=new ArrayList<>();
+            for(Candidate c:found) {
+                Candidate value=new Candidate(capitalization==2?c.text.toUpperCase(Locale.ROOT):capitalization==1?Character.toUpperCase(c.text.charAt(0))+c.text.substring(1):c.text,true,c.score);
+                if(displayable==null || displayable.test(value.text))readable.add(value);
+            }
+            if(!readable.isEmpty()) {
+                candidates=readable;
                 raw=candidates.get(0).text;preferred=0;traced=true;editor.composing(raw);
             }
             barrier=false;changed.run();drain();
@@ -261,11 +282,11 @@ public final class CompositionEngine {
     }
     /** Long press accepts exactly the advertised alternate of the held snapshot. */
     public void selectAlternative(Candidate displayed,long composition) {
-        if(composition!=compositionId || displayed.pair==null || !pairedTaiwanese || !inputMode.taiwanese())return;
+        if(composition!=compositionId || displayed.pair==null || displayed.alternateText().isEmpty() || !pairedTaiwanese || !inputMode.taiwanese())return;
         if(deferUntilReady(()->selectAlternative(displayed,composition),true))return;
         for(Candidate current:candidates) {
             if(current.text.equals(displayed.text) && current.literal==displayed.literal
-                    && displayed.pair.same(current.pair)) {selectChoice(current.alternative());return;}
+                    && displayed.pair.same(current.pair) && !current.alternateText().isEmpty()) {selectChoice(current.alternative());return;}
         }
     }
     private boolean partial(Candidate c) {
@@ -333,6 +354,7 @@ public final class CompositionEngine {
                 Set<String> seen=new HashSet<>();candidates.removeIf(c->!englishSuggestion(c) || !seen.add(c.text));
             }
             if (!privateField && dictionary != null && !literalField && inputMode.chineseEnabled()) candidates.addAll(dictionary.predict(context));
+            retainDisplayableCandidates();
             return;
         }
         boolean bpmf = raw.codePoints().anyMatch(IntentClassifier::isZhuyin);
@@ -348,7 +370,7 @@ public final class CompositionEngine {
             int at = ",.?!:;".indexOf(raw.charAt(0));
             if (at >= 0) {
                 candidates.add(new Candidate("，。？！：；".substring(at, at + 1), false, 0));
-                preferred = 1; return;
+                preferred = 1;retainDisplayableCandidates();return;
             }
         }
         // No-personalized-learning editors still need their static language model.
@@ -558,6 +580,7 @@ public final class CompositionEngine {
             }
             candidates.addAll(Math.min(3,candidates.size()),glyphs);
         }
+        retainDisplayableCandidates();
     }
     private boolean focused(Candidate candidate) {
         return !inputMode.pack.isEmpty() && inputMode.pack.equals(candidate.pack);
