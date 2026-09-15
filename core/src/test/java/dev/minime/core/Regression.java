@@ -41,6 +41,7 @@ public final class Regression {
         throw new AssertionError("Missing candidate "+value+" for "+c.raw()+": "+c.candidates());
     }
     public static void main(String[] args) throws Exception {
+        TextIntegrityRegression.run();
         JoinedKalqRegression.run();
         ReadingIndexParity.run();
         ReadingUnitLookupRegression.run();

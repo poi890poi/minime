@@ -5,7 +5,7 @@ try {
     if(!$SkipCompile) {
         New-Item -ItemType Directory -Force $Classes | Out-Null
         $sources=@(Get-ChildItem core/src/main/java -Recurse -Filter '*.java' | ForEach-Object FullName)
-        & javac -encoding UTF-8 -d $Classes @sources core/src/test/java/dev/minime/core/DesktopEvaluation.java
+        & javac -encoding UTF-8 -d $Classes @sources core/src/test/java/dev/minime/core/DesktopEvaluation.java core/src/testSupport/java/dev/minime/testing/TextIntegrity.java
         if($LASTEXITCODE -ne 0){throw 'Desktop Java compilation failed'}
         & tools/build-desktop-metadata.ps1 -SourceOnly -Output artifacts/desktop-rime.exe
     }

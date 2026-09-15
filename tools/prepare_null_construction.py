@@ -30,6 +30,7 @@ out=R/'docs/null-construction';out.mkdir(exist_ok=True)
 java=Path('C:/Program Files/Microsoft/jdk-17.0.11.9-hotspot/bin')
 classes=W/'classes';classes.mkdir(exist_ok=True)
 sources=list((W/'source').rglob('*.java'))+[R/'core/src/test/java/dev/minime/core'/name for name in ['NullConstructionReplay.java','DesktopEvaluation.java','NullConstructionContract.java','NullConstructionEffort.java']]
+sources.append(R/'core/src/testSupport/java/dev/minime/testing/TextIntegrity.java')
 subprocess.run([str(java/'javac.exe'),'-encoding','UTF-8','-d',str(classes),*map(str,sources)],cwd=R,check=True)
 for character,reading in [('false','false'),('true','false'),('false','true'),('true','true')]:
     enabled=str(character=='true' or reading=='true').lower()

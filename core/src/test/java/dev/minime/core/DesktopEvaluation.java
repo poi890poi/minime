@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
 import java.util.function.Consumer;
+import dev.minime.testing.TextIntegrity;
 
 /** Core + pinned desktop Rime evaluation. No Android dependencies or APK build. */
 public final class DesktopEvaluation {
@@ -28,7 +29,7 @@ public final class DesktopEvaluation {
             Files.createDirectories(Paths.get(user));
             process=new ProcessBuilder(exe,dll,model,user).redirectError(ProcessBuilder.Redirect.INHERIT).start();
             input=new BufferedWriter(new OutputStreamWriter(process.getOutputStream(),StandardCharsets.UTF_8));
-            output=new BufferedReader(new InputStreamReader(process.getInputStream(),StandardCharsets.UTF_8));
+            output=new BufferedReader(TextIntegrity.utf8(process.getInputStream()));
             if(!"READY 1.16.1".equals(output.readLine()))throw new IOException("Pinned Rime unavailable");
         }
         List<Candidate> query(String raw) {
@@ -39,6 +40,7 @@ public final class DesktopEvaluation {
                     if(line.isEmpty())continue;
                     Candidate candidate=NativeCandidateCodec.decode(raw,line,found.size());
                     if(candidate==null)throw new IOException("Invalid native candidate provenance");
+                    TextIntegrity.require(candidate.text,"native input="+raw+" rank="+found.size());
                     found.add(candidate);
                 }
                 if(line==null)throw new EOFException("Desktop Rime exited");
@@ -72,7 +74,13 @@ public final class DesktopEvaluation {
         CompositionEngine c=new CompositionEngine(e,learning);c.dictionary(d);c.start(false,false,false,false,english);c.decoder(decoder,()->{});
         if(!packs.isEmpty())c.addons(addons,packs);return c;
     }
-    private static void type(CompositionEngine c,Decoder decoder,String raw) {raw.codePoints().forEach(c::type);decoder.flush();}
+    private static void type(CompositionEngine c,Decoder decoder,String raw) {
+        raw.codePoints().forEach(c::type);decoder.flush();
+        for(Candidate candidate:c.candidates()) {
+            TextIntegrity.require(candidate.text,"merged input="+raw);
+            TextIntegrity.require(candidate.alternateText(),"alternate input="+raw);
+        }
+    }
     public static void main(String[] args) throws Exception {
         if(args.length!=6)throw new IllegalArgumentException("corpus.tsv output.jsonl native.exe rime.dll model-dir user-dir");
         Path assets=Paths.get("app/src/main/assets");
