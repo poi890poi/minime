@@ -32,11 +32,17 @@ public final class AppEditorAuditTest extends KeyboardInteractionTest {
         AccessibilityNodeInfo n=externalField(id);android.os.Bundle args=new android.os.Bundle();
         args.putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,"");
         assertTrue(n.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT,args));
-        android.graphics.Rect r=new android.graphics.Rect();n.getBoundsInScreen(r);n.recycle();
-        long at=SystemClock.uptimeMillis();
-        for(int action:new int[]{android.view.MotionEvent.ACTION_DOWN,android.view.MotionEvent.ACTION_UP}) {
-            android.view.MotionEvent e=android.view.MotionEvent.obtain(at,SystemClock.uptimeMillis(),action,r.exactCenterX(),r.exactCenterY(),0);
-            e.setSource(android.view.InputDevice.SOURCE_TOUCHSCREEN);assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(e,true));e.recycle();SystemClock.sleep(35);
+        if(id.equals("chrome-web")) {
+            android.graphics.Rect r=new android.graphics.Rect();n.getBoundsInScreen(r);n.recycle();
+            long at=SystemClock.uptimeMillis();
+            for(int action:new int[]{android.view.MotionEvent.ACTION_DOWN,android.view.MotionEvent.ACTION_UP}) {
+                android.view.MotionEvent e=android.view.MotionEvent.obtain(at,SystemClock.uptimeMillis(),action,r.exactCenterX(),r.exactCenterY(),0);
+                e.setSource(android.view.InputDevice.SOURCE_TOUCHSCREEN);assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(e,true));e.recycle();SystemClock.sleep(35);
+            }
+        } else {
+            // ACTION_FOCUS may return false when the editor already has focus.
+            // Verify delivery through the editor's actual text, not that return value.
+            n.performAction(AccessibilityNodeInfo.ACTION_FOCUS);n.performAction(AccessibilityNodeInfo.ACTION_CLICK);n.recycle();
         }
         node("Space").recycle();SystemClock.sleep(350);
     }
@@ -77,7 +83,7 @@ public final class AppEditorAuditTest extends KeyboardInteractionTest {
         try {
             for(String field:new String[]{title,body})for(dev.minime.core.InputMode mode:new dev.minime.core.InputMode[]{dev.minime.core.InputMode.ENGLISH,dev.minime.core.InputMode.CHINESE,dev.minime.core.InputMode.TAIWANESE,dev.minime.core.InputMode.JAPANESE}) {
                 String nativeQuery=mode.english()?"tomorr":mode==dev.minime.core.InputMode.CHINESE?"nihao":mode.taiwanese()?AddonTestData.probe(activity,"poj","everyday_")[0]:"konnichi";
-                for(String raw:new String[]{"pronun",nativeQuery}) {
+                for(String raw:mode.english()?new String[]{"pronun",nativeQuery,"thank "}:new String[]{"pronun",nativeQuery}) {
                     clearExternal(field);externalMode(mode);externalType(field,raw);
                     rows.put(new org.json.JSONObject().put("field",field).put("mode",mode.id).put("raw",raw).put("candidates",new org.json.JSONArray(auditCandidates())));
                 }
@@ -112,7 +118,7 @@ public final class AppEditorAuditTest extends KeyboardInteractionTest {
             activity.startActivity(intent);SystemClock.sleep(1500);
             for(dev.minime.core.InputMode mode:new dev.minime.core.InputMode[]{dev.minime.core.InputMode.ENGLISH,dev.minime.core.InputMode.CHINESE,dev.minime.core.InputMode.TAIWANESE,dev.minime.core.InputMode.JAPANESE}) {
                 String nativeQuery=mode.english()?"tomorr":mode==dev.minime.core.InputMode.CHINESE?"nihao":mode.taiwanese()?AddonTestData.probe(activity,"poj","everyday_")[0]:"konnichi";
-                for(String raw:new String[]{"pronun",nativeQuery}) {
+                for(String raw:mode.english()?new String[]{"pronun",nativeQuery,"thank "}:new String[]{"pronun",nativeQuery}) {
                     clearExternal("chrome-web");externalMode(mode);externalType("chrome-web",raw);
                     rows.put(new org.json.JSONObject().put("field","Chrome textarea").put("mode",mode.id).put("raw",raw).put("candidates",new org.json.JSONArray(auditCandidates())));
                 }

@@ -93,6 +93,19 @@ public final class EditorIntegrationTest extends ActivityInstrumentationTestCase
         s.finish(); s.start(3,7); s.write("A",false); assertFalse(s.update(4,4));
         assertTrue(s.update(0,4));
     }
+    public void testCommittedOwnershipIsBoundedAndInvalidated() {
+        SelectionState s=new SelectionState();s.start(0,0);
+        s.write("thank",true);s.write("thank ",false);assertTrue(s.ownsCommitted(6,6));assertEquals("thank ",s.committedText());
+        s.write("you",true);s.write("you ",false);assertEquals("thank you ",s.committedText());assertTrue(s.ownsCommitted(10,10));
+        assertFalse(s.ownsCommitted(9,9));assertFalse(s.ownsCommitted(9,10));
+        s.update(10,10);s.update(0,0);assertEquals("",s.committedText());assertFalse(s.ownsCommitted(0,0));
+        s.write("x",false);s.delete();assertEquals("",s.committedText());
+        s.start(0,0);s.write("word ",false);s.rewind(1);assertEquals("",s.committedText());
+        s.start(0,0);s.write("\uD83D\uDE00"+new String(new char[95]).replace('\0','a'),false);
+        assertTrue(s.committedText().length()<=96);assertFalse(Character.isLowSurrogate(s.committedText().charAt(0)));
+        s.start(0,0);assertEquals("",s.committedText());
+        s.rememberCommitted(false);s.write("private",false);assertEquals("",s.committedText());assertFalse(s.ownsCommitted(7,7));
+    }
     public void testRealMultilineEnterAndPasswordMasking() throws Throwable {
         EditorTestActivity activity=getActivity();
         runTestOnUiThread(()-> {

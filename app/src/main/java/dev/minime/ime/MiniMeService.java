@@ -85,8 +85,16 @@ public final class MiniMeService extends InputMethodService {
             resume=owned!=null && engine.raw().contentEquals(owned)
                 && input.setComposingRegion(attribute.initialSelEnd-engine.raw().length(),attribute.initialSelEnd);
         }
+        boolean resumeContext=sameField && engine.raw().isEmpty() && engine.hasContext()
+            && selection.ownsCommitted(attribute.initialSelStart,attribute.initialSelEnd);
+        if(resumeContext) {
+            InputConnection input=getCurrentInputConnection();String committed=selection.committedText();
+            CharSequence owned=input==null?null:input.getTextBeforeCursor(committed.length(),0);
+            resumeContext=owned!=null && committed.contentEquals(owned);
+        }
         editorInfo=attribute; policy=nextPolicy;
-        if(resume) {configureAddons();render();return;}
+        selection.rememberCommitted(!policy.literal);
+        if(resume || resumeContext) {configureAddons();render();return;}
         zhuyin=getSharedPreferences("settings",MODE_PRIVATE).getBoolean("zhuyin",false);
         decoder.rime(RimeBackend.enabled(this));
         if(RimeBackend.enabled(this))RimeBackend.load(this).whenComplete((loaded,error)->new Handler(Looper.getMainLooper()).post(()-> {
@@ -110,7 +118,7 @@ public final class MiniMeService extends InputMethodService {
     }
     @Override public void onFinishInput() {
         if(keyboard!=null)keyboard.inputActive(false);
-        engine.abandon(); super.onFinishInput();
+        engine.abandon();selection.start(-1,-1);super.onFinishInput();
     }
     @Override public void onStartInputView(EditorInfo attribute,boolean restarting) {
         super.onStartInputView(attribute,restarting);
@@ -127,7 +135,7 @@ public final class MiniMeService extends InputMethodService {
     }
     @Override public void onFinishInputView(boolean finishingInput) {
         if(keyboard!=null)keyboard.inputActive(false);
-        if(finishingInput)engine.abandon(); super.onFinishInputView(finishingInput);
+        if(finishingInput){engine.abandon();selection.start(-1,-1);} super.onFinishInputView(finishingInput);
     }
     @Override public void onUpdateSelection(int oldStart,int oldEnd,int newStart,int newEnd,int candidatesStart,int candidatesEnd) {
         super.onUpdateSelection(oldStart,oldEnd,newStart,newEnd,candidatesStart,candidatesEnd);

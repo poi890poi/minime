@@ -1,6 +1,6 @@
 # MinIME Privacy Policy
 
-Effective date: September 10, 2026
+Effective date: September 16, 2026
 
 **App:** MinIME — Pinyin for Taiwan / MinIME — 台灣多語拼音鍵盤
 
@@ -12,7 +12,7 @@ MinIME is an independently developed, offline Android keyboard. This policy appl
 
 ## Typing and local processing
 
-MinIME processes the characters you type to compose text and suggest candidates. Text you choose to enter is sent to the app you are typing in. That app has its own privacy practices. MinIME does not send your typing to the MinIME developers or a prediction server. It has no Internet permission, advertising SDK, analytics SDK or keystroke log. To restore an interrupted composition, it may check its own composing text immediately before the cursor, limited to 96 characters; it does not collect the rest of the document.
+MinIME processes the characters you type to compose text and suggest candidates. Text you choose to enter is sent to the app you are typing in. That app has its own privacy practices. MinIME does not send your typing to the MinIME developers or a prediction server. Release builds have no Internet permission, advertising SDK, analytics SDK or keystroke log. To restore interrupted composition or next-word suggestions in the same field, MinIME may check a short suffix of text it just entered immediately before the cursor, limited to 96 characters. This temporary state is cleared when the input session finishes and is not retained for password fields; MinIME does not collect the rest of the document. Development-only editor tests may use a loopback network fixture; that permission is excluded from release builds.
 
 ## Preferences and learned words
 

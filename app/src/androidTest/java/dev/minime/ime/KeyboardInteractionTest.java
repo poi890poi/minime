@@ -172,6 +172,23 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
             SystemClock.sleep(60);
         }
     }
+    public void testCommittedContextSurvivesValidatedRestart() {
+        activateMode(dev.minime.core.InputMode.ENGLISH);auditType("thank ");
+        List<String> before=auditCandidates();assertFalse("Accepted word has predictions",before.isEmpty());
+        getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
+        assertEquals("Same editor preserves accepted-word predictions",before,auditCandidates());
+        // Same cursor and length do not prove ownership: an external edit must clear context.
+        getInstrumentation().runOnMainSync(()-> {
+            activity.text.setText("other ");activity.text.setSelection(6);
+            ((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text);
+        });
+        assertTrue("External replacement clears old context",auditCandidates().isEmpty());
+        clear();focus(activity.url);focus(activity.text);auditType("thank ");assertFalse(auditCandidates().isEmpty());
+        getInstrumentation().runOnMainSync(()->activity.text.setSelection(0));
+        assertTrue("Cursor movement clears old context",auditCandidates().isEmpty());
+        clear();focus(activity.url);focus(activity.text);auditType("thank ");assertFalse(auditCandidates().isEmpty());
+        focus(activity.url);focus(activity.text);assertTrue("New field session clears old context",auditCandidates().isEmpty());
+    }
     /** Observation-only matrix: equivalent fields, not language-model accuracy. */
     public void testEditorSuggestionAudit()throws Exception {
         SharedPreferences p=activity.getSharedPreferences("settings",Context.MODE_PRIVATE);
