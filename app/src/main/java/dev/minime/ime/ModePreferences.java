@@ -26,9 +26,12 @@ final class ModePreferences {
     void select(InputMode mode) {
         mode=resolve(mode);
         if(!mode.available(configured()))return;
+        // Returning from English must also repair older saved state whose quick
+        // partner still names a previously selected optional language.
+        InputMode partner=mode==InputMode.CHINESE?selected():mode;
         SharedPreferences.Editor edit=settings.edit().putBoolean("english_mode",mode.english()).putBoolean("english_punctuation",false);
         if(!mode.english())edit.putString("mixed_mode",mode.id);
-        if(!mode.pack.isEmpty())edit.putString("last_focused_mode",mode.id);
+        if(partner!=InputMode.CHINESE)edit.putString("last_focused_mode",partner.id);
         edit.apply();
     }
 }

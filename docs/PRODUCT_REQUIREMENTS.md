@@ -1059,3 +1059,13 @@ The project is done only when a user familiar with legacy Google Zhuyin can type
 The defining property is:
 
 **The user thinks about the text they want to type, not which language mode the keyboard is currently in.**
+
+### Explicit English fast-switch pair
+
+Selecting the English board establishes English ↔ Chinese for the bottom language
+key, including repeated taps and reopening the IME. A previously used Japanese or
+Taiwanese mode must not intercept the return trip from Chinese. Selecting 台 or 日
+explicitly establishes that mode ↔ Chinese again. Existing English sessions with
+older saved partner preferences must adopt the English pair on their first return
+to Chinese. Preserve unfinished spelling, key geometry, and optional-mode enable
+settings; do not accept a candidate as a side effect of switching.

@@ -303,6 +303,28 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         node("ㄅ").recycle();assertEquals("hello ",activity.text.getText().toString());
         click("拼音 layout");
     }
+    public void testEnglishFastSwitchAfterFocusedLanguage() throws Exception {
+        Context context=getInstrumentation().getTargetContext();
+        context.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).commit();
+        AddonRepository.load(context).get(60,java.util.concurrent.TimeUnit.SECONDS);
+        focus(activity.url);focus(activity.text);
+        Rect stable=keyboardBounds();
+        for(String focused:new String[]{"japanese","taiwanese"}) {
+            click("Choose language mode: chinese");click("Choose "+focused+" mode");
+            click("Choose language mode: "+focused);click("Choose english mode");
+            type("ni");
+            for(int repeat=0;repeat<3;repeat++) {
+                click("Switch to Chinese");node("Switch to English").recycle();
+                assertEquals("ni",activity.text.getText().toString());
+                sameKeyboardBounds(stable,"Chinese quick-switch partner");
+                click("Switch to English");node("Switch to Chinese").recycle();
+                assertEquals("ni",activity.text.getText().toString());
+                getInstrumentation().runOnMainSync(()->assertTrue("Quick switching preserves composition",android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText())>=0));
+                sameKeyboardBounds(stable,"English quick-switch partner");
+            }
+            clear();click("Switch to Chinese");
+        }
+    }
     public void testExplicitMixedModesKeepCompositionAndGeometry() throws Exception {
         Context context=getInstrumentation().getTargetContext();
         context.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).commit();
