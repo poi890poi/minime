@@ -4,7 +4,7 @@ import android.text.InputType;
 import android.view.inputmethod.EditorInfo;
 
 final class EditorPolicy {
-    final boolean secure, privateField, literal, numeric, preferEnglish, literalEnglish;
+    final boolean secure, privateField, literal, numeric, preferEnglish, literalEnglish, noSuggestions;
     EditorPolicy(EditorInfo info) {
         int cls = info.inputType & InputType.TYPE_MASK_CLASS;
         int variation = info.inputType & InputType.TYPE_MASK_VARIATION;
@@ -18,8 +18,12 @@ final class EditorPolicy {
         preferEnglish = cls == InputType.TYPE_CLASS_TEXT &&
             (variation == InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS || variation == InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS
             || variation == InputType.TYPE_TEXT_VARIATION_URI);
-        literalEnglish = preferEnglish || (cls == InputType.TYPE_CLASS_TEXT &&
-            (info.inputType & InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS) != 0);
+        noSuggestions = cls == InputType.TYPE_CLASS_TEXT &&
+            (info.inputType & InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS) != 0;
+        // Rich editors also set NO_SUGGESTIONS on ordinary prose fields. Keep
+        // manual candidates available in every mode; use the hint to disable
+        // optional automatic spelling correction, not dictionary lookup.
+        literalEnglish = preferEnglish;
     }
     boolean literal(boolean english) { return literal || (english && literalEnglish); }
     static int action(EditorInfo info) {

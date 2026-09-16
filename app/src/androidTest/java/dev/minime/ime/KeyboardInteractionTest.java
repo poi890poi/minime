@@ -17,7 +17,7 @@ import java.util.*;
 @SuppressWarnings("deprecation")
 public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<EditorTestActivity> {
     public KeyboardInteractionTest() { super(EditorTestActivity.class); }
-    private EditorTestActivity activity;
+    protected EditorTestActivity activity;
     private boolean zhuyin;
     private final Map<String,Map<String,?>> saved=new HashMap<>();
     @Override protected void setUp() throws Exception {
@@ -69,7 +69,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
             }
         } finally { super.tearDown(); }
     }
-    private AccessibilityNodeInfo find(AccessibilityNodeInfo n,String description) {
+    protected AccessibilityNodeInfo find(AccessibilityNodeInfo n,String description) {
         if(n==null) return null;
         if(n.isVisibleToUser() && description.contentEquals(n.getContentDescription()==null?"":n.getContentDescription())) return n;
         for(int i=0;i<n.getChildCount();i++) {
@@ -78,7 +78,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         }
         n.recycle(); return null;
     }
-    private AccessibilityNodeInfo node(String description) {
+    protected AccessibilityNodeInfo node(String description) {
         long until=SystemClock.uptimeMillis()+6000;
         do {
             for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows()) {
@@ -89,7 +89,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         } while(SystemClock.uptimeMillis()<until);
         capture("review-control-failure");throw new AssertionError("Visible control missing: "+description);
     }
-    private void click(String description) {
+    protected void click(String description) {
         if(description.equals("Emoji")) {
             AccessibilityNodeInfo comma=null;
             for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows()) {
@@ -147,6 +147,72 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         catch(java.util.concurrent.TimeoutException e) { throw new AssertionError("Slide UI did not settle",e); }
     }
     private void clear() { getInstrumentation().runOnMainSync(()->activity.text.setText("")); getInstrumentation().waitForIdleSync(); }
+    private void auditCandidates(AccessibilityNodeInfo n,List<String> out) {
+        if(n==null)return;
+        String d=String.valueOf(n.getContentDescription());
+        if(n.isVisibleToUser() && d.startsWith("Candidate ") && !d.equals("Candidate list"))out.add(d.substring(10));
+        for(int i=0;i<n.getChildCount();i++)auditCandidates(n.getChild(i),out);
+        n.recycle();
+    }
+    protected List<String> auditCandidates() {
+        SystemClock.sleep(250);List<String> out=new ArrayList<>();
+        for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows())
+            if(w.getType()==AccessibilityWindowInfo.TYPE_INPUT_METHOD)auditCandidates(w.getRoot(),out);
+        return out;
+    }
+    private void auditType(String text) {
+        StringBuilder typed=new StringBuilder();
+        for(char c:text.toCharArray()) {
+            if(c==' '){click("Space");continue;}
+            String key=String.valueOf(c);boolean lower=false;
+            for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows())if(w.getType()==AccessibilityWindowInfo.TYPE_INPUT_METHOD){AccessibilityNodeInfo n=find(w.getRoot(),key);if(n!=null){lower=true;n.recycle();break;}}
+            click(lower?key:key.toUpperCase(Locale.ROOT));
+            typed.append(lower?key:key.toUpperCase(Locale.ROOT));
+            expectText(typed.toString());
+            SystemClock.sleep(60);
+        }
+    }
+    /** Observation-only matrix: equivalent fields, not language-model accuracy. */
+    public void testEditorSuggestionAudit()throws Exception {
+        SharedPreferences p=activity.getSharedPreferences("settings",Context.MODE_PRIVATE);
+        p.edit().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).putBoolean("english_correction",false).commit();
+        AddonRepository.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS);
+        String poj=AddonTestData.probe(activity,"poj","everyday_")[0],ja=AddonTestData.probe(activity,"japanese","everyday_")[0];
+        int text=android.text.InputType.TYPE_CLASS_TEXT;
+        int[] types={text,text|0x2c000,text|0x10000,text|0x80000,text,text|0x10,text|0x80};
+        String[] profiles={"plain","multiline-autocorrect-caps","autocomplete","no-suggestions","private","uri","password"};
+        org.json.JSONArray records=new org.json.JSONArray();
+        try {
+            for(dev.minime.core.InputMode mode:new dev.minime.core.InputMode[]{dev.minime.core.InputMode.ENGLISH,dev.minime.core.InputMode.CHINESE,dev.minime.core.InputMode.TAIWANESE,dev.minime.core.InputMode.JAPANESE}) {
+                String[] queries=mode.english()?new String[]{"pronun","tomorr","keybo"}:mode==dev.minime.core.InputMode.CHINESE?new String[]{"pronun","nihao","xiexie"}:new String[]{"pronun",mode.taiwanese()?poj:ja,(mode.taiwanese()?poj:ja).substring(0,3)};
+                for(int profile=0;profile<types.length;profile++) {
+                    final int ix=profile;
+                    getInstrumentation().runOnMainSync(()->{activity.text.setText("");activity.text.setInputType(types[ix]);activity.text.setImeOptions(ix==4?android.view.inputmethod.EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING:android.view.inputmethod.EditorInfo.IME_ACTION_NONE);});
+                    activateMode(mode);
+                    for(String raw:queries) {
+                        clear();focus(activity.url);focus(activity.text);
+                        SystemClock.sleep(250);
+                        // URI defaults to English; an explicit mode switch is intentionally tested separately.
+                        auditType(raw);
+                        org.json.JSONObject row=new org.json.JSONObject().put("mode",mode.id).put("profile",profiles[profile]).put("raw",raw)
+                            .put("candidates",new org.json.JSONArray(auditCandidates())).put("input_type",types[profile]);records.put(row);
+                        getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
+                        row.put("after_restart",new org.json.JSONArray(auditCandidates()));
+                    }
+                }
+            }
+            getInstrumentation().runOnMainSync(()->{activity.text.setText("");activity.text.setInputType(text);activity.text.setImeOptions(android.view.inputmethod.EditorInfo.IME_ACTION_NONE);});
+            activateMode(dev.minime.core.InputMode.ENGLISH);
+            for(String raw:new String[]{"thank ","see ","how ","good "}) {
+                clear();focus(activity.url);focus(activity.text);auditType(raw);
+                org.json.JSONObject row=new org.json.JSONObject().put("mode","english").put("profile","committed-context").put("raw",raw).put("candidates",new org.json.JSONArray(auditCandidates()));records.put(row);
+                getInstrumentation().runOnMainSync(()->((InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).restartInput(activity.text));
+                row.put("after_restart",new org.json.JSONArray(auditCandidates()));
+            }
+        } finally {
+            try(java.io.FileOutputStream out=new java.io.FileOutputStream(new java.io.File(activity.getExternalFilesDir(null),"editor-suggestion-audit.json"))){out.write(records.toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));}
+        }
+    }
     private AccessibilityNodeInfo textNode(AccessibilityNodeInfo n,String text,boolean list) {
         if(n==null) return null;
         if(n.isVisibleToUser() && (list?"android.widget.ListView".contentEquals(n.getClassName()):text.contentEquals(n.getText()==null?"":n.getText()))) return n;
@@ -692,6 +758,7 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         click("Switch to English");type("ming");click("Space");assertEquals("你好ming ",activity.url.getText().toString());
     }
     public void testNoSuggestionsKeepsChineseConversionAndPrivatePolicy() {
+        activity.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("english_correction",true).commit();
         getInstrumentation().runOnMainSync(()-> {
             activity.text.setInputType(android.text.InputType.TYPE_CLASS_TEXT|android.text.InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
             activity.text.setImeOptions(android.view.inputmethod.EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING);
@@ -699,7 +766,9 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         });
         node("Switch to English").recycle();type("nihao");click("Space");expectText("你好");
         click("Switch to English");type("pronun");
-        for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows())assertNull("No-suggestions English stays literal",find(w.getRoot(),"Candidate pronunciation"));
+        node("Candidate pronunciation").recycle();
+        click("Candidate pronunciation");expectText("你好pronunciation");
+        clear();type("teh");click("Space");expectText("teh ");
     }
     private void focus(android.view.View view) {
         getInstrumentation().runOnMainSync(()-> {

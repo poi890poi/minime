@@ -78,7 +78,7 @@ public final class EditorIntegrationTest extends ActivityInstrumentationTestCase
         EditorInfo info=new EditorInfo();info.inputType=InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS;
         info.imeOptions=EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING;
         EditorPolicy policy=new EditorPolicy(info);
-        assertFalse(policy.preferEnglish);assertFalse(policy.literal(false));assertTrue(policy.literal(true));assertTrue(policy.privateField);
+        assertFalse(policy.preferEnglish);assertFalse(policy.literal(false));assertFalse(policy.literal(true));assertTrue(policy.privateField);assertTrue(policy.noSuggestions);
         for(int type:new int[]{InputType.TYPE_NULL,InputType.TYPE_CLASS_NUMBER,InputType.TYPE_CLASS_PHONE,InputType.TYPE_CLASS_DATETIME,
                 InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD}) {
             info.inputType=type;policy=new EditorPolicy(info);assertTrue(policy.literal(false));assertTrue(policy.literal(true));

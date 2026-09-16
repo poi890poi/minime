@@ -104,7 +104,7 @@ public final class MiniMeService extends InputMethodService {
         engine.start(zhuyin,literalInput(),policy.privateField,policy.secure || policy.numeric,english);
         engine.switchMode(english?InputMode.ENGLISH:modes.mixed(),literalInput());
         configureAddons();
-        engine.englishOptions(getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_correction",false),
+        engine.englishOptions(!policy.noSuggestions && getSharedPreferences("settings",MODE_PRIVATE).getBoolean("english_correction",false),
             getSharedPreferences("settings",MODE_PRIVATE).getBoolean("double_space_period",true));
         render();
     }

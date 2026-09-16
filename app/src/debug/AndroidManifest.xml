@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Local-loopback Chrome editor fixture; never present in release builds. -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <application>
         <activity android:name=".EditorTestActivity" android:exported="true" android:label="MinIME editor checks" android:windowSoftInputMode="adjustResize" />
     </application>
