@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.AssertionError: separate accepted English: CHINESE/space expected [alpha beta ] actual [alphabeta ]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.CompletionBoundaryRegression.run(CompletionBoundaryRegression.java:33)
+	at dev.minime.core.CompletionBoundaryRegression.main(CompletionBoundaryRegression.java:9)

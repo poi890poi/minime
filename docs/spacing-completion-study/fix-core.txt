@@ -1,0 +1,31 @@
+PASS strict UTF-8 and Unicode audit: 34 source/note files, 735289 lines; font support is checked separately on Android
+PASS prefix-index parity: 768 generated queries against frozen full-sort reference
+PASS candidate font capability: order, raw recovery, Space, prefix taps, paired forms and queued acceptance
+PASS raw/lexical identity, paired tap/hold/Space, raw recovery and language isolation
+PASS explicit mode isolation, composition, callback, learning and acceptance boundaries
+PASS English context: all modes, casing, completion, contraction, privacy, literal/direct fields and lifecycle boundaries
+PASS completion boundary: mixed acceptance, punctuation, edits, foreign provenance and async Space
+PASS dedicated language priority, matching, fallback, overrides and acceptance
+PASS Japanese characters: 228 kana source aliases, bounded lookup, source frequency and mode isolation
+PASS Japanese kana differential probes=24989; acceptance, suffix and mode isolation
+PASS optional Japanese conversion eligibility, fallback, cancellation and acceptance
+PASS prefix acceptance: 14056 source-derived casing/privacy controls plus malformed provider spans
+PASS paired output, shared partial matching, source isolation, stale and queued acceptance
+Dictionary startup 9940 ms
+PASS corpus A
+PASS corpus B
+PASS corpus C
+PASS corpus D
+PASS corpus meeting-transition
+PASS corpus technical
+PASS corpus url
+PASS corpus email
+PASS corpus code
+PASS corpus literal
+PASS corpus zhuyin-A
+PASS corpus zhuyin-transition
+PASS corpus zhuyin-construction-choice
+Pinyin continuity: 411 frozen full/initial/mixed inputs, immediate and out-of-order callbacks
+PASS add-ons: 96 source-derived composition probes; bounded repeated learning and privacy
+PASS apostrophes: 1243 source pairs; 48 keys in both modes and three casing styles; 727 valid spellings; 52 source-annotated contractions
+PASS 309236 assertions; desktop key processing p50=0.02 ms p95=0.21 ms max=25.44 ms (101620 keys; not Android latency)

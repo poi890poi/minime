@@ -173,7 +173,9 @@ public final class CompositionEngine {
         clearAssistance();
         traced=false;
         String letter = new String(Character.toChars(codePoint));
-        resolveCompletionBoundary(letter);
+        // Mixed boards cannot know whether these Latin keys will become Han.
+        // Resolve their boundary only when the next segment is accepted.
+        if(englishMode)resolveCompletionBoundary(letter);
         committedEnglishWord=false;
         if (direct) { editor.commit(letter); return; }
         boolean phonetic = IntentClassifier.isZhuyin(codePoint);
@@ -182,6 +184,7 @@ public final class CompositionEngine {
         // ASCII punctuation stays with Latin tokens so email, URLs and identifiers never lose raw input.
         if (!phonetic && !Character.isLetterOrDigit(codePoint) && (codePoint > 126 || codePoint < 33)) {
             commitDefault(false);
+            resolveCompletionBoundary(letter);
             phraseSession.clear();
             editor.commit(letter); clearContext();afterLatin=false; refresh(); return;
         }
@@ -193,7 +196,7 @@ public final class CompositionEngine {
     }
     public void space(long now) {
         if(deferUntilReady(()->space(now),true))return;
-        completionBoundary=false;
+        if(raw.isEmpty())completionBoundary=false;
         if(doubleSpace && englishMode && !literalField && !direct && raw.isEmpty() && spaceAt>=0 && now-spaceAt<=1000 && now>=spaceAt) {
             clearAssistance();editor.replacePrevious(1,". ");clearContext();refresh();return;
         }
@@ -211,25 +214,25 @@ public final class CompositionEngine {
             if(!selected.text.equals(spelling)) {undoSpelling=spelling;undoOutput=selected.text+" ";}
         }
     }
-    public void confirm() { if(deferUntilReady(this::confirm,true))return;clearAssistance();completionBoundary=false; commitDefault(false); }
+    public void confirm() { if(deferUntilReady(this::confirm,true))return;clearAssistance();commitDefault(false);completionBoundary=false; }
     /** An explicit slide commits its literal output, independent of token inference. */
-    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();resolveCompletionBoundary(text); commitDefault(false);phraseSession.clear(); editor.commit(text);committedEnglishWord=false; clearContext();afterLatin=latinBoundary(text); refresh(); }
-    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();completionBoundary=false; commitDefault(false);phraseSession.clear(); editor.enter();committedEnglishWord=false; clearContext();afterLatin=false; refresh(); }
+    public void literal(String text) { if(deferUntilReady(()->literal(text),true))return;clearAssistance();commitDefault(false);resolveCompletionBoundary(text);phraseSession.clear(); editor.commit(text);committedEnglishWord=false; clearContext();afterLatin=latinBoundary(text); refresh(); }
+    public void enter() { if(deferUntilReady(this::enter,true))return;clearAssistance();commitDefault(false);completionBoundary=false;phraseSession.clear(); editor.enter();committedEnglishWord=false; clearContext();afterLatin=false; refresh(); }
     private void resolveCompletionBoundary(String text) {
         if(completionBoundary) {
             completionBoundary=false;
-            if(!text.isEmpty() && Character.isLetterOrDigit(text.codePointAt(0))) editor.commit(" ");
+            if(boundaryWordStart(text)) editor.commit(" ");
         }
     }
     public void commitRaw(boolean space) {
         clearAssistance();
-        if (raw.isEmpty()) { if (space) editor.commit(" "); return; }
+        if (raw.isEmpty()) { if (space) {completionBoundary=false;editor.commit(" ");} return; }
         commit(new Candidate(raw, true, 0), space, false);
     }
     public void backspace() {
         if(deferUntilReady(this::backspace,false))return;
         phraseSession.clear();
-        completionBoundary=false;
+        if(raw.isEmpty())completionBoundary=false;
         committedEnglishWord=false;
         if(!undoSpelling.isEmpty() && raw.isEmpty()) {
             String spelling=undoSpelling;int count=undoOutput.length();clearAssistance();
@@ -263,8 +266,7 @@ public final class CompositionEngine {
             raw=rest;completionBoundary=false;committedEnglishWord=false;
             editor.composing(raw);refresh();return;
         }
-        boolean completed=englishMode && !literalField && (traced || !choice.text.equals(raw)) && choice.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");
-        resolveCompletionBoundary(choice.text);
+        boolean completed=englishWord(choice) && (traced || !choice.text.equals(raw));
         commit(choice, false, !raw.isEmpty());
         completionBoundary=completed;
     }
@@ -301,7 +303,11 @@ public final class CompositionEngine {
     private void commit(Candidate c, boolean withSpace, boolean explicit) {
         acceptedPhrase(raw,c,explicit);
         if(explicit)learnChoice(raw,c);
-        editor.commit(c.text + (withSpace ? " " : ""));
+        // One editor replacement owns both the separator and the accepted text.
+        // Pack provenance prevents ASCII Taiwanese readings from posing as English.
+        boolean separate=completionBoundary && c.literal && !c.supplemental && c.pack.isEmpty() && boundaryWordStart(c.text);
+        completionBoundary=false;
+        editor.commit((separate?" ":"") + c.text + (withSpace ? " " : ""));
         committedEnglishWord=false;
         if(inputMode.englishEnabled() && !literalField && !c.supplemental && c.pack.isEmpty()
                 && c.literal && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
@@ -317,6 +323,16 @@ public final class CompositionEngine {
         }
         afterLatin=c.literal && latinBoundary(c.text);
         raw = ""; refresh();
+    }
+    private boolean englishWord(Candidate c) {
+        return inputMode.englishEnabled() && !literalField && !direct && c.literal && !c.supplemental && c.pack.isEmpty()
+            && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");
+    }
+    private boolean boundaryWordStart(String text) {
+        if(text.isEmpty())return false;
+        if(englishMode)return Character.isLetterOrDigit(text.codePointAt(0));
+        char first=text.charAt(0);
+        return (first>='A' && first<='Z') || (first>='a' && first<='z') || (first>='0' && first<='9');
     }
     private boolean latinBoundary(String text) {return !englishMode && !literalField && text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");}
     private String contextKey() {

@@ -62,6 +62,7 @@ public final class Regression {
         ModeRegression.run();
         EnglishIsolationRegression.run();
         EnglishContextRegression.run();
+        CompletionBoundaryRegression.run();
         ModePriorityRegression.run();
         JapaneseBasicsRegression.run();
         JapaneseKanaRegression.run();

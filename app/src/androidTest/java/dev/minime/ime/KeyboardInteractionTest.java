@@ -552,6 +552,16 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         clear();type("im ");expectText("I'm ");clear();type("cant ");expectText("cant ");
         clear();type("pronun");click("Candidate pronunciation");click("Space");click("Space");expectText("pronunciation. ");
     }
+    public void testPinyinEnglishCompletionSpacing() {
+        type("pronun");click("Candidate pronunciation");type("test ");
+        expectText("pronunciation test ");
+        clear();type("pronun");click("Candidate pronunciation");type("nihao");click("Candidate 你好");
+        expectText("pronunciation你好");
+        clear();type("pronun");click("Candidate pronunciation");click("Space");type("test ");
+        expectText("pronunciation test ");
+        clear();type("pronun");click("Candidate pronunciation");type("tesx");click("⌫");type("t ");
+        expectText("pronunciation test ");
+    }
     public void testPhoneticAnnotationTracksPanelsAndEditors() {
         type("nihao");node("Candidate 你好").recycle();node("Exact input nihao").recycle();
         click("?123");
