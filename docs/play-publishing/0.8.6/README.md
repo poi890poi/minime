@@ -1,6 +1,6 @@
 # MinIME 0.8.6
 
-Package `app.minime.keyboard`, version code 35. This local release packages the
+Package `app.minime.keyboard`, version code 36. This local release packages the
 approved Plex 26/18 portrait typography and unreadable-candidate filtering since
 0.8.5. Existing settings and QWERTY/joined KALQ choice are preserved.
 
