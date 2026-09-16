@@ -1,0 +1,69 @@
+[
+  {
+    "id": "py-english-space",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "meeting",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "first-space"
+      },
+      {
+        "type": "test",
+        "label": "next-word"
+      },
+      {
+        "key": "SPACE",
+        "label": "second-accept"
+      }
+    ]
+  },
+  {
+    "id": "py-english-two-spaces",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "meeting",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "first-space"
+      },
+      {
+        "key": "SPACE",
+        "label": "second-space"
+      },
+      {
+        "type": "test",
+        "label": "next-word"
+      }
+    ]
+  },
+  {
+    "id": "py-english-completion",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "choose": "pronunciation",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "type": "test",
+        "label": "next-word"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ]
+  }
+]

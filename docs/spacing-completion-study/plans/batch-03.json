@@ -1,0 +1,199 @@
+[
+  {
+    "id": "py-chinese-space",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "phrase-accept"
+      },
+      {
+        "key": "SPACE",
+        "label": "literal-space"
+      },
+      {
+        "type": "ma",
+        "label": "next-syllable"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ]
+  },
+  {
+    "id": "py-chinese-candidate",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "choose": "你好",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "type": "ma",
+        "label": "next-syllable"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ]
+  },
+  {
+    "id": "py-english-then-chinese",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "meeting",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      },
+      {
+        "type": "nihao",
+        "label": "chinese-typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "chinese-accepted"
+      }
+    ]
+  },
+  {
+    "id": "py-chinese-then-english",
+    "mode": "pinyin",
+    "actions": [
+      {
+        "type": "nihao",
+        "label": "typed"
+      },
+      {
+        "choose": "你好",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "type": "meeting",
+        "label": "english-typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "english-accepted"
+      }
+    ]
+  },
+  {
+    "id": "en-candidate-switch-chinese",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "choose": "pronunciation",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "key": "LANGUAGE",
+        "label": "switch"
+      },
+      {
+        "type": "nihao",
+        "label": "chinese-typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ]
+  },
+  {
+    "id": "en-nosuggest-completion",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "choose": "pronunciation",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "type": "test",
+        "label": "next-word"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ],
+    "field": "nosuggest"
+  },
+  {
+    "id": "en-url-completion",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "choose": "pronunciation",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "type": "test",
+        "label": "next-word"
+      }
+    ],
+    "field": "url"
+  },
+  {
+    "id": "en-email-literal",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "name",
+        "label": "typed"
+      },
+      {
+        "key": "a",
+        "label": "at-symbol",
+        "slide": 1
+      },
+      {
+        "type": "example",
+        "label": "typed"
+      },
+      {
+        "key": "PERIOD",
+        "label": "period"
+      },
+      {
+        "type": "com",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ],
+    "field": "email"
+  }
+]

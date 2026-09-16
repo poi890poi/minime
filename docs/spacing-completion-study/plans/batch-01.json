@@ -1,0 +1,199 @@
+[
+  {
+    "id": "en-completion-letter",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "choose": "pronunciation",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "type": "test",
+        "label": "next-word"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ]
+  },
+  {
+    "id": "en-completion-explicit-space",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "tomorr",
+        "label": "typed"
+      },
+      {
+        "choose": "tomorrow",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      },
+      {
+        "type": "morning",
+        "label": "next-word"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ]
+  },
+  {
+    "id": "en-completion-comma",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hell",
+        "label": "typed"
+      },
+      {
+        "choose": "hello",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "key": "COMMA",
+        "label": "comma"
+      },
+      {
+        "type": "world",
+        "label": "next-word"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ]
+  },
+  {
+    "id": "en-completion-period",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pleas",
+        "label": "typed"
+      },
+      {
+        "choose": "please",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "key": "PERIOD",
+        "label": "period"
+      },
+      {
+        "type": "help",
+        "label": "next-word"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ]
+  },
+  {
+    "id": "en-completion-delete",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "becau",
+        "label": "typed"
+      },
+      {
+        "choose": "because",
+        "label": "candidate-selected",
+        "capture": true
+      },
+      {
+        "key": "DELETE",
+        "label": "after-delete"
+      },
+      {
+        "type": "x",
+        "label": "after-edit"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ]
+  },
+  {
+    "id": "en-partial-space",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "space-accept"
+      },
+      {
+        "type": "test",
+        "label": "next-word"
+      }
+    ]
+  },
+  {
+    "id": "en-full-space",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "first-space"
+      },
+      {
+        "type": "world",
+        "label": "next-word"
+      },
+      {
+        "key": "SPACE",
+        "label": "space"
+      }
+    ]
+  },
+  {
+    "id": "en-double-space",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "first-space"
+      },
+      {
+        "key": "SPACE",
+        "label": "second-space"
+      },
+      {
+        "key": "DELETE",
+        "label": "undo"
+      },
+      {
+        "type": "world",
+        "label": "after-undo"
+      }
+    ]
+  }
+]

@@ -1,0 +1,3208 @@
+{
+  "runtime_revision": "8021a65ac52c926b22e87b2d633f06185cb5aed9",
+  "matrix_sha256": "fea7b86b2bcadee97ad94bbc6a3e7d104f1133cf5c6b10ee763a434de20bf4ec",
+  "scenarios": 31,
+  "provider_attempts": 68,
+  "fully_observed_pairs": 28,
+  "final_unavailable": [
+    {
+      "provider": "google",
+      "id": "en-candidate-switch-chinese",
+      "error": "java.lang.IllegalStateException: Selected IME changed: app.minime.keyboard/dev.minime.ime.MiniMeService"
+    },
+    {
+      "provider": "google",
+      "id": "en-nosuggest-completion",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: pronunciation"
+    },
+    {
+      "provider": "minime",
+      "id": "en-url-completion",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate pronunciation"
+    }
+  ],
+  "cases": [
+    {
+      "provider": "google",
+      "id": "en-completion-letter",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "next-word",
+          "text": "pronunciation test",
+          "composingStart": 14,
+          "composingEnd": 18,
+          "selectionStart": 18,
+          "selectionEnd": 18
+        },
+        {
+          "stage": "space",
+          "text": "pronunciation test ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 19,
+          "selectionEnd": 19
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-completion-explicit-space",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "tomorr",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "tomorrow",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "space",
+          "text": "tomorrow ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 9,
+          "selectionEnd": 9
+        },
+        {
+          "stage": "next-word",
+          "text": "tomorrow morning",
+          "composingStart": 9,
+          "composingEnd": 16,
+          "selectionStart": 16,
+          "selectionEnd": 16
+        },
+        {
+          "stage": "space",
+          "text": "tomorrow morning ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 17,
+          "selectionEnd": 17
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-completion-comma",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hell",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "hello",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "comma",
+          "text": "hello,",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "next-word",
+          "text": "hello,world",
+          "composingStart": 6,
+          "composingEnd": 11,
+          "selectionStart": 11,
+          "selectionEnd": 11
+        },
+        {
+          "stage": "space",
+          "text": "hello,world ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-completion-period",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pleas",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "please",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "period",
+          "text": "please.",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "next-word",
+          "text": "please.help",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 11,
+          "selectionEnd": 11
+        },
+        {
+          "stage": "space",
+          "text": "please.help ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-completion-delete",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "becau",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "because",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "after-delete",
+          "text": "because",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "after-edit",
+          "text": "because x",
+          "composingStart": 8,
+          "composingEnd": 9,
+          "selectionStart": 9,
+          "selectionEnd": 9
+        },
+        {
+          "stage": "space",
+          "text": "because x ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 10,
+          "selectionEnd": 10
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-partial-space",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "space-accept",
+          "text": "pronunciation ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 14,
+          "selectionEnd": 14
+        },
+        {
+          "stage": "next-word",
+          "text": "pronunciation test",
+          "composingStart": 14,
+          "composingEnd": 18,
+          "selectionStart": 18,
+          "selectionEnd": 18
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-full-space",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "first-space",
+          "text": "hello ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "next-word",
+          "text": "hello world",
+          "composingStart": 6,
+          "composingEnd": 11,
+          "selectionStart": 11,
+          "selectionEnd": 11
+        },
+        {
+          "stage": "space",
+          "text": "hello world ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-double-space",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "first-space",
+          "text": "hello ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "second-space",
+          "text": "hello. ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "undo",
+          "text": "hello. ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "after-undo",
+          "text": "hello. world",
+          "composingStart": 7,
+          "composingEnd": 12,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-completion-letter",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "next-word",
+          "text": "pronunciation test",
+          "composingStart": 14,
+          "composingEnd": 18,
+          "selectionStart": 18,
+          "selectionEnd": 18
+        },
+        {
+          "stage": "space",
+          "text": "pronunciation test ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 19,
+          "selectionEnd": 19
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-completion-explicit-space",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "tomorr",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "tomorrow",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "space",
+          "text": "tomorrow ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 9,
+          "selectionEnd": 9
+        },
+        {
+          "stage": "next-word",
+          "text": "tomorrow morning",
+          "composingStart": 9,
+          "composingEnd": 16,
+          "selectionStart": 16,
+          "selectionEnd": 16
+        },
+        {
+          "stage": "space",
+          "text": "tomorrow morning ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 17,
+          "selectionEnd": 17
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-completion-comma",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hell",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "hello",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "comma",
+          "text": "hello,",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "next-word",
+          "text": "hello,world",
+          "composingStart": 6,
+          "composingEnd": 11,
+          "selectionStart": 11,
+          "selectionEnd": 11
+        },
+        {
+          "stage": "space",
+          "text": "hello,world ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-completion-period",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pleas",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "please",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "period",
+          "text": "please.",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "next-word",
+          "text": "please.help",
+          "composingStart": 7,
+          "composingEnd": 11,
+          "selectionStart": 11,
+          "selectionEnd": 11
+        },
+        {
+          "stage": "space",
+          "text": "please.help ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-completion-delete",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "becau",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "because",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "after-delete",
+          "text": "becaus",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "after-edit",
+          "text": "becausx",
+          "composingStart": 6,
+          "composingEnd": 7,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "space",
+          "text": "becausx ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-partial-space",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "space-accept",
+          "text": "pronun ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "next-word",
+          "text": "pronun test",
+          "composingStart": 7,
+          "composingEnd": 11,
+          "selectionStart": 11,
+          "selectionEnd": 11
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-full-space",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "first-space",
+          "text": "hello ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "next-word",
+          "text": "hello world",
+          "composingStart": 6,
+          "composingEnd": 11,
+          "selectionStart": 11,
+          "selectionEnd": 11
+        },
+        {
+          "stage": "space",
+          "text": "hello world ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-double-space",
+      "run": "batch-01",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "first-space",
+          "text": "hello ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "second-space",
+          "text": "hello. ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "undo",
+          "text": "hello.",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "after-undo",
+          "text": "hello.world",
+          "composingStart": 6,
+          "composingEnd": 11,
+          "selectionStart": 11,
+          "selectionEnd": 11
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-literal-comma",
+      "run": "batch-02",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "comma",
+          "text": "hello,",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "next-word",
+          "text": "hello,world",
+          "composingStart": 6,
+          "composingEnd": 11,
+          "selectionStart": 11,
+          "selectionEnd": 11
+        },
+        {
+          "stage": "space",
+          "text": "hello,world ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-typo-space",
+      "run": "batch-02",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "thos",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "space-accept",
+          "text": "this ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "undo",
+          "text": "this ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-spelling-space",
+      "run": "batch-02",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "recieve",
+          "composingStart": 0,
+          "composingEnd": 7,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "space-accept",
+          "text": "receive ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "undo",
+          "text": "receive ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-contraction-space",
+      "run": "batch-02",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "cant",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "space-accept",
+          "text": "can't ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "undo",
+          "text": "can't ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-next-word-tap",
+      "run": "batch-02",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "thank",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "space",
+          "text": "thank ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "thank you",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 9,
+          "selectionEnd": 9
+        },
+        {
+          "stage": "next-word",
+          "text": "thank you again",
+          "composingStart": 10,
+          "composingEnd": 15,
+          "selectionStart": 15,
+          "selectionEnd": 15
+        },
+        {
+          "stage": "space",
+          "text": "thank you again ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 16,
+          "selectionEnd": 16
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "py-english-space",
+      "run": "recheck-pinyin",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "first-space",
+          "text": "meeting",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "next-word",
+          "text": "meeting",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "second-accept",
+          "text": "meeting test",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "py-english-two-spaces",
+      "run": "recheck-pinyin",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "first-space",
+          "text": "meeting",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "second-space",
+          "text": "meeting ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "next-word",
+          "text": "meeting ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "py-english-completion",
+      "run": "recheck-pinyin",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "next-word",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "space",
+          "text": "pronunciation test",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 18,
+          "selectionEnd": 18
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-literal-comma",
+      "run": "batch-02",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "comma",
+          "text": "hello,",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "next-word",
+          "text": "hello,world",
+          "composingStart": 6,
+          "composingEnd": 11,
+          "selectionStart": 11,
+          "selectionEnd": 11
+        },
+        {
+          "stage": "space",
+          "text": "hello,world ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-typo-space",
+      "run": "batch-02",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "thos",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "space-accept",
+          "text": "thos ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "undo",
+          "text": "thos",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-spelling-space",
+      "run": "batch-02",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "recieve",
+          "composingStart": 0,
+          "composingEnd": 7,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "space-accept",
+          "text": "recieve ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "undo",
+          "text": "recieve",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-contraction-space",
+      "run": "batch-02",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "cant",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "space-accept",
+          "text": "cant ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "undo",
+          "text": "cant",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-next-word-tap",
+      "run": "batch-02",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "thank",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "space",
+          "text": "thank ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "thank you",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 9,
+          "selectionEnd": 9
+        },
+        {
+          "stage": "next-word",
+          "text": "thank you again",
+          "composingStart": 10,
+          "composingEnd": 15,
+          "selectionStart": 15,
+          "selectionEnd": 15
+        },
+        {
+          "stage": "space",
+          "text": "thank you again ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 16,
+          "selectionEnd": 16
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "py-english-space",
+      "run": "recheck-pinyin",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "meeting",
+          "composingStart": 0,
+          "composingEnd": 7,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "first-space",
+          "text": "meeting ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "next-word",
+          "text": "meeting test",
+          "composingStart": 8,
+          "composingEnd": 12,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        },
+        {
+          "stage": "second-accept",
+          "text": "meeting test ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "py-english-two-spaces",
+      "run": "recheck-pinyin",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "meeting",
+          "composingStart": 0,
+          "composingEnd": 7,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "first-space",
+          "text": "meeting ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "second-space",
+          "text": "meeting  ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 9,
+          "selectionEnd": 9
+        },
+        {
+          "stage": "next-word",
+          "text": "meeting  test",
+          "composingStart": 9,
+          "composingEnd": 13,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "py-english-completion",
+      "run": "recheck-pinyin",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "next-word",
+          "text": "pronunciationtest",
+          "composingStart": 13,
+          "composingEnd": 17,
+          "selectionStart": 17,
+          "selectionEnd": 17
+        },
+        {
+          "stage": "space",
+          "text": "pronunciationtest ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 18,
+          "selectionEnd": 18
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "py-chinese-space",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "phrase-accept",
+          "text": "你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 2,
+          "selectionEnd": 2
+        },
+        {
+          "stage": "literal-space",
+          "text": "你好 ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        },
+        {
+          "stage": "next-syllable",
+          "text": "你好 ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        },
+        {
+          "stage": "space",
+          "text": "你好 嗎",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "py-chinese-candidate",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 2,
+          "selectionEnd": 2
+        },
+        {
+          "stage": "next-syllable",
+          "text": "你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 2,
+          "selectionEnd": 2
+        },
+        {
+          "stage": "space",
+          "text": "你好嗎",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "py-english-then-chinese",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "space",
+          "text": "meeting",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "chinese-typed",
+          "text": "meeting",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "chinese-accepted",
+          "text": "meeting你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 9,
+          "selectionEnd": 9
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "py-chinese-then-english",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 2,
+          "selectionEnd": 2
+        },
+        {
+          "stage": "english-typed",
+          "text": "你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 2,
+          "selectionEnd": 2
+        },
+        {
+          "stage": "english-accepted",
+          "text": "你好meeting",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 9,
+          "selectionEnd": 9
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-candidate-switch-chinese",
+      "run": "batch-03",
+      "status": "unavailable",
+      "error": "java.lang.IllegalStateException: Selected IME changed: app.minime.keyboard/dev.minime.ime.MiniMeService",
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "switch",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "failure",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-nosuggest-completion",
+      "run": "batch-03",
+      "status": "unavailable",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: pronunciation",
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "failure",
+          "text": "pronun",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-url-completion",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "next-word",
+          "text": "pronunciation test",
+          "composingStart": 14,
+          "composingEnd": 18,
+          "selectionStart": 18,
+          "selectionEnd": 18
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-email-literal",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "name",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "at-symbol",
+          "text": "name@",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "typed",
+          "text": "name@example",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        },
+        {
+          "stage": "period",
+          "text": "name@example.",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "typed",
+          "text": "name@example.com",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 16,
+          "selectionEnd": 16
+        },
+        {
+          "stage": "space",
+          "text": "name@example.com ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 17,
+          "selectionEnd": 17
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "py-chinese-space",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "nihao",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "phrase-accept",
+          "text": "你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 2,
+          "selectionEnd": 2
+        },
+        {
+          "stage": "literal-space",
+          "text": "你好 ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        },
+        {
+          "stage": "next-syllable",
+          "text": "你好 ma",
+          "composingStart": 3,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "space",
+          "text": "你好 ma ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "py-chinese-candidate",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "nihao",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 2,
+          "selectionEnd": 2
+        },
+        {
+          "stage": "next-syllable",
+          "text": "你好ma",
+          "composingStart": 2,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "space",
+          "text": "你好ma ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "py-english-then-chinese",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "meeting",
+          "composingStart": 0,
+          "composingEnd": 7,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "space",
+          "text": "meeting ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "chinese-typed",
+          "text": "meeting nihao",
+          "composingStart": 8,
+          "composingEnd": 13,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "chinese-accepted",
+          "text": "meeting 你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 10,
+          "selectionEnd": 10
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "py-chinese-then-english",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "nihao",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 2,
+          "selectionEnd": 2
+        },
+        {
+          "stage": "english-typed",
+          "text": "你好meeting",
+          "composingStart": 2,
+          "composingEnd": 9,
+          "selectionStart": 9,
+          "selectionEnd": 9
+        },
+        {
+          "stage": "english-accepted",
+          "text": "你好meeting ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 10,
+          "selectionEnd": 10
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-candidate-switch-chinese",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "switch",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "chinese-typed",
+          "text": "pronunciationnihao",
+          "composingStart": 13,
+          "composingEnd": 18,
+          "selectionStart": 18,
+          "selectionEnd": 18
+        },
+        {
+          "stage": "space",
+          "text": "pronunciation你好",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 15,
+          "selectionEnd": 15
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-nosuggest-completion",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "candidate-selected",
+          "text": "pronunciation",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "next-word",
+          "text": "pronunciation test",
+          "composingStart": 14,
+          "composingEnd": 18,
+          "selectionStart": 18,
+          "selectionEnd": 18
+        },
+        {
+          "stage": "space",
+          "text": "pronunciation test ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 19,
+          "selectionEnd": 19
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-url-completion",
+      "run": "batch-03",
+      "status": "unavailable",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate pronunciation",
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "failure",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-email-literal",
+      "run": "batch-03",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "name",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "at-symbol",
+          "text": "name@",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "typed",
+          "text": "name@example",
+          "composingStart": 5,
+          "composingEnd": 12,
+          "selectionStart": 12,
+          "selectionEnd": 12
+        },
+        {
+          "stage": "period",
+          "text": "name@example.",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 13,
+          "selectionEnd": 13
+        },
+        {
+          "stage": "typed",
+          "text": "name@example.com",
+          "composingStart": 13,
+          "composingEnd": 16,
+          "selectionStart": 16,
+          "selectionEnd": 16
+        },
+        {
+          "stage": "space",
+          "text": "name@example.com ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 17,
+          "selectionEnd": 17
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-correction-on-pronun",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "space-accept",
+          "text": "pronunciation ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 14,
+          "selectionEnd": 14
+        },
+        {
+          "stage": "delete-1",
+          "text": "pronunciation ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 14,
+          "selectionEnd": 14
+        },
+        {
+          "stage": "delete-2",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-correction-on-thos",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "thos",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "space-accept",
+          "text": "this ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "delete-1",
+          "text": "this ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "delete-2",
+          "text": "thos",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-correction-on-recieve",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "recieve",
+          "composingStart": 0,
+          "composingEnd": 7,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "space-accept",
+          "text": "receive ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "delete-1",
+          "text": "receive ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "delete-2",
+          "text": "recieve",
+          "composingStart": 0,
+          "composingEnd": 7,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-correction-on-the",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "the",
+          "composingStart": 0,
+          "composingEnd": 3,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        },
+        {
+          "stage": "space-accept",
+          "text": "the ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "delete-1",
+          "text": "the ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "delete-2",
+          "text": "the",
+          "composingStart": 0,
+          "composingEnd": 3,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-basic-delete-control",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "delete-1",
+          "text": "hell",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "delete-2",
+          "text": "hel",
+          "composingStart": 0,
+          "composingEnd": 3,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        },
+        {
+          "stage": "accepted",
+          "text": "hello ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "delete-3",
+          "text": "hello ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "delete-4",
+          "text": "hel",
+          "composingStart": 0,
+          "composingEnd": 3,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-completion-delete-repeat",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "becau",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "selected",
+          "text": "because",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "delete-1",
+          "text": "because",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "delete-2",
+          "text": "becaus",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "delete-3",
+          "text": "becau",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "after-edit",
+          "text": "becaux",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        }
+      ]
+    },
+    {
+      "provider": "google",
+      "id": "en-double-space-delete-repeat",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "space-1",
+          "text": "hello ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "space-2",
+          "text": "hello. ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "delete-1",
+          "text": "hello. ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "delete-2",
+          "text": "hello.",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "delete-3",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-correction-on-pronun",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "pronun",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "space-accept",
+          "text": "pronun ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "delete-1",
+          "text": "pronun",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "delete-2",
+          "text": "pronu",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-correction-on-thos",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "thos",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "space-accept",
+          "text": "this ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "delete-1",
+          "text": "thos",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "delete-2",
+          "text": "tho",
+          "composingStart": 0,
+          "composingEnd": 3,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-correction-on-recieve",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "recieve",
+          "composingStart": 0,
+          "composingEnd": 7,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "space-accept",
+          "text": "receive ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 8,
+          "selectionEnd": 8
+        },
+        {
+          "stage": "delete-1",
+          "text": "recieve",
+          "composingStart": 0,
+          "composingEnd": 7,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "delete-2",
+          "text": "reciev",
+          "composingStart": 0,
+          "composingEnd": 6,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-correction-on-the",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "the",
+          "composingStart": 0,
+          "composingEnd": 3,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        },
+        {
+          "stage": "space-accept",
+          "text": "the ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "delete-1",
+          "text": "the",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        },
+        {
+          "stage": "delete-2",
+          "text": "th",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 2,
+          "selectionEnd": 2
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-basic-delete-control",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "delete-1",
+          "text": "hell",
+          "composingStart": 0,
+          "composingEnd": 4,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "delete-2",
+          "text": "hel",
+          "composingStart": 0,
+          "composingEnd": 3,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        },
+        {
+          "stage": "accepted",
+          "text": "hel ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "delete-3",
+          "text": "hel",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 3,
+          "selectionEnd": 3
+        },
+        {
+          "stage": "delete-4",
+          "text": "he",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 2,
+          "selectionEnd": 2
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-completion-delete-repeat",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "becau",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "selected",
+          "text": "because",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "delete-1",
+          "text": "becaus",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "delete-2",
+          "text": "becau",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "delete-3",
+          "text": "beca",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        },
+        {
+          "stage": "after-edit",
+          "text": "becax",
+          "composingStart": 4,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        }
+      ]
+    },
+    {
+      "provider": "minime",
+      "id": "en-double-space-delete-repeat",
+      "run": "followups",
+      "status": "observed",
+      "error": null,
+      "states": [
+        {
+          "stage": "ready",
+          "text": "",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 0,
+          "selectionEnd": 0
+        },
+        {
+          "stage": "typed",
+          "text": "hello",
+          "composingStart": 0,
+          "composingEnd": 5,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "space-1",
+          "text": "hello ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "space-2",
+          "text": "hello. ",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 7,
+          "selectionEnd": 7
+        },
+        {
+          "stage": "delete-1",
+          "text": "hello.",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 6,
+          "selectionEnd": 6
+        },
+        {
+          "stage": "delete-2",
+          "text": "hello",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 5,
+          "selectionEnd": 5
+        },
+        {
+          "stage": "delete-3",
+          "text": "hell",
+          "composingStart": -1,
+          "composingEnd": -1,
+          "selectionStart": 4,
+          "selectionEnd": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+[
+  {
+    "id": "en-correction-on-pronun",
+    "mode": "english",
+    "englishCorrection": true,
+    "actions": [
+      {
+        "type": "pronun",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "space-accept"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-1"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-2"
+      }
+    ]
+  },
+  {
+    "id": "en-correction-on-thos",
+    "mode": "english",
+    "englishCorrection": true,
+    "actions": [
+      {
+        "type": "thos",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "space-accept"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-1"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-2"
+      }
+    ]
+  },
+  {
+    "id": "en-correction-on-recieve",
+    "mode": "english",
+    "englishCorrection": true,
+    "actions": [
+      {
+        "type": "recieve",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "space-accept"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-1"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-2"
+      }
+    ]
+  },
+  {
+    "id": "en-correction-on-the",
+    "mode": "english",
+    "englishCorrection": true,
+    "actions": [
+      {
+        "type": "the",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "space-accept"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-1"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-2"
+      }
+    ]
+  },
+  {
+    "id": "en-basic-delete-control",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-1"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-2"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-3"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-4"
+      }
+    ]
+  },
+  {
+    "id": "en-completion-delete-repeat",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "becau",
+        "label": "typed"
+      },
+      {
+        "choose": "because",
+        "label": "selected"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-1",
+        "capture": true
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-2"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-3"
+      },
+      {
+        "type": "x",
+        "label": "after-edit"
+      }
+    ]
+  },
+  {
+    "id": "en-double-space-delete-repeat",
+    "mode": "english",
+    "actions": [
+      {
+        "type": "hello",
+        "label": "typed"
+      },
+      {
+        "key": "SPACE",
+        "label": "space-1"
+      },
+      {
+        "key": "SPACE",
+        "label": "space-2"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-1",
+        "capture": true
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-2"
+      },
+      {
+        "key": "DELETE",
+        "label": "delete-3"
+      }
+    ]
+  }
+]

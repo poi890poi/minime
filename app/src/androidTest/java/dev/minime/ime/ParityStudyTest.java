@@ -159,7 +159,7 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
             SystemClock.sleep(350);
         }
         if(provider.equals("minime")){
-            activity.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().clear().putBoolean("english_mode",mode.equals("english")).commit();
+            activity.getSharedPreferences("settings",Context.MODE_PRIVATE).edit().clear().putBoolean("english_mode",mode.equals("english")).putBoolean("english_correction",test.optBoolean("englishCorrection",false)).commit();
             activity.getSharedPreferences("learning",Context.MODE_PRIVATE).edit().clear().commit();
         }
         if(!selectedIme().equals(ime())){shell("ime set "+ime());SystemClock.sleep(450);}

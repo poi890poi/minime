@@ -11,7 +11,7 @@ try {
 & $adb -s $Serial push $Plan /sdcard/Android/data/app.minime.keyboard/files/parity-plan.json
 if($LASTEXITCODE -ne 0){throw 'Plan transfer failed'}
 try {
-    & "$PSScriptRoot/test-device.ps1" -Serial $Serial -SdkDir $SdkDir -TestClass dev.minime.ime.ParityStudyTest -TimeoutSeconds 900
+    & "$PSScriptRoot/test-device.ps1" -Serial $Serial -SdkDir $SdkDir -TestClass 'dev.minime.ime.ParityStudyTest#testPairedObservations' -TimeoutSeconds 900
 } finally {
     & $adb -s $Serial pull /sdcard/Android/data/app.minime.keyboard/files/parity-observations.json (Join-Path $Output 'observations.json')
     $cases=@(Get-Content $Plan -Raw | ConvertFrom-Json)
