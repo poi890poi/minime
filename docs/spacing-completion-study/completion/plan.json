@@ -1,0 +1,17 @@
+{
+  "decision": "Do not enable automatic expansion by default if new substitutions are not reliably correct. No tuning on these labels.",
+  "policies": [
+    "baseline correction on",
+    "top completion only when baseline leaves invalid raw",
+    "same existing correction score >=100 and margin >=8"
+  ],
+  "source": "docs/conversation-ranking/corpus/gum-test.tsv",
+  "sha256": "EADE8DE35B75A5124F74D3A9BEC755A87FDE50FAB0DE298523689763C0257FAA",
+  "role": "Previously evaluated independent text; not fresh holdout",
+  "conditions": [
+    "complete",
+    "missing-last (length >=4)",
+    "half-prefix rounded up (length >=4)",
+    "deterministic closest-key slip at middle (length >=4)"
+  ]
+}

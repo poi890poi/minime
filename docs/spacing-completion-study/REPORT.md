@@ -1,5 +1,10 @@
 # Google Zhuyin auto-spacing and completion
 
+Follow-up: [the mixed-board completion boundary is fixed](FIX.md).
+[Additional punctuation probes](punctuation/REPORT.md) matched the installed
+reference. [Automatic prefix-expansion experiments](completion/REPORT.md) failed
+quality checks and were rejected. The original observations below remain unchanged.
+
 Live study, 2026-09-16, authorized phone RFCR91GWXLX. Google Zhuyin
 2.4.5.164561151-arm64-v8a / code 2451413; MinIME runtime revision
 `8021a65ac52c926b22e87b2d633f06185cb5aed9` (debug version code 38).

@@ -1,0 +1,233 @@
+[
+  {
+    "mode": "english",
+    "id": "en-COMMA-before-False-after-False",
+    "actions": [
+      {
+        "label": "typed",
+        "type": "hello"
+      },
+      {
+        "key": "COMMA",
+        "label": "punctuation"
+      },
+      {
+        "label": "next-word",
+        "type": "world"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ]
+  },
+  {
+    "mode": "english",
+    "id": "en-COMMA-before-False-after-True",
+    "actions": [
+      {
+        "label": "typed",
+        "type": "hello"
+      },
+      {
+        "key": "COMMA",
+        "label": "punctuation"
+      },
+      {
+        "key": "SPACE",
+        "label": "after-space"
+      },
+      {
+        "label": "next-word",
+        "type": "world"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ]
+  },
+  {
+    "mode": "english",
+    "id": "en-COMMA-before-True-after-False",
+    "actions": [
+      {
+        "label": "typed",
+        "type": "hello"
+      },
+      {
+        "key": "SPACE",
+        "label": "before-space"
+      },
+      {
+        "key": "COMMA",
+        "label": "punctuation"
+      },
+      {
+        "label": "next-word",
+        "type": "world"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ]
+  },
+  {
+    "mode": "english",
+    "id": "en-COMMA-before-True-after-True",
+    "actions": [
+      {
+        "label": "typed",
+        "type": "hello"
+      },
+      {
+        "key": "SPACE",
+        "label": "before-space"
+      },
+      {
+        "key": "COMMA",
+        "label": "punctuation"
+      },
+      {
+        "key": "SPACE",
+        "label": "after-space"
+      },
+      {
+        "label": "next-word",
+        "type": "world"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ]
+  },
+  {
+    "mode": "english",
+    "id": "en-PERIOD-before-False-after-False",
+    "actions": [
+      {
+        "label": "typed",
+        "type": "hello"
+      },
+      {
+        "key": "PERIOD",
+        "label": "punctuation"
+      },
+      {
+        "label": "next-word",
+        "type": "world"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ]
+  },
+  {
+    "mode": "english",
+    "id": "en-PERIOD-before-False-after-True",
+    "actions": [
+      {
+        "label": "typed",
+        "type": "hello"
+      },
+      {
+        "key": "PERIOD",
+        "label": "punctuation"
+      },
+      {
+        "key": "SPACE",
+        "label": "after-space"
+      },
+      {
+        "label": "next-word",
+        "type": "world"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ]
+  },
+  {
+    "mode": "english",
+    "id": "en-PERIOD-before-True-after-False",
+    "actions": [
+      {
+        "label": "typed",
+        "type": "hello"
+      },
+      {
+        "key": "SPACE",
+        "label": "before-space"
+      },
+      {
+        "key": "PERIOD",
+        "label": "punctuation"
+      },
+      {
+        "label": "next-word",
+        "type": "world"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ]
+  },
+  {
+    "mode": "english",
+    "id": "en-PERIOD-before-True-after-True",
+    "actions": [
+      {
+        "label": "typed",
+        "type": "hello"
+      },
+      {
+        "key": "SPACE",
+        "label": "before-space"
+      },
+      {
+        "key": "PERIOD",
+        "label": "punctuation"
+      },
+      {
+        "key": "SPACE",
+        "label": "after-space"
+      },
+      {
+        "label": "next-word",
+        "type": "world"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ]
+  },
+  {
+    "mode": "english",
+    "id": "en-dot-url",
+    "field": "url",
+    "actions": [
+      {
+        "label": "typed",
+        "type": "example"
+      },
+      {
+        "key": "PERIOD",
+        "label": "dot"
+      },
+      {
+        "label": "domain",
+        "type": "com"
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted"
+      }
+    ]
+  }
+]
