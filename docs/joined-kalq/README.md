@@ -10,11 +10,11 @@ restores it. Dedicated Zhuyin and numeric layouts are unaffected.
 | 1 | M B W H G T O J | 1 2 3 4 5 6 7 8 |
 | 2 | P Space X C I E Space U | 9, then 0 @ * + - on the remaining letters |
 | 3 | R Y S Z K A L Q | = / # ( ) ' : " |
-| 4 | D N F V, Shift, Backspace | ? ! ~ … |
+| 4 | Shift, D N F V, Backspace | ? ! ~ … |
 
 The two internal Space keys accept input exactly like the bottom Space key,
 including hold-to-keep-literal behavior. Shift and Backspace each use two columns
-in the lower-right area. Slide up for capitals; one-shot Shift and double-tap
+at the left and right edges, centering D N F V between them. Slide up for capitals; one-shot Shift and double-tap
 Caps Lock retain their existing behavior. Punctuation width follows the editor
 and mode policy; the same positions carry the corresponding Chinese symbols.
 The existing symbol/emoji pages and their remembered page remain available.
@@ -29,6 +29,9 @@ Geometry follows the joined adaptation in [the compact-layout study](../two-thum
 based on [KALQ Figure 1](https://www.pokristensson.com/pubs/OulasvirtaEtAlCHI2013.pdf).
 The Android controls and hit regions are independently implemented. Simulation
 improvements are not a claim of faster human typing.
+
+The [September 16 bottom-row adjustment](CENTERED-BOTTOM-ROW.md) centers the four
+letters; older simulation results and screenshots use the previous left-aligned row.
 
 ## Verification, September 15, 2026
 

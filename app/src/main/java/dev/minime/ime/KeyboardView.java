@@ -520,6 +520,7 @@ final class KeyboardView extends LinearLayout {
             int keyHeight=height*3/4;
             for(int r=0;r<JoinedKalq.rows();r++) {
                 LinearLayout line=row(keyHeight);String text=JoinedKalq.row(r);
+                if(r==3)line.addView(plain(caps?"⇪":shifted?"⬆":"⇧","SHIFT",keyHeight,2));
                 for(int c=0;c<text.length();c++) {
                     char lower=text.charAt(c);
                     if(lower==' ') {
@@ -531,7 +532,6 @@ final class KeyboardView extends LinearLayout {
                     }
                 }
                 if(r==3) {
-                    line.addView(plain(caps?"⇪":shifted?"⬆":"⇧","SHIFT",keyHeight,2));
                     line.addView(plain("⌫","DELETE",keyHeight,2));
                 }
             }

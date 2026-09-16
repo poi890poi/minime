@@ -77,6 +77,13 @@ public final class JoinedKalqTest extends InstrumentationTestCase {
                 assertTrue("QWERTY fallback",bounds(key("q")).top<bounds(key("m")).top);
                 settings.edit().putBoolean("joined_kalq",true).commit();assertEquals(normal,render(mode,false,false,0,false,mode.english()));
                 assertTrue("Joined applies to "+mode,bounds(key("m")).top<bounds(key("q")).top);
+                // The four-letter group is centered between equal-width outer controls.
+                Rect d=bounds(key("d")),v=bounds(key("v")),bottom=bounds((View)key("d").getParent());
+                assertEquals("Bottom letters centered",bottom.exactCenterX(),(d.left+v.right)/2f,1f);
+                assertEquals("Letter touch width retained",bounds(key("m")).width(),d.width(),1f);
+                assertEquals("Symmetric outer controls",bounds(key("⇧")).width(),bounds(key("⌫")).width(),1f);
+                assertTrue("Shift precedes letters",bounds(key("⇧")).right<=d.left);
+                assertTrue("Delete follows letters",bounds(key("⌫")).left>=v.right);
                 for(int r=0;r<JoinedKalq.rows();r++)for(int c=0;c<JoinedKalq.row(r).length();c++) {
                     char letter=JoinedKalq.row(r).charAt(c);if(letter==' ')continue;
                     assertEquals("Unique letter",1,find(String.valueOf(letter)).size());
