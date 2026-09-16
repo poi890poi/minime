@@ -20,7 +20,9 @@ final class PortraitKeyLabels {
     }
     void draw(Canvas canvas,String text,String symbol,int width,int height,boolean alternate) {
         // Fit unusually narrow windows without changing keyboard height or key hit areas.
-        float fit=Math.min(1f,Math.min(width/(36*density),height/(44*density)));
+        float minimumWidth=Math.max(36*density,Math.max(mainEnvelope.width()+4*density,hintEnvelope.width()+8*density));
+        float minimumHeight=Math.max(44*density,Math.max(mainEnvelope.height()+8*density,hintEnvelope.height()+4*density));
+        float fit=Math.min(1f,Math.min(width/minimumWidth,height/minimumHeight));
         float w=width/fit,h=height/fit;
         canvas.save();canvas.scale(fit,fit);
         if(!alternate) {

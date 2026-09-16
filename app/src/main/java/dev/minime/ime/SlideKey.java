@@ -48,29 +48,16 @@ final class SlideKey extends TextView {
         setTypeface(getResources().getFont(R.font.ibm_plex_sans_condensed));
         hintPaint.setTypeface(getTypeface());
         hintPaint.setColor(0xff9aa6aa);hintPaint.setFakeBoldText(false);
-        // Larger accessibility text keeps a fitted stacked arrangement instead
-        // of crowding the fixed-height diagonal geometry approved at normal scale.
-        if(getResources().getConfiguration().fontScale<=1.05f) {
-            setPadding(0,0,0,0);
-            setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX,26*scaled);
-            getPaint().setFlags(Paint.ANTI_ALIAS_FLAG);
-            getPaint().setTextAlign(Paint.Align.LEFT);
-            hintPaint.setTextSize(18*scaled);hintPaint.setTextAlign(Paint.Align.LEFT);
-            portraitLabels=new PortraitKeyLabels(getPaint(),hintPaint,density);
-            return;
-        }
-        hintPaint.setTextSize(10*scaled);
-        Paint.FontMetrics hint=hintPaint.getFontMetrics();
-        // Keep a real gap between the two font boxes, including at enlarged
-        // system font scales. Short landscape rows still use the same budget.
-        int reserved=(int)Math.ceil(hint.descent-hint.ascent+(hintBottom+2)*density);
-        setPadding(0,0,0,reserved);
-        setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX,23*scaled);
-        Paint.FontMetrics main=getPaint().getFontMetrics();
-        float available=Math.max(density,height*density-reserved);
-        if(main.descent-main.ascent>available)
-            setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX,getTextSize()*available/(main.descent-main.ascent));
+        // Use the approved pair at every portrait font scale. Fit its ink to
+        // the actual key in PortraitKeyLabels instead of switching to tiny hints.
+        setPadding(0,0,0,0);
+        setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX,26*scaled);
+        getPaint().setFlags(Paint.ANTI_ALIAS_FLAG);
+        getPaint().setTextAlign(Paint.Align.LEFT);
+        hintPaint.setTextSize(18*scaled);hintPaint.setTextAlign(Paint.Align.LEFT);
+        portraitLabels=new PortraitKeyLabels(getPaint(),hintPaint,density);
     }
+
     void emojiHint() {emojiHint=true;setPadding(0,Math.round(14*getResources().getDisplayMetrics().density),0,0);}
     private float originX,originY;
     private int direction, activePointer=-1;
