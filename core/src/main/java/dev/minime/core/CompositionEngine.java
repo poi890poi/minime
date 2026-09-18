@@ -418,8 +418,10 @@ public final class CompositionEngine {
             custom=new ArrayList<>(custom);custom.removeIf(c->!englishSuggestion(c));
         }
         if (!englishMode) converted.addAll(custom);
-        if (!privateField) converted.sort(Comparator.comparingInt((Candidate c) -> learning.count(contextKey(), raw, c.text)).reversed()
+        if (!privateField) converted.sort(Comparator.comparing((Candidate c)->partial(c))
+            .thenComparing(Comparator.comparingInt((Candidate c) -> learning.count(contextKey(), raw, c.text)).reversed())
             .thenComparing(Comparator.comparingDouble((Candidate c) -> c.score).reversed()));
+        else converted.sort(Comparator.comparing((Candidate c)->partial(c)));
         Set<String> seen = new HashSet<>(); seen.add(raw);
         for (Candidate c : converted) if (seen.add(c.text)) candidates.add(c);
         if (candidates.size() > 1) {
@@ -536,7 +538,7 @@ public final class CompositionEngine {
             // Focused defaults use their language-scoped votes below. The
             // legacy text-keyed fallback cannot distinguish a lexical twin
             // from an explicit raw choice with exactly the same spelling.
-            if(preferred==0 && !addonMatches.isEmpty() && candidates.size()>1 && !focused(candidates.get(1)) && !candidates.get(1).incomplete && conversionInput(bpmf) && !dictionary.validEnglishSpelling(raw)
+            if(preferred==0 && !addonMatches.isEmpty() && candidates.size()>1 && !partial(candidates.get(1)) && !focused(candidates.get(1)) && !candidates.get(1).incomplete && conversionInput(bpmf) && !dictionary.validEnglishSpelling(raw)
                     && (privateField || learning.count(contextKey(),raw,raw)<=learning.count(contextKey(),raw,candidates.get(1).text)))preferred=1;
             // Candidate ordering and automatic acceptance share one winner.
             // Raw recovery stays available; choices consuming only part of the
@@ -594,7 +596,9 @@ public final class CompositionEngine {
                     glyphs.add(candidates.remove(i));
                 } else i++;
             }
-            candidates.addAll(Math.min(3,candidates.size()),glyphs);
+            int at=1;
+            while(at<Math.min(3,candidates.size()) && !partial(candidates.get(at)))at++;
+            candidates.addAll(at,glyphs);
         }
         retainDisplayableCandidates();
     }

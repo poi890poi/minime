@@ -63,6 +63,7 @@ public final class Regression {
         EnglishIsolationRegression.run();
         EnglishContextRegression.run();
         CompletionBoundaryRegression.run();
+        FirstGlyphRecoveryRegression.run();
         ModePriorityRegression.run();
         JapaneseBasicsRegression.run();
         JapaneseKanaRegression.run();
@@ -154,7 +155,7 @@ public final class Regression {
         e=new Editor(); c=engine(e,Learning.NONE,false); type(c,"srf"); c.backspace();
         equal("sr",c.raw(),"abbreviation backspace keeps exact input"); type(c,"ufa");
         c.select(find(c,"輸入法")); equal("輸入法",e.text,"refine an abbreviation without restarting");
-        yes(dictionary.convert("n'h",false).stream().noneMatch(v->v.text.codePointCount(0,v.text.length())==1),"apostrophe forces two syllables even when abbreviated");
+        yes(dictionary.convert("n'h",false).stream().noneMatch(v->v.consumed==0 && v.text.codePointCount(0,v.text.length())==1),"apostrophe forces two syllables for whole-input matches; explicit first-glyph recovery owns a shorter span");
         e=new Editor();c=engine(e,Learning.NONE,false);
         for(String[] word:new String[][]{{"wo","我"},{"xiang","想"},{"srf","輸入法"}}) {type(c,word[0]);c.select(find(c,word[1]));}
         equal("我想輸入法",e.text,"explicit entry can mix full and abbreviated stored words");

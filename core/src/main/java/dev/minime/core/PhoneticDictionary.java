@@ -16,6 +16,7 @@ public final class PhoneticDictionary {
     private final Set<String> syllables = new HashSet<>();
     private ReadingIndex pinyinPrefixes,zhuyinPrefixes;
     private ReadingUnitIndex pinyinSyllables;
+    private FirstGlyphIndex firstGlyphs;
     private ContextModel contextModel=new ContextModel();
     public void writeBinary(OutputStream target)throws IOException {
         try(DataOutputStream stream=new DataOutputStream(new BufferedOutputStream(target))) {
@@ -30,7 +31,8 @@ public final class PhoneticDictionary {
             BinaryModel.Reader in=new BinaryModel.Reader(stream);PhoneticDictionary d=new PhoneticDictionary();
             in.words(d.pinyin);in.words(d.zhuyin);in.counts(d.english);in.words(d.continuations);Collections.addAll(d.syllables,in.strings());
             d.pinyinPrefixes=new ReadingIndex(in);d.zhuyinPrefixes=new ReadingIndex(in);d.pinyinSyllables=new ReadingUnitIndex(in);d.contextModel=new ContextModel(in);
-            if(stream.read()!=-1)throw new IOException("Trailing model data");d.indexEnglish();return d;
+            if(stream.read()!=-1)throw new IOException("Trailing model data");
+            d.firstGlyphs=new FirstGlyphIndex(d.pinyin,d.syllables);d.indexEnglish();return d;
         } catch(IndexOutOfBoundsException e) {throw new IOException("Invalid model reference",e);}
     }
     public static PhoneticDictionary load(Reader chinese,Reader english,Reader syllables,Reader context)throws IOException {
@@ -81,6 +83,7 @@ public final class PhoneticDictionary {
             }
         d.pinyinSyllables=new ReadingUnitIndex(d.pinyin,readings); d.zhuyinPrefixes=new ReadingIndex(d.zhuyin);
         d.pinyinPrefixes=new ReadingIndex(d.pinyin);
+        d.firstGlyphs=new FirstGlyphIndex(d.pinyin,d.syllables);
         d.indexEnglish();
         return d;
     }
@@ -175,6 +178,9 @@ public final class PhoneticDictionary {
         if(!bpmf && !context.isEmpty())result.replaceAll(c->c.withScore(
             c.score+.5*(contextModel.chinese(context,c.text)-contextModel.chinese("",c.text))));
         result.sort(Comparator.comparingDouble((Candidate c) -> c.score).reversed().thenComparing(c -> c.text));
+        // Whole-input identities win deduplication; partial recovery never
+        // replaces their acceptance span or invents a multi-character phrase.
+        if(!bpmf)result.addAll(firstGlyphs.lookup(key));
         Set<String> seen = new HashSet<>(); result.removeIf(c -> !seen.add(c.text));
         return result;
     }

@@ -41,17 +41,19 @@ final class AddonLearningRegression {
             equal(0,addon.lookup(p[1],Collections.emptySet()).size(),"disabled add-on");
             Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.switchMode(InputMode.fromId(p[0].equals("poj")?"taiwanese":p[0]),false);type(c,p[1]);
             String before=c.candidates().get(c.preferred()).text;
-            List<String> base=new ArrayList<>();Set<String> constructed=new HashSet<>();
-            for(Candidate value:c.candidates()){base.add(value.text);if(value.composed)constructed.add(value.text);}
+            List<String> base=new ArrayList<>();Set<String> constructed=new HashSet<>(),prefixes=new HashSet<>();
+            for(Candidate value:c.candidates()){base.add(value.text);if(value.composed)constructed.add(value.text);if(value.consumed>0 && value.consumed<p[1].length())prefixes.add(value.text);}
             c.addons(addon,all);coherentDefault(c,before);
             List<String> retained=new ArrayList<>();for(Candidate value:c.candidates())if(!value.supplemental)retained.add(value.text);
             List<String> unpromoted=new ArrayList<>();for(String value:base)if(retained.contains(value))unpromoted.add(value);
             // Adding attested choices can defer an early construction. Relative
-            // order within each provenance group must still remain unchanged.
-            for(boolean assembled:new boolean[]{false,true})equal(
-                unpromoted.stream().filter(v->constructed.contains(v)==assembled).collect(java.util.stream.Collectors.toList()),
-                retained.stream().filter(v->constructed.contains(v)==assembled).collect(java.util.stream.Collectors.toList()),
-                "unpromoted candidates retain order within construction/attestation groups");
+            // order within each provenance/span group remains unchanged. The
+            // mixed row reserves two whole-word positions before prefix glyphs;
+            // adding a whole word can shift that interleave, not homophone order.
+            for(boolean assembled:new boolean[]{false,true})for(boolean partial:new boolean[]{false,true})equal(
+                unpromoted.stream().filter(v->constructed.contains(v)==assembled && prefixes.contains(v)==partial).collect(java.util.stream.Collectors.toList()),
+                retained.stream().filter(v->constructed.contains(v)==assembled && prefixes.contains(v)==partial).collect(java.util.stream.Collectors.toList()),
+                "unpromoted candidates retain order within provenance and consumption groups");
             c.addons(addon,Collections.emptySet());equal(base,c.candidates().stream().map(v->v.text).collect(java.util.stream.Collectors.toList()),"off removes supplemental results");samples++;
         }
         yes(samples>30,"source-diverse composition checks");

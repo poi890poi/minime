@@ -828,8 +828,9 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         catch(java.util.concurrent.TimeoutException e) { throw new AssertionError(e); }
     }
     public void testFirstCharacterMixedWithMatchingPhrases() throws Exception {
-        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",true).commit();
-        assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
+        for(boolean nativeMode:new boolean[]{false,true}) {
+        getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",nativeMode).commit();
+        if(nativeMode)assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
         for(String[] sample:new String[][]{{"nihao","你","hao"},{"jintian","金","tian"},{"xianzai","先","zai"},{"zhongguo","中","guo"}}) {
             clear();type(sample[0]);
             Rect glyph=bounds("Candidate "+sample[1]),strip=bounds("Candidate list");
@@ -841,6 +842,25 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
             assertEquals("Only the chosen character is committed",sample[1].length(),android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText()));
             click("Space");
             assertTrue("Rest finishes after the chosen character",activity.text.getText().toString().startsWith(sample[1]));
+        }
+        }
+    }
+    public void testSourceDerivedLongBufferRecovery() throws Exception {
+        List<String> syllables=new ArrayList<>();
+        try(java.io.BufferedReader in=new java.io.BufferedReader(new java.io.InputStreamReader(getInstrumentation().getContext().getAssets().open("syllables.tsv"),java.nio.charset.StandardCharsets.UTF_8))) {
+            String line;while((line=in.readLine())!=null)syllables.add(line.split("\t")[0]);
+        }
+        Collections.sort(syllables);
+        dev.minime.core.PhoneticDictionary dictionary=DictionaryRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
+        for(int start=0;start<syllables.size();start+=53)for(int length:new int[]{3,6,10}) {
+            List<String> units=new ArrayList<>();for(int j=0;j<length;j++)units.add(syllables.get((start+j*71)%syllables.size()));
+            String raw=String.join("'",units);
+            dev.minime.core.Candidate choice=dictionary.convert(raw,false).stream().filter(c->c.consumed>0&&c.consumed<raw.length()).findFirst().orElse(null);
+            assertNotNull("Source-derived long input has first-glyph recovery",choice);
+            clear();type(raw);click("Expand candidates");click("Candidate "+choice.text);
+            String remaining=raw.substring(choice.consumed).replaceFirst("^'+","");
+            expectText(choice.text+remaining);node("Exact input "+remaining).recycle();
+            assertEquals("Only explicitly tapped glyph is committed",choice.text.length(),android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText()));
         }
     }
     public void testMixedEnglishDefaultVisible() throws Exception {
