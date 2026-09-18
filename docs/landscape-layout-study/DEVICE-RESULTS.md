@@ -1,8 +1,11 @@
 # Landscape phone assessment — 2026-09-18
 
-Recommendation: keep compact as the default and offer taller split as an option.
-Do not ship full-height side overlays as the default. The split designs remain
-debug-only prototypes; no split preference or production window change was added.
+Corrected recommendation: keep compact and reject the current split prototypes.
+The earlier recommendation to offer taller split is withdrawn: its empty center
+does not return usable editing space while it consumes more editor height.
+Full-height sides also fail because they obscure the app. A split design must
+demonstrate a usable central editor before geometric benefits justify it.
+These remain debug-only prototypes; no production split feature was added.
 
 Phone: RFCR91GWXLX, Samsung SM-G781B, Android 13 / API 33, density 3.
 Native prototype content viewport: 770.67 × 360 dp. Screenshots are actual phone
@@ -12,8 +15,8 @@ measure suggestion quality. The real IME is captured separately.
 | Native prototype | Letter target (dp) | Clear height above (dp) | Assessment |
 |---|---:|---:|---|
 | Compact joined KALQ | 96.33 × 25.5 | 176 | Preserves editor space; shallow targets and long inward reach |
-| Split, same height | 60 × 25.5 | 176 | Shorter inward reach, unchanged vertical error margin |
-| Taller split | 60 × 44 | 96 | Best option to try for two thumbs; much less editor space |
+| Split, same height | 60 × 25.5 | 176 | Rejected: center returns no usable editing space |
+| Taller split | 60 × 44 | 96 | Rejected: sacrifices editor height while the center stays unusable |
 | Full-height sides | 48 × 68 | 0 | Large targets, but covers the title and beginnings of text lines |
 
 Both compact and taller split screenshots show the two fixture text lines; the

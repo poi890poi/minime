@@ -1,9 +1,11 @@
 # Landscape layout assessment
 
-2026-09-18. Recommendation: **retain compact and trial a taller split as an
-option**. A same-height split helps reach but does not solve short targets.
-Reject full-height side overlays as the default because they obscure the app.
-No production default changed in this study.
+2026-09-18. Corrected recommendation: **retain compact; reject the current split
+prototypes**. The user requires the center to provide usable editing space.
+The bottom splits reserve the full-width keyboard area despite their empty
+center; the full-height overlay obscures app content. Better key geometry does
+not satisfy that requirement. The earlier taller-split recommendation is withdrawn.
+Measurements and frozen plans are retained; no production default changed.
 
 Follow-up: [native phone assessment](DEVICE-RESULTS.md) and screenshots now
 cover all four layouts on RFCR91GWXLX. Split layouts remain debug-only prototypes.
@@ -102,20 +104,17 @@ real-world typing improvement. Browser checks do not replace Android tests.
 ## Decisions
 
 1. **Compact:** retain for small landscape windows and tasks needing editor space.
-2. **Same-height split:** optional reach variant only; reject it as a remedy for
-   vertical imprecision. It slightly worsens wide-scatter accuracy as keys narrow.
-3. **Taller split:** strongest candidate for an opt-in phone trial. It preserves
-   familiar letter/symbol assignments and improves the geometric tolerance while
-   keeping the app above the IME. The height tradeoff must be user-controlled.
-4. **Full-height sides:** do not ship as a default. Good key geometry cannot offset
-   covering the app's cursor, text and controls. A transparent center is not a
-   guarantee of a usable editor. It would require separate cross-app validation
-   and a reliable way to dismiss or move the panels.
+2. **Same-height split:** reject this design. The unused middle returns no editing
+   space, and the short rows retain their vertical imprecision.
+3. **Taller split:** reject this design. It consumes another 80 dp of editor height
+   while leaving the center unusable. The geometric improvements are insufficient.
+4. **Full-height sides:** reject this implementation. A visible center gap does
+   not provide usable editing when text, cursor context and controls are obscured.
 
-Next acceptance work: build an isolated optional Android split layout; test
-candidate access, rotation with active composition, both-thumb overlap, symbol
-slides and cleanup on the authorized phone. Compare real input errors and visible
-latency before considering a default change.
+Before recommending another split design, demonstrate an actually usable central
+editing area in the real IME: readable text and cursor context, working selection
+and editing touches, and accessible candidates. Empty or transparent pixels alone
+do not pass. Only then compare key geometry, rotation, gestures and input speed.
 
 ## Reproduction
 
