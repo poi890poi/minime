@@ -1,0 +1,263 @@
+[
+  {
+    "id": "recovery-00",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-wxhj",
+      "condition": "authored",
+      "raw": "wxhj",
+      "target": "我想回家",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "wxhj",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "我",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-01",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-wobuzd",
+      "condition": "authored",
+      "raw": "wobuzd",
+      "target": "我不知道",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "wobuzd",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "我",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-02",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-mingtianxiawu",
+      "condition": "authored",
+      "raw": "mingtianxiawu",
+      "target": "明天下午",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "mingtianxiawu",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "明",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-03",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-woxianghuijia",
+      "condition": "authored",
+      "raw": "woxianghuijia",
+      "target": "我想回家",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "woxianghuijia",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "我",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-04",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-mingtxiawu",
+      "condition": "authored",
+      "raw": "mingtxiawu",
+      "target": "明天下午",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "mingtxiawu",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "明",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-05",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-womenyiqi",
+      "condition": "authored",
+      "raw": "womenyiqi",
+      "target": "我們一起",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "womenyiqi",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "我",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-06",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Culture/九天玄女信仰.md:knowledge/Culture/九天玄女信仰.md:256",
+      "condition": "full",
+      "raw": "jiutianxuannv",
+      "target": "九天玄女",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "jiutianxuannv",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "九",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-07",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Lifestyle/夜生活與KTV文化.md:knowledge/Lifestyle/夜生活與KTV文化.md:121",
+      "condition": "full",
+      "raw": "yundongjiuba",
+      "target": "運動酒吧",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "yundongjiuba",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "運",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-08",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Culture/九天玄女信仰.md:knowledge/Culture/九天玄女信仰.md:170",
+      "condition": "full",
+      "raw": "jinsanshinianlai",
+      "target": "近三十年來",
+      "glyphs": "5"
+    },
+    "actions": [
+      {
+        "type": "jinsanshinianlai",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "近",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  }
+]

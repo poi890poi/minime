@@ -1,0 +1,263 @@
+[
+  {
+    "id": "recovery-09",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/People/黃春明.md:knowledge/People/黃春明.md:134",
+      "condition": "full",
+      "raw": "shiyigerendui",
+      "target": "是一個人對",
+      "glyphs": "5"
+    },
+    "actions": [
+      {
+        "type": "shiyigerendui",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "是",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-10",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Geography/湖口老街.md:knowledge/Geography/湖口老街.md:274",
+      "condition": "initials",
+      "raw": "ysy",
+      "target": "原書頁",
+      "glyphs": "3"
+    },
+    "actions": [
+      {
+        "type": "ysy",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "原",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-11",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/People/席慕蓉.md:knowledge/People/席慕蓉.md:105",
+      "condition": "initials",
+      "raw": "dzp",
+      "target": "等作品",
+      "glyphs": "3"
+    },
+    "actions": [
+      {
+        "type": "dzp",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "等",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-12",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Nature/台灣森林生態系.md:knowledge/Nature/台灣森林生態系.md:98",
+      "condition": "initials",
+      "raw": "nyl",
+      "target": "年雨量",
+      "glyphs": "3"
+    },
+    "actions": [
+      {
+        "type": "nyl",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "年",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-13",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Lifestyle/307taipeibus.md:knowledge/Lifestyle/307taipeibus.md:408",
+      "condition": "initials",
+      "raw": "jthtk",
+      "target": "今天回頭看",
+      "glyphs": "5"
+    },
+    "actions": [
+      {
+        "type": "jthtk",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "今",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-14",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Geography/北大特區.md:knowledge/Geography/北大特區.md:260",
+      "condition": "mixed",
+      "raw": "sxiagzhong",
+      "target": "三峽國中",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "sxiagzhong",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "三",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-15",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Food/台南中西區美食小吃文化.md:knowledge/Food/台南中西區美食小吃文化.md:78",
+      "condition": "mixed",
+      "raw": "zshangwdianb",
+      "target": "早上五點半",
+      "glyphs": "5"
+    },
+    "actions": [
+      {
+        "type": "zshangwdianb",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "早",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-16",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Society/台灣省籍矛盾.md:knowledge/Society/台灣省籍矛盾.md:62",
+      "condition": "mixed",
+      "raw": "sniansdang",
+      "target": "三年掃蕩",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "sniansdang",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "三",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  },
+  {
+    "id": "recovery-17",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Technology/台灣Game-Jam社群.md:knowledge/Technology/台灣Game-Jam社群.md:98",
+      "condition": "mixed",
+      "raw": "rguob",
+      "target": "如果把",
+      "glyphs": "3"
+    },
+    "actions": [
+      {
+        "type": "rguob",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "choose": "如",
+        "label": "first-glyph",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "remainder-accepted",
+        "capture": true
+      }
+    ]
+  }
+]

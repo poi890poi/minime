@@ -1,0 +1,178 @@
+{
+  "before_sha256": "01db22f6c72ec59f6b0ef85390ec0af823578b9f56efb556da29d1d0100d4a5a",
+  "after_sha256": "7d0c0ab2d053ea5476262e631f33d9e49bc6cbcdddb5a825e72c13b61a87fd3e",
+  "groups": {
+    "all": {
+      "before": {
+        "episodes": 3560,
+        "empty": 1088,
+        "with_prefix_glyph": 0,
+        "prefix_in_first8": 0,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 3560,
+        "empty": 282,
+        "with_prefix_glyph": 3033,
+        "prefix_in_first8": 2595,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "imprecision-contract": {
+      "before": {
+        "episodes": 3560,
+        "empty": 1088,
+        "with_prefix_glyph": 0,
+        "prefix_in_first8": 0,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 3560,
+        "empty": 282,
+        "with_prefix_glyph": 3033,
+        "prefix_in_first8": 2595,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "imprecision-contract/adjacent-key": {
+      "before": {
+        "episodes": 2108,
+        "empty": 585,
+        "with_prefix_glyph": 0,
+        "prefix_in_first8": 0,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 2108,
+        "empty": 110,
+        "with_prefix_glyph": 1879,
+        "prefix_in_first8": 1620,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "imprecision-contract/missing-letter": {
+      "before": {
+        "episodes": 527,
+        "empty": 35,
+        "with_prefix_glyph": 0,
+        "prefix_in_first8": 0,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 527,
+        "empty": 16,
+        "with_prefix_glyph": 430,
+        "prefix_in_first8": 300,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "imprecision-contract/transposed-letters": {
+      "before": {
+        "episodes": 925,
+        "empty": 468,
+        "with_prefix_glyph": 0,
+        "prefix_in_first8": 0,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 925,
+        "empty": 156,
+        "with_prefix_glyph": 724,
+        "prefix_in_first8": 675,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "length/0": {
+      "before": {
+        "episodes": 3560,
+        "empty": 1088,
+        "with_prefix_glyph": 0,
+        "prefix_in_first8": 0,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 3560,
+        "empty": 282,
+        "with_prefix_glyph": 3033,
+        "prefix_in_first8": 2595,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    }
+  },
+  "changed_space": [],
+  "lost_targets": [],
+  "before_lookup_ms": {
+    "unique_queries": 3177,
+    "mean": 0.14438873150771167,
+    "p50": 0.0623,
+    "p95": 0.4638,
+    "maximum": 9.1762
+  },
+  "after_lookup_ms": {
+    "unique_queries": 3177,
+    "mean": 0.3243858986465219,
+    "p50": 0.1276,
+    "p95": 1.0239,
+    "maximum": 33.7856
+  }
+}

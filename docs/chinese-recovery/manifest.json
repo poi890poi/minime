@@ -1,0 +1,31 @@
+{
+  "seed": "recovery-20260918",
+  "rows": 31527,
+  "unique_inputs": 26127,
+  "sources": {
+    "app/src/main/assets/syllables.tsv": "4915d49bbc76e0aad722b25f06e5906bec00694672d6b0f2ff678a58f370c30b",
+    "docs/glyph-ranking/inputs.txt": "c02a4f20da8b2eed3af9bcc3ce9632b5cebf62cdc4180bf919af9e2487711657",
+    "docs/conversation-ranking/corpus/inputs.tsv": "14c186c6589c4081f709f6aa237bb9a0d61a0d5ad32754dad8d72976d478004d",
+    "docs/construction-confidence/inputs.json.gz": "d94d89a26e07b7a546235a3b5d2c59a77e202020dde7630ac86e0c2c3e561361",
+    "docs/pinyin-fresh-holdout.tsv": "72e3d7ee4b7d9ec024c965cb9b0fa9e794c7b7b6d9840efca26ff6206b923afa",
+    "app/src/main/assets/zh_tw.tsv": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473"
+  },
+  "sha256": "f5a194273257d4d8ae25e152d08456275a7ccc9c08ad0c4735e3b6598acfa276",
+  "roles": {
+    "mechanical": "all syllables, source-derived arbitrary chains, recovery contracts only; no phrase correctness labels",
+    "source-retrieval": "5000 hash-selected stored phrases >=3 glyphs; seen-source retrieval, not generalization",
+    "glyph-audit": "all prior 499 inputs; MOE/UD used only after decoding",
+    "essay-regression": "previously evaluated Taiwan.md prose, not fresh holdout",
+    "encyclopedic-regression": "previously evaluated Chinese GSD and other frozen rows, not natural conversation",
+    "authored-conversation-regression": "previously inspected author-written conversation scenarios; not population accuracy"
+  },
+  "gates": [
+    "No previously present full target lost",
+    "No whole-token Space replaced by partial output",
+    "Source-owned first-glyph candidates remain reachable for multi-syllable inputs",
+    "Explicit prefix tap consumes only its stated raw span",
+    "No generated Han sequences",
+    "Separate results by genre, spelling condition and glyph length",
+    "Record input availability, target ranks, lookup latency and remaining gaps; do not infer Google parity"
+  ]
+}

@@ -1,0 +1,2822 @@
+{
+  "before_sha256": "2de1adef4cd8a180a2a1e1510f707686c143ced53fc0aaeb51424c8b1cbfc8e0",
+  "after_sha256": "63b3351944b73b55a09a46f98d1589b78600ff7a26803337121809fd678b5061",
+  "groups": {
+    "all": {
+      "before": {
+        "episodes": 31527,
+        "empty": 0,
+        "with_prefix_glyph": 30518,
+        "prefix_in_first8": 29637,
+        "labeled_episodes": 24244,
+        "target_available": 13102,
+        "target_in_first8": 11591,
+        "target_on_space": 8539,
+        "target_first_glyph_available": 23572,
+        "target_first_glyph_in_first8": 14092
+      },
+      "after": {
+        "episodes": 31527,
+        "empty": 0,
+        "with_prefix_glyph": 30518,
+        "prefix_in_first8": 29637,
+        "labeled_episodes": 24244,
+        "target_available": 13095,
+        "target_in_first8": 11510,
+        "target_on_space": 8508,
+        "target_first_glyph_available": 23570,
+        "target_first_glyph_in_first8": 14321
+      }
+    },
+    "authored-conversation-regression": {
+      "before": {
+        "episodes": 24,
+        "empty": 0,
+        "with_prefix_glyph": 24,
+        "prefix_in_first8": 24,
+        "labeled_episodes": 24,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 24,
+        "target_first_glyph_in_first8": 22
+      },
+      "after": {
+        "episodes": 24,
+        "empty": 0,
+        "with_prefix_glyph": 24,
+        "prefix_in_first8": 24,
+        "labeled_episodes": 24,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 24,
+        "target_first_glyph_in_first8": 22
+      }
+    },
+    "authored-conversation-regression/authored": {
+      "before": {
+        "episodes": 24,
+        "empty": 0,
+        "with_prefix_glyph": 24,
+        "prefix_in_first8": 24,
+        "labeled_episodes": 24,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 24,
+        "target_first_glyph_in_first8": 22
+      },
+      "after": {
+        "episodes": 24,
+        "empty": 0,
+        "with_prefix_glyph": 24,
+        "prefix_in_first8": 24,
+        "labeled_episodes": 24,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 24,
+        "target_first_glyph_in_first8": 22
+      }
+    },
+    "encyclopedic-regression": {
+      "before": {
+        "episodes": 8000,
+        "empty": 0,
+        "with_prefix_glyph": 7082,
+        "prefix_in_first8": 6316,
+        "labeled_episodes": 8000,
+        "target_available": 6910,
+        "target_in_first8": 5438,
+        "target_on_space": 2873,
+        "target_first_glyph_available": 7550,
+        "target_first_glyph_in_first8": 2868
+      },
+      "after": {
+        "episodes": 8000,
+        "empty": 0,
+        "with_prefix_glyph": 7082,
+        "prefix_in_first8": 6316,
+        "labeled_episodes": 8000,
+        "target_available": 6903,
+        "target_in_first8": 5354,
+        "target_on_space": 2854,
+        "target_first_glyph_available": 7548,
+        "target_first_glyph_in_first8": 2914
+      }
+    },
+    "encyclopedic-regression/zh-dev-full": {
+      "before": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 943,
+        "prefix_in_first8": 918,
+        "labeled_episodes": 1000,
+        "target_available": 1000,
+        "target_in_first8": 939,
+        "target_on_space": 699,
+        "target_first_glyph_available": 997,
+        "target_first_glyph_in_first8": 657
+      },
+      "after": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 943,
+        "prefix_in_first8": 918,
+        "labeled_episodes": 1000,
+        "target_available": 1000,
+        "target_in_first8": 927,
+        "target_on_space": 696,
+        "target_first_glyph_available": 997,
+        "target_first_glyph_in_first8": 670
+      }
+    },
+    "encyclopedic-regression/zh-dev-initial": {
+      "before": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 820,
+        "prefix_in_first8": 650,
+        "labeled_episodes": 1000,
+        "target_available": 631,
+        "target_in_first8": 327,
+        "target_on_space": 88,
+        "target_first_glyph_available": 886,
+        "target_first_glyph_in_first8": 90
+      },
+      "after": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 820,
+        "prefix_in_first8": 650,
+        "labeled_episodes": 1000,
+        "target_available": 631,
+        "target_in_first8": 324,
+        "target_on_space": 87,
+        "target_first_glyph_available": 885,
+        "target_first_glyph_in_first8": 87
+      }
+    },
+    "encyclopedic-regression/zh-dev-mixed-left": {
+      "before": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 943,
+        "prefix_in_first8": 795,
+        "labeled_episodes": 1000,
+        "target_available": 967,
+        "target_in_first8": 788,
+        "target_on_space": 338,
+        "target_first_glyph_available": 998,
+        "target_first_glyph_in_first8": 542
+      },
+      "after": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 943,
+        "prefix_in_first8": 795,
+        "labeled_episodes": 1000,
+        "target_available": 964,
+        "target_in_first8": 759,
+        "target_on_space": 331,
+        "target_first_glyph_available": 998,
+        "target_first_glyph_in_first8": 550
+      }
+    },
+    "encyclopedic-regression/zh-dev-mixed-right": {
+      "before": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 820,
+        "prefix_in_first8": 780,
+        "labeled_episodes": 1000,
+        "target_available": 861,
+        "target_in_first8": 663,
+        "target_on_space": 307,
+        "target_first_glyph_available": 880,
+        "target_first_glyph_in_first8": 107
+      },
+      "after": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 820,
+        "prefix_in_first8": 780,
+        "labeled_episodes": 1000,
+        "target_available": 858,
+        "target_in_first8": 655,
+        "target_on_space": 304,
+        "target_first_glyph_available": 879,
+        "target_first_glyph_in_first8": 108
+      }
+    },
+    "encyclopedic-regression/zh-test-full": {
+      "before": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 946,
+        "prefix_in_first8": 924,
+        "labeled_episodes": 1000,
+        "target_available": 1000,
+        "target_in_first8": 946,
+        "target_on_space": 704,
+        "target_first_glyph_available": 998,
+        "target_first_glyph_in_first8": 691
+      },
+      "after": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 946,
+        "prefix_in_first8": 924,
+        "labeled_episodes": 1000,
+        "target_available": 1000,
+        "target_in_first8": 940,
+        "target_on_space": 706,
+        "target_first_glyph_available": 998,
+        "target_first_glyph_in_first8": 709
+      }
+    },
+    "encyclopedic-regression/zh-test-initial": {
+      "before": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 832,
+        "prefix_in_first8": 667,
+        "labeled_episodes": 1000,
+        "target_available": 619,
+        "target_in_first8": 329,
+        "target_on_space": 82,
+        "target_first_glyph_available": 897,
+        "target_first_glyph_in_first8": 101
+      },
+      "after": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 832,
+        "prefix_in_first8": 667,
+        "labeled_episodes": 1000,
+        "target_available": 619,
+        "target_in_first8": 328,
+        "target_on_space": 82,
+        "target_first_glyph_available": 897,
+        "target_first_glyph_in_first8": 100
+      }
+    },
+    "encyclopedic-regression/zh-test-mixed-left": {
+      "before": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 946,
+        "prefix_in_first8": 784,
+        "labeled_episodes": 1000,
+        "target_available": 965,
+        "target_in_first8": 779,
+        "target_on_space": 355,
+        "target_first_glyph_available": 1000,
+        "target_first_glyph_in_first8": 562
+      },
+      "after": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 946,
+        "prefix_in_first8": 784,
+        "labeled_episodes": 1000,
+        "target_available": 964,
+        "target_in_first8": 759,
+        "target_on_space": 349,
+        "target_first_glyph_available": 1000,
+        "target_first_glyph_in_first8": 572
+      }
+    },
+    "encyclopedic-regression/zh-test-mixed-right": {
+      "before": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 832,
+        "prefix_in_first8": 798,
+        "labeled_episodes": 1000,
+        "target_available": 867,
+        "target_in_first8": 667,
+        "target_on_space": 300,
+        "target_first_glyph_available": 894,
+        "target_first_glyph_in_first8": 118
+      },
+      "after": {
+        "episodes": 1000,
+        "empty": 0,
+        "with_prefix_glyph": 832,
+        "prefix_in_first8": 798,
+        "labeled_episodes": 1000,
+        "target_available": 867,
+        "target_in_first8": 662,
+        "target_on_space": 299,
+        "target_first_glyph_available": 894,
+        "target_first_glyph_in_first8": 118
+      }
+    },
+    "essay-regression": {
+      "before": {
+        "episodes": 11220,
+        "empty": 0,
+        "with_prefix_glyph": 11220,
+        "prefix_in_first8": 11209,
+        "labeled_episodes": 11220,
+        "target_available": 1192,
+        "target_in_first8": 1154,
+        "target_on_space": 883,
+        "target_first_glyph_available": 11037,
+        "target_first_glyph_in_first8": 7141
+      },
+      "after": {
+        "episodes": 11220,
+        "empty": 0,
+        "with_prefix_glyph": 11220,
+        "prefix_in_first8": 11209,
+        "labeled_episodes": 11220,
+        "target_available": 1192,
+        "target_in_first8": 1157,
+        "target_on_space": 889,
+        "target_first_glyph_available": 11037,
+        "target_first_glyph_in_first8": 7248
+      }
+    },
+    "essay-regression/full": {
+      "before": {
+        "episodes": 2805,
+        "empty": 0,
+        "with_prefix_glyph": 2805,
+        "prefix_in_first8": 2805,
+        "labeled_episodes": 2805,
+        "target_available": 301,
+        "target_in_first8": 301,
+        "target_on_space": 297,
+        "target_first_glyph_available": 2790,
+        "target_first_glyph_in_first8": 2547
+      },
+      "after": {
+        "episodes": 2805,
+        "empty": 0,
+        "with_prefix_glyph": 2805,
+        "prefix_in_first8": 2805,
+        "labeled_episodes": 2805,
+        "target_available": 301,
+        "target_in_first8": 301,
+        "target_on_space": 296,
+        "target_first_glyph_available": 2790,
+        "target_first_glyph_in_first8": 2569
+      }
+    },
+    "essay-regression/initials": {
+      "before": {
+        "episodes": 2805,
+        "empty": 0,
+        "with_prefix_glyph": 2805,
+        "prefix_in_first8": 2795,
+        "labeled_episodes": 2805,
+        "target_available": 300,
+        "target_in_first8": 286,
+        "target_on_space": 207,
+        "target_first_glyph_available": 2738,
+        "target_first_glyph_in_first8": 1041
+      },
+      "after": {
+        "episodes": 2805,
+        "empty": 0,
+        "with_prefix_glyph": 2805,
+        "prefix_in_first8": 2795,
+        "labeled_episodes": 2805,
+        "target_available": 300,
+        "target_in_first8": 286,
+        "target_on_space": 208,
+        "target_first_glyph_available": 2738,
+        "target_first_glyph_in_first8": 1069
+      }
+    },
+    "essay-regression/mixed": {
+      "before": {
+        "episodes": 2805,
+        "empty": 0,
+        "with_prefix_glyph": 2805,
+        "prefix_in_first8": 2804,
+        "labeled_episodes": 2805,
+        "target_available": 301,
+        "target_in_first8": 301,
+        "target_on_space": 265,
+        "target_first_glyph_available": 2719,
+        "target_first_glyph_in_first8": 1093
+      },
+      "after": {
+        "episodes": 2805,
+        "empty": 0,
+        "with_prefix_glyph": 2805,
+        "prefix_in_first8": 2804,
+        "labeled_episodes": 2805,
+        "target_available": 301,
+        "target_in_first8": 301,
+        "target_on_space": 265,
+        "target_first_glyph_available": 2719,
+        "target_first_glyph_in_first8": 1123
+      }
+    },
+    "essay-regression/partial": {
+      "before": {
+        "episodes": 2805,
+        "empty": 0,
+        "with_prefix_glyph": 2805,
+        "prefix_in_first8": 2805,
+        "labeled_episodes": 2805,
+        "target_available": 290,
+        "target_in_first8": 266,
+        "target_on_space": 114,
+        "target_first_glyph_available": 2790,
+        "target_first_glyph_in_first8": 2460
+      },
+      "after": {
+        "episodes": 2805,
+        "empty": 0,
+        "with_prefix_glyph": 2805,
+        "prefix_in_first8": 2805,
+        "labeled_episodes": 2805,
+        "target_available": 290,
+        "target_in_first8": 269,
+        "target_on_space": 120,
+        "target_first_glyph_available": 2790,
+        "target_first_glyph_in_first8": 2487
+      }
+    },
+    "glyph-audit": {
+      "before": {
+        "episodes": 499,
+        "empty": 0,
+        "with_prefix_glyph": 408,
+        "prefix_in_first8": 315,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 499,
+        "empty": 0,
+        "with_prefix_glyph": 408,
+        "prefix_in_first8": 315,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "glyph-audit/single": {
+      "before": {
+        "episodes": 499,
+        "empty": 0,
+        "with_prefix_glyph": 408,
+        "prefix_in_first8": 315,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 499,
+        "empty": 0,
+        "with_prefix_glyph": 408,
+        "prefix_in_first8": 315,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "length/1": {
+      "before": {
+        "episodes": 1891,
+        "empty": 0,
+        "with_prefix_glyph": 882,
+        "prefix_in_first8": 697,
+        "labeled_episodes": 1392,
+        "target_available": 1022,
+        "target_in_first8": 686,
+        "target_on_space": 172,
+        "target_first_glyph_available": 1022,
+        "target_first_glyph_in_first8": 686
+      },
+      "after": {
+        "episodes": 1891,
+        "empty": 0,
+        "with_prefix_glyph": 882,
+        "prefix_in_first8": 697,
+        "labeled_episodes": 1392,
+        "target_available": 1020,
+        "target_in_first8": 648,
+        "target_on_space": 184,
+        "target_first_glyph_available": 1020,
+        "target_first_glyph_in_first8": 648
+      }
+    },
+    "length/2": {
+      "before": {
+        "episodes": 6324,
+        "empty": 0,
+        "with_prefix_glyph": 6324,
+        "prefix_in_first8": 5652,
+        "labeled_episodes": 6324,
+        "target_available": 5604,
+        "target_in_first8": 4473,
+        "target_on_space": 2456,
+        "target_first_glyph_available": 6261,
+        "target_first_glyph_in_first8": 2045
+      },
+      "after": {
+        "episodes": 6324,
+        "empty": 0,
+        "with_prefix_glyph": 6324,
+        "prefix_in_first8": 5652,
+        "labeled_episodes": 6324,
+        "target_available": 5599,
+        "target_in_first8": 4426,
+        "target_on_space": 2425,
+        "target_first_glyph_available": 6261,
+        "target_first_glyph_in_first8": 2128
+      }
+    },
+    "length/3": {
+      "before": {
+        "episodes": 6641,
+        "empty": 0,
+        "with_prefix_glyph": 6641,
+        "prefix_in_first8": 6617,
+        "labeled_episodes": 4945,
+        "target_available": 3381,
+        "target_in_first8": 3337,
+        "target_on_space": 2945,
+        "target_first_glyph_available": 4889,
+        "target_first_glyph_in_first8": 3390
+      },
+      "after": {
+        "episodes": 6641,
+        "empty": 0,
+        "with_prefix_glyph": 6641,
+        "prefix_in_first8": 6617,
+        "labeled_episodes": 4945,
+        "target_available": 3381,
+        "target_in_first8": 3341,
+        "target_on_space": 2935,
+        "target_first_glyph_available": 4889,
+        "target_first_glyph_in_first8": 3460
+      }
+    },
+    "length/4": {
+      "before": {
+        "episodes": 6797,
+        "empty": 0,
+        "with_prefix_glyph": 6797,
+        "prefix_in_first8": 6797,
+        "labeled_episodes": 5101,
+        "target_available": 2741,
+        "target_in_first8": 2741,
+        "target_on_space": 2624,
+        "target_first_glyph_available": 5045,
+        "target_first_glyph_in_first8": 3570
+      },
+      "after": {
+        "episodes": 6797,
+        "empty": 0,
+        "with_prefix_glyph": 6797,
+        "prefix_in_first8": 6797,
+        "labeled_episodes": 5101,
+        "target_available": 2741,
+        "target_in_first8": 2741,
+        "target_on_space": 2622,
+        "target_first_glyph_available": 5045,
+        "target_first_glyph_in_first8": 3625
+      }
+    },
+    "length/5+": {
+      "before": {
+        "episodes": 9874,
+        "empty": 0,
+        "with_prefix_glyph": 9874,
+        "prefix_in_first8": 9874,
+        "labeled_episodes": 6482,
+        "target_available": 354,
+        "target_in_first8": 354,
+        "target_on_space": 342,
+        "target_first_glyph_available": 6355,
+        "target_first_glyph_in_first8": 4401
+      },
+      "after": {
+        "episodes": 9874,
+        "empty": 0,
+        "with_prefix_glyph": 9874,
+        "prefix_in_first8": 9874,
+        "labeled_episodes": 6482,
+        "target_available": 354,
+        "target_in_first8": 354,
+        "target_on_space": 342,
+        "target_first_glyph_available": 6355,
+        "target_first_glyph_in_first8": 4460
+      }
+    },
+    "mechanical": {
+      "before": {
+        "episodes": 6784,
+        "empty": 0,
+        "with_prefix_glyph": 6784,
+        "prefix_in_first8": 6773,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 6784,
+        "empty": 0,
+        "with_prefix_glyph": 6784,
+        "prefix_in_first8": 6773,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "mechanical/full": {
+      "before": {
+        "episodes": 1696,
+        "empty": 0,
+        "with_prefix_glyph": 1696,
+        "prefix_in_first8": 1696,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 1696,
+        "empty": 0,
+        "with_prefix_glyph": 1696,
+        "prefix_in_first8": 1696,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "mechanical/initials": {
+      "before": {
+        "episodes": 1696,
+        "empty": 0,
+        "with_prefix_glyph": 1696,
+        "prefix_in_first8": 1685,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 1696,
+        "empty": 0,
+        "with_prefix_glyph": 1696,
+        "prefix_in_first8": 1685,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "mechanical/mixed": {
+      "before": {
+        "episodes": 1696,
+        "empty": 0,
+        "with_prefix_glyph": 1696,
+        "prefix_in_first8": 1696,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 1696,
+        "empty": 0,
+        "with_prefix_glyph": 1696,
+        "prefix_in_first8": 1696,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "mechanical/separated": {
+      "before": {
+        "episodes": 1696,
+        "empty": 0,
+        "with_prefix_glyph": 1696,
+        "prefix_in_first8": 1696,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      },
+      "after": {
+        "episodes": 1696,
+        "empty": 0,
+        "with_prefix_glyph": 1696,
+        "prefix_in_first8": 1696,
+        "labeled_episodes": 0,
+        "target_available": 0,
+        "target_in_first8": 0,
+        "target_on_space": 0,
+        "target_first_glyph_available": 0,
+        "target_first_glyph_in_first8": 0
+      }
+    },
+    "source-retrieval": {
+      "before": {
+        "episodes": 5000,
+        "empty": 0,
+        "with_prefix_glyph": 5000,
+        "prefix_in_first8": 5000,
+        "labeled_episodes": 5000,
+        "target_available": 5000,
+        "target_in_first8": 4999,
+        "target_on_space": 4783,
+        "target_first_glyph_available": 4961,
+        "target_first_glyph_in_first8": 4061
+      },
+      "after": {
+        "episodes": 5000,
+        "empty": 0,
+        "with_prefix_glyph": 5000,
+        "prefix_in_first8": 5000,
+        "labeled_episodes": 5000,
+        "target_available": 5000,
+        "target_in_first8": 4999,
+        "target_on_space": 4765,
+        "target_first_glyph_available": 4961,
+        "target_first_glyph_in_first8": 4137
+      }
+    },
+    "source-retrieval/full": {
+      "before": {
+        "episodes": 5000,
+        "empty": 0,
+        "with_prefix_glyph": 5000,
+        "prefix_in_first8": 5000,
+        "labeled_episodes": 5000,
+        "target_available": 5000,
+        "target_in_first8": 4999,
+        "target_on_space": 4783,
+        "target_first_glyph_available": 4961,
+        "target_first_glyph_in_first8": 4061
+      },
+      "after": {
+        "episodes": 5000,
+        "empty": 0,
+        "with_prefix_glyph": 5000,
+        "prefix_in_first8": 5000,
+        "labeled_episodes": 5000,
+        "target_available": 5000,
+        "target_in_first8": 4999,
+        "target_on_space": 4765,
+        "target_first_glyph_available": 4961,
+        "target_first_glyph_in_first8": 4137
+      }
+    }
+  },
+  "changed_space": [
+    {
+      "raw": "anr",
+      "genre": "mechanical",
+      "before": "安人",
+      "after": "盎然",
+      "target": ""
+    },
+    {
+      "raw": "nbe",
+      "genre": "mechanical",
+      "before": "南北",
+      "after": "諾貝爾",
+      "target": ""
+    },
+    {
+      "raw": "bo",
+      "genre": "glyph-audit",
+      "before": "白",
+      "after": "播",
+      "target": ""
+    },
+    {
+      "raw": "cen",
+      "genre": "glyph-audit",
+      "before": "參",
+      "after": "曾",
+      "target": ""
+    },
+    {
+      "raw": "chai",
+      "genre": "glyph-audit",
+      "before": "差",
+      "after": "拆",
+      "target": ""
+    },
+    {
+      "raw": "cu",
+      "genre": "glyph-audit",
+      "before": "錯",
+      "after": "促",
+      "target": ""
+    },
+    {
+      "raw": "cui",
+      "genre": "glyph-audit",
+      "before": "衰",
+      "after": "脆",
+      "target": ""
+    },
+    {
+      "raw": "dai",
+      "genre": "glyph-audit",
+      "before": "大",
+      "after": "代",
+      "target": ""
+    },
+    {
+      "raw": "di",
+      "genre": "glyph-audit",
+      "before": "的",
+      "after": "地",
+      "target": ""
+    },
+    {
+      "raw": "diao",
+      "genre": "glyph-audit",
+      "before": "調",
+      "after": "掉",
+      "target": ""
+    },
+    {
+      "raw": "du",
+      "genre": "glyph-audit",
+      "before": "都",
+      "after": "度",
+      "target": ""
+    },
+    {
+      "raw": "eng",
+      "genre": "glyph-audit",
+      "before": "鞥",
+      "after": "恩格斯",
+      "target": ""
+    },
+    {
+      "raw": "ga",
+      "genre": "glyph-audit",
+      "before": "價",
+      "after": "高",
+      "target": ""
+    },
+    {
+      "raw": "gu",
+      "genre": "glyph-audit",
+      "before": "家",
+      "after": "國",
+      "target": ""
+    },
+    {
+      "raw": "huan",
+      "genre": "glyph-audit",
+      "before": "還",
+      "after": "環",
+      "target": ""
+    },
+    {
+      "raw": "huo",
+      "genre": "glyph-audit",
+      "before": "和",
+      "after": "或",
+      "target": ""
+    },
+    {
+      "raw": "ji",
+      "genre": "glyph-audit",
+      "before": "其",
+      "after": "及",
+      "target": ""
+    },
+    {
+      "raw": "ju",
+      "genre": "glyph-audit",
+      "before": "車",
+      "after": "局",
+      "target": ""
+    },
+    {
+      "raw": "jua",
+      "genre": "glyph-audit",
+      "before": "身",
+      "after": "卷",
+      "target": ""
+    },
+    {
+      "raw": "juan",
+      "genre": "glyph-audit",
+      "before": "身",
+      "after": "卷",
+      "target": ""
+    },
+    {
+      "raw": "ken",
+      "genre": "glyph-audit",
+      "before": "肯",
+      "after": "可能",
+      "target": ""
+    },
+    {
+      "raw": "ku",
+      "genre": "glyph-audit",
+      "before": "會",
+      "after": "苦",
+      "target": ""
+    },
+    {
+      "raw": "kua",
+      "genre": "glyph-audit",
+      "before": "會",
+      "after": "快",
+      "target": ""
+    },
+    {
+      "raw": "kuai",
+      "genre": "glyph-audit",
+      "before": "會",
+      "after": "快",
+      "target": ""
+    },
+    {
+      "raw": "kuo",
+      "genre": "glyph-audit",
+      "before": "括",
+      "after": "擴",
+      "target": ""
+    },
+    {
+      "raw": "mo",
+      "genre": "glyph-audit",
+      "before": "沒",
+      "after": "麼",
+      "target": ""
+    },
+    {
+      "raw": "nei",
+      "genre": "glyph-audit",
+      "before": "那",
+      "after": "內",
+      "target": ""
+    },
+    {
+      "raw": "nou",
+      "genre": "glyph-audit",
+      "before": "耨",
+      "after": "南歐",
+      "target": ""
+    },
+    {
+      "raw": "nuo",
+      "genre": "glyph-audit",
+      "before": "哪",
+      "after": "諾",
+      "target": ""
+    },
+    {
+      "raw": "o",
+      "genre": "glyph-audit",
+      "before": "區",
+      "after": "喔",
+      "target": ""
+    },
+    {
+      "raw": "ou",
+      "genre": "glyph-audit",
+      "before": "區",
+      "after": "歐",
+      "target": ""
+    },
+    {
+      "raw": "qiang",
+      "genre": "glyph-audit",
+      "before": "將",
+      "after": "強",
+      "target": ""
+    },
+    {
+      "raw": "rua",
+      "genre": "glyph-audit",
+      "before": "軟",
+      "after": "軟體",
+      "target": ""
+    },
+    {
+      "raw": "shai",
+      "genre": "glyph-audit",
+      "before": "殺",
+      "after": "篩",
+      "target": ""
+    },
+    {
+      "raw": "shen",
+      "genre": "glyph-audit",
+      "before": "什",
+      "after": "身",
+      "target": ""
+    },
+    {
+      "raw": "shua",
+      "genre": "glyph-audit",
+      "before": "率",
+      "after": "刷",
+      "target": ""
+    },
+    {
+      "raw": "shui",
+      "genre": "glyph-audit",
+      "before": "說",
+      "after": "水",
+      "target": ""
+    },
+    {
+      "raw": "wu",
+      "genre": "glyph-audit",
+      "before": "於",
+      "after": "無",
+      "target": ""
+    },
+    {
+      "raw": "xiao",
+      "genre": "glyph-audit",
+      "before": "學",
+      "after": "小",
+      "target": ""
+    },
+    {
+      "raw": "xua",
+      "genre": "glyph-audit",
+      "before": "還",
+      "after": "選",
+      "target": ""
+    },
+    {
+      "raw": "xuan",
+      "genre": "glyph-audit",
+      "before": "還",
+      "after": "選",
+      "target": ""
+    },
+    {
+      "raw": "yue",
+      "genre": "glyph-audit",
+      "before": "說",
+      "after": "月",
+      "target": ""
+    },
+    {
+      "raw": "yun",
+      "genre": "glyph-audit",
+      "before": "員",
+      "after": "運",
+      "target": ""
+    },
+    {
+      "raw": "zan",
+      "genre": "glyph-audit",
+      "before": "暫",
+      "after": "贊",
+      "target": ""
+    },
+    {
+      "raw": "zang",
+      "genre": "glyph-audit",
+      "before": "藏",
+      "after": "臟",
+      "target": ""
+    },
+    {
+      "raw": "ze",
+      "genre": "glyph-audit",
+      "before": "子",
+      "after": "則",
+      "target": ""
+    },
+    {
+      "raw": "zeng",
+      "genre": "glyph-audit",
+      "before": "曾",
+      "after": "增",
+      "target": ""
+    },
+    {
+      "raw": "zha",
+      "genre": "glyph-audit",
+      "before": "查",
+      "after": "展",
+      "target": ""
+    },
+    {
+      "raw": "zhai",
+      "genre": "glyph-audit",
+      "before": "責",
+      "after": "宅",
+      "target": ""
+    },
+    {
+      "raw": "zhang",
+      "genre": "glyph-audit",
+      "before": "長",
+      "after": "張",
+      "target": ""
+    },
+    {
+      "raw": "zhao",
+      "genre": "glyph-audit",
+      "before": "著",
+      "after": "照",
+      "target": ""
+    },
+    {
+      "raw": "zhua",
+      "genre": "glyph-audit",
+      "before": "傳",
+      "after": "專",
+      "target": ""
+    },
+    {
+      "raw": "zhuan",
+      "genre": "glyph-audit",
+      "before": "傳",
+      "after": "專",
+      "target": ""
+    },
+    {
+      "raw": "zhuo",
+      "genre": "glyph-audit",
+      "before": "著",
+      "after": "桌",
+      "target": ""
+    },
+    {
+      "raw": "zong",
+      "genre": "glyph-audit",
+      "before": "從",
+      "after": "總",
+      "target": ""
+    },
+    {
+      "raw": "zua",
+      "genre": "glyph-audit",
+      "before": "賺",
+      "after": "鑽",
+      "target": ""
+    },
+    {
+      "raw": "zuan",
+      "genre": "glyph-audit",
+      "before": "賺",
+      "after": "鑽",
+      "target": ""
+    },
+    {
+      "raw": "di",
+      "genre": "encyclopedic-regression",
+      "before": "的",
+      "after": "地",
+      "target": "弟"
+    },
+    {
+      "raw": "di",
+      "genre": "encyclopedic-regression",
+      "before": "的",
+      "after": "地",
+      "target": "弟"
+    },
+    {
+      "raw": "liangx",
+      "genre": "encyclopedic-regression",
+      "before": "兩性",
+      "after": "兩岸關係",
+      "target": "良心"
+    },
+    {
+      "raw": "yuanz",
+      "genre": "encyclopedic-regression",
+      "before": "原則",
+      "after": "原住民",
+      "target": "遠征"
+    },
+    {
+      "raw": "tongh",
+      "genre": "encyclopedic-regression",
+      "before": "通貨",
+      "after": "通貨膨脹",
+      "target": "通貨"
+    },
+    {
+      "raw": "zhang",
+      "genre": "encyclopedic-regression",
+      "before": "長",
+      "after": "張",
+      "target": "張"
+    },
+    {
+      "raw": "zhang",
+      "genre": "encyclopedic-regression",
+      "before": "長",
+      "after": "張",
+      "target": "張"
+    },
+    {
+      "raw": "mingzhi",
+      "genre": "encyclopedic-regression",
+      "before": "明治",
+      "after": "明知",
+      "target": "明治"
+    },
+    {
+      "raw": "mzhi",
+      "genre": "encyclopedic-regression",
+      "before": "明治",
+      "after": "明知",
+      "target": "明治"
+    },
+    {
+      "raw": "wens",
+      "genre": "encyclopedic-regression",
+      "before": "文書",
+      "after": "威尼斯",
+      "target": "溫室"
+    },
+    {
+      "raw": "shua",
+      "genre": "encyclopedic-regression",
+      "before": "率",
+      "after": "刷",
+      "target": "神話"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "集"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "集"
+    },
+    {
+      "raw": "mo",
+      "genre": "encyclopedic-regression",
+      "before": "沒",
+      "after": "麼",
+      "target": "末"
+    },
+    {
+      "raw": "mo",
+      "genre": "encyclopedic-regression",
+      "before": "沒",
+      "after": "麼",
+      "target": "末"
+    },
+    {
+      "raw": "zhuo",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "桌",
+      "target": "卓"
+    },
+    {
+      "raw": "zhuo",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "桌",
+      "target": "卓"
+    },
+    {
+      "raw": "bok",
+      "genre": "encyclopedic-regression",
+      "before": "撥款",
+      "after": "柏克萊",
+      "target": "撥款"
+    },
+    {
+      "raw": "yik",
+      "genre": "encyclopedic-regression",
+      "before": "一開",
+      "after": "一開始",
+      "target": "依靠"
+    },
+    {
+      "raw": "minj",
+      "genre": "encyclopedic-regression",
+      "before": "民間",
+      "after": "民進黨",
+      "target": "民間"
+    },
+    {
+      "raw": "amu",
+      "genre": "encyclopedic-regression",
+      "before": "阿母",
+      "after": "阿姆斯特丹",
+      "target": "愛慕"
+    },
+    {
+      "raw": "lixue",
+      "genre": "encyclopedic-regression",
+      "before": "理學",
+      "after": "力學",
+      "target": "理學"
+    },
+    {
+      "raw": "lxue",
+      "genre": "encyclopedic-regression",
+      "before": "理學",
+      "after": "留學",
+      "target": "理學"
+    },
+    {
+      "raw": "kenya",
+      "genre": "encyclopedic-regression",
+      "before": "肯亞",
+      "after": "可能要",
+      "target": "肯亞"
+    },
+    {
+      "raw": "gu",
+      "genre": "encyclopedic-regression",
+      "before": "家",
+      "after": "國",
+      "target": "古"
+    },
+    {
+      "raw": "gu",
+      "genre": "encyclopedic-regression",
+      "before": "家",
+      "after": "國",
+      "target": "古"
+    },
+    {
+      "raw": "ou",
+      "genre": "encyclopedic-regression",
+      "before": "區",
+      "after": "歐",
+      "target": "歐"
+    },
+    {
+      "raw": "o",
+      "genre": "encyclopedic-regression",
+      "before": "區",
+      "after": "喔",
+      "target": "歐"
+    },
+    {
+      "raw": "ou",
+      "genre": "encyclopedic-regression",
+      "before": "區",
+      "after": "歐",
+      "target": "歐"
+    },
+    {
+      "raw": "o",
+      "genre": "encyclopedic-regression",
+      "before": "區",
+      "after": "喔",
+      "target": "歐"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "無"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "無"
+    },
+    {
+      "raw": "hshu",
+      "genre": "encyclopedic-regression",
+      "before": "話說",
+      "after": "還是會",
+      "target": "函數"
+    },
+    {
+      "raw": "dadian",
+      "genre": "encyclopedic-regression",
+      "before": "打點",
+      "after": "打電話",
+      "target": "大典"
+    },
+    {
+      "raw": "quans",
+      "genre": "encyclopedic-regression",
+      "before": "詮釋",
+      "after": "全世界",
+      "target": "勸說"
+    },
+    {
+      "raw": "zuiz",
+      "genre": "encyclopedic-regression",
+      "before": "最重",
+      "after": "最重要",
+      "target": "最終"
+    },
+    {
+      "raw": "shua",
+      "genre": "encyclopedic-regression",
+      "before": "率",
+      "after": "刷",
+      "target": "深化"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "吳"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "吳"
+    },
+    {
+      "raw": "gangk",
+      "genre": "encyclopedic-regression",
+      "before": "港口",
+      "after": "剛開始",
+      "target": "港口"
+    },
+    {
+      "raw": "haoy",
+      "genre": "encyclopedic-regression",
+      "before": "好意",
+      "after": "好意思",
+      "target": "好友"
+    },
+    {
+      "raw": "yuey",
+      "genre": "encyclopedic-regression",
+      "before": "越野",
+      "after": "躍躍欲試",
+      "target": "月牙"
+    },
+    {
+      "raw": "guof",
+      "genre": "encyclopedic-regression",
+      "before": "國防",
+      "after": "國防部",
+      "target": "國防"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "朝"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "朝"
+    },
+    {
+      "raw": "huo",
+      "genre": "encyclopedic-regression",
+      "before": "和",
+      "after": "或",
+      "target": "火"
+    },
+    {
+      "raw": "huo",
+      "genre": "encyclopedic-regression",
+      "before": "和",
+      "after": "或",
+      "target": "火"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "於"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "於"
+    },
+    {
+      "raw": "yuel",
+      "genre": "encyclopedic-regression",
+      "before": "越來",
+      "after": "越來越",
+      "target": "閱覽"
+    },
+    {
+      "raw": "yant",
+      "genre": "encyclopedic-regression",
+      "before": "研討",
+      "after": "研討會",
+      "target": "研討"
+    },
+    {
+      "raw": "zhaoh",
+      "genre": "encyclopedic-regression",
+      "before": "昭和",
+      "after": "照護",
+      "target": "召喚"
+    },
+    {
+      "raw": "zhuan",
+      "genre": "encyclopedic-regression",
+      "before": "傳",
+      "after": "專",
+      "target": "召喚"
+    },
+    {
+      "raw": "dshou",
+      "genre": "encyclopedic-regression",
+      "before": "對手",
+      "after": "到時候",
+      "target": "對手"
+    },
+    {
+      "raw": "zhuan",
+      "genre": "encyclopedic-regression",
+      "before": "傳",
+      "after": "專",
+      "target": "轉換"
+    },
+    {
+      "raw": "tianz",
+      "genre": "encyclopedic-regression",
+      "before": "天主",
+      "after": "天主教",
+      "target": "天主"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "罩"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "罩"
+    },
+    {
+      "raw": "bo",
+      "genre": "encyclopedic-regression",
+      "before": "白",
+      "after": "播",
+      "target": "白"
+    },
+    {
+      "raw": "bo",
+      "genre": "encyclopedic-regression",
+      "before": "白",
+      "after": "播",
+      "target": "白"
+    },
+    {
+      "raw": "ju",
+      "genre": "encyclopedic-regression",
+      "before": "車",
+      "after": "局",
+      "target": "足"
+    },
+    {
+      "raw": "ju",
+      "genre": "encyclopedic-regression",
+      "before": "車",
+      "after": "局",
+      "target": "足"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "做好"
+    },
+    {
+      "raw": "fuzuo",
+      "genre": "encyclopedic-regression",
+      "before": "輔佐",
+      "after": "副作用",
+      "target": "輔佐"
+    },
+    {
+      "raw": "neiz",
+      "genre": "encyclopedic-regression",
+      "before": "內政",
+      "after": "內政部",
+      "target": "內戰"
+    },
+    {
+      "raw": "diaox",
+      "genre": "encyclopedic-regression",
+      "before": "掉下",
+      "after": "掉下來",
+      "target": "雕像"
+    },
+    {
+      "raw": "fanlu",
+      "genre": "encyclopedic-regression",
+      "before": "番路",
+      "after": "方略",
+      "target": "番路"
+    },
+    {
+      "raw": "fy",
+      "genre": "encyclopedic-regression",
+      "before": "法院",
+      "after": "反應",
+      "target": "法院"
+    },
+    {
+      "raw": "fay",
+      "genre": "encyclopedic-regression",
+      "before": "法院",
+      "after": "反應",
+      "target": "法院"
+    },
+    {
+      "raw": "ju",
+      "genre": "encyclopedic-regression",
+      "before": "車",
+      "after": "局",
+      "target": "據"
+    },
+    {
+      "raw": "ju",
+      "genre": "encyclopedic-regression",
+      "before": "車",
+      "after": "局",
+      "target": "據"
+    },
+    {
+      "raw": "jind",
+      "genre": "encyclopedic-regression",
+      "before": "進度",
+      "after": "加拿大",
+      "target": "進度"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "季"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "季"
+    },
+    {
+      "raw": "wx",
+      "genre": "encyclopedic-regression",
+      "before": "文學",
+      "after": "我想",
+      "target": "外銷"
+    },
+    {
+      "raw": "zhuo",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "桌",
+      "target": "桌"
+    },
+    {
+      "raw": "zhuo",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "桌",
+      "target": "桌"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "物"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "物"
+    },
+    {
+      "raw": "huan",
+      "genre": "encyclopedic-regression",
+      "before": "還",
+      "after": "環",
+      "target": "換"
+    },
+    {
+      "raw": "huan",
+      "genre": "encyclopedic-regression",
+      "before": "還",
+      "after": "環",
+      "target": "換"
+    },
+    {
+      "raw": "zhang",
+      "genre": "encyclopedic-regression",
+      "before": "長",
+      "after": "張",
+      "target": "張"
+    },
+    {
+      "raw": "zhang",
+      "genre": "encyclopedic-regression",
+      "before": "長",
+      "after": "張",
+      "target": "張"
+    },
+    {
+      "raw": "shua",
+      "genre": "encyclopedic-regression",
+      "before": "率",
+      "after": "刷",
+      "target": "神話"
+    },
+    {
+      "raw": "buken",
+      "genre": "encyclopedic-regression",
+      "before": "不肯",
+      "after": "不可能",
+      "target": "不肯"
+    },
+    {
+      "raw": "feit",
+      "genre": "encyclopedic-regression",
+      "before": "非他",
+      "after": "廢土",
+      "target": "廢鐵"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "集"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "集"
+    },
+    {
+      "raw": "mo",
+      "genre": "encyclopedic-regression",
+      "before": "沒",
+      "after": "麼",
+      "target": "末"
+    },
+    {
+      "raw": "mo",
+      "genre": "encyclopedic-regression",
+      "before": "沒",
+      "after": "麼",
+      "target": "末"
+    },
+    {
+      "raw": "wusha",
+      "genre": "encyclopedic-regression",
+      "before": "無上",
+      "after": "烏山頭",
+      "target": "誤殺"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "爪"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "爪"
+    },
+    {
+      "raw": "neiz",
+      "genre": "encyclopedic-regression",
+      "before": "內政",
+      "after": "內政部",
+      "target": "內在"
+    },
+    {
+      "raw": "bok",
+      "genre": "encyclopedic-regression",
+      "before": "撥款",
+      "after": "柏克萊",
+      "target": "撥款"
+    },
+    {
+      "raw": "yuanz",
+      "genre": "encyclopedic-regression",
+      "before": "原則",
+      "after": "原住民",
+      "target": "園長"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "籍"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "籍"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "奇"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "奇"
+    },
+    {
+      "raw": "zshou",
+      "genre": "encyclopedic-regression",
+      "before": "著手",
+      "after": "這時候",
+      "target": "著手"
+    },
+    {
+      "raw": "mo",
+      "genre": "encyclopedic-regression",
+      "before": "沒",
+      "after": "麼",
+      "target": "膜"
+    },
+    {
+      "raw": "mo",
+      "genre": "encyclopedic-regression",
+      "before": "沒",
+      "after": "麼",
+      "target": "膜"
+    },
+    {
+      "raw": "zhang",
+      "genre": "encyclopedic-regression",
+      "before": "長",
+      "after": "張",
+      "target": "戰果"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "照"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "照"
+    },
+    {
+      "raw": "tianh",
+      "genre": "encyclopedic-regression",
+      "before": "天花",
+      "after": "天花板",
+      "target": "天后"
+    },
+    {
+      "raw": "fy",
+      "genre": "encyclopedic-regression",
+      "before": "法院",
+      "after": "反應",
+      "target": "反應"
+    },
+    {
+      "raw": "yuanz",
+      "genre": "encyclopedic-regression",
+      "before": "原則",
+      "after": "原住民",
+      "target": "原子"
+    },
+    {
+      "raw": "gu",
+      "genre": "encyclopedic-regression",
+      "before": "家",
+      "after": "國",
+      "target": "古"
+    },
+    {
+      "raw": "gu",
+      "genre": "encyclopedic-regression",
+      "before": "家",
+      "after": "國",
+      "target": "古"
+    },
+    {
+      "raw": "fy",
+      "genre": "encyclopedic-regression",
+      "before": "法院",
+      "after": "反應",
+      "target": "方言"
+    },
+    {
+      "raw": "shui",
+      "genre": "encyclopedic-regression",
+      "before": "說",
+      "after": "水",
+      "target": "水"
+    },
+    {
+      "raw": "shui",
+      "genre": "encyclopedic-regression",
+      "before": "說",
+      "after": "水",
+      "target": "水"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "無"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "無"
+    },
+    {
+      "raw": "jiangm",
+      "genre": "encyclopedic-regression",
+      "before": "江面",
+      "after": "薑母鴨",
+      "target": "江面"
+    },
+    {
+      "raw": "qians",
+      "genre": "encyclopedic-regression",
+      "before": "牽涉",
+      "after": "牽涉到",
+      "target": "前述"
+    },
+    {
+      "raw": "zuiz",
+      "genre": "encyclopedic-regression",
+      "before": "最重",
+      "after": "最重要",
+      "target": "最終"
+    },
+    {
+      "raw": "guof",
+      "genre": "encyclopedic-regression",
+      "before": "國防",
+      "after": "國防部",
+      "target": "國防"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "朝"
+    },
+    {
+      "raw": "zhao",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "照",
+      "target": "朝"
+    },
+    {
+      "raw": "huo",
+      "genre": "encyclopedic-regression",
+      "before": "和",
+      "after": "或",
+      "target": "火"
+    },
+    {
+      "raw": "huo",
+      "genre": "encyclopedic-regression",
+      "before": "和",
+      "after": "或",
+      "target": "火"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "於"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "於"
+    },
+    {
+      "raw": "bo",
+      "genre": "encyclopedic-regression",
+      "before": "白",
+      "after": "播",
+      "target": "波"
+    },
+    {
+      "raw": "bo",
+      "genre": "encyclopedic-regression",
+      "before": "白",
+      "after": "播",
+      "target": "波"
+    },
+    {
+      "raw": "gongting",
+      "genre": "encyclopedic-regression",
+      "before": "宮廷",
+      "after": "公聽會",
+      "target": "宮廷"
+    },
+    {
+      "raw": "daf",
+      "genre": "encyclopedic-regression",
+      "before": "大幅",
+      "after": "大法官",
+      "target": "大幅"
+    },
+    {
+      "raw": "tingy",
+      "genre": "encyclopedic-regression",
+      "before": "庭園",
+      "after": "聽音樂",
+      "target": "庭院"
+    },
+    {
+      "raw": "zshou",
+      "genre": "encyclopedic-regression",
+      "before": "著手",
+      "after": "這時候",
+      "target": "斬首"
+    },
+    {
+      "raw": "dshou",
+      "genre": "encyclopedic-regression",
+      "before": "對手",
+      "after": "到時候",
+      "target": "對手"
+    },
+    {
+      "raw": "fbu",
+      "genre": "encyclopedic-regression",
+      "before": "防部",
+      "after": "分布",
+      "target": "分布"
+    },
+    {
+      "raw": "zhuan",
+      "genre": "encyclopedic-regression",
+      "before": "傳",
+      "after": "專",
+      "target": "轉換"
+    },
+    {
+      "raw": "tangn",
+      "genre": "encyclopedic-regression",
+      "before": "糖尿",
+      "after": "糖尿病",
+      "target": "糖尿"
+    },
+    {
+      "raw": "qund",
+      "genre": "encyclopedic-regression",
+      "before": "群島",
+      "after": "去年的",
+      "target": "群島"
+    },
+    {
+      "raw": "zhib",
+      "genre": "encyclopedic-regression",
+      "before": "指標",
+      "after": "只不過",
+      "target": "植被"
+    },
+    {
+      "raw": "tianz",
+      "genre": "encyclopedic-regression",
+      "before": "天主",
+      "after": "天主教",
+      "target": "天主"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "極"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "極"
+    },
+    {
+      "raw": "xhe",
+      "genre": "encyclopedic-regression",
+      "before": "祥和",
+      "after": "小孩兒",
+      "target": "顯赫"
+    },
+    {
+      "raw": "baih",
+      "genre": "encyclopedic-regression",
+      "before": "百貨",
+      "after": "百貨公司",
+      "target": "百合"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "基"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "基"
+    },
+    {
+      "raw": "ju",
+      "genre": "encyclopedic-regression",
+      "before": "車",
+      "after": "局",
+      "target": "拒"
+    },
+    {
+      "raw": "ju",
+      "genre": "encyclopedic-regression",
+      "before": "車",
+      "after": "局",
+      "target": "拒"
+    },
+    {
+      "raw": "tongh",
+      "genre": "encyclopedic-regression",
+      "before": "通貨",
+      "after": "通貨膨脹",
+      "target": "通紅"
+    },
+    {
+      "raw": "neiz",
+      "genre": "encyclopedic-regression",
+      "before": "內政",
+      "after": "內政部",
+      "target": "內戰"
+    },
+    {
+      "raw": "tingb",
+      "genre": "encyclopedic-regression",
+      "before": "停擺",
+      "after": "聽不懂",
+      "target": "停播"
+    },
+    {
+      "raw": "fy",
+      "genre": "encyclopedic-regression",
+      "before": "法院",
+      "after": "反應",
+      "target": "法院"
+    },
+    {
+      "raw": "fay",
+      "genre": "encyclopedic-regression",
+      "before": "法院",
+      "after": "反應",
+      "target": "法院"
+    },
+    {
+      "raw": "ju",
+      "genre": "encyclopedic-regression",
+      "before": "車",
+      "after": "局",
+      "target": "據"
+    },
+    {
+      "raw": "ju",
+      "genre": "encyclopedic-regression",
+      "before": "車",
+      "after": "局",
+      "target": "據"
+    },
+    {
+      "raw": "tengz",
+      "genre": "encyclopedic-regression",
+      "before": "藤子",
+      "after": "藤子不二雄",
+      "target": "藤子"
+    },
+    {
+      "raw": "bujing",
+      "genre": "encyclopedic-regression",
+      "before": "不經",
+      "after": "不景氣",
+      "target": "佈景"
+    },
+    {
+      "raw": "chai",
+      "genre": "encyclopedic-regression",
+      "before": "差",
+      "after": "拆",
+      "target": "殘骸"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "季"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "季"
+    },
+    {
+      "raw": "zhuo",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "桌",
+      "target": "桌"
+    },
+    {
+      "raw": "zhuo",
+      "genre": "encyclopedic-regression",
+      "before": "著",
+      "after": "桌",
+      "target": "桌"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "物"
+    },
+    {
+      "raw": "wu",
+      "genre": "encyclopedic-regression",
+      "before": "於",
+      "after": "無",
+      "target": "物"
+    },
+    {
+      "raw": "ruhuo",
+      "genre": "encyclopedic-regression",
+      "before": "入夥",
+      "after": "如火如荼",
+      "target": "入伙"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "機"
+    },
+    {
+      "raw": "ji",
+      "genre": "encyclopedic-regression",
+      "before": "其",
+      "after": "及",
+      "target": "機"
+    },
+    {
+      "raw": "kanm",
+      "genre": "encyclopedic-regression",
+      "before": "看門",
+      "after": "看漫畫",
+      "target": "看門"
+    },
+    {
+      "raw": "zhifeng",
+      "genre": "essay-regression",
+      "before": "指縫",
+      "after": "紙風車",
+      "target": "紙風車"
+    },
+    {
+      "raw": "zhifeng",
+      "genre": "essay-regression",
+      "before": "指縫",
+      "after": "紙風車",
+      "target": "紙風車"
+    },
+    {
+      "raw": "zhifeng",
+      "genre": "essay-regression",
+      "before": "指縫",
+      "after": "紙風車",
+      "target": "紙風車"
+    },
+    {
+      "raw": "zhifeng",
+      "genre": "essay-regression",
+      "before": "指縫",
+      "after": "紙風車",
+      "target": "紙風車"
+    },
+    {
+      "raw": "linyang",
+      "genre": "essay-regression",
+      "before": "羚羊",
+      "after": "林洋港",
+      "target": "林洋港"
+    },
+    {
+      "raw": "duyi",
+      "genre": "essay-regression",
+      "before": "對應",
+      "after": "獨一無二",
+      "target": "杜奕瑾"
+    },
+    {
+      "raw": "duyi",
+      "genre": "essay-regression",
+      "before": "對應",
+      "after": "獨一無二",
+      "target": "杜奕瑾"
+    },
+    {
+      "raw": "duyi",
+      "genre": "essay-regression",
+      "before": "對應",
+      "after": "獨一無二",
+      "target": "杜奕瑾"
+    },
+    {
+      "raw": "wangwen",
+      "genre": "essay-regression",
+      "before": "王文祥",
+      "after": "望文生義",
+      "target": "王文隆"
+    },
+    {
+      "raw": "baixian",
+      "genre": "essay-regression",
+      "before": "白先勇",
+      "after": "白線斑蚊",
+      "target": "白先勇"
+    },
+    {
+      "raw": "dawangye",
+      "genre": "essay-regression",
+      "before": "大王爺",
+      "after": "大王椰子",
+      "target": "大王椰子"
+    },
+    {
+      "raw": "hangong",
+      "genre": "essay-regression",
+      "before": "焊工",
+      "after": "漢宮飛燕",
+      "target": "含共享"
+    },
+    {
+      "raw": "yida",
+      "genre": "essay-regression",
+      "before": "一旦",
+      "after": "義大利",
+      "target": "一大早"
+    },
+    {
+      "raw": "jlg",
+      "genre": "essay-regression",
+      "before": "經歷過",
+      "after": "基隆港",
+      "target": "基隆港"
+    },
+    {
+      "raw": "buhua",
+      "genre": "essay-regression",
+      "before": "不懷",
+      "after": "不慌不忙",
+      "target": "不化妝"
+    },
+    {
+      "raw": "guofa",
+      "genre": "essay-regression",
+      "before": "國防",
+      "after": "國防部",
+      "target": "國發會"
+    },
+    {
+      "raw": "linxin",
+      "genre": "essay-regression",
+      "before": "零星",
+      "after": "林信義",
+      "target": "林欣怡"
+    },
+    {
+      "raw": "laalu",
+      "genre": "essay-regression",
+      "before": "拉阿魯哇",
+      "after": "拉阿魯哇族",
+      "target": "拉阿魯哇"
+    },
+    {
+      "raw": "zhuxia",
+      "genre": "essay-regression",
+      "before": "住下",
+      "after": "彰化縣",
+      "target": "豬下水"
+    },
+    {
+      "raw": "shiyin",
+      "genre": "essay-regression",
+      "before": "適應",
+      "after": "十一年",
+      "target": "是因為"
+    },
+    {
+      "raw": "yezhi",
+      "genre": "essay-regression",
+      "before": "液汁",
+      "after": "葉志仙",
+      "target": "也指出"
+    },
+    {
+      "raw": "kuaiyi",
+      "genre": "essay-regression",
+      "before": "快意",
+      "after": "快一點",
+      "target": "快一點"
+    },
+    {
+      "raw": "zhongshangao",
+      "genre": "essay-regression",
+      "before": "中山女高",
+      "after": "中山高速公路",
+      "target": "中山高"
+    },
+    {
+      "raw": "nixu",
+      "genre": "essay-regression",
+      "before": "拈鬚",
+      "after": "泥雪鴻跡",
+      "target": "你需要"
+    },
+    {
+      "raw": "nianyi",
+      "genre": "essay-regression",
+      "before": "黏液",
+      "after": "廿一世紀",
+      "target": "年以來"
+    },
+    {
+      "raw": "shangyeshu",
+      "genre": "essay-regression",
+      "before": "商業署",
+      "after": "上野樹里",
+      "target": "商業署"
+    },
+    {
+      "raw": "zhongguoshi",
+      "genre": "essay-regression",
+      "before": "中國式",
+      "after": "中國時報",
+      "target": "中國時報"
+    },
+    {
+      "raw": "lyingc",
+      "genre": "essay-regression",
+      "before": "露營車",
+      "after": "聯營公車",
+      "target": "劉鶯釧"
+    },
+    {
+      "raw": "mentingrushi",
+      "genre": "source-retrieval",
+      "before": "門庭如市",
+      "after": "門庭若市",
+      "target": "門庭如市"
+    },
+    {
+      "raw": "xianchuqu",
+      "genre": "source-retrieval",
+      "before": "先出去",
+      "after": "想出去",
+      "target": "先出去"
+    },
+    {
+      "raw": "jihuichen",
+      "genre": "source-retrieval",
+      "before": "積灰塵",
+      "after": "機會成本",
+      "target": "積灰塵"
+    },
+    {
+      "raw": "fangdabuji",
+      "genre": "source-retrieval",
+      "before": "放達不羈",
+      "after": "放蕩不羈",
+      "target": "放達不羈"
+    },
+    {
+      "raw": "xiaoyanji",
+      "genre": "source-retrieval",
+      "before": "消炎劑",
+      "after": "小眼睛",
+      "target": "消炎劑"
+    },
+    {
+      "raw": "jinghuaji",
+      "genre": "source-retrieval",
+      "before": "淨化劑",
+      "after": "晶華酒店",
+      "target": "淨化劑"
+    },
+    {
+      "raw": "yachulai",
+      "genre": "source-retrieval",
+      "before": "壓出來",
+      "after": "演出來",
+      "target": "壓出來"
+    },
+    {
+      "raw": "dufaju",
+      "genre": "source-retrieval",
+      "before": "都發局",
+      "after": "都發局長",
+      "target": "都發局"
+    },
+    {
+      "raw": "shachulai",
+      "genre": "source-retrieval",
+      "before": "殺出來",
+      "after": "燒出來",
+      "target": "殺出來"
+    },
+    {
+      "raw": "hudahuxiao",
+      "genre": "source-retrieval",
+      "before": "忽大忽小",
+      "after": "或大或小",
+      "target": "忽大忽小"
+    },
+    {
+      "raw": "fulanke",
+      "genre": "source-retrieval",
+      "before": "福蘭克",
+      "after": "富蘭克林",
+      "target": "福蘭克"
+    },
+    {
+      "raw": "bakuaiqian",
+      "genre": "source-retrieval",
+      "before": "八塊錢",
+      "after": "百塊錢",
+      "target": "八塊錢"
+    },
+    {
+      "raw": "jiaoxiaqu",
+      "genre": "source-retrieval",
+      "before": "教下去",
+      "after": "交響曲",
+      "target": "交下去"
+    },
+    {
+      "raw": "tianbupa",
+      "genre": "source-retrieval",
+      "before": "天不怕",
+      "after": "天不怕地不怕",
+      "target": "天不怕"
+    },
+    {
+      "raw": "guaxiaqu",
+      "genre": "source-retrieval",
+      "before": "刮下去",
+      "after": "管轄權",
+      "target": "刮下去"
+    },
+    {
+      "raw": "chongjingshi",
+      "genre": "source-retrieval",
+      "before": "重晶石",
+      "after": "衝勁十足",
+      "target": "重晶石"
+    },
+    {
+      "raw": "xiangduishi",
+      "genre": "source-retrieval",
+      "before": "相對式",
+      "after": "相對濕度",
+      "target": "相對式"
+    },
+    {
+      "raw": "sheshangqu",
+      "genre": "source-retrieval",
+      "before": "射上去",
+      "after": "升上去",
+      "target": "射上去"
+    },
+    {
+      "raw": "rijibu",
+      "genre": "source-retrieval",
+      "before": "日記簿",
+      "after": "日間部",
+      "target": "日記簿"
+    }
+  ],
+  "lost_targets": [
+    {
+      "raw": "ys",
+      "genre": "encyclopedic-regression",
+      "target": "野生"
+    },
+    {
+      "raw": "mz",
+      "genre": "encyclopedic-regression",
+      "target": "明治"
+    },
+    {
+      "raw": "mingz",
+      "genre": "encyclopedic-regression",
+      "target": "明治"
+    },
+    {
+      "raw": "mzhi",
+      "genre": "encyclopedic-regression",
+      "target": "明治"
+    },
+    {
+      "raw": "jid",
+      "genre": "encyclopedic-regression",
+      "target": "極大"
+    },
+    {
+      "raw": "zzhu",
+      "genre": "encyclopedic-regression",
+      "target": "卓著"
+    },
+    {
+      "raw": "lx",
+      "genre": "encyclopedic-regression",
+      "target": "理學"
+    },
+    {
+      "raw": "jig",
+      "genre": "encyclopedic-regression",
+      "target": "極高"
+    },
+    {
+      "raw": "w",
+      "genre": "encyclopedic-regression",
+      "target": "於"
+    },
+    {
+      "raw": "w",
+      "genre": "encyclopedic-regression",
+      "target": "於"
+    },
+    {
+      "raw": "h",
+      "genre": "encyclopedic-regression",
+      "target": "許"
+    },
+    {
+      "raw": "h",
+      "genre": "encyclopedic-regression",
+      "target": "許"
+    },
+    {
+      "raw": "ys",
+      "genre": "encyclopedic-regression",
+      "target": "野生"
+    },
+    {
+      "raw": "diz",
+      "genre": "encyclopedic-regression",
+      "target": "地中"
+    },
+    {
+      "raw": "w",
+      "genre": "encyclopedic-regression",
+      "target": "於"
+    },
+    {
+      "raw": "w",
+      "genre": "encyclopedic-regression",
+      "target": "於"
+    },
+    {
+      "raw": "hhe",
+      "genre": "encyclopedic-regression",
+      "target": "恆河"
+    },
+    {
+      "raw": "shiji",
+      "genre": "essay-regression",
+      "target": "實際上"
+    },
+    {
+      "raw": "meishi",
+      "genre": "essay-regression",
+      "target": "美食家"
+    }
+  ],
+  "before_lookup_ms": {
+    "unique_queries": 26127,
+    "mean": 0.18361973820186014,
+    "p50": 0.0909,
+    "p95": 0.4843,
+    "maximum": 33.1433
+  },
+  "after_lookup_ms": {
+    "unique_queries": 26127,
+    "mean": 0.1703091744172695,
+    "p50": 0.091,
+    "p95": 0.4517,
+    "maximum": 25.0709
+  }
+}
