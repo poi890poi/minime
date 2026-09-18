@@ -561,7 +561,11 @@ final class KeyboardView extends LinearLayout {
         String mixedLabel=engine.inputMode()==InputMode.CHINESE?(zhuyin?"注音":"拼音"):engine.inputMode().description();
         TextView space=plain(english?"English":mixedLabel,"SPACE",height,4); space.setTextSize(14); space.setTextColor(0xff6d7b80); space.setContentDescription("Space");
         GradientDrawable spaceShape=new GradientDrawable();spaceShape.setColor(0xffcbd0d3);spaceShape.setCornerRadius(dp(2));
-        space.setBackground(new RippleDrawable(ColorStateList.valueOf(0x33263238),new InsetDrawable(spaceShape,dp(12),dp(14),dp(12),dp(14)),null));bottom.addView(space);
+        space.setBackground(new RippleDrawable(ColorStateList.valueOf(0x33263238),new InsetDrawable(spaceShape,dp(12),dp(14),dp(12),dp(14)),null));
+        // InsetDrawable also supplies TextView padding. Its 28 dp vertical inset
+        // leaves only 6 dp for the label in the 34 dp landscape footer.
+        if(landscape)space.setPadding(0,0,0,0);
+        bottom.addView(space);
         if(zhuyin && panel==0 && !numeric) bottom.addView(plain("ㄦ","ㄦ",height,1));
         else bottom.addView(punctuation(false,asciiPunctuation,allowLanguageSwitch && !english,height));
         if(zhuyin || panel>0 || numeric || expanded) bottom.addView(plain("⌫","DELETE",height,1.5f));

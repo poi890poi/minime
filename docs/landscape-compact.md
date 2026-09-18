@@ -31,12 +31,32 @@ Validation:
   QWERTY/KALQ, 480/600/760/960 dp widths, 1/1.3/2 font scales, Chinese/ASCII
   punctuation and upper/lower case. Checks actual Android ink visibility,
   clipping, non-overlap, fixed height, letter taps and accessible symbol actions.
-- Instrumentation tests compile but have **not run**. Phone approval remains
-  pending from the earlier blocked session. No phone operation occurred here.
+- At the original commit, instrumentation compiled but had not run; phone
+  approval was pending. The follow-up device validation below closes that gate.
 - Inspected an approximate desktop font preview. It is not an Android screenshot
   or a pixel golden and does not establish device readability or touch accuracy.
 
-Before release, run the new landscape tests, the existing portrait golden and
-height tests, and actual landscape gesture checks on RFCR91GWXLX after direct
-approval and a fresh acknowledged reservation. Retain the phone lease throughout
-cleanup, restore its prior IME/preferences, and verify its display is OFF.
+## Phone follow-up and Space-label fix
+
+With direct user approval and an acknowledged reservation, RFCR91GWXLX passed
+the landscape ink/symbol test, keyboard height test and both portrait typography
+tests. The on-screen native trial also passed taps and up/down slides across
+four landscape geometries; these automated contacts do not measure human accuracy.
+
+Device inspection found an additional footer bug: InsetDrawable's 14 dp top and
+bottom decoration insets also became TextView padding. The 34 dp landscape Space
+key had only 6 dp left for its label. A baseline Android pixel regression measured
+2 px of visible Chinese ink instead of the expected 38 px, with 42 px padding at
+each edge on the 3x-density phone.
+
+The fix clears Space text padding only in landscape after setting its background.
+It preserves the decoration, tap rectangle, row height, portrait behavior and all
+input logic. SpaceLabelTest covers Chinese/English labels, portrait/landscape and
+font scales 1/1.3. Baseline failed; the fix passed. Final local instrumentation:
+6 tests passed in 108.491 seconds, including native trial, Space labels, landscape
+ink, height and both portrait typography tests. Actual IME screenshot confirms
+the full 拼音 label is visible. No dictionary/core behavior changed.
+
+Evidence session: `artifacts/device-tests/d59677a2-3310-4ef5-b3ef-b5dd7e6b0c8b`.
+Preferences and prior Samsung IME were restored, rotation settings stayed
+unchanged, display OFF was verified, and the phone reservation was released.
