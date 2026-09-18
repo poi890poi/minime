@@ -5,6 +5,9 @@ option**. A same-height split helps reach but does not solve short targets.
 Reject full-height side overlays as the default because they obscure the app.
 No production default changed in this study.
 
+Follow-up: [native phone assessment](DEVICE-RESULTS.md) and screenshots now
+cover all four layouts on RFCR91GWXLX. Split layouts remain debug-only prototypes.
+
 Open `index.html` through a local server to try every layout, screen size, capital
 slide, symbol slide and punctuation mapping. These are working browser prototypes,
 not Android screenshots or an installed IME. Geometry comes from the same JSON
@@ -83,9 +86,10 @@ and 98.29–98.32% sides. These are seed ranges, not human confidence intervals.
   the prototype's key line height to one fixed the cause, after which all passed.
 - Visually inspected taller split and full-height overlays. The latter visibly
   hides Notes/Done controls and the beginning of the text lines.
-- NOT MEASURED: phone touch accuracy, multitouch, gesture false activation,
-  physical latency, Android insets/rotation, app compatibility and real thumb reach.
-  Phone approval is pending; no phone commands were issued in this study.
+- Not measured in this initial offline study: phone touch accuracy, multitouch,
+  gesture false activation, physical latency, Android insets/rotation, app
+  compatibility and real thumb reach. The separate native follow-up documents
+  which Android checks have since passed and which human measures remain unknown.
 
 The frozen corpus has 12,529 text/spelling rows, 234,880 letter contacts and
 19,116 Space contacts per seed. It reuses all GUM test genres and existing Chinese

@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-18",
+  "offline_study_commit": "e301412",
+  "space_fix_commit": "0ad1dca",
+  "final_session": "d59677a2-3310-4ef5-b3ef-b5dd7e6b0c8b",
+  "baseline_failure_session": "73e060fc-054b-482f-9382-20d5a5534c6a",
+  "device": "SM-G781B",
+  "api": 33,
+  "prototype_actions": 592,
+  "real_ime_actions": 5,
+  "tests_passed": 6,
+  "instrumentation_seconds": 108.491,
+  "limitations": "Injected routing checks, not human hit rate or latency. Split layouts are debug activity prototypes, not production IME windows.",
+  "sources": {
+    "app/src/debug/java/dev/minime/ime/LandscapeStudyActivity.java": "c08ec52c0804bc175ba23fc1fc5f20c035211c3f247ce3da23052ac8761983a7",
+    "app/src/androidTest/java/dev/minime/ime/LandscapeDeviceStudyTest.java": "77d407159a73f67e74d29d1de1b0a3f971590ce458c0bf943964f787208753f2",
+    "app/src/androidTest/java/dev/minime/ime/SpaceLabelTest.java": "84ebc228626459cf1b9f57c418f807ae7df304be089f8069b5148fdf16594a37",
+    "app/src/main/java/dev/minime/ime/KeyboardView.java": "82d87d495ee8328aae94cb54e5567e37cb8674ec286bb7b0bdaa739a5d4af40c",
+    "docs/landscape-layout-study/DEVICE-PLAN.md": "9334f6479dc50066e2f89f4f9ca59ff218b03098e97a1d0d9ac5b15f2b209bf4"
+  },
+  "evidence": {
+    "final-tests.txt": "3fbb61c31eb095eaf81b2186d12a3c9a41b079f7750fb482b778df162a7a89a4",
+    "initial-animation-run.json": "9bdf22edd8aea2c89431589e84244ba036cde5d03394154fa194cf7060df7622",
+    "landscape-actual-ime.png": "cfeb4bff709b949398fb887dbb644fe3cbae167b6c1fbf471342c5860b54c87b",
+    "landscape-compact.png": "1d8f37b1b78de6ef4f30db8bf67fec95f6970d6eae0923769561d5c19d8e0820",
+    "landscape-device.json": "f3f1c29072b9ad0eca8e69290de83250cce4025b4459d080ae521d7fff7cad8d",
+    "landscape-side-panels.png": "7f78ac3bc058d8ebdca997b9a8f0f224cc74f2293428c85bab2f3edbd233339c",
+    "landscape-split-low.png": "6394af07c13e32b5ff7f8d463dffb512fb691437c7ff672891a79e253bf41e57",
+    "landscape-split-tall.png": "30a6da2ec3359bacfda54af521a86bc64b0a130875e82e536e5e10b3838aa351",
+    "obsolete-activity-run.json": "1bd12359f6d4868a3bc60b24c0d4f29adcea35b864628d91458859fd9c31fe47",
+    "space-baseline-failure.txt": "6219d43a3adb8a6b1775435691bee6c13366f50581f4f80a5a06d8adf1bbab82"
+  },
+  "hash_policy": "SHA-256; PNG bytes unchanged, UTF-8 text normalized to LF for Git/Windows portability. Test logs have trailing blank lines trimmed."
+}

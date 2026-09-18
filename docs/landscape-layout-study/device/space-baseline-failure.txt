@@ -1,0 +1,22 @@
+
+dev.minime.ime.LandscapeDeviceStudyTest:.
+dev.minime.ime.SpaceLabelTest:
+Failure in testSpaceLabelInkIsNotClipped:
+junit.framework.AssertionFailedError: Space label 拼音 landscape=true scale=1.0 expected ink height=38 actual=2 padding=42,42
+	at dev.minime.ime.SpaceLabelTest.lambda$testSpaceLabelInkIsNotClipped$3(SpaceLabelTest.java:34)
+	at dev.minime.ime.SpaceLabelTest.$r8$lambda$ASpnYMDf3D7A2WgTXsRCQV0iFys(SpaceLabelTest.java:0)
+	at dev.minime.ime.SpaceLabelTest$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)
+	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2353)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:226)
+	at android.os.Looper.loop(Looper.java:313)
+	at android.app.ActivityThread.main(ActivityThread.java:8762)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)
+
+Test results for InstrumentationTestRunner=..F
+Time: 54.899
+
+FAILURES!!!
+Tests run: 2,  Failures: 1,  Errors: 0

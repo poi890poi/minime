@@ -1,0 +1,2979 @@
+{
+  "device": "SM-G781B",
+  "api": 33,
+  "injected_failures": 316,
+  "records": [
+    {
+      "layout": "compact",
+      "width_dp": 770.6666870117188,
+      "height_dp": 360,
+      "row_dp": 25.5,
+      "block_dp": 385.3333435058594,
+      "clear_above_dp": 176,
+      "attempts": [
+        {
+          "key": "m",
+          "direction": 0,
+          "expected": "m",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "m",
+          "direction": -1,
+          "expected": "LITERAL:M",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "m",
+          "direction": 1,
+          "expected": "LITERAL:1",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": 0,
+          "expected": "b",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": -1,
+          "expected": "LITERAL:B",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": 1,
+          "expected": "LITERAL:2",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": 0,
+          "expected": "w",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": -1,
+          "expected": "LITERAL:W",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": 1,
+          "expected": "LITERAL:3",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": 0,
+          "expected": "h",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": -1,
+          "expected": "LITERAL:H",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": 1,
+          "expected": "LITERAL:4",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": 0,
+          "expected": "g",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": -1,
+          "expected": "LITERAL:G",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": 1,
+          "expected": "LITERAL:5",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": 0,
+          "expected": "t",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": -1,
+          "expected": "LITERAL:T",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": 1,
+          "expected": "LITERAL:6",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": 0,
+          "expected": "o",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": -1,
+          "expected": "LITERAL:O",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": 1,
+          "expected": "LITERAL:7",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": 0,
+          "expected": "j",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": -1,
+          "expected": "LITERAL:J",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": 1,
+          "expected": "LITERAL:8",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": 0,
+          "expected": "p",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": -1,
+          "expected": "LITERAL:P",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": 1,
+          "expected": "LITERAL:9",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": 0,
+          "expected": "x",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": -1,
+          "expected": "LITERAL:X",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": 1,
+          "expected": "LITERAL:0",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": 0,
+          "expected": "c",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": -1,
+          "expected": "LITERAL:C",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": 1,
+          "expected": "LITERAL:@",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": 0,
+          "expected": "i",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": -1,
+          "expected": "LITERAL:I",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": 1,
+          "expected": "LITERAL:*",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": 0,
+          "expected": "e",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": -1,
+          "expected": "LITERAL:E",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": 1,
+          "expected": "LITERAL:+",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": 0,
+          "expected": "u",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": -1,
+          "expected": "LITERAL:U",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": 1,
+          "expected": "LITERAL:-",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": 0,
+          "expected": "r",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": -1,
+          "expected": "LITERAL:R",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": 1,
+          "expected": "LITERAL:=",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": 0,
+          "expected": "y",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": -1,
+          "expected": "LITERAL:Y",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": 1,
+          "expected": "LITERAL:\/",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": 0,
+          "expected": "s",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": -1,
+          "expected": "LITERAL:S",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": 1,
+          "expected": "LITERAL:#",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": 0,
+          "expected": "z",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": -1,
+          "expected": "LITERAL:Z",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": 1,
+          "expected": "LITERAL:(",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": 0,
+          "expected": "k",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": -1,
+          "expected": "LITERAL:K",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": 1,
+          "expected": "LITERAL:)",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": 0,
+          "expected": "a",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": -1,
+          "expected": "LITERAL:A",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": 1,
+          "expected": "LITERAL:'",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": 0,
+          "expected": "l",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": -1,
+          "expected": "LITERAL:L",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": 1,
+          "expected": "LITERAL::",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": 0,
+          "expected": "q",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": -1,
+          "expected": "LITERAL:Q",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": 1,
+          "expected": "LITERAL:\"",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": 0,
+          "expected": "d",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": -1,
+          "expected": "LITERAL:D",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": 1,
+          "expected": "LITERAL:?",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": 0,
+          "expected": "n",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": -1,
+          "expected": "LITERAL:N",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": 1,
+          "expected": "LITERAL:!",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": 0,
+          "expected": "f",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": -1,
+          "expected": "LITERAL:F",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": 1,
+          "expected": "LITERAL:~",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": 0,
+          "expected": "v",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": -1,
+          "expected": "LITERAL:V",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": 1,
+          "expected": "LITERAL:…",
+          "actual": [],
+          "pass": false
+        }
+      ],
+      "key_bounds_px": [
+        {
+          "key": "m",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "b",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "w",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "h",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "g",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "t",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "o",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "j",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "p",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "x",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "c",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "i",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "e",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "u",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "r",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "y",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "s",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "z",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "k",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "a",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "l",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "q",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "d",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "n",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "f",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "v",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      ],
+      "repeated_expected": "thequickbrownfoxjumpsoverthelazydogthequickbrownfoxjumpsoverthelazydog",
+      "repeated_actual": "",
+      "repeated_pass": false
+    },
+    {
+      "layout": "split-low",
+      "width_dp": 770.6666870117188,
+      "height_dp": 360,
+      "row_dp": 25.5,
+      "block_dp": 240,
+      "clear_above_dp": 176,
+      "attempts": [
+        {
+          "key": "m",
+          "direction": 0,
+          "expected": "m",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "m",
+          "direction": -1,
+          "expected": "LITERAL:M",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "m",
+          "direction": 1,
+          "expected": "LITERAL:1",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": 0,
+          "expected": "b",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": -1,
+          "expected": "LITERAL:B",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": 1,
+          "expected": "LITERAL:2",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": 0,
+          "expected": "w",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": -1,
+          "expected": "LITERAL:W",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": 1,
+          "expected": "LITERAL:3",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": 0,
+          "expected": "h",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": -1,
+          "expected": "LITERAL:H",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": 1,
+          "expected": "LITERAL:4",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": 0,
+          "expected": "g",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": -1,
+          "expected": "LITERAL:G",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": 1,
+          "expected": "LITERAL:5",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": 0,
+          "expected": "t",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": -1,
+          "expected": "LITERAL:T",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": 1,
+          "expected": "LITERAL:6",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": 0,
+          "expected": "o",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": -1,
+          "expected": "LITERAL:O",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": 1,
+          "expected": "LITERAL:7",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": 0,
+          "expected": "j",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": -1,
+          "expected": "LITERAL:J",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": 1,
+          "expected": "LITERAL:8",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": 0,
+          "expected": "p",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": -1,
+          "expected": "LITERAL:P",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": 1,
+          "expected": "LITERAL:9",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": 0,
+          "expected": "x",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": -1,
+          "expected": "LITERAL:X",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": 1,
+          "expected": "LITERAL:0",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": 0,
+          "expected": "c",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": -1,
+          "expected": "LITERAL:C",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": 1,
+          "expected": "LITERAL:@",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": 0,
+          "expected": "i",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": -1,
+          "expected": "LITERAL:I",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": 1,
+          "expected": "LITERAL:*",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": 0,
+          "expected": "e",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": -1,
+          "expected": "LITERAL:E",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": 1,
+          "expected": "LITERAL:+",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": 0,
+          "expected": "u",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": -1,
+          "expected": "LITERAL:U",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": 1,
+          "expected": "LITERAL:-",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": 0,
+          "expected": "r",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": -1,
+          "expected": "LITERAL:R",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": 1,
+          "expected": "LITERAL:=",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": 0,
+          "expected": "y",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": -1,
+          "expected": "LITERAL:Y",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": 1,
+          "expected": "LITERAL:\/",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": 0,
+          "expected": "s",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": -1,
+          "expected": "LITERAL:S",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": 1,
+          "expected": "LITERAL:#",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": 0,
+          "expected": "z",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": -1,
+          "expected": "LITERAL:Z",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": 1,
+          "expected": "LITERAL:(",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": 0,
+          "expected": "k",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": -1,
+          "expected": "LITERAL:K",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": 1,
+          "expected": "LITERAL:)",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": 0,
+          "expected": "a",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": -1,
+          "expected": "LITERAL:A",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": 1,
+          "expected": "LITERAL:'",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": 0,
+          "expected": "l",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": -1,
+          "expected": "LITERAL:L",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": 1,
+          "expected": "LITERAL::",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": 0,
+          "expected": "q",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": -1,
+          "expected": "LITERAL:Q",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": 1,
+          "expected": "LITERAL:\"",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": 0,
+          "expected": "d",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": -1,
+          "expected": "LITERAL:D",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": 1,
+          "expected": "LITERAL:?",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": 0,
+          "expected": "n",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": -1,
+          "expected": "LITERAL:N",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": 1,
+          "expected": "LITERAL:!",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": 0,
+          "expected": "f",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": -1,
+          "expected": "LITERAL:F",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": 1,
+          "expected": "LITERAL:~",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": 0,
+          "expected": "v",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": -1,
+          "expected": "LITERAL:V",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": 1,
+          "expected": "LITERAL:…",
+          "actual": [],
+          "pass": false
+        }
+      ],
+      "key_bounds_px": [
+        {
+          "key": "m",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "b",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "w",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "h",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "g",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "t",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "o",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "j",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "p",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "x",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "c",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "i",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "e",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "u",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "r",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "y",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "s",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "z",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "k",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "a",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "l",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "q",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "d",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "n",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "f",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "v",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      ],
+      "repeated_expected": "thequickbrownfoxjumpsoverthelazydogthequickbrownfoxjumpsoverthelazydog",
+      "repeated_actual": "",
+      "repeated_pass": false
+    },
+    {
+      "layout": "split-tall",
+      "width_dp": 770.6666870117188,
+      "height_dp": 360,
+      "row_dp": 44,
+      "block_dp": 240,
+      "clear_above_dp": 96,
+      "attempts": [
+        {
+          "key": "m",
+          "direction": 0,
+          "expected": "m",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "m",
+          "direction": -1,
+          "expected": "LITERAL:M",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "m",
+          "direction": 1,
+          "expected": "LITERAL:1",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": 0,
+          "expected": "b",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": -1,
+          "expected": "LITERAL:B",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": 1,
+          "expected": "LITERAL:2",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": 0,
+          "expected": "w",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": -1,
+          "expected": "LITERAL:W",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": 1,
+          "expected": "LITERAL:3",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": 0,
+          "expected": "h",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": -1,
+          "expected": "LITERAL:H",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": 1,
+          "expected": "LITERAL:4",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": 0,
+          "expected": "g",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": -1,
+          "expected": "LITERAL:G",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": 1,
+          "expected": "LITERAL:5",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": 0,
+          "expected": "t",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": -1,
+          "expected": "LITERAL:T",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": 1,
+          "expected": "LITERAL:6",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": 0,
+          "expected": "o",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": -1,
+          "expected": "LITERAL:O",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": 1,
+          "expected": "LITERAL:7",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": 0,
+          "expected": "j",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": -1,
+          "expected": "LITERAL:J",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": 1,
+          "expected": "LITERAL:8",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": 0,
+          "expected": "p",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": -1,
+          "expected": "LITERAL:P",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": 1,
+          "expected": "LITERAL:9",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": 0,
+          "expected": "x",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": -1,
+          "expected": "LITERAL:X",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": 1,
+          "expected": "LITERAL:0",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": 0,
+          "expected": "c",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": -1,
+          "expected": "LITERAL:C",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": 1,
+          "expected": "LITERAL:@",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": 0,
+          "expected": "i",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": -1,
+          "expected": "LITERAL:I",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": 1,
+          "expected": "LITERAL:*",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": 0,
+          "expected": "e",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": -1,
+          "expected": "LITERAL:E",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": 1,
+          "expected": "LITERAL:+",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": 0,
+          "expected": "u",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": -1,
+          "expected": "LITERAL:U",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": 1,
+          "expected": "LITERAL:-",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": 0,
+          "expected": "r",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": -1,
+          "expected": "LITERAL:R",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": 1,
+          "expected": "LITERAL:=",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": 0,
+          "expected": "y",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": -1,
+          "expected": "LITERAL:Y",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": 1,
+          "expected": "LITERAL:\/",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": 0,
+          "expected": "s",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": -1,
+          "expected": "LITERAL:S",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": 1,
+          "expected": "LITERAL:#",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": 0,
+          "expected": "z",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": -1,
+          "expected": "LITERAL:Z",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": 1,
+          "expected": "LITERAL:(",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": 0,
+          "expected": "k",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": -1,
+          "expected": "LITERAL:K",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": 1,
+          "expected": "LITERAL:)",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": 0,
+          "expected": "a",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": -1,
+          "expected": "LITERAL:A",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": 1,
+          "expected": "LITERAL:'",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": 0,
+          "expected": "l",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": -1,
+          "expected": "LITERAL:L",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": 1,
+          "expected": "LITERAL::",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": 0,
+          "expected": "q",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": -1,
+          "expected": "LITERAL:Q",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": 1,
+          "expected": "LITERAL:\"",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": 0,
+          "expected": "d",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": -1,
+          "expected": "LITERAL:D",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": 1,
+          "expected": "LITERAL:?",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": 0,
+          "expected": "n",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": -1,
+          "expected": "LITERAL:N",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": 1,
+          "expected": "LITERAL:!",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": 0,
+          "expected": "f",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": -1,
+          "expected": "LITERAL:F",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": 1,
+          "expected": "LITERAL:~",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": 0,
+          "expected": "v",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": -1,
+          "expected": "LITERAL:V",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": 1,
+          "expected": "LITERAL:…",
+          "actual": [],
+          "pass": false
+        }
+      ],
+      "key_bounds_px": [
+        {
+          "key": "m",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "b",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "w",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "h",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "g",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "t",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "o",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "j",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "p",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "x",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "c",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "i",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "e",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "u",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "r",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "y",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "s",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "z",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "k",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "a",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "l",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "q",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "d",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "n",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "f",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "v",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      ],
+      "repeated_expected": "thequickbrownfoxjumpsoverthelazydogthequickbrownfoxjumpsoverthelazydog",
+      "repeated_actual": "",
+      "repeated_pass": false
+    },
+    {
+      "layout": "side-panels",
+      "width_dp": 770.6666870117188,
+      "height_dp": 360,
+      "row_dp": 68,
+      "block_dp": 192,
+      "clear_above_dp": 0,
+      "attempts": [
+        {
+          "key": "m",
+          "direction": 0,
+          "expected": "m",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "m",
+          "direction": -1,
+          "expected": "LITERAL:M",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "m",
+          "direction": 1,
+          "expected": "LITERAL:1",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": 0,
+          "expected": "b",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": -1,
+          "expected": "LITERAL:B",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "b",
+          "direction": 1,
+          "expected": "LITERAL:2",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": 0,
+          "expected": "w",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": -1,
+          "expected": "LITERAL:W",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "w",
+          "direction": 1,
+          "expected": "LITERAL:3",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": 0,
+          "expected": "h",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": -1,
+          "expected": "LITERAL:H",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "h",
+          "direction": 1,
+          "expected": "LITERAL:4",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": 0,
+          "expected": "g",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": -1,
+          "expected": "LITERAL:G",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "g",
+          "direction": 1,
+          "expected": "LITERAL:5",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": 0,
+          "expected": "t",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": -1,
+          "expected": "LITERAL:T",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "t",
+          "direction": 1,
+          "expected": "LITERAL:6",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": 0,
+          "expected": "o",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": -1,
+          "expected": "LITERAL:O",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "o",
+          "direction": 1,
+          "expected": "LITERAL:7",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": 0,
+          "expected": "j",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": -1,
+          "expected": "LITERAL:J",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "j",
+          "direction": 1,
+          "expected": "LITERAL:8",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": 0,
+          "expected": "p",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": -1,
+          "expected": "LITERAL:P",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "p",
+          "direction": 1,
+          "expected": "LITERAL:9",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": 0,
+          "expected": "x",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": -1,
+          "expected": "LITERAL:X",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "x",
+          "direction": 1,
+          "expected": "LITERAL:0",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": 0,
+          "expected": "c",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": -1,
+          "expected": "LITERAL:C",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "c",
+          "direction": 1,
+          "expected": "LITERAL:@",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": 0,
+          "expected": "i",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": -1,
+          "expected": "LITERAL:I",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "i",
+          "direction": 1,
+          "expected": "LITERAL:*",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": 0,
+          "expected": "e",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": -1,
+          "expected": "LITERAL:E",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "e",
+          "direction": 1,
+          "expected": "LITERAL:+",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": 0,
+          "expected": "u",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": -1,
+          "expected": "LITERAL:U",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "u",
+          "direction": 1,
+          "expected": "LITERAL:-",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": 0,
+          "expected": "r",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": -1,
+          "expected": "LITERAL:R",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "r",
+          "direction": 1,
+          "expected": "LITERAL:=",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": 0,
+          "expected": "y",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": -1,
+          "expected": "LITERAL:Y",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "y",
+          "direction": 1,
+          "expected": "LITERAL:\/",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": 0,
+          "expected": "s",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": -1,
+          "expected": "LITERAL:S",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "s",
+          "direction": 1,
+          "expected": "LITERAL:#",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": 0,
+          "expected": "z",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": -1,
+          "expected": "LITERAL:Z",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "z",
+          "direction": 1,
+          "expected": "LITERAL:(",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": 0,
+          "expected": "k",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": -1,
+          "expected": "LITERAL:K",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "k",
+          "direction": 1,
+          "expected": "LITERAL:)",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": 0,
+          "expected": "a",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": -1,
+          "expected": "LITERAL:A",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "a",
+          "direction": 1,
+          "expected": "LITERAL:'",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": 0,
+          "expected": "l",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": -1,
+          "expected": "LITERAL:L",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "l",
+          "direction": 1,
+          "expected": "LITERAL::",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": 0,
+          "expected": "q",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": -1,
+          "expected": "LITERAL:Q",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "q",
+          "direction": 1,
+          "expected": "LITERAL:\"",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": 0,
+          "expected": "d",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": -1,
+          "expected": "LITERAL:D",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "d",
+          "direction": 1,
+          "expected": "LITERAL:?",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": 0,
+          "expected": "n",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": -1,
+          "expected": "LITERAL:N",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "n",
+          "direction": 1,
+          "expected": "LITERAL:!",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": 0,
+          "expected": "f",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": -1,
+          "expected": "LITERAL:F",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "f",
+          "direction": 1,
+          "expected": "LITERAL:~",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": 0,
+          "expected": "v",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": -1,
+          "expected": "LITERAL:V",
+          "actual": [],
+          "pass": false
+        },
+        {
+          "key": "v",
+          "direction": 1,
+          "expected": "LITERAL:…",
+          "actual": [],
+          "pass": false
+        }
+      ],
+      "key_bounds_px": [
+        {
+          "key": "m",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "b",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "w",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "h",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "g",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "t",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "o",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "j",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "p",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "x",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "c",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "i",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "e",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "u",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "r",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "y",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "s",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "z",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "k",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "a",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "l",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "q",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "d",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "n",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "f",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        {
+          "key": "v",
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      ],
+      "repeated_expected": "thequickbrownfoxjumpsoverthelazydogthequickbrownfoxjumpsoverthelazydog",
+      "repeated_actual": "",
+      "repeated_pass": false
+    }
+  ]
+}
