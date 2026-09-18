@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-18",
+  "surface": "Codex in-app browser, localhost prototype",
+  "alphabet_space_shift_symbol": {
+    "layouts": ["compact", "split-low", "split-tall", "side-panels"],
+    "expected_and_observed": "abcdefghijklmnopqrstuvwxyz A@",
+    "passed": 4
+  },
+  "pointer_drags": {
+    "layout": "split-tall",
+    "down_on_m": "1",
+    "up_on_m_after_down": "1M"
+  },
+  "label_bounds": {
+    "layout_count": 4,
+    "viewport_count": 3,
+    "punctuation_modes": 2,
+    "passed_configurations": 24,
+    "clipped_labels_after_fix": 0,
+    "initial_failure": "Default CSS line height exceeded compact row height; fixed key line height, then repeated all configurations."
+  },
+  "device_tests": "NOT MEASURED; no phone operations",
+  "human_accuracy_and_latency": "NOT MEASURED"
+}

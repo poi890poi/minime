@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MinIME landscape layout study</title>
+<style>
+@font-face{font-family:Plex;src:url('../../app/src/main/res/font/ibm_plex_sans_condensed.ttf')}*{box-sizing:border-box}body{margin:0;background:#f6f8f8;color:#263238;font:16px system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:28px}h1{font-size:26px;margin:0 0 8px}p{line-height:1.5}.muted{color:#53656b}.controls{display:flex;gap:16px;flex-wrap:wrap;margin:20px 0}label{display:flex;gap:7px;align-items:center}select,button{font:inherit;color:inherit}select,.reset{padding:8px;border:1px solid #b5c5c8;border-radius:6px;background:white}.phone{position:relative;width:100%;max-width:960px;overflow:hidden;background:#fff;border:1px solid #bcc8cc;isolation:isolate}.app{position:absolute;inset:0;background:white}.app-title{height:40px;display:flex;align-items:center;gap:12px;padding:0 16px;background:#e5eeec;font-weight:500}.editor{resize:none;border:0;outline:0;position:absolute;left:0;top:40px;width:100%;height:calc(100% - 40px);padding:12px 20px;font:18px/1.55 system-ui,sans-serif;background:white;color:#263238}.key{position:absolute;margin:0;border:0;border-radius:0;padding:0;background:#e9eef0;color:#37474f;display:flex;align-items:center;justify-content:center;gap:8px;touch-action:none;cursor:pointer;user-select:none;font-family:Plex,system-ui,sans-serif;font-size:22px;font-weight:400;line-height:1}.key:focus-visible{outline:2px solid #00897b;outline-offset:-3px}.key:active{background:#bbd8d4}.symbol{color:#819397;font-size:16px;min-width:16px;text-align:center}.control{font:14px system-ui,sans-serif}.candidate{background:#dfe7e8;font:16px system-ui,sans-serif;justify-content:flex-start;padding-left:16px;cursor:default}.metrics{display:flex;gap:24px;flex-wrap:wrap;padding:14px 0}.metrics strong{display:block;font-size:19px}.metrics span{font-size:13px;color:#53656b}.warning{border-left:3px solid #bd823a;padding:8px 14px;margin:16px 0;background:#fff7e9}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;margin-top:18px}th,td{text-align:left;border-bottom:1px solid #d9e0e2;padding:12px 8px}th{font-size:13px}td.num{font-variant-numeric:tabular-nums;white-space:nowrap}caption{text-align:left;font-weight:500;margin-bottom:6px}.active-row{background:#e5efed}.note{font-size:14px;max-width:950px}a{color:#006b5d}@media(max-width:600px){main{padding:16px}.key{gap:3px}h1{font-size:22px}.controls{gap:10px}}
+</style></head><body><main>
+<h1>Landscape: reach, key height and room to write</h1>
+<p class="muted">Interactive prototypes using the same letter and symbol mappings. Tap letters; slide up for capitals or down for symbols.</p>
+<div class="controls">
+<label>Layout <select id="layout"><option value="compact">Compact joined</option><option value="split-low">Split · same height</option><option value="split-tall">Split · taller keys</option><option value="side-panels">Full-height sides</option></select></label>
+<label>Usable screen <select id="size"><option value="640">640 × 320 dp</option><option value="760" selected>760 × 360 dp</option><option value="880">880 × 400 dp</option></select></label>
+<label>Symbols <select id="punct"><option value="0">English</option><option value="1">Chinese</option></select></label>
+<button type="button" class="reset" id="reset">Reset text</button>
+</div>
+<div id="phone" class="phone" aria-label="Landscape keyboard prototype">
+<div id="app" class="app"><div class="app-title">‹ &nbsp; Notes <span style="margin-left:auto">Done</span></div><textarea id="editor" class="editor" aria-label="Example app editor" spellcheck="false"></textarea></div>
+<div id="keys"></div></div>
+<div id="metrics" class="metrics"></div>
+<p id="caveat" class="warning"></p>
+<p class="note">Browser geometry, not an Android screenshot. Screen dimensions exclude system bars. The full-height view overlays the original app; it deliberately does not pretend the app can reflow between the keyboard halves. Scaling this preview changes its physical size.</p>
+<div class="table-wrap"><table><caption>Tap-scatter sensitivity at the selected screen size</caption><thead><tr><th>Layout</th><th>Letter target</th><th>Clear height above</th><th>6 dp scatter</th><th>10 dp scatter</th><th>Mean inward reach</th></tr></thead><tbody id="comparison"></tbody></table></div>
+<p class="note">Percentages mean <strong>intended letter taps landing on the correct letter ÷ all intended letter taps</strong>, before any correction. Scatter is independent Gaussian noise with the stated standard deviation on both axes. These are simulated outcomes on reused text, not measured human hit rates. Gaps, Space and controls count as errors when a letter was intended. Reach is horizontal distance from the nearest screen edge, not a fatigue or speed score.</p>
+<p class="note"><a href="RESULTS.md">Assessment and limitations</a> · <a href="PLAN.md">Frozen comparison plan</a></p>
+</main><script src="preview-data.js"></script><script>
+(()=>{'use strict';
+const data=window.landscapeStudy,selector=document.getElementById('layout'),size=document.getElementById('size'),punct=document.getElementById('punct'),phone=document.getElementById('phone'),app=document.getElementById('app'),editor=document.getElementById('editor'),keys=document.getElementById('keys');
+let shifted=false,symbols=false,design;
+const initial='Tomorrow we can check the route together.\nThen stop for lunch on the way home.\n\n';editor.value=initial;
+function write(value){const a=editor.selectionStart,b=editor.selectionEnd;editor.setRangeText(value,a,b,'end');}
+function keyAction(cell,slide=0){
+if(cell.kind==='letter'){write(slide<0?cell.label.toUpperCase():slide>0||symbols?cell.symbol[Number(punct.value)]:shifted?cell.label.toUpperCase():cell.label);if(shifted){shifted=false;render();}return;}
+if(cell.kind==='space'){write(' ');return;}
+if(cell.label==='Delete'){const end=editor.selectionEnd;editor.setRangeText('',editor.selectionStart===end?Math.max(0,end-1):editor.selectionStart,end,'end');}
+if(cell.label==='Shift'){shifted=!shifted;render();}
+if(cell.label==='Symbols'){symbols=!symbols;render();}
+if(cell.label==='Mode'){punct.value=punct.value==='0'?'1':'0';render();}
+if(cell.label==='Enter')write('\n');
+if(cell.label===','||cell.label==='.')write(punct.value==='1'?(cell.label===','?'，':'。'):cell.label);
+}
+function rate(d,profile){return data.summary.find(r=>r.layout===d.name&&r.width===d.width&&r.profile===profile);}
+function render(){
+design=data.designs.find(d=>d.name===selector.value&&d.width===Number(size.value));phone.style.aspectRatio=design.width+'/'+design.height;
+app.style.height=(design.name==='side-panels'?100:design.top/design.height*100)+'%';keys.replaceChildren();
+const visualScale=phone.clientWidth/design.width;
+for(const cell of design.cells){
+const b=document.createElement('button');b.type='button';b.className='key'+(cell.kind!=='letter'?' control':'')+(cell.label==='Candidates'?' candidate':'');
+b.style.left=100*cell.x/design.width+'%';b.style.top=100*cell.y/design.height+'%';b.style.width=100*cell.w/design.width+'%';b.style.height=100*cell.h/design.height+'%';
+b.style.fontSize=(cell.kind==='letter'?22:14)*visualScale+'px';b.style.gap=8*visualScale+'px';b.setAttribute('aria-label',cell.label);
+if(cell.kind==='letter'){const primary=document.createElement('span');primary.textContent=symbols?cell.symbol[Number(punct.value)]:shifted?cell.label.toUpperCase():cell.label;b.append(primary);if(!symbols){const hint=document.createElement('span');hint.className='symbol';hint.style.fontSize=16*visualScale+'px';hint.style.minWidth=16*visualScale+'px';hint.textContent=cell.symbol[Number(punct.value)];b.append(hint);}}
+else b.textContent=cell.label==='Candidates'?'中     EN     台     日     ▾':cell.label==='Space'?'Space':cell.label==='Symbols'&&symbols?'ABC':cell.label;
+if(cell.label!=='Candidates'){
+let y=0,pointer=null;
+b.addEventListener('pointerdown',e=>{if(pointer!==null)return;pointer=e.pointerId;y=e.clientY;b.setPointerCapture(pointer);e.preventDefault();});
+b.addEventListener('pointerup',e=>{if(pointer!==e.pointerId)return;const movement=(e.clientY-y)/visualScale;pointer=null;keyAction(cell,Math.abs(movement)>14?Math.sign(movement):0);e.preventDefault();});
+b.addEventListener('pointercancel',()=>{pointer=null;});
+b.addEventListener('click',e=>{if(e.detail===0)keyAction(cell);});
+}keys.append(b);}
+const m=design.metrics;document.getElementById('metrics').innerHTML='<div><strong>'+m.letter_width.toFixed(1)+' × '+m.letter_height.toFixed(1)+' dp</strong><span>Letter target</span></div><div><strong>'+m.clear_above_height.toFixed(0)+' dp</strong><span>Clear editor height above keyboard</span></div><div><strong>'+m.uncovered_percent.toFixed(1)+'%</strong><span>Screen area not covered by controls</span></div>';
+document.getElementById('caveat').textContent=design.name==='side-panels'?'Overlay risk: the app’s title, cursor and edge controls can sit underneath the keyboard. The middle gap is not a resized editor.':design.name==='split-tall'?'Taller targets leave only '+design.top.toFixed(0)+' dp above the keyboard here. Check whether the text and app controls still have enough room.':design.name==='split-low'?'Splitting reduces inward reach, but the letter rows are still only 25.5 dp tall. A center gap alone does not fix vertical tap errors.':'Compact height preserves the editor, but joined KALQ letter rows are only 25.5 dp tall.';
+const body=document.getElementById('comparison');body.replaceChildren();for(const d of data.designs.filter(d=>d.width===design.width)){const row=document.createElement('tr');if(d.name===design.name)row.className='active-row';const r6=rate(d,'scatter-6dp'),r10=rate(d,'scatter-10dp');for(const [i,value] of [d.title,d.metrics.letter_width.toFixed(0)+' × '+d.metrics.letter_height.toFixed(1)+' dp',d.top.toFixed(0)+' dp',r6.percent.toFixed(2)+'%',r10.percent.toFixed(2)+'%',d.metrics.mean_inward_reach_dp.toFixed(1)+' dp'].entries()){const td=document.createElement('td');td.textContent=value;if(i>0)td.className='num';if(i===3)td.title=r6.hits.toLocaleString()+' / '+r6.attempts.toLocaleString()+' intended letters across three seeds';row.append(td);}body.append(row);}
+}
+for(const control of [selector,size,punct])control.addEventListener('change',render);document.getElementById('reset').addEventListener('click',()=>{editor.value=initial;shifted=false;symbols=false;render();});new ResizeObserver(render).observe(phone);render();
+})();
+</script></body></html>

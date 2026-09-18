@@ -1,0 +1,61 @@
+{
+  "baseline": "88c32af",
+  "sources": {
+    "docs/conversation-ranking/corpus/gum-test.tsv": "eade8de35b75a5124f74d3a9bec755a87fde50fab0de298523689763c0257faa",
+    "docs/chinese-recovery/corpus.tsv.gz": "e70017ba11d5296b6e934436cbe40b1656069b38b085517edc67ca1c27dc1239",
+    "core/src/main/java/dev/minime/core/JoinedKalq.java": "198988e1d2187cf70e3f770ba7d930687e05e53887481c773c12ea83f345c04d"
+  },
+  "plan_sha256": "415725fcfcc16f4f7c9cf25826745084db2fd61a83b391b76c0e321407c16dee",
+  "code_sha256": "c2f26cd34c6faf1f6b50b9d4bc43ecf7f75921823a14b4ed9980bc88bda5fca1",
+  "numpy": "2.3.5",
+  "seeds": [
+    20260918,
+    20260919,
+    20260920
+  ],
+  "profiles": [
+    "center",
+    "scatter-6dp",
+    "scatter-10dp",
+    "inward-bias",
+    "slips"
+  ],
+  "dimensions": [
+    [
+      640,
+      320
+    ],
+    [
+      760,
+      360
+    ],
+    [
+      880,
+      400
+    ]
+  ],
+  "input_rows": 12529,
+  "excluded_characters": {
+    "en-gum-academic": 1,
+    "en-gum-bio": 8,
+    "en-gum-conversation": 65,
+    "en-gum-court": 17,
+    "en-gum-essay": 0,
+    "en-gum-fiction": 38,
+    "en-gum-interview": 5,
+    "en-gum-letter": 4,
+    "en-gum-news": 22,
+    "en-gum-podcast": 20,
+    "en-gum-speech": 8,
+    "en-gum-textbook": 17,
+    "en-gum-vlog": 74,
+    "en-gum-voyage": 23,
+    "en-gum-whow": 4,
+    "zh-essay-regression/full": 0,
+    "zh-essay-regression/partial": 0,
+    "zh-essay-regression/initials": 0,
+    "zh-essay-regression/mixed": 0,
+    "zh-authored-conversation-regression/authored": 0
+  },
+  "role": "Reused corpus, synthetic geometric sensitivity; not human accuracy or WPM"
+}
