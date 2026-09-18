@@ -17,6 +17,7 @@ final class SlideKey extends TextView {
     private final Predicate<String> hold;
     private final Paint hintPaint=new Paint(Paint.ANTI_ALIAS_FLAG);
     private PortraitKeyLabels portraitLabels;
+    private LandscapeKeyLabels landscapeLabels;
     private KeyboardIcon icon;
     private boolean centeredHint,emojiHint;
     private float hintBottom=9;
@@ -36,13 +37,16 @@ final class SlideKey extends TextView {
         centeredHint=true;hintBottom=compact?3:9;setIncludeFontPadding(false);
         float density=getResources().getDisplayMetrics().density;
         float scaled=getResources().getDisplayMetrics().scaledDensity;
-        // This change targets portrait readability. Preserve the existing
-        // short-row landscape typography until its geometry is studied.
+        // Short landscape rows have ample horizontal space: use adjacent ink
+        // slots instead of shrinking a second line beneath the letter.
         if(height<44) {
-            setIncludeFontPadding(!compact);
-            setPadding(0,0,0,Math.round((compact?12:15)*density));
-            hintPaint.setTextSize((compact?8:10)*scaled);
-            hintPaint.setFakeBoldText(true);
+            setTypeface(getResources().getFont(R.font.ibm_plex_sans_condensed));
+            hintPaint.setTypeface(getTypeface());hintPaint.setColor(0xff9aa6aa);hintPaint.setFakeBoldText(false);
+            setPadding(0,0,0,0);
+            setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX,22*scaled);
+            getPaint().setFlags(Paint.ANTI_ALIAS_FLAG);getPaint().setTextAlign(Paint.Align.LEFT);
+            hintPaint.setTextSize(16*scaled);hintPaint.setTextAlign(Paint.Align.LEFT);
+            landscapeLabels=new LandscapeKeyLabels(getPaint(),hintPaint,density);
             return;
         }
         setTypeface(getResources().getFont(R.font.ibm_plex_sans_condensed));
@@ -125,6 +129,11 @@ final class SlideKey extends TextView {
         hintPaint.setTextSize(10*getResources().getDisplayMetrics().scaledDensity);
     }
     @Override protected void onDraw(Canvas canvas) {
+        if(landscapeLabels!=null) {
+            getPaint().setColor(getCurrentTextColor());
+            landscapeLabels.draw(canvas,getText().toString(),down,getWidth(),getHeight(),direction!=0);
+            return;
+        }
         if(portraitLabels!=null) {
             getPaint().setColor(getCurrentTextColor());
             portraitLabels.draw(canvas,getText().toString(),down,getWidth(),getHeight(),direction!=0);
