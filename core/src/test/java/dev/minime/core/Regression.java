@@ -207,6 +207,7 @@ public final class Regression {
         GapRegression.run();
         PartialSelectionRegression.run();
         EnglishCandidateRegression.run();
+        ChineseAlternativeRegression.run();
         MixedLearningRegression.run();
         CapitalizedVocabularyRegression.run();
         PinyinContinuityRegression.run();

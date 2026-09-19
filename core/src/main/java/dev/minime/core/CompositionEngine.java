@@ -622,6 +622,23 @@ public final class CompositionEngine {
                 candidates.add(at,word);preferred=candidates.indexOf(accepted);
             }
         }
+        // Preserving raw spelling on Space does not imply English intent.
+        // In Chinese mode let an attested whole-input Chinese alternative lead
+        // speculative English extensions, without reshuffling the rest of the
+        // list or changing the selected Space choice. Accepted Latin context
+        // and explicit custom/default choices already provide stronger evidence.
+        if(inputMode==InputMode.CHINESE && !literalField && !zhuyin && !bpmf && !afterLatin
+                && preferred==0 && custom.isEmpty() && !IntentClassifier.technicalWord(raw)
+                && raw.codePoints().noneMatch(Character::isUpperCase)
+                && candidates.size()>2 && candidates.get(1).literal) {
+            for(int i=2;i<candidates.size();i++) {
+                Candidate c=candidates.get(i);
+                if(!c.literal && !partial(c) && !c.composed
+                        && c.text.codePoints().anyMatch(cp->Character.UnicodeScript.of(cp)==Character.UnicodeScript.HAN)) {
+                    candidates.add(1,candidates.remove(i));break;
+                }
+            }
+        }
         retainDisplayableCandidates();
     }
     private boolean focused(Candidate candidate) {

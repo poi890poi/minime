@@ -9,7 +9,7 @@ final class EnglishCandidateRegression {
             Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);type(c,raw);
             equal(0,c.preferred(),"English remains the default: "+raw);
             if(!dictionary.englishCompletions(raw).isEmpty())
-                yes(c.candidates().get(1).literal,"English completion is immediately reachable for "+raw);
+                yes(c.candidates().subList(1,Math.min(3,c.candidates().size())).stream().anyMatch(v->v.literal),"English completion stays beside the leading Chinese alternative for "+raw);
             if(raw.equals("time"))yes(c.candidates().subList(1,3).stream().anyMatch(v->!v.literal),"Chinese alternative remains near the front");
             c.space();equal(raw+" ",e.text,"English Space output: "+raw);
         }

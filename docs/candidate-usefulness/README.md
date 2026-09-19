@@ -1,5 +1,10 @@
 # Candidate usefulness audit — 2026-09-19
 
+Follow-up: [the implemented language-priority correction](LANGUAGE-PRIORITY.md)
+supersedes the earlier decision to leave production English-first ordering intact.
+It promotes one Chinese alternative and preserves first-page English coverage;
+the blanket pair-reversal experiment below remains unshipped.
+
 MinIME still has a substantial phrase-efficiency gap to Google Zhuyin. More
 retrievable dictionary matches did not establish a better visible candidate list.
 The extra-eight prefix expansion was withdrawn in `9d3f650`; see
