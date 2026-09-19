@@ -29,7 +29,7 @@ final class FirstGlyphRecoveryRegression {
             equal(signature(values),signature(binary.convert(raw,false)),"Text and packaged binary recovery parity: "+raw);
             for(boolean priv:new boolean[]{false,true}) {
                 Editor e=new Editor();CompositionEngine c=engine(e,Learning.NONE,false);c.start(false,false,priv,false);type(c,raw);
-                List<Candidate> partials=new ArrayList<>();for(Candidate v:c.candidates())if(prefix(v,raw))partials.add(v);
+                List<Candidate> partials=new ArrayList<>();for(Candidate v:c.candidates())if(prefix(v,raw)&&v.text.codePointCount(0,v.text.length())==1)partials.add(v);
                 if(!glyphs.isEmpty())yes(!partials.isEmpty(),"First glyph present in both privacy modes: "+raw);
                 if(!partials.isEmpty()) {
                     Candidate chosen=partials.get(0);long id=c.compositionId();c.selectCandidate(chosen,id);

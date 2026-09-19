@@ -45,6 +45,7 @@ public final class PhoneticDictionary {
     public static PhoneticDictionary load(Reader chinese, Reader english, Reader syllables) throws IOException {
         PhoneticDictionary d = new PhoneticDictionary();
         Set<String> readings=new HashSet<>();
+        Map<String,List<Candidate>> sourceReadings=new HashMap<>();
         try (BufferedReader r = new BufferedReader(chinese)) {
             String line;
             while ((line = r.readLine()) != null) {
@@ -55,6 +56,7 @@ public final class PhoneticDictionary {
                 add(d.pinyin, normalize(p[0]), c);
                 if (p[0].contains("'")) add(d.pinyin, p[0], c);
                 readings.add(p[0]);
+                add(sourceReadings,p[0],c);
                 add(d.zhuyin, p[1], c);
                 add(d.zhuyin, "~" + toneless(p[1]), new Candidate(c.text, false, c.score - 3,c.reading));
                 int n = p[2].codePointCount(0, p[2].length());
@@ -76,12 +78,15 @@ public final class PhoneticDictionary {
             String line;
             while ((line = r.readLine()) != null) d.syllables.add(line.split("\t")[0]);
         }
-        for (Map<String, List<Candidate>> m : Arrays.asList(d.pinyin, d.zhuyin, d.continuations))
+        for (Map<String, List<Candidate>> m : Arrays.asList(d.pinyin, d.zhuyin, d.continuations,sourceReadings))
             for (List<Candidate> list : m.values()) {
                 list.sort(Comparator.comparingDouble((Candidate c) -> c.score).reversed().thenComparing(c -> c.text));
                 Set<String> seen = new HashSet<>(); list.removeIf(c -> !seen.add(c.text));
             }
-        d.pinyinSyllables=new ReadingUnitIndex(d.pinyin,readings); d.zhuyinPrefixes=new ReadingIndex(d.zhuyin);
+        // Exact unseparated lookup may share aliases (xian and xi'an). The
+        // syllable trie must retain each source boundary instead of inheriting
+        // multi-syllable words from the compact alias at a one-syllable node.
+        d.pinyinSyllables=new ReadingUnitIndex(sourceReadings,readings); d.zhuyinPrefixes=new ReadingIndex(d.zhuyin);
         d.pinyinPrefixes=new ReadingIndex(d.pinyin);
         d.firstGlyphs=new FirstGlyphIndex(d.pinyin,d.syllables);
         d.indexEnglish();
@@ -171,13 +176,14 @@ public final class PhoneticDictionary {
         }
         if(bpmf) result.addAll(zhuyinPrefixes.complete(key.replace("ˉ", ""),(reading,c)->firstTonesMatch(key,c.reading)));
         else {
-            result.addAll(pinyinSyllables.lookup(key));
+            result.addAll(pinyinSyllables.lookupWithPrefixes(key));
             result.addAll(pinyinPrefixes.complete(key,(reading,c)->true));
         }
         // Apply only the boundary signal; retain dictionary word probabilities.
         if(!bpmf && !context.isEmpty())result.replaceAll(c->c.withScore(
             c.score+.5*(contextModel.chinese(context,c.text)-contextModel.chinese("",c.text))));
-        result.sort(Comparator.comparingDouble((Candidate c) -> c.score).reversed().thenComparing(c -> c.text));
+        result.sort(Comparator.comparing((Candidate c)->c.consumed>0 && c.consumed<key.length())
+            .thenComparing(Comparator.comparingDouble((Candidate c)->c.score).reversed()).thenComparing(c->c.text));
         // Whole-input identities win deduplication; partial recovery never
         // replaces their acceptance span or invents a multi-character phrase.
         if(!bpmf)result.addAll(firstGlyphs.lookup(key));

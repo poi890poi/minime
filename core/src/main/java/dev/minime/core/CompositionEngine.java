@@ -418,10 +418,9 @@ public final class CompositionEngine {
             custom=new ArrayList<>(custom);custom.removeIf(c->!englishSuggestion(c));
         }
         if (!englishMode) converted.addAll(custom);
-        if (!privateField) converted.sort(Comparator.comparing((Candidate c)->partial(c))
-            .thenComparing(Comparator.comparingInt((Candidate c) -> learning.count(contextKey(), raw, c.text)).reversed())
+        converted.sort(Comparator.comparing((Candidate c)->partial(c))
+            .thenComparing(Comparator.comparingInt((Candidate c) -> privateField?0:learning.count(contextKey(), raw, c.text)).reversed())
             .thenComparing(Comparator.comparingDouble((Candidate c) -> c.score).reversed()));
-        else converted.sort(Comparator.comparing((Candidate c)->partial(c)));
         Set<String> seen = new HashSet<>(); seen.add(raw);
         for (Candidate c : converted) if (seen.add(c.text)) candidates.add(c);
         if (candidates.size() > 1) {
@@ -599,6 +598,29 @@ public final class CompositionEngine {
             int at=1;
             while(at<Math.min(3,candidates.size()) && !partial(candidates.get(at)))at++;
             candidates.addAll(at,glyphs);
+        }
+        // Show one useful stored phrase prefix alongside the first glyphs.
+        // It remains an explicit partial selection; Space keeps its prior choice.
+        if(inputMode==InputMode.CHINESE && conversionInput(bpmf)) {
+            Candidate word=null;
+            for(Candidate c:candidates)if(partial(c) && !c.literal && !c.composed && c.text.codePointCount(0,c.text.length())>1)
+                if(word==null || c.consumed>word.consumed)word=c;
+            if(word!=null) {
+                Candidate accepted=candidates.get(preferred);candidates.remove(word);
+                int at=1;
+                if(preferred>0 && !accepted.literal) {
+                    while(at<Math.min(3,candidates.size()) && !partial(candidates.get(at)))at++;
+                    // Keep the two established first-glyph access positions.
+                    int glyphs=0;
+                    while(at<candidates.size() && glyphs<2 && partial(candidates.get(at))
+                            && candidates.get(at).text.codePointCount(0,candidates.get(at).text.length())==1) {at++;glyphs++;}
+                }
+                // A full first page already has six whole choices plus two
+                // glyphs. Do not evict one of those whole matches for a preview.
+                int whole=0;for(Candidate c:candidates)if(!c.literal&&!partial(c))whole++;
+                if(whole>=6)at=Math.max(at,Math.min(9,candidates.size()));
+                candidates.add(at,word);preferred=candidates.indexOf(accepted);
+            }
         }
         retainDisplayableCandidates();
     }

@@ -32,12 +32,13 @@ public final class SuggestionCoverageAudit {
         PhoneticDictionary d=PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")),Files.newBufferedReader(assets.resolve("en_us.tsv")),Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));
         Set<String> oracleInputs=args.length>2?new HashSet<>(Files.readAllLines(Paths.get(args[2]))):Collections.emptySet();
         Map<Character,List<Entry>> byInitial=new HashMap<>();
-        if(!oracleInputs.isEmpty())for(String line:Files.readAllLines(assets.resolve("zh_tw.tsv"))){String[] p=line.split("\t");Entry e=new Entry(p);byInitial.computeIfAbsent(p[0].charAt(0),k->new ArrayList<>()).add(e);}
+        Map<String,List<Entry>> byText=new HashMap<>();
+        for(String line:Files.readAllLines(assets.resolve("zh_tw.tsv"))){String[] p=line.split("\t");Entry e=new Entry(p);byInitial.computeIfAbsent(p[0].charAt(0),k->new ArrayList<>()).add(e);byText.computeIfAbsent(e.text,k->new ArrayList<>()).add(e);}
         try(BufferedReader in=new BufferedReader(new InputStreamReader(new GZIPInputStream(Files.newInputStream(Paths.get(args[0]))),StandardCharsets.UTF_8));
             BufferedWriter out=Files.newBufferedWriter(Paths.get(args[1]));BufferedWriter oracle=Files.newBufferedWriter(Paths.get(args[1]+".oracle.tsv"))){
             out.write(in.readLine()+"\ttarget_rank\tcandidates\tlookup_ns\ttop8\n");
             oracle.write("raw\ttarget\toracle_rank\tlength_rank\treturned\n");
-            String line,lastRaw=null;List<Candidate> found=Collections.emptyList();Map<String,Integer> ranks=new HashMap<>();String preview="";long nanos=0;int rows=0,queries=0;
+            String line,lastRaw=null;List<Candidate> found=Collections.emptyList();Map<String,Integer> ranks=new HashMap<>();String preview="";long nanos=0;int rows=0,queries=0,prefixes=0;
             while((line=in.readLine())!=null){
                 String[] p=line.split("\t",-1);String raw=p[5];
                 if(!raw.equals(lastRaw)){
@@ -45,6 +46,11 @@ public final class SuggestionCoverageAudit {
                     ranks.clear();List<String> top=new ArrayList<>();
                     for(int i=0;i<found.size();i++){
                         Candidate c=found.get(i);if(c.composed)throw new AssertionError("Constructed output: "+raw);
+                        if(c.consumed>0 && c.consumed<raw.length() && c.text.codePointCount(0,c.text.length())>1) {
+                            String spelling=raw.substring(0,c.consumed);
+                            if(byText.getOrDefault(c.text,Collections.emptyList()).stream().noneMatch(e->matches(spelling,e.units)))throw new AssertionError("Unattested phrase or invalid prefix span: "+raw+"/"+c.text+"/"+c.consumed);
+                            prefixes++;
+                        }
                         if(c.consumed==0)ranks.put(c.text,i+1);if(i<8)top.add(c.text+":"+c.consumed);
                     }preview=String.join("|",top);
                     if(oracleInputs.contains(raw)){
@@ -63,7 +69,7 @@ public final class SuggestionCoverageAudit {
                 out.write(line+"\t"+ranks.getOrDefault(p[3],0)+"\t"+found.size()+"\t"+nanos+"\t"+preview+"\n");
                 if(++rows%50000==0){out.flush();oracle.flush();System.out.println("Retrieval rows "+rows+", unique queries "+queries);}
             }
-            System.out.println("PASS retrieval audit completed: "+rows+" rows / "+queries+" queries; evaluate target ranks separately.");
+            System.out.println("PASS retrieval audit completed: "+rows+" rows / "+queries+" queries; "+prefixes+" phrase-prefix outputs independently checked against source readings; evaluate target ranks separately.");
         }
     }
 }

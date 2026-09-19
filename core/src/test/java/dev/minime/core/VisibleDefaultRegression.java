@@ -31,6 +31,7 @@ final class VisibleDefaultRegression {
             equal("詞組0",e.candidates().get(e.preferred()).text,"character access preserves whole default");
             equal("甲",e.candidates().get(3).text,"first character stays reachable despite 24 phrases");
             equal("𠀀",e.candidates().get(4).text,"supplementary Han gets the same character access");
+            equal("甲乙",e.candidates().get(9).text,"Stored prefix phrase preserves the full first page and glyph positions");
             equal(28,e.candidates().size(),"mixed display removes no choices");
             Candidate displayed=e.candidates().get(3);
             e.selectCandidate(displayed,e.compositionId());

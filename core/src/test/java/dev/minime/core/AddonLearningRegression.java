@@ -50,10 +50,12 @@ final class AddonLearningRegression {
             // order within each provenance/span group remains unchanged. The
             // mixed row reserves two whole-word positions before prefix glyphs;
             // adding a whole word can shift that interleave, not homophone order.
-            for(boolean assembled:new boolean[]{false,true})for(boolean partial:new boolean[]{false,true})equal(
-                unpromoted.stream().filter(v->constructed.contains(v)==assembled && prefixes.contains(v)==partial).collect(java.util.stream.Collectors.toList()),
-                retained.stream().filter(v->constructed.contains(v)==assembled && prefixes.contains(v)==partial).collect(java.util.stream.Collectors.toList()),
-                "unpromoted candidates retain order within provenance and consumption groups");
+            // Stored phrase-prefix previews now have a separate access position
+            // after the two glyph slots. Check each group, including every word.
+            for(boolean assembled:new boolean[]{false,true})for(boolean partial:new boolean[]{false,true})for(boolean glyph:new boolean[]{false,true})equal(
+                unpromoted.stream().filter(v->constructed.contains(v)==assembled && prefixes.contains(v)==partial && (v.codePointCount(0,v.length())==1)==glyph).collect(java.util.stream.Collectors.toList()),
+                retained.stream().filter(v->constructed.contains(v)==assembled && prefixes.contains(v)==partial && (v.codePointCount(0,v.length())==1)==glyph).collect(java.util.stream.Collectors.toList()),
+                "unpromoted candidates retain order within provenance, consumption and glyph/phrase groups");
             c.addons(addon,Collections.emptySet());equal(base,c.candidates().stream().map(v->v.text).collect(java.util.stream.Collectors.toList()),"off removes supplemental results");samples++;
         }
         yes(samples>30,"source-diverse composition checks");

@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 /** Source syllable boundaries, not generated abbreviation combinations. Immutable after load. */
 final class ReadingUnitIndex {
     private static final Pattern WORD_INPUT=Pattern.compile("[a-z0-9]+(?:'[a-z0-9]+)*");
+    private static final Pattern PINYIN_INPUT=Pattern.compile("[a-z]+(?:'[a-z]+)*");
     private String[] syllable;
     private int[] child, sibling;
     private List<Candidate>[] words;
@@ -96,6 +97,9 @@ final class ReadingUnitIndex {
         return match(raw,start,budget,true);
     }
     private List<List<Candidate>> match(String raw,int start,int[] budget,boolean intermediateResults) {
+        return match(raw,start,budget,intermediateResults,null);
+    }
+    private List<List<Candidate>> match(String raw,int start,int[] budget,boolean intermediateResults,List<Candidate> prefixes) {
         int limit=Math.min(raw.length(),start+MAX_WORD_INPUT);
         List<List<Candidate>> matches=new ArrayList<>();
         for(int i=0;i<=limit;i++) matches.add(intermediateResults || i==limit?new ArrayList<>():Collections.emptyList());
@@ -111,6 +115,15 @@ final class ReadingUnitIndex {
             Integer prior=visited.get(identity);
             if(prior!=null && prior<=state.missing) continue;
             visited.put(identity,state.missing);
+            // Reuse this traversal for explicit stored-word prefix choices.
+            // Never concatenate terminal entries or promote them to whole input.
+            if(prefixes!=null && state.at>start && state.at<raw.length() && words[state.node]!=null) {
+                int kept=0;
+                for(Candidate c:words[state.node])if(c.text.codePointCount(0,c.text.length())>1) {
+                    prefixes.add((state.missing==0?c:c.completing(c.score-penalty(state.missing))).consuming(state.at));
+                    if(++kept==2)break;
+                }
+            }
             // Single-entry lookup only returns the final offset. Materializing
             // other offsets cannot affect traversal: queue bounds and visited
             // states depend solely on source readings and omitted input.
@@ -147,5 +160,19 @@ final class ReadingUnitIndex {
     List<Candidate> lookup(String raw) {
         if(raw.isEmpty() || raw.length()>MAX_WORD_INPUT || !WORD_INPUT.matcher(raw).matches())return Collections.emptyList();
         return match(raw,0,new int[]{SEARCH_BUDGET},false).get(raw.length());
+    }
+    List<Candidate> lookupWithPrefixes(String raw) {
+        if(raw.length()>96)return Collections.emptyList();
+        if(!PINYIN_INPUT.matcher(raw).matches())return lookup(raw);
+        List<Candidate> prefixes=new ArrayList<>();
+        List<List<Candidate>> matches=match(raw,0,new int[]{SEARCH_BUDGET},false,prefixes);
+        List<Candidate> result=new ArrayList<>();
+        if(raw.length()<=MAX_WORD_INPUT)result.addAll(matches.get(raw.length()));
+        prefixes.sort(Comparator.comparingInt((Candidate c)->c.consumed).reversed()
+            .thenComparing(Comparator.comparingDouble((Candidate c)->c.score).reversed()).thenComparing(c->c.text));
+        Set<String> seen=new HashSet<>();for(Candidate c:result)seen.add(c.text);
+        int count=0;
+        for(Candidate c:prefixes)if(seen.add(c.text)) {result.add(c);if(++count==8)break;}
+        return result;
     }
 }
