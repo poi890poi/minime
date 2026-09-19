@@ -1,0 +1,47 @@
+diff --git a/core/src/main/java/dev/minime/core/CompositionEngine.java b/core/src/main/java/dev/minime/core/CompositionEngine.java
+index e718965..03860f4 100644
+--- a/core/src/main/java/dev/minime/core/CompositionEngine.java
++++ b/core/src/main/java/dev/minime/core/CompositionEngine.java
+@@ -635,6 +635,17 @@ public final class CompositionEngine {
+                 Candidate c=candidates.get(i);
+                 if(!c.literal && !partial(c) && !c.composed
+                         && c.text.codePoints().anyMatch(cp->Character.UnicodeScript.of(cp)==Character.UnicodeScript.HAN)) {
++                    // Prefer a reading covering every source unit over a
++                    // forward completion. Swap only Chinese positions so
++                    // English access and the raw Space default stay stable.
++                    if(c.incomplete && !c.abbreviated)for(int j=i+1;j<candidates.size();j++) {
++                        Candidate match=candidates.get(j);
++                        if(!match.literal && !partial(match) && !match.composed
++                                && (!match.incomplete || match.abbreviated)
++                                && match.text.codePoints().anyMatch(cp->Character.UnicodeScript.of(cp)==Character.UnicodeScript.HAN)) {
++                            Collections.swap(candidates,i,j);break;
++                        }
++                    }
+                     candidates.add(1,candidates.remove(i));break;
+                 }
+             }
+diff --git a/core/src/test/java/dev/minime/core/ChineseAlternativeRegression.java b/core/src/test/java/dev/minime/core/ChineseAlternativeRegression.java
+index a7682d7..90f77d3 100644
+--- a/core/src/test/java/dev/minime/core/ChineseAlternativeRegression.java
++++ b/core/src/test/java/dev/minime/core/ChineseAlternativeRegression.java
+@@ -46,6 +46,20 @@ final class ChineseAlternativeRegression {
+         CompositionEngine zhuyin=new CompositionEngine(new Editor(),Learning.NONE);zhuyin.dictionary(tiny);zhuyin.start(true,false,false,false);
+         zhuyin.decoder((d,r,z,context,done)->done.accept(Arrays.asList(han,second)),()->{});type(zhuyin,"al");
+         yes(zhuyin.candidates().get(1).literal,"Zhuyin-board lowercase Latin is not Pinyin intent");
++        for(boolean abbreviated:new boolean[]{false,true})for(boolean priv:new boolean[]{false,true}) {
++            Candidate forward=han.completing(han.score);
++            Candidate covered=abbreviated?second.abbreviating(second.score):second;
++            Editor editor=new Editor();CompositionEngine preview=new CompositionEngine(editor,Learning.NONE);
++            preview.dictionary(tiny);preview.start(false,false,priv,false);
++            preview.decoder((d,r,z,ctx,done)->done.accept(Arrays.asList(forward,covered)),()->{});
++            type(preview,"al");
++            equal(covered.text,preview.candidates().get(1).text,"Covered reading leads forward prediction");
++            equal(forward.text,preview.candidates().get(4).text,"Displaced forward prediction stays in the exchanged Chinese slot");
++            equal("alpha",preview.candidates().get(2).text,"First English completion position unchanged");
++            equal("alphabet",preview.candidates().get(3).text,"Second English completion position unchanged");
++            equal("al",preview.candidates().get(preview.preferred()).text,"Preview evidence never authorizes automatic acceptance");
++            preview.space();equal("al ",editor.text,"Raw Space remains unchanged");
++        }
+         System.out.println("PASS Chinese alternative priority, English context, raw acceptance, privacy and mode boundaries");
+     }
+ }

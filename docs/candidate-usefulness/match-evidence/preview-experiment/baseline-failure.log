@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.AssertionError: Covered reading leads forward prediction expected [丙丁] actual [甲乙]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.ChineseAlternativeRegression.run(ChineseAlternativeRegression.java:56)
+	at dev.minime.core.PreviewProbe.main(PreviewProbe.java:1)
