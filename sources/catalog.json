@@ -1053,6 +1053,60 @@
         "docs/whole-input-quality/ngram-source/manifest.json",
         "docs/whole-input-quality/ngram-source/audit.json"
       ]
+    },
+    {
+      "id": "nccu-conversation-audit",
+      "name": "NCCU / CABank Taiwan Mandarin conversations",
+      "origin": "taiwan-academic-conversations",
+      "decision": "hold",
+      "uses": [
+        "discovery",
+        "evaluation"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-NC-SA-3.0 default; corpus-specific scope unverified",
+        "status": "review",
+        "evidence": "https://talkbank.org/ca/access/TaiwanMandarin.html"
+      },
+      "evidence": [
+        "https://talkbank.org/ca/access/TaiwanMandarin.html"
+      ],
+      "editorial": "Naturalistic Taiwan conversations curated by NCCU; transcript download requires authentication.",
+      "coverage": "29 participants according to the official description; transcript and reading inventory not acquired.",
+      "limitations": "Access and evaluation/redistribution rights not established; no corpus data or independent reading inventory imported.",
+      "reason": "Larger independent conversation evaluation candidate; no production vocabulary approval.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/prefix-access/CONVERSATION-SOURCES.md"
+      ]
+    },
+    {
+      "id": "sinica-mcdc8-evaluation",
+      "name": "Sinica MCDC8 conversations with checked Pinyin",
+      "origin": "taiwan-academic-conversations",
+      "decision": "hold",
+      "uses": [
+        "discovery",
+        "evaluation"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "Academic licensing through ACLCLP; not acquired",
+        "status": "review",
+        "evidence": "https://tmc.ling.sinica.edu.tw/corpus_resource_en/"
+      },
+      "evidence": [
+        "https://tmc.ling.sinica.edu.tw/corpus_resource_en/"
+      ],
+      "editorial": "Taiwan Mandarin conversations with manually checked Pinyin/POS according to the official corpus description.",
+      "coverage": "Eight licensed conversations; no local transcript package.",
+      "limitations": "Access and evaluation/redistribution rights not established; no corpus data or independent reading inventory imported.",
+      "reason": "Larger independent conversation evaluation candidate; no production vocabulary approval.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/prefix-access/CONVERSATION-SOURCES.md"
+      ]
     }
   ]
 }
