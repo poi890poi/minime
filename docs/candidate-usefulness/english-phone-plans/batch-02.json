@@ -1,0 +1,266 @@
+[
+  {
+    "id": "english-interference-08",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "而是",
+      "condition": "zh-dev-initial",
+      "raw": "es",
+      "target": "而是"
+    },
+    "actions": [
+      {
+        "type": "es",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-09",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "極高",
+      "condition": "zh-dev-mixed-left",
+      "raw": "jig",
+      "target": "極高"
+    },
+    "actions": [
+      {
+        "type": "jig",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-10",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "創立",
+      "condition": "zh-dev-mixed-right",
+      "raw": "cli",
+      "target": "創立"
+    },
+    "actions": [
+      {
+        "type": "cli",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-11",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "桂林",
+      "condition": "zh-test-mixed-left",
+      "raw": "guil",
+      "target": "桂林"
+    },
+    "actions": [
+      {
+        "type": "guil",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-12",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "列",
+      "condition": "zh-dev-full",
+      "raw": "lie",
+      "target": "列"
+    },
+    "actions": [
+      {
+        "type": "lie",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-13",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "天后",
+      "condition": "zh-test-initial",
+      "raw": "th",
+      "target": "天后"
+    },
+    "actions": [
+      {
+        "type": "th",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-14",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "泰國",
+      "condition": "zh-test-mixed-left",
+      "raw": "taig",
+      "target": "泰國"
+    },
+    "actions": [
+      {
+        "type": "taig",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-15",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "命令",
+      "condition": "zh-dev-mixed-left",
+      "raw": "mingl",
+      "target": "命令"
+    },
+    "actions": [
+      {
+        "type": "mingl",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  }
+]

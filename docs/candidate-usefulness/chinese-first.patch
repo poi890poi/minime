@@ -1,0 +1,16 @@
+--- a/core/src/main/java/dev/minime/core/CompositionEngine.java
++++ b/core/src/main/java/dev/minime/core/CompositionEngine.java
+@@ -445,9 +445,12 @@
+             List<Candidate> latin=new ArrayList<>(),han=new ArrayList<>();
+             for(int i=1;i<candidates.size();i++)(candidates.get(i).literal?latin:han).add(candidates.get(i));
+             candidates.subList(1,candidates.size()).clear();
++            boolean chineseFirst=inputMode==InputMode.CHINESE && !afterLatin
++                && dictionary!=null && !dictionary.isEnglish(raw,false);
+             for(int i=0;i<Math.max(latin.size(),han.size());i++) {
++                if(chineseFirst && i<han.size())candidates.add(han.get(i));
+                 if(i<latin.size())candidates.add(latin.get(i));
+-                if(i<han.size())candidates.add(han.get(i));
++                if(!chineseFirst && i<han.size())candidates.add(han.get(i));
+             }
+         }
+         if(englishMode && !literalField && !privateField) {

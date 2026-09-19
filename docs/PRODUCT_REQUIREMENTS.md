@@ -1054,6 +1054,17 @@ holdout roles distinct. Passing assertion counts or clean screenshots cannot
 substitute for these gates. The current rejected experiments and contextual
 decoder proposal are recorded in [the quality audit](whole-input-quality/RECALL-PRECISION.md).
 
+Candidate-list expansion must also report task-conditioned precision: how many
+shown choices help form the specified intended text, divided by the number shown.
+Report full phrases, useful phrase prefixes and one-glyph recovery separately,
+along with off-target slots before the first useful choice and the longest useful
+visible prefix. Measure the real collapsed row and expanded viewport against
+Google Zhuyin on identical inputs; a fixed top-eight count is not a pixel page.
+Report all missing observations and reference learning-state limitations. Separate
+task-irrelevant alternatives from linguistically invalid or unsupported output.
+Expanded-list recall alone does not justify additional clutter or displacement.
+The [candidate usefulness audit](candidate-usefulness/README.md) applies this gate.
+
 The project is done only when a user familiar with legacy Google Zhuyin can type ordinary Taiwan Chinese mixed with arbitrary English words, acronyms, technical terminology, numbers, and spaces without consciously managing an input-language state.
 
 The defining property is:

@@ -1,0 +1,4231 @@
+{
+  "scope": "Visible text compatibility for a specified task. Prefix spans not proven by screenshots. Alternative homophones are not labeled nonsense. Google learning persists; MinIME fresh per case.",
+  "planned_cases": 24,
+  "observed_records": 48,
+  "groups": {
+    "google/typed/all": {
+      "episodes": 24,
+      "slots": 105,
+      "useful_slots": 38,
+      "whole_slots": 16,
+      "phrase_slots": 17,
+      "glyph_slots": 5,
+      "off_target_slots": 67,
+      "whole_top1": 16,
+      "whole_available": 16,
+      "target_compatible_precision": 0.3619047619047619,
+      "with_useful_choice": 20,
+      "with_phrase_choice": 20,
+      "without_useful_choice": 4,
+      "mean_best_glyphs": 3.125,
+      "off_target_slots_before_first_useful_when_available": 8,
+      "search_cost_denominator": 20
+    },
+    "google/typed/authored-conversation-regression": {
+      "episodes": 12,
+      "slots": 52,
+      "useful_slots": 25,
+      "whole_slots": 12,
+      "phrase_slots": 10,
+      "glyph_slots": 3,
+      "off_target_slots": 27,
+      "whole_top1": 12,
+      "whole_available": 12,
+      "target_compatible_precision": 0.4807692307692308,
+      "with_useful_choice": 12,
+      "with_phrase_choice": 12,
+      "without_useful_choice": 0,
+      "mean_best_glyphs": 4.0,
+      "off_target_slots_before_first_useful_when_available": 0,
+      "search_cost_denominator": 12
+    },
+    "google/expanded/all": {
+      "episodes": 24,
+      "slots": 559,
+      "useful_slots": 57,
+      "whole_slots": 16,
+      "phrase_slots": 20,
+      "glyph_slots": 21,
+      "off_target_slots": 502,
+      "whole_top1": 16,
+      "whole_available": 16,
+      "target_compatible_precision": 0.10196779964221825,
+      "with_useful_choice": 23,
+      "with_phrase_choice": 21,
+      "without_useful_choice": 1,
+      "mean_best_glyphs": 3.2916666666666665,
+      "off_target_slots_before_first_useful_when_available": 33,
+      "search_cost_denominator": 23
+    },
+    "google/expanded/authored-conversation-regression": {
+      "episodes": 12,
+      "slots": 278,
+      "useful_slots": 34,
+      "whole_slots": 12,
+      "phrase_slots": 11,
+      "glyph_slots": 11,
+      "off_target_slots": 244,
+      "whole_top1": 12,
+      "whole_available": 12,
+      "target_compatible_precision": 0.1223021582733813,
+      "with_useful_choice": 12,
+      "with_phrase_choice": 12,
+      "without_useful_choice": 0,
+      "mean_best_glyphs": 4.0,
+      "off_target_slots_before_first_useful_when_available": 0,
+      "search_cost_denominator": 12
+    },
+    "google/typed/essay-regression": {
+      "episodes": 12,
+      "slots": 53,
+      "useful_slots": 13,
+      "whole_slots": 4,
+      "phrase_slots": 7,
+      "glyph_slots": 2,
+      "off_target_slots": 40,
+      "whole_top1": 4,
+      "whole_available": 4,
+      "target_compatible_precision": 0.24528301886792453,
+      "with_useful_choice": 8,
+      "with_phrase_choice": 8,
+      "without_useful_choice": 4,
+      "mean_best_glyphs": 2.25,
+      "off_target_slots_before_first_useful_when_available": 8,
+      "search_cost_denominator": 8
+    },
+    "google/expanded/essay-regression": {
+      "episodes": 12,
+      "slots": 281,
+      "useful_slots": 23,
+      "whole_slots": 4,
+      "phrase_slots": 9,
+      "glyph_slots": 10,
+      "off_target_slots": 258,
+      "whole_top1": 4,
+      "whole_available": 4,
+      "target_compatible_precision": 0.08185053380782918,
+      "with_useful_choice": 11,
+      "with_phrase_choice": 9,
+      "without_useful_choice": 1,
+      "mean_best_glyphs": 2.5833333333333335,
+      "off_target_slots_before_first_useful_when_available": 33,
+      "search_cost_denominator": 11
+    },
+    "minime/typed/all": {
+      "episodes": 24,
+      "slots": 101,
+      "useful_slots": 28,
+      "whole_slots": 3,
+      "phrase_slots": 10,
+      "glyph_slots": 15,
+      "off_target_slots": 73,
+      "whole_top1": 2,
+      "whole_available": 3,
+      "target_compatible_precision": 0.27722772277227725,
+      "with_useful_choice": 18,
+      "with_phrase_choice": 12,
+      "without_useful_choice": 6,
+      "mean_best_glyphs": 1.4583333333333333,
+      "off_target_slots_before_first_useful_when_available": 9,
+      "search_cost_denominator": 18
+    },
+    "minime/typed/authored-conversation-regression": {
+      "episodes": 12,
+      "slots": 50,
+      "useful_slots": 18,
+      "whole_slots": 0,
+      "phrase_slots": 7,
+      "glyph_slots": 11,
+      "off_target_slots": 32,
+      "whole_top1": 0,
+      "whole_available": 0,
+      "target_compatible_precision": 0.36,
+      "with_useful_choice": 11,
+      "with_phrase_choice": 7,
+      "without_useful_choice": 1,
+      "mean_best_glyphs": 1.5,
+      "off_target_slots_before_first_useful_when_available": 5,
+      "search_cost_denominator": 11
+    },
+    "minime/expanded/all": {
+      "episodes": 24,
+      "slots": 575,
+      "useful_slots": 38,
+      "whole_slots": 3,
+      "phrase_slots": 13,
+      "glyph_slots": 22,
+      "off_target_slots": 537,
+      "whole_top1": 2,
+      "whole_available": 3,
+      "target_compatible_precision": 0.06608695652173913,
+      "with_useful_choice": 23,
+      "with_phrase_choice": 15,
+      "without_useful_choice": 1,
+      "mean_best_glyphs": 1.7916666666666667,
+      "off_target_slots_before_first_useful_when_available": 68,
+      "search_cost_denominator": 23
+    },
+    "minime/expanded/authored-conversation-regression": {
+      "episodes": 12,
+      "slots": 286,
+      "useful_slots": 21,
+      "whole_slots": 0,
+      "phrase_slots": 9,
+      "glyph_slots": 12,
+      "off_target_slots": 265,
+      "whole_top1": 0,
+      "whole_available": 0,
+      "target_compatible_precision": 0.07342657342657342,
+      "with_useful_choice": 12,
+      "with_phrase_choice": 9,
+      "without_useful_choice": 0,
+      "mean_best_glyphs": 1.75,
+      "off_target_slots_before_first_useful_when_available": 13,
+      "search_cost_denominator": 12
+    },
+    "minime/typed/essay-regression": {
+      "episodes": 12,
+      "slots": 51,
+      "useful_slots": 10,
+      "whole_slots": 3,
+      "phrase_slots": 3,
+      "glyph_slots": 4,
+      "off_target_slots": 41,
+      "whole_top1": 2,
+      "whole_available": 3,
+      "target_compatible_precision": 0.19607843137254902,
+      "with_useful_choice": 7,
+      "with_phrase_choice": 5,
+      "without_useful_choice": 5,
+      "mean_best_glyphs": 1.4166666666666667,
+      "off_target_slots_before_first_useful_when_available": 4,
+      "search_cost_denominator": 7
+    },
+    "minime/expanded/essay-regression": {
+      "episodes": 12,
+      "slots": 289,
+      "useful_slots": 17,
+      "whole_slots": 3,
+      "phrase_slots": 4,
+      "glyph_slots": 10,
+      "off_target_slots": 272,
+      "whole_top1": 2,
+      "whole_available": 3,
+      "target_compatible_precision": 0.058823529411764705,
+      "with_useful_choice": 11,
+      "with_phrase_choice": 6,
+      "without_useful_choice": 1,
+      "mean_best_glyphs": 1.8333333333333333,
+      "off_target_slots_before_first_useful_when_available": 55,
+      "search_cost_denominator": 11
+    }
+  },
+  "acceptance": {
+    "google": {
+      "observed": 0,
+      "whole_target_committed": 0,
+      "missing": 24
+    },
+    "minime": {
+      "observed": 24,
+      "whole_target_committed": 2,
+      "missing": 0
+    }
+  },
+  "action_failures": [
+    {
+      "provider": "google",
+      "id": "useful-00",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-01",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-02",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-03",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-04",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-05",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-06",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-07",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-08",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-09",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-10",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-11",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-12",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-13",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-14",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-15",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-16",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-17",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-18",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-19",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-20",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-21",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-22",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    },
+    {
+      "provider": "google",
+      "id": "useful-23",
+      "error": "java.lang.IllegalStateException: Visible action unavailable: SPACE"
+    }
+  ],
+  "rows": [
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-00",
+      "condition": "authored",
+      "raw": "wxhj",
+      "target": "我想回家",
+      "glyphs": "4",
+      "source_id": "fresh-wxhj",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我想回家",
+            "我想",
+            "危險",
+            "威脅",
+            "微笑"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "我想回家",
+            "我想",
+            "危險",
+            "威脅",
+            "微笑",
+            "無限",
+            "維修",
+            "文獻",
+            "文學",
+            "猥褻",
+            "溫馨",
+            "我",
+            "為",
+            "無",
+            "外",
+            "文",
+            "問",
+            "萬",
+            "未",
+            "王",
+            "五",
+            "玩",
+            "完"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-01",
+      "condition": "authored",
+      "raw": "wobuzd",
+      "target": "我不知道",
+      "glyphs": "4",
+      "source_id": "fresh-wobuzd",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我不知道",
+            "我不真的",
+            "我",
+            "我不"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 1,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "我不知道",
+            "我不真的",
+            "我",
+            "我不",
+            "窩",
+            "握",
+            "我不在",
+            "喔",
+            "臥",
+            "沃",
+            "渦",
+            "倭",
+            "渥",
+            "我部",
+            "WO",
+            "斡",
+            "涴",
+            "幄",
+            "萵",
+            "齷",
+            "偓",
+            "蠖",
+            "捰",
+            "猧",
+            "濣"
+          ],
+          "metrics": {
+            "slots": 25,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 22,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-02",
+      "condition": "authored",
+      "raw": "mingtianxiawu",
+      "target": "明天下午",
+      "glyphs": "4",
+      "source_id": "fresh-mingtianxiawu",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "明天下午",
+            "明天下無",
+            "明天",
+            "名"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "明天下午",
+            "明天下無",
+            "明天",
+            "名",
+            "明",
+            "命",
+            "銘",
+            "鳴",
+            "冥",
+            "茗",
+            "溟",
+            "命題",
+            "Ming",
+            "暝",
+            "洺",
+            "瞑",
+            "螟",
+            "皿",
+            "酩",
+            "蓂",
+            "慏",
+            "姳",
+            "熐",
+            "鄍",
+            "榠",
+            "覭"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 23,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-03",
+      "condition": "authored",
+      "raw": "woxianghuijia",
+      "target": "我想回家",
+      "glyphs": "4",
+      "source_id": "fresh-woxianghuijia",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我想回家",
+            "我想",
+            "我向",
+            "我像",
+            "我"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "我想回家",
+            "我想",
+            "我向",
+            "我像",
+            "我",
+            "窩",
+            "握",
+            "喔",
+            "臥",
+            "沃",
+            "渦",
+            "倭",
+            "渥",
+            "我先",
+            "WO",
+            "斡",
+            "涴",
+            "幄",
+            "萵",
+            "齷",
+            "偓",
+            "蠖",
+            "捰",
+            "猧",
+            "濣",
+            "婑",
+            "婐"
+          ],
+          "metrics": {
+            "slots": 27,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 24,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-04",
+      "condition": "authored",
+      "raw": "mingtxiawu",
+      "target": "明天下午",
+      "glyphs": "4",
+      "source_id": "fresh-mingtxiawu",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "明天下午",
+            "明天下無",
+            "明天",
+            "命題"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "明天下午",
+            "明天下無",
+            "明天",
+            "命題",
+            "明堂",
+            "名堂",
+            "名頭",
+            "明潭",
+            "明泰",
+            "名湯",
+            "名條",
+            "名",
+            "明",
+            "命",
+            "銘",
+            "鳴",
+            "冥",
+            "茗",
+            "溟",
+            "Ming"
+          ],
+          "metrics": {
+            "slots": 20,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 17,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-05",
+      "condition": "authored",
+      "raw": "womenyiqi",
+      "target": "我們一起",
+      "glyphs": "4",
+      "source_id": "fresh-womenyiqi",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我們一起",
+            "我們",
+            "women",
+            "我"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 1,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "我們一起",
+            "我們",
+            "women",
+            "我",
+            "窩",
+            "握",
+            "喔",
+            "臥",
+            "沃",
+            "渦",
+            "倭",
+            "渥",
+            "我沒",
+            "我嗎",
+            "WO",
+            "斡",
+            "我媽",
+            "涴",
+            "幄",
+            "澳門",
+            "萵",
+            "我買"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 19,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-06",
+      "condition": "full",
+      "raw": "jiutianxuannv",
+      "target": "九天玄女",
+      "glyphs": "4",
+      "source_id": "knowledge/Culture/九天玄女信仰.md:knowledge/Culture/九天玄女信仰.md:256",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "九天玄女",
+            "就",
+            "九天",
+            "九",
+            "酒"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "九天玄女",
+            "就",
+            "九天",
+            "九",
+            "酒",
+            "久",
+            "舊",
+            "救",
+            "揪",
+            "究",
+            "糾",
+            "啾",
+            "玖",
+            "鳩",
+            "鷲",
+            "灸",
+            "咎",
+            "舅",
+            "臼",
+            "韭",
+            "鬮",
+            "柩",
+            "廄",
+            "疚",
+            "捄",
+            "桕",
+            "僦",
+            "摎",
+            "樛"
+          ],
+          "metrics": {
+            "slots": 29,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 26,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-07",
+      "condition": "full",
+      "raw": "yundongjiuba",
+      "target": "運動酒吧",
+      "glyphs": "4",
+      "source_id": "knowledge/Lifestyle/夜生活與KTV文化.md:knowledge/Lifestyle/夜生活與KTV文化.md:121",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "運動就把",
+            "運東就把",
+            "運動",
+            "運送"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "運動就把",
+            "運東就把",
+            "運動",
+            "運送",
+            "雲",
+            "運",
+            "云",
+            "允",
+            "暈",
+            "韻",
+            "芸",
+            "蘊",
+            "孕",
+            "昀",
+            "勻",
+            "筠",
+            "蕓",
+            "耘",
+            "澐",
+            "韞",
+            "Yun",
+            "熨",
+            "隕",
+            "殞",
+            "贇",
+            "妘",
+            "紜"
+          ],
+          "metrics": {
+            "slots": 27,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 25,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-08",
+      "condition": "full",
+      "raw": "jinsanshinianlai",
+      "target": "近三十年來",
+      "glyphs": "5",
+      "source_id": "knowledge/Culture/九天玄女信仰.md:knowledge/Culture/九天玄女信仰.md:170",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "近三十年來",
+            "近三",
+            "盡散",
+            "金"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 5,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "近三十年來",
+            "近三",
+            "盡散",
+            "金",
+            "進",
+            "今",
+            "近",
+            "僅",
+            "緊",
+            "盡",
+            "勁",
+            "錦",
+            "禁",
+            "金丹",
+            "晉",
+            "津",
+            "筋",
+            "謹",
+            "金蛋",
+            "瑾",
+            "儘",
+            "斤",
+            "浸",
+            "靳",
+            "槿",
+            "巾"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 23,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 5,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-09",
+      "condition": "full",
+      "raw": "shiyigerendui",
+      "target": "是一個人對",
+      "glyphs": "5",
+      "source_id": "knowledge/People/黃春明.md:knowledge/People/黃春明.md:134",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "是一個人對",
+            "十一個",
+            "是",
+            "時"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 5,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "是一個人對",
+            "十一個",
+            "是",
+            "時",
+            "是以",
+            "使",
+            "十",
+            "式",
+            "是一",
+            "事",
+            "食",
+            "市",
+            "師",
+            "石",
+            "時亦",
+            "失",
+            "實",
+            "世",
+            "施",
+            "濕",
+            "事宜",
+            "史",
+            "室"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 5,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-10",
+      "condition": "initials",
+      "raw": "ysy",
+      "target": "原書頁",
+      "glyphs": "3",
+      "source_id": "knowledge/Geography/湖口老街.md:knowledge/Geography/湖口老街.md:274",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "約書亞",
+            "與適用",
+            "以賽亞",
+            "運輸業"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "約書亞",
+            "與適用",
+            "以賽亞",
+            "運輸業",
+            "印刷業",
+            "飲食業",
+            "又瘦又",
+            "與",
+            "也",
+            "有",
+            "以",
+            "要",
+            "也是",
+            "一",
+            "又",
+            "壓抑",
+            "於",
+            "用",
+            "以上",
+            "月",
+            "因"
+          ],
+          "metrics": {
+            "slots": 21,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 21,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-11",
+      "condition": "initials",
+      "raw": "dzp",
+      "target": "等作品",
+      "glyphs": "3",
+      "source_id": "knowledge/People/席慕蓉.md:knowledge/People/席慕蓉.md:105",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "動作片",
+            "DSP",
+            "的",
+            "但",
+            "都"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "動作片",
+            "DSP",
+            "的",
+            "但",
+            "都",
+            "等",
+            "對",
+            "地",
+            "到",
+            "大",
+            "當",
+            "多",
+            "第",
+            "D",
+            "道",
+            "點",
+            "得",
+            "動作",
+            "打",
+            "導致",
+            "帶著",
+            "帶",
+            "店",
+            "度"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 23,
+            "first_useful_rank": 6,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-00",
+      "condition": "authored",
+      "raw": "wxhj",
+      "target": "我想回家",
+      "glyphs": "4",
+      "source_id": "fresh-wxhj",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "文獻會",
+            "我",
+            "為",
+            "於",
+            "文"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 4,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "文獻會",
+            "我",
+            "為",
+            "於",
+            "文",
+            "外",
+            "無",
+            "問",
+            "灣",
+            "五",
+            "位",
+            "物",
+            "委",
+            "務",
+            "完",
+            "萬",
+            "未",
+            "網",
+            "望",
+            "往",
+            "聞",
+            "王",
+            "維",
+            "免",
+            "晚",
+            "午"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 25,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "wxhj ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-01",
+      "condition": "authored",
+      "raw": "wobuzd",
+      "target": "我不知道",
+      "glyphs": "4",
+      "source_id": "fresh-wobuzd",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我不在",
+            "我",
+            "我不",
+            "握"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "我不在",
+            "我",
+            "我不",
+            "握",
+            "窩",
+            "臥",
+            "沃",
+            "渦",
+            "渥",
+            "萵",
+            "我把",
+            "倭",
+            "斡",
+            "我爸",
+            "幄",
+            "我被",
+            "齷",
+            "玩偶",
+            "圍毆",
+            "臥病",
+            "㓇",
+            "㱧",
+            "䂺"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "wobuzd ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-02",
+      "condition": "authored",
+      "raw": "mingtianxiawu",
+      "target": "明天下午",
+      "glyphs": "4",
+      "source_id": "fresh-mingtianxiawu",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "明天",
+            "明",
+            "名",
+            "命"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "明天",
+            "明",
+            "名",
+            "命",
+            "銘",
+            "鳴",
+            "民國",
+            "冥",
+            "明年",
+            "命題",
+            "敏感",
+            "明體",
+            "茗",
+            "閩南",
+            "迷你",
+            "瞑",
+            "酩",
+            "暝",
+            "螟",
+            "溟",
+            "名堂",
+            "鄍"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "mingtianxiawu ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-03",
+      "condition": "authored",
+      "raw": "woxianghuijia",
+      "target": "我想回家",
+      "glyphs": "4",
+      "source_id": "fresh-woxianghuijia",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我想",
+            "我",
+            "握",
+            "窩"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "我想",
+            "我",
+            "握",
+            "窩",
+            "臥",
+            "沃",
+            "我下",
+            "渦",
+            "渥",
+            "我向",
+            "萵",
+            "倭",
+            "斡",
+            "幄",
+            "齷",
+            "玩偶",
+            "斡旋",
+            "窩心",
+            "臥下",
+            "圍毆",
+            "㓇",
+            "㱧"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "woxianghuijia ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-04",
+      "condition": "authored",
+      "raw": "mingtxiawu",
+      "target": "明天下午",
+      "glyphs": "4",
+      "source_id": "fresh-mingtxiawu",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "明天",
+            "明",
+            "名",
+            "命"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "明天",
+            "明",
+            "名",
+            "命",
+            "銘",
+            "鳴",
+            "民國",
+            "冥",
+            "明年",
+            "敏感",
+            "茗",
+            "閩南",
+            "迷你",
+            "瞑",
+            "命題",
+            "酩",
+            "民歌",
+            "暝",
+            "螟",
+            "明體",
+            "溟",
+            "名堂"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "mingtxiawu ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-05",
+      "condition": "authored",
+      "raw": "womenyiqi",
+      "target": "我們一起",
+      "glyphs": "4",
+      "source_id": "fresh-womenyiqi",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我們",
+            "我",
+            "握",
+            "窩"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "我們",
+            "我",
+            "握",
+            "窩",
+            "臥",
+            "沃",
+            "我沒",
+            "渦",
+            "渥",
+            "萵",
+            "倭",
+            "斡",
+            "我媽",
+            "幄",
+            "齷",
+            "玩偶",
+            "我嗎",
+            "圍毆",
+            "㓇",
+            "㱧",
+            "䂺",
+            "䇶",
+            "䠎",
+            "偓"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 22,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "womenyiqi ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-06",
+      "condition": "full",
+      "raw": "jiutianxuannv",
+      "target": "九天玄女",
+      "glyphs": "4",
+      "source_id": "knowledge/Culture/九天玄女信仰.md:knowledge/Culture/九天玄女信仰.md:256",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "九天玄女",
+            "就",
+            "九",
+            "九天",
+            "究",
+            "久"
+          ],
+          "metrics": {
+            "slots": 6,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "九天玄女",
+            "就",
+            "九",
+            "九天",
+            "究",
+            "久",
+            "酒",
+            "舊",
+            "救",
+            "糾",
+            "鷲",
+            "舅",
+            "咎",
+            "揪",
+            "灸",
+            "臼",
+            "疚",
+            "鳩",
+            "啾",
+            "玖",
+            "赳",
+            "韭",
+            "九條",
+            "柩",
+            "樛",
+            "廄",
+            "捄"
+          ],
+          "metrics": {
+            "slots": 27,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 24,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "九天玄女",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": true
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-07",
+      "condition": "full",
+      "raw": "yundongjiuba",
+      "target": "運動酒吧",
+      "glyphs": "4",
+      "source_id": "knowledge/Lifestyle/夜生活與KTV文化.md:knowledge/Lifestyle/夜生活與KTV文化.md:121",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "運動家",
+            "員",
+            "運"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "運動家",
+            "員",
+            "運",
+            "運動",
+            "雲",
+            "允",
+            "孕",
+            "韻",
+            "云",
+            "暈",
+            "蘊",
+            "勻",
+            "芸",
+            "耘",
+            "隕",
+            "醞",
+            "紜",
+            "筠",
+            "越南",
+            "昀",
+            "熨",
+            "殞",
+            "慍",
+            "氳"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 22,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 4,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "yundongjiuba ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-08",
+      "condition": "full",
+      "raw": "jinsanshinianlai",
+      "target": "近三十年來",
+      "glyphs": "5",
+      "source_id": "knowledge/Culture/九天玄女信仰.md:knowledge/Culture/九天玄女信仰.md:170",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "盡散",
+            "進",
+            "今"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "盡散",
+            "進",
+            "今",
+            "金",
+            "近",
+            "僅",
+            "緊",
+            "盡",
+            "禁",
+            "儘",
+            "津",
+            "錦",
+            "斤",
+            "勁",
+            "謹",
+            "筋",
+            "今年",
+            "晉",
+            "精神",
+            "浸",
+            "巾",
+            "紀念",
+            "襟"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 22,
+            "first_useful_rank": 5,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "jinsanshinianlai ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-09",
+      "condition": "full",
+      "raw": "shiyigerendui",
+      "target": "是一個人對",
+      "glyphs": "5",
+      "source_id": "knowledge/People/黃春明.md:knowledge/People/黃春明.md:134",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "十一個",
+            "是",
+            "時"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "十一個",
+            "是",
+            "時",
+            "十",
+            "事",
+            "實",
+            "市",
+            "提",
+            "使",
+            "式",
+            "什",
+            "師",
+            "示",
+            "視",
+            "世",
+            "始",
+            "士",
+            "失",
+            "識",
+            "施",
+            "史",
+            "試",
+            "食",
+            "勢"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 23,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "shiyigerendui ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-10",
+      "condition": "initials",
+      "raw": "ysy",
+      "target": "原書頁",
+      "glyphs": "3",
+      "source_id": "knowledge/Geography/湖口老街.md:knowledge/Geography/湖口老街.md:274",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "運輸業",
+            "一三一",
+            "一",
+            "有",
+            "鳶山岩"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "運輸業",
+            "一三一",
+            "一",
+            "有",
+            "鳶山岩",
+            "一四一",
+            "飲食業",
+            "約書亞",
+            "藝術",
+            "一四餘",
+            "有損於",
+            "楊守愚",
+            "楊淑喻",
+            "印刷業",
+            "有時有",
+            "野山羊",
+            "一霎眼"
+          ],
+          "metrics": {
+            "slots": 17,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 17,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "運輸業",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-11",
+      "condition": "initials",
+      "raw": "dzp",
+      "target": "等作品",
+      "glyphs": "3",
+      "source_id": "knowledge/People/席慕蓉.md:knowledge/People/席慕蓉.md:105",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "動作片",
+            "豆製品",
+            "的",
+            "大",
+            "電子"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "動作片",
+            "豆製品",
+            "的",
+            "大",
+            "電子",
+            "低週波",
+            "搭帳篷",
+            "低周波",
+            "到",
+            "都",
+            "地",
+            "得",
+            "對",
+            "多",
+            "但",
+            "動",
+            "當",
+            "第",
+            "度",
+            "定",
+            "道",
+            "電",
+            "點",
+            "等"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 23,
+            "first_useful_rank": 24,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "動作片",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-12",
+      "condition": "initials",
+      "raw": "nyl",
+      "target": "年雨量",
+      "glyphs": "3",
+      "source_id": "knowledge/Nature/台灣森林生態系.md:knowledge/Nature/台灣森林生態系.md:98",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "年以來",
+            "難預料",
+            "nylon",
+            "倪雅倫"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "年以來",
+            "難預料",
+            "nylon",
+            "倪雅倫",
+            "努力",
+            "內衣",
+            "你",
+            "奴隸",
+            "難以",
+            "那樣",
+            "你要",
+            "你有",
+            "那",
+            "呢",
+            "年",
+            "你也",
+            "能",
+            "您",
+            "內"
+          ],
+          "metrics": {
+            "slots": 19,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 18,
+            "first_useful_rank": 15,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-13",
+      "condition": "initials",
+      "raw": "jthtk",
+      "target": "今天回頭看",
+      "glyphs": "5",
+      "source_id": "knowledge/Lifestyle/307taipeibus.md:knowledge/Lifestyle/307taipeibus.md:408",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "今天很痛苦",
+            "金田",
+            "今天",
+            "家庭"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "今天很痛苦",
+            "金田",
+            "今天",
+            "家庭",
+            "交通",
+            "集團",
+            "鏡頭",
+            "驚嘆",
+            "具體",
+            "巨塔",
+            "幾天",
+            "就",
+            "及",
+            "將",
+            "家",
+            "金",
+            "即",
+            "經",
+            "進",
+            "今",
+            "機"
+          ],
+          "metrics": {
+            "slots": 21,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 19,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-14",
+      "condition": "mixed",
+      "raw": "sxiagzhong",
+      "target": "三峽國中",
+      "glyphs": "4",
+      "source_id": "knowledge/Geography/北大特區.md:knowledge/Geography/北大特區.md:260",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "上下各種",
+            "上下",
+            "剩下",
+            "私下",
+            "手下"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "上下各種",
+            "上下",
+            "剩下",
+            "私下",
+            "手下",
+            "盛夏",
+            "三峽",
+            "樹下",
+            "省下",
+            "生下",
+            "山下",
+            "是",
+            "時",
+            "上",
+            "說",
+            "所",
+            "s",
+            "S",
+            "三",
+            "生",
+            "使",
+            "水",
+            "四"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 7,
+            "first_phrase_rank": 7,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-15",
+      "condition": "mixed",
+      "raw": "zshangwdianb",
+      "target": "早上五點半",
+      "glyphs": "5",
+      "source_id": "knowledge/Food/台南中西區美食小吃文化.md:knowledge/Food/台南中西區美食小吃文化.md:78",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "早上五點半",
+            "在",
+            "之",
+            "早上"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 5,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "早上五點半",
+            "在",
+            "之",
+            "早上",
+            "這",
+            "中",
+            "最",
+            "桌上",
+            "再",
+            "之上",
+            "者",
+            "站上",
+            "只",
+            "裝上",
+            "走上",
+            "則",
+            "做",
+            "至",
+            "正",
+            "著",
+            "在上",
+            "找"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 20,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 5,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-16",
+      "condition": "mixed",
+      "raw": "sniansdang",
+      "target": "三年掃蕩",
+      "glyphs": "4",
+      "source_id": "knowledge/Society/台灣省籍矛盾.md:knowledge/Society/台灣省籍矛盾.md:62",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "三年適當",
+            "十年",
+            "少年",
+            "三年",
+            "四年"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 4,
+            "first_phrase_rank": 4,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "三年適當",
+            "十年",
+            "少年",
+            "三年",
+            "四年",
+            "思念",
+            "數年",
+            "蛇年",
+            "善念",
+            "時年",
+            "生年",
+            "是",
+            "時",
+            "上",
+            "說",
+            "所",
+            "s",
+            "S",
+            "三",
+            "生",
+            "使",
+            "水",
+            "四"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 4,
+            "first_phrase_rank": 4,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-17",
+      "condition": "mixed",
+      "raw": "rguob",
+      "target": "如果把",
+      "glyphs": "3",
+      "source_id": "knowledge/Technology/台灣Game-Jam社群.md:knowledge/Technology/台灣Game-Jam社群.md:98",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "如果不",
+            "如果",
+            "繞過",
+            "讓",
+            "人"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "如果不",
+            "如果",
+            "繞過",
+            "讓",
+            "人",
+            "日",
+            "如",
+            "熱鍋",
+            "若",
+            "入鍋",
+            "認過",
+            "若果",
+            "R",
+            "r",
+            "入",
+            "然",
+            "仍",
+            "熱",
+            "認",
+            "肉",
+            "任",
+            "容",
+            "弱國"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-18",
+      "condition": "authored",
+      "raw": "mtxw",
+      "target": "明天下午",
+      "glyphs": "4",
+      "source_id": "fresh-mtxw",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "明天下午",
+            "明天下無",
+            "每天",
+            "媒體"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "明天下午",
+            "明天下無",
+            "每天",
+            "媒體",
+            "明天",
+            "Mt",
+            "眉頭",
+            "碼頭",
+            "馬桶",
+            "嗎",
+            "麵條",
+            "木頭",
+            "饅頭",
+            "名",
+            "沒",
+            "們",
+            "美",
+            "M",
+            "買"
+          ],
+          "metrics": {
+            "slots": 19,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 17,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-19",
+      "condition": "authored",
+      "raw": "wbzd",
+      "target": "我不知道",
+      "glyphs": "4",
+      "source_id": "fresh-wbzd",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我不知道",
+            "我不真的",
+            "微不足道"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "我不知道",
+            "我不真的",
+            "微不足道",
+            "我",
+            "外包裝",
+            "為",
+            "無",
+            "外",
+            "文",
+            "問",
+            "萬",
+            "未",
+            "王",
+            "五",
+            "玩",
+            "完",
+            "我不在",
+            "往",
+            "w",
+            "W",
+            "網",
+            "物",
+            "微",
+            "位"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 22,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-20",
+      "condition": "authored",
+      "raw": "wmyq",
+      "target": "我們一起",
+      "glyphs": "4",
+      "source_id": "fresh-wmyq",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我們一起",
+            "帷幕牆",
+            "我們",
+            "我沒有"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "我們一起",
+            "帷幕牆",
+            "我們",
+            "我沒有",
+            "我",
+            "外面",
+            "完美",
+            "萬美元",
+            "我沒",
+            "未滿",
+            "我嗎",
+            "文明",
+            "為",
+            "WM",
+            "無",
+            "外",
+            "文",
+            "問"
+          ],
+          "metrics": {
+            "slots": 18,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 15,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-21",
+      "condition": "authored",
+      "raw": "mingtzaishuo",
+      "target": "明天再說",
+      "glyphs": "4",
+      "source_id": "fresh-mingtzaishuo",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "明天再說",
+            "明天",
+            "命題",
+            "明堂",
+            "名堂"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "明天再說",
+            "明天",
+            "命題",
+            "明堂",
+            "名堂",
+            "名頭",
+            "明潭",
+            "明泰",
+            "名湯",
+            "名條",
+            "明廷",
+            "名",
+            "明",
+            "命",
+            "銘",
+            "鳴",
+            "冥",
+            "茗",
+            "溟",
+            "Ming",
+            "暝",
+            "民"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 19,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-22",
+      "condition": "authored",
+      "raw": "keyibangwo",
+      "target": "可以幫我",
+      "glyphs": "4",
+      "source_id": "fresh-keyibangwo",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "可以幫我",
+            "可以",
+            "刻意",
+            "可依",
+            "可疑"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "可以幫我",
+            "可以",
+            "刻意",
+            "可依",
+            "可疑",
+            "科儀",
+            "課以",
+            "可意",
+            "可",
+            "客",
+            "了一",
+            "克",
+            "科",
+            "課",
+            "課題",
+            "柯",
+            "顆",
+            "刻",
+            "殼",
+            "咳",
+            "渴",
+            "棵",
+            "剋",
+            "珂"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-23",
+      "condition": "authored",
+      "raw": "jintianwanshang",
+      "target": "今天晚上",
+      "glyphs": "4",
+      "source_id": "fresh-jintianwanshang",
+      "provider": "google",
+      "status": "unavailable",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "今天晚上",
+            "金田",
+            "今天",
+            "津田",
+            "金"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "今天晚上",
+            "金田",
+            "今天",
+            "津田",
+            "金",
+            "進",
+            "今",
+            "近",
+            "僅",
+            "緊",
+            "盡",
+            "勁",
+            "錦",
+            "禁",
+            "晉",
+            "津",
+            "筋",
+            "謹",
+            "瑾",
+            "儘",
+            "浸",
+            "斤",
+            "靳",
+            "槿",
+            "巾",
+            "堇",
+            "Jin",
+            "襟"
+          ],
+          "metrics": {
+            "slots": 28,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 25,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-12",
+      "condition": "initials",
+      "raw": "nyl",
+      "target": "年雨量",
+      "glyphs": "3",
+      "source_id": "knowledge/Nature/台灣森林生態系.md:knowledge/Nature/台灣森林生態系.md:98",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "nylon",
+            "年雨量",
+            "湳雅里",
+            "內應力"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 3,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "nylon",
+            "年雨量",
+            "湳雅里",
+            "內應力",
+            "內營力",
+            "年",
+            "你",
+            "那",
+            "能",
+            "內",
+            "女",
+            "兒",
+            "難",
+            "南",
+            "呢",
+            "拿",
+            "腦",
+            "男",
+            "念",
+            "哪",
+            "農",
+            "您",
+            "尼"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 3,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "nyl ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-13",
+      "condition": "initials",
+      "raw": "jthtk",
+      "target": "今天回頭看",
+      "glyphs": "5",
+      "source_id": "knowledge/Lifestyle/307taipeibus.md:knowledge/Lifestyle/307taipeibus.md:408",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "檢討會",
+            "就",
+            "家",
+            "其",
+            "及"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "檢討會",
+            "就",
+            "家",
+            "其",
+            "及",
+            "經",
+            "機",
+            "進",
+            "間",
+            "期",
+            "加",
+            "計",
+            "教",
+            "己",
+            "將",
+            "今",
+            "給",
+            "金",
+            "車",
+            "基",
+            "覺",
+            "更",
+            "幾",
+            "接",
+            "解",
+            "建"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 25,
+            "first_useful_rank": 16,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "jthtk ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-14",
+      "condition": "mixed",
+      "raw": "sxiagzhong",
+      "target": "三峽國中",
+      "glyphs": "4",
+      "source_id": "knowledge/Geography/北大特區.md:knowledge/Geography/北大特區.md:260",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "三峽國中",
+            "是",
+            "時",
+            "腎小管",
+            "上"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "三峽國中",
+            "是",
+            "時",
+            "腎小管",
+            "上",
+            "所",
+            "十",
+            "生",
+            "說",
+            "事",
+            "三",
+            "實",
+            "市",
+            "四",
+            "提",
+            "使",
+            "社",
+            "式",
+            "什",
+            "設",
+            "書",
+            "數",
+            "水",
+            "師",
+            "司",
+            "色"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 24,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "三峽國中",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": true
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-15",
+      "condition": "mixed",
+      "raw": "zshangwdianb",
+      "target": "早上五點半",
+      "glyphs": "5",
+      "source_id": "knowledge/Food/台南中西區美食小吃文化.md:knowledge/Food/台南中西區美食小吃文化.md:78",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "早上",
+            "在",
+            "這",
+            "中"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "早上",
+            "在",
+            "這",
+            "中",
+            "自",
+            "之",
+            "子",
+            "作",
+            "主",
+            "者",
+            "最",
+            "資",
+            "著",
+            "只",
+            "長",
+            "做",
+            "政",
+            "種",
+            "知",
+            "再",
+            "重",
+            "則",
+            "從",
+            "正",
+            "至"
+          ],
+          "metrics": {
+            "slots": 25,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 24,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "zshangwdianb ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-16",
+      "condition": "mixed",
+      "raw": "sniansdang",
+      "target": "三年掃蕩",
+      "glyphs": "4",
+      "source_id": "knowledge/Society/台灣省籍矛盾.md:knowledge/Society/台灣省籍矛盾.md:62",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "少年時代",
+            "是",
+            "時"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "少年時代",
+            "是",
+            "時",
+            "上",
+            "所",
+            "十",
+            "生",
+            "說",
+            "事",
+            "三",
+            "實",
+            "市",
+            "四",
+            "提",
+            "使",
+            "社",
+            "式",
+            "什",
+            "設",
+            "書",
+            "數",
+            "水",
+            "師",
+            "司"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 23,
+            "first_useful_rank": 10,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "sniansdang ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "essay-regression",
+      "id": "useful-17",
+      "condition": "mixed",
+      "raw": "rguob",
+      "target": "如果把",
+      "glyphs": "3",
+      "source_id": "knowledge/Technology/台灣Game-Jam社群.md:knowledge/Technology/台灣Game-Jam社群.md:98",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "如果",
+            "人",
+            "如",
+            "日",
+            "然"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "如果",
+            "人",
+            "如",
+            "日",
+            "然",
+            "入",
+            "女",
+            "任",
+            "認",
+            "讓",
+            "容",
+            "熱",
+            "若",
+            "仍",
+            "軟",
+            "染",
+            "榮",
+            "肉",
+            "仁",
+            "融",
+            "瑞",
+            "弱",
+            "擾",
+            "忍",
+            "乳",
+            "潤"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 24,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "rguob ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-18",
+      "condition": "authored",
+      "raw": "mtxw",
+      "target": "明天下午",
+      "glyphs": "4",
+      "source_id": "fresh-mtxw",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "滿天星",
+            "們",
+            "沒",
+            "麼",
+            "民"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "滿天星",
+            "們",
+            "沒",
+            "麼",
+            "民",
+            "面",
+            "目",
+            "美",
+            "明",
+            "名",
+            "每",
+            "馬",
+            "嗎",
+            "門",
+            "滿",
+            "買",
+            "媽",
+            "命",
+            "母",
+            "模",
+            "某",
+            "賣",
+            "密",
+            "媒",
+            "免",
+            "木"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 25,
+            "first_useful_rank": 9,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "mtxw ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-19",
+      "condition": "authored",
+      "raw": "wbzd",
+      "target": "我不知道",
+      "glyphs": "4",
+      "source_id": "fresh-wbzd",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "微不足道",
+            "我",
+            "為",
+            "我不在",
+            "於"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 4,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "微不足道",
+            "我",
+            "為",
+            "我不在",
+            "於",
+            "文",
+            "外",
+            "無",
+            "問",
+            "灣",
+            "五",
+            "位",
+            "物",
+            "委",
+            "務",
+            "完",
+            "萬",
+            "未",
+            "網",
+            "望",
+            "往",
+            "聞",
+            "王",
+            "維",
+            "免",
+            "晚"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 25,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "微不足道",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-20",
+      "condition": "authored",
+      "raw": "wmyq",
+      "target": "我們一起",
+      "glyphs": "4",
+      "source_id": "fresh-wmyq",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我沒有",
+            "我",
+            "為",
+            "於",
+            "文"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 4,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "我沒有",
+            "我",
+            "為",
+            "於",
+            "文",
+            "我們",
+            "外",
+            "無",
+            "問",
+            "灣",
+            "五",
+            "位",
+            "物",
+            "委",
+            "務",
+            "完",
+            "萬",
+            "未",
+            "網",
+            "望",
+            "往",
+            "聞",
+            "王",
+            "維",
+            "免",
+            "晚"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 24,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 6,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "wmyq ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-21",
+      "condition": "authored",
+      "raw": "mingtzaishuo",
+      "target": "明天再說",
+      "glyphs": "4",
+      "source_id": "fresh-mingtzaishuo",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "明體字",
+            "明",
+            "名"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "明體字",
+            "明",
+            "名",
+            "命",
+            "銘",
+            "鳴",
+            "民國",
+            "明天",
+            "冥",
+            "明年",
+            "敏感",
+            "茗",
+            "閩南",
+            "迷你",
+            "瞑",
+            "命題",
+            "酩",
+            "民歌",
+            "暝",
+            "螟",
+            "明體"
+          ],
+          "metrics": {
+            "slots": 21,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 19,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 8,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "mingtzaishuo ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-22",
+      "condition": "authored",
+      "raw": "keyibangwo",
+      "target": "可以幫我",
+      "glyphs": "4",
+      "source_id": "fresh-keyibangwo",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "可以",
+            "可",
+            "科",
+            "客"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "可以",
+            "可",
+            "科",
+            "客",
+            "課",
+            "克",
+            "刻",
+            "顆",
+            "柯",
+            "殼",
+            "棵",
+            "渴",
+            "刻意",
+            "咳",
+            "喀",
+            "苛",
+            "蚵",
+            "峇",
+            "剋",
+            "瞌",
+            "坷",
+            "珂",
+            "磕",
+            "嗑",
+            "窠"
+          ],
+          "metrics": {
+            "slots": 25,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 23,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "keyibangwo ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "authored-conversation-regression",
+      "id": "useful-23",
+      "condition": "authored",
+      "raw": "jintianwanshang",
+      "target": "今天晚上",
+      "glyphs": "4",
+      "source_id": "fresh-jintianwanshang",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "今天",
+            "進",
+            "今"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 1,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "今天",
+            "進",
+            "今",
+            "金",
+            "近",
+            "僅",
+            "緊",
+            "盡",
+            "禁",
+            "儘",
+            "津",
+            "錦",
+            "斤",
+            "勁",
+            "謹",
+            "筋",
+            "今年",
+            "晉",
+            "浸",
+            "巾",
+            "紀念",
+            "襟",
+            "幾年"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "jintianwanshang ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    }
+  ],
+  "hashes": {
+    "artifacts\\candidate-usefulness\\phone-01\\observations.json": "576647763475a34348b8ed48df21db94551bee0fd8e693fc71411ca4e0dff52d",
+    "artifacts\\candidate-usefulness\\phone-02\\observations.json": "d731839a32f02b50c834d31dd1f3254721f75a55755f9d325a1e7a9e124d483c"
+  },
+  "english_exposure": {
+    "google/typed": {
+      "episodes": 24,
+      "with_latin": 3,
+      "latin_top1": 0,
+      "latin_slots": 3,
+      "other_latin": 2,
+      "prefix_extension": 1
+    },
+    "google/expanded": {
+      "episodes": 24,
+      "with_latin": 16,
+      "latin_top1": 0,
+      "latin_slots": 23,
+      "other_latin": 22,
+      "prefix_extension": 1
+    },
+    "minime/typed": {
+      "episodes": 24,
+      "with_latin": 1,
+      "latin_top1": 1,
+      "latin_slots": 1,
+      "prefix_extension": 1
+    },
+    "minime/expanded": {
+      "episodes": 24,
+      "with_latin": 1,
+      "latin_top1": 1,
+      "latin_slots": 1,
+      "prefix_extension": 1
+    }
+  }
+}

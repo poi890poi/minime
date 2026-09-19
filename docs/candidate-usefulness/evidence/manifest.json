@@ -1,0 +1,60 @@
+{
+  "before-01-observations.json.gz": {
+    "source": "artifacts\\candidate-usefulness\\phone-01\\observations.json",
+    "source_sha256": "576647763475a34348b8ed48df21db94551bee0fd8e693fc71411ca4e0dff52d"
+  },
+  "before-02-observations.json.gz": {
+    "source": "artifacts\\candidate-usefulness\\phone-02\\observations.json",
+    "source_sha256": "d731839a32f02b50c834d31dd1f3254721f75a55755f9d325a1e7a9e124d483c"
+  },
+  "final-01-observations.json.gz": {
+    "source": "artifacts\\candidate-usefulness\\final\\phone-01\\observations.json",
+    "source_sha256": "36334ca72fce2a468acf0caf67cef02a9ee2143a2b619015bf636b42c6e69942"
+  },
+  "final-02-observations.json.gz": {
+    "source": "artifacts\\candidate-usefulness\\final\\phone-02\\observations.json",
+    "source_sha256": "8be5d124d6c44bf72d93ab762d8e3d9f652b013a3bf033c6cd6cd65647f0c959"
+  },
+  "english-01-observations.json.gz": {
+    "source": "artifacts\\candidate-usefulness\\english-phone\\phone-01\\observations.json",
+    "source_sha256": "daaefc6dd7bc6466768a2367bec945d98a7ddd2332536434ebbd336125e776a3"
+  },
+  "english-02-observations.json.gz": {
+    "source": "artifacts\\candidate-usefulness\\english-phone\\phone-02\\observations.json",
+    "source_sha256": "de4b910940a421dfa3d3ce61d4e0105237ade9654fc280a9624561f4c0e23513"
+  },
+  "archive_sha256": {
+    "android-final-build.log": "8aaa7f89478f57dc800aa3bceed698292a1848db3d116b1345311e9910c3ab3b",
+    "before-01-google-version.txt": "2cf701478d5236812da638f692b0f2bcbec636fd53f8424904463c54becd50f5",
+    "before-01-observations.json.gz": "1b20dd4363f5293ca206d105cc293d227999619a414771769b6aac85aad3636e",
+    "before-02-google-version.txt": "2cf701478d5236812da638f692b0f2bcbec636fd53f8424904463c54becd50f5",
+    "before-02-observations.json.gz": "ed2eb467b930e20f9fb69b55186726eda18edbf2df6497be53b7e7f5474e73d8",
+    "chinese-first.log": "c8bcea75582b66d3a428e4b6af2f96b5e4bda05371b55fee10e476398dc2ed91",
+    "cleanup.json": "c555f548b89271fcfcb00526bb93875ce5334cc640966b35cc5c1ffd91eda75c",
+    "core-final.log": "ec07153184bda23ed431175acc856bfb7925247a934145c083727cfa385471a9",
+    "desktop-final.log": "24ea858db97bbc86ce2196cb23a98d8d208c9ede50b5bbb03837ffd56b209cad",
+    "english-01-google-version.txt": "2cf701478d5236812da638f692b0f2bcbec636fd53f8424904463c54becd50f5",
+    "english-01-observations.json.gz": "c83d0f8af5bffeb288902ae55465d7e24e74d27539743fd4e41b3e2fd2262630",
+    "english-02-google-version.txt": "2cf701478d5236812da638f692b0f2bcbec636fd53f8424904463c54becd50f5",
+    "english-02-observations.json.gz": "b1dc5d04514f1c1f2af5227f9f0e49e924b2c8d4e6ca216b7b3136883b94de86",
+    "english-after.log": "28ee0fff5465789ae24093781370f27bcdd1bacd5eab3ee2218f42346cb0e80f",
+    "english-after.tsv.gz": "48b65bf7a684aaf212b25bad585bab523315c9f2eb3e07ea131b9c129c226285",
+    "english-before.log": "28ee0fff5465789ae24093781370f27bcdd1bacd5eab3ee2218f42346cb0e80f",
+    "english-before.tsv.gz": "6c4ff163f7a4ed4b360868a079d9af8f6eba199bb8cbae004dab6c379036900c",
+    "final-01-google-version.txt": "2cf701478d5236812da638f692b0f2bcbec636fd53f8424904463c54becd50f5",
+    "final-01-observations.json.gz": "bed658653164a26d803b636e0091dd144c5593db7d8644fa312e2c294b61ac42",
+    "final-02-google-version.txt": "2cf701478d5236812da638f692b0f2bcbec636fd53f8424904463c54becd50f5",
+    "final-02-observations.json.gz": "5b436b8c488fb0d105b343e13b93512cacfdc9e18596f2c39a84f0c65785c8cd",
+    "no-preview.log": "c8bcea75582b66d3a428e4b6af2f96b5e4bda05371b55fee10e476398dc2ed91",
+    "parity-google-english-interference-00-step-0.png": "da5d83bc69b4f04af379cf01ee989f91e3f98146c9ffd5fe091caf3708c45c4e",
+    "parity-google-useful-00-step-0.png": "c545647e6863db5c7939c9e6c93fe7bda1f962c7d56061315b0bd3201c76e04f",
+    "parity-google-useful-07-step-0.png": "1d372c643ac337ec2a859b50290aa59ac45b1bd362ab1403086c1a464023475b",
+    "parity-google-useful-12-step-0.png": "9fa28c9240b4b56d5543b8628a25f4a242869615c244fa54955bff3a5a76ff70",
+    "parity-google-useful-14-step-0.png": "0b4cd384bb3d94599b5bf507f3a1068b0995cb16e30388063f765a2831c987d0",
+    "parity-minime-english-interference-00-step-0.png": "1e3c23d384721540b4fc9b6dffd523fbe275678b06c7b7bd37c5115c0b345692",
+    "parity-minime-useful-00-step-0.png": "600f0bbe9f1aa1217c853b55912834df765347c72b1fa3ad854935121a52410c",
+    "parity-minime-useful-07-step-0.png": "7c30410270b169ae0977903b37dc12c5284bd3da984df30b46eb5920984fe812",
+    "parity-minime-useful-12-step-0.png": "210168354f0b3af9d150ce4d6acc7fd7b7c08798e5f93204e884ccb03153cbd0",
+    "parity-minime-useful-14-step-0.png": "cabda348e473a93c926902e691986b1f36ccba5ce997350abda0e671e31711bc"
+  }
+}

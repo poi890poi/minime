@@ -1,0 +1,11 @@
+--- a/core/src/main/java/dev/minime/core/CompositionEngine.java
++++ b/core/src/main/java/dev/minime/core/CompositionEngine.java
+@@ -601,7 +601,7 @@
+         }
+         // Show one useful stored phrase prefix alongside the first glyphs.
+         // It remains an explicit partial selection; Space keeps its prior choice.
+-        if(inputMode==InputMode.CHINESE && conversionInput(bpmf)) {
++        if(false && inputMode==InputMode.CHINESE && conversionInput(bpmf)) {
+             Candidate word=null;
+             for(Candidate c:candidates)if(partial(c) && !c.literal && !c.composed && c.text.codePointCount(0,c.text.length())>1)
+                 if(word==null || c.consumed>word.consumed)word=c;

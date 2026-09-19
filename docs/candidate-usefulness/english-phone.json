@@ -1,0 +1,2729 @@
+{
+  "scope": "Visible text compatibility for a specified task. Prefix spans not proven by screenshots. Alternative homophones are not labeled nonsense. Google learning persists; MinIME fresh per case.",
+  "planned_cases": 16,
+  "observed_records": 32,
+  "groups": {
+    "google/typed/all": {
+      "episodes": 16,
+      "slots": 81,
+      "useful_slots": 11,
+      "whole_slots": 11,
+      "phrase_slots": 0,
+      "glyph_slots": 0,
+      "off_target_slots": 70,
+      "whole_top1": 4,
+      "whole_available": 11,
+      "target_compatible_precision": 0.13580246913580246,
+      "with_useful_choice": 11,
+      "with_phrase_choice": 11,
+      "without_useful_choice": 5,
+      "mean_best_glyphs": 1.25,
+      "off_target_slots_before_first_useful_when_available": 17,
+      "search_cost_denominator": 11
+    },
+    "google/typed/encyclopedic-regression": {
+      "episodes": 16,
+      "slots": 81,
+      "useful_slots": 11,
+      "whole_slots": 11,
+      "phrase_slots": 0,
+      "glyph_slots": 0,
+      "off_target_slots": 70,
+      "whole_top1": 4,
+      "whole_available": 11,
+      "target_compatible_precision": 0.13580246913580246,
+      "with_useful_choice": 11,
+      "with_phrase_choice": 11,
+      "without_useful_choice": 5,
+      "mean_best_glyphs": 1.25,
+      "off_target_slots_before_first_useful_when_available": 17,
+      "search_cost_denominator": 11
+    },
+    "google/expanded/all": {
+      "episodes": 16,
+      "slots": 368,
+      "useful_slots": 21,
+      "whole_slots": 13,
+      "phrase_slots": 0,
+      "glyph_slots": 8,
+      "off_target_slots": 347,
+      "whole_top1": 4,
+      "whole_available": 13,
+      "target_compatible_precision": 0.057065217391304345,
+      "with_useful_choice": 14,
+      "with_phrase_choice": 13,
+      "without_useful_choice": 2,
+      "mean_best_glyphs": 1.5625,
+      "off_target_slots_before_first_useful_when_available": 43,
+      "search_cost_denominator": 14
+    },
+    "google/expanded/encyclopedic-regression": {
+      "episodes": 16,
+      "slots": 368,
+      "useful_slots": 21,
+      "whole_slots": 13,
+      "phrase_slots": 0,
+      "glyph_slots": 8,
+      "off_target_slots": 347,
+      "whole_top1": 4,
+      "whole_available": 13,
+      "target_compatible_precision": 0.057065217391304345,
+      "with_useful_choice": 14,
+      "with_phrase_choice": 13,
+      "without_useful_choice": 2,
+      "mean_best_glyphs": 1.5625,
+      "off_target_slots_before_first_useful_when_available": 43,
+      "search_cost_denominator": 14
+    },
+    "minime/typed/all": {
+      "episodes": 16,
+      "slots": 68,
+      "useful_slots": 6,
+      "whole_slots": 6,
+      "phrase_slots": 0,
+      "glyph_slots": 0,
+      "off_target_slots": 62,
+      "whole_top1": 0,
+      "whole_available": 6,
+      "target_compatible_precision": 0.08823529411764706,
+      "with_useful_choice": 6,
+      "with_phrase_choice": 6,
+      "without_useful_choice": 10,
+      "mean_best_glyphs": 0.625,
+      "off_target_slots_before_first_useful_when_available": 10,
+      "search_cost_denominator": 6
+    },
+    "minime/typed/encyclopedic-regression": {
+      "episodes": 16,
+      "slots": 68,
+      "useful_slots": 6,
+      "whole_slots": 6,
+      "phrase_slots": 0,
+      "glyph_slots": 0,
+      "off_target_slots": 62,
+      "whole_top1": 0,
+      "whole_available": 6,
+      "target_compatible_precision": 0.08823529411764706,
+      "with_useful_choice": 6,
+      "with_phrase_choice": 6,
+      "without_useful_choice": 10,
+      "mean_best_glyphs": 0.625,
+      "off_target_slots_before_first_useful_when_available": 10,
+      "search_cost_denominator": 6
+    },
+    "minime/expanded/all": {
+      "episodes": 16,
+      "slots": 282,
+      "useful_slots": 11,
+      "whole_slots": 10,
+      "phrase_slots": 0,
+      "glyph_slots": 1,
+      "off_target_slots": 271,
+      "whole_top1": 0,
+      "whole_available": 10,
+      "target_compatible_precision": 0.03900709219858156,
+      "with_useful_choice": 10,
+      "with_phrase_choice": 10,
+      "without_useful_choice": 6,
+      "mean_best_glyphs": 1.125,
+      "off_target_slots_before_first_useful_when_available": 30,
+      "search_cost_denominator": 10
+    },
+    "minime/expanded/encyclopedic-regression": {
+      "episodes": 16,
+      "slots": 282,
+      "useful_slots": 11,
+      "whole_slots": 10,
+      "phrase_slots": 0,
+      "glyph_slots": 1,
+      "off_target_slots": 271,
+      "whole_top1": 0,
+      "whole_available": 10,
+      "target_compatible_precision": 0.03900709219858156,
+      "with_useful_choice": 10,
+      "with_phrase_choice": 10,
+      "without_useful_choice": 6,
+      "mean_best_glyphs": 1.125,
+      "off_target_slots_before_first_useful_when_available": 30,
+      "search_cost_denominator": 10
+    }
+  },
+  "acceptance": {
+    "google": {
+      "observed": 16,
+      "whole_target_committed": 4,
+      "missing": 0
+    },
+    "minime": {
+      "observed": 16,
+      "whole_target_committed": 0,
+      "missing": 0
+    }
+  },
+  "action_failures": [],
+  "rows": [
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-00",
+      "condition": "zh-dev-initial",
+      "raw": "sy",
+      "target": "所有",
+      "source_id": "所有",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "所以",
+            "使用",
+            "所有",
+            "是要",
+            "聲音"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "所以",
+            "使用",
+            "所有",
+            "是要",
+            "聲音",
+            "是有",
+            "屬於",
+            "是以",
+            "事業",
+            "是由",
+            "是用",
+            "是",
+            "時",
+            "上",
+            "說",
+            "所",
+            "S",
+            "三",
+            "生",
+            "使",
+            "水",
+            "四",
+            "身"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "所以",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-01",
+      "condition": "zh-test-initial",
+      "raw": "py",
+      "target": "平原",
+      "source_id": "平原",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "朋友",
+            "便宜",
+            "培養",
+            "培育",
+            "頗有"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "朋友",
+            "便宜",
+            "培養",
+            "培育",
+            "頗有",
+            "平原",
+            "配音",
+            "派員",
+            "配樂",
+            "偏遠",
+            "飄逸",
+            "普",
+            "噗",
+            "p",
+            "拍",
+            "品",
+            "平",
+            "破",
+            "跑",
+            "怕",
+            "片",
+            "派",
+            "排"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 6,
+            "first_phrase_rank": 6,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "朋友",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-02",
+      "condition": "zh-test-mixed-left",
+      "raw": "bud",
+      "target": "不得",
+      "source_id": "不得",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "不但",
+            "不對",
+            "不斷",
+            "不得",
+            "不到"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 4,
+            "first_phrase_rank": 4,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "不但",
+            "不對",
+            "不斷",
+            "不得",
+            "不到",
+            "部的",
+            "不多",
+            "不大",
+            "不懂",
+            "步道",
+            "不動",
+            "不",
+            "部",
+            "補",
+            "布",
+            "步",
+            "佈",
+            "捕",
+            "卜",
+            "簿",
+            "哺",
+            "怖",
+            "埔"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 4,
+            "first_phrase_rank": 4,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "不但",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-03",
+      "condition": "zh-dev-initial",
+      "raw": "by",
+      "target": "表演",
+      "source_id": "表演",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "不要",
+            "不用",
+            "表演",
+            "畢業"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 1
+        },
+        "expanded": {
+          "candidates": [
+            "不要",
+            "不用",
+            "表演",
+            "畢業",
+            "保養",
+            "必要",
+            "抱怨",
+            "並應",
+            "不易",
+            "不已",
+            "不願",
+            "不",
+            "被",
+            "B",
+            "吧",
+            "並",
+            "把",
+            "本",
+            "比",
+            "白",
+            "必"
+          ],
+          "metrics": {
+            "slots": 21,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 20,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 1
+        }
+      },
+      "accepted": {
+        "text": "不要",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-04",
+      "condition": "zh-dev-full",
+      "raw": "tai",
+      "target": "太",
+      "source_id": "太",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "太",
+            "台",
+            "泰",
+            "臺",
+            "抬",
+            "胎"
+          ],
+          "metrics": {
+            "slots": 6,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 1,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "太",
+            "台",
+            "泰",
+            "臺",
+            "抬",
+            "胎",
+            "颱",
+            "檯",
+            "態",
+            "大",
+            "邰",
+            "鈦",
+            "苔",
+            "肽",
+            "汰",
+            "Taiwan",
+            "Tai",
+            "跆",
+            "酞",
+            "呔",
+            "薹",
+            "傣",
+            "鮐",
+            "籉",
+            "炱",
+            "儓",
+            "嬯"
+          ],
+          "metrics": {
+            "slots": 27,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 26,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 1,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "太",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": true
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-05",
+      "condition": "zh-dev-initial",
+      "raw": "dr",
+      "target": "擔任",
+      "source_id": "擔任",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "當然",
+            "登入",
+            "的人",
+            "Dr",
+            "擔任"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 5,
+            "first_phrase_rank": 5,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "當然",
+            "登入",
+            "的人",
+            "Dr",
+            "擔任",
+            "大人",
+            "多人",
+            "敵人",
+            "等人",
+            "達人",
+            "的",
+            "當日",
+            "動人",
+            "得",
+            "但",
+            "都",
+            "等",
+            "對",
+            "到",
+            "大",
+            "當"
+          ],
+          "metrics": {
+            "slots": 21,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 20,
+            "first_useful_rank": 5,
+            "first_phrase_rank": 5,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "當然",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-06",
+      "condition": "zh-dev-initial",
+      "raw": "dy",
+      "target": "定義",
+      "source_id": "定義",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "對於",
+            "都有",
+            "電影",
+            "定要",
+            "第一"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "對於",
+            "都有",
+            "電影",
+            "定要",
+            "第一",
+            "導演",
+            "都要",
+            "大約",
+            "得以",
+            "多元",
+            "的有",
+            "的",
+            "但",
+            "都",
+            "等",
+            "對",
+            "地",
+            "到",
+            "大",
+            "當",
+            "多",
+            "第",
+            "D"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 23,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "對於",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-07",
+      "condition": "zh-dev-initial",
+      "raw": "gy",
+      "target": "關於",
+      "source_id": "關於",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "關於",
+            "公園",
+            "給予",
+            "個月",
+            "故意"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "關於",
+            "公園",
+            "給予",
+            "個月",
+            "故意",
+            "官員",
+            "共有",
+            "更有",
+            "過於",
+            "工業",
+            "公寓",
+            "故",
+            "跟",
+            "更",
+            "給",
+            "個",
+            "高",
+            "過",
+            "該",
+            "g",
+            "各",
+            "國",
+            "感"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 22,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "關於",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": true
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-00",
+      "condition": "zh-dev-initial",
+      "raw": "sy",
+      "target": "所有",
+      "source_id": "所有",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "system",
+            "所以",
+            "水源",
+            "systems"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "system",
+            "所以",
+            "水源",
+            "systems",
+            "使用",
+            "symbol",
+            "所有",
+            "symptoms",
+            "上野",
+            "思源",
+            "雙園",
+            "善餘",
+            "壽元",
+            "尚義",
+            "松園",
+            "十一"
+          ],
+          "metrics": {
+            "slots": 16,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 15,
+            "first_useful_rank": 7,
+            "first_phrase_rank": 7,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "sy ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-01",
+      "condition": "zh-test-initial",
+      "raw": "py",
+      "target": "平原",
+      "source_id": "平原",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "pyramid",
+            "朋友",
+            "平園",
+            "pyramids"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "pyramid",
+            "朋友",
+            "平園",
+            "pyramids",
+            "便宜",
+            "pylons",
+            "培養",
+            "pyramidal",
+            "平烟",
+            "普義",
+            "培亞",
+            "票源",
+            "培育",
+            "pygmy",
+            "拼音",
+            "pylon",
+            "偏遠"
+          ],
+          "metrics": {
+            "slots": 17,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 17,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "py ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-02",
+      "condition": "zh-test-mixed-left",
+      "raw": "bud",
+      "target": "不得",
+      "source_id": "不得",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "budget",
+            "不得",
+            "布袋",
+            "budgets"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "budget",
+            "不得",
+            "布袋",
+            "budgets",
+            "不到",
+            "budding",
+            "不斷",
+            "buds",
+            "步道",
+            "布丁池",
+            "布袋戲偶",
+            "布袋鎮",
+            "不動瀑布",
+            "步道入口"
+          ],
+          "metrics": {
+            "slots": 14,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 13,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "bud ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-03",
+      "condition": "zh-dev-initial",
+      "raw": "by",
+      "target": "表演",
+      "source_id": "表演",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "bye",
+            "不要",
+            "半月",
+            "bypass"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "bye",
+            "不要",
+            "半月",
+            "bypass",
+            "不一",
+            "byte",
+            "畢業",
+            "bytes",
+            "白玉",
+            "本源",
+            "八煙",
+            "八瑤",
+            "北源",
+            "北營",
+            "北苑",
+            "必要",
+            "bypassed",
+            "不用"
+          ],
+          "metrics": {
+            "slots": 18,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 18,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "by ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-04",
+      "condition": "zh-dev-full",
+      "raw": "tai",
+      "target": "太",
+      "source_id": "太",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "tail",
+            "台",
+            "台語",
+            "tailed",
+            "太"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 5,
+            "first_phrase_rank": 5,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "tail",
+            "台",
+            "台語",
+            "tailed",
+            "太",
+            "tails",
+            "態",
+            "tailored",
+            "台資",
+            "太古",
+            "太和",
+            "太爺",
+            "台灣",
+            "tailor",
+            "泰",
+            "tainted",
+            "台北",
+            "taillights",
+            "胎"
+          ],
+          "metrics": {
+            "slots": 19,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 18,
+            "first_useful_rank": 5,
+            "first_phrase_rank": 5,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "tai ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-05",
+      "condition": "zh-dev-initial",
+      "raw": "dr",
+      "target": "擔任",
+      "source_id": "擔任",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "drive",
+            "當然",
+            "頂讓",
+            "dropped"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "drive",
+            "當然",
+            "頂讓",
+            "dropped",
+            "擔任",
+            "drug",
+            "多人",
+            "drama",
+            "大人",
+            "drawn",
+            "代人",
+            "draw",
+            "敵人",
+            "dry",
+            "等人",
+            "driver",
+            "動人",
+            "driving",
+            "對人"
+          ],
+          "metrics": {
+            "slots": 19,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 18,
+            "first_useful_rank": 5,
+            "first_phrase_rank": 5,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "dr ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-06",
+      "condition": "zh-dev-initial",
+      "raw": "dy",
+      "target": "定義",
+      "source_id": "定義",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "dynasty",
+            "第一",
+            "大有",
+            "dying"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "dynasty",
+            "第一",
+            "大有",
+            "dying",
+            "對於",
+            "dynamic",
+            "電影",
+            "dynamics",
+            "大園",
+            "大洋",
+            "大禹",
+            "東園",
+            "大雁",
+            "東原",
+            "東源",
+            "都有",
+            "dye",
+            "導演"
+          ],
+          "metrics": {
+            "slots": 18,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 18,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "dy ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-07",
+      "condition": "zh-dev-initial",
+      "raw": "gy",
+      "target": "關於",
+      "source_id": "關於",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "gymnasium",
+            "工業",
+            "觀音",
+            "gym"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "gymnasium",
+            "工業",
+            "觀音",
+            "gym",
+            "公園",
+            "gymnastics",
+            "關於",
+            "gymnast",
+            "果園",
+            "關原",
+            "柑園",
+            "高義",
+            "姑爺",
+            "廣原",
+            "港源",
+            "給予",
+            "gypsy"
+          ],
+          "metrics": {
+            "slots": 17,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 16,
+            "first_useful_rank": 7,
+            "first_phrase_rank": 7,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "gy ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-08",
+      "condition": "zh-dev-initial",
+      "raw": "es",
+      "target": "而是",
+      "source_id": "而是",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "額上",
+            "ES",
+            "餓死",
+            "扼殺",
+            "惡事"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "額上",
+            "ES",
+            "餓死",
+            "扼殺",
+            "惡事",
+            "惡聲",
+            "額數",
+            "惡獸",
+            "扼守",
+            "俄式",
+            "惡死",
+            "E",
+            "餓",
+            "哦",
+            "惡",
+            "額",
+            "呃",
+            "鵝",
+            "噁",
+            "厄",
+            "俄",
+            "娥",
+            "我"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 23,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "額上",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-09",
+      "condition": "zh-dev-mixed-left",
+      "raw": "jig",
+      "target": "極高",
+      "source_id": "極高",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "幾個",
+            "機構",
+            "機關",
+            "極高",
+            "寄給"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 4,
+            "first_phrase_rank": 4,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "幾個",
+            "機構",
+            "機關",
+            "極高",
+            "寄給",
+            "及格",
+            "及各",
+            "幾根",
+            "記過",
+            "極光",
+            "濟公",
+            "及",
+            "即",
+            "機",
+            "記",
+            "幾",
+            "極",
+            "集",
+            "季",
+            "既",
+            "級",
+            "基",
+            "吉"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 4,
+            "first_phrase_rank": 4,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "幾個",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-10",
+      "condition": "zh-dev-mixed-right",
+      "raw": "cli",
+      "target": "創立",
+      "source_id": "創立",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "處理",
+            "成立",
+            "創立",
+            "撤離",
+            "吃力"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "處理",
+            "成立",
+            "創立",
+            "撤離",
+            "吃力",
+            "車裡",
+            "財力",
+            "城裡",
+            "查理",
+            "常理",
+            "村裡",
+            "click",
+            "client",
+            "從",
+            "才",
+            "吃",
+            "出",
+            "此",
+            "成",
+            "超",
+            "常"
+          ],
+          "metrics": {
+            "slots": 21,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 20,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "處理",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-11",
+      "condition": "zh-test-mixed-left",
+      "raw": "guil",
+      "target": "桂林",
+      "source_id": "桂林",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "規律",
+            "歸類",
+            "貴了",
+            "歸來",
+            "歸零"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "規律",
+            "歸類",
+            "貴了",
+            "歸來",
+            "歸零",
+            "桂林",
+            "鬼臉",
+            "櫃裡",
+            "瑰麗",
+            "龜裂",
+            "桂蘭",
+            "guild",
+            "guilty",
+            "鬼",
+            "貴",
+            "歸",
+            "規",
+            "櫃",
+            "龜",
+            "桂",
+            "圭"
+          ],
+          "metrics": {
+            "slots": 21,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 19,
+            "first_useful_rank": 6,
+            "first_phrase_rank": 6,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "規律",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-12",
+      "condition": "zh-dev-full",
+      "raw": "lie",
+      "target": "列",
+      "source_id": "列",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "列",
+            "烈",
+            "咧",
+            "獵",
+            "裂",
+            "劣"
+          ],
+          "metrics": {
+            "slots": 6,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 1,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "列",
+            "烈",
+            "咧",
+            "獵",
+            "裂",
+            "劣",
+            "冽",
+            "洌",
+            "趔",
+            "鬣",
+            "捩",
+            "Liese",
+            "躐",
+            "迾",
+            "颲",
+            "鴷",
+            "茢",
+            "姴",
+            "睙",
+            "鮤",
+            "蛚",
+            "蛶",
+            "儠",
+            "犣",
+            "脟",
+            "擸",
+            "奊",
+            "略"
+          ],
+          "metrics": {
+            "slots": 28,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 27,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 1,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 1
+        }
+      },
+      "accepted": {
+        "text": "列",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": true
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-13",
+      "condition": "zh-test-initial",
+      "raw": "th",
+      "target": "天后",
+      "source_id": "天后",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "退貨",
+            "體會",
+            "退回",
+            "他會",
+            "特惠"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "退貨",
+            "體會",
+            "退回",
+            "他會",
+            "特惠",
+            "他還",
+            "他很",
+            "他和",
+            "桃花",
+            "談話",
+            "她還",
+            "TH",
+            "他",
+            "她",
+            "太",
+            "t",
+            "天",
+            "它",
+            "同",
+            "台",
+            "特",
+            "頭",
+            "聽"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 22,
+            "first_useful_rank": 17,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "退貨",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-14",
+      "condition": "zh-test-mixed-left",
+      "raw": "taig",
+      "target": "泰國",
+      "source_id": "泰國",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "泰國",
+            "太過",
+            "台股",
+            "太高",
+            "太貴"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "泰國",
+            "太過",
+            "台股",
+            "太高",
+            "太貴",
+            "抬高",
+            "太乾",
+            "太鼓",
+            "太古",
+            "太趕",
+            "太公",
+            "太",
+            "台",
+            "泰",
+            "臺",
+            "抬",
+            "胎",
+            "颱",
+            "他",
+            "檯",
+            "態",
+            "大",
+            "她"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": true,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "泰國",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": true
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-15",
+      "condition": "zh-dev-mixed-left",
+      "raw": "mingl",
+      "target": "命令",
+      "source_id": "命令",
+      "provider": "google",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "命理",
+            "命令",
+            "明了",
+            "明亮",
+            "明瞭"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "命理",
+            "命令",
+            "明了",
+            "明亮",
+            "明瞭",
+            "明朗",
+            "名列",
+            "名利",
+            "名流",
+            "命裡",
+            "名錄",
+            "名",
+            "明",
+            "命",
+            "銘",
+            "鳴",
+            "冥",
+            "茗",
+            "溟",
+            "Ming",
+            "暝",
+            "洺"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "命理",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-08",
+      "condition": "zh-dev-initial",
+      "raw": "es",
+      "target": "而是",
+      "source_id": "而是",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "established",
+            "二十",
+            "二社",
+            "especially"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "established",
+            "二十",
+            "二社",
+            "especially",
+            "而是",
+            "estate",
+            "餓死",
+            "estimated",
+            "二三",
+            "escape",
+            "二手",
+            "establish",
+            "而生",
+            "establishment"
+          ],
+          "metrics": {
+            "slots": 14,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 13,
+            "first_useful_rank": 5,
+            "first_phrase_rank": 5,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "es ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-09",
+      "condition": "zh-dev-mixed-left",
+      "raw": "jig",
+      "target": "極高",
+      "source_id": "極高",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "jigsaw",
+            "結果",
+            "磯固",
+            "jigs",
+            "價格"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "jigsaw",
+            "結果",
+            "磯固",
+            "jigs",
+            "價格",
+            "經過",
+            "機構",
+            "幾個",
+            "九股",
+            "基改",
+            "撿骨",
+            "紀剛",
+            "建國",
+            "經溝",
+            "結構",
+            "機關",
+            "儘管",
+            "架構",
+            "景觀"
+          ],
+          "metrics": {
+            "slots": 19,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 19,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "jig ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-10",
+      "condition": "zh-dev-mixed-right",
+      "raw": "cli",
+      "target": "創立",
+      "source_id": "創立",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "climate",
+            "處理",
+            "草里",
+            "clinical"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "climate",
+            "處理",
+            "草里",
+            "clinical",
+            "成立",
+            "client",
+            "材料",
+            "clients",
+            "刺陵",
+            "草林",
+            "茶寮",
+            "草寮",
+            "草嶺",
+            "菜寮",
+            "陳列",
+            "潮流",
+            "climbing",
+            "車輛",
+            "climb"
+          ],
+          "metrics": {
+            "slots": 19,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 19,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "cli ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-11",
+      "condition": "zh-test-mixed-left",
+      "raw": "guil",
+      "target": "桂林",
+      "source_id": "桂林",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "guilty",
+            "規律",
+            "桂林",
+            "guilt"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "guilty",
+            "規律",
+            "桂林",
+            "guilt",
+            "歸類",
+            "guild",
+            "歸來",
+            "guilds",
+            "桂綸鎂",
+            "龜崙口",
+            "桂林坑",
+            "歸來門市",
+            "桂林坑山",
+            "歸來車站水塔",
+            "guillotine"
+          ],
+          "metrics": {
+            "slots": 15,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 14,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "guil ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-12",
+      "condition": "zh-dev-full",
+      "raw": "lie",
+      "target": "列",
+      "source_id": "列",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "lies",
+            "列",
+            "林二",
+            "lieutenant"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "lies",
+            "列",
+            "林二",
+            "lieutenant",
+            "烈",
+            "lieu",
+            "裂",
+            "lied",
+            "列印",
+            "獵人",
+            "獵豔",
+            "列柏克",
+            "李恩芯",
+            "獵寮",
+            "獵",
+            "lieutenants",
+            "劣",
+            "lien",
+            "咧",
+            "lieder"
+          ],
+          "metrics": {
+            "slots": 20,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 19,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "lie ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-13",
+      "condition": "zh-test-initial",
+      "raw": "th",
+      "target": "天后",
+      "source_id": "天后",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "the",
+            "體會",
+            "太和",
+            "this",
+            "談話"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "the",
+            "體會",
+            "太和",
+            "this",
+            "談話",
+            "that",
+            "通貨",
+            "their",
+            "塔后",
+            "塘湖",
+            "天湖",
+            "桶后",
+            "桶後",
+            "泰和",
+            "藤湖",
+            "通話",
+            "they",
+            "太好",
+            "then",
+            "童話"
+          ],
+          "metrics": {
+            "slots": 20,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 20,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "th ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-14",
+      "condition": "zh-test-mixed-left",
+      "raw": "taig",
+      "target": "泰國",
+      "source_id": "泰國",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "taiga",
+            "泰國",
+            "台股",
+            "太過",
+            "太高"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "taiga",
+            "泰國",
+            "台股",
+            "太過",
+            "太高",
+            "太古",
+            "抬高",
+            "太公",
+            "太高坑",
+            "抬槓",
+            "台共",
+            "抬過",
+            "台鋼",
+            "臺共",
+            "台",
+            "太",
+            "態",
+            "泰",
+            "胎",
+            "抬",
+            "颱",
+            "汰"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "taig ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    },
+    {
+      "genre": "encyclopedic-regression",
+      "id": "english-interference-15",
+      "condition": "zh-dev-mixed-left",
+      "raw": "mingl",
+      "target": "命令",
+      "source_id": "命令",
+      "provider": "minime",
+      "status": "observed",
+      "stages": {
+        "typed": {
+          "candidates": [
+            "mingled",
+            "命令",
+            "明里",
+            "mingle"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        },
+        "expanded": {
+          "candidates": [
+            "mingled",
+            "命令",
+            "明里",
+            "mingle",
+            "明亮",
+            "mingling",
+            "名利",
+            "名列",
+            "命令列",
+            "名流路上登魚路古道",
+            "明朗",
+            "明瞭",
+            "明理",
+            "名流",
+            "明令"
+          ],
+          "metrics": {
+            "slots": 15,
+            "useful_slots": 1,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 14,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": true
+          },
+          "excluded_exact_raw": 0
+        }
+      },
+      "accepted": {
+        "text": "mingl ",
+        "composing_start": -1,
+        "composing_end": -1,
+        "whole_target_committed": false
+      }
+    }
+  ],
+  "hashes": {
+    "artifacts\\candidate-usefulness\\english-phone\\phone-01\\observations.json": "daaefc6dd7bc6466768a2367bec945d98a7ddd2332536434ebbd336125e776a3",
+    "artifacts\\candidate-usefulness\\english-phone\\phone-02\\observations.json": "de4b910940a421dfa3d3ce61d4e0105237ade9654fc280a9624561f4c0e23513"
+  },
+  "english_exposure": {
+    "google/typed": {
+      "episodes": 16,
+      "with_latin": 2,
+      "latin_top1": 0,
+      "latin_slots": 2,
+      "raw": 2
+    },
+    "google/expanded": {
+      "episodes": 16,
+      "with_latin": 13,
+      "latin_top1": 0,
+      "latin_slots": 18,
+      "other_latin": 8,
+      "prefix_extension": 6,
+      "raw": 4
+    },
+    "minime/typed": {
+      "episodes": 16,
+      "with_latin": 16,
+      "latin_top1": 16,
+      "latin_slots": 31,
+      "prefix_extension": 31
+    },
+    "minime/expanded": {
+      "episodes": 16,
+      "with_latin": 16,
+      "latin_top1": 16,
+      "latin_slots": 82,
+      "prefix_extension": 82
+    }
+  }
+}

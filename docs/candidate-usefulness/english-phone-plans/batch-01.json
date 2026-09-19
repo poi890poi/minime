@@ -1,0 +1,266 @@
+[
+  {
+    "id": "english-interference-00",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "所有",
+      "condition": "zh-dev-initial",
+      "raw": "sy",
+      "target": "所有"
+    },
+    "actions": [
+      {
+        "type": "sy",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-01",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "平原",
+      "condition": "zh-test-initial",
+      "raw": "py",
+      "target": "平原"
+    },
+    "actions": [
+      {
+        "type": "py",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-02",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "不得",
+      "condition": "zh-test-mixed-left",
+      "raw": "bud",
+      "target": "不得"
+    },
+    "actions": [
+      {
+        "type": "bud",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-03",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "表演",
+      "condition": "zh-dev-initial",
+      "raw": "by",
+      "target": "表演"
+    },
+    "actions": [
+      {
+        "type": "by",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-04",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "太",
+      "condition": "zh-dev-full",
+      "raw": "tai",
+      "target": "太"
+    },
+    "actions": [
+      {
+        "type": "tai",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-05",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "擔任",
+      "condition": "zh-dev-initial",
+      "raw": "dr",
+      "target": "擔任"
+    },
+    "actions": [
+      {
+        "type": "dr",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-06",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "定義",
+      "condition": "zh-dev-initial",
+      "raw": "dy",
+      "target": "定義"
+    },
+    "actions": [
+      {
+        "type": "dy",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "english-interference-07",
+    "mode": "pinyin",
+    "source": {
+      "genre": "encyclopedic-regression",
+      "id": "關於",
+      "condition": "zh-dev-initial",
+      "raw": "gy",
+      "target": "關於"
+    },
+    "actions": [
+      {
+        "type": "gy",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  }
+]

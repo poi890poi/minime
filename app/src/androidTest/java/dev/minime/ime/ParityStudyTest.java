@@ -61,6 +61,7 @@ public final class ParityStudyTest extends ActivityInstrumentationTestCase2<Edit
             case "EMOJI":return new String[]{"Emoji","表情符號鍵盤"};
             case "LETTERS":return new String[]{"字母鍵盤","ABC"};
             case "EXPAND":return new String[]{"其他候選鍵","Expand candidates","Next candidate page"};
+            case "COLLAPSE":return new String[]{"隱藏其他候選鍵","Collapse candidates"};
             case "LANGUAGE":return provider.equals("google")?new String[]{mode.equals("english")?"中文鍵盤":"英文鍵盤","下一種語言"}:new String[]{"Switch to Chinese","Switch to English"};
             default:return new String[]{semantic,semantic.toUpperCase(Locale.ROOT)};
         }

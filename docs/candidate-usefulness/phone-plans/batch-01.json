@@ -1,0 +1,350 @@
+[
+  {
+    "id": "useful-00",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-wxhj",
+      "condition": "authored",
+      "raw": "wxhj",
+      "target": "我想回家",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "wxhj",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-01",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-wobuzd",
+      "condition": "authored",
+      "raw": "wobuzd",
+      "target": "我不知道",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "wobuzd",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-02",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-mingtianxiawu",
+      "condition": "authored",
+      "raw": "mingtianxiawu",
+      "target": "明天下午",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "mingtianxiawu",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-03",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-woxianghuijia",
+      "condition": "authored",
+      "raw": "woxianghuijia",
+      "target": "我想回家",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "woxianghuijia",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-04",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-mingtxiawu",
+      "condition": "authored",
+      "raw": "mingtxiawu",
+      "target": "明天下午",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "mingtxiawu",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-05",
+    "mode": "pinyin",
+    "source": {
+      "genre": "authored-conversation-regression",
+      "id": "fresh-womenyiqi",
+      "condition": "authored",
+      "raw": "womenyiqi",
+      "target": "我們一起",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "womenyiqi",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-06",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Culture/九天玄女信仰.md:knowledge/Culture/九天玄女信仰.md:256",
+      "condition": "full",
+      "raw": "jiutianxuannv",
+      "target": "九天玄女",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "jiutianxuannv",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-07",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Lifestyle/夜生活與KTV文化.md:knowledge/Lifestyle/夜生活與KTV文化.md:121",
+      "condition": "full",
+      "raw": "yundongjiuba",
+      "target": "運動酒吧",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "yundongjiuba",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-08",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Culture/九天玄女信仰.md:knowledge/Culture/九天玄女信仰.md:170",
+      "condition": "full",
+      "raw": "jinsanshinianlai",
+      "target": "近三十年來",
+      "glyphs": "5"
+    },
+    "actions": [
+      {
+        "type": "jinsanshinianlai",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-09",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/People/黃春明.md:knowledge/People/黃春明.md:134",
+      "condition": "full",
+      "raw": "shiyigerendui",
+      "target": "是一個人對",
+      "glyphs": "5"
+    },
+    "actions": [
+      {
+        "type": "shiyigerendui",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-10",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Geography/湖口老街.md:knowledge/Geography/湖口老街.md:274",
+      "condition": "initials",
+      "raw": "ysy",
+      "target": "原書頁",
+      "glyphs": "3"
+    },
+    "actions": [
+      {
+        "type": "ysy",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "useful-11",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/People/席慕蓉.md:knowledge/People/席慕蓉.md:105",
+      "condition": "initials",
+      "raw": "dzp",
+      "target": "等作品",
+      "glyphs": "3"
+    },
+    "actions": [
+      {
+        "type": "dzp",
+        "label": "typed",
+        "capture": true
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": true
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  }
+]
