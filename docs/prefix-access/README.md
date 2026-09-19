@@ -1,5 +1,9 @@
 # Access to shorter stored Pinyin prefixes
 
+**Decision superseded:** the extra-eight retention addition was withdrawn after
+the [joint usefulness audit](../candidate-usefulness/DECISION.md). The measurements
+below remain historical evidence, not the current runtime acceptance decision.
+
 Baseline: `96db0d6`. This follow-up retains shorter high-frequency stored words
 that the previous eight-longest-prefix limit discarded. It keeps those original
 eight and unions the eight highest existing source-score choices, at most sixteen

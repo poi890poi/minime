@@ -463,10 +463,6 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
     public void testStoredPhrasePrefixesAndSuffixEditing() throws Exception {
         checkStoredPrefixes("stored-prefix-cases.json","stored-prefix");
     }
-    /** Hash-selected recovered development cases, one per input condition. */
-    public void testShortFrequentPrefixesAndSuffixEditing() throws Exception {
-        checkStoredPrefixes("prefix-retention-cases.json","prefix-retention");
-    }
     private void checkStoredPrefixes(String fixture,String capturePrefix) throws Exception {
         org.json.JSONArray cases;
         try(java.io.InputStream stream=getInstrumentation().getContext().getAssets().open(fixture)) {

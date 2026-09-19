@@ -171,19 +171,8 @@ final class ReadingUnitIndex {
         prefixes.sort(Comparator.comparingInt((Candidate c)->c.consumed).reversed()
             .thenComparing(Comparator.comparingDouble((Candidate c)->c.score).reversed()).thenComparing(c->c.text));
         Set<String> seen=new HashSet<>();for(Candidate c:result)seen.add(c.text);
-        Set<String> scoreSeen=new HashSet<>(seen);
         int count=0;
         for(Candidate c:prefixes)if(seen.add(c.text)) {result.add(c);if(++count==8)break;}
-        // A longer abbreviation is not evidence that its word is more useful.
-        // Keep the original long-span choices and also the strongest source
-        // words, so a short common prefix is not crowded out by longer ones.
-        prefixes.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed()
-            .thenComparing(Comparator.comparingInt((Candidate c)->c.consumed).reversed()).thenComparing(c->c.text));
-        count=0;
-        for(Candidate c:prefixes)if(scoreSeen.add(c.text)) {
-            if(seen.add(c.text))result.add(c);
-            if(++count==8)break;
-        }
         return result;
     }
 }

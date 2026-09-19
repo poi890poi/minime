@@ -27,7 +27,7 @@ for condition in sorted({row['condition'] for row in recovered}):
               key=lambda row: hashlib.sha256(('prefix-phone-20260919\t' + row['raw'] + '\t' + row['target']).encode()).digest())
     selected.append(dict(raw=row['raw'], text=row['target'], remaining=row['suffix'], condition=condition))
 assert len(selected) > 1
-target = root / 'app/src/androidTest/assets/prefix-retention-cases.json'
+target = root / 'docs/prefix-access/evidence/prefix-retention-cases.json'
 target.write_bytes((json.dumps(selected, ensure_ascii=False, indent=2) + '\n').encode())
 manifest = dict(selection='one minimum SHA-256 per recovered development input condition; fixed seed prefix-phone-20260919',
                 role='mechanical Android integration, not natural conversation accuracy',
