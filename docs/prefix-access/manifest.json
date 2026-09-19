@@ -1,0 +1,14 @@
+{
+  "seed": "prefix-access-20260919",
+  "baseline": "96db0d6",
+  "families": 6000,
+  "excluded_prior_partial_families": 12000,
+  "rows": 42000,
+  "roles": "Seen-source, new suffix conditions; validation frozen before variant results.",
+  "frequency_bands": "0 lowest to 4 highest source frequency quintiles; not independent conversational frequencies.",
+  "source_sha256": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+  "files": {
+    "development.tsv.gz": "1fb05ddfe8e44ffdf027a9e533578d2477b6c8c2480ee10d2febb186fc92428b",
+    "validation.tsv.gz": "2b1fc8635e2b296604339adb1082069ab4cf0a33e9a457b3bf9cd94f6d8aa28e"
+  }
+}
