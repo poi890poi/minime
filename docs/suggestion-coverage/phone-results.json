@@ -1,0 +1,1195 @@
+{
+  "scope": "Repeated reference observations; Google learning state was not reset. Not language accuracy. After is the initial prefix APK before alias/first-page refinements; final APK has separate asserted integration tests.",
+  "cases": [
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-00",
+      "raw": "wxhj",
+      "target": "我想回家",
+      "status": "unavailable",
+      "visible": [
+        "我想回家",
+        "我想",
+        "危險",
+        "威脅",
+        "微笑"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 我"
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-01",
+      "raw": "wobuzd",
+      "target": "我不知道",
+      "status": "observed",
+      "visible": [
+        "我不知道",
+        "我",
+        "我不",
+        "窩",
+        "握"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-02",
+      "raw": "mingtianxiawu",
+      "target": "明天下午",
+      "status": "observed",
+      "visible": [
+        "明天下午",
+        "明天",
+        "名",
+        "明",
+        "命"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-03",
+      "raw": "woxianghuijia",
+      "target": "我想回家",
+      "status": "observed",
+      "visible": [
+        "我想回家",
+        "我想",
+        "我向",
+        "我像",
+        "我"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-04",
+      "raw": "mingtxiawu",
+      "target": "明天下午",
+      "status": "unavailable",
+      "visible": [
+        "明天下無",
+        "明天",
+        "命題",
+        "明堂",
+        "名堂"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 明"
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-05",
+      "raw": "womenyiqi",
+      "target": "我們一起",
+      "status": "observed",
+      "visible": [
+        "我們一起",
+        "我們",
+        "women",
+        "我"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-06",
+      "raw": "jiutianxuannv",
+      "target": "九天玄女",
+      "status": "observed",
+      "visible": [
+        "九天玄女",
+        "就",
+        "九天",
+        "九",
+        "酒"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-07",
+      "raw": "yundongjiuba",
+      "target": "運動酒吧",
+      "status": "observed",
+      "visible": [
+        "運動就把",
+        "運動",
+        "運送",
+        "雲",
+        "運"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-08",
+      "raw": "jinsanshinianlai",
+      "target": "近三十年來",
+      "status": "unavailable",
+      "visible": [
+        "近三十年來",
+        "近三",
+        "盡散",
+        "金"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 近"
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-00",
+      "raw": "wxhj",
+      "target": "我想回家",
+      "status": "observed",
+      "visible": [
+        "我",
+        "為",
+        "於",
+        "文",
+        "外",
+        "無"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-01",
+      "raw": "wobuzd",
+      "target": "我不知道",
+      "status": "observed",
+      "visible": [
+        "我",
+        "握",
+        "窩",
+        "臥",
+        "沃"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-02",
+      "raw": "mingtianxiawu",
+      "target": "明天下午",
+      "status": "observed",
+      "visible": [
+        "明",
+        "名",
+        "命",
+        "銘"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-03",
+      "raw": "woxianghuijia",
+      "target": "我想回家",
+      "status": "observed",
+      "visible": [
+        "我",
+        "握",
+        "窩",
+        "臥"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-04",
+      "raw": "mingtxiawu",
+      "target": "明天下午",
+      "status": "observed",
+      "visible": [
+        "明",
+        "名",
+        "命",
+        "銘"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-05",
+      "raw": "womenyiqi",
+      "target": "我們一起",
+      "status": "observed",
+      "visible": [
+        "我",
+        "握",
+        "窩",
+        "臥",
+        "沃"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-06",
+      "raw": "jiutianxuannv",
+      "target": "九天玄女",
+      "status": "observed",
+      "visible": [
+        "九天玄女",
+        "就",
+        "九",
+        "究",
+        "久",
+        "酒"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-07",
+      "raw": "yundongjiuba",
+      "target": "運動酒吧",
+      "status": "observed",
+      "visible": [
+        "員",
+        "運",
+        "雲",
+        "允"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-08",
+      "raw": "jinsanshinianlai",
+      "target": "近三十年來",
+      "status": "observed",
+      "visible": [
+        "進",
+        "今",
+        "金",
+        "近"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-09",
+      "raw": "shiyigerendui",
+      "target": "是一個人對",
+      "status": "observed",
+      "visible": [
+        "是一個人對",
+        "十一個",
+        "是",
+        "時"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-10",
+      "raw": "ysy",
+      "target": "原書頁",
+      "status": "unavailable",
+      "visible": [
+        "約書亞",
+        "與適用",
+        "以賽亞",
+        "運輸業"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 原"
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-11",
+      "raw": "dzp",
+      "target": "等作品",
+      "status": "unavailable",
+      "visible": [
+        "動作片",
+        "DSP",
+        "的",
+        "但",
+        "都"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 等"
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-12",
+      "raw": "nyl",
+      "target": "年雨量",
+      "status": "unavailable",
+      "visible": [
+        "年以來",
+        "難預料",
+        "nylon",
+        "倪雅倫"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 年"
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-13",
+      "raw": "jthtk",
+      "target": "今天回頭看",
+      "status": "unavailable",
+      "visible": [
+        "今天很痛苦",
+        "金田",
+        "今天",
+        "家庭"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 今"
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-14",
+      "raw": "sxiagzhong",
+      "target": "三峽國中",
+      "status": "unavailable",
+      "visible": [
+        "上下各種",
+        "上下",
+        "剩下",
+        "私下",
+        "手下"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 三"
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-15",
+      "raw": "zshangwdianb",
+      "target": "早上五點半",
+      "status": "unavailable",
+      "visible": [
+        "早上五點半",
+        "在",
+        "之",
+        "早上"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 早"
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-16",
+      "raw": "sniansdang",
+      "target": "三年掃蕩",
+      "status": "unavailable",
+      "visible": [
+        "少年適當",
+        "十年",
+        "少年",
+        "三年",
+        "四年"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 三"
+    },
+    {
+      "phase": "baseline",
+      "provider": "google",
+      "id": "recovery-17",
+      "raw": "rguob",
+      "target": "如果把",
+      "status": "unavailable",
+      "visible": [
+        "如果不",
+        "如果",
+        "繞過",
+        "讓",
+        "人"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 如"
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-09",
+      "raw": "shiyigerendui",
+      "target": "是一個人對",
+      "status": "observed",
+      "visible": [
+        "是",
+        "時",
+        "十",
+        "事"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-10",
+      "raw": "ysy",
+      "target": "原書頁",
+      "status": "unavailable",
+      "visible": [
+        "運輸業",
+        "一三一",
+        "一",
+        "有",
+        "鳶山岩"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 原"
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-11",
+      "raw": "dzp",
+      "target": "等作品",
+      "status": "unavailable",
+      "visible": [
+        "動作片",
+        "豆製品",
+        "的",
+        "大",
+        "低週波"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 等"
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-12",
+      "raw": "nyl",
+      "target": "年雨量",
+      "status": "unavailable",
+      "visible": [
+        "nylon",
+        "年雨量",
+        "湳雅里",
+        "內應力"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 年"
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-13",
+      "raw": "jthtk",
+      "target": "今天回頭看",
+      "status": "unavailable",
+      "visible": [
+        "就",
+        "家",
+        "其",
+        "及",
+        "經",
+        "機"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 今"
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-14",
+      "raw": "sxiagzhong",
+      "target": "三峽國中",
+      "status": "unavailable",
+      "visible": [
+        "三峽國中",
+        "是",
+        "時",
+        "上",
+        "所",
+        "十"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 三"
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-15",
+      "raw": "zshangwdianb",
+      "target": "早上五點半",
+      "status": "unavailable",
+      "visible": [
+        "在",
+        "這",
+        "中",
+        "自"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 早"
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-16",
+      "raw": "sniansdang",
+      "target": "三年掃蕩",
+      "status": "unavailable",
+      "visible": [
+        "是",
+        "時",
+        "上",
+        "所"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 三"
+    },
+    {
+      "phase": "baseline",
+      "provider": "minime",
+      "id": "recovery-17",
+      "raw": "rguob",
+      "target": "如果把",
+      "status": "observed",
+      "visible": [
+        "人",
+        "如",
+        "日",
+        "然",
+        "入"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-00",
+      "raw": "wxhj",
+      "target": "我想回家",
+      "status": "unavailable",
+      "visible": [
+        "我想回家",
+        "我想",
+        "危險",
+        "威脅",
+        "微笑"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 我"
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-01",
+      "raw": "wobuzd",
+      "target": "我不知道",
+      "status": "observed",
+      "visible": [
+        "我不知道",
+        "我",
+        "我不",
+        "窩",
+        "握"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-02",
+      "raw": "mingtianxiawu",
+      "target": "明天下午",
+      "status": "observed",
+      "visible": [
+        "明天下無",
+        "明天",
+        "名",
+        "明",
+        "命"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-03",
+      "raw": "woxianghuijia",
+      "target": "我想回家",
+      "status": "observed",
+      "visible": [
+        "我想回家",
+        "我想",
+        "我向",
+        "我像",
+        "我"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-04",
+      "raw": "mingtxiawu",
+      "target": "明天下午",
+      "status": "observed",
+      "visible": [
+        "明天下午",
+        "明天下無",
+        "明天",
+        "命題"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-05",
+      "raw": "womenyiqi",
+      "target": "我們一起",
+      "status": "observed",
+      "visible": [
+        "我們一起",
+        "我們",
+        "women",
+        "我"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-06",
+      "raw": "jiutianxuannv",
+      "target": "九天玄女",
+      "status": "observed",
+      "visible": [
+        "九天玄女",
+        "就",
+        "九天",
+        "九",
+        "酒"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-07",
+      "raw": "yundongjiuba",
+      "target": "運動酒吧",
+      "status": "observed",
+      "visible": [
+        "運東就把",
+        "運動",
+        "運送",
+        "雲",
+        "運"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-08",
+      "raw": "jinsanshinianlai",
+      "target": "近三十年來",
+      "status": "unavailable",
+      "visible": [
+        "近三十年來",
+        "近三",
+        "盡散",
+        "金"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 近"
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-00",
+      "raw": "wxhj",
+      "target": "我想回家",
+      "status": "observed",
+      "visible": [
+        "文獻會",
+        "我",
+        "為",
+        "於",
+        "文"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-01",
+      "raw": "wobuzd",
+      "target": "我不知道",
+      "status": "observed",
+      "visible": [
+        "我不在",
+        "我",
+        "我不",
+        "握"
+      ],
+      "phrase_selection_suffix_verified": true,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-02",
+      "raw": "mingtianxiawu",
+      "target": "明天下午",
+      "status": "observed",
+      "visible": [
+        "明天",
+        "明",
+        "名",
+        "命"
+      ],
+      "phrase_selection_suffix_verified": true,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-03",
+      "raw": "woxianghuijia",
+      "target": "我想回家",
+      "status": "observed",
+      "visible": [
+        "我想",
+        "我",
+        "握",
+        "窩"
+      ],
+      "phrase_selection_suffix_verified": true,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-04",
+      "raw": "mingtxiawu",
+      "target": "明天下午",
+      "status": "observed",
+      "visible": [
+        "明天",
+        "明",
+        "名",
+        "命"
+      ],
+      "phrase_selection_suffix_verified": true,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-05",
+      "raw": "womenyiqi",
+      "target": "我們一起",
+      "status": "observed",
+      "visible": [
+        "我們",
+        "我",
+        "握",
+        "窩"
+      ],
+      "phrase_selection_suffix_verified": true,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-06",
+      "raw": "jiutianxuannv",
+      "target": "九天玄女",
+      "status": "observed",
+      "visible": [
+        "九天玄女",
+        "就",
+        "九",
+        "九天",
+        "究",
+        "久"
+      ],
+      "phrase_selection_suffix_verified": true,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-07",
+      "raw": "yundongjiuba",
+      "target": "運動酒吧",
+      "status": "unavailable",
+      "visible": [
+        "運動家",
+        "員",
+        "運"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 運動"
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-08",
+      "raw": "jinsanshinianlai",
+      "target": "近三十年來",
+      "status": "unavailable",
+      "visible": [
+        "盡散",
+        "進",
+        "今"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 近"
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-09",
+      "raw": "shiyigerendui",
+      "target": "是一個人對",
+      "status": "observed",
+      "visible": [
+        "是一個人對",
+        "十一個",
+        "是",
+        "時"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-10",
+      "raw": "ysy",
+      "target": "原書頁",
+      "status": "unavailable",
+      "visible": [
+        "約書亞",
+        "與適用",
+        "以賽亞",
+        "運輸業"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 原"
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-11",
+      "raw": "dzp",
+      "target": "等作品",
+      "status": "unavailable",
+      "visible": [
+        "動作片",
+        "DSP",
+        "的",
+        "但",
+        "都"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 等"
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-12",
+      "raw": "nyl",
+      "target": "年雨量",
+      "status": "unavailable",
+      "visible": [
+        "年以來",
+        "難預料",
+        "nylon",
+        "倪雅倫"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 年"
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-13",
+      "raw": "jthtk",
+      "target": "今天回頭看",
+      "status": "unavailable",
+      "visible": [
+        "今天很痛苦",
+        "金田",
+        "今天",
+        "家庭"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 今"
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-14",
+      "raw": "sxiagzhong",
+      "target": "三峽國中",
+      "status": "unavailable",
+      "visible": [
+        "上下各種",
+        "上下",
+        "剩下",
+        "私下",
+        "手下"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: 三"
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-15",
+      "raw": "zshangwdianb",
+      "target": "早上五點半",
+      "status": "observed",
+      "visible": [
+        "早上五點半",
+        "在",
+        "之",
+        "早上"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-16",
+      "raw": "sniansdang",
+      "target": "三年掃蕩",
+      "status": "observed",
+      "visible": [
+        "少年適當",
+        "十年",
+        "少年",
+        "三年",
+        "四年"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "google",
+      "id": "recovery-17",
+      "raw": "rguob",
+      "target": "如果把",
+      "status": "observed",
+      "visible": [
+        "如果不",
+        "如果",
+        "繞過",
+        "讓",
+        "人"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-09",
+      "raw": "shiyigerendui",
+      "target": "是一個人對",
+      "status": "observed",
+      "visible": [
+        "十一個",
+        "是",
+        "時"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-10",
+      "raw": "ysy",
+      "target": "原書頁",
+      "status": "unavailable",
+      "visible": [
+        "運輸業",
+        "一三一",
+        "一",
+        "有",
+        "藝術"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 原"
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-11",
+      "raw": "dzp",
+      "target": "等作品",
+      "status": "unavailable",
+      "visible": [
+        "動作片",
+        "豆製品",
+        "的",
+        "大",
+        "電子"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 等"
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-12",
+      "raw": "nyl",
+      "target": "年雨量",
+      "status": "unavailable",
+      "visible": [
+        "nylon",
+        "年雨量",
+        "湳雅里",
+        "內應力"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 年"
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-13",
+      "raw": "jthtk",
+      "target": "今天回頭看",
+      "status": "unavailable",
+      "visible": [
+        "檢討會",
+        "就",
+        "家",
+        "其",
+        "及"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 今"
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-14",
+      "raw": "sxiagzhong",
+      "target": "三峽國中",
+      "status": "unavailable",
+      "visible": [
+        "三峽國中",
+        "是",
+        "時",
+        "腎小管",
+        "上"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 三"
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-15",
+      "raw": "zshangwdianb",
+      "target": "早上五點半",
+      "status": "observed",
+      "visible": [
+        "早上",
+        "在",
+        "這",
+        "中"
+      ],
+      "phrase_selection_suffix_verified": true,
+      "error": null
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-16",
+      "raw": "sniansdang",
+      "target": "三年掃蕩",
+      "status": "unavailable",
+      "visible": [
+        "少年時代",
+        "是",
+        "時"
+      ],
+      "phrase_selection_suffix_verified": null,
+      "error": "java.lang.IllegalStateException: Visible action unavailable: Candidate 三年"
+    },
+    {
+      "phase": "after",
+      "provider": "minime",
+      "id": "recovery-17",
+      "raw": "rguob",
+      "target": "如果把",
+      "status": "observed",
+      "visible": [
+        "如果",
+        "人",
+        "如",
+        "日",
+        "然"
+      ],
+      "phrase_selection_suffix_verified": true,
+      "error": null
+    }
+  ]
+}

@@ -22,7 +22,15 @@ def stats(rows):
     for r in labeled:
         rank = next((i for i, (text, end) in enumerate(inventory(r), 1) if text == r['target'][0] and (end > 0 or len(r['target']) == 1)), 0)
         first.append(rank)
+    words = [[(i, text) for i, (text, end) in enumerate(inventory(r), 1)
+              if len(text)>1 and 0<end<len(r['raw'])] for r in rows]
+    correct_words = [[(i, text) for i, text in values if r['target'].startswith(text)]
+                     for r, values in zip(rows, words) if r['target']]
     return dict(episodes=len(rows), empty=sum(int(r['candidates']) == 0 for r in rows),
+                with_stored_prefix_phrase=sum(bool(v) for v in words),
+                prefix_phrase_in_first8=sum(any(i<=8 for i, _ in v) for v in words),
+                target_prefix_phrase_available=sum(bool(v) for v in correct_words),
+                target_prefix_phrase_in_first8=sum(any(i<=8 for i, _ in v) for v in correct_words),
                 with_prefix_glyph=sum(int(r['first_glyph_rank']) > 0 for r in rows),
                 prefix_in_first8=sum(0 < int(r['first_glyph_rank']) <= 8 for r in rows),
                 labeled_episodes=len(labeled), target_available=sum(int(r['target_rank']) > 0 for r in labeled),

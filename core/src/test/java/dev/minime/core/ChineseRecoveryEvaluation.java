@@ -34,23 +34,28 @@ public final class ChineseRecoveryEvaluation {
                 String[] p=line.split("\t",-1);String raw=p[3],target=p[4];
                 if(!cache.containsKey(raw)) {long started=System.nanoTime();List<Candidate> values=d.convert(raw,false);if(nativeMode)values=CandidateMerge.merge(nativeRime.query(raw),values);cache.put(raw,values);timings.put(raw,System.nanoTime()-started);}
                 List<Candidate> found=cache.get(raw);Editor editor=new Editor();CompositionEngine c=session(editor,d,addons,enabled,raw,found);
-                int firstRank=0,targetRank=0,firstEnd=0;Candidate first=null;List<String> outputs=new ArrayList<>();
+                int firstRank=0,targetRank=0,firstEnd=0;Candidate first=null,word=null;List<String> outputs=new ArrayList<>();
                 for(int i=1;i<c.candidates().size();i++) {
                     Candidate v=c.candidates().get(i);outputs.add(v.text+":"+v.consumed);
                     if(v.composed)throw new AssertionError("Unattested construction: "+raw);
                     if(v.text.equals(target)&&v.consumed==0)targetRank=i;
                     if(firstRank==0 && glyph(v) && v.consumed>0 && v.consumed<raw.length()) {firstRank=i;firstEnd=v.consumed;first=v;}
+                    if(word==null && !v.literal && v.text.codePointCount(0,v.text.length())>1 && v.consumed>0 && v.consumed<raw.length())word=v;
                 }
                 String space=c.candidates().isEmpty()?raw:c.candidates().get(c.preferred()).text;
                 if(!c.candidates().isEmpty() && c.candidates().get(c.preferred()).consumed>0 && c.candidates().get(c.preferred()).consumed<raw.length())throw new AssertionError("Partial Space: "+raw);
                 Candidate accepted=c.candidates().get(c.preferred());c.space();
                 if(!editor.text.equals(accepted.text+(accepted.literal?" ":"")) || !c.raw().isEmpty() || !editor.composing.isEmpty())throw new AssertionError("Actual Space differs from displayed default: "+raw);
                 boolean valid=true;
-                if(first!=null) {
+                for(Candidate choice:Arrays.asList(first,word))if(choice!=null) {
                     editor=new Editor();c=session(editor,d,addons,enabled,raw,found);
-                    c.selectCandidate(first,c.compositionId());String suffix=raw.substring(first.consumed).replaceFirst("^'+","");
-                    valid=editor.text.equals(first.text)&&c.raw().equals(suffix)&&editor.composing.equals(suffix);
+                    long version=c.compositionId();c.selectCandidate(choice,version);String suffix=raw.substring(choice.consumed).replaceFirst("^'+","");
+                    valid=editor.text.equals(choice.text)&&c.raw().equals(suffix)&&editor.composing.equals(suffix);
                     if(!valid)throw new AssertionError("Lost raw suffix: "+raw);
+                    c.selectCandidate(choice,version);
+                    if(!editor.text.equals(choice.text)||!c.raw().equals(suffix))throw new AssertionError("Stale selection repeated: "+raw);
+                    c.backspace();
+                    if(!c.raw().equals(suffix.substring(0,suffix.length()-1)))throw new AssertionError("Prefix suffix backspace: "+raw);
                 }
                 out.write(line+"\t"+outputs.size()+"\t"+firstRank+"\t"+targetRank+"\t"+space+"\t"+firstEnd+"\t"+valid+"\t"+timings.get(raw)+"\t"+String.join("|",outputs)+"\n");
                 if(++count%5000==0) {out.flush();System.out.println("Recovery episodes "+count+" unique queries "+cache.size());}

@@ -459,6 +459,60 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         click("Candidate 輸入法"); assertEquals("我想輸入法",activity.text.getText().toString());
         clear(); type("nh"); click("Exact input nh"); type(" meeting "); assertEquals("nh meeting ",activity.text.getText().toString());
     }
+    /** All eligible phrase-prefix cases derived from the frozen 18-case plan. */
+    public void testStoredPhrasePrefixesAndSuffixEditing() throws Exception {
+        org.json.JSONArray cases;
+        try(java.io.InputStream stream=getInstrumentation().getContext().getAssets().open("stored-prefix-cases.json")) {
+            java.io.ByteArrayOutputStream bytes=new java.io.ByteArrayOutputStream();byte[] buffer=new byte[4096];int n;
+            while((n=stream.read(buffer))>=0)bytes.write(buffer,0,n);
+            cases=new org.json.JSONArray(bytes.toString("UTF-8"));
+        }
+        assertTrue("Frozen plan contains multiple eligible prefixes",cases.length()>1);
+        for(boolean privacy:new boolean[]{false,true}) {
+            getInstrumentation().runOnMainSync(()->activity.text.setImeOptions(privacy?android.view.inputmethod.EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING:0));
+            focus(activity.url);focus(activity.text);
+            for(int i=0;i<cases.length();i++) {
+                org.json.JSONObject test=cases.getJSONObject(i);
+                String raw=test.getString("raw"),word=test.getString("text"),remaining=test.getString("remaining");
+                clear();type(raw);expectText(raw);
+                click("Expand candidates");selectExpandedCandidate(word);expectText(word+remaining);
+                getInstrumentation().runOnMainSync(()-> {
+                    assertEquals("Committed prefix stays outside composition",word.length(),android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText()));
+                    assertEquals("Every suffix key remains composing",word.length()+remaining.length(),android.view.inputmethod.BaseInputConnection.getComposingSpanEnd(activity.text.getText()));
+                });
+                click("⌫");expectText(word+remaining.substring(0,remaining.length()-1));
+                if(i==0)capture("stored-prefix-"+(privacy?"private":"ordinary"));
+            }
+        }
+    }
+    private AccessibilityNodeInfo verticalCandidates(AccessibilityNodeInfo n) {
+        if(n==null)return null;
+        if(n.isVisibleToUser() && "android.widget.ScrollView".contentEquals(n.getClassName()))return n;
+        for(int i=0;i<n.getChildCount();i++) {
+            AccessibilityNodeInfo found=verticalCandidates(n.getChild(i));
+            if(found!=null){n.recycle();return found;}
+        }
+        n.recycle();return null;
+    }
+    private void selectExpandedCandidate(String text) {
+        for(int page=0;page<40;page++) {
+            for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows()) {
+                AccessibilityNodeInfo candidate=find(window.getRoot(),"Candidate "+text);
+                if(candidate!=null) {
+                    assertTrue(candidate.performAction(AccessibilityNodeInfo.ACTION_CLICK));candidate.recycle();
+                    getInstrumentation().waitForIdleSync();return;
+                }
+            }
+            boolean moved=false;
+            for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows())if(window.getType()==AccessibilityWindowInfo.TYPE_INPUT_METHOD) {
+                AccessibilityNodeInfo list=verticalCandidates(window.getRoot());
+                if(list!=null){moved|=list.performAction(AccessibilityNodeInfo.ACTION_SCROLL_FORWARD);list.recycle();}
+            }
+            if(!moved)break;
+            getInstrumentation().waitForIdleSync();SystemClock.sleep(100);
+        }
+        capture("stored-prefix-unreachable");fail("Stored prefix unavailable after scrolling expanded candidates: "+text);
+    }
     public void testSlidesCaseNumbersAndCancellation() {
         slide("g",-1,false); type("it"); slide("h",-1,false); type("ub ");
         assertEquals("GitHub ",activity.text.getText().toString());

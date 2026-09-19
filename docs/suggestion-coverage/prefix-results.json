@@ -1,0 +1,272 @@
+{
+  "development-prefix": {
+    "groups": {
+      "all": {
+        "attempts": 157467,
+        "before_available": 135831,
+        "after_available": 135833,
+        "before_first8": 103220,
+        "after_first8": 103220
+      },
+      "glyph/full": {
+        "attempts": 12555,
+        "before_available": 12555,
+        "after_available": 12555,
+        "before_first8": 1117,
+        "after_first8": 1117
+      },
+      "glyph/glyph-prefix-1": {
+        "attempts": 12472,
+        "before_available": 1463,
+        "after_available": 1464,
+        "before_first8": 101,
+        "after_first8": 101
+      },
+      "phrase/separated_initials": {
+        "attempts": 6061,
+        "before_available": 4851,
+        "after_available": 4851,
+        "before_first8": 2796,
+        "after_first8": 2796
+      },
+      "phrase/separated_mixed": {
+        "attempts": 6061,
+        "before_available": 6012,
+        "after_available": 6012,
+        "before_first8": 4206,
+        "after_first8": 4206
+      },
+      "phrase/separated": {
+        "attempts": 6061,
+        "before_available": 6061,
+        "after_available": 6061,
+        "before_first8": 5868,
+        "after_first8": 5868
+      },
+      "phrase/initials": {
+        "attempts": 6061,
+        "before_available": 4827,
+        "after_available": 4827,
+        "before_first8": 2724,
+        "after_first8": 2724
+      },
+      "phrase/partial_units": {
+        "attempts": 6061,
+        "before_available": 5902,
+        "after_available": 5902,
+        "before_first8": 4337,
+        "after_first8": 4337
+      },
+      "phrase/mixed_reverse": {
+        "attempts": 6061,
+        "before_available": 6015,
+        "after_available": 6015,
+        "before_first8": 4243,
+        "after_first8": 4243
+      },
+      "phrase/full": {
+        "attempts": 70598,
+        "before_available": 70598,
+        "after_available": 70598,
+        "before_first8": 68270,
+        "after_first8": 68270
+      },
+      "phrase/mixed": {
+        "attempts": 6061,
+        "before_available": 6002,
+        "after_available": 6002,
+        "before_first8": 4175,
+        "after_first8": 4175
+      },
+      "phrase/final_partial": {
+        "attempts": 6061,
+        "before_available": 6044,
+        "after_available": 6044,
+        "before_first8": 5035,
+        "after_first8": 5035
+      },
+      "glyph/glyph-prefix-2": {
+        "attempts": 8867,
+        "before_available": 2831,
+        "after_available": 2832,
+        "before_first8": 145,
+        "after_first8": 145
+      },
+      "glyph/glyph-prefix-3": {
+        "attempts": 3859,
+        "before_available": 2285,
+        "after_available": 2285,
+        "before_first8": 168,
+        "after_first8": 168
+      },
+      "glyph/glyph-prefix-4": {
+        "attempts": 589,
+        "before_available": 346,
+        "after_available": 346,
+        "before_first8": 32,
+        "after_first8": 32
+      },
+      "glyph/glyph-prefix-5": {
+        "attempts": 39,
+        "before_available": 39,
+        "after_available": 39,
+        "before_first8": 3,
+        "after_first8": 3
+      }
+    },
+    "lost_targets": [],
+    "changed_first8_queries": 76054,
+    "before_lookup_ms": {
+      "queries": 95136,
+      "p50": 0.045,
+      "p95": 0.2967,
+      "p99": 0.9562,
+      "maximum": 31.9455
+    },
+    "after_lookup_ms": {
+      "queries": 95136,
+      "p50": 0.0965,
+      "p95": 0.5373,
+      "p99": 1.2827,
+      "maximum": 54.0074
+    }
+  },
+  "reserved-prefix": {
+    "groups": {
+      "all": {
+        "attempts": 157632,
+        "before_available": 135684,
+        "after_available": 135686,
+        "before_first8": 103179,
+        "after_first8": 103179
+      },
+      "glyph/full": {
+        "attempts": 12545,
+        "before_available": 12545,
+        "after_available": 12545,
+        "before_first8": 1102,
+        "after_first8": 1102
+      },
+      "glyph/glyph-prefix-1": {
+        "attempts": 12473,
+        "before_available": 1376,
+        "after_available": 1377,
+        "before_first8": 87,
+        "after_first8": 87
+      },
+      "phrase/separated_initials": {
+        "attempts": 6059,
+        "before_available": 4829,
+        "after_available": 4829,
+        "before_first8": 2782,
+        "after_first8": 2782
+      },
+      "phrase/separated_mixed": {
+        "attempts": 6059,
+        "before_available": 6014,
+        "after_available": 6014,
+        "before_first8": 4240,
+        "after_first8": 4240
+      },
+      "phrase/separated": {
+        "attempts": 6059,
+        "before_available": 6059,
+        "after_available": 6059,
+        "before_first8": 5867,
+        "after_first8": 5867
+      },
+      "phrase/initials": {
+        "attempts": 6059,
+        "before_available": 4806,
+        "after_available": 4806,
+        "before_first8": 2697,
+        "after_first8": 2697
+      },
+      "phrase/mixed": {
+        "attempts": 6059,
+        "before_available": 6010,
+        "after_available": 6010,
+        "before_first8": 4200,
+        "after_first8": 4200
+      },
+      "phrase/final_partial": {
+        "attempts": 6059,
+        "before_available": 6042,
+        "after_available": 6042,
+        "before_first8": 5059,
+        "after_first8": 5059
+      },
+      "phrase/partial_units": {
+        "attempts": 6059,
+        "before_available": 5890,
+        "after_available": 5890,
+        "before_first8": 4333,
+        "after_first8": 4333
+      },
+      "phrase/full": {
+        "attempts": 70483,
+        "before_available": 70483,
+        "after_available": 70483,
+        "before_first8": 68196,
+        "after_first8": 68196
+      },
+      "phrase/mixed_reverse": {
+        "attempts": 6059,
+        "before_available": 6005,
+        "after_available": 6005,
+        "before_first8": 4202,
+        "after_first8": 4202
+      },
+      "glyph/glyph-prefix-2": {
+        "attempts": 8980,
+        "before_available": 2827,
+        "after_available": 2828,
+        "before_first8": 167,
+        "after_first8": 167
+      },
+      "glyph/glyph-prefix-3": {
+        "attempts": 4006,
+        "before_available": 2370,
+        "after_available": 2370,
+        "before_first8": 203,
+        "after_first8": 203
+      },
+      "glyph/glyph-prefix-4": {
+        "attempts": 613,
+        "before_available": 368,
+        "after_available": 368,
+        "before_first8": 41,
+        "after_first8": 41
+      },
+      "glyph/glyph-prefix-5": {
+        "attempts": 60,
+        "before_available": 60,
+        "after_available": 60,
+        "before_first8": 3,
+        "after_first8": 3
+      }
+    },
+    "lost_targets": [],
+    "changed_first8_queries": 75592,
+    "before_lookup_ms": {
+      "queries": 94624,
+      "p50": 0.0419,
+      "p95": 0.2695,
+      "p99": 0.8475,
+      "maximum": 25.2811
+    },
+    "after_lookup_ms": {
+      "queries": 94624,
+      "p50": 0.0969,
+      "p95": 0.5659,
+      "p99": 1.342,
+      "maximum": 41.1526
+    }
+  },
+  "oracle": {
+    "queries": 242,
+    "eligible_targets": 1721,
+    "missing": 0,
+    "scope": "Independent exhaustive unit matching; eligible means top 24 overall or top six of a glyph length."
+  }
+}

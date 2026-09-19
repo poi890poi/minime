@@ -1,0 +1,5 @@
+Exception in thread "main" java.lang.AssertionError: Compact alias cannot lend a two-syllable phrase to one syllable: x'x expected [true] actual [false]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.Regression.yes(Regression.java:32)
+	at dev.minime.core.StoredPrefixRegression.run(StoredPrefixRegression.java:29)
+	at dev.minime.core.StoredPrefixRegression.main(StoredPrefixRegression.java:35)
