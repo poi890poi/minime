@@ -225,7 +225,7 @@ public final class PhoneticDictionary {
                 String text = e.getKey();
                 if (caps) text=text.toUpperCase(Locale.ROOT);
                 else if (title) text = Character.toUpperCase(text.charAt(0)) + text.substring(1);
-                top.add(new Candidate(text, true, e.getValue()));
+                top.add(new Candidate(text, true, e.getValue()).completing(e.getValue()));
                 if(top.size()>24) top.remove();
             }
         }

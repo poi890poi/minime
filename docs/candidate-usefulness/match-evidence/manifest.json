@@ -1,0 +1,30 @@
+{
+  "baseline": "2363722",
+  "scope": "Core metadata correction; no phone or release build.",
+  "sha256": {
+    "docs/chinese-recovery/corpus.tsv.gz": "e70017ba11d5296b6e934436cbe40b1656069b38b085517edc67ca1c27dc1239",
+    "docs/conversation-ranking/corpus/inputs.tsv": "14c186c6589c4081f709f6aa237bb9a0d61a0d5ad32754dad8d72976d478004d",
+    "docs/conversation-ranking/corpus/gum-test.tsv": "eade8de35b75a5124f74d3a9bec755a87fde50fab0de298523689763c0257faa",
+    "artifacts/match-evidence/chinese.tsv": "600c6973e7745d6eb87c54872767aa38d40bababf5e0bd9580f28757d23de470",
+    "artifacts/match-evidence/english.tsv": "8c82a6c46533fdd84dabe5d04cce061c882670794073f900b322e2e704c91960",
+    "artifacts/match-evidence/trial-chinese.tsv": "7fc0874cfcbea2228a2a9951bd7fedd7e4df37398cfbfbe31f81e165bee8c059",
+    "artifacts/match-evidence/desktop.jsonl": "72ed6f69cf0a838ec9c03a4d8de2a3e94e5991531b344ae1f173d95bff2d6bfe",
+    "core/src/main/java/dev/minime/core/Candidate.java": "297e3a417eeaa633d442399f2a180ae7e2eebb8ea8740dfc58648672a14841e0",
+    "core/src/main/java/dev/minime/core/ReadingUnitIndex.java": "65f51a3ab9c8dff51a66c145441e9fc1c6bb38a0ac0becbf3c9f9c3a2a4046e8",
+    "core/src/main/java/dev/minime/core/FirstGlyphIndex.java": "d869887f4658af4bae1c56e1104423c89201792b6033c5476436cac616752f1a",
+    "core/src/main/java/dev/minime/core/PhoneticDictionary.java": "26fae3cbde1965a51ce9549c505186fcca78b62cf4f5fe7706ec561dad91dda6",
+    "core/src/main/java/dev/minime/core/AddonDictionary.java": "550a9015659777925bb1e606335874f75f5c6b751f2c416622e6f71745ef0b65",
+    "docs/candidate-usefulness/match-evidence/baseline-failure.log": "c213499dfc42c52cb9dd86cbadbc81cff3df0cfd64cb33d80ab714531e213145",
+    "docs/candidate-usefulness/match-evidence/core.log": "8140447f1d5b2449c850f7027e8d08e859defd21f72e61a370451ff7297e554d",
+    "docs/candidate-usefulness/match-evidence/desktop.log": "8c0b311f8c3aef7356561935d398282e731a9e18e6d406b3bd85c9da01892111",
+    "docs/candidate-usefulness/match-evidence/english-priority-changes.jsonl.gz": "79b5adffe03ca5fa42190139e50336910f67c5316bc38db69473e728b3b4696f",
+    "docs/candidate-usefulness/match-evidence/english-priority-summary.json": "9a1ead3f1252648e36167da28a78ba73522a373c7ead201170d78228b574addf",
+    "docs/candidate-usefulness/match-evidence/invariants.json": "a9d99f6420c6b8c8cbfb509a2d3113b4ddc8f8accac943155d05bfb3cab3d384",
+    "docs/candidate-usefulness/match-evidence/PLAN.md": "d3b11110a6c6b1301381dbb5ab79c58cbf1d32e8d000c455bacf2a8b34235c86",
+    "docs/candidate-usefulness/match-evidence/RESULTS.md": "70fc3fc7f723d681e2c936b8c17c9d102d77add3bf8e2e7f204ba5081773232e",
+    "docs/candidate-usefulness/match-evidence/rejected/core-summary.json": "c2302793aed6cf2ed2d300dd34963c5abcf3881fc972eca132151b261671fb82",
+    "docs/candidate-usefulness/match-evidence/rejected/first8-changes.jsonl.gz": "2ac310f18922a3838e71d1a7e64294624ec2534616e2ad93885bb0f55a81f289",
+    "docs/candidate-usefulness/match-evidence/rejected/invariants.json": "2abfef4d6ccada385957b3eac66096ee41274466ef637bf784e02b4f2011972e",
+    "docs/candidate-usefulness/match-evidence/rejected/trial.patch": "78f2fb2a4d43650e526e306e2022d8a9bb807580d84f0e6b11b2474a60fc4f92"
+  }
+}

@@ -136,7 +136,10 @@ public final class AddonDictionary {
         for(String pack:packs)if(append(pack+"\t"+key,result,seen,limit))return result;
         List<Candidate> partials=new ArrayList<>();
         for(String pack:packs)complete(pack,raw,partials,limit);
-        partials.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text));
+        // Equal-score paths to the same text retain the stronger reading-unit
+        // evidence. This tie break changes metadata, not text order or quotas.
+        partials.sort(Comparator.comparingDouble((Candidate c)->c.score).reversed().thenComparing(c->c.text)
+            .thenComparing(c->!c.abbreviated));
         for(Candidate c:partials)if(seen.add(c.text)) {result.add(c);if(result.size()==limit)break;}
         return result;
     }

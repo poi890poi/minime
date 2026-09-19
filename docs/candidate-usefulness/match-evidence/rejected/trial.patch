@@ -1,0 +1,69 @@
+diff --git a/core/src/main/java/dev/minime/core/BinaryModel.java b/core/src/main/java/dev/minime/core/BinaryModel.java
+index 9a77077..93e4cb1 100644
+--- a/core/src/main/java/dev/minime/core/BinaryModel.java
++++ b/core/src/main/java/dev/minime/core/BinaryModel.java
+@@ -23,7 +23,7 @@ final class BinaryModel {
+             string(value.text);out.writeBoolean(value.literal);out.writeDouble(value.score);string(value.reading);
+             if(supplemental) {
+                 if(!value.supplemental || value.literal || value.consumed!=0 || value.composed || value.languageCharacter
+-                        || value.incomplete!=value.abbreviated || !value.reading.isEmpty())throw new IOException("Unsupported indexed supplemental candidate");
++                        || value.incomplete || !value.reading.isEmpty())throw new IOException("Unsupported indexed supplemental candidate");
+                 out.writeBoolean(value.abbreviated);string(value.pack);out.writeBoolean(value.pair!=null);
+                 if(value.pair!=null) {string(value.pair.phonetic);string(value.pair.han);string(value.pair.source);}
+             }
+diff --git a/core/src/main/java/dev/minime/core/Candidate.java b/core/src/main/java/dev/minime/core/Candidate.java
+index f1b6701..67a54b7 100644
+--- a/core/src/main/java/dev/minime/core/Candidate.java
++++ b/core/src/main/java/dev/minime/core/Candidate.java
+@@ -24,7 +24,7 @@ public final class Candidate {
+     public final boolean transliteration;
+     private final boolean hideAlternate;
+     private Candidate(String text,boolean literal,double score,String reading,int consumed,boolean supplemental,boolean abbreviated,boolean composed) {
+-        this(text,literal,score,reading,consumed,supplemental,abbreviated,composed,abbreviated);
++        this(text,literal,score,reading,consumed,supplemental,abbreviated,composed,false);
+     }
+     private Candidate(String text,boolean literal,double score,String reading,int consumed,boolean supplemental,boolean abbreviated,boolean composed,boolean incomplete) {
+         this(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,null);
+@@ -69,6 +69,7 @@ public final class Candidate {
+     }
+     Candidate withScore(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,languageCharacter,transliteration,hideAlternate);}
+     Candidate completing(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,true,pair,pack,languageCharacter,transliteration,hideAlternate);}
++    Candidate abbreviating(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,true,composed,false,pair,pack,languageCharacter,transliteration,hideAlternate);}
+     Candidate paired(PairedForms.Pair value) {return pair==value?this:new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,value,pack,languageCharacter,transliteration);}
+     Candidate inPack(String value) {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,value,languageCharacter,transliteration,hideAlternate);}
+     Candidate asLanguageCharacter() {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,true,transliteration,hideAlternate);}
+diff --git a/core/src/main/java/dev/minime/core/FirstGlyphIndex.java b/core/src/main/java/dev/minime/core/FirstGlyphIndex.java
+index bf263d5..7ae0906 100644
+--- a/core/src/main/java/dev/minime/core/FirstGlyphIndex.java
++++ b/core/src/main/java/dev/minime/core/FirstGlyphIndex.java
+@@ -18,7 +18,7 @@ final class FirstGlyphIndex {
+             exact.put(reading,glyphs);
+             for(int end=1;end<reading.length();end++) {
+                 List<Candidate> at=prefix.computeIfAbsent(reading.substring(0,end),k->new ArrayList<>());
+-                for(Candidate c:glyphs)at.add(c.completing(c.score-.7-.08*(reading.length()-end)));
++                for(Candidate c:glyphs)at.add(c.abbreviating(c.score-.7-.08*(reading.length()-end)));
+             }
+         }
+         for(List<Candidate> values:prefix.values()) {
+diff --git a/core/src/main/java/dev/minime/core/ReadingUnitIndex.java b/core/src/main/java/dev/minime/core/ReadingUnitIndex.java
+index 1a1cc22..db60327 100644
+--- a/core/src/main/java/dev/minime/core/ReadingUnitIndex.java
++++ b/core/src/main/java/dev/minime/core/ReadingUnitIndex.java
+@@ -120,7 +120,7 @@ final class ReadingUnitIndex {
+             if(prefixes!=null && state.at>start && state.at<raw.length() && words[state.node]!=null) {
+                 int kept=0;
+                 for(Candidate c:words[state.node])if(c.text.codePointCount(0,c.text.length())>1) {
+-                    prefixes.add((state.missing==0?c:c.completing(c.score-penalty(state.missing))).consuming(state.at));
++                    prefixes.add((state.missing==0?c:c.abbreviating(c.score-penalty(state.missing))).consuming(state.at));
+                     if(++kept==2)break;
+                 }
+             }
+@@ -131,7 +131,7 @@ final class ReadingUnitIndex {
+             if(words[state.node]!=null && (intermediateResults || state.at==limit)) {
+                 List<Candidate> at=matches.get(state.at);
+                 for(Candidate c:words[state.node].subList(0,Math.min(CANDIDATES,words[state.node].size())))
+-                    at.add(state.missing==0?c:c.completing(c.score-penalty(state.missing)));
++                    at.add(state.missing==0?c:c.abbreviating(c.score-penalty(state.missing)));
+                 trim(at,CANDIDATES,true);
+             }
+             if(state.at==limit) continue;

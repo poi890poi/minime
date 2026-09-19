@@ -120,7 +120,7 @@ final class ReadingUnitIndex {
             if(prefixes!=null && state.at>start && state.at<raw.length() && words[state.node]!=null) {
                 int kept=0;
                 for(Candidate c:words[state.node])if(c.text.codePointCount(0,c.text.length())>1) {
-                    prefixes.add((state.missing==0?c:c.completing(c.score-penalty(state.missing))).consuming(state.at));
+                    prefixes.add((state.missing==0?c:c.abbreviating(c.score-penalty(state.missing))).consuming(state.at));
                     if(++kept==2)break;
                 }
             }
@@ -131,7 +131,7 @@ final class ReadingUnitIndex {
             if(words[state.node]!=null && (intermediateResults || state.at==limit)) {
                 List<Candidate> at=matches.get(state.at);
                 for(Candidate c:words[state.node].subList(0,Math.min(CANDIDATES,words[state.node].size())))
-                    at.add(state.missing==0?c:c.completing(c.score-penalty(state.missing)));
+                    at.add(state.missing==0?c:c.abbreviating(c.score-penalty(state.missing)));
                 trim(at,CANDIDATES,true);
             }
             if(state.at==limit) continue;

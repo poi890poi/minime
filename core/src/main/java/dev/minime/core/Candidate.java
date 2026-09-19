@@ -10,10 +10,13 @@ public final class Candidate {
     public final int consumed;
     /** Supplemental identity; focused choices learn in their own language namespace. */
     public final boolean supplemental;
+    /** Every source reading unit was matched, with letters omitted inside units.
+     * This is not evidence that the spelling is fully typed or safe to accept. */
     public final boolean abbreviated;
     /** True only when the retained path joins more than one lexical unit. */
     public final boolean composed;
-    /** The stored reading requires letters that have not been typed yet. */
+    /** The stored reading requires untyped letters. With abbreviated=true these
+     * are inside matched units; otherwise this is a forward spelling completion. */
     public final boolean incomplete;
     public final PairedForms.Pair pair;
     /** Source dictionary pack, retained through matching and display transformations. */
@@ -65,10 +68,13 @@ public final class Candidate {
         this(text,literal,score,reading,0,false,false,false);
     }
     static Candidate concatenate(Candidate prefix,Candidate word) {
-        return new Candidate(prefix.text+word.text,false,prefix.score+word.score,"",0,false,false,prefix.composed || word.composed || !prefix.text.isEmpty(),prefix.incomplete || word.incomplete);
+        return new Candidate(prefix.text+word.text,false,prefix.score+word.score,"",0,false,
+            (prefix.abbreviated || word.abbreviated) && (!prefix.incomplete || prefix.abbreviated) && (!word.incomplete || word.abbreviated),
+            prefix.composed || word.composed || !prefix.text.isEmpty(),prefix.incomplete || word.incomplete);
     }
     Candidate withScore(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,languageCharacter,transliteration,hideAlternate);}
-    Candidate completing(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,abbreviated,composed,true,pair,pack,languageCharacter,transliteration,hideAlternate);}
+    Candidate completing(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,false,composed,true,pair,pack,languageCharacter,transliteration,hideAlternate);}
+    Candidate abbreviating(double value) {return new Candidate(text,literal,value,reading,consumed,supplemental,true,composed,true,pair,pack,languageCharacter,transliteration,hideAlternate);}
     Candidate paired(PairedForms.Pair value) {return pair==value?this:new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,value,pack,languageCharacter,transliteration);}
     Candidate inPack(String value) {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,value,languageCharacter,transliteration,hideAlternate);}
     Candidate asLanguageCharacter() {return new Candidate(text,literal,score,reading,consumed,supplemental,abbreviated,composed,incomplete,pair,pack,true,transliteration,hideAlternate);}

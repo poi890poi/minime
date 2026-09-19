@@ -1,0 +1,5 @@
+Exception in thread "main" java.lang.AssertionError: Initial/mixed units knp all source units matched with omissions expected [true] actual [false]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.MatchEvidenceRegression.evidence(MatchEvidenceRegression.java:15)
+	at dev.minime.core.MatchEvidenceRegression.run(MatchEvidenceRegression.java:24)
+	at dev.minime.core.EvidenceProbe.main(EvidenceProbe.java:3)

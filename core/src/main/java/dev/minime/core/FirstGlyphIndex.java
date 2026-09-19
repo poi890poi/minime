@@ -18,7 +18,7 @@ final class FirstGlyphIndex {
             exact.put(reading,glyphs);
             for(int end=1;end<reading.length();end++) {
                 List<Candidate> at=prefix.computeIfAbsent(reading.substring(0,end),k->new ArrayList<>());
-                for(Candidate c:glyphs)at.add(c.completing(c.score-.7-.08*(reading.length()-end)));
+                for(Candidate c:glyphs)at.add(c.abbreviating(c.score-.7-.08*(reading.length()-end)));
             }
         }
         for(List<Candidate> values:prefix.values()) {
