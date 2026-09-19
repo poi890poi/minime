@@ -1,0 +1,32 @@
+{
+  "session": "034e4f67-c521-4364-8ac2-28a5f11792ac",
+  "device": "RFCR91GWXLX",
+  "shared_task_acknowledgement": "SHINE explicitly reserved the window; explicit release sent after verified cleanup",
+  "runtime_commit": "c19a7d5",
+  "fixture_sha256": "b829ed99a27f890fd71147f12b55429576b12aa3d9a771308a5c1db46b8ff0ea",
+  "app_apk_sha256": "6b54fc99d640eb77770f4f36216eb164e36e2d5d2f336243f2bfffc6bf054bc5",
+  "test_apk_sha256": "a71e348dccd6e03599df6a9d4cee389875f00e7aff3b328d84db2b1c586c9ce7",
+  "instrumentation_method": "KeyboardInteractionTest#testShortFrequentPrefixesAndSuffixEditing",
+  "fixture_cases": 6,
+  "field_variants": [
+    "ordinary",
+    "no-personalized-learning"
+  ],
+  "total_selections": 12,
+  "letters": "visible soft-key controls",
+  "apostrophes": "Android hardware-key events in two cases per field; not a soft separator test",
+  "selection": "expanded list; scroll until expected text is visible",
+  "checks": [
+    "committed expected prefix",
+    "retained exact suffix",
+    "verified composing span",
+    "Backspace edits suffix"
+  ],
+  "outcome": "PASS",
+  "instrumentation_seconds": 293.208,
+  "timing_scope": "Entire instrumentation session including setup and accessibility waits; not typing latency",
+  "previous_ime": "com.samsung.android.honeyboard/.service.HoneyBoardService",
+  "cleanup": "test-device.ps1 restored and read back settings, learning and previous IME; display OFF verified under shared mutex",
+  "display_after_sha256": "2bd30a381f4ef93d2a2fb275b782f180ce858ede62ab2031161b23063f16b4e8",
+  "phone_operations_remaining": 0
+}

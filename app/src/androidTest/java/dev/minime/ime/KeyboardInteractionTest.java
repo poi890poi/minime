@@ -461,8 +461,15 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
     }
     /** All eligible phrase-prefix cases derived from the frozen 18-case plan. */
     public void testStoredPhrasePrefixesAndSuffixEditing() throws Exception {
+        checkStoredPrefixes("stored-prefix-cases.json","stored-prefix");
+    }
+    /** Hash-selected recovered development cases, one per input condition. */
+    public void testShortFrequentPrefixesAndSuffixEditing() throws Exception {
+        checkStoredPrefixes("prefix-retention-cases.json","prefix-retention");
+    }
+    private void checkStoredPrefixes(String fixture,String capturePrefix) throws Exception {
         org.json.JSONArray cases;
-        try(java.io.InputStream stream=getInstrumentation().getContext().getAssets().open("stored-prefix-cases.json")) {
+        try(java.io.InputStream stream=getInstrumentation().getContext().getAssets().open(fixture)) {
             java.io.ByteArrayOutputStream bytes=new java.io.ByteArrayOutputStream();byte[] buffer=new byte[4096];int n;
             while((n=stream.read(buffer))>=0)bytes.write(buffer,0,n);
             cases=new org.json.JSONArray(bytes.toString("UTF-8"));
@@ -474,14 +481,22 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
             for(int i=0;i<cases.length();i++) {
                 org.json.JSONObject test=cases.getJSONObject(i);
                 String raw=test.getString("raw"),word=test.getString("text"),remaining=test.getString("remaining");
-                clear();type(raw);expectText(raw);
+                clear();
+                // Pinyin's soft board has no separator key; palette quotes are
+                // literal commits. Exercise separated readings through Android's
+                // hardware-key route, keeping letter entry and selection on UI.
+                for(char key:raw.toCharArray()) {
+                    if(key=='\'')getInstrumentation().sendKeyDownUpSync(android.view.KeyEvent.KEYCODE_APOSTROPHE);
+                    else type(String.valueOf(key));
+                }
+                expectText(raw);
                 click("Expand candidates");selectExpandedCandidate(word);expectText(word+remaining);
                 getInstrumentation().runOnMainSync(()-> {
                     assertEquals("Committed prefix stays outside composition",word.length(),android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText()));
                     assertEquals("Every suffix key remains composing",word.length()+remaining.length(),android.view.inputmethod.BaseInputConnection.getComposingSpanEnd(activity.text.getText()));
                 });
                 click("⌫");expectText(word+remaining.substring(0,remaining.length()-1));
-                if(i==0)capture("stored-prefix-"+(privacy?"private":"ordinary"));
+                if(i==0)capture(capturePrefix+"-"+(privacy?"private":"ordinary"));
             }
         }
     }

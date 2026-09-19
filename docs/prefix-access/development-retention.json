@@ -1,0 +1,210 @@
+{
+  "groups": {
+    "all": {
+      "before": {
+        "episodes": 21000,
+        "available": 12957,
+        "first8": 8482,
+        "leading": 8345
+      },
+      "after": {
+        "episodes": 21000,
+        "available": 13086,
+        "first8": 8434,
+        "leading": 8345
+      }
+    },
+    "frequency-band/0": {
+      "before": {
+        "episodes": 4025,
+        "available": 2633,
+        "first8": 1928,
+        "leading": 1926
+      },
+      "after": {
+        "episodes": 4025,
+        "available": 2633,
+        "first8": 1928,
+        "leading": 1926
+      }
+    },
+    "frequency-band/1": {
+      "before": {
+        "episodes": 3822,
+        "available": 2385,
+        "first8": 1739,
+        "leading": 1732
+      },
+      "after": {
+        "episodes": 3822,
+        "available": 2385,
+        "first8": 1735,
+        "leading": 1732
+      }
+    },
+    "frequency-band/2": {
+      "before": {
+        "episodes": 4445,
+        "available": 2655,
+        "first8": 1787,
+        "leading": 1781
+      },
+      "after": {
+        "episodes": 4445,
+        "available": 2657,
+        "first8": 1784,
+        "leading": 1781
+      }
+    },
+    "frequency-band/3": {
+      "before": {
+        "episodes": 4403,
+        "available": 2593,
+        "first8": 1676,
+        "leading": 1642
+      },
+      "after": {
+        "episodes": 4403,
+        "available": 2595,
+        "first8": 1660,
+        "leading": 1642
+      }
+    },
+    "frequency-band/4": {
+      "before": {
+        "episodes": 4305,
+        "available": 2691,
+        "first8": 1352,
+        "leading": 1264
+      },
+      "after": {
+        "episodes": 4305,
+        "available": 2816,
+        "first8": 1327,
+        "leading": 1264
+      }
+    },
+    "full": {
+      "before": {
+        "episodes": 3000,
+        "available": 2572,
+        "first8": 2043,
+        "leading": 2013
+      },
+      "after": {
+        "episodes": 3000,
+        "available": 2572,
+        "first8": 2036,
+        "leading": 2013
+      }
+    },
+    "initials": {
+      "before": {
+        "episodes": 3000,
+        "available": 1191,
+        "first8": 649,
+        "leading": 640
+      },
+      "after": {
+        "episodes": 3000,
+        "available": 1233,
+        "first8": 648,
+        "leading": 640
+      }
+    },
+    "mixed": {
+      "before": {
+        "episodes": 3000,
+        "available": 1985,
+        "first8": 1316,
+        "leading": 1294
+      },
+      "after": {
+        "episodes": 3000,
+        "available": 1999,
+        "first8": 1312,
+        "leading": 1294
+      }
+    },
+    "mixed_reverse": {
+      "before": {
+        "episodes": 3000,
+        "available": 1974,
+        "first8": 1153,
+        "leading": 1147
+      },
+      "after": {
+        "episodes": 3000,
+        "available": 1979,
+        "first8": 1148,
+        "leading": 1147
+      }
+    },
+    "partial_units": {
+      "before": {
+        "episodes": 3000,
+        "available": 1994,
+        "first8": 1302,
+        "leading": 1262
+      },
+      "after": {
+        "episodes": 3000,
+        "available": 2007,
+        "first8": 1277,
+        "leading": 1262
+      }
+    },
+    "separated_initials": {
+      "before": {
+        "episodes": 3000,
+        "available": 1230,
+        "first8": 685,
+        "leading": 677
+      },
+      "after": {
+        "episodes": 3000,
+        "available": 1272,
+        "first8": 684,
+        "leading": 677
+      }
+    },
+    "separated_mixed": {
+      "before": {
+        "episodes": 3000,
+        "available": 2011,
+        "first8": 1334,
+        "leading": 1312
+      },
+      "after": {
+        "episodes": 3000,
+        "available": 2024,
+        "first8": 1329,
+        "leading": 1312
+      }
+    }
+  },
+  "lost_targets": [],
+  "changed_space": [],
+  "changed_whole_choices": [],
+  "changed_first_two_glyphs": [],
+  "before_lookup_ms": {
+    "n": 21000,
+    "mean": 0.31910074285714285,
+    "p50": 0.2211,
+    "p95": 0.8175,
+    "p99": 1.7971,
+    "max": 46.3107
+  },
+  "after_lookup_ms": {
+    "n": 21000,
+    "mean": 0.31283737142857143,
+    "p50": 0.2266,
+    "p95": 0.7927,
+    "p99": 1.5591,
+    "max": 44.9847
+  },
+  "hashes": {
+    "artifacts\\prefix-access\\development-before.tsv": "8d5cbc80be14a5d7369dba8e8311c3f121296fd201d27b2d4f27a6bdad8edb7e",
+    "artifacts\\prefix-access\\development-retention.tsv": "37ee37e4c1565d512752be07adee0e244fc641b17415b843f7aa4c3e3e429723"
+  }
+}

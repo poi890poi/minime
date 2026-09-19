@@ -1,0 +1,28 @@
+{
+  "development-before": {
+    "full_sha256": "8d5cbc80be14a5d7369dba8e8311c3f121296fd201d27b2d4f27a6bdad8edb7e",
+    "archive_sha256": "0e83e0e9eb2a95639577eca107777b8dedb952eebf7824f16ac831a4f9a2243e"
+  },
+  "development-retention": {
+    "full_sha256": "37ee37e4c1565d512752be07adee0e244fc641b17415b843f7aa4c3e3e429723",
+    "archive_sha256": "2408b1922286fb12a195af91278e7af54d03bf6fa847cb833473be33707c5ee4"
+  },
+  "development-preview": {
+    "full_sha256": "f8bb6d2f876fabb4b627156b9e4c7a76695bdb06b77014dd7747f7ac77ccff4f",
+    "archive_sha256": "8f66908d06b385ac9650a7a28dbdc178c6530615bde5983327d39123fe5cc245"
+  },
+  "validation-before": {
+    "full_sha256": "0e69e2e83e202256e10aa156fbf4754ee5b7f77adf4c361b367fc0fee17ebce0",
+    "archive_sha256": "2d6371ff1520f43e2562685439b9f34d4ed18d6f76ed3690088aad12236031c7"
+  },
+  "validation-after": {
+    "full_sha256": "8ed57dc2f32a995e89b25f3ac42928db079a75928bdb6c2d71723e38ffffbe0f",
+    "archive_sha256": "2d4fcfc5499684c4c0b3350690c90b6ed1422c0799ec2ddfdadb814d269a727b"
+  },
+  "composition-after": {
+    "rows": 31527,
+    "full_sha256": "f043c603b9fef31735f138d8bcfd368e401e2c4343da7f89b98ae6141f01b21a",
+    "archive_sha256": "a33e72d0516a1c90b208915792b9d2ebcd6593f5761ef31f2c1046dacf30d3b8",
+    "baseline": "docs/suggestion-coverage/evidence/pipeline-after-compact.tsv.gz"
+  }
+}
