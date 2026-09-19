@@ -1,0 +1,20 @@
+{
+  "scope": "Context scoring only; median of ten round-average elapsed costs, not individual-query p50 or phone touch latency.",
+  "median_ns": {
+    "two-pass": 953.9874267578125,
+    "shared": 808.3236694335938
+  },
+  "paired_reductions": [
+    0.13326363407498043,
+    0.18248294648243646,
+    0.1659031692777666,
+    0.14411134651446722,
+    0.18855774514092227,
+    0.17881360527746148,
+    0.09106906032240802,
+    0.2091237893561544,
+    0.10121626671345474,
+    0.1257688492222946
+  ],
+  "median_cost_reduction": 0.152689389019797
+}

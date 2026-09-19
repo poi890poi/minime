@@ -35,9 +35,35 @@ Percentages must identify their numerator, denominator and input conditions.
 
 [Full report and verification](match-evidence/preview-experiment/RESULTS.md)
 
+## 2026-09-19: contextual backoff — withdrawn (`ab5a1f7` records evidence)
+
+- **Problem/cause:** a sparse two-character context bypasses available evidence
+  from the last single character.
+- **Change tested:** smooth the longer context with the shorter one, preserving
+  the frozen counts and existing constants.
+- **Result:** intended first choices gain 30 / 2,400 encyclopedic probes and
+  292 / 40,386 essay probes, but lose one / 105 authored conversation probes.
+- **Decision:** reject under the declared genre gate. The conversation sample is
+  only eight scenarios, so broader conversation improvement remains unproven.
+
+[Full report, individual gains/losses and source lineage](../context-backoff/RESULTS.md)
+
+## 2026-09-19: shared context-score computation — accepted
+
+- **Problem/cause:** two complete score passes repeat identical work after their
+  preceding-character states converge.
+- **Change:** share the repeated calculations while preserving both original
+  floating-point sums and the unchanged model.
+- **Improvement:** context-scoring elapsed time falls 15.3% in ten alternating
+  desktop benchmark rounds, from 0.954 to 0.808 µs per score difference. This is
+  one computation component, not an overall typing-latency improvement claim.
+- **Quality:** all 42,891 candidate lists/orders/spans remain identical; core and
+  pinned desktop gates pass. No better language coverage is claimed.
+
+[Full report, timing boundaries and exact-score verification](../context-boundary/RESULTS.md)
+
 ## Next loop
 
-Investigate context and source-frequency ranking among already-retrieved entries.
-Use separate natural-conversation and essay results; freeze data roles before
-comparison. Measure useful first-row choices, target access and unrelated
-suggestion exposure together. No model or source change is accepted yet.
+Trace source-present words lost during bounded retrieval. Broader natural Taiwan
+conversation evidence is still needed before replacing the context model; keep
+its data and scores unchanged until a supported replacement passes.

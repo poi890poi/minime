@@ -34,16 +34,33 @@ public final class ContextModel {
     public double chinese(String context,String text) {
         double score=0;String before=context;
         for(int cp:text.codePoints().toArray()) {
-            String next=new String(Character.toChars(cp));String key=tail(before,2);
-            if(!totals.containsKey(key))key=tail(before,1);
-            if(!key.isEmpty() && totals.containsKey(key)) {
-                double prior=(chinese.getOrDefault("\t"+next,0)+1.0)/(totals.getOrDefault("",1)+5000.0);
-                double observed=(chinese.getOrDefault(key+"\t"+next,0)+20*prior)/(totals.get(key)+20.0);
-                score+=Math.max(-2,Math.min(2,Math.log10(observed/prior)));
-            }
+            String next=new String(Character.toChars(cp));score+=increment(before,next);
             before=tail(before+next,2);
         }
         return score;
+    }
+    /** Exact difference of the two original running sums, sharing their suffix
+     * work once the preceding two characters coincide. Do not just truncate
+     * at two characters: floating-point cancellation can otherwise reorder ties. */
+    double chineseBoundary(String context,String text) {
+        if(context.isEmpty())return 0;
+        double score=0,neutral=0;String before=context,neutralBefore="";int index=0;
+        for(int cp:text.codePoints().toArray()) {
+            boolean shared=index++>=2;
+            if(shared && score==neutral)return 0;
+            String next=new String(Character.toChars(cp));double delta=increment(before,next);
+            score+=delta;neutral+=shared?delta:increment(neutralBefore,next);
+            before=tail(before+next,2);
+            if(!shared)neutralBefore=tail(neutralBefore+next,2);
+        }
+        return score-neutral;
+    }
+    private double increment(String before,String next) {
+        String key=tail(before,2);if(!totals.containsKey(key))key=tail(before,1);
+        if(key.isEmpty() || !totals.containsKey(key))return 0;
+        double prior=(chinese.getOrDefault("\t"+next,0)+1.0)/(totals.getOrDefault("",1)+5000.0);
+        double observed=(chinese.getOrDefault(key+"\t"+next,0)+20*prior)/(totals.get(key)+20.0);
+        return Math.max(-2,Math.min(2,Math.log10(observed/prior)));
     }
     private static String tail(String value,int count) {return value.substring(value.offsetByCodePoints(value.length(),-Math.min(count,value.codePointCount(0,value.length()))));}
 }

@@ -45,6 +45,7 @@ public final class Regression {
         JoinedKalqRegression.run();
         ReadingIndexParity.run();
         ReadingUnitLookupRegression.run();
+        ContextBoundaryRegression.run();
         PartialDepthRegression.run();
         StoredPrefixRegression.run();
         Path assets = Paths.get("app/src/main/assets");

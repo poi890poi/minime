@@ -181,7 +181,7 @@ public final class PhoneticDictionary {
         }
         // Apply only the boundary signal; retain dictionary word probabilities.
         if(!bpmf && !context.isEmpty())result.replaceAll(c->c.withScore(
-            c.score+.5*(contextModel.chinese(context,c.text)-contextModel.chinese("",c.text))));
+            c.score+.5*contextModel.chineseBoundary(context,c.text)));
         result.sort(Comparator.comparing((Candidate c)->c.consumed>0 && c.consumed<key.length())
             .thenComparing(Comparator.comparingDouble((Candidate c)->c.score).reversed()).thenComparing(c->c.text));
         // Whole-input identities win deduplication; partial recovery never
