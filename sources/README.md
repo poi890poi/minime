@@ -20,6 +20,11 @@ consumed evidence, and may not be advertised as a fresh holdout again.
 
 ## Decisions
 
+The September 19 context-backoff loop is recorded in `evaluation.json` and
+`../docs/context-backoff/RESULTS.md`. It reuses frozen counts and previously
+evaluated prose/scenarios for conditional ranking. The estimator was rejected
+after a conversation regression; no source decision or production data changed.
+
 | Decision | Meaning |
 |---|---|
 | retain | Continue the reviewed use of an established source. Other uses need review. |

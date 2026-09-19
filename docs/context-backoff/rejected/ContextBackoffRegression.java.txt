@@ -1,0 +1,26 @@
+package dev.minime.core;
+
+import java.io.*;
+import java.util.*;
+import static dev.minime.core.Regression.*;
+
+/** Synthetic hierarchical smoothing contracts, not language-quality labels. */
+final class ContextBackoffRegression {
+    static void run()throws Exception {
+        String counts="zh\t\t甲\t100\nzh\t\t乙\t100\nzh\t\t丙\t100\n"
+            +"zh\t文\t乙\t40\nzh\t文\t甲\t2\nzh\t文\t丙\t2\nzh\t前文\t丙\t2\n";
+        ContextModel model=ContextModel.load(new StringReader(counts));
+        yes(model.chinese("前文","乙")>model.chinese("前文","甲"),"Unseen long-context continuations retain shorter-context evidence");
+        equal(0.0,model.chinese("未知","乙"),"Absent context does not invent evidence");
+        double prior=101.0/5300.0;
+        double expected=Math.log10(((40+20*prior)/64)/prior);
+        yes(Math.abs(expected-model.chinese("文","乙"))<1e-12,"Single-context estimator unchanged");
+        ContextModel strong=ContextModel.load(new StringReader(counts.replace("前文\t丙\t2","前文\t甲\t400")));
+        yes(strong.chinese("前文","甲")>strong.chinese("前文","乙"),"Strong longer-context evidence can override the shorter prior");
+        ByteArrayOutputStream bytes=new ByteArrayOutputStream();model.write(new BinaryModel.Writer(new DataOutputStream(bytes)));
+        ContextModel binary=new ContextModel(new BinaryModel.Reader(new DataInputStream(new ByteArrayInputStream(bytes.toByteArray()))));
+        for(String context:Arrays.asList("","文","前文","更長前文","未知","𠀀文"))
+            for(String word:Arrays.asList("甲","乙","丙","甲乙","𠀀乙"))
+                equal(model.chinese(context,word),binary.chinese(context,word),"Frozen binary counts preserve the estimator");
+    }
+}

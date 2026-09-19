@@ -1,0 +1,35 @@
+diff --git a/core/src/main/java/dev/minime/core/ContextModel.java b/core/src/main/java/dev/minime/core/ContextModel.java
+index eb26194..7646063 100644
+--- a/core/src/main/java/dev/minime/core/ContextModel.java
++++ b/core/src/main/java/dev/minime/core/ContextModel.java
+@@ -34,11 +34,14 @@ public final class ContextModel {
+     public double chinese(String context,String text) {
+         double score=0;String before=context;
+         for(int cp:text.codePoints().toArray()) {
+-            String next=new String(Character.toChars(cp));String key=tail(before,2);
+-            if(!totals.containsKey(key))key=tail(before,1);
+-            if(!key.isEmpty() && totals.containsKey(key)) {
++            String next=new String(Character.toChars(cp));String shortKey=tail(before,1),longKey=tail(before,2);
++            if(!shortKey.isEmpty() && (totals.containsKey(shortKey) || totals.containsKey(longKey))) {
+                 double prior=(chinese.getOrDefault("\t"+next,0)+1.0)/(totals.getOrDefault("",1)+5000.0);
+-                double observed=(chinese.getOrDefault(key+"\t"+next,0)+20*prior)/(totals.get(key)+20.0);
++                // A sparse longer context backs off to observed shorter-context
++                // evidence rather than discarding it for the unigram prior.
++                double observed=prior;
++                if(totals.containsKey(shortKey))observed=(chinese.getOrDefault(shortKey+"\t"+next,0)+20*observed)/(totals.get(shortKey)+20.0);
++                if(!longKey.equals(shortKey) && totals.containsKey(longKey))observed=(chinese.getOrDefault(longKey+"\t"+next,0)+20*observed)/(totals.get(longKey)+20.0);
+                 score+=Math.max(-2,Math.min(2,Math.log10(observed/prior)));
+             }
+             before=tail(before+next,2);
+diff --git a/core/src/test/java/dev/minime/core/Regression.java b/core/src/test/java/dev/minime/core/Regression.java
+index df3643a..d4b59cc 100644
+--- a/core/src/test/java/dev/minime/core/Regression.java
++++ b/core/src/test/java/dev/minime/core/Regression.java
+@@ -45,6 +45,7 @@ public final class Regression {
+         JoinedKalqRegression.run();
+         ReadingIndexParity.run();
+         ReadingUnitLookupRegression.run();
++        ContextBackoffRegression.run();
+         PartialDepthRegression.run();
+         StoredPrefixRegression.run();
+         Path assets = Paths.get("app/src/main/assets");
