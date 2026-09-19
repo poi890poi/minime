@@ -12,7 +12,9 @@ final class ReadingUnitIndex {
     private double[] best;
     private int[][] branches;
     private int size=1;
-    private static final int BEAM=6, CANDIDATES=24, SEARCH_BUDGET=2048, MAX_WORD_INPUT=32;
+    // Keep deeper stored alternatives available when users expand the list.
+    // This does not increase traversal work or alter the source score model.
+    private static final int BEAM=6, CANDIDATES=128, SEARCH_BUDGET=2048, MAX_WORD_INPUT=32;
     ReadingUnitIndex(BinaryModel.Reader in)throws java.io.IOException {syllable=in.strings();child=in.ints();sibling=in.ints();words=in.lists();best=in.doubles();size=syllable.length;indexBranches();}
     void write(BinaryModel.Writer out)throws java.io.IOException {out.strings(syllable);out.ints(child);out.ints(sibling);out.lists(words);out.doubles(best);}
 
