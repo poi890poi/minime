@@ -135,3 +135,7 @@ docs/first-glyph/evidence/** -text whitespace=-blank-at-eof,cr-at-eol
 docs/candidate-usefulness/** -text whitespace=cr-at-eol
 docs/context-backoff/** -text whitespace=cr-at-eol
 docs/context-boundary/** -text whitespace=cr-at-eol
+docs/rudy-reading-boundaries/** -text whitespace=cr-at-eol
+# These evaluation scripts are pinned by exact-byte source ledger hashes.
+tools/make_rudy_boundary_corpus.py text eol=lf
+tools/report_rudy_boundaries.py text eol=lf

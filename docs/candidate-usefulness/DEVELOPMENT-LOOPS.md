@@ -62,8 +62,28 @@ Percentages must identify their numerator, denominator and input conditions.
 
 [Full report, timing boundaries and exact-score verification](../context-boundary/RESULTS.md)
 
+## 2026-09-21: Rudy source reading boundaries — accepted
+
+- **Problem:** source-backed names fail initial and mixed Pinyin lookup.
+- **Cause:** compact upstream tags are indexed as one reading unit; derived
+  geography readings already preserve syllable boundaries.
+- **Change:** add aliases only for unique syllabification respecting source
+  separators and Han glyph count. Keep all existing names and readings.
+- **Improvement:** among 2,359 supported name/readings, initial-only top-eight
+  retrieval rises from 15 to 2,153; mixed spelling rises from 212 to 2,283.
+  Every original full tag still retrieves its target.
+- **Costs:** +0.43 MiB asset, approximately +1.63 MiB desktop heap; no material
+  pack-lookup latency change. Two shortened geography queries lose their targets
+  under the fixed result cap. Broad Chinese first-eight coverage gains three and
+  loses one; one English prefix in Chinese mode moves from eighth to ninth.
+  English-mode candidates and all measured Space outputs remain unchanged.
+- **Scope:** this fixes a data-processing defect, not general conversation ranking.
+
+[Full report, losses, resource measurements and reproduction](../rudy-reading-boundaries/RESULTS.md)
+
 ## Next loop
 
-Trace source-present words lost during bounded retrieval. Broader natural Taiwan
-conversation evidence is still needed before replacing the context model; keep
-its data and scores unchanged until a supported replacement passes.
+Investigate the remaining candidate-cap losses with precision and recall together.
+Do not raise limits without evidence about the displaced alternatives. Broader
+natural Taiwan conversation evidence is still needed before replacing context
+scores; keep their data unchanged until a supported replacement passes.

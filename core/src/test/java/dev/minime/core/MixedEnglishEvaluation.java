@@ -14,10 +14,11 @@ public final class MixedEnglishEvaluation {
     }
     static final class Result {
         final List<String> values;final String space;final long nanos;
-        Result(PhoneticDictionary dictionary,String raw,boolean english) {
+        Result(PhoneticDictionary dictionary,AddonDictionary addons,String raw,boolean english) {
             Regression.Editor editor=new Regression.Editor();
             CompositionEngine c=new CompositionEngine(editor,Learning.NONE);c.dictionary(dictionary);
             c.start(false,false,false,false,english);
+            c.addons(addons,new HashSet<>(Arrays.asList("taiwan","geography")));
             long start=System.nanoTime();raw.codePoints().forEach(c::type);nanos=System.nanoTime()-start;
             values=new ArrayList<>();for(Candidate candidate:c.candidates())values.add(candidate.text);
             c.space();space=editor.text;
@@ -27,6 +28,9 @@ public final class MixedEnglishEvaluation {
         Path assets=Paths.get("app/src/main/assets");
         PhoneticDictionary d=PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")),Files.newBufferedReader(assets.resolve("en_us.tsv")),Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));
         d.englishSpelling(Files.newBufferedReader(assets.resolve("en_spelling.tsv")));
+        AddonDictionary addons=args.length<2?AddonDictionary.EMPTY:AddonDictionary.combine(
+            AddonDictionary.read(Files.newBufferedReader(assets.resolve("addons.tsv"))),
+            AddonDictionary.read(Files.newBufferedReader(Paths.get(args[1]))));
         Map<String,Result> cache=new HashMap<>();
         try(BufferedWriter out=Files.newBufferedWriter(Paths.get(args[0]))) {
             out.write("source\tword\tcondition\traw\tmode\trank\tspace\tfirst8\tquery_ns\tinventory_sha256\n");
@@ -43,7 +47,7 @@ public final class MixedEnglishEvaluation {
                     conditions.put("missing-last",word.substring(0,word.length()-1));conditions.put("half-prefix",word.substring(0,(word.length()+1)/2));
                     for(Map.Entry<String,String> condition:conditions.entrySet())for(boolean english:new boolean[]{false,true}) {
                         String raw=condition.getValue(),mode=english?"English":"Chinese";
-                        Result r=cache.computeIfAbsent(mode+"|"+raw,key->new Result(d,raw,english));
+                        Result r=cache.computeIfAbsent(mode+"|"+raw,key->new Result(d,addons,raw,english));
                         out.write(String.join("\t",file,word,condition.getKey(),raw,mode,Integer.toString(r.values.indexOf(word)+1),r.space,
                             String.join("|",r.values.subList(0,Math.min(8,r.values.size()))),Long.toString(r.nanos),hash(String.join("|",r.values)))+"\n");
                     }

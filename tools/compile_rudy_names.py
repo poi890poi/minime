@@ -7,6 +7,7 @@ from CC-BY-SA language packs. No per-name article links are maintained.
 from pathlib import Path
 from sources import require_sources
 require_sources('rudy','mcbopomofo')
+from pinyin_boundaries import unique_boundaries
 import collections,gzip,hashlib,io,json,re,shutil,sqlite3,unicodedata,zipfile,sys
 ROOT=Path(__file__).resolve().parent.parent
 SOURCE=ROOT/'third_party/rudy'
@@ -22,7 +23,7 @@ def fold_pinyin(value):
     value=unicodedata.normalize('NFD',value).replace('u\u0308','v')
     value=''.join(c for c in value if not unicodedata.combining(c))
     value=re.sub('[1-5]','',value).replace('’',"'")
-    return value if re.fullmatch("[a-zv '\-]+",value) else None
+    return value if re.fullmatch(r"[a-zv '\-]+",value) else None
 
 readings=collections.defaultdict(set);frequency={}
 for line in (ASSETS/'zh_tw.tsv').read_text(encoding='utf-8').splitlines():
@@ -101,7 +102,7 @@ assert extracted['extractor_version']==1
 names=extracted['names'];summary=extracted['summary']
 metadata=json.loads((SOURCE/'source.json').read_text(encoding='utf-8'))
 assert summary['source']['sha256']==metadata['sha256']
-rows=set();skipped=[];reading_methods=collections.Counter()
+rows=set();skipped=[];reading_methods=collections.Counter();boundary_methods=collections.Counter()
 version=summary['database_metadata']['comment'].split('/')[0].strip()
 def add(key,word,method):
     if key and len(key)<=96:rows.add(('geography',key,word,'rudy-'+version+':'+method,'geography_history'))
@@ -110,8 +111,16 @@ for word,data in sorted(names.items()):
     if data['pinyin'] or data['bpmf']:
         reading_methods['upstream_tags']+=1
         for key in data['pinyin']:
-            add(key,word,'upstream');parts=re.split("[ '\-]+",key)
+            add(key,word,'upstream');parts=re.split(r"[ '\-]+",key)
             if all(p in syllables for p in parts) and len(parts)>1:add(''.join(p[0] for p in parts),word,'upstream')
+            separated=unique_boundaries(key,syllables,len(word))
+            if separated is None:boundary_methods['ambiguous_or_unresolved']+=1
+            else:
+                boundary_methods['unique']+=1
+                if separated!=key:
+                    boundary_methods['additional_separated_alias']+=1
+                    add(separated,word,'upstream')
+                if "'" in separated:add(''.join(p[0] for p in separated.split("'")),word,'upstream')
         for key in data['bpmf']:add(key,word,'upstream')
     else:
         found=derive(word)
@@ -125,7 +134,7 @@ for word,data in sorted(names.items()):
 ordered=sorted(rows,key=lambda r:(r[0],r[1],-frequency.get(r[2],0),r[2],r[3]))
 payload='# pack\treading\toutput\tdataset\tcategory\n'+''.join('\t'.join(r)+'\n' for r in ordered)
 (ASSETS/'geography.tsv').write_bytes(payload.encode('utf-8'))
-report=dict(summary,eligible_Han_names=len(names),reading_methods=dict(reading_methods),included_names=len({r[2] for r in rows}),pinyin_names=len({r[2] for r in rows if re.fullmatch("[a-zv '\-]+",r[1])}),rows=len(rows),unavailable_readings=len(skipped),asset_sha256=hashlib.sha256(payload.encode()).hexdigest(),extracted_snapshot_sha256=hashlib.sha256(snapshot.read_bytes()).hexdigest(),reading_source_sha256=hashlib.sha256((ASSETS/'zh_tw.tsv').read_bytes()).hexdigest(),rules='All descendants of named thematic categories; NFC/trim; semicolon aliases; 2-32 Han glyphs; upstream Pinyin/Zhuyin or exact/unambiguous McBopomofo units; no entity allowlist or per-name links')
+report=dict(summary,eligible_Han_names=len(names),reading_methods=dict(reading_methods),included_names=len({r[2] for r in rows}),pinyin_names=len({r[2] for r in rows if re.fullmatch(r"[a-zv '\-]+",r[1])}),rows=len(rows),unavailable_readings=len(skipped),asset_sha256=hashlib.sha256(payload.encode()).hexdigest(),extracted_snapshot_sha256=hashlib.sha256(snapshot.read_bytes()).hexdigest(),reading_source_sha256=hashlib.sha256((ASSETS/'zh_tw.tsv').read_bytes()).hexdigest(),rules='All descendants of named thematic categories; NFC/trim; semicolon aliases; 2-32 Han glyphs; upstream Pinyin/Zhuyin or exact/unambiguous McBopomofo units; uniquely segmented upstream Pinyin aliases respecting separators and Han glyph count; no entity allowlist or per-name links',upstream_boundaries=dict(boundary_methods),boundary_helper_sha256=hashlib.sha256((ROOT/'tools/pinyin_boundaries.py').read_text(encoding='utf-8').encode('utf-8')).hexdigest())
 (REPORT/'rudy-manifest.json').write_bytes((json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
 buffer=io.BytesIO()
 with gzip.GzipFile(fileobj=buffer,mode='wb',mtime=0) as archive:archive.write(('\n'.join(skipped)+'\n').encode('utf-8'))

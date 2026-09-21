@@ -122,10 +122,16 @@
   },
   "included_names": 19373,
   "pinyin_names": 19367,
-  "rows": 54969,
+  "rows": 61017,
   "unavailable_readings": 11589,
-  "asset_sha256": "8969bee08d2315e349e8e53618ac2986b5a6632d95bee6aee8e772de00cd7040",
+  "asset_sha256": "3138bd8c64ffbf3910d1ffd075db85a98a27bb053e55f58b6bcd33d8e0cea12c",
   "extracted_snapshot_sha256": "4444a6e1832d72eea9e11d6e1e1360830433853fa1f9565a162fa943cb86b212",
   "reading_source_sha256": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
-  "rules": "All descendants of named thematic categories; NFC/trim; semicolon aliases; 2-32 Han glyphs; upstream Pinyin/Zhuyin or exact/unambiguous McBopomofo units; no entity allowlist or per-name links"
+  "rules": "All descendants of named thematic categories; NFC/trim; semicolon aliases; 2-32 Han glyphs; upstream Pinyin/Zhuyin or exact/unambiguous McBopomofo units; uniquely segmented upstream Pinyin aliases respecting separators and Han glyph count; no entity allowlist or per-name links",
+  "upstream_boundaries": {
+    "unique": 3034,
+    "additional_separated_alias": 3034,
+    "ambiguous_or_unresolved": 110
+  },
+  "boundary_helper_sha256": "f67ba3cec09577ddaad632a30d64d14afd84967d0c66abca8e167646244e88dc"
 }

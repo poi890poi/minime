@@ -62,7 +62,8 @@
       "editorial": "Locally maintained thematic mapping built on OSM contributions.",
       "coverage": "Complete pinned normalized POI snapshot; existing sector/reading exclusions in rudy-manifest.",
       "limitations": "Not all names have usable Mandarin readings; map presence is not typing frequency.",
-      "reason": "Preserve the high-quality geography source and separate ODbL pack.",
+      "reason": "Preserve the high-quality geography source and separate ODbL pack. Compact upstream tags may gain separated aliases only under unique syllabification respecting source separators and Han glyph count; preserve original spelling and reject ambiguous inference.",
+      "audit_files": ["docs/rudy-reading-boundaries/PLAN.md"],
       "addon_prefixes": []
     },
     {

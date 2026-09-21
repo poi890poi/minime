@@ -20,6 +20,13 @@ consumed evidence, and may not be advertised as a fresh holdout again.
 
 ## Decisions
 
+The September 21 Rudy repair (`../docs/rudy-reading-boundaries/PLAN.md`) retains
+the pinned snapshot and original tags. It permits additional reading aliases only
+for a unique legal-syllable segmentation respecting supplied separators and Han
+glyph count. No name, pronunciation letters, frequency or source scope is added.
+Ambiguous compact tags remain unchanged; independently supported source readings
+and broad mixed-language regression data evaluate the resulting lookup behavior.
+
 The September 19 context-backoff loop is recorded in `evaluation.json` and
 `../docs/context-backoff/RESULTS.md`. It reuses frozen counts and previously
 evaluated prose/scenarios for conditional ranking. The estimator was rejected
