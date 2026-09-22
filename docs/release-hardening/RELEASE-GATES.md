@@ -1,8 +1,9 @@
 # Release hardening — September 22–23, 2026
 
 **Not cleared for public release.** This report concerns 0.8.8 (38), application
-`app.minime.keyboard`, runtime commit `fd728d5`. Evaluation-only commit `1231638`
-does not alter the runtime. Earlier publishing checklists are historical evidence,
+`app.minime.keyboard`, final runtime commit `995b535`. Candidate quality was measured
+on baseline `fd728d5`; the accepted rendering change does not alter dictionary or
+ranking logic. Evaluation-only commit `1231638` adds evidence. Earlier publishing checklists are historical evidence,
 not certification of this build. No Play upload or GitHub CI was used.
 
 ## Quality loop
@@ -35,17 +36,17 @@ native queries. Neither count is language accuracy or a phone performance result
 | Source rights | BLOCKED: existing UD underlying-text review remains open |
 
 The APK SHA-256 is
-`8a54391407771f3093cd5fe38b02328b492024210b563fd65f0f46b3f370d4bf`.
+`a599a799369b5424e4d700e0aed8520b6133f0656cfee730f62d3e9ada021dc1`.
 The AAB SHA-256 is
-`157889b303e7d0af98f8ee6be7582059152d2e1ca592dc45488b757fa6187de7`.
-[Package evidence](package/inventory.json) records asset/native hashes;
-[signature verification](package/apk-signature.txt) identifies the upload certificate.
+`3c7e8690adfcbfeb246cfbfb5e136ea3f28abbbbe8bd38e8cedeec55a5422304`.
+[Final package evidence](final-package/inventory.json) records asset/native hashes;
+[signature verification](final-package/apk-signature.txt) identifies the upload certificate.
 The AAB verifier reports a valid signature with the expected self-signed certificate;
 its trust-chain/timestamp warnings are retained in the evidence, not suppressed.
 
 Phone release tests use a copy signed with the existing installation's test key
 to avoid uninstalling user data. All 58 non-signature ZIP entries match the upload
-APK byte for byte. [Parity record](package/payload-parity.json). This exercises
+APK byte for byte. [Parity record](final-package/payload-parity.json). This exercises
 the release payload, not the Play signing chain or an upload-signed upgrade.
 Code 38 is a validation build; increment before a new Play upload.
 
@@ -68,11 +69,12 @@ badge, and rejects Han/kana in English. The earlier observation is excluded from
 four-mode certification. These were test defects; neither establishes a production
 language-mode regression.
 
-The corrected release run passes all **15 tests**: settings/defaults/backup/mode
+The corrected harness passes all **15 tests** on both the baseline and final release payload: settings/defaults/backup/mode
 preferences plus the four-mode visible-key smoke test. The latter is one test
 with four input/selection episodes, not a four-language coverage benchmark.
-[Actual mode outputs](phone/release-modes.json) and
-[instrumentation status](phone/release-instrumentation.txt) are retained.
+[Final mode outputs](final-package/phone-modes.json) and
+[instrumentation status](final-package/phone-instrumentation.txt) are retained.
+The final debug implementation also passes 14 paging/stability/input checks.
 
 The original broad debug suite stopped progressing after 16 completed checks and
 was aborted through its owning runner, with cleanup verified. A partial run is
@@ -89,6 +91,18 @@ The frozen Google/MinIME comparison completes 48 observations. Chrome and Keep
 complete 27 editor/mode/query observations with candidates available in each.
 Injected latency telemetry exposes a substantial Chinese main-thread delay;
 see the [phone report and its explicit measurement limits](PHONE.md).
+
+The accepted [rendering fix](RENDER-RESULTS.md) reduces Chinese raw-frame p95 from
+148.8/559.3 ms in a repeated baseline to 26.8/33.2 ms at 150/60 ms key intervals.
+Other modes' measured p95 increases roughly 2–7 ms in the short replays. Fresh
+Chinese candidate p95 remains 170.9 ms at the slower interval, above its target.
+This is a significant improvement, not completed performance acceptance.
+The source/rights, Android-version, human-touch and larger-sample gates stay open.
+
+Final cleanup restores the original APK/preferences/IME and verifies display OFF.
+The shared-phone reservation has been explicitly released to SHINE.
+[Cleanup record](final-package/phone-cleanup.json). The `package` directory retains
+the earlier baseline package evidence; `final-package` identifies the current build.
 
 ## Still required
 
