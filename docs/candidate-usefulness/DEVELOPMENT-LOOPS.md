@@ -83,6 +83,11 @@ Percentages must identify their numerator, denominator and input conditions.
 
 ## Next loop
 
+The September 22 release-hardening loop adds 4,608 chat-derived conditions and
+rejects extending the duplicate-source guard: 15 first-eight Chinese gains versus
+44 losses, with no first-choice gain. Production ranking remains unchanged.
+[Problem, cause, trial and measured outcome](../release-hardening/QUALITY.md).
+
 Investigate the remaining candidate-cap losses with precision and recall together.
 Do not raise limits without evidence about the displaced alternatives. Broader
 natural Taiwan conversation evidence is still needed before replacing context

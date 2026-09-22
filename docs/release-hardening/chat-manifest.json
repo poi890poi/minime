@@ -1,0 +1,27 @@
+{
+  "baseline": "fd728d5",
+  "seed": "release-hardening-20260922-v1",
+  "source_lines": 8882,
+  "eligible_lines": 2376,
+  "selected_lines": 512,
+  "exclusions": {
+    "ambiguous_or_unavailable_reading": 5916,
+    "not_3_to_20_Han_only": 590
+  },
+  "rows": 4608,
+  "groups": {
+    "chat-excerpt/full": 512,
+    "chat-excerpt/initials": 512,
+    "chat-excerpt/mixed": 512,
+    "chat-short-span/full": 1024,
+    "chat-short-span/initials": 1024,
+    "chat-short-span/mixed": 1024
+  },
+  "source_exact_references": 263,
+  "references": 1536,
+  "source_sha256": "6bde40bb34ddc97b860876d03de1a04171787854bfb6aefaf596a0d2ded8086f",
+  "reading_source_sha256": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+  "input_sha256": "94d594ccf5828869afb793ca9deadcce66dcc020ac372ded29d92160f7e2cc54",
+  "plan_sha256": "16543223f5a8118e722b02d238350611b0ab56379c92382228cb26ab9defb0a9",
+  "scope": "One evaluation-only edited chat source document. Lost conversation boundaries; shared reading lineage; no natural-conversation accuracy or fresh holdout claim."
+}

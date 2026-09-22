@@ -1,0 +1,5 @@
+Exception in thread "main" java.lang.AssertionError: duplicate source preserves full and abbreviated phrase order: ca/taiwan expected [[ca, 甲甲, 乙乙, 丙丙, 丁丁, 戊戊, 己己]] actual [[ca, 甲甲, 乙乙, 己己, 丙丙, 丁丁, 戊戊]]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.GlyphOrderRegression.abbreviatedPhraseOrder(GlyphOrderRegression.java:50)
+	at dev.minime.core.GlyphOrderRegression.run(GlyphOrderRegression.java:9)
+	at dev.minime.core.GlyphOrderRegression.main(GlyphOrderRegression.java:54)

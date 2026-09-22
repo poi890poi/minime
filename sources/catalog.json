@@ -9,6 +9,33 @@
   },
   "sources": [
     {
+      "id": "moztw-chat-evaluation",
+      "name": "MozTW CC0 donated g0v chat excerpts",
+      "origin": "taiwan-community",
+      "decision": "reference",
+      "uses": [
+        "evaluation"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC0-1.0",
+        "status": "verified",
+        "evidence": "https://github.com/moztw/cc0-sentences/blob/b473f2a3ee52920dce26d86cc02117479e257c18/zh-TW/README.md"
+      },
+      "evidence": [
+        "https://github.com/moztw/cc0-sentences/tree/b473f2a3ee52920dce26d86cc02117479e257c18"
+      ],
+      "editorial": "MozTW editors; participant-donated g0v #rand0m text, de-identified, split and shuffled; formatting may be AI-assisted.",
+      "coverage": "One pinned file of 8882 edited lines; 512 hash-selected readable Han excerpts and short spans for initial release-hardening evaluation.",
+      "limitations": "Not intact conversations; difficult text and English removed upstream. Conversation identities unavailable. Reading annotation shares McBopomofo lineage; many ambiguous readings excluded. No population-frequency, code-switching or natural-conversation accuracy claim.",
+      "reason": "Evaluation only to broaden Taiwan chat-register evidence. Never production entries, training counts or handpicked promotions.",
+      "audit_files": [
+        "docs/release-hardening/SOURCES.md",
+        "docs/release-hardening/PLAN.md"
+      ],
+      "addon_prefixes": []
+    },
+    {
       "id": "mcbopomofo",
       "name": "McBopomofo",
       "origin": "taiwan-traditional",

@@ -20,6 +20,12 @@ consumed evidence, and may not be advertised as a fresh holdout again.
 
 ## Decisions
 
+The September 22 release-hardening evaluation admits only the pinned MozTW CC0
+g0v chat-derived excerpt file; see `../docs/release-hardening/SOURCES.md`. It is
+evaluation-only, with edited/shuffled context and shared-reading limitations. No
+new production source or model counts are approved.
+
+
 The September 21 Rudy repair (`../docs/rudy-reading-boundaries/PLAN.md`) retains
 the pinned snapshot and original tags. It permits additional reading aliases only
 for a unique legal-syllable segmentation respecting supplied separators and Han

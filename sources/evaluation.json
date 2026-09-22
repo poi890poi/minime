@@ -3,6 +3,63 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "release-hardening-chat-20260922",
+      "source_ids": [
+        "moztw-chat-evaluation",
+        "mcbopomofo"
+      ],
+      "genre": [
+        "chat-derived-edited-excerpts",
+        "chat-short-spans"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "512 salted-hash eligible lines from one pinned evaluation-only donated chat file, complete excerpt and two hash-selected short spans per line, full/initial/mixed spelling. Frozen before candidate queries.",
+      "files": [
+        "docs/release-hardening/chat/core-summary.json",
+        "docs/release-hardening/chat/first8-changes.jsonl.gz",
+        "docs/release-hardening/chat/trial-changes.jsonl.gz",
+        "docs/release-hardening/chat/trial-summary.json",
+        "docs/release-hardening/chat-after.tsv.gz",
+        "docs/release-hardening/chat-before.tsv.gz",
+        "docs/release-hardening/chat-inputs.tsv.gz",
+        "docs/release-hardening/chat-manifest.json",
+        "docs/release-hardening/chat-references.json.gz",
+        "docs/release-hardening/chinese/trial-changes.jsonl.gz",
+        "docs/release-hardening/chinese/trial-summary.json",
+        "docs/release-hardening/core-candidate.log",
+        "docs/release-hardening/core-final.log",
+        "docs/release-hardening/desktop-final.log",
+        "docs/release-hardening/duplicate-before.log",
+        "docs/release-hardening/english/english-priority-changes.jsonl.gz",
+        "docs/release-hardening/english/english-priority-summary.json",
+        "docs/release-hardening/PLAN.md",
+        "docs/release-hardening/QUALITY.md",
+        "docs/release-hardening/rejected-duplicate-guard.patch",
+        "docs/release-hardening/source/g0v_slack_rand0m.txt",
+        "docs/release-hardening/source/LICENSE.md",
+        "docs/release-hardening/source/README.md",
+        "docs/release-hardening/source/zh-TW__g0v_slack_rand0m_README.md",
+        "docs/release-hardening/source/zh-TW__README.md",
+        "docs/release-hardening/SOURCES.md",
+        "tools/make_release_chat_corpus.py",
+        "tools/report_release_ranking_trial.py"
+      ],
+      "report_by": [
+        "genre",
+        "condition",
+        "first-choice",
+        "first-eight",
+        "gains",
+        "losses",
+        "useful-slots",
+        "inventory-spans",
+        "Space"
+      ],
+      "leakage": "Text source is evaluation only. Reading annotation shares production McBopomofo lineage, with ambiguity exclusions. No target labels enter ranking. The entire source document is reserved for evaluation; no training split is made from shuffled lines.",
+      "limitations": "Upstream excerpts are edited, de-identified, split and shuffled; source conversation/speaker identities unavailable. Most source lines have ambiguous/unavailable readings. Not natural multi-turn accuracy or a fresh conversation holdout. Existing essay/encyclopedic/English probes are reused regression sources, reported separately. Trial rejected and withdrawn."
+    },
+    {
       "id": "rudy-reading-boundaries-20260921",
       "source_ids": [
         "rudy",

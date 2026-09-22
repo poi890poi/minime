@@ -1,0 +1,44 @@
+diff --git a/core/src/main/java/dev/minime/core/CompositionEngine.java b/core/src/main/java/dev/minime/core/CompositionEngine.java
+index e718965..e8169a4 100644
+--- a/core/src/main/java/dev/minime/core/CompositionEngine.java
++++ b/core/src/main/java/dev/minime/core/CompositionEngine.java
+@@ -510,6 +510,7 @@ public final class CompositionEngine {
+                 // rank, including after English completion interleaving.
+                 if(c.supplemental && !focused(c) && existing>=0 && !candidates.get(existing).supplemental && dictionary!=null
+                         && (dictionary.exactChinese(raw,bpmf,c.text)
++                            || (candidates.get(existing).abbreviated && !candidates.get(existing).composed && candidates.get(existing).consumed==0)
+                             || (candidates.get(existing).consumed==0 && c.text.codePointCount(0,c.text.length())==1)))continue;
+                 // Static dictionaries supply identity/readings, not comparable
+                 // glyph frequencies. A novel Han glyph must not outrank the
+diff --git a/core/src/test/java/dev/minime/core/GlyphOrderRegression.java b/core/src/test/java/dev/minime/core/GlyphOrderRegression.java
+index a4d0a27..f1ac74f 100644
+--- a/core/src/test/java/dev/minime/core/GlyphOrderRegression.java
++++ b/core/src/test/java/dev/minime/core/GlyphOrderRegression.java
+@@ -6,6 +6,7 @@ import static dev.minime.core.Regression.*;
+ 
+ final class GlyphOrderRegression {
+     static void run()throws Exception {
++        abbreviatedPhraseOrder();
+         for(boolean englishOverlap:new boolean[]{false,true})for(String pack:Arrays.asList("taiwan","geography","japanese","poj")) {
+             // Synthetic homophones expose duplicate promotion, independently
+             // of real character identities and production frequency values.
+@@ -36,4 +37,19 @@ final class GlyphOrderRegression {
+         engine.addons(AddonDictionary.read(new StringReader("japanese\tka\tかな\tfixture\ttest\njapanese\tka\t甲\tfixture\ttest\n")),Collections.singleton("japanese"));
+         type(engine,"ka");yes(find(engine,"かな")<find(engine,"甲"),"without a base glyph competitor preserve optional source order");
+     }
++    private static void abbreviatedPhraseOrder()throws Exception {
++        StringBuilder rows=new StringBuilder();
++        String[] names={"甲甲","乙乙","丙丙","丁丁","戊戊","己己"};
++        for(int i=0;i<names.length;i++)rows.append("can'an\tㄘㄢㄢ\t").append(names[i]).append('\t').append(100000/(i+1)).append("\tㄘㄢㄢ\n");
++        PhoneticDictionary d=PhoneticDictionary.load(new StringReader(rows.toString()),new StringReader(""),new StringReader("can\tㄘㄢ\nan\tㄢ\n"));
++        for(String raw:Arrays.asList("ca","cana","canan"))for(String pack:Arrays.asList("taiwan","geography")) {
++            CompositionEngine c=new CompositionEngine(new Editor(),Learning.NONE);c.dictionary(d);c.start(false,false,false,false);type(c,raw);
++            List<String> before=new ArrayList<>();for(Candidate v:c.candidates())before.add(v.text);
++            String accepted=c.candidates().get(c.preferred()).text;
++            c.addons(AddonDictionary.read(new StringReader(pack+"\tcan'an\t己己\tfixture\ttest\n")),Collections.singleton(pack));
++            equal(before,c.candidates().stream().map(v->v.text).collect(java.util.stream.Collectors.toList()),"duplicate source preserves full and abbreviated phrase order: "+raw+"/"+pack);
++            equal(accepted,c.candidates().get(c.preferred()).text,"duplicate phrase preserves Space");
++        }
++    }
++    public static void main(String[] args)throws Exception {run();System.out.println("PASS duplicate source ordering contracts");}
+ }
