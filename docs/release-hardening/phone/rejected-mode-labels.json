@@ -1,0 +1,45 @@
+[
+  {
+    "mode": "chinese",
+    "raw": "nihao",
+    "candidates": [
+      "你好",
+      "妳好",
+      "你",
+      "兒",
+      "您好",
+      "你好嗎"
+    ],
+    "accepted": "你好"
+  },
+  {
+    "mode": "english",
+    "raw": "tomorr",
+    "candidates": [
+      "tomorrow",
+      "他",
+      "tomorrow's"
+    ],
+    "accepted": "tomorrow"
+  },
+  {
+    "mode": "taiwanese_english",
+    "raw": "hannh",
+    "candidates": [
+      "--haⁿh",
+      "haⁿh",
+      "haⁿh-tio̍h",
+      "ha̍ⁿh-kè"
+    ],
+    "accepted": "--haⁿh"
+  },
+  {
+    "mode": "japanese_english",
+    "raw": "aaaa",
+    "candidates": [
+      "ああああ",
+      "アアアア"
+    ],
+    "accepted": "ああああ"
+  }
+]

@@ -1,0 +1,3080 @@
+{
+  "planned_records": 48,
+  "records": 48,
+  "missing": [],
+  "unverified_input": [
+    {
+      "provider": "google",
+      "id": "hardening-00"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-01"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-02"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-03"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-04"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-05"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-06"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-07"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-08"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-09"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-10"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-11"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-12"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-13"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-14"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-15"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-16"
+    },
+    {
+      "provider": "google",
+      "id": "hardening-17"
+    }
+  ],
+  "totals": {
+    "minime/chat-excerpt/typed": {
+      "episodes": 12,
+      "slots": 46,
+      "compatible_slots": 14,
+      "whole_available": 2,
+      "any_compatible": 10
+    },
+    "minime/chat-excerpt/expanded": {
+      "episodes": 12,
+      "slots": 293,
+      "compatible_slots": 20,
+      "whole_available": 2,
+      "any_compatible": 11
+    },
+    "minime/essay-regression/typed": {
+      "episodes": 6,
+      "slots": 23,
+      "compatible_slots": 3,
+      "whole_available": 0,
+      "any_compatible": 3
+    },
+    "minime/essay-regression/expanded": {
+      "episodes": 6,
+      "slots": 138,
+      "compatible_slots": 5,
+      "whole_available": 0,
+      "any_compatible": 4
+    }
+  },
+  "end_to_end_ui_totals": {
+    "google/chat-excerpt/typed": {
+      "episodes": 12,
+      "slots": 49,
+      "compatible_slots": 16,
+      "whole_available": 6,
+      "any_compatible": 10
+    },
+    "google/chat-excerpt/expanded": {
+      "episodes": 12,
+      "slots": 252,
+      "compatible_slots": 26,
+      "whole_available": 6,
+      "any_compatible": 12
+    },
+    "google/essay-regression/typed": {
+      "episodes": 6,
+      "slots": 24,
+      "compatible_slots": 3,
+      "whole_available": 1,
+      "any_compatible": 2
+    },
+    "google/essay-regression/expanded": {
+      "episodes": 6,
+      "slots": 132,
+      "compatible_slots": 8,
+      "whole_available": 1,
+      "any_compatible": 5
+    },
+    "minime/chat-excerpt/typed": {
+      "episodes": 12,
+      "slots": 46,
+      "compatible_slots": 14,
+      "whole_available": 2,
+      "any_compatible": 10
+    },
+    "minime/chat-excerpt/expanded": {
+      "episodes": 12,
+      "slots": 293,
+      "compatible_slots": 20,
+      "whole_available": 2,
+      "any_compatible": 11
+    },
+    "minime/essay-regression/typed": {
+      "episodes": 6,
+      "slots": 23,
+      "compatible_slots": 3,
+      "whole_available": 0,
+      "any_compatible": 3
+    },
+    "minime/essay-regression/expanded": {
+      "episodes": 6,
+      "slots": 138,
+      "compatible_slots": 5,
+      "whole_available": 0,
+      "any_compatible": 4
+    }
+  },
+  "rows": [
+    {
+      "provider": "google",
+      "id": "hardening-00",
+      "genre": "chat-excerpt",
+      "condition": "full",
+      "raw": "xianggangjiayou",
+      "target": "香港加油",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "香港加油",
+            "香港",
+            "想",
+            "像",
+            "向"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "香港加油",
+            "香港",
+            "想",
+            "像",
+            "向",
+            "相",
+            "香",
+            "相仿",
+            "廂房",
+            "項",
+            "鄉",
+            "享",
+            "象",
+            "翔",
+            "響",
+            "巷",
+            "箱",
+            "詳",
+            "祥",
+            "湘",
+            "鑲",
+            "襄",
+            "廂",
+            "饗",
+            "橡",
+            "降",
+            "嚮"
+          ],
+          "metrics": {
+            "slots": 27,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 24,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        }
+      },
+      "accepted": "香港加油",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-01",
+      "genre": "chat-excerpt",
+      "condition": "full",
+      "raw": "yourenjiaowaisongma",
+      "target": "有人叫外送嗎",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "有人叫外送嗎",
+            "有人",
+            "友人",
+            "誘人"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 6,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "有人叫外送嗎",
+            "有人",
+            "友人",
+            "誘人",
+            "遊人",
+            "由人",
+            "幽人",
+            "游人",
+            "友仁",
+            "游刃",
+            "有",
+            "又",
+            "由",
+            "遊",
+            "油",
+            "友",
+            "優",
+            "右",
+            "游",
+            "幼",
+            "尤",
+            "悠"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 19,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 6,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        }
+      },
+      "accepted": "有人叫外送嗎",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-02",
+      "genre": "chat-excerpt",
+      "condition": "full",
+      "raw": "weishigejieanxin",
+      "target": "為使各界安心",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "為使各界安心",
+            "餵食",
+            "為師",
+            "為使"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 6,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "為使各界安心",
+            "餵食",
+            "為師",
+            "為使",
+            "唯識",
+            "為時",
+            "衛視",
+            "為食",
+            "衛士",
+            "委實",
+            "威勢",
+            "為實",
+            "違失",
+            "魏氏",
+            "未時",
+            "維士"
+          ],
+          "metrics": {
+            "slots": 16,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 14,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 6,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        }
+      },
+      "accepted": "為使各界安心",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-03",
+      "genre": "chat-excerpt",
+      "condition": "full",
+      "raw": "yougongjixing",
+      "target": "有攻擊性",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "有攻擊性",
+            "有",
+            "又",
+            "由",
+            "遊"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "有攻擊性",
+            "有",
+            "又",
+            "由",
+            "遊",
+            "油",
+            "友",
+            "優",
+            "右",
+            "游",
+            "幼",
+            "尤",
+            "悠",
+            "佑",
+            "幽",
+            "猶",
+            "誘",
+            "憂",
+            "呦",
+            "宥",
+            "you",
+            "祐",
+            "郵",
+            "柚",
+            "侑",
+            "攸",
+            "酉",
+            "釉"
+          ],
+          "metrics": {
+            "slots": 28,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 26,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        }
+      },
+      "accepted": "有攻擊性",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-04",
+      "genre": "chat-excerpt",
+      "condition": "initials",
+      "raw": "yskjhz",
+      "target": "藝術空間合作",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "袁世凱救火在",
+            "袁世凱",
+            "也是"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "袁世凱救火在",
+            "袁世凱",
+            "也是",
+            "伊薩克",
+            "以上",
+            "於是",
+            "楊尚昆",
+            "醫師",
+            "藝術",
+            "顏色",
+            "一聲",
+            "與",
+            "也",
+            "有",
+            "以",
+            "要",
+            "一",
+            "又",
+            "於"
+          ],
+          "metrics": {
+            "slots": 19,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 18,
+            "first_useful_rank": 9,
+            "first_phrase_rank": 9,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "袁世凱救火在",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-05",
+      "genre": "chat-excerpt",
+      "condition": "initials",
+      "raw": "wjydcxljt",
+      "target": "我就要當成心靈寄托",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "我就一旦出現了幾天",
+            "玩家",
+            "我就"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "我就一旦出現了幾天",
+            "玩家",
+            "我就",
+            "文具店",
+            "文件",
+            "我",
+            "危機",
+            "我家",
+            "忘記",
+            "外界",
+            "玩具",
+            "萬金油",
+            "為",
+            "無",
+            "外",
+            "文",
+            "問",
+            "萬"
+          ],
+          "metrics": {
+            "slots": 18,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 16,
+            "first_useful_rank": 3,
+            "first_phrase_rank": 3,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "我就一旦出現了幾天",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-06",
+      "genre": "chat-excerpt",
+      "condition": "initials",
+      "raw": "wgrygsnbdb",
+      "target": "外國人應該是拿不到吧",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "外國人一個少年不代表",
+            "外國人"
+          ],
+          "metrics": {
+            "slots": 2,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 1,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 3,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "外國人一個少年不代表",
+            "外國人",
+            "五個人",
+            "無關",
+            "我國",
+            "五個月",
+            "外觀",
+            "外國",
+            "我跟",
+            "網購",
+            "我",
+            "無辜",
+            "WG",
+            "為",
+            "無"
+          ],
+          "metrics": {
+            "slots": 15,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 2,
+            "glyph_slots": 0,
+            "off_target_slots": 13,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 3,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "外國人一個少年不代表",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-07",
+      "genre": "chat-excerpt",
+      "condition": "initials",
+      "raw": "tnaw",
+      "target": "台南愛我",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "他那位",
+            "他那",
+            "他",
+            "太",
+            "她那"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "他那位",
+            "他那",
+            "他",
+            "太",
+            "她那",
+            "她",
+            "推拿",
+            "天哪",
+            "TNA",
+            "t",
+            "他拿",
+            "天",
+            "它",
+            "同",
+            "吐納",
+            "聽那",
+            "台",
+            "特",
+            "頭",
+            "聽",
+            "特納"
+          ],
+          "metrics": {
+            "slots": 21,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 17,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "他那位",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-08",
+      "genre": "chat-excerpt",
+      "condition": "mixed",
+      "raw": "jullais",
+      "target": "舉例來說",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "舉例來說",
+            "距離",
+            "巨浪",
+            "劇烈",
+            "舉例"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "舉例來說",
+            "距離",
+            "巨浪",
+            "劇烈",
+            "舉例",
+            "聚落",
+            "Jul",
+            "居留",
+            "巨龍",
+            "拘留",
+            "劇裡",
+            "局裡",
+            "具",
+            "據",
+            "局",
+            "巨",
+            "舉",
+            "居",
+            "劇",
+            "聚",
+            "橘",
+            "拒"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 19,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        }
+      },
+      "accepted": "舉例來說",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-09",
+      "genre": "chat-excerpt",
+      "condition": "mixed",
+      "raw": "taiwzhurbaowzhan",
+      "target": "台灣豬肉保衛戰",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "台灣主人保衛戰",
+            "台灣",
+            "臺灣"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "台灣主人保衛戰",
+            "台灣",
+            "臺灣",
+            "太",
+            "太晚",
+            "台",
+            "台灣製",
+            "泰",
+            "泰武",
+            "臺",
+            "胎位",
+            "泰文",
+            "太尉",
+            "抬",
+            "胎",
+            "颱",
+            "泰王",
+            "檯",
+            "態",
+            "大"
+          ],
+          "metrics": {
+            "slots": 20,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 18,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 2,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "台灣主人保衛戰",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-10",
+      "genre": "chat-excerpt",
+      "condition": "mixed",
+      "raw": "kaiychul",
+      "target": "開源出來",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "開運除了",
+            "開業",
+            "開運",
+            "開眼",
+            "開"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 4,
+            "first_useful_rank": 5,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "開運除了",
+            "開業",
+            "開運",
+            "開眼",
+            "開",
+            "開元",
+            "開演",
+            "開藥",
+            "開源",
+            "凱悅",
+            "開陽",
+            "開議",
+            "凱",
+            "愷",
+            "楷",
+            "鎧",
+            "Kai",
+            "揩",
+            "慨",
+            "鍇",
+            "闓"
+          ],
+          "metrics": {
+            "slots": 21,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 19,
+            "first_useful_rank": 5,
+            "first_phrase_rank": 9,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "開運除了",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-11",
+      "genre": "chat-excerpt",
+      "condition": "mixed",
+      "raw": "shehzhid",
+      "target": "社會制度",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "社會制度",
+            "社會",
+            "奢華",
+            "攝護",
+            "設好"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "社會制度",
+            "社會",
+            "奢華",
+            "攝護",
+            "設好",
+            "攝魂",
+            "設或",
+            "射回",
+            "涉黑",
+            "社",
+            "設",
+            "蛇",
+            "攝",
+            "射",
+            "什",
+            "舌",
+            "涉",
+            "適合",
+            "捨",
+            "舍",
+            "奢",
+            "赦",
+            "是"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        }
+      },
+      "accepted": "社會制度",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-12",
+      "genre": "essay-regression",
+      "condition": "full",
+      "raw": "tasuanguoyibizhang",
+      "target": "他算過一筆帳",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "他算過一筆賬",
+            "他",
+            "她",
+            "它"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 3,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "他算過一筆賬",
+            "他",
+            "她",
+            "它",
+            "牠",
+            "塔",
+            "祂",
+            "踏",
+            "塌",
+            "TA",
+            "榻",
+            "蹋",
+            "撻",
+            "遝",
+            "沓",
+            "獺",
+            "漯",
+            "闥",
+            "達",
+            "佗",
+            "褟",
+            "鉈",
+            "他說",
+            "禢",
+            "趿",
+            "他是"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 25,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "他算過一筆賬",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-13",
+      "genre": "essay-regression",
+      "condition": "full",
+      "raw": "mifengqilai",
+      "target": "密封起來",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "密封起來",
+            "蜜蜂",
+            "密封",
+            "米",
+            "彌封"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "密封起來",
+            "蜜蜂",
+            "密封",
+            "米",
+            "彌封",
+            "迷",
+            "密",
+            "蜜",
+            "秘",
+            "咪",
+            "彌",
+            "眯",
+            "謎",
+            "覓",
+            "瞇",
+            "祕",
+            "冪",
+            "宓",
+            "靡",
+            "你",
+            "糜",
+            "Mi",
+            "泌",
+            "糸",
+            "謐",
+            "麋",
+            "弭",
+            "蘼",
+            "瀰"
+          ],
+          "metrics": {
+            "slots": 29,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 26,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        }
+      },
+      "accepted": "密封起來",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-14",
+      "genre": "essay-regression",
+      "condition": "initials",
+      "raw": "czh",
+      "target": "處災害",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "穿著",
+            "成長",
+            "車站",
+            "材質",
+            "參照"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "穿著",
+            "成長",
+            "車站",
+            "材質",
+            "參照",
+            "趁著",
+            "朝著",
+            "從中",
+            "財政",
+            "挫折",
+            "處置",
+            "從",
+            "c",
+            "C",
+            "才",
+            "吃",
+            "出",
+            "此",
+            "成",
+            "超",
+            "常",
+            "陳",
+            "處"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 22,
+            "first_useful_rank": 23,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "穿著",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-15",
+      "genre": "essay-regression",
+      "condition": "initials",
+      "raw": "fbgw",
+      "target": "分別改為",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "發表官網",
+            "FB",
+            "發表",
+            "方便",
+            "誹謗"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "發表官網",
+            "FB",
+            "發表",
+            "方便",
+            "誹謗",
+            "分別",
+            "發布",
+            "發佈",
+            "腹部",
+            "分佈",
+            "副本",
+            "法寶",
+            "發",
+            "法",
+            "分",
+            "f",
+            "非",
+            "方",
+            "風",
+            "放",
+            "反",
+            "飛"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 6,
+            "first_phrase_rank": 6,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "發表官網",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-16",
+      "genre": "essay-regression",
+      "condition": "mixed",
+      "raw": "llimjicyez",
+      "target": "勞力密集產業在",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "勞力密集產業之",
+            "料理",
+            "倫理"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "勞力密集產業之",
+            "料理",
+            "倫理",
+            "琉璃",
+            "履歷",
+            "林立",
+            "亮麗",
+            "蘿莉",
+            "理論基礎",
+            "勞力",
+            "莉莉",
+            "了",
+            "列",
+            "來",
+            "裏"
+          ],
+          "metrics": {
+            "slots": 15,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 14,
+            "first_useful_rank": 10,
+            "first_phrase_rank": 10,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "勞力密集產業之",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-17",
+      "genre": "essay-regression",
+      "condition": "mixed",
+      "raw": "brenhyigyuyxianxdangc",
+      "target": "把任何一個語言現象當成",
+      "status": "observed",
+      "input_verified": false,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "比任何一個與原先想當初",
+            "別人"
+          ],
+          "metrics": {
+            "slots": 2,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "比任何一個與原先想當初",
+            "別人",
+            "本人",
+            "病人",
+            "被人",
+            "把人",
+            "不忍",
+            "白人",
+            "不認",
+            "幫人",
+            "百人",
+            "不",
+            "被",
+            "B",
+            "b",
+            "吧",
+            "並"
+          ],
+          "metrics": {
+            "slots": 17,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 17,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "比任何一個與原先想當初",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-18",
+      "genre": "english-word-regression",
+      "condition": "whole",
+      "raw": "purpose",
+      "target": "purpose",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "purpose ",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": true
+    },
+    {
+      "provider": "google",
+      "id": "hardening-19",
+      "genre": "english-word-regression",
+      "condition": "whole",
+      "raw": "civil",
+      "target": "civil",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "civil ",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": true
+    },
+    {
+      "provider": "google",
+      "id": "hardening-20",
+      "genre": "english-word-regression",
+      "condition": "missing-last",
+      "raw": "bee",
+      "target": "beer",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "bee ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-21",
+      "genre": "english-word-regression",
+      "condition": "missing-last",
+      "raw": "collectable",
+      "target": "collectables",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "collectable ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-22",
+      "genre": "english-word-regression",
+      "condition": "half-prefix",
+      "raw": "sala",
+      "target": "salafism",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "salary ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "google",
+      "id": "hardening-23",
+      "genre": "english-word-regression",
+      "condition": "half-prefix",
+      "raw": "sp",
+      "target": "sped",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "so ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-00",
+      "genre": "chat-excerpt",
+      "condition": "full",
+      "raw": "xianggangjiayou",
+      "target": "香港加油",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "香港腳藥",
+            "想"
+          ],
+          "metrics": {
+            "slots": 2,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "香港腳藥",
+            "想",
+            "相",
+            "像",
+            "向",
+            "象",
+            "項",
+            "響",
+            "香",
+            "鄉",
+            "降",
+            "享",
+            "香港",
+            "祥",
+            "詳",
+            "箱",
+            "巷",
+            "相關",
+            "翔",
+            "廂",
+            "嚮",
+            "襄",
+            "橡"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 9,
+            "first_phrase_rank": 13,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "xianggangjiayou ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-01",
+      "genre": "chat-excerpt",
+      "condition": "full",
+      "raw": "yourenjiaowaisongma",
+      "target": "有人叫外送嗎",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "有人",
+            "有"
+          ],
+          "metrics": {
+            "slots": 2,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 0,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "有人",
+            "有",
+            "由",
+            "又",
+            "友",
+            "遊",
+            "油",
+            "優",
+            "右",
+            "尤",
+            "游",
+            "幼",
+            "憂",
+            "郵",
+            "幽",
+            "猶",
+            "誘",
+            "悠",
+            "佑",
+            "友人",
+            "攸",
+            "祐",
+            "釉"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "yourenjiaowaisongma ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-02",
+      "genre": "chat-excerpt",
+      "condition": "full",
+      "raw": "weishigejieanxin",
+      "target": "為使各界安心",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "為時",
+            "為",
+            "位"
+          ],
+          "metrics": {
+            "slots": 3,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 2,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "為時",
+            "為",
+            "位",
+            "委",
+            "未",
+            "維",
+            "味",
+            "衛",
+            "謂",
+            "圍",
+            "威",
+            "微",
+            "危",
+            "遺",
+            "違",
+            "唯",
+            "尾",
+            "偉",
+            "胃",
+            "慰",
+            "偽",
+            "惟",
+            "魏",
+            "畏"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 23,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "weishigejieanxin ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-03",
+      "genre": "chat-excerpt",
+      "condition": "full",
+      "raw": "yougongjixing",
+      "target": "有攻擊性",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "有功",
+            "有",
+            "由",
+            "又"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 3,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "有功",
+            "有",
+            "由",
+            "又",
+            "友",
+            "遊",
+            "油",
+            "優",
+            "右",
+            "尤",
+            "游",
+            "幼",
+            "憂",
+            "郵",
+            "幽",
+            "猶",
+            "誘",
+            "悠",
+            "有關",
+            "佑",
+            "攸",
+            "有個",
+            "祐",
+            "釉"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 23,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "yougongjixing ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-04",
+      "genre": "chat-excerpt",
+      "condition": "initials",
+      "raw": "yskjhz",
+      "target": "藝術空間合作",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "袁世凱",
+            "一",
+            "有",
+            "以",
+            "要"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 5,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "袁世凱",
+            "一",
+            "有",
+            "以",
+            "要",
+            "也",
+            "於",
+            "與",
+            "說",
+            "用",
+            "業",
+            "因",
+            "意",
+            "員",
+            "已",
+            "由",
+            "樣",
+            "月",
+            "應",
+            "議",
+            "又",
+            "育",
+            "研",
+            "影",
+            "院",
+            "義"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 26,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "yskjhz ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-05",
+      "genre": "chat-excerpt",
+      "condition": "initials",
+      "raw": "wjydcxljt",
+      "target": "我就要當成心靈寄托",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "五九一",
+            "我",
+            "為",
+            "於"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 3,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "五九一",
+            "我",
+            "為",
+            "於",
+            "文",
+            "外",
+            "無",
+            "問",
+            "灣",
+            "五",
+            "位",
+            "物",
+            "委",
+            "務",
+            "完",
+            "萬",
+            "未",
+            "網",
+            "望",
+            "往",
+            "聞",
+            "王",
+            "維",
+            "免",
+            "晚"
+          ],
+          "metrics": {
+            "slots": 25,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 24,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "wjydcxljt ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-06",
+      "genre": "chat-excerpt",
+      "condition": "initials",
+      "raw": "wgrygsnbdb",
+      "target": "外國人應該是拿不到吧",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "外國人",
+            "我",
+            "為",
+            "於"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 0,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 3,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "外國人",
+            "我",
+            "為",
+            "於",
+            "文",
+            "外",
+            "無",
+            "問",
+            "灣",
+            "五",
+            "位",
+            "物",
+            "委",
+            "務",
+            "完",
+            "萬",
+            "未",
+            "網",
+            "望",
+            "往",
+            "聞",
+            "王",
+            "維",
+            "免",
+            "晚"
+          ],
+          "metrics": {
+            "slots": 25,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 23,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 3,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "wgrygsnbdb ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-07",
+      "genre": "chat-excerpt",
+      "condition": "initials",
+      "raw": "tnaw",
+      "target": "台南愛我",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "台南",
+            "他",
+            "台",
+            "天",
+            "體"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "台南",
+            "他",
+            "台",
+            "天",
+            "體",
+            "提",
+            "題",
+            "同",
+            "她",
+            "特",
+            "它",
+            "頭",
+            "統",
+            "通",
+            "太",
+            "推",
+            "調",
+            "圖",
+            "團",
+            "投",
+            "條",
+            "態",
+            "土",
+            "聽",
+            "討",
+            "談"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 24,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "tnaw ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-08",
+      "genre": "chat-excerpt",
+      "condition": "mixed",
+      "raw": "jullais",
+      "target": "舉例來說",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "舉例來說",
+            "車",
+            "局",
+            "距離",
+            "具",
+            "舉"
+          ],
+          "metrics": {
+            "slots": 6,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 4,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "舉例來說",
+            "車",
+            "局",
+            "距離",
+            "具",
+            "舉",
+            "據",
+            "足",
+            "劇",
+            "居",
+            "句",
+            "距",
+            "聚",
+            "巨",
+            "拒",
+            "俱",
+            "懼",
+            "矩",
+            "菊",
+            "橘",
+            "拘",
+            "鉅",
+            "侷",
+            "鋸",
+            "沮",
+            "鞠",
+            "咀"
+          ],
+          "metrics": {
+            "slots": 27,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 25,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        }
+      },
+      "accepted": "舉例來說",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": true
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-09",
+      "genre": "chat-excerpt",
+      "condition": "mixed",
+      "raw": "taiwzhurbaowzhan",
+      "target": "台灣豬肉保衛戰",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "台灣鱒",
+            "台"
+          ],
+          "metrics": {
+            "slots": 2,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 1,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "台灣鱒",
+            "台",
+            "太",
+            "態",
+            "台灣",
+            "泰",
+            "胎",
+            "抬",
+            "颱",
+            "汰",
+            "檯",
+            "苔",
+            "鈦",
+            "跆",
+            "邰",
+            "太晚",
+            "肽",
+            "傣",
+            "鮐",
+            "㒗",
+            "㘆",
+            "㙜",
+            "㙵"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 5,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "taiwzhurbaowzhan ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-10",
+      "genre": "chat-excerpt",
+      "condition": "mixed",
+      "raw": "kaiychul",
+      "target": "開源出來",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "開夜車",
+            "開",
+            "凱",
+            "豈"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 3,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "開夜車",
+            "開",
+            "凱",
+            "豈",
+            "慨",
+            "咳",
+            "楷",
+            "愷",
+            "揩",
+            "愾",
+            "鎧",
+            "開眼",
+            "開業",
+            "開演",
+            "開源",
+            "開議",
+            "開元",
+            "愒",
+            "暟",
+            "欬",
+            "闓",
+            "凱悅"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 20,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 15,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "kaiychul ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-11",
+      "genre": "chat-excerpt",
+      "condition": "mixed",
+      "raw": "shehzhid",
+      "target": "社會制度",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "社會制度",
+            "社",
+            "什",
+            "生活照",
+            "設"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 2,
+            "whole_slots": 1,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 3,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "社會制度",
+            "社",
+            "什",
+            "生活照",
+            "設",
+            "甚",
+            "攝",
+            "葉",
+            "射",
+            "涉",
+            "社會",
+            "舍",
+            "蛇",
+            "生活",
+            "捨",
+            "拾",
+            "舌",
+            "奢",
+            "赦",
+            "審核",
+            "神話",
+            "深厚",
+            "麝",
+            "賒",
+            "佘"
+          ],
+          "metrics": {
+            "slots": 25,
+            "useful_slots": 3,
+            "whole_slots": 1,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 22,
+            "first_useful_rank": 1,
+            "first_phrase_rank": 1,
+            "best_glyphs": 4,
+            "whole_top1": true,
+            "whole_available": true
+          }
+        }
+      },
+      "accepted": "社會制度",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": true
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-12",
+      "genre": "essay-regression",
+      "condition": "full",
+      "raw": "tasuanguoyibizhang",
+      "target": "他算過一筆帳",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "碳酸鈣",
+            "他"
+          ],
+          "metrics": {
+            "slots": 2,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 1,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "碳酸鈣",
+            "他",
+            "她",
+            "它",
+            "牠",
+            "塔",
+            "踏",
+            "拓",
+            "塌",
+            "榻",
+            "台塑",
+            "祂",
+            "探索",
+            "撻",
+            "蹋",
+            "沓",
+            "獺",
+            "躂",
+            "遢",
+            "漯",
+            "褟",
+            "遝"
+          ],
+          "metrics": {
+            "slots": 22,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 21,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "tasuanguoyibizhang ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-13",
+      "genre": "essay-regression",
+      "condition": "full",
+      "raw": "mifengqilai",
+      "target": "密封起來",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "蜜蜂",
+            "密",
+            "米",
+            "迷"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 3,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "蜜蜂",
+            "密",
+            "米",
+            "迷",
+            "秘",
+            "祕",
+            "蜜",
+            "彌",
+            "謎",
+            "靡",
+            "覓",
+            "泌",
+            "咪",
+            "瀰",
+            "獼",
+            "米粉",
+            "瞇",
+            "弭",
+            "謐",
+            "糜",
+            "汨",
+            "密封",
+            "蜜粉",
+            "宓"
+          ],
+          "metrics": {
+            "slots": 24,
+            "useful_slots": 2,
+            "whole_slots": 0,
+            "phrase_slots": 1,
+            "glyph_slots": 1,
+            "off_target_slots": 22,
+            "first_useful_rank": 2,
+            "first_phrase_rank": 22,
+            "best_glyphs": 2,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "mifengqilai ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-14",
+      "genre": "essay-regression",
+      "condition": "initials",
+      "raw": "czh",
+      "target": "處災害",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "成長",
+            "財政",
+            "出",
+            "成",
+            "潮州湖",
+            "車站"
+          ],
+          "metrics": {
+            "slots": 6,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 6,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "成長",
+            "財政",
+            "出",
+            "成",
+            "潮州湖",
+            "車站",
+            "次長",
+            "處長",
+            "存在",
+            "挫折",
+            "殘障",
+            "崔展鴻",
+            "蔡中涵",
+            "蔡宗翰",
+            "蔡智恆",
+            "陳中和",
+            "陳之漢",
+            "陳之華"
+          ],
+          "metrics": {
+            "slots": 18,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 18,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "成長",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-15",
+      "genre": "essay-regression",
+      "condition": "initials",
+      "raw": "fbgw",
+      "target": "分別改為",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "分杯羹",
+            "法",
+            "發",
+            "分",
+            "方"
+          ],
+          "metrics": {
+            "slots": 5,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 4,
+            "first_useful_rank": 4,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "分杯羹",
+            "法",
+            "發",
+            "分",
+            "方",
+            "府",
+            "非",
+            "費",
+            "服",
+            "反",
+            "放",
+            "風",
+            "份",
+            "負",
+            "父",
+            "否",
+            "福",
+            "夫",
+            "飛",
+            "復",
+            "防",
+            "富",
+            "房",
+            "副",
+            "付",
+            "範"
+          ],
+          "metrics": {
+            "slots": 26,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 25,
+            "first_useful_rank": 4,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "fbgw ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-16",
+      "genre": "essay-regression",
+      "condition": "mixed",
+      "raw": "llimjicyez",
+      "target": "勞力密集產業在",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "力量",
+            "了",
+            "來",
+            "理"
+          ],
+          "metrics": {
+            "slots": 4,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 4,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "力量",
+            "了",
+            "來",
+            "理",
+            "力",
+            "裡",
+            "立",
+            "路",
+            "利",
+            "老",
+            "兩",
+            "樂",
+            "六",
+            "論",
+            "林",
+            "錄",
+            "類",
+            "流",
+            "例",
+            "連",
+            "量",
+            "陸",
+            "率",
+            "李",
+            "落"
+          ],
+          "metrics": {
+            "slots": 25,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 25,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "llimjicyez ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-17",
+      "genre": "essay-regression",
+      "condition": "mixed",
+      "raw": "brenhyigyuyxianxdangc",
+      "target": "把任何一個語言現象當成",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {
+        "typed": {
+          "candidates": [
+            "別人",
+            "不"
+          ],
+          "metrics": {
+            "slots": 2,
+            "useful_slots": 0,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 0,
+            "off_target_slots": 2,
+            "first_useful_rank": 0,
+            "first_phrase_rank": 0,
+            "best_glyphs": 0,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        },
+        "expanded": {
+          "candidates": [
+            "別人",
+            "不",
+            "部",
+            "本",
+            "比",
+            "把",
+            "表",
+            "被",
+            "保",
+            "並",
+            "北",
+            "報",
+            "八",
+            "百",
+            "別",
+            "必",
+            "辦",
+            "變",
+            "白",
+            "包",
+            "步",
+            "便",
+            "吧"
+          ],
+          "metrics": {
+            "slots": 23,
+            "useful_slots": 1,
+            "whole_slots": 0,
+            "phrase_slots": 0,
+            "glyph_slots": 1,
+            "off_target_slots": 22,
+            "first_useful_rank": 6,
+            "first_phrase_rank": 0,
+            "best_glyphs": 1,
+            "whole_top1": false,
+            "whole_available": false
+          }
+        }
+      },
+      "accepted": "brenhyigyuyxianxdangc ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-18",
+      "genre": "english-word-regression",
+      "condition": "whole",
+      "raw": "purpose",
+      "target": "purpose",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "purpose ",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": true
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-19",
+      "genre": "english-word-regression",
+      "condition": "whole",
+      "raw": "civil",
+      "target": "civil",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "civil ",
+      "ui_whole_target_committed": true,
+      "whole_target_committed": true
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-20",
+      "genre": "english-word-regression",
+      "condition": "missing-last",
+      "raw": "bee",
+      "target": "beer",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "bee ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-21",
+      "genre": "english-word-regression",
+      "condition": "missing-last",
+      "raw": "collectable",
+      "target": "collectables",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "collectable ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-22",
+      "genre": "english-word-regression",
+      "condition": "half-prefix",
+      "raw": "sala",
+      "target": "salafism",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "sala ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    },
+    {
+      "provider": "minime",
+      "id": "hardening-23",
+      "genre": "english-word-regression",
+      "condition": "half-prefix",
+      "raw": "sp",
+      "target": "sped",
+      "status": "observed",
+      "input_verified": true,
+      "stages": {},
+      "ranking_scope": "Not scored: Chinese accessibility boundaries do not establish English candidate provenance.",
+      "accepted": "sp ",
+      "ui_whole_target_committed": false,
+      "whole_target_committed": false
+    }
+  ],
+  "limitations": [
+    "Small already-inspected sample, not a fresh quality holdout",
+    "Google learning persists; MinIME preferences/learning reset per case",
+    "Visible task-compatible text does not prove useful acceptance spans",
+    "Alternative homophones are not labeled meaningless",
+    "English ranking is unscored; acceptance observations are retained",
+    "Literal input verification requires editor spelling; Google Chinese keeps preedit in its IME and leaves the editor empty",
+    "End-to-end UI totals score observed requested touch sequences and include touch/delivery effects; they are not decoder-only accuracy"
+  ],
+  "observations_sha256": "8c09dd025be7ebc47e780acccd37485662dac2baa802d7f1be3c8f8a6ee26111"
+}

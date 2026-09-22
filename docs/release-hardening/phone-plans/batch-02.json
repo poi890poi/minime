@@ -1,0 +1,404 @@
+[
+  {
+    "id": "hardening-12",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Technology/國家太空中心.md:knowledge/Technology/國家太空中心.md:600",
+      "condition": "full",
+      "raw": "tasuanguoyibizhang",
+      "target": "他算過一筆帳",
+      "glyphs": "6"
+    },
+    "actions": [
+      {
+        "type": "tasuanguoyibizhang",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-13",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Food/粽子.md:knowledge/Food/粽子.md:160",
+      "condition": "full",
+      "raw": "mifengqilai",
+      "target": "密封起來",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "mifengqilai",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-14",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Geography/阿里山林業鐵路.md:knowledge/Geography/阿里山林業鐵路.md:186",
+      "condition": "initials",
+      "raw": "czh",
+      "target": "處災害",
+      "glyphs": "3"
+    },
+    "actions": [
+      {
+        "type": "czh",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-15",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/History/淡江中學.md:knowledge/History/淡江中學.md:113",
+      "condition": "initials",
+      "raw": "fbgw",
+      "target": "分別改為",
+      "glyphs": "4"
+    },
+    "actions": [
+      {
+        "type": "fbgw",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-16",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/History/高雄加工出口區.md:knowledge/History/高雄加工出口區.md:213",
+      "condition": "mixed",
+      "raw": "llimjicyez",
+      "target": "勞力密集產業在",
+      "glyphs": "7"
+    },
+    "actions": [
+      {
+        "type": "llimjicyez",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-17",
+    "mode": "pinyin",
+    "source": {
+      "genre": "essay-regression",
+      "id": "knowledge/Culture/台灣華語的演化.md:knowledge/Culture/台灣華語的演化.md:312",
+      "condition": "mixed",
+      "raw": "brenhyigyuyxianxdangc",
+      "target": "把任何一個語言現象當成",
+      "glyphs": "11"
+    },
+    "actions": [
+      {
+        "type": "brenhyigyuyxianxdangc",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-18",
+    "mode": "english",
+    "source": {
+      "genre": "english-word-regression",
+      "id": "inputs.tsv:purpose",
+      "raw": "purpose",
+      "target": "purpose",
+      "condition": "whole"
+    },
+    "actions": [
+      {
+        "type": "purpose",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-19",
+    "mode": "english",
+    "source": {
+      "genre": "english-word-regression",
+      "id": "gum-test.tsv:civil",
+      "raw": "civil",
+      "target": "civil",
+      "condition": "whole"
+    },
+    "actions": [
+      {
+        "type": "civil",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-20",
+    "mode": "english",
+    "source": {
+      "genre": "english-word-regression",
+      "id": "inputs.tsv:beer",
+      "raw": "bee",
+      "target": "beer",
+      "condition": "missing-last"
+    },
+    "actions": [
+      {
+        "type": "bee",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-21",
+    "mode": "english",
+    "source": {
+      "genre": "english-word-regression",
+      "id": "inputs.tsv:collectables",
+      "raw": "collectable",
+      "target": "collectables",
+      "condition": "missing-last"
+    },
+    "actions": [
+      {
+        "type": "collectable",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-22",
+    "mode": "english",
+    "source": {
+      "genre": "english-word-regression",
+      "id": "inputs.tsv:salafism",
+      "raw": "sala",
+      "target": "salafism",
+      "condition": "half-prefix"
+    },
+    "actions": [
+      {
+        "type": "sala",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  },
+  {
+    "id": "hardening-23",
+    "mode": "english",
+    "source": {
+      "genre": "english-word-regression",
+      "id": "inputs.tsv:sped",
+      "raw": "sp",
+      "target": "sped",
+      "condition": "half-prefix"
+    },
+    "actions": [
+      {
+        "type": "sp",
+        "label": "typed",
+        "capture": false
+      },
+      {
+        "key": "EXPAND",
+        "label": "expanded",
+        "capture": false
+      },
+      {
+        "key": "COLLAPSE",
+        "label": "collapsed",
+        "capture": false
+      },
+      {
+        "key": "SPACE",
+        "label": "accepted",
+        "capture": false
+      }
+    ]
+  }
+]

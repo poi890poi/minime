@@ -1,0 +1,9 @@
+{
+  "equal_non_signature_payload": true,
+  "entries": 58,
+  "apks": {
+    "app\\build\\outputs\\apk\\release\\app-release.apk": "8a54391407771f3093cd5fe38b02328b492024210b563fd65f0f46b3f370d4bf",
+    "artifacts\\release-hardening\\package\\release-payload-test.apk": "89ec2a380509907f3d93f9211c170ef50bd30d1d761268261a744a1c19de32c1"
+  },
+  "scope": "All non-META-INF ZIP entry bytes match, including manifest, classes, resources, native libraries and dictionaries. Test copy uses existing debug certificate to preserve installed data. Play signing and exact upload-signer phone installation are not exercised."
+}

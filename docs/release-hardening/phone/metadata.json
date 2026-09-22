@@ -1,0 +1,25 @@
+{
+  "runtime": "fd728d5",
+  "release_session": "0bb87ef1-61c2-4809-b33c-7cc2685689b2",
+  "release_tests_passed": 15,
+  "phone": "RFCR91GWXLX",
+  "android": 13,
+  "page_bytes": 4096,
+  "restored": [
+    "original APK",
+    "settings and learning XML readback",
+    "previous Samsung IME",
+    "display OFF verified"
+  ],
+  "apks": {
+    "app-debug.apk": "2acc1169a0a029fd9a6ee6e064975db456294e91cff3772d5ca3d82a9a40553f",
+    "app-debug-androidTest.apk": "bc8d6607eafeb354d0b03b7a818979dedcda1493b5103c24d0f18417ea632542",
+    "installed-before.apk": "482f5aefd0ad776d6f89d2b8ac5795cdd8b812e328276001ff84f242d47f769a"
+  },
+  "limitations": [
+    "Release APK re-signed with installed test certificate, no uninstall",
+    "Four source-derived/smoke queries are not language coverage",
+    "OS-injected taps, not human touch accuracy",
+    "The earlier mislabeled English observation is rejected"
+  ]
+}

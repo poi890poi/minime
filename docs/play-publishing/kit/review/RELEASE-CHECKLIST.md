@@ -1,5 +1,9 @@
 # MinIME 0.8.4 release checklist
 
+Historical build evidence. For the September 22–23, 2026 validation of 0.8.8 (38),
+see the [current release gates](../../../release-hardening/RELEASE-GATES.md).
+That build is not cleared for public release.
+
 Prepared September 12, 2026. No Play upload or publication has occurred.
 
 ## Completed locally

@@ -1,12 +1,17 @@
+# Test a non-debuggable APK signed with the existing installation certificate.
+# Requires explicit shared-phone handoff and a debuggable original installation
+# for preference backup/restore. Never uninstall or replace user signing keys.
 param([Parameter(Mandatory=$true)][ValidateSet('RFCR91GWXLX')][string]$Serial,[string]$SdkDir=$env:ANDROID_HOME,
-    [string]$TestClass='dev.minime.ime.EditorIntegrationTest,dev.minime.ime.KeyboardInteractionTest,dev.minime.ime.RimeIntegrationTest',
-    [string]$AppApk='app/build/outputs/apk/debug/app-debug.apk',
+    [string]$TestClass='dev.minime.ime.ReleaseKeyboardSmokeTest',
+    [Parameter(Mandatory=$true)][string]$AppApk,
+    [Parameter(Mandatory=$true)][string]$RestoreAppApk,
     [string]$TestApk='app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk',
     [ValidateRange(30,900)][int]$TimeoutSeconds=180,
-    [string[]]$Reports=@())
+    [string[]]$Reports=@('release-payload-smoke.json','release-payload-smoke.png'))
 foreach($report in $Reports) {if($report -notmatch '^[a-zA-Z0-9][a-zA-Z0-9_.-]*$'){throw 'Report must be a plain file name'}}
 # Resolve install inputs before taking a device lease or issuing any ADB command.
 $AppApk=(Resolve-Path -LiteralPath $AppApk -ErrorAction Stop).Path
+$RestoreAppApk=(Resolve-Path -LiteralPath $RestoreAppApk -ErrorAction Stop).Path
 $TestApk=(Resolve-Path -LiteralPath $TestApk -ErrorAction Stop).Path
 . "$PSScriptRoot/phone-lease.ps1"
 Invoke-WithPhoneLease {
@@ -20,10 +25,6 @@ $prefBackup=Join-Path (Get-Location) ('artifacts/device-tests/'+[guid]::NewGuid(
 New-Item -ItemType Directory -Force $prefBackup | Out-Null
 $backedUp=@()
 try {
-    & $adb -s $Serial install -r -t $AppApk
-    if($LASTEXITCODE -ne 0) { throw 'App installation failed' }
-    & $adb -s $Serial install -r -t $TestApk
-    if($LASTEXITCODE -ne 0) { throw 'Test installation failed' }
     & $adb -s $Serial shell am force-stop app.minime.keyboard
     foreach($name in @('settings','learning')) {
         $xml=& $adb -s $Serial shell run-as app.minime.keyboard cat "shared_prefs/$name.xml" 2>&1
@@ -34,13 +35,21 @@ try {
         [IO.File]::WriteAllText((Join-Path $prefBackup "$name.xml"),($xml -join "`n"),[Text.UTF8Encoding]::new($false))
         $backedUp+=$name
     }
+    & $adb -s $Serial install --no-incremental -r -t $AppApk
+    if($LASTEXITCODE -ne 0) { throw 'App installation failed' }
+    & $adb -s $Serial install --no-incremental -r -t $TestApk
+    if($LASTEXITCODE -ne 0) { throw 'Test installation failed' }
+    foreach($report in $Reports) {
+        & $adb -s $Serial shell rm -f "/sdcard/Android/data/app.minime.keyboard/files/$report"
+        if($LASTEXITCODE -ne 0){throw "Could not clear previous test output: $report"}
+    }
     & $adb -s $Serial shell input keyevent KEYCODE_WAKEUP
     & $adb -s $Serial shell ime enable app.minime.keyboard/dev.minime.ime.MiniMeService
-    & $adb -s $Serial shell ime set app.minime.keyboard/dev.minime.ime.MiniMeService
+    # Leave the previous IME selected until instrumentation has restarted the target.
+    # ReleaseKeyboardSmokeTest selects MinIME after its activity exists.
+    & $adb -s $Serial shell ime set $previousIme
     $outFile=Join-Path $prefBackup 'instrumentation.txt'
     $errFile=Join-Path $prefBackup 'instrumentation-errors.txt'
-    # Raw status includes each test's start/result, so a timeout identifies the
-    # stalled method instead of leaving only a row of progress dots.
     $testProcess=Start-Process -FilePath $adb -ArgumentList @('-s',$Serial,'shell','am','instrument','-w','-r','-e','class',$TestClass,'app.minime.keyboard.test/android.test.InstrumentationTestRunner') -WindowStyle Hidden -PassThru -RedirectStandardOutput $outFile -RedirectStandardError $errFile
     $timer=[Diagnostics.Stopwatch]::StartNew()
     while(!$testProcess.WaitForExit(1000)) {
@@ -53,8 +62,10 @@ try {
     $result=Get-Content -LiteralPath $outFile
     $result | Write-Output
     if($testProcess.ExitCode -ne 0 -or ($result -join "`n") -notmatch 'OK \(\d+ tests?\)') { throw 'Device checks failed; see artifacts/device-tests' }
-} finally {
+ } finally {
     try {
+        & $adb -s $Serial install --no-incremental -r -t $RestoreAppApk
+        if($LASTEXITCODE -ne 0){throw 'Original APK restoration failed; keep the preference backup for recovery'}
         & $adb -s $Serial shell am force-stop app.minime.keyboard
         foreach($report in $Reports) {
             & $adb -s $Serial pull "/sdcard/Android/data/app.minime.keyboard/files/$report" (Join-Path $prefBackup $report)
