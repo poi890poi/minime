@@ -1,0 +1,14 @@
+{
+  "runtime_baseline": "fd728d5 (recompiled)",
+  "candidate": "same runtime plus bounded strip materialization",
+  "apk_sha256": {
+    "render-baseline.apk": "2ebcace65624f4195e078670aff53d7219c1952c357d1bf34d494bbc9039f598",
+    "render-candidate.apk": "40869a05f9e30779f7c93653c89d8a3ca175918f62c6f36bde9572c2eca2c01d",
+    "render-final.apk": "8fa25e8801d61500a0b0c335ce20bd1a655aaf03ff0bd1f8395d55249180c564"
+  },
+  "differing_non_signature_entries": [
+    "classes3.dex"
+  ],
+  "baseline_rebuild_note": "Rebuilt baseline APK hash differs from initial build; A/B/A uses the explicitly archived binaries. Native/data/manifest equality is checked between these artifacts.",
+  "final_variant": "Same 24-view minimum; grows batch to cover two viewports on wide displays. Phone batch remains 24."
+}

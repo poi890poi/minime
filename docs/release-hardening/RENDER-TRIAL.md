@@ -24,5 +24,8 @@ Repeat the identical injected latency sample. Reject if Chinese raw latency does
 not improve or other modes regress materially. Report cold/warm limitations and
 missing matching frames rather than claiming lower conditional tails are a win.
 
+Outcome: [accepted with measured costs and open gates](RENDER-RESULTS.md). The final
+batch also covers two viewports on wide displays; it remains 24 on the test phone.
+
 Expanded-grid construction remains eager in this trial. Do not claim that its
 opening/scroll cost or physical touch latency is fixed.

@@ -32,6 +32,14 @@ final class KeyboardView extends LinearLayout {
     private int annotationX=-1,annotationY=-1,annotationWidth=-1;
     private HorizontalScrollView candidateScroll;
     private LinearLayout candidateWords;
+    private static final int STRIP_BATCH=24;
+    private int stripLimit=STRIP_BATCH;
+    private int stripBatch() {
+        // Cover two viewports even on wide displays; otherwise a short initial
+        // strip might not overflow and therefore could never request its tail.
+        int width=Math.max(getWidth(),getResources().getDisplayMetrics().widthPixels);
+        return Math.max(STRIP_BATCH,2*(width/Math.max(1,dp(48))+1));
+    }
     private CandidateFlowLayout candidateGrid;
     private TextView expandButton;
     private String gridKey="";
@@ -382,6 +390,7 @@ final class KeyboardView extends LinearLayout {
         String hint=engine.privateField()?"Private input · learning off":loading;
         status.setText(hint);
         String mode=zhuyin+":"+english+":"+numeric+":"+panel+":"+engine.privateField()+":"+engine.inputMode()+":"+returnMode+":"+new TreeSet<>(configuredModes);
+        if(!lastRaw.equals(engine.raw()) || !snapshotMode.equals(mode) || snapshotEngine!=engine)stripLimit=stripBatch();
         if(!lastRaw.equals(engine.raw()) || !snapshotMode.equals(mode) || panel!=0)modeMenu=false;
         // Keep the last completed row while its replacement is computed. Core acceptance
         // still uses the current query, and composition ownership prevents cross-editor reuse.
@@ -421,7 +430,7 @@ final class KeyboardView extends LinearLayout {
             Candidate c=candidates.get(i);presentation.append('|').append(c.text.length()).append(':').append(c.text)
                 .append(':').append(c.literal).append(':').append(c.consumed).append(':').append(c.alternateText());
         }
-        String nextStrip=presentation.toString();
+        String nextStrip=presentation.append(":strip-limit:").append(stripLimit).toString();
         if(!nextStrip.equals(stripKey)) {
             stripKey=nextStrip;lastRaw=engine.raw();
             if((expanded || modeMenu) && allowLanguageSwitch) {
@@ -449,8 +458,9 @@ final class KeyboardView extends LinearLayout {
                 }
                 while(strip.getChildCount()>2)strip.removeViewAt(strip.getChildCount()-1);
                 List<TextView> available=candidatePool(candidateWords);
-                while(candidateWords.getChildCount()>(candidates.size()-from)*2)candidateWords.removeViewAt(candidateWords.getChildCount()-1);
-                for(int i=from;i<candidates.size();i++) {
+                int to=Math.min(candidates.size(),from+stripLimit);
+                while(candidateWords.getChildCount()>(to-from)*2)candidateWords.removeViewAt(candidateWords.getChildCount()-1);
+                for(int i=from;i<to;i++) {
                     Candidate c=candidates.get(i);TextView word=reuseCandidate(available,engine,c,snapshotComposition);
                     if((i-from)*2<candidateWords.getChildCount())placeCandidate(candidateWords,word,(i-from)*2,new LayoutParams(-2,dp(48)));
                     else {
@@ -463,6 +473,17 @@ final class KeyboardView extends LinearLayout {
                     word.setMinWidth(dp(48));word.setPadding(dp(12),0,dp(12),0);
                     if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
                 }
+                // Keep every candidate reachable without allocating thousands of
+                // off-screen text views on each keystroke. A gesture may request
+                // only one new batch before the deferred render installs it.
+                final int shownLimit=stripLimit;
+                candidateScroll.setOnScrollChangeListener((view,x,y,oldX,oldY)-> {
+                    if(view!=candidateScroll || candidateWords==null)return;
+                    if(x<=oldX || view.getWidth()<=0 || to>=candidates.size() || stripLimit!=shownLimit)return;
+                    if(x<Math.max(0,candidateWords.getWidth()-2*view.getWidth()))return;
+                    stripLimit+=stripBatch();
+                    render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading);
+                });
                 HorizontalScrollView currentScroll=candidateScroll;currentScroll.post(()->currentScroll.scrollTo(restoreScroll,0));
                 expandButton.setText(expanded?"⌃":allowLanguageSwitch?engine.inputMode().label+"⌄":"⌄");expandButton.setTextSize(15);
                 expandButton.setContentDescription(expanded?"Collapse candidates":"Expand candidates");

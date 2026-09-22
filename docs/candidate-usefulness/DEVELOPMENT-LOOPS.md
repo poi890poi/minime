@@ -92,3 +92,19 @@ Investigate the remaining candidate-cap losses with precision and recall togethe
 Do not raise limits without evidence about the displaced alternatives. Broader
 natural Taiwan conversation evidence is still needed before replacing context
 scores; keep their data unchanged until a supported replacement passes.
+
+## 2026-09-23: Off-screen candidate allocation — accepted
+
+- **Problem:** Chinese typing delays raw text, even with decoding on a worker.
+- **Cause:** the collapsed strip eagerly creates views for up to 1,651 candidates.
+- **Change:** allocate visible/nearby candidates in batches and extend on scroll;
+  preserve every candidate, its order and acceptance span.
+- **Improvement:** Chinese raw-frame p95 is 26.8/33.2 ms at 150/60 ms key intervals,
+  versus 148.8/559.3 ms in the repeated baseline. Returning to the old build
+  reproduces the delay. Fourteen final phone checks pass.
+- **Costs and limits:** other modes' p95 increases roughly 2–7 ms in these short
+  replays. Candidate latency still misses its target; expanded-grid creation is
+  unchanged. These are injected-input/frame-submission measurements, not physical
+  touch accuracy or completed performance acceptance.
+
+[Full report, all four runs, tradeoffs and remaining gates](../release-hardening/RENDER-RESULTS.md)
