@@ -1,0 +1,149 @@
+{
+  "chinese": {
+    "requests": 100,
+    "delivered": 100,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 100,
+        "mean_ms": 22.09412503,
+        "p50_ms": 18.7784115,
+        "p95_ms": 40.251823,
+        "max_ms": 77.296458
+      },
+      "callback": {
+        "observed": 100,
+        "mean_ms": 16.05246038,
+        "p50_ms": 11.2447655,
+        "p95_ms": 41.305364,
+        "max_ms": 99.694062
+      },
+      "glyph": {
+        "observed": 100,
+        "mean_ms": 3.13439766,
+        "p50_ms": 0.47723899999999997,
+        "p95_ms": 8.354586,
+        "max_ms": 56.942536
+      },
+      "render": {
+        "observed": 100,
+        "mean_ms": 6.38708644,
+        "p50_ms": 7.623021,
+        "p95_ms": 10.072084,
+        "max_ms": 12.042084
+      },
+      "votes": {
+        "observed": 100,
+        "mean_ms": 1.71640243,
+        "p50_ms": 0.7156735,
+        "p95_ms": 7.088051,
+        "max_ms": 8.869825
+      },
+      "residual": {
+        "observed": 100,
+        "mean_ms": 4.81457385,
+        "p50_ms": 1.9785214999999998,
+        "p95_ms": 20.210784,
+        "max_ms": 32.060875
+      }
+    }
+  },
+  "taiwanese_english": {
+    "requests": 100,
+    "delivered": 100,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 100,
+        "mean_ms": 22.45872339,
+        "p50_ms": 20.5522135,
+        "p95_ms": 35.577187,
+        "max_ms": 39.061823
+      },
+      "callback": {
+        "observed": 100,
+        "mean_ms": 4.39163957,
+        "p50_ms": 1.976901,
+        "p95_ms": 10.633802,
+        "max_ms": 12.624063
+      },
+      "glyph": {
+        "observed": 100,
+        "mean_ms": 0.15861766,
+        "p50_ms": 0.0,
+        "p95_ms": 0.891512,
+        "max_ms": 1.885316
+      },
+      "render": {
+        "observed": 100,
+        "mean_ms": 3.54764492,
+        "p50_ms": 1.5081,
+        "p95_ms": 8.737656,
+        "max_ms": 10.484063
+      },
+      "votes": {
+        "observed": 100,
+        "mean_ms": 0.036390650000000004,
+        "p50_ms": 0.0,
+        "p95_ms": 0.158905,
+        "max_ms": 0.302497
+      },
+      "residual": {
+        "observed": 100,
+        "mean_ms": 0.64898634,
+        "p50_ms": 0.34322949999999997,
+        "p95_ms": 1.728644,
+        "max_ms": 3.84979
+      }
+    }
+  },
+  "japanese_english": {
+    "requests": 100,
+    "delivered": 100,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 100,
+        "mean_ms": 20.9296453,
+        "p50_ms": 19.299505500000002,
+        "p95_ms": 35.407657,
+        "max_ms": 39.745469
+      },
+      "callback": {
+        "observed": 100,
+        "mean_ms": 4.6312574,
+        "p50_ms": 2.7585940000000004,
+        "p95_ms": 11.192188,
+        "max_ms": 12.302188
+      },
+      "glyph": {
+        "observed": 100,
+        "mean_ms": 0.1956896,
+        "p50_ms": 0.025807,
+        "p95_ms": 1.358801,
+        "max_ms": 2.312658
+      },
+      "render": {
+        "observed": 100,
+        "mean_ms": 3.71746663,
+        "p50_ms": 2.3162755,
+        "p95_ms": 8.598802,
+        "max_ms": 9.62302
+      },
+      "votes": {
+        "observed": 100,
+        "mean_ms": 0.06302391,
+        "p50_ms": 0.017943,
+        "p95_ms": 0.210832,
+        "max_ms": 0.529066
+      },
+      "residual": {
+        "observed": 100,
+        "mean_ms": 0.65507726,
+        "p50_ms": 0.3817975,
+        "p95_ms": 1.701973,
+        "max_ms": 3.924797
+      }
+    }
+  }
+}

@@ -21,6 +21,7 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
     private EditorTestActivity activity;
     private KeyboardView keyboard;
     private CompositionEngine engine;
+    private CandidateTimingProbe timing;
     private volatile Sample active;
     private final List<Sample> samples=new ArrayList<>();
     private static final class Sample {
@@ -72,6 +73,7 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
             for(View root:WindowInspector.getGlobalWindowViews()){keyboard=keyboard(root);if(keyboard!=null)break;}
             assertNotNull("Visible installed keyboard",keyboard);
             try {Field field=KeyboardView.class.getDeclaredField("snapshotEngine");field.setAccessible(true);engine=(CompositionEngine)field.get(keyboard);}catch(Exception e){throw new RuntimeException(e);}
+            try {timing=new CandidateTimingProbe(engine);}catch(Exception e){throw new RuntimeException(e);}
             assertTrue("Hardware accelerated editor",activity.text.isHardwareAccelerated());
             assertTrue("Hardware accelerated IME",keyboard.isHardwareAccelerated());
             activity.text.addTextChangedListener(new TextWatcher(){public void beforeTextChanged(CharSequence s,int a,int c,int f){}public void onTextChanged(CharSequence s,int a,int b,int c){}public void afterTextChanged(Editable text){Sample s=active;if(s!=null && s.up>0 && s.callback==0 && matches(s))s.callback=System.nanoTime();}});
@@ -114,6 +116,7 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
             }
         }
         } finally {active=null;
+        getInstrumentation().runOnMainSync(()->{try {timing.write(context.getExternalFilesDir(null));timing.close();}catch(Exception e){throw new RuntimeException(e);}});
         try(PrintWriter out=new PrintWriter(new File(context.getExternalFilesDir(null),"touch-latency.tsv"),"UTF-8")) {
             out.println("mode\tinterval_ms\tquery\texpected\taction\tdown_ns\tup_ns\teditor_callback_ns\teditor_pre_draw_ns\teditor_submit_ns\tcandidate_pre_draw_ns\tcandidate_submit_ns\tpressed_submit_ns");
             for(Sample s:samples)out.println(s.mode+"\t"+s.interval+"\t"+s.query+"\t"+s.expected+"\t"+s.action+"\t"+s.down+"\t"+s.up+"\t"+s.callback+"\t"+s.rawDraw+"\t"+s.rawSubmit+"\t"+s.candidateDraw+"\t"+s.candidateSubmit+"\t"+s.pressedSubmit);

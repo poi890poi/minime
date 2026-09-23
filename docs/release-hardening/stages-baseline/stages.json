@@ -1,0 +1,128 @@
+{
+  "chinese": {
+    "requests": 101,
+    "delivered": 101,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 101,
+        "mean_ms": 22.17395617821782,
+        "p50_ms": 19.003177,
+        "p95_ms": 38.65125,
+        "max_ms": 62.087187
+      },
+      "callback": {
+        "observed": 101,
+        "mean_ms": 16.83621808910891,
+        "p50_ms": 11.025157,
+        "p95_ms": 44.248594,
+        "max_ms": 105.49073
+      },
+      "glyph": {
+        "observed": 101,
+        "mean_ms": 4.499674623762377,
+        "p50_ms": 0.523386,
+        "p95_ms": 13.16037,
+        "max_ms": 87.855312
+      },
+      "render": {
+        "observed": 101,
+        "mean_ms": 6.524646237623762,
+        "p50_ms": 7.575208,
+        "p95_ms": 10.580833,
+        "max_ms": 12.999323
+      },
+      "residual": {
+        "observed": 101,
+        "mean_ms": 5.811897227722772,
+        "p50_ms": 2.345727,
+        "p95_ms": 24.781046,
+        "max_ms": 34.772662
+      }
+    }
+  },
+  "taiwanese_english": {
+    "requests": 100,
+    "delivered": 100,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 100,
+        "mean_ms": 21.35981822,
+        "p50_ms": 19.5741145,
+        "p95_ms": 34.158386,
+        "max_ms": 36.167708
+      },
+      "callback": {
+        "observed": 100,
+        "mean_ms": 4.26907552,
+        "p50_ms": 1.8836715,
+        "p95_ms": 10.719948,
+        "max_ms": 12.731041
+      },
+      "glyph": {
+        "observed": 100,
+        "mean_ms": 0.14854159,
+        "p50_ms": 0.0,
+        "p95_ms": 0.810778,
+        "max_ms": 1.321509
+      },
+      "render": {
+        "observed": 100,
+        "mean_ms": 3.50877335,
+        "p50_ms": 1.53362,
+        "p95_ms": 8.797968,
+        "max_ms": 9.940312
+      },
+      "residual": {
+        "observed": 100,
+        "mean_ms": 0.61176058,
+        "p50_ms": 0.334246,
+        "p95_ms": 1.703383,
+        "max_ms": 3.99995
+      }
+    }
+  },
+  "japanese_english": {
+    "requests": 100,
+    "delivered": 100,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 100,
+        "mean_ms": 20.98733174,
+        "p50_ms": 19.509401,
+        "p95_ms": 35.067239,
+        "max_ms": 41.583229
+      },
+      "callback": {
+        "observed": 100,
+        "mean_ms": 4.65700525,
+        "p50_ms": 2.87362,
+        "p95_ms": 11.334896,
+        "max_ms": 13.927031
+      },
+      "glyph": {
+        "observed": 100,
+        "mean_ms": 0.19791794,
+        "p50_ms": 0.025703,
+        "p95_ms": 1.074531,
+        "max_ms": 2.664169
+      },
+      "render": {
+        "observed": 100,
+        "mean_ms": 3.76636715,
+        "p50_ms": 2.477266,
+        "p95_ms": 8.793438,
+        "max_ms": 10.522135
+      },
+      "residual": {
+        "observed": 100,
+        "mean_ms": 0.69272016,
+        "p50_ms": 0.425833,
+        "p95_ms": 1.877083,
+        "max_ms": 4.080684
+      }
+    }
+  }
+}
