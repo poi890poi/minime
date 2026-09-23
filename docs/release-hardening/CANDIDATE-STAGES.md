@@ -65,3 +65,28 @@ Both phone sessions passed and restored the original APK, preferences and Samsun
 IME, then verified display OFF. Session IDs: `ea6e300b-f297-4a4c-9ef0-620ff35c5ddd`
 and `f1f5a5f1-9e72-4a97-aad0-446076957c6f`. Shared-core 887,604 assertions and pinned
 desktop 13,014 rows/11,272 native queries passed before building the test APK.
+
+## Observation-window correction
+
+The original frame probe shared one active sample for pressed-key and candidate
+feedback. Starting the next DOWN event replaced it, although key acceptance and
+the new spelling happen on UP. With 60 ms between keys and a 25 ms press, it
+observed only about 35 ms of the previous query. A result arriving during the next
+press was omitted even while it was still the current spelling.
+
+The test now keeps candidate observation separate until the next UP. The reporter
+also distinguishes a delivered, unchanged presentation from a changed row without
+an observed frame. Eight reporter contracts cover these boundaries. This is a
+measurement correction, not a production speedup or relaxed latency target.
+
+In the corrected baseline, all 50 fast Chinese queries have observed frames;
+20 are captured during the following press. Taiwanese and Japanese each have
+49/50 observed frames plus one confirmed unchanged presentation per interval.
+All 300 asynchronous typing requests deliver. Earlier low observed-frame counts
+therefore cannot establish lost suggestions. Actual observed delays still miss
+the candidate target: Chinese p95 is 118.96 ms at 150 ms typing and 75.89 ms at
+60 ms typing. The full measurements remain in
+[corrected baseline](stages-window-baseline/stages.json).
+
+Do not directly compare earlier conditional fast-frame percentiles with this
+corrected window. The final trial uses the identical corrected test APK.

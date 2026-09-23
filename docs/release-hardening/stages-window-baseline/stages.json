@@ -1,0 +1,190 @@
+{
+  "chinese": {
+    "requests": 100,
+    "delivered": 100,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 100,
+        "mean_ms": 22.5799614,
+        "p50_ms": 19.557656,
+        "p95_ms": 39.391406,
+        "max_ms": 79.78276
+      },
+      "callback": {
+        "observed": 100,
+        "mean_ms": 16.26246667,
+        "p50_ms": 11.593802,
+        "p95_ms": 41.755208,
+        "max_ms": 96.19177
+      },
+      "glyph": {
+        "observed": 100,
+        "mean_ms": 2.86607432,
+        "p50_ms": 0.38594249999999997,
+        "p95_ms": 8.3275,
+        "max_ms": 54.874554
+      },
+      "render": {
+        "observed": 100,
+        "mean_ms": 6.52189888,
+        "p50_ms": 7.2146875,
+        "p95_ms": 10.406354,
+        "max_ms": 11.606563
+      },
+      "votes": {
+        "observed": 100,
+        "mean_ms": 1.73710881,
+        "p50_ms": 0.7234985,
+        "p95_ms": 7.085221,
+        "max_ms": 8.589481
+      },
+      "residual": {
+        "observed": 100,
+        "mean_ms": 5.13738466,
+        "p50_ms": 2.1307385,
+        "p95_ms": 21.468664,
+        "max_ms": 32.472479
+      }
+    }
+  },
+  "taiwanese_english": {
+    "requests": 100,
+    "delivered": 100,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 100,
+        "mean_ms": 22.56415888,
+        "p50_ms": 20.321953,
+        "p95_ms": 36.135104,
+        "max_ms": 40.811406
+      },
+      "callback": {
+        "observed": 100,
+        "mean_ms": 4.53223805,
+        "p50_ms": 1.9858855,
+        "p95_ms": 12.022969,
+        "max_ms": 13.422969
+      },
+      "glyph": {
+        "observed": 100,
+        "mean_ms": 0.15810469,
+        "p50_ms": 0.0,
+        "p95_ms": 0.987452,
+        "max_ms": 1.713333
+      },
+      "render": {
+        "observed": 100,
+        "mean_ms": 3.66065207,
+        "p50_ms": 1.606979,
+        "p95_ms": 9.565678,
+        "max_ms": 12.085833
+      },
+      "votes": {
+        "observed": 100,
+        "mean_ms": 0.03462179,
+        "p50_ms": 0.0,
+        "p95_ms": 0.153445,
+        "max_ms": 0.171403
+      },
+      "residual": {
+        "observed": 100,
+        "mean_ms": 0.6788595,
+        "p50_ms": 0.37119800000000003,
+        "p95_ms": 1.956205,
+        "max_ms": 3.909265
+      }
+    }
+  },
+  "japanese_english": {
+    "requests": 100,
+    "delivered": 100,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 100,
+        "mean_ms": 20.93795881,
+        "p50_ms": 19.1364845,
+        "p95_ms": 34.460938,
+        "max_ms": 38.390625
+      },
+      "callback": {
+        "observed": 100,
+        "mean_ms": 4.73877344,
+        "p50_ms": 2.7377605000000003,
+        "p95_ms": 12.124271,
+        "max_ms": 15.235573
+      },
+      "glyph": {
+        "observed": 100,
+        "mean_ms": 0.20793118,
+        "p50_ms": 0.0249745,
+        "p95_ms": 1.061199,
+        "max_ms": 2.536874
+      },
+      "render": {
+        "observed": 100,
+        "mean_ms": 3.76374055,
+        "p50_ms": 2.289193,
+        "p95_ms": 9.040468,
+        "max_ms": 10.842813
+      },
+      "votes": {
+        "observed": 100,
+        "mean_ms": 0.07430286,
+        "p50_ms": 0.0170325,
+        "p95_ms": 0.222554,
+        "max_ms": 1.223285
+      },
+      "residual": {
+        "observed": 100,
+        "mean_ms": 0.69279885,
+        "p50_ms": 0.4066415,
+        "p95_ms": 1.728439,
+        "max_ms": 4.611772
+      }
+    }
+  },
+  "frame_observations": {
+    "chinese/150": {
+      "letters": 50,
+      "observed_frame": 50
+    },
+    "chinese/60": {
+      "letters": 50,
+      "observed_frame": 50,
+      "observed_during_next_press_subset": 20
+    },
+    "english/150": {
+      "letters": 50,
+      "observed_frame": 50
+    },
+    "english/60": {
+      "letters": 50,
+      "observed_frame": 50
+    },
+    "taiwanese_english/150": {
+      "letters": 50,
+      "observed_frame": 49,
+      "ready_unchanged_presentation": 1
+    },
+    "taiwanese_english/60": {
+      "letters": 50,
+      "observed_frame": 49,
+      "observed_during_next_press_subset": 27,
+      "ready_unchanged_presentation": 1
+    },
+    "japanese_english/150": {
+      "letters": 50,
+      "observed_frame": 49,
+      "ready_unchanged_presentation": 1
+    },
+    "japanese_english/60": {
+      "letters": 50,
+      "observed_frame": 49,
+      "observed_during_next_press_subset": 14,
+      "ready_unchanged_presentation": 1
+    }
+  }
+}

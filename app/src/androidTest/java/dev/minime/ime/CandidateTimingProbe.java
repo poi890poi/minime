@@ -9,6 +9,7 @@ import java.util.function.*;
 /** Test-only, main-thread hooks. Never records ordinary user typing. */
 final class CandidateTimingProbe implements AutoCloseable {
     private final CompositionEngine engine;
+    private final KeyboardView keyboard;
     private final CompositionEngine.Decoder decoder;
     private final Runnable changed;
     private final Predicate<String> display;
@@ -16,7 +17,7 @@ final class CandidateTimingProbe implements AutoCloseable {
     private final List<Sample> samples=new ArrayList<>();
     private Sample active;
     private static final class Sample {
-        String mode,raw;long requested,delivered,finished,glyph,render,votes,voteCalls;int count;
+        String mode,raw;long requested,delivered,finished,glyph,render,votes,voteCalls;int count;boolean presentationChanged;
     }
     private static Object get(Object owner,String name)throws Exception {
         Field f=owner.getClass().getDeclaredField(name);f.setAccessible(true);return f.get(owner);
@@ -25,8 +26,8 @@ final class CandidateTimingProbe implements AutoCloseable {
         Field f=owner.getClass().getDeclaredField(name);f.setAccessible(true);f.set(owner,value);
     }
     @SuppressWarnings("unchecked")
-    CandidateTimingProbe(CompositionEngine engine)throws Exception {
-        this.engine=engine;decoder=(CompositionEngine.Decoder)get(engine,"decoder");
+    CandidateTimingProbe(CompositionEngine engine,KeyboardView keyboard)throws Exception {
+        this.engine=engine;this.keyboard=keyboard;decoder=(CompositionEngine.Decoder)get(engine,"decoder");
         changed=(Runnable)get(engine,"changed");display=(Predicate<String>)get(engine,"displayable");
         learning=(Learning)get(engine,"learning");
         set(engine,"learning",new Learning(){
@@ -57,7 +58,11 @@ final class CandidateTimingProbe implements AutoCloseable {
                 Sample s=new Sample();s.mode=engine.inputMode().id;s.raw=raw;s.requested=System.nanoTime();samples.add(s);
                 decoder.query(d,raw,z,context,phonetic,addons,enabled,values->{
                     s.delivered=System.nanoTime();Sample previous=active;active=s;
-                    try{result.accept(values);s.count=engine.candidates().size();}
+                    try{
+                        Object before=get(keyboard,"stripKey");
+                        result.accept(values);s.count=engine.candidates().size();
+                        s.presentationChanged=!Objects.equals(before,get(keyboard,"stripKey"));
+                    } catch(Exception failure){throw new RuntimeException(failure);}
                     finally{s.finished=System.nanoTime();active=previous;}
                 });
             }
@@ -68,8 +73,8 @@ final class CandidateTimingProbe implements AutoCloseable {
     }
     void write(File directory)throws Exception {
         try(PrintWriter out=new PrintWriter(new File(directory,"candidate-stages.tsv"),"UTF-8")) {
-            out.println("mode\tquery\trequested_ns\tdelivered_ns\tfinished_ns\tglyph_ns\trender_ns\tcandidates\tvotes_ns\tvote_calls");
-            for(Sample s:samples)out.println(s.mode+"\t"+s.raw+"\t"+s.requested+"\t"+s.delivered+"\t"+s.finished+"\t"+s.glyph+"\t"+s.render+"\t"+s.count+"\t"+s.votes+"\t"+s.voteCalls);
+            out.println("mode\tquery\trequested_ns\tdelivered_ns\tfinished_ns\tglyph_ns\trender_ns\tcandidates\tvotes_ns\tvote_calls\tpresentation_changed");
+            for(Sample s:samples)out.println(s.mode+"\t"+s.raw+"\t"+s.requested+"\t"+s.delivered+"\t"+s.finished+"\t"+s.glyph+"\t"+s.render+"\t"+s.count+"\t"+s.votes+"\t"+s.voteCalls+"\t"+s.presentationChanged);
         }
         if(decoder instanceof AsyncDecoder) {
             DecodePipeline.Stats stats=((AsyncDecoder)decoder).stats;

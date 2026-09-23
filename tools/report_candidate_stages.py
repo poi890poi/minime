@@ -5,6 +5,7 @@ import gzip
 import json
 import math
 import statistics
+from collections import Counter
 from pathlib import Path
 
 
@@ -40,13 +41,52 @@ def report(source):
     return groups
 
 
+def observations(touches, stages):
+    """Partition every injected letter; do not equate unchanged presentation with loss."""
+    groups = {}
+    for index, touch in enumerate(touches):
+        if touch["action"] != "key":
+            continue
+        end = int(touches[index+1]["up_ns"]) if index+1 < len(touches) else float("inf")
+        group = groups.setdefault(touch["mode"]+"/"+touch["interval_ms"], Counter())
+        matching = [r for r in stages if r["mode"] == touch["mode"] and r["query"] == touch["expected"]
+                    and int(touch["up_ns"]) <= int(r["requested_ns"]) < end]
+        group["letters"] += 1
+        if int(touch["candidate_submit_ns"]):
+            group["observed_frame"] += 1
+            if index+1 < len(touches) and int(touches[index+1]["down_ns"]) <= int(touch.get("candidate_pre_draw_ns", 0)) < end:
+                group["observed_during_next_press_subset"] += 1
+        elif touch["mode"] == "english":
+            group["synchronous_unobserved"] += 1
+        elif not matching:
+            group["unmatched_request"] += 1
+        else:
+            row = matching[-1]
+            if not int(row["finished_ns"]):
+                group["undelivered"] += 1
+            elif int(row["finished_ns"]) >= end:
+                group["ready_after_observation_window"] += 1
+            elif row.get("presentation_changed") == "false":
+                group["ready_unchanged_presentation"] += 1
+            else:
+                group["ready_changed_without_observed_frame"] += 1
+    return groups
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--touch", type=Path)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     result = report(args.source)
+    if args.touch:
+        with args.touch.open(encoding="utf-8") as f:
+            touches = list(csv.DictReader(f, delimiter="\t"))
+        with args.source.open(encoding="utf-8") as f:
+            stages = list(csv.DictReader(f, delimiter="\t"))
+        result["frame_observations"] = observations(touches, stages)
     (args.output / "stages.json").write_text(json.dumps(result, indent=2)+"\n", encoding="utf-8")
     (args.output / "stages.tsv.gz").write_bytes(gzip.compress(args.source.read_bytes(), mtime=0))
     print(json.dumps(result, indent=2))

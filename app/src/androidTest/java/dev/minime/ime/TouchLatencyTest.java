@@ -23,6 +23,7 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
     private CompositionEngine engine;
     private CandidateTimingProbe timing;
     private volatile Sample active;
+    private volatile Sample candidateActive;
     private final List<Sample> samples=new ArrayList<>();
     private static final class Sample {
         String mode,query,expected,action;int interval;
@@ -55,7 +56,8 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
     }
     private void inject(Sample s,int action) {
         long now=SystemClock.uptimeMillis();
-        if(action==MotionEvent.ACTION_DOWN)s.down=now*1000000;else s.up=now*1000000;
+        if(action==MotionEvent.ACTION_DOWN)s.down=now*1000000;
+        else {s.up=now*1000000;candidateActive=s.action.equals("key")?s:null;}
         MotionEvent event=MotionEvent.obtain(s.down/1000000,now,action,s.x,s.y,0);
         event.setSource(InputDevice.SOURCE_TOUCHSCREEN);
         try {assertTrue(getInstrumentation().getUiAutomation().injectInputEvent(event,false));}finally{event.recycle();}
@@ -73,7 +75,7 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
             for(View root:WindowInspector.getGlobalWindowViews()){keyboard=keyboard(root);if(keyboard!=null)break;}
             assertNotNull("Visible installed keyboard",keyboard);
             try {Field field=KeyboardView.class.getDeclaredField("snapshotEngine");field.setAccessible(true);engine=(CompositionEngine)field.get(keyboard);}catch(Exception e){throw new RuntimeException(e);}
-            try {timing=new CandidateTimingProbe(engine);}catch(Exception e){throw new RuntimeException(e);}
+            try {timing=new CandidateTimingProbe(engine,keyboard);}catch(Exception e){throw new RuntimeException(e);}
             assertTrue("Hardware accelerated editor",activity.text.isHardwareAccelerated());
             assertTrue("Hardware accelerated IME",keyboard.isHardwareAccelerated());
             activity.text.addTextChangedListener(new TextWatcher(){public void beforeTextChanged(CharSequence s,int a,int c,int f){}public void onTextChanged(CharSequence s,int a,int b,int c){}public void afterTextChanged(Editable text){Sample s=active;if(s!=null && s.up>0 && s.callback==0 && matches(s))s.callback=System.nanoTime();}});
@@ -86,8 +88,11 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
             keyboard.getViewTreeObserver().addOnPreDrawListener(()-> {
                 Sample s=active;if(s==null)return true;
                 if(s.pressedSubmit==0 && s.up==0 && s.key.isPressed())keyboard.getViewTreeObserver().registerFrameCommitCallback(()->{if(s.pressedSubmit==0)s.pressedSubmit=System.nanoTime();});
-                if(s.up>0 && s.candidateDraw==0 && !s.action.equals("space") && engine.raw().equals(s.expected) && !engine.predictionPending()) {
-                    s.candidateDraw=System.nanoTime();keyboard.getViewTreeObserver().registerFrameCommitCallback(()->s.candidateSubmit=System.nanoTime());
+                // Finger-down on the next key does not supersede the current
+                // spelling. Observe it until the next key is released.
+                Sample candidate=candidateActive;
+                if(candidate!=null && candidate.candidateDraw==0 && engine.raw().equals(candidate.expected) && !engine.predictionPending()) {
+                    candidate.candidateDraw=System.nanoTime();keyboard.getViewTreeObserver().registerFrameCommitCallback(()->candidate.candidateSubmit=System.nanoTime());
                 }
                 return true;
             });
@@ -98,11 +103,11 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
         }
         assertTrue("Diverse frozen corpus sample",queries.size()>=8);
         try {for(String mode:new String[]{"chinese","english","taiwanese_english","japanese_english"}) {
-            active=null;
+            active=null;candidateActive=null;
             context.getSharedPreferences("settings",0).edit().putString("mixed_mode",mode.equals("english")?"chinese":mode).putBoolean("english_mode",mode.equals("english")).commit();
             focus(activity.url);focus(activity.text);
             for(int interval:new int[]{150,60})for(String query:queries.subList(0,8)) {
-                active=null;getInstrumentation().runOnMainSync(()->activity.text.setText(""));focus(activity.url);focus(activity.text);
+                active=null;candidateActive=null;getInstrumentation().runOnMainSync(()->activity.text.setText(""));focus(activity.url);focus(activity.text);
                 String expected="";
                 for(char c:(query+" ").toCharArray()) {
                     Sample s=new Sample();s.mode=mode;s.query=query;s.interval=interval;s.action=c==' '?"space":"key";
@@ -115,7 +120,7 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
                 SystemClock.sleep(160);
             }
         }
-        } finally {active=null;
+        } finally {active=null;candidateActive=null;
         getInstrumentation().runOnMainSync(()->{try {timing.write(context.getExternalFilesDir(null));timing.close();}catch(Exception e){throw new RuntimeException(e);}});
         try(PrintWriter out=new PrintWriter(new File(context.getExternalFilesDir(null),"touch-latency.tsv"),"UTF-8")) {
             out.println("mode\tinterval_ms\tquery\texpected\taction\tdown_ns\tup_ns\teditor_callback_ns\teditor_pre_draw_ns\teditor_submit_ns\tcandidate_pre_draw_ns\tcandidate_submit_ns\tpressed_submit_ns");
