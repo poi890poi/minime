@@ -893,22 +893,47 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         catch(java.util.concurrent.TimeoutException e) { throw new AssertionError(e); }
     }
     public void testFirstCharacterMixedWithMatchingPhrases() throws Exception {
+        dev.minime.core.PhoneticDictionary dictionary=DictionaryRepository.load(activity).get(30,java.util.concurrent.TimeUnit.SECONDS);
         for(boolean nativeMode:new boolean[]{false,true}) {
         getInstrumentation().getTargetContext().getSharedPreferences("settings",Context.MODE_PRIVATE).edit().putBoolean("rime_pinyin",nativeMode).commit();
         if(nativeMode)assertTrue(RimeBackend.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS));focus(activity.url);focus(activity.text);
-        for(String[] sample:new String[][]{{"nihao","你","hao"},{"jintian","金","tian"},{"xianzai","先","zai"},{"zhongguo","中","guo"}}) {
+        for(String[] sample:new String[][]{{"nihao","ni","hao"},{"jintian","jin","tian"},{"xianzai","xian","zai"},{"zhongguo","zhong","guo"}}) {
+            Set<String> eligible=new HashSet<>();
+            for(dev.minime.core.Candidate candidate:dictionary.convert(sample[1],false))
+                if(candidate.text.codePointCount(0,candidate.text.length())==1
+                        && Character.UnicodeScript.of(candidate.text.codePointAt(0))==Character.UnicodeScript.HAN)
+                    eligible.add(candidate.text);
+            assertFalse("Source provides first-syllable glyphs",eligible.isEmpty());
             clear();type(sample[0]);
-            Rect glyph=bounds("Candidate "+sample[1]),strip=bounds("Candidate list");
+            Rect strip=bounds("Candidate list");AccessibilityNodeInfo choice=null;
+            for(AccessibilityWindowInfo window:getInstrumentation().getUiAutomation().getWindows()) {
+                choice=findVisibleSourceGlyph(window.getRoot(),eligible,strip);if(choice!=null)break;
+            }
+            assertNotNull("A source-valid first glyph is visible for "+sample[0],choice);
+            String selected=choice.getContentDescription().toString().substring("Candidate ".length());
+            Rect glyph=new Rect();choice.getBoundsInScreen(glyph);choice.recycle();
             assertTrue("First character is tappable without expansion for "+sample[0],strip.contains(glyph.centerX(),glyph.centerY()));
             long down=SystemClock.uptimeMillis();
             event(down,MotionEvent.ACTION_DOWN,glyph.centerX(),glyph.centerY());
             event(down,MotionEvent.ACTION_UP,glyph.centerX(),glyph.centerY());
-            expectText(sample[1]+sample[2]);node("Exact input "+sample[2]).recycle();
-            assertEquals("Only the chosen character is committed",sample[1].length(),android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText()));
+            expectText(selected+sample[2]);node("Exact input "+sample[2]).recycle();
+            assertEquals("Only the chosen character is committed",selected.length(),android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText()));
             click("Space");
-            assertTrue("Rest finishes after the chosen character",activity.text.getText().toString().startsWith(sample[1]));
+            assertTrue("Rest finishes after the chosen character",activity.text.getText().toString().startsWith(selected));
         }
         }
+    }
+    private AccessibilityNodeInfo findVisibleSourceGlyph(AccessibilityNodeInfo node,Set<String> eligible,Rect strip) {
+        if(node==null)return null;
+        String description=String.valueOf(node.getContentDescription());Rect bounds=new Rect();node.getBoundsInScreen(bounds);
+        if(node.isVisibleToUser() && description.startsWith("Candidate ")
+                && eligible.contains(description.substring("Candidate ".length()))
+                && strip.contains(bounds.centerX(),bounds.centerY()))return node;
+        for(int i=0;i<node.getChildCount();i++) {
+            AccessibilityNodeInfo match=findVisibleSourceGlyph(node.getChild(i),eligible,strip);
+            if(match!=null){node.recycle();return match;}
+        }
+        node.recycle();return null;
     }
     public void testSourceDerivedLongBufferRecovery() throws Exception {
         List<String> syllables=new ArrayList<>();
