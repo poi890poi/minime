@@ -1,0 +1,16 @@
+{
+  "baseline_runtime": "995b535",
+  "probe_commit": "fce8c49",
+  "binaries": {
+    "stages-baseline.apk": "8fa25e8801d61500a0b0c335ce20bd1a655aaf03ff0bd1f8395d55249180c564",
+    "stages-vote-tests.apk": "366611193c627ed44fbd2b8c0cf9f327dd66d858df006c6afeb18cce817fe8e8",
+    "font-trial.apk": "8f06f8cd9fd9afcfdeacff8431a8b3f8c562e29beb0f562a19e71a46b043227b",
+    "font-tests.apk": "a75a82c9ea3ba9b51bae89458bc018fcd97d137dd0d2252260b9cc03d37ebe40",
+    "stages-observation-tests.apk": "391db037775d2caebefbc936df3b0af130d557db5767b15107316156eaa5589c",
+    "stages-window-tests.apk": "511ffd36e6eff552e3299a607e7b47961246d99c2fc53ad7608c29694b644d9e"
+  },
+  "changed_unsigned_entries": [
+    "classes3.dex"
+  ],
+  "decision": "rejected: no reproduced end-to-end candidate improvement; Japanese latency regression"
+}

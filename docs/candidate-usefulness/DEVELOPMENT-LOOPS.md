@@ -108,3 +108,22 @@ scores; keep their data unchanged until a supported replacement passes.
   touch accuracy or completed performance acceptance.
 
 [Full report, all four runs, tradeoffs and remaining gates](../release-hardening/RENDER-RESULTS.md)
+
+## 2026-09-23: Candidate stage profiling — trial rejected, measurement fixed
+
+- **Problem:** fresh Chinese candidates remain too slow; earlier fast-frame
+  counts also suggested many unavailable results.
+- **Causes:** cold font checks block the main thread, but the path also includes
+  worker delivery and candidate application. Separately, the test stopped
+  observing the current spelling at the next DOWN instead of the next UP.
+- **Changes:** retain test-only stage profiling and the corrected observation
+  window. Revert the worker font-cache warming experiment.
+- **Outcome:** warming cuts the final maximum callback from 96 to 45 ms, but
+  Chinese candidate p95 stays about 119–120 ms and final Japanese p95 worsens
+  about 10 ms. That tradeoff does not support adding the mechanism. Nineteen
+  integration checks pass; functional correctness does not override this result.
+- **Testing improvement:** corrected baseline captures all 50 fast Chinese
+  frames, including 20 during the next press. Earlier missing counts overstated
+  the problem. Eight reporter contracts pass. No language-quality gain is claimed.
+
+[Full report, negative results, artifacts and next causal question](../release-hardening/FONT-RESULTS.md)

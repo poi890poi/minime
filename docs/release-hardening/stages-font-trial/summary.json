@@ -1,0 +1,429 @@
+{
+  "baseline": "fce8c49 + worker font warming trial",
+  "samples": 464,
+  "groups": {
+    "chinese/150": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.2598842,
+        "p50_ms": 4.2897295,
+        "p95_ms": 5.893688,
+        "p99_ms": 6.20176,
+        "max_ms": 6.20176
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 13.99829464,
+        "p50_ms": 13.208742,
+        "p95_ms": 20.47072,
+        "p99_ms": 21.030461,
+        "max_ms": 21.030461
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 55.64177588,
+        "p50_ms": 44.5021255,
+        "p95_ms": 107.65343,
+        "p99_ms": 146.302961,
+        "max_ms": 146.302961
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 21.36461752,
+        "p50_ms": 20.045304,
+        "p95_ms": 31.029837,
+        "p99_ms": 32.022542,
+        "max_ms": 32.022542
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 21.28366975,
+        "p50_ms": 21.374418,
+        "p95_ms": 30.406812,
+        "p99_ms": 30.406812,
+        "max_ms": 30.406812
+      }
+    },
+    "chinese/60": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.53078956,
+        "p50_ms": 4.531420000000001,
+        "p95_ms": 5.575718,
+        "p99_ms": 6.959937,
+        "max_ms": 6.959937
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 14.73832804,
+        "p50_ms": 14.0085815,
+        "p95_ms": 21.263061,
+        "p99_ms": 22.642333,
+        "max_ms": 22.642333
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 27,
+        "unobserved": 23,
+        "mean_ms": 41.673777666666666,
+        "p50_ms": 43.725351,
+        "p95_ms": 45.753528,
+        "p99_ms": 46.312956,
+        "max_ms": 46.312956
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 49,
+        "unobserved": 1,
+        "mean_ms": 25.621738,
+        "p50_ms": 24.281029,
+        "p95_ms": 39.481394,
+        "p99_ms": 44.548372,
+        "max_ms": 44.548372
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 24.366308875,
+        "p50_ms": 23.697643,
+        "p95_ms": 28.708998,
+        "p99_ms": 28.708998,
+        "max_ms": 28.708998
+      }
+    },
+    "english/150": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.62375916,
+        "p50_ms": 4.6043585,
+        "p95_ms": 5.737639,
+        "p99_ms": 5.7954,
+        "max_ms": 5.7954
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 17.36749768,
+        "p50_ms": 14.912561,
+        "p95_ms": 29.465608,
+        "p99_ms": 31.67509,
+        "max_ms": 31.67509
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 19.8562748,
+        "p50_ms": 18.1567,
+        "p95_ms": 27.881076,
+        "p99_ms": 29.547692,
+        "max_ms": 29.547692
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 22.32415604,
+        "p50_ms": 22.189148000000003,
+        "p95_ms": 30.711756,
+        "p99_ms": 33.348159,
+        "max_ms": 33.348159
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 14.101337000000001,
+        "p50_ms": 13.782691,
+        "p95_ms": 17.656597,
+        "p99_ms": 17.656597,
+        "max_ms": 17.656597
+      }
+    },
+    "english/60": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.67651552,
+        "p50_ms": 4.521464,
+        "p95_ms": 5.841228,
+        "p99_ms": 6.953207,
+        "max_ms": 6.953207
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 16.96494886,
+        "p50_ms": 14.2498495,
+        "p95_ms": 30.50399,
+        "p99_ms": 31.685135,
+        "max_ms": 31.685135
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 20.0522822,
+        "p50_ms": 18.1657595,
+        "p95_ms": 29.427635,
+        "p99_ms": 37.107741,
+        "max_ms": 37.107741
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 23.0077728,
+        "p50_ms": 22.5724785,
+        "p95_ms": 30.408887,
+        "p99_ms": 32.017427,
+        "max_ms": 32.017427
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 13.999920375,
+        "p50_ms": 14.405915499999999,
+        "p95_ms": 15.301853,
+        "p99_ms": 15.301853,
+        "max_ms": 15.301853
+      }
+    },
+    "taiwanese_english/150": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.83203744,
+        "p50_ms": 4.6070585,
+        "p95_ms": 6.047995,
+        "p99_ms": 6.972477,
+        "max_ms": 6.972477
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 15.21872914,
+        "p50_ms": 14.117892000000001,
+        "p95_ms": 21.510911,
+        "p99_ms": 26.223517,
+        "max_ms": 26.223517
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 49,
+        "unobserved": 1,
+        "mean_ms": 40.54233371428572,
+        "p50_ms": 35.080602,
+        "p95_ms": 67.403829,
+        "p99_ms": 76.071017,
+        "max_ms": 76.071017
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 22.1541364,
+        "p50_ms": 20.66547,
+        "p95_ms": 29.916277,
+        "p99_ms": 31.578727,
+        "max_ms": 31.578727
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 24.09417375,
+        "p50_ms": 23.3768495,
+        "p95_ms": 28.87883,
+        "p99_ms": 28.87883,
+        "max_ms": 28.87883
+      }
+    },
+    "taiwanese_english/60": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.55491244,
+        "p50_ms": 4.544684999999999,
+        "p95_ms": 6.00773,
+        "p99_ms": 6.226325,
+        "max_ms": 6.226325
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 15.02311246,
+        "p50_ms": 13.9461165,
+        "p95_ms": 23.111064,
+        "p99_ms": 24.38648,
+        "max_ms": 24.38648
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 23,
+        "unobserved": 27,
+        "mean_ms": 38.573444869565215,
+        "p50_ms": 38.539033,
+        "p95_ms": 49.169189,
+        "p99_ms": 57.527368,
+        "max_ms": 57.527368
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 26.1203916,
+        "p50_ms": 26.0497365,
+        "p95_ms": 35.873355,
+        "p99_ms": 39.010439,
+        "max_ms": 39.010439
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 21.87222325,
+        "p50_ms": 21.6702045,
+        "p95_ms": 26.300961,
+        "p99_ms": 26.300961,
+        "max_ms": 26.300961
+      }
+    },
+    "japanese_english/150": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.62852074,
+        "p50_ms": 4.6490025,
+        "p95_ms": 5.560177,
+        "p99_ms": 5.81158,
+        "max_ms": 5.81158
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 14.0490541,
+        "p50_ms": 12.983457999999999,
+        "p95_ms": 20.280488,
+        "p99_ms": 23.412312,
+        "max_ms": 23.412312
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 49,
+        "unobserved": 1,
+        "mean_ms": 39.927188163265306,
+        "p50_ms": 34.88434,
+        "p95_ms": 67.786426,
+        "p99_ms": 72.519967,
+        "max_ms": 72.519967
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 22.73442912,
+        "p50_ms": 21.0930655,
+        "p95_ms": 31.18679,
+        "p99_ms": 32.148767,
+        "max_ms": 32.148767
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 26.264940125,
+        "p50_ms": 26.860875999999998,
+        "p95_ms": 29.513196,
+        "p99_ms": 29.513196,
+        "max_ms": 29.513196
+      }
+    },
+    "japanese_english/60": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.5586468,
+        "p50_ms": 4.725094,
+        "p95_ms": 5.685743,
+        "p99_ms": 5.906474,
+        "max_ms": 5.906474
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 14.736959279999999,
+        "p50_ms": 13.5009795,
+        "p95_ms": 23.436055,
+        "p99_ms": 27.560275,
+        "max_ms": 27.560275
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 42,
+        "unobserved": 8,
+        "mean_ms": 41.485838,
+        "p50_ms": 37.6349625,
+        "p95_ms": 71.422203,
+        "p99_ms": 78.515744,
+        "max_ms": 78.515744
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 24.19877698,
+        "p50_ms": 23.6663945,
+        "p95_ms": 33.005693,
+        "p99_ms": 38.734596,
+        "max_ms": 38.734596
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 24.097904875,
+        "p50_ms": 22.720689999999998,
+        "p95_ms": 29.935744,
+        "p99_ms": 29.935744,
+        "max_ms": 29.935744
+      }
+    }
+  },
+  "limitations": [
+    "injected events, not physical digitizer latency",
+    "frame callback delivery, not display presentation",
+    "one session, small sample; no acceptance certification",
+    "same-process test editor, not Chrome",
+    "candidate metrics conditional on observing a fresh matching frame before the next action; unchanged rows and supersession are not distinguished"
+  ]
+}

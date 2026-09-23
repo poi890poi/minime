@@ -1,5 +1,10 @@
 # Candidate-strip allocation — accepted improvement, release gates still open
 
+Follow-up measurement correction: the old fast-typing candidate probe stopped at
+the next finger-down, before the spelling changed. Its unobserved counts cannot
+establish missing suggestions. Raw-editor timings are unaffected. See the
+[corrected observation window and fresh baseline](CANDIDATE-STAGES.md).
+
 ## Problem and cause
 
 The collapsed strip eagerly creates, binds and measures a TextView/divider for

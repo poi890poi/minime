@@ -1,0 +1,113 @@
+diff --git a/app/src/main/java/dev/minime/ime/AsyncDecoder.java b/app/src/main/java/dev/minime/ime/AsyncDecoder.java
+index 378b3d5..ff504d2 100644
+--- a/app/src/main/java/dev/minime/ime/AsyncDecoder.java
++++ b/app/src/main/java/dev/minime/ime/AsyncDecoder.java
+@@ -15,10 +15,12 @@ final class AsyncDecoder implements CompositionEngine.Decoder,AutoCloseable {
+     private volatile boolean closed;
+     private volatile boolean rime;
+     private volatile JapaneseConversion.Provider japanese;
++    private volatile CandidateGlyphs glyphs;
+     private final DecodePipeline.Requests requests=new DecodePipeline.Requests();
+     final DecodePipeline.Stats stats=new DecodePipeline.Stats();
+     AsyncDecoder(Handler main) {this.main=main;}
+     void rime(boolean enabled) {rime=enabled;}
++    void glyphs(CandidateGlyphs value) {glyphs=value;}
+     /** Optional injection; no native Japanese dependency is enabled by normal builds. */
+     void japanese(JapaneseConversion.Provider provider) {cancel();japanese=provider;}
+     public void convert(PhoneticDictionary dictionary,String raw,boolean zhuyin,String context,Consumer<List<Candidate>> result) {
+@@ -30,13 +32,17 @@ final class AsyncDecoder implements CompositionEngine.Decoder,AutoCloseable {
+         cancel();BooleanSupplier current=requests.next();
+         boolean useRime=phonetic && rime && !zhuyin;
+         JapaneseConversion.Provider conversion=japanese;
++        CandidateGlyphs display=glyphs;
+         stats.requests.incrementAndGet();
+         queued=worker.schedule(()-> {
+             List<Candidate> choices=DecodePipeline.run(current,
+                 ()->phonetic?dictionary.convert(raw,zhuyin,context):new ArrayList<>(),
+                 useRime?()->RimeBackend.candidates(raw):null,
+                 ()->JapaneseConversion.merge(raw,enabled,addons,addons.lookup(raw,enabled),conversion,current),stats);
+-            if(choices!=null)deliver(current,choices,result);
++            if(choices!=null) {
++                if(display!=null && !display.warm(choices,current)) {stats.cancelled.incrementAndGet();return;}
++                deliver(current,choices,result);
++            }
+         },8,TimeUnit.MILLISECONDS);
+     }
+     public void cancel() {requests.cancel();if(queued!=null)queued.cancel(false);}
+diff --git a/app/src/main/java/dev/minime/ime/CandidateGlyphs.java b/app/src/main/java/dev/minime/ime/CandidateGlyphs.java
+index 858812a..98553d0 100644
+--- a/app/src/main/java/dev/minime/ime/CandidateGlyphs.java
++++ b/app/src/main/java/dev/minime/ime/CandidateGlyphs.java
+@@ -4,22 +4,43 @@ import android.graphics.Paint;
+ import java.util.LinkedHashMap;
+ import java.util.Map;
+ import java.util.function.Predicate;
++import java.util.function.BooleanSupplier;
++import java.util.List;
++import dev.minime.core.Candidate;
+ 
+ /** Device font coverage only. No vocabulary exceptions or Unicode-block blacklist. */
+ final class CandidateGlyphs implements Predicate<String> {
+     private final Paint paint;
++    private final Paint workerPaint;
+     private final Map<Integer,Boolean> supported=new LinkedHashMap<Integer,Boolean>(1024,.75f,true) {
+         @Override protected boolean removeEldestEntry(Map.Entry<Integer,Boolean> entry) {return size()>8192;}
+     };
+-    CandidateGlyphs(Paint actualCandidatePaint) {paint=new Paint(actualCandidatePaint);}
+-    @Override public boolean test(String text) {
++    CandidateGlyphs(Paint actualCandidatePaint) {paint=new Paint(actualCandidatePaint);workerPaint=new Paint(actualCandidatePaint);}
++    /** Decoder worker only; preserve core filtering order and stop superseded work. */
++    boolean warm(List<Candidate> choices,BooleanSupplier current) {
++        for(Candidate c:choices) {
++            if(!current.getAsBoolean())return false;
++            test(c.text,workerPaint);
++            if(!c.alternateText().isEmpty())test(c.alternateText(),workerPaint);
++        }
++        return current.getAsBoolean();
++    }
++    @Override public boolean test(String text) {return test(text,paint);}
++    private boolean test(String text,Paint font) {
+         for(int at=0;at<text.length();) {
+             int cp=text.codePointAt(at);at+=Character.charCount(cp);
+             if(cp>=0xd800 && cp<=0xdfff || cp==0xfffd || (cp>=0xfdd0 && cp<=0xfdef) || (cp&0xffff)>=0xfffe)return false;
+             // Format controls and variation selectors modify surrounding glyphs.
+             // hasGlyph on a whole POJ cluster would incorrectly demand a ligature.
+             if(Character.isWhitespace(cp) || Character.getType(cp)==Character.FORMAT || cp>=0xfe00 && cp<=0xfe0f || cp>=0xe0100 && cp<=0xe01ef)continue;
+-            if(!supported.computeIfAbsent(cp,key->paint.hasGlyph(new String(Character.toChars(key)))))return false;
++            Boolean found;
++            synchronized(supported) {found=supported.get(cp);}
++            if(found==null) {
++                // Font lookup can take milliseconds. Never make typing wait on its lock.
++                found=font.hasGlyph(new String(Character.toChars(cp)));
++                synchronized(supported) {supported.put(cp,found);}
++            }
++            if(!found)return false;
+         }
+         return true;
+     }
+diff --git a/app/src/main/java/dev/minime/ime/MiniMeService.java b/app/src/main/java/dev/minime/ime/MiniMeService.java
+index 5c9c16f..7f7ad55 100644
+--- a/app/src/main/java/dev/minime/ime/MiniMeService.java
++++ b/app/src/main/java/dev/minime/ime/MiniMeService.java
+@@ -52,8 +52,9 @@ public final class MiniMeService extends InputMethodService {
+         super.onCreate();
+         modes=new ModePreferences(this);
+         engine=new CompositionEngine(new AndroidEditor(this::getCurrentInputConnection,()->editorInfo,selection),new LocalLearning(this));
+-        engine.candidateDisplay(new CandidateGlyphs(new android.widget.TextView(this).getPaint()));
+-        decoder=new AsyncDecoder(new Handler(Looper.getMainLooper()));engine.decoder(decoder,this::render);
++        CandidateGlyphs glyphs=new CandidateGlyphs(new android.widget.TextView(this).getPaint());
++        engine.candidateDisplay(glyphs);
++        decoder=new AsyncDecoder(new Handler(Looper.getMainLooper()));decoder.glyphs(glyphs);engine.decoder(decoder,this::render);
+         DictionaryRepository.load(this).whenComplete((dictionary,error)->new Handler(Looper.getMainLooper()).post(()-> {
+             if(destroyed) return;
+             if(error==null) { engine.dictionary(dictionary); ready=true; dictionaryStatus=""; }
+@@ -63,7 +64,8 @@ public final class MiniMeService extends InputMethodService {
+     }
+     @Override public View onCreateInputView() {
+         // Recreate font capability cache with the input view after configuration changes.
+-        engine.candidateDisplay(new CandidateGlyphs(new android.widget.TextView(this).getPaint()));
++        CandidateGlyphs glyphs=new CandidateGlyphs(new android.widget.TextView(this).getPaint());
++        decoder.glyphs(glyphs);engine.candidateDisplay(glyphs);
+         keyboard=new KeyboardView(this,this::key,this::longKey,(points,capitalization)->{engine.trace(points,capitalization);shift.consume();render();},action->{
+             if(getCurrentInputConnection()==null)return;
+             shift.interrupt();action.run();render();

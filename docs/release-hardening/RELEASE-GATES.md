@@ -99,6 +99,16 @@ Chinese candidate p95 remains 170.9 ms at the slower interval, above its target.
 This is a significant improvement, not completed performance acceptance.
 The source/rights, Android-version, human-touch and larger-sample gates stay open.
 
+The subsequent [candidate profiling loop](FONT-RESULTS.md) rejects worker font
+warming: the main-thread tail improves, but end-to-end improvement does not
+repeat and Japanese latency worsens in the final comparison. Production remains
+at `995b535`. Its corrected fresh baseline measures Chinese candidate p95 at
+118.96/75.89 ms for 150/60 ms typing; cross-session differences are not a speedup.
+The earlier fast-frame probe stopped at finger-down before the next spelling
+existed. Correcting that test observes all 50 fast Chinese baseline frames.
+Earlier low frame counts do not establish missing suggestions. The target remains
+50 ms; the correction does not relax it or clear release acceptance.
+
 Final cleanup restores the original APK/preferences/IME and verifies display OFF.
 The shared-phone reservation has been explicitly released to SHINE.
 [Cleanup record](final-package/phone-cleanup.json). The `package` directory retains

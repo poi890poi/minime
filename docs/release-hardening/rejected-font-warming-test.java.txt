@@ -1,0 +1,47 @@
+package dev.minime.ime;
+
+import android.test.InstrumentationTestCase;
+import android.graphics.Paint;
+import dev.minime.core.*;
+import java.io.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+
+/** Real device-font parity and concurrent cache access, without changing candidates. */
+@SuppressWarnings("deprecation")
+public final class CandidateFontWarmTest extends InstrumentationTestCase {
+    public void testWorkerFontWarmParityAndCancellation()throws Exception {
+        PhoneticDictionary dictionary=DictionaryRepository.load(getInstrumentation().getTargetContext()).get(60,TimeUnit.SECONDS);
+        List<Candidate> choices=new ArrayList<>();
+        try(BufferedReader in=new BufferedReader(new InputStreamReader(getInstrumentation().getContext().getAssets().open("latency-inputs.tsv"),"UTF-8"))) {
+            String line;int row=0,queries=0;
+            while((line=in.readLine())!=null && queries<8) {
+                String raw=line.split("\t")[2];
+                if(row++%144!=0 || !raw.matches("[a-z]{3,16}"))continue;
+                queries++;
+                for(int end=1;end<=raw.length();end++)choices.addAll(dictionary.convert(raw.substring(0,end),false));
+            }
+        }
+        // Invalid scalars, combining POJ, kana and supplementary Han exercise
+        // the same font predicate; these are test fixtures, never vocabulary.
+        for(String text:Arrays.asList("a\u030d","\ud800","\ufffd","\ufdd0","\ud840\udc00","かな","カナ"))choices.add(new Candidate(text,false,0));
+        Set<String> unique=new LinkedHashSet<>();for(Candidate c:choices)unique.add(c.text);
+        List<String> texts=new ArrayList<>(unique);
+        Paint[] actual={null};getInstrumentation().runOnMainSync(()->actual[0]=new Paint(new android.widget.TextView(getInstrumentation().getTargetContext()).getPaint()));
+        CandidateGlyphs baseline=new CandidateGlyphs(actual[0]),trial=new CandidateGlyphs(actual[0]);
+        List<Boolean> expected=new ArrayList<>();for(String text:texts)expected.add(baseline.test(text));
+        ExecutorService worker=Executors.newSingleThreadExecutor();
+        try {
+            Future<Boolean> warm=worker.submit(()->trial.warm(choices,()->true));
+            getInstrumentation().runOnMainSync(()->{
+                for(int i=0;i<texts.size();i++)assertEquals("Concurrent font result",expected.get(i).booleanValue(),trial.test(texts.get(i)));
+            });
+            assertTrue(warm.get(30,TimeUnit.SECONDS));
+            for(int i=0;i<texts.size();i++)assertEquals("Warm font result",expected.get(i).booleanValue(),trial.test(texts.get(i)));
+            AtomicInteger remaining=new AtomicInteger(3);
+            assertFalse(worker.submit(()->trial.warm(choices,()->remaining.getAndDecrement()>0)).get(30,TimeUnit.SECONDS));
+            assertTrue("Broad source-derived glyph set",texts.size()>1000);
+        } finally {worker.shutdownNow();}
+    }
+}

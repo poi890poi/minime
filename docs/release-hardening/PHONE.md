@@ -82,6 +82,12 @@ representative Taiwanese/Japanese conversational workloads.
 
 p95 is the delay at or below which 95% of observed samples fall. These are not
 means. Chinese fails even this narrower proxy for the 33 ms raw-display target.
+Historical probe limitation: its candidate observation ended at the next DOWN,
+not the next UP that changes the spelling. The following fast-typing missing
+counts are therefore under-observation, not proof of missing suggestions. See
+[the correction and fresh baseline](CANDIDATE-STAGES.md). Raw-editor timings are
+unaffected.
+
 At 150 ms typing, Chinese fresh-candidate frame p95 is 765.9 ms (49/50 observed).
 At 60 ms, only 11/50 matching candidate frames are observed; its conditional
 53.4 ms p95 is **not** evidence that faster typing improves responsiveness.
