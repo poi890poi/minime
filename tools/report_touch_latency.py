@@ -27,9 +27,17 @@ for mode in dict.fromkeys(r['mode'] for r in rows):
     for interval in ('150','60'):
         group=[r for r in rows if r['mode']==mode and r['interval_ms']==interval]
         keys=[r for r in group if r['action']=='key'];spaces=[r for r in group if r['action']=='space']
+        intervals=[dict(up_ns=a['up_ns'],next_up_ns=b['up_ns']) for a,b in zip(group,group[1:])
+                   if a['action']=='key' and a['query']==b['query']]
+        deadlines=[(a,b) for a,b in zip(group,group[1:]) if a['action']=='key' and a['query']==b['query']]
+        on_time=sum(0<int(a['candidate_submit_ns'])<int(b['up_ns']) for a,b in deadlines)
+        late=sum(int(a['candidate_submit_ns'])>=int(b['up_ns']) for a,b in deadlines)
         groups[mode+'/'+interval] = dict(editor_callback=summary(keys,'editor_callback_ns'),
             editor_submission=summary(keys,'editor_submit_ns'),candidate_submission=summary(keys,'candidate_submit_ns'),
-            pressed_submission=summary(keys,'pressed_submit_ns','down_ns'),space_submission=summary(spaces,'editor_submit_ns'))
+            pressed_submission=summary(keys,'pressed_submit_ns','down_ns'),space_submission=summary(spaces,'editor_submit_ns'),
+            injected_key_interval=summary(intervals,'next_up_ns'),
+            candidate_deadline=dict(letters=len(deadlines),submitted_before_next_up=on_time,
+                observed_submission_at_or_after_next_up=late,unobserved=len(deadlines)-on_time-late))
 OUT.mkdir(parents=True,exist_ok=True)
 sources=[(args.input,'samples.tsv.gz')]
 if args.input==ROOT/'artifacts/touch-latency-corrected.tsv':
