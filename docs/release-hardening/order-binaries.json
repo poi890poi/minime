@@ -1,0 +1,35 @@
+{
+  "baseline_runtime": "995b535",
+  "tooling_commit": "92b7a67",
+  "binaries": {
+    "stages-baseline.apk": "8fa25e8801d61500a0b0c335ce20bd1a655aaf03ff0bd1f8395d55249180c564",
+    "order-trial.apk": "1c43b60e9a76e97d9917b9f13545d95dafb5c67498eaa8db42fae1e73c9ca72b",
+    "order-tests.apk": "3e85cb39d804ea4fdb0a8bce39144256469e5a3547b8a160496327bcf7419995",
+    "application-profile-tests.apk": "901aa788585cd77c83d45ca45b95131677959014e85070b077f928e90164f4c0",
+    "order-cadence-tests.apk": "490a443bb4f3cf34808f4f93cd3317af0813ea9d77336253b501414f650837aa",
+    "order-final-tests.apk": "a3677d493ee0c017b931246a6da4c9d4d3656c63b973fd3022792b8be93d8a1a",
+    "order-glyph-tests.apk": "874232f791da3f7371c7170c8f4b5186f954dd9b0038cbc0236fe2179df4f572"
+  },
+  "changed_unsigned_entries": [
+    "classes.dex",
+    "classes3.dex"
+  ],
+  "desktop_baseline_sha256": "72ed6f69cf0a838ec9c03a4d8de2a3e94e5991531b344ae1f173d95bff2d6bfe",
+  "desktop_trial_sha256": "72ed6f69cf0a838ec9c03a4d8de2a3e94e5991531b344ae1f173d95bff2d6bfe",
+  "harness_versions": {
+    "order-tests.apk": "A1/B1/B2/A2: unhooked with per-key main-thread barrier",
+    "order-cadence-tests.apk": "A3/B3: fixed targets, original editor observation boundary",
+    "order-final-tests.apk": "B4/A4: fixed targets, editor and candidates observed until next UP"
+  },
+  "input_asset_sha256": "cd50e119257521710a601f279f35c28c85b969a1f4a0ad9918011edc57344603",
+  "phone_sessions": {
+    "a1": "c5d69481-1f1b-4190-866d-b20c7e5783c6",
+    "b1": "9eaf0e93-ba4f-407e-bf92-c4bc355a230d",
+    "b2": "53f0563c-3963-4989-bd13-32b7dda8e568",
+    "a2": "6126ef30-fa97-4e71-b732-7a93a4714cd5",
+    "a3": "a188043b-f9b2-417d-adbb-397dd81e8feb",
+    "b3": "99aed9c0-1c9e-44a7-b928-f8f301f2ddd1",
+    "b4": "1226410e-19e1-493f-bc8f-16678d2e7989",
+    "a4": "5b1959ed-c947-4d66-8e68-5faabff33dca"
+  }
+}

@@ -418,9 +418,8 @@ public final class CompositionEngine {
             custom=new ArrayList<>(custom);custom.removeIf(c->!englishSuggestion(c));
         }
         if (!englishMode) converted.addAll(custom);
-        converted.sort(Comparator.comparing((Candidate c)->partial(c))
-            .thenComparing(Comparator.comparingInt((Candidate c) -> privateField?0:learning.count(contextKey(), raw, c.text)).reversed())
-            .thenComparing(Comparator.comparingDouble((Candidate c) -> c.score).reversed()));
+        String sortContext=contextKey();
+        CandidateOrder.sort(converted,this::partial,c->privateField?0:learning.count(sortContext,raw,c.text));
         Set<String> seen = new HashSet<>(); seen.add(raw);
         for (Candidate c : converted) if (seen.add(c.text)) candidates.add(c);
         if (candidates.size() > 1) {

@@ -1,10 +1,21 @@
-# Release hardening — September 22–23, 2026
+# Release hardening — September 22–24, 2026
 
 **Not cleared for public release.** This report concerns 0.8.8 (38), application
-`app.minime.keyboard`, final runtime commit `995b535`. Candidate quality was measured
+`app.minime.keyboard`, packaged runtime commit `995b535`. Candidate quality was measured
 on baseline `fd728d5`; the accepted rendering change does not alter dictionary or
 ranking logic. Evaluation-only commit `1231638` adds evidence. Earlier publishing checklists are historical evidence,
 not certification of this build. No Play upload or GitHub CI was used.
+
+September 24 follow-up: [query-local sort keys](ORDER-RESULTS.md) improve fast
+Chinese candidate-frame observations from 52/100 to 62/100 across two corrected
+comparison pairs, without changing candidate order or dictionaries. Strict
+submission before the next key release improves from 38/100 to 45/100. These
+are timing observations, not language accuracy. General candidate p95 improvement
+is not established and acceptance remains open. The replay now removes a hidden
+main-thread wait before every key and observes raw frames through the next key
+release; older nominal-interval timings must not be treated as equal-load results.
+Core follow-up passes 888,180 assertions and the desktop output is unchanged.
+No new signed release payload has been built for this follow-up.
 
 ## Quality loop
 

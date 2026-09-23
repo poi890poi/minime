@@ -1,0 +1,332 @@
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidatePagingTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+dev.minime.ime.CandidatePagingTest:
+INSTRUMENTATION_STATUS: test=testEveryCandidateRemainsReachableAndNewInputResetsAllocation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidatePagingTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testEveryCandidateRemainsReachableAndNewInputResetsAllocation
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+dev.minime.ime.CandidateStabilityTest:
+INSTRUMENTATION_STATUS: test=testBufferSurvivesLiteralAndUnavailablePredictions
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testBufferSurvivesLiteralAndUnavailablePredictions
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testCandidateReorderingReusesWordIdentity
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testCandidateReorderingReusesWordIdentity
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testCandidateTouchCancellationAppliesLatestRow
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testCandidateTouchCancellationAppliesLatestRow
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testCandidateTouchSurvivesResultReplacement
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testCandidateTouchSurvivesResultReplacement
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testExpandedPendingAndSelection
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testExpandedPendingAndSelection
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testOldChoiceCannotCrossEditorOrPrivateField
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testOldChoiceCannotCrossEditorOrPrivateField
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testPendingQueryKeepsVisibleCandidates
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testPendingQueryKeepsVisibleCandidates
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testStaleAccessibilityIdentityCannotSelectReplacement
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testStaleAccessibilityIdentityCannotSelectReplacement
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testUnchangedRenderPreservesCandidateViews
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateStabilityTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testUnchangedRenderPreservesCandidateViews
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+dev.minime.ime.KeyboardInteractionTest:
+INSTRUMENTATION_STATUS: test=testPinyinInitialsMixedSyllablesAndEditing
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testPinyinInitialsMixedSyllablesAndEditing
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testEnglishCorrectionUndoAndDoubleSpace
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testEnglishCorrectionUndoAndDoubleSpace
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testPinyinEnglishCompletionSpacing
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testPinyinEnglishCompletionSpacing
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testTwoLanguagePairsKeepCompositionAndReturnMode
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testTwoLanguagePairsKeepCompositionAndReturnMode
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testTaiwaneseDirectPairedOutput
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testTaiwaneseDirectPairedOutput
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testJapaneseJoinedReadingKeepsCandidates
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testJapaneseJoinedReadingKeepsCandidates
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=17
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testCompositionSurvivesHideAndRestart
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=17
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testCompositionSurvivesHideAndRestart
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=18
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testNoSuggestionsKeepsChineseConversionAndPrivatePolicy
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=18
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testNoSuggestionsKeepsChineseConversionAndPrivatePolicy
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=19
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testFirstCharacterMixedWithMatchingPhrases
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=19
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Visible control missing: Candidate 金
+	at dev.minime.ime.KeyboardInteractionTest.node(KeyboardInteractionTest.java:90)
+	at dev.minime.ime.KeyboardInteractionTest.bounds(KeyboardInteractionTest.java:138)
+	at dev.minime.ime.KeyboardInteractionTest.testFirstCharacterMixedWithMatchingPhrases(KeyboardInteractionTest.java:901)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+
+INSTRUMENTATION_STATUS: stream=
+Error in testFirstCharacterMixedWithMatchingPhrases:
+java.lang.AssertionError: Visible control missing: Candidate 金
+	at dev.minime.ime.KeyboardInteractionTest.node(KeyboardInteractionTest.java:90)
+	at dev.minime.ime.KeyboardInteractionTest.bounds(KeyboardInteractionTest.java:138)
+	at dev.minime.ime.KeyboardInteractionTest.testFirstCharacterMixedWithMatchingPhrases(KeyboardInteractionTest.java:901)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+
+INSTRUMENTATION_STATUS: test=testFirstCharacterMixedWithMatchingPhrases
+INSTRUMENTATION_STATUS_CODE: -1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=20
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testLearnedChineseDoesNotReplaceEnglishContinuation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.KeyboardInteractionTest
+INSTRUMENTATION_STATUS: current=20
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testLearnedChineseDoesNotReplaceEnglishContinuation
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.TouchLatencyTest
+INSTRUMENTATION_STATUS: current=21
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=
+dev.minime.ime.TouchLatencyTest:
+INSTRUMENTATION_STATUS: test=testTouchToSubmittedFrames
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.TouchLatencyTest
+INSTRUMENTATION_STATUS: current=21
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=21
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testTouchToSubmittedFrames
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+Test results for InstrumentationTestRunner=...................E..
+Time: 186.034
+
+FAILURES!!!
+Tests run: 21,  Failures: 0,  Errors: 1
+
+
+INSTRUMENTATION_CODE: -1
