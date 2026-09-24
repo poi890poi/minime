@@ -1,0 +1,197 @@
+{
+  "chinese": {
+    "requests": 101,
+    "delivered": 98,
+    "undelivered": 3,
+    "stages": {
+      "delivery": {
+        "observed": 98,
+        "mean_ms": 25.6345913877551,
+        "p50_ms": 22.804141,
+        "p95_ms": 48.383385,
+        "max_ms": 60.635625
+      },
+      "callback": {
+        "observed": 98,
+        "mean_ms": 19.059450469387755,
+        "p50_ms": 14.422733999999998,
+        "p95_ms": 45.964844,
+        "max_ms": 153.155156
+      },
+      "glyph": {
+        "observed": 98,
+        "mean_ms": 4.382761948979592,
+        "p50_ms": 0.501252,
+        "p95_ms": 15.172028,
+        "max_ms": 102.219861
+      },
+      "render": {
+        "observed": 98,
+        "mean_ms": 8.722133836734693,
+        "p50_ms": 10.965963,
+        "p95_ms": 14.224219,
+        "max_ms": 15.809271
+      },
+      "votes": {
+        "observed": 98,
+        "mean_ms": 1.374431918367347,
+        "p50_ms": 0.498181,
+        "p95_ms": 6.978532,
+        "max_ms": 7.77399
+      },
+      "residual": {
+        "observed": 98,
+        "mean_ms": 4.580122765306123,
+        "p50_ms": 2.1484085,
+        "p95_ms": 20.911044,
+        "max_ms": 27.571029
+      }
+    }
+  },
+  "taiwanese_english": {
+    "requests": 100,
+    "delivered": 100,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 100,
+        "mean_ms": 25.32583182,
+        "p50_ms": 23.080026500000002,
+        "p95_ms": 42.98849,
+        "max_ms": 52.496511
+      },
+      "callback": {
+        "observed": 100,
+        "mean_ms": 5.56972241,
+        "p50_ms": 2.3694015,
+        "p95_ms": 14.258854,
+        "max_ms": 17.518907
+      },
+      "glyph": {
+        "observed": 100,
+        "mean_ms": 0.20055008,
+        "p50_ms": 0.0,
+        "p95_ms": 1.019585,
+        "max_ms": 2.378282
+      },
+      "render": {
+        "observed": 100,
+        "mean_ms": 4.49120048,
+        "p50_ms": 1.9671615,
+        "p95_ms": 11.592188,
+        "max_ms": 13.299218
+      },
+      "votes": {
+        "observed": 100,
+        "mean_ms": 0.07567721,
+        "p50_ms": 0.0,
+        "p95_ms": 0.341879,
+        "max_ms": 0.397661
+      },
+      "residual": {
+        "observed": 100,
+        "mean_ms": 0.8022946400000001,
+        "p50_ms": 0.442838,
+        "p95_ms": 2.113694,
+        "max_ms": 5.268854
+      }
+    }
+  },
+  "japanese_english": {
+    "requests": 100,
+    "delivered": 100,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 100,
+        "mean_ms": 22.59523329,
+        "p50_ms": 20.205416999999997,
+        "p95_ms": 39.64,
+        "max_ms": 53.798073
+      },
+      "callback": {
+        "observed": 100,
+        "mean_ms": 6.09702444,
+        "p50_ms": 3.2544535,
+        "p95_ms": 15.777187,
+        "max_ms": 19.42099
+      },
+      "glyph": {
+        "observed": 100,
+        "mean_ms": 0.30565725,
+        "p50_ms": 0.032160999999999995,
+        "p95_ms": 2.021931,
+        "max_ms": 5.243386
+      },
+      "render": {
+        "observed": 100,
+        "mean_ms": 4.7495438,
+        "p50_ms": 2.705678,
+        "p95_ms": 11.121457,
+        "max_ms": 12.49776
+      },
+      "votes": {
+        "observed": 100,
+        "mean_ms": 0.14787374,
+        "p50_ms": 0.041875,
+        "p95_ms": 0.474992,
+        "max_ms": 1.373116
+      },
+      "residual": {
+        "observed": 100,
+        "mean_ms": 0.89394965,
+        "p50_ms": 0.481197,
+        "p95_ms": 2.342292,
+        "max_ms": 6.116977
+      }
+    }
+  },
+  "frame_observations": {
+    "chinese/150": {
+      "letters": 50,
+      "observed_frame": 47,
+      "ready_after_observation_window": 2,
+      "ready_changed_without_observed_frame": 1
+    },
+    "chinese/60": {
+      "letters": 50,
+      "ready_after_observation_window": 11,
+      "observed_frame": 31,
+      "observed_during_next_press_subset": 31,
+      "undelivered": 2,
+      "ready_changed_without_observed_frame": 6
+    },
+    "english/150": {
+      "letters": 50,
+      "observed_frame": 50
+    },
+    "english/60": {
+      "letters": 50,
+      "observed_frame": 50
+    },
+    "taiwanese_english/150": {
+      "letters": 50,
+      "observed_frame": 49,
+      "ready_unchanged_presentation": 1
+    },
+    "taiwanese_english/60": {
+      "letters": 50,
+      "observed_frame": 45,
+      "observed_during_next_press_subset": 43,
+      "ready_after_observation_window": 3,
+      "ready_changed_without_observed_frame": 2
+    },
+    "japanese_english/150": {
+      "letters": 50,
+      "observed_frame": 49,
+      "ready_unchanged_presentation": 1
+    },
+    "japanese_english/60": {
+      "letters": 50,
+      "observed_frame": 48,
+      "observed_during_next_press_subset": 45,
+      "ready_changed_without_observed_frame": 1,
+      "ready_after_observation_window": 1
+    }
+  }
+}

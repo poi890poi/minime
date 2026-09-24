@@ -1,0 +1,104 @@
+{
+  "before": {
+    "utc": "2026-09-24T10:23:20.3518882Z",
+    "battery_temperature_c": 35.4,
+    "battery_percent": 100,
+    "usb_powered": true,
+    "thermal_status": 1,
+    "status_override": "false",
+    "low_power": "0",
+    "cpu0_frequency_khz": 691200,
+    "temperatures": [
+      {
+        "celsius": 0.0,
+        "type": 2,
+        "name": "SUBBAT",
+        "status": 0
+      },
+      {
+        "celsius": 35.9,
+        "type": 0,
+        "name": "AP",
+        "status": 0
+      },
+      {
+        "celsius": 35.5,
+        "type": 2,
+        "name": "BAT",
+        "status": 0
+      },
+      {
+        "celsius": 33.5,
+        "type": 4,
+        "name": "USB",
+        "status": 0
+      },
+      {
+        "celsius": 36.9,
+        "type": 3,
+        "name": "SKIN",
+        "status": 1
+      },
+      {
+        "celsius": 37.0,
+        "type": 5,
+        "name": "PATHM",
+        "status": 0
+      }
+    ]
+  },
+  "after": {
+    "utc": "2026-09-24T10:25:06.3194530Z",
+    "battery_temperature_c": 36.1,
+    "battery_percent": 100,
+    "usb_powered": true,
+    "thermal_status": 1,
+    "status_override": "false",
+    "low_power": "0",
+    "cpu0_frequency_khz": 1804800,
+    "temperatures": [
+      {
+        "celsius": 0.0,
+        "type": 2,
+        "name": "SUBBAT",
+        "status": 0
+      },
+      {
+        "celsius": 38.9,
+        "type": 0,
+        "name": "AP",
+        "status": 0
+      },
+      {
+        "celsius": 36.1,
+        "type": 2,
+        "name": "BAT",
+        "status": 0
+      },
+      {
+        "celsius": 34.3,
+        "type": 4,
+        "name": "USB",
+        "status": 0
+      },
+      {
+        "celsius": 38.2,
+        "type": 3,
+        "name": "SKIN",
+        "status": 1
+      },
+      {
+        "celsius": 39.0,
+        "type": 5,
+        "name": "PATHM",
+        "status": 0
+      }
+    ]
+  },
+  "session": "2b6a788e-2ce6-4ddf-b8df-359765769880",
+  "runtime": "1ea175a",
+  "app_sha256": "e4d064d597bbfbe69cb9770d68cd0d5a32829a1c82fc1e0b5f03460357d40332",
+  "test_sha256": "4e4d1901d575bf453b6a00f3f3c5bc21a297b36e419d61a45c36022b581a0197",
+  "scope": "Before/after snapshots only, not continuous frequency/thermal attribution. No inference about earlier unobserved session states.",
+  "cleanup": "Original APK/preferences/IME restored; final display OFF verified after environment reads; explicit reservation release sent to SHINE."
+}
