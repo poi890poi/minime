@@ -9,11 +9,20 @@ and verifies that active sources remain unchanged. `verify.py` checks package,
 source, asset, corpus, manifest and test-key boundaries after the local build.
 
 The prepared diagnostic builds locally in 22 seconds. Relative to the admitted
-test fixture, only `classes.dex` differs among non-signature ZIP entries; all 24
+test fixture, `classes.dex` and Git revision metadata differ among non-signature
+ZIP entries; all 24
 language assets and native libraries remain equal. The fixture is non-debuggable,
 has no Internet permission or profileable flag, and includes a test-only editor.
 Its test-key signature is verified. Neither app nor test APK is a distribution.
 Binary identities are recorded in `binaries.json`.
+
+The follow-up audit corrects the initial overly broad META-INF exclusion: that
+directory contains Git metadata as well as signature records. The verifier now
+excludes only the three known signature files and explicitly retains the revision
+change. The ordinary build output was then restored: its runtime, resources,
+native libraries, assets and manifest equal the prior ordinary package; only Git
+revision metadata differs. `ordinary-restored.json` records that check. It is
+still unsigned and not a new distribution.
 
 The existing queue observer passes its desktop identity, chronology, terminal
 state and bounded-overflow contract; six queue-report fixtures pass. Existing

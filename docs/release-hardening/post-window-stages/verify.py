@@ -23,9 +23,12 @@ def main():
         original = {n: old.read(n) for n in old.namelist() if n.startswith('assets/') and not n.endswith('/')}
         if assets != original or len(assets) != 24:
             raise ValueError('Language assets differ')
-        names = {n for n in set(app.namelist()) | set(old.namelist()) if not n.startswith('META-INF/')}
+        # META-INF also contains non-signature build metadata. Exclude only the
+        # known JAR signature records, retaining revision and other resources.
+        signature_records = {'META-INF/MANIFEST.MF', 'META-INF/ANDROIDD.SF', 'META-INF/ANDROIDD.RSA'}
+        names = (set(app.namelist()) | set(old.namelist())) - signature_records
         differences = sorted(n for n in names if n not in app.namelist() or n not in old.namelist() or app.read(n) != old.read(n))
-        if differences != ['classes.dex']:
+        if differences != ['META-INF/version-control-info.textproto', 'classes.dex']:
             raise ValueError('Unexpected package delta: ' + repr(differences))
         dex = b''.join(app.read(n) for n in app.namelist() if n.endswith('.dex'))
         if b'Ldev/minime/ime/QueueTrace;' not in dex:
@@ -43,7 +46,7 @@ def main():
     if 'edf08f77fe28853ffe8afe6bfbb2c1c83ba0b60c346c27c7d5650ff0b5edd4c7' not in signature:
         raise ValueError('Unexpected signing identity')
     result = dict(active_sources_unchanged=True, equal_language_assets=24,
-        changed_non_signature_entries=differences, non_debuggable=True,
+        changed_non_signature_entries=differences, build_revision_metadata_changed=True, non_debuggable=True,
         no_internet=True, no_profileable=True, test_only_editor=True,
         corpus_sha256=hashlib.sha256(corpus).hexdigest(),
         baseline_sha256=sha(baseline), files={name: sha(OUT / name) for name in
