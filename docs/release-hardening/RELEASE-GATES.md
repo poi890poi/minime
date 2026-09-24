@@ -34,6 +34,13 @@ three Taiwanese pipelines are cancelled. Production is unchanged. The next
 isolated experiment marks decoder-result messages asynchronous while retaining
 the 8 ms scheduling delay and requiring repeated unhooked tail comparisons.
 
+That [asynchronous-delivery experiment](ASYNC-DELIVERY-RESULTS.md) is now rejected:
+all four contracts and 1,856 injected raw/Space observations complete, but fast
+Chinese Space p95 worsens by 4.33/4.20 ms in the paired runs, with repeated
+Taiwanese acceptance-tail costs too. Some candidate gains do not meet the frozen
+cross-mode admission rule. Active sources are restored; the trial and aggregate
+evidence are archived outside Android source sets. No release gate is waived.
+
 The [compiled-validator experiment](VALIDATION-PATTERN-RESULTS.md) is rejected.
 Despite lower isolated ART validation cost and identical desktop predictions,
 Taiwanese raw/Space tails and fast Japanese raw tails worsen in both phone pairs.

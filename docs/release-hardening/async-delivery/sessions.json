@@ -1,0 +1,60 @@
+{
+  "contracts": {
+    "session": "ee585190-20d8-42be-955c-3d2eb6e21af6",
+    "passed": 4,
+    "instrumentation_sha256": "8e67d6ea8104557e805e0034aae57f946ee777c7819c79df602681a4a64d7077",
+    "restoration_verified": true
+  },
+  "a1": {
+    "session": "5286faa0-6b65-4625-a697-07b53bf502c2",
+    "passed": 1,
+    "instrumentation_sha256": "8eca83972daeec8e2c7fbca326ad932a39832701c67f1517f909190b8574a243",
+    "restoration_verified": true,
+    "final_display_sha256": "3257944107d87ad17021ba3d2f2310ad117809ee0e1b29878e949a40938cef00",
+    "cooled_start": {
+      "utc": "2026-09-24T19:29:09.2591134Z",
+      "thermal": 0,
+      "batteryC": 31.6
+    },
+    "touch_sha256": "f8770c5b94dc0b932130b906931641db084b5bdafebfe5b5414b1e98e4626669"
+  },
+  "b1": {
+    "session": "2569a0bb-1541-4d5d-8ec0-f411d2897169",
+    "passed": 1,
+    "instrumentation_sha256": "ec820f6d1a79bde62ddcb66bb8c9ba05886013ad9d9693a20db8e525557a2a92",
+    "restoration_verified": true,
+    "final_display_sha256": "b7457acfcea0b9683b94d862364eb3402b7a35e3cc938ebc410d3be910699500",
+    "cooled_start": {
+      "utc": "2026-09-24T19:30:52.5707237Z",
+      "thermal": 0,
+      "batteryC": 33.3
+    },
+    "touch_sha256": "1eac77cd8c17ab082880baa8dc4aab7197bb6241ce02fdc3e1c8eddafdba7a04"
+  },
+  "b2": {
+    "session": "1977b1da-af42-4eb9-bae1-a2fc65c11a93",
+    "passed": 1,
+    "instrumentation_sha256": "1c7ba3fd3445a14972b085df36fd1a81004abc7205b42ae166f858b124289e9e",
+    "restoration_verified": true,
+    "final_display_sha256": "9d8ac1a5314bb462e5ddb720ef37e27ff339794b954b1629f03e4a2009ecd1cd",
+    "cooled_start": {
+      "utc": "2026-09-24T19:34:04.5243201Z",
+      "thermal": 0,
+      "batteryC": 33.7
+    },
+    "touch_sha256": "d484f324683e42d88289c1d2b594829b7da4f9ad03228eb92f5b9a04e62a6d0a"
+  },
+  "a2": {
+    "session": "f776ba07-b418-4cf4-950a-52b9519dcd99",
+    "passed": 1,
+    "instrumentation_sha256": "54854564a6c7dadd6487f47f60671071807f36d7804cdd9ff1494d851f23fde4",
+    "restoration_verified": true,
+    "final_display_sha256": "1eeb1af40de570d9c3f8aec022ae9f80b245f74ae72e8586f245f2e4813495c7",
+    "cooled_start": {
+      "utc": "2026-09-24T19:37:47.3702342Z",
+      "thermal": 0,
+      "batteryC": 33.7
+    },
+    "touch_sha256": "9afdc9cbed03a1f4860d889ec28d28e9a42c8510b0e036d15b18edff105f0805"
+  }
+}
