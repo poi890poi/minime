@@ -1,0 +1,27 @@
+{
+  "mechanism": {
+    "false": {
+      "rounds": 10,
+      "predicates_per_round": 11145,
+      "median_ms": 107.822239,
+      "mean_ms": 122.8488123,
+      "min_ms": 99.032812,
+      "max_ms": 181.533021
+    },
+    "true": {
+      "rounds": 10,
+      "predicates_per_round": 11145,
+      "median_ms": 25.0415365,
+      "mean_ms": 26.9959687,
+      "min_ms": 21.320417,
+      "max_ms": 35.16427
+    }
+  },
+  "sampled_application_us": 147518,
+  "regex_compile_sample_us": 0,
+  "scope": "Isolated alternating ART predicate benchmark; not typing latency",
+  "session": "5139779a-b30a-45e8-bedd-e58b9c4f77dc",
+  "tests_passed": 3,
+  "restored_original_state": true,
+  "display_off_verified": true
+}

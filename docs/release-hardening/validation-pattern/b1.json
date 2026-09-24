@@ -1,0 +1,560 @@
+{
+  "baseline": "b1",
+  "samples": 464,
+  "groups": {
+    "chinese/150": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 3.9744791,
+        "p50_ms": 4.081271,
+        "p95_ms": 5.410045,
+        "p99_ms": 6.238799,
+        "max_ms": 6.238799
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 13.06067694,
+        "p50_ms": 11.5703345,
+        "p95_ms": 21.182809,
+        "p99_ms": 29.623903,
+        "max_ms": 29.623903
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 42.40903852,
+        "p50_ms": 36.3114785,
+        "p95_ms": 77.429319,
+        "p99_ms": 102.152601,
+        "max_ms": 102.152601
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 18.30318024,
+        "p50_ms": 17.1128325,
+        "p95_ms": 27.55635,
+        "p99_ms": 27.902076,
+        "max_ms": 27.902076
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 19.477286375000002,
+        "p50_ms": 20.266217500000003,
+        "p95_ms": 27.3301,
+        "p99_ms": 27.3301,
+        "max_ms": 27.3301
+      },
+      "injected_key_interval": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 150.04,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 157.0,
+        "max_ms": 157.0
+      },
+      "candidate_deadline": {
+        "letters": 50,
+        "submitted_before_next_up": 50,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/60": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 3.95150224,
+        "p50_ms": 3.807464,
+        "p95_ms": 5.767646,
+        "p99_ms": 6.631188,
+        "max_ms": 6.631188
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 13.07683344,
+        "p50_ms": 12.722803500000001,
+        "p95_ms": 16.520667,
+        "p99_ms": 18.287906,
+        "max_ms": 18.287906
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 37.20655112,
+        "p50_ms": 33.560902999999996,
+        "p95_ms": 55.210511,
+        "p99_ms": 59.994261,
+        "max_ms": 59.994261
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 24.960722,
+        "p50_ms": 23.070303000000003,
+        "p95_ms": 39.186711,
+        "p99_ms": 42.929209,
+        "max_ms": 42.929209
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 20.24351275,
+        "p50_ms": 20.8722295,
+        "p95_ms": 22.468168,
+        "p99_ms": 22.468168,
+        "max_ms": 22.468168
+      },
+      "injected_key_interval": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 60.78,
+        "p50_ms": 62.0,
+        "p95_ms": 69.0,
+        "p99_ms": 71.0,
+        "max_ms": 71.0
+      },
+      "candidate_deadline": {
+        "letters": 50,
+        "submitted_before_next_up": 50,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "english/150": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.14621268,
+        "p50_ms": 4.0852474999999995,
+        "p95_ms": 5.036447,
+        "p99_ms": 5.553579,
+        "max_ms": 5.553579
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 13.77672306,
+        "p50_ms": 12.6529805,
+        "p95_ms": 20.479208,
+        "p99_ms": 21.959258,
+        "max_ms": 21.959258
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 16.46321052,
+        "p50_ms": 17.4789435,
+        "p95_ms": 19.069257,
+        "p99_ms": 19.820144,
+        "max_ms": 19.820144
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 21.68598762,
+        "p50_ms": 21.295743,
+        "p95_ms": 31.439516,
+        "p99_ms": 35.513633,
+        "max_ms": 35.513633
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 12.431692,
+        "p50_ms": 12.595897,
+        "p95_ms": 13.559519,
+        "p99_ms": 13.559519,
+        "max_ms": 13.559519
+      },
+      "injected_key_interval": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 149.54,
+        "p50_ms": 152.0,
+        "p95_ms": 153.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 50,
+        "submitted_before_next_up": 50,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "english/60": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.39821074,
+        "p50_ms": 4.2338885,
+        "p95_ms": 5.724825,
+        "p99_ms": 6.59592,
+        "max_ms": 6.59592
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 13.80427536,
+        "p50_ms": 12.8771705,
+        "p95_ms": 20.071232,
+        "p99_ms": 21.461232,
+        "max_ms": 21.461232
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 16.14477842,
+        "p50_ms": 17.643420499999998,
+        "p95_ms": 18.983525,
+        "p99_ms": 19.921857,
+        "max_ms": 19.921857
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 21.9478118,
+        "p50_ms": 21.011858,
+        "p95_ms": 31.289461,
+        "p99_ms": 35.706284,
+        "max_ms": 35.706284
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 12.213472125,
+        "p50_ms": 12.417170500000001,
+        "p95_ms": 12.729097,
+        "p99_ms": 12.729097,
+        "max_ms": 12.729097
+      },
+      "injected_key_interval": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 59.66,
+        "p50_ms": 59.0,
+        "p95_ms": 68.0,
+        "p99_ms": 69.0,
+        "max_ms": 69.0
+      },
+      "candidate_deadline": {
+        "letters": 50,
+        "submitted_before_next_up": 50,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/150": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.29304728,
+        "p50_ms": 4.200421,
+        "p95_ms": 5.61029,
+        "p99_ms": 5.923783,
+        "max_ms": 5.923783
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 12.87073896,
+        "p50_ms": 11.970266,
+        "p95_ms": 17.625916,
+        "p99_ms": 20.073209,
+        "max_ms": 20.073209
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 49,
+        "unobserved": 1,
+        "mean_ms": 34.991249795918364,
+        "p50_ms": 33.403363,
+        "p95_ms": 51.400029,
+        "p99_ms": 57.12925,
+        "max_ms": 57.12925
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 20.18881184,
+        "p50_ms": 19.624798,
+        "p95_ms": 28.36581,
+        "p99_ms": 30.2293,
+        "max_ms": 30.2293
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 21.964503125,
+        "p50_ms": 21.434873500000002,
+        "p95_ms": 25.58727,
+        "p99_ms": 25.58727,
+        "max_ms": 25.58727
+      },
+      "injected_key_interval": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 149.52,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 50,
+        "submitted_before_next_up": 49,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/60": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 3.92296506,
+        "p50_ms": 3.9757024999999997,
+        "p95_ms": 5.164662,
+        "p99_ms": 6.246015,
+        "max_ms": 6.246015
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 13.090156780000001,
+        "p50_ms": 12.564634999999999,
+        "p95_ms": 17.26539,
+        "p99_ms": 21.194661,
+        "max_ms": 21.194661
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 49,
+        "unobserved": 1,
+        "mean_ms": 33.35795814285714,
+        "p50_ms": 31.328725,
+        "p95_ms": 51.033829,
+        "p99_ms": 54.732057,
+        "max_ms": 54.732057
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 26.20287754,
+        "p50_ms": 24.2625785,
+        "p95_ms": 38.917892,
+        "p99_ms": 45.093361,
+        "max_ms": 45.093361
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 18.595013375,
+        "p50_ms": 19.1380465,
+        "p95_ms": 22.941223,
+        "p99_ms": 22.941223,
+        "max_ms": 22.941223
+      },
+      "injected_key_interval": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 60.08,
+        "p50_ms": 61.0,
+        "p95_ms": 69.0,
+        "p99_ms": 70.0,
+        "max_ms": 70.0
+      },
+      "candidate_deadline": {
+        "letters": 50,
+        "submitted_before_next_up": 49,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 1
+      }
+    },
+    "japanese_english/150": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.10531202,
+        "p50_ms": 4.251298,
+        "p95_ms": 5.011688,
+        "p99_ms": 5.671949,
+        "max_ms": 5.671949
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 11.92141824,
+        "p50_ms": 11.2102045,
+        "p95_ms": 17.133564,
+        "p99_ms": 18.004763,
+        "max_ms": 18.004763
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 49,
+        "unobserved": 1,
+        "mean_ms": 34.10782542857143,
+        "p50_ms": 33.622679,
+        "p95_ms": 55.235441,
+        "p99_ms": 60.93617,
+        "max_ms": 60.93617
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 21.7529026,
+        "p50_ms": 20.967575500000002,
+        "p95_ms": 31.492992,
+        "p99_ms": 32.801166,
+        "max_ms": 32.801166
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 20.450953375,
+        "p50_ms": 19.644892499999997,
+        "p95_ms": 24.99497,
+        "p99_ms": 24.99497,
+        "max_ms": 24.99497
+      },
+      "injected_key_interval": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 150.12,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 50,
+        "submitted_before_next_up": 49,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 1
+      }
+    },
+    "japanese_english/60": {
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 3.85972156,
+        "p50_ms": 3.7965545,
+        "p95_ms": 5.351634,
+        "p99_ms": 5.640903,
+        "max_ms": 5.640903
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 12.9596018,
+        "p50_ms": 11.920279,
+        "p95_ms": 19.090124,
+        "p99_ms": 26.644186,
+        "max_ms": 26.644186
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 49,
+        "unobserved": 1,
+        "mean_ms": 33.274802693877554,
+        "p50_ms": 31.214757,
+        "p95_ms": 54.811374,
+        "p99_ms": 58.312467,
+        "max_ms": 58.312467
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 28.31602472,
+        "p50_ms": 26.049941,
+        "p95_ms": 43.785173,
+        "p99_ms": 44.638509,
+        "max_ms": 44.638509
+      },
+      "space_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 20.364445375,
+        "p50_ms": 20.2610345,
+        "p95_ms": 29.484862,
+        "p99_ms": 29.484862,
+        "max_ms": 29.484862
+      },
+      "injected_key_interval": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 60.38,
+        "p50_ms": 62.5,
+        "p95_ms": 69.0,
+        "p99_ms": 69.0,
+        "max_ms": 69.0
+      },
+      "candidate_deadline": {
+        "letters": 50,
+        "submitted_before_next_up": 48,
+        "observed_submission_at_or_after_next_up": 1,
+        "unobserved": 1
+      }
+    }
+  },
+  "strata": {},
+  "limitations": [
+    "injected events, not physical digitizer latency",
+    "frame callback delivery, not display presentation",
+    "one session, small sample; no acceptance certification",
+    "same-process test editor, not Chrome",
+    "candidate metrics conditional on observing a fresh matching frame before the next action; unchanged rows and supersession are not distinguished",
+    "source conditions independently sampled; latency differences between conditions are not isolated error effects",
+    "four Space samples per source/condition/shard; p95/p99 equal the maximum, not stable tail estimates"
+  ]
+}

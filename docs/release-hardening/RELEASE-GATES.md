@@ -7,6 +7,13 @@ on baseline `fd728d5`; the accepted rendering change does not alter dictionary o
 ranking logic. Evaluation-only commit `1231638` adds evidence. Earlier publishing checklists are historical evidence,
 not certification of this build. No Play upload or GitHub CI was used.
 
+The [compiled-validator experiment](VALIDATION-PATTERN-RESULTS.md) is rejected.
+Despite lower isolated ART validation cost and identical desktop predictions,
+Taiwanese raw/Space tails and fast Japanese raw tails worsen in both phone pairs.
+All 1,856 injected raw/Space actions are observed, but this is not physical touch
+or large-sample acceptance. The trial is archived; accepted runtime remains
+`6bffd17` / publication `e89a337`, including the two quality changes below.
+
 The [phrase-derived pronunciation change](../chinese-recovery/PHRASE-READING-INTEGRATION.md)
 passes its declared independent reading screen: reference-supported Space choices
 305 → 313 of 405; a new 28-query Google diagnostic agrees on 5 → 12 defaults.

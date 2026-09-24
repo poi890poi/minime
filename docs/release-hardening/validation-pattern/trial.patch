@@ -1,0 +1,110 @@
+diff --git a/core/src/main/java/dev/minime/core/CompositionEngine.java b/core/src/main/java/dev/minime/core/CompositionEngine.java
+index 557a098..289fca6 100644
+--- a/core/src/main/java/dev/minime/core/CompositionEngine.java
++++ b/core/src/main/java/dev/minime/core/CompositionEngine.java
+@@ -209,7 +209,7 @@ public final class CompositionEngine {
+         }
+         Candidate selected=candidates.isEmpty()?new Candidate(raw,true,0):candidates.get(preferred);
+         commitDefault(true);
+-        if((englishMode || selected.literal) && !literalField && spelling.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
++        if((englishMode || selected.literal) && !literalField && InputValidators.englishWord(spelling)) {
+             spaceAt=now;
+             if(!selected.text.equals(spelling)) {undoSpelling=spelling;undoOutput=selected.text+" ";}
+         }
+@@ -259,7 +259,7 @@ public final class CompositionEngine {
+             String reading=raw.substring(0,choice.consumed),rest=raw.substring(choice.consumed);
+             // Legacy Pinyin decoder offsets exclude their following delimiter.
+             // Other providers own their exact raw span, including separators.
+-            if(!choice.supplemental && raw.matches("[a-zv]+(?:'[a-zv]+)*"))rest=rest.replaceFirst("^'+","");
++            if(!choice.supplemental && InputValidators.pinyin(raw))rest=rest.replaceFirst("^'+","");
+             acceptedPhrase(reading,choice,true);
+             learnChoice(reading,choice);
+             editor.commit(choice.text);englishContext="";context=privateField?"":tail(context+choice.text,3);afterLatin=false;
+@@ -310,7 +310,7 @@ public final class CompositionEngine {
+         editor.commit((separate?" ":"") + c.text + (withSpace ? " " : ""));
+         committedEnglishWord=false;
+         if(inputMode.englishEnabled() && !literalField && !c.supplemental && c.pack.isEmpty()
+-                && c.literal && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*")) {
++                && c.literal && InputValidators.englishWord(c.text)) {
+             committedEnglishWord=englishMode && !withSpace;
+             if(!privateField)learning.rememberEnglish(englishContext,c.text.toLowerCase(Locale.ROOT));
+             String[] words=(englishContext+" "+c.text.toLowerCase(Locale.ROOT)).trim().split(" ");
+@@ -326,7 +326,7 @@ public final class CompositionEngine {
+     }
+     private boolean englishWord(Candidate c) {
+         return inputMode.englishEnabled() && !literalField && !direct && c.literal && !c.supplemental && c.pack.isEmpty()
+-            && c.text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");
++            && InputValidators.englishWord(c.text);
+     }
+     private boolean boundaryWordStart(String text) {
+         if(text.isEmpty())return false;
+@@ -334,7 +334,7 @@ public final class CompositionEngine {
+         char first=text.charAt(0);
+         return (first>='A' && first<='Z') || (first>='a' && first<='z') || (first>='0' && first<='9');
+     }
+-    private boolean latinBoundary(String text) {return !englishMode && !literalField && text.matches("[A-Za-z]+(?:'[A-Za-z]+)*");}
++    private boolean latinBoundary(String text) {return !englishMode && !literalField && InputValidators.englishWord(text);}
+     private String contextKey() {
+         String base=englishMode?"EN:"+context:!context.isEmpty()?context:afterLatin?"AFTER_LATIN":"START_OR_LATIN";
+         return !inputMode.pack.isEmpty()?"MODE:"+inputMode.id+":"+base:base;
+@@ -663,7 +663,7 @@ public final class CompositionEngine {
+     }
+     private boolean conversionInput(boolean bpmf) {
+         return !bpmf && !literalField && !englishMode && dictionary!=null
+-            && raw.matches("[a-zv]+(?:'[a-zv]+)*") && raw.length()>1
++            && InputValidators.pinyin(raw) && raw.length()>1
+             && !IntentClassifier.technicalWord(raw) && !dictionary.isEnglish(raw,afterLatin) && !dictionary.hasEnglishCompletion(raw,afterLatin);
+     }
+ }
+diff --git a/core/src/main/java/dev/minime/core/PhoneticDictionary.java b/core/src/main/java/dev/minime/core/PhoneticDictionary.java
+index 8227b53..424993b 100644
+--- a/core/src/main/java/dev/minime/core/PhoneticDictionary.java
++++ b/core/src/main/java/dev/minime/core/PhoneticDictionary.java
+@@ -128,7 +128,7 @@ public final class PhoneticDictionary {
+         return result;
+     }
+     public List<Candidate> englishApostrophes(String raw) {
+-        if(raw.length()<2 || raw.length()>32 || !raw.matches("[A-Za-z]+") || IntentClassifier.technicalWord(raw.toLowerCase(Locale.ROOT)))return Collections.emptyList();
++        if(raw.length()<2 || raw.length()>32 || !InputValidators.englishBare(raw) || IntentClassifier.technicalWord(raw.toLowerCase(Locale.ROOT)))return Collections.emptyList();
+         String key=raw.toLowerCase(Locale.ROOT);boolean caps=raw.equals(raw.toUpperCase(Locale.ROOT));
+         boolean title=raw.equals(Character.toUpperCase(key.charAt(0))+key.substring(1));
+         if(!caps && !title && !raw.equals(key))return Collections.emptyList();
+@@ -222,7 +222,7 @@ public final class PhoneticDictionary {
+     }
+     /** Exact existence counterpart of englishCompletions, without constructing/ranking a list. */
+     public boolean hasEnglishCompletion(String raw,boolean latinContext) {
+-        if(raw.length()<2 || !raw.matches("[A-Za-z]+(?:'[A-Za-z]*)?"))return false;
++        if(raw.length()<2 || !InputValidators.englishPrefix(raw))return false;
+         String key=raw.toLowerCase(Locale.ROOT);
+         boolean caps=raw.equals(raw.toUpperCase(Locale.ROOT));
+         boolean title=raw.equals(Character.toUpperCase(key.charAt(0))+key.substring(1));
+@@ -235,7 +235,7 @@ public final class PhoneticDictionary {
+         return false;
+     }
+     public List<Candidate> englishCompletions(String raw,boolean latinContext) {
+-        if (raw.length() < 2 || !raw.matches("[A-Za-z]+(?:'[A-Za-z]*)?")) return Collections.emptyList();
++        if (raw.length() < 2 || !InputValidators.englishPrefix(raw)) return Collections.emptyList();
+         String key = raw.toLowerCase(Locale.ROOT);
+         boolean caps=raw.equals(raw.toUpperCase(Locale.ROOT));
+         boolean title=raw.equals(Character.toUpperCase(key.charAt(0))+key.substring(1));
+@@ -266,7 +266,7 @@ public final class PhoneticDictionary {
+     }
+     /** One-edit spelling alternatives, bounded by the input length, with source frequencies. */
+     public List<Candidate> englishCorrections(String raw) {
+-        if(raw.length()<2 || raw.length()>32 || !raw.matches("[A-Za-z]+(?:'[A-Za-z]+)?")
++        if(raw.length()<2 || raw.length()>32 || !InputValidators.englishCorrection(raw)
+                 || IntentClassifier.technicalWord(raw.toLowerCase(Locale.ROOT))) return Collections.emptyList();
+         String key=raw.toLowerCase(Locale.ROOT);
+         boolean caps=raw.equals(raw.toUpperCase(Locale.ROOT));
+diff --git a/core/src/test/java/dev/minime/core/Regression.java b/core/src/test/java/dev/minime/core/Regression.java
+index b89eb69..2dc23f0 100644
+--- a/core/src/test/java/dev/minime/core/Regression.java
++++ b/core/src/test/java/dev/minime/core/Regression.java
+@@ -46,6 +46,7 @@ public final class Regression {
+         JoinedKalqRegression.run();
+         CandidateOrderRegression.run();
+         CompletenessOrderProbe.main(new String[]{"complete"});
++        ValidationPatternProbe.main(new String[0]);
+         ReadingIndexParity.run();
+         ReadingUnitLookupRegression.run();
+         ContextBoundaryRegression.run();
