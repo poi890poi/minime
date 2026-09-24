@@ -75,8 +75,13 @@ Taiwanese improves 60.92/57.84 → 52.17/43.02 ms; Japanese improves
 p99 is still 81.29 ms and ordinary Taiwanese p95 is still 52.17 ms, over budget.
 All subgroup tails, unfavorable differences and missing candidate observations
 remain recorded. One pair per language on reused shard 0 does not clear the
-large-sample or physical-touch gates. A [separate diagnostic](POST-WINDOW-STAGES-PLAN.md)
-will locate remaining delay before another runtime change.
+large-sample or physical-touch gates. The completed
+[combined-stage diagnostic](POST-WINDOW-STAGES-RESULTS.md) observes all 2,354 further
+raw/Space updates and locates different tails: Chinese font filtering reaches
+62.01 ms inside a 69.93 ms callback, while Taiwanese provider work reaches
+52.10 ms with three pipeline cancellations and three stale deliveries. Japanese
+observes every candidate frame. No runtime change follows until separate core
+lookup and font-cost investigations identify a behavior-preserving intervention.
 
 The [compiled-validator experiment](VALIDATION-PATTERN-RESULTS.md) is rejected.
 Despite lower isolated ART validation cost and identical desktop predictions,

@@ -30,8 +30,11 @@ core evidence remains 1,770,165 assertions, with 13,014 pinned desktop inputs an
 11,272 native queries; no core/provider/data source changed in this diagnostic.
 Those counts prove neither language accuracy nor Android performance.
 
-No phone results are claimed by this preparation. Obtain a separate explicit
-reservation before installation or replay. Preserve cancelled, ambiguous and
+The three acknowledged sessions are complete; see the separate
+[diagnostic results](../POST-WINDOW-STAGES-RESULTS.md). `run.ps1` retains deadline,
+binary, cooling and restoration guards; `summarize.py` validates each session
+before expansion. Obtain a new explicit reservation before any further phone
+operation. Preserve cancelled, ambiguous and
 missing observations; keep raw spelling/stage files and device dumps local.
 Use the strict language timeline and queue reporters, publishing only aggregates
 and hashes. Earlier unhooked comparison results remain a separate measurement.

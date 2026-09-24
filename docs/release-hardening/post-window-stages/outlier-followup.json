@@ -1,0 +1,36 @@
+{
+  "prior_comparison_sha256": "54bde4fe77b4992928e17055a1c9acd372ae502c83ad5929eaf7b269368e48c0",
+  "observations": [
+    {
+      "prior": {
+        "tag": "chinese-old",
+        "action_index": 315,
+        "query_id": "05a7238ca7bde3e2e60faa4d1a86e5f64c65ffe8a789641a1d4ac0a7f110c538",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "transpose",
+        "interval_ms": 150,
+        "action": "key",
+        "typed_length": 2,
+        "metric": "candidate",
+        "delay_ms": 101.338723,
+        "counterpart_ms": 98.070862
+      },
+      "diagnostic_session": "7d6ea052-3223-4012-a21c-3f5b0413e5dc",
+      "matching_callbacks": 1,
+      "matching_queue_requests": 1,
+      "diagnostic_delay_ms": 93.484703,
+      "glyph_ms": 62.010413,
+      "candidates": 2201,
+      "callback_ms": 69.929584,
+      "provider_ms": 1.481979,
+      "main_queue_ms": 1.063021,
+      "hashes": {
+        "artifacts\\device-tests\\7d6ea052-3223-4012-a21c-3f5b0413e5dc\\touch-latency.tsv": "ffc024faf978d8e1ef3fddb27afaaeae5e0394e82cc9d73ec7e9968b24c65dce",
+        "artifacts\\device-tests\\7d6ea052-3223-4012-a21c-3f5b0413e5dc\\candidate-stages.tsv": "30ae7109a0a3441e24dc13af651930e536a3ae89efa9f76c8b484348dc4a6083",
+        "artifacts\\device-tests\\7d6ea052-3223-4012-a21c-3f5b0413e5dc\\candidate-queues.tsv": "191ad8753b83ab8a6ed81da740bdc724226541c623be0a12b58b7459f6c5492d"
+      }
+    }
+  ],
+  "scope": "All prior outliers, matched by action identity. Hooked follow-up timing is not an unhooked speedup."
+}
