@@ -1,0 +1,2303 @@
+{
+  "scope": "Deepest active main-thread trace slice, exclusively accounted during queued-request waiting; untraced gaps retained. Instrumented Chinese fixture only.",
+  "requests": 665,
+  "total_wait_ms": 5982.165761,
+  "leaves": [
+    {
+      "name": "relayoutWindow#first=false/resize=true/vis=false/params=true/force=false",
+      "share": 0.4773137118023768,
+      "mean_ms_per_request": 4.293789088721804,
+      "state_mean_ms": {
+        "Running": 0.811759717293233,
+        "R": 0.2825837187969925,
+        "S": 2.5590510075187973,
+        "R+": 0.6403946451127819
+      }
+    },
+    {
+      "name": "postAndWait",
+      "share": 0.1698407235091659,
+      "mean_ms_per_request": 1.527842648120301,
+      "state_mean_ms": {
+        "S": 1.2005454105263156,
+        "R": 0.2679229563909774,
+        "Running": 0.0558789007518797,
+        "D": 0.00038847218045112784,
+        "R+": 0.003106908270676692
+      }
+    },
+    {
+      "name": "[untraced]",
+      "share": 0.0989757112482661,
+      "mean_ms_per_request": 0.8903595654135338,
+      "state_mean_ms": {
+        "Running": 0.3576903218045113,
+        "S": 0.36051417593984963,
+        "R": 0.1352879007518797,
+        "R+": 0.0368500947368421,
+        "D": 1.707218045112782e-05
+      }
+    },
+    {
+      "name": "traversal",
+      "share": 0.09197922859095445,
+      "mean_ms_per_request": 0.8274210406015038,
+      "state_mean_ms": {
+        "Running": 0.581872807518797,
+        "R+": 0.014267218045112783,
+        "R": 0.04571074887218045,
+        "S": 0.1851995714285714,
+        "D": 0.00037069473684210526
+      }
+    },
+    {
+      "name": "relayoutWindow#first=true/resize=true/vis=false/params=true/force=false",
+      "share": 0.0879233717375422,
+      "mean_ms_per_request": 0.790935615037594,
+      "state_mean_ms": {
+        "S": 0.49406641203007523,
+        "R": 0.07698708872180451,
+        "Running": 0.14290286766917293,
+        "R+": 0.07572086766917294,
+        "D": 0.001258378947368421
+      }
+    },
+    {
+      "name": "Record View#draw()",
+      "share": 0.024409063679236957,
+      "mean_ms_per_request": 0.21957754135338345,
+      "state_mean_ms": {
+        "Running": 0.209460207518797,
+        "R": 0.008435783458646616,
+        "S": 5.670375939849624e-05,
+        "D": 0.0009373458646616541,
+        "R+": 0.0006875007518796992
+      }
+    },
+    {
+      "name": "draw",
+      "share": 0.01178845117595196,
+      "mean_ms_per_request": 0.10604581804511279,
+      "state_mean_ms": {
+        "Running": 0.056030855639097744,
+        "S": 0.03598871729323308,
+        "R": 0.010792532330827068,
+        "R+": 0.0030906977443609022,
+        "D": 0.00014301503759398497
+      }
+    },
+    {
+      "name": "layout",
+      "share": 0.009640227854595552,
+      "mean_ms_per_request": 0.08672096390977443,
+      "state_mean_ms": {
+        "Running": 0.07562885112781956,
+        "R": 0.006594768421052631,
+        "R+": 0.0035884285714285714,
+        "S": 0.0004979639097744362,
+        "D": 0.00041095187969924813
+      }
+    },
+    {
+      "name": "measure",
+      "share": 0.005478688540138566,
+      "mean_ms_per_request": 0.04928484661654135,
+      "state_mean_ms": {
+        "Running": 0.04774529172932331,
+        "R+": 0.00023465112781954886,
+        "S": 0.00010831729323308271,
+        "R": 0.0011965864661654137
+      }
+    },
+    {
+      "name": "dispatchApplyInsets",
+      "share": 0.00484964996943688,
+      "mean_ms_per_request": 0.043626180451127816,
+      "state_mean_ms": {
+        "Running": 0.04250407969924812,
+        "R": 0.0011221007518796991
+      }
+    },
+    {
+      "name": "MSG_SYSTEM_GESTURE_EXCLUSION_CHANGED",
+      "share": 0.002488013471146608,
+      "mean_ms_per_request": 0.022381517293233084,
+      "state_mean_ms": {
+        "Running": 0.02066997142857143,
+        "R": 0.0017016781954887217,
+        "R+": 9.86766917293233e-06
+      }
+    },
+    {
+      "name": "Choreographer#scheduleVsyncLocked",
+      "share": 0.0024345970308862525,
+      "mean_ms_per_request": 0.021900996992481204,
+      "state_mean_ms": {
+        "Running": 0.02111395187969925,
+        "R+": 0.0007870451127819549
+      }
+    },
+    {
+      "name": "animation",
+      "share": 0.0021892068062338,
+      "mean_ms_per_request": 0.01969353082706767,
+      "state_mean_ms": {
+        "Running": 0.019644111278195486,
+        "R": 4.941954887218045e-05
+      }
+    },
+    {
+      "name": "Choreographer#doFrame #",
+      "share": 0.0021594254516010894,
+      "mean_ms_per_request": 0.019425625563909775,
+      "state_mean_ms": {
+        "Running": 0.01913536992481203,
+        "R": 0.0002165563909774436,
+        "D": 5.5529323308270675e-05,
+        "R+": 1.8169924812030076e-05
+      }
+    },
+    {
+      "name": "Choreographer#onVsync #",
+      "share": 0.0012981520924458382,
+      "mean_ms_per_request": 0.011677836090225565,
+      "state_mean_ms": {
+        "Running": 0.011180497744360902,
+        "R+": 0.00046444360902255644,
+        "D": 3.289473684210526e-05
+      }
+    },
+    {
+      "name": "setTransformHint",
+      "share": 0.0004365363823625415,
+      "mean_ms_per_request": 0.003926966917293233,
+      "state_mean_ms": {
+        "Running": 0.003714560902255639,
+        "R+": 0.000212406015037594
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf71bf53f",
+      "share": 0.0002944343353845089,
+      "mean_ms_per_request": 0.002648654135338346,
+      "state_mean_ms": {
+        "Running": 0.0006838210526315789,
+        "R": 0.001964833082706767
+      }
+    },
+    {
+      "name": "setDefaultBufferSize",
+      "share": 0.0002530100402545499,
+      "mean_ms_per_request": 0.002276012030075188,
+      "state_mean_ms": {
+        "Running": 0.002276012030075188
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xe59fe046",
+      "share": 0.00022277149334244266,
+      "mean_ms_per_request": 0.0020039939849624063,
+      "state_mean_ms": {
+        "Running": 0.0004141593984962406,
+        "R": 0.0015898345864661654
+      }
+    },
+    {
+      "name": "MSG_RESIZED",
+      "share": 0.00021866244638820198,
+      "mean_ms_per_request": 0.00196703007518797,
+      "state_mean_ms": {
+        "Running": 0.00196703007518797
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xc66b4dfd",
+      "share": 0.0001435953188726761,
+      "mean_ms_per_request": 0.0012917458646616543,
+      "state_mean_ms": {
+        "Running": 0.0006806872180451128,
+        "R+": 0.0004332706766917293,
+        "R": 0.000177787969924812
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf5dd4b5b",
+      "share": 0.0001325902744405748,
+      "mean_ms_per_request": 0.0011927473684210526,
+      "state_mean_ms": {
+        "Running": 0.0004403187969924812,
+        "R": 0.0007524285714285714
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xe8b16997",
+      "share": 0.00012259539927516228,
+      "mean_ms_per_request": 0.001102836090225564,
+      "state_mean_ms": {
+        "Running": 0.00043006015037593985,
+        "R": 0.000672775939849624
+      }
+    },
+    {
+      "name": "setMaxAcquiredBufferCount",
+      "share": 0.00010960562214350851,
+      "mean_ms_per_request": 0.0009859834586466165,
+      "state_mean_ms": {
+        "Running": 0.0008898060150375939,
+        "R+": 9.617744360902256e-05
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xc66b4dfd",
+      "share": 0.00010846456382571643,
+      "mean_ms_per_request": 0.0009757187969924812,
+      "state_mean_ms": {
+        "Running": 0.00012421503759398495,
+        "R+": 0.0008515037593984962
+      }
+    },
+    {
+      "name": "relayoutWindow#first=false/resize=false/vis=false/params=false/force=true",
+      "share": 0.00010500829049160144,
+      "mean_ms_per_request": 0.0009446270676691729,
+      "state_mean_ms": {
+        "R": 0.00036090225563909775,
+        "Running": 0.0005837248120300752
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xcdd6db2c",
+      "share": 0.00010361531672040875,
+      "mean_ms_per_request": 0.0009320962406015038,
+      "state_mean_ms": {
+        "Running": 0.0005729172932330826,
+        "R": 0.00035917894736842105
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf2c2b5ba",
+      "share": 0.00010228319047744287,
+      "mean_ms_per_request": 0.0009201127819548872,
+      "state_mean_ms": {
+        "Running": 9.077443609022556e-05,
+        "R": 0.0008293383458646617
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf2c2b5ba",
+      "share": 9.847838116433631e-05,
+      "mean_ms_per_request": 0.0008858857142857142,
+      "state_mean_ms": {
+        "Running": 0.0005687654135338346,
+        "R": 0.0003171203007518797
+      }
+    },
+    {
+      "name": "processInputEventForCompatibility",
+      "share": 8.990222295513554e-05,
+      "mean_ms_per_request": 0.0008087368421052631,
+      "state_mean_ms": {
+        "Running": 0.0004591127819548872,
+        "R+": 0.00034962406015037593
+      }
+    },
+    {
+      "name": "MSG_DISPATCH_SYSTEM_UI_VISIBILITY",
+      "share": 8.243218588405812e-05,
+      "mean_ms_per_request": 0.0007415383458646617,
+      "state_mean_ms": {
+        "Running": 0.0007415383458646617
+      }
+    },
+    {
+      "name": "dispatchContentCapture() for ViewRootImpl",
+      "share": 8.23713383558313e-05,
+      "mean_ms_per_request": 0.0007409909774436091,
+      "state_mean_ms": {
+        "Running": 0.0007409909774436091
+      }
+    },
+    {
+      "name": "setMaxDequeuedBufferCount",
+      "share": 8.159603386155651e-05,
+      "mean_ms_per_request": 0.0007340165413533834,
+      "state_mean_ms": {
+        "Running": 0.0005668796992481203,
+        "R+": 0.00016713684210526315
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xc2d3f136",
+      "share": 7.621604251965494e-05,
+      "mean_ms_per_request": 0.0006856195488721804,
+      "state_mean_ms": {
+        "Running": 0.0006856195488721804
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf7a785aa",
+      "share": 7.512780788021364e-05,
+      "mean_ms_per_request": 0.0006758300751879699,
+      "state_mean_ms": {
+        "Running": 0.0006758300751879699
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xd5b144a1",
+      "share": 7.480568374039744e-05,
+      "mean_ms_per_request": 0.0006729323308270677,
+      "state_mean_ms": {
+        "Running": 0.0006729323308270677
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf1c5ed7e",
+      "share": 7.281192420973438e-05,
+      "mean_ms_per_request": 0.000654996992481203,
+      "state_mean_ms": {
+        "Running": 0.000654996992481203
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xd4b780bd",
+      "share": 7.18019221065847e-05,
+      "mean_ms_per_request": 0.0006459112781954888,
+      "state_mean_ms": {
+        "Running": 0.0006459112781954888
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xce451394",
+      "share": 7.04002558313596e-05,
+      "mean_ms_per_request": 0.0006333022556390978,
+      "state_mean_ms": {
+        "Running": 0.0006333022556390978
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xca644e1a",
+      "share": 6.800597246104963e-05,
+      "mean_ms_per_request": 0.0006117639097744361,
+      "state_mean_ms": {
+        "Running": 0.0006117639097744361
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xe4e21b71",
+      "share": 6.716146226159379e-05,
+      "mean_ms_per_request": 0.0006041669172932331,
+      "state_mean_ms": {
+        "Running": 0.0006041669172932331
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xee3a0b25",
+      "share": 6.238158802500625e-05,
+      "mean_ms_per_request": 0.0005611684210526316,
+      "state_mean_ms": {
+        "Running": 0.0005611684210526316
+      }
+    },
+    {
+      "name": "waitWhileAllocatingLocked",
+      "share": 6.087694900970498e-05,
+      "mean_ms_per_request": 0.000547633082706767,
+      "state_mean_ms": {
+        "Running": 0.000547633082706767
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xc7d6137b",
+      "share": 5.921250165103875e-05,
+      "mean_ms_per_request": 0.0005326601503759398,
+      "state_mean_ms": {
+        "Running": 0.0005326601503759398
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xfa62a1c7",
+      "share": 5.914279445524044e-05,
+      "mean_ms_per_request": 0.0005320330827067669,
+      "state_mean_ms": {
+        "Running": 0.0005320330827067669
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xcdae7c3a",
+      "share": 5.870750059946391e-05,
+      "mean_ms_per_request": 0.0005281172932330827,
+      "state_mean_ms": {
+        "Running": 0.0005281172932330827
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xfbd0923f",
+      "share": 5.862040839560079e-05,
+      "mean_ms_per_request": 0.0005273338345864662,
+      "state_mean_ms": {
+        "Running": 0.0005273338345864662
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xd9a29cf8",
+      "share": 5.809802233596114e-05,
+      "mean_ms_per_request": 0.0005226345864661654,
+      "state_mean_ms": {
+        "Running": 0.0005226345864661654
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xe8d18821",
+      "share": 5.79500826038712e-05,
+      "mean_ms_per_request": 0.0005213037593984962,
+      "state_mean_ms": {
+        "Running": 0.0005213037593984962
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf1a15616",
+      "share": 5.7801975708242165e-05,
+      "mean_ms_per_request": 0.0005199714285714285,
+      "state_mean_ms": {
+        "Running": 0.0005199714285714285
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xd9e916f6",
+      "share": 5.7253512136505305e-05,
+      "mean_ms_per_request": 0.0005150375939849624,
+      "state_mean_ms": {
+        "Running": 0.0005150375939849624
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xc59b3790",
+      "share": 5.683560328879359e-05,
+      "mean_ms_per_request": 0.0005112781954887218,
+      "state_mean_ms": {
+        "Running": 0.0005112781954887218
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xccf10b4c",
+      "share": 5.675720358896287e-05,
+      "mean_ms_per_request": 0.0005105729323308271,
+      "state_mean_ms": {
+        "Running": 0.0005105729323308271
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xd229d29b",
+      "share": 5.6034555609499766e-05,
+      "mean_ms_per_request": 0.0005040721804511278,
+      "state_mean_ms": {
+        "Running": 0.0005040721804511278
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xedbe17b6",
+      "share": 5.5808216177579105e-05,
+      "mean_ms_per_request": 0.0005020360902255639,
+      "state_mean_ms": {
+        "Running": 0.0005020360902255639
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xd98fb8ec",
+      "share": 5.549478454179531e-05,
+      "mean_ms_per_request": 0.0004992165413533835,
+      "state_mean_ms": {
+        "Running": 0.0004992165413533835
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xeff88bfc",
+      "share": 5.539899983389979e-05,
+      "mean_ms_per_request": 0.0004983548872180451,
+      "state_mean_ms": {
+        "Running": 0.0004983548872180451
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xc05be6e8",
+      "share": 5.497239848215567e-05,
+      "mean_ms_per_request": 0.0004945172932330827,
+      "state_mean_ms": {
+        "Running": 0.0004945172932330827
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xe9c9e3ee",
+      "share": 5.479838123796851e-05,
+      "mean_ms_per_request": 0.0004929518796992482,
+      "state_mean_ms": {
+        "Running": 0.0004929518796992482
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xfe57dbb5",
+      "share": 5.4711289034105384e-05,
+      "mean_ms_per_request": 0.0004921684210526315,
+      "state_mean_ms": {
+        "Running": 0.0004921684210526315
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xdd93741e",
+      "share": 5.4606811822177454e-05,
+      "mean_ms_per_request": 0.0004912285714285715,
+      "state_mean_ms": {
+        "Running": 0.0004912285714285715
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xeeedccd4",
+      "share": 5.43629202186529e-05,
+      "mean_ms_per_request": 0.0004890345864661654,
+      "state_mean_ms": {
+        "Running": 0.0004890345864661654
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf7a043a3",
+      "share": 5.308311616342054e-05,
+      "mean_ms_per_request": 0.00047752180451127825,
+      "state_mean_ms": {
+        "Running": 0.00047752180451127825
+      }
+    },
+    {
+      "name": "setDequeueTimeout",
+      "share": 5.284724840977204e-05,
+      "mean_ms_per_request": 0.00047539999999999995,
+      "state_mean_ms": {
+        "Running": 0.00047539999999999995
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xea0c266a",
+      "share": 5.2221220955899885e-05,
+      "mean_ms_per_request": 0.0004697684210526316,
+      "state_mean_ms": {
+        "Running": 0.0004697684210526316
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xe17213fd",
+      "share": 5.2160206264133976e-05,
+      "mean_ms_per_request": 0.00046921954887218045,
+      "state_mean_ms": {
+        "Running": 0.00046921954887218045
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xfd9b3093",
+      "share": 5.211674374397196e-05,
+      "mean_ms_per_request": 0.0004688285714285714,
+      "state_mean_ms": {
+        "Running": 0.0004688285714285714
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xe8fce56e",
+      "share": 5.145511045627477e-05,
+      "mean_ms_per_request": 0.00046287669172932327,
+      "state_mean_ms": {
+        "Running": 0.00046287669172932327
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xfe3a01b4",
+      "share": 5.1394095764508854e-05,
+      "mean_ms_per_request": 0.0004623278195488722,
+      "state_mean_ms": {
+        "Running": 0.0004623278195488722
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xdbb692dd",
+      "share": 5.107197162469266e-05,
+      "mean_ms_per_request": 0.00045943007518796993,
+      "state_mean_ms": {
+        "Running": 0.00045943007518796993
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf79cad19",
+      "share": 5.0784617501006085e-05,
+      "mean_ms_per_request": 0.0004568451127819549,
+      "state_mean_ms": {
+        "Running": 0.0004568451127819549
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf5679f60",
+      "share": 5.0662755281013354e-05,
+      "mean_ms_per_request": 0.00045574887218045114,
+      "state_mean_ms": {
+        "Running": 0.00045574887218045114
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xc52ed9b5",
+      "share": 5.053220055698821e-05,
+      "mean_ms_per_request": 0.0004545744360902256,
+      "state_mean_ms": {
+        "Running": 0.0004311563909774436,
+        "D": 2.3418045112781954e-05
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xc9b45996",
+      "share": 5.007066202557539e-05,
+      "mean_ms_per_request": 0.0004504225563909774,
+      "state_mean_ms": {
+        "Running": 0.0004504225563909774
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xd859ae5b",
+      "share": 4.9722460373661986e-05,
+      "mean_ms_per_request": 0.00044729022556390976,
+      "state_mean_ms": {
+        "Running": 0.00044729022556390976
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xdacfa254",
+      "share": 4.958304598206536e-05,
+      "mean_ms_per_request": 0.0004460360902255639,
+      "state_mean_ms": {
+        "Running": 0.0004460360902255639
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xe9d1652f",
+      "share": 4.672739124388165e-05,
+      "mean_ms_per_request": 0.0004203473684210526,
+      "state_mean_ms": {
+        "Running": 0.0004203473684210526
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf1591430",
+      "share": 4.595242107668504e-05,
+      "mean_ms_per_request": 0.000413375939849624,
+      "state_mean_ms": {
+        "Running": 0.000413375939849624
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xda517817",
+      "share": 4.426356784131245e-05,
+      "mean_ms_per_request": 0.00039818345864661654,
+      "state_mean_ms": {
+        "Running": 0.00039818345864661654
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xed6e96f5",
+      "share": 4.3915366189399044e-05,
+      "mean_ms_per_request": 0.0003950511278195489,
+      "state_mean_ms": {
+        "Running": 0.0003950511278195489
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xc33760b7",
+      "share": 4.300967413463821e-05,
+      "mean_ms_per_request": 0.0003869037593984962,
+      "state_mean_ms": {
+        "Running": 0.0003869037593984962
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xe82eaeb9",
+      "share": 4.248728807499856e-05,
+      "mean_ms_per_request": 0.0003822045112781955,
+      "state_mean_ms": {
+        "Running": 0.0003822045112781955
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xef79e49f",
+      "share": 4.1320820899265614e-05,
+      "mean_ms_per_request": 0.0003717112781954887,
+      "state_mean_ms": {
+        "Running": 0.0003717112781954887
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xd390f26d",
+      "share": 4.0981144587845534e-05,
+      "mean_ms_per_request": 0.00036865563909774436,
+      "state_mean_ms": {
+        "Running": 0.00036865563909774436
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xe3561418",
+      "share": 4.094637457171592e-05,
+      "mean_ms_per_request": 0.00036834285714285714,
+      "state_mean_ms": {
+        "Running": 0.00036834285714285714
+      }
+    },
+    {
+      "name": "setDefaultBufferFormat",
+      "share": 4.071000532745017e-05,
+      "mean_ms_per_request": 0.00036621654135338344,
+      "state_mean_ms": {
+        "Running": 0.00036621654135338344
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xe8b16997",
+      "share": 4.008431220065619e-05,
+      "mean_ms_per_request": 0.00036058796992481207,
+      "state_mean_ms": {
+        "Running": 0.0002818751879699248,
+        "R+": 7.871278195488722e-05
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xf40aec89",
+      "share": 3.8212582053524945e-05,
+      "mean_ms_per_request": 0.0003437503759398496,
+      "state_mean_ms": {
+        "Running": 0.0003437503759398496
+      }
+    },
+    {
+      "name": "setConsumerName",
+      "share": 3.805611698094168e-05,
+      "mean_ms_per_request": 0.00034234285714285716,
+      "state_mean_ms": {
+        "Running": 0.00034234285714285716
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xc476951d",
+      "share": 3.7777121034209335e-05,
+      "mean_ms_per_request": 0.0003398330827067669,
+      "state_mean_ms": {
+        "Running": 0.0003398330827067669
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xfd8048b5",
+      "share": 3.7489934074061845e-05,
+      "mean_ms_per_request": 0.00033724962406015037,
+      "state_mean_ms": {
+        "Running": 0.00033724962406015037
+      }
+    },
+    {
+      "name": "ViewPostImeInputStage id=0xd7d74cf8",
+      "share": 3.45211096199178e-05,
+      "mean_ms_per_request": 0.00031054285714285715,
+      "state_mean_ms": {
+        "Running": 0.00031054285714285715
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xcdae7c3a",
+      "share": 2.4021066239391355e-05,
+      "mean_ms_per_request": 0.0002160872180451128,
+      "state_mean_ms": {
+        "Running": 9.946766917293233e-05,
+        "R": 0.00011661954887218044
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf5dd4b5b",
+      "share": 2.2654337143834955e-05,
+      "mean_ms_per_request": 0.00020379248120300754,
+      "state_mean_ms": {
+        "Running": 0.00011254887218045113,
+        "R+": 9.124360902255638e-05
+      }
+    },
+    {
+      "name": "connect",
+      "share": 2.2532474923842217e-05,
+      "mean_ms_per_request": 0.00020269624060150374,
+      "state_mean_ms": {
+        "Running": 0.00020269624060150374
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf7a785aa",
+      "share": 2.017296156966186e-05,
+      "mean_ms_per_request": 0.00018147067669172933,
+      "state_mean_ms": {
+        "Running": 0.00018147067669172933
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf1591430",
+      "share": 1.820527955109601e-05,
+      "mean_ms_per_request": 0.00016376992481203007,
+      "state_mean_ms": {
+        "Running": 0.00016376992481203007
+      }
+    },
+    {
+      "name": "encoder_vblank_callback",
+      "share": 1.7917758263870348e-05,
+      "mean_ms_per_request": 0.00016118345864661655,
+      "state_mean_ms": {
+        "Running": 0.00016118345864661655
+      }
+    },
+    {
+      "name": "setConsumerUsageBits",
+      "share": 1.788348973835799e-05,
+      "mean_ms_per_request": 0.0001608751879699248,
+      "state_mean_ms": {
+        "Running": 0.0001608751879699248
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xc59b3790",
+      "share": 1.7055695892810616e-05,
+      "mean_ms_per_request": 0.00015342857142857142,
+      "state_mean_ms": {
+        "Running": 0.00015342857142857142
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xe8d18821",
+      "share": 1.6089490636901127e-05,
+      "mean_ms_per_request": 0.00014473684210526314,
+      "state_mean_ms": {
+        "Running": 0.00014473684210526314
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xc05be6e8",
+      "share": 1.5445242357268743e-05,
+      "mean_ms_per_request": 0.00013894135338345865,
+      "state_mean_ms": {
+        "Running": 0.00013894135338345865
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xee3a0b25",
+      "share": 1.5419164845171533e-05,
+      "mean_ms_per_request": 0.00013870676691729323,
+      "state_mean_ms": {
+        "Running": 0.00013870676691729323
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xd9a29cf8",
+      "share": 1.518413290921846e-05,
+      "mean_ms_per_request": 0.0001365924812030075,
+      "state_mean_ms": {
+        "Running": 0.0001365924812030075
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xca644e1a",
+      "share": 1.5131810721484953e-05,
+      "mean_ms_per_request": 0.0001361218045112782,
+      "state_mean_ms": {
+        "Running": 0.0001361218045112782
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xdd93741e",
+      "share": 1.4565794978144204e-05,
+      "mean_ms_per_request": 0.00013103007518796992,
+      "state_mean_ms": {
+        "Running": 0.00013103007518796992
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf71bf53f",
+      "share": 1.4269748350425223e-05,
+      "mean_ms_per_request": 0.00012836691729323308,
+      "state_mean_ms": {
+        "Running": 0.00012836691729323308
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xfa62a1c7",
+      "share": 1.4060793926569365e-05,
+      "mean_ms_per_request": 0.00012648721804511278,
+      "state_mean_ms": {
+        "Running": 0.00012648721804511278
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xcdd6db2c",
+      "share": 1.4008806065914027e-05,
+      "mean_ms_per_request": 0.00012601954887218045,
+      "state_mean_ms": {
+        "Running": 0.00012601954887218045
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf7a043a3",
+      "share": 1.3851839502713505e-05,
+      "mean_ms_per_request": 0.00012460751879699248,
+      "state_mean_ms": {
+        "Running": 0.00012460751879699248
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf1c5ed7e",
+      "share": 1.3468700671131403e-05,
+      "mean_ms_per_request": 0.0001211609022556391,
+      "state_mean_ms": {
+        "Running": 0.0001211609022556391
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xe8fce56e",
+      "share": 1.3425238150969385e-05,
+      "mean_ms_per_request": 0.00012076992481203007,
+      "state_mean_ms": {
+        "Running": 0.00012076992481203007
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xd4b780bd",
+      "share": 1.3355698118710154e-05,
+      "mean_ms_per_request": 0.00012014436090225564,
+      "state_mean_ms": {
+        "Running": 0.00012014436090225564
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xe17213fd",
+      "share": 1.3216450890652611e-05,
+      "mean_ms_per_request": 0.00011889172932330827,
+      "state_mean_ms": {
+        "Running": 0.00011889172932330827
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xc9b45996",
+      "share": 1.2772297367304597e-05,
+      "mean_ms_per_request": 0.00011489624060150376,
+      "state_mean_ms": {
+        "Running": 0.00011489624060150376
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xc33760b7",
+      "share": 1.2685205163441476e-05,
+      "mean_ms_per_request": 0.00011411278195488722,
+      "state_mean_ms": {
+        "Running": 0.00011411278195488722
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xe59fe046",
+      "share": 1.2667987318915752e-05,
+      "mean_ms_per_request": 0.0001139578947368421,
+      "state_mean_ms": {
+        "Running": 0.0001139578947368421
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xdbb692dd",
+      "share": 1.2632882975707968e-05,
+      "mean_ms_per_request": 0.0001136421052631579,
+      "state_mean_ms": {
+        "Running": 0.0001136421052631579
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xe9c9e3ee",
+      "share": 1.2580727951513545e-05,
+      "mean_ms_per_request": 0.00011317293233082706,
+      "state_mean_ms": {
+        "Running": 0.00011317293233082706
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xe4e21b71",
+      "share": 1.251988042328672e-05,
+      "mean_ms_per_request": 0.00011262556390977444,
+      "state_mean_ms": {
+        "Running": 0.00011262556390977444
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xc52ed9b5",
+      "share": 1.2380633195229175e-05,
+      "mean_ms_per_request": 0.00011137293233082707,
+      "state_mean_ms": {
+        "Running": 0.00011137293233082707
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xfbd0923f",
+      "share": 1.2293708154905137e-05,
+      "mean_ms_per_request": 0.00011059097744360903,
+      "state_mean_ms": {
+        "Running": 0.00011059097744360903
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xea0c266a",
+      "share": 1.2223666632028655e-05,
+      "mean_ms_per_request": 0.0001099609022556391,
+      "state_mean_ms": {
+        "Running": 0.0001099609022556391
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xccf10b4c",
+      "share": 1.2171845934912401e-05,
+      "mean_ms_per_request": 0.00010949473684210527,
+      "state_mean_ms": {
+        "Running": 0.00010949473684210527
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xcdae7c3a",
+      "share": 1.2171678771373317e-05,
+      "mean_ms_per_request": 0.00010949323308270677,
+      "state_mean_ms": {
+        "Running": 0.00010949323308270677
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xe9d1652f",
+      "share": 1.2119523747178894e-05,
+      "mean_ms_per_request": 0.00010902406015037595,
+      "state_mean_ms": {
+        "Running": 0.00010902406015037595
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xeff88bfc",
+      "share": 1.2041124047348176e-05,
+      "mean_ms_per_request": 0.0001083187969924812,
+      "state_mean_ms": {
+        "Running": 0.0001083187969924812
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xfe57dbb5",
+      "share": 1.2040789720270006e-05,
+      "mean_ms_per_request": 0.0001083157894736842,
+      "state_mean_ms": {
+        "Running": 0.0001083157894736842
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xedbe17b6",
+      "share": 1.1988801859614668e-05,
+      "mean_ms_per_request": 0.00010784812030075188,
+      "state_mean_ms": {
+        "Running": 0.00010784812030075188
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xfe3a01b4",
+      "share": 1.1953864679945968e-05,
+      "mean_ms_per_request": 0.00010753383458646617,
+      "state_mean_ms": {
+        "Running": 0.00010753383458646617
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xc7d6137b",
+      "share": 1.184938746801804e-05,
+      "mean_ms_per_request": 0.00010659398496240602,
+      "state_mean_ms": {
+        "Running": 0.00010659398496240602
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf2c2b5ba",
+      "share": 1.171030740349958e-05,
+      "mean_ms_per_request": 0.00010534285714285715,
+      "state_mean_ms": {
+        "Running": 0.00010534285714285715
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xe82eaeb9",
+      "share": 1.1614522695604055e-05,
+      "mean_ms_per_request": 0.0001044812030075188,
+      "state_mean_ms": {
+        "Running": 0.0001044812030075188
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xfd8048b5",
+      "share": 1.1605830191571651e-05,
+      "mean_ms_per_request": 0.000104403007518797,
+      "state_mean_ms": {
+        "Running": 0.000104403007518797
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xed6e96f5",
+      "share": 1.1579418352396271e-05,
+      "mean_ms_per_request": 0.00010416541353383458,
+      "state_mean_ms": {
+        "Running": 0.00010416541353383458
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xfd9b3093",
+      "share": 1.151840366063036e-05,
+      "mean_ms_per_request": 0.00010361654135338346,
+      "state_mean_ms": {
+        "Running": 0.00010361654135338346
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xd229d29b",
+      "share": 1.1510045483676124e-05,
+      "mean_ms_per_request": 0.00010354135338345865,
+      "state_mean_ms": {
+        "Running": 0.00010354135338345865
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xd98fb8ec",
+      "share": 1.144886362837113e-05,
+      "mean_ms_per_request": 0.00010299097744360903,
+      "state_mean_ms": {
+        "Running": 0.00010299097744360903
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xd9e916f6",
+      "share": 1.144033828787781e-05,
+      "mean_ms_per_request": 0.00010291428571428571,
+      "state_mean_ms": {
+        "Running": 0.00010291428571428571
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf5679f60",
+      "share": 1.1431311456767237e-05,
+      "mean_ms_per_request": 0.00010283308270676691,
+      "state_mean_ms": {
+        "Running": 0.00010283308270676691
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xe3561418",
+      "share": 1.1309616400313585e-05,
+      "mean_ms_per_request": 0.00010173834586466165,
+      "state_mean_ms": {
+        "Running": 0.00010173834586466165
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf79cad19",
+      "share": 1.1300923896281181e-05,
+      "mean_ms_per_request": 0.00010166015037593985,
+      "state_mean_ms": {
+        "Running": 0.00010166015037593985
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xd859ae5b",
+      "share": 1.1257294212580079e-05,
+      "mean_ms_per_request": 0.00010126766917293233,
+      "state_mean_ms": {
+        "Running": 0.00010126766917293233
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xe9c9e3ee",
+      "share": 1.1231216700482867e-05,
+      "mean_ms_per_request": 0.00010103308270676692,
+      "state_mean_ms": {
+        "Running": 0.00010103308270676692
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xd5b144a1",
+      "share": 1.1204972024846572e-05,
+      "mean_ms_per_request": 0.000100796992481203,
+      "state_mean_ms": {
+        "Running": 0.000100796992481203
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xda517817",
+      "share": 1.1179061676288445e-05,
+      "mean_ms_per_request": 0.00010056390977443609,
+      "state_mean_ms": {
+        "Running": 0.00010056390977443609
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf40aec89",
+      "share": 1.1161509504684552e-05,
+      "mean_ms_per_request": 0.00010040601503759399,
+      "state_mean_ms": {
+        "Running": 0.00010040601503759399
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xf1a15616",
+      "share": 1.108327696839292e-05,
+      "mean_ms_per_request": 9.970225563909774e-05,
+      "state_mean_ms": {
+        "Running": 9.970225563909774e-05
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xd7d74cf8",
+      "share": 1.0917785064699078e-05,
+      "mean_ms_per_request": 9.821353383458647e-05,
+      "state_mean_ms": {
+        "Running": 9.821353383458647e-05
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xc476951d",
+      "share": 1.0856937536472253e-05,
+      "mean_ms_per_request": 9.766616541353383e-05,
+      "state_mean_ms": {
+        "Running": 9.766616541353383e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xfd8048b5",
+      "share": 1.084824503243985e-05,
+      "mean_ms_per_request": 9.758796992481203e-05,
+      "state_mean_ms": {
+        "Running": 9.758796992481203e-05
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xc2d3f136",
+      "share": 1.080478251227783e-05,
+      "mean_ms_per_request": 9.719699248120301e-05,
+      "state_mean_ms": {
+        "Running": 9.719699248120301e-05
+      }
+    },
+    {
+      "name": "wr_ptr_irq",
+      "share": 1.0552031241181784e-05,
+      "mean_ms_per_request": 9.492330827067668e-05,
+      "state_mean_ms": {
+        "Running": 9.492330827067668e-05
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xeeedccd4",
+      "share": 1.0543505900688465e-05,
+      "mean_ms_per_request": 9.484661654135338e-05,
+      "state_mean_ms": {
+        "Running": 9.484661654135338e-05
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xce451394",
+      "share": 1.0143149224580639e-05,
+      "mean_ms_per_request": 9.124511278195489e-05,
+      "state_mean_ms": {
+        "Running": 9.124511278195489e-05
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xdacfa254",
+      "share": 9.925335133153292e-06,
+      "mean_ms_per_request": 8.928571428571429e-05,
+      "state_mean_ms": {
+        "Running": 8.928571428571429e-05
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xef79e49f",
+      "share": 9.846935433322574e-06,
+      "mean_ms_per_request": 8.858045112781954e-05,
+      "state_mean_ms": {
+        "Running": 8.858045112781954e-05
+      }
+    },
+    {
+      "name": "deliverInputEvent src=0x1002 eventTimeNano=# id=0xd390f26d",
+      "share": 9.83824292929017e-06,
+      "mean_ms_per_request": 8.850225563909774e-05,
+      "state_mean_ms": {
+        "Running": 8.850225563909774e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xd4b780bd",
+      "share": 8.906640525971209e-06,
+      "mean_ms_per_request": 8.01218045112782e-05,
+      "state_mean_ms": {
+        "Running": 8.01218045112782e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xfe57dbb5",
+      "share": 8.680301094050544e-06,
+      "mean_ms_per_request": 7.808571428571428e-05,
+      "state_mean_ms": {
+        "Running": 7.808571428571428e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xee3a0b25",
+      "share": 7.774943366367879e-06,
+      "mean_ms_per_request": 6.994135338345864e-05,
+      "state_mean_ms": {
+        "Running": 6.994135338345864e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xce451394",
+      "share": 7.76608369879639e-06,
+      "mean_ms_per_request": 6.986165413533834e-05,
+      "state_mean_ms": {
+        "Running": 6.986165413533834e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf7a785aa",
+      "share": 7.522359258810916e-06,
+      "mean_ms_per_request": 6.766917293233083e-05,
+      "state_mean_ms": {
+        "Running": 6.766917293233083e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xc7d6137b",
+      "share": 7.417882046882987e-06,
+      "mean_ms_per_request": 6.672932330827068e-05,
+      "state_mean_ms": {
+        "Running": 6.672932330827068e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xdd93741e",
+      "share": 7.400497038818179e-06,
+      "mean_ms_per_request": 6.657293233082707e-05,
+      "state_mean_ms": {
+        "Running": 6.657293233082707e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xed6e96f5",
+      "share": 7.391804534785775e-06,
+      "mean_ms_per_request": 6.649473684210527e-05,
+      "state_mean_ms": {
+        "Running": 6.649473684210527e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf7a043a3",
+      "share": 7.383112030753372e-06,
+      "mean_ms_per_request": 6.641654135338346e-05,
+      "state_mean_ms": {
+        "Running": 6.641654135338346e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xe8d18821",
+      "share": 7.382944867214287e-06,
+      "mean_ms_per_request": 6.641503759398497e-05,
+      "state_mean_ms": {
+        "Running": 6.641503759398497e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xe9d1652f",
+      "share": 7.36555985914948e-06,
+      "mean_ms_per_request": 6.625864661654136e-05,
+      "state_mean_ms": {
+        "Running": 6.625864661654136e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf1c5ed7e",
+      "share": 7.357034518656161e-06,
+      "mean_ms_per_request": 6.618195488721804e-05,
+      "state_mean_ms": {
+        "Running": 6.618195488721804e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xe8fce56e",
+      "share": 7.357034518656161e-06,
+      "mean_ms_per_request": 6.618195488721804e-05,
+      "state_mean_ms": {
+        "Running": 6.618195488721804e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xc59b3790",
+      "share": 7.348342014623757e-06,
+      "mean_ms_per_request": 6.610375939849624e-05,
+      "state_mean_ms": {
+        "Running": 6.610375939849624e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xdbb692dd",
+      "share": 7.339482347052269e-06,
+      "mean_ms_per_request": 6.602406015037595e-05,
+      "state_mean_ms": {
+        "Running": 6.602406015037595e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xfd9b3093",
+      "share": 7.2699423147930384e-06,
+      "mean_ms_per_request": 6.539849624060151e-05,
+      "state_mean_ms": {
+        "Running": 6.539849624060151e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf1591430",
+      "share": 7.235005135124339e-06,
+      "mean_ms_per_request": 6.508421052631578e-05,
+      "state_mean_ms": {
+        "Running": 6.508421052631578e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xc05be6e8",
+      "share": 7.139387590767898e-06,
+      "mean_ms_per_request": 6.422406015037593e-05,
+      "state_mean_ms": {
+        "Running": 6.422406015037593e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xedbe17b6",
+      "share": 6.965203183041655e-06,
+      "mean_ms_per_request": 6.265714285714286e-05,
+      "state_mean_ms": {
+        "Running": 6.265714285714286e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xca644e1a",
+      "share": 6.834648459016514e-06,
+      "mean_ms_per_request": 6.14827067669173e-05,
+      "state_mean_ms": {
+        "Running": 6.14827067669173e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xd5b144a1",
+      "share": 6.808403783380218e-06,
+      "mean_ms_per_request": 6.124661654135339e-05,
+      "state_mean_ms": {
+        "Running": 6.124661654135339e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xdacfa254",
+      "share": 6.599449359524359e-06,
+      "mean_ms_per_request": 5.936691729323308e-05,
+      "state_mean_ms": {
+        "Running": 5.936691729323308e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xcdd6db2c",
+      "share": 6.555819675823255e-06,
+      "mean_ms_per_request": 5.8974436090225564e-05,
+      "state_mean_ms": {
+        "Running": 5.8974436090225564e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xda517817",
+      "share": 6.442649959862923e-06,
+      "mean_ms_per_request": 5.795639097744361e-05,
+      "state_mean_ms": {
+        "Running": 5.795639097744361e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf71bf53f",
+      "share": 6.442649959862923e-06,
+      "mean_ms_per_request": 5.795639097744361e-05,
+      "state_mean_ms": {
+        "Running": 5.795639097744361e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xd859ae5b",
+      "share": 6.381802431636097e-06,
+      "mean_ms_per_request": 5.740902255639098e-05,
+      "state_mean_ms": {
+        "Running": 5.740902255639098e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xd229d29b",
+      "share": 6.312095235837782e-06,
+      "mean_ms_per_request": 5.678195488721804e-05,
+      "state_mean_ms": {
+        "Running": 5.678195488721804e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xe4e21b71",
+      "share": 6.312095235837782e-06,
+      "mean_ms_per_request": 5.678195488721804e-05,
+      "state_mean_ms": {
+        "Running": 5.678195488721804e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xfa62a1c7",
+      "share": 6.286017723740571e-06,
+      "mean_ms_per_request": 5.654736842105263e-05,
+      "state_mean_ms": {
+        "Running": 5.654736842105263e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xfe3a01b4",
+      "share": 6.242555203578552e-06,
+      "mean_ms_per_request": 5.6156390977443606e-05,
+      "state_mean_ms": {
+        "Running": 5.6156390977443606e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xe8b16997",
+      "share": 6.242555203578552e-06,
+      "mean_ms_per_request": 5.6156390977443606e-05,
+      "state_mean_ms": {
+        "Running": 5.6156390977443606e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xc33760b7",
+      "share": 6.216477691481341e-06,
+      "mean_ms_per_request": 5.5921804511278196e-05,
+      "state_mean_ms": {
+        "Running": 5.5921804511278196e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xd9a29cf8",
+      "share": 6.164155503747834e-06,
+      "mean_ms_per_request": 5.545112781954887e-05,
+      "state_mean_ms": {
+        "Running": 5.545112781954887e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf5679f60",
+      "share": 6.15546299971543e-06,
+      "mean_ms_per_request": 5.537293233082707e-05,
+      "state_mean_ms": {
+        "Running": 5.537293233082707e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf40aec89",
+      "share": 6.1292183240791346e-06,
+      "mean_ms_per_request": 5.5136842105263155e-05,
+      "state_mean_ms": {
+        "Running": 5.5136842105263155e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xef79e49f",
+      "share": 6.0683707958523085e-06,
+      "mean_ms_per_request": 5.4589473684210524e-05,
+      "state_mean_ms": {
+        "Running": 5.4589473684210524e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf79cad19",
+      "share": 6.0683707958523085e-06,
+      "mean_ms_per_request": 5.4589473684210524e-05,
+      "state_mean_ms": {
+        "Running": 5.4589473684210524e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xe82eaeb9",
+      "share": 6.059678291819905e-06,
+      "mean_ms_per_request": 5.451127819548872e-05,
+      "state_mean_ms": {
+        "Running": 5.451127819548872e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xc476951d",
+      "share": 6.0075232676254825e-06,
+      "mean_ms_per_request": 5.404210526315789e-05,
+      "state_mean_ms": {
+        "Running": 5.404210526315789e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xe3561418",
+      "share": 5.981278591989187e-06,
+      "mean_ms_per_request": 5.3806015037593986e-05,
+      "state_mean_ms": {
+        "Running": 5.3806015037593986e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xe59fe046",
+      "share": 5.929123567794764e-06,
+      "mean_ms_per_request": 5.333684210526316e-05,
+      "state_mean_ms": {
+        "Running": 5.333684210526316e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xe17213fd",
+      "share": 5.92895640425568e-06,
+      "mean_ms_per_request": 5.333533834586466e-05,
+      "state_mean_ms": {
+        "Running": 5.333533834586466e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xc66b4dfd",
+      "share": 5.728861647971309e-06,
+      "mean_ms_per_request": 5.153533834586466e-05,
+      "state_mean_ms": {
+        "Running": 5.153533834586466e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xeeedccd4",
+      "share": 5.5720622483098724e-06,
+      "mean_ms_per_request": 5.012481203007519e-05,
+      "state_mean_ms": {
+        "Running": 5.012481203007519e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xea0c266a",
+      "share": 5.432815020252328e-06,
+      "mean_ms_per_request": 4.887218045112782e-05,
+      "state_mean_ms": {
+        "Running": 4.887218045112782e-05
+      }
+    },
+    {
+      "name": "MSG_WINDOW_MOVED",
+      "share": 5.345722816389207e-06,
+      "mean_ms_per_request": 4.808872180451128e-05,
+      "state_mean_ms": {
+        "Running": 4.808872180451128e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xc52ed9b5",
+      "share": 5.162845904630559e-06,
+      "mean_ms_per_request": 4.6443609022556394e-05,
+      "state_mean_ms": {
+        "Running": 4.6443609022556394e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xd7d74cf8",
+      "share": 4.683922365152931e-06,
+      "mean_ms_per_request": 4.213533834586466e-05,
+      "state_mean_ms": {
+        "Running": 4.213533834586466e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf1a15616",
+      "share": 4.658012016594804e-06,
+      "mean_ms_per_request": 4.190225563909775e-05,
+      "state_mean_ms": {
+        "Running": 4.190225563909775e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xf5dd4b5b",
+      "share": 4.6491523490233156e-06,
+      "mean_ms_per_request": 4.182255639097745e-05,
+      "state_mean_ms": {
+        "Running": 4.182255639097745e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xccf10b4c",
+      "share": 4.274706021473616e-06,
+      "mean_ms_per_request": 3.8454135338345865e-05,
+      "state_mean_ms": {
+        "Running": 3.8454135338345865e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xfbd0923f",
+      "share": 4.1528438014808795e-06,
+      "mean_ms_per_request": 3.7357894736842106e-05,
+      "state_mean_ms": {
+        "Running": 3.7357894736842106e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xeff88bfc",
+      "share": 4.074611265189246e-06,
+      "mean_ms_per_request": 3.665413533834587e-05,
+      "state_mean_ms": {
+        "Running": 3.665413533834587e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xc2d3f136",
+      "share": 4.057226257124439e-06,
+      "mean_ms_per_request": 3.6497744360902255e-05,
+      "state_mean_ms": {
+        "Running": 3.6497744360902255e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xd9e916f6",
+      "share": 4.01376373696242e-06,
+      "mean_ms_per_request": 3.610676691729324e-05,
+      "state_mean_ms": {
+        "Running": 3.610676691729324e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xd98fb8ec",
+      "share": 3.952749045196509e-06,
+      "mean_ms_per_request": 3.555789473684211e-05,
+      "state_mean_ms": {
+        "Running": 3.555789473684211e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xc9b45996",
+      "share": 3.865656841333388e-06,
+      "mean_ms_per_request": 3.4774436090225565e-05,
+      "state_mean_ms": {
+        "Running": 3.4774436090225565e-05
+      }
+    },
+    {
+      "name": "rd_ptr_irq",
+      "share": 3.4912105137836885e-06,
+      "mean_ms_per_request": 3.1406015037593983e-05,
+      "state_mean_ms": {
+        "Running": 3.1406015037593983e-05
+      }
+    },
+    {
+      "name": "EarlyPostImeInputStage id=0xd390f26d",
+      "share": 3.0298391459099525e-06,
+      "mean_ms_per_request": 2.725563909774436e-05,
+      "state_mean_ms": {
+        "Running": 2.725563909774436e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf1591430",
+      "share": 1.6542503827820628e-06,
+      "mean_ms_per_request": 1.4881203007518797e-05,
+      "state_mean_ms": {
+        "Running": 1.4881203007518797e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xdbb692dd",
+      "share": 1.6368653747172553e-06,
+      "mean_ms_per_request": 1.4724812030075188e-05,
+      "state_mean_ms": {
+        "Running": 1.4724812030075188e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xc7d6137b",
+      "share": 1.480065975055819e-06,
+      "mean_ms_per_request": 1.3314285714285715e-05,
+      "state_mean_ms": {
+        "Running": 1.3314285714285715e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xc05be6e8",
+      "share": 1.453821299419523e-06,
+      "mean_ms_per_request": 1.3078195488721806e-05,
+      "state_mean_ms": {
+        "Running": 1.3078195488721806e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xfa62a1c7",
+      "share": 1.4366034548938004e-06,
+      "mean_ms_per_request": 1.2923308270676692e-05,
+      "state_mean_ms": {
+        "Running": 1.2923308270676692e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xe8b16997",
+      "share": 1.3842812671602933e-06,
+      "mean_ms_per_request": 1.2452631578947368e-05,
+      "state_mean_ms": {
+        "Running": 1.2452631578947368e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xfd9b3093",
+      "share": 1.3408187469982747e-06,
+      "mean_ms_per_request": 1.2061654135338346e-05,
+      "state_mean_ms": {
+        "Running": 1.2061654135338346e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xedbe17b6",
+      "share": 1.3232665753943824e-06,
+      "mean_ms_per_request": 1.190375939849624e-05,
+      "state_mean_ms": {
+        "Running": 1.190375939849624e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xc59b3790",
+      "share": 1.3060487308686596e-06,
+      "mean_ms_per_request": 1.1748872180451129e-05,
+      "state_mean_ms": {
+        "Running": 1.1748872180451129e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xfbd0923f",
+      "share": 1.157941835239627e-06,
+      "mean_ms_per_request": 1.0416541353383458e-05,
+      "state_mean_ms": {
+        "Running": 1.0416541353383458e-05
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xea0c266a",
+      "share": 1.1057868110452046e-06,
+      "mean_ms_per_request": 9.947368421052632e-06,
+      "state_mean_ms": {
+        "Running": 9.947368421052632e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf40aec89",
+      "share": 1.1057868110452046e-06,
+      "mean_ms_per_request": 9.947368421052632e-06,
+      "state_mean_ms": {
+        "Running": 9.947368421052632e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf7a785aa",
+      "share": 1.10561964750612e-06,
+      "mean_ms_per_request": 9.945864661654136e-06,
+      "state_mean_ms": {
+        "Running": 9.945864661654136e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xd4b780bd",
+      "share": 1.10561964750612e-06,
+      "mean_ms_per_request": 9.945864661654136e-06,
+      "state_mean_ms": {
+        "Running": 9.945864661654136e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf71bf53f",
+      "share": 1.097094307012801e-06,
+      "mean_ms_per_request": 9.869172932330827e-06,
+      "state_mean_ms": {
+        "Running": 9.869172932330827e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xee3a0b25",
+      "share": 1.0969271434737162e-06,
+      "mean_ms_per_request": 9.86766917293233e-06,
+      "state_mean_ms": {
+        "Running": 9.86766917293233e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xe8fce56e",
+      "share": 1.0969271434737162e-06,
+      "mean_ms_per_request": 9.86766917293233e-06,
+      "state_mean_ms": {
+        "Running": 9.86766917293233e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xe82eaeb9",
+      "share": 1.070849631376505e-06,
+      "mean_ms_per_request": 9.633082706766917e-06,
+      "state_mean_ms": {
+        "Running": 9.633082706766917e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xe9c9e3ee",
+      "share": 1.0621571273441014e-06,
+      "mean_ms_per_request": 9.554887218045114e-06,
+      "state_mean_ms": {
+        "Running": 9.554887218045114e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xccf10b4c",
+      "share": 1.0621571273441014e-06,
+      "mean_ms_per_request": 9.554887218045114e-06,
+      "state_mean_ms": {
+        "Running": 9.554887218045114e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xda517817",
+      "share": 1.0534646233116976e-06,
+      "mean_ms_per_request": 9.476691729323308e-06,
+      "state_mean_ms": {
+        "Running": 9.476691729323308e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf7a043a3",
+      "share": 1.0360796152468902e-06,
+      "mean_ms_per_request": 9.3203007518797e-06,
+      "state_mean_ms": {
+        "Running": 9.3203007518797e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf79cad19",
+      "share": 1.0360796152468902e-06,
+      "mean_ms_per_request": 9.3203007518797e-06,
+      "state_mean_ms": {
+        "Running": 9.3203007518797e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf1a15616",
+      "share": 1.0359124517078056e-06,
+      "mean_ms_per_request": 9.318796992481203e-06,
+      "state_mean_ms": {
+        "Running": 9.318796992481203e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xd229d29b",
+      "share": 1.0273871112144864e-06,
+      "mean_ms_per_request": 9.242105263157895e-06,
+      "state_mean_ms": {
+        "Running": 9.242105263157895e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xc9b45996",
+      "share": 1.0186946071820828e-06,
+      "mean_ms_per_request": 9.163909774436091e-06,
+      "state_mean_ms": {
+        "Running": 9.163909774436091e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xd7d74cf8",
+      "share": 9.926170950848715e-07,
+      "mean_ms_per_request": 8.929323308270677e-06,
+      "state_mean_ms": {
+        "Running": 8.929323308270677e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xd9a29cf8",
+      "share": 9.837574275133831e-07,
+      "mean_ms_per_request": 8.849624060150376e-06,
+      "state_mean_ms": {
+        "Running": 8.849624060150376e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xcdd6db2c",
+      "share": 9.837574275133831e-07,
+      "mean_ms_per_request": 8.849624060150376e-06,
+      "state_mean_ms": {
+        "Running": 8.849624060150376e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xfe57dbb5",
+      "share": 9.665395829876603e-07,
+      "mean_ms_per_request": 8.694736842105262e-06,
+      "state_mean_ms": {
+        "Running": 8.694736842105262e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xef79e49f",
+      "share": 9.57679915416172e-07,
+      "mean_ms_per_request": 8.615037593984962e-06,
+      "state_mean_ms": {
+        "Running": 8.615037593984962e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xd9e916f6",
+      "share": 9.57679915416172e-07,
+      "mean_ms_per_request": 8.615037593984962e-06,
+      "state_mean_ms": {
+        "Running": 8.615037593984962e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xd98fb8ec",
+      "share": 9.489874113837682e-07,
+      "mean_ms_per_request": 8.536842105263159e-06,
+      "state_mean_ms": {
+        "Running": 8.536842105263159e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf1c5ed7e",
+      "share": 9.402949073513645e-07,
+      "mean_ms_per_request": 8.458646616541353e-06,
+      "state_mean_ms": {
+        "Running": 8.458646616541353e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xfe3a01b4",
+      "share": 9.402949073513645e-07,
+      "mean_ms_per_request": 8.458646616541353e-06,
+      "state_mean_ms": {
+        "Running": 8.458646616541353e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xc476951d",
+      "share": 9.402949073513645e-07,
+      "mean_ms_per_request": 8.458646616541353e-06,
+      "state_mean_ms": {
+        "Running": 8.458646616541353e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xe17213fd",
+      "share": 9.316024033189608e-07,
+      "mean_ms_per_request": 8.38045112781955e-06,
+      "state_mean_ms": {
+        "Running": 8.38045112781955e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xe59fe046",
+      "share": 9.140502317150687e-07,
+      "mean_ms_per_request": 8.222556390977443e-06,
+      "state_mean_ms": {
+        "Running": 8.222556390977443e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xe4e21b71",
+      "share": 9.055248912217497e-07,
+      "mean_ms_per_request": 8.145864661654136e-06,
+      "state_mean_ms": {
+        "Running": 8.145864661654136e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xd390f26d",
+      "share": 9.055248912217497e-07,
+      "mean_ms_per_request": 8.145864661654136e-06,
+      "state_mean_ms": {
+        "Running": 8.145864661654136e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xeff88bfc",
+      "share": 9.05357727682665e-07,
+      "mean_ms_per_request": 8.14436090225564e-06,
+      "state_mean_ms": {
+        "Running": 8.14436090225564e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xce451394",
+      "share": 8.966652236502612e-07,
+      "mean_ms_per_request": 8.066165413533835e-06,
+      "state_mean_ms": {
+        "Running": 8.066165413533835e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xd859ae5b",
+      "share": 8.794473791245384e-07,
+      "mean_ms_per_request": 7.91127819548872e-06,
+      "state_mean_ms": {
+        "Running": 7.91127819548872e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xca644e1a",
+      "share": 8.792802155854537e-07,
+      "mean_ms_per_request": 7.909774436090226e-06,
+      "state_mean_ms": {
+        "Running": 7.909774436090226e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xe8d18821",
+      "share": 8.707548750921347e-07,
+      "mean_ms_per_request": 7.833082706766917e-06,
+      "state_mean_ms": {
+        "Running": 7.833082706766917e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xdd93741e",
+      "share": 8.618952075206463e-07,
+      "mean_ms_per_request": 7.753383458646616e-06,
+      "state_mean_ms": {
+        "Running": 7.753383458646616e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xc2d3f136",
+      "share": 8.618952075206463e-07,
+      "mean_ms_per_request": 7.753383458646616e-06,
+      "state_mean_ms": {
+        "Running": 7.753383458646616e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xc33760b7",
+      "share": 8.446773629949235e-07,
+      "mean_ms_per_request": 7.598496240601504e-06,
+      "state_mean_ms": {
+        "Running": 7.598496240601504e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xe9d1652f",
+      "share": 8.445101994558389e-07,
+      "mean_ms_per_request": 7.596992481203007e-06,
+      "state_mean_ms": {
+        "Running": 7.596992481203007e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xed6e96f5",
+      "share": 8.271251913910314e-07,
+      "mean_ms_per_request": 7.4406015037593985e-06,
+      "state_mean_ms": {
+        "Running": 7.4406015037593985e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf5679f60",
+      "share": 8.010476792938203e-07,
+      "mean_ms_per_request": 7.206015037593985e-06,
+      "state_mean_ms": {
+        "Running": 7.206015037593985e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xc52ed9b5",
+      "share": 7.923551752614164e-07,
+      "mean_ms_per_request": 7.1278195488721804e-06,
+      "state_mean_ms": {
+        "Running": 7.1278195488721804e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xfd8048b5",
+      "share": 7.834955076899281e-07,
+      "mean_ms_per_request": 7.04812030075188e-06,
+      "state_mean_ms": {
+        "Running": 7.04812030075188e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xdacfa254",
+      "share": 7.662776631642053e-07,
+      "mean_ms_per_request": 6.8932330827067675e-06,
+      "state_mean_ms": {
+        "Running": 6.8932330827067675e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xd5b144a1",
+      "share": 7.488926550993979e-07,
+      "mean_ms_per_request": 6.736842105263157e-06,
+      "state_mean_ms": {
+        "Running": 6.736842105263157e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xe3561418",
+      "share": 7.313404834955057e-07,
+      "mean_ms_per_request": 6.578947368421052e-06,
+      "state_mean_ms": {
+        "Running": 6.578947368421052e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xeeedccd4",
+      "share": 7.313404834955057e-07,
+      "mean_ms_per_request": 6.578947368421052e-06,
+      "state_mean_ms": {
+        "Running": 6.578947368421052e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xcdae7c3a",
+      "share": 7.139554754306983e-07,
+      "mean_ms_per_request": 6.4225563909774435e-06,
+      "state_mean_ms": {
+        "Running": 6.4225563909774435e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf5dd4b5b",
+      "share": 7.052629713982946e-07,
+      "mean_ms_per_request": 6.344360902255639e-06,
+      "state_mean_ms": {
+        "Running": 6.344360902255639e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xc66b4dfd",
+      "share": 6.965704673658909e-07,
+      "mean_ms_per_request": 6.266165413533835e-06,
+      "state_mean_ms": {
+        "Running": 6.266165413533835e-06
+      }
+    },
+    {
+      "name": "NativePostImeInputStage id=0xf2c2b5ba",
+      "share": 5.919260918988768e-07,
+      "mean_ms_per_request": 5.324812030075189e-06,
+      "state_mean_ms": {
+        "Running": 5.324812030075189e-06
+      }
+    }
+  ],
+  "frame_names": {
+    "Choreographer#doFrame -#": 1,
+    "Choreographer#doFrame #": 10967
+  },
+  "inputs": {
+    "artifacts\\system-queue\\scoped.json": "38e6aee525c8dcdc9f162ee6922158abea1de1c152b70bdb3db0a92fba1c6321",
+    "artifacts\\system-queue\\scoped.csv": "3faf2e4eb2c1ce3ac1b38cad04076f0e9546a88c7d8ec6095cfb21b054df8301",
+    "artifacts\\system-queue\\frame-detail.csv": "89491937eae815d3c8cb877309ae39539f2d43dfea23c2c6c1a38e0dd624eed7"
+  }
+}

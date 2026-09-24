@@ -1,0 +1,16 @@
+{
+  "status": "incomplete",
+  "failures": [
+    "queue missing/extra IDs",
+    "callback missing/extra IDs"
+  ],
+  "expected_queues": 665,
+  "observed_queues": 495,
+  "expected_callbacks": 665,
+  "observed_callbacks": 495,
+  "health": [],
+  "inputs": {
+    "artifacts\\system-queue\\ring.csv": "88439c1c78c30709dfba1e85659a0efedbc09c2befb7f8440f454a4285d8145f",
+    "artifacts\\device-tests\\9340e0d0-d092-4e53-9e3b-3f230083f0f3\\candidate-queues.tsv": "00e6ebdc4071ad12bcd56447b5eefd573d1d9e4c69d7d9f44360a311959e030b"
+  }
+}

@@ -41,6 +41,12 @@ Taiwanese acceptance-tail costs too. Some candidate gains do not meet the frozen
 cross-mode admission rule. Active sources are restored; the trial and aggregate
 evidence are archived outside Android source sets. No release gate is waived.
 
+The complete [system trace](SYSTEM-QUEUE-RESULTS.md) accounts for all 665 Chinese
+queued results. Window relayout overlaps 56.52% of their summed waiting duration;
+this points to the floating composition popup but does not identify its ownership
+causally. A separately frozen diagnostic ablation will test that hypothesis.
+No runtime change or release-latency acceptance follows from instrumented timing.
+
 The [compiled-validator experiment](VALIDATION-PATTERN-RESULTS.md) is rejected.
 Despite lower isolated ART validation cost and identical desktop predictions,
 Taiwanese raw/Space tails and fast Japanese raw tails worsen in both phone pairs.

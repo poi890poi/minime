@@ -1,0 +1,40 @@
+{
+  "status": "incomplete",
+  "failures": [
+    "trace loss/error/overrun"
+  ],
+  "expected_queues": 665,
+  "observed_queues": 665,
+  "expected_callbacks": 665,
+  "observed_callbacks": 665,
+  "health": [
+    {
+      "kind": "health",
+      "id": "[NULL]",
+      "ts": "0",
+      "dur": "1",
+      "name": "config_write_into_file_no_flush",
+      "aux": "error"
+    },
+    {
+      "kind": "health",
+      "id": "0",
+      "ts": "0",
+      "dur": "1",
+      "name": "config_write_into_file_discard",
+      "aux": "data_loss"
+    },
+    {
+      "kind": "health",
+      "id": "1",
+      "ts": "0",
+      "dur": "1",
+      "name": "config_write_into_file_discard",
+      "aux": "data_loss"
+    }
+  ],
+  "inputs": {
+    "artifacts\\system-queue\\streamed.csv": "9e8c67d0ed07ab3a080d6d6a4e69f09e70ebf069b5b08444b4c360181232ebe4",
+    "artifacts\\device-tests\\0a59f53d-bd24-4dec-8016-05b87061e21b\\candidate-queues.tsv": "62b31a5d2de275a578cc35fc25e1e48f3b8cb3f3b05b6708249185de78b311eb"
+  }
+}

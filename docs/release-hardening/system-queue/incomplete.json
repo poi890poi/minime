@@ -1,0 +1,35 @@
+{
+  "status": "incomplete",
+  "failures": [
+    "queue missing/extra IDs",
+    "callback missing/extra IDs",
+    "callback incomplete spans",
+    "trace loss/error/overrun"
+  ],
+  "expected_queues": 665,
+  "observed_queues": 81,
+  "expected_callbacks": 665,
+  "observed_callbacks": 81,
+  "health": [
+    {
+      "kind": "health",
+      "id": "0",
+      "ts": "0",
+      "dur": "9363",
+      "name": "traced_buf_chunks_discarded",
+      "aux": "info"
+    },
+    {
+      "kind": "health",
+      "id": "0",
+      "ts": "0",
+      "dur": "9059",
+      "name": "traced_buf_patches_failed",
+      "aux": "data_loss"
+    }
+  ],
+  "inputs": {
+    "artifacts\\system-queue\\incomplete.csv": "3bf4c2fd415d19fb7fb54dced93c977bdc8f6f5c81a2765909fa9263fb44a6e3",
+    "artifacts\\device-tests\\93dce400-165f-4f10-a621-e8374e161c65\\candidate-queues.tsv": "930aa40a6c116638ece2c1aee30ff0662b83e045dc027d13e21c68f161bef992"
+  }
+}
