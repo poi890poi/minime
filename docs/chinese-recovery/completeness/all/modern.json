@@ -1,0 +1,128 @@
+{
+  "scope": "Complete-reading support against all supplied MOE concise single-Han Pinyin records; not conversation accuracy, frequency or a fresh holdout",
+  "groups": {
+    "all": {
+      "before": {
+        "queries": 405,
+        "reference_pairs": 6402,
+        "reference_pairs_available": 6257,
+        "space_supported_by_reference": 313,
+        "first_nonraw_supported_by_reference": 371,
+        "first8_slots": 3232,
+        "first8_supported_complete_glyph_slots": 1535,
+        "first8_reference_mismatch_glyph_slots": 232,
+        "first8_phrase_or_literal_slots": 874,
+        "first8_partial_slots": 557,
+        "first8_uncovered_glyph_slots": 34
+      },
+      "after": {
+        "queries": 405,
+        "reference_pairs": 6402,
+        "reference_pairs_available": 6257,
+        "space_supported_by_reference": 337,
+        "first_nonraw_supported_by_reference": 400,
+        "first8_slots": 3232,
+        "first8_supported_complete_glyph_slots": 1828,
+        "first8_uncovered_glyph_slots": 173,
+        "first8_reference_mismatch_glyph_slots": 36,
+        "first8_phrase_or_literal_slots": 638,
+        "first8_partial_slots": 557
+      },
+      "changes": {
+        "first8_supported_pairs_gained": 293,
+        "first8_supported_pairs_lost": 0,
+        "space_reference_gains": 24,
+        "space_reference_losses": 0
+      }
+    },
+    "one-letter": {
+      "before": {
+        "queries": 3,
+        "reference_pairs": 38,
+        "reference_pairs_available": 37,
+        "space_supported_by_reference": 1,
+        "first_nonraw_supported_by_reference": 2,
+        "first8_slots": 24,
+        "first8_supported_complete_glyph_slots": 6,
+        "first8_reference_mismatch_glyph_slots": 13,
+        "first8_phrase_or_literal_slots": 5
+      },
+      "after": {
+        "queries": 3,
+        "reference_pairs": 38,
+        "reference_pairs_available": 37,
+        "space_supported_by_reference": 2,
+        "first_nonraw_supported_by_reference": 3,
+        "first8_slots": 24,
+        "first8_supported_complete_glyph_slots": 11,
+        "first8_uncovered_glyph_slots": 3,
+        "first8_reference_mismatch_glyph_slots": 6,
+        "first8_phrase_or_literal_slots": 4
+      },
+      "changes": {
+        "first8_supported_pairs_gained": 5,
+        "first8_supported_pairs_lost": 0,
+        "space_reference_gains": 1,
+        "space_reference_losses": 0
+      }
+    },
+    "multiple-letter": {
+      "before": {
+        "queries": 402,
+        "reference_pairs": 6364,
+        "reference_pairs_available": 6220,
+        "space_supported_by_reference": 312,
+        "first_nonraw_supported_by_reference": 369,
+        "first8_slots": 3208,
+        "first8_supported_complete_glyph_slots": 1529,
+        "first8_phrase_or_literal_slots": 869,
+        "first8_partial_slots": 557,
+        "first8_reference_mismatch_glyph_slots": 219,
+        "first8_uncovered_glyph_slots": 34
+      },
+      "after": {
+        "queries": 402,
+        "reference_pairs": 6364,
+        "reference_pairs_available": 6220,
+        "space_supported_by_reference": 335,
+        "first_nonraw_supported_by_reference": 397,
+        "first8_slots": 3208,
+        "first8_supported_complete_glyph_slots": 1817,
+        "first8_phrase_or_literal_slots": 634,
+        "first8_partial_slots": 557,
+        "first8_uncovered_glyph_slots": 170,
+        "first8_reference_mismatch_glyph_slots": 30
+      },
+      "changes": {
+        "first8_supported_pairs_gained": 288,
+        "first8_supported_pairs_lost": 0,
+        "space_reference_gains": 23,
+        "space_reference_losses": 0
+      }
+    }
+  },
+  "manifest": {
+    "source_id": "moe-dictionaries",
+    "role": "pronunciation-reference diagnostic; previously inspected source, not fresh holdout",
+    "queries": 405,
+    "reference_pairs": 6402,
+    "glyphs": 6028,
+    "skipped_unresolved_glyphs": 0,
+    "inputs_sha256": "5f401c7e4b22d35381ead2854643e402f93bec98c3ffb75f25fc6b5d3d9ea05b",
+    "references_sha256": "8947794f7136a816103b366690780ff93b2b7d59a2cef37d20235a2910c5c7c4",
+    "source_inventory": {
+      "source_rows": 45130,
+      "single_han_rows": 6657,
+      "unparsed_word_pinyin": 1,
+      "distinct_single_han_glyphs": 6028,
+      "single_han_reading_pairs": 6657,
+      "single_han_glyphs_with_multiple_readings": 554
+    }
+  },
+  "hashes": {
+    "baseline": "b2b719aa193ccc5c0bc56fc4034cc92c90675df9f1c4611fcf46fb2d7053c946",
+    "candidate": "fef53afacbb3f3b4bc8f93ad66b5ca6ffa3585bc4917c8a257c076d822fd180c",
+    "references": "8947794f7136a816103b366690780ff93b2b7d59a2cef37d20235a2910c5c7c4",
+    "inputs": "5f401c7e4b22d35381ead2854643e402f93bec98c3ffb75f25fc6b5d3d9ea05b"
+  }
+}

@@ -1,0 +1,56 @@
+diff --git a/core/src/main/java/dev/minime/core/CandidateOrder.java b/core/src/main/java/dev/minime/core/CandidateOrder.java
+index 40fb112..a42a9c7 100644
+--- a/core/src/main/java/dev/minime/core/CandidateOrder.java
++++ b/core/src/main/java/dev/minime/core/CandidateOrder.java
+@@ -10,18 +10,23 @@ final class CandidateOrder {
+         final Candidate value;
+         final boolean partial;
+         final int votes;
+-        Key(Candidate value,boolean partial,int votes) {this.value=value;this.partial=partial;this.votes=votes;}
++        final boolean incomplete;
++        Key(Candidate value,boolean partial,int votes,boolean incomplete) {this.value=value;this.partial=partial;this.votes=votes;this.incomplete=incomplete;}
+     }
+     private static final Comparator<Key> ORDER=(a,b)-> {
+         int order=Boolean.compare(a.partial,b.partial);
+         if(order==0)order=Integer.compare(b.votes,a.votes);
++        if(order==0)order=Boolean.compare(a.incomplete,b.incomplete);
+         return order!=0?order:Double.compare(b.value.score,a.value.score);
+     };
+     static void sort(List<Candidate> values,Predicate<Candidate> partial,ToIntFunction<Candidate> votes) {
++        sort(values,partial,votes,c->false);
++    }
++    static void sort(List<Candidate> values,Predicate<Candidate> partial,ToIntFunction<Candidate> votes,Predicate<Candidate> incomplete) {
+         if(values.size()<2)return;
+         Key[] keys=new Key[values.size()];
+         for(int i=0;i<keys.length;i++) {
+-            Candidate value=values.get(i);keys[i]=new Key(value,partial.test(value),votes.applyAsInt(value));
++            Candidate value=values.get(i);keys[i]=new Key(value,partial.test(value),votes.applyAsInt(value),incomplete.test(value));
+         }
+         // Object-array sorting is stable, preserving source order for exact ties.
+         Arrays.sort(keys,ORDER);
+diff --git a/core/src/main/java/dev/minime/core/CompositionEngine.java b/core/src/main/java/dev/minime/core/CompositionEngine.java
+index 42bda48..57d3763 100644
+--- a/core/src/main/java/dev/minime/core/CompositionEngine.java
++++ b/core/src/main/java/dev/minime/core/CompositionEngine.java
+@@ -419,7 +419,8 @@ public final class CompositionEngine {
+         }
+         if (!englishMode) converted.addAll(custom);
+         String sortContext=contextKey();
+-        CandidateOrder.sort(converted,this::partial,c->privateField?0:learning.count(sortContext,raw,c.text));
++        CandidateOrder.sort(converted,this::partial,c->privateField?0:learning.count(sortContext,raw,c.text),
++            c->!bpmf && inputMode.chineseEnabled() && c.incomplete);
+         Set<String> seen = new HashSet<>(); seen.add(raw);
+         for (Candidate c : converted) if (seen.add(c.text)) candidates.add(c);
+         if (candidates.size() > 1) {
+diff --git a/core/src/main/java/dev/minime/core/PhoneticDictionary.java b/core/src/main/java/dev/minime/core/PhoneticDictionary.java
+index ace0ed0..a19a701 100644
+--- a/core/src/main/java/dev/minime/core/PhoneticDictionary.java
++++ b/core/src/main/java/dev/minime/core/PhoneticDictionary.java
+@@ -183,6 +183,7 @@ public final class PhoneticDictionary {
+         if(!bpmf && !context.isEmpty())result.replaceAll(c->c.withScore(
+             c.score+.5*contextModel.chineseBoundary(context,c.text)));
+         result.sort(Comparator.comparing((Candidate c)->c.consumed>0 && c.consumed<key.length())
++            .thenComparing(c->!bpmf && c.incomplete)
+             .thenComparing(Comparator.comparingDouble((Candidate c)->c.score).reversed()).thenComparing(c->c.text));
+         // Whole-input identities win deduplication; partial recovery never
+         // replaces their acceptance span or invents a multi-character phrase.
