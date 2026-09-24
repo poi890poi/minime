@@ -1,0 +1,48 @@
+--- accepted/AsyncDecoder.java
++++ diagnostic/AsyncDecoder.java
+@@ -12,6 +12,7 @@
+     private final ScheduledExecutorService worker=Executors.newSingleThreadScheduledExecutor();
+     private final Handler main;
+     private ScheduledFuture<?> queued;
++    private QueueTrace.Sample queuedSample;
+     private volatile boolean closed;
+     private volatile boolean rime;
+     private volatile JapaneseConversion.Provider japanese;
+@@ -31,19 +32,32 @@
+         boolean useRime=phonetic && rime && !zhuyin;
+         JapaneseConversion.Provider conversion=japanese;
+         stats.requests.incrementAndGet();
++        QueueTrace.Sample sample=QueueTrace.begin();queuedSample=sample;
++        QueueTrace.scheduled(sample);
+         queued=worker.schedule(()-> {
+-            List<Candidate> choices=DecodePipeline.run(current,
++            QueueTrace.worker(sample);
++            List<Candidate> choices;
++            try { choices=DecodePipeline.run(current,
+                 ()->phonetic?dictionary.convert(raw,zhuyin,context):new ArrayList<>(),
+                 useRime?()->RimeBackend.candidates(raw):null,
+                 ()->JapaneseConversion.merge(raw,enabled,addons,addons.lookup(raw,enabled),conversion,current),stats);
+-            if(choices!=null)deliver(current,choices,result);
++            } catch(RuntimeException | Error failure){QueueTrace.failed(sample);throw failure;}
++            QueueTrace.providers(sample,choices!=null);
++            if(choices!=null)deliver(current,choices,result,sample);
+         },8,TimeUnit.MILLISECONDS);
+     }
+-    public void cancel() {requests.cancel();if(queued!=null)queued.cancel(false);}
++    public void cancel() {requests.cancel();if(queued!=null)queued.cancel(false);QueueTrace.cancel(queuedSample);}
+     private void deliver(BooleanSupplier current,List<Candidate> choices,Consumer<List<Candidate>> result) {
++        deliver(current,choices,result,null);
++    }
++    private void deliver(BooleanSupplier current,List<Candidate> choices,Consumer<List<Candidate>> result,QueueTrace.Sample sample) {
++        QueueTrace.posted(sample);
+         main.post(()-> {
+-            if(!closed && current.getAsBoolean()) {stats.delivered.incrementAndGet();result.accept(choices);}
+-            else stats.staleDelivery.incrementAndGet();
++            QueueTrace.entered(sample);boolean accepted=false;
++            try {
++                if(!closed && current.getAsBoolean()) {accepted=true;stats.delivered.incrementAndGet();result.accept(choices);}
++                else stats.staleDelivery.incrementAndGet();
++            } finally {QueueTrace.finished(sample,accepted);}
+         });
+     }
+     public void close() {closed=true;cancel();worker.shutdownNow();}

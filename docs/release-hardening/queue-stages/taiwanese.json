@@ -1,0 +1,3459 @@
+{
+  "scope": "Instrumented synthetic requests only. Schedule overshoot includes worker availability and timer dispatch. Main-queue includes Handler enqueue overhead. Do not add percentiles.",
+  "source_sha256": "168d1fd44dbb9fb4afa740095e9086d49d5598194948ce289035d1102604f700",
+  "schedule_ms": 8,
+  "counts": {
+    "requests": 894,
+    "worker_started": 894,
+    "posted": 891,
+    "entered": 891,
+    "accepted": 891,
+    "cancelled_pipeline": 3
+  },
+  "stages": {
+    "scheduled_wait": {
+      "observed": 894,
+      "mean_ms": 8.161651507829978,
+      "p50_ms": 8.113281,
+      "p95_ms": 8.399635,
+      "p99_ms": 8.77224,
+      "max_ms": 10.451719
+    },
+    "schedule_deadline_overshoot": {
+      "observed": 894,
+      "mean_ms": 0.16165150782997764,
+      "p50_ms": 0.113281,
+      "p95_ms": 0.399635,
+      "p99_ms": 0.77224,
+      "max_ms": 2.451719
+    },
+    "provider_work": {
+      "observed": 894,
+      "mean_ms": 4.9311281823266215,
+      "p50_ms": 1.7379165,
+      "p95_ms": 18.552031,
+      "p99_ms": 46.53375,
+      "max_ms": 59.953229
+    },
+    "before_post": {
+      "observed": 891,
+      "mean_ms": 0.003641808080808081,
+      "p50_ms": 0.003282,
+      "p95_ms": 0.006041,
+      "p99_ms": 0.008073,
+      "max_ms": 0.027136
+    },
+    "main_queue": {
+      "observed": 891,
+      "mean_ms": 8.172254241301909,
+      "p50_ms": 7.874687,
+      "p95_ms": 17.123334,
+      "p99_ms": 20.666667,
+      "max_ms": 23.933385
+    },
+    "callback": {
+      "observed": 891,
+      "mean_ms": 2.599943362514029,
+      "p50_ms": 1.44099,
+      "p95_ms": 5.980156,
+      "p99_ms": 8.23474,
+      "max_ms": 11.389688
+    },
+    "request_to_main": {
+      "observed": 891,
+      "mean_ms": 21.112342978675645,
+      "p50_ms": 19.124271,
+      "p95_ms": 34.343542,
+      "p99_ms": 54.297916,
+      "max_ms": 61.660417
+    },
+    "request_to_finish": {
+      "observed": 891,
+      "mean_ms": 23.712286341189674,
+      "p50_ms": 21.354219,
+      "p95_ms": 39.590104,
+      "p99_ms": 57.159479,
+      "max_ms": 70.320209
+    },
+    "accepted_scheduled_wait": {
+      "observed": 891,
+      "mean_ms": 8.161839388327722,
+      "p50_ms": 8.113281,
+      "p95_ms": 8.399635,
+      "p99_ms": 8.77224,
+      "max_ms": 10.451719
+    },
+    "accepted_provider_work": {
+      "observed": 891,
+      "mean_ms": 4.772346557800224,
+      "p50_ms": 1.732761,
+      "p95_ms": 17.395364,
+      "p99_ms": 44.984323,
+      "max_ms": 49.050886
+    },
+    "accepted_main_queue": {
+      "observed": 891,
+      "mean_ms": 8.172254241301909,
+      "p50_ms": 7.874687,
+      "p95_ms": 17.123334,
+      "p99_ms": 20.666667,
+      "max_ms": 23.933385
+    },
+    "accepted_callback": {
+      "observed": 891,
+      "mean_ms": 2.599943362514029,
+      "p50_ms": 1.44099,
+      "p95_ms": 5.980156,
+      "p99_ms": 8.23474,
+      "max_ms": 11.389688
+    }
+  },
+  "workload": {
+    "mode": "taiwanese_english",
+    "shard": 0,
+    "queries_per_cadence": 56,
+    "actions": 1006,
+    "status": "exact action sequence matches frozen corpus"
+  },
+  "touch_sha256": "b8057a852b7c4ffa56af7752bbf8b66e2187021a974d36018c4784a8df9c9d2a",
+  "corpus_sha256": "5c316cebea4ed88352a946fafe01fcda4e922c49a47b12783996a53ec1995f49",
+  "correlation": {
+    "requests_not_uniquely_attributed": 0,
+    "groups": {
+      "taiwanese_english/150": {
+        "attribution": {
+          "letters": 447,
+          "unique_request": 447
+        },
+        "counts": {
+          "requests": 447,
+          "worker_started": 447,
+          "posted": 447,
+          "entered": 447,
+          "accepted": 447
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 447,
+            "mean_ms": 8.150978040268456,
+            "p50_ms": 8.112917,
+            "p95_ms": 8.379375,
+            "p99_ms": 8.745729,
+            "max_ms": 10.451719
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 447,
+            "mean_ms": 0.15097804026845638,
+            "p50_ms": 0.112917,
+            "p95_ms": 0.379375,
+            "p99_ms": 0.745729,
+            "max_ms": 2.451719
+          },
+          "provider_work": {
+            "observed": 447,
+            "mean_ms": 5.132195536912752,
+            "p50_ms": 1.762239,
+            "p95_ms": 20.186146,
+            "p99_ms": 46.493386,
+            "max_ms": 49.050886
+          },
+          "before_post": {
+            "observed": 447,
+            "mean_ms": 0.003579199105145414,
+            "p50_ms": 0.003177,
+            "p95_ms": 0.005782,
+            "p99_ms": 0.008125,
+            "max_ms": 0.027136
+          },
+          "main_queue": {
+            "observed": 447,
+            "mean_ms": 7.7862826017897095,
+            "p50_ms": 7.407864,
+            "p95_ms": 16.481145,
+            "p99_ms": 20.036719,
+            "max_ms": 22.690938
+          },
+          "callback": {
+            "observed": 447,
+            "mean_ms": 2.788838577181208,
+            "p50_ms": 1.515625,
+            "p95_ms": 6.515312,
+            "p99_ms": 8.659792,
+            "max_ms": 11.389688
+          },
+          "request_to_main": {
+            "observed": 447,
+            "mean_ms": 21.075724704697986,
+            "p50_ms": 18.662343,
+            "p95_ms": 34.695833,
+            "p99_ms": 55.372084,
+            "max_ms": 61.660417
+          },
+          "request_to_finish": {
+            "observed": 447,
+            "mean_ms": 23.864563281879196,
+            "p50_ms": 20.952187,
+            "p95_ms": 40.518907,
+            "p99_ms": 59.027709,
+            "max_ms": 70.320209
+          },
+          "accepted_scheduled_wait": {
+            "observed": 447,
+            "mean_ms": 8.150978040268456,
+            "p50_ms": 8.112917,
+            "p95_ms": 8.379375,
+            "p99_ms": 8.745729,
+            "max_ms": 10.451719
+          },
+          "accepted_provider_work": {
+            "observed": 447,
+            "mean_ms": 5.132195536912752,
+            "p50_ms": 1.762239,
+            "p95_ms": 20.186146,
+            "p99_ms": 46.493386,
+            "max_ms": 49.050886
+          },
+          "accepted_main_queue": {
+            "observed": 447,
+            "mean_ms": 7.7862826017897095,
+            "p50_ms": 7.407864,
+            "p95_ms": 16.481145,
+            "p99_ms": 20.036719,
+            "max_ms": 22.690938
+          },
+          "accepted_callback": {
+            "observed": 447,
+            "mean_ms": 2.788838577181208,
+            "p50_ms": 1.515625,
+            "p95_ms": 6.515312,
+            "p99_ms": 8.659792,
+            "max_ms": 11.389688
+          }
+        }
+      },
+      "taiwanese_english/150/suisiann-thousand/authored-situational-examples/full": {
+        "attribution": {
+          "letters": 31,
+          "unique_request": 31
+        },
+        "counts": {
+          "requests": 31,
+          "worker_started": 31,
+          "posted": 31,
+          "entered": 31,
+          "accepted": 31
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 31,
+            "mean_ms": 8.224591677419355,
+            "p50_ms": 8.116354,
+            "p95_ms": 8.420885,
+            "p99_ms": 10.451719,
+            "max_ms": 10.451719
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 31,
+            "mean_ms": 0.22459167741935485,
+            "p50_ms": 0.116354,
+            "p95_ms": 0.420885,
+            "p99_ms": 2.451719,
+            "max_ms": 2.451719
+          },
+          "provider_work": {
+            "observed": 31,
+            "mean_ms": 6.76916,
+            "p50_ms": 1.315052,
+            "p95_ms": 30.316771,
+            "p99_ms": 43.222916,
+            "max_ms": 43.222916
+          },
+          "before_post": {
+            "observed": 31,
+            "mean_ms": 0.0031669032258064517,
+            "p50_ms": 0.002917,
+            "p95_ms": 0.005,
+            "p99_ms": 0.005938,
+            "max_ms": 0.005938
+          },
+          "main_queue": {
+            "observed": 31,
+            "mean_ms": 6.714546451612903,
+            "p50_ms": 6.898593,
+            "p95_ms": 15.644948,
+            "p99_ms": 16.481145,
+            "max_ms": 16.481145
+          },
+          "callback": {
+            "observed": 31,
+            "mean_ms": 3.6368295806451614,
+            "p50_ms": 1.445468,
+            "p95_ms": 8.799219,
+            "p99_ms": 9.922969,
+            "max_ms": 9.922969
+          },
+          "request_to_main": {
+            "observed": 31,
+            "mean_ms": 21.71383735483871,
+            "p50_ms": 17.483646,
+            "p95_ms": 52.633802,
+            "p99_ms": 61.660417,
+            "max_ms": 61.660417
+          },
+          "request_to_finish": {
+            "observed": 31,
+            "mean_ms": 25.350666935483872,
+            "p50_ms": 19.275937,
+            "p95_ms": 60.868542,
+            "p99_ms": 70.320209,
+            "max_ms": 70.320209
+          },
+          "accepted_scheduled_wait": {
+            "observed": 31,
+            "mean_ms": 8.224591677419355,
+            "p50_ms": 8.116354,
+            "p95_ms": 8.420885,
+            "p99_ms": 10.451719,
+            "max_ms": 10.451719
+          },
+          "accepted_provider_work": {
+            "observed": 31,
+            "mean_ms": 6.76916,
+            "p50_ms": 1.315052,
+            "p95_ms": 30.316771,
+            "p99_ms": 43.222916,
+            "max_ms": 43.222916
+          },
+          "accepted_main_queue": {
+            "observed": 31,
+            "mean_ms": 6.714546451612903,
+            "p50_ms": 6.898593,
+            "p95_ms": 15.644948,
+            "p99_ms": 16.481145,
+            "max_ms": 16.481145
+          },
+          "accepted_callback": {
+            "observed": 31,
+            "mean_ms": 3.6368295806451614,
+            "p50_ms": 1.445468,
+            "p95_ms": 8.799219,
+            "p99_ms": 9.922969,
+            "max_ms": 9.922969
+          }
+        }
+      },
+      "taiwanese_english/150/suisiann-thousand/authored-situational-examples/half": {
+        "attribution": {
+          "letters": 16,
+          "unique_request": 16
+        },
+        "counts": {
+          "requests": 16,
+          "worker_started": 16,
+          "posted": 16,
+          "entered": 16,
+          "accepted": 16
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.106976,
+            "p50_ms": 8.1058335,
+            "p95_ms": 8.129323,
+            "p99_ms": 8.129323,
+            "max_ms": 8.129323
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 16,
+            "mean_ms": 0.106976,
+            "p50_ms": 0.1058335,
+            "p95_ms": 0.129323,
+            "p99_ms": 0.129323,
+            "max_ms": 0.129323
+          },
+          "provider_work": {
+            "observed": 16,
+            "mean_ms": 9.6498339375,
+            "p50_ms": 4.753932,
+            "p95_ms": 44.984323,
+            "p99_ms": 44.984323,
+            "max_ms": 44.984323
+          },
+          "before_post": {
+            "observed": 16,
+            "mean_ms": 0.004088625,
+            "p50_ms": 0.003802,
+            "p95_ms": 0.005781,
+            "p99_ms": 0.005781,
+            "max_ms": 0.005781
+          },
+          "main_queue": {
+            "observed": 16,
+            "mean_ms": 4.8721516875,
+            "p50_ms": 5.0520835,
+            "p95_ms": 8.703177,
+            "p99_ms": 8.703177,
+            "max_ms": 8.703177
+          },
+          "callback": {
+            "observed": 16,
+            "mean_ms": 4.0328450625,
+            "p50_ms": 5.390026000000001,
+            "p95_ms": 6.46375,
+            "p99_ms": 6.46375,
+            "max_ms": 6.46375
+          },
+          "request_to_main": {
+            "observed": 16,
+            "mean_ms": 22.635133562500002,
+            "p50_ms": 18.4214585,
+            "p95_ms": 53.156302,
+            "p99_ms": 53.156302,
+            "max_ms": 53.156302
+          },
+          "request_to_finish": {
+            "observed": 16,
+            "mean_ms": 26.667978625,
+            "p50_ms": 23.8599215,
+            "p95_ms": 55.103907,
+            "p99_ms": 55.103907,
+            "max_ms": 55.103907
+          },
+          "accepted_scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.106976,
+            "p50_ms": 8.1058335,
+            "p95_ms": 8.129323,
+            "p99_ms": 8.129323,
+            "max_ms": 8.129323
+          },
+          "accepted_provider_work": {
+            "observed": 16,
+            "mean_ms": 9.6498339375,
+            "p50_ms": 4.753932,
+            "p95_ms": 44.984323,
+            "p99_ms": 44.984323,
+            "max_ms": 44.984323
+          },
+          "accepted_main_queue": {
+            "observed": 16,
+            "mean_ms": 4.8721516875,
+            "p50_ms": 5.0520835,
+            "p95_ms": 8.703177,
+            "p99_ms": 8.703177,
+            "max_ms": 8.703177
+          },
+          "accepted_callback": {
+            "observed": 16,
+            "mean_ms": 4.0328450625,
+            "p50_ms": 5.390026000000001,
+            "p95_ms": 6.46375,
+            "p99_ms": 6.46375,
+            "max_ms": 6.46375
+          }
+        }
+      },
+      "taiwanese_english/150/suisiann-thousand/authored-situational-examples/initials": {
+        "attribution": {
+          "letters": 18,
+          "unique_request": 18
+        },
+        "counts": {
+          "requests": 18,
+          "worker_started": 18,
+          "posted": 18,
+          "entered": 18,
+          "accepted": 18
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 18,
+            "mean_ms": 8.13970488888889,
+            "p50_ms": 8.1108595,
+            "p95_ms": 8.364062,
+            "p99_ms": 8.364062,
+            "max_ms": 8.364062
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 18,
+            "mean_ms": 0.13970488888888888,
+            "p50_ms": 0.1108595,
+            "p95_ms": 0.364062,
+            "p99_ms": 0.364062,
+            "max_ms": 0.364062
+          },
+          "provider_work": {
+            "observed": 18,
+            "mean_ms": 6.805457111111111,
+            "p50_ms": 3.782604,
+            "p95_ms": 46.493386,
+            "p99_ms": 46.493386,
+            "max_ms": 46.493386
+          },
+          "before_post": {
+            "observed": 18,
+            "mean_ms": 0.003854111111111111,
+            "p50_ms": 0.00375,
+            "p95_ms": 0.00625,
+            "p99_ms": 0.00625,
+            "max_ms": 0.00625
+          },
+          "main_queue": {
+            "observed": 18,
+            "mean_ms": 7.942149888888889,
+            "p50_ms": 8.322083,
+            "p95_ms": 14.936511,
+            "p99_ms": 14.936511,
+            "max_ms": 14.936511
+          },
+          "callback": {
+            "observed": 18,
+            "mean_ms": 4.024777333333334,
+            "p50_ms": 4.3159115,
+            "p95_ms": 9.145417,
+            "p99_ms": 9.145417,
+            "max_ms": 9.145417
+          },
+          "request_to_main": {
+            "observed": 18,
+            "mean_ms": 22.893339166666667,
+            "p50_ms": 19.789427,
+            "p95_ms": 54.972969,
+            "p99_ms": 54.972969,
+            "max_ms": 54.972969
+          },
+          "request_to_finish": {
+            "observed": 18,
+            "mean_ms": 26.9181165,
+            "p50_ms": 21.9677085,
+            "p95_ms": 60.956875,
+            "p99_ms": 60.956875,
+            "max_ms": 60.956875
+          },
+          "accepted_scheduled_wait": {
+            "observed": 18,
+            "mean_ms": 8.13970488888889,
+            "p50_ms": 8.1108595,
+            "p95_ms": 8.364062,
+            "p99_ms": 8.364062,
+            "max_ms": 8.364062
+          },
+          "accepted_provider_work": {
+            "observed": 18,
+            "mean_ms": 6.805457111111111,
+            "p50_ms": 3.782604,
+            "p95_ms": 46.493386,
+            "p99_ms": 46.493386,
+            "max_ms": 46.493386
+          },
+          "accepted_main_queue": {
+            "observed": 18,
+            "mean_ms": 7.942149888888889,
+            "p50_ms": 8.322083,
+            "p95_ms": 14.936511,
+            "p99_ms": 14.936511,
+            "max_ms": 14.936511
+          },
+          "accepted_callback": {
+            "observed": 18,
+            "mean_ms": 4.024777333333334,
+            "p50_ms": 4.3159115,
+            "p95_ms": 9.145417,
+            "p99_ms": 9.145417,
+            "max_ms": 9.145417
+          }
+        }
+      },
+      "taiwanese_english/150/suisiann-thousand/authored-situational-examples/mixed": {
+        "attribution": {
+          "letters": 6,
+          "unique_request": 6
+        },
+        "counts": {
+          "requests": 6,
+          "worker_started": 6,
+          "posted": 6,
+          "entered": 6,
+          "accepted": 6
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 6,
+            "mean_ms": 8.244409833333334,
+            "p50_ms": 8.2391145,
+            "p95_ms": 8.389167,
+            "p99_ms": 8.389167,
+            "max_ms": 8.389167
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 6,
+            "mean_ms": 0.24440983333333333,
+            "p50_ms": 0.2391145,
+            "p95_ms": 0.389167,
+            "p99_ms": 0.389167,
+            "max_ms": 0.389167
+          },
+          "provider_work": {
+            "observed": 6,
+            "mean_ms": 11.657283166666668,
+            "p50_ms": 8.19974,
+            "p95_ms": 30.279375,
+            "p99_ms": 30.279375,
+            "max_ms": 30.279375
+          },
+          "before_post": {
+            "observed": 6,
+            "mean_ms": 0.004791666666666666,
+            "p50_ms": 0.004817999999999999,
+            "p95_ms": 0.006458,
+            "p99_ms": 0.006458,
+            "max_ms": 0.006458
+          },
+          "main_queue": {
+            "observed": 6,
+            "mean_ms": 10.798949333333333,
+            "p50_ms": 11.170052,
+            "p95_ms": 19.738541,
+            "p99_ms": 19.738541,
+            "max_ms": 19.738541
+          },
+          "callback": {
+            "observed": 6,
+            "mean_ms": 5.9264845,
+            "p50_ms": 5.583203,
+            "p95_ms": 8.619167,
+            "p99_ms": 8.619167,
+            "max_ms": 8.619167
+          },
+          "request_to_main": {
+            "observed": 6,
+            "mean_ms": 30.707508500000003,
+            "p50_ms": 29.494218500000002,
+            "p95_ms": 39.930573,
+            "p99_ms": 39.930573,
+            "max_ms": 39.930573
+          },
+          "request_to_finish": {
+            "observed": 6,
+            "mean_ms": 36.633993000000004,
+            "p50_ms": 36.382448,
+            "p95_ms": 44.434791,
+            "p99_ms": 44.434791,
+            "max_ms": 44.434791
+          },
+          "accepted_scheduled_wait": {
+            "observed": 6,
+            "mean_ms": 8.244409833333334,
+            "p50_ms": 8.2391145,
+            "p95_ms": 8.389167,
+            "p99_ms": 8.389167,
+            "max_ms": 8.389167
+          },
+          "accepted_provider_work": {
+            "observed": 6,
+            "mean_ms": 11.657283166666668,
+            "p50_ms": 8.19974,
+            "p95_ms": 30.279375,
+            "p99_ms": 30.279375,
+            "max_ms": 30.279375
+          },
+          "accepted_main_queue": {
+            "observed": 6,
+            "mean_ms": 10.798949333333333,
+            "p50_ms": 11.170052,
+            "p95_ms": 19.738541,
+            "p99_ms": 19.738541,
+            "max_ms": 19.738541
+          },
+          "accepted_callback": {
+            "observed": 6,
+            "mean_ms": 5.9264845,
+            "p50_ms": 5.583203,
+            "p95_ms": 8.619167,
+            "p99_ms": 8.619167,
+            "max_ms": 8.619167
+          }
+        }
+      },
+      "taiwanese_english/150/suisiann-thousand/authored-situational-examples/neighbor": {
+        "attribution": {
+          "letters": 25,
+          "unique_request": 25
+        },
+        "counts": {
+          "requests": 25,
+          "worker_started": 25,
+          "posted": 25,
+          "entered": 25,
+          "accepted": 25
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 25,
+            "mean_ms": 8.14066252,
+            "p50_ms": 8.113541,
+            "p95_ms": 8.36125,
+            "p99_ms": 8.437552,
+            "max_ms": 8.437552
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 25,
+            "mean_ms": 0.14066252,
+            "p50_ms": 0.113541,
+            "p95_ms": 0.36125,
+            "p99_ms": 0.437552,
+            "max_ms": 0.437552
+          },
+          "provider_work": {
+            "observed": 25,
+            "mean_ms": 3.3166604,
+            "p50_ms": 0.528229,
+            "p95_ms": 13.642135,
+            "p99_ms": 17.203489,
+            "max_ms": 17.203489
+          },
+          "before_post": {
+            "observed": 25,
+            "mean_ms": 0.00378964,
+            "p50_ms": 0.002396,
+            "p95_ms": 0.006719,
+            "p99_ms": 0.025625,
+            "max_ms": 0.025625
+          },
+          "main_queue": {
+            "observed": 25,
+            "mean_ms": 8.98723128,
+            "p50_ms": 9.806771,
+            "p95_ms": 18.342343,
+            "p99_ms": 20.036719,
+            "max_ms": 20.036719
+          },
+          "callback": {
+            "observed": 25,
+            "mean_ms": 2.83251664,
+            "p50_ms": 1.835937,
+            "p95_ms": 5.905104,
+            "p99_ms": 6.666146,
+            "max_ms": 6.666146
+          },
+          "request_to_main": {
+            "observed": 25,
+            "mean_ms": 20.45115844,
+            "p50_ms": 18.850833,
+            "p95_ms": 29.472135,
+            "p99_ms": 33.308229,
+            "max_ms": 33.308229
+          },
+          "request_to_finish": {
+            "observed": 25,
+            "mean_ms": 23.28367508,
+            "p50_ms": 22.778698,
+            "p95_ms": 35.366198,
+            "p99_ms": 38.551198,
+            "max_ms": 38.551198
+          },
+          "accepted_scheduled_wait": {
+            "observed": 25,
+            "mean_ms": 8.14066252,
+            "p50_ms": 8.113541,
+            "p95_ms": 8.36125,
+            "p99_ms": 8.437552,
+            "max_ms": 8.437552
+          },
+          "accepted_provider_work": {
+            "observed": 25,
+            "mean_ms": 3.3166604,
+            "p50_ms": 0.528229,
+            "p95_ms": 13.642135,
+            "p99_ms": 17.203489,
+            "max_ms": 17.203489
+          },
+          "accepted_main_queue": {
+            "observed": 25,
+            "mean_ms": 8.98723128,
+            "p50_ms": 9.806771,
+            "p95_ms": 18.342343,
+            "p99_ms": 20.036719,
+            "max_ms": 20.036719
+          },
+          "accepted_callback": {
+            "observed": 25,
+            "mean_ms": 2.83251664,
+            "p50_ms": 1.835937,
+            "p95_ms": 5.905104,
+            "p99_ms": 6.666146,
+            "max_ms": 6.666146
+          }
+        }
+      },
+      "taiwanese_english/150/suisiann-thousand/authored-situational-examples/omission": {
+        "attribution": {
+          "letters": 36,
+          "unique_request": 36
+        },
+        "counts": {
+          "requests": 36,
+          "worker_started": 36,
+          "posted": 36,
+          "entered": 36,
+          "accepted": 36
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 36,
+            "mean_ms": 8.182377055555556,
+            "p50_ms": 8.113229,
+            "p95_ms": 8.419792,
+            "p99_ms": 9.692813,
+            "max_ms": 9.692813
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 36,
+            "mean_ms": 0.18237705555555556,
+            "p50_ms": 0.113229,
+            "p95_ms": 0.419792,
+            "p99_ms": 1.692813,
+            "max_ms": 1.692813
+          },
+          "provider_work": {
+            "observed": 36,
+            "mean_ms": 1.4544444444444444,
+            "p50_ms": 0.9829425,
+            "p95_ms": 7.543594,
+            "p99_ms": 9.857656,
+            "max_ms": 9.857656
+          },
+          "before_post": {
+            "observed": 36,
+            "mean_ms": 0.0025680555555555556,
+            "p50_ms": 0.002448,
+            "p95_ms": 0.003906,
+            "p99_ms": 0.00474,
+            "max_ms": 0.00474
+          },
+          "main_queue": {
+            "observed": 36,
+            "mean_ms": 9.801643333333333,
+            "p50_ms": 9.087474,
+            "p95_ms": 17.929687,
+            "p99_ms": 22.690938,
+            "max_ms": 22.690938
+          },
+          "callback": {
+            "observed": 36,
+            "mean_ms": 2.6145530277777778,
+            "p50_ms": 1.6351565,
+            "p95_ms": 6.343594,
+            "p99_ms": 6.733437,
+            "max_ms": 6.733437
+          },
+          "request_to_main": {
+            "observed": 36,
+            "mean_ms": 19.443197194444444,
+            "p50_ms": 18.250417,
+            "p95_ms": 30.105104,
+            "p99_ms": 32.187292,
+            "max_ms": 32.187292
+          },
+          "request_to_finish": {
+            "observed": 36,
+            "mean_ms": 22.05775022222222,
+            "p50_ms": 20.6315885,
+            "p95_ms": 35.502396,
+            "p99_ms": 38.920729,
+            "max_ms": 38.920729
+          },
+          "accepted_scheduled_wait": {
+            "observed": 36,
+            "mean_ms": 8.182377055555556,
+            "p50_ms": 8.113229,
+            "p95_ms": 8.419792,
+            "p99_ms": 9.692813,
+            "max_ms": 9.692813
+          },
+          "accepted_provider_work": {
+            "observed": 36,
+            "mean_ms": 1.4544444444444444,
+            "p50_ms": 0.9829425,
+            "p95_ms": 7.543594,
+            "p99_ms": 9.857656,
+            "max_ms": 9.857656
+          },
+          "accepted_main_queue": {
+            "observed": 36,
+            "mean_ms": 9.801643333333333,
+            "p50_ms": 9.087474,
+            "p95_ms": 17.929687,
+            "p99_ms": 22.690938,
+            "max_ms": 22.690938
+          },
+          "accepted_callback": {
+            "observed": 36,
+            "mean_ms": 2.6145530277777778,
+            "p50_ms": 1.6351565,
+            "p95_ms": 6.343594,
+            "p99_ms": 6.733437,
+            "max_ms": 6.733437
+          }
+        }
+      },
+      "taiwanese_english/150/suisiann-thousand/authored-situational-examples/transpose": {
+        "attribution": {
+          "letters": 16,
+          "unique_request": 16
+        },
+        "counts": {
+          "requests": 16,
+          "worker_started": 16,
+          "posted": 16,
+          "entered": 16,
+          "accepted": 16
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.138476625,
+            "p50_ms": 8.112057499999999,
+            "p95_ms": 8.346563,
+            "p99_ms": 8.346563,
+            "max_ms": 8.346563
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 16,
+            "mean_ms": 0.138476625,
+            "p50_ms": 0.1120575,
+            "p95_ms": 0.346563,
+            "p99_ms": 0.346563,
+            "max_ms": 0.346563
+          },
+          "provider_work": {
+            "observed": 16,
+            "mean_ms": 7.9779131875000004,
+            "p50_ms": 1.8056505,
+            "p95_ms": 43.427292,
+            "p99_ms": 43.427292,
+            "max_ms": 43.427292
+          },
+          "before_post": {
+            "observed": 16,
+            "mean_ms": 0.003317375,
+            "p50_ms": 0.0030470000000000002,
+            "p95_ms": 0.005886,
+            "p99_ms": 0.005886,
+            "max_ms": 0.005886
+          },
+          "main_queue": {
+            "observed": 16,
+            "mean_ms": 6.7504980625,
+            "p50_ms": 5.147422000000001,
+            "p95_ms": 19.54026,
+            "p99_ms": 19.54026,
+            "max_ms": 19.54026
+          },
+          "callback": {
+            "observed": 16,
+            "mean_ms": 3.4409764375000003,
+            "p50_ms": 4.2491405,
+            "p95_ms": 8.3025,
+            "p99_ms": 8.3025,
+            "max_ms": 8.3025
+          },
+          "request_to_main": {
+            "observed": 16,
+            "mean_ms": 22.8733693125,
+            "p50_ms": 19.9351825,
+            "p95_ms": 51.632917,
+            "p99_ms": 51.632917,
+            "max_ms": 51.632917
+          },
+          "request_to_finish": {
+            "observed": 16,
+            "mean_ms": 26.31434575,
+            "p50_ms": 23.983958,
+            "p95_ms": 57.159479,
+            "p99_ms": 57.159479,
+            "max_ms": 57.159479
+          },
+          "accepted_scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.138476625,
+            "p50_ms": 8.112057499999999,
+            "p95_ms": 8.346563,
+            "p99_ms": 8.346563,
+            "max_ms": 8.346563
+          },
+          "accepted_provider_work": {
+            "observed": 16,
+            "mean_ms": 7.9779131875000004,
+            "p50_ms": 1.8056505,
+            "p95_ms": 43.427292,
+            "p99_ms": 43.427292,
+            "max_ms": 43.427292
+          },
+          "accepted_main_queue": {
+            "observed": 16,
+            "mean_ms": 6.7504980625,
+            "p50_ms": 5.147422000000001,
+            "p95_ms": 19.54026,
+            "p99_ms": 19.54026,
+            "max_ms": 19.54026
+          },
+          "accepted_callback": {
+            "observed": 16,
+            "mean_ms": 3.4409764375000003,
+            "p50_ms": 4.2491405,
+            "p95_ms": 8.3025,
+            "p99_ms": 8.3025,
+            "max_ms": 8.3025
+          }
+        }
+      },
+      "taiwanese_english/150/taiwanese-basic/historical-authored-examples/full": {
+        "attribution": {
+          "letters": 62,
+          "unique_request": 62
+        },
+        "counts": {
+          "requests": 62,
+          "worker_started": 62,
+          "posted": 62,
+          "entered": 62,
+          "accepted": 62
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 62,
+            "mean_ms": 8.135808919354838,
+            "p50_ms": 8.1117445,
+            "p95_ms": 8.236406,
+            "p99_ms": 8.745729,
+            "max_ms": 8.745729
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 62,
+            "mean_ms": 0.13580891935483871,
+            "p50_ms": 0.1117445,
+            "p95_ms": 0.236406,
+            "p99_ms": 0.745729,
+            "max_ms": 0.745729
+          },
+          "provider_work": {
+            "observed": 62,
+            "mean_ms": 2.705846741935484,
+            "p50_ms": 0.7672135,
+            "p95_ms": 10.341458,
+            "p99_ms": 44.537083,
+            "max_ms": 44.537083
+          },
+          "before_post": {
+            "observed": 62,
+            "mean_ms": 0.0027646290322580645,
+            "p50_ms": 0.0023955,
+            "p95_ms": 0.004532,
+            "p99_ms": 0.0075,
+            "max_ms": 0.0075
+          },
+          "main_queue": {
+            "observed": 62,
+            "mean_ms": 9.45146664516129,
+            "p50_ms": 8.3667975,
+            "p95_ms": 17.94599,
+            "p99_ms": 20.092552,
+            "max_ms": 20.092552
+          },
+          "callback": {
+            "observed": 62,
+            "mean_ms": 2.3937383387096776,
+            "p50_ms": 1.3594534999999999,
+            "p95_ms": 6.346979,
+            "p99_ms": 7.314115,
+            "max_ms": 7.314115
+          },
+          "request_to_main": {
+            "observed": 62,
+            "mean_ms": 20.298329838709677,
+            "p50_ms": 18.396926999999998,
+            "p95_ms": 30.54552,
+            "p99_ms": 52.702448,
+            "max_ms": 52.702448
+          },
+          "request_to_finish": {
+            "observed": 62,
+            "mean_ms": 22.692068177419355,
+            "p50_ms": 20.681328,
+            "p95_ms": 34.778229,
+            "p99_ms": 54.762969,
+            "max_ms": 54.762969
+          },
+          "accepted_scheduled_wait": {
+            "observed": 62,
+            "mean_ms": 8.135808919354838,
+            "p50_ms": 8.1117445,
+            "p95_ms": 8.236406,
+            "p99_ms": 8.745729,
+            "max_ms": 8.745729
+          },
+          "accepted_provider_work": {
+            "observed": 62,
+            "mean_ms": 2.705846741935484,
+            "p50_ms": 0.7672135,
+            "p95_ms": 10.341458,
+            "p99_ms": 44.537083,
+            "max_ms": 44.537083
+          },
+          "accepted_main_queue": {
+            "observed": 62,
+            "mean_ms": 9.45146664516129,
+            "p50_ms": 8.3667975,
+            "p95_ms": 17.94599,
+            "p99_ms": 20.092552,
+            "max_ms": 20.092552
+          },
+          "accepted_callback": {
+            "observed": 62,
+            "mean_ms": 2.3937383387096776,
+            "p50_ms": 1.3594534999999999,
+            "p95_ms": 6.346979,
+            "p99_ms": 7.314115,
+            "max_ms": 7.314115
+          }
+        }
+      },
+      "taiwanese_english/150/taiwanese-basic/historical-authored-examples/half": {
+        "attribution": {
+          "letters": 39,
+          "unique_request": 39
+        },
+        "counts": {
+          "requests": 39,
+          "worker_started": 39,
+          "posted": 39,
+          "entered": 39,
+          "accepted": 39
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 39,
+            "mean_ms": 8.173998333333333,
+            "p50_ms": 8.113438,
+            "p95_ms": 8.77224,
+            "p99_ms": 8.789375,
+            "max_ms": 8.789375
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 39,
+            "mean_ms": 0.17399833333333334,
+            "p50_ms": 0.113438,
+            "p95_ms": 0.77224,
+            "p99_ms": 0.789375,
+            "max_ms": 0.789375
+          },
+          "provider_work": {
+            "observed": 39,
+            "mean_ms": 6.943581794871795,
+            "p50_ms": 3.591354,
+            "p95_ms": 36.49,
+            "p99_ms": 49.050886,
+            "max_ms": 49.050886
+          },
+          "before_post": {
+            "observed": 39,
+            "mean_ms": 0.004153230769230769,
+            "p50_ms": 0.004531,
+            "p95_ms": 0.006719,
+            "p99_ms": 0.008125,
+            "max_ms": 0.008125
+          },
+          "main_queue": {
+            "observed": 39,
+            "mean_ms": 6.907560153846154,
+            "p50_ms": 6.801302,
+            "p95_ms": 19.037187,
+            "p99_ms": 19.199947,
+            "max_ms": 19.199947
+          },
+          "callback": {
+            "observed": 39,
+            "mean_ms": 2.557979435897436,
+            "p50_ms": 1.199271,
+            "p95_ms": 6.377552,
+            "p99_ms": 7.1825,
+            "max_ms": 7.1825
+          },
+          "request_to_main": {
+            "observed": 39,
+            "mean_ms": 22.031748076923076,
+            "p50_ms": 18.624583,
+            "p95_ms": 44.893802,
+            "p99_ms": 57.492969,
+            "max_ms": 57.492969
+          },
+          "request_to_finish": {
+            "observed": 39,
+            "mean_ms": 24.589727512820513,
+            "p50_ms": 20.952187,
+            "p95_ms": 52.076302,
+            "p99_ms": 59.027709,
+            "max_ms": 59.027709
+          },
+          "accepted_scheduled_wait": {
+            "observed": 39,
+            "mean_ms": 8.173998333333333,
+            "p50_ms": 8.113438,
+            "p95_ms": 8.77224,
+            "p99_ms": 8.789375,
+            "max_ms": 8.789375
+          },
+          "accepted_provider_work": {
+            "observed": 39,
+            "mean_ms": 6.943581794871795,
+            "p50_ms": 3.591354,
+            "p95_ms": 36.49,
+            "p99_ms": 49.050886,
+            "max_ms": 49.050886
+          },
+          "accepted_main_queue": {
+            "observed": 39,
+            "mean_ms": 6.907560153846154,
+            "p50_ms": 6.801302,
+            "p95_ms": 19.037187,
+            "p99_ms": 19.199947,
+            "max_ms": 19.199947
+          },
+          "accepted_callback": {
+            "observed": 39,
+            "mean_ms": 2.557979435897436,
+            "p50_ms": 1.199271,
+            "p95_ms": 6.377552,
+            "p99_ms": 7.1825,
+            "max_ms": 7.1825
+          }
+        }
+      },
+      "taiwanese_english/150/taiwanese-basic/historical-authored-examples/initials": {
+        "attribution": {
+          "letters": 16,
+          "unique_request": 16
+        },
+        "counts": {
+          "requests": 16,
+          "worker_started": 16,
+          "posted": 16,
+          "entered": 16,
+          "accepted": 16
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.167799375,
+            "p50_ms": 8.115651,
+            "p95_ms": 8.399635,
+            "p99_ms": 8.399635,
+            "max_ms": 8.399635
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 16,
+            "mean_ms": 0.167799375,
+            "p50_ms": 0.115651,
+            "p95_ms": 0.399635,
+            "p99_ms": 0.399635,
+            "max_ms": 0.399635
+          },
+          "provider_work": {
+            "observed": 16,
+            "mean_ms": 7.7147364375,
+            "p50_ms": 4.079922,
+            "p95_ms": 48.669323,
+            "p99_ms": 48.669323,
+            "max_ms": 48.669323
+          },
+          "before_post": {
+            "observed": 16,
+            "mean_ms": 0.004020125,
+            "p50_ms": 0.004323,
+            "p95_ms": 0.006041,
+            "p99_ms": 0.006041,
+            "max_ms": 0.006041
+          },
+          "main_queue": {
+            "observed": 16,
+            "mean_ms": 8.13278,
+            "p50_ms": 6.9225525,
+            "p95_ms": 21.1725,
+            "p99_ms": 21.1725,
+            "max_ms": 21.1725
+          },
+          "callback": {
+            "observed": 16,
+            "mean_ms": 3.084501875,
+            "p50_ms": 2.8814845,
+            "p95_ms": 6.051303,
+            "p99_ms": 6.051303,
+            "max_ms": 6.051303
+          },
+          "request_to_main": {
+            "observed": 16,
+            "mean_ms": 24.0220541875,
+            "p50_ms": 19.5425525,
+            "p95_ms": 57.048386,
+            "p99_ms": 57.048386,
+            "max_ms": 57.048386
+          },
+          "request_to_finish": {
+            "observed": 16,
+            "mean_ms": 27.106556062499997,
+            "p50_ms": 22.305365000000002,
+            "p95_ms": 62.662917,
+            "p99_ms": 62.662917,
+            "max_ms": 62.662917
+          },
+          "accepted_scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.167799375,
+            "p50_ms": 8.115651,
+            "p95_ms": 8.399635,
+            "p99_ms": 8.399635,
+            "max_ms": 8.399635
+          },
+          "accepted_provider_work": {
+            "observed": 16,
+            "mean_ms": 7.7147364375,
+            "p50_ms": 4.079922,
+            "p95_ms": 48.669323,
+            "p99_ms": 48.669323,
+            "max_ms": 48.669323
+          },
+          "accepted_main_queue": {
+            "observed": 16,
+            "mean_ms": 8.13278,
+            "p50_ms": 6.9225525,
+            "p95_ms": 21.1725,
+            "p99_ms": 21.1725,
+            "max_ms": 21.1725
+          },
+          "accepted_callback": {
+            "observed": 16,
+            "mean_ms": 3.084501875,
+            "p50_ms": 2.8814845,
+            "p95_ms": 6.051303,
+            "p99_ms": 6.051303,
+            "max_ms": 6.051303
+          }
+        }
+      },
+      "taiwanese_english/150/taiwanese-basic/historical-authored-examples/mixed": {
+        "attribution": {
+          "letters": 49,
+          "unique_request": 49
+        },
+        "counts": {
+          "requests": 49,
+          "worker_started": 49,
+          "posted": 49,
+          "entered": 49,
+          "accepted": 49
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 49,
+            "mean_ms": 8.121079959183673,
+            "p50_ms": 8.11125,
+            "p95_ms": 8.153542,
+            "p99_ms": 8.386042,
+            "max_ms": 8.386042
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 49,
+            "mean_ms": 0.12107995918367347,
+            "p50_ms": 0.11125,
+            "p95_ms": 0.153542,
+            "p99_ms": 0.386042,
+            "max_ms": 0.386042
+          },
+          "provider_work": {
+            "observed": 49,
+            "mean_ms": 3.561134163265306,
+            "p50_ms": 0.898073,
+            "p95_ms": 13.42125,
+            "p99_ms": 40.240156,
+            "max_ms": 40.240156
+          },
+          "before_post": {
+            "observed": 49,
+            "mean_ms": 0.0032068367346938776,
+            "p50_ms": 0.002656,
+            "p95_ms": 0.004948,
+            "p99_ms": 0.005469,
+            "max_ms": 0.005469
+          },
+          "main_queue": {
+            "observed": 49,
+            "mean_ms": 7.980146653061224,
+            "p50_ms": 7.709792,
+            "p95_ms": 13.26302,
+            "p99_ms": 14.67651,
+            "max_ms": 14.67651
+          },
+          "callback": {
+            "observed": 49,
+            "mean_ms": 2.0011724489795917,
+            "p50_ms": 0.948907,
+            "p95_ms": 5.619896,
+            "p99_ms": 6.614844,
+            "max_ms": 6.614844
+          },
+          "request_to_main": {
+            "observed": 49,
+            "mean_ms": 19.668558612244897,
+            "p50_ms": 18.447083,
+            "p95_ms": 30.571354,
+            "p99_ms": 48.378333,
+            "max_ms": 48.378333
+          },
+          "request_to_finish": {
+            "observed": 49,
+            "mean_ms": 21.66973106122449,
+            "p50_ms": 19.628177,
+            "p95_ms": 35.184219,
+            "p99_ms": 49.547135,
+            "max_ms": 49.547135
+          },
+          "accepted_scheduled_wait": {
+            "observed": 49,
+            "mean_ms": 8.121079959183673,
+            "p50_ms": 8.11125,
+            "p95_ms": 8.153542,
+            "p99_ms": 8.386042,
+            "max_ms": 8.386042
+          },
+          "accepted_provider_work": {
+            "observed": 49,
+            "mean_ms": 3.561134163265306,
+            "p50_ms": 0.898073,
+            "p95_ms": 13.42125,
+            "p99_ms": 40.240156,
+            "max_ms": 40.240156
+          },
+          "accepted_main_queue": {
+            "observed": 49,
+            "mean_ms": 7.980146653061224,
+            "p50_ms": 7.709792,
+            "p95_ms": 13.26302,
+            "p99_ms": 14.67651,
+            "max_ms": 14.67651
+          },
+          "accepted_callback": {
+            "observed": 49,
+            "mean_ms": 2.0011724489795917,
+            "p50_ms": 0.948907,
+            "p95_ms": 5.619896,
+            "p99_ms": 6.614844,
+            "max_ms": 6.614844
+          }
+        }
+      },
+      "taiwanese_english/150/taiwanese-basic/historical-authored-examples/neighbor": {
+        "attribution": {
+          "letters": 52,
+          "unique_request": 52
+        },
+        "counts": {
+          "requests": 52,
+          "worker_started": 52,
+          "posted": 52,
+          "entered": 52,
+          "accepted": 52
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 52,
+            "mean_ms": 8.145345557692307,
+            "p50_ms": 8.113854,
+            "p95_ms": 8.397031,
+            "p99_ms": 8.686979,
+            "max_ms": 8.686979
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 52,
+            "mean_ms": 0.1453455576923077,
+            "p50_ms": 0.113854,
+            "p95_ms": 0.397031,
+            "p99_ms": 0.686979,
+            "max_ms": 0.686979
+          },
+          "provider_work": {
+            "observed": 52,
+            "mean_ms": 4.374325980769231,
+            "p50_ms": 1.676094,
+            "p95_ms": 13.679166,
+            "p99_ms": 47.831667,
+            "max_ms": 47.831667
+          },
+          "before_post": {
+            "observed": 52,
+            "mean_ms": 0.004225788461538461,
+            "p50_ms": 0.0033075,
+            "p95_ms": 0.01323,
+            "p99_ms": 0.027136,
+            "max_ms": 0.027136
+          },
+          "main_queue": {
+            "observed": 52,
+            "mean_ms": 7.151568461538462,
+            "p50_ms": 7.0345835,
+            "p95_ms": 13.879896,
+            "p99_ms": 15.378854,
+            "max_ms": 15.378854
+          },
+          "callback": {
+            "observed": 52,
+            "mean_ms": 2.49104975,
+            "p50_ms": 1.417422,
+            "p95_ms": 5.697448,
+            "p99_ms": 6.793281,
+            "max_ms": 6.793281
+          },
+          "request_to_main": {
+            "observed": 52,
+            "mean_ms": 19.67860767307692,
+            "p50_ms": 17.669244499999998,
+            "p95_ms": 29.57026,
+            "p99_ms": 56.372031,
+            "max_ms": 56.372031
+          },
+          "request_to_finish": {
+            "observed": 52,
+            "mean_ms": 22.169657423076924,
+            "p50_ms": 20.8303905,
+            "p95_ms": 34.482552,
+            "p99_ms": 58.876823,
+            "max_ms": 58.876823
+          },
+          "accepted_scheduled_wait": {
+            "observed": 52,
+            "mean_ms": 8.145345557692307,
+            "p50_ms": 8.113854,
+            "p95_ms": 8.397031,
+            "p99_ms": 8.686979,
+            "max_ms": 8.686979
+          },
+          "accepted_provider_work": {
+            "observed": 52,
+            "mean_ms": 4.374325980769231,
+            "p50_ms": 1.676094,
+            "p95_ms": 13.679166,
+            "p99_ms": 47.831667,
+            "max_ms": 47.831667
+          },
+          "accepted_main_queue": {
+            "observed": 52,
+            "mean_ms": 7.151568461538462,
+            "p50_ms": 7.0345835,
+            "p95_ms": 13.879896,
+            "p99_ms": 15.378854,
+            "max_ms": 15.378854
+          },
+          "accepted_callback": {
+            "observed": 52,
+            "mean_ms": 2.49104975,
+            "p50_ms": 1.417422,
+            "p95_ms": 5.697448,
+            "p99_ms": 6.793281,
+            "max_ms": 6.793281
+          }
+        }
+      },
+      "taiwanese_english/150/taiwanese-basic/historical-authored-examples/omission": {
+        "attribution": {
+          "letters": 32,
+          "unique_request": 32
+        },
+        "counts": {
+          "requests": 32,
+          "worker_started": 32,
+          "posted": 32,
+          "entered": 32,
+          "accepted": 32
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 32,
+            "mean_ms": 8.13321134375,
+            "p50_ms": 8.113254999999999,
+            "p95_ms": 8.378594,
+            "p99_ms": 8.440052,
+            "max_ms": 8.440052
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 32,
+            "mean_ms": 0.13321134375,
+            "p50_ms": 0.113255,
+            "p95_ms": 0.378594,
+            "p99_ms": 0.440052,
+            "max_ms": 0.440052
+          },
+          "provider_work": {
+            "observed": 32,
+            "mean_ms": 4.47625146875,
+            "p50_ms": 0.891849,
+            "p95_ms": 26.615833,
+            "p99_ms": 47.124166,
+            "max_ms": 47.124166
+          },
+          "before_post": {
+            "observed": 32,
+            "mean_ms": 0.0029769375,
+            "p50_ms": 0.002526,
+            "p95_ms": 0.005209,
+            "p99_ms": 0.005937,
+            "max_ms": 0.005937
+          },
+          "main_queue": {
+            "observed": 32,
+            "mean_ms": 8.64698896875,
+            "p50_ms": 8.8209895,
+            "p95_ms": 17.992709,
+            "p99_ms": 20.529584,
+            "max_ms": 20.529584
+          },
+          "callback": {
+            "observed": 32,
+            "mean_ms": 3.3704410625,
+            "p50_ms": 2.561953,
+            "p95_ms": 6.479167,
+            "p99_ms": 11.389688,
+            "max_ms": 11.389688
+          },
+          "request_to_main": {
+            "observed": 32,
+            "mean_ms": 21.26282221875,
+            "p50_ms": 18.238332999999997,
+            "p95_ms": 34.816406,
+            "p99_ms": 55.372084,
+            "max_ms": 55.372084
+          },
+          "request_to_finish": {
+            "observed": 32,
+            "mean_ms": 24.63326328125,
+            "p50_ms": 21.6741405,
+            "p95_ms": 39.44927,
+            "p99_ms": 56.761302,
+            "max_ms": 56.761302
+          },
+          "accepted_scheduled_wait": {
+            "observed": 32,
+            "mean_ms": 8.13321134375,
+            "p50_ms": 8.113254999999999,
+            "p95_ms": 8.378594,
+            "p99_ms": 8.440052,
+            "max_ms": 8.440052
+          },
+          "accepted_provider_work": {
+            "observed": 32,
+            "mean_ms": 4.47625146875,
+            "p50_ms": 0.891849,
+            "p95_ms": 26.615833,
+            "p99_ms": 47.124166,
+            "max_ms": 47.124166
+          },
+          "accepted_main_queue": {
+            "observed": 32,
+            "mean_ms": 8.64698896875,
+            "p50_ms": 8.8209895,
+            "p95_ms": 17.992709,
+            "p99_ms": 20.529584,
+            "max_ms": 20.529584
+          },
+          "accepted_callback": {
+            "observed": 32,
+            "mean_ms": 3.3704410625,
+            "p50_ms": 2.561953,
+            "p95_ms": 6.479167,
+            "p99_ms": 11.389688,
+            "max_ms": 11.389688
+          }
+        }
+      },
+      "taiwanese_english/150/taiwanese-basic/historical-authored-examples/transpose": {
+        "attribution": {
+          "letters": 49,
+          "unique_request": 49
+        },
+        "counts": {
+          "requests": 49,
+          "worker_started": 49,
+          "posted": 49,
+          "entered": 49,
+          "accepted": 49
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 49,
+            "mean_ms": 8.140607918367348,
+            "p50_ms": 8.114427,
+            "p95_ms": 8.374219,
+            "p99_ms": 8.410625,
+            "max_ms": 8.410625
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 49,
+            "mean_ms": 0.14060791836734693,
+            "p50_ms": 0.114427,
+            "p95_ms": 0.374219,
+            "p99_ms": 0.410625,
+            "max_ms": 0.410625
+          },
+          "provider_work": {
+            "observed": 49,
+            "mean_ms": 7.495643081632653,
+            "p50_ms": 4.336927,
+            "p95_ms": 23.947031,
+            "p99_ms": 40.74177,
+            "max_ms": 40.74177
+          },
+          "before_post": {
+            "observed": 49,
+            "mean_ms": 0.004654571428571429,
+            "p50_ms": 0.004895,
+            "p95_ms": 0.005782,
+            "p99_ms": 0.007032,
+            "max_ms": 0.007032
+          },
+          "main_queue": {
+            "observed": 49,
+            "mean_ms": 5.631428571428572,
+            "p50_ms": 5.275573,
+            "p95_ms": 11.47875,
+            "p99_ms": 19.570104,
+            "max_ms": 19.570104
+          },
+          "callback": {
+            "observed": 49,
+            "mean_ms": 2.2117367959183674,
+            "p50_ms": 1.147708,
+            "p95_ms": 5.711354,
+            "p99_ms": 6.515312,
+            "max_ms": 6.515312
+          },
+          "request_to_main": {
+            "observed": 49,
+            "mean_ms": 21.275101,
+            "p50_ms": 18.916302,
+            "p95_ms": 34.496146,
+            "p99_ms": 49.569479,
+            "max_ms": 49.569479
+          },
+          "request_to_finish": {
+            "observed": 49,
+            "mean_ms": 23.48683779591837,
+            "p50_ms": 20.270469,
+            "p95_ms": 39.590104,
+            "p99_ms": 52.671667,
+            "max_ms": 52.671667
+          },
+          "accepted_scheduled_wait": {
+            "observed": 49,
+            "mean_ms": 8.140607918367348,
+            "p50_ms": 8.114427,
+            "p95_ms": 8.374219,
+            "p99_ms": 8.410625,
+            "max_ms": 8.410625
+          },
+          "accepted_provider_work": {
+            "observed": 49,
+            "mean_ms": 7.495643081632653,
+            "p50_ms": 4.336927,
+            "p95_ms": 23.947031,
+            "p99_ms": 40.74177,
+            "max_ms": 40.74177
+          },
+          "accepted_main_queue": {
+            "observed": 49,
+            "mean_ms": 5.631428571428572,
+            "p50_ms": 5.275573,
+            "p95_ms": 11.47875,
+            "p99_ms": 19.570104,
+            "max_ms": 19.570104
+          },
+          "accepted_callback": {
+            "observed": 49,
+            "mean_ms": 2.2117367959183674,
+            "p50_ms": 1.147708,
+            "p95_ms": 5.711354,
+            "p99_ms": 6.515312,
+            "max_ms": 6.515312
+          }
+        }
+      },
+      "taiwanese_english/60": {
+        "attribution": {
+          "letters": 447,
+          "unique_request": 447
+        },
+        "counts": {
+          "requests": 447,
+          "worker_started": 447,
+          "posted": 444,
+          "entered": 444,
+          "accepted": 444,
+          "cancelled_pipeline": 3
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 447,
+            "mean_ms": 8.172324975391499,
+            "p50_ms": 8.113906,
+            "p95_ms": 8.419427,
+            "p99_ms": 9.264531,
+            "max_ms": 9.897969
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 447,
+            "mean_ms": 0.17232497539149888,
+            "p50_ms": 0.113906,
+            "p95_ms": 0.419427,
+            "p99_ms": 1.264531,
+            "max_ms": 1.897969
+          },
+          "provider_work": {
+            "observed": 447,
+            "mean_ms": 4.730060827740492,
+            "p50_ms": 1.713125,
+            "p95_ms": 17.042917,
+            "p99_ms": 46.53375,
+            "max_ms": 59.953229
+          },
+          "before_post": {
+            "observed": 444,
+            "mean_ms": 0.00370484009009009,
+            "p50_ms": 0.003333,
+            "p95_ms": 0.006146,
+            "p99_ms": 0.007916,
+            "max_ms": 0.009427
+          },
+          "main_queue": {
+            "observed": 444,
+            "mean_ms": 8.560833797297297,
+            "p50_ms": 8.55625,
+            "p95_ms": 17.567292,
+            "p99_ms": 21.909792,
+            "max_ms": 23.933385
+          },
+          "callback": {
+            "observed": 444,
+            "mean_ms": 2.409771828828829,
+            "p50_ms": 1.3104165,
+            "p95_ms": 5.318385,
+            "p99_ms": 6.052032,
+            "max_ms": 7.485729
+          },
+          "request_to_main": {
+            "observed": 444,
+            "mean_ms": 21.149208673423423,
+            "p50_ms": 19.662318,
+            "p95_ms": 33.222813,
+            "p99_ms": 52.379739,
+            "max_ms": 55.979011
+          },
+          "request_to_finish": {
+            "observed": 444,
+            "mean_ms": 23.558980502252254,
+            "p50_ms": 21.562005,
+            "p95_ms": 38.292708,
+            "p99_ms": 54.725365,
+            "max_ms": 60.918958
+          },
+          "accepted_scheduled_wait": {
+            "observed": 444,
+            "mean_ms": 8.172774123873873,
+            "p50_ms": 8.114037,
+            "p95_ms": 8.419427,
+            "p99_ms": 9.264531,
+            "max_ms": 9.897969
+          },
+          "accepted_provider_work": {
+            "observed": 444,
+            "mean_ms": 4.410066166666667,
+            "p50_ms": 1.7057295,
+            "p95_ms": 15.746407,
+            "p99_ms": 43.913386,
+            "max_ms": 47.555833
+          },
+          "accepted_main_queue": {
+            "observed": 444,
+            "mean_ms": 8.560833797297297,
+            "p50_ms": 8.55625,
+            "p95_ms": 17.567292,
+            "p99_ms": 21.909792,
+            "max_ms": 23.933385
+          },
+          "accepted_callback": {
+            "observed": 444,
+            "mean_ms": 2.409771828828829,
+            "p50_ms": 1.3104165,
+            "p95_ms": 5.318385,
+            "p99_ms": 6.052032,
+            "max_ms": 7.485729
+          }
+        }
+      },
+      "taiwanese_english/60/suisiann-thousand/authored-situational-examples/full": {
+        "attribution": {
+          "letters": 31,
+          "unique_request": 31
+        },
+        "counts": {
+          "requests": 31,
+          "worker_started": 31,
+          "posted": 31,
+          "entered": 31,
+          "accepted": 31
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 31,
+            "mean_ms": 8.218486225806451,
+            "p50_ms": 8.121927,
+            "p95_ms": 8.446354,
+            "p99_ms": 9.897969,
+            "max_ms": 9.897969
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 31,
+            "mean_ms": 0.2184862258064516,
+            "p50_ms": 0.121927,
+            "p95_ms": 0.446354,
+            "p99_ms": 1.897969,
+            "max_ms": 1.897969
+          },
+          "provider_work": {
+            "observed": 31,
+            "mean_ms": 2.2355779032258063,
+            "p50_ms": 0.869062,
+            "p95_ms": 8.854896,
+            "p99_ms": 12.221875,
+            "max_ms": 12.221875
+          },
+          "before_post": {
+            "observed": 31,
+            "mean_ms": 0.003034322580645161,
+            "p50_ms": 0.002813,
+            "p95_ms": 0.004792,
+            "p99_ms": 0.005052,
+            "max_ms": 0.005052
+          },
+          "main_queue": {
+            "observed": 31,
+            "mean_ms": 9.684040677419354,
+            "p50_ms": 9.872708,
+            "p95_ms": 19.098125,
+            "p99_ms": 22.822917,
+            "max_ms": 22.822917
+          },
+          "callback": {
+            "observed": 31,
+            "mean_ms": 2.30071235483871,
+            "p50_ms": 1.343542,
+            "p95_ms": 5.038177,
+            "p99_ms": 5.578073,
+            "max_ms": 5.578073
+          },
+          "request_to_main": {
+            "observed": 31,
+            "mean_ms": 20.14388622580645,
+            "p50_ms": 19.143854,
+            "p95_ms": 32.683594,
+            "p99_ms": 33.222813,
+            "max_ms": 33.222813
+          },
+          "request_to_finish": {
+            "observed": 31,
+            "mean_ms": 22.44459858064516,
+            "p50_ms": 20.438282,
+            "p95_ms": 37.397083,
+            "p99_ms": 37.767657,
+            "max_ms": 37.767657
+          },
+          "accepted_scheduled_wait": {
+            "observed": 31,
+            "mean_ms": 8.218486225806451,
+            "p50_ms": 8.121927,
+            "p95_ms": 8.446354,
+            "p99_ms": 9.897969,
+            "max_ms": 9.897969
+          },
+          "accepted_provider_work": {
+            "observed": 31,
+            "mean_ms": 2.2355779032258063,
+            "p50_ms": 0.869062,
+            "p95_ms": 8.854896,
+            "p99_ms": 12.221875,
+            "max_ms": 12.221875
+          },
+          "accepted_main_queue": {
+            "observed": 31,
+            "mean_ms": 9.684040677419354,
+            "p50_ms": 9.872708,
+            "p95_ms": 19.098125,
+            "p99_ms": 22.822917,
+            "max_ms": 22.822917
+          },
+          "accepted_callback": {
+            "observed": 31,
+            "mean_ms": 2.30071235483871,
+            "p50_ms": 1.343542,
+            "p95_ms": 5.038177,
+            "p99_ms": 5.578073,
+            "max_ms": 5.578073
+          }
+        }
+      },
+      "taiwanese_english/60/suisiann-thousand/authored-situational-examples/half": {
+        "attribution": {
+          "letters": 16,
+          "unique_request": 16
+        },
+        "counts": {
+          "requests": 16,
+          "worker_started": 16,
+          "posted": 16,
+          "entered": 16,
+          "accepted": 16
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.1973111875,
+            "p50_ms": 8.121198,
+            "p95_ms": 8.541146,
+            "p99_ms": 8.541146,
+            "max_ms": 8.541146
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 16,
+            "mean_ms": 0.1973111875,
+            "p50_ms": 0.121198,
+            "p95_ms": 0.541146,
+            "p99_ms": 0.541146,
+            "max_ms": 0.541146
+          },
+          "provider_work": {
+            "observed": 16,
+            "mean_ms": 9.291988875,
+            "p50_ms": 5.8313025000000005,
+            "p95_ms": 47.555833,
+            "p99_ms": 47.555833,
+            "max_ms": 47.555833
+          },
+          "before_post": {
+            "observed": 16,
+            "mean_ms": 0.003470125,
+            "p50_ms": 0.003307,
+            "p95_ms": 0.005052,
+            "p99_ms": 0.005052,
+            "max_ms": 0.005052
+          },
+          "main_queue": {
+            "observed": 16,
+            "mean_ms": 6.262753875,
+            "p50_ms": 6.455,
+            "p95_ms": 15.408854,
+            "p99_ms": 15.408854,
+            "max_ms": 15.408854
+          },
+          "callback": {
+            "observed": 16,
+            "mean_ms": 3.4907975625,
+            "p50_ms": 3.936563,
+            "p95_ms": 5.874375,
+            "p99_ms": 5.874375,
+            "max_ms": 5.874375
+          },
+          "request_to_main": {
+            "observed": 16,
+            "mean_ms": 23.758684875,
+            "p50_ms": 22.1453385,
+            "p95_ms": 55.979011,
+            "p99_ms": 55.979011,
+            "max_ms": 55.979011
+          },
+          "request_to_finish": {
+            "observed": 16,
+            "mean_ms": 27.2494824375,
+            "p50_ms": 25.859401,
+            "p95_ms": 57.07849,
+            "p99_ms": 57.07849,
+            "max_ms": 57.07849
+          },
+          "accepted_scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.1973111875,
+            "p50_ms": 8.121198,
+            "p95_ms": 8.541146,
+            "p99_ms": 8.541146,
+            "max_ms": 8.541146
+          },
+          "accepted_provider_work": {
+            "observed": 16,
+            "mean_ms": 9.291988875,
+            "p50_ms": 5.8313025000000005,
+            "p95_ms": 47.555833,
+            "p99_ms": 47.555833,
+            "max_ms": 47.555833
+          },
+          "accepted_main_queue": {
+            "observed": 16,
+            "mean_ms": 6.262753875,
+            "p50_ms": 6.455,
+            "p95_ms": 15.408854,
+            "p99_ms": 15.408854,
+            "max_ms": 15.408854
+          },
+          "accepted_callback": {
+            "observed": 16,
+            "mean_ms": 3.4907975625,
+            "p50_ms": 3.936563,
+            "p95_ms": 5.874375,
+            "p99_ms": 5.874375,
+            "max_ms": 5.874375
+          }
+        }
+      },
+      "taiwanese_english/60/suisiann-thousand/authored-situational-examples/initials": {
+        "attribution": {
+          "letters": 18,
+          "unique_request": 18
+        },
+        "counts": {
+          "requests": 18,
+          "worker_started": 18,
+          "posted": 18,
+          "entered": 18,
+          "accepted": 18
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 18,
+            "mean_ms": 8.148142277777778,
+            "p50_ms": 8.11388,
+            "p95_ms": 8.477135,
+            "p99_ms": 8.477135,
+            "max_ms": 8.477135
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 18,
+            "mean_ms": 0.14814227777777778,
+            "p50_ms": 0.11388,
+            "p95_ms": 0.477135,
+            "p99_ms": 0.477135,
+            "max_ms": 0.477135
+          },
+          "provider_work": {
+            "observed": 18,
+            "mean_ms": 5.943778944444444,
+            "p50_ms": 2.8740885,
+            "p95_ms": 45.538854,
+            "p99_ms": 45.538854,
+            "max_ms": 45.538854
+          },
+          "before_post": {
+            "observed": 18,
+            "mean_ms": 0.0041840555555555554,
+            "p50_ms": 0.003906,
+            "p95_ms": 0.007916,
+            "p99_ms": 0.007916,
+            "max_ms": 0.007916
+          },
+          "main_queue": {
+            "observed": 18,
+            "mean_ms": 8.013833833333333,
+            "p50_ms": 8.091224,
+            "p95_ms": 18.96802,
+            "p99_ms": 18.96802,
+            "max_ms": 18.96802
+          },
+          "callback": {
+            "observed": 18,
+            "mean_ms": 3.3512876666666664,
+            "p50_ms": 4.101354000000001,
+            "p95_ms": 6.621042,
+            "p99_ms": 6.621042,
+            "max_ms": 6.621042
+          },
+          "request_to_main": {
+            "observed": 18,
+            "mean_ms": 22.112563555555557,
+            "p50_ms": 20.389349,
+            "p95_ms": 54.297916,
+            "p99_ms": 54.297916,
+            "max_ms": 54.297916
+          },
+          "request_to_finish": {
+            "observed": 18,
+            "mean_ms": 25.46385122222222,
+            "p50_ms": 23.06375,
+            "p95_ms": 60.918958,
+            "p99_ms": 60.918958,
+            "max_ms": 60.918958
+          },
+          "accepted_scheduled_wait": {
+            "observed": 18,
+            "mean_ms": 8.148142277777778,
+            "p50_ms": 8.11388,
+            "p95_ms": 8.477135,
+            "p99_ms": 8.477135,
+            "max_ms": 8.477135
+          },
+          "accepted_provider_work": {
+            "observed": 18,
+            "mean_ms": 5.943778944444444,
+            "p50_ms": 2.8740885,
+            "p95_ms": 45.538854,
+            "p99_ms": 45.538854,
+            "max_ms": 45.538854
+          },
+          "accepted_main_queue": {
+            "observed": 18,
+            "mean_ms": 8.013833833333333,
+            "p50_ms": 8.091224,
+            "p95_ms": 18.96802,
+            "p99_ms": 18.96802,
+            "max_ms": 18.96802
+          },
+          "accepted_callback": {
+            "observed": 18,
+            "mean_ms": 3.3512876666666664,
+            "p50_ms": 4.101354000000001,
+            "p95_ms": 6.621042,
+            "p99_ms": 6.621042,
+            "max_ms": 6.621042
+          }
+        }
+      },
+      "taiwanese_english/60/suisiann-thousand/authored-situational-examples/mixed": {
+        "attribution": {
+          "letters": 6,
+          "unique_request": 6
+        },
+        "counts": {
+          "requests": 6,
+          "worker_started": 6,
+          "posted": 6,
+          "entered": 6,
+          "accepted": 6
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 6,
+            "mean_ms": 8.203940833333334,
+            "p50_ms": 8.158724,
+            "p95_ms": 8.36474,
+            "p99_ms": 8.36474,
+            "max_ms": 8.36474
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 6,
+            "mean_ms": 0.20394083333333335,
+            "p50_ms": 0.158724,
+            "p95_ms": 0.36474,
+            "p99_ms": 0.36474,
+            "max_ms": 0.36474
+          },
+          "provider_work": {
+            "observed": 6,
+            "mean_ms": 10.171111333333334,
+            "p50_ms": 7.919063,
+            "p95_ms": 26.272552,
+            "p99_ms": 26.272552,
+            "max_ms": 26.272552
+          },
+          "before_post": {
+            "observed": 6,
+            "mean_ms": 0.004513666666666667,
+            "p50_ms": 0.004453,
+            "p95_ms": 0.006718,
+            "p99_ms": 0.006718,
+            "max_ms": 0.006718
+          },
+          "main_queue": {
+            "observed": 6,
+            "mean_ms": 11.8490625,
+            "p50_ms": 12.923906500000001,
+            "p95_ms": 17.867395,
+            "p99_ms": 17.867395,
+            "max_ms": 17.867395
+          },
+          "callback": {
+            "observed": 6,
+            "mean_ms": 4.917821166666666,
+            "p50_ms": 4.7932815,
+            "p95_ms": 5.932031,
+            "p99_ms": 5.932031,
+            "max_ms": 5.932031
+          },
+          "request_to_main": {
+            "observed": 6,
+            "mean_ms": 30.232986166666667,
+            "p50_ms": 29.732109,
+            "p95_ms": 34.653281,
+            "p99_ms": 34.653281,
+            "max_ms": 34.653281
+          },
+          "request_to_finish": {
+            "observed": 6,
+            "mean_ms": 35.15080733333333,
+            "p50_ms": 34.5946875,
+            "p95_ms": 40.585312,
+            "p99_ms": 40.585312,
+            "max_ms": 40.585312
+          },
+          "accepted_scheduled_wait": {
+            "observed": 6,
+            "mean_ms": 8.203940833333334,
+            "p50_ms": 8.158724,
+            "p95_ms": 8.36474,
+            "p99_ms": 8.36474,
+            "max_ms": 8.36474
+          },
+          "accepted_provider_work": {
+            "observed": 6,
+            "mean_ms": 10.171111333333334,
+            "p50_ms": 7.919063,
+            "p95_ms": 26.272552,
+            "p99_ms": 26.272552,
+            "max_ms": 26.272552
+          },
+          "accepted_main_queue": {
+            "observed": 6,
+            "mean_ms": 11.8490625,
+            "p50_ms": 12.923906500000001,
+            "p95_ms": 17.867395,
+            "p99_ms": 17.867395,
+            "max_ms": 17.867395
+          },
+          "accepted_callback": {
+            "observed": 6,
+            "mean_ms": 4.917821166666666,
+            "p50_ms": 4.7932815,
+            "p95_ms": 5.932031,
+            "p99_ms": 5.932031,
+            "max_ms": 5.932031
+          }
+        }
+      },
+      "taiwanese_english/60/suisiann-thousand/authored-situational-examples/neighbor": {
+        "attribution": {
+          "letters": 25,
+          "unique_request": 25
+        },
+        "counts": {
+          "requests": 25,
+          "worker_started": 25,
+          "posted": 25,
+          "entered": 25,
+          "accepted": 25
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 25,
+            "mean_ms": 8.19353956,
+            "p50_ms": 8.119218,
+            "p95_ms": 8.422031,
+            "p99_ms": 8.429114,
+            "max_ms": 8.429114
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 25,
+            "mean_ms": 0.19353956,
+            "p50_ms": 0.119218,
+            "p95_ms": 0.422031,
+            "p99_ms": 0.429114,
+            "max_ms": 0.429114
+          },
+          "provider_work": {
+            "observed": 25,
+            "mean_ms": 3.46155632,
+            "p50_ms": 0.442136,
+            "p95_ms": 11.788229,
+            "p99_ms": 20.301511,
+            "max_ms": 20.301511
+          },
+          "before_post": {
+            "observed": 25,
+            "mean_ms": 0.0030457600000000002,
+            "p50_ms": 0.002292,
+            "p95_ms": 0.00651,
+            "p99_ms": 0.00677,
+            "max_ms": 0.00677
+          },
+          "main_queue": {
+            "observed": 25,
+            "mean_ms": 9.19126664,
+            "p50_ms": 9.371198,
+            "p95_ms": 19.638229,
+            "p99_ms": 22.793802,
+            "max_ms": 22.793802
+          },
+          "callback": {
+            "observed": 25,
+            "mean_ms": 2.49326456,
+            "p50_ms": 1.580521,
+            "p95_ms": 5.231771,
+            "p99_ms": 5.683438,
+            "max_ms": 5.683438
+          },
+          "request_to_main": {
+            "observed": 25,
+            "mean_ms": 20.85212716,
+            "p50_ms": 19.670625,
+            "p95_ms": 31.102761,
+            "p99_ms": 43.608125,
+            "max_ms": 43.608125
+          },
+          "request_to_finish": {
+            "observed": 25,
+            "mean_ms": 23.34539172,
+            "p50_ms": 22.860052,
+            "p95_ms": 31.339479,
+            "p99_ms": 47.772135,
+            "max_ms": 47.772135
+          },
+          "accepted_scheduled_wait": {
+            "observed": 25,
+            "mean_ms": 8.19353956,
+            "p50_ms": 8.119218,
+            "p95_ms": 8.422031,
+            "p99_ms": 8.429114,
+            "max_ms": 8.429114
+          },
+          "accepted_provider_work": {
+            "observed": 25,
+            "mean_ms": 3.46155632,
+            "p50_ms": 0.442136,
+            "p95_ms": 11.788229,
+            "p99_ms": 20.301511,
+            "max_ms": 20.301511
+          },
+          "accepted_main_queue": {
+            "observed": 25,
+            "mean_ms": 9.19126664,
+            "p50_ms": 9.371198,
+            "p95_ms": 19.638229,
+            "p99_ms": 22.793802,
+            "max_ms": 22.793802
+          },
+          "accepted_callback": {
+            "observed": 25,
+            "mean_ms": 2.49326456,
+            "p50_ms": 1.580521,
+            "p95_ms": 5.231771,
+            "p99_ms": 5.683438,
+            "max_ms": 5.683438
+          }
+        }
+      },
+      "taiwanese_english/60/suisiann-thousand/authored-situational-examples/omission": {
+        "attribution": {
+          "letters": 36,
+          "unique_request": 36
+        },
+        "counts": {
+          "requests": 36,
+          "worker_started": 36,
+          "posted": 36,
+          "entered": 36,
+          "accepted": 36
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 36,
+            "mean_ms": 8.141294805555555,
+            "p50_ms": 8.114479,
+            "p95_ms": 8.374844,
+            "p99_ms": 8.470156,
+            "max_ms": 8.470156
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 36,
+            "mean_ms": 0.14129480555555557,
+            "p50_ms": 0.114479,
+            "p95_ms": 0.374844,
+            "p99_ms": 0.470156,
+            "max_ms": 0.470156
+          },
+          "provider_work": {
+            "observed": 36,
+            "mean_ms": 1.3822005,
+            "p50_ms": 0.955573,
+            "p95_ms": 4.986718,
+            "p99_ms": 11.948907,
+            "max_ms": 11.948907
+          },
+          "before_post": {
+            "observed": 36,
+            "mean_ms": 0.002893611111111111,
+            "p50_ms": 0.002917,
+            "p95_ms": 0.004427,
+            "p99_ms": 0.004687,
+            "max_ms": 0.004687
+          },
+          "main_queue": {
+            "observed": 36,
+            "mean_ms": 9.27284286111111,
+            "p50_ms": 8.8854945,
+            "p95_ms": 19.606458,
+            "p99_ms": 23.933385,
+            "max_ms": 23.933385
+          },
+          "callback": {
+            "observed": 36,
+            "mean_ms": 2.2586183055555553,
+            "p50_ms": 1.1485675,
+            "p95_ms": 5.307344,
+            "p99_ms": 5.332813,
+            "max_ms": 5.332813
+          },
+          "request_to_main": {
+            "observed": 36,
+            "mean_ms": 18.800901361111112,
+            "p50_ms": 18.794349,
+            "p95_ms": 32.303021,
+            "p99_ms": 33.180208,
+            "max_ms": 33.180208
+          },
+          "request_to_finish": {
+            "observed": 36,
+            "mean_ms": 21.059519666666667,
+            "p50_ms": 19.8330205,
+            "p95_ms": 37.608542,
+            "p99_ms": 37.610365,
+            "max_ms": 37.610365
+          },
+          "accepted_scheduled_wait": {
+            "observed": 36,
+            "mean_ms": 8.141294805555555,
+            "p50_ms": 8.114479,
+            "p95_ms": 8.374844,
+            "p99_ms": 8.470156,
+            "max_ms": 8.470156
+          },
+          "accepted_provider_work": {
+            "observed": 36,
+            "mean_ms": 1.3822005,
+            "p50_ms": 0.955573,
+            "p95_ms": 4.986718,
+            "p99_ms": 11.948907,
+            "max_ms": 11.948907
+          },
+          "accepted_main_queue": {
+            "observed": 36,
+            "mean_ms": 9.27284286111111,
+            "p50_ms": 8.8854945,
+            "p95_ms": 19.606458,
+            "p99_ms": 23.933385,
+            "max_ms": 23.933385
+          },
+          "accepted_callback": {
+            "observed": 36,
+            "mean_ms": 2.2586183055555553,
+            "p50_ms": 1.1485675,
+            "p95_ms": 5.307344,
+            "p99_ms": 5.332813,
+            "max_ms": 5.332813
+          }
+        }
+      },
+      "taiwanese_english/60/suisiann-thousand/authored-situational-examples/transpose": {
+        "attribution": {
+          "letters": 16,
+          "unique_request": 16
+        },
+        "counts": {
+          "requests": 16,
+          "worker_started": 16,
+          "posted": 16,
+          "entered": 16,
+          "accepted": 16
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.279127625,
+            "p50_ms": 8.144714,
+            "p95_ms": 9.52927,
+            "p99_ms": 9.52927,
+            "max_ms": 9.52927
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 16,
+            "mean_ms": 0.279127625,
+            "p50_ms": 0.144714,
+            "p95_ms": 1.52927,
+            "p99_ms": 1.52927,
+            "max_ms": 1.52927
+          },
+          "provider_work": {
+            "observed": 16,
+            "mean_ms": 7.929576875,
+            "p50_ms": 2.0226565,
+            "p95_ms": 42.725261,
+            "p99_ms": 42.725261,
+            "max_ms": 42.725261
+          },
+          "before_post": {
+            "observed": 16,
+            "mean_ms": 0.0041210625,
+            "p50_ms": 0.003203,
+            "p95_ms": 0.009427,
+            "p99_ms": 0.009427,
+            "max_ms": 0.009427
+          },
+          "main_queue": {
+            "observed": 16,
+            "mean_ms": 9.362545562500001,
+            "p50_ms": 11.8077345,
+            "p95_ms": 19.376667,
+            "p99_ms": 19.376667,
+            "max_ms": 19.376667
+          },
+          "callback": {
+            "observed": 16,
+            "mean_ms": 3.0473599375,
+            "p50_ms": 3.6506255,
+            "p95_ms": 5.413854,
+            "p99_ms": 5.413854,
+            "max_ms": 5.413854
+          },
+          "request_to_main": {
+            "observed": 16,
+            "mean_ms": 25.576946562499998,
+            "p50_ms": 23.279661,
+            "p95_ms": 51.431875,
+            "p99_ms": 51.431875,
+            "max_ms": 51.431875
+          },
+          "request_to_finish": {
+            "observed": 16,
+            "mean_ms": 28.6243065,
+            "p50_ms": 24.2592445,
+            "p95_ms": 56.845729,
+            "p99_ms": 56.845729,
+            "max_ms": 56.845729
+          },
+          "accepted_scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.279127625,
+            "p50_ms": 8.144714,
+            "p95_ms": 9.52927,
+            "p99_ms": 9.52927,
+            "max_ms": 9.52927
+          },
+          "accepted_provider_work": {
+            "observed": 16,
+            "mean_ms": 7.929576875,
+            "p50_ms": 2.0226565,
+            "p95_ms": 42.725261,
+            "p99_ms": 42.725261,
+            "max_ms": 42.725261
+          },
+          "accepted_main_queue": {
+            "observed": 16,
+            "mean_ms": 9.362545562500001,
+            "p50_ms": 11.8077345,
+            "p95_ms": 19.376667,
+            "p99_ms": 19.376667,
+            "max_ms": 19.376667
+          },
+          "accepted_callback": {
+            "observed": 16,
+            "mean_ms": 3.0473599375,
+            "p50_ms": 3.6506255,
+            "p95_ms": 5.413854,
+            "p99_ms": 5.413854,
+            "max_ms": 5.413854
+          }
+        }
+      },
+      "taiwanese_english/60/taiwanese-basic/historical-authored-examples/full": {
+        "attribution": {
+          "letters": 62,
+          "unique_request": 62
+        },
+        "counts": {
+          "requests": 62,
+          "worker_started": 62,
+          "posted": 61,
+          "entered": 61,
+          "accepted": 61,
+          "cancelled_pipeline": 1
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 62,
+            "mean_ms": 8.156014,
+            "p50_ms": 8.1146615,
+            "p95_ms": 8.400104,
+            "p99_ms": 8.441979,
+            "max_ms": 8.441979
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 62,
+            "mean_ms": 0.15601399999999999,
+            "p50_ms": 0.1146615,
+            "p95_ms": 0.400104,
+            "p99_ms": 0.441979,
+            "max_ms": 0.441979
+          },
+          "provider_work": {
+            "observed": 62,
+            "mean_ms": 2.996347483870968,
+            "p50_ms": 0.7403385,
+            "p95_ms": 10.328125,
+            "p99_ms": 59.953229,
+            "max_ms": 59.953229
+          },
+          "before_post": {
+            "observed": 61,
+            "mean_ms": 0.0030967540983606557,
+            "p50_ms": 0.002813,
+            "p95_ms": 0.005625,
+            "p99_ms": 0.006145,
+            "max_ms": 0.006145
+          },
+          "main_queue": {
+            "observed": 61,
+            "mean_ms": 9.695782,
+            "p50_ms": 10.175625,
+            "p95_ms": 17.764427,
+            "p99_ms": 19.553281,
+            "max_ms": 19.553281
+          },
+          "callback": {
+            "observed": 61,
+            "mean_ms": 2.117192704918033,
+            "p50_ms": 1.094584,
+            "p95_ms": 5.460052,
+            "p99_ms": 7.31974,
+            "max_ms": 7.31974
+          },
+          "request_to_main": {
+            "observed": 61,
+            "mean_ms": 19.920183524590165,
+            "p50_ms": 19.654011,
+            "p95_ms": 30.215417,
+            "p99_ms": 37.307969,
+            "max_ms": 37.307969
+          },
+          "request_to_finish": {
+            "observed": 61,
+            "mean_ms": 22.037376229508197,
+            "p50_ms": 21.0625,
+            "p95_ms": 34.536511,
+            "p99_ms": 43.896979,
+            "max_ms": 43.896979
+          },
+          "accepted_scheduled_wait": {
+            "observed": 61,
+            "mean_ms": 8.156741,
+            "p50_ms": 8.11526,
+            "p95_ms": 8.400104,
+            "p99_ms": 8.441979,
+            "max_ms": 8.441979
+          },
+          "accepted_provider_work": {
+            "observed": 61,
+            "mean_ms": 2.0626281147540984,
+            "p50_ms": 0.740156,
+            "p95_ms": 8.921563,
+            "p99_ms": 23.096458,
+            "max_ms": 23.096458
+          },
+          "accepted_main_queue": {
+            "observed": 61,
+            "mean_ms": 9.695782,
+            "p50_ms": 10.175625,
+            "p95_ms": 17.764427,
+            "p99_ms": 19.553281,
+            "max_ms": 19.553281
+          },
+          "accepted_callback": {
+            "observed": 61,
+            "mean_ms": 2.117192704918033,
+            "p50_ms": 1.094584,
+            "p95_ms": 5.460052,
+            "p99_ms": 7.31974,
+            "max_ms": 7.31974
+          }
+        }
+      },
+      "taiwanese_english/60/taiwanese-basic/historical-authored-examples/half": {
+        "attribution": {
+          "letters": 39,
+          "unique_request": 39
+        },
+        "counts": {
+          "requests": 39,
+          "worker_started": 39,
+          "posted": 39,
+          "entered": 39,
+          "accepted": 39
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 39,
+            "mean_ms": 8.16231435897436,
+            "p50_ms": 8.111042,
+            "p95_ms": 8.419427,
+            "p99_ms": 8.489323,
+            "max_ms": 8.489323
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 39,
+            "mean_ms": 0.16231435897435897,
+            "p50_ms": 0.111042,
+            "p95_ms": 0.419427,
+            "p99_ms": 0.489323,
+            "max_ms": 0.489323
+          },
+          "provider_work": {
+            "observed": 39,
+            "mean_ms": 6.598600358974359,
+            "p50_ms": 3.700261,
+            "p95_ms": 38.52474,
+            "p99_ms": 38.986822,
+            "max_ms": 38.986822
+          },
+          "before_post": {
+            "observed": 39,
+            "mean_ms": 0.00409325641025641,
+            "p50_ms": 0.004167,
+            "p95_ms": 0.006198,
+            "p99_ms": 0.007343,
+            "max_ms": 0.007343
+          },
+          "main_queue": {
+            "observed": 39,
+            "mean_ms": 7.022809846153846,
+            "p50_ms": 7.171302,
+            "p95_ms": 13.71427,
+            "p99_ms": 22.108334,
+            "max_ms": 22.108334
+          },
+          "callback": {
+            "observed": 39,
+            "mean_ms": 2.4290879487179486,
+            "p50_ms": 1.202292,
+            "p95_ms": 6.032448,
+            "p99_ms": 6.052032,
+            "max_ms": 6.052032
+          },
+          "request_to_main": {
+            "observed": 39,
+            "mean_ms": 21.78997053846154,
+            "p50_ms": 19.269896,
+            "p95_ms": 46.858072,
+            "p99_ms": 47.318958,
+            "max_ms": 47.318958
+          },
+          "request_to_finish": {
+            "observed": 39,
+            "mean_ms": 24.21905848717949,
+            "p50_ms": 21.803854,
+            "p95_ms": 48.526771,
+            "p99_ms": 52.910104,
+            "max_ms": 52.910104
+          },
+          "accepted_scheduled_wait": {
+            "observed": 39,
+            "mean_ms": 8.16231435897436,
+            "p50_ms": 8.111042,
+            "p95_ms": 8.419427,
+            "p99_ms": 8.489323,
+            "max_ms": 8.489323
+          },
+          "accepted_provider_work": {
+            "observed": 39,
+            "mean_ms": 6.598600358974359,
+            "p50_ms": 3.700261,
+            "p95_ms": 38.52474,
+            "p99_ms": 38.986822,
+            "max_ms": 38.986822
+          },
+          "accepted_main_queue": {
+            "observed": 39,
+            "mean_ms": 7.022809846153846,
+            "p50_ms": 7.171302,
+            "p95_ms": 13.71427,
+            "p99_ms": 22.108334,
+            "max_ms": 22.108334
+          },
+          "accepted_callback": {
+            "observed": 39,
+            "mean_ms": 2.4290879487179486,
+            "p50_ms": 1.202292,
+            "p95_ms": 6.032448,
+            "p99_ms": 6.052032,
+            "max_ms": 6.052032
+          }
+        }
+      },
+      "taiwanese_english/60/taiwanese-basic/historical-authored-examples/initials": {
+        "attribution": {
+          "letters": 16,
+          "unique_request": 16
+        },
+        "counts": {
+          "requests": 16,
+          "worker_started": 16,
+          "posted": 15,
+          "entered": 15,
+          "accepted": 15,
+          "cancelled_pipeline": 1
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 16,
+            "mean_ms": 8.121513875,
+            "p50_ms": 8.1073705,
+            "p95_ms": 8.2875,
+            "p99_ms": 8.2875,
+            "max_ms": 8.2875
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 16,
+            "mean_ms": 0.121513875,
+            "p50_ms": 0.10737050000000001,
+            "p95_ms": 0.2875,
+            "p99_ms": 0.2875,
+            "max_ms": 0.2875
+          },
+          "provider_work": {
+            "observed": 16,
+            "mean_ms": 7.50538075,
+            "p50_ms": 3.2311975,
+            "p95_ms": 49.009427,
+            "p99_ms": 49.009427,
+            "max_ms": 49.009427
+          },
+          "before_post": {
+            "observed": 15,
+            "mean_ms": 0.004639,
+            "p50_ms": 0.004792,
+            "p95_ms": 0.006302,
+            "p99_ms": 0.006302,
+            "max_ms": 0.006302
+          },
+          "main_queue": {
+            "observed": 15,
+            "mean_ms": 9.728621533333333,
+            "p50_ms": 8.536406,
+            "p95_ms": 20.17,
+            "p99_ms": 20.17,
+            "max_ms": 20.17
+          },
+          "callback": {
+            "observed": 15,
+            "mean_ms": 2.839246466666667,
+            "p50_ms": 1.716667,
+            "p95_ms": 5.995469,
+            "p99_ms": 5.995469,
+            "max_ms": 5.995469
+          },
+          "request_to_main": {
+            "observed": 15,
+            "mean_ms": 22.596448066666667,
+            "p50_ms": 20.806614,
+            "p95_ms": 41.822552,
+            "p99_ms": 41.822552,
+            "max_ms": 41.822552
+          },
+          "request_to_finish": {
+            "observed": 15,
+            "mean_ms": 25.435694533333333,
+            "p50_ms": 22.523281,
+            "p95_ms": 46.4075,
+            "p99_ms": 46.4075,
+            "max_ms": 46.4075
+          },
+          "accepted_scheduled_wait": {
+            "observed": 15,
+            "mean_ms": 8.1226356,
+            "p50_ms": 8.107605,
+            "p95_ms": 8.2875,
+            "p99_ms": 8.2875,
+            "max_ms": 8.2875
+          },
+          "accepted_provider_work": {
+            "observed": 15,
+            "mean_ms": 4.738444333333333,
+            "p50_ms": 3.136927,
+            "p95_ms": 15.500573,
+            "p99_ms": 15.500573,
+            "max_ms": 15.500573
+          },
+          "accepted_main_queue": {
+            "observed": 15,
+            "mean_ms": 9.728621533333333,
+            "p50_ms": 8.536406,
+            "p95_ms": 20.17,
+            "p99_ms": 20.17,
+            "max_ms": 20.17
+          },
+          "accepted_callback": {
+            "observed": 15,
+            "mean_ms": 2.839246466666667,
+            "p50_ms": 1.716667,
+            "p95_ms": 5.995469,
+            "p99_ms": 5.995469,
+            "max_ms": 5.995469
+          }
+        }
+      },
+      "taiwanese_english/60/taiwanese-basic/historical-authored-examples/mixed": {
+        "attribution": {
+          "letters": 49,
+          "unique_request": 49
+        },
+        "counts": {
+          "requests": 49,
+          "worker_started": 49,
+          "posted": 49,
+          "entered": 49,
+          "accepted": 49
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 49,
+            "mean_ms": 8.139022081632653,
+            "p50_ms": 8.112239,
+            "p95_ms": 8.3875,
+            "p99_ms": 8.453385,
+            "max_ms": 8.453385
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 49,
+            "mean_ms": 0.13902208163265306,
+            "p50_ms": 0.112239,
+            "p95_ms": 0.3875,
+            "p99_ms": 0.453385,
+            "max_ms": 0.453385
+          },
+          "provider_work": {
+            "observed": 49,
+            "mean_ms": 3.640157326530612,
+            "p50_ms": 1.001511,
+            "p95_ms": 12.807552,
+            "p99_ms": 37.774792,
+            "max_ms": 37.774792
+          },
+          "before_post": {
+            "observed": 49,
+            "mean_ms": 0.003808510204081633,
+            "p50_ms": 0.003282,
+            "p95_ms": 0.006719,
+            "p99_ms": 0.009375,
+            "max_ms": 0.009375
+          },
+          "main_queue": {
+            "observed": 49,
+            "mean_ms": 8.770117918367347,
+            "p50_ms": 8.542656,
+            "p95_ms": 14.794739,
+            "p99_ms": 15.287188,
+            "max_ms": 15.287188
+          },
+          "callback": {
+            "observed": 49,
+            "mean_ms": 1.9320631428571429,
+            "p50_ms": 1.016771,
+            "p95_ms": 5.08375,
+            "p99_ms": 7.485729,
+            "max_ms": 7.485729
+          },
+          "request_to_main": {
+            "observed": 49,
+            "mean_ms": 20.554179510204083,
+            "p50_ms": 19.295313,
+            "p95_ms": 32.081042,
+            "p99_ms": 46.135833,
+            "max_ms": 46.135833
+          },
+          "request_to_finish": {
+            "observed": 49,
+            "mean_ms": 22.486242653061225,
+            "p50_ms": 21.953282,
+            "p95_ms": 36.403542,
+            "p99_ms": 47.242708,
+            "max_ms": 47.242708
+          },
+          "accepted_scheduled_wait": {
+            "observed": 49,
+            "mean_ms": 8.139022081632653,
+            "p50_ms": 8.112239,
+            "p95_ms": 8.3875,
+            "p99_ms": 8.453385,
+            "max_ms": 8.453385
+          },
+          "accepted_provider_work": {
+            "observed": 49,
+            "mean_ms": 3.640157326530612,
+            "p50_ms": 1.001511,
+            "p95_ms": 12.807552,
+            "p99_ms": 37.774792,
+            "max_ms": 37.774792
+          },
+          "accepted_main_queue": {
+            "observed": 49,
+            "mean_ms": 8.770117918367347,
+            "p50_ms": 8.542656,
+            "p95_ms": 14.794739,
+            "p99_ms": 15.287188,
+            "max_ms": 15.287188
+          },
+          "accepted_callback": {
+            "observed": 49,
+            "mean_ms": 1.9320631428571429,
+            "p50_ms": 1.016771,
+            "p95_ms": 5.08375,
+            "p99_ms": 7.485729,
+            "max_ms": 7.485729
+          }
+        }
+      },
+      "taiwanese_english/60/taiwanese-basic/historical-authored-examples/neighbor": {
+        "attribution": {
+          "letters": 52,
+          "unique_request": 52
+        },
+        "counts": {
+          "requests": 52,
+          "worker_started": 52,
+          "posted": 52,
+          "entered": 52,
+          "accepted": 52
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 52,
+            "mean_ms": 8.178708865384616,
+            "p50_ms": 8.113176500000002,
+            "p95_ms": 8.436667,
+            "p99_ms": 9.681615,
+            "max_ms": 9.681615
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 52,
+            "mean_ms": 0.1787088653846154,
+            "p50_ms": 0.1131765,
+            "p95_ms": 0.436667,
+            "p99_ms": 1.681615,
+            "max_ms": 1.681615
+          },
+          "provider_work": {
+            "observed": 52,
+            "mean_ms": 4.146725769230769,
+            "p50_ms": 1.675443,
+            "p95_ms": 13.710261,
+            "p99_ms": 44.774063,
+            "max_ms": 44.774063
+          },
+          "before_post": {
+            "observed": 52,
+            "mean_ms": 0.003724923076923077,
+            "p50_ms": 0.0035415,
+            "p95_ms": 0.005416,
+            "p99_ms": 0.006875,
+            "max_ms": 0.006875
+          },
+          "main_queue": {
+            "observed": 52,
+            "mean_ms": 8.271643730769231,
+            "p50_ms": 8.8024995,
+            "p95_ms": 15.25625,
+            "p99_ms": 17.123334,
+            "max_ms": 17.123334
+          },
+          "callback": {
+            "observed": 52,
+            "mean_ms": 2.1338020384615386,
+            "p50_ms": 1.304349,
+            "p95_ms": 4.519166,
+            "p99_ms": 4.757864,
+            "max_ms": 4.757864
+          },
+          "request_to_main": {
+            "observed": 52,
+            "mean_ms": 20.601889057692308,
+            "p50_ms": 19.48961,
+            "p95_ms": 34.216615,
+            "p99_ms": 52.917708,
+            "max_ms": 52.917708
+          },
+          "request_to_finish": {
+            "observed": 52,
+            "mean_ms": 22.735691096153847,
+            "p50_ms": 21.225547,
+            "p95_ms": 38.226927,
+            "p99_ms": 54.725365,
+            "max_ms": 54.725365
+          },
+          "accepted_scheduled_wait": {
+            "observed": 52,
+            "mean_ms": 8.178708865384616,
+            "p50_ms": 8.113176500000002,
+            "p95_ms": 8.436667,
+            "p99_ms": 9.681615,
+            "max_ms": 9.681615
+          },
+          "accepted_provider_work": {
+            "observed": 52,
+            "mean_ms": 4.146725769230769,
+            "p50_ms": 1.675443,
+            "p95_ms": 13.710261,
+            "p99_ms": 44.774063,
+            "max_ms": 44.774063
+          },
+          "accepted_main_queue": {
+            "observed": 52,
+            "mean_ms": 8.271643730769231,
+            "p50_ms": 8.8024995,
+            "p95_ms": 15.25625,
+            "p99_ms": 17.123334,
+            "max_ms": 17.123334
+          },
+          "accepted_callback": {
+            "observed": 52,
+            "mean_ms": 2.1338020384615386,
+            "p50_ms": 1.304349,
+            "p95_ms": 4.519166,
+            "p99_ms": 4.757864,
+            "max_ms": 4.757864
+          }
+        }
+      },
+      "taiwanese_english/60/taiwanese-basic/historical-authored-examples/omission": {
+        "attribution": {
+          "letters": 32,
+          "unique_request": 32
+        },
+        "counts": {
+          "requests": 32,
+          "worker_started": 32,
+          "posted": 31,
+          "entered": 31,
+          "accepted": 31,
+          "cancelled_pipeline": 1
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 32,
+            "mean_ms": 8.2189453125,
+            "p50_ms": 8.109219,
+            "p95_ms": 9.264531,
+            "p99_ms": 9.609427,
+            "max_ms": 9.609427
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 32,
+            "mean_ms": 0.2189453125,
+            "p50_ms": 0.109219,
+            "p95_ms": 1.264531,
+            "p99_ms": 1.609427,
+            "max_ms": 1.609427
+          },
+          "provider_work": {
+            "observed": 32,
+            "mean_ms": 4.3176171875,
+            "p50_ms": 0.9090104999999999,
+            "p95_ms": 22.739219,
+            "p99_ms": 47.305156,
+            "max_ms": 47.305156
+          },
+          "before_post": {
+            "observed": 31,
+            "mean_ms": 0.0036121935483870967,
+            "p50_ms": 0.003333,
+            "p95_ms": 0.005833,
+            "p99_ms": 0.00599,
+            "max_ms": 0.00599
+          },
+          "main_queue": {
+            "observed": 31,
+            "mean_ms": 9.951493741935483,
+            "p50_ms": 9.898385,
+            "p95_ms": 21.722605,
+            "p99_ms": 21.909792,
+            "max_ms": 21.909792
+          },
+          "callback": {
+            "observed": 31,
+            "mean_ms": 2.9333583870967743,
+            "p50_ms": 2.908385,
+            "p95_ms": 5.637083,
+            "p99_ms": 5.784739,
+            "max_ms": 5.784739
+          },
+          "request_to_main": {
+            "observed": 31,
+            "mean_ms": 21.110057096774195,
+            "p50_ms": 19.996302,
+            "p95_ms": 32.062813,
+            "p99_ms": 32.392031,
+            "max_ms": 32.392031
+          },
+          "request_to_finish": {
+            "observed": 31,
+            "mean_ms": 24.04341548387097,
+            "p50_ms": 22.196719,
+            "p95_ms": 36.251198,
+            "p99_ms": 37.39875,
+            "max_ms": 37.39875
+          },
+          "accepted_scheduled_wait": {
+            "observed": 31,
+            "mean_ms": 8.222743612903226,
+            "p50_ms": 8.109375,
+            "p95_ms": 9.264531,
+            "p99_ms": 9.609427,
+            "max_ms": 9.609427
+          },
+          "accepted_provider_work": {
+            "observed": 31,
+            "mean_ms": 2.930922387096774,
+            "p50_ms": 0.855156,
+            "p95_ms": 14.747916,
+            "p99_ms": 22.739219,
+            "max_ms": 22.739219
+          },
+          "accepted_main_queue": {
+            "observed": 31,
+            "mean_ms": 9.951493741935483,
+            "p50_ms": 9.898385,
+            "p95_ms": 21.722605,
+            "p99_ms": 21.909792,
+            "max_ms": 21.909792
+          },
+          "accepted_callback": {
+            "observed": 31,
+            "mean_ms": 2.9333583870967743,
+            "p50_ms": 2.908385,
+            "p95_ms": 5.637083,
+            "p99_ms": 5.784739,
+            "max_ms": 5.784739
+          }
+        }
+      },
+      "taiwanese_english/60/taiwanese-basic/historical-authored-examples/transpose": {
+        "attribution": {
+          "letters": 49,
+          "unique_request": 49
+        },
+        "counts": {
+          "requests": 49,
+          "worker_started": 49,
+          "posted": 49,
+          "entered": 49,
+          "accepted": 49
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 49,
+            "mean_ms": 8.158353448979591,
+            "p50_ms": 8.110781,
+            "p95_ms": 8.426406,
+            "p99_ms": 8.611354,
+            "max_ms": 8.611354
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 49,
+            "mean_ms": 0.15835344897959183,
+            "p50_ms": 0.110781,
+            "p95_ms": 0.426406,
+            "p99_ms": 0.611354,
+            "max_ms": 0.611354
+          },
+          "provider_work": {
+            "observed": 49,
+            "mean_ms": 7.547146102040816,
+            "p50_ms": 4.095208,
+            "p95_ms": 32.599636,
+            "p99_ms": 46.53375,
+            "max_ms": 46.53375
+          },
+          "before_post": {
+            "observed": 49,
+            "mean_ms": 0.004822489795918368,
+            "p50_ms": 0.004844,
+            "p95_ms": 0.007812,
+            "p99_ms": 0.008385,
+            "max_ms": 0.008385
+          },
+          "main_queue": {
+            "observed": 49,
+            "mean_ms": 5.963950897959184,
+            "p50_ms": 6.15,
+            "p95_ms": 11.013125,
+            "p99_ms": 17.132188,
+            "max_ms": 17.132188
+          },
+          "callback": {
+            "observed": 49,
+            "mean_ms": 1.9897820204081633,
+            "p50_ms": 0.940313,
+            "p95_ms": 4.708906,
+            "p99_ms": 5.445678,
+            "max_ms": 5.445678
+          },
+          "request_to_main": {
+            "observed": 49,
+            "mean_ms": 21.67564942857143,
+            "p50_ms": 19.162188,
+            "p95_ms": 41.004323,
+            "p99_ms": 55.203333,
+            "max_ms": 55.203333
+          },
+          "request_to_finish": {
+            "observed": 49,
+            "mean_ms": 23.665431448979593,
+            "p50_ms": 20.737916,
+            "p95_ms": 45.149167,
+            "p99_ms": 58.269115,
+            "max_ms": 58.269115
+          },
+          "accepted_scheduled_wait": {
+            "observed": 49,
+            "mean_ms": 8.158353448979591,
+            "p50_ms": 8.110781,
+            "p95_ms": 8.426406,
+            "p99_ms": 8.611354,
+            "max_ms": 8.611354
+          },
+          "accepted_provider_work": {
+            "observed": 49,
+            "mean_ms": 7.547146102040816,
+            "p50_ms": 4.095208,
+            "p95_ms": 32.599636,
+            "p99_ms": 46.53375,
+            "max_ms": 46.53375
+          },
+          "accepted_main_queue": {
+            "observed": 49,
+            "mean_ms": 5.963950897959184,
+            "p50_ms": 6.15,
+            "p95_ms": 11.013125,
+            "p99_ms": 17.132188,
+            "max_ms": 17.132188
+          },
+          "accepted_callback": {
+            "observed": 49,
+            "mean_ms": 1.9897820204081633,
+            "p50_ms": 0.940313,
+            "p95_ms": 4.708906,
+            "p99_ms": 5.445678,
+            "max_ms": 5.445678
+          }
+        }
+      }
+    }
+  }
+}

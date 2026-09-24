@@ -27,6 +27,13 @@ without establishing which queue causes it. Hooks perturb timing, so no speedup
 or release-latency acceptance is claimed. Production remains unchanged; a separate
 queue-boundary measurement is planned before another performance intervention.
 
+The completed [queue-boundary measurement](QUEUE-STAGES-RESULTS.md) localizes
+8–11 ms mean result-delivery wait across all three modes, versus about 0.16 ms
+worker deadline overshoot. All 2,354 injected raw/Space submissions are observed;
+three Taiwanese pipelines are cancelled. Production is unchanged. The next
+isolated experiment marks decoder-result messages asynchronous while retaining
+the 8 ms scheduling delay and requiring repeated unhooked tail comparisons.
+
 The [compiled-validator experiment](VALIDATION-PATTERN-RESULTS.md) is rejected.
 Despite lower isolated ART validation cost and identical desktop predictions,
 Taiwanese raw/Space tails and fast Japanese raw tails worsen in both phone pairs.

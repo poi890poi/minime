@@ -1,0 +1,2288 @@
+{
+  "baseline": "6bffd17 queue diagnostic",
+  "samples": 1006,
+  "groups": {
+    "taiwanese_english/150": {
+      "editor_callback": {
+        "n": 447,
+        "observed": 447,
+        "unobserved": 0,
+        "mean_ms": 4.265137581655481,
+        "p50_ms": 4.218859,
+        "p95_ms": 5.546453,
+        "p99_ms": 5.973717,
+        "max_ms": 6.998294
+      },
+      "editor_submission": {
+        "n": 447,
+        "observed": 447,
+        "unobserved": 0,
+        "mean_ms": 12.587661941834451,
+        "p50_ms": 11.807572,
+        "p95_ms": 18.47031,
+        "p99_ms": 20.868552,
+        "max_ms": 26.250128
+      },
+      "candidate_submission": {
+        "n": 447,
+        "observed": 446,
+        "unobserved": 1,
+        "mean_ms": 36.91707904484305,
+        "p50_ms": 34.109300000000005,
+        "p95_ms": 61.416917,
+        "p99_ms": 78.272241,
+        "max_ms": 87.726638
+      },
+      "pressed_submission": {
+        "n": 447,
+        "observed": 447,
+        "unobserved": 0,
+        "mean_ms": 20.477310313199105,
+        "p50_ms": 19.650543,
+        "p95_ms": 29.618064,
+        "p99_ms": 31.940165,
+        "max_ms": 35.183974
+      },
+      "space_submission": {
+        "n": 56,
+        "observed": 56,
+        "unobserved": 0,
+        "mean_ms": 19.767150142857144,
+        "p50_ms": 19.346125999999998,
+        "p95_ms": 24.888175,
+        "p99_ms": 29.838166,
+        "max_ms": 29.838166
+      },
+      "injected_key_interval": {
+        "n": 447,
+        "observed": 447,
+        "unobserved": 0,
+        "mean_ms": 149.84116331096197,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 156.0,
+        "max_ms": 164.0
+      },
+      "candidate_deadline": {
+        "letters": 447,
+        "submitted_before_next_up": 446,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/60": {
+      "editor_callback": {
+        "n": 447,
+        "observed": 447,
+        "unobserved": 0,
+        "mean_ms": 3.886720205816555,
+        "p50_ms": 3.81049,
+        "p95_ms": 5.332776,
+        "p99_ms": 6.138403,
+        "max_ms": 8.829345
+      },
+      "editor_submission": {
+        "n": 447,
+        "observed": 447,
+        "unobserved": 0,
+        "mean_ms": 12.715688662192393,
+        "p50_ms": 12.190482,
+        "p95_ms": 17.853098,
+        "p99_ms": 20.153941,
+        "max_ms": 22.277736
+      },
+      "candidate_submission": {
+        "n": 447,
+        "observed": 437,
+        "unobserved": 10,
+        "mean_ms": 35.85504662471396,
+        "p50_ms": 32.443511,
+        "p95_ms": 58.764916,
+        "p99_ms": 68.41705,
+        "max_ms": 79.813616
+      },
+      "pressed_submission": {
+        "n": 447,
+        "observed": 447,
+        "unobserved": 0,
+        "mean_ms": 26.08055353243848,
+        "p50_ms": 24.734091,
+        "p95_ms": 39.766524,
+        "p99_ms": 44.433728,
+        "max_ms": 48.521436
+      },
+      "space_submission": {
+        "n": 56,
+        "observed": 56,
+        "unobserved": 0,
+        "mean_ms": 17.93821832142857,
+        "p50_ms": 17.509605999999998,
+        "p95_ms": 22.266999,
+        "p99_ms": 25.974133,
+        "max_ms": 25.974133
+      },
+      "injected_key_interval": {
+        "n": 447,
+        "observed": 447,
+        "unobserved": 0,
+        "mean_ms": 60.628635346756155,
+        "p50_ms": 63.0,
+        "p95_ms": 70.0,
+        "p99_ms": 74.0,
+        "max_ms": 83.0
+      },
+      "candidate_deadline": {
+        "letters": 447,
+        "submitted_before_next_up": 418,
+        "observed_submission_at_or_after_next_up": 19,
+        "unobserved": 10
+      }
+    }
+  },
+  "strata": {
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/full/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "full",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 4.034447645161291,
+        "p50_ms": 3.905542,
+        "p95_ms": 5.899449,
+        "p99_ms": 6.157106,
+        "max_ms": 6.157106
+      },
+      "editor_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 13.746742774193548,
+        "p50_ms": 12.038824,
+        "p95_ms": 24.990438,
+        "p99_ms": 26.250128,
+        "max_ms": 26.250128
+      },
+      "candidate_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 38.43284987096774,
+        "p50_ms": 27.849761,
+        "p95_ms": 81.270544,
+        "p99_ms": 87.726638,
+        "max_ms": 87.726638
+      },
+      "pressed_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 19.45252064516129,
+        "p50_ms": 19.620647,
+        "p95_ms": 25.38596,
+        "p99_ms": 30.631793,
+        "max_ms": 30.631793
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 17.1063635,
+        "p50_ms": 16.8765585,
+        "p95_ms": 20.100803,
+        "p99_ms": 20.100803,
+        "max_ms": 20.100803
+      },
+      "injected_key_interval": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 150.19354838709677,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 164.0,
+        "max_ms": 164.0
+      },
+      "candidate_deadline": {
+        "letters": 31,
+        "submitted_before_next_up": 31,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/half/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "half",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 4.4114325625,
+        "p50_ms": 4.378509,
+        "p95_ms": 5.973717,
+        "p99_ms": 5.973717,
+        "max_ms": 5.973717
+      },
+      "editor_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 13.1038969375,
+        "p50_ms": 12.355619,
+        "p95_ms": 18.646426,
+        "p99_ms": 18.646426,
+        "max_ms": 18.646426
+      },
+      "candidate_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 42.1660386875,
+        "p50_ms": 39.5797075,
+        "p95_ms": 78.209342,
+        "p99_ms": 78.209342,
+        "max_ms": 78.209342
+      },
+      "pressed_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 20.4394925625,
+        "p50_ms": 18.823456999999998,
+        "p95_ms": 28.999499,
+        "p99_ms": 28.999499,
+        "max_ms": 28.999499
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 17.653574499999998,
+        "p50_ms": 17.502572,
+        "p95_ms": 19.8883,
+        "p99_ms": 19.8883,
+        "max_ms": 19.8883
+      },
+      "injected_key_interval": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 149.125,
+        "p50_ms": 152.0,
+        "p95_ms": 153.0,
+        "p99_ms": 153.0,
+        "max_ms": 153.0
+      },
+      "candidate_deadline": {
+        "letters": 16,
+        "submitted_before_next_up": 16,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/initials/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "initials",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 3.905715333333333,
+        "p50_ms": 3.776138,
+        "p95_ms": 5.460227,
+        "p99_ms": 5.460227,
+        "max_ms": 5.460227
+      },
+      "editor_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 13.562737777777778,
+        "p50_ms": 12.5229855,
+        "p95_ms": 19.687622,
+        "p99_ms": 19.687622,
+        "max_ms": 19.687622
+      },
+      "candidate_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 40.99700572222222,
+        "p50_ms": 35.0859035,
+        "p95_ms": 79.13882,
+        "p99_ms": 79.13882,
+        "max_ms": 79.13882
+      },
+      "pressed_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 19.901945055555554,
+        "p50_ms": 19.966424,
+        "p95_ms": 29.263142,
+        "p99_ms": 29.263142,
+        "max_ms": 29.263142
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 19.755708,
+        "p50_ms": 19.890253,
+        "p95_ms": 20.12908,
+        "p99_ms": 20.12908,
+        "max_ms": 20.12908
+      },
+      "injected_key_interval": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 148.83333333333334,
+        "p50_ms": 152.0,
+        "p95_ms": 156.0,
+        "p99_ms": 156.0,
+        "max_ms": 156.0
+      },
+      "candidate_deadline": {
+        "letters": 18,
+        "submitted_before_next_up": 18,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/mixed/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "mixed",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 6,
+        "observed": 6,
+        "unobserved": 0,
+        "mean_ms": 4.2745386666666665,
+        "p50_ms": 4.1962399999999995,
+        "p95_ms": 4.952724,
+        "p99_ms": 4.952724,
+        "max_ms": 4.952724
+      },
+      "editor_submission": {
+        "n": 6,
+        "observed": 6,
+        "unobserved": 0,
+        "mean_ms": 16.383462333333334,
+        "p50_ms": 17.282360500000003,
+        "p95_ms": 20.265849,
+        "p99_ms": 20.265849,
+        "max_ms": 20.265849
+      },
+      "candidate_submission": {
+        "n": 6,
+        "observed": 6,
+        "unobserved": 0,
+        "mean_ms": 55.504703500000005,
+        "p50_ms": 56.2679855,
+        "p95_ms": 69.497984,
+        "p99_ms": 69.497984,
+        "max_ms": 69.497984
+      },
+      "pressed_submission": {
+        "n": 6,
+        "observed": 6,
+        "unobserved": 0,
+        "mean_ms": 24.011552833333333,
+        "p50_ms": 23.2468655,
+        "p95_ms": 35.183974,
+        "p99_ms": 35.183974,
+        "max_ms": 35.183974
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 19.26946925,
+        "p50_ms": 19.353817999999997,
+        "p95_ms": 19.455797,
+        "p99_ms": 19.455797,
+        "max_ms": 19.455797
+      },
+      "injected_key_interval": {
+        "n": 6,
+        "observed": 6,
+        "unobserved": 0,
+        "mean_ms": 147.16666666666666,
+        "p50_ms": 147.5,
+        "p95_ms": 153.0,
+        "p99_ms": 153.0,
+        "max_ms": 153.0
+      },
+      "candidate_deadline": {
+        "letters": 6,
+        "submitted_before_next_up": 6,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/neighbor/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "neighbor",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 25,
+        "observed": 25,
+        "unobserved": 0,
+        "mean_ms": 4.29157872,
+        "p50_ms": 4.254857,
+        "p95_ms": 5.709701,
+        "p99_ms": 6.998294,
+        "max_ms": 6.998294
+      },
+      "editor_submission": {
+        "n": 25,
+        "observed": 25,
+        "unobserved": 0,
+        "mean_ms": 12.60598088,
+        "p50_ms": 11.317879,
+        "p95_ms": 16.909701,
+        "p99_ms": 20.090328,
+        "max_ms": 20.090328
+      },
+      "candidate_submission": {
+        "n": 25,
+        "observed": 24,
+        "unobserved": 1,
+        "mean_ms": 35.686752625,
+        "p50_ms": 34.2150665,
+        "p95_ms": 58.202618,
+        "p99_ms": 60.034026,
+        "max_ms": 60.034026
+      },
+      "pressed_submission": {
+        "n": 25,
+        "observed": 25,
+        "unobserved": 0,
+        "mean_ms": 21.0673434,
+        "p50_ms": 20.180222,
+        "p95_ms": 28.362776,
+        "p99_ms": 32.878191,
+        "max_ms": 32.878191
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 19.5728395,
+        "p50_ms": 18.7142065,
+        "p95_ms": 23.110379,
+        "p99_ms": 23.110379,
+        "max_ms": 23.110379
+      },
+      "injected_key_interval": {
+        "n": 25,
+        "observed": 25,
+        "unobserved": 0,
+        "mean_ms": 150.0,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 25,
+        "submitted_before_next_up": 24,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/omission/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "omission",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 4.393554527777778,
+        "p50_ms": 4.3337615,
+        "p95_ms": 5.742096,
+        "p99_ms": 5.789647,
+        "max_ms": 5.789647
+      },
+      "editor_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 12.225961972222223,
+        "p50_ms": 11.672564000000001,
+        "p95_ms": 17.659544,
+        "p99_ms": 20.868552,
+        "max_ms": 20.868552
+      },
+      "candidate_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 34.253001805555556,
+        "p50_ms": 33.347278,
+        "p95_ms": 59.959282,
+        "p99_ms": 63.628916,
+        "max_ms": 63.628916
+      },
+      "pressed_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 21.821763444444443,
+        "p50_ms": 21.313631,
+        "p95_ms": 31.333553,
+        "p99_ms": 31.778553,
+        "max_ms": 31.778553
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 21.4003105,
+        "p50_ms": 21.916938000000002,
+        "p95_ms": 22.608189,
+        "p99_ms": 22.608189,
+        "max_ms": 22.608189
+      },
+      "injected_key_interval": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 150.02777777777777,
+        "p50_ms": 152.0,
+        "p95_ms": 156.0,
+        "p99_ms": 156.0,
+        "max_ms": 156.0
+      },
+      "candidate_deadline": {
+        "letters": 36,
+        "submitted_before_next_up": 36,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/transpose/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "transpose",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 4.3701,
+        "p50_ms": 4.084462,
+        "p95_ms": 6.503185,
+        "p99_ms": 6.503185,
+        "max_ms": 6.503185
+      },
+      "editor_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 13.095813,
+        "p50_ms": 12.149723,
+        "p95_ms": 18.850269,
+        "p99_ms": 18.850269,
+        "max_ms": 18.850269
+      },
+      "candidate_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 41.8485505625,
+        "p50_ms": 40.20466999999999,
+        "p95_ms": 72.086936,
+        "p99_ms": 72.086936,
+        "max_ms": 72.086936
+      },
+      "pressed_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 21.8895825,
+        "p50_ms": 20.727196,
+        "p95_ms": 31.940165,
+        "p99_ms": 31.940165,
+        "max_ms": 31.940165
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 21.001389,
+        "p50_ms": 20.5602695,
+        "p95_ms": 23.656675,
+        "p99_ms": 23.656675,
+        "max_ms": 23.656675
+      },
+      "injected_key_interval": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 149.875,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 16,
+        "submitted_before_next_up": 16,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/full/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "full",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 62,
+        "observed": 62,
+        "unobserved": 0,
+        "mean_ms": 4.252999661290323,
+        "p50_ms": 4.1933395,
+        "p95_ms": 5.617817,
+        "p99_ms": 5.909849,
+        "max_ms": 5.909849
+      },
+      "editor_submission": {
+        "n": 62,
+        "observed": 62,
+        "unobserved": 0,
+        "mean_ms": 11.883652403225806,
+        "p50_ms": 11.4140665,
+        "p95_ms": 16.243181,
+        "p99_ms": 17.623859,
+        "max_ms": 17.623859
+      },
+      "candidate_submission": {
+        "n": 62,
+        "observed": 62,
+        "unobserved": 0,
+        "mean_ms": 34.63272740322581,
+        "p50_ms": 32.417844,
+        "p95_ms": 53.047296,
+        "p99_ms": 76.820421,
+        "max_ms": 76.820421
+      },
+      "pressed_submission": {
+        "n": 62,
+        "observed": 62,
+        "unobserved": 0,
+        "mean_ms": 19.335108177419354,
+        "p50_ms": 18.664692000000002,
+        "p95_ms": 28.514537,
+        "p99_ms": 30.729587,
+        "max_ms": 30.729587
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 17.43960125,
+        "p50_ms": 17.3244575,
+        "p95_ms": 19.024171,
+        "p99_ms": 19.024171,
+        "max_ms": 19.024171
+      },
+      "injected_key_interval": {
+        "n": 62,
+        "observed": 62,
+        "unobserved": 0,
+        "mean_ms": 150.17741935483872,
+        "p50_ms": 152.0,
+        "p95_ms": 155.0,
+        "p99_ms": 156.0,
+        "max_ms": 156.0
+      },
+      "candidate_deadline": {
+        "letters": 62,
+        "submitted_before_next_up": 62,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/half/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "half",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 39,
+        "observed": 39,
+        "unobserved": 0,
+        "mean_ms": 4.094602153846154,
+        "p50_ms": 4.093647,
+        "p95_ms": 5.191354,
+        "p99_ms": 5.330522,
+        "max_ms": 5.330522
+      },
+      "editor_submission": {
+        "n": 39,
+        "observed": 39,
+        "unobserved": 0,
+        "mean_ms": 12.214775641025641,
+        "p50_ms": 11.675054,
+        "p95_ms": 18.570993,
+        "p99_ms": 19.003023,
+        "max_ms": 19.003023
+      },
+      "candidate_submission": {
+        "n": 39,
+        "observed": 39,
+        "unobserved": 0,
+        "mean_ms": 37.31050082051282,
+        "p50_ms": 33.379583,
+        "p95_ms": 69.506774,
+        "p99_ms": 78.272241,
+        "max_ms": 78.272241
+      },
+      "pressed_submission": {
+        "n": 39,
+        "observed": 39,
+        "unobserved": 0,
+        "mean_ms": 21.026095128205128,
+        "p50_ms": 20.509376,
+        "p95_ms": 29.854479,
+        "p99_ms": 29.882553,
+        "max_ms": 29.882553
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 19.27225425,
+        "p50_ms": 18.610028,
+        "p95_ms": 21.609219,
+        "p99_ms": 21.609219,
+        "max_ms": 21.609219
+      },
+      "injected_key_interval": {
+        "n": 39,
+        "observed": 39,
+        "unobserved": 0,
+        "mean_ms": 149.94871794871796,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 39,
+        "submitted_before_next_up": 39,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/initials/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "initials",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 4.345194375,
+        "p50_ms": 4.3376815,
+        "p95_ms": 5.287604,
+        "p99_ms": 5.287604,
+        "max_ms": 5.287604
+      },
+      "editor_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 13.833556875,
+        "p50_ms": 12.878983999999999,
+        "p95_ms": 21.461457,
+        "p99_ms": 21.461457,
+        "max_ms": 21.461457
+      },
+      "candidate_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 41.4453049375,
+        "p50_ms": 35.7344265,
+        "p95_ms": 77.434218,
+        "p99_ms": 77.434218,
+        "max_ms": 77.434218
+      },
+      "pressed_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 21.5111025625,
+        "p50_ms": 20.3358065,
+        "p95_ms": 33.632342,
+        "p99_ms": 33.632342,
+        "max_ms": 33.632342
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 21.65661325,
+        "p50_ms": 21.542759500000003,
+        "p95_ms": 24.888175,
+        "p99_ms": 24.888175,
+        "max_ms": 24.888175
+      },
+      "injected_key_interval": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 148.0,
+        "p50_ms": 151.5,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 16,
+        "submitted_before_next_up": 16,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/mixed/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "mixed",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 4.275406408163265,
+        "p50_ms": 4.230932,
+        "p95_ms": 5.546453,
+        "p99_ms": 5.75213,
+        "max_ms": 5.75213
+      },
+      "editor_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 12.061550102040817,
+        "p50_ms": 11.476194,
+        "p95_ms": 18.51208,
+        "p99_ms": 19.307288,
+        "max_ms": 19.307288
+      },
+      "candidate_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 33.10570818367347,
+        "p50_ms": 28.465881,
+        "p95_ms": 53.031505,
+        "p99_ms": 69.449111,
+        "max_ms": 69.449111
+      },
+      "pressed_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 19.702291020408165,
+        "p50_ms": 19.033382,
+        "p95_ms": 29.225466,
+        "p99_ms": 30.519737,
+        "max_ms": 30.519737
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 21.22506075,
+        "p50_ms": 19.199345,
+        "p95_ms": 27.654684,
+        "p99_ms": 27.654684,
+        "max_ms": 27.654684
+      },
+      "injected_key_interval": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 150.46938775510205,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 49,
+        "submitted_before_next_up": 49,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/neighbor/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "neighbor",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 52,
+        "observed": 52,
+        "unobserved": 0,
+        "mean_ms": 4.337693365384616,
+        "p50_ms": 4.2900955,
+        "p95_ms": 5.484835,
+        "p99_ms": 5.654575,
+        "max_ms": 5.654575
+      },
+      "editor_submission": {
+        "n": 52,
+        "observed": 52,
+        "unobserved": 0,
+        "mean_ms": 12.263940384615385,
+        "p50_ms": 11.6055655,
+        "p95_ms": 18.183847,
+        "p99_ms": 18.838117,
+        "max_ms": 18.838117
+      },
+      "candidate_submission": {
+        "n": 52,
+        "observed": 52,
+        "unobserved": 0,
+        "mean_ms": 35.72044382692307,
+        "p50_ms": 34.211321,
+        "p95_ms": 57.365408,
+        "p99_ms": 78.181294,
+        "max_ms": 78.181294
+      },
+      "pressed_submission": {
+        "n": 52,
+        "observed": 52,
+        "unobserved": 0,
+        "mean_ms": 19.65316217307692,
+        "p50_ms": 18.7794455,
+        "p95_ms": 29.618064,
+        "p99_ms": 30.923014,
+        "max_ms": 30.923014
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 20.384314500000002,
+        "p50_ms": 19.6121525,
+        "p95_ms": 23.798012,
+        "p99_ms": 23.798012,
+        "max_ms": 23.798012
+      },
+      "injected_key_interval": {
+        "n": 52,
+        "observed": 52,
+        "unobserved": 0,
+        "mean_ms": 150.0,
+        "p50_ms": 152.0,
+        "p95_ms": 155.0,
+        "p99_ms": 156.0,
+        "max_ms": 156.0
+      },
+      "candidate_deadline": {
+        "letters": 52,
+        "submitted_before_next_up": 52,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/omission/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "omission",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 4.47284171875,
+        "p50_ms": 4.5279834999999995,
+        "p95_ms": 5.733479,
+        "p99_ms": 6.041915,
+        "max_ms": 6.041915
+      },
+      "editor_submission": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 13.169444875,
+        "p50_ms": 12.2777755,
+        "p95_ms": 18.513791,
+        "p99_ms": 20.425146,
+        "max_ms": 20.425146
+      },
+      "candidate_submission": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 38.84820459375,
+        "p50_ms": 35.449780000000004,
+        "p95_ms": 61.416917,
+        "p99_ms": 78.701917,
+        "max_ms": 78.701917
+      },
+      "pressed_submission": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 21.40073896875,
+        "p50_ms": 20.315509499999997,
+        "p95_ms": 30.254832,
+        "p99_ms": 31.467384,
+        "max_ms": 31.467384
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.610353250000003,
+        "p50_ms": 20.3733735,
+        "p95_ms": 29.838166,
+        "p99_ms": 29.838166,
+        "max_ms": 29.838166
+      },
+      "injected_key_interval": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 149.625,
+        "p50_ms": 152.0,
+        "p95_ms": 155.0,
+        "p99_ms": 157.0,
+        "max_ms": 157.0
+      },
+      "candidate_deadline": {
+        "letters": 32,
+        "submitted_before_next_up": 32,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/transpose/150": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "transpose",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 4.254124183673469,
+        "p50_ms": 4.212642,
+        "p95_ms": 5.393997,
+        "p99_ms": 5.895767,
+        "max_ms": 5.895767
+      },
+      "editor_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 12.223746857142856,
+        "p50_ms": 11.860403,
+        "p95_ms": 17.273839,
+        "p99_ms": 19.436912,
+        "max_ms": 19.436912
+      },
+      "candidate_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 36.33779981632653,
+        "p50_ms": 34.095557,
+        "p95_ms": 60.920612,
+        "p99_ms": 72.028214,
+        "max_ms": 72.028214
+      },
+      "pressed_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 20.884093346938776,
+        "p50_ms": 19.678058,
+        "p95_ms": 29.735713,
+        "p99_ms": 32.177276,
+        "max_ms": 32.177276
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 18.3922505,
+        "p50_ms": 18.4811035,
+        "p95_ms": 21.111808,
+        "p99_ms": 21.111808,
+        "max_ms": 21.111808
+      },
+      "injected_key_interval": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 149.75510204081633,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 49,
+        "submitted_before_next_up": 49,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/full/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "full",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 4.017082419354839,
+        "p50_ms": 4.111336,
+        "p95_ms": 4.977117,
+        "p99_ms": 5.040451,
+        "max_ms": 5.040451
+      },
+      "editor_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 12.829204419354838,
+        "p50_ms": 11.828993,
+        "p95_ms": 20.153941,
+        "p99_ms": 20.695139,
+        "max_ms": 20.695139
+      },
+      "candidate_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 36.10760329032258,
+        "p50_ms": 31.942587,
+        "p95_ms": 57.959253,
+        "p99_ms": 59.971336,
+        "max_ms": 59.971336
+      },
+      "pressed_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 25.446775,
+        "p50_ms": 24.206076,
+        "p95_ms": 38.675919,
+        "p99_ms": 47.817222,
+        "max_ms": 47.817222
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 17.2561415,
+        "p50_ms": 17.0061545,
+        "p95_ms": 19.684461,
+        "p99_ms": 19.684461,
+        "max_ms": 19.684461
+      },
+      "injected_key_interval": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 61.03225806451613,
+        "p50_ms": 63.0,
+        "p95_ms": 79.0,
+        "p99_ms": 83.0,
+        "max_ms": 83.0
+      },
+      "candidate_deadline": {
+        "letters": 31,
+        "submitted_before_next_up": 29,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/half/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "half",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 3.7710355,
+        "p50_ms": 3.777142,
+        "p95_ms": 5.031023,
+        "p99_ms": 5.031023,
+        "max_ms": 5.031023
+      },
+      "editor_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 13.293529,
+        "p50_ms": 12.8436265,
+        "p95_ms": 18.27123,
+        "p99_ms": 18.27123,
+        "max_ms": 18.27123
+      },
+      "candidate_submission": {
+        "n": 16,
+        "observed": 15,
+        "unobserved": 1,
+        "mean_ms": 40.43334206666667,
+        "p50_ms": 37.992116,
+        "p95_ms": 62.679251,
+        "p99_ms": 62.679251,
+        "max_ms": 62.679251
+      },
+      "pressed_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 26.411185375,
+        "p50_ms": 25.157194,
+        "p95_ms": 40.948679,
+        "p99_ms": 40.948679,
+        "max_ms": 40.948679
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 16.7790045,
+        "p50_ms": 16.839928999999998,
+        "p95_ms": 17.923002,
+        "p99_ms": 17.923002,
+        "max_ms": 17.923002
+      },
+      "injected_key_interval": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 61.0625,
+        "p50_ms": 63.0,
+        "p95_ms": 74.0,
+        "p99_ms": 74.0,
+        "max_ms": 74.0
+      },
+      "candidate_deadline": {
+        "letters": 16,
+        "submitted_before_next_up": 13,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/initials/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "initials",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 3.9396873333333335,
+        "p50_ms": 3.9692245,
+        "p95_ms": 5.175917,
+        "p99_ms": 5.175917,
+        "max_ms": 5.175917
+      },
+      "editor_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 13.629091444444445,
+        "p50_ms": 13.097219500000001,
+        "p95_ms": 20.592427,
+        "p99_ms": 20.592427,
+        "max_ms": 20.592427
+      },
+      "candidate_submission": {
+        "n": 18,
+        "observed": 17,
+        "unobserved": 1,
+        "mean_ms": 38.26306176470588,
+        "p50_ms": 32.843418,
+        "p95_ms": 66.729771,
+        "p99_ms": 66.729771,
+        "max_ms": 66.729771
+      },
+      "pressed_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 26.011278833333332,
+        "p50_ms": 24.502948500000002,
+        "p95_ms": 47.176802,
+        "p99_ms": 47.176802,
+        "max_ms": 47.176802
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 17.11736225,
+        "p50_ms": 17.599485,
+        "p95_ms": 21.03951,
+        "p99_ms": 21.03951,
+        "max_ms": 21.03951
+      },
+      "injected_key_interval": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 60.94444444444444,
+        "p50_ms": 62.5,
+        "p95_ms": 81.0,
+        "p99_ms": 81.0,
+        "max_ms": 81.0
+      },
+      "candidate_deadline": {
+        "letters": 18,
+        "submitted_before_next_up": 15,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/mixed/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "mixed",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 6,
+        "observed": 6,
+        "unobserved": 0,
+        "mean_ms": 3.6383898333333335,
+        "p50_ms": 3.3394575,
+        "p95_ms": 4.750187,
+        "p99_ms": 4.750187,
+        "max_ms": 4.750187
+      },
+      "editor_submission": {
+        "n": 6,
+        "observed": 6,
+        "unobserved": 0,
+        "mean_ms": 14.9294575,
+        "p50_ms": 15.1743015,
+        "p95_ms": 19.32753,
+        "p99_ms": 19.32753,
+        "max_ms": 19.32753
+      },
+      "candidate_submission": {
+        "n": 6,
+        "observed": 6,
+        "unobserved": 0,
+        "mean_ms": 53.389553,
+        "p50_ms": 53.432218000000006,
+        "p95_ms": 59.037322,
+        "p99_ms": 59.037322,
+        "max_ms": 59.037322
+      },
+      "pressed_submission": {
+        "n": 6,
+        "observed": 6,
+        "unobserved": 0,
+        "mean_ms": 25.845829333333334,
+        "p50_ms": 22.9713585,
+        "p95_ms": 36.03701,
+        "p99_ms": 36.03701,
+        "max_ms": 36.03701
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 16.344601,
+        "p50_ms": 16.4498225,
+        "p95_ms": 18.625551,
+        "p99_ms": 18.625551,
+        "max_ms": 18.625551
+      },
+      "injected_key_interval": {
+        "n": 6,
+        "observed": 6,
+        "unobserved": 0,
+        "mean_ms": 60.833333333333336,
+        "p50_ms": 62.0,
+        "p95_ms": 69.0,
+        "p99_ms": 69.0,
+        "max_ms": 69.0
+      },
+      "candidate_deadline": {
+        "letters": 6,
+        "submitted_before_next_up": 5,
+        "observed_submission_at_or_after_next_up": 1,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/neighbor/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "neighbor",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 25,
+        "observed": 25,
+        "unobserved": 0,
+        "mean_ms": 3.82470632,
+        "p50_ms": 3.625967,
+        "p95_ms": 5.541071,
+        "p99_ms": 5.766644,
+        "max_ms": 5.766644
+      },
+      "editor_submission": {
+        "n": 25,
+        "observed": 25,
+        "unobserved": 0,
+        "mean_ms": 13.06988552,
+        "p50_ms": 12.804509,
+        "p95_ms": 17.760133,
+        "p99_ms": 19.752999,
+        "max_ms": 19.752999
+      },
+      "candidate_submission": {
+        "n": 25,
+        "observed": 25,
+        "unobserved": 0,
+        "mean_ms": 37.60302708,
+        "p50_ms": 35.468622,
+        "p95_ms": 55.94982,
+        "p99_ms": 67.939353,
+        "max_ms": 67.939353
+      },
+      "pressed_submission": {
+        "n": 25,
+        "observed": 25,
+        "unobserved": 0,
+        "mean_ms": 27.81018768,
+        "p50_ms": 26.818884,
+        "p95_ms": 44.433728,
+        "p99_ms": 48.521436,
+        "max_ms": 48.521436
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 18.13732075,
+        "p50_ms": 17.7445345,
+        "p95_ms": 20.241383,
+        "p99_ms": 20.241383,
+        "max_ms": 20.241383
+      },
+      "injected_key_interval": {
+        "n": 25,
+        "observed": 25,
+        "unobserved": 0,
+        "mean_ms": 61.04,
+        "p50_ms": 62.0,
+        "p95_ms": 68.0,
+        "p99_ms": 68.0,
+        "max_ms": 68.0
+      },
+      "candidate_deadline": {
+        "letters": 25,
+        "submitted_before_next_up": 24,
+        "observed_submission_at_or_after_next_up": 1,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/omission/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "omission",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 3.9517580555555556,
+        "p50_ms": 3.8772675000000003,
+        "p95_ms": 5.438621,
+        "p99_ms": 5.620548,
+        "max_ms": 5.620548
+      },
+      "editor_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 12.457009777777778,
+        "p50_ms": 11.997736,
+        "p95_ms": 17.882737,
+        "p99_ms": 22.277736,
+        "max_ms": 22.277736
+      },
+      "candidate_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 33.62759425,
+        "p50_ms": 31.066694,
+        "p95_ms": 55.40383,
+        "p99_ms": 57.542111,
+        "max_ms": 57.542111
+      },
+      "pressed_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 24.765246166666667,
+        "p50_ms": 23.137814,
+        "p95_ms": 37.263517,
+        "p99_ms": 43.503101,
+        "max_ms": 43.503101
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 19.693556,
+        "p50_ms": 18.629168,
+        "p95_ms": 23.57258,
+        "p99_ms": 23.57258,
+        "max_ms": 23.57258
+      },
+      "injected_key_interval": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 61.138888888888886,
+        "p50_ms": 62.0,
+        "p95_ms": 69.0,
+        "p99_ms": 69.0,
+        "max_ms": 69.0
+      },
+      "candidate_deadline": {
+        "letters": 36,
+        "submitted_before_next_up": 36,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/suisiann-thousand/authored-situational-examples/transpose/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "suisiann-thousand",
+        "genre": "authored-situational-examples",
+        "condition": "transpose",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 3.8783594375,
+        "p50_ms": 3.925964,
+        "p95_ms": 5.993776,
+        "p99_ms": 5.993776,
+        "max_ms": 5.993776
+      },
+      "editor_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 13.806761125,
+        "p50_ms": 14.801120000000001,
+        "p95_ms": 18.067058,
+        "p99_ms": 18.067058,
+        "max_ms": 18.067058
+      },
+      "candidate_submission": {
+        "n": 16,
+        "observed": 15,
+        "unobserved": 1,
+        "mean_ms": 41.45272406666667,
+        "p50_ms": 38.456745,
+        "p95_ms": 59.557058,
+        "p99_ms": 59.557058,
+        "max_ms": 59.557058
+      },
+      "pressed_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 25.624710375,
+        "p50_ms": 24.42237,
+        "p95_ms": 36.115546,
+        "p99_ms": 36.115546,
+        "max_ms": 36.115546
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 17.61513,
+        "p50_ms": 17.021276,
+        "p95_ms": 20.99737,
+        "p99_ms": 20.99737,
+        "max_ms": 20.99737
+      },
+      "injected_key_interval": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 59.5625,
+        "p50_ms": 61.0,
+        "p95_ms": 73.0,
+        "p99_ms": 73.0,
+        "max_ms": 73.0
+      },
+      "candidate_deadline": {
+        "letters": 16,
+        "submitted_before_next_up": 15,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/full/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "full",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 62,
+        "observed": 62,
+        "unobserved": 0,
+        "mean_ms": 4.033238419354839,
+        "p50_ms": 3.946847,
+        "p95_ms": 5.880962,
+        "p99_ms": 6.661431,
+        "max_ms": 6.661431
+      },
+      "editor_submission": {
+        "n": 62,
+        "observed": 62,
+        "unobserved": 0,
+        "mean_ms": 12.397785629032258,
+        "p50_ms": 11.827316,
+        "p95_ms": 17.314295,
+        "p99_ms": 18.691742,
+        "max_ms": 18.691742
+      },
+      "candidate_submission": {
+        "n": 62,
+        "observed": 61,
+        "unobserved": 1,
+        "mean_ms": 33.77714444262295,
+        "p50_ms": 31.320649,
+        "p95_ms": 55.732108,
+        "p99_ms": 69.533045,
+        "max_ms": 69.533045
+      },
+      "pressed_submission": {
+        "n": 62,
+        "observed": 62,
+        "unobserved": 0,
+        "mean_ms": 25.73136093548387,
+        "p50_ms": 23.302315999999998,
+        "p95_ms": 41.12643,
+        "p99_ms": 43.939504,
+        "max_ms": 43.939504
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 17.645089,
+        "p50_ms": 17.3221855,
+        "p95_ms": 19.052733,
+        "p99_ms": 19.052733,
+        "max_ms": 19.052733
+      },
+      "injected_key_interval": {
+        "n": 62,
+        "observed": 62,
+        "unobserved": 0,
+        "mean_ms": 60.516129032258064,
+        "p50_ms": 63.0,
+        "p95_ms": 70.0,
+        "p99_ms": 72.0,
+        "max_ms": 72.0
+      },
+      "candidate_deadline": {
+        "letters": 62,
+        "submitted_before_next_up": 59,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/half/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "half",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 39,
+        "observed": 39,
+        "unobserved": 0,
+        "mean_ms": 3.892811846153846,
+        "p50_ms": 3.670178,
+        "p95_ms": 5.213303,
+        "p99_ms": 8.829345,
+        "max_ms": 8.829345
+      },
+      "editor_submission": {
+        "n": 39,
+        "observed": 39,
+        "unobserved": 0,
+        "mean_ms": 12.734996692307693,
+        "p50_ms": 12.486115,
+        "p95_ms": 17.869346,
+        "p99_ms": 19.743772,
+        "max_ms": 19.743772
+      },
+      "candidate_submission": {
+        "n": 39,
+        "observed": 38,
+        "unobserved": 1,
+        "mean_ms": 37.292273868421056,
+        "p50_ms": 31.8267145,
+        "p95_ms": 71.382835,
+        "p99_ms": 79.813616,
+        "max_ms": 79.813616
+      },
+      "pressed_submission": {
+        "n": 39,
+        "observed": 39,
+        "unobserved": 0,
+        "mean_ms": 26.504327666666665,
+        "p50_ms": 26.597106,
+        "p95_ms": 39.005126,
+        "p99_ms": 42.690074,
+        "max_ms": 42.690074
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 17.01710575,
+        "p50_ms": 17.081559,
+        "p95_ms": 17.510855,
+        "p99_ms": 17.510855,
+        "max_ms": 17.510855
+      },
+      "injected_key_interval": {
+        "n": 39,
+        "observed": 39,
+        "unobserved": 0,
+        "mean_ms": 60.717948717948715,
+        "p50_ms": 63.0,
+        "p95_ms": 71.0,
+        "p99_ms": 71.0,
+        "max_ms": 71.0
+      },
+      "candidate_deadline": {
+        "letters": 39,
+        "submitted_before_next_up": 35,
+        "observed_submission_at_or_after_next_up": 3,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/initials/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "initials",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 3.6230579375,
+        "p50_ms": 3.6233285000000004,
+        "p95_ms": 6.119657,
+        "p99_ms": 6.119657,
+        "max_ms": 6.119657
+      },
+      "editor_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 13.3467393125,
+        "p50_ms": 12.831270499999999,
+        "p95_ms": 22.012677,
+        "p99_ms": 22.012677,
+        "max_ms": 22.012677
+      },
+      "candidate_submission": {
+        "n": 16,
+        "observed": 15,
+        "unobserved": 1,
+        "mean_ms": 38.126541599999996,
+        "p50_ms": 30.594396,
+        "p95_ms": 70.33299,
+        "p99_ms": 70.33299,
+        "max_ms": 70.33299
+      },
+      "pressed_submission": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 24.4926379375,
+        "p50_ms": 23.193875,
+        "p95_ms": 34.275333,
+        "p99_ms": 34.275333,
+        "max_ms": 34.275333
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 17.4798385,
+        "p50_ms": 17.3822865,
+        "p95_ms": 19.613927,
+        "p99_ms": 19.613927,
+        "max_ms": 19.613927
+      },
+      "injected_key_interval": {
+        "n": 16,
+        "observed": 16,
+        "unobserved": 0,
+        "mean_ms": 60.375,
+        "p50_ms": 61.0,
+        "p95_ms": 72.0,
+        "p99_ms": 72.0,
+        "max_ms": 72.0
+      },
+      "candidate_deadline": {
+        "letters": 16,
+        "submitted_before_next_up": 14,
+        "observed_submission_at_or_after_next_up": 1,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/mixed/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "mixed",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 3.9354145102040814,
+        "p50_ms": 3.994081,
+        "p95_ms": 4.904706,
+        "p99_ms": 5.056218,
+        "max_ms": 5.056218
+      },
+      "editor_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 12.262465857142857,
+        "p50_ms": 11.817936,
+        "p95_ms": 16.748821,
+        "p99_ms": 19.134654,
+        "max_ms": 19.134654
+      },
+      "candidate_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 34.137977163265305,
+        "p50_ms": 31.453874,
+        "p95_ms": 57.689289,
+        "p99_ms": 68.41705,
+        "max_ms": 68.41705
+      },
+      "pressed_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 27.30499130612245,
+        "p50_ms": 28.146633,
+        "p95_ms": 38.74382,
+        "p99_ms": 40.448665,
+        "max_ms": 40.448665
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 20.854680249999998,
+        "p50_ms": 20.244237499999997,
+        "p95_ms": 25.974133,
+        "p99_ms": 25.974133,
+        "max_ms": 25.974133
+      },
+      "injected_key_interval": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 60.714285714285715,
+        "p50_ms": 65.0,
+        "p95_ms": 70.0,
+        "p99_ms": 72.0,
+        "max_ms": 72.0
+      },
+      "candidate_deadline": {
+        "letters": 49,
+        "submitted_before_next_up": 48,
+        "observed_submission_at_or_after_next_up": 1,
+        "unobserved": 0
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/neighbor/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "neighbor",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 52,
+        "observed": 52,
+        "unobserved": 0,
+        "mean_ms": 3.949500076923077,
+        "p50_ms": 3.8047825,
+        "p95_ms": 5.556528,
+        "p99_ms": 6.138403,
+        "max_ms": 6.138403
+      },
+      "editor_submission": {
+        "n": 52,
+        "observed": 52,
+        "unobserved": 0,
+        "mean_ms": 12.603438365384616,
+        "p50_ms": 12.11335,
+        "p95_ms": 17.510225,
+        "p99_ms": 18.963714,
+        "max_ms": 18.963714
+      },
+      "candidate_submission": {
+        "n": 52,
+        "observed": 51,
+        "unobserved": 1,
+        "mean_ms": 34.3016845882353,
+        "p50_ms": 31.833664,
+        "p95_ms": 59.231632,
+        "p99_ms": 62.084027,
+        "max_ms": 62.084027
+      },
+      "pressed_submission": {
+        "n": 52,
+        "observed": 52,
+        "unobserved": 0,
+        "mean_ms": 25.819319788461538,
+        "p50_ms": 24.2336375,
+        "p95_ms": 40.532881,
+        "p99_ms": 41.858506,
+        "max_ms": 41.858506
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 18.49543325,
+        "p50_ms": 18.718897,
+        "p95_ms": 20.434964,
+        "p99_ms": 20.434964,
+        "max_ms": 20.434964
+      },
+      "injected_key_interval": {
+        "n": 52,
+        "observed": 52,
+        "unobserved": 0,
+        "mean_ms": 60.5,
+        "p50_ms": 64.0,
+        "p95_ms": 71.0,
+        "p99_ms": 75.0,
+        "max_ms": 75.0
+      },
+      "candidate_deadline": {
+        "letters": 52,
+        "submitted_before_next_up": 50,
+        "observed_submission_at_or_after_next_up": 1,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/omission/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "omission",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 3.65660025,
+        "p50_ms": 3.647697,
+        "p95_ms": 5.025067,
+        "p99_ms": 5.332776,
+        "max_ms": 5.332776
+      },
+      "editor_submission": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 12.9466864375,
+        "p50_ms": 12.3573065,
+        "p95_ms": 18.640484,
+        "p99_ms": 19.394547,
+        "max_ms": 19.394547
+      },
+      "candidate_submission": {
+        "n": 32,
+        "observed": 31,
+        "unobserved": 1,
+        "mean_ms": 36.723786612903226,
+        "p50_ms": 33.075901,
+        "p95_ms": 56.623712,
+        "p99_ms": 58.719495,
+        "max_ms": 58.719495
+      },
+      "pressed_submission": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 27.5250751875,
+        "p50_ms": 26.5686605,
+        "p95_ms": 39.707984,
+        "p99_ms": 46.653869,
+        "max_ms": 46.653869
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 16.99427275,
+        "p50_ms": 17.639885,
+        "p95_ms": 19.633816,
+        "p99_ms": 19.633816,
+        "max_ms": 19.633816
+      },
+      "injected_key_interval": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 59.9375,
+        "p50_ms": 64.0,
+        "p95_ms": 70.0,
+        "p99_ms": 70.0,
+        "max_ms": 70.0
+      },
+      "candidate_deadline": {
+        "letters": 32,
+        "submitted_before_next_up": 29,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 1
+      }
+    },
+    "taiwanese_english/taiwanese-basic/historical-authored-examples/transpose/60": {
+      "labels": {
+        "mode": "taiwanese_english",
+        "source": "taiwanese-basic",
+        "genre": "historical-authored-examples",
+        "condition": "transpose",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 3.7703776530612245,
+        "p50_ms": 3.73116,
+        "p95_ms": 5.494597,
+        "p99_ms": 6.894441,
+        "max_ms": 6.894441
+      },
+      "editor_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 12.103958673469387,
+        "p50_ms": 12.028816,
+        "p95_ms": 16.666315,
+        "p99_ms": 18.418087,
+        "max_ms": 18.418087
+      },
+      "candidate_submission": {
+        "n": 49,
+        "observed": 47,
+        "unobserved": 2,
+        "mean_ms": 33.820334489361706,
+        "p50_ms": 31.132929,
+        "p95_ms": 51.847929,
+        "p99_ms": 57.890743,
+        "max_ms": 57.890743
+      },
+      "pressed_submission": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 25.39295,
+        "p50_ms": 23.476368,
+        "p95_ms": 39.766524,
+        "p99_ms": 43.547357,
+        "max_ms": 43.547357
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 19.705520999999997,
+        "p50_ms": 19.9406385,
+        "p95_ms": 20.729544,
+        "p99_ms": 20.729544,
+        "max_ms": 20.729544
+      },
+      "injected_key_interval": {
+        "n": 49,
+        "observed": 49,
+        "unobserved": 0,
+        "mean_ms": 60.51020408163265,
+        "p50_ms": 63.0,
+        "p95_ms": 70.0,
+        "p99_ms": 71.0,
+        "max_ms": 71.0
+      },
+      "candidate_deadline": {
+        "letters": 49,
+        "submitted_before_next_up": 46,
+        "observed_submission_at_or_after_next_up": 1,
+        "unobserved": 2
+      }
+    }
+  },
+  "limitations": [
+    "injected events, not physical digitizer latency",
+    "frame callback delivery, not display presentation",
+    "one session, small sample; no acceptance certification",
+    "same-process test editor, not Chrome",
+    "candidate metrics conditional on observing a fresh matching frame before the next action; unchanged rows and supersession are not distinguished",
+    "source conditions independently sampled; latency differences between conditions are not isolated error effects",
+    "four Space samples per source/condition/shard; p95/p99 equal the maximum, not stable tail estimates"
+  ],
+  "workload_validation": {
+    "mode": "taiwanese_english",
+    "shard": 0,
+    "queries_per_cadence": 56,
+    "actions": 1006,
+    "status": "exact action sequence matches frozen corpus"
+  }
+}

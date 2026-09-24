@@ -1,0 +1,3454 @@
+{
+  "scope": "Instrumented synthetic requests only. Schedule overshoot includes worker availability and timer dispatch. Main-queue includes Handler enqueue overhead. Do not add percentiles.",
+  "source_sha256": "b765a49759759b6e02e188fc44b8497b6a562670a54a1b6e9ebf602b32ece462",
+  "schedule_ms": 8,
+  "counts": {
+    "requests": 508,
+    "worker_started": 508,
+    "posted": 508,
+    "entered": 508,
+    "accepted": 508
+  },
+  "stages": {
+    "scheduled_wait": {
+      "observed": 508,
+      "mean_ms": 8.156352714566928,
+      "p50_ms": 8.1152605,
+      "p95_ms": 8.381042,
+      "p99_ms": 8.567135,
+      "max_ms": 9.798802
+    },
+    "schedule_deadline_overshoot": {
+      "observed": 508,
+      "mean_ms": 0.15635271456692915,
+      "p50_ms": 0.1152605,
+      "p95_ms": 0.381042,
+      "p99_ms": 0.567135,
+      "max_ms": 1.798802
+    },
+    "provider_work": {
+      "observed": 508,
+      "mean_ms": 0.832358031496063,
+      "p50_ms": 0.4970315,
+      "p95_ms": 2.128906,
+      "p99_ms": 3.984688,
+      "max_ms": 18.594844
+    },
+    "before_post": {
+      "observed": 508,
+      "mean_ms": 0.0023621850393700785,
+      "p50_ms": 0.002187,
+      "p95_ms": 0.003489,
+      "p99_ms": 0.005521,
+      "max_ms": 0.014479
+    },
+    "main_queue": {
+      "observed": 508,
+      "mean_ms": 10.571321864173228,
+      "p50_ms": 9.7113025,
+      "p95_ms": 21.473333,
+      "p99_ms": 25.054531,
+      "max_ms": 31.238021
+    },
+    "callback": {
+      "observed": 508,
+      "mean_ms": 3.407978696850394,
+      "p50_ms": 3.0235415,
+      "p95_ms": 6.521927,
+      "p99_ms": 8.873073,
+      "max_ms": 19.639011
+    },
+    "request_to_main": {
+      "observed": 508,
+      "mean_ms": 19.565360553149606,
+      "p50_ms": 18.3830725,
+      "p95_ms": 31.313906,
+      "p99_ms": 36.756562,
+      "max_ms": 50.778541
+    },
+    "request_to_finish": {
+      "observed": 508,
+      "mean_ms": 22.97333925,
+      "p50_ms": 21.3721095,
+      "p95_ms": 36.239375,
+      "p99_ms": 39.207969,
+      "max_ms": 70.417552
+    },
+    "accepted_scheduled_wait": {
+      "observed": 508,
+      "mean_ms": 8.156352714566928,
+      "p50_ms": 8.1152605,
+      "p95_ms": 8.381042,
+      "p99_ms": 8.567135,
+      "max_ms": 9.798802
+    },
+    "accepted_provider_work": {
+      "observed": 508,
+      "mean_ms": 0.832358031496063,
+      "p50_ms": 0.4970315,
+      "p95_ms": 2.128906,
+      "p99_ms": 3.984688,
+      "max_ms": 18.594844
+    },
+    "accepted_main_queue": {
+      "observed": 508,
+      "mean_ms": 10.571321864173228,
+      "p50_ms": 9.7113025,
+      "p95_ms": 21.473333,
+      "p99_ms": 25.054531,
+      "max_ms": 31.238021
+    },
+    "accepted_callback": {
+      "observed": 508,
+      "mean_ms": 3.407978696850394,
+      "p50_ms": 3.0235415,
+      "p95_ms": 6.521927,
+      "p99_ms": 8.873073,
+      "max_ms": 19.639011
+    }
+  },
+  "workload": {
+    "mode": "japanese_english",
+    "shard": 0,
+    "queries_per_cadence": 56,
+    "actions": 620,
+    "status": "exact action sequence matches frozen corpus"
+  },
+  "touch_sha256": "f0a9fec6d63e4a38584ddd41690cf3c5f8719a6ce6ea7f9ae5882043540ff0d8",
+  "corpus_sha256": "5c316cebea4ed88352a946fafe01fcda4e922c49a47b12783996a53ec1995f49",
+  "correlation": {
+    "requests_not_uniquely_attributed": 0,
+    "groups": {
+      "japanese_english/150": {
+        "attribution": {
+          "letters": 254,
+          "unique_request": 254
+        },
+        "counts": {
+          "requests": 254,
+          "worker_started": 254,
+          "posted": 254,
+          "entered": 254,
+          "accepted": 254
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 254,
+            "mean_ms": 8.15649072047244,
+            "p50_ms": 8.1146095,
+            "p95_ms": 8.371302,
+            "p99_ms": 8.738907,
+            "max_ms": 9.798802
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 254,
+            "mean_ms": 0.15649072047244095,
+            "p50_ms": 0.1146095,
+            "p95_ms": 0.371302,
+            "p99_ms": 0.738907,
+            "max_ms": 1.798802
+          },
+          "provider_work": {
+            "observed": 254,
+            "mean_ms": 1.01645918503937,
+            "p50_ms": 0.5263545000000001,
+            "p95_ms": 2.619635,
+            "p99_ms": 7.264011,
+            "max_ms": 18.594844
+          },
+          "before_post": {
+            "observed": 254,
+            "mean_ms": 0.002113488188976378,
+            "p50_ms": 0.001979,
+            "p95_ms": 0.003021,
+            "p99_ms": 0.005781,
+            "max_ms": 0.006823
+          },
+          "main_queue": {
+            "observed": 254,
+            "mean_ms": 10.395589488188977,
+            "p50_ms": 9.3372915,
+            "p95_ms": 20.992604,
+            "p99_ms": 23.477552,
+            "max_ms": 31.238021
+          },
+          "callback": {
+            "observed": 254,
+            "mean_ms": 3.6680126417322834,
+            "p50_ms": 3.1003385000000003,
+            "p95_ms": 6.772657,
+            "p99_ms": 11.937448,
+            "max_ms": 19.639011
+          },
+          "request_to_main": {
+            "observed": 254,
+            "mean_ms": 19.573659956692914,
+            "p50_ms": 18.140494500000003,
+            "p95_ms": 30.889791,
+            "p99_ms": 33.653073,
+            "max_ms": 50.778541
+          },
+          "request_to_finish": {
+            "observed": 254,
+            "mean_ms": 23.241672598425197,
+            "p50_ms": 21.3375,
+            "p95_ms": 36.176197,
+            "p99_ms": 38.705469,
+            "max_ms": 70.417552
+          },
+          "accepted_scheduled_wait": {
+            "observed": 254,
+            "mean_ms": 8.15649072047244,
+            "p50_ms": 8.1146095,
+            "p95_ms": 8.371302,
+            "p99_ms": 8.738907,
+            "max_ms": 9.798802
+          },
+          "accepted_provider_work": {
+            "observed": 254,
+            "mean_ms": 1.01645918503937,
+            "p50_ms": 0.5263545000000001,
+            "p95_ms": 2.619635,
+            "p99_ms": 7.264011,
+            "max_ms": 18.594844
+          },
+          "accepted_main_queue": {
+            "observed": 254,
+            "mean_ms": 10.395589488188977,
+            "p50_ms": 9.3372915,
+            "p95_ms": 20.992604,
+            "p99_ms": 23.477552,
+            "max_ms": 31.238021
+          },
+          "accepted_callback": {
+            "observed": 254,
+            "mean_ms": 3.6680126417322834,
+            "p50_ms": 3.1003385000000003,
+            "p95_ms": 6.772657,
+            "p99_ms": 11.937448,
+            "max_ms": 19.639011
+          }
+        }
+      },
+      "japanese_english/150/asdc/service-roleplay/full": {
+        "attribution": {
+          "letters": 18,
+          "unique_request": 18
+        },
+        "counts": {
+          "requests": 18,
+          "worker_started": 18,
+          "posted": 18,
+          "entered": 18,
+          "accepted": 18
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 18,
+            "mean_ms": 8.21248861111111,
+            "p50_ms": 8.124297,
+            "p95_ms": 8.750313,
+            "p99_ms": 8.750313,
+            "max_ms": 8.750313
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 18,
+            "mean_ms": 0.21248861111111111,
+            "p50_ms": 0.12429699999999999,
+            "p95_ms": 0.750313,
+            "p99_ms": 0.750313,
+            "max_ms": 0.750313
+          },
+          "provider_work": {
+            "observed": 18,
+            "mean_ms": 2.9540248888888887,
+            "p50_ms": 1.5029165,
+            "p95_ms": 18.594844,
+            "p99_ms": 18.594844,
+            "max_ms": 18.594844
+          },
+          "before_post": {
+            "observed": 18,
+            "mean_ms": 0.002757388888888889,
+            "p50_ms": 0.002161,
+            "p95_ms": 0.006823,
+            "p99_ms": 0.006823,
+            "max_ms": 0.006823
+          },
+          "main_queue": {
+            "observed": 18,
+            "mean_ms": 6.917193277777778,
+            "p50_ms": 6.1428645,
+            "p95_ms": 23.422552,
+            "p99_ms": 23.422552,
+            "max_ms": 23.422552
+          },
+          "callback": {
+            "observed": 18,
+            "mean_ms": 6.506707277777778,
+            "p50_ms": 6.2353905,
+            "p95_ms": 19.639011,
+            "p99_ms": 19.639011,
+            "max_ms": 19.639011
+          },
+          "request_to_main": {
+            "observed": 18,
+            "mean_ms": 18.088480722222222,
+            "p50_ms": 16.1309895,
+            "p95_ms": 50.778541,
+            "p99_ms": 50.778541,
+            "max_ms": 50.778541
+          },
+          "request_to_finish": {
+            "observed": 18,
+            "mean_ms": 24.595188,
+            "p50_ms": 21.849818,
+            "p95_ms": 70.417552,
+            "p99_ms": 70.417552,
+            "max_ms": 70.417552
+          },
+          "accepted_scheduled_wait": {
+            "observed": 18,
+            "mean_ms": 8.21248861111111,
+            "p50_ms": 8.124297,
+            "p95_ms": 8.750313,
+            "p99_ms": 8.750313,
+            "max_ms": 8.750313
+          },
+          "accepted_provider_work": {
+            "observed": 18,
+            "mean_ms": 2.9540248888888887,
+            "p50_ms": 1.5029165,
+            "p95_ms": 18.594844,
+            "p99_ms": 18.594844,
+            "max_ms": 18.594844
+          },
+          "accepted_main_queue": {
+            "observed": 18,
+            "mean_ms": 6.917193277777778,
+            "p50_ms": 6.1428645,
+            "p95_ms": 23.422552,
+            "p99_ms": 23.422552,
+            "max_ms": 23.422552
+          },
+          "accepted_callback": {
+            "observed": 18,
+            "mean_ms": 6.506707277777778,
+            "p50_ms": 6.2353905,
+            "p95_ms": 19.639011,
+            "p99_ms": 19.639011,
+            "max_ms": 19.639011
+          }
+        }
+      },
+      "japanese_english/150/asdc/service-roleplay/half": {
+        "attribution": {
+          "letters": 7,
+          "unique_request": 7
+        },
+        "counts": {
+          "requests": 7,
+          "worker_started": 7,
+          "posted": 7,
+          "entered": 7,
+          "accepted": 7
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 7,
+            "mean_ms": 8.105863142857142,
+            "p50_ms": 8.104583,
+            "p95_ms": 8.114948,
+            "p99_ms": 8.114948,
+            "max_ms": 8.114948
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 7,
+            "mean_ms": 0.10586314285714285,
+            "p50_ms": 0.104583,
+            "p95_ms": 0.114948,
+            "p99_ms": 0.114948,
+            "max_ms": 0.114948
+          },
+          "provider_work": {
+            "observed": 7,
+            "mean_ms": 2.101406285714286,
+            "p50_ms": 2.193229,
+            "p95_ms": 3.011666,
+            "p99_ms": 3.011666,
+            "max_ms": 3.011666
+          },
+          "before_post": {
+            "observed": 7,
+            "mean_ms": 0.0022915714285714284,
+            "p50_ms": 0.002031,
+            "p95_ms": 0.003125,
+            "p99_ms": 0.003125,
+            "max_ms": 0.003125
+          },
+          "main_queue": {
+            "observed": 7,
+            "mean_ms": 12.154189,
+            "p50_ms": 13.319011,
+            "p95_ms": 22.380572,
+            "p99_ms": 22.380572,
+            "max_ms": 22.380572
+          },
+          "callback": {
+            "observed": 7,
+            "mean_ms": 6.746354285714285,
+            "p50_ms": 6.282813,
+            "p95_ms": 8.873073,
+            "p99_ms": 8.873073,
+            "max_ms": 8.873073
+          },
+          "request_to_main": {
+            "observed": 7,
+            "mean_ms": 22.36604157142857,
+            "p50_ms": 23.947396,
+            "p95_ms": 33.01625,
+            "p99_ms": 33.01625,
+            "max_ms": 33.01625
+          },
+          "request_to_finish": {
+            "observed": 7,
+            "mean_ms": 29.112395857142857,
+            "p50_ms": 30.230209,
+            "p95_ms": 38.705469,
+            "p99_ms": 38.705469,
+            "max_ms": 38.705469
+          },
+          "accepted_scheduled_wait": {
+            "observed": 7,
+            "mean_ms": 8.105863142857142,
+            "p50_ms": 8.104583,
+            "p95_ms": 8.114948,
+            "p99_ms": 8.114948,
+            "max_ms": 8.114948
+          },
+          "accepted_provider_work": {
+            "observed": 7,
+            "mean_ms": 2.101406285714286,
+            "p50_ms": 2.193229,
+            "p95_ms": 3.011666,
+            "p99_ms": 3.011666,
+            "max_ms": 3.011666
+          },
+          "accepted_main_queue": {
+            "observed": 7,
+            "mean_ms": 12.154189,
+            "p50_ms": 13.319011,
+            "p95_ms": 22.380572,
+            "p99_ms": 22.380572,
+            "max_ms": 22.380572
+          },
+          "accepted_callback": {
+            "observed": 7,
+            "mean_ms": 6.746354285714285,
+            "p50_ms": 6.282813,
+            "p95_ms": 8.873073,
+            "p99_ms": 8.873073,
+            "max_ms": 8.873073
+          }
+        }
+      },
+      "japanese_english/150/asdc/service-roleplay/initials": {
+        "attribution": {
+          "letters": 8,
+          "unique_request": 8
+        },
+        "counts": {
+          "requests": 8,
+          "worker_started": 8,
+          "posted": 8,
+          "entered": 8,
+          "accepted": 8
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 8,
+            "mean_ms": 8.126360375,
+            "p50_ms": 8.1143745,
+            "p95_ms": 8.19875,
+            "p99_ms": 8.19875,
+            "max_ms": 8.19875
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 8,
+            "mean_ms": 0.126360375,
+            "p50_ms": 0.11437449999999999,
+            "p95_ms": 0.19875,
+            "p99_ms": 0.19875,
+            "max_ms": 0.19875
+          },
+          "provider_work": {
+            "observed": 8,
+            "mean_ms": 1.41561875,
+            "p50_ms": 1.3758595,
+            "p95_ms": 2.783698,
+            "p99_ms": 2.783698,
+            "max_ms": 2.783698
+          },
+          "before_post": {
+            "observed": 8,
+            "mean_ms": 0.00205725,
+            "p50_ms": 0.001927,
+            "p95_ms": 0.003073,
+            "p99_ms": 0.003073,
+            "max_ms": 0.003073
+          },
+          "main_queue": {
+            "observed": 8,
+            "mean_ms": 11.626829375,
+            "p50_ms": 10.313021,
+            "p95_ms": 20.41224,
+            "p99_ms": 20.41224,
+            "max_ms": 20.41224
+          },
+          "callback": {
+            "observed": 8,
+            "mean_ms": 5.304297125,
+            "p50_ms": 5.314818,
+            "p95_ms": 7.310782,
+            "p99_ms": 7.310782,
+            "max_ms": 7.310782
+          },
+          "request_to_main": {
+            "observed": 8,
+            "mean_ms": 21.173261625,
+            "p50_ms": 20.221432,
+            "p95_ms": 30.832136,
+            "p99_ms": 30.832136,
+            "max_ms": 30.832136
+          },
+          "request_to_finish": {
+            "observed": 8,
+            "mean_ms": 26.47755875,
+            "p50_ms": 25.889896,
+            "p95_ms": 36.004115,
+            "p99_ms": 36.004115,
+            "max_ms": 36.004115
+          },
+          "accepted_scheduled_wait": {
+            "observed": 8,
+            "mean_ms": 8.126360375,
+            "p50_ms": 8.1143745,
+            "p95_ms": 8.19875,
+            "p99_ms": 8.19875,
+            "max_ms": 8.19875
+          },
+          "accepted_provider_work": {
+            "observed": 8,
+            "mean_ms": 1.41561875,
+            "p50_ms": 1.3758595,
+            "p95_ms": 2.783698,
+            "p99_ms": 2.783698,
+            "max_ms": 2.783698
+          },
+          "accepted_main_queue": {
+            "observed": 8,
+            "mean_ms": 11.626829375,
+            "p50_ms": 10.313021,
+            "p95_ms": 20.41224,
+            "p99_ms": 20.41224,
+            "max_ms": 20.41224
+          },
+          "accepted_callback": {
+            "observed": 8,
+            "mean_ms": 5.304297125,
+            "p50_ms": 5.314818,
+            "p95_ms": 7.310782,
+            "p99_ms": 7.310782,
+            "max_ms": 7.310782
+          }
+        }
+      },
+      "japanese_english/150/asdc/service-roleplay/mixed": {
+        "attribution": {
+          "letters": 11,
+          "unique_request": 11
+        },
+        "counts": {
+          "requests": 11,
+          "worker_started": 11,
+          "posted": 11,
+          "entered": 11,
+          "accepted": 11
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 11,
+            "mean_ms": 8.18744790909091,
+            "p50_ms": 8.126042,
+            "p95_ms": 8.361406,
+            "p99_ms": 8.361406,
+            "max_ms": 8.361406
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 11,
+            "mean_ms": 0.18744790909090908,
+            "p50_ms": 0.126042,
+            "p95_ms": 0.361406,
+            "p99_ms": 0.361406,
+            "max_ms": 0.361406
+          },
+          "provider_work": {
+            "observed": 11,
+            "mean_ms": 1.1569508181818182,
+            "p50_ms": 0.478646,
+            "p95_ms": 2.626094,
+            "p99_ms": 2.626094,
+            "max_ms": 2.626094
+          },
+          "before_post": {
+            "observed": 11,
+            "mean_ms": 0.001979272727272727,
+            "p50_ms": 0.001875,
+            "p95_ms": 0.002969,
+            "p99_ms": 0.002969,
+            "max_ms": 0.002969
+          },
+          "main_queue": {
+            "observed": 11,
+            "mean_ms": 11.709119090909091,
+            "p50_ms": 10.298541,
+            "p95_ms": 20.988594,
+            "p99_ms": 20.988594,
+            "max_ms": 20.988594
+          },
+          "callback": {
+            "observed": 11,
+            "mean_ms": 3.2981393636363636,
+            "p50_ms": 2.285417,
+            "p95_ms": 6.123958,
+            "p99_ms": 6.123958,
+            "max_ms": 6.123958
+          },
+          "request_to_main": {
+            "observed": 11,
+            "mean_ms": 21.05774609090909,
+            "p50_ms": 18.890052,
+            "p95_ms": 31.714948,
+            "p99_ms": 31.714948,
+            "max_ms": 31.714948
+          },
+          "request_to_finish": {
+            "observed": 11,
+            "mean_ms": 24.355885454545454,
+            "p50_ms": 21.362969,
+            "p95_ms": 36.660156,
+            "p99_ms": 36.660156,
+            "max_ms": 36.660156
+          },
+          "accepted_scheduled_wait": {
+            "observed": 11,
+            "mean_ms": 8.18744790909091,
+            "p50_ms": 8.126042,
+            "p95_ms": 8.361406,
+            "p99_ms": 8.361406,
+            "max_ms": 8.361406
+          },
+          "accepted_provider_work": {
+            "observed": 11,
+            "mean_ms": 1.1569508181818182,
+            "p50_ms": 0.478646,
+            "p95_ms": 2.626094,
+            "p99_ms": 2.626094,
+            "max_ms": 2.626094
+          },
+          "accepted_main_queue": {
+            "observed": 11,
+            "mean_ms": 11.709119090909091,
+            "p50_ms": 10.298541,
+            "p95_ms": 20.988594,
+            "p99_ms": 20.988594,
+            "max_ms": 20.988594
+          },
+          "accepted_callback": {
+            "observed": 11,
+            "mean_ms": 3.2981393636363636,
+            "p50_ms": 2.285417,
+            "p95_ms": 6.123958,
+            "p99_ms": 6.123958,
+            "max_ms": 6.123958
+          }
+        }
+      },
+      "japanese_english/150/asdc/service-roleplay/neighbor": {
+        "attribution": {
+          "letters": 36,
+          "unique_request": 36
+        },
+        "counts": {
+          "requests": 36,
+          "worker_started": 36,
+          "posted": 36,
+          "entered": 36,
+          "accepted": 36
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 36,
+            "mean_ms": 8.146749083333333,
+            "p50_ms": 8.113802,
+            "p95_ms": 8.328646,
+            "p99_ms": 8.556979,
+            "max_ms": 8.556979
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 36,
+            "mean_ms": 0.14674908333333334,
+            "p50_ms": 0.113802,
+            "p95_ms": 0.328646,
+            "p99_ms": 0.556979,
+            "max_ms": 0.556979
+          },
+          "provider_work": {
+            "observed": 36,
+            "mean_ms": 0.6932233611111112,
+            "p50_ms": 0.4805985,
+            "p95_ms": 2.081719,
+            "p99_ms": 2.954063,
+            "max_ms": 2.954063
+          },
+          "before_post": {
+            "observed": 36,
+            "mean_ms": 0.0018114722222222221,
+            "p50_ms": 0.001823,
+            "p95_ms": 0.0025,
+            "p99_ms": 0.002552,
+            "max_ms": 0.002552
+          },
+          "main_queue": {
+            "observed": 36,
+            "mean_ms": 9.5707435,
+            "p50_ms": 8.7303385,
+            "p95_ms": 21.132552,
+            "p99_ms": 31.238021,
+            "max_ms": 31.238021
+          },
+          "callback": {
+            "observed": 36,
+            "mean_ms": 2.6197048888888887,
+            "p50_ms": 1.8128384999999998,
+            "p95_ms": 5.970625,
+            "p99_ms": 6.64823,
+            "max_ms": 6.64823
+          },
+          "request_to_main": {
+            "observed": 36,
+            "mean_ms": 18.4149305,
+            "p50_ms": 17.345833,
+            "p95_ms": 31.333177,
+            "p99_ms": 39.921458,
+            "max_ms": 39.921458
+          },
+          "request_to_finish": {
+            "observed": 36,
+            "mean_ms": 21.03463538888889,
+            "p50_ms": 20.1298175,
+            "p95_ms": 36.176197,
+            "p99_ms": 42.580052,
+            "max_ms": 42.580052
+          },
+          "accepted_scheduled_wait": {
+            "observed": 36,
+            "mean_ms": 8.146749083333333,
+            "p50_ms": 8.113802,
+            "p95_ms": 8.328646,
+            "p99_ms": 8.556979,
+            "max_ms": 8.556979
+          },
+          "accepted_provider_work": {
+            "observed": 36,
+            "mean_ms": 0.6932233611111112,
+            "p50_ms": 0.4805985,
+            "p95_ms": 2.081719,
+            "p99_ms": 2.954063,
+            "max_ms": 2.954063
+          },
+          "accepted_main_queue": {
+            "observed": 36,
+            "mean_ms": 9.5707435,
+            "p50_ms": 8.7303385,
+            "p95_ms": 21.132552,
+            "p99_ms": 31.238021,
+            "max_ms": 31.238021
+          },
+          "accepted_callback": {
+            "observed": 36,
+            "mean_ms": 2.6197048888888887,
+            "p50_ms": 1.8128384999999998,
+            "p95_ms": 5.970625,
+            "p99_ms": 6.64823,
+            "max_ms": 6.64823
+          }
+        }
+      },
+      "japanese_english/150/asdc/service-roleplay/omission": {
+        "attribution": {
+          "letters": 12,
+          "unique_request": 12
+        },
+        "counts": {
+          "requests": 12,
+          "worker_started": 12,
+          "posted": 12,
+          "entered": 12,
+          "accepted": 12
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 12,
+            "mean_ms": 8.149700833333334,
+            "p50_ms": 8.1182555,
+            "p95_ms": 8.397136,
+            "p99_ms": 8.397136,
+            "max_ms": 8.397136
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 12,
+            "mean_ms": 0.14970083333333334,
+            "p50_ms": 0.1182555,
+            "p95_ms": 0.397136,
+            "p99_ms": 0.397136,
+            "max_ms": 0.397136
+          },
+          "provider_work": {
+            "observed": 12,
+            "mean_ms": 0.96122375,
+            "p50_ms": 0.7733595,
+            "p95_ms": 1.844791,
+            "p99_ms": 1.844791,
+            "max_ms": 1.844791
+          },
+          "before_post": {
+            "observed": 12,
+            "mean_ms": 0.0017666666666666666,
+            "p50_ms": 0.001719,
+            "p95_ms": 0.002136,
+            "p99_ms": 0.002136,
+            "max_ms": 0.002136
+          },
+          "main_queue": {
+            "observed": 12,
+            "mean_ms": 11.1932855,
+            "p50_ms": 10.0892185,
+            "p95_ms": 19.107084,
+            "p99_ms": 19.107084,
+            "max_ms": 19.107084
+          },
+          "callback": {
+            "observed": 12,
+            "mean_ms": 4.76295575,
+            "p50_ms": 4.944844,
+            "p95_ms": 6.898333,
+            "p99_ms": 6.898333,
+            "max_ms": 6.898333
+          },
+          "request_to_main": {
+            "observed": 12,
+            "mean_ms": 20.31023,
+            "p50_ms": 18.7621355,
+            "p95_ms": 28.846771,
+            "p99_ms": 28.846771,
+            "max_ms": 28.846771
+          },
+          "request_to_finish": {
+            "observed": 12,
+            "mean_ms": 25.07318575,
+            "p50_ms": 25.286223999999997,
+            "p95_ms": 33.546042,
+            "p99_ms": 33.546042,
+            "max_ms": 33.546042
+          },
+          "accepted_scheduled_wait": {
+            "observed": 12,
+            "mean_ms": 8.149700833333334,
+            "p50_ms": 8.1182555,
+            "p95_ms": 8.397136,
+            "p99_ms": 8.397136,
+            "max_ms": 8.397136
+          },
+          "accepted_provider_work": {
+            "observed": 12,
+            "mean_ms": 0.96122375,
+            "p50_ms": 0.7733595,
+            "p95_ms": 1.844791,
+            "p99_ms": 1.844791,
+            "max_ms": 1.844791
+          },
+          "accepted_main_queue": {
+            "observed": 12,
+            "mean_ms": 11.1932855,
+            "p50_ms": 10.0892185,
+            "p95_ms": 19.107084,
+            "p99_ms": 19.107084,
+            "max_ms": 19.107084
+          },
+          "accepted_callback": {
+            "observed": 12,
+            "mean_ms": 4.76295575,
+            "p50_ms": 4.944844,
+            "p95_ms": 6.898333,
+            "p99_ms": 6.898333,
+            "max_ms": 6.898333
+          }
+        }
+      },
+      "japanese_english/150/asdc/service-roleplay/transpose": {
+        "attribution": {
+          "letters": 17,
+          "unique_request": 17
+        },
+        "counts": {
+          "requests": 17,
+          "worker_started": 17,
+          "posted": 17,
+          "entered": 17,
+          "accepted": 17
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 17,
+            "mean_ms": 8.135790411764706,
+            "p50_ms": 8.111875,
+            "p95_ms": 8.330208,
+            "p99_ms": 8.330208,
+            "max_ms": 8.330208
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 17,
+            "mean_ms": 0.13579041176470588,
+            "p50_ms": 0.111875,
+            "p95_ms": 0.330208,
+            "p99_ms": 0.330208,
+            "max_ms": 0.330208
+          },
+          "provider_work": {
+            "observed": 17,
+            "mean_ms": 1.3074296470588236,
+            "p50_ms": 0.748281,
+            "p95_ms": 4.205625,
+            "p99_ms": 4.205625,
+            "max_ms": 4.205625
+          },
+          "before_post": {
+            "observed": 17,
+            "mean_ms": 0.0017830588235294117,
+            "p50_ms": 0.001667,
+            "p95_ms": 0.002448,
+            "p99_ms": 0.002448,
+            "max_ms": 0.002448
+          },
+          "main_queue": {
+            "observed": 17,
+            "mean_ms": 10.82576905882353,
+            "p50_ms": 9.599792,
+            "p95_ms": 20.992604,
+            "p99_ms": 20.992604,
+            "max_ms": 20.992604
+          },
+          "callback": {
+            "observed": 17,
+            "mean_ms": 4.585101,
+            "p50_ms": 5.169896,
+            "p95_ms": 7.040521,
+            "p99_ms": 7.040521,
+            "max_ms": 7.040521
+          },
+          "request_to_main": {
+            "observed": 17,
+            "mean_ms": 20.273768529411765,
+            "p50_ms": 18.333958,
+            "p95_ms": 31.546718,
+            "p99_ms": 31.546718,
+            "max_ms": 31.546718
+          },
+          "request_to_finish": {
+            "observed": 17,
+            "mean_ms": 24.858869529411766,
+            "p50_ms": 23.384896,
+            "p95_ms": 36.716614,
+            "p99_ms": 36.716614,
+            "max_ms": 36.716614
+          },
+          "accepted_scheduled_wait": {
+            "observed": 17,
+            "mean_ms": 8.135790411764706,
+            "p50_ms": 8.111875,
+            "p95_ms": 8.330208,
+            "p99_ms": 8.330208,
+            "max_ms": 8.330208
+          },
+          "accepted_provider_work": {
+            "observed": 17,
+            "mean_ms": 1.3074296470588236,
+            "p50_ms": 0.748281,
+            "p95_ms": 4.205625,
+            "p99_ms": 4.205625,
+            "max_ms": 4.205625
+          },
+          "accepted_main_queue": {
+            "observed": 17,
+            "mean_ms": 10.82576905882353,
+            "p50_ms": 9.599792,
+            "p95_ms": 20.992604,
+            "p99_ms": 20.992604,
+            "max_ms": 20.992604
+          },
+          "accepted_callback": {
+            "observed": 17,
+            "mean_ms": 4.585101,
+            "p50_ms": 5.169896,
+            "p95_ms": 7.040521,
+            "p99_ms": 7.040521,
+            "max_ms": 7.040521
+          }
+        }
+      },
+      "japanese_english/150/real-persona-chat/casual-conversation/full": {
+        "attribution": {
+          "letters": 37,
+          "unique_request": 37
+        },
+        "counts": {
+          "requests": 37,
+          "worker_started": 37,
+          "posted": 37,
+          "entered": 37,
+          "accepted": 37
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 37,
+            "mean_ms": 8.147439378378378,
+            "p50_ms": 8.11375,
+            "p95_ms": 8.541667,
+            "p99_ms": 8.738907,
+            "max_ms": 8.738907
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 37,
+            "mean_ms": 0.14743937837837837,
+            "p50_ms": 0.11375,
+            "p95_ms": 0.541667,
+            "p99_ms": 0.738907,
+            "max_ms": 0.738907
+          },
+          "provider_work": {
+            "observed": 37,
+            "mean_ms": 0.9083137567567567,
+            "p50_ms": 0.529688,
+            "p95_ms": 2.483594,
+            "p99_ms": 7.339271,
+            "max_ms": 7.339271
+          },
+          "before_post": {
+            "observed": 37,
+            "mean_ms": 0.002038216216216216,
+            "p50_ms": 0.001823,
+            "p95_ms": 0.005313,
+            "p99_ms": 0.005729,
+            "max_ms": 0.005729
+          },
+          "main_queue": {
+            "observed": 37,
+            "mean_ms": 9.455823594594595,
+            "p50_ms": 9.133489,
+            "p95_ms": 17.146198,
+            "p99_ms": 20.848386,
+            "max_ms": 20.848386
+          },
+          "callback": {
+            "observed": 37,
+            "mean_ms": 2.549410081081081,
+            "p50_ms": 1.837084,
+            "p95_ms": 5.858802,
+            "p99_ms": 6.930208,
+            "max_ms": 6.930208
+          },
+          "request_to_main": {
+            "observed": 37,
+            "mean_ms": 18.516124810810812,
+            "p50_ms": 17.750208,
+            "p95_ms": 28.466146,
+            "p99_ms": 30.395,
+            "max_ms": 30.395
+          },
+          "request_to_finish": {
+            "observed": 37,
+            "mean_ms": 21.065534891891893,
+            "p50_ms": 19.894427,
+            "p95_ms": 33.911979,
+            "p99_ms": 35.524062,
+            "max_ms": 35.524062
+          },
+          "accepted_scheduled_wait": {
+            "observed": 37,
+            "mean_ms": 8.147439378378378,
+            "p50_ms": 8.11375,
+            "p95_ms": 8.541667,
+            "p99_ms": 8.738907,
+            "max_ms": 8.738907
+          },
+          "accepted_provider_work": {
+            "observed": 37,
+            "mean_ms": 0.9083137567567567,
+            "p50_ms": 0.529688,
+            "p95_ms": 2.483594,
+            "p99_ms": 7.339271,
+            "max_ms": 7.339271
+          },
+          "accepted_main_queue": {
+            "observed": 37,
+            "mean_ms": 9.455823594594595,
+            "p50_ms": 9.133489,
+            "p95_ms": 17.146198,
+            "p99_ms": 20.848386,
+            "max_ms": 20.848386
+          },
+          "accepted_callback": {
+            "observed": 37,
+            "mean_ms": 2.549410081081081,
+            "p50_ms": 1.837084,
+            "p95_ms": 5.858802,
+            "p99_ms": 6.930208,
+            "max_ms": 6.930208
+          }
+        }
+      },
+      "japanese_english/150/real-persona-chat/casual-conversation/half": {
+        "attribution": {
+          "letters": 23,
+          "unique_request": 23
+        },
+        "counts": {
+          "requests": 23,
+          "worker_started": 23,
+          "posted": 23,
+          "entered": 23,
+          "accepted": 23
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 23,
+            "mean_ms": 8.161933826086957,
+            "p50_ms": 8.116719,
+            "p95_ms": 8.419844,
+            "p99_ms": 8.506354,
+            "max_ms": 8.506354
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 23,
+            "mean_ms": 0.16193382608695653,
+            "p50_ms": 0.116719,
+            "p95_ms": 0.419844,
+            "p99_ms": 0.506354,
+            "max_ms": 0.506354
+          },
+          "provider_work": {
+            "observed": 23,
+            "mean_ms": 0.7919565652173913,
+            "p50_ms": 0.529583,
+            "p95_ms": 2.012969,
+            "p99_ms": 2.160782,
+            "max_ms": 2.160782
+          },
+          "before_post": {
+            "observed": 23,
+            "mean_ms": 0.0022034347826086955,
+            "p50_ms": 0.002135,
+            "p95_ms": 0.002969,
+            "p99_ms": 0.003073,
+            "max_ms": 0.003073
+          },
+          "main_queue": {
+            "observed": 23,
+            "mean_ms": 9.062348173913044,
+            "p50_ms": 8.302343,
+            "p95_ms": 16.369531,
+            "p99_ms": 22.383125,
+            "max_ms": 22.383125
+          },
+          "callback": {
+            "observed": 23,
+            "mean_ms": 3.9964333913043477,
+            "p50_ms": 4.446979,
+            "p95_ms": 6.20375,
+            "p99_ms": 6.589947,
+            "max_ms": 6.589947
+          },
+          "request_to_main": {
+            "observed": 23,
+            "mean_ms": 18.020905739130434,
+            "p50_ms": 16.956146,
+            "p95_ms": 26.93302,
+            "p99_ms": 31.630417,
+            "max_ms": 31.630417
+          },
+          "request_to_finish": {
+            "observed": 23,
+            "mean_ms": 22.01733913043478,
+            "p50_ms": 20.373229,
+            "p95_ms": 32.01276,
+            "p99_ms": 36.239375,
+            "max_ms": 36.239375
+          },
+          "accepted_scheduled_wait": {
+            "observed": 23,
+            "mean_ms": 8.161933826086957,
+            "p50_ms": 8.116719,
+            "p95_ms": 8.419844,
+            "p99_ms": 8.506354,
+            "max_ms": 8.506354
+          },
+          "accepted_provider_work": {
+            "observed": 23,
+            "mean_ms": 0.7919565652173913,
+            "p50_ms": 0.529583,
+            "p95_ms": 2.012969,
+            "p99_ms": 2.160782,
+            "max_ms": 2.160782
+          },
+          "accepted_main_queue": {
+            "observed": 23,
+            "mean_ms": 9.062348173913044,
+            "p50_ms": 8.302343,
+            "p95_ms": 16.369531,
+            "p99_ms": 22.383125,
+            "max_ms": 22.383125
+          },
+          "accepted_callback": {
+            "observed": 23,
+            "mean_ms": 3.9964333913043477,
+            "p50_ms": 4.446979,
+            "p95_ms": 6.20375,
+            "p99_ms": 6.589947,
+            "max_ms": 6.589947
+          }
+        }
+      },
+      "japanese_english/150/real-persona-chat/casual-conversation/initials": {
+        "attribution": {
+          "letters": 10,
+          "unique_request": 10
+        },
+        "counts": {
+          "requests": 10,
+          "worker_started": 10,
+          "posted": 10,
+          "entered": 10,
+          "accepted": 10
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 10,
+            "mean_ms": 8.1822033,
+            "p50_ms": 8.1224215,
+            "p95_ms": 8.347448,
+            "p99_ms": 8.347448,
+            "max_ms": 8.347448
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 10,
+            "mean_ms": 0.18220329999999998,
+            "p50_ms": 0.12242149999999999,
+            "p95_ms": 0.347448,
+            "p99_ms": 0.347448,
+            "max_ms": 0.347448
+          },
+          "provider_work": {
+            "observed": 10,
+            "mean_ms": 0.8444842,
+            "p50_ms": 0.6661975,
+            "p95_ms": 1.593229,
+            "p99_ms": 1.593229,
+            "max_ms": 1.593229
+          },
+          "before_post": {
+            "observed": 10,
+            "mean_ms": 0.0022554,
+            "p50_ms": 0.002162,
+            "p95_ms": 0.002865,
+            "p99_ms": 0.002865,
+            "max_ms": 0.002865
+          },
+          "main_queue": {
+            "observed": 10,
+            "mean_ms": 13.2713957,
+            "p50_ms": 10.115677,
+            "p95_ms": 23.229323,
+            "p99_ms": 23.229323,
+            "max_ms": 23.229323
+          },
+          "callback": {
+            "observed": 10,
+            "mean_ms": 3.6363803,
+            "p50_ms": 3.373672,
+            "p95_ms": 6.555052,
+            "p99_ms": 6.555052,
+            "max_ms": 6.555052
+          },
+          "request_to_main": {
+            "observed": 10,
+            "mean_ms": 22.3029062,
+            "p50_ms": 18.763099,
+            "p95_ms": 32.763177,
+            "p99_ms": 32.763177,
+            "max_ms": 32.763177
+          },
+          "request_to_finish": {
+            "observed": 10,
+            "mean_ms": 25.939286499999998,
+            "p50_ms": 22.919896,
+            "p95_ms": 38.532447,
+            "p99_ms": 38.532447,
+            "max_ms": 38.532447
+          },
+          "accepted_scheduled_wait": {
+            "observed": 10,
+            "mean_ms": 8.1822033,
+            "p50_ms": 8.1224215,
+            "p95_ms": 8.347448,
+            "p99_ms": 8.347448,
+            "max_ms": 8.347448
+          },
+          "accepted_provider_work": {
+            "observed": 10,
+            "mean_ms": 0.8444842,
+            "p50_ms": 0.6661975,
+            "p95_ms": 1.593229,
+            "p99_ms": 1.593229,
+            "max_ms": 1.593229
+          },
+          "accepted_main_queue": {
+            "observed": 10,
+            "mean_ms": 13.2713957,
+            "p50_ms": 10.115677,
+            "p95_ms": 23.229323,
+            "p99_ms": 23.229323,
+            "max_ms": 23.229323
+          },
+          "accepted_callback": {
+            "observed": 10,
+            "mean_ms": 3.6363803,
+            "p50_ms": 3.373672,
+            "p95_ms": 6.555052,
+            "p99_ms": 6.555052,
+            "max_ms": 6.555052
+          }
+        }
+      },
+      "japanese_english/150/real-persona-chat/casual-conversation/mixed": {
+        "attribution": {
+          "letters": 12,
+          "unique_request": 12
+        },
+        "counts": {
+          "requests": 12,
+          "worker_started": 12,
+          "posted": 12,
+          "entered": 12,
+          "accepted": 12
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 12,
+            "mean_ms": 8.1552995,
+            "p50_ms": 8.120546999999998,
+            "p95_ms": 8.317656,
+            "p99_ms": 8.317656,
+            "max_ms": 8.317656
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 12,
+            "mean_ms": 0.1552995,
+            "p50_ms": 0.12054699999999999,
+            "p95_ms": 0.317656,
+            "p99_ms": 0.317656,
+            "max_ms": 0.317656
+          },
+          "provider_work": {
+            "observed": 12,
+            "mean_ms": 0.7542449999999999,
+            "p50_ms": 0.540886,
+            "p95_ms": 1.912083,
+            "p99_ms": 1.912083,
+            "max_ms": 1.912083
+          },
+          "before_post": {
+            "observed": 12,
+            "mean_ms": 0.0023956666666666666,
+            "p50_ms": 0.0023435,
+            "p95_ms": 0.003125,
+            "p99_ms": 0.003125,
+            "max_ms": 0.003125
+          },
+          "main_queue": {
+            "observed": 12,
+            "mean_ms": 13.51042975,
+            "p50_ms": 11.976667,
+            "p95_ms": 24.173333,
+            "p99_ms": 24.173333,
+            "max_ms": 24.173333
+          },
+          "callback": {
+            "observed": 12,
+            "mean_ms": 2.8237846666666666,
+            "p50_ms": 2.0948955,
+            "p95_ms": 5.884948,
+            "p99_ms": 5.884948,
+            "max_ms": 5.884948
+          },
+          "request_to_main": {
+            "observed": 12,
+            "mean_ms": 22.42491325,
+            "p50_ms": 20.5945575,
+            "p95_ms": 33.653073,
+            "p99_ms": 33.653073,
+            "max_ms": 33.653073
+          },
+          "request_to_finish": {
+            "observed": 12,
+            "mean_ms": 25.248697916666668,
+            "p50_ms": 21.696797,
+            "p95_ms": 38.445573,
+            "p99_ms": 38.445573,
+            "max_ms": 38.445573
+          },
+          "accepted_scheduled_wait": {
+            "observed": 12,
+            "mean_ms": 8.1552995,
+            "p50_ms": 8.120546999999998,
+            "p95_ms": 8.317656,
+            "p99_ms": 8.317656,
+            "max_ms": 8.317656
+          },
+          "accepted_provider_work": {
+            "observed": 12,
+            "mean_ms": 0.7542449999999999,
+            "p50_ms": 0.540886,
+            "p95_ms": 1.912083,
+            "p99_ms": 1.912083,
+            "max_ms": 1.912083
+          },
+          "accepted_main_queue": {
+            "observed": 12,
+            "mean_ms": 13.51042975,
+            "p50_ms": 11.976667,
+            "p95_ms": 24.173333,
+            "p99_ms": 24.173333,
+            "max_ms": 24.173333
+          },
+          "accepted_callback": {
+            "observed": 12,
+            "mean_ms": 2.8237846666666666,
+            "p50_ms": 2.0948955,
+            "p95_ms": 5.884948,
+            "p99_ms": 5.884948,
+            "max_ms": 5.884948
+          }
+        }
+      },
+      "japanese_english/150/real-persona-chat/casual-conversation/neighbor": {
+        "attribution": {
+          "letters": 19,
+          "unique_request": 19
+        },
+        "counts": {
+          "requests": 19,
+          "worker_started": 19,
+          "posted": 19,
+          "entered": 19,
+          "accepted": 19
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 19,
+            "mean_ms": 8.133196263157895,
+            "p50_ms": 8.114896,
+            "p95_ms": 8.371302,
+            "p99_ms": 8.371302,
+            "max_ms": 8.371302
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 19,
+            "mean_ms": 0.13319626315789473,
+            "p50_ms": 0.114896,
+            "p95_ms": 0.371302,
+            "p99_ms": 0.371302,
+            "max_ms": 0.371302
+          },
+          "provider_work": {
+            "observed": 19,
+            "mean_ms": 0.6351015263157895,
+            "p50_ms": 0.34849,
+            "p95_ms": 1.601771,
+            "p99_ms": 1.601771,
+            "max_ms": 1.601771
+          },
+          "before_post": {
+            "observed": 19,
+            "mean_ms": 0.0020394736842105263,
+            "p50_ms": 0.001927,
+            "p95_ms": 0.002916,
+            "p99_ms": 0.002916,
+            "max_ms": 0.002916
+          },
+          "main_queue": {
+            "observed": 19,
+            "mean_ms": 10.546348578947368,
+            "p50_ms": 10.063906,
+            "p95_ms": 23.477552,
+            "p99_ms": 23.477552,
+            "max_ms": 23.477552
+          },
+          "callback": {
+            "observed": 19,
+            "mean_ms": 3.167648052631579,
+            "p50_ms": 2.906823,
+            "p95_ms": 6.125521,
+            "p99_ms": 6.125521,
+            "max_ms": 6.125521
+          },
+          "request_to_main": {
+            "observed": 19,
+            "mean_ms": 19.31910905263158,
+            "p50_ms": 18.520364,
+            "p95_ms": 32.776354,
+            "p99_ms": 32.776354,
+            "max_ms": 32.776354
+          },
+          "request_to_finish": {
+            "observed": 19,
+            "mean_ms": 22.48675710526316,
+            "p50_ms": 20.203802,
+            "p95_ms": 37.45375,
+            "p99_ms": 37.45375,
+            "max_ms": 37.45375
+          },
+          "accepted_scheduled_wait": {
+            "observed": 19,
+            "mean_ms": 8.133196263157895,
+            "p50_ms": 8.114896,
+            "p95_ms": 8.371302,
+            "p99_ms": 8.371302,
+            "max_ms": 8.371302
+          },
+          "accepted_provider_work": {
+            "observed": 19,
+            "mean_ms": 0.6351015263157895,
+            "p50_ms": 0.34849,
+            "p95_ms": 1.601771,
+            "p99_ms": 1.601771,
+            "max_ms": 1.601771
+          },
+          "accepted_main_queue": {
+            "observed": 19,
+            "mean_ms": 10.546348578947368,
+            "p50_ms": 10.063906,
+            "p95_ms": 23.477552,
+            "p99_ms": 23.477552,
+            "max_ms": 23.477552
+          },
+          "accepted_callback": {
+            "observed": 19,
+            "mean_ms": 3.167648052631579,
+            "p50_ms": 2.906823,
+            "p95_ms": 6.125521,
+            "p99_ms": 6.125521,
+            "max_ms": 6.125521
+          }
+        }
+      },
+      "japanese_english/150/real-persona-chat/casual-conversation/omission": {
+        "attribution": {
+          "letters": 13,
+          "unique_request": 13
+        },
+        "counts": {
+          "requests": 13,
+          "worker_started": 13,
+          "posted": 13,
+          "entered": 13,
+          "accepted": 13
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 13,
+            "mean_ms": 8.273754,
+            "p50_ms": 8.115678,
+            "p95_ms": 9.798802,
+            "p99_ms": 9.798802,
+            "max_ms": 9.798802
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 13,
+            "mean_ms": 0.273754,
+            "p50_ms": 0.115678,
+            "p95_ms": 1.798802,
+            "p99_ms": 1.798802,
+            "max_ms": 1.798802
+          },
+          "provider_work": {
+            "observed": 13,
+            "mean_ms": 0.7405287692307693,
+            "p50_ms": 0.685156,
+            "p95_ms": 1.21974,
+            "p99_ms": 1.21974,
+            "max_ms": 1.21974
+          },
+          "before_post": {
+            "observed": 13,
+            "mean_ms": 0.0021995384615384615,
+            "p50_ms": 0.002136,
+            "p95_ms": 0.003021,
+            "p99_ms": 0.003021,
+            "max_ms": 0.003021
+          },
+          "main_queue": {
+            "observed": 13,
+            "mean_ms": 12.206277923076923,
+            "p50_ms": 11.210625,
+            "p95_ms": 21.473333,
+            "p99_ms": 21.473333,
+            "max_ms": 21.473333
+          },
+          "callback": {
+            "observed": 13,
+            "mean_ms": 4.458161076923077,
+            "p50_ms": 4.935469,
+            "p95_ms": 7.764063,
+            "p99_ms": 7.764063,
+            "max_ms": 7.764063
+          },
+          "request_to_main": {
+            "observed": 13,
+            "mean_ms": 21.225536923076923,
+            "p50_ms": 20.385261,
+            "p95_ms": 30.605208,
+            "p99_ms": 30.605208,
+            "max_ms": 30.605208
+          },
+          "request_to_finish": {
+            "observed": 13,
+            "mean_ms": 25.683698,
+            "p50_ms": 25.724635,
+            "p95_ms": 36.973385,
+            "p99_ms": 36.973385,
+            "max_ms": 36.973385
+          },
+          "accepted_scheduled_wait": {
+            "observed": 13,
+            "mean_ms": 8.273754,
+            "p50_ms": 8.115678,
+            "p95_ms": 9.798802,
+            "p99_ms": 9.798802,
+            "max_ms": 9.798802
+          },
+          "accepted_provider_work": {
+            "observed": 13,
+            "mean_ms": 0.7405287692307693,
+            "p50_ms": 0.685156,
+            "p95_ms": 1.21974,
+            "p99_ms": 1.21974,
+            "max_ms": 1.21974
+          },
+          "accepted_main_queue": {
+            "observed": 13,
+            "mean_ms": 12.206277923076923,
+            "p50_ms": 11.210625,
+            "p95_ms": 21.473333,
+            "p99_ms": 21.473333,
+            "max_ms": 21.473333
+          },
+          "accepted_callback": {
+            "observed": 13,
+            "mean_ms": 4.458161076923077,
+            "p50_ms": 4.935469,
+            "p95_ms": 7.764063,
+            "p99_ms": 7.764063,
+            "max_ms": 7.764063
+          }
+        }
+      },
+      "japanese_english/150/real-persona-chat/casual-conversation/transpose": {
+        "attribution": {
+          "letters": 31,
+          "unique_request": 31
+        },
+        "counts": {
+          "requests": 31,
+          "worker_started": 31,
+          "posted": 31,
+          "entered": 31,
+          "accepted": 31
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 31,
+            "mean_ms": 8.121525451612904,
+            "p50_ms": 8.113125,
+            "p95_ms": 8.148073,
+            "p99_ms": 8.381042,
+            "max_ms": 8.381042
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 31,
+            "mean_ms": 0.12152545161290322,
+            "p50_ms": 0.113125,
+            "p95_ms": 0.148073,
+            "p99_ms": 0.381042,
+            "max_ms": 0.381042
+          },
+          "provider_work": {
+            "observed": 31,
+            "mean_ms": 0.5328292580645161,
+            "p50_ms": 0.372084,
+            "p95_ms": 1.503594,
+            "p99_ms": 1.940937,
+            "max_ms": 1.940937
+          },
+          "before_post": {
+            "observed": 31,
+            "mean_ms": 0.002305096774193548,
+            "p50_ms": 0.002135,
+            "p95_ms": 0.002917,
+            "p99_ms": 0.005781,
+            "max_ms": 0.005781
+          },
+          "main_queue": {
+            "observed": 31,
+            "mean_ms": 10.773254387096774,
+            "p50_ms": 9.708282,
+            "p95_ms": 20.429375,
+            "p99_ms": 21.467656,
+            "max_ms": 21.467656
+          },
+          "callback": {
+            "observed": 31,
+            "mean_ms": 2.7279922903225806,
+            "p50_ms": 1.859063,
+            "p95_ms": 5.436146,
+            "p99_ms": 6.294219,
+            "max_ms": 6.294219
+          },
+          "request_to_main": {
+            "observed": 31,
+            "mean_ms": 19.436081903225805,
+            "p50_ms": 18.218646,
+            "p95_ms": 30.490521,
+            "p99_ms": 30.889791,
+            "max_ms": 30.889791
+          },
+          "request_to_finish": {
+            "observed": 31,
+            "mean_ms": 22.164074193548387,
+            "p50_ms": 20.695937,
+            "p95_ms": 35.206407,
+            "p99_ms": 36.085833,
+            "max_ms": 36.085833
+          },
+          "accepted_scheduled_wait": {
+            "observed": 31,
+            "mean_ms": 8.121525451612904,
+            "p50_ms": 8.113125,
+            "p95_ms": 8.148073,
+            "p99_ms": 8.381042,
+            "max_ms": 8.381042
+          },
+          "accepted_provider_work": {
+            "observed": 31,
+            "mean_ms": 0.5328292580645161,
+            "p50_ms": 0.372084,
+            "p95_ms": 1.503594,
+            "p99_ms": 1.940937,
+            "max_ms": 1.940937
+          },
+          "accepted_main_queue": {
+            "observed": 31,
+            "mean_ms": 10.773254387096774,
+            "p50_ms": 9.708282,
+            "p95_ms": 20.429375,
+            "p99_ms": 21.467656,
+            "max_ms": 21.467656
+          },
+          "accepted_callback": {
+            "observed": 31,
+            "mean_ms": 2.7279922903225806,
+            "p50_ms": 1.859063,
+            "p95_ms": 5.436146,
+            "p99_ms": 6.294219,
+            "max_ms": 6.294219
+          }
+        }
+      },
+      "japanese_english/60": {
+        "attribution": {
+          "letters": 254,
+          "unique_request": 254
+        },
+        "counts": {
+          "requests": 254,
+          "worker_started": 254,
+          "posted": 254,
+          "entered": 254,
+          "accepted": 254
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 254,
+            "mean_ms": 8.156214708661418,
+            "p50_ms": 8.1158335,
+            "p95_ms": 8.382865,
+            "p99_ms": 8.518281,
+            "max_ms": 8.81599
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 254,
+            "mean_ms": 0.15621470866141732,
+            "p50_ms": 0.1158335,
+            "p95_ms": 0.382865,
+            "p99_ms": 0.518281,
+            "max_ms": 0.81599
+          },
+          "provider_work": {
+            "observed": 254,
+            "mean_ms": 0.6482568779527559,
+            "p50_ms": 0.44273450000000003,
+            "p95_ms": 1.394219,
+            "p99_ms": 2.264792,
+            "max_ms": 3.712969
+          },
+          "before_post": {
+            "observed": 254,
+            "mean_ms": 0.0026108818897637794,
+            "p50_ms": 0.002448,
+            "p95_ms": 0.003958,
+            "p99_ms": 0.005416,
+            "max_ms": 0.014479
+          },
+          "main_queue": {
+            "observed": 254,
+            "mean_ms": 10.74705424015748,
+            "p50_ms": 10.1453645,
+            "p95_ms": 22.581875,
+            "p99_ms": 28.052395,
+            "max_ms": 29.345625
+          },
+          "callback": {
+            "observed": 254,
+            "mean_ms": 3.1479447519685038,
+            "p50_ms": 2.8689584999999997,
+            "p95_ms": 5.837761,
+            "p99_ms": 7.083854,
+            "max_ms": 9.868802
+          },
+          "request_to_main": {
+            "observed": 254,
+            "mean_ms": 19.557061149606298,
+            "p50_ms": 18.808020499999998,
+            "p95_ms": 31.821979,
+            "p99_ms": 37.632344,
+            "max_ms": 38.82349
+          },
+          "request_to_finish": {
+            "observed": 254,
+            "mean_ms": 22.705005901574804,
+            "p50_ms": 21.429531,
+            "p95_ms": 37.145313,
+            "p99_ms": 42.121771,
+            "max_ms": 43.464063
+          },
+          "accepted_scheduled_wait": {
+            "observed": 254,
+            "mean_ms": 8.156214708661418,
+            "p50_ms": 8.1158335,
+            "p95_ms": 8.382865,
+            "p99_ms": 8.518281,
+            "max_ms": 8.81599
+          },
+          "accepted_provider_work": {
+            "observed": 254,
+            "mean_ms": 0.6482568779527559,
+            "p50_ms": 0.44273450000000003,
+            "p95_ms": 1.394219,
+            "p99_ms": 2.264792,
+            "max_ms": 3.712969
+          },
+          "accepted_main_queue": {
+            "observed": 254,
+            "mean_ms": 10.74705424015748,
+            "p50_ms": 10.1453645,
+            "p95_ms": 22.581875,
+            "p99_ms": 28.052395,
+            "max_ms": 29.345625
+          },
+          "accepted_callback": {
+            "observed": 254,
+            "mean_ms": 3.1479447519685038,
+            "p50_ms": 2.8689584999999997,
+            "p95_ms": 5.837761,
+            "p99_ms": 7.083854,
+            "max_ms": 9.868802
+          }
+        }
+      },
+      "japanese_english/60/asdc/service-roleplay/full": {
+        "attribution": {
+          "letters": 18,
+          "unique_request": 18
+        },
+        "counts": {
+          "requests": 18,
+          "worker_started": 18,
+          "posted": 18,
+          "entered": 18,
+          "accepted": 18
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 18,
+            "mean_ms": 8.173188555555555,
+            "p50_ms": 8.117785999999999,
+            "p95_ms": 8.567135,
+            "p99_ms": 8.567135,
+            "max_ms": 8.567135
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 18,
+            "mean_ms": 0.17318855555555554,
+            "p50_ms": 0.117786,
+            "p95_ms": 0.567135,
+            "p99_ms": 0.567135,
+            "max_ms": 0.567135
+          },
+          "provider_work": {
+            "observed": 18,
+            "mean_ms": 0.7124942222222223,
+            "p50_ms": 0.6603125000000001,
+            "p95_ms": 1.482344,
+            "p99_ms": 1.482344,
+            "max_ms": 1.482344
+          },
+          "before_post": {
+            "observed": 18,
+            "mean_ms": 0.0021845555555555555,
+            "p50_ms": 0.002005,
+            "p95_ms": 0.004063,
+            "p99_ms": 0.004063,
+            "max_ms": 0.004063
+          },
+          "main_queue": {
+            "observed": 18,
+            "mean_ms": 10.04982061111111,
+            "p50_ms": 9.584530999999998,
+            "p95_ms": 22.581875,
+            "p99_ms": 22.581875,
+            "max_ms": 22.581875
+          },
+          "callback": {
+            "observed": 18,
+            "mean_ms": 3.7069532777777776,
+            "p50_ms": 4.321068,
+            "p95_ms": 7.083854,
+            "p99_ms": 7.083854,
+            "max_ms": 7.083854
+          },
+          "request_to_main": {
+            "observed": 18,
+            "mean_ms": 18.940300833333332,
+            "p50_ms": 18.564583,
+            "p95_ms": 31.866927,
+            "p99_ms": 31.866927,
+            "max_ms": 31.866927
+          },
+          "request_to_finish": {
+            "observed": 18,
+            "mean_ms": 22.64725411111111,
+            "p50_ms": 22.943697999999998,
+            "p95_ms": 37.145313,
+            "p99_ms": 37.145313,
+            "max_ms": 37.145313
+          },
+          "accepted_scheduled_wait": {
+            "observed": 18,
+            "mean_ms": 8.173188555555555,
+            "p50_ms": 8.117785999999999,
+            "p95_ms": 8.567135,
+            "p99_ms": 8.567135,
+            "max_ms": 8.567135
+          },
+          "accepted_provider_work": {
+            "observed": 18,
+            "mean_ms": 0.7124942222222223,
+            "p50_ms": 0.6603125000000001,
+            "p95_ms": 1.482344,
+            "p99_ms": 1.482344,
+            "max_ms": 1.482344
+          },
+          "accepted_main_queue": {
+            "observed": 18,
+            "mean_ms": 10.04982061111111,
+            "p50_ms": 9.584530999999998,
+            "p95_ms": 22.581875,
+            "p99_ms": 22.581875,
+            "max_ms": 22.581875
+          },
+          "accepted_callback": {
+            "observed": 18,
+            "mean_ms": 3.7069532777777776,
+            "p50_ms": 4.321068,
+            "p95_ms": 7.083854,
+            "p99_ms": 7.083854,
+            "max_ms": 7.083854
+          }
+        }
+      },
+      "japanese_english/60/asdc/service-roleplay/half": {
+        "attribution": {
+          "letters": 7,
+          "unique_request": 7
+        },
+        "counts": {
+          "requests": 7,
+          "worker_started": 7,
+          "posted": 7,
+          "entered": 7,
+          "accepted": 7
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 7,
+            "mean_ms": 8.116763428571428,
+            "p50_ms": 8.113959,
+            "p95_ms": 8.136302,
+            "p99_ms": 8.136302,
+            "max_ms": 8.136302
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 7,
+            "mean_ms": 0.11676342857142857,
+            "p50_ms": 0.113959,
+            "p95_ms": 0.136302,
+            "p99_ms": 0.136302,
+            "max_ms": 0.136302
+          },
+          "provider_work": {
+            "observed": 7,
+            "mean_ms": 0.9842038571428572,
+            "p50_ms": 1.033594,
+            "p95_ms": 1.174166,
+            "p99_ms": 1.174166,
+            "max_ms": 1.174166
+          },
+          "before_post": {
+            "observed": 7,
+            "mean_ms": 0.002432857142857143,
+            "p50_ms": 0.0025,
+            "p95_ms": 0.002864,
+            "p99_ms": 0.002864,
+            "max_ms": 0.002864
+          },
+          "main_queue": {
+            "observed": 7,
+            "mean_ms": 15.327209857142858,
+            "p50_ms": 19.667396,
+            "p95_ms": 25.054531,
+            "p99_ms": 25.054531,
+            "max_ms": 25.054531
+          },
+          "callback": {
+            "observed": 7,
+            "mean_ms": 4.759241,
+            "p50_ms": 4.777969,
+            "p95_ms": 5.215938,
+            "p99_ms": 5.215938,
+            "max_ms": 5.215938
+          },
+          "request_to_main": {
+            "observed": 7,
+            "mean_ms": 24.433429857142855,
+            "p50_ms": 28.841979,
+            "p95_ms": 34.239791,
+            "p99_ms": 34.239791,
+            "max_ms": 34.239791
+          },
+          "request_to_finish": {
+            "observed": 7,
+            "mean_ms": 29.192670857142858,
+            "p50_ms": 33.528437,
+            "p95_ms": 39.01776,
+            "p99_ms": 39.01776,
+            "max_ms": 39.01776
+          },
+          "accepted_scheduled_wait": {
+            "observed": 7,
+            "mean_ms": 8.116763428571428,
+            "p50_ms": 8.113959,
+            "p95_ms": 8.136302,
+            "p99_ms": 8.136302,
+            "max_ms": 8.136302
+          },
+          "accepted_provider_work": {
+            "observed": 7,
+            "mean_ms": 0.9842038571428572,
+            "p50_ms": 1.033594,
+            "p95_ms": 1.174166,
+            "p99_ms": 1.174166,
+            "max_ms": 1.174166
+          },
+          "accepted_main_queue": {
+            "observed": 7,
+            "mean_ms": 15.327209857142858,
+            "p50_ms": 19.667396,
+            "p95_ms": 25.054531,
+            "p99_ms": 25.054531,
+            "max_ms": 25.054531
+          },
+          "accepted_callback": {
+            "observed": 7,
+            "mean_ms": 4.759241,
+            "p50_ms": 4.777969,
+            "p95_ms": 5.215938,
+            "p99_ms": 5.215938,
+            "max_ms": 5.215938
+          }
+        }
+      },
+      "japanese_english/60/asdc/service-roleplay/initials": {
+        "attribution": {
+          "letters": 8,
+          "unique_request": 8
+        },
+        "counts": {
+          "requests": 8,
+          "worker_started": 8,
+          "posted": 8,
+          "entered": 8,
+          "accepted": 8
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 8,
+            "mean_ms": 8.14921225,
+            "p50_ms": 8.11901,
+            "p95_ms": 8.35599,
+            "p99_ms": 8.35599,
+            "max_ms": 8.35599
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 8,
+            "mean_ms": 0.14921225,
+            "p50_ms": 0.11901,
+            "p95_ms": 0.35599,
+            "p99_ms": 0.35599,
+            "max_ms": 0.35599
+          },
+          "provider_work": {
+            "observed": 8,
+            "mean_ms": 0.895879125,
+            "p50_ms": 0.790365,
+            "p95_ms": 2.264792,
+            "p99_ms": 2.264792,
+            "max_ms": 2.264792
+          },
+          "before_post": {
+            "observed": 8,
+            "mean_ms": 0.0022915,
+            "p50_ms": 0.0021875,
+            "p95_ms": 0.002969,
+            "p99_ms": 0.002969,
+            "max_ms": 0.002969
+          },
+          "main_queue": {
+            "observed": 8,
+            "mean_ms": 12.306953125,
+            "p50_ms": 11.932708,
+            "p95_ms": 23.104427,
+            "p99_ms": 23.104427,
+            "max_ms": 23.104427
+          },
+          "callback": {
+            "observed": 8,
+            "mean_ms": 4.75172525,
+            "p50_ms": 4.9752345,
+            "p95_ms": 6.84625,
+            "p99_ms": 6.84625,
+            "max_ms": 6.84625
+          },
+          "request_to_main": {
+            "observed": 8,
+            "mean_ms": 21.357168,
+            "p50_ms": 20.853776,
+            "p95_ms": 32.361719,
+            "p99_ms": 32.361719,
+            "max_ms": 32.361719
+          },
+          "request_to_finish": {
+            "observed": 8,
+            "mean_ms": 26.10889325,
+            "p50_ms": 25.168776,
+            "p95_ms": 39.207969,
+            "p99_ms": 39.207969,
+            "max_ms": 39.207969
+          },
+          "accepted_scheduled_wait": {
+            "observed": 8,
+            "mean_ms": 8.14921225,
+            "p50_ms": 8.11901,
+            "p95_ms": 8.35599,
+            "p99_ms": 8.35599,
+            "max_ms": 8.35599
+          },
+          "accepted_provider_work": {
+            "observed": 8,
+            "mean_ms": 0.895879125,
+            "p50_ms": 0.790365,
+            "p95_ms": 2.264792,
+            "p99_ms": 2.264792,
+            "max_ms": 2.264792
+          },
+          "accepted_main_queue": {
+            "observed": 8,
+            "mean_ms": 12.306953125,
+            "p50_ms": 11.932708,
+            "p95_ms": 23.104427,
+            "p99_ms": 23.104427,
+            "max_ms": 23.104427
+          },
+          "accepted_callback": {
+            "observed": 8,
+            "mean_ms": 4.75172525,
+            "p50_ms": 4.9752345,
+            "p95_ms": 6.84625,
+            "p99_ms": 6.84625,
+            "max_ms": 6.84625
+          }
+        }
+      },
+      "japanese_english/60/asdc/service-roleplay/mixed": {
+        "attribution": {
+          "letters": 11,
+          "unique_request": 11
+        },
+        "counts": {
+          "requests": 11,
+          "worker_started": 11,
+          "posted": 11,
+          "entered": 11,
+          "accepted": 11
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 11,
+            "mean_ms": 8.166448909090908,
+            "p50_ms": 8.115,
+            "p95_ms": 8.475729,
+            "p99_ms": 8.475729,
+            "max_ms": 8.475729
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 11,
+            "mean_ms": 0.1664489090909091,
+            "p50_ms": 0.115,
+            "p95_ms": 0.475729,
+            "p99_ms": 0.475729,
+            "max_ms": 0.475729
+          },
+          "provider_work": {
+            "observed": 11,
+            "mean_ms": 0.6585795454545454,
+            "p50_ms": 0.366146,
+            "p95_ms": 1.252813,
+            "p99_ms": 1.252813,
+            "max_ms": 1.252813
+          },
+          "before_post": {
+            "observed": 11,
+            "mean_ms": 0.0022537272727272727,
+            "p50_ms": 0.00224,
+            "p95_ms": 0.002604,
+            "p99_ms": 0.002604,
+            "max_ms": 0.002604
+          },
+          "main_queue": {
+            "observed": 11,
+            "mean_ms": 12.360080454545455,
+            "p50_ms": 11.867292,
+            "p95_ms": 22.579792,
+            "p99_ms": 22.579792,
+            "max_ms": 22.579792
+          },
+          "callback": {
+            "observed": 11,
+            "mean_ms": 3.5395408181818184,
+            "p50_ms": 2.214063,
+            "p95_ms": 9.868802,
+            "p99_ms": 9.868802,
+            "max_ms": 9.868802
+          },
+          "request_to_main": {
+            "observed": 11,
+            "mean_ms": 21.190800181818183,
+            "p50_ms": 20.352761,
+            "p95_ms": 31.719532,
+            "p99_ms": 31.719532,
+            "max_ms": 31.719532
+          },
+          "request_to_finish": {
+            "observed": 11,
+            "mean_ms": 24.730341,
+            "p50_ms": 21.658698,
+            "p95_ms": 39.106979,
+            "p99_ms": 39.106979,
+            "max_ms": 39.106979
+          },
+          "accepted_scheduled_wait": {
+            "observed": 11,
+            "mean_ms": 8.166448909090908,
+            "p50_ms": 8.115,
+            "p95_ms": 8.475729,
+            "p99_ms": 8.475729,
+            "max_ms": 8.475729
+          },
+          "accepted_provider_work": {
+            "observed": 11,
+            "mean_ms": 0.6585795454545454,
+            "p50_ms": 0.366146,
+            "p95_ms": 1.252813,
+            "p99_ms": 1.252813,
+            "max_ms": 1.252813
+          },
+          "accepted_main_queue": {
+            "observed": 11,
+            "mean_ms": 12.360080454545455,
+            "p50_ms": 11.867292,
+            "p95_ms": 22.579792,
+            "p99_ms": 22.579792,
+            "max_ms": 22.579792
+          },
+          "accepted_callback": {
+            "observed": 11,
+            "mean_ms": 3.5395408181818184,
+            "p50_ms": 2.214063,
+            "p95_ms": 9.868802,
+            "p99_ms": 9.868802,
+            "max_ms": 9.868802
+          }
+        }
+      },
+      "japanese_english/60/asdc/service-roleplay/neighbor": {
+        "attribution": {
+          "letters": 36,
+          "unique_request": 36
+        },
+        "counts": {
+          "requests": 36,
+          "worker_started": 36,
+          "posted": 36,
+          "entered": 36,
+          "accepted": 36
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 36,
+            "mean_ms": 8.148579277777777,
+            "p50_ms": 8.1142445,
+            "p95_ms": 8.437552,
+            "p99_ms": 8.497761,
+            "max_ms": 8.497761
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 36,
+            "mean_ms": 0.14857927777777777,
+            "p50_ms": 0.1142445,
+            "p95_ms": 0.437552,
+            "p99_ms": 0.497761,
+            "max_ms": 0.497761
+          },
+          "provider_work": {
+            "observed": 36,
+            "mean_ms": 0.5432479444444445,
+            "p50_ms": 0.3883855,
+            "p95_ms": 1.430833,
+            "p99_ms": 2.702604,
+            "max_ms": 2.702604
+          },
+          "before_post": {
+            "observed": 36,
+            "mean_ms": 0.0024493333333333333,
+            "p50_ms": 0.002266,
+            "p95_ms": 0.00375,
+            "p99_ms": 0.004115,
+            "max_ms": 0.004115
+          },
+          "main_queue": {
+            "observed": 36,
+            "mean_ms": 10.746419305555555,
+            "p50_ms": 10.694141,
+            "p95_ms": 21.053438,
+            "p99_ms": 23.314323,
+            "max_ms": 23.314323
+          },
+          "callback": {
+            "observed": 36,
+            "mean_ms": 2.454646972222222,
+            "p50_ms": 1.577787,
+            "p95_ms": 6.017031,
+            "p99_ms": 8.241302,
+            "max_ms": 8.241302
+          },
+          "request_to_main": {
+            "observed": 36,
+            "mean_ms": 19.44370072222222,
+            "p50_ms": 19.1960155,
+            "p95_ms": 30.202396,
+            "p99_ms": 31.821979,
+            "max_ms": 31.821979
+          },
+          "request_to_finish": {
+            "observed": 36,
+            "mean_ms": 21.898347694444446,
+            "p50_ms": 21.2561975,
+            "p95_ms": 33.868281,
+            "p99_ms": 36.219427,
+            "max_ms": 36.219427
+          },
+          "accepted_scheduled_wait": {
+            "observed": 36,
+            "mean_ms": 8.148579277777777,
+            "p50_ms": 8.1142445,
+            "p95_ms": 8.437552,
+            "p99_ms": 8.497761,
+            "max_ms": 8.497761
+          },
+          "accepted_provider_work": {
+            "observed": 36,
+            "mean_ms": 0.5432479444444445,
+            "p50_ms": 0.3883855,
+            "p95_ms": 1.430833,
+            "p99_ms": 2.702604,
+            "max_ms": 2.702604
+          },
+          "accepted_main_queue": {
+            "observed": 36,
+            "mean_ms": 10.746419305555555,
+            "p50_ms": 10.694141,
+            "p95_ms": 21.053438,
+            "p99_ms": 23.314323,
+            "max_ms": 23.314323
+          },
+          "accepted_callback": {
+            "observed": 36,
+            "mean_ms": 2.454646972222222,
+            "p50_ms": 1.577787,
+            "p95_ms": 6.017031,
+            "p99_ms": 8.241302,
+            "max_ms": 8.241302
+          }
+        }
+      },
+      "japanese_english/60/asdc/service-roleplay/omission": {
+        "attribution": {
+          "letters": 12,
+          "unique_request": 12
+        },
+        "counts": {
+          "requests": 12,
+          "worker_started": 12,
+          "posted": 12,
+          "entered": 12,
+          "accepted": 12
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 12,
+            "mean_ms": 8.140612083333334,
+            "p50_ms": 8.116900999999999,
+            "p95_ms": 8.366823,
+            "p99_ms": 8.366823,
+            "max_ms": 8.366823
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 12,
+            "mean_ms": 0.14061208333333333,
+            "p50_ms": 0.116901,
+            "p95_ms": 0.366823,
+            "p99_ms": 0.366823,
+            "max_ms": 0.366823
+          },
+          "provider_work": {
+            "observed": 12,
+            "mean_ms": 0.6802601666666667,
+            "p50_ms": 0.5852865,
+            "p95_ms": 1.254739,
+            "p99_ms": 1.254739,
+            "max_ms": 1.254739
+          },
+          "before_post": {
+            "observed": 12,
+            "mean_ms": 0.002369916666666667,
+            "p50_ms": 0.0021875,
+            "p95_ms": 0.00349,
+            "p99_ms": 0.00349,
+            "max_ms": 0.00349
+          },
+          "main_queue": {
+            "observed": 12,
+            "mean_ms": 11.554401083333333,
+            "p50_ms": 10.609427,
+            "p95_ms": 21.669062,
+            "p99_ms": 21.669062,
+            "max_ms": 21.669062
+          },
+          "callback": {
+            "observed": 12,
+            "mean_ms": 4.340872333333333,
+            "p50_ms": 4.4628645,
+            "p95_ms": 6.353333,
+            "p99_ms": 6.353333,
+            "max_ms": 6.353333
+          },
+          "request_to_main": {
+            "observed": 12,
+            "mean_ms": 20.37990891666667,
+            "p50_ms": 19.344453,
+            "p95_ms": 31.037604,
+            "p99_ms": 31.037604,
+            "max_ms": 31.037604
+          },
+          "request_to_finish": {
+            "observed": 12,
+            "mean_ms": 24.72078125,
+            "p50_ms": 23.874375,
+            "p95_ms": 35.662292,
+            "p99_ms": 35.662292,
+            "max_ms": 35.662292
+          },
+          "accepted_scheduled_wait": {
+            "observed": 12,
+            "mean_ms": 8.140612083333334,
+            "p50_ms": 8.116900999999999,
+            "p95_ms": 8.366823,
+            "p99_ms": 8.366823,
+            "max_ms": 8.366823
+          },
+          "accepted_provider_work": {
+            "observed": 12,
+            "mean_ms": 0.6802601666666667,
+            "p50_ms": 0.5852865,
+            "p95_ms": 1.254739,
+            "p99_ms": 1.254739,
+            "max_ms": 1.254739
+          },
+          "accepted_main_queue": {
+            "observed": 12,
+            "mean_ms": 11.554401083333333,
+            "p50_ms": 10.609427,
+            "p95_ms": 21.669062,
+            "p99_ms": 21.669062,
+            "max_ms": 21.669062
+          },
+          "accepted_callback": {
+            "observed": 12,
+            "mean_ms": 4.340872333333333,
+            "p50_ms": 4.4628645,
+            "p95_ms": 6.353333,
+            "p99_ms": 6.353333,
+            "max_ms": 6.353333
+          }
+        }
+      },
+      "japanese_english/60/asdc/service-roleplay/transpose": {
+        "attribution": {
+          "letters": 17,
+          "unique_request": 17
+        },
+        "counts": {
+          "requests": 17,
+          "worker_started": 17,
+          "posted": 17,
+          "entered": 17,
+          "accepted": 17
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 17,
+            "mean_ms": 8.16678288235294,
+            "p50_ms": 8.116562,
+            "p95_ms": 8.3825,
+            "p99_ms": 8.3825,
+            "max_ms": 8.3825
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 17,
+            "mean_ms": 0.16678288235294117,
+            "p50_ms": 0.116562,
+            "p95_ms": 0.3825,
+            "p99_ms": 0.3825,
+            "max_ms": 0.3825
+          },
+          "provider_work": {
+            "observed": 17,
+            "mean_ms": 0.8259804117647059,
+            "p50_ms": 0.570834,
+            "p95_ms": 1.63,
+            "p99_ms": 1.63,
+            "max_ms": 1.63
+          },
+          "before_post": {
+            "observed": 17,
+            "mean_ms": 0.0025488823529411764,
+            "p50_ms": 0.002448,
+            "p95_ms": 0.003958,
+            "p99_ms": 0.003958,
+            "max_ms": 0.003958
+          },
+          "main_queue": {
+            "observed": 17,
+            "mean_ms": 8.41302405882353,
+            "p50_ms": 8.246354,
+            "p95_ms": 17.380313,
+            "p99_ms": 17.380313,
+            "max_ms": 17.380313
+          },
+          "callback": {
+            "observed": 17,
+            "mean_ms": 3.879077705882353,
+            "p50_ms": 4.608281,
+            "p95_ms": 5.392187,
+            "p99_ms": 5.392187,
+            "max_ms": 5.392187
+          },
+          "request_to_main": {
+            "observed": 17,
+            "mean_ms": 17.41070782352941,
+            "p50_ms": 18.022604,
+            "p95_ms": 27.103542,
+            "p99_ms": 27.103542,
+            "max_ms": 27.103542
+          },
+          "request_to_finish": {
+            "observed": 17,
+            "mean_ms": 21.289785529411766,
+            "p50_ms": 21.251614,
+            "p95_ms": 31.648073,
+            "p99_ms": 31.648073,
+            "max_ms": 31.648073
+          },
+          "accepted_scheduled_wait": {
+            "observed": 17,
+            "mean_ms": 8.16678288235294,
+            "p50_ms": 8.116562,
+            "p95_ms": 8.3825,
+            "p99_ms": 8.3825,
+            "max_ms": 8.3825
+          },
+          "accepted_provider_work": {
+            "observed": 17,
+            "mean_ms": 0.8259804117647059,
+            "p50_ms": 0.570834,
+            "p95_ms": 1.63,
+            "p99_ms": 1.63,
+            "max_ms": 1.63
+          },
+          "accepted_main_queue": {
+            "observed": 17,
+            "mean_ms": 8.41302405882353,
+            "p50_ms": 8.246354,
+            "p95_ms": 17.380313,
+            "p99_ms": 17.380313,
+            "max_ms": 17.380313
+          },
+          "accepted_callback": {
+            "observed": 17,
+            "mean_ms": 3.879077705882353,
+            "p50_ms": 4.608281,
+            "p95_ms": 5.392187,
+            "p99_ms": 5.392187,
+            "max_ms": 5.392187
+          }
+        }
+      },
+      "japanese_english/60/real-persona-chat/casual-conversation/full": {
+        "attribution": {
+          "letters": 37,
+          "unique_request": 37
+        },
+        "counts": {
+          "requests": 37,
+          "worker_started": 37,
+          "posted": 37,
+          "entered": 37,
+          "accepted": 37
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 37,
+            "mean_ms": 8.154418621621621,
+            "p50_ms": 8.117188,
+            "p95_ms": 8.379375,
+            "p99_ms": 8.478385,
+            "max_ms": 8.478385
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 37,
+            "mean_ms": 0.15441862162162162,
+            "p50_ms": 0.117188,
+            "p95_ms": 0.379375,
+            "p99_ms": 0.478385,
+            "max_ms": 0.478385
+          },
+          "provider_work": {
+            "observed": 37,
+            "mean_ms": 0.6266273243243243,
+            "p50_ms": 0.401198,
+            "p95_ms": 1.710104,
+            "p99_ms": 3.712969,
+            "max_ms": 3.712969
+          },
+          "before_post": {
+            "observed": 37,
+            "mean_ms": 0.0025985405405405406,
+            "p50_ms": 0.002448,
+            "p95_ms": 0.003958,
+            "p99_ms": 0.005521,
+            "max_ms": 0.005521
+          },
+          "main_queue": {
+            "observed": 37,
+            "mean_ms": 9.989425648648648,
+            "p50_ms": 9.838229,
+            "p95_ms": 20.708385,
+            "p99_ms": 25.778177,
+            "max_ms": 25.778177
+          },
+          "callback": {
+            "observed": 37,
+            "mean_ms": 2.1940357027027027,
+            "p50_ms": 1.60651,
+            "p95_ms": 4.787605,
+            "p99_ms": 4.869323,
+            "max_ms": 4.869323
+          },
+          "request_to_main": {
+            "observed": 37,
+            "mean_ms": 18.776399243243244,
+            "p50_ms": 18.38651,
+            "p95_ms": 30.139427,
+            "p99_ms": 37.632344,
+            "max_ms": 37.632344
+          },
+          "request_to_finish": {
+            "observed": 37,
+            "mean_ms": 20.970434945945946,
+            "p50_ms": 19.970365,
+            "p95_ms": 34.927032,
+            "p99_ms": 42.501667,
+            "max_ms": 42.501667
+          },
+          "accepted_scheduled_wait": {
+            "observed": 37,
+            "mean_ms": 8.154418621621621,
+            "p50_ms": 8.117188,
+            "p95_ms": 8.379375,
+            "p99_ms": 8.478385,
+            "max_ms": 8.478385
+          },
+          "accepted_provider_work": {
+            "observed": 37,
+            "mean_ms": 0.6266273243243243,
+            "p50_ms": 0.401198,
+            "p95_ms": 1.710104,
+            "p99_ms": 3.712969,
+            "max_ms": 3.712969
+          },
+          "accepted_main_queue": {
+            "observed": 37,
+            "mean_ms": 9.989425648648648,
+            "p50_ms": 9.838229,
+            "p95_ms": 20.708385,
+            "p99_ms": 25.778177,
+            "max_ms": 25.778177
+          },
+          "accepted_callback": {
+            "observed": 37,
+            "mean_ms": 2.1940357027027027,
+            "p50_ms": 1.60651,
+            "p95_ms": 4.787605,
+            "p99_ms": 4.869323,
+            "max_ms": 4.869323
+          }
+        }
+      },
+      "japanese_english/60/real-persona-chat/casual-conversation/half": {
+        "attribution": {
+          "letters": 23,
+          "unique_request": 23
+        },
+        "counts": {
+          "requests": 23,
+          "worker_started": 23,
+          "posted": 23,
+          "entered": 23,
+          "accepted": 23
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 23,
+            "mean_ms": 8.180378130434782,
+            "p50_ms": 8.120729,
+            "p95_ms": 8.392083,
+            "p99_ms": 8.81599,
+            "max_ms": 8.81599
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 23,
+            "mean_ms": 0.18037813043478262,
+            "p50_ms": 0.120729,
+            "p95_ms": 0.392083,
+            "p99_ms": 0.81599,
+            "max_ms": 0.81599
+          },
+          "provider_work": {
+            "observed": 23,
+            "mean_ms": 0.6670244782608695,
+            "p50_ms": 0.468594,
+            "p95_ms": 1.276927,
+            "p99_ms": 1.505937,
+            "max_ms": 1.505937
+          },
+          "before_post": {
+            "observed": 23,
+            "mean_ms": 0.0026945652173913045,
+            "p50_ms": 0.002552,
+            "p95_ms": 0.00401,
+            "p99_ms": 0.004375,
+            "max_ms": 0.004375
+          },
+          "main_queue": {
+            "observed": 23,
+            "mean_ms": 7.452574913043478,
+            "p50_ms": 6.244532,
+            "p95_ms": 16.212083,
+            "p99_ms": 18.46724,
+            "max_ms": 18.46724
+          },
+          "callback": {
+            "observed": 23,
+            "mean_ms": 3.6255752173913045,
+            "p50_ms": 3.787969,
+            "p95_ms": 6.521927,
+            "p99_ms": 6.606458,
+            "max_ms": 6.606458
+          },
+          "request_to_main": {
+            "observed": 23,
+            "mean_ms": 16.305140304347827,
+            "p50_ms": 15.272292,
+            "p95_ms": 25.706875,
+            "p99_ms": 27.864792,
+            "max_ms": 27.864792
+          },
+          "request_to_finish": {
+            "observed": 23,
+            "mean_ms": 19.93071552173913,
+            "p50_ms": 17.739583,
+            "p95_ms": 31.631146,
+            "p99_ms": 32.571042,
+            "max_ms": 32.571042
+          },
+          "accepted_scheduled_wait": {
+            "observed": 23,
+            "mean_ms": 8.180378130434782,
+            "p50_ms": 8.120729,
+            "p95_ms": 8.392083,
+            "p99_ms": 8.81599,
+            "max_ms": 8.81599
+          },
+          "accepted_provider_work": {
+            "observed": 23,
+            "mean_ms": 0.6670244782608695,
+            "p50_ms": 0.468594,
+            "p95_ms": 1.276927,
+            "p99_ms": 1.505937,
+            "max_ms": 1.505937
+          },
+          "accepted_main_queue": {
+            "observed": 23,
+            "mean_ms": 7.452574913043478,
+            "p50_ms": 6.244532,
+            "p95_ms": 16.212083,
+            "p99_ms": 18.46724,
+            "max_ms": 18.46724
+          },
+          "accepted_callback": {
+            "observed": 23,
+            "mean_ms": 3.6255752173913045,
+            "p50_ms": 3.787969,
+            "p95_ms": 6.521927,
+            "p99_ms": 6.606458,
+            "max_ms": 6.606458
+          }
+        }
+      },
+      "japanese_english/60/real-persona-chat/casual-conversation/initials": {
+        "attribution": {
+          "letters": 10,
+          "unique_request": 10
+        },
+        "counts": {
+          "requests": 10,
+          "worker_started": 10,
+          "posted": 10,
+          "entered": 10,
+          "accepted": 10
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 10,
+            "mean_ms": 8.1747658,
+            "p50_ms": 8.119245,
+            "p95_ms": 8.46375,
+            "p99_ms": 8.46375,
+            "max_ms": 8.46375
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 10,
+            "mean_ms": 0.1747658,
+            "p50_ms": 0.119245,
+            "p95_ms": 0.46375,
+            "p99_ms": 0.46375,
+            "max_ms": 0.46375
+          },
+          "provider_work": {
+            "observed": 10,
+            "mean_ms": 0.7537761,
+            "p50_ms": 0.516693,
+            "p95_ms": 1.729636,
+            "p99_ms": 1.729636,
+            "max_ms": 1.729636
+          },
+          "before_post": {
+            "observed": 10,
+            "mean_ms": 0.0039948,
+            "p50_ms": 0.002813,
+            "p95_ms": 0.014479,
+            "p99_ms": 0.014479,
+            "max_ms": 0.014479
+          },
+          "main_queue": {
+            "observed": 10,
+            "mean_ms": 14.4386405,
+            "p50_ms": 12.515390499999999,
+            "p95_ms": 28.687813,
+            "p99_ms": 28.687813,
+            "max_ms": 28.687813
+          },
+          "callback": {
+            "observed": 10,
+            "mean_ms": 3.1494792,
+            "p50_ms": 3.0276305,
+            "p95_ms": 6.04151,
+            "p99_ms": 6.04151,
+            "max_ms": 6.04151
+          },
+          "request_to_main": {
+            "observed": 10,
+            "mean_ms": 23.373953,
+            "p50_ms": 20.9215105,
+            "p95_ms": 37.809896,
+            "p99_ms": 37.809896,
+            "max_ms": 37.809896
+          },
+          "request_to_finish": {
+            "observed": 10,
+            "mean_ms": 26.523432200000002,
+            "p50_ms": 23.1241665,
+            "p95_ms": 42.121771,
+            "p99_ms": 42.121771,
+            "max_ms": 42.121771
+          },
+          "accepted_scheduled_wait": {
+            "observed": 10,
+            "mean_ms": 8.1747658,
+            "p50_ms": 8.119245,
+            "p95_ms": 8.46375,
+            "p99_ms": 8.46375,
+            "max_ms": 8.46375
+          },
+          "accepted_provider_work": {
+            "observed": 10,
+            "mean_ms": 0.7537761,
+            "p50_ms": 0.516693,
+            "p95_ms": 1.729636,
+            "p99_ms": 1.729636,
+            "max_ms": 1.729636
+          },
+          "accepted_main_queue": {
+            "observed": 10,
+            "mean_ms": 14.4386405,
+            "p50_ms": 12.515390499999999,
+            "p95_ms": 28.687813,
+            "p99_ms": 28.687813,
+            "max_ms": 28.687813
+          },
+          "accepted_callback": {
+            "observed": 10,
+            "mean_ms": 3.1494792,
+            "p50_ms": 3.0276305,
+            "p95_ms": 6.04151,
+            "p99_ms": 6.04151,
+            "max_ms": 6.04151
+          }
+        }
+      },
+      "japanese_english/60/real-persona-chat/casual-conversation/mixed": {
+        "attribution": {
+          "letters": 12,
+          "unique_request": 12
+        },
+        "counts": {
+          "requests": 12,
+          "worker_started": 12,
+          "posted": 12,
+          "entered": 12,
+          "accepted": 12
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 12,
+            "mean_ms": 8.169553,
+            "p50_ms": 8.121432,
+            "p95_ms": 8.317708,
+            "p99_ms": 8.317708,
+            "max_ms": 8.317708
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 12,
+            "mean_ms": 0.169553,
+            "p50_ms": 0.121432,
+            "p95_ms": 0.317708,
+            "p99_ms": 0.317708,
+            "max_ms": 0.317708
+          },
+          "provider_work": {
+            "observed": 12,
+            "mean_ms": 0.62327675,
+            "p50_ms": 0.40177050000000003,
+            "p95_ms": 1.358542,
+            "p99_ms": 1.358542,
+            "max_ms": 1.358542
+          },
+          "before_post": {
+            "observed": 12,
+            "mean_ms": 0.002890666666666667,
+            "p50_ms": 0.0027085,
+            "p95_ms": 0.005416,
+            "p99_ms": 0.005416,
+            "max_ms": 0.005416
+          },
+          "main_queue": {
+            "observed": 12,
+            "mean_ms": 14.306814166666667,
+            "p50_ms": 12.868333,
+            "p95_ms": 28.052395,
+            "p99_ms": 28.052395,
+            "max_ms": 28.052395
+          },
+          "callback": {
+            "observed": 12,
+            "mean_ms": 2.4857465833333334,
+            "p50_ms": 1.7499995,
+            "p95_ms": 4.861979,
+            "p99_ms": 4.861979,
+            "max_ms": 4.861979
+          },
+          "request_to_main": {
+            "observed": 12,
+            "mean_ms": 23.10536025,
+            "p50_ms": 21.336848500000002,
+            "p95_ms": 36.756562,
+            "p99_ms": 36.756562,
+            "max_ms": 36.756562
+          },
+          "request_to_finish": {
+            "observed": 12,
+            "mean_ms": 25.591106833333335,
+            "p50_ms": 22.449193,
+            "p95_ms": 38.838906,
+            "p99_ms": 38.838906,
+            "max_ms": 38.838906
+          },
+          "accepted_scheduled_wait": {
+            "observed": 12,
+            "mean_ms": 8.169553,
+            "p50_ms": 8.121432,
+            "p95_ms": 8.317708,
+            "p99_ms": 8.317708,
+            "max_ms": 8.317708
+          },
+          "accepted_provider_work": {
+            "observed": 12,
+            "mean_ms": 0.62327675,
+            "p50_ms": 0.40177050000000003,
+            "p95_ms": 1.358542,
+            "p99_ms": 1.358542,
+            "max_ms": 1.358542
+          },
+          "accepted_main_queue": {
+            "observed": 12,
+            "mean_ms": 14.306814166666667,
+            "p50_ms": 12.868333,
+            "p95_ms": 28.052395,
+            "p99_ms": 28.052395,
+            "max_ms": 28.052395
+          },
+          "accepted_callback": {
+            "observed": 12,
+            "mean_ms": 2.4857465833333334,
+            "p50_ms": 1.7499995,
+            "p95_ms": 4.861979,
+            "p99_ms": 4.861979,
+            "max_ms": 4.861979
+          }
+        }
+      },
+      "japanese_english/60/real-persona-chat/casual-conversation/neighbor": {
+        "attribution": {
+          "letters": 19,
+          "unique_request": 19
+        },
+        "counts": {
+          "requests": 19,
+          "worker_started": 19,
+          "posted": 19,
+          "entered": 19,
+          "accepted": 19
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 19,
+            "mean_ms": 8.151252684210526,
+            "p50_ms": 8.119635,
+            "p95_ms": 8.403125,
+            "p99_ms": 8.403125,
+            "max_ms": 8.403125
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 19,
+            "mean_ms": 0.15125268421052632,
+            "p50_ms": 0.119635,
+            "p95_ms": 0.403125,
+            "p99_ms": 0.403125,
+            "max_ms": 0.403125
+          },
+          "provider_work": {
+            "observed": 19,
+            "mean_ms": 0.6213762105263158,
+            "p50_ms": 0.492292,
+            "p95_ms": 1.200573,
+            "p99_ms": 1.200573,
+            "max_ms": 1.200573
+          },
+          "before_post": {
+            "observed": 19,
+            "mean_ms": 0.0030700526315789473,
+            "p50_ms": 0.003125,
+            "p95_ms": 0.004948,
+            "p99_ms": 0.004948,
+            "max_ms": 0.004948
+          },
+          "main_queue": {
+            "observed": 19,
+            "mean_ms": 11.811165052631578,
+            "p50_ms": 10.517656,
+            "p95_ms": 29.345625,
+            "p99_ms": 29.345625,
+            "max_ms": 29.345625
+          },
+          "callback": {
+            "observed": 19,
+            "mean_ms": 3.4675603157894734,
+            "p50_ms": 4.19349,
+            "p95_ms": 6.633958,
+            "p99_ms": 6.633958,
+            "max_ms": 6.633958
+          },
+          "request_to_main": {
+            "observed": 19,
+            "mean_ms": 20.590348105263157,
+            "p50_ms": 19.157395,
+            "p95_ms": 38.82349,
+            "p99_ms": 38.82349,
+            "max_ms": 38.82349
+          },
+          "request_to_finish": {
+            "observed": 19,
+            "mean_ms": 24.057908421052634,
+            "p50_ms": 21.557813,
+            "p95_ms": 43.464063,
+            "p99_ms": 43.464063,
+            "max_ms": 43.464063
+          },
+          "accepted_scheduled_wait": {
+            "observed": 19,
+            "mean_ms": 8.151252684210526,
+            "p50_ms": 8.119635,
+            "p95_ms": 8.403125,
+            "p99_ms": 8.403125,
+            "max_ms": 8.403125
+          },
+          "accepted_provider_work": {
+            "observed": 19,
+            "mean_ms": 0.6213762105263158,
+            "p50_ms": 0.492292,
+            "p95_ms": 1.200573,
+            "p99_ms": 1.200573,
+            "max_ms": 1.200573
+          },
+          "accepted_main_queue": {
+            "observed": 19,
+            "mean_ms": 11.811165052631578,
+            "p50_ms": 10.517656,
+            "p95_ms": 29.345625,
+            "p99_ms": 29.345625,
+            "max_ms": 29.345625
+          },
+          "accepted_callback": {
+            "observed": 19,
+            "mean_ms": 3.4675603157894734,
+            "p50_ms": 4.19349,
+            "p95_ms": 6.633958,
+            "p99_ms": 6.633958,
+            "max_ms": 6.633958
+          }
+        }
+      },
+      "japanese_english/60/real-persona-chat/casual-conversation/omission": {
+        "attribution": {
+          "letters": 13,
+          "unique_request": 13
+        },
+        "counts": {
+          "requests": 13,
+          "worker_started": 13,
+          "posted": 13,
+          "entered": 13,
+          "accepted": 13
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 13,
+            "mean_ms": 8.135456692307692,
+            "p50_ms": 8.110469,
+            "p95_ms": 8.432656,
+            "p99_ms": 8.432656,
+            "max_ms": 8.432656
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 13,
+            "mean_ms": 0.1354566923076923,
+            "p50_ms": 0.110469,
+            "p95_ms": 0.432656,
+            "p99_ms": 0.432656,
+            "max_ms": 0.432656
+          },
+          "provider_work": {
+            "observed": 13,
+            "mean_ms": 0.6746716923076923,
+            "p50_ms": 0.598178,
+            "p95_ms": 1.35,
+            "p99_ms": 1.35,
+            "max_ms": 1.35
+          },
+          "before_post": {
+            "observed": 13,
+            "mean_ms": 0.0027724615384615383,
+            "p50_ms": 0.002656,
+            "p95_ms": 0.00375,
+            "p99_ms": 0.00375,
+            "max_ms": 0.00375
+          },
+          "main_queue": {
+            "observed": 13,
+            "mean_ms": 11.009286692307693,
+            "p50_ms": 10.150781,
+            "p95_ms": 23.661459,
+            "p99_ms": 23.661459,
+            "max_ms": 23.661459
+          },
+          "callback": {
+            "observed": 13,
+            "mean_ms": 3.7123237692307693,
+            "p50_ms": 4.666875,
+            "p95_ms": 5.649271,
+            "p99_ms": 5.649271,
+            "max_ms": 5.649271
+          },
+          "request_to_main": {
+            "observed": 13,
+            "mean_ms": 19.82548046153846,
+            "p50_ms": 19.194635,
+            "p95_ms": 32.651823,
+            "p99_ms": 32.651823,
+            "max_ms": 32.651823
+          },
+          "request_to_finish": {
+            "observed": 13,
+            "mean_ms": 23.537804230769233,
+            "p50_ms": 24.413489,
+            "p95_ms": 37.405521,
+            "p99_ms": 37.405521,
+            "max_ms": 37.405521
+          },
+          "accepted_scheduled_wait": {
+            "observed": 13,
+            "mean_ms": 8.135456692307692,
+            "p50_ms": 8.110469,
+            "p95_ms": 8.432656,
+            "p99_ms": 8.432656,
+            "max_ms": 8.432656
+          },
+          "accepted_provider_work": {
+            "observed": 13,
+            "mean_ms": 0.6746716923076923,
+            "p50_ms": 0.598178,
+            "p95_ms": 1.35,
+            "p99_ms": 1.35,
+            "max_ms": 1.35
+          },
+          "accepted_main_queue": {
+            "observed": 13,
+            "mean_ms": 11.009286692307693,
+            "p50_ms": 10.150781,
+            "p95_ms": 23.661459,
+            "p99_ms": 23.661459,
+            "max_ms": 23.661459
+          },
+          "accepted_callback": {
+            "observed": 13,
+            "mean_ms": 3.7123237692307693,
+            "p50_ms": 4.666875,
+            "p95_ms": 5.649271,
+            "p99_ms": 5.649271,
+            "max_ms": 5.649271
+          }
+        }
+      },
+      "japanese_english/60/real-persona-chat/casual-conversation/transpose": {
+        "attribution": {
+          "letters": 31,
+          "unique_request": 31
+        },
+        "counts": {
+          "requests": 31,
+          "worker_started": 31,
+          "posted": 31,
+          "entered": 31,
+          "accepted": 31
+        },
+        "stages": {
+          "scheduled_wait": {
+            "observed": 31,
+            "mean_ms": 8.147368903225807,
+            "p50_ms": 8.11224,
+            "p95_ms": 8.385053,
+            "p99_ms": 8.518281,
+            "max_ms": 8.518281
+          },
+          "schedule_deadline_overshoot": {
+            "observed": 31,
+            "mean_ms": 0.14736890322580645,
+            "p50_ms": 0.11224,
+            "p95_ms": 0.385053,
+            "p99_ms": 0.518281,
+            "max_ms": 0.518281
+          },
+          "provider_work": {
+            "observed": 31,
+            "mean_ms": 0.47255048387096776,
+            "p50_ms": 0.319531,
+            "p95_ms": 1.166094,
+            "p99_ms": 1.311771,
+            "max_ms": 1.311771
+          },
+          "before_post": {
+            "observed": 31,
+            "mean_ms": 0.0024713870967741935,
+            "p50_ms": 0.002344,
+            "p95_ms": 0.003125,
+            "p99_ms": 0.00375,
+            "max_ms": 0.00375
+          },
+          "main_queue": {
+            "observed": 31,
+            "mean_ms": 10.128506451612903,
+            "p50_ms": 10.183542,
+            "p95_ms": 21.477448,
+            "p99_ms": 24.308906,
+            "max_ms": 24.308906
+          },
+          "callback": {
+            "observed": 31,
+            "mean_ms": 2.4565204193548387,
+            "p50_ms": 1.476823,
+            "p95_ms": 5.820625,
+            "p99_ms": 5.837761,
+            "max_ms": 5.837761
+          },
+          "request_to_main": {
+            "observed": 31,
+            "mean_ms": 18.753776903225805,
+            "p50_ms": 18.675365,
+            "p95_ms": 31.313906,
+            "p99_ms": 33.208906,
+            "max_ms": 33.208906
+          },
+          "request_to_finish": {
+            "observed": 31,
+            "mean_ms": 21.210297322580644,
+            "p50_ms": 20.832917,
+            "p95_ms": 35.674219,
+            "p99_ms": 37.515833,
+            "max_ms": 37.515833
+          },
+          "accepted_scheduled_wait": {
+            "observed": 31,
+            "mean_ms": 8.147368903225807,
+            "p50_ms": 8.11224,
+            "p95_ms": 8.385053,
+            "p99_ms": 8.518281,
+            "max_ms": 8.518281
+          },
+          "accepted_provider_work": {
+            "observed": 31,
+            "mean_ms": 0.47255048387096776,
+            "p50_ms": 0.319531,
+            "p95_ms": 1.166094,
+            "p99_ms": 1.311771,
+            "max_ms": 1.311771
+          },
+          "accepted_main_queue": {
+            "observed": 31,
+            "mean_ms": 10.128506451612903,
+            "p50_ms": 10.183542,
+            "p95_ms": 21.477448,
+            "p99_ms": 24.308906,
+            "max_ms": 24.308906
+          },
+          "accepted_callback": {
+            "observed": 31,
+            "mean_ms": 2.4565204193548387,
+            "p50_ms": 1.476823,
+            "p95_ms": 5.820625,
+            "p99_ms": 5.837761,
+            "max_ms": 5.837761
+          }
+        }
+      }
+    }
+  }
+}
