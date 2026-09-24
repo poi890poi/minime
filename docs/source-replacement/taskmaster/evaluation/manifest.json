@@ -1,0 +1,166 @@
+{
+  "source_manifest_sha256": "da23080876c61289d3a00a0fb898231c641fb71c438034d7de0b3944098e180c",
+  "training_conversations": 6165,
+  "training_utterances": 135576,
+  "excluded": [
+    {
+      "id": "dlg-70bd013e-a4c0-4553-96b6-4932e1c8e9c3",
+      "reason": "duplicate-training-dialogue",
+      "signature": "74162b1230648c728831fc4e7e6f7cf23495cb923fbfa5eb5380f23ebbdeba10"
+    },
+    {
+      "id": "dlg-ca2ffca3-4a4b-45c3-beb3-c2757f503773",
+      "reason": "duplicate-training-dialogue",
+      "signature": "60c733afbe1bb9a279effa11264fd05e71dc23e26ee0ea1c2a9676b29121c344"
+    },
+    {
+      "id": "dlg-d53cc100-9448-41ca-8e32-a4282aa20d81",
+      "reason": "evaluation-dialogue-overlap",
+      "signature": "610dd0a1173c82cdffdf9a6940b69ff0c583ac13269ccb8f773bf6d545d0aed7"
+    }
+  ],
+  "model_sha256": "897d31f35d236d0570312b4b58c81c0da23b709339c81037368453d873359e0f",
+  "model_bytes": 2583970,
+  "model_rows": 140815,
+  "inputs_sha256": "1ddf2e6a8ca3bcbae402f85106df70ef4623d71816ed9a143a61c2ef7fcb6fe6",
+  "contexts_sha256": "687069df539bf3c7b38c041c4a7001dff690e63e6b5dbb77f7d5eab4388d6507",
+  "evaluation_tokens": 253275,
+  "unique_contexts": 52004,
+  "source_pins": {
+    "artifacts/mode-corpus/en_gum-ud-train.conllu": "2c25ae2a7c51ac467777eeeb0beae46b46e389c5e8c5d6f8a0513b0e0f7683af",
+    "artifacts/mode-corpus/en_gum-ud-dev.conllu": "6625c7dcdf8440cc8d098aef13e84ed5585c7a9484c47a07ac9f15e73a6b02a6",
+    "app/src/main/assets/context.tsv": "0627a69373c47f8ffca381245fd48292a50316ff8cbca53efbfa70e545f60952"
+  },
+  "groups": {
+    "gum/conversation": {
+      "documents": 12,
+      "tokens": 9257
+    },
+    "gum/essay": {
+      "documents": 4,
+      "tokens": 3607
+    },
+    "taskmaster/dev/auto-repair-appt-1": {
+      "documents": 106,
+      "tokens": 19062
+    },
+    "taskmaster/dev/coffee-ordering-1": {
+      "documents": 84,
+      "tokens": 11736
+    },
+    "taskmaster/dev/coffee-ordering-2": {
+      "documents": 56,
+      "tokens": 7626
+    },
+    "taskmaster/dev/movie-finder": {
+      "documents": 5,
+      "tokens": 698
+    },
+    "taskmaster/dev/movie-ticket-1": {
+      "documents": 7,
+      "tokens": 1114
+    },
+    "taskmaster/dev/movie-tickets-1": {
+      "documents": 59,
+      "tokens": 8408
+    },
+    "taskmaster/dev/movie-tickets-2": {
+      "documents": 42,
+      "tokens": 6793
+    },
+    "taskmaster/dev/movie-tickets-3": {
+      "documents": 11,
+      "tokens": 1873
+    },
+    "taskmaster/dev/pizza-ordering-1": {
+      "documents": 31,
+      "tokens": 4778
+    },
+    "taskmaster/dev/pizza-ordering-2": {
+      "documents": 128,
+      "tokens": 19134
+    },
+    "taskmaster/dev/restaurant-table-1": {
+      "documents": 64,
+      "tokens": 11571
+    },
+    "taskmaster/dev/restaurant-table-2": {
+      "documents": 54,
+      "tokens": 8254
+    },
+    "taskmaster/dev/restaurant-table-3": {
+      "documents": 8,
+      "tokens": 1175
+    },
+    "taskmaster/dev/uber-lyft-1": {
+      "documents": 76,
+      "tokens": 12226
+    },
+    "taskmaster/dev/uber-lyft-2": {
+      "documents": 39,
+      "tokens": 5735
+    },
+    "taskmaster/test/auto-repair-appt-1": {
+      "documents": 108,
+      "tokens": 18672
+    },
+    "taskmaster/test/coffee-ordering-1": {
+      "documents": 79,
+      "tokens": 10882
+    },
+    "taskmaster/test/coffee-ordering-2": {
+      "documents": 52,
+      "tokens": 7006
+    },
+    "taskmaster/test/movie-finder": {
+      "documents": 5,
+      "tokens": 498
+    },
+    "taskmaster/test/movie-ticket-1": {
+      "documents": 3,
+      "tokens": 559
+    },
+    "taskmaster/test/movie-tickets-1": {
+      "documents": 73,
+      "tokens": 10960
+    },
+    "taskmaster/test/movie-tickets-2": {
+      "documents": 45,
+      "tokens": 7615
+    },
+    "taskmaster/test/movie-tickets-3": {
+      "documents": 26,
+      "tokens": 3978
+    },
+    "taskmaster/test/pizza-ordering-1": {
+      "documents": 22,
+      "tokens": 3791
+    },
+    "taskmaster/test/pizza-ordering-2": {
+      "documents": 109,
+      "tokens": 16346
+    },
+    "taskmaster/test/restaurant-table-1": {
+      "documents": 71,
+      "tokens": 13295
+    },
+    "taskmaster/test/restaurant-table-2": {
+      "documents": 48,
+      "tokens": 7363
+    },
+    "taskmaster/test/restaurant-table-3": {
+      "documents": 14,
+      "tokens": 2132
+    },
+    "taskmaster/test/uber-lyft-1": {
+      "documents": 64,
+      "tokens": 9527
+    },
+    "taskmaster/test/uber-lyft-2": {
+      "documents": 51,
+      "tokens": 7604
+    }
+  },
+  "production_changed": false,
+  "exposure": "Frozen before prediction queries. Taskmaster first-use split evaluation; GUM is previously evaluated source material."
+}

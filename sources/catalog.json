@@ -1160,13 +1160,16 @@
       "editorial": "Crowdsourced human-authored self-dialogues from explicit service scenarios; dataset-specific CC BY notice covers the authored work.",
       "coverage": "7,708 self-dialogues; official splits contain 6,168 train, 770 dev and 770 test IDs; 169,469 nonempty utterances.",
       "limitations": "Six task domains; a single worker plays both sides in self-dialogues. Not spontaneous multi-party chat, general population frequency, or Taiwan Mandarin data. Structural audit found two duplicate train records and one train/test full-dialogue overlap; declared signature decontamination is required before extraction.",
-      "reason": "Audit a licensed replacement for English EWT-derived context counts; production admission requires separate quality comparison.",
+      "reason": "Licensed source pilot rejected as a sole English context replacement: gains in service-dialogue next-word recall accompany losses in casual conversations and essays. No production admission.",
       "addon_prefixes": [],
       "audit_files": [
         "docs/source-replacement/taskmaster/PLAN.md",
         "docs/source-replacement/taskmaster/UPSTREAM-README.md",
         "docs/source-replacement/taskmaster/manifest.json",
-        "docs/source-replacement/taskmaster/audit.py"
+        "docs/source-replacement/taskmaster/audit.py",
+        "docs/source-replacement/taskmaster/EVALUATION-PLAN.md",
+        "docs/source-replacement/taskmaster/pilot.py",
+        "docs/source-replacement/taskmaster/RESULTS.md"
       ]
     }
   ]

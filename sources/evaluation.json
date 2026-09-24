@@ -3,6 +3,39 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "taskmaster-context-replacement-20260924",
+      "source_ids": [
+        "taskmaster-english-pilot",
+        "ud-gum-evaluation"
+      ],
+      "genre": [
+        "prompted-self-dialogue",
+        "casual-conversation",
+        "essay"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "All eligible following-token positions after within-utterance sentence resets; complete official Taskmaster dev/test and all GUM conversation/essay documents in the existing train/dev cache. Decontaminated official Taskmaster training only contributes to the pilot.",
+      "files": [
+        "docs/source-replacement/taskmaster/evaluation/context.tsv.gz",
+        "docs/source-replacement/taskmaster/evaluation/inputs.tsv.gz",
+        "docs/source-replacement/taskmaster/evaluation/manifest.json",
+        "docs/source-replacement/taskmaster/evaluation/predictions.tsv.gz",
+        "docs/source-replacement/taskmaster/evaluation/summary.json"
+      ],
+      "report_by": [
+        "source",
+        "split",
+        "genre",
+        "instruction-domain",
+        "nonempty-output",
+        "reference-top1-top3-top8",
+        "output-slots"
+      ],
+      "leakage": "First-use Taskmaster prediction evaluation has now been consumed; reused GUM documents are not a fresh holdout. Whole-dialogue train duplicates and train/evaluation overlaps excluded before counts.",
+      "limitations": "Taskmaster shared domains and instructions remain. Single-reference next-word recall is not semantic precision, whole typing coverage or phone latency. Pilot is rejected as a sole replacement; production remains unchanged."
+    },
+    {
       "id": "release-hardening-chat-20260922",
       "source_ids": [
         "moztw-chat-evaluation",

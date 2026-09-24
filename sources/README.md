@@ -26,6 +26,12 @@ English dialogue source as a possible replacement for EWT-derived context data.
 Official conversation splits remain separate; no production input or source-rights
 gate is changed by pilot admission.
 
+The first [context-only comparison](../docs/source-replacement/taskmaster/RESULTS.md)
+rejects Taskmaster as the sole English replacement: service-dialogue gains do
+not offset casual-conversation and essay losses. The pilot remains isolated;
+production counts and the rights gate are unchanged. Evaluation exposure and
+raw-result hashes are recorded separately in evaluation.json.
+
 The September 22 release-hardening evaluation admits only the pinned MozTW CC0
 g0v chat-derived excerpt file; see `../docs/release-hardening/SOURCES.md`. It is
 evaluation-only, with edited/shuffled context and shared-reading limitations. No
