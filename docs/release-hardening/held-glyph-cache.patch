@@ -1,0 +1,102 @@
+diff --git a/app/src/main/java/dev/minime/ime/CandidateGlyphs.java b/app/src/main/java/dev/minime/ime/CandidateGlyphs.java
+index 858812a..75880cf 100644
+--- a/app/src/main/java/dev/minime/ime/CandidateGlyphs.java
++++ b/app/src/main/java/dev/minime/ime/CandidateGlyphs.java
+@@ -15,12 +15,15 @@ final class CandidateGlyphs implements Predicate<String> {
+     @Override public boolean test(String text) {
+         for(int at=0;at<text.length();) {
+             int cp=text.codePointAt(at);at+=Character.charCount(cp);
+-            if(cp>=0xd800 && cp<=0xdfff || cp==0xfffd || (cp>=0xfdd0 && cp<=0xfdef) || (cp&0xffff)>=0xfffe)return false;
+-            // Format controls and variation selectors modify surrounding glyphs.
+-            // hasGlyph on a whole POJ cluster would incorrectly demand a ligature.
+-            if(Character.isWhitespace(cp) || Character.getType(cp)==Character.FORMAT || cp>=0xfe00 && cp<=0xfe0f || cp>=0xe0100 && cp<=0xe01ef)continue;
+-            if(!supported.computeIfAbsent(cp,key->paint.hasGlyph(new String(Character.toChars(key)))))return false;
++            if(!supported.computeIfAbsent(cp,this::supportsCodePoint))return false;
+         }
+         return true;
+     }
++    private boolean supportsCodePoint(int cp) {
++        if(cp>=0xd800 && cp<=0xdfff || cp==0xfffd || (cp>=0xfdd0 && cp<=0xfdef) || (cp&0xffff)>=0xfffe)return false;
++        // Format controls and variation selectors modify surrounding glyphs.
++        // hasGlyph on a whole POJ cluster would incorrectly demand a ligature.
++        if(Character.isWhitespace(cp) || Character.getType(cp)==Character.FORMAT || cp>=0xfe00 && cp<=0xfe0f || cp>=0xe0100 && cp<=0xe01ef)return true;
++        return paint.hasGlyph(new String(Character.toChars(cp)));
++    }
+ }
+diff --git a/app/src/androidTest/java/dev/minime/ime/GlyphCacheParityTest.java b/app/src/androidTest/java/dev/minime/ime/GlyphCacheParityTest.java
+new file mode 100644
+--- /dev/null
++++ b/app/src/androidTest/java/dev/minime/ime/GlyphCacheParityTest.java
+@@ -0,0 +1,72 @@
++package dev.minime.ime;
++
++import android.graphics.Paint;
++import android.test.InstrumentationTestCase;
++import android.widget.TextView;
++import java.io.*;
++import java.lang.reflect.Field;
++import java.util.*;
++
++/** Old policy is an independent device-font oracle; no source entries are modified. */
++@SuppressWarnings("deprecation")
++public final class GlyphCacheParityTest extends InstrumentationTestCase {
++    private static final class Original {
++        final Paint paint;
++        final Map<Integer,Boolean> supported=new LinkedHashMap<Integer,Boolean>(1024,.75f,true) {
++            protected boolean removeEldestEntry(Map.Entry<Integer,Boolean> entry){return size()>8192;}
++        };
++        Original(Paint value){paint=new Paint(value);}
++        boolean test(String text) {
++            for(int at=0;at<text.length();) {
++                int cp=text.codePointAt(at);at+=Character.charCount(cp);
++                if(cp>=0xd800 && cp<=0xdfff || cp==0xfffd || (cp>=0xfdd0 && cp<=0xfdef) || (cp&0xffff)>=0xfffe)return false;
++                if(Character.isWhitespace(cp) || Character.getType(cp)==Character.FORMAT || cp>=0xfe00 && cp<=0xfe0f || cp>=0xe0100 && cp<=0xe01ef)continue;
++                if(!supported.computeIfAbsent(cp,key->paint.hasGlyph(new String(Character.toChars(key)))))return false;
++            }
++            return true;
++        }
++    }
++    public void testCompleteDecisionCacheParityAndCost()throws Exception {
++        Paint paint=new TextView(getInstrumentation().getTargetContext()).getPaint();
++        Set<String> source=new TreeSet<>();
++        // Full-file fixed-hash sampling; no target or output dependent selection.
++        for(String file:new String[]{"zh_tw.tsv","addons.tsv","geography.tsv"}) {
++            try(BufferedReader reader=new BufferedReader(new InputStreamReader(getInstrumentation().getContext().getAssets().open(file),"UTF-8"))) {
++                String line;while((line=reader.readLine())!=null) {
++                    String[] parts=line.split("\t",-1);if(parts.length<3)continue;
++                    String text=parts[2];if(Math.floorMod(text.hashCode(),101)==0)source.add(text);
++                }
++            }
++        }
++        assertTrue("Broad source-derived sample",source.size()>100);
++        List<String> inputs=new ArrayList<>(source);
++        inputs.addAll(Arrays.asList("","\ud800","\udfff","\ud800x","\ufffd","\ufdd0","\uffff","\udbff\udfff","a\u200db","o\u0358","\u2764\ufe0f","\t\n "));
++        for(int cp=0;cp<=0x10ffff;cp+=997)inputs.add(new String(Character.toChars(cp)));
++        Original original=new Original(paint);CandidateGlyphs cached=new CandidateGlyphs(paint);
++        int checks=0;
++        for(int pass=0;pass<2;pass++)for(String text:inputs){assertEquals(original.test(text),cached.test(text));checks++;}
++        // Force eviction through more unique entries than either cache can retain.
++        for(int cp=0x4e00;cp<0x4e00+9000;cp++) {
++            String text=new String(Character.toChars(cp));assertEquals(original.test(text),cached.test(text));checks++;
++        }
++        for(String text:inputs){assertEquals(original.test(text),cached.test(text));checks++;}
++        Field field=CandidateGlyphs.class.getDeclaredField("supported");field.setAccessible(true);
++        assertTrue("Original bound retained",((Map<?,?>)field.get(cached)).size()<=8192);
++        File dir=getInstrumentation().getTargetContext().getExternalFilesDir(null);
++        try(PrintWriter out=new PrintWriter(new File(dir,"glyph-cache-cost.tsv"),"UTF-8")) {
++            out.println("round\tstrings\told_ns\tcached_ns\tsupported");
++            for(int round=-2;round<8;round++) {
++                long a,b,start;int x=0,y=0;
++                if((round&1)==0) {
++                    start=System.nanoTime();for(String text:inputs)if(original.test(text))x++;a=System.nanoTime()-start;
++                    start=System.nanoTime();for(String text:inputs)if(cached.test(text))y++;b=System.nanoTime()-start;
++                } else {
++                    start=System.nanoTime();for(String text:inputs)if(cached.test(text))y++;b=System.nanoTime()-start;
++                    start=System.nanoTime();for(String text:inputs)if(original.test(text))x++;a=System.nanoTime()-start;
++                }
++                assertEquals(x,y);if(round>=0)out.println(round+"\t"+inputs.size()+"\t"+a+"\t"+b+"\t"+x);
++            }
++        }
++        android.os.Bundle status=new android.os.Bundle();status.putInt("glyph_parity_checks",checks);status.putInt("glyph_source_strings",source.size());getInstrumentation().sendStatus(2,status);
++    }
++}

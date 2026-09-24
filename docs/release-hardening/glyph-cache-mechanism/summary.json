@@ -1,0 +1,44 @@
+{
+  "old_ns": {
+    "rounds": 8,
+    "strings_per_round": 4153,
+    "mean_ms": 2.790820375,
+    "median_ms": 2.6939845,
+    "max_ms": 3.502864
+  },
+  "cached_ns": {
+    "rounds": 8,
+    "strings_per_round": 4153,
+    "mean_ms": 2.466464625,
+    "median_ms": 2.150963,
+    "max_ms": 3.372135
+  },
+  "parity_checks": 21459,
+  "source_strings": 3023,
+  "decision": "hold-at-mechanism-screen-runtime-reverted",
+  "phone_typing_comparison": "not run; sub-millisecond saving per 4153-string batch does not address the measured cold-font tail; no end-to-end claim",
+  "environment": {
+    "before": {
+      "utc": "2026-09-24T10:41:32.2467159Z",
+      "battery_temperature_c": 31.8,
+      "thermal_status": 0
+    },
+    "after": {
+      "utc": "2026-09-24T10:41:49.3382144Z",
+      "battery_temperature_c": 31.7,
+      "thermal_status": 0
+    }
+  },
+  "session": "af2f7cd5-acd3-4b64-886e-cfb8dcf8edf1",
+  "binaries": {
+    "baseline": "1ea175a",
+    "differences": [
+      "classes3.dex"
+    ],
+    "sha256": {
+      "artifacts\\release-hardening\\existence-trial.apk": "e4d064d597bbfbe69cb9770d68cd0d5a32829a1c82fc1e0b5f03460357d40332",
+      "artifacts\\release-hardening\\glyph-cache-trial.apk": "6e09a6f89a8ee45f56767f43f1bc12f47476e4e81b64e75ff4e88bb33351d092",
+      "artifacts\\release-hardening\\glyph-cache-tests.apk": "cb2260d7cfdfd8609c0fcb167f700e9c23c5784c70f51df57c4c7387a7f62428"
+    }
+  }
+}

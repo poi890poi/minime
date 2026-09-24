@@ -1,0 +1,41 @@
+INSTRUMENTATION_STATUS: class=dev.minime.ime.GlyphCacheParityTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+dev.minime.ime.GlyphCacheParityTest:
+INSTRUMENTATION_STATUS: test=testCompleteDecisionCacheParityAndCost
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: glyph_parity_checks=21459
+INSTRUMENTATION_STATUS: glyph_source_strings=3023
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: class=dev.minime.ime.GlyphCacheParityTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testCompleteDecisionCacheParityAndCost
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateTextAuditTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+dev.minime.ime.CandidateTextAuditTest:
+INSTRUMENTATION_STATUS: test=testSentinelDistinguishesMalformedTextAndMissingFonts
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.CandidateTextAuditTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testSentinelDistinguishesMalformedTextAndMissingFonts
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+Test results for InstrumentationTestRunner=..
+Time: 3.058
+
+OK (2 tests)
+
+
+INSTRUMENTATION_CODE: -1
