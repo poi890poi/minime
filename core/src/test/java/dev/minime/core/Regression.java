@@ -62,6 +62,7 @@ public final class Regression {
         StaticDictionaryPrivacyRegression.run();
         FocusedChoiceRegression.run();
         RawCandidateIdentityRegression.run();
+        CommitObservationRegression.run();
         AddonLoadBarrierRegression.run();
         DecodePipelineRegression.run();
         AddonBinaryRegression.run();

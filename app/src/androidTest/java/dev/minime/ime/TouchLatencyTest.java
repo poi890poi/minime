@@ -9,6 +9,7 @@ import android.view.*;
 import android.view.inputmethod.*;
 import android.view.inspector.WindowInspector;
 import dev.minime.core.CompositionEngine;
+import dev.minime.testing.CommitObservation;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.util.*;
@@ -59,7 +60,7 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
         SystemClock.sleep(180);
     }
     private boolean matches(Sample s) {
-        if(s.action.equals("space"))return BaseInputConnection.getComposingSpanEnd(activity.text.getText())<0 && !activity.text.getText().toString().equals(s.expected);
+        if(s.action.equals("space"))return CommitObservation.finished(BaseInputConnection.getComposingSpanEnd(activity.text.getText()),activity.text.getText().toString(),s.expected,engine.raw());
         return activity.text.getText().toString().equals(s.expected);
     }
     private void inject(Sample s,int action) {
