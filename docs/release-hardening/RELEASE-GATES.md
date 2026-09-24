@@ -7,6 +7,12 @@ on baseline `fd728d5`; the accepted rendering change does not alter dictionary o
 ranking logic. Evaluation-only commit `1231638` adds evidence. Earlier publishing checklists are historical evidence,
 not certification of this build. No Play upload or GitHub CI was used.
 
+The [grammar-source replacement screen](../source-replacement/PRODUCTIVE-GRAMMAR-RESULTS.md)
+rejects three metadata-only replacements. The broadest preserves annotated
+auxiliary coverage on 40 new documents and passes 486 engine-contract episodes,
+but loses mixed-mode prefix coverage and changes one automatic Space output.
+No source or runtime change is admitted, and the EWT rights item remains open.
+
 The [accepted-build language-specific replay](LANGUAGE-BASELINE-RESULTS.md)
 completes 2,692 injected actions across four modes. All raw/Space frames are
 observed and their aggregate tails meet the stated budgets in this sample;

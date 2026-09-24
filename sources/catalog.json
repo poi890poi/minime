@@ -1248,7 +1248,58 @@
         "docs/source-replacement/MASC-PUBLISHER-HEADER.xml",
         "docs/source-replacement/masc-publisher-audit.py",
         "docs/source-replacement/masc-publisher-manifest.json",
-        "docs/source-replacement/MASC-CONTEXT-PLAN.md"
+        "docs/source-replacement/MASC-CONTEXT-PLAN.md",
+        "docs/source-replacement/MASC-GRAMMAR-SOURCE-PLAN.md",
+        "docs/source-replacement/MASC-GRAMMAR-SOURCE-RESULTS.md",
+        "docs/source-replacement/masc-grammar-source/reference.json"
+      ]
+    },
+    {
+      "id": "wiktionary-english-contractions",
+      "name": "English Wiktionary contraction and pronoun category inventories",
+      "origin": "english-community-lexicography",
+      "decision": "pilot",
+      "uses": [
+        "discovery",
+        "evaluation"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-SA-4.0 / GFDL original entry metadata; no quotations",
+        "status": "review",
+        "evidence": "https://en.wiktionary.org/wiki/MediaWiki:Wikimedia-copyrightwarning"
+      },
+      "evidence": [
+        "https://en.wiktionary.org/wiki/Category:English_contractions",
+        "https://en.wiktionary.org/wiki/Category:English_pronouns",
+        "https://www.mediawiki.org/wiki/API:Categorymembers"
+      ],
+      "editorial": "Community-maintained lexical category, broader than tokenizer exceptions or contractions encountered in a finite corpus.",
+      "coverage": "Two identical complete captures: contraction graph 5 categories/1421 memberships/1319 pages; pronoun graph 15 categories/1656 memberships/1221 pages. Structural filtering yields 501 contraction forms and 769 ASCII pronouns. The category-only and productive proposals retain 70 and 81 existing-word flags, respectively.",
+      "limitations": "Dynamic membership needs a pinned snapshot. Dialectal/historical/ambiguous entries may be present; category membership does not establish frequency or safe mixed-language intent.",
+      "reason": "Category-only replacement loses an annotated auxiliary occurrence. General productive attachment preserves annotated auxiliary coverage, including 40 new documents, but fails mixed-mode prefix coverage and changes one Space output. Reject both replacements; no production admission or source-rights clearance.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/source-replacement/WIKTIONARY-GRAMMAR-PLAN.md",
+        "docs/source-replacement/WIKTIONARY-GRAMMAR-RESULTS.md",
+        "docs/source-replacement/wiktionary-grammar-audit.py",
+        "docs/source-replacement/test_wiktionary_grammar.py",
+        "docs/source-replacement/wiktionary-grammar-source/reference.json",
+        "docs/source-replacement/PRODUCTIVE-GRAMMAR-PLAN.md",
+        "docs/source-replacement/PRODUCTIVE-GRAMMAR-RESULTS.md",
+        "docs/source-replacement/productive-grammar.py",
+        "docs/source-replacement/test_productive_grammar.py",
+        "docs/source-replacement/GrammarSourceEvaluation.java",
+        "docs/source-replacement/prepare-grammar-source.py",
+        "docs/source-replacement/audit-grammar-reference.py",
+        "docs/source-replacement/GRAMMAR-HOLDOUT-PLAN.md",
+        "docs/source-replacement/fetch-grammar-holdout.py",
+        "docs/source-replacement/prepare-grammar-holdout.py",
+        "docs/source-replacement/test_grammar_holdout.py",
+        "docs/source-replacement/audit-grammar-holdout.py",
+        "docs/source-replacement/productive-grammar/reused-reference.json",
+        "docs/source-replacement/productive-grammar/holdout-reference.json",
+        "docs/source-replacement/productive-grammar/english.json"
       ]
     }
   ]

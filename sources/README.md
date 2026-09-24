@@ -20,6 +20,13 @@ consumed evidence, and may not be advertised as a fresh holdout again.
 
 ## Decisions
 
+The September 25 [Wiktionary contraction audit](../docs/source-replacement/WIKTIONARY-GRAMMAR-PLAN.md)
+starts a discovery-only pilot for an explicitly maintained English lexical
+inventory. It traverses the whole category graph with complete continuation and
+two-pass snapshot checks; no definition/example/quotation text is imported. The
+tokenizer-only and MASC-only grammar screens retain documented omissions. This
+pilot changes no production input, frequency, intent policy or release-rights gate.
+
 The September 25 [pronunciation-frequency admission](../docs/chinese-recovery/PHRASE-READING-ADMISSION.md)
 approves integration of conditional reading shares using the unchanged retained
 McBopomofo source. Independent reading and Google checks, native/core comparisons,
@@ -205,3 +212,17 @@ rejection of null is withdrawn. Strict boundary attestation likewise has not
 proved net benefit. No model data is approved for production by these comparisons.
 A fresh, independent conversation and essay evaluation is required before a
 generalization claim.
+
+## English grammar-source screen (September 25, 2026)
+
+The [MASC-only](../docs/source-replacement/MASC-GRAMMAR-SOURCE-RESULTS.md) and
+[Wiktionary category-only](../docs/source-replacement/WIKTIONARY-GRAMMAR-RESULTS.md)
+replacements each lose an annotated contraction occurrence. A separately frozen
+[source-defined productive rule](../docs/source-replacement/PRODUCTIVE-GRAMMAR-RESULTS.md)
+preserves auxiliary coverage, including 40 previously unused GUM documents, but
+loses mixed-mode prefix coverage and changes an automatic Space result. All three
+replacements are rejected. No production flags/counts, eligibility thresholds or
+source-rights status changed. Raw captures and document identities stay local;
+aggregate evidence, source pins and reproducible extraction are registered here.
+The newly evaluated documents are now exposed and cannot be reused as a fresh
+holdout for another method. Grammatical membership does not prove typing intent.

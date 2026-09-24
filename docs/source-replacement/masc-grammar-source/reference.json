@@ -1,0 +1,450 @@
+{
+  "scope": "All eligible multiword surfaces in pinned reused evaluation splits; grammar-flag inclusion, not runtime restoration or safe mixed-language intent",
+  "source_pins": {
+    "ewt-dev": [
+      "UD_English-EWT/en_ewt-ud-dev.conllu.gz",
+      "14a82ce2c4c4648c3e7c4efc76872c85c5f4c39643fcb7f9c91a45a58157a270"
+    ],
+    "ewt-test": [
+      "UD_English-EWT/en_ewt-ud-test.conllu.gz",
+      "0612e45914359e4b36d187ef2bfeaf66fc8933210925be985c5fbf6a9e311036"
+    ],
+    "gum-test": [
+      "UD_English-GUM/en_gum-ud-test.conllu.gz",
+      "99deb5746618d8ab83e5cafc2d07851e76389b2c8babf5ad9e5ef176a4619114"
+    ]
+  },
+  "exclusions": {
+    "ewt-dev": {
+      "outside-shape": 76
+    },
+    "ewt-test": {
+      "outside-shape": 60
+    },
+    "gum-test": {
+      "outside-shape": 32
+    }
+  },
+  "groups": {
+    "ewt-dev/auxiliary": {
+      "occurrences": 207,
+      "unique_surfaces": 38,
+      "old_occurrences": 204,
+      "new_occurrences": 204,
+      "old_unique": 35,
+      "new_unique": 35,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "ewt-dev/nonverbal": {
+      "occurrences": 67,
+      "unique_surfaces": 51,
+      "old_occurrences": 1,
+      "new_occurrences": 1,
+      "old_unique": 1,
+      "new_unique": 1,
+      "gained_occurrences": 1,
+      "lost_occurrences": 1
+    },
+    "ewt-dev/unspecified-web-genre/auxiliary": {
+      "occurrences": 207,
+      "unique_surfaces": 38,
+      "old_occurrences": 204,
+      "new_occurrences": 204,
+      "old_unique": 35,
+      "new_unique": 35,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "ewt-dev/unspecified-web-genre/nonverbal": {
+      "occurrences": 67,
+      "unique_surfaces": 51,
+      "old_occurrences": 1,
+      "new_occurrences": 1,
+      "old_unique": 1,
+      "new_unique": 1,
+      "gained_occurrences": 1,
+      "lost_occurrences": 1
+    },
+    "ewt-dev/unspecified-web-genre/verb-without-auxiliary": {
+      "occurrences": 9,
+      "unique_surfaces": 3,
+      "old_occurrences": 8,
+      "new_occurrences": 8,
+      "old_unique": 2,
+      "new_unique": 2,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "ewt-dev/verb-without-auxiliary": {
+      "occurrences": 9,
+      "unique_surfaces": 3,
+      "old_occurrences": 8,
+      "new_occurrences": 8,
+      "old_unique": 2,
+      "new_unique": 2,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "ewt-test/auxiliary": {
+      "occurrences": 233,
+      "unique_surfaces": 32,
+      "old_occurrences": 232,
+      "new_occurrences": 231,
+      "old_unique": 31,
+      "new_unique": 30,
+      "gained_occurrences": 0,
+      "lost_occurrences": 1
+    },
+    "ewt-test/nonverbal": {
+      "occurrences": 57,
+      "unique_surfaces": 45,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "ewt-test/unspecified-web-genre/auxiliary": {
+      "occurrences": 233,
+      "unique_surfaces": 32,
+      "old_occurrences": 232,
+      "new_occurrences": 231,
+      "old_unique": 31,
+      "new_unique": 30,
+      "gained_occurrences": 0,
+      "lost_occurrences": 1
+    },
+    "ewt-test/unspecified-web-genre/nonverbal": {
+      "occurrences": 57,
+      "unique_surfaces": 45,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "ewt-test/unspecified-web-genre/verb-without-auxiliary": {
+      "occurrences": 4,
+      "unique_surfaces": 2,
+      "old_occurrences": 4,
+      "new_occurrences": 4,
+      "old_unique": 2,
+      "new_unique": 2,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "ewt-test/verb-without-auxiliary": {
+      "occurrences": 4,
+      "unique_surfaces": 2,
+      "old_occurrences": 4,
+      "new_occurrences": 4,
+      "old_unique": 2,
+      "new_unique": 2,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/academic/nonverbal": {
+      "occurrences": 1,
+      "unique_surfaces": 1,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/auxiliary": {
+      "occurrences": 206,
+      "unique_surfaces": 38,
+      "old_occurrences": 197,
+      "new_occurrences": 197,
+      "old_unique": 30,
+      "new_unique": 30,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/bio/nonverbal": {
+      "occurrences": 4,
+      "unique_surfaces": 4,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/conversation/auxiliary": {
+      "occurrences": 59,
+      "unique_surfaces": 21,
+      "old_occurrences": 56,
+      "new_occurrences": 56,
+      "old_unique": 18,
+      "new_unique": 18,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/conversation/nonverbal": {
+      "occurrences": 1,
+      "unique_surfaces": 1,
+      "old_occurrences": 0,
+      "new_occurrences": 1,
+      "old_unique": 0,
+      "new_unique": 1,
+      "gained_occurrences": 1,
+      "lost_occurrences": 0
+    },
+    "gum-test/conversation/verb-without-auxiliary": {
+      "occurrences": 5,
+      "unique_surfaces": 2,
+      "old_occurrences": 5,
+      "new_occurrences": 5,
+      "old_unique": 2,
+      "new_unique": 2,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/court/auxiliary": {
+      "occurrences": 15,
+      "unique_surfaces": 10,
+      "old_occurrences": 15,
+      "new_occurrences": 15,
+      "old_unique": 10,
+      "new_unique": 10,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/court/nonverbal": {
+      "occurrences": 2,
+      "unique_surfaces": 2,
+      "old_occurrences": 1,
+      "new_occurrences": 0,
+      "old_unique": 1,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 1
+    },
+    "gum-test/fiction/auxiliary": {
+      "occurrences": 28,
+      "unique_surfaces": 12,
+      "old_occurrences": 26,
+      "new_occurrences": 26,
+      "old_unique": 10,
+      "new_unique": 10,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/fiction/nonverbal": {
+      "occurrences": 9,
+      "unique_surfaces": 7,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/fiction/verb-without-auxiliary": {
+      "occurrences": 1,
+      "unique_surfaces": 1,
+      "old_occurrences": 1,
+      "new_occurrences": 1,
+      "old_unique": 1,
+      "new_unique": 1,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/interview/nonverbal": {
+      "occurrences": 5,
+      "unique_surfaces": 4,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/letter/nonverbal": {
+      "occurrences": 4,
+      "unique_surfaces": 3,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/news/auxiliary": {
+      "occurrences": 9,
+      "unique_surfaces": 5,
+      "old_occurrences": 9,
+      "new_occurrences": 9,
+      "old_unique": 5,
+      "new_unique": 5,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/news/nonverbal": {
+      "occurrences": 12,
+      "unique_surfaces": 8,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/nonverbal": {
+      "occurrences": 76,
+      "unique_surfaces": 45,
+      "old_occurrences": 1,
+      "new_occurrences": 1,
+      "old_unique": 1,
+      "new_unique": 1,
+      "gained_occurrences": 1,
+      "lost_occurrences": 1
+    },
+    "gum-test/podcast/auxiliary": {
+      "occurrences": 17,
+      "unique_surfaces": 12,
+      "old_occurrences": 15,
+      "new_occurrences": 15,
+      "old_unique": 10,
+      "new_unique": 10,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/podcast/nonverbal": {
+      "occurrences": 3,
+      "unique_surfaces": 2,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/speech/auxiliary": {
+      "occurrences": 2,
+      "unique_surfaces": 2,
+      "old_occurrences": 2,
+      "new_occurrences": 2,
+      "old_unique": 2,
+      "new_unique": 2,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/speech/nonverbal": {
+      "occurrences": 6,
+      "unique_surfaces": 5,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/textbook/auxiliary": {
+      "occurrences": 1,
+      "unique_surfaces": 1,
+      "old_occurrences": 1,
+      "new_occurrences": 1,
+      "old_unique": 1,
+      "new_unique": 1,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/textbook/nonverbal": {
+      "occurrences": 16,
+      "unique_surfaces": 6,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/verb-without-auxiliary": {
+      "occurrences": 11,
+      "unique_surfaces": 4,
+      "old_occurrences": 10,
+      "new_occurrences": 10,
+      "old_unique": 3,
+      "new_unique": 3,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/vlog/auxiliary": {
+      "occurrences": 69,
+      "unique_surfaces": 18,
+      "old_occurrences": 67,
+      "new_occurrences": 67,
+      "old_unique": 17,
+      "new_unique": 17,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/vlog/nonverbal": {
+      "occurrences": 1,
+      "unique_surfaces": 1,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/vlog/verb-without-auxiliary": {
+      "occurrences": 4,
+      "unique_surfaces": 2,
+      "old_occurrences": 3,
+      "new_occurrences": 3,
+      "old_unique": 1,
+      "new_unique": 1,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/voyage/auxiliary": {
+      "occurrences": 3,
+      "unique_surfaces": 2,
+      "old_occurrences": 3,
+      "new_occurrences": 3,
+      "old_unique": 2,
+      "new_unique": 2,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/voyage/nonverbal": {
+      "occurrences": 12,
+      "unique_surfaces": 7,
+      "old_occurrences": 0,
+      "new_occurrences": 0,
+      "old_unique": 0,
+      "new_unique": 0,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/whow/auxiliary": {
+      "occurrences": 3,
+      "unique_surfaces": 2,
+      "old_occurrences": 3,
+      "new_occurrences": 3,
+      "old_unique": 2,
+      "new_unique": 2,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    },
+    "gum-test/whow/verb-without-auxiliary": {
+      "occurrences": 1,
+      "unique_surfaces": 1,
+      "old_occurrences": 1,
+      "new_occurrences": 1,
+      "old_unique": 1,
+      "new_unique": 1,
+      "gained_occurrences": 0,
+      "lost_occurrences": 0
+    }
+  }
+}

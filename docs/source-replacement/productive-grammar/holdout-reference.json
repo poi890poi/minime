@@ -1,0 +1,329 @@
+{
+  "scope": "Grammar-flag surface inclusion only; no runtime or typing-intent claim",
+  "document_freeze_sha256": "1add51de8a8ceba147dd2a8d007795e11c8fe902c621fc1bd95dcf464ecb926e",
+  "proposal_manifest_sha256": "8c5a71fb4b82f3d1abe0e82cbf26f63a8432305c27c28b6c9107837a3eed382b",
+  "table_sha256": {
+    "accepted": "9dc2823be8f18e4c12bbeccc1ef6deaf12322f980814efb37c79c605a519db76",
+    "category": "80dfebcb74623c8a65380fc37c8e3e5abd59f9921146fb7c210fa56c3b0b7737",
+    "productive": "196992eb4a12312d2990ed77b2a02c69ba8a2bdbbe634a63e737829ac2708ed3"
+  },
+  "status_counts": {
+    "previous-document-id": 216,
+    "new-document-holdout": 40,
+    "previous-20-token-overlap": 1
+  },
+  "eligible_genres": {
+    "conversation": 1,
+    "court": 8,
+    "essay": 9,
+    "letter": 12,
+    "news": 1,
+    "podcast": 9
+  },
+  "groups": {
+    "all/auxiliary": {
+      "occurrences": 639,
+      "unique_surfaces": 45,
+      "included": {
+        "accepted": 629,
+        "category": 630,
+        "productive": 632
+      },
+      "included_unique": {
+        "accepted": 38,
+        "category": 39,
+        "productive": 40
+      },
+      "productive_gains": 3,
+      "productive_losses": 0
+    },
+    "all/nonverbal": {
+      "occurrences": 135,
+      "unique_surfaces": 85,
+      "included": {
+        "accepted": 3,
+        "category": 1,
+        "productive": 2
+      },
+      "included_unique": {
+        "accepted": 2,
+        "category": 1,
+        "productive": 2
+      },
+      "productive_gains": 1,
+      "productive_losses": 2
+    },
+    "all/verb-without-auxiliary": {
+      "occurrences": 44,
+      "unique_surfaces": 5,
+      "included": {
+        "accepted": 34,
+        "category": 44,
+        "productive": 44
+      },
+      "included_unique": {
+        "accepted": 4,
+        "category": 5,
+        "productive": 5
+      },
+      "productive_gains": 10,
+      "productive_losses": 0
+    },
+    "conversation/auxiliary": {
+      "occurrences": 35,
+      "unique_surfaces": 14,
+      "included": {
+        "accepted": 33,
+        "category": 33,
+        "productive": 33
+      },
+      "included_unique": {
+        "accepted": 13,
+        "category": 13,
+        "productive": 13
+      },
+      "productive_gains": 0,
+      "productive_losses": 0
+    },
+    "conversation/nonverbal": {
+      "occurrences": 5,
+      "unique_surfaces": 3,
+      "included": {
+        "accepted": 0,
+        "category": 0,
+        "productive": 0
+      },
+      "included_unique": {
+        "accepted": 0,
+        "category": 0,
+        "productive": 0
+      },
+      "productive_gains": 0,
+      "productive_losses": 0
+    },
+    "court/auxiliary": {
+      "occurrences": 147,
+      "unique_surfaces": 26,
+      "included": {
+        "accepted": 145,
+        "category": 146,
+        "productive": 146
+      },
+      "included_unique": {
+        "accepted": 24,
+        "category": 25,
+        "productive": 25
+      },
+      "productive_gains": 1,
+      "productive_losses": 0
+    },
+    "court/nonverbal": {
+      "occurrences": 40,
+      "unique_surfaces": 22,
+      "included": {
+        "accepted": 2,
+        "category": 0,
+        "productive": 0
+      },
+      "included_unique": {
+        "accepted": 1,
+        "category": 0,
+        "productive": 0
+      },
+      "productive_gains": 0,
+      "productive_losses": 2
+    },
+    "court/verb-without-auxiliary": {
+      "occurrences": 16,
+      "unique_surfaces": 3,
+      "included": {
+        "accepted": 15,
+        "category": 16,
+        "productive": 16
+      },
+      "included_unique": {
+        "accepted": 2,
+        "category": 3,
+        "productive": 3
+      },
+      "productive_gains": 1,
+      "productive_losses": 0
+    },
+    "essay/auxiliary": {
+      "occurrences": 80,
+      "unique_surfaces": 22,
+      "included": {
+        "accepted": 79,
+        "category": 79,
+        "productive": 79
+      },
+      "included_unique": {
+        "accepted": 21,
+        "category": 21,
+        "productive": 21
+      },
+      "productive_gains": 0,
+      "productive_losses": 0
+    },
+    "essay/nonverbal": {
+      "occurrences": 31,
+      "unique_surfaces": 24,
+      "included": {
+        "accepted": 0,
+        "category": 0,
+        "productive": 0
+      },
+      "included_unique": {
+        "accepted": 0,
+        "category": 0,
+        "productive": 0
+      },
+      "productive_gains": 0,
+      "productive_losses": 0
+    },
+    "essay/verb-without-auxiliary": {
+      "occurrences": 9,
+      "unique_surfaces": 3,
+      "included": {
+        "accepted": 5,
+        "category": 9,
+        "productive": 9
+      },
+      "included_unique": {
+        "accepted": 2,
+        "category": 3,
+        "productive": 3
+      },
+      "productive_gains": 4,
+      "productive_losses": 0
+    },
+    "letter/auxiliary": {
+      "occurrences": 53,
+      "unique_surfaces": 18,
+      "included": {
+        "accepted": 52,
+        "category": 52,
+        "productive": 52
+      },
+      "included_unique": {
+        "accepted": 17,
+        "category": 17,
+        "productive": 17
+      },
+      "productive_gains": 0,
+      "productive_losses": 0
+    },
+    "letter/nonverbal": {
+      "occurrences": 35,
+      "unique_surfaces": 22,
+      "included": {
+        "accepted": 0,
+        "category": 0,
+        "productive": 0
+      },
+      "included_unique": {
+        "accepted": 0,
+        "category": 0,
+        "productive": 0
+      },
+      "productive_gains": 0,
+      "productive_losses": 0
+    },
+    "letter/verb-without-auxiliary": {
+      "occurrences": 1,
+      "unique_surfaces": 1,
+      "included": {
+        "accepted": 1,
+        "category": 1,
+        "productive": 1
+      },
+      "included_unique": {
+        "accepted": 1,
+        "category": 1,
+        "productive": 1
+      },
+      "productive_gains": 0,
+      "productive_losses": 0
+    },
+    "news/auxiliary": {
+      "occurrences": 6,
+      "unique_surfaces": 4,
+      "included": {
+        "accepted": 6,
+        "category": 6,
+        "productive": 6
+      },
+      "included_unique": {
+        "accepted": 4,
+        "category": 4,
+        "productive": 4
+      },
+      "productive_gains": 0,
+      "productive_losses": 0
+    },
+    "news/nonverbal": {
+      "occurrences": 10,
+      "unique_surfaces": 10,
+      "included": {
+        "accepted": 1,
+        "category": 1,
+        "productive": 1
+      },
+      "included_unique": {
+        "accepted": 1,
+        "category": 1,
+        "productive": 1
+      },
+      "productive_gains": 0,
+      "productive_losses": 0
+    },
+    "podcast/auxiliary": {
+      "occurrences": 318,
+      "unique_surfaces": 36,
+      "included": {
+        "accepted": 314,
+        "category": 314,
+        "productive": 316
+      },
+      "included_unique": {
+        "accepted": 33,
+        "category": 33,
+        "productive": 34
+      },
+      "productive_gains": 2,
+      "productive_losses": 0
+    },
+    "podcast/nonverbal": {
+      "occurrences": 14,
+      "unique_surfaces": 11,
+      "included": {
+        "accepted": 0,
+        "category": 0,
+        "productive": 1
+      },
+      "included_unique": {
+        "accepted": 0,
+        "category": 0,
+        "productive": 1
+      },
+      "productive_gains": 1,
+      "productive_losses": 0
+    },
+    "podcast/verb-without-auxiliary": {
+      "occurrences": 18,
+      "unique_surfaces": 3,
+      "included": {
+        "accepted": 13,
+        "category": 18,
+        "productive": 18
+      },
+      "included_unique": {
+        "accepted": 2,
+        "category": 3,
+        "productive": 3
+      },
+      "productive_gains": 5,
+      "productive_losses": 0
+    }
+  }
+}
