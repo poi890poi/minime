@@ -1,0 +1,18 @@
+diff --git a/app/src/main/java/dev/minime/ime/KeyboardView.java b/app/src/main/java/dev/minime/ime/KeyboardView.java
+index e98e45b..dd3ba85 100644
+--- a/app/src/main/java/dev/minime/ime/KeyboardView.java
++++ b/app/src/main/java/dev/minime/ime/KeyboardView.java
+@@ -510,7 +510,12 @@ final class KeyboardView extends LinearLayout {
+         boolean landscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
+         int height=landscape?34:59;
+         // Every layout shares the QWERTY budget; only orientation and system insets resize it.
+-        keys.setLayoutParams(new LayoutParams(-1,dp(height)*4+(panel==0?0:dp(48))));
++        int boardHeight=dp(height)*4+(panel==0?0:dp(48));
++        ViewGroup.LayoutParams boardParams=keys.getLayoutParams();
++        // Candidate updates do not resize the letter board. Reassigning identical
++        // parameters still asks Android to measure and lay out that subtree.
++        if(boardParams.width!=-1 || boardParams.height!=boardHeight)
++            keys.setLayoutParams(new LayoutParams(-1,boardHeight));
+         String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+":"+engine.inputMode()+":"+returnMode+":"+joined;
+         if(nextLayout.equals(layoutKey)) {
+             if(expanded)expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);

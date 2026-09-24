@@ -23,6 +23,12 @@ both comparison pairs and ordinary candidate gains are mixed. Four unhooked
 runs capture all raw-editor and Space frames; this does not certify human touch
 or release latency. The existing 8 ms scheduling delay remains in production.
 
+The [unchanged-board layout trial](LAYOUT-RESULTS.md) is also rejected. A
+redundant layout request is demonstrably removed, but repeated typing gains
+are mixed and fast Taiwanese raw-text p95 worsens in both pairs. The guard is
+archived; accepted runtime remains b47bb2a. Four further unhooked replays capture
+all raw-editor/Space frames without establishing release acceptance.
+
 ## Quality loop
 
 The new Taiwan chat-derived evaluation adds 4,608 complete, initial and mixed

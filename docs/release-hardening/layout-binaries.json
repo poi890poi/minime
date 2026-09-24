@@ -1,0 +1,28 @@
+{
+  "baseline_runtime": "b47bb2a",
+  "checkout_base": "e2a330d",
+  "trial": "Skip letter-board layout-parameter assignment when width and pixel height already match",
+  "binaries": {
+    "schedule-baseline.apk": "1c43b60e9a76e97d9917b9f13545d95dafb5c67498eaa8db42fae1e73c9ca72b",
+    "layout-trial.apk": "ecf4298f1de4b9d31daf981777f389672e3b0ccd36b42809e26ef0bd88a6614c",
+    "layout-tests.apk": "4e4d1901d575bf453b6a00f3f3c5bc21a297b36e419d61a45c36022b581a0197"
+  },
+  "changed_unsigned_apk_entries": [
+    "classes3.dex"
+  ],
+  "core_assertions": 888180,
+  "desktop_rows": 13014,
+  "native_queries": 11272,
+  "desktop_sha256": "72ed6f69cf0a838ec9c03a4d8de2a3e94e5991531b344ae1f173d95bff2d6bfe",
+  "input_sha256": "cd50e119257521710a601f279f35c28c85b969a1f4a0ad9918011edc57344603",
+  "phone_sessions": {
+    "regression-a": "9c548e89-f465-463b-8e95-38f9c41d7816",
+    "regression-b": "3d7137eb-1a3a-4f2b-8fda-fb18ee56b5b9",
+    "a1": "d48f92f6-9e16-43d2-b46a-59e6c85276c5",
+    "b1": "812f13f4-ea44-46d5-953e-0cfc39ac6f78",
+    "b2": "cb5284eb-545e-4cc4-926c-f37a8bf4bc2c",
+    "a2": "0873e6a7-138a-4263-8633-8a8df77a7f22"
+  },
+  "decision": "reject: no reliable general latency improvement; repeated fast Taiwanese raw-text p95 worsening",
+  "phone_status": "all six experiment sessions restored APK/preferences/IME and verified OFF; explicit release after separate diagnostic session 206afe93-1112-47c4-8977-2f7c7a5d869a"
+}
