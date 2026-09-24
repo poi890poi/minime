@@ -10,6 +10,8 @@ import android.view.inputmethod.*;
 import android.view.inspector.WindowInspector;
 import dev.minime.core.CompositionEngine;
 import dev.minime.testing.CommitObservation;
+import dev.minime.testing.LanguageTimingInputs;
+import dev.minime.testing.LanguageTimingInputs.Query;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.util.*;
@@ -28,7 +30,7 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
     private volatile Sample candidateActive;
     private final List<Sample> samples=new ArrayList<>();
     private static final class Sample {
-        String mode,query,expected,action;int interval;
+        String mode,query,expected,action;int interval;Query labelled;
         volatile long down,up,callback,rawDraw,rawSubmit,candidateDraw,candidateSubmit,pressedSubmit;
         View key;float x,y;
     }
@@ -73,7 +75,32 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
     }
     public void testTouchToSubmittedFrames()throws Exception {runReplay(true);}
     public void testTouchWithoutStageHooks()throws Exception {runReplay(false);}
-    private void runReplay(boolean stageHooks)throws Exception {
+    public void testChineseShard0()throws Exception {runReplay(false,"chinese",0);}
+    public void testChineseShard1()throws Exception {runReplay(false,"chinese",1);}
+    public void testChineseShard2()throws Exception {runReplay(false,"chinese",2);}
+    public void testChineseShard3()throws Exception {runReplay(false,"chinese",3);}
+    public void testEnglishShard0()throws Exception {runReplay(false,"english",0);}
+    public void testEnglishShard1()throws Exception {runReplay(false,"english",1);}
+    public void testEnglishShard2()throws Exception {runReplay(false,"english",2);}
+    public void testEnglishShard3()throws Exception {runReplay(false,"english",3);}
+    public void testTaiwaneseShard0()throws Exception {runReplay(false,"taiwanese_english",0);}
+    public void testTaiwaneseShard1()throws Exception {runReplay(false,"taiwanese_english",1);}
+    public void testTaiwaneseShard2()throws Exception {runReplay(false,"taiwanese_english",2);}
+    public void testTaiwaneseShard3()throws Exception {runReplay(false,"taiwanese_english",3);}
+    public void testJapaneseShard0()throws Exception {runReplay(false,"japanese_english",0);}
+    public void testJapaneseShard1()throws Exception {runReplay(false,"japanese_english",1);}
+    public void testJapaneseShard2()throws Exception {runReplay(false,"japanese_english",2);}
+    public void testJapaneseShard3()throws Exception {runReplay(false,"japanese_english",3);}
+    private void runReplay(boolean stageHooks)throws Exception {runReplay(stageHooks,null,0);}
+    private void runReplay(boolean stageHooks,String selectedMode,int shard)throws Exception {
+        List<Query> queries=new ArrayList<>();
+        if(selectedMode!=null)queries.addAll(LanguageTimingInputs.shard(LanguageTimingInputs.read(getInstrumentation().getContext().getAssets().open("language-timing-inputs.tsv")),selectedMode,shard));
+        else {
+            try(BufferedReader in=new BufferedReader(new InputStreamReader(getInstrumentation().getContext().getAssets().open("latency-inputs.tsv"),"UTF-8"))) {
+                String line;int row=0;while((line=in.readLine())!=null){String[] p=line.split("\t");if(row++%144==0 && p[2].matches("[a-z]{3,16}"))queries.add(Query.legacy(p[2]));}
+            }
+            assertTrue("Diverse frozen corpus sample",queries.size()>=8);queries=new ArrayList<>(queries.subList(0,8));
+        }
         Context context=getInstrumentation().getTargetContext();
         context.getSharedPreferences("settings",0).edit().clear().putBoolean("addon_poj",true).putBoolean("addon_japanese",true).commit();
         activity=getActivity();
@@ -108,16 +135,13 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
                 return true;
             });
         });
-        List<String> queries=new ArrayList<>();
-        try(BufferedReader in=new BufferedReader(new InputStreamReader(getInstrumentation().getContext().getAssets().open("latency-inputs.tsv"),"UTF-8"))) {
-            String line;int row=0;while((line=in.readLine())!=null){String[] p=line.split("\t");if(row++%144==0 && p[2].matches("[a-z]{3,16}"))queries.add(p[2]);}
-        }
-        assertTrue("Diverse frozen corpus sample",queries.size()>=8);
-        try {for(String mode:new String[]{"chinese","english","taiwanese_english","japanese_english"}) {
+        String[] modes=selectedMode==null?new String[]{"chinese","english","taiwanese_english","japanese_english"}:new String[]{selectedMode};
+        try {for(String mode:modes) {
             active=null;editorActive=null;candidateActive=null;
             context.getSharedPreferences("settings",0).edit().putString("mixed_mode",mode.equals("english")?"chinese":mode).putBoolean("english_mode",mode.equals("english")).commit();
             focus(activity.url);focus(activity.text);
-            for(int interval:new int[]{150,60})for(String query:queries.subList(0,8)) {
+            for(int interval:new int[]{150,60})for(Query labelled:queries) {
+                String query=labelled.raw;
                 active=null;editorActive=null;candidateActive=null;getInstrumentation().runOnMainSync(()->activity.text.setText(""));focus(activity.url);focus(activity.text);
                 Map<Character,Target> targets=new HashMap<>();
                 // Resolve the stable board geometry before timing the query.
@@ -131,7 +155,7 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
                 });
                 String expected="";
                 for(char c:(query+" ").toCharArray()) {
-                    Sample s=new Sample();s.mode=mode;s.query=query;s.interval=interval;s.action=c==' '?"space":"key";
+                    Sample s=new Sample();s.mode=mode;s.query=query;s.interval=interval;s.action=c==' '?"space":"key";s.labelled=labelled;
                     if(c!=' ')expected+=c;s.expected=expected;
                     Target target=targets.get(c);s.key=target.key;s.x=target.x;s.y=target.y;
                     samples.add(s);active=s;long start=SystemClock.uptimeMillis();inject(s,MotionEvent.ACTION_DOWN);SystemClock.sleep(25);inject(s,MotionEvent.ACTION_UP);
@@ -159,8 +183,8 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
             } catch(Exception e){throw new RuntimeException(e);}
         });
         try(PrintWriter out=new PrintWriter(new File(context.getExternalFilesDir(null),"touch-latency.tsv"),"UTF-8")) {
-            out.println("mode\tinterval_ms\tquery\texpected\taction\tdown_ns\tup_ns\teditor_callback_ns\teditor_pre_draw_ns\teditor_submit_ns\tcandidate_pre_draw_ns\tcandidate_submit_ns\tpressed_submit_ns");
-            for(Sample s:samples)out.println(s.mode+"\t"+s.interval+"\t"+s.query+"\t"+s.expected+"\t"+s.action+"\t"+s.down+"\t"+s.up+"\t"+s.callback+"\t"+s.rawDraw+"\t"+s.rawSubmit+"\t"+s.candidateDraw+"\t"+s.candidateSubmit+"\t"+s.pressedSubmit);
+            out.println("mode\tinterval_ms\tquery\texpected\taction\tdown_ns\tup_ns\teditor_callback_ns\teditor_pre_draw_ns\teditor_submit_ns\tcandidate_pre_draw_ns\tcandidate_submit_ns\tpressed_submit_ns\tquery_id\tsource\tgenre\tcondition");
+            for(Sample s:samples)out.println(s.mode+"\t"+s.interval+"\t"+s.query+"\t"+s.expected+"\t"+s.action+"\t"+s.down+"\t"+s.up+"\t"+s.callback+"\t"+s.rawDraw+"\t"+s.rawSubmit+"\t"+s.candidateDraw+"\t"+s.candidateSubmit+"\t"+s.pressedSubmit+"\t"+s.labelled.id+"\t"+s.labelled.source+"\t"+s.labelled.genre+"\t"+s.labelled.condition);
         }}
     }
 }

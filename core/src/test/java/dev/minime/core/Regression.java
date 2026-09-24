@@ -42,6 +42,7 @@ public final class Regression {
     }
     public static void main(String[] args) throws Exception {
         TextIntegrityRegression.run();
+        LanguageTimingRegression.run();
         JoinedKalqRegression.run();
         CandidateOrderRegression.run();
         ReadingIndexParity.run();

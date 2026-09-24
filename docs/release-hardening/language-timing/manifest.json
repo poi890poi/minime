@@ -1,0 +1,283 @@
+{
+  "format": 1,
+  "seed": "minime-language-timing-20260924-v1",
+  "limit_per_mode_source_condition": 16,
+  "role": "reused regression; not a fresh language-quality holdout",
+  "selection": "Source/condition rules and salted SHA-256 only; no output, rank, expected-target availability or manual word choice.",
+  "source_sha256": {
+    "docs/language-contract-benchmark/inputs.tsv": "bdc152fd1ff97d1dbec1bb9a7230b6815b5587e1b7ea37b5ab97f53319e907f3",
+    "docs/language-contract-benchmark/conversations/inputs.tsv": "92fed5d6b03e2dc9adc5c594f8ecb39f9fcfa756ecd636879def90005b0cda3a",
+    "docs/language-contract-benchmark/conversations/references.jsonl.gz": "1d480ff7b52cbe80abb5529c85993adcb76d6567121bf131d0486be3b5a40e34",
+    "docs/release-hardening/chat-inputs.tsv.gz": "e19874fff11d34020475ba8019a64e0396e59d94b656d62093b3ea32c0200755"
+  },
+  "input_sha256": "5c316cebea4ed88352a946fafe01fcda4e922c49a47b12783996a53ec1995f49",
+  "rows": 720,
+  "modes": {
+    "chinese": {
+      "queries": 128,
+      "letters": 1217,
+      "spaces": 128
+    },
+    "english": {
+      "queries": 144,
+      "letters": 541,
+      "spaces": 144
+    },
+    "japanese_english": {
+      "queries": 224,
+      "letters": 1180,
+      "spaces": 224
+    },
+    "taiwanese_english": {
+      "queries": 224,
+      "letters": 1960,
+      "spaces": 224
+    }
+  },
+  "strata": {
+    "chinese/moztw-g0v-edited/full": {
+      "eligible_distinct": 1494,
+      "selected": 16,
+      "letters": 177
+    },
+    "chinese/moztw-g0v-edited/initials": {
+      "eligible_distinct": 1346,
+      "selected": 16,
+      "letters": 58
+    },
+    "chinese/moztw-g0v-edited/mixed": {
+      "eligible_distinct": 1495,
+      "selected": 16,
+      "letters": 165
+    },
+    "chinese/zh-essay/full": {
+      "eligible_distinct": 376,
+      "selected": 16,
+      "letters": 205
+    },
+    "chinese/zh-essay/half": {
+      "eligible_distinct": 384,
+      "selected": 16,
+      "letters": 112
+    },
+    "chinese/zh-essay/initials": {
+      "eligible_distinct": 394,
+      "selected": 16,
+      "letters": 92
+    },
+    "chinese/zh-essay/mixed": {
+      "eligible_distinct": 399,
+      "selected": 16,
+      "letters": 180
+    },
+    "chinese/zh-essay/transpose": {
+      "eligible_distinct": 390,
+      "selected": 16,
+      "letters": 228
+    },
+    "english/en-conversation/full": {
+      "eligible_distinct": 150,
+      "selected": 16,
+      "letters": 62
+    },
+    "english/en-conversation/half": {
+      "eligible_distinct": 92,
+      "selected": 16,
+      "letters": 35
+    },
+    "english/en-conversation/transpose": {
+      "eligible_distinct": 161,
+      "selected": 16,
+      "letters": 73
+    },
+    "english/en-essay/full": {
+      "eligible_distinct": 102,
+      "selected": 16,
+      "letters": 83
+    },
+    "english/en-essay/half": {
+      "eligible_distinct": 81,
+      "selected": 16,
+      "letters": 37
+    },
+    "english/en-essay/transpose": {
+      "eligible_distinct": 96,
+      "selected": 16,
+      "letters": 96
+    },
+    "english/en-reserved-conversation/full": {
+      "eligible_distinct": 147,
+      "selected": 16,
+      "letters": 59
+    },
+    "english/en-reserved-conversation/half": {
+      "eligible_distinct": 86,
+      "selected": 16,
+      "letters": 28
+    },
+    "english/en-reserved-conversation/transpose": {
+      "eligible_distinct": 180,
+      "selected": 16,
+      "letters": 68
+    },
+    "japanese_english/asdc/full": {
+      "eligible_distinct": 701,
+      "selected": 16,
+      "letters": 90
+    },
+    "japanese_english/asdc/half": {
+      "eligible_distinct": 576,
+      "selected": 16,
+      "letters": 89
+    },
+    "japanese_english/asdc/initials": {
+      "eligible_distinct": 363,
+      "selected": 16,
+      "letters": 25
+    },
+    "japanese_english/asdc/mixed": {
+      "eligible_distinct": 449,
+      "selected": 16,
+      "letters": 76
+    },
+    "japanese_english/asdc/neighbor": {
+      "eligible_distinct": 1000,
+      "selected": 16,
+      "letters": 107
+    },
+    "japanese_english/asdc/omission": {
+      "eligible_distinct": 959,
+      "selected": 16,
+      "letters": 75
+    },
+    "japanese_english/asdc/transpose": {
+      "eligible_distinct": 1000,
+      "selected": 16,
+      "letters": 148
+    },
+    "japanese_english/real-persona-chat/full": {
+      "eligible_distinct": 950,
+      "selected": 16,
+      "letters": 157
+    },
+    "japanese_english/real-persona-chat/half": {
+      "eligible_distinct": 744,
+      "selected": 16,
+      "letters": 72
+    },
+    "japanese_english/real-persona-chat/initials": {
+      "eligible_distinct": 479,
+      "selected": 16,
+      "letters": 37
+    },
+    "japanese_english/real-persona-chat/mixed": {
+      "eligible_distinct": 587,
+      "selected": 16,
+      "letters": 54
+    },
+    "japanese_english/real-persona-chat/neighbor": {
+      "eligible_distinct": 1114,
+      "selected": 16,
+      "letters": 94
+    },
+    "japanese_english/real-persona-chat/omission": {
+      "eligible_distinct": 1043,
+      "selected": 16,
+      "letters": 70
+    },
+    "japanese_english/real-persona-chat/transpose": {
+      "eligible_distinct": 1114,
+      "selected": 16,
+      "letters": 86
+    },
+    "taiwanese_english/suisiann-thousand/full": {
+      "eligible_distinct": 1157,
+      "selected": 16,
+      "letters": 158
+    },
+    "taiwanese_english/suisiann-thousand/half": {
+      "eligible_distinct": 1046,
+      "selected": 16,
+      "letters": 58
+    },
+    "taiwanese_english/suisiann-thousand/initials": {
+      "eligible_distinct": 979,
+      "selected": 16,
+      "letters": 81
+    },
+    "taiwanese_english/suisiann-thousand/mixed": {
+      "eligible_distinct": 1118,
+      "selected": 16,
+      "letters": 141
+    },
+    "taiwanese_english/suisiann-thousand/neighbor": {
+      "eligible_distinct": 1308,
+      "selected": 16,
+      "letters": 153
+    },
+    "taiwanese_english/suisiann-thousand/omission": {
+      "eligible_distinct": 1246,
+      "selected": 16,
+      "letters": 136
+    },
+    "taiwanese_english/suisiann-thousand/transpose": {
+      "eligible_distinct": 1309,
+      "selected": 16,
+      "letters": 162
+    },
+    "taiwanese_english/taiwanese-basic/full": {
+      "eligible_distinct": 1269,
+      "selected": 16,
+      "letters": 187
+    },
+    "taiwanese_english/taiwanese-basic/half": {
+      "eligible_distinct": 1236,
+      "selected": 16,
+      "letters": 106
+    },
+    "taiwanese_english/taiwanese-basic/initials": {
+      "eligible_distinct": 1174,
+      "selected": 16,
+      "letters": 83
+    },
+    "taiwanese_english/taiwanese-basic/mixed": {
+      "eligible_distinct": 1291,
+      "selected": 16,
+      "letters": 190
+    },
+    "taiwanese_english/taiwanese-basic/neighbor": {
+      "eligible_distinct": 1381,
+      "selected": 16,
+      "letters": 192
+    },
+    "taiwanese_english/taiwanese-basic/omission": {
+      "eligible_distinct": 1345,
+      "selected": 16,
+      "letters": 111
+    },
+    "taiwanese_english/taiwanese-basic/transpose": {
+      "eligible_distinct": 1381,
+      "selected": 16,
+      "letters": 202
+    }
+  },
+  "excluded": {
+    "duplicate-input-within-stratum": 24817,
+    "not-1-to-32-lowercase-letter-keys": 2191,
+    "unsupported-condition": 7775
+  },
+  "excluded_source_groups": {
+    "japanese-retrieval": 384,
+    "poj-retrieval": 380,
+    "japanese-source": 8244,
+    "poj-source": 8664
+  },
+  "limitations": [
+    "Source conditions independently sampled; their latency differences are not isolated error effects.",
+    "Single-query reset workload; no natural multi-turn context or physical touch record.",
+    "ASCII letter keys only; punctuation, tone digits and longer input excluded, not certified.",
+    "Missing source-condition combinations remain missing; Taiwanese examples are not spontaneous conversations.",
+    "Corpora already evaluated for language quality and some lookup costs; these are not fresh holdouts.",
+    "Inventory is not measurement or the 10000-action-per-mode, three-session release gate."
+  ]
+}

@@ -3,6 +3,51 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "language-typing-timing-20260924",
+      "source_ids": [
+        "ud-gum-evaluation",
+        "taiwan-md",
+        "mcbopomofo",
+        "real-persona-chat",
+        "asdc",
+        "suisiann-thousand",
+        "taiwanese-basic",
+        "moztw-chat-evaluation"
+      ],
+      "genre": [
+        "conversation",
+        "essay",
+        "casual-conversation",
+        "service-roleplay",
+        "authored-situational-examples",
+        "historical-authored-examples",
+        "chat-derived-edited-excerpts"
+      ],
+      "role": "regression",
+      "exposure": "previously-evaluated",
+      "selection": "720 existing queries; 16 SHA256-selected distinct readings per mode/source/condition. Inputs frozen before timing, no target availability or ranking consulted. Four mode-specific shards preserve every stratum.",
+      "files": [
+        "docs/release-hardening/LANGUAGE-TIMING-PLAN.md",
+        "docs/release-hardening/language-timing/inputs.tsv",
+        "docs/release-hardening/language-timing/manifest.json",
+        "app/src/androidTest/assets/language-timing-inputs.tsv",
+        "tools/make_language_timing_corpus.py",
+        "tools/test_language_timing_corpus.py"
+      ],
+      "report_by": [
+        "mode",
+        "source",
+        "genre",
+        "input-condition",
+        "cadence",
+        "observed-and-missing-frames",
+        "shard",
+        "session"
+      ],
+      "leakage": "Reused evaluated corpora. Original source role and document identities retained; no fresh holdout or production vocabulary use.",
+      "limitations": "ASCII letters only, 1-32 keys; source conditions independently sampled. Authored Taiwanese examples are not spontaneous conversation. OS injected events and frame callback delivery do not measure physical touch or panel presentation. Single-query reset editor only; inventory does not certify the full release gate."
+    },
+    {
       "id": "taskmaster-context-replacement-20260924",
       "source_ids": [
         "taskmaster-english-pilot",
