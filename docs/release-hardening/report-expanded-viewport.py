@@ -9,7 +9,7 @@ def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def stats(values):
     x=sorted(values)
     return dict(n=len(x),mean_ms=statistics.mean(x),median_ms=statistics.median(x),
-                p95_ms=x[math.ceil(.95*len(x))-1],maximum_ms=x[-1]) if x else dict(n=0)
+                p95_ms=x[math.ceil(.95*len(x))-1],p99_ms=x[math.ceil(.99*len(x))-1],maximum_ms=x[-1]) if x else dict(n=0)
 def records(path):return list(csv.DictReader(io.StringIO(path.read_text(encoding='utf-8')),delimiter='\t'))
 def preserve(path,target):
     with target.open('wb') as f:
@@ -23,14 +23,14 @@ def main():
     identity={(r['round'],r['query']):(r['candidates'],r['sha256']) for r in reference}
     expected=[r['query'] for r in reference if r['round']=='0'][::4]
     for tag in args.tags:
-        assert re.fullmatch(r'expanded-(cost|frames)-[ab][12]',tag),tag
+        assert re.fullmatch(r'expanded-(append-)?(cost|frames)-[ab][12]',tag),tag
         log=(ART/(tag+'.txt')).read_text(encoding='utf-8-sig')
         assert re.search(r'OK \(\d+ tests?\)',log) and 'Cleanup verified: preferences, previous IME, display OFF.' in log and 'Final display OFF verified after environment collection' in log,tag
         sid=re.search(r'Session evidence: .*device-tests[\\/]([a-f0-9-]+)',log)[1]
         source=ROOT/'artifacts/device-tests'/sid;target=OUT/tag;target.mkdir(exist_ok=True)
         kind='cost' if '-cost-' in tag else 'frames'
         tests='expanded-viewport-tests3.apk' if kind=='cost' else 'expanded-frame-tests.apk'
-        app='existence-trial.apk' if tag.rsplit('-',1)[1][0]=='a' else 'expanded-viewport-trial.apk'
+        app='existence-trial.apk' if tag.rsplit('-',1)[1][0]=='a' else 'expanded-append-trial.apk' if '-append-' in tag else 'expanded-viewport-trial.apk'
         manifest=dict(session=sid,app=app,app_sha256=sha(ART/app),instrumentation=tests,instrumentation_sha256=sha(ART/tests),
                       runtime_boundary='Accepted 1ea175a versus expanded-grid allocation only; core/dictionary unchanged.',environment={})
         env=ART/(tag+'-environment')
