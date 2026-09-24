@@ -1,0 +1,91 @@
+{
+  "samples": 92,
+  "units": "milliseconds for costs; probe counts are string predicate calls, not time",
+  "scope": "Detached measure/layout/bitmap draw; excludes providers, input injection and presented frames. Two passes share font cache. Same frozen 46 Chinese prefixes.",
+  "rounds": {
+    "0": {
+      "apply_ns": {
+        "n": 46,
+        "mean": 4.518482739130435,
+        "median": 1.895208,
+        "p95": 18.699844,
+        "maximum": 24.342239
+      },
+      "strip_ns": {
+        "n": 46,
+        "mean": 46.66637895652174,
+        "median": 43.7696355,
+        "p95": 51.547084,
+        "maximum": 123.9025
+      },
+      "expand_ns": {
+        "n": 46,
+        "mean": 124.63068736956522,
+        "median": 44.7122655,
+        "p95": 541.730729,
+        "maximum": 735.143177
+      },
+      "select_ns": {
+        "n": 46,
+        "mean": 1.1938994130434784,
+        "median": 0.8315105,
+        "p95": 3.30802,
+        "maximum": 3.482865
+      },
+      "apply_plus_strip_ms": {
+        "n": 46,
+        "mean": 51.184861695652174,
+        "median": 47.444349,
+        "p95": 69.169947,
+        "maximum": 128.017552
+      },
+      "probe_totals": {
+        "apply_probes": 23,
+        "strip_probes": 1061,
+        "expand_probes": 13062
+      }
+    },
+    "1": {
+      "apply_ns": {
+        "n": 46,
+        "mean": 3.8926245869565217,
+        "median": 2.0619005,
+        "p95": 13.384115,
+        "maximum": 17.499479
+      },
+      "strip_ns": {
+        "n": 46,
+        "mean": 43.445727956521736,
+        "median": 42.720026000000004,
+        "p95": 48.303958,
+        "maximum": 51.22651
+      },
+      "expand_ns": {
+        "n": 46,
+        "mean": 115.17447913043479,
+        "median": 44.276302,
+        "p95": 530.831458,
+        "maximum": 631.305729
+      },
+      "select_ns": {
+        "n": 46,
+        "mean": 1.1760258695652175,
+        "median": 0.841198,
+        "p95": 3.243593,
+        "maximum": 4.100052
+      },
+      "apply_plus_strip_ms": {
+        "n": 46,
+        "mean": 47.33835254347826,
+        "median": 45.7575785,
+        "p95": 59.805156,
+        "maximum": 61.91823
+      },
+      "probe_totals": {
+        "apply_probes": 24,
+        "strip_probes": 1060,
+        "expand_probes": 13062
+      }
+    }
+  }
+}

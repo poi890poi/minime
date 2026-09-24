@@ -1,0 +1,55 @@
+{
+  "session": "33357370-111e-40d2-a70a-2d8a5733de35",
+  "before": {
+    "utc": "2026-09-24T11:28:00.2641647Z",
+    "thermal_status": 0,
+    "battery_temperature_c": 33.8,
+    "battery_percent": 100,
+    "usb_powered": true,
+    "low_power": "0",
+    "cpu0_frequency_khz": 1804800
+  },
+  "after": {
+    "utc": "2026-09-24T11:29:45.8765555Z",
+    "thermal_status": 0,
+    "battery_temperature_c": 34.8,
+    "battery_percent": 100,
+    "usb_powered": true,
+    "low_power": "0",
+    "cpu0_frequency_khz": 1075200
+  },
+  "cooldown": [
+    {
+      "utc": "2026-09-24T11:25:29.2024986Z",
+      "thermal": 0,
+      "batteryC": 34.7
+    },
+    {
+      "utc": "2026-09-24T11:25:59.4233707Z",
+      "thermal": 0,
+      "batteryC": 35
+    },
+    {
+      "utc": "2026-09-24T11:26:29.6461325Z",
+      "thermal": 0,
+      "batteryC": 34.6
+    },
+    {
+      "utc": "2026-09-24T11:26:59.8439786Z",
+      "thermal": 0,
+      "batteryC": 34.3
+    },
+    {
+      "utc": "2026-09-24T11:27:30.0640701Z",
+      "thermal": 0,
+      "batteryC": 34
+    },
+    {
+      "utc": "2026-09-24T11:28:00.2634747Z",
+      "thermal": 0,
+      "batteryC": 33.8
+    }
+  ],
+  "scope": "Before/after snapshots, not a temperature/frequency trajectory or causal attribution.",
+  "cleanup": "Original APK/preferences/IME restored; display OFF verified after final environment collection."
+}

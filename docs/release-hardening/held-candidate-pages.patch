@@ -1,0 +1,451 @@
+diff --git a/app/src/androidTest/java/dev/minime/ime/CandidatePagingTest.java b/app/src/androidTest/java/dev/minime/ime/CandidatePagingTest.java
+index 40b5b9c..65746dc 100644
+--- a/app/src/androidTest/java/dev/minime/ime/CandidatePagingTest.java
++++ b/app/src/androidTest/java/dev/minime/ime/CandidatePagingTest.java
+@@ -13,6 +13,7 @@ public final class CandidatePagingTest extends ActivityInstrumentationTestCase2<
+     private KeyboardView keyboard;
+     private CompositionEngine engine;
+     private String accepted="";
++    private int fontProbes;
+     private View find(View view,String description) {
+         if(description.contentEquals(view.getContentDescription()==null?"":view.getContentDescription()))return view;
+         if(view instanceof ViewGroup)for(int i=0;i<((ViewGroup)view).getChildCount();i++) {
+@@ -33,24 +34,54 @@ public final class CandidatePagingTest extends ActivityInstrumentationTestCase2<
+                 public void delete(){} public void enter(){} public void finish(){}
+             },Learning.NONE);
+             engine.dictionary(dictionary);
++            CandidateGlyphs glyphs=new CandidateGlyphs(new TextView(activity).getPaint());
++            engine.candidateDisplay(text->{fontProbes++;return !text.endsWith("7") && glyphs.test(text);});
+             engine.decoder((dict,raw,zh,context,done)->done.accept(new ArrayList<>(choices)),this::render);
+-            engine.start(false,false,false,false);activity.setContentView(keyboard);engine.type('a');render();
++            engine.start(false,false,false,false);activity.setContentView(keyboard);fontProbes=0;engine.type('a');render();
+         });
+         getInstrumentation().waitForIdleSync();
+         String last="Candidate "+choices.get(choices.size()-1).text;
+-        getInstrumentation().runOnMainSync(()->assertNull("Off-screen tail is not allocated on a keystroke",find(keyboard,last)));
++        getInstrumentation().runOnMainSync(()-> {
++            assertNull("Off-screen tail is not allocated on a keystroke",find(keyboard,last));
++            assertTrue("Font validation does not traverse the entire invisible tail",fontProbes<choices.size());
++            assertNull("Unsupported candidates never acquire visible controls",find(keyboard,"Candidate "+choices.get(7).text));
++        });
++        // Paging a held result must work while the next spelling is unresolved.
++        List<java.util.function.Consumer<List<Candidate>>> pending=new ArrayList<>();
++        getInstrumentation().runOnMainSync(()-> {
++            engine.decoder((dict,raw,zh,context,done)->pending.add(done),this::render);
++            engine.type('b');render();assertTrue(engine.predictionPending());
++        });
+         final boolean[] found={false};
+         for(int page=0;page<40 && !found[0];page++) {
+             getInstrumentation().runOnMainSync(()-> {
+                 HorizontalScrollView scroll=(HorizontalScrollView)find(keyboard,"Candidate list");assertNotNull(scroll);
++                // This is a deterministic reachability check. fullScroll otherwise
++                // starts an animation that waitForIdleSync does not finish.
++                scroll.setSmoothScrollingEnabled(false);
+                 scroll.fullScroll(View.FOCUS_RIGHT);
+             });
+             getInstrumentation().waitForIdleSync();android.os.SystemClock.sleep(50);
+             getInstrumentation().runOnMainSync(()->found[0]=find(keyboard,last)!=null);
+         }
+         assertTrue("Scrolling reaches the original final candidate",found[0]);
+-        getInstrumentation().runOnMainSync(()->((HorizontalScrollView)find(keyboard,"Candidate list")).fullScroll(View.FOCUS_RIGHT));
++        getInstrumentation().runOnMainSync(()-> {
++            assertTrue("Held tail is reachable before replacement arrives",engine.predictionPending());
++            pending.get(pending.size()-1).accept(new ArrayList<>(choices));
++        });
+         getInstrumentation().waitForIdleSync();
++        // Replacement can change text widths and load a further batch at the
++        // right edge. Allocation alone is not visibility; keep scrolling until
++        // the target enters the viewport, with a fixed failure budget.
++        final boolean[] visible={false};
++        for(int attempt=0;attempt<40 && !visible[0];attempt++) {
++            getInstrumentation().runOnMainSync(()-> {
++                HorizontalScrollView scroll=(HorizontalScrollView)find(keyboard,"Candidate list");
++                scroll.setSmoothScrollingEnabled(false);scroll.fullScroll(View.FOCUS_RIGHT);
++            });
++            getInstrumentation().waitForIdleSync();android.os.SystemClock.sleep(50);
++            getInstrumentation().runOnMainSync(()->visible[0]=find(keyboard,last).getGlobalVisibleRect(new android.graphics.Rect()));
++        }
+         getInstrumentation().runOnMainSync(()-> {
+             assertTrue("Final candidate is actually inside the visible viewport",find(keyboard,last).getGlobalVisibleRect(new android.graphics.Rect()));
+             assertEquals("Paging preserves every candidate and its order",choices.get(255).text,engine.candidates().get(engine.candidates().size()-1).text);
+diff --git a/app/src/main/java/dev/minime/ime/KeyboardView.java b/app/src/main/java/dev/minime/ime/KeyboardView.java
+index e98e45b..daed18c 100644
+--- a/app/src/main/java/dev/minime/ime/KeyboardView.java
++++ b/app/src/main/java/dev/minime/ime/KeyboardView.java
+@@ -48,6 +48,7 @@ final class KeyboardView extends LinearLayout {
+     private CompositionEngine snapshotEngine;
+     private long snapshotComposition=-1;
+     private List<Candidate> snapshot=Collections.emptyList();
++    private CandidatePage snapshotPage;
+     private int snapshotPreferred;
+     private boolean snapshotHasRaw;
+     private boolean candidateGesture;
+@@ -398,9 +399,12 @@ final class KeyboardView extends LinearLayout {
+             && snapshotEngine==engine && snapshotComposition==engine.compositionId() && snapshotMode.equals(mode);
+         if(!retain) {
+             if(snapshotEngine!=engine) {stripKey="";gridKey="";}
+-            snapshot=new ArrayList<>(engine.candidates());snapshotPreferred=engine.preferred();
++            snapshotPage=engine.candidatePage();snapshotPreferred=engine.preferred();
+             snapshotEngine=engine;snapshotComposition=engine.compositionId();snapshotMode=mode;snapshotHasRaw=!engine.raw().isEmpty();
+         }
++        // One extra entry preserves the existing scroll-to-load condition. Keep
++        // the result object while pending so its unseen tail remains reachable.
++        snapshot=expanded?snapshotPage.all():snapshotPage.first(stripLimit+2);
+         List<Candidate> candidates=new ArrayList<>(snapshot);
+         if(retain && !candidates.isEmpty())candidates.set(0,new Candidate(engine.raw(),true,0));
+         // Retained candidates belong to the previous query, not the current Space
+diff --git a/core/src/main/java/dev/minime/core/CompositionEngine.java b/core/src/main/java/dev/minime/core/CompositionEngine.java
+index 7a46022..4957a7b 100644
+--- a/core/src/main/java/dev/minime/core/CompositionEngine.java
++++ b/core/src/main/java/dev/minime/core/CompositionEngine.java
+@@ -46,6 +46,7 @@ public final class CompositionEngine {
+     private void clearAssistance() { spaceAt=-1;undoSpelling="";undoOutput=""; }
+     private Intent intent = Intent.LATIN_LITERAL;
+     private List<Candidate> candidates = new ArrayList<>();
++    private CandidatePage displayPage;
+     private int preferred;
+     private java.util.function.Predicate<String> displayable;
+     /** Platform font capability, independent of dictionary scores and language. */
+@@ -54,14 +55,9 @@ public final class CompositionEngine {
+     }
+     private void retainDisplayableCandidates() {
+         if(displayable==null)return;
+-        List<Candidate> readable=new ArrayList<>();int nextPreferred=0;
+-        for(int i=0;i<candidates.size();i++) {
+-            // The user's exact input is always recoverable, even on a font-poor device.
+-            Candidate value=!raw.isEmpty() && i==0?candidates.get(i):candidates.get(i).readable(displayable);
+-            if(value!=null) {if(i==preferred)nextPreferred=readable.size();readable.add(value);}
+-        }
+-        if(!candidates.isEmpty() && (readable.isEmpty() || !readable.contains(candidates.get(preferred))))automaticCorrection=false;
+-        candidates=readable;preferred=nextPreferred;
++        displayPage=new CandidatePage(candidates,preferred,!raw.isEmpty(),displayable);
++        if(!displayPage.originalPreferredRetained)automaticCorrection=false;
++        candidates=displayPage.prepared();preferred=displayPage.preferred;
+     }
+     private final PhraseSession phraseSession=new PhraseSession();
+     private boolean phraseLearning;
+@@ -108,6 +104,7 @@ public final class CompositionEngine {
+                 if(displayable==null || displayable.test(value.text))readable.add(value);
+             }
+             if(!readable.isEmpty()) {
++                displayPage=null;
+                 candidates=readable;
+                 raw=candidates.get(0).text;preferred=0;traced=true;editor.composing(raw);
+             }
+@@ -160,7 +157,11 @@ public final class CompositionEngine {
+     /** Editor lifecycle must account for both conversion and English continuation. */
+     public boolean hasContext() {return !context.isEmpty() || !englishContext.isEmpty();}
+     public Intent intent() { return intent; }
+-    public List<Candidate> candidates() { return Collections.unmodifiableList(candidates); }
++    public List<Candidate> candidates() { return displayPage==null?Collections.unmodifiableList(candidates):displayPage.all(); }
++    /** Stable ranked result for viewport-sized reads, including held older results. */
++    public CandidatePage candidatePage() {
++        return displayPage==null?new CandidatePage(candidates,preferred,!raw.isEmpty(),null):displayPage;
++    }
+     public int preferred() { return preferred; }
+     /** Presentation may keep completed suggestions while this query runs; acceptance may not. */
+     public boolean predictionPending() { return pending; }
+@@ -248,8 +249,8 @@ public final class CompositionEngine {
+         refresh();
+     }
+     public void select(int index) {
+-        if (index < 0 || index >= candidates.size()) return;
+-        selectChoice(candidates.get(index));
++        Candidate choice=displayPage!=null?displayPage.at(index):index<0 || index>=candidates.size()?null:candidates.get(index);
++        if(choice!=null)selectChoice(choice);
+     }
+     private void selectChoice(Candidate choice) {
+         if(!choice.validConsumption(raw))return;
+@@ -274,22 +275,22 @@ public final class CompositionEngine {
+     public void selectCandidate(Candidate displayed,long composition) {
+         if(composition!=compositionId)return;
+         if(deferUntilReady(()->selectCandidate(displayed,composition),true))return;
+-        for(int i=0;i<candidates.size();i++) {
+-            Candidate current=candidates.get(i);
+-            if(current.text.equals(displayed.text) && current.literal==displayed.literal
+-                    && (displayed.pair==null?current.pair==null:displayed.pair.same(current.pair))) {
+-                select(i);return;
+-            }
+-        }
++        Candidate choice=findCandidate(current->current.text.equals(displayed.text) && current.literal==displayed.literal
++            && (displayed.pair==null?current.pair==null:displayed.pair.same(current.pair)));
++        if(choice!=null)selectChoice(choice);
+     }
+     /** Long press accepts exactly the advertised alternate of the held snapshot. */
+     public void selectAlternative(Candidate displayed,long composition) {
+         if(composition!=compositionId || displayed.pair==null || displayed.alternateText().isEmpty() || !pairedTaiwanese || !inputMode.taiwanese())return;
+         if(deferUntilReady(()->selectAlternative(displayed,composition),true))return;
+-        for(Candidate current:candidates) {
+-            if(current.text.equals(displayed.text) && current.literal==displayed.literal
+-                    && displayed.pair.same(current.pair) && !current.alternateText().isEmpty()) {selectChoice(current.alternative());return;}
+-        }
++        Candidate choice=findCandidate(current->current.text.equals(displayed.text) && current.literal==displayed.literal
++            && displayed.pair.same(current.pair) && !current.alternateText().isEmpty());
++        if(choice!=null)selectChoice(choice.alternative());
++    }
++    private Candidate findCandidate(java.util.function.Predicate<Candidate> matches) {
++        if(displayPage!=null)return displayPage.find(matches);
++        for(Candidate value:candidates)if(matches.test(value))return value;
++        return null;
+     }
+     private boolean partial(Candidate c) {
+         return c.validConsumption(raw) && c.consumed>0 && c.consumed<raw.length();
+@@ -360,7 +361,7 @@ public final class CompositionEngine {
+         automaticCorrection=false;
+         traced=false;
+         long query=++revision;pending=false;
+-        candidates = new ArrayList<>(); preferred = 0;
++        displayPage=null;candidates = new ArrayList<>(); preferred = 0;
+         if (direct) return;
+         if (raw.isEmpty()) {
+             compositionId++;
+diff --git a/core/src/test/java/dev/minime/core/Regression.java b/core/src/test/java/dev/minime/core/Regression.java
+index bd1432d..2dc0f24 100644
+--- a/core/src/test/java/dev/minime/core/Regression.java
++++ b/core/src/test/java/dev/minime/core/Regression.java
+@@ -44,6 +44,7 @@ public final class Regression {
+         TextIntegrityRegression.run();
+         JoinedKalqRegression.run();
+         CandidateOrderRegression.run();
++        CandidatePageRegression.run();
+         ReadingIndexParity.run();
+         ReadingUnitLookupRegression.run();
+         ContextBoundaryRegression.run();
+@@ -57,6 +58,7 @@ public final class Regression {
+         MatchEvidenceRegression.run(dictionary);
+         VisibleDefaultRegression.run();
+         CandidateDisplayRegression.run();
++        CandidatePagingEngineRegression.run();
+         ConstructionRegression.run(dictionary);
+         FocusedIntentRegression.run(dictionary);
+         StaticDictionaryPrivacyRegression.run();
+diff --git a/core/src/main/java/dev/minime/core/CandidatePage.java b/core/src/main/java/dev/minime/core/CandidatePage.java
+new file mode 100644
+--- /dev/null
++++ b/core/src/main/java/dev/minime/core/CandidatePage.java
+@@ -0,0 +1,64 @@
++package dev.minime.core;
++
++import java.util.*;
++import java.util.function.Predicate;
++
++/** One ranked result, with ordered font validation on demand. Owned by one UI thread. */
++public final class CandidatePage {
++    private final List<Candidate> source;
++    private final Predicate<String> supported;
++    private final boolean protectRaw;
++    private final List<Candidate> readable=new ArrayList<>();
++    private int cursor;
++    final int preferred;
++    final boolean originalPreferredRetained;
++
++    CandidatePage(List<Candidate> ranked,int preferred,boolean protectRaw,Predicate<String> supported) {
++        source=new ArrayList<>(ranked);this.supported=supported;this.protectRaw=protectRaw;
++        int selected=0;
++        for(int i=0;i<source.size() && i<=preferred;i++) {
++            int before=readable.size();advance();
++            if(i==preferred && readable.size()>before)selected=before;
++        }
++        // Even an idle result whose leading candidates are unreadable needs its
++        // first surviving choice before callers inspect emptiness or default.
++        ensure(1);
++        this.preferred=selected;
++        originalPreferredRetained=source.isEmpty() || readable.contains(source.get(preferred));
++    }
++
++    private void advance() {
++        int at=cursor++;
++        Candidate value=source.get(at);
++        if(supported!=null && !(protectRaw && at==0))value=value.readable(supported);
++        if(value!=null)readable.add(value);
++    }
++    private void ensure(int count) {
++        while(readable.size()<count && cursor<source.size())advance();
++    }
++    /** Stable prefix; the next request cannot mutate an earlier returned list. */
++    public List<Candidate> first(int count) {
++        if(count<0)throw new IllegalArgumentException("Negative candidate count");
++        ensure(count);
++        return Collections.unmodifiableList(new ArrayList<>(readable.subList(0,Math.min(count,readable.size()))));
++    }
++    /** Complete compatibility path, including candidates beyond the current viewport. */
++    public List<Candidate> all() {
++        ensure(Integer.MAX_VALUE);
++        return Collections.unmodifiableList(readable);
++    }
++    Candidate at(int index) {
++        if(index<0)return null;
++        ensure(index==Integer.MAX_VALUE?index:index+1);
++        return index<readable.size()?readable.get(index):null;
++    }
++    Candidate find(Predicate<Candidate> matches) {
++        for(int i=0;;i++) {
++            Candidate value=at(i);
++            if(value==null || matches.test(value))return value;
++        }
++    }
++    // Engine acceptance consults only the already-resolved default. This list is
++    // never exposed to a caller that could mutate it or infer the final count.
++    List<Candidate> prepared() {return readable;}
++}
+diff --git a/core/src/test/java/dev/minime/core/CandidatePageRegression.java b/core/src/test/java/dev/minime/core/CandidatePageRegression.java
+new file mode 100644
+--- /dev/null
++++ b/core/src/test/java/dev/minime/core/CandidatePageRegression.java
+@@ -0,0 +1,78 @@
++package dev.minime.core;
++
++import java.util.*;
++import java.util.function.Predicate;
++import static dev.minime.core.Regression.*;
++
++final class CandidatePageRegression {
++    // Independent oracle: the original complete filter, without paging helpers.
++    static List<Candidate> eager(List<Candidate> source,boolean raw,Predicate<String> supported) {
++        List<Candidate> result=new ArrayList<>();
++        for(int i=0;i<source.size();i++) {
++            Candidate c=raw && i==0?source.get(i):source.get(i).readable(supported);
++            if(c!=null)result.add(c);
++        }
++        return result;
++    }
++    static String identity(Candidate c) {
++        return c.text+"|"+c.literal+"|"+c.score+"|"+c.reading+"|"+c.consumed+"|"+c.supplemental
++            +"|"+c.abbreviated+"|"+c.composed+"|"+c.incomplete+"|"+c.pack+"|"+c.languageCharacter
++            +"|"+c.transliteration+"|"+c.alternateText()+"|"+(c.pair==null?"":c.pair.source);
++    }
++    static void same(List<Candidate> a,List<Candidate> b,String message) {
++        equal(a.size(),b.size(),message+" count");
++        for(int i=0;i<a.size();i++)equal(identity(a.get(i)),identity(b.get(i)),message+" candidate "+i);
++    }
++    static void run() {
++        Random random=new Random(0x4d494e494d45L);
++        int cases=0;
++        for(int n:new int[]{0,1,2,7,25,129,2048})for(int policy=0;policy<7;policy++)for(boolean raw:new boolean[]{false,true}) {
++            List<Candidate> ranked=new ArrayList<>();
++            for(int i=0;i<n;i++) {
++                String text="entry"+random.nextInt(100000);
++                Candidate c=new Candidate(text,i==0,random.nextDouble(),i%5==0?2:0);
++                if(i%3==0)c=c.paired(new PairedForms.Pair(text,"form"+i,"fixture:"+i)).inPack("poj");
++                if(i%7==0)c=c.completing(c.score).asConstructed();
++                ranked.add(c);
++            }
++            final int rule=policy;
++            Predicate<String> allowed=s->rule==0 || (rule!=1 && Math.floorMod(s.hashCode(),rule+1)!=0);
++            List<Candidate> expected=eager(ranked,raw,allowed);
++            for(int choice:new int[]{0,Math.min(1,n-1),n/2,n-1}) {
++                if(choice<0)continue;
++                int preferred=0;
++                if(n>0) {
++                    Candidate original=ranked.get(choice);
++                    Candidate transformed=raw && choice==0?original:original.readable(allowed);
++                    if(transformed!=null) {
++                        preferred=eager(ranked.subList(0,choice),raw,allowed).size();
++                    }
++                }
++                CandidatePage page=new CandidatePage(ranked,choice,raw,allowed);
++                equal(preferred,page.preferred,"Same default after unreadable runs and paired fallback");
++                equal(n==0 || expected.contains(ranked.get(choice)),page.originalPreferredRetained,"Same correction eligibility");
++                List<Candidate> retained=page.first(3);
++                String retainedBefore=retained.toString();
++                for(int size:new int[]{0,1,2,8,24,25,48,10000,7})same(expected.subList(0,Math.min(size,expected.size())),page.first(size),"Eager prefix");
++                equal(retainedBefore,retained.toString(),"Older prefix remains stable");
++                same(expected,page.all(),"Full union preserved");
++                equal(null,page.at(expected.size()),"Past end is unavailable");
++                cases++;
++            }
++        }
++        List<Candidate> many=new ArrayList<>();
++        for(int i=0;i<4096;i++)many.add(new Candidate("entry"+i,false,i));
++        int[] probes={0};
++        CandidatePage page=new CandidatePage(many,1,true,s->{probes[0]++;return true;});
++        equal(1,probes[0],"Construction validates Space, not off-screen tail");
++        List<Candidate> first=page.first(26);
++        equal(25,probes[0],"25 font probes for 26 entries including protected raw");
++        equal(many.get(12),page.find(c->c==many.get(12)),"Visible selection keeps identity");
++        equal(25,probes[0],"Visible selection does not scan tail");
++        many.clear();
++        equal(4096,page.all().size(),"Source snapshot independent of its former owner");
++        equal(26,first.size(),"Old page remains its original size");
++        equal(4095,probes[0],"All candidates checked once when eventually requested");
++        System.out.println("PASS candidate pages: "+cases+" generated eager-oracle cases; deferred probes 25/4095 before expansion");
++    }
++}
+diff --git a/core/src/test/java/dev/minime/core/CandidatePagingEngineRegression.java b/core/src/test/java/dev/minime/core/CandidatePagingEngineRegression.java
+new file mode 100644
+--- /dev/null
++++ b/core/src/test/java/dev/minime/core/CandidatePagingEngineRegression.java
+@@ -0,0 +1,73 @@
++package dev.minime.core;
++
++import java.io.StringReader;
++import java.util.*;
++import java.util.function.*;
++import static dev.minime.core.Regression.*;
++
++final class CandidatePagingEngineRegression {
++    private static void typeWithoutFullRead(CompositionEngine c,String text) {text.codePoints().forEach(c::type);}
++    static void run() throws Exception {
++        List<Candidate> supplied=new ArrayList<>();
++        for(int i=0;i<2048;i++)supplied.add(new Candidate(new String(Character.toChars(0x4e00+i)),false,4096-i,i%4==0?2:0));
++        for(boolean privateField:new boolean[]{false,true})for(int policy=0;policy<3;policy++)for(int action=0;action<5;action++) {
++            Editor a=new Editor(),b=new Editor();
++            CompositionEngine eager=engine(a,Learning.NONE,false),paged=engine(b,Learning.NONE,false);
++            final int rule=policy;
++            Predicate<String> supported=s->rule==0 || (rule==1?Math.floorMod(s.hashCode(),3)!=0:s.codePoints().allMatch(cp->cp<128));
++            for(CompositionEngine c:Arrays.asList(eager,paged)) {
++                c.start(false,false,privateField,false);c.candidateDisplay(supported);
++                c.decoder((d,r,z,x,done)->done.accept(supplied),()->{});
++                typeWithoutFullRead(c,"nihao");
++            }
++            List<Candidate> all=eager.candidates();
++            CandidatePage retained=paged.candidatePage();
++            CandidatePageRegression.same(all.subList(0,Math.min(26,all.size())),retained.first(26),"Engine first page");
++            equal(eager.preferred(),paged.preferred(),"Engine default index before full read");
++            if(action==0) {eager.space();paged.space();}
++            if(action==1) {eager.enter();paged.enter();}
++            if(action==2) {
++                Candidate chosen=all.get(Math.min(1000,all.size()-1));
++                eager.selectCandidate(chosen,eager.compositionId());paged.selectCandidate(chosen,paged.compositionId());
++                eager.backspace();paged.backspace();
++            }
++            if(action==3) {
++                int index=0;for(int i=0;i<all.size();i++)if(all.get(i).consumed==2){index=i;break;}
++                eager.select(index);paged.select(index);eager.space();paged.space();
++            }
++            if(action==4) {eager.switchMode(InputMode.ENGLISH,false);paged.switchMode(InputMode.ENGLISH,false);eager.space();paged.space();}
++            equal(a.text,b.text,"Paged acceptance matches eager text");equal(a.composing,b.composing,"Paged suffix composition");
++            equal(eager.raw(),paged.raw(),"Paged raw ownership");
++            CandidatePageRegression.same(all,retained.all(),"Older result remains fully pageable after acceptance/reset");
++        }
++        // A real English correction must still be undone with Backspace; the
++        // unsupported counterpart must not acquire hidden correction behavior.
++        for(boolean allow:new boolean[]{false,true}) {
++            Editor a=new Editor(),b=new Editor();CompositionEngine eager=engine(a,Learning.NONE,false),paged=engine(b,Learning.NONE,false);
++            for(CompositionEngine c:Arrays.asList(eager,paged)) {c.start(false,false,false,false,true);c.englishOptions(true,true);c.candidateDisplay(s->allow || s.equals("teh"));typeWithoutFullRead(c,"teh");}
++            eager.candidates();eager.space();paged.space();equal(a.text,b.text,"Correction Space parity");
++            eager.backspace();paged.backspace();equal(a.text,b.text,"Correction undo text parity");equal(a.composing,b.composing,"Correction undo spelling parity");
++        }
++        AddonDictionary addons=AddonDictionary.read(new StringReader("poj\tfixture\ttâi-gí\ttest\tfixture\njapanese\tfixture\tかな\ttest\tfixture\n"));
++        for(InputMode mode:InputMode.values()) {
++            Editor output=new Editor();CompositionEngine c=engine(output,Learning.NONE,false);
++            c.addons(addons,new HashSet<>(Arrays.asList("poj","japanese")));c.switchMode(mode,false);c.candidateDisplay(s->true);
++            typeWithoutFullRead(c,"fixture");CandidatePage held=c.candidatePage();List<Candidate> old=new ArrayList<>(held.all());
++            List<Consumer<List<Candidate>>> callbacks=new ArrayList<>();
++            c.decoder(new CompositionEngine.Decoder() {
++                public void convert(PhoneticDictionary d,String r,boolean z,String x,Consumer<List<Candidate>> done) {callbacks.add(done);}
++                public void query(PhoneticDictionary d,String r,boolean z,String x,boolean p,AddonDictionary ad,Set<String> enabled,Consumer<List<Candidate>> done) {callbacks.add(done);}
++            },()->{});
++            c.type('a');c.type('b');
++            int last=callbacks.size()-1;
++            if(last>=1) {
++                callbacks.get(last-1).accept(supplied);yes(c.predictionPending(),"Stale result cannot replace pending page");
++                CandidatePageRegression.same(old,held.first(10000),"Held tail survives newer pending query");
++                callbacks.get(last).accept(Collections.emptyList());yes(!c.predictionPending(),"Current result completes");
++            }
++            Candidate stale=old.get(0);long id=c.compositionId();c.start(false,true,true,true);c.selectCandidate(stale,id);
++            equal("",output.text,"Old page cannot select into a different editor");
++        }
++        System.out.println("PASS engine paging: Space/Enter, late taps, prefix suffix edits, correction undo, modes, held/stale results and editor reset");
++    }
++}

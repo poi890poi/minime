@@ -1,0 +1,30 @@
+{
+  "baseline_runtime": "1ea175a",
+  "sessions": {
+    "a1": "9d174eb8-0dc8-4210-b8f5-d3dd9b5c9a21",
+    "b1": "e4accc35-db17-45e9-ab3d-2f86bf9d4850",
+    "b2": "ebcba5c5-c279-4694-b3be-0497d8e86ce4",
+    "a2": "c0ff6d8a-73c8-4154-a610-8efebe77b4ec",
+    "cost-a": "aebc8735-3097-4af2-895a-5c784654dcc9",
+    "cost-b": "b9fdef4d-d986-424c-9987-18c2d74d32d0",
+    "b3": "b20df290-0f6a-4f2b-b0b4-1516cf1c5616",
+    "a3": "33357370-111e-40d2-a70a-2d8a5733de35"
+  },
+  "binary_sha256": {
+    "existence-trial.apk": "e4d064d597bbfbe69cb9770d68cd0d5a32829a1c82fc1e0b5f03460357d40332",
+    "candidate-pages-trial.apk": "fa305a48cb7f5b4a7c7aa4978ba8f41f7e5edbb8b9a6e35fc82c3c84f088a88b",
+    "layout-tests.apk": "4e4d1901d575bf453b6a00f3f3c5bc21a297b36e419d61a45c36022b581a0197",
+    "candidate-pages-tests3.apk": "47ffdf82fb7fe89250b4d108b3258bf52f69c00e40cda9b5a5b255ad7165c9da",
+    "candidate-pages-cost-tests.apk": "488ced5a2b5b7994e2b73bf1c7366fc0ef493f970192977b5eef944d5603e2ed"
+  },
+  "runtime_source_sha256": {
+    "core/src/main/java/dev/minime/core/CandidatePage.java": "c5c6c460879edfd54a53214fc95d682359c8ab9bef63b6081feccb3a00873916",
+    "core/src/main/java/dev/minime/core/CompositionEngine.java": "286fcd8c946b100ac8f973f73ef7e2edec7e78b991204450cb91dd3cf7068c5a",
+    "app/src/main/java/dev/minime/ime/KeyboardView.java": "d7b32f0762f95d282c1c29aa3a0552d42f74f5f4c6ab740929b0881574176181"
+  },
+  "changed_nonsignature_apk_entries": [
+    "classes.dex",
+    "classes3.dex"
+  ],
+  "timing_fixture_sha256": "cd50e119257521710a601f279f35c28c85b969a1f4a0ad9918011edc57344603"
+}

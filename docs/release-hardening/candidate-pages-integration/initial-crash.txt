@@ -1,0 +1,18 @@
+--------- beginning of crash
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: FATAL EXCEPTION: main
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: Process: app.minime.keyboard, PID: 21868
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: junit.framework.AssertionFailedError: Final candidate is actually inside the visible viewport
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at junit.framework.Assert.fail(Assert.java:50)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at junit.framework.Assert.assertTrue(Assert.java:20)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at dev.minime.ime.CandidatePagingTest.lambda$testEveryCandidateRemainsReachableAndNewInputResetsAllocation$13(CandidatePagingTest.java:73)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at dev.minime.ime.CandidatePagingTest.$r8$lambda$1TX_torvjgw2pqUhu4M_QIDo7No(CandidatePagingTest.java:0)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at dev.minime.ime.CandidatePagingTest$$ExternalSyntheticLambda12.run(D8$$SyntheticClass:0)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2353)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:942)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:226)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:313)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8762)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:604)
+09-24 19:01:07.456 21868 21868 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1067)

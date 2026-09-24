@@ -40,6 +40,14 @@ lower isolated lookup cost: fast Chinese raw-frame p95 worsens in both phone
 pairs, and candidate gains are conditional on fewer observed frames. Its runtime
 changes are reverted; the accepted runtime remains 1ea175a.
 
+The [candidate font-page experiment](CANDIDATE-PAGES-RESULTS.md) is held outside
+production. It preserves full ordered results and improves slower Chinese
+candidate p95 in three pairs, including a cooled repeat, but shifts work to
+expansion and has mixed cross-language/acceptance timings. Its eight-query
+workload cannot settle those tradeoffs. Broader language-specific timing inputs
+are needed before admission; 12 integration checks and 92 ordered-result
+comparisons do not establish release performance. Accepted runtime remains 1ea175a.
+
 ## Quality loop
 
 The new Taiwan chat-derived evaluation adds 4,608 complete, initial and mixed

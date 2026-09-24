@@ -1,0 +1,23 @@
+{
+  "session": "e4accc35-db17-45e9-ab3d-2f86bf9d4850",
+  "before": {
+    "utc": "2026-09-24T11:08:53.8141634Z",
+    "thermal_status": 0,
+    "battery_temperature_c": 34.2,
+    "battery_percent": 100,
+    "usb_powered": true,
+    "low_power": "0",
+    "cpu0_frequency_khz": 691200
+  },
+  "after": {
+    "utc": "2026-09-24T11:10:38.6461366Z",
+    "thermal_status": 1,
+    "battery_temperature_c": 35.2,
+    "battery_percent": 100,
+    "usb_powered": true,
+    "low_power": "0",
+    "cpu0_frequency_khz": 1804800
+  },
+  "scope": "Before/after snapshots, not a temperature/frequency trajectory or causal attribution.",
+  "cleanup": "Original APK/preferences/IME restored; display OFF verified after final environment collection."
+}
