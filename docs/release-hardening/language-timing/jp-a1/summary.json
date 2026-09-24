@@ -1,0 +1,2288 @@
+{
+  "baseline": "1ea175a accepted runtime / 393ee56 timing harness",
+  "samples": 620,
+  "groups": {
+    "japanese_english/150": {
+      "editor_callback": {
+        "n": 254,
+        "observed": 254,
+        "unobserved": 0,
+        "mean_ms": 4.96969981496063,
+        "p50_ms": 4.922026,
+        "p95_ms": 6.17585,
+        "p99_ms": 7.347553,
+        "max_ms": 8.649872
+      },
+      "editor_submission": {
+        "n": 254,
+        "observed": 254,
+        "unobserved": 0,
+        "mean_ms": 15.011623433070866,
+        "p50_ms": 13.6205565,
+        "p95_ms": 22.696562,
+        "p99_ms": 24.909904,
+        "max_ms": 33.919351
+      },
+      "candidate_submission": {
+        "n": 254,
+        "observed": 254,
+        "unobserved": 0,
+        "mean_ms": 44.11827185433071,
+        "p50_ms": 36.8292325,
+        "p95_ms": 71.885379,
+        "p99_ms": 78.857828,
+        "max_ms": 120.111539
+      },
+      "pressed_submission": {
+        "n": 254,
+        "observed": 254,
+        "unobserved": 0,
+        "mean_ms": 22.050140547244094,
+        "p50_ms": 20.725316499999998,
+        "p95_ms": 30.501893,
+        "p99_ms": 31.914116,
+        "max_ms": 36.512716
+      },
+      "space_submission": {
+        "n": 56,
+        "observed": 56,
+        "unobserved": 0,
+        "mean_ms": 24.341910339285715,
+        "p50_ms": 23.3883635,
+        "p95_ms": 30.051201,
+        "p99_ms": 35.262048,
+        "max_ms": 35.262048
+      },
+      "injected_key_interval": {
+        "n": 254,
+        "observed": 254,
+        "unobserved": 0,
+        "mean_ms": 150.0,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 156.0
+      },
+      "candidate_deadline": {
+        "letters": 254,
+        "submitted_before_next_up": 254,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/60": {
+      "editor_callback": {
+        "n": 254,
+        "observed": 254,
+        "unobserved": 0,
+        "mean_ms": 4.301315712598425,
+        "p50_ms": 4.1653055000000005,
+        "p95_ms": 5.823944,
+        "p99_ms": 11.305608,
+        "max_ms": 11.97593
+      },
+      "editor_submission": {
+        "n": 254,
+        "observed": 254,
+        "unobserved": 0,
+        "mean_ms": 14.519688003937008,
+        "p50_ms": 13.029359,
+        "p95_ms": 21.538887,
+        "p99_ms": 23.501287,
+        "max_ms": 25.873108
+      },
+      "candidate_submission": {
+        "n": 254,
+        "observed": 254,
+        "unobserved": 0,
+        "mean_ms": 43.1032242992126,
+        "p50_ms": 37.185511500000004,
+        "p95_ms": 71.185562,
+        "p99_ms": 78.577799,
+        "max_ms": 90.848121
+      },
+      "pressed_submission": {
+        "n": 254,
+        "observed": 254,
+        "unobserved": 0,
+        "mean_ms": 28.815392137795275,
+        "p50_ms": 27.168377,
+        "p95_ms": 46.045247,
+        "p99_ms": 51.469721,
+        "max_ms": 54.369888
+      },
+      "space_submission": {
+        "n": 56,
+        "observed": 56,
+        "unobserved": 0,
+        "mean_ms": 21.94875257142857,
+        "p50_ms": 22.054173499999997,
+        "p95_ms": 27.254313,
+        "p99_ms": 27.458432,
+        "max_ms": 27.458432
+      },
+      "injected_key_interval": {
+        "n": 254,
+        "observed": 254,
+        "unobserved": 0,
+        "mean_ms": 61.354330708661415,
+        "p50_ms": 63.0,
+        "p95_ms": 72.0,
+        "p99_ms": 75.0,
+        "max_ms": 76.0
+      },
+      "candidate_deadline": {
+        "letters": 254,
+        "submitted_before_next_up": 222,
+        "observed_submission_at_or_after_next_up": 32,
+        "unobserved": 0
+      }
+    }
+  },
+  "strata": {
+    "japanese_english/asdc/service-roleplay/full/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "full",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 4.453826555555556,
+        "p50_ms": 4.010236,
+        "p95_ms": 8.649872,
+        "p99_ms": 8.649872,
+        "max_ms": 8.649872
+      },
+      "editor_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 14.997084555555556,
+        "p50_ms": 13.528595500000002,
+        "p95_ms": 33.919351,
+        "p99_ms": 33.919351,
+        "max_ms": 33.919351
+      },
+      "candidate_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 52.715050444444444,
+        "p50_ms": 45.2656,
+        "p95_ms": 120.111539,
+        "p99_ms": 120.111539,
+        "max_ms": 120.111539
+      },
+      "pressed_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 18.321161611111112,
+        "p50_ms": 18.179219500000002,
+        "p95_ms": 26.196798,
+        "p99_ms": 26.196798,
+        "max_ms": 26.196798
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 19.99222725,
+        "p50_ms": 21.023568,
+        "p95_ms": 21.855132,
+        "p99_ms": 21.855132,
+        "max_ms": 21.855132
+      },
+      "injected_key_interval": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 150.11111111111111,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 18,
+        "submitted_before_next_up": 18,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/half/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "half",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 7,
+        "observed": 7,
+        "unobserved": 0,
+        "mean_ms": 5.280159428571428,
+        "p50_ms": 5.237786,
+        "p95_ms": 6.053463,
+        "p99_ms": 6.053463,
+        "max_ms": 6.053463
+      },
+      "editor_submission": {
+        "n": 7,
+        "observed": 7,
+        "unobserved": 0,
+        "mean_ms": 18.458068714285716,
+        "p50_ms": 19.433462,
+        "p95_ms": 21.914661,
+        "p99_ms": 21.914661,
+        "max_ms": 21.914661
+      },
+      "candidate_submission": {
+        "n": 7,
+        "observed": 7,
+        "unobserved": 0,
+        "mean_ms": 61.95467571428571,
+        "p50_ms": 61.796901,
+        "p95_ms": 71.317474,
+        "p99_ms": 71.317474,
+        "max_ms": 71.317474
+      },
+      "pressed_submission": {
+        "n": 7,
+        "observed": 7,
+        "unobserved": 0,
+        "mean_ms": 23.709884285714285,
+        "p50_ms": 22.815234,
+        "p95_ms": 29.524713,
+        "p99_ms": 29.524713,
+        "max_ms": 29.524713
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 23.453502,
+        "p50_ms": 21.5150775,
+        "p95_ms": 30.636536,
+        "p99_ms": 30.636536,
+        "max_ms": 30.636536
+      },
+      "injected_key_interval": {
+        "n": 7,
+        "observed": 7,
+        "unobserved": 0,
+        "mean_ms": 150.71428571428572,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 7,
+        "submitted_before_next_up": 7,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/initials/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "initials",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 4.797602,
+        "p50_ms": 4.832107499999999,
+        "p95_ms": 5.69268,
+        "p99_ms": 5.69268,
+        "max_ms": 5.69268
+      },
+      "editor_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 17.3228885,
+        "p50_ms": 18.06755,
+        "p95_ms": 21.199399,
+        "p99_ms": 21.199399,
+        "max_ms": 21.199399
+      },
+      "candidate_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 55.18161225,
+        "p50_ms": 57.351456,
+        "p95_ms": 72.815909,
+        "p99_ms": 72.815909,
+        "max_ms": 72.815909
+      },
+      "pressed_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 22.382029125,
+        "p50_ms": 19.5266125,
+        "p95_ms": 36.190181,
+        "p99_ms": 36.190181,
+        "max_ms": 36.190181
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.19732875,
+        "p50_ms": 22.111977,
+        "p95_ms": 23.75768,
+        "p99_ms": 23.75768,
+        "max_ms": 23.75768
+      },
+      "injected_key_interval": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 150.25,
+        "p50_ms": 152.0,
+        "p95_ms": 155.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 8,
+        "submitted_before_next_up": 8,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/mixed/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "mixed",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 11,
+        "observed": 11,
+        "unobserved": 0,
+        "mean_ms": 5.126229545454546,
+        "p50_ms": 4.924709,
+        "p95_ms": 6.340596,
+        "p99_ms": 6.340596,
+        "max_ms": 6.340596
+      },
+      "editor_submission": {
+        "n": 11,
+        "observed": 11,
+        "unobserved": 0,
+        "mean_ms": 16.024837454545455,
+        "p50_ms": 14.050388,
+        "p95_ms": 22.652575,
+        "p99_ms": 22.652575,
+        "max_ms": 22.652575
+      },
+      "candidate_submission": {
+        "n": 11,
+        "observed": 11,
+        "unobserved": 0,
+        "mean_ms": 48.917224,
+        "p50_ms": 36.24898,
+        "p95_ms": 75.651012,
+        "p99_ms": 75.651012,
+        "max_ms": 75.651012
+      },
+      "pressed_submission": {
+        "n": 11,
+        "observed": 11,
+        "unobserved": 0,
+        "mean_ms": 22.883322636363637,
+        "p50_ms": 22.800907,
+        "p95_ms": 27.409138,
+        "p99_ms": 27.409138,
+        "max_ms": 27.409138
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 23.69697525,
+        "p50_ms": 23.810724999999998,
+        "p95_ms": 26.46096,
+        "p99_ms": 26.46096,
+        "max_ms": 26.46096
+      },
+      "injected_key_interval": {
+        "n": 11,
+        "observed": 11,
+        "unobserved": 0,
+        "mean_ms": 148.0909090909091,
+        "p50_ms": 151.0,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 11,
+        "submitted_before_next_up": 11,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/neighbor/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "neighbor",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 5.074920083333334,
+        "p50_ms": 4.9545775,
+        "p95_ms": 6.157052,
+        "p99_ms": 6.705126,
+        "max_ms": 6.705126
+      },
+      "editor_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 13.979850583333333,
+        "p50_ms": 13.1864525,
+        "p95_ms": 21.998822,
+        "p99_ms": 23.469605,
+        "max_ms": 23.469605
+      },
+      "candidate_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 38.189098361111114,
+        "p50_ms": 34.196895,
+        "p95_ms": 71.295386,
+        "p99_ms": 72.841633,
+        "max_ms": 72.841633
+      },
+      "pressed_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 22.685958805555554,
+        "p50_ms": 22.877051,
+        "p95_ms": 30.524082,
+        "p99_ms": 30.923613,
+        "max_ms": 30.923613
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.25246775,
+        "p50_ms": 21.827702000000002,
+        "p95_ms": 25.094446,
+        "p99_ms": 25.094446,
+        "max_ms": 25.094446
+      },
+      "injected_key_interval": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 149.94444444444446,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 36,
+        "submitted_before_next_up": 36,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/omission/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "omission",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 5.0952605,
+        "p50_ms": 5.260434500000001,
+        "p95_ms": 5.920018,
+        "p99_ms": 5.920018,
+        "max_ms": 5.920018
+      },
+      "editor_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 17.385139,
+        "p50_ms": 15.394497,
+        "p95_ms": 24.017102,
+        "p99_ms": 24.017102,
+        "max_ms": 24.017102
+      },
+      "candidate_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 51.58623275,
+        "p50_ms": 46.9116315,
+        "p95_ms": 73.864601,
+        "p99_ms": 73.864601,
+        "max_ms": 73.864601
+      },
+      "pressed_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 23.567812583333332,
+        "p50_ms": 23.4001995,
+        "p95_ms": 31.249341,
+        "p99_ms": 31.249341,
+        "max_ms": 31.249341
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 26.72006925,
+        "p50_ms": 24.5383245,
+        "p95_ms": 35.262048,
+        "p99_ms": 35.262048,
+        "max_ms": 35.262048
+      },
+      "injected_key_interval": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 148.5,
+        "p50_ms": 151.5,
+        "p95_ms": 155.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 12,
+        "submitted_before_next_up": 12,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/transpose/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "transpose",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 4.998854235294117,
+        "p50_ms": 4.966265,
+        "p95_ms": 6.229963,
+        "p99_ms": 6.229963,
+        "max_ms": 6.229963
+      },
+      "editor_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 16.165018411764706,
+        "p50_ms": 15.383608,
+        "p95_ms": 26.570536,
+        "p99_ms": 26.570536,
+        "max_ms": 26.570536
+      },
+      "candidate_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 47.882864705882355,
+        "p50_ms": 43.865171,
+        "p95_ms": 78.857828,
+        "p99_ms": 78.857828,
+        "max_ms": 78.857828
+      },
+      "pressed_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 23.608823705882354,
+        "p50_ms": 23.817568,
+        "p95_ms": 30.931735,
+        "p99_ms": 30.931735,
+        "max_ms": 30.931735
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 25.89097925,
+        "p50_ms": 26.5351455,
+        "p95_ms": 29.407828,
+        "p99_ms": 29.407828,
+        "max_ms": 29.407828
+      },
+      "injected_key_interval": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 150.23529411764707,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 17,
+        "submitted_before_next_up": 17,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/full/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "full",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 37,
+        "observed": 37,
+        "unobserved": 0,
+        "mean_ms": 5.114809918918919,
+        "p50_ms": 5.026418,
+        "p95_ms": 6.540952,
+        "p99_ms": 8.638918,
+        "max_ms": 8.638918
+      },
+      "editor_submission": {
+        "n": 37,
+        "observed": 37,
+        "unobserved": 0,
+        "mean_ms": 14.211013675675677,
+        "p50_ms": 13.301106,
+        "p95_ms": 19.235014,
+        "p99_ms": 24.075223,
+        "max_ms": 24.075223
+      },
+      "candidate_submission": {
+        "n": 37,
+        "observed": 37,
+        "unobserved": 0,
+        "mean_ms": 38.646787783783786,
+        "p50_ms": 34.525117,
+        "p95_ms": 71.588087,
+        "p99_ms": 71.885379,
+        "max_ms": 71.885379
+      },
+      "pressed_submission": {
+        "n": 37,
+        "observed": 37,
+        "unobserved": 0,
+        "mean_ms": 22.202015864864865,
+        "p50_ms": 20.445533,
+        "p95_ms": 30.502928,
+        "p99_ms": 30.654231,
+        "max_ms": 30.654231
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 26.43947925,
+        "p50_ms": 26.85905,
+        "p95_ms": 29.072251,
+        "p99_ms": 29.072251,
+        "max_ms": 29.072251
+      },
+      "injected_key_interval": {
+        "n": 37,
+        "observed": 37,
+        "unobserved": 0,
+        "mean_ms": 150.56756756756758,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 37,
+        "submitted_before_next_up": 37,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/half/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "half",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 23,
+        "observed": 23,
+        "unobserved": 0,
+        "mean_ms": 5.137111608695652,
+        "p50_ms": 5.166678,
+        "p95_ms": 6.341104,
+        "p99_ms": 6.852667,
+        "max_ms": 6.852667
+      },
+      "editor_submission": {
+        "n": 23,
+        "observed": 23,
+        "unobserved": 0,
+        "mean_ms": 15.280857,
+        "p50_ms": 14.351417,
+        "p95_ms": 22.356624,
+        "p99_ms": 22.716104,
+        "max_ms": 22.716104
+      },
+      "candidate_submission": {
+        "n": 23,
+        "observed": 23,
+        "unobserved": 0,
+        "mean_ms": 43.35967047826087,
+        "p50_ms": 43.132666,
+        "p95_ms": 66.279645,
+        "p99_ms": 70.017355,
+        "max_ms": 70.017355
+      },
+      "pressed_submission": {
+        "n": 23,
+        "observed": 23,
+        "unobserved": 0,
+        "mean_ms": 23.164219869565216,
+        "p50_ms": 22.555426,
+        "p95_ms": 29.62673,
+        "p99_ms": 31.616886,
+        "max_ms": 31.616886
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 23.008799,
+        "p50_ms": 21.567354,
+        "p95_ms": 28.169385,
+        "p99_ms": 28.169385,
+        "max_ms": 28.169385
+      },
+      "injected_key_interval": {
+        "n": 23,
+        "observed": 23,
+        "unobserved": 0,
+        "mean_ms": 150.43478260869566,
+        "p50_ms": 152.0,
+        "p95_ms": 155.0,
+        "p99_ms": 156.0,
+        "max_ms": 156.0
+      },
+      "candidate_deadline": {
+        "letters": 23,
+        "submitted_before_next_up": 23,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/initials/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "initials",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 10,
+        "observed": 10,
+        "unobserved": 0,
+        "mean_ms": 4.7885395,
+        "p50_ms": 4.932639,
+        "p95_ms": 6.052092,
+        "p99_ms": 6.052092,
+        "max_ms": 6.052092
+      },
+      "editor_submission": {
+        "n": 10,
+        "observed": 10,
+        "unobserved": 0,
+        "mean_ms": 16.3081383,
+        "p50_ms": 13.7700605,
+        "p95_ms": 24.909904,
+        "p99_ms": 24.909904,
+        "max_ms": 24.909904
+      },
+      "candidate_submission": {
+        "n": 10,
+        "observed": 10,
+        "unobserved": 0,
+        "mean_ms": 47.661581,
+        "p50_ms": 40.2000335,
+        "p95_ms": 73.945738,
+        "p99_ms": 73.945738,
+        "max_ms": 73.945738
+      },
+      "pressed_submission": {
+        "n": 10,
+        "observed": 10,
+        "unobserved": 0,
+        "mean_ms": 22.7556957,
+        "p50_ms": 20.100321,
+        "p95_ms": 36.512716,
+        "p99_ms": 36.512716,
+        "max_ms": 36.512716
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 24.74814625,
+        "p50_ms": 25.6125605,
+        "p95_ms": 29.011154,
+        "p99_ms": 29.011154,
+        "max_ms": 29.011154
+      },
+      "injected_key_interval": {
+        "n": 10,
+        "observed": 10,
+        "unobserved": 0,
+        "mean_ms": 149.6,
+        "p50_ms": 152.0,
+        "p95_ms": 153.0,
+        "p99_ms": 153.0,
+        "max_ms": 153.0
+      },
+      "candidate_deadline": {
+        "letters": 10,
+        "submitted_before_next_up": 10,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/mixed/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "mixed",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 5.131625583333333,
+        "p50_ms": 5.05321,
+        "p95_ms": 6.063861,
+        "p99_ms": 6.063861,
+        "max_ms": 6.063861
+      },
+      "editor_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 16.002871416666668,
+        "p50_ms": 13.6615435,
+        "p95_ms": 23.9511,
+        "p99_ms": 23.9511,
+        "max_ms": 23.9511
+      },
+      "candidate_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 44.9829625,
+        "p50_ms": 35.726490999999996,
+        "p95_ms": 71.544174,
+        "p99_ms": 71.544174,
+        "max_ms": 71.544174
+      },
+      "pressed_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 19.506729916666668,
+        "p50_ms": 19.4638875,
+        "p95_ms": 24.912611,
+        "p99_ms": 24.912611,
+        "max_ms": 24.912611
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 25.03690725,
+        "p50_ms": 24.228547499999998,
+        "p95_ms": 29.976621,
+        "p99_ms": 29.976621,
+        "max_ms": 29.976621
+      },
+      "injected_key_interval": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 150.66666666666666,
+        "p50_ms": 152.0,
+        "p95_ms": 156.0,
+        "p99_ms": 156.0,
+        "max_ms": 156.0
+      },
+      "candidate_deadline": {
+        "letters": 12,
+        "submitted_before_next_up": 12,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/neighbor/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "neighbor",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 19,
+        "observed": 19,
+        "unobserved": 0,
+        "mean_ms": 4.995023947368421,
+        "p50_ms": 5.050316,
+        "p95_ms": 6.469693,
+        "p99_ms": 6.469693,
+        "max_ms": 6.469693
+      },
+      "editor_submission": {
+        "n": 19,
+        "observed": 19,
+        "unobserved": 0,
+        "mean_ms": 14.094842947368422,
+        "p50_ms": 13.589797,
+        "p95_ms": 19.260577,
+        "p99_ms": 19.260577,
+        "max_ms": 19.260577
+      },
+      "candidate_submission": {
+        "n": 19,
+        "observed": 19,
+        "unobserved": 0,
+        "mean_ms": 41.201964631578946,
+        "p50_ms": 34.510161,
+        "p95_ms": 67.640629,
+        "p99_ms": 67.640629,
+        "max_ms": 67.640629
+      },
+      "pressed_submission": {
+        "n": 19,
+        "observed": 19,
+        "unobserved": 0,
+        "mean_ms": 21.763332736842106,
+        "p50_ms": 20.047869,
+        "p95_ms": 29.619224,
+        "p99_ms": 29.619224,
+        "max_ms": 29.619224
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 25.3957205,
+        "p50_ms": 24.44253,
+        "p95_ms": 29.907401,
+        "p99_ms": 29.907401,
+        "max_ms": 29.907401
+      },
+      "injected_key_interval": {
+        "n": 19,
+        "observed": 19,
+        "unobserved": 0,
+        "mean_ms": 149.89473684210526,
+        "p50_ms": 152.0,
+        "p95_ms": 155.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 19,
+        "submitted_before_next_up": 19,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/omission/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "omission",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 4.742334230769231,
+        "p50_ms": 4.604637,
+        "p95_ms": 5.828128,
+        "p99_ms": 5.828128,
+        "max_ms": 5.828128
+      },
+      "editor_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 14.63261476923077,
+        "p50_ms": 12.880159,
+        "p95_ms": 21.924533,
+        "p99_ms": 21.924533,
+        "max_ms": 21.924533
+      },
+      "candidate_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 47.03212992307692,
+        "p50_ms": 43.929794,
+        "p95_ms": 67.831981,
+        "p99_ms": 67.831981,
+        "max_ms": 67.831981
+      },
+      "pressed_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 22.076601153846156,
+        "p50_ms": 20.875158,
+        "p95_ms": 31.052919,
+        "p99_ms": 31.052919,
+        "max_ms": 31.052919
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 28.36643475,
+        "p50_ms": 27.9514085,
+        "p95_ms": 30.051201,
+        "p99_ms": 30.051201,
+        "max_ms": 30.051201
+      },
+      "injected_key_interval": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 149.07692307692307,
+        "p50_ms": 151.0,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 13,
+        "submitted_before_next_up": 13,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/transpose/150": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "transpose",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 4.779400354838709,
+        "p50_ms": 4.516563,
+        "p95_ms": 6.588854,
+        "p99_ms": 7.347553,
+        "max_ms": 7.347553
+      },
+      "editor_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 13.607463290322581,
+        "p50_ms": 12.728072,
+        "p95_ms": 21.411564,
+        "p99_ms": 22.696562,
+        "max_ms": 22.696562
+      },
+      "candidate_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 38.652389387096775,
+        "p50_ms": 33.796771,
+        "p95_ms": 68.945679,
+        "p99_ms": 73.343176,
+        "max_ms": 73.343176
+      },
+      "pressed_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 21.192453225806453,
+        "p50_ms": 19.822708,
+        "p95_ms": 31.39401,
+        "p99_ms": 31.914116,
+        "max_ms": 31.914116
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 23.58770825,
+        "p50_ms": 23.418334,
+        "p95_ms": 26.42776,
+        "p99_ms": 26.42776,
+        "max_ms": 26.42776
+      },
+      "injected_key_interval": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 150.2258064516129,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 31,
+        "submitted_before_next_up": 31,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/full/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "full",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 4.267833833333333,
+        "p50_ms": 4.352263499999999,
+        "p95_ms": 5.56656,
+        "p99_ms": 5.56656,
+        "max_ms": 5.56656
+      },
+      "editor_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 14.606962833333334,
+        "p50_ms": 12.8988265,
+        "p95_ms": 22.327238,
+        "p99_ms": 22.327238,
+        "max_ms": 22.327238
+      },
+      "candidate_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 43.55064633333333,
+        "p50_ms": 41.302837,
+        "p95_ms": 68.850988,
+        "p99_ms": 68.850988,
+        "max_ms": 68.850988
+      },
+      "pressed_submission": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 31.6008055,
+        "p50_ms": 32.455597,
+        "p95_ms": 45.535936,
+        "p99_ms": 45.535936,
+        "max_ms": 45.535936
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.422016250000002,
+        "p50_ms": 22.498045,
+        "p95_ms": 24.12505,
+        "p99_ms": 24.12505,
+        "max_ms": 24.12505
+      },
+      "injected_key_interval": {
+        "n": 18,
+        "observed": 18,
+        "unobserved": 0,
+        "mean_ms": 61.333333333333336,
+        "p50_ms": 62.5,
+        "p95_ms": 70.0,
+        "p99_ms": 70.0,
+        "max_ms": 70.0
+      },
+      "candidate_deadline": {
+        "letters": 18,
+        "submitted_before_next_up": 16,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/half/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "half",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 7,
+        "observed": 7,
+        "unobserved": 0,
+        "mean_ms": 3.8118495714285716,
+        "p50_ms": 3.650414,
+        "p95_ms": 5.351663,
+        "p99_ms": 5.351663,
+        "max_ms": 5.351663
+      },
+      "editor_submission": {
+        "n": 7,
+        "observed": 7,
+        "unobserved": 0,
+        "mean_ms": 15.967601142857143,
+        "p50_ms": 19.436715,
+        "p95_ms": 20.599112,
+        "p99_ms": 20.599112,
+        "max_ms": 20.599112
+      },
+      "candidate_submission": {
+        "n": 7,
+        "observed": 7,
+        "unobserved": 0,
+        "mean_ms": 57.80618728571429,
+        "p50_ms": 61.949319,
+        "p95_ms": 74.937966,
+        "p99_ms": 74.937966,
+        "max_ms": 74.937966
+      },
+      "pressed_submission": {
+        "n": 7,
+        "observed": 7,
+        "unobserved": 0,
+        "mean_ms": 33.11737814285714,
+        "p50_ms": 25.204841,
+        "p95_ms": 48.874893,
+        "p99_ms": 48.874893,
+        "max_ms": 48.874893
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.44519225,
+        "p50_ms": 21.891898,
+        "p95_ms": 25.386715,
+        "p99_ms": 25.386715,
+        "max_ms": 25.386715
+      },
+      "injected_key_interval": {
+        "n": 7,
+        "observed": 7,
+        "unobserved": 0,
+        "mean_ms": 66.14285714285714,
+        "p50_ms": 68.0,
+        "p95_ms": 70.0,
+        "p99_ms": 70.0,
+        "max_ms": 70.0
+      },
+      "candidate_deadline": {
+        "letters": 7,
+        "submitted_before_next_up": 5,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/initials/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "initials",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 4.6261155,
+        "p50_ms": 4.495308,
+        "p95_ms": 6.003433,
+        "p99_ms": 6.003433,
+        "max_ms": 6.003433
+      },
+      "editor_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 16.50301,
+        "p50_ms": 15.345751,
+        "p95_ms": 23.088902,
+        "p99_ms": 23.088902,
+        "max_ms": 23.088902
+      },
+      "candidate_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 56.879833,
+        "p50_ms": 56.360750499999995,
+        "p95_ms": 90.848121,
+        "p99_ms": 90.848121,
+        "max_ms": 90.848121
+      },
+      "pressed_submission": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 27.793348625,
+        "p50_ms": 27.097443499999997,
+        "p95_ms": 41.905829,
+        "p99_ms": 41.905829,
+        "max_ms": 41.905829
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 21.335138999999998,
+        "p50_ms": 22.079501,
+        "p95_ms": 24.254266,
+        "p99_ms": 24.254266,
+        "max_ms": 24.254266
+      },
+      "injected_key_interval": {
+        "n": 8,
+        "observed": 8,
+        "unobserved": 0,
+        "mean_ms": 65.25,
+        "p50_ms": 67.0,
+        "p95_ms": 75.0,
+        "p99_ms": 75.0,
+        "max_ms": 75.0
+      },
+      "candidate_deadline": {
+        "letters": 8,
+        "submitted_before_next_up": 6,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/mixed/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "mixed",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 11,
+        "observed": 11,
+        "unobserved": 0,
+        "mean_ms": 4.532025818181818,
+        "p50_ms": 4.53463,
+        "p95_ms": 7.523171,
+        "p99_ms": 7.523171,
+        "max_ms": 7.523171
+      },
+      "editor_submission": {
+        "n": 11,
+        "observed": 11,
+        "unobserved": 0,
+        "mean_ms": 16.23355027272727,
+        "p50_ms": 15.006089,
+        "p95_ms": 22.37588,
+        "p99_ms": 22.37588,
+        "max_ms": 22.37588
+      },
+      "candidate_submission": {
+        "n": 11,
+        "observed": 11,
+        "unobserved": 0,
+        "mean_ms": 48.55235709090909,
+        "p50_ms": 34.079213,
+        "p95_ms": 90.356609,
+        "p99_ms": 90.356609,
+        "max_ms": 90.356609
+      },
+      "pressed_submission": {
+        "n": 11,
+        "observed": 11,
+        "unobserved": 0,
+        "mean_ms": 27.862688454545456,
+        "p50_ms": 27.088848,
+        "p95_ms": 53.28114,
+        "p99_ms": 53.28114,
+        "max_ms": 53.28114
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.347260249999998,
+        "p50_ms": 21.270411,
+        "p95_ms": 27.458432,
+        "p99_ms": 27.458432,
+        "max_ms": 27.458432
+      },
+      "injected_key_interval": {
+        "n": 11,
+        "observed": 11,
+        "unobserved": 0,
+        "mean_ms": 61.63636363636363,
+        "p50_ms": 67.0,
+        "p95_ms": 70.0,
+        "p99_ms": 70.0,
+        "max_ms": 70.0
+      },
+      "candidate_deadline": {
+        "letters": 11,
+        "submitted_before_next_up": 8,
+        "observed_submission_at_or_after_next_up": 3,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/neighbor/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "neighbor",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 4.227478611111111,
+        "p50_ms": 4.3166335,
+        "p95_ms": 5.587181,
+        "p99_ms": 5.614472,
+        "max_ms": 5.614472
+      },
+      "editor_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 13.899996027777778,
+        "p50_ms": 13.270384,
+        "p95_ms": 20.737492,
+        "p99_ms": 20.982284,
+        "max_ms": 20.982284
+      },
+      "candidate_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 38.09611427777778,
+        "p50_ms": 35.062155,
+        "p95_ms": 64.220775,
+        "p99_ms": 64.691815,
+        "max_ms": 64.691815
+      },
+      "pressed_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 26.796949083333335,
+        "p50_ms": 24.910618,
+        "p95_ms": 43.929264,
+        "p99_ms": 44.355462,
+        "max_ms": 44.355462
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 21.101060750000002,
+        "p50_ms": 21.213144,
+        "p95_ms": 22.44041,
+        "p99_ms": 22.44041,
+        "max_ms": 22.44041
+      },
+      "injected_key_interval": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 61.19444444444444,
+        "p50_ms": 64.0,
+        "p95_ms": 74.0,
+        "p99_ms": 76.0,
+        "max_ms": 76.0
+      },
+      "candidate_deadline": {
+        "letters": 36,
+        "submitted_before_next_up": 34,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/omission/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "omission",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 4.636792916666667,
+        "p50_ms": 4.0310595,
+        "p95_ms": 11.97593,
+        "p99_ms": 11.97593,
+        "max_ms": 11.97593
+      },
+      "editor_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 15.834358083333333,
+        "p50_ms": 15.4523355,
+        "p95_ms": 22.205513,
+        "p99_ms": 22.205513,
+        "max_ms": 22.205513
+      },
+      "candidate_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 48.03215325,
+        "p50_ms": 43.729315,
+        "p95_ms": 73.382753,
+        "p99_ms": 73.382753,
+        "max_ms": 73.382753
+      },
+      "pressed_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 30.4115325,
+        "p50_ms": 30.509574999999998,
+        "p95_ms": 54.369888,
+        "p99_ms": 54.369888,
+        "max_ms": 54.369888
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.364562,
+        "p50_ms": 22.184444999999997,
+        "p95_ms": 24.092752,
+        "p99_ms": 24.092752,
+        "max_ms": 24.092752
+      },
+      "injected_key_interval": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 61.416666666666664,
+        "p50_ms": 61.5,
+        "p95_ms": 72.0,
+        "p99_ms": 72.0,
+        "max_ms": 72.0
+      },
+      "candidate_deadline": {
+        "letters": 12,
+        "submitted_before_next_up": 10,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/asdc/service-roleplay/transpose/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "asdc",
+        "genre": "service-roleplay",
+        "condition": "transpose",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 3.7926864117647057,
+        "p50_ms": 3.507282,
+        "p95_ms": 5.26697,
+        "p99_ms": 5.26697,
+        "max_ms": 5.26697
+      },
+      "editor_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 14.544077294117647,
+        "p50_ms": 15.152854,
+        "p95_ms": 21.242959,
+        "p99_ms": 21.242959,
+        "max_ms": 21.242959
+      },
+      "candidate_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 44.00971458823529,
+        "p50_ms": 39.743375,
+        "p95_ms": 67.132646,
+        "p99_ms": 67.132646,
+        "max_ms": 67.132646
+      },
+      "pressed_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 29.04789782352941,
+        "p50_ms": 29.740302,
+        "p95_ms": 45.121813,
+        "p99_ms": 45.121813,
+        "max_ms": 45.121813
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 23.64414425,
+        "p50_ms": 24.095668,
+        "p95_ms": 27.254313,
+        "p99_ms": 27.254313,
+        "max_ms": 27.254313
+      },
+      "injected_key_interval": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 61.294117647058826,
+        "p50_ms": 65.0,
+        "p95_ms": 76.0,
+        "p99_ms": 76.0,
+        "max_ms": 76.0
+      },
+      "candidate_deadline": {
+        "letters": 17,
+        "submitted_before_next_up": 14,
+        "observed_submission_at_or_after_next_up": 3,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/full/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "full",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 37,
+        "observed": 37,
+        "unobserved": 0,
+        "mean_ms": 4.281710162162162,
+        "p50_ms": 4.361291,
+        "p95_ms": 5.615405,
+        "p99_ms": 6.495249,
+        "max_ms": 6.495249
+      },
+      "editor_submission": {
+        "n": 37,
+        "observed": 37,
+        "unobserved": 0,
+        "mean_ms": 13.536047108108107,
+        "p50_ms": 12.391447,
+        "p95_ms": 22.78124,
+        "p99_ms": 22.79702,
+        "max_ms": 22.79702
+      },
+      "candidate_submission": {
+        "n": 37,
+        "observed": 37,
+        "unobserved": 0,
+        "mean_ms": 38.5375222972973,
+        "p50_ms": 34.102957,
+        "p95_ms": 70.74853,
+        "p99_ms": 71.185562,
+        "max_ms": 71.185562
+      },
+      "pressed_submission": {
+        "n": 37,
+        "observed": 37,
+        "unobserved": 0,
+        "mean_ms": 30.355053243243244,
+        "p50_ms": 30.193738,
+        "p95_ms": 44.173166,
+        "p99_ms": 45.745718,
+        "max_ms": 45.745718
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.77996325,
+        "p50_ms": 22.38189,
+        "p95_ms": 25.887646,
+        "p99_ms": 25.887646,
+        "max_ms": 25.887646
+      },
+      "injected_key_interval": {
+        "n": 37,
+        "observed": 37,
+        "unobserved": 0,
+        "mean_ms": 61.108108108108105,
+        "p50_ms": 64.0,
+        "p95_ms": 74.0,
+        "p99_ms": 75.0,
+        "max_ms": 75.0
+      },
+      "candidate_deadline": {
+        "letters": 37,
+        "submitted_before_next_up": 36,
+        "observed_submission_at_or_after_next_up": 1,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/half/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "half",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 23,
+        "observed": 23,
+        "unobserved": 0,
+        "mean_ms": 4.084210434782609,
+        "p50_ms": 4.075977,
+        "p95_ms": 5.352071,
+        "p99_ms": 5.627591,
+        "max_ms": 5.627591
+      },
+      "editor_submission": {
+        "n": 23,
+        "observed": 23,
+        "unobserved": 0,
+        "mean_ms": 13.620095869565217,
+        "p50_ms": 12.483113,
+        "p95_ms": 19.183476,
+        "p99_ms": 22.848321,
+        "max_ms": 22.848321
+      },
+      "candidate_submission": {
+        "n": 23,
+        "observed": 23,
+        "unobserved": 0,
+        "mean_ms": 43.429611173913045,
+        "p50_ms": 40.732071,
+        "p95_ms": 70.819207,
+        "p99_ms": 72.077435,
+        "max_ms": 72.077435
+      },
+      "pressed_submission": {
+        "n": 23,
+        "observed": 23,
+        "unobserved": 0,
+        "mean_ms": 29.10520452173913,
+        "p50_ms": 30.831549,
+        "p95_ms": 44.807852,
+        "p99_ms": 46.045247,
+        "max_ms": 46.045247
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.81600275,
+        "p50_ms": 23.20194,
+        "p95_ms": 25.127487,
+        "p99_ms": 25.127487,
+        "max_ms": 25.127487
+      },
+      "injected_key_interval": {
+        "n": 23,
+        "observed": 23,
+        "unobserved": 0,
+        "mean_ms": 60.91304347826087,
+        "p50_ms": 62.0,
+        "p95_ms": 72.0,
+        "p99_ms": 73.0,
+        "max_ms": 73.0
+      },
+      "candidate_deadline": {
+        "letters": 23,
+        "submitted_before_next_up": 19,
+        "observed_submission_at_or_after_next_up": 4,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/initials/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "initials",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 10,
+        "observed": 10,
+        "unobserved": 0,
+        "mean_ms": 4.3080378999999995,
+        "p50_ms": 4.2726679999999995,
+        "p95_ms": 5.964256,
+        "p99_ms": 5.964256,
+        "max_ms": 5.964256
+      },
+      "editor_submission": {
+        "n": 10,
+        "observed": 10,
+        "unobserved": 0,
+        "mean_ms": 15.979413000000001,
+        "p50_ms": 15.088840000000001,
+        "p95_ms": 23.797122,
+        "p99_ms": 23.797122,
+        "max_ms": 23.797122
+      },
+      "candidate_submission": {
+        "n": 10,
+        "observed": 10,
+        "unobserved": 0,
+        "mean_ms": 49.4153973,
+        "p50_ms": 44.341392,
+        "p95_ms": 78.577799,
+        "p99_ms": 78.577799,
+        "max_ms": 78.577799
+      },
+      "pressed_submission": {
+        "n": 10,
+        "observed": 10,
+        "unobserved": 0,
+        "mean_ms": 28.7585537,
+        "p50_ms": 24.591001499999997,
+        "p95_ms": 50.482798,
+        "p99_ms": 50.482798,
+        "max_ms": 50.482798
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 21.472473,
+        "p50_ms": 21.9723295,
+        "p95_ms": 23.370247,
+        "p99_ms": 23.370247,
+        "max_ms": 23.370247
+      },
+      "injected_key_interval": {
+        "n": 10,
+        "observed": 10,
+        "unobserved": 0,
+        "mean_ms": 62.4,
+        "p50_ms": 62.0,
+        "p95_ms": 70.0,
+        "p99_ms": 70.0,
+        "max_ms": 70.0
+      },
+      "candidate_deadline": {
+        "letters": 10,
+        "submitted_before_next_up": 6,
+        "observed_submission_at_or_after_next_up": 4,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/mixed/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "mixed",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 5.291143916666667,
+        "p50_ms": 4.870349,
+        "p95_ms": 11.308839,
+        "p99_ms": 11.308839,
+        "max_ms": 11.308839
+      },
+      "editor_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 16.209216833333333,
+        "p50_ms": 14.3110785,
+        "p95_ms": 23.501287,
+        "p99_ms": 23.501287,
+        "max_ms": 23.501287
+      },
+      "candidate_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 46.13203791666667,
+        "p50_ms": 43.34298,
+        "p95_ms": 72.53686,
+        "p99_ms": 72.53686,
+        "max_ms": 72.53686
+      },
+      "pressed_submission": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 27.596977083333332,
+        "p50_ms": 24.853631,
+        "p95_ms": 49.523006,
+        "p99_ms": 49.523006,
+        "max_ms": 49.523006
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 19.419008,
+        "p50_ms": 19.0031095,
+        "p95_ms": 23.030401,
+        "p99_ms": 23.030401,
+        "max_ms": 23.030401
+      },
+      "injected_key_interval": {
+        "n": 12,
+        "observed": 12,
+        "unobserved": 0,
+        "mean_ms": 60.833333333333336,
+        "p50_ms": 61.0,
+        "p95_ms": 73.0,
+        "p99_ms": 73.0,
+        "max_ms": 73.0
+      },
+      "candidate_deadline": {
+        "letters": 12,
+        "submitted_before_next_up": 10,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/neighbor/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "neighbor",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 19,
+        "observed": 19,
+        "unobserved": 0,
+        "mean_ms": 4.390556526315789,
+        "p50_ms": 4.130713,
+        "p95_ms": 11.305608,
+        "p99_ms": 11.305608,
+        "max_ms": 11.305608
+      },
+      "editor_submission": {
+        "n": 19,
+        "observed": 19,
+        "unobserved": 0,
+        "mean_ms": 14.40238505263158,
+        "p50_ms": 12.310087,
+        "p95_ms": 25.873108,
+        "p99_ms": 25.873108,
+        "max_ms": 25.873108
+      },
+      "candidate_submission": {
+        "n": 19,
+        "observed": 19,
+        "unobserved": 0,
+        "mean_ms": 43.742171052631576,
+        "p50_ms": 38.207796,
+        "p95_ms": 75.646233,
+        "p99_ms": 75.646233,
+        "max_ms": 75.646233
+      },
+      "pressed_submission": {
+        "n": 19,
+        "observed": 19,
+        "unobserved": 0,
+        "mean_ms": 27.51924636842105,
+        "p50_ms": 26.217276,
+        "p95_ms": 49.643785,
+        "p99_ms": 49.643785,
+        "max_ms": 49.643785
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 20.7638245,
+        "p50_ms": 21.7498535,
+        "p95_ms": 24.332275,
+        "p99_ms": 24.332275,
+        "max_ms": 24.332275
+      },
+      "injected_key_interval": {
+        "n": 19,
+        "observed": 19,
+        "unobserved": 0,
+        "mean_ms": 61.05263157894737,
+        "p50_ms": 64.0,
+        "p95_ms": 70.0,
+        "p99_ms": 70.0,
+        "max_ms": 70.0
+      },
+      "candidate_deadline": {
+        "letters": 19,
+        "submitted_before_next_up": 18,
+        "observed_submission_at_or_after_next_up": 1,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/omission/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "omission",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 4.161388307692308,
+        "p50_ms": 3.975347,
+        "p95_ms": 7.341857,
+        "p99_ms": 7.341857,
+        "max_ms": 7.341857
+      },
+      "editor_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 14.632726615384614,
+        "p50_ms": 14.738316,
+        "p95_ms": 21.497483,
+        "p99_ms": 21.497483,
+        "max_ms": 21.497483
+      },
+      "candidate_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 46.35711361538461,
+        "p50_ms": 41.734982,
+        "p95_ms": 75.474409,
+        "p99_ms": 75.474409,
+        "max_ms": 75.474409
+      },
+      "pressed_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 32.35620407692308,
+        "p50_ms": 32.785556,
+        "p95_ms": 49.462325,
+        "p99_ms": 49.462325,
+        "max_ms": 49.462325
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.1315575,
+        "p50_ms": 20.783081,
+        "p95_ms": 27.2717,
+        "p99_ms": 27.2717,
+        "max_ms": 27.2717
+      },
+      "injected_key_interval": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 59.61538461538461,
+        "p50_ms": 61.0,
+        "p95_ms": 70.0,
+        "p99_ms": 70.0,
+        "max_ms": 70.0
+      },
+      "candidate_deadline": {
+        "letters": 13,
+        "submitted_before_next_up": 11,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 0
+      }
+    },
+    "japanese_english/real-persona-chat/casual-conversation/transpose/60": {
+      "labels": {
+        "mode": "japanese_english",
+        "source": "real-persona-chat",
+        "genre": "casual-conversation",
+        "condition": "transpose",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 4.303540935483871,
+        "p50_ms": 4.05545,
+        "p95_ms": 6.431648,
+        "p99_ms": 7.1167,
+        "max_ms": 7.1167
+      },
+      "editor_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 13.96052164516129,
+        "p50_ms": 13.081282,
+        "p95_ms": 19.9467,
+        "p99_ms": 21.538887,
+        "max_ms": 21.538887
+      },
+      "candidate_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 37.686670870967745,
+        "p50_ms": 33.439564,
+        "p95_ms": 67.163835,
+        "p99_ms": 68.651752,
+        "max_ms": 68.651752
+      },
+      "pressed_submission": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 26.17393564516129,
+        "p50_ms": 24.134877,
+        "p95_ms": 47.150814,
+        "p99_ms": 51.469721,
+        "max_ms": 51.469721
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 22.24033225,
+        "p50_ms": 22.054173499999997,
+        "p95_ms": 24.75847,
+        "p99_ms": 24.75847,
+        "max_ms": 24.75847
+      },
+      "injected_key_interval": {
+        "n": 31,
+        "observed": 31,
+        "unobserved": 0,
+        "mean_ms": 60.774193548387096,
+        "p50_ms": 62.0,
+        "p95_ms": 69.0,
+        "p99_ms": 72.0,
+        "max_ms": 72.0
+      },
+      "candidate_deadline": {
+        "letters": 31,
+        "submitted_before_next_up": 29,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 0
+      }
+    }
+  },
+  "limitations": [
+    "injected events, not physical digitizer latency",
+    "frame callback delivery, not display presentation",
+    "one session, small sample; no acceptance certification",
+    "same-process test editor, not Chrome",
+    "candidate metrics conditional on observing a fresh matching frame before the next action; unchanged rows and supersession are not distinguished",
+    "source conditions independently sampled; latency differences between conditions are not isolated error effects",
+    "four Space samples per source/condition/shard; p95/p99 equal the maximum, not stable tail estimates"
+  ],
+  "workload_validation": {
+    "mode": "japanese_english",
+    "shard": 0,
+    "queries_per_cadence": 56,
+    "actions": 620,
+    "status": "exact action sequence matches frozen corpus"
+  }
+}

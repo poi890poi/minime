@@ -48,6 +48,14 @@ workload cannot settle those tradeoffs. Broader language-specific timing inputs
 are needed before admission; 12 integration checks and 92 ordered-result
 comparisons do not establish release performance. Accepted runtime remains 1ea175a.
 
+The subsequent [language-specific timing screen](language-timing/RESULTS.md)
+keeps font paging out of this release. Five guarded sessions cover 4,258 actions
+with all raw-editor/Space submissions observed; Japanese trial timing is worse,
+Taiwanese results are mixed and repeated accepted-baseline sessions vary materially.
+720 labelled queries and an exact action-sequence validator now replace the shared
+eight-spelling workload for new tests. Only one shard in two modes has been run;
+no full-corpus, human-touch or release-latency acceptance is claimed.
+
 ## Quality loop
 
 The new Taiwan chat-derived evaluation adds 4,608 complete, initial and mixed

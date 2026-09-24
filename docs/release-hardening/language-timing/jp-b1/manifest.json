@@ -1,26 +1,26 @@
 {
-  "session": "b0dadba8-66a0-4a57-87ee-8fbd01fd81e4",
-  "runtime": "1ea175a accepted runtime",
+  "session": "415cc790-cbb9-4e19-96ff-bbe9124b696f",
+  "runtime": "held candidate-pages APK",
   "harness": "393ee56",
   "sha256": {
-    "app": "e4d064d597bbfbe69cb9770d68cd0d5a32829a1c82fc1e0b5f03460357d40332",
+    "app": "fa305a48cb7f5b4a7c7aa4978ba8f41f7e5edbb8b9a6e35fc82c3c84f088a88b",
     "instrumentation": "ec7f6fb80d7118617457ba2fce2f3d24f25802545a3dc9bf7411ca674c294df5",
     "corpus": "5c316cebea4ed88352a946fafe01fcda4e922c49a47b12783996a53ec1995f49"
   },
   "environment": {
     "before": {
-      "utc": "2026-09-24T11:57:18.8303520Z",
+      "utc": "2026-09-24T12:14:21.6961347Z",
       "thermal_status": 0,
-      "battery_c": 31.1,
+      "battery_c": 33.7,
       "low_power": "0",
       "cpu0_khz": "691200"
     },
     "after": {
-      "utc": "2026-09-24T12:00:26.7247812Z",
+      "utc": "2026-09-24T12:16:51.5363680Z",
       "thermal_status": 0,
-      "battery_c": 33.9,
+      "battery_c": 34.4,
       "low_power": "0",
-      "cpu0_khz": "1075200"
+      "cpu0_khz": "1804800"
     }
   },
   "restoration": "Original APK/preferences/IME restored; final display OFF verified."

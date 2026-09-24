@@ -1,5 +1,9 @@
 # Candidate font pages: useful Chinese signal, hold pending broader evidence
 
+Follow-up: the [broader language-specific screen](language-timing/RESULTS.md)
+does not justify admission. Keep the trial out of the current release; preserve
+the historical results below and the archived patch. No runtime change landed.
+
 September 24, 2026. **Hold outside production.** The trial consistently reduces
 the slower-paced Chinese candidate tail, but other modes and acceptance timings
 are mixed. The eight-query shared-spelling replay is too narrow to decide the
