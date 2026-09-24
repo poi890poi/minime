@@ -1,0 +1,87 @@
+{
+  "sessions": {
+    "chinese": {
+      "session": "c25571d2-f7c9-4583-a0a1-5972af14dd17",
+      "cooled_start": {
+        "utc": "2026-09-24T18:44:21.3860876Z",
+        "thermal": 0,
+        "batteryC": 29.6
+      },
+      "providers": {
+        "base": {
+          "calls": 665,
+          "elapsed_ms": 610.963907,
+          "mean_ms": 0.918742717293233
+        },
+        "rime": {
+          "calls": 0,
+          "elapsed_ms": 0.0,
+          "mean_ms": null
+        },
+        "addons": {
+          "calls": 665,
+          "elapsed_ms": 593.561604,
+          "mean_ms": 0.8925738406015037
+        }
+      },
+      "final_display_sha256": "c9db56c337ef3a89851dc887f4f2b672bcaf6633831383dc8a9a219837855f07",
+      "display_off": true
+    },
+    "taiwanese": {
+      "session": "2c2957c9-3103-463d-ac17-9d469d8b929e",
+      "cooled_start": {
+        "utc": "2026-09-24T18:46:32.1059489Z",
+        "thermal": 0,
+        "batteryC": 31.7
+      },
+      "providers": {
+        "base": {
+          "calls": 894,
+          "elapsed_ms": 3.347962,
+          "mean_ms": 0.003744923937360179
+        },
+        "rime": {
+          "calls": 0,
+          "elapsed_ms": 0.0,
+          "mean_ms": null
+        },
+        "addons": {
+          "calls": 894,
+          "elapsed_ms": 4643.830513,
+          "mean_ms": 5.1944412897091725
+        }
+      },
+      "final_display_sha256": "17d985d7a8ed3cc49cefc03f90cb280efbeee1389927e5ac4e01a1d14b4d289d",
+      "display_off": true
+    },
+    "japanese": {
+      "session": "c56d1af5-eaed-402d-b664-eb3dc6366979",
+      "cooled_start": {
+        "utc": "2026-09-24T18:50:52.7168237Z",
+        "thermal": 0,
+        "batteryC": 33.5
+      },
+      "providers": {
+        "base": {
+          "calls": 508,
+          "elapsed_ms": 2.014181,
+          "mean_ms": 0.003964923228346457
+        },
+        "rime": {
+          "calls": 0,
+          "elapsed_ms": 0.0,
+          "mean_ms": null
+        },
+        "addons": {
+          "calls": 508,
+          "elapsed_ms": 402.348759,
+          "mean_ms": 0.7920251161417322
+        }
+      },
+      "final_display_sha256": "cf13c87ec8121800f92af50d62ff64150d5fa8fabc1cfd1f56676886ce497702",
+      "display_off": true
+    }
+  },
+  "total_injected_actions": 2354,
+  "scope": "Hooked diagnostics, not unhooked release latency or physical touch acceptance"
+}

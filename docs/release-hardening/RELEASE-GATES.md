@@ -19,6 +19,14 @@ observed and their aggregate tails meet the stated budgets in this sample;
 Chinese/Taiwanese/Japanese candidate p95 remains above 50 ms. This is one shard
 and one session per mode, not large-sample or human-touch release acceptance.
 
+The subsequent [three-language stage diagnostic](LANGUAGE-STAGES-RESULTS.md)
+completes 2,354 further injected actions with all raw/Space submissions observed.
+Request-to-main delivery averages about 19–21 ms, while aggregate provider work
+averages 0.8–5.2 ms per call. This localizes an unaccounted scheduling/queue interval
+without establishing which queue causes it. Hooks perturb timing, so no speedup
+or release-latency acceptance is claimed. Production remains unchanged; a separate
+queue-boundary measurement is planned before another performance intervention.
+
 The [compiled-validator experiment](VALIDATION-PATTERN-RESULTS.md) is rejected.
 Despite lower isolated ART validation cost and identical desktop predictions,
 Taiwanese raw/Space tails and fast Japanese raw tails worsen in both phone pairs.

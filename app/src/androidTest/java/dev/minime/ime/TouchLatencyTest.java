@@ -75,6 +75,9 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
     }
     public void testTouchToSubmittedFrames()throws Exception {runReplay(true);}
     public void testTouchWithoutStageHooks()throws Exception {runReplay(false);}
+    public void testChineseStagesShard0()throws Exception {runReplay(true,"chinese",0);}
+    public void testTaiwaneseStagesShard0()throws Exception {runReplay(true,"taiwanese_english",0);}
+    public void testJapaneseStagesShard0()throws Exception {runReplay(true,"japanese_english",0);}
     public void testChineseShard0()throws Exception {runReplay(false,"chinese",0);}
     public void testChineseShard1()throws Exception {runReplay(false,"chinese",1);}
     public void testChineseShard2()throws Exception {runReplay(false,"chinese",2);}

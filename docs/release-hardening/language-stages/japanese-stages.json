@@ -1,0 +1,62 @@
+{
+  "japanese_english": {
+    "requests": 508,
+    "delivered": 508,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 508,
+        "mean_ms": 19.438983031496065,
+        "p50_ms": 18.4516405,
+        "p95_ms": 31.033437,
+        "max_ms": 48.486667
+      },
+      "callback": {
+        "observed": 508,
+        "mean_ms": 3.4328620039370077,
+        "p50_ms": 2.809063,
+        "p95_ms": 6.612083,
+        "max_ms": 16.60599
+      },
+      "glyph": {
+        "observed": 508,
+        "mean_ms": 0.14832425590551182,
+        "p50_ms": 0.0349745,
+        "p95_ms": 0.90641,
+        "max_ms": 3.505572
+      },
+      "render": {
+        "observed": 508,
+        "mean_ms": 2.755469334645669,
+        "p50_ms": 2.38,
+        "p95_ms": 5.2,
+        "max_ms": 8.573438
+      },
+      "votes": {
+        "observed": 508,
+        "mean_ms": 0.041517102362204725,
+        "p50_ms": 0.018725,
+        "p95_ms": 0.089007,
+        "max_ms": 1.14323
+      },
+      "residual": {
+        "observed": 508,
+        "mean_ms": 0.48755131102362204,
+        "p50_ms": 0.3320305,
+        "p95_ms": 1.148229,
+        "max_ms": 6.041554
+      }
+    }
+  },
+  "frame_observations": {
+    "japanese_english/150": {
+      "letters": 254,
+      "observed_frame": 254
+    },
+    "japanese_english/60": {
+      "letters": 254,
+      "observed_frame": 254,
+      "observed_during_next_press_subset": 218
+    }
+  }
+}

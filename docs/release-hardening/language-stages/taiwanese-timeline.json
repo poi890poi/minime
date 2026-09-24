@@ -1,0 +1,166 @@
+{
+  "scope": "Hooked diagnostics, not release latency or physical screen presentation. Delivery includes scheduled delay, worker queue/work and main queue. Stage percentiles cannot be added.",
+  "workload": {
+    "mode": "taiwanese_english",
+    "shard": 0,
+    "queries_per_cadence": 56,
+    "actions": 1006,
+    "status": "exact action sequence matches frozen corpus"
+  },
+  "hashes": {
+    "touch-latency.tsv": "e3440b9a4ebf0cbb2e05f526be36393424633d00324164fd1b823bdf159d14be",
+    "candidate-stages.tsv": "326c5638e6003241e9a7ced9b1c6193869c6883f0bb409ae0feea1d44174ecb0",
+    "inputs.tsv": "5c316cebea4ed88352a946fafe01fcda4e922c49a47b12783996a53ec1995f49"
+  },
+  "groups": {
+    "taiwanese_english/150": {
+      "counts": {
+        "letters": 447,
+        "matched_request": 447,
+        "delivered": 447,
+        "complete_timeline": 446,
+        "no_candidate_frame": 1
+      },
+      "stages": {
+        "dispatch": {
+          "observed": 447,
+          "mean_ms": 5.332718639821029,
+          "p50_ms": 5.314391,
+          "p95_ms": 6.441525,
+          "max_ms": 9.583753
+        },
+        "delivery": {
+          "observed": 447,
+          "mean_ms": 21.089550364653245,
+          "p50_ms": 18.490052,
+          "p95_ms": 34.802395,
+          "max_ms": 74.18651
+        },
+        "application": {
+          "observed": 447,
+          "mean_ms": 2.8692233959731546,
+          "p50_ms": 1.465677,
+          "p95_ms": 6.782865,
+          "max_ms": 29.93099
+        },
+        "glyph": {
+          "observed": 447,
+          "mean_ms": 0.25125942281879193,
+          "p50_ms": 0.017188,
+          "p95_ms": 1.204218,
+          "max_ms": 6.319526
+        },
+        "render": {
+          "observed": 447,
+          "mean_ms": 2.1574519776286354,
+          "p50_ms": 0.99349,
+          "p95_ms": 5.114376,
+          "max_ms": 14.60651
+        },
+        "votes": {
+          "observed": 447,
+          "mean_ms": 0.029577581655480984,
+          "p50_ms": 0.007604,
+          "p95_ms": 0.08604,
+          "max_ms": 0.602698
+        },
+        "after_application_to_predraw": {
+          "observed": 446,
+          "mean_ms": 2.7835867376681613,
+          "p50_ms": 2.2302605,
+          "p95_ms": 7.400052,
+          "max_ms": 12.569167
+        },
+        "predraw_to_submission": {
+          "observed": 446,
+          "mean_ms": 4.975752174887893,
+          "p50_ms": 3.5569794999999997,
+          "p95_ms": 11.397239,
+          "max_ms": 18.725573
+        },
+        "total": {
+          "observed": 446,
+          "mean_ms": 37.02497139910314,
+          "p50_ms": 33.497879,
+          "p95_ms": 61.913695,
+          "max_ms": 96.048514
+        }
+      }
+    },
+    "taiwanese_english/60": {
+      "counts": {
+        "letters": 447,
+        "matched_request": 447,
+        "delivered": 441,
+        "complete_timeline": 436,
+        "no_candidate_frame": 5,
+        "undelivered": 6
+      },
+      "stages": {
+        "dispatch": {
+          "observed": 441,
+          "mean_ms": 4.582795376417233,
+          "p50_ms": 4.536799,
+          "p95_ms": 6.155391,
+          "max_ms": 8.551329
+        },
+        "delivery": {
+          "observed": 441,
+          "mean_ms": 20.869366129251702,
+          "p50_ms": 19.869323,
+          "p95_ms": 32.770885,
+          "max_ms": 53.384843
+        },
+        "application": {
+          "observed": 441,
+          "mean_ms": 2.460275163265306,
+          "p50_ms": 1.308697,
+          "p95_ms": 5.521979,
+          "max_ms": 8.467187
+        },
+        "glyph": {
+          "observed": 441,
+          "mean_ms": 0.03925618594104308,
+          "p50_ms": 0.015937,
+          "p95_ms": 0.110622,
+          "max_ms": 0.559113
+        },
+        "render": {
+          "observed": 441,
+          "mean_ms": 2.0384163628117915,
+          "p50_ms": 0.918906,
+          "p95_ms": 4.927345,
+          "max_ms": 6.894271
+        },
+        "votes": {
+          "observed": 441,
+          "mean_ms": 0.024981657596371883,
+          "p50_ms": 0.006042,
+          "p95_ms": 0.062975,
+          "max_ms": 0.907344
+        },
+        "after_application_to_predraw": {
+          "observed": 436,
+          "mean_ms": 3.059006357798165,
+          "p50_ms": 2.199583,
+          "p95_ms": 9.095885,
+          "max_ms": 16.622344
+        },
+        "predraw_to_submission": {
+          "observed": 436,
+          "mean_ms": 5.035099731651376,
+          "p50_ms": 3.5702085,
+          "p95_ms": 12.194427,
+          "max_ms": 21.557917
+        },
+        "total": {
+          "observed": 436,
+          "mean_ms": 35.76008586926606,
+          "p50_ms": 32.777755,
+          "p95_ms": 59.479617,
+          "max_ms": 77.27965
+        }
+      }
+    }
+  }
+}

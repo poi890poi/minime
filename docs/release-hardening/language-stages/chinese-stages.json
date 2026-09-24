@@ -1,0 +1,64 @@
+{
+  "chinese": {
+    "requests": 665,
+    "delivered": 665,
+    "undelivered": 0,
+    "stages": {
+      "delivery": {
+        "observed": 665,
+        "mean_ms": 18.91501456992481,
+        "p50_ms": 18.114791,
+        "p95_ms": 29.518907,
+        "max_ms": 39.333386
+      },
+      "callback": {
+        "observed": 665,
+        "mean_ms": 5.809331833082707,
+        "p50_ms": 4.640104,
+        "p95_ms": 13.421823,
+        "max_ms": 69.373646
+      },
+      "glyph": {
+        "observed": 665,
+        "mean_ms": 1.810340415037594,
+        "p50_ms": 0.233068,
+        "p95_ms": 6.21151,
+        "max_ms": 61.324332
+      },
+      "render": {
+        "observed": 665,
+        "mean_ms": 2.509900902255639,
+        "p50_ms": 2.120156,
+        "p95_ms": 4.938228,
+        "max_ms": 10.087969
+      },
+      "votes": {
+        "observed": 665,
+        "mean_ms": 0.2967406285714286,
+        "p50_ms": 0.077137,
+        "p95_ms": 0.964692,
+        "max_ms": 3.901357
+      },
+      "residual": {
+        "observed": 665,
+        "mean_ms": 1.1923498872180451,
+        "p50_ms": 0.688234,
+        "p95_ms": 2.72036,
+        "max_ms": 14.510774
+      }
+    }
+  },
+  "frame_observations": {
+    "chinese/150": {
+      "letters": 332,
+      "observed_frame": 332
+    },
+    "chinese/60": {
+      "letters": 332,
+      "observed_frame": 327,
+      "observed_during_next_press_subset": 298,
+      "ready_after_observation_window": 4,
+      "ready_changed_without_observed_frame": 1
+    }
+  }
+}
