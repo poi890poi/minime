@@ -1,0 +1,38 @@
+{
+  "queries": 499,
+  "changed_queries": 241,
+  "single_han_reading_pairs": 25100,
+  "complete_missing_before": 0,
+  "complete_missing_after": 0,
+  "lost_query_identities": 0,
+  "lost_glyph_identities": 0,
+  "lost_identities_without_complete_access": 0,
+  "scope": "Coverage diagnosis of rejected reading-prior trial; not semantic precision or production admission",
+  "source_rows": 171708,
+  "source_rows_with_reduced_weight": 618,
+  "source_rows_with_increased_weight": 0,
+  "gained_query_identities": 36,
+  "lost_by_input_length": {},
+  "lost_by_kind": {},
+  "lost_with_unchanged_all_complete_reading_access": 0,
+  "lost_with_matching_source_penalty": 0,
+  "gained_by_kind": {
+    "phrase": 36
+  },
+  "runtime_sources": {
+    "PhoneticDictionary": "f9277c6e602071195347d1cec8627cd212af0cb0764f711ca25d7f7cf7ac68ec",
+    "ReadingUnitIndex": "65f51a3ab9c8dff51a66c145441e9fc1c6bb38a0ac0becbf3c9f9c3a2a4046e8",
+    "ReadingIndex": "f57141f44f6358c3fb0a7c66f88c837074aebaec1dadff798a153a68d14f34ff",
+    "FirstGlyphIndex": "d869887f4658af4bae1c56e1104423c89201792b6033c5476436cac616752f1a"
+  },
+  "isolated_runtime_overrides": {
+    "ReadingUnitIndex": "aee3a25e861fd28a18090d10586d80f0a95669420ae682e9be666ae9a371b7e9"
+  },
+  "hashes": {
+    "app/src/main/assets/zh_tw.tsv": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+    "artifacts/reading-prior-followup/weights/reading-priors.tsv": "06ced752a50667e7dff5de56bd4cf1dae8ed4bb64874bf891259601db085e479",
+    "docs/glyph-ranking/inputs.txt": "c02a4f20da8b2eed3af9bcc3ce9632b5cebf62cdc4180bf919af9e2487711657",
+    "artifacts/reading-prior-followup/unbounded-inventories.tsv": "947151ed65e70ef2c09d99ffe7362c66f96e25a44d40cd31ccc8533f1be9c631",
+    "core/src/test/java/dev/minime/core/ReadingPriorAudit.java": "4e2a191c88e5f65999f34cada4a09f1951b8e74b43b089a976c5b7fb24dd1162"
+  }
+}

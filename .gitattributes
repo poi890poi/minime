@@ -168,3 +168,6 @@ tools/simulate_kalq_layout.py text eol=lf
 tools/report_kalq_layout.py text eol=lf
 tools/simulate_english_layouts.py text eol=lf
 tools/report_english_layouts.py text eol=lf
+# Byte-pinned diagnostic source code.
+core/src/test/java/dev/minime/core/ReadingPriorAudit.java text eol=lf
+tools/report_reading_prior_losses.py text eol=lf

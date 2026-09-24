@@ -152,6 +152,14 @@ weights; bounded candidate retrieval needs investigation before adopting source
 priors. No weights were tuned to the evaluation labels. MOE school frequencies
 and corpus absence are review signals, not universal rarity judgments.
 
+The September 24 [bounded-retrieval follow-up](READING-PRIOR-RESULTS.md) confirms
+that all 25,100 single-glyph reading pairs retain complete-spelling access. The
+six older labelled losses are repeated single-character/initial-query episodes,
+not six phrases. Across all 499 syllable/prefix queries, 196 removed glyph/query
+pairs each match a source reading penalty; all removals disappear when only the
+128-candidate cap is lifted diagnostically. The production rejection remains;
+this clarifies its cause without authorizing unlimited lists or new weights.
+
 To reproduce upstream audit inputs, obtain the pinned `Source/Data` tree and run
 its `curation.builders.frequency_builder`, then
 `curation.compilers.main_compiler` with its heterophony1/2/3, PhraseFreq,
