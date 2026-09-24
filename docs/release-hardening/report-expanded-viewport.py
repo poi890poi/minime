@@ -23,14 +23,14 @@ def main():
     identity={(r['round'],r['query']):(r['candidates'],r['sha256']) for r in reference}
     expected=[r['query'] for r in reference if r['round']=='0'][::4]
     for tag in args.tags:
-        assert re.fullmatch(r'expanded-(append-)?(cost|frames)-[ab][12]',tag),tag
+        assert re.fullmatch(r'expanded-((append|row|page)-)?(cost|frames)-[ab][12]',tag),tag
         log=(ART/(tag+'.txt')).read_text(encoding='utf-8-sig')
         assert re.search(r'OK \(\d+ tests?\)',log) and 'Cleanup verified: preferences, previous IME, display OFF.' in log and 'Final display OFF verified after environment collection' in log,tag
         sid=re.search(r'Session evidence: .*device-tests[\\/]([a-f0-9-]+)',log)[1]
         source=ROOT/'artifacts/device-tests'/sid;target=OUT/tag;target.mkdir(exist_ok=True)
         kind='cost' if '-cost-' in tag else 'frames'
         tests='expanded-viewport-tests3.apk' if kind=='cost' else 'expanded-frame-tests.apk'
-        app='existence-trial.apk' if tag.rsplit('-',1)[1][0]=='a' else 'expanded-append-trial.apk' if '-append-' in tag else 'expanded-viewport-trial.apk'
+        app='existence-trial.apk' if tag.rsplit('-',1)[1][0]=='a' else 'expanded-page-trial.apk' if '-page-' in tag else 'expanded-row-trial.apk' if '-row-' in tag else 'expanded-append-trial.apk' if '-append-' in tag else 'expanded-viewport-trial.apk'
         manifest=dict(session=sid,app=app,app_sha256=sha(ART/app),instrumentation=tests,instrumentation_sha256=sha(ART/tests),
                       runtime_boundary='Accepted 1ea175a versus expanded-grid allocation only; core/dictionary unchanged.',environment={})
         env=ART/(tag+'-environment')

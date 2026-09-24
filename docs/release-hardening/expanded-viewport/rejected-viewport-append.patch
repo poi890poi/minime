@@ -1,0 +1,89 @@
+diff --git a/app/src/main/java/dev/minime/ime/KeyboardView.java b/app/src/main/java/dev/minime/ime/KeyboardView.java
+index e98e45b..8b5ddb7 100644
+--- a/app/src/main/java/dev/minime/ime/KeyboardView.java
++++ b/app/src/main/java/dev/minime/ime/KeyboardView.java
+@@ -41,6 +41,17 @@ final class KeyboardView extends LinearLayout {
+         return Math.max(STRIP_BATCH,2*(width/Math.max(1,dp(48))+1));
+     }
+     private CandidateFlowLayout candidateGrid;
++    private int gridLimit=STRIP_BATCH;
++    private int gridColumns() {
++        int width=Math.max(getWidth(),getResources().getDisplayMetrics().widthPixels);
++        return width/Math.max(1,dp(48))+1;
++    }
++    private int gridBatch() {
++        // The grid has at most four key rows of height. Cover two viewports
++        // even when every candidate uses the minimum 48 dp touch rectangle.
++        int keyHeight=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE?34:59;
++        return 2*(4*keyHeight/48+1)*gridColumns();
++    }
+     private TextView expandButton;
+     private String gridKey="";
+     private String layoutKey="", lastRaw="";
+@@ -315,12 +326,17 @@ final class KeyboardView extends LinearLayout {
+         ((CandidateWord)word).alternate(alternate,value.pair==null?"":value.pair.phonetic,alternate.isEmpty()?null:
+             ()->{expanded=false;choose.accept(()->engine.selectAlternative(value,composition));});
+     }
+-    private void expandedCandidates(CompositionEngine engine,List<Candidate> candidates,int first,int preferred,String key) {
+-        if(key.equals(gridKey))return;
++    private void expandedCandidates(CompositionEngine engine,List<Candidate> candidates,int first,int preferred,String key,Runnable redraw) {
++        final int to=Math.min(candidates.size(),first+gridLimit),shownLimit=gridLimit;
++        boolean unchanged=key.equals(gridKey);
++        int existing=candidateGrid.getChildCount();
++        if(unchanged && existing==to-first)return;
+         gridKey=key;
+-        List<TextView> available=candidatePool(candidateGrid);
+-        while(candidateGrid.getChildCount()>candidates.size()-first)candidateGrid.removeViewAt(candidateGrid.getChildCount()-1);
+-        for(int i=first;i<candidates.size();i++) {
++        boolean append=unchanged && existing<to-first;
++        List<TextView> available=append?Collections.emptyList():candidatePool(candidateGrid);
++        while(candidateGrid.getChildCount()>to-first)candidateGrid.removeViewAt(candidateGrid.getChildCount()-1);
++        // An unchanged page keeps both its accessibility nodes and measured text.
++        for(int i=append?first+existing:first;i<to;i++) {
+             TextView word=reuseCandidate(available,engine,candidates.get(i),snapshotComposition);
+             word.setTextSize(20);word.setMinWidth(dp(48));word.setMinHeight(dp(48));word.setPadding(dp(12),dp(4),dp(12),dp(4));
+             word.setSingleLine(false);word.setMaxLines(Integer.MAX_VALUE);
+@@ -329,6 +345,14 @@ final class KeyboardView extends LinearLayout {
+             if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
+             word.setTextColor(preferred==i && !engine.raw().isEmpty()?Color.BLACK:0xff5d6b71);
+         }
++        ScrollView scroll=(ScrollView)candidateGrid.getParent();
++        scroll.setOnScrollChangeListener((view,x,y,oldX,oldY)-> {
++            if(candidateGrid==null || candidateGrid.getParent()!=view || y<=oldY || view.getHeight()<=0
++                    || to>=candidates.size() || gridLimit!=shownLimit)return;
++            if(y<Math.max(0,candidateGrid.getHeight()-2*view.getHeight()))return;
++            int rows=(view.getHeight()+dp(48)-1)/dp(48);
++            gridLimit+=rows*gridColumns();redraw.run();
++        });
+     }
+     private static List<TextView> candidatePool(ViewGroup parent) {
+         List<TextView> result=new ArrayList<>();
+@@ -390,7 +414,7 @@ final class KeyboardView extends LinearLayout {
+         String hint=engine.privateField()?"Private input · learning off":loading;
+         status.setText(hint);
+         String mode=zhuyin+":"+english+":"+numeric+":"+panel+":"+engine.privateField()+":"+engine.inputMode()+":"+returnMode+":"+new TreeSet<>(configuredModes);
+-        if(!lastRaw.equals(engine.raw()) || !snapshotMode.equals(mode) || snapshotEngine!=engine)stripLimit=stripBatch();
++        if(!lastRaw.equals(engine.raw()) || !snapshotMode.equals(mode) || snapshotEngine!=engine) {stripLimit=stripBatch();gridLimit=gridBatch();}
+         if(!lastRaw.equals(engine.raw()) || !snapshotMode.equals(mode) || panel!=0)modeMenu=false;
+         // Keep the last completed row while its replacement is computed. Core acceptance
+         // still uses the current query, and composition ownership prevents cross-editor reuse.
+@@ -513,14 +537,17 @@ final class KeyboardView extends LinearLayout {
+         keys.setLayoutParams(new LayoutParams(-1,dp(height)*4+(panel==0?0:dp(48))));
+         String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+":"+engine.inputMode()+":"+returnMode+":"+joined;
+         if(nextLayout.equals(layoutKey)) {
+-            if(expanded)expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);
++            if(expanded)expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip,
++                ()->render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading));
+             return;
+         }
+         layoutKey=nextLayout; keys.removeAllViews();Arrays.fill(letters,null);typingKeys.clear();candidateGrid=null;gridKey="";
+         if(expanded) {
++            gridLimit=gridBatch();
+             ScrollView scroll=new ScrollView(getContext());scroll.setContentDescription("Expanded candidate list");
+             candidateGrid=new CandidateFlowLayout(getContext());scroll.addView(candidateGrid);
+-            expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);
++            expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip,
++                ()->render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading));
+             keys.addView(scroll,new LayoutParams(-1,dp(height*(zhuyin?4:3))));
+         } else if(panel==3) {
+             punctuationChoices(asciiPunctuation,allowLanguageSwitch && !english,height);

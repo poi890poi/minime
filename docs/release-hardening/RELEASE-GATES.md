@@ -63,6 +63,10 @@ opening but is rejected: visible scroll-frame p95 rises from 16–19 ms to
 83–85 ms when appending views. All candidate/default hashes and 20 integration
 checks pass, which does not excuse the scrolling regression. A shared attached
 frame harness now measures both opening and deep scrolling on either runtime.
+The [follow-up geometry trials](expanded-viewport/GEOMETRY-RESULTS.md) are also
+rejected: row increments increase scroll effort, and viewport increments retain
+36–38 ms scrolling p95 above the fixed 33 ms budget. All runtime prototypes were
+removed; accepted production remains `1ea175a`.
 
 The new Taiwan chat-derived evaluation adds 4,608 complete, initial and mixed
 spelling conditions. These edited excerpts are not intact conversations or a

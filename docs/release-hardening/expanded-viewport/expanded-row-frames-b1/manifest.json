@@ -1,0 +1,26 @@
+{
+  "session": "85d2c354-9774-4919-a92e-6e031200c197",
+  "app": "expanded-row-trial.apk",
+  "app_sha256": "2b832ea5ee9cfa75ff89f086cae41d387211efd69c2bf73c99e7ac4d8737c44c",
+  "instrumentation": "expanded-frame-tests.apk",
+  "instrumentation_sha256": "f24d1fe07bf27122790f1761845270be59efa080cc611d9514d5b351af419b82",
+  "runtime_boundary": "Accepted 1ea175a versus expanded-grid allocation only; core/dictionary unchanged.",
+  "environment": {
+    "before": {
+      "utc": "2026-09-24T13:06:00.5429708Z",
+      "thermal_status": 0,
+      "battery_c": 33.9,
+      "cpu0_khz": "691200",
+      "low_power": "0"
+    },
+    "after": {
+      "utc": "2026-09-24T13:08:15.2584515Z",
+      "thermal_status": 0,
+      "battery_c": 34.6,
+      "cpu0_khz": "1075200",
+      "low_power": "0"
+    }
+  },
+  "cleanup": "Original APK/preferences/IME restored; display OFF verified after environment collection.",
+  "environment_scope": "Endpoint snapshots cannot establish a constant thermal/frequency trajectory."
+}
