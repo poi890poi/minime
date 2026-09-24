@@ -27,5 +27,20 @@ class TimingReportTest(unittest.TestCase):
     def test_negative_timestamps_fail(self):
         row=self.row();row['editor_submit_ns']=1
         with self.assertRaises(AssertionError):timing.report([row],'fixture')
+    def test_frozen_action_replay_validation(self):
+        corpus=[dict(id=str(i),mode='english',source='one',genre='conversation',condition='full',raw='ab') for i in range(8)]
+        rows=[]
+        for interval in ['150','60']:
+            for i in [0,4]:
+                for expected,action in [('a','key'),('ab','key'),('ab','space')]:
+                    row=self.row(ident=str(i),up=(len(rows)+1)*100,action=action)
+                    row.update(interval_ms=interval,query='ab',expected=expected);rows.append(row)
+        result=timing.validate_workload(rows,corpus,'english',0)
+        self.assertEqual(12,result['actions']);self.assertEqual(2,result['queries_per_cadence'])
+        for broken in [rows[:-1],rows+rows[:1],list(reversed(rows))]:
+            with self.assertRaises(ValueError):timing.validate_workload(broken,corpus,'english',0)
+        for field,value in [('mode','chinese'),('source','two'),('expected','bad'),('up_ns',0)]:
+            broken=[dict(r) for r in rows];broken[0][field]=value
+            with self.assertRaises(ValueError):timing.validate_workload(broken,corpus,'english',0)
 
 if __name__=='__main__':unittest.main()

@@ -18,6 +18,30 @@ def summary(group, endpoint, origin='up_ns'):
 def episode(row):
     return (row['mode'],row['interval_ms'],row.get('query_id') or row['query'])
 
+def validate_workload(rows,corpus,mode,shard):
+    """Compare injected actions with the frozen inventory, independently of frames."""
+    if shard not in range(4):raise ValueError('Invalid shard')
+    positions={};selected=[]
+    for q in corpus:
+        if q['mode']!=mode:continue
+        key=(q['source'],q['condition']);index=positions.get(key,0);positions[key]=index+1
+        if index%4==shard:selected.append(q)
+    if not selected:raise ValueError('Empty workload')
+    fields=['mode','interval_ms','query','expected','action','query_id','source','genre','condition']
+    expected=[]
+    for interval in ['150','60']:
+        for q in selected:
+            for n in range(1,len(q['raw'])+2):
+                expected.append((mode,interval,q['raw'],q['raw'][:n],'space' if n>len(q['raw']) else 'key',q['id'],q['source'],q['genre'],q['condition']))
+    actual=[tuple(r.get(k,'') for k in fields) for r in rows]
+    if actual!=expected:raise ValueError('Injected action sequence differs from the frozen mode/shard workload')
+    previous_up=0
+    for r in rows:
+        down,up=int(r['down_ns']),int(r['up_ns'])
+        if not previous_up<down<=up:raise ValueError('Invalid/nonmonotonic injected action timestamps')
+        previous_up=up
+    return dict(mode=mode,shard=shard,queries_per_cadence=len(selected),actions=len(rows),status='exact action sequence matches frozen corpus')
+
 def measurements(group,adjacent):
     keys=[r for r in group if r['action']=='key'];spaces=[r for r in group if r['action']=='space']
     # Use original adjacency, never stitch across intervening queries/strata.
@@ -57,9 +81,17 @@ def main():
     parser.add_argument('--input',type=Path,default=ROOT/'artifacts/touch-latency-corrected.tsv')
     parser.add_argument('--output',type=Path,default=ROOT/'docs/touch-latency')
     parser.add_argument('--build',default='5bcb90f / 0.7.6')
+    parser.add_argument('--workload-mode')
+    parser.add_argument('--workload-shard',type=int)
+    parser.add_argument('--workload-corpus',type=Path,default=ROOT/'docs/release-hardening/language-timing/inputs.tsv')
     args=parser.parse_args();out=args.output
     with args.input.open(encoding='utf-8') as stream:rows=list(csv.DictReader(stream,delimiter='\t'))
-    result=report(rows,args.build);out.mkdir(parents=True,exist_ok=True)
+    result=report(rows,args.build)
+    if args.workload_mode is not None or args.workload_shard is not None:
+        if args.workload_mode is None or args.workload_shard is None:parser.error('Both workload mode and shard are required')
+        with args.workload_corpus.open(encoding='utf-8') as f:corpus=list(csv.DictReader(f,delimiter='\t'))
+        result['workload_validation']=validate_workload(rows,corpus,args.workload_mode,args.workload_shard)
+    out.mkdir(parents=True,exist_ok=True)
     sources=[(args.input,'samples.tsv.gz')]
     if args.input==ROOT/'artifacts/touch-latency-corrected.tsv':sources.append((ROOT/'artifacts/touch-latency-rejected-ondraw.tsv','rejected-ondraw.tsv.gz'))
     for source,target in sources:
