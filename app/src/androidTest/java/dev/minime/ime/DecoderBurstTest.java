@@ -26,8 +26,8 @@ public final class DecoderBurstTest extends InstrumentationTestCase {
         }
         assertEquals(50,prefixes.size());
         try(PrintWriter out=new PrintWriter(new File(context.getExternalFilesDir(null),"decoder-burst.tsv"),"UTF-8")) {
-            out.println("round\tgap_ms\trequests\tdelivered\tobsolete_callbacks\tbase_calls\tbase_ns\taddon_calls\taddon_ns\tcancelled\tstale_delivery");
-            for(int round=-1;round<2;round++)for(int gap:new int[]{0,4,12}) {
+            out.println("round\tdispatch_pattern\trequests\tdelivered\tobsolete_callbacks\tbase_calls\tbase_ns\taddon_calls\taddon_ns\tcancelled\tstale_delivery");
+            for(int round=-1;round<2;round++)for(int gap:new int[]{0,4,12,150}) {
                 AsyncDecoder decoder=new AsyncDecoder(new Handler(Looper.getMainLooper()));
                 CountDownLatch done=new CountDownLatch(1);AtomicInteger obsolete=new AtomicInteger();
                 try {
@@ -37,14 +37,15 @@ public final class DecoderBurstTest extends InstrumentationTestCase {
                             decoder.query(dictionary,prefixes.get(i),false,"",true,addons,packs,values->{
                                 if(last)done.countDown();else obsolete.incrementAndGet();
                             });
-                            if(gap>0 && !last)SystemClock.sleep(gap);
+                            int pause=gap==150?(i%2==0?4:150):gap;
+                            if(pause>0 && !last)SystemClock.sleep(pause);
                         }
                     });
                     assertTrue("Latest result delivered",done.await(10,TimeUnit.SECONDS));getInstrumentation().waitForIdleSync();
                     assertEquals(0,obsolete.get());assertEquals(1L,decoder.stats.delivered.get());
                     assertEquals((long)prefixes.size(),decoder.stats.requests.get());
                     DecodePipeline.Stats s=decoder.stats;
-                    if(round>=0)out.println(round+"\t"+gap+"\t"+s.requests.get()+"\t"+s.delivered.get()+"\t"+obsolete.get()+"\t"+s.calls[0].get()+"\t"+s.nanos[0].get()+"\t"+s.calls[2].get()+"\t"+s.nanos[2].get()+"\t"+s.cancelled.get()+"\t"+s.staleDelivery.get());
+                    if(round>=0)out.println(round+"\t"+(gap==150?"paired_4_150":gap)+"\t"+s.requests.get()+"\t"+s.delivered.get()+"\t"+obsolete.get()+"\t"+s.calls[0].get()+"\t"+s.nanos[0].get()+"\t"+s.calls[2].get()+"\t"+s.nanos[2].get()+"\t"+s.cancelled.get()+"\t"+s.staleDelivery.get());
                 } finally {getInstrumentation().runOnMainSync(decoder::close);}
             }
         }
