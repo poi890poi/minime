@@ -1,0 +1,104 @@
+{
+  "samples": 138,
+  "prefixes": 46,
+  "apply": {
+    "n": 138,
+    "mean_ms": 3.573433760869565,
+    "p50_ms": 2.2019795,
+    "p95_ms": 10.476459,
+    "max_ms": 14.196979
+  },
+  "completion": {
+    "n": 138,
+    "mean_ms": 0.31086009420289856,
+    "p50_ms": 0.0778125,
+    "p95_ms": 0.769739,
+    "max_ms": 9.259947
+  },
+  "largest": [
+    {
+      "query": "qi",
+      "round": "0",
+      "apply_ns": "14196979",
+      "english_completion_ns": "73594",
+      "candidates": "340"
+    },
+    {
+      "query": "dhy",
+      "round": "0",
+      "apply_ns": "12569218",
+      "english_completion_ns": "27656",
+      "candidates": "1127"
+    },
+    {
+      "query": "le",
+      "round": "0",
+      "apply_ns": "12185261",
+      "english_completion_ns": "451459",
+      "candidates": "1647"
+    },
+    {
+      "query": "dhy",
+      "round": "1",
+      "apply_ns": "10813750",
+      "english_completion_ns": "30417",
+      "candidates": "1127"
+    },
+    {
+      "query": "dhy",
+      "round": "2",
+      "apply_ns": "10763282",
+      "english_completion_ns": "32292",
+      "candidates": "1127"
+    },
+    {
+      "query": "la",
+      "round": "1",
+      "apply_ns": "10615104",
+      "english_completion_ns": "479948",
+      "candidates": "1656"
+    },
+    {
+      "query": "la",
+      "round": "0",
+      "apply_ns": "10476459",
+      "english_completion_ns": "582083",
+      "candidates": "1656"
+    },
+    {
+      "query": "le",
+      "round": "1",
+      "apply_ns": "9903906",
+      "english_completion_ns": "476510",
+      "candidates": "1647"
+    },
+    {
+      "query": "lei",
+      "round": "1",
+      "apply_ns": "9791510",
+      "english_completion_ns": "52552",
+      "candidates": "1655"
+    },
+    {
+      "query": "lei",
+      "round": "0",
+      "apply_ns": "9561771",
+      "english_completion_ns": "61666",
+      "candidates": "1655"
+    },
+    {
+      "query": "le",
+      "round": "2",
+      "apply_ns": "9538542",
+      "english_completion_ns": "442291",
+      "candidates": "1647"
+    },
+    {
+      "query": "dh",
+      "round": "0",
+      "apply_ns": "9439323",
+      "english_completion_ns": "45156",
+      "candidates": "1243"
+    }
+  ]
+}

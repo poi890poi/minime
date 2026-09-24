@@ -1,0 +1,21 @@
+{
+  "before": {
+    "utc": "2026-09-24T10:33:46.7434240Z",
+    "battery_temperature_c": 32.8,
+    "thermal_status": 0,
+    "low_power": "0"
+  },
+  "after": {
+    "utc": "2026-09-24T10:34:12.2466003Z",
+    "battery_temperature_c": 33.0,
+    "thermal_status": 0,
+    "low_power": "0"
+  },
+  "session": "2f63a271-8545-4302-bda1-97860e6c483a",
+  "runtime": "1ea175a",
+  "sha256": {
+    "artifacts/release-hardening/existence-trial.apk": "e4d064d597bbfbe69cb9770d68cd0d5a32829a1c82fc1e0b5f03460357d40332",
+    "artifacts/release-hardening/application-untraced-tests.apk": "0bceaa210c8c2a102d30ed0dad039808bacbaa83a0fd31e10278acef157f46b5"
+  },
+  "cleanup": "Original app/preferences/IME restored; final display OFF verified after environment reads; explicit release sent to SHINE."
+}

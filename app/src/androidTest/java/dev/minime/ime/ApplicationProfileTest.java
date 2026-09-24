@@ -16,7 +16,9 @@ public final class ApplicationProfileTest extends InstrumentationTestCase {
         public void convert(PhoneticDictionary d,String r,boolean z,String c,Consumer<List<Candidate>> done){result=done;}
         public void query(PhoneticDictionary d,String r,boolean z,String c,boolean p,AddonDictionary a,Set<String> e,Consumer<List<Candidate>> done){result=done;}
     }
-    public void testCandidateApplicationProfile()throws Exception {
+    public void testCandidateApplicationProfile()throws Exception {runProfile(true);}
+    public void testCandidateApplicationWithoutTracing()throws Exception {runProfile(false);}
+    private void runProfile(boolean tracing)throws Exception {
         android.content.Context context=getInstrumentation().getTargetContext();
         context.getSharedPreferences("settings",0).edit().clear().commit();
         context.getSharedPreferences("learning",0).edit().clear().commit();
@@ -32,8 +34,8 @@ public final class ApplicationProfileTest extends InstrumentationTestCase {
             }
         }
         File directory=context.getExternalFilesDir(null);
-        Debug.startMethodTracingSampling(new File(directory,"application.trace").toString(),32*1024*1024,1000);
-        try(PrintWriter out=new PrintWriter(new File(directory,"application-cost.tsv"),"UTF-8")) {
+        if(tracing)Debug.startMethodTracingSampling(new File(directory,"application.trace").toString(),32*1024*1024,1000);
+        try(PrintWriter out=new PrintWriter(new File(directory,tracing?"application-cost.tsv":"application-untraced.tsv"),"UTF-8")) {
             out.println("query\tround\tapply_ns\tenglish_completion_ns\tcandidates");
             for(String raw:prefixes) {
                 List<Candidate> choices=new ArrayList<>(dictionary.convert(raw,false));choices.addAll(addons.lookup(raw,packs));
@@ -51,6 +53,6 @@ public final class ApplicationProfileTest extends InstrumentationTestCase {
                     if(round>=0)out.println(raw+"\t"+round+"\t"+elapsed[0]+"\t"+elapsed[1]+"\t"+count[0]);
                 }
             }
-        } finally {Debug.stopMethodTracing();}
+        } finally {if(tracing)Debug.stopMethodTracing();}
     }
 }
