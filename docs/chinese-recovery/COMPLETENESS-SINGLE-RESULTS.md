@@ -61,9 +61,12 @@ metrics and Space outputs remain identical in every genre/condition. Only
 desktop evaluator completes 13,014 inputs / 11,272 native queries: all 130,233
 English token outputs and Chinese Space/first-page target metrics are unchanged;
 four of 21,044 records have lower-list changes. The separate 6,144 English
-word/prefix probes preserve every English-mode output and target rank within that mode;
-Chinese-mode English first-eight completion coverage gains 22 episodes with no
-loss. Chinese-mode Space changes are retained in local telemetry.
+word/prefix probes preserve every English-mode output and target rank within that mode.
+The [corrected matched-configuration replay](ENGLISH-CONFIGURATION-CORRECTION.md)
+finds Chinese-mode English first-eight coverage unchanged at 2,218/3,072, with no
+gains or losses. The earlier claimed 22 gains compared enabled optional dictionaries
+against disabled dictionaries and is withdrawn. All 21 Chinese-mode Space changes
+are retained in local telemetry; no English-mode Space output changes.
 
 The full core suite passes 1,770,165 assertions, including generated duplicate
 paths, learning, partial-input ordering and unknown native metadata. This count

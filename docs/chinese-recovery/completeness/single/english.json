@@ -1,4 +1,5 @@
 {
+  "superseded": "Invalid paired configuration: trial disabled optional dictionaries. Do not attribute gains to completeness. Use english-corrected.json and ENGLISH-CONFIGURATION-CORRECTION.md.",
   "scope": "512 hash-selected unique words from each pinned EWT/GUM source set; whole, missing-last and half-prefix; isolated words, no natural-context or conversational accuracy claim; reused evidence, not fresh holdout. Ranks include raw recovery.",
   "source_group_scope": "Separate source-role/genre word probes. A word can occur in several source groups, so these groups overlap and must not be summed. No training data or fit; previously exposed dev/test are both labeled reused evaluation.",
   "groups": {

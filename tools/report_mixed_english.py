@@ -1,6 +1,7 @@
 """Paired word/prefix retention audit; ranks include explicit raw recovery."""
 import argparse, collections, csv, gzip, hashlib, itertools, json
 from pathlib import Path
+from evaluation_configuration import compare_configuration
 
 root = Path(__file__).resolve().parents[1]
 base = root / 'artifacts/candidate-usefulness'
@@ -8,7 +9,9 @@ parser=argparse.ArgumentParser()
 parser.add_argument('--before',type=Path,default=base/'english-before.tsv')
 parser.add_argument('--after',type=Path,default=base/'english-after.tsv')
 parser.add_argument('--output',type=Path,default=root/'docs/candidate-usefulness')
+parser.add_argument('--changed-input',action='append',default=[],help='Named input intentionally changed by the frozen experiment, e.g. spelling')
 args=parser.parse_args()
+configuration=compare_configuration(args.before,args.after,args.changed_input)
 groups = collections.defaultdict(collections.Counter)
 changes = []
 lineage = collections.defaultdict(set)
@@ -39,6 +42,7 @@ with args.before.open(encoding='utf-8') as a, args.after.open(encoding='utf-8') 
         if old['rank'] != new['rank'] or old['space'] != new['space']:
             changes.append(dict(before=old, after=new))
 report = dict(scope='512 hash-selected unique words from each pinned EWT/GUM source set; whole, missing-last and half-prefix; isolated words, no natural-context or conversational accuracy claim; reused evidence, not fresh holdout. Ranks include raw recovery.',
+              configuration=configuration,
               source_group_scope='Separate source-role/genre word probes. A word can occur in several source groups, so these groups overlap and must not be summed. No training data or fit; previously exposed dev/test are both labeled reused evaluation.',
               groups={k:dict(v) for k,v in groups.items()}, changed_rank_or_space=len(changes),
               hashes={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in

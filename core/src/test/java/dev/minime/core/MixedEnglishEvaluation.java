@@ -8,6 +8,30 @@ import java.util.*;
 
 /** Reused independent English text, hash sampling before candidate inspection. */
 public final class MixedEnglishEvaluation {
+    static String digest(byte[] bytes)throws Exception {
+        return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(bytes));
+    }
+    static String quote(String value) {return "\""+value.replace("\\","\\\\").replace("\"","\\\"")+"\"";}
+    static void configuration(String[] args)throws Exception {
+        Path assets=Paths.get("app/src/main/assets");
+        Map<String,Path> inputs=new TreeMap<>();
+        inputs.put("chinese",args.length>4?Paths.get(args[4]):assets.resolve("zh_tw.tsv"));
+        inputs.put("english",assets.resolve("en_us.tsv"));inputs.put("syllables",assets.resolve("syllables.tsv"));
+        inputs.put("context",args.length>2?Paths.get(args[2]):assets.resolve("context.tsv"));
+        inputs.put("spelling",args.length>3?Paths.get(args[3]):assets.resolve("en_spelling.tsv"));
+        inputs.put("corpus-ewt",Paths.get("docs/conversation-ranking/corpus/inputs.tsv"));
+        inputs.put("corpus-gum",Paths.get("docs/conversation-ranking/corpus/gum-test.tsv"));
+        if(args.length>=2){inputs.put("taiwan",assets.resolve("addons.tsv"));inputs.put("geography",Paths.get(args[1]));}
+        List<String> fields=new ArrayList<>(),runtime=new ArrayList<>();
+        for(Map.Entry<String,Path> entry:inputs.entrySet())fields.add(quote(entry.getKey())+":"+quote(digest(Files.readAllBytes(entry.getValue()))));
+        for(Class<?> type:Arrays.asList(CompositionEngine.class,PhoneticDictionary.class,CandidateOrder.class,AddonDictionary.class,MixedEnglishEvaluation.class))
+            try(InputStream in=type.getResourceAsStream(type.getSimpleName()+".class")) {
+                if(in==null)throw new IOException("Missing runtime identity: "+type);
+                runtime.add(quote(type.getSimpleName())+":"+quote(digest(in.readAllBytes())));
+            }
+        String result="{\n\"format\":1,\n\"packs\":"+(args.length>=2)+",\n\"inputs\":{"+String.join(",",fields)+"},\n\"runtime\":{"+String.join(",",runtime)+"},\n\"output_sha256\":"+quote(digest(Files.readAllBytes(Paths.get(args[0]))))+"\n}\n";
+        Files.writeString(Paths.get(args[0]+".config.json"),result,StandardCharsets.UTF_8);
+    }
     static String hash(String text) {
         try {return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(text.getBytes(StandardCharsets.UTF_8)));}
         catch(Exception e) {throw new IllegalStateException(e);}
@@ -55,5 +79,6 @@ public final class MixedEnglishEvaluation {
                 out.flush();System.out.println(file+": "+sample.size()+" hash-selected words; unique mode/input queries="+cache.size());
             }
         }
+        configuration(args);
     }
 }
