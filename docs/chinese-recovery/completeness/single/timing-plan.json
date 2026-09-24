@@ -1,0 +1,15 @@
+{
+  "purpose": "Serial built-in lookup cost, not Android latency",
+  "order": [
+    "baseline-a1",
+    "trial-b1",
+    "trial-b2",
+    "baseline-a2"
+  ],
+  "warmup_rounds": 1,
+  "measured_rounds_per_process": 3,
+  "inputs": 1488,
+  "input_sha256": "cd50e119257521710a601f279f35c28c85b969a1f4a0ad9918011edc57344603",
+  "model_sha256": "d82ec850c067e9300246d487967a19f29ab473eac87503234531dcb3a09d4b13",
+  "rule": "No query cache; unchanged binary and optional dictionaries; no concurrent desktop evaluator"
+}

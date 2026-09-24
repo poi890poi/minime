@@ -3,7 +3,8 @@
 September 25, 2026. Baseline `21557f4` includes the admitted conditional
 pronunciation counts. The [frozen plan](COMPLETENESS-PLAN.md) tests spelling
 completeness separately from source frequency. **The first trial is rejected.**
-The production rule remains unchanged pending the separate follow-up.
+The broad grouping is not in production. The separately tested
+[single-preference follow-up](COMPLETENESS-SINGLE-RESULTS.md) is admitted later.
 
 The cause is reproducible with six generated dictionaries: a high-frequency
 completion outranks a low-frequency exact spelling, and composition sorts away

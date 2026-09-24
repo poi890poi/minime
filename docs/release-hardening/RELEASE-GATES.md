@@ -1,7 +1,8 @@
-# Release hardening — September 22–24, 2026
+# Release hardening — September 22–25, 2026
 
 **Not cleared for public release.** This report concerns 0.8.8 (38), application
-`app.minime.keyboard`, packaged runtime commit `995b535`. Candidate quality was measured
+`app.minime.keyboard`. The original packaged runtime was `995b535`; subsequent
+admitted changes and their actual package evidence are recorded below. Candidate quality was measured
 on baseline `fd728d5`; the accepted rendering change does not alter dictionary or
 ranking logic. Evaluation-only commit `1231638` adds evidence. Earlier publishing checklists are historical evidence,
 not certification of this build. No Play upload or GitHub CI was used.
@@ -13,8 +14,18 @@ English retention and full glyph-reading access are preserved, while broad
 first-eight whole-target retrieval has ten net encyclopedic losses. Native/core
 comparisons preserve first-page metrics, exact Pinyin/Zhuyin access is intact,
 binary size is unchanged, and three packaged integration tests, including 28
-pronunciation cases, pass. Conditional frequencies are integrated; completeness ordering and
-the broader release gates remain open.
+pronunciation cases, pass. Conditional frequencies are integrated.
+
+The [single complete-match preference](../chinese-recovery/COMPLETENESS-SINGLE-RESULTS.md)
+is also admitted after rejecting all-complete grouping. Complete-reading Space
+support improves 313 -> 337 of 405, while conversation/essay first-eight whole
+and compatible coverage is preserved. Some abbreviated targets lose first place;
+those tradeoffs remain documented. A frozen 28-case Google diagnostic has 13
+agreement gains and one loss; this is not population accuracy. Core and pinned
+native checks pass, all 24 language assets are unchanged, and the actual
+non-debuggable candidate passes 55 spelling/Space episodes plus four-mode and
+English smoke tests. Original phone state is restored, display OFF verified,
+and ownership explicitly released. Broader release gates remain open.
 
 September 24 follow-up: [query-local sort keys](ORDER-RESULTS.md) improve fast
 Chinese candidate-frame observations from 52/100 to 62/100 across two corrected

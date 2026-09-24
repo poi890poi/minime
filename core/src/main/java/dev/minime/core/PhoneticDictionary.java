@@ -182,8 +182,18 @@ public final class PhoneticDictionary {
         // Apply only the boundary signal; retain dictionary word probabilities.
         if(!bpmf && !context.isEmpty())result.replaceAll(c->c.withScore(
             c.score+.5*contextModel.chineseBoundary(context,c.text)));
+        if(!bpmf) {
+            // One text may have both exact and more frequent incomplete readings.
+            // Keep its exact path before deduplication, including that path's score.
+            Set<String> full=new HashSet<>();
+            for(Candidate c:result)if(c.consumed==0 && !c.incomplete)full.add(c.text);
+            result.removeIf(c->c.consumed==0 && c.incomplete && full.contains(c.text));
+        }
         result.sort(Comparator.comparing((Candidate c)->c.consumed>0 && c.consumed<key.length())
             .thenComparing(Comparator.comparingDouble((Candidate c)->c.score).reversed()).thenComparing(c->c.text));
+        Candidate preferred=bpmf?null:CandidateOrder.bestComplete(result);
+        // Prefer one complete match, without burying useful completion alternatives.
+        if(preferred!=null) {result.remove(preferred);result.add(0,preferred);}
         // Whole-input identities win deduplication; partial recovery never
         // replaces their acceptance span or invents a multi-character phrase.
         if(!bpmf)result.addAll(firstGlyphs.lookup(key));

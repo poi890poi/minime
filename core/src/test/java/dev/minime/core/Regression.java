@@ -45,6 +45,7 @@ public final class Regression {
         LanguageTimingRegression.run();
         JoinedKalqRegression.run();
         CandidateOrderRegression.run();
+        CompletenessOrderProbe.main(new String[]{"complete"});
         ReadingIndexParity.run();
         ReadingUnitLookupRegression.run();
         ContextBoundaryRegression.run();

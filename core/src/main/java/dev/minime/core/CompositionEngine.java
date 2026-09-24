@@ -419,7 +419,8 @@ public final class CompositionEngine {
         }
         if (!englishMode) converted.addAll(custom);
         String sortContext=contextKey();
-        CandidateOrder.sort(converted,this::partial,c->privateField?0:learning.count(sortContext,raw,c.text));
+        Candidate complete=!bpmf && inputMode.chineseEnabled()?CandidateOrder.bestComplete(converted):null;
+        CandidateOrder.sort(converted,this::partial,c->privateField?0:learning.count(sortContext,raw,c.text),complete);
         Set<String> seen = new HashSet<>(); seen.add(raw);
         for (Candidate c : converted) if (seen.add(c.text)) candidates.add(c);
         if (candidates.size() > 1) {

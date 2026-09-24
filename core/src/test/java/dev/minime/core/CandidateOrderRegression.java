@@ -33,5 +33,19 @@ final class CandidateOrderRegression {
             lists++;
         }
         System.out.println("PASS candidate ordering: "+lists+" generated lists, refreshed votes, exact old-comparator parity (not language accuracy)");
+        Candidate exact=new Candidate("exact",false,3,"reading");
+        Candidate rare=new Candidate("rare",false,1,"reading");
+        Candidate completion=new Candidate("completion",false,99,"longer").completing(99);
+        Candidate prefix=new Candidate("prefix",false,100,"reading").consuming(2);
+        List<Candidate> values=new ArrayList<>(Arrays.asList(completion,exact,rare,prefix));
+        Regression.equal(exact,CandidateOrder.bestComplete(values),"only a complete whole-input path can be preferred");
+        CandidateOrder.sort(values,c->c.consumed>0,c->0,exact);
+        Regression.equal(Arrays.asList(exact,completion,rare,prefix),values,"one preference keeps other frequency and span ordering");
+        CandidateOrder.sort(values,c->c.consumed>0,c->c==completion?1:0,exact);
+        Regression.equal(Arrays.asList(completion,exact,rare,prefix),values,"explicit learning precedes completeness");
+        values.add(new Candidate("native-unknown",false,200));
+        Regression.equal(null,CandidateOrder.bestComplete(values),"native transport cannot establish spelling completeness");
+        Regression.equal(null,CandidateOrder.bestComplete(Arrays.asList(completion,prefix)),"initial-only and prefix-only lists have no complete preference");
+        Regression.equal(null,CandidateOrder.bestComplete(Arrays.asList(exact.asConstructed())),"construction cannot establish an attested full word");
     }
 }
