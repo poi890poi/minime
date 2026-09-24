@@ -1220,18 +1220,22 @@
       },
       "evidence": [
         "https://anc.org/data/masc/",
-        "https://raw.githubusercontent.com/nltk/nltk_data/550b6625bcef1f2abff2ff770a5a0d272c9c6b2a/packages/corpora/masc_tagged.xml"
+        "https://raw.githubusercontent.com/nltk/nltk_data/550b6625bcef1f2abff2ff770a5a0d272c9c6b2a/packages/corpora/masc_tagged.xml",
+        "https://github.com/oanc/masc/tree/7a718b01af317f7ed8e330b0edd8db30c162da24/metadata/FULL_MASC"
       ],
       "editorial": "Academic multi-genre corpus with raw and POS-tagged distributions; conversations and essays remain distinct from scripts/spam.",
-      "coverage": "392 tagged documents; 592469 parseable tagged tokens; 20 labelled genres and three unlisted files. 386 raw counterparts, 344 exact non-whitespace character agreements.",
-      "limitations": "Penn tokenization separates contractions; 67 malformed tagged units; six missing raw counterparts and 42 differing pairs. Original publisher archive retrieved with an expired-certificate transport exception for quarantined audit only; no training or evaluation model created.",
-      "reason": "Hold pending authenticated raw distribution/notice and systematic version/orthography reconciliation, followed by independent whole-document evaluation. Production assets unchanged.",
+      "coverage": "392 tagged documents; 592469 parseable tagged tokens. Authenticated publisher Git snapshot has 393 original texts: 380 equal prior archive bytes, five differ, eight absent from archive. 391 tagged pairs, 344 exact non-whitespace agreements.",
+      "limitations": "Penn tokenization separates contractions; 67 malformed tagged units. Publisher Git text version differs from earlier archive and NLTK tags; no automatic repair or corpus mixture. No training, split or evaluation model created.",
+      "reason": "Publisher Git snapshot resolves raw-text authentication. Hold pending application plan, document-level splits/overlap audit and annotation alignment for any contraction pilot. EWT rights gate and production assets unchanged.",
       "addon_prefixes": [],
       "audit_files": [
         "docs/source-replacement/MASC-DISCOVERY.md",
         "docs/source-replacement/MASC-PACKAGE.xml",
         "docs/source-replacement/masc-audit.py",
-        "docs/source-replacement/masc-manifest.json"
+        "docs/source-replacement/masc-manifest.json",
+        "docs/source-replacement/MASC-PUBLISHER-HEADER.xml",
+        "docs/source-replacement/masc-publisher-audit.py",
+        "docs/source-replacement/masc-publisher-manifest.json"
       ]
     }
   ]

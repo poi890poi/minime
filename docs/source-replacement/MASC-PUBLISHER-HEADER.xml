@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resourceHeader xmlns="http://www.xces.org/ns/GrAF/1.0/" xmlns:lnk="http://www.w3.org/1999/xlink"
+    version="1.0" creator="NI" date.created="17-02-2010" type="corpus">
+    <fileDesc>
+        <titleStmt>
+            <title>Manually Annotated Sub-Corpus (MASC)</title>
+            <funder>National Science Foundation Computing Resource Infrastructure Grant
+                CRI-0708952</funder>
+            <respStmt>
+                <resp lnk:href="http://www.anc.org">American National Corpus Project</resp>
+            </respStmt>
+        </titleStmt>
+        <editionStmt version="3.0.0"/>
+        <extent count="506768" unit="words"/>
+        <publicationStmt>
+            <distributor>American National Corpus Project</distributor>
+            <pubAddress>Department of Computer Science, Vassar College, Poughkeepsie, New York
+                12604-0732 USA</pubAddress>
+            <fax>+1 (845) 437 7498</fax>
+            <eAddress>anc@cs.vassar.edu</eAddress>
+            <pubDate value="2010-05-01"/>
+            <availability lnk:href="http://www.anc.org/MASC" status="free"/>
+        </publicationStmt>
+        <publicationStmt>
+            <distributor>Linguistic Data Consortium</distributor>
+            <pubAddress>3600 Market Street, Suite 810, Philadelphia, PA, 19104-2653,
+                USA</pubAddress>
+            <telephone>+1 (215) 573-1275</telephone>
+            <fax>+1 (215) 573-2175</fax>
+            <eAddress>ldc@ldc.upenn.edu</eAddress>
+            <pubDate value="2010-09-30"/>
+            <availability lnk:href="http:www.ldc.upenn.edu/MASC" status="free"/>
+            <idno type="LDCcatno">LDC2010T22</idno>
+        </publicationStmt>
+    </fileDesc>
+    <encodingDesc>
+        <projectDesc>The Manually Annotated Sub-Corpus (MASC) project is assembling a corpus of
+            500,000 words of contemporary American English, all of which contain manually produced
+            or hand validated annotations for a variety of linguistic phenomena.</projectDesc>
+        <samplingDecl> The original texts in the MASC are drawn from the Open American National
+            Corpus (OANC), which includes written texts and spoken transcripts of American English
+            produced since 1990. The OANC includes a broad range of genres. MASC data have been
+            selected to include approximately equal-sized representative samples of OANC
+            genres.</samplingDecl>
+        <editorialDecl>
+            <transduction>The data in the MASC are taken "as is" from the Open American National
+                Corpus. OANC data is derived from original electronic versions in a wide variety of
+                formats, including but not limited to Quark Express, XML, Microsoft Word, Portable
+                Document Format (PDF), HTML, and plain text. Transduction procedures vary depending
+                on the original format.</transduction>
+            <correction>As little correction or other editorial modification as possible is applied
+                to the text themselves. Corrections to the text are either made in standoff
+                documents containing the corrected version, or are reflected in values of
+                segmentation, token, sentence, or other segmental unit, and/or part of speech
+                annotation.</correction>
+            <segmentation>The data are segmented into minimal regions spanning the primary data.
+                Minimal regions are identified as the smallest unit any of the tokenizations applied
+                to data references. Token annotations reference these regions as appropriate.
+                Sentences reference regions in primary data.</segmentation>
+        </editorialDecl>
+        <classDecl>
+            <!-- Category codes are referenced in the header of each primary data document -->
+            <taxonomy xml:id="MASC">
+                <category xml:id="WR">
+                    <catDesc>Written</catDesc>
+                    <category xml:id="JO">
+                        <catDesc>journal</catDesc>
+                    </category>
+                    <category xml:id="FC">
+                        <catDesc>fiction</catDesc>
+                    </category>
+                    <category xml:id="NF">
+                        <catDesc>non-fiction</catDesc>
+                    </category>
+                    <category xml:id="TG">
+                        <catDesc>travel guides</catDesc>
+                    </category>
+                    <category xml:id="NP">
+                        <catDesc>newspaper/newswire</catDesc>
+                    </category>
+                    <category xml:id="BL">
+                        <catDesc>web logs (blogs)</catDesc>
+                    </category>
+                    <category xml:id="TC">
+                        <catDesc>technical documents</catDesc>
+                    </category>
+                    <category xml:id="GV">
+                        <catDesc>government documents</catDesc>
+                    </category>
+                    <category xml:id="LT">
+                        <catDesc>letters</catDesc>
+                    </category>
+                    <category xml:id="IM">
+                        <catDesc>instruction manuals</catDesc>
+                    </category>
+                    <category xml:id="EM">
+                        <catDesc>email messages</catDesc>
+                    </category>
+                    <category xml:id="CW">
+                        <catDesc>creative writing</catDesc>
+                    </category>
+                    <category xml:id="ES">
+                        <catDesc>essays</catDesc>
+                    </category>
+                    <category xml:id="JK">
+                        <catDesc>jokes</catDesc>
+                    </category>
+                    <category xml:id="FT">
+                        <catDesc>ficlets (fiction)</catDesc>
+                    </category>
+                    <category xml:id="MS">
+                        <catDesc>movie scripts</catDesc>
+                    </category>
+                    <category xml:id="TW">
+                        <catDesc>tweets</catDesc>
+                    </category>
+                </category>
+                <category xml:id="SP">
+                    <catDesc>spoken</catDesc>
+                    <category xml:id="TR">
+                        <catDesc>normalized transcriptions</catDesc>
+                    </category>
+                    <category xml:id="AD">
+                        <catDesc>academic discourse</catDesc>
+                    </category>
+                    <category xml:id="TP">
+                        <catDesc>conversational telephone speech</catDesc>
+                    </category>
+                    <category xml:id="IN">
+                        <catDesc>interview</catDesc>
+                    </category>
+                    <category xml:id="FF">
+                        <catDesc>face-to-face</catDesc>
+                    </category>
+                    <category xml:id="BN">
+                        <catDesc>broadcast news</catDesc>
+                    </category>
+                    <category xml:id="BC">
+                        <catDesc>broadcast conversation</catDesc>
+                    </category>
+                </category>
+            </taxonomy>
+        </classDecl>
+    </encodingDesc>
+    <resourceDesc>
+        <fileStruct>
+            <!-- The following information identifies the physical files included in the corpus, 
+                their content types, and dependencies -->
+            <directories>
+                <directory xml:id="data" d.name="data" root="yes">
+                    <!-- may contain PCDATA **or** a series of <directory> elements -->
+                    <directory xml:id="written" d.name="written"
+                        f.ids="f.primary
+                        f.seg
+                        f.logical
+                        f.ptbtok
+                        f.fntok
+                        f.penn
+                        f.nc
+                        f.vc
+                        f.s
+                        f.ne
+                        f.ptb
+                        f.fn
+                        f.wn
+                        f.mpqa
+                        f.cb
+                        f.event"/>
+                    <directory xml:id="spoken" d.name="spoken"
+                        f.ids="f.primary
+                        f.seg
+                        f.logical
+                        f.ptbtok
+                        f.fntok
+                        f.penn
+                        f.nc
+                        f.vc
+                        f.s
+                        f.ne
+                        f.ptb
+                        f.fn
+                        f.wn
+                        f.mpqa
+                        f.cb
+                        f.event"
+                    />
+                </directory>
+            </directories>
+            <fileTypes>
+                <fileType xml:id="f.primary" medium="text"/>
+                <fileType xml:id="f.seg" f.suffix="seg" a.ids="a.seg" medium="xml">
+                    <requires f.id="f.primary"/>
+                </fileType>
+                <fileType xml:id="f.logical" f.suffix="logical" a.ids="a.logical" medium="xml">
+                    <requires f.id="f.primary"/>
+                </fileType>
+                <fileType xml:id="f.ptbtok" f.suffix="ptbtok" a.ids="a.ptbtok" medium="xml">
+                    <requires f.id="f.seg"/>
+                </fileType>
+                <fileType xml:id="f.fntok" f.suffix="fntok" a.ids="a.fntok" medium="xml">
+                    <requires f.id="f.seg"/>
+                </fileType>
+                <fileType xml:id="f.penn" f.suffix="penn" a.ids="a.penn" medium="xml">
+                    <requires f.id="f.seg"/>
+                </fileType>
+                <fileType xml:id="f.nc" f.suffix="nc" a.ids="a.nc" medium="xml">
+                    <requires f.id="f.penn"/>
+                </fileType>
+                <fileType xml:id="f.vc" f.suffix="vc" a.ids="a.vc" medium="xml">
+                    <requires f.id="f.penn"/>
+                </fileType>
+                <fileType xml:id="f.s" f.suffix="s" a.ids="a.s" medium="xml">
+                    <requires f.id="f.primary"/>
+                </fileType>
+                <fileType xml:id="f.ne" f.suffix="ne" a.ids="a.ne" medium="xml">
+                    <requires f.id="f.penn"/>
+                </fileType>
+                <fileType xml:id="f.ptb" f.suffix="ptb" a.ids="a.ptb" medium="xml">
+                    <requires f.id="f.ptbtok"/>
+                </fileType>
+                <fileType xml:id="f.framenet" f.suffix="fn" a.ids="a.fn" medium="xml">
+                    <requires f.id="f.fntok"/>
+                </fileType>
+                <fileType xml:id="f.wn" f.suffix="wn" a.ids="a.wn" medium="xml">
+                    <requires f.id="f.s"/>
+                </fileType>
+                <fileType xml:id="f.mpqa" f.suffix="mpqa" a.ids="a.mpqa" medium="xml">
+                    <requires f.id="f.penn"/>
+                </fileType>
+                <fileType xml:id="f.cb" f.suffix="cb" a.ids="a.cb" medium="xml">
+                    <requires f.id="f.penn"/>
+                </fileType>
+                <fileType xml:id="f.event" f.suffix="event" a.ids="a.event" medium="xml">
+                    <requires f.id="f.event"/>
+                </fileType>
+            </fileTypes>
+        </fileStruct>
+        <annotationSpaces>
+            <annotationSpace xml:id="xces" pid="http://www.xces.org/ns/GrAF/1.0/"/>
+            <annotationSpace xml:id="anc" pid="http://www.anc.org/ns/masc/"/>
+            <annotationSpace xml:id="ptb" pid="http://www.cis.upenn.edu/~treebank/"/>
+            <annotationSpace xml:id="wn" pid="http://wordnet.princeton.edu/"/>
+            <annotationSpace xml:id="fn" pid="http://framenet.icsi.berkeley.edu/"/>
+            <annotationSpace xml:id="mpqa" pid="http://www.cs.pitt.edu/mpqa/"/>
+            <annotationSpace xml:id="cb" pid="http://www1.ccls.columbia.edu/"/>
+            <annotationSpace xml:id="event" pid="http://www.lti.cs.cmu.edu/"/>
+        </annotationSpaces>
+        <annotationDecls>
+            <annotationDecl xml:id="a.seg" as.id="xces">
+                <a.desc>Segmentation into minimal token components ("quarks")</a.desc>
+                <a.resp lnk:href="http://www.anc.org">ANC project</a.resp>
+                <a.method type=""/>
+                <a.doc lnk:href=""/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.logical" as.id="xces">
+                <a.desc>Segmentation into logical elements (paragraph, section, etc.)</a.desc>
+                <a.resp lnk:href="http://www.anc.org">ANC project</a.resp>
+                <a.method type="automatic-validated"/>
+                <a.doc lnk:href="http://www.cs.vassar.edu/CES/CES1-4.html"/>
+                <a.schema lnk:href="http://www.xces.org/schema/2003"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.nc" as.id="xces">
+                <a.desc>noun chunks (shallow parse)</a.desc>
+                <a.resp lnk:href="http://www.anc.org">ANC project</a.resp>
+                <a.method type="automatic-validated"/>
+                <a.doc lnk:href="https://www.anc.org/wiki/wiki/NounChunks"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.vc" as.id="xces">
+                <a.desc>verb chunks (shallow parse)</a.desc>
+                <a.resp lnk:href="http://www.anc.org">ANC project</a.resp>
+                <a.method type="automatic-validated"/>
+                <a.doc lnk:href="https://www.anc.org/wiki/wiki/VerbChunks"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.s" as.id="xces">
+                <a.desc>sentence boundaries</a.desc>
+                <a.resp lnk:href="http://www.anc.org">ANC project</a.resp>
+                <a.method type="automatic-validated"/>
+                <a.doc lnk:href=""/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.ne" as.id="xces">
+                <a.desc>named entities</a.desc>
+                <a.resp lnk:href="http://www.anc.org">ANC project</a.resp>
+                <a.method type="automatic-validated"/>
+                <a.doc lnk:href="https://www.anc.org/wiki/wiki/NamedEntities"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.penn" as.id="xces">
+                <a.desc>Tokenization and Penn POS tags produced by GATE-5.0 ANNIE
+                    application</a.desc>
+                <a.resp lnk:href="http://www.anc.org">ANC project</a.resp>
+                <a.method type="automatic-validated"/>
+                <a.doc lnk:href="http://gate.ac.uk/sale/tao/splitli1.html#QQ2-9-156"/>
+                <a.doc lnk:href="http://gate.ac.uk/sale/tao/splitch6.html#x9-1410006.6"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.cb" as.id="cb">
+                <a.desc>Committed belief annotation produced by Columbia University</a.desc>
+                <a.resp lnk:href="http://www1.ccls.columbia.edu/">CCLS, Columbia University</a.resp>
+                <a.method type="automatic-validated"/>
+                <a.doc lnk:href="http://www.aclweb.org/anthology/W/W09/W09-3012.pdf"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.ptb" as.id="ptb">
+                <a.desc>Penn Treebank syntax</a.desc>
+                <a.resp lnk:href="http://www.cis.upenn.edu/~treebank/">Penn Treebank
+                    project</a.resp>
+                <a.method type="automatic-validated"/>
+                <a.doc lnk:href="http://www.cis.upenn.edu/~treebank/"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.ptbtok" as.id="ptb">
+                <a.desc>Penn Treebank tokens with part of speech</a.desc>
+                <a.resp lnk:href="http://www.cis.upenn.edu/~treebank/">Penn Treebank
+                    project</a.resp>
+                <a.method type="automatic-validated"/>
+                <a.doc lnk:href="http://www.cis.upenn.edu/~treebank/"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.fn" as.id="fn">
+                <a.desc>FrameNet frame elements</a.desc>
+                <a.resp lnk:href="http://framenet.icsi.berkeley.edu/">FrameNet project</a.resp>
+                <a.method type="manual"/>
+                <a.doc lnk:href="http://framenet.icsi.berkeley.edu/"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.fntok" as.id="fn">
+                <a.desc>FrameNet tokenization with part of speech</a.desc>
+                <a.resp lnk:href="http://framenet.icsi.berkeley.edu/">FrameNet project</a.resp>
+                <a.method type="automatic-validated"/>
+                <a.doc lnk:href="http://framenet.icsi.berkeley.edu/"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.wn" as.id="wn">
+                <a.desc>WordNet sense tags</a.desc>
+                <a.resp lnk:href="http://www.anc.org">ANC project and Columbia University</a.resp>
+                <a.method type="manual"/>
+                <a.doc lnk:href="http://www.anc.org/MASC/WordNet_Annotations.html"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.mpqa" as.id="mpqa">
+                <a.desc>Opinion/subjectivity annotation</a.desc>
+                <a.resp lnk:href="http://www.cs.pitt.edu/mpqa/">University of Pittsburgh</a.resp>
+                <a.method type="manual"/>
+                <a.doc lnk:href="http://www.cs.pitt.edu/mpqa/"/>
+            </annotationDecl>
+            <annotationDecl xml:id="a.event" as.id="event">
+                <a.desc>Event co-reference annotation</a.desc>
+                <a.resp lnk:href="http://www.lti.cs.cmu.edu/">Language Technologies Institute,
+                    Carnegie-Mellon University</a.resp>
+                <a.method type="manual"/>
+                <a.doc lnk:href="http://www.lti.cs.cmu.edu/"/>
+            </annotationDecl>
+        </annotationDecls>
+
+        <media>
+            <medium xml:id="text" type="text/plain" encoding="utf-8" extension="txt"/>
+            <medium xml:id="xml" type="text/xml" encoding="utf-8" extension="xml"/>
+        </media>
+        <anchorTypes>
+            <anchorType xml:id="anchor.char" medium="text" default="true"
+                lnk:href="http://www.xces.org/ns/GrAF/1.0/#character-anchor"/>
+        </anchorTypes>
+        <groups>
+            <group xml:id="g.segmentation-layer">
+                <g.desc>Any segmentation of the primary data.</g.desc>
+                <g.member value="a.seg" type="type"/>
+                <g.member value="a.s" type="type"/>
+                <g.member value="a.logical" type="type"/>
+            </group>
+            <group xml:id="g.token-msd-layer">
+                <g.desc>Annotations that identify all tokens in the primary data and provide
+                    morphosyntactic (POS) annotations and (optionally) lemmas.</g.desc>
+                <g.member value="a.penn-pos" type="type"/>
+                <g.member value="a.ptbtok" type="type"/>
+                <g.member value="a.fntok" type="type"/>
+            </group>
+            <group xml:id="g.syntactic-layer">
+                <g.desc>Syntactic analysis</g.desc>
+                <g.member value="a.ptb" type="type"/>
+                <g.member value="a.nc" type="type"/>
+                <g.member value="a.vc" type="type"/>
+            </group>
+            <group xml:id="g.semantic-layer">
+                <g.desc>Semantic analysis</g.desc>
+                <g.member value="a.ne" type="type"/>
+                <g.member value="a.fn" type="type"/>
+                <g.member value="a.wn" type="type"/>
+                <g.member value="a.mpqa" type="type"/>
+                <g.member value="a.cb" type="type"/>
+                <g.member value="a.event" type="type"/>
+            </group>
+        </groups>
+    </resourceDesc>
+</resourceHeader>

@@ -1,0 +1,4076 @@
+{
+  "format": 1,
+  "role": "discovery-only; no model, split or production use",
+  "repository": "https://github.com/oanc/masc",
+  "revision": "7a718b01af317f7ed8e330b0edd8db30c162da24",
+  "tree": "97d8b0b9ab6575d5f0a88ab08b30b3a43bbbe45f",
+  "resource_header_sha256": "db0cf4e0f496668ba43848a1d0d164179bfb09bbcc9c8366020a13012a1122a0",
+  "selection": "Every .txt blob below metadata/FULL_MASC/; no lexical/genre selection.",
+  "authentication": "Publisher commit/tree obtained over verified HTTPS. Every text is verified against its exact Git blob hash; unmatched texts fetched from pinned publisher HTTPS URL. Earlier archive bytes are reused only when that authenticated blob identity matches.",
+  "counts": {
+    "documents": 393,
+    "archive_git_blob_matches": 380,
+    "archive_missing": 8,
+    "archive_different": 5,
+    "tagged_pairs": 391,
+    "tagged_nonwhitespace_agreement": 344
+  },
+  "genres": {
+    "spoken/court-transcript": {
+      "documents": 2,
+      "bytes": 174676,
+      "apostrophes": 894
+    },
+    "spoken/debate-transcript": {
+      "documents": 2,
+      "bytes": 172815,
+      "apostrophes": 1143
+    },
+    "spoken/face-to-face": {
+      "documents": 7,
+      "bytes": 162879,
+      "apostrophes": 660
+    },
+    "spoken/telephone": {
+      "documents": 5,
+      "bytes": 36240,
+      "apostrophes": 356
+    },
+    "written/blog": {
+      "documents": 21,
+      "bytes": 165587,
+      "apostrophes": 751
+    },
+    "written/email/enron": {
+      "documents": 45,
+      "bytes": 106329,
+      "apostrophes": 145
+    },
+    "written/email/spam": {
+      "documents": 97,
+      "bytes": 146852,
+      "apostrophes": 185
+    },
+    "written/email/w3c": {
+      "documents": 35,
+      "bytes": 83020,
+      "apostrophes": 207
+    },
+    "written/essays": {
+      "documents": 8,
+      "bytes": 209844,
+      "apostrophes": 199
+    },
+    "written/ficlets": {
+      "documents": 5,
+      "bytes": 152082,
+      "apostrophes": 623
+    },
+    "written/fiction": {
+      "documents": 7,
+      "bytes": 186690,
+      "apostrophes": 802
+    },
+    "written/govt-docs": {
+      "documents": 5,
+      "bytes": 168841,
+      "apostrophes": 161
+    },
+    "written/jokes": {
+      "documents": 16,
+      "bytes": 149185,
+      "apostrophes": 592
+    },
+    "written/journal": {
+      "documents": 9,
+      "bytes": 130096,
+      "apostrophes": 329
+    },
+    "written/letters/philanthropic-fundraising": {
+      "documents": 31,
+      "bytes": 70014,
+      "apostrophes": 133
+    },
+    "written/letters/solicitation-brochures": {
+      "documents": 18,
+      "bytes": 85390,
+      "apostrophes": 246
+    },
+    "written/movie-script": {
+      "documents": 6,
+      "bytes": 129880,
+      "apostrophes": 733
+    },
+    "written/newspaper/nyt": {
+      "documents": 14,
+      "bytes": 114775,
+      "apostrophes": 283
+    },
+    "written/newspaper/unknown": {
+      "documents": 2,
+      "bytes": 2710,
+      "apostrophes": 4
+    },
+    "written/newspaper/wsj": {
+      "documents": 36,
+      "bytes": 47667,
+      "apostrophes": 118
+    },
+    "written/non-fiction": {
+      "documents": 5,
+      "bytes": 164741,
+      "apostrophes": 218
+    },
+    "written/technical": {
+      "documents": 8,
+      "bytes": 142772,
+      "apostrophes": 41
+    },
+    "written/travel-guides": {
+      "documents": 7,
+      "bytes": 162086,
+      "apostrophes": 275
+    },
+    "written/twitter": {
+      "documents": 2,
+      "bytes": 152780,
+      "apostrophes": 500
+    }
+  },
+  "documents": [
+    {
+      "path": "metadata/FULL_MASC/spoken/court-transcript/Day3PMSession.txt",
+      "git_blob": "0b3bd5fcfcf5f227d772aac29fdc9ad8870df492",
+      "sha256": "3270f7dc9328bd5af1b79634ecabbe637ce4f31df24d513533ae9f92029e4cf0",
+      "bytes": 121298,
+      "genre": "spoken/court-transcript",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 623,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/court-transcript/Lessig-court-transcript.txt",
+      "git_blob": "1e4a1fb4c1da5b513fc10def5c41222921323e61",
+      "sha256": "db50eaa172c4fd7b09079b593956bd40139b8ed70bcc7051862381a8ea58087c",
+      "bytes": 53378,
+      "genre": "spoken/court-transcript",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 271,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/debate-transcript/2nd_Gore-Bush.txt",
+      "git_blob": "1286e8bc4bef50e64c92895b869420b6a0aba361",
+      "sha256": "63d2ceb915ef81e1da42e6ccd1d2849bb4dabdaa0bdcbbf643c9181adc08f7fe",
+      "bytes": 87494,
+      "genre": "spoken/debate-transcript",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 543,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/debate-transcript/3rd_Bush-Kerry.txt",
+      "git_blob": "c1b99d2380ac9e5df3d92ad87deb7dd26fc24b83",
+      "sha256": "bf55f0a687389c6133106565328b31786a48f52f706a500e66e07825f530f664",
+      "bytes": 85321,
+      "genre": "spoken/debate-transcript",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 600,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/face-to-face/Bed012.txt",
+      "git_blob": "712e61efe37515e499a0716d28f8eb521d606dcf",
+      "sha256": "c4f360e061ebd2909c9afe768af86dc9d803a4034fc177084ff2574dbbe24cea",
+      "bytes": 55539,
+      "genre": "spoken/face-to-face",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 276,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/face-to-face/Bmr021.txt",
+      "git_blob": "36996d9e5e0bf7e95574aac4739edf65cc5ad1bd",
+      "sha256": "47609cf25784477d1e82399bcdca0a987abf69c052ce4e14acbf1b034f608ad5",
+      "bytes": 55286,
+      "genre": "spoken/face-to-face",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 255,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/face-to-face/NapierDianne.txt",
+      "git_blob": "6242c7e209175047e49c1c3e407f953d8be36bb8",
+      "sha256": "6dda400f9fcfd7a6771a242e6e9d769c30a054d2e702ddd73bf422be3c69425c",
+      "bytes": 12547,
+      "genre": "spoken/face-to-face",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 48,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/face-to-face/PolkMaria.txt",
+      "git_blob": "8ab4e8f2c82591619c40097a2f7d329d383636e0",
+      "sha256": "420cebc6fc3bd84f782bb49496cc611eb95d753d8c397d4e3b046be30ce0f517",
+      "bytes": 3723,
+      "genre": "spoken/face-to-face",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 9,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/face-to-face/ReidSandra.txt",
+      "git_blob": "f0a6e278e3a8b76643264fac9b1aaca67ea79e3d",
+      "sha256": "948a5f0cf29821670e7bf029ae09c5c1de68347b80a50bcf784a6e295b850a2e",
+      "bytes": 10234,
+      "genre": "spoken/face-to-face",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 36,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/face-to-face/RindnerBonnie.txt",
+      "git_blob": "3872d6753fcf28d3f90e979a8ce44198c58a8600",
+      "sha256": "70ee8b21ee74b95fc57c3ce12622596b2fc35b94bea6276d17fbc3b0a3c5e5e9",
+      "bytes": 2023,
+      "genre": "spoken/face-to-face",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/face-to-face/interview_nathan_hole.txt",
+      "git_blob": "d9a1d94334318baff10f9f1e692240ff5557ed90",
+      "sha256": "ef40162daccaada942e145b58410e4ff077be392da4bbe6747e182541f56cd47",
+      "bytes": 23527,
+      "genre": "spoken/face-to-face",
+      "archive_comparison": "missing",
+      "apostrophes": 30,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/telephone/sw2014-ms98-a-trans.txt",
+      "git_blob": "eadd57aeed53dfef6ddcc22416e3778c07456bee",
+      "sha256": "5386ddce6e7ed23a516959d145cebc9207893aee2bbdccf0185fd8f673d7d578",
+      "bytes": 4130,
+      "genre": "spoken/telephone",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 50,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/telephone/sw2015-ms98-a-trans.txt",
+      "git_blob": "7923d3e2aae08039f0483f6ae0c67d0f078bb408",
+      "sha256": "c6618d8b5dd1e13660345ec2a7ac816d74900c7525f7ef1581533a6b0b7652b1",
+      "bytes": 6954,
+      "genre": "spoken/telephone",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 67,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/telephone/sw2025-ms98-a-trans.txt",
+      "git_blob": "910b91b238ef4f2ee275b5eb5a0dc45692e86191",
+      "sha256": "6d2964a0809a145b23d40bf68a1f8f3130cf3ab06c6ff257e071c81a37bd2447",
+      "bytes": 7544,
+      "genre": "spoken/telephone",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 67,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/telephone/sw2071-ms98-a-trans.txt",
+      "git_blob": "712cd32aa3808c543e161548b9f43647b0dfa7d3",
+      "sha256": "f6a1a32434df5307c82c4d9b6e60949411ac46a2ccba5a731ceb48724bb98012",
+      "bytes": 5362,
+      "genre": "spoken/telephone",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 36,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/spoken/telephone/sw2078-ms98-a-trans.txt",
+      "git_blob": "58c25bbca4017fb91874dfaea50ecb7a3db342c5",
+      "sha256": "9962334c6850283bdbdba141f57f0ec0b7f8a2cbd75b9643f9313ff7dc4c7c73",
+      "bytes": 12250,
+      "genre": "spoken/telephone",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 136,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Acephalous-Cant-believe.txt",
+      "git_blob": "2bfdfb0ad9d36e7e786aff97b679a2b4eda3ec0a",
+      "sha256": "1f91110b9812ac63c53daa8034a021673d5352e3613a8a2667038cad4dd0c3dd",
+      "bytes": 3614,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 17,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Acephalous-Internet.txt",
+      "git_blob": "54b9cddd2520ad231ada85b9ca2539733021a88d",
+      "sha256": "3f5f74a0d001dca6c99168cb607cac8d2e1d3792291de4606369e65de63ea46f",
+      "bytes": 4390,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 13,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Anti-Terrorist.txt",
+      "git_blob": "bbd2b2634ccdb200350dafd3b0d49cac5d9e7c7b",
+      "sha256": "2422dfc57ecdb0a40caaa9e9df99baf71197f9fc23edd1c3d42c247a1c1461b4",
+      "bytes": 5449,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Effing-Idiot.txt",
+      "git_blob": "d76641957a09cd6d00f9052c3863e6ae7da667ee",
+      "sha256": "a4c69eefc5eb2d91fec86fd5786ed23f44b396bdc18bc21df0585576796495fa",
+      "bytes": 29962,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 239,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Fermentation_Eminent-Domain.txt",
+      "git_blob": "e0d1e060d7f482be8b529284f3f5fa0f0002c14d",
+      "sha256": "270dd9d3bfc3d435311402b8028d37e408e829c9bea8fe649489440e78110a1b",
+      "bytes": 14357,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 35,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Fermentation_HR5034.txt",
+      "git_blob": "0987725375bb9fd1447cdd115d37f8a949643545",
+      "sha256": "a680f0ecfca8c74c4897e7487805f072d398c06be5058fb7131247a75d15f9d3",
+      "bytes": 14812,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 26,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/How_soon-Fans.txt",
+      "git_blob": "580dc7151e6fd9931b73842ecb665d9f58c00ac2",
+      "sha256": "727ff1dffa5f138f5bb559e021809f2e64d663e4566abc11545f508f3a7725d8",
+      "bytes": 3815,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 29,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/How_soon-Lebron-James.txt",
+      "git_blob": "0038e0d537cc82472fd931366cb4f9de9a657dbd",
+      "sha256": "26ecd9347367060b953793432ddf79daac7b95e182c54ccc78a5cc8a367c5cbc",
+      "bytes": 3256,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 23,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Italy.txt",
+      "git_blob": "55744b4fc9acd6ff359291062a04c5c1b0aff341",
+      "sha256": "5265e808aa2779419c266e63c29a4a045a5fad89b637cefeaa83c0fa74347cbe",
+      "bytes": 5419,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 26,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Seedbombing.txt",
+      "git_blob": "b8f18a161aef3321ce1abf1b8177e0e26d7d8bfc",
+      "sha256": "faf7e32849bdbd53ccfa6d3739c102a845ee48fec8e207a63cfe3a2eb623cf0e",
+      "bytes": 6560,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 23,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Tupelo-Honey-Cafe.txt",
+      "git_blob": "4e390934c634df47bc0fd796b81a337361283f77",
+      "sha256": "dae4a58728747fe8c460554e6f0e88448cdc6c04601428477f2e7b0e8884c1db",
+      "bytes": 3858,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 20,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Uprooted_Bike.txt",
+      "git_blob": "d6fffb3e8cb3a9e53ea845b4b146b2b949f3d072",
+      "sha256": "7384f9cb874b77427984db7e4aba6e11f9019707fdb6b9f3b7dd857ef837c10f",
+      "bytes": 6749,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 29,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/Uprooted_Farming-on-Sand.txt",
+      "git_blob": "b98d0d0b9551432285970bd9a711bab8e21db71e",
+      "sha256": "1bf1a720708e3aa4650c639f85bab493b6fa9ff75eece4fe2c0f803850c3d3db",
+      "bytes": 5270,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 27,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/blog-jet-lag.txt",
+      "git_blob": "ba0ab0bb034e39fc0329728fa1a007dab1e9e6b2",
+      "sha256": "469b0fc006539f3fd36ad25419e72751d14485f1ea337ed5429bfc79fe124df3",
+      "bytes": 6372,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 15,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/blog-monastery.txt",
+      "git_blob": "55280b8145479d4799e915ccddf8d8c23de64876",
+      "sha256": "afe0198d652b954fc813987c429472f15af094a48aa49d1893750eb20ed6397a",
+      "bytes": 5879,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 15,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/blog-new-year's-resolutions.txt",
+      "git_blob": "a4d53af01ee6db9890cc000e7c14e2f6502e8d83",
+      "sha256": "c87044a5298359ac818c75747091c31f250c8f7c38607d32ca60ffc475edc91d",
+      "bytes": 6238,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 21,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/blog-varsity-athletics.txt",
+      "git_blob": "7ae070f3c4b4027f4fcfb0c7d331f36171961ec6",
+      "sha256": "3100c7297a79ac440cb8450b16ae53fe252e3be627f374295609f4ce0518bebd",
+      "bytes": 6015,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 25,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/detroit.txt",
+      "git_blob": "c42978b8408815aa80ed72f38979e68ffa7872e3",
+      "sha256": "0bbdc3f148760b593ae7c5b256c242a0e0a4de99e4c79d1955faa90726beabd4",
+      "bytes": 17459,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 100,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/lessig_blog-carbon.txt",
+      "git_blob": "883a1bcfe3f04253059313b7d66359ead1293074",
+      "sha256": "235a4b4189fe1b4a57eda9caf08394439982cfa8e1de3299eefcd2ab57a09ac7",
+      "bytes": 8917,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 29,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/sucker.txt",
+      "git_blob": "d016180ef195fe3e39bc780db94067b1f2b94b8a",
+      "sha256": "bb4f4e6719c67bbd537a32042dd561ba5c3971bdb1f2f1586bca591e604ef626",
+      "bytes": 2709,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 15,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/blog/vampires.txt",
+      "git_blob": "4f870848410437b86b0e56569cd06a7ffc1f05c0",
+      "sha256": "50c2ebb5a50dfcada3e597eb1ff9a60c48c4a5b3e95b9d0b5105642f6e21af15",
+      "bytes": 4487,
+      "genre": "written/blog",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 23,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/12030.txt",
+      "git_blob": "243fb46275805c826b6d1f7ba809320c007f4f50",
+      "sha256": "cf576d5f0ca77cf2d57bf73965411ed36723a4c3f00596678ca8846adb941dba",
+      "bytes": 1486,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/12174.txt",
+      "git_blob": "6947e1f997216dbeb94adad57cd022576b048896",
+      "sha256": "f41c4b795c7b71a55afee8a349b82ac5cb04e070074fe3848e5595512a827675",
+      "bytes": 1114,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/12176.txt",
+      "git_blob": "59865b64364414eeb0b4d2490d70771ee35b958e",
+      "sha256": "7e67aaed7bd0a904fb46c0c815691058725bfb74726727abe7eb71c5c644367d",
+      "bytes": 8869,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 19,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/173252.txt",
+      "git_blob": "357e708394424a37789a8d13ae7af9aa0a6bed68",
+      "sha256": "ab321d5bc474e2453cfd968ba32d604005e659532e42717738f4eb05aee3cafa",
+      "bytes": 4540,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/173906.txt",
+      "git_blob": "03b1003edac6adbf410cc83e007f9ba274f9bccd",
+      "sha256": "01cebe30426bf0084d52ac0043981d4d22e26a509373c894693ca943f71c11b1",
+      "bytes": 1128,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/174124.txt",
+      "git_blob": "cab421924ea6d9e8c3c1d150acce3beae5ce6c97",
+      "sha256": "41e7445bfea08b9284f7871583538722b9e1f52dd293fd8c663bbd62c470a672",
+      "bytes": 1402,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/175448.txt",
+      "git_blob": "8e18e0db95ece4b5eb4d910623e21bb183e1a5c4",
+      "sha256": "47bff1e105b5b1e62a8309486648cb232a4094e176f6d08fefc3ac19d5adaa6c",
+      "bytes": 2257,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/175814.txt",
+      "git_blob": "ff07c3b4ed7672e5ea7741cbd19c076589e907ba",
+      "sha256": "53a72c168340d69dce8708d9a453a1036eb496034e73bc4d79060b17c2303461",
+      "bytes": 1484,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/175816.txt",
+      "git_blob": "c1bcf654f16076af02b6bab2e64f61908ca4ae69",
+      "sha256": "245954f7938c9079274c42767a716174bcd40f981036d3200bc0e4e50c3e2946",
+      "bytes": 1495,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/175841.txt",
+      "git_blob": "0649e51763535bfd202d656ff037eb302b7be210",
+      "sha256": "2334d2a92975ea572072314df9f898849bb7eea885420ae73e875645e8a92d71",
+      "bytes": 22927,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 48,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/176581.txt",
+      "git_blob": "123528a206415e8bd754cbf071254290e90668ca",
+      "sha256": "dcde6f64b378ebce95b97282ebf02343a16ef723d34f26f72ca7ca06c9975880",
+      "bytes": 2626,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/210343.txt",
+      "git_blob": "0a2d7af110af03e1f15ca3b9688b0c6bdcb495fa",
+      "sha256": "a9b3ed0c336ab7b68d30a729f1fb651ce82eb380969938e1278f27051c8cde77",
+      "bytes": 964,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/211401.txt",
+      "git_blob": "03a7d900dacb6c7278c0c78609ae933957a7b8d4",
+      "sha256": "9be66d28ac2caeb6beb020392207bfd53b7359400b6a46fd0d56f19178b36f85",
+      "bytes": 402,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/211402.txt",
+      "git_blob": "9993f0dc91d0dc199b5c6149cb1f04864e1579c6",
+      "sha256": "23cb45180563534be892a7c2142ed3007f5b0ae4a22195900cf7758b6628d0a8",
+      "bytes": 1481,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/21257.txt",
+      "git_blob": "f7db89067e3f9132b9876c47af457aa5a0a90aa3",
+      "sha256": "1707c8fe8831377df2ad923112aa3ce1441bf19ef26caa742e47f58a4f0d9ece",
+      "bytes": 2532,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/218920.txt",
+      "git_blob": "523c9b496769025622555c8e3487f9c69de93c02",
+      "sha256": "2178cb892f0d3a9af7ac471fe29209185d71e3154c75901209b09f9309cd1d43",
+      "bytes": 842,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/219122.txt",
+      "git_blob": "517a83c489d2434425e17899616f692d319e3d1a",
+      "sha256": "f47fcbef3e4ec281d37a29ea2e9962f46bf502ac29eaa59654bd10337b816b6f",
+      "bytes": 1184,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/219123.txt",
+      "git_blob": "6b29a046f5901567d98d544ccf3846f1bc76de76",
+      "sha256": "ff9e84d20d9a4de0eb28edfca9e3f2a46df73d261066e2aabe855d71f7451d67",
+      "bytes": 1890,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/219257.txt",
+      "git_blob": "79eb10308e5c77e86e9ffd3754c9b3240fa63429",
+      "sha256": "6f2aa24ad0d447b7d00232c25566cb2f5141c0eaf9ed81b99dbbafd742ce70b0",
+      "bytes": 560,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/221197.txt",
+      "git_blob": "a071ee036cfad7ba7982f95631957d99fe543bca",
+      "sha256": "7adb36018ee98b25d7b40b73d6860ed9f1fcf9b0fd6d0df627e8e85b22984772",
+      "bytes": 1451,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/230685.txt",
+      "git_blob": "ac45e0dfeb9a7ccf93696491daf65bfc6279b55d",
+      "sha256": "57a2198408205c72ecc6df252457453968cb866ec04baaead5bc908eb29a6807",
+      "bytes": 1867,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/234267.txt",
+      "git_blob": "d6d3949b3497b9533144808589066dfc6b3dae73",
+      "sha256": "ac8b652dbd5f411c7454e27e8d9ca59c19fae079d08323bc37d39547965957a2",
+      "bytes": 1086,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/234783.txt",
+      "git_blob": "7ad13bec21a33f354b390959518ed21c26f0e565",
+      "sha256": "2850205234d70780c5587d6d9dfd5544cd997bcc815153c6c2dc49e96697c042",
+      "bytes": 560,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/23559.txt",
+      "git_blob": "24b313486b874fc95f9e1660cb08384fc043030d",
+      "sha256": "40349f6e87c1217f1ae3d2d8c5f89ac5ea976659e7d7dae0a2f20dbd5ab43bd1",
+      "bytes": 2507,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/49059.txt",
+      "git_blob": "cc42c511a9ee7eeb51220914fa1ec13655df8c58",
+      "sha256": "2e7d33e0ec18dab99f5bb2e10aa4e9b8d48e09541a7932823db23f17b7254d4b",
+      "bytes": 2511,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/50307.txt",
+      "git_blob": "042370357a93232e01b7219d800801c4df0d9156",
+      "sha256": "6b887e2741214be3de831d5ee2da2d404a67fff12934f7713763afa4c5617ec4",
+      "bytes": 1369,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 8,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/52201.txt",
+      "git_blob": "775792102ec02c12c2df7018f3c3a2cfb6a39188",
+      "sha256": "5d4aafbd6398c335e07a1d38696e7d2810dda279636e4cb5aca6a1315ea03155",
+      "bytes": 826,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/52555.txt",
+      "git_blob": "cb251e807542e538defc6f91d7cb086d200eaf5b",
+      "sha256": "479cdeac91fea08517a0b30cf3faf970f91b8ed7e9d88a25b756427b64e7ac96",
+      "bytes": 1931,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/52713.txt",
+      "git_blob": "66e0085b6bee3a7971c8ebce79d0ca4808f9fb9a",
+      "sha256": "937aa4d3e78af29160f7a5dc12108805e7ae1b7520d3374a62809c459d1516e2",
+      "bytes": 507,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/52998.txt",
+      "git_blob": "6240c22ee3edfe07a74a2406c5a29fefa830162a",
+      "sha256": "e35af6691d3d46240e0a2c3361f4a97b281396a525dd68bae5f6c9a839edefbb",
+      "bytes": 2876,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/52999.txt",
+      "git_blob": "20011af4b70c4e472caa0388924661c52e6dbdef",
+      "sha256": "f7e4841008d13dc68fdfbc80b93f2030de239614af264f02e103948cc37902e2",
+      "bytes": 2165,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/53536.txt",
+      "git_blob": "0d9a4464bcebf1f896e6524833672e41d0cad592",
+      "sha256": "17976a016bed6b5446f09483cc8e2bb2521f7fe930b0209696db4c93bb0c64a7",
+      "bytes": 3594,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 12,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/53555.txt",
+      "git_blob": "102d1db51ec945cd5277878cfbdbfa1a07b9006a",
+      "sha256": "e500220017ef96723c0cd9002770c6ee9b1451c3cda357693d65bae9effdaab6",
+      "bytes": 1016,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/54261.txt",
+      "git_blob": "8234bb321b6c7a62d41b761503d73df0957aa674",
+      "sha256": "5ecaf3c5669338ac2932ba7874537ddb9f6eb26a6f64dfbe5d5e91650f42971a",
+      "bytes": 2843,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/54262.txt",
+      "git_blob": "5a0581870f71f5e4e2f1c19109975ccc96e91e84",
+      "sha256": "ede429942241c7dd1be14d1d0fc00a4d0df9fdf29fdd1f72fad46481749be8de",
+      "bytes": 2805,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/54263.txt",
+      "git_blob": "f7000798eaf651501c8db51ef8c467ff92084ca9",
+      "sha256": "dbe92a2424c3ed233d1da288cb7d78c3fd33a49d6ccf9f2b773af212e9bdfdc7",
+      "bytes": 2302,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/54536.txt",
+      "git_blob": "314a7096072a9b82f131d2e8719a7b8b1e8a6b47",
+      "sha256": "168851f8f876bf6a80b259edbd7e8777a9b9a3a50c192ed2ebebb678cf9cb5c7",
+      "bytes": 4133,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/54537.txt",
+      "git_blob": "f78d0a16b6aa1f2799e0ddd6a416e2da6c5585a3",
+      "sha256": "7b5023dffbe6adfad4c341fdbf9a7212bcef7a0cce61fb188467f2120449ba31",
+      "bytes": 683,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/8885.txt",
+      "git_blob": "c5a2603f9124eb6905bfe05fd711efa5c34b19ce",
+      "sha256": "107a071843b8aa16418e0b021460bd2efdf1f31dfd476c9910e45a2f831a65da",
+      "bytes": 1929,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/9066.txt",
+      "git_blob": "680106dc5d375a7e466adc97a454d4e6866d8702",
+      "sha256": "8b2762e31301bd72c67de1cba6ec067753cdb7f40a5d1a0b87238f8e0077a672",
+      "bytes": 1457,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/9085.txt",
+      "git_blob": "b499ef9e6c809a9cbaefbf15b4406c43d10daaf2",
+      "sha256": "ebb2497d68eb82ea40d5dedd4a98dd0dbd8a99ce7ac70137a378052ea3ab9ef6",
+      "bytes": 1510,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/9159.txt",
+      "git_blob": "62d0eb66a72617cebd4c1f3c5a354ce5a4ede19a",
+      "sha256": "2d3d342945041bf05ae6261729949b0294b1b64655e305001252585ae399e16c",
+      "bytes": 1889,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/9191.txt",
+      "git_blob": "3ba3c021069d1f7fba1ebacd2e70ab7938c1cf45",
+      "sha256": "a4e41430fc15a64d99e04fdd6d9b0f3a80fe8d95cc9686cf88539b49e9a97dbe",
+      "bytes": 760,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/ENRON-pearson-email-25jul02.txt",
+      "git_blob": "c758e6e2808ca08c7f93493f65eb70852a033db8",
+      "sha256": "410bab481c5f76e4b8c14ff1e3fff60f4c8e15360cec464b33d43e289102f5c6",
+      "bytes": 438,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/enron/enron-thread-159550.txt",
+      "git_blob": "5a376f1b64945d90f9ea6cfa4501b230d3a29a66",
+      "sha256": "5c621e64719d458431b59e9ba6e6614aa20e496fcd353d0a1f1394ed8128e8ea",
+      "bytes": 2131,
+      "genre": "written/email/enron",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111344.txt",
+      "git_blob": "8091b25cf2be632aef6bbbfb1960763c0fe7586c",
+      "sha256": "bc6af0542f5aba58319e61f833fcacd0663ac59ffcd5af34fe515381831f649f",
+      "bytes": 656,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111348.txt",
+      "git_blob": "6542710eac3c465d88378f710c5d1c00e8dbb3d9",
+      "sha256": "8d7dedd84c5cad632c973032d5cd01221c3eb6d01ae7129474018856b7a1a515",
+      "bytes": 2780,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111349.txt",
+      "git_blob": "61336c54ee280f2a2edbcc1a0ada8a91c87f09d4",
+      "sha256": "5e4a14a0039467b631174681f7747ccda04d20a65c767b1fd154f3a7b59f6fa6",
+      "bytes": 1841,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111359.txt",
+      "git_blob": "cc92d5c4e920e50ea7ff3e5ecd70b8bada790947",
+      "sha256": "324c58e7398c5dc75659fede0c46c78e394b78a43a6ae39385db157e00d37b94",
+      "bytes": 2546,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111363.txt",
+      "git_blob": "3f784795c81be73c608ce77716a23ab13afb21aa",
+      "sha256": "45d02902952ea76231df2af6b23cecefec4dfc6c533ade2e4bde4068c66e06c3",
+      "bytes": 3817,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111364.txt",
+      "git_blob": "aae14fe55ab41d491bc38aafba8e7677365c7471",
+      "sha256": "67de8b47cb01bf571df6a5838016eb01d909d70f1b22e8c3f85a65b1de87895c",
+      "bytes": 1771,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111367.txt",
+      "git_blob": "ccf89dbe0f84b9a09c7085af35d1c6f9fe4062c3",
+      "sha256": "af1be70204fe968cf98ecb11a36e82c6c6baaad38c310444c201c43d693810d9",
+      "bytes": 1896,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111369.txt",
+      "git_blob": "dfcf27b3219ec8a7963de461b1fab96ee6ed17ed",
+      "sha256": "640abc539be65303e7fc3492abdf017f9a688594ea5e97c2f900c1d8227e362b",
+      "bytes": 1000,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111371.txt",
+      "git_blob": "20130509a915d2e00159fea155108c70d65fc03d",
+      "sha256": "9d1f3f2471cfcffb92d1039f16165d43962007be8719ce1711871a5a61218af3",
+      "bytes": 1790,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111373.txt",
+      "git_blob": "651e6d19b4d93aee0473c5e7635139e0deee7c40",
+      "sha256": "3112fcf26bd28ccc94c14516f952fa71f6ca07a5fb692fbd3036624b82878cfd",
+      "bytes": 1063,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111375.txt",
+      "git_blob": "b74382411be6df88805592fa0b9cb20c7bf36093",
+      "sha256": "430648ae15ee5fce6ce23d5a7c7b813f54050a0257f41b1ef4bde5ce8e240181",
+      "bytes": 839,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111377.txt",
+      "git_blob": "8dd4117e2a3972160812bc0808330eddaa360961",
+      "sha256": "87ec32c14fa83a0bf661d9d6033fc5bec2b75f43fc9c0db0ae75d1e690e15859",
+      "bytes": 870,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111380.txt",
+      "git_blob": "4c7ff27dd79ecd4ce851e7425ce10f76f29fde02",
+      "sha256": "1ad1d16bea53b649dc9619cee6f8353e3bd151ebdb64e8471e9421fb0a4e4e0b",
+      "bytes": 2236,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111381.txt",
+      "git_blob": "60951ee4a2d21d24971912a1106fbeab546d8ee0",
+      "sha256": "2912831f48f7ab981cc5d050fdd6c796b6f140c872bc12cb901c721d48f3475e",
+      "bytes": 4212,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111382.txt",
+      "git_blob": "b9198ea672faaee11ed7e6dc2414030c13f3b9a4",
+      "sha256": "30444d18dbf2cc7d4337eed6bb95411ab48d2356d59afb0c77d20a2c25fda16b",
+      "bytes": 1485,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111393.txt",
+      "git_blob": "dea62b90b4e44a31507e7235b14404bb87325d27",
+      "sha256": "7de887774a7b80f34bdbdb6f85cf6684172442e9254deeb052f8fba62a6f934c",
+      "bytes": 936,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111394.txt",
+      "git_blob": "efffeea4f6c3354d1ec0c06a4e8d4f6044be9dc1",
+      "sha256": "efcb78374645ffda220db1cb494177d747b9b289d85579c5ee42e90ff31c816a",
+      "bytes": 689,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111399.txt",
+      "git_blob": "3fd3eb77c9db9b779f09a497abaa0d14ec35f5f8",
+      "sha256": "bb46f5b63d8e2a84b91a054cfcb480d6ba1a886ae951effe548343da9a8effb9",
+      "bytes": 662,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111400.txt",
+      "git_blob": "3708aa7b74e223960299835cccaa514c01e6c3ea",
+      "sha256": "ff1d229ccffaeebaad8dcf7ba01d44d4bd8e9008a5641c546caf9926b8175911",
+      "bytes": 4302,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111404.txt",
+      "git_blob": "9dbe4640e6c29fd79331b4fbe1349b63b7ad863d",
+      "sha256": "ab53c5c1d6d112c4fda60f3476f203f94fb3e9c37b0fcd62c75165900d911231",
+      "bytes": 700,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111406.txt",
+      "git_blob": "dcc4f88969c71ca06e10ae9c8152273f89af55f4",
+      "sha256": "b813376e6c5355d48e66ff42bb069c74bac82b9065dc7528cc97afff6852c906",
+      "bytes": 579,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111410.txt",
+      "git_blob": "8ee34f973b6af2e83272c1c875b18944eabffcdd",
+      "sha256": "0f0e68f4708ebdbc1b714a33cb707070ac8dcf56319984c3aa9203f6d85748a7",
+      "bytes": 1090,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111414.txt",
+      "git_blob": "31181eac648c4d37100e30d62b10ddab3a4e7862",
+      "sha256": "5714b683df5b66492c541b4b0185677560a0a346abbe1768f8147fe0ed8c8d89",
+      "bytes": 3563,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111422.txt",
+      "git_blob": "8a3bedd3a8960429a0814c80cc77723c55330241",
+      "sha256": "1e0dedaa14b6992972a75e57c0f8d86df3a731d9732c67b65ec7463c2b251eb0",
+      "bytes": 895,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111424.txt",
+      "git_blob": "dadcda556bf7f8583c6893e93b0f5fd48b0d4777",
+      "sha256": "6ed91be8660f94837dce00bf2a0d96b62f43907924ed0cb7b244f32ca583e7f8",
+      "bytes": 668,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/111428.txt",
+      "git_blob": "df159cc6850c530b20ba00fd50887045731fe3c2",
+      "sha256": "1e421ad2587cf4d9e99d783a44fbc79ea6e6e185577e0d7749a13d0104984eb2",
+      "bytes": 1924,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114421.txt",
+      "git_blob": "d8ff507063b66c1bdb14a4043c8c7644428e7ca7",
+      "sha256": "185803e64f89bc0c82a1460f20bd7e898b1253e94b53a54db474083464679fc1",
+      "bytes": 593,
+      "genre": "written/email/spam",
+      "archive_comparison": "missing",
+      "apostrophes": 1
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114423.txt",
+      "git_blob": "ce3b5de668da4bd1120730f970be41e14b30529f",
+      "sha256": "7cd567133892686a39a99e6bacfa38ded3c2950fcbe862e9d6abd3180f939097",
+      "bytes": 3820,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 9,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114424.txt",
+      "git_blob": "1c061312105c04f6be89af17abde89cd39a859eb",
+      "sha256": "ed226ac71c50570b4ce186be08980b169377011ff9e6152e23bd9b7be620fb16",
+      "bytes": 1029,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114425.txt",
+      "git_blob": "5ca817ef676c907b0a70282085c9592960238f6e",
+      "sha256": "db5374ed05871209223f885a32506f28bde71139c5669c735b6e3ef8df267301",
+      "bytes": 970,
+      "genre": "written/email/spam",
+      "archive_comparison": "missing",
+      "apostrophes": 0
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114428.txt",
+      "git_blob": "a9f3a49c43986ad5b8d6b7b9e13562a96b6eaae8",
+      "sha256": "0acbce69fbffb0f1f1028b8cbc0fbf633be62432b016f9e1e624deb1ba394407",
+      "bytes": 781,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114433.txt",
+      "git_blob": "61cb908b26d09385281ec9b5591f5b7b9e9b4372",
+      "sha256": "c39f66851ae5816f8f57fdbf33c7a9d224d85491b0172a92f62ca8353b55594f",
+      "bytes": 1275,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114435.txt",
+      "git_blob": "dcff95998d93f2a6ccae27be52293235ec26c5e1",
+      "sha256": "582dd18479f8e6cce671f6cda3b1bdc4a399409dea4da0f6607c411d8a1dec1a",
+      "bytes": 1418,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114439.txt",
+      "git_blob": "c97f10134f916d96f146631632620e172f2ba6cc",
+      "sha256": "ae9e39b4d7e7bc61c49722918c688ece83583d3dcafb69a26c5c7d4f02a3051a",
+      "bytes": 659,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114440.txt",
+      "git_blob": "c3e3a7b924392c5994c0a1b13dfbb4ca55986172",
+      "sha256": "d55da25b9082696779eb1c7774457737d8f0ae17b4f014311fb6a516d13321b5",
+      "bytes": 1025,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114441.txt",
+      "git_blob": "cf68808d05dbc2f46720debab91c1493251e4711",
+      "sha256": "ef22c58d2d38c6e6c06bf25717c1b39d85516eb06e0c1a3f71889ed25b3e7d7b",
+      "bytes": 1093,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114442.txt",
+      "git_blob": "3b412becf49c2b3234f9bf5bfea4f6310a543fd5",
+      "sha256": "01ae1c0b5df5687d30059d6eeac4e3a435979c797b85f587c235557f3c044f9d",
+      "bytes": 1708,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114445.txt",
+      "git_blob": "295dd9cc9721a287c0f4e7f7ad26c1037b0ba50e",
+      "sha256": "9828c16c192855b40671894060bb590c4453eae49db5bfc9eac80d2d65dd8caf",
+      "bytes": 8007,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114446.txt",
+      "git_blob": "0c628041a25344e6d5eadc28d3d8cd47ba9c810c",
+      "sha256": "2293f2467f0ecc2676bcd72b0825677780a1ee33b443d970cc231decd9da4c97",
+      "bytes": 1003,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114447.txt",
+      "git_blob": "f18b8aecbce2e34ecf86427922723d2ab232db0b",
+      "sha256": "c26e2444292c3cb9c46aff188276791b9678ee5044283bb26b7a6335a9f5f8b3",
+      "bytes": 945,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114448.txt",
+      "git_blob": "5a996788f75cd25c7f759a7c681d3e3c5053b26a",
+      "sha256": "5fc8e45ee736080a50efc48032a6bb26e6a1b8fa0030dbf15f18dce7be92e7b2",
+      "bytes": 4875,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 8,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114450.txt",
+      "git_blob": "84b1955aff72ab51e079f5c3329ac4ae8cbc21d0",
+      "sha256": "ed3c3fb6c6fd163ff2a33272b102b8105a580a797764aa83d78834b222755b89",
+      "bytes": 933,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/114452.txt",
+      "git_blob": "5e50a2f41a2ee7aa91edefeb75b1ecda23e1485a",
+      "sha256": "368f22afa50c208007b30e741ea0c0d49ea9937ee969ca66ecd86a1d9e3b620b",
+      "bytes": 879,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/Apply.txt",
+      "git_blob": "915cbb7d659fa61c1993490a6317da12857fd585",
+      "sha256": "5c4b886d2604a99cc762ab2711705c290da4a12433e26d2d91a999bd6dd78f4c",
+      "bytes": 1285,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/Cartoonist_services.txt",
+      "git_blob": "a0827aeed9b567893e5abf0d4772ef76ba77a5d7",
+      "sha256": "b4bd9f16c9bc7647b68559600c9c4aaec14aeaf218d79a0ce3b76b166f22053d",
+      "bytes": 1412,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/Dear_e-mail_user.txt",
+      "git_blob": "6bbacb720e58cdc6e281939260006f4f5deda682",
+      "sha256": "64bf3c4364db420225ef6dfcfa080477567e0c18dd48e7ac62e125787a151b2d",
+      "bytes": 547,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/Earnings_Season_Underway.txt",
+      "git_blob": "33549f31d4be3c69b22451ad82eeb4a74b84467a",
+      "sha256": "9dd94c902999d997012ff29a7a8c6a24fbb7e027288054ee4d838830a17cea27",
+      "bytes": 1082,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/FBI_urgent.txt",
+      "git_blob": "d52f478362e242ce128f3eba25f8382ea6af1b67",
+      "sha256": "4cc3c1444f9a5a750944a08b1c48991062df16bc345e941aab6e44ea02ac57fb",
+      "bytes": 4450,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/Fastest_Reader.txt",
+      "git_blob": "ec33e94aa210e75f443e078b617c2b13f3087c24",
+      "sha256": "9b8d43a0b4e10bb44440cabd9fff554d8f01bed64a3b469aa31a13ee1fa5aa21",
+      "bytes": 4440,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 11,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/Global_Professional_Directory.txt",
+      "git_blob": "837a43172d842e6b78747f5a8ad2e754a5a8e36b",
+      "sha256": "47bbc86ae46fe0c612395b36e4c347941f7a937c4bf8ee00554b7f48a63e308b",
+      "bytes": 2585,
+      "genre": "written/email/spam",
+      "archive_comparison": "missing",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/Laptop_Bags.txt",
+      "git_blob": "bb4e404737e7841266b63363f1af5c1bf5ef2232",
+      "sha256": "8eb794a1c26ef0f095d687075c27da0e273ceaf3a5e1f84900f5da19c7754446",
+      "bytes": 4430,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/Mailbox_Upgrade.txt",
+      "git_blob": "308a0e60fcdf17ee72fbc088be0c00a8dae0f6c1",
+      "sha256": "6d4f489ba73d135dd81929bc0d5576aed0d37af1f602f8ca2536c559b270793a",
+      "bytes": 595,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/Re_JobOffer.txt",
+      "git_blob": "f3b43d02cebbcff294aabb1f4ba856a30b1c580b",
+      "sha256": "571801d7b741425da1093dd673416db79e3eba2164ffe30e3e7b705f88d0d4e7",
+      "bytes": 3537,
+      "genre": "written/email/spam",
+      "archive_comparison": "missing",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/SEO.txt",
+      "git_blob": "24a73cbeda7569b316c1c05b00d7166d99ee1888",
+      "sha256": "80055695224dea6334761f644f8bf65038c15b40e98794b0e9c0817101562306",
+      "bytes": 1433,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/Secret_Shopper.txt",
+      "git_blob": "5c9638e2343c5fa988d3296151634a036c4700a0",
+      "sha256": "19ab74b40a591fc5ac7a36f7dd19b8336e1d3121bbcd6ed142668c0549a4f283",
+      "bytes": 640,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/SgtCassandra.txt",
+      "git_blob": "0a4978c8e805ccb5ed9301ea783e712f74150788",
+      "sha256": "763ee9fb3cdcf6021a3b07e06c7744ec737ebfefa012fa166fad404e211c829a",
+      "bytes": 1996,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/new_clients.txt",
+      "git_blob": "4baf923627c70c2961b137394ead8dd73ecf9bba",
+      "sha256": "84bf0f8b9f3e303f6e7718a564c96e8f3c04b1f4abc5af5ed5a9ac999629403e",
+      "bytes": 3779,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/record_volume.txt",
+      "git_blob": "9e1b91395615002574e17348aab6cbdb048eded1",
+      "sha256": "8ccc98b5560fecbcedf3c53d62e2a0223bf7b59f0cfc8afca4079f0cb3153457",
+      "bytes": 765,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb1.txt",
+      "git_blob": "e0ca79ac318431e7f12fdbcb9eb69c83c7e76fee",
+      "sha256": "1da075207e3f2ef2912f58a1cc69cdbe1f2e918f2fa03421e7af622384a5946e",
+      "bytes": 1055,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb10.txt",
+      "git_blob": "e5fb29d233721d8df6e3054ee2893c3cd3e0910b",
+      "sha256": "0ef053a2de6387c1f9d1f4ed32fb8513e5c6ade8be487a4b85a8d3a8c2fd7667",
+      "bytes": 328,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb11.txt",
+      "git_blob": "5aa5f347239165035a9d333a4b0e174da3c32c1d",
+      "sha256": "b8a791ec7db732325f4a021d2a81bbd6b4f3c17794feb33f5685869b2162611e",
+      "bytes": 1117,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb12.txt",
+      "git_blob": "dfdceceaaf03651d1b356f6481014f61ddc97143",
+      "sha256": "9e7a5fbcfe2500e2d2e6d38266267e7e5a9bb4426c4d2e93edf843853df66e4c",
+      "bytes": 596,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb14.txt",
+      "git_blob": "8bfb5c8d2c3ba287da08ec6e55d8a383db652ebf",
+      "sha256": "001f0ebf70288dd24fd26ec46d4553c05be927c35cb71758b065d0c8c8bd6ac9",
+      "bytes": 1245,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb15.txt",
+      "git_blob": "9fd03b83eaadcba36e5517e647275c4202388b53",
+      "sha256": "268d36490d0cc92e027010717dfec629937f92ccbcd9d0719cfec3a62a7e28bd",
+      "bytes": 1007,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb2.txt",
+      "git_blob": "34c97b01baa9ad78bc761327c629dfa690a5126c",
+      "sha256": "4961c39c1f2bce8b70cee39d7ad348a5c3f6077607b3c4990d7eb33017fcadab",
+      "bytes": 994,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb20.txt",
+      "git_blob": "bfc93b04c97f67c3067ffd99777182958b7b12b1",
+      "sha256": "53e0795ff90e5411fbf3fe65c8a654bbd7ad3a243c18d4ee4af5b128f18ec18b",
+      "bytes": 601,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb21.txt",
+      "git_blob": "4b3b333793910d82c9b7cd7f1004c0668ad0e0e8",
+      "sha256": "a4042b6dc08ed04307b0bd846ee253a763d7ec8107712cdb7c47507a9999dac7",
+      "bytes": 512,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb22.txt",
+      "git_blob": "e14a11f0899456a892627abda11319ddf33ac7dc",
+      "sha256": "35d19513d10b6e67f153d5dd7e9f5749a6a4f6ecb9cb3449b74f241f5f6d7b7a",
+      "bytes": 726,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb23.txt",
+      "git_blob": "f67e144379dc8d4f82094c9fe62a3b4a9577b11c",
+      "sha256": "e0948bec180f48b7e41ae4e026d5de830ea48bd48d1cdd9d75e87641fbbe56b8",
+      "bytes": 619,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb24.txt",
+      "git_blob": "eafdbfb7c7954a623d4f92f1fb09147d56f5d9ba",
+      "sha256": "5d3c3338cb005acb80c602776f86e11c6c4dd6fe0feadad389131436b592470f",
+      "bytes": 510,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb25.txt",
+      "git_blob": "9f8c9012983a851ecfb9ba6dbb539a7966c9e948",
+      "sha256": "a23fe5688df4609109398bb846f776c8cca37a53168f7153f5f98a00069cb06b",
+      "bytes": 656,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb26.txt",
+      "git_blob": "50bb628b01385d5dc62ac4b9c4207896f2005ebb",
+      "sha256": "aa1e30c00cc6cbcd1eb79952ab6b98978252ecafc6840e805d32dfb63863d34b",
+      "bytes": 793,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb27.txt",
+      "git_blob": "be32a3101a6619a9ff8386556af7d3a2aed1a366",
+      "sha256": "dfb33dc23e9deab85fbdb85565aea38595c8c460ea52bfce9e936359f7958c8d",
+      "bytes": 642,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb28.txt",
+      "git_blob": "bc2a2890f0a96c90273236d38b752f2ec01e48e4",
+      "sha256": "f8b49e8b7e320583b82d7bef06979c916a23d8a4bed76ca0f1cb2bd65a298d02",
+      "bytes": 703,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb29.txt",
+      "git_blob": "2c3333249b862ba00c01bf472e577f24ca62c57f",
+      "sha256": "33a5fae7855435170ccc64f99e872f74cfadf554e2fa6a001430497a6bb0231f",
+      "bytes": 422,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb3.txt",
+      "git_blob": "829b73504ef1aa4d9b1a186446499c602372187c",
+      "sha256": "e4276388c4a40e419caa97a2ddd5b4e18531fbd3efb349d447890a389d035729",
+      "bytes": 884,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb30.txt",
+      "git_blob": "17b392138c0722c44621916db9696c0bf0c8fdac",
+      "sha256": "883d6c34608ce683a14637e9446e951f2bb75ac66aef42e71062aea3a2be7775",
+      "bytes": 650,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb31.txt",
+      "git_blob": "7754ef2136acd9972fbea2887a4da15fde4a91ba",
+      "sha256": "3b3c5c198749a9daf76122881f3c5a2db9c322611b77f632f0cabd94b3ab6728",
+      "bytes": 4907,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb4.txt",
+      "git_blob": "1d6cf11f5ef30e9af49e2ae56c1156b1a481ed13",
+      "sha256": "22b85b4477aa7c1a70a67fe62cbb83a8730a144d177718df839c9a0e0bafde4d",
+      "bytes": 1026,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb40.txt",
+      "git_blob": "33a01022f07ee8b584a0a3a49f2f73f41cbf6d27",
+      "sha256": "fbc54351e0f27b6cdb8a615eb48285c7940cc153d50be3980884dbb71c23182d",
+      "bytes": 665,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb41.txt",
+      "git_blob": "f830feff0c3acc2791190955f685edcf85d12a4f",
+      "sha256": "7cbc5f2dee555d8e1dfbe35defcdb2efa5d9d69833cd98049e81d4aae5ffe4dd",
+      "bytes": 1438,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb42.txt",
+      "git_blob": "5a0fa920759af62b2fe0d50560164d559c7a00ce",
+      "sha256": "d5e8e56854df38fbc01c22afb6c8fe3b1ad63bf6616df02a0bf580f64686cb90",
+      "bytes": 718,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb43.txt",
+      "git_blob": "2716285b209f9f95d1f7dad05e8644da97521b5c",
+      "sha256": "4368f6c0fa54d20dbe8c14afcb42f5839f1c29f55f676217f72cebd87c6c2e2e",
+      "bytes": 563,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb44.txt",
+      "git_blob": "1e533832df134788f964f67e1d39c8deab42ab8b",
+      "sha256": "7b52342ac10578b897f5a8f134adfb69ff4a6aac0164491e74028c19c3dfe2f5",
+      "bytes": 1940,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb45.txt",
+      "git_blob": "f6486c8e6db4d7109087c51402fed318ceeda067",
+      "sha256": "3540b010118b68bd2d21b3aacf393456fa8be4d5cf20e004b91157d16ab0703d",
+      "bytes": 494,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb46.txt",
+      "git_blob": "7673b3bd747076913113c3d3b761de0ea3938c14",
+      "sha256": "85e4e55c0cb5c191ff219473ebd42ea32cd5bf923f5dbac3667ae56422fd17ef",
+      "bytes": 596,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb47.txt",
+      "git_blob": "211c0f0af45a9fb1d551127f9afdb735e241643c",
+      "sha256": "9e7abac0c67fcce10ace0e6c1f914a3ac41771f39ac8712f32da1c2479243e21",
+      "bytes": 510,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb48.txt",
+      "git_blob": "5ace0022a6ceb2e78772c83f1827e944300a1f1b",
+      "sha256": "3fb696f361ee6861f272f8c2bb3fee172777ad89096a47199bd63a08ef30e74c",
+      "bytes": 1827,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb49.txt",
+      "git_blob": "60dcff39f7c776bd97c02b5c381b4797f32254f9",
+      "sha256": "78253feb4404fb48ba75712d08ac0dab702c5b0d563228733051eb1caf46c84d",
+      "bytes": 1173,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb50.txt",
+      "git_blob": "20d466d5d3c1f00a6519e72039295f39233118d6",
+      "sha256": "cdee4d980cead3e854a7ef990c058ab5f2919e0a6032c7dddfd4181663016cd7",
+      "bytes": 627,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb51.txt",
+      "git_blob": "9f3e6e28c769fd860b19a81f9d49c3d2eaf34ce7",
+      "sha256": "a23a0e3f3ad824fba9e7713abc8e3f09f0afb3a2c919a152bde0a5432a09bff7",
+      "bytes": 771,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb52.txt",
+      "git_blob": "069993c665aba8421df32d118eeb5cdacf992d98",
+      "sha256": "197faace6836f098077a652f4555b164d09e6aecf7cd6d6812f05fbbbdfb6fad",
+      "bytes": 1152,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb53.txt",
+      "git_blob": "8337c83967b0d1f699bd0125084d11452e87a103",
+      "sha256": "33c47e17bebc1a683efdeee64efb997e7888349a87dc6362b5d0600bf629947f",
+      "bytes": 599,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb54.txt",
+      "git_blob": "ccfe601bb69f1b79e24a6dad5269ead9d24fd930",
+      "sha256": "aade4fc9a5e1fe55e26d6c01364d40ae5771d5ee9847f9649b45d1a5471d2597",
+      "bytes": 626,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb6.txt",
+      "git_blob": "6c799040c8110b30a08888f6a9d37e798c81aef9",
+      "sha256": "8ef3efc7e31aeeffa93c679c97b49e3d77255888c2093416eccb80ff9e190a70",
+      "bytes": 1160,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb8.txt",
+      "git_blob": "aae22c71fdbc01c76faa4952145a0dff151012c0",
+      "sha256": "a2a0530410fd46d9affd390da9facf7009a03165f80fa2a0b89a3cffe9795a6c",
+      "bytes": 2110,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/spam/ucb9.txt",
+      "git_blob": "9bc24ca4be812d80ceb2c6de4f4abae283cf2c90",
+      "sha256": "487a30db67635ac29f3fad89f493470841a20547bb4f1fb97ddfa05dc87fd906",
+      "bytes": 1091,
+      "genre": "written/email/spam",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2114716.txt",
+      "git_blob": "877ea095b13fdff212c78453240b404e1a201ad8",
+      "sha256": "bad771a98957fadf3494fd9284414e3db0acc88e9ed7746497815e122a8732c6",
+      "bytes": 4508,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 12,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2121270.txt",
+      "git_blob": "05ac537c31a38ce526a78afe6f8527ef4bceabbd",
+      "sha256": "86e88f8d7a2018e5f01f587a25807dab10e51d4ef7967d80b8ae9c04d6825902",
+      "bytes": 1247,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 8,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2125109.txt",
+      "git_blob": "cd7c301901e8aa6bead98ebbfbbffed1075b17ba",
+      "sha256": "c9f79a1a5f69f3a048fc5362790c694cf291db2e048e366d82d6f88990b0e55d",
+      "bytes": 1894,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 12,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2129640.txt",
+      "git_blob": "b6df2bd95821ec23a309bfe30d46ffd1fa4be50a",
+      "sha256": "d2f353f7b67c88aff7a7ecb3304fea40c8ca6090a83ddf1609a469ecb4bfa326",
+      "bytes": 986,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2133315.txt",
+      "git_blob": "3d7137fcf513c56885fffac2b73624f4ecdea24d",
+      "sha256": "c1f1ba6dbda4d935ac76a60138b5d76715276340f91dadb0f766bf8916574aaf",
+      "bytes": 1269,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2137010.txt",
+      "git_blob": "55dab5476305266400c93a24e1c3c56f3b35248c",
+      "sha256": "2b6f6de7e25347b15351ae397bcba7b611d63687c9845acfe27d1aacc32bedc2",
+      "bytes": 5433,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 17,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2144868.txt",
+      "git_blob": "2302ff19849984fa63fdbe95ecca6a9efc89a42c",
+      "sha256": "7f579af24c9e1bd304084420eb7a9e9be68a416326a742ca401d575e15a0c496",
+      "bytes": 595,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2148080.txt",
+      "git_blob": "c1ef97e6a2fb6154dc720d0e274c74dac9cb3aba",
+      "sha256": "88170cbe6ae765c02ad17c42dcd3c186a6770f62894319a0d7718958122877ef",
+      "bytes": 2133,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2152883.txt",
+      "git_blob": "10e24b4d6e52212b8373c346d3012de5b3adbab4",
+      "sha256": "84bf14b9a5bd8bdda559d8bbf1591b601565dd511b7c77dce1afde87329875f4",
+      "bytes": 970,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2171003.txt",
+      "git_blob": "310bd26b6c80ba8b7cb06b8118d60b0676d2a8af",
+      "sha256": "21680a20e9d22e622d8557de331f7ec414de1f6accbb46b160a21f89b58fe9c3",
+      "bytes": 743,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2173878.txt",
+      "git_blob": "6fbe0fdd5ef1ff0fef8c9ad2fe612826d4735c01",
+      "sha256": "3958bf56a1fd8677109f4c01bfbbcc7cd92f87a01a3539dc2a4f4c854c85e382",
+      "bytes": 4782,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2180740.txt",
+      "git_blob": "43a93973fd15acae6396a6df6c7b1c11656f526b",
+      "sha256": "abc2377434313ad021fe854c96d4b90586b69d731b73f1b58be4cc04882b11ed",
+      "bytes": 732,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2183485.txt",
+      "git_blob": "55a489a7ad04801ba922445741266482a7645545",
+      "sha256": "71328ae7baaa3baec17e0d9f454dcc4702c0752b64e908b5ce44c038461ac4ae",
+      "bytes": 792,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-003-2205935.txt",
+      "git_blob": "e722eb76ad90d117721c25e3912e8a9a7daecef5",
+      "sha256": "32453ee46d452bf51d6e57b6102f5172733d14295c7bb45c1be7f97ff99d1150",
+      "bytes": 7004,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 10,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-034-10062451.txt",
+      "git_blob": "5f68f0ebf0222061a75af1c97b8d78f804291097",
+      "sha256": "5604b3013ce8a4db26aae6ca3e702ceea665ebb9d46de9afff9861fa8f4e5ffb",
+      "bytes": 2058,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 8,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-034-10066763.txt",
+      "git_blob": "75d2ee0d5bd145c0ed8ca376836757c178d7033e",
+      "sha256": "82e04209327a90bb889dc42d10b75d84853e00d6c47387b5152fca94a5bbc74e",
+      "bytes": 966,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-034-10069772.txt",
+      "git_blob": "2d196bf12020b30b62fcd7f17a559e0738e1078b",
+      "sha256": "dfe848995ab28b93da0cfc4edde0fd15e47eed09fa708e10d102ca1417284211",
+      "bytes": 1449,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-034-10073419.txt",
+      "git_blob": "e17084ab7d851852de429629cfd3fb0fdd33bf4a",
+      "sha256": "d893810d48074fa2cec4fbabfea9d584097d0ab2d5705eb2383d2fe9eb7767c5",
+      "bytes": 2002,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-034-10077455.txt",
+      "git_blob": "64d756f9ce23c4ba3d5611e5a3137fa1a5dc3b2e",
+      "sha256": "59e5ead08093fa1b9b8b5b7b957f18e7eefe357db1a7ea93f183503a41da1c47",
+      "bytes": 2924,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-034-10082707.txt",
+      "git_blob": "af45c39bf26a803a5d697e969719fa93bcac3743",
+      "sha256": "71c4de852f3ed2ed9d9b341758caac8dfdb03f5c8492b87e414459058d4ca2a1",
+      "bytes": 2421,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-11485666.txt",
+      "git_blob": "4bfbd4a9eabb8aabc353385cf151b25d31926b8f",
+      "sha256": "94a4eedab4bfb036a4dbd902590bbb2843fda98d99d0b75507d6e5f53ef81017",
+      "bytes": 1781,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-11489622.txt",
+      "git_blob": "d8cd36fc3bb5747b59a0b6ba4705be6dac6a4625",
+      "sha256": "c2edb7a9941db1b0f2d2380cd139432f84d291818a95d4845d782b73a6de6ccb",
+      "bytes": 2518,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-11493928.txt",
+      "git_blob": "5b521f1104ffa4cc58e80d319d63abb4dafb3fb7",
+      "sha256": "b2e09a4598bbe026745c0c12af655f2a441ebac62366d09a43d9c30b9e478ccb",
+      "bytes": 9938,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 28,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-11506817.txt",
+      "git_blob": "6cc81be92ec5ac9f45a4919f34577a807b9a9789",
+      "sha256": "ea3f6b1e62af866b6fe518e32a34bdb20c56ae3ee1198ab47acc1d8e6e628217",
+      "bytes": 785,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12119260.txt",
+      "git_blob": "890e4fd2660ba99243fb7df43fb29beac7f28731",
+      "sha256": "ecd8e785c5105458dd5d79b8cc4a5dc3df1d4aca9fe32af1e5ec24fc2b3534d2",
+      "bytes": 1101,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12122969.txt",
+      "git_blob": "950c84ef4b011e4a3f8b150b6def5f41b5980b6f",
+      "sha256": "12d1b87530de5aa3ab5b8dbad5fa28e236a5fe285be05d1f125fabe039181164",
+      "bytes": 5131,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 9,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12130258.txt",
+      "git_blob": "539514bbb4e4d827afbbce8dcac9dccd633efcd4",
+      "sha256": "58ed9efcc4613f18ae8c70c637655325931a003e68a9d9a6eec0cb8c7d2de29e",
+      "bytes": 925,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12133410.txt",
+      "git_blob": "497d3a51fb98b938400a40ad25d26e04f96dec94",
+      "sha256": "b26ae7c9b2aebe5c6b6d96423520be1bdf01b5f94a01443bb3772d314e15922e",
+      "bytes": 2790,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12139072.txt",
+      "git_blob": "27aa40f9375c2e6f64e72fbf1ff4d585f3283ec0",
+      "sha256": "97fdf1aad68089aca4f7396aa84a7848009934165262b7ee32ad632e9c2a9a59",
+      "bytes": 946,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12142206.txt",
+      "git_blob": "0e38e4d5492e4a6e208efcce2c8172d03032252d",
+      "sha256": "bfd9e8383b4845bd303694d73aa0ecf0ee92407501e3661ca44cb5f5b352f051",
+      "bytes": 1841,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12146425.txt",
+      "git_blob": "57cf8894611613f3d38d904e0cb8ff1a64ab8b5d",
+      "sha256": "5219ba303b0ea44a18f76bc8e04aa68a18a8557526c9c0f612e35af5b10c199e",
+      "bytes": 2694,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12151335.txt",
+      "git_blob": "90b704f53e72def69dbc05ed420954fd7fc5a575",
+      "sha256": "79ccb0a16996fe64ff5496d19bfa1e8dd7f20896d43f80b3c073754eaf73f05b",
+      "bytes": 2112,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12155427.txt",
+      "git_blob": "8f5efa80e39e1ff02d494b9e7cf691c2cd4f84ce",
+      "sha256": "35d5a554a947cc9cce33c55bb550e38284fe4af6bf5f52e46aa516f4747ff6c3",
+      "bytes": 1187,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12158926.txt",
+      "git_blob": "521c4e2bba8a59769a3c6f76e8143fa305557d66",
+      "sha256": "98fc7d76c0afa65f955d8284e434b6a8a397c3c87e41ebe1a878e9843351efd3",
+      "bytes": 1876,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 18,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/email/w3c/lists-046-12162937.txt",
+      "git_blob": "42e1ff6333e4859e10a403c33bf3884afafb3ec0",
+      "sha256": "19a79c7b0f2d0157d7ee3e238e6a95690c82f20d9a72409624011345e0839c23",
+      "bytes": 2487,
+      "genre": "written/email/w3c",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 9,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/essays/A_defense_of_Michael_Moore.txt",
+      "git_blob": "614b89e467eab8483951bd99f97ed752e8aea075",
+      "sha256": "4d6cff1eb22a00e459a4f73d8d0be084f98c833648ed70d2d77ce1cc53680c98",
+      "bytes": 28970,
+      "genre": "written/essays",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 76,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/essays/Ant_Robot.txt",
+      "git_blob": "9267ba50149784f16846b24beace2c672f217327",
+      "sha256": "e60f89a2dff3e2426eec2aceac174fbeccfeb15dc1b7e8cbfc37636bbdc4f8c7",
+      "bytes": 57871,
+      "genre": "written/essays",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 34,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/essays/Bartok.txt",
+      "git_blob": "38452286f8411ac822d11da9bde6c6110a52d816",
+      "sha256": "d4693d004c1b0b6f559b27d8a6be943533a1e793f5a4502ecbc3c415e6c29179",
+      "bytes": 28205,
+      "genre": "written/essays",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 14,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/essays/Black_and_white.txt",
+      "git_blob": "708726bb576bd7d7a1f78427df885e597444812a",
+      "sha256": "f72ad6c577484226629883d18879e730007ee2a9431f15a02f0ec2fa3ff87f71",
+      "bytes": 20463,
+      "genre": "written/essays",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/essays/Homosexuality.txt",
+      "git_blob": "fdcb3cedef135b9e3749d44bc790297e43866bdd",
+      "sha256": "37cad518d7db1548e0016abb4564a6db6eafcad3183bcb5b5b636f84b1d60340",
+      "bytes": 19346,
+      "genre": "written/essays",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 29,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/essays/Madame_White_Snake.txt",
+      "git_blob": "b7963a90ea99c8b06c191ed0b6db174962829b6a",
+      "sha256": "463a180c18c6e726c5a752497e034401949fcf3ecd696aeb91f116edac484337",
+      "bytes": 12652,
+      "genre": "written/essays",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 16,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/essays/Ohio_Steel.txt",
+      "git_blob": "3f33166f66af98ba9385b62199b6e51bbd27da9e",
+      "sha256": "c3c060c062444431a3c5e6b5102e6b84f25910650e924f94e74999f0551c5998",
+      "bytes": 20783,
+      "genre": "written/essays",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 22,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/essays/anth_essay_4.txt",
+      "git_blob": "6232cf35c80d7b2fd5f0dfaa6d05f8a28b366301",
+      "sha256": "66a11377b7c845b568bca4054a9b0924e7aa6765b050887736f08af996fc65ff",
+      "bytes": 21554,
+      "genre": "written/essays",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/ficlets/1399.txt",
+      "git_blob": "83be6c941e040d9dccc9b377ffd5ffa6cf585961",
+      "sha256": "74cdc5bf2752480b579d3e14848e343df3860912db364d82f3aedcba44fa8434",
+      "bytes": 31018,
+      "genre": "written/ficlets",
+      "archive_comparison": "different",
+      "apostrophes": 109,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/ficlets/1400.txt",
+      "git_blob": "76386bb10a6b22e48546cdc86faba34d41db5932",
+      "sha256": "78393ae7ab51f85ef2001a70880728ae5426c55413686d471a3f5782374dba7f",
+      "bytes": 30012,
+      "genre": "written/ficlets",
+      "archive_comparison": "different",
+      "apostrophes": 133,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/ficlets/1401.txt",
+      "git_blob": "d49bbdf2f06592a38c23c308ed70f73f282a2169",
+      "sha256": "169232a7745ff88f4c256a707986e7db6381442a6da7fd3f7f78901649782be3",
+      "bytes": 27853,
+      "genre": "written/ficlets",
+      "archive_comparison": "different",
+      "apostrophes": 124,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/ficlets/1402.txt",
+      "git_blob": "55549d6d63fd909cb74f223891c6993b3e81ccaa",
+      "sha256": "f4a08065e03f8aa525a180bcdc604cbefea5790f45f60215ff061bcf0722ff78",
+      "bytes": 31114,
+      "genre": "written/ficlets",
+      "archive_comparison": "different",
+      "apostrophes": 117,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/ficlets/1403.txt",
+      "git_blob": "7474ab659141e2ce1f8c45070328e13a58002804",
+      "sha256": "b016c0ce1e432cf3052bfddb09110c46cebef550e5c09dcb544bc384d5241955",
+      "bytes": 32085,
+      "genre": "written/ficlets",
+      "archive_comparison": "different",
+      "apostrophes": 140,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/fiction/Nathans_Bylichka.txt",
+      "git_blob": "b1e1772d5b8caa14647f174dfbcbd378a6f3d36e",
+      "sha256": "f988687cd505f0b5d1856a03d52283bc6755acd20f18e00ae9a149eeb599f7db",
+      "bytes": 59791,
+      "genre": "written/fiction",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 297,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/fiction/The_Black_Willow.txt",
+      "git_blob": "32515c5680ef0882cbaf3e14303c605ed45d06b5",
+      "sha256": "dd4dc62c25c4f54459d1b2934ffafcd37712af2a6ec9ece2e4800c1afe46df00",
+      "bytes": 23400,
+      "genre": "written/fiction",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 62,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/fiction/cable_spool_fort.txt",
+      "git_blob": "e0a38ffb43b5b806868858877fb64cafc134fc32",
+      "sha256": "39019711a3a82f6dff952525e1110dfeeec3495ab2497de6d9b2a70aa83d057e",
+      "bytes": 9103,
+      "genre": "written/fiction",
+      "archive_comparison": "missing",
+      "apostrophes": 38,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/fiction/captured_moments.txt",
+      "git_blob": "faad8c38a752a0a80f479e508fa2105398799738",
+      "sha256": "6c4622c002747096c2efed43002da16d7d4811b7d36aa6db482170bcaf0c9500",
+      "bytes": 39501,
+      "genre": "written/fiction",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 117,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/fiction/easy_money.txt",
+      "git_blob": "7177431dbacb8568ed90320ffede5f6e8b428546",
+      "sha256": "9b4578a63014761aa877dc68c2b512fdcfd77089cfe089bdcae9b8ab40952828",
+      "bytes": 15760,
+      "genre": "written/fiction",
+      "archive_comparison": "missing",
+      "apostrophes": 80,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/fiction/hotel-california.txt",
+      "git_blob": "8d3c6f32aebdb18f9c6eb93c7bd3ba404a7e0d52",
+      "sha256": "df06203fcf64772b76947eb6b140a6e9664052b4ffbb295e834f0d1f0234f7a7",
+      "bytes": 34953,
+      "genre": "written/fiction",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 189,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/fiction/lw1.txt",
+      "git_blob": "ab5dc1a786b9ef957662a2a994a9ae2181c48874",
+      "sha256": "50f2dae0e4b54613a736f1f600e12496951ed8e9f76fba12dd8d83282f0b78ea",
+      "bytes": 4182,
+      "genre": "written/fiction",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 19,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/govt-docs/Env_Prot_Agency-nov1.txt",
+      "git_blob": "3f83414f28c2e11ef350bcbd6171a23230d237aa",
+      "sha256": "3eb7c6161be8d69d0586f3bcbbdce8ef7e7cd84b53e2abd6458542f41df92782",
+      "bytes": 31404,
+      "genre": "written/govt-docs",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 19,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/govt-docs/LSC-Protocol_Regarding_Access.txt",
+      "git_blob": "e28d85556be38d7f284ccb2e4944d25e8d6ab83f",
+      "sha256": "ec16a1e1e8d0deca3db0d6e25800e815e518441c29b7187b4bed6fd2773275f3",
+      "bytes": 13682,
+      "genre": "written/govt-docs",
+      "archive_comparison": "missing",
+      "apostrophes": 18,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/govt-docs/Postal_Rate_Comm-ReportToCongress2002WEB.txt",
+      "git_blob": "ec98b966f09ad2cfa48c8941b82446ce16517de0",
+      "sha256": "c6fa8eb6377ce0a2bf6e7bd945ea32f31acf9dc0bee848a99b8f850b0d06a09b",
+      "bytes": 32630,
+      "genre": "written/govt-docs",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 30,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/govt-docs/chapter-10.txt",
+      "git_blob": "2e28fe2d576bd5edd3dfea214d0320cc8da30b77",
+      "sha256": "1eb8ad648dc2916cd6ec7f17f3fe7fe9af6faf210f469dd35a953f90f3ca0670",
+      "bytes": 47306,
+      "genre": "written/govt-docs",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 48,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/govt-docs/fcic_final_report_conclusions.txt",
+      "git_blob": "3495ce9c1242f2dad416ce8b762412951d11e77b",
+      "sha256": "8e052d7db27f81d406c452b1741829ab2c04ae5471370eb44c4279817abea6b0",
+      "bytes": 43819,
+      "genre": "written/govt-docs",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 46,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes1.txt",
+      "git_blob": "5bdaaf8cfb0af688489ce45eba47805dab0432fb",
+      "sha256": "ae7c9d22988894b841cc9bba5fb455bc1242371e8e2fbe09b391e1642f43cf6b",
+      "bytes": 20451,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 80,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes10.txt",
+      "git_blob": "e07ae9ddd6940a2eb7fc89d9b92da5109e5cecc9",
+      "sha256": "486b5f99d48b4df63db8ab7b685d9cc0c145364b2018a8e8307baab6ed1b65ed",
+      "bytes": 6973,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 21,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes11.txt",
+      "git_blob": "5c0721ddf319c59c0b62de2c50d3580522482963",
+      "sha256": "9f38e2c6138892122cc370308dc67e4243986a58b91f0d0ed05526720ceb1541",
+      "bytes": 7793,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 32,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes12.txt",
+      "git_blob": "ffcb11450b70b93a7ed2e78ed05282c17255f6cc",
+      "sha256": "e776198b2ba7b56e1a603d473a9beb2813ab709182837a099c39c0baef5fac27",
+      "bytes": 4891,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 15,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes13.txt",
+      "git_blob": "476c3963ef43977208a96f842a80707864e3f89f",
+      "sha256": "fdeac3143c1d2d7c3cab9751abcdc9d2df3e7a3c5559ab7f116ab5a13bfd0233",
+      "bytes": 6744,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 35,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes14.txt",
+      "git_blob": "da2efc0e55738230adc1d6d6dbe56c101814ea7f",
+      "sha256": "3714f03437ad62a47396880df51399b9675d321b907d92550324c0fff52fa255",
+      "bytes": 7297,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 28,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes15.txt",
+      "git_blob": "fac9b76a6f55888a64d4ac86fb025bbb6bbecd56",
+      "sha256": "d116fc03f08b21b62613fbd605078619aba46ee2c0c838aec531f430c59bc85c",
+      "bytes": 6076,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 23,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes16.txt",
+      "git_blob": "0862bad6426a87646e2807ac4515f2c2e60bf92f",
+      "sha256": "3e80fda494c52894f97096a8cc7e2a97774744a1408bad0a1b70204ecab1f0c6",
+      "bytes": 10909,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 31,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes2.txt",
+      "git_blob": "e72dfdf25ddc8768cba990d2a996e4596b01c996",
+      "sha256": "2ed69268db5028d019cbe6d1646a0b88a9fdaa682012de572f3451f0eac8a696",
+      "bytes": 14294,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 73,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes3.txt",
+      "git_blob": "db3b2fb865049bffb0f873433f8d7bd28322cd79",
+      "sha256": "a07e559a1ff45032eb59119f56a5c53278125097f67289b579a9573722627bc5",
+      "bytes": 13856,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 60,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes4.txt",
+      "git_blob": "4a669fded1ce702f3fadacb33cc2916e107cc51a",
+      "sha256": "305ac21e7ec1d5c858bce33ce502c1ef96374090df961bed2e2fb1347b8729cb",
+      "bytes": 12658,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 61,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes5.txt",
+      "git_blob": "cceb719488c3fddfb7b5cfab96af0e6189103dee",
+      "sha256": "0b79fae1c62cab5d85bbfd8e5dffab8bc22ec3e60030c551a77ddedb6483955b",
+      "bytes": 9975,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 37,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes6.txt",
+      "git_blob": "0107a28122900b6ac04682e37c8d4a5741f7d662",
+      "sha256": "0a3fc6b67725f22c12c002243ef81839d8f043d041135671b8110b0621f099f9",
+      "bytes": 7814,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 27,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes7.txt",
+      "git_blob": "cf3fa1a45d5692a539500d84e317fa1b0339f371",
+      "sha256": "d6fcd2c4e36c474e4c229af230492b3566f02dd7c32b6c218f11d25d2f4f2b3a",
+      "bytes": 6101,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 23,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes8.txt",
+      "git_blob": "7d2002c07ee7c8fa884fd13eb1d02eaa386111d1",
+      "sha256": "45be741314e277ff9a4c0bb352523c8b63c23e6b061b83818832fe3f3214692f",
+      "bytes": 7299,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 24,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/jokes/jokes9.txt",
+      "git_blob": "67832ef878372d5ce1ed2c135d8e8e5a19309ce4",
+      "sha256": "38291f71004d4d2743c0dcde77a5ef5b7a82519d977de9c70da2a2a28c1b9f87",
+      "bytes": 6054,
+      "genre": "written/jokes",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 22,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/journal/Article247_327.txt",
+      "git_blob": "7e583ea8588bd473a831705ee43d0832d8c0f89e",
+      "sha256": "233634ebd955b52e53cbf88ac1277b5c2246c83d0b61b4b5c56ce82f82fdbcd9",
+      "bytes": 4951,
+      "genre": "written/journal",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 31,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/journal/Article247_328.txt",
+      "git_blob": "adc23679a18e8346a42291662e03a7faa441c293",
+      "sha256": "ab18edc7726529377635212a4c5ac9da2225fba7cb14a13becea3eaa5c5bde57",
+      "bytes": 3110,
+      "genre": "written/journal",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 24,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/journal/Article247_3500.txt",
+      "git_blob": "fab7ddefdeaf13e6e14b5fcd2425ca30bec5fd88",
+      "sha256": "1748bfd978f75bfd8dee6f8983977f0ddb2760af8c3615ad2ec0429e2eb87cef",
+      "bytes": 4106,
+      "genre": "written/journal",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/journal/Article247_400.txt",
+      "git_blob": "0c37412bd9ab3302b4b26c6240ab0fbde50b8289",
+      "sha256": "bee5166a3d3080f2f02957f3c074afba425c78eae7cf7c8193277cfa2d161e08",
+      "bytes": 4356,
+      "genre": "written/journal",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 12,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/journal/Article247_500.txt",
+      "git_blob": "c6945c384a8161cb2a0f93a869ca082d5ed4cb13",
+      "sha256": "f1cdc0264d2b518114cecdbf0bac14b0eb69576bad2b23d3d8da68bba8e1e15a",
+      "bytes": 4713,
+      "genre": "written/journal",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 18,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/journal/Article247_66.txt",
+      "git_blob": "39e49e05328025d1b12b80ad520826dd75f805b5",
+      "sha256": "642ccc2ff83ef0dfd9749eb9c192af8378923c328a73eefad9eb640587d3bc89",
+      "bytes": 4153,
+      "genre": "written/journal",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 24,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/journal/ArticleIP_1059.txt",
+      "git_blob": "7ad961afc37a1772b9a4ed7b246585e05b656e6a",
+      "sha256": "cd03f2402a74c2a81286dc74ba3209922d36660c9341f3c35faffb13a6d4b1bd",
+      "bytes": 6094,
+      "genre": "written/journal",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 11,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/journal/ArticleIP_1060.txt",
+      "git_blob": "a6539254358368e1b20918d27e717455624730a0",
+      "sha256": "af5069972902d0861760859ba4190839a62ef09bb167d0492df06c249474de50",
+      "bytes": 6101,
+      "genre": "written/journal",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 14,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/journal/VOL15_3.txt",
+      "git_blob": "57b7259b709916656b20708c7fd0d773e7a52c29",
+      "sha256": "baf4cf698bed4d34f0da0283a584db2d0c153e1dd782fee28c43661c8a4c4a34",
+      "bytes": 92512,
+      "genre": "written/journal",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 189,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/110CYL067.txt",
+      "git_blob": "816c1a022c52061d0d4ec00fabf01f708fedf039",
+      "sha256": "524a407d9577a3672e6744168b244e781c315d2b4371eb2414fb99c205306a23",
+      "bytes": 3094,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 12,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/110CYL068.txt",
+      "git_blob": "c803d9c79b32030b3007a23572472b1b52795c27",
+      "sha256": "d3cc7ac3598c47a01e745c5accae1f5685839401b3ca4e65d86773d020fa7f20",
+      "bytes": 2857,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 8,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/110CYL069.txt",
+      "git_blob": "b89ba55acec307d3690ca7bdcea5302e9dc90574",
+      "sha256": "84e4d5cc080dff12a2a7ace6413de29a6929452813cc33ba17e92b0c96a7598b",
+      "bytes": 3651,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 9,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/110CYL070.txt",
+      "git_blob": "152d35bcb87fc731575ad413781175cc172d0d1e",
+      "sha256": "c1504e106cf29b2a6ecbc0626d3fa25a0d56496fcfe9b0313143c11f214dba46",
+      "bytes": 1380,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/110CYL071.txt",
+      "git_blob": "44f3cb61e07378408cdbbaa91059dd06a7448b64",
+      "sha256": "3885c05852b4c99d798f77697e851bd17993b20561c9710bc58290319119aa45",
+      "bytes": 2804,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/110CYL072.txt",
+      "git_blob": "9141306700ffc28f136e5012edda94406158946c",
+      "sha256": "c545ab693453ffde22841b5d9e0a70a45985583f596024e6dcaa4b83946b6c50",
+      "bytes": 978,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/110CYL200.txt",
+      "git_blob": "d10c51b54d77c6c1095cdbe9d18d9b85e92183af",
+      "sha256": "55bc108bb0f18f3eb1d53e2e5fc4f315298edd0a055800eab5471df9eef4cc8e",
+      "bytes": 2603,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/112C-L012.txt",
+      "git_blob": "a8e62af5b69e97680c5f10fe342aab416be87a84",
+      "sha256": "d2298970ef1a13f5f62a9188931beb2b5a25be481c40552acd35ec3053de55df",
+      "bytes": 1829,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/112C-L013.txt",
+      "git_blob": "cffa4265c035b6b1eb6f3c252522f7856b9b2e47",
+      "sha256": "0e6c74a11ae5f5d61e00da9b91e4f98ccc7cb85c00c822aca50ff9165b9db796",
+      "bytes": 2430,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/112C-L014.txt",
+      "git_blob": "9d0e6fc2eadfd8b8db9e7c13521b1c82a7bd1528",
+      "sha256": "e4063d02ac28c4a176655d882bf630a70a17d043d87fb9e527e8b5bbc30b1311",
+      "bytes": 1664,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 12,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/112C-L015.txt",
+      "git_blob": "4b7119834e048bb10148600a13cef2ded6e4db47",
+      "sha256": "1f82b5e6f19e1ab308c2c9005e896e4912cad55e56d5e9f7891f0b1af3c5f4da",
+      "bytes": 1941,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/112C-L016.txt",
+      "git_blob": "471e92f83dda608230afe1d2b00c1f8793f217ab",
+      "sha256": "72d986662d02c56fb588dc9be792ba41e8111e461b221edd902b9736d0286148",
+      "bytes": 1340,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/113CWL017.txt",
+      "git_blob": "37aa9f100615d0ea3436deb9f2d2e7b5b5951ff3",
+      "sha256": "50e542c5c9a831741b3566542c82429b385e468f5291f79c3328d109b126fe70",
+      "bytes": 1740,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 10,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/113CWL018.txt",
+      "git_blob": "4680b98466a4d0999659b9a239cdbb7cf95871a2",
+      "sha256": "b29da427fc6f7c3d64c2d6c4ccae282eeaa66159439c50eebf785c06f0bf941a",
+      "bytes": 1436,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/114CUL057.txt",
+      "git_blob": "a366b9f85e8be64aada64206cac39d16a1c9f9a2",
+      "sha256": "5b1509a730ffddfb2f7a3e07c1b5f24c60d58540887f3a2076d3df3bf61e7f0f",
+      "bytes": 1620,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/114CUL058.txt",
+      "git_blob": "8413efb3dd6457e2120b0596d5522c98927d6ebd",
+      "sha256": "d965af800090bf1d2c521242473615faeea950aabea0068ff54f670449654408",
+      "bytes": 2424,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/114CUL059.txt",
+      "git_blob": "9081358aa64e4196b3b21214121f4bb848a2fc56",
+      "sha256": "f63eda253725b292568ac737b7ad913b1c1e24bf49bb1c10e2d48ac0f6c7c924",
+      "bytes": 1958,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/114CUL060.txt",
+      "git_blob": "e3f1dd280e8e37f105346f245cd9cfa616926eae",
+      "sha256": "9872be3cbfe9849bbebfd0e3f34fe0f2c4ac050c0b7ecbb84eff1547a1ba1790",
+      "bytes": 2699,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/115CVL035.txt",
+      "git_blob": "ac6104dfc136f797b853a287f9ed404daca6cf4c",
+      "sha256": "1a95ee1251a613e0b5cc84348745802793610c7d86e0e5b4a1918ab85d70594a",
+      "bytes": 2270,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/115CVL036.txt",
+      "git_blob": "504c89f701c7b3dd145a1f5f6af8a2c257492f96",
+      "sha256": "e3415475618112bddf85aa16c88a09623926ae99aef2e00217578c673ccebc9a",
+      "bytes": 2238,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 9,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/115CVL037.txt",
+      "git_blob": "daf38a473a40048f176e21d6ea360c2c4e457f34",
+      "sha256": "0ec57b50830f2ecad4f519de8c24e8978f938a84d735d08157879f009c5163a0",
+      "bytes": 2886,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/116CUL032.txt",
+      "git_blob": "cbc8c9c8622d9b93cfc034ef25ce8847908e43d3",
+      "sha256": "7af1b7aac8da9548bdc1983329fdb2e0609021391b439c8fa2a3ac9e9f8f356f",
+      "bytes": 2496,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/116CUL033.txt",
+      "git_blob": "0490d71597bf02041f80e8890d1470af9ff10271",
+      "sha256": "12d5e9bb79b5ea5ea6a694f425dd44982ec0c839404f5e9f330155c6a571cf0f",
+      "bytes": 1975,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/116CUL034.txt",
+      "git_blob": "1dc80a80d768318b53209f373d69da09a07b8dd3",
+      "sha256": "6066fed4618c7bfd4268f18883a30b263d9a1aa7510c34133060eee20878d6ef",
+      "bytes": 4705,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/117CWL008.txt",
+      "git_blob": "c5afe5070a505643e565fdfa3dfe7eb1f05a5c44",
+      "sha256": "ec0f7b91e5d220c7808b863b91581b697bad633beee8c2cfa6f6804075fd9dbc",
+      "bytes": 1581,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/117CWL009.txt",
+      "git_blob": "cbbe0e73fe6bb2c06caafd8f2af9eb01c799886b",
+      "sha256": "d2603e2029e4a56add4d21544416e20f124626840bf31adaf2f45bb8a2e4a203",
+      "bytes": 1659,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/118CWL048.txt",
+      "git_blob": "a207fc2a14faed9fa18752cd3361b6f148b9f8e9",
+      "sha256": "1545d5d4eb5ce08246a9fb47cf2d904ac8b69b0d664957cf06af468dbf6da66f",
+      "bytes": 1648,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/118CWL049.txt",
+      "git_blob": "b4915eacb8b6eadbd982f5c759b370e3d2da69e5",
+      "sha256": "fc724e094da48431fe8f04125fecf7d7aba01f09afd1c910e87baf680cfbbfd7",
+      "bytes": 2378,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/118CWL050.txt",
+      "git_blob": "10c89fbf6f714e30eec9605a9752e331b97d48b7",
+      "sha256": "92bffbe4991f0b2b87bd393826a42ca84b50d98a98f81dfbd8c4ee9d576f7e6b",
+      "bytes": 4028,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/119CWL041.txt",
+      "git_blob": "accafe43894c648b78e2036c940ad15069b7e698",
+      "sha256": "97fa59556e2ef1dfd520793bc1a27a015847e4674799eadf7b2baf88bced3a08",
+      "bytes": 1548,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/philanthropic-fundraising/602CZL285.txt",
+      "git_blob": "3cd56a86383daacb154ed563114432d5088c1617",
+      "sha256": "7db50572d321a251487e809906db7b77db97aeb247ed1a8606a6d2431b22dae0",
+      "bytes": 2154,
+      "genre": "written/letters/philanthropic-fundraising",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/AMC2.txt",
+      "git_blob": "caea7714e95124a52b7fee4acb3e202d6efa9193",
+      "sha256": "4c26c08b324cff8d2c4551f0ba5ea8620316f43db5b1b20eca7fb95d33325496",
+      "bytes": 3929,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 10,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/IFAW1.txt",
+      "git_blob": "220d44dae017cc0bb2875523347125d9e9f5fdcf",
+      "sha256": "7c2bb54c58fb72671dae2cfe64860a161d375eb305740dce95554b3d8aa1288d",
+      "bytes": 4792,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 9,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/NWF1.txt",
+      "git_blob": "5e7feaafe037798c68dda5b216977b7bcfb62d83",
+      "sha256": "24ba5ccda3bc79d32c706b398f7a6df9e0ccb39bbcea87c555b5cba807e74ec5",
+      "bytes": 5430,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 18,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/alumnifund1.txt",
+      "git_blob": "67587033956d5d40dfcb3c7c351a90fa0fc13465",
+      "sha256": "c7553462dc843041c4f8bc340c2443c681de0f9e54bba835fc96249134929129",
+      "bytes": 2304,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/appalachian1.txt",
+      "git_blob": "197514bc5038e63fa205de3f92badd8337da2a3c",
+      "sha256": "bcc5b3b62e535faf3a68af86b12b30c6d373fc0a0546dae8934e2e794a4392f3",
+      "bytes": 9810,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 27,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/aspca1.txt",
+      "git_blob": "a1e9b2cb6a4e490f215488053d6d4cf19403e18b",
+      "sha256": "77ec6545fa62721cd3cada9c604b9c6930fcedb0a69cfcba5e9ce164912eb5e5",
+      "bytes": 4819,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/att2.txt",
+      "git_blob": "1641fc49285a707e799c3aea95bd48961dc579a2",
+      "sha256": "f8f2cfd3ca288dcb9728092365b5c6d315de7b8b399f9f34bfc1da15302750ee",
+      "bytes": 2980,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/audubon1.txt",
+      "git_blob": "495a9d23c3184346cbc5d3d70cc199c64c462583",
+      "sha256": "b6d9e0a45b7aa00f3111a0835aff14103ca3838ac05b59b1acc1d1213c567a3f",
+      "bytes": 7989,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 32,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/audubon2.txt",
+      "git_blob": "820f5f090a3a8469e26f4ed9d66b07f2c56e41ee",
+      "sha256": "4dc83da10fef4e95a71f29b8e551746f3d4647040f6bc860bd2aed95f910e55f",
+      "bytes": 4521,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 24,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/defenders5.txt",
+      "git_blob": "0bd2174d1b7dfd0b78b422deb5e00cca5394615b",
+      "sha256": "f29eaa249f3e920317b76a732885fb617aa4dfac640d0b8a00aafa67cc05e38e",
+      "bytes": 7931,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 39,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/guidedogs1.txt",
+      "git_blob": "896cc08042b632f93a56a67dd9da24a3d61c66fc",
+      "sha256": "a3b482f4ce6b01fd628063e47c04dabaf0f764bbef8f2fc18980999090dc8151",
+      "bytes": 3421,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/hsus4.txt",
+      "git_blob": "774f0bc0a55e57f95f9696587f5abc910ace74dc",
+      "sha256": "88f06a9dc3c1338f01959b2599c0a3b6b10058c77a1c5e5811c5ff9f0aa0d700",
+      "bytes": 6933,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 8,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/littleshelter2.txt",
+      "git_blob": "f73a090bd4dd5a914f04bfe3d7f5f88f7455ca31",
+      "sha256": "499663e71911e95421c873bd101da4f4169e9113596770a414b11df43213a750",
+      "bytes": 1787,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/marine1.txt",
+      "git_blob": "0cb5aaa5a6175501ec5051bab90125e6e0fbf6f4",
+      "sha256": "92ae439c68e901817ce82c52bfaec0eaa7269a3a55cdcae83edb57c88755a3bb",
+      "bytes": 4657,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 13,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/united1.txt",
+      "git_blob": "66446dd4818ef3bc774a25e7867f0fbfd3cc968e",
+      "sha256": "f9f0a966371aadd4ea29166109700d0ff77cc9e6d2899da90b204d945756ffaf",
+      "bytes": 2279,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/warner1.txt",
+      "git_blob": "f94bcb32cacc4453b46f548e4832395053a85a17",
+      "sha256": "487f8156e30614a28d1c770ddb55e978ad06af392e3cea43ebf1594af4e4a9d2",
+      "bytes": 2851,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 9,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/wildelifewatch1.txt",
+      "git_blob": "adc3e289938b0135a7903f07a30ab66c5b2eef8c",
+      "sha256": "1dbe30ee0972436500031435fba9a362ba698e05301550058a8e33abf60ee381",
+      "bytes": 4274,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 13,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/letters/solicitation-brochures/wwf12.txt",
+      "git_blob": "575bba77ba633ec22816aa97655d4efa75d89c03",
+      "sha256": "0761bb13803703d5d86ca91b0946277211a339df5fcc3ec90b5db9dc42a3917d",
+      "bytes": 4683,
+      "genre": "written/letters/solicitation-brochures",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 15,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/movie-script/JurassicParkIV-INT.txt",
+      "git_blob": "4754281213462782642c095ebf41824613fed439",
+      "sha256": "8490fc49e3d356aa505be2127029fb74f6613fe6a4a049b394eef2a58580ebdd",
+      "bytes": 6311,
+      "genre": "written/movie-script",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 39,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/movie-script/JurassicParkIV-Scene_1.txt",
+      "git_blob": "d02f24f6eaf30d927c2e82389469a4328dd7af30",
+      "sha256": "4f1bfe1322385b41017c4908f7b8ba248d2c4e888c5e2bae8b105c3d12c67072",
+      "bytes": 2966,
+      "genre": "written/movie-script",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 15,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/movie-script/JurassicParkIV-Scene_3.txt",
+      "git_blob": "887c901de3261b79fe12c856b7af5843161938f9",
+      "sha256": "5db2a023cc96de380f7f770a5da9495d19c39744f3b5ea737467230c407589a1",
+      "bytes": 9837,
+      "genre": "written/movie-script",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 55,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/movie-script/JurassicParkIV-Scene_4.txt",
+      "git_blob": "c08f1cdd795560c6f65186b44e6304c2ef293e07",
+      "sha256": "80fac8ec9f7bc456bea6de961fcae5284d8b73f6a67b4cb5dd3b42637d43d532",
+      "bytes": 683,
+      "genre": "written/movie-script",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/movie-script/JurassicParkIV-Scene_5.txt",
+      "git_blob": "c3023f9fd3e2eef3ccc8a8820dd375c6cac744db",
+      "sha256": "9d4d9b2e43537db24fe79b8b375a1a9cdd534b2b406b6e0dc3791e0c01c416d1",
+      "bytes": 15588,
+      "genre": "written/movie-script",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 102,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/movie-script/pirates.txt",
+      "git_blob": "7968548a8d5e016f183c1533e0b6cd6fdce197dd",
+      "sha256": "1e1c60abde7a825360f2f3c92e6793511a750ba6ea0e4040601b9b0a86b29804",
+      "bytes": 94495,
+      "genre": "written/movie-script",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 520,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/20000410_nyt-NEW.txt",
+      "git_blob": "a2b2728dbc1aaca2b93a3a4adbadc0171b967bab",
+      "sha256": "8a13bef6c8a1e4d046c269c04d55e2dd87db6e4228b3200368e69b9d3f185c7b",
+      "bytes": 1461,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/20000415_apw_eng-NEW.txt",
+      "git_blob": "f42adbc4ea8f06296214d49ea7b51efad33c1ed7",
+      "sha256": "a8e9392cdcd1901926e003698db6fc50707861e1177a40974b98d273a9de4a5c",
+      "bytes": 1741,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/20000419_apw_eng-NEW.txt",
+      "git_blob": "ca8a3838f56ec155f08d1146a6a017073f2696dd",
+      "sha256": "6ece34dbbd98ce61a41fd6007b7121e4c2846b8fc6fdfc2061fa34433a083004",
+      "bytes": 1355,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/20000424_nyt-NEW.txt",
+      "git_blob": "3b23c9e3bc3185cf866bdd677f10ed20dd890352",
+      "sha256": "8c9dac124544c01ed8f038b7809f95032b2e1522b80e56fb810b199de8590d88",
+      "bytes": 296,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/20020731-nyt.txt",
+      "git_blob": "6b25dc2b007c5f298f848117861630d676bd58e3",
+      "sha256": "a998794c1e362a86eaa15460c70ac3616c917b444875ca917eead5cb3f9671dc",
+      "bytes": 47845,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 114,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/NYTnewswire1.txt",
+      "git_blob": "db103057eccd1833a52a5341db0119f4372de673",
+      "sha256": "bd92ba6c2ecf8fb19f66147dbcd28860162ca1bb6b9b4f7cac2ca1aabf742ba0",
+      "bytes": 4387,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 29,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/NYTnewswire2.txt",
+      "git_blob": "49a42d66fa505ce1f7dd892c7f0d171206158c17",
+      "sha256": "bffeb007f327152fa22221f16d6435f27627b4ad9e2fe9c0972583058dd77674",
+      "bytes": 11751,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 25,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/NYTnewswire3.txt",
+      "git_blob": "521ab7c16e8ce08cd5051f574522fb90ab0d02ff",
+      "sha256": "8f73421d25ef523d7c0372de4cd811a49e25867c720ef8c42f8ecfa916ad9114",
+      "bytes": 5672,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/NYTnewswire4.txt",
+      "git_blob": "889b13c4087832852149818a5220c531c7e7e02d",
+      "sha256": "a40b2cca65393f00e4f8df66d5609fc0484ad7dece00b4fd0691d76482a3559e",
+      "bytes": 4138,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 22,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/NYTnewswire5.txt",
+      "git_blob": "49501c21e0a2b9625762f64ebaa5ce4e6f53bc8d",
+      "sha256": "676bd40fdc319ac5be03db4d5187fdc1f2053f2081050f99177739865973d3c1",
+      "bytes": 2565,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/NYTnewswire6.txt",
+      "git_blob": "0589e7f089273995dd24bbb5e5a85a3e09dd743b",
+      "sha256": "d380182bfb346fb3e73bcf2189964dbab1adf1b269abe5b4c77ff0befba3bb2f",
+      "bytes": 9095,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 31,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/NYTnewswire7.txt",
+      "git_blob": "b50ada2b83529a5cbc2c8463db16b6fee8cb3aa1",
+      "sha256": "ca18d0ee2d4d8f0e1ec596afd556833b8b12794f919b072dde048ce59a3d9693",
+      "bytes": 7649,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 21,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/NYTnewswire8.txt",
+      "git_blob": "73b8c4a6e9df7d9a642103fa81ab81994afb70e1",
+      "sha256": "94e48f2efe0471e6efa495cdde220ad4976018b25a98b5cc65cfd840665a2f5e",
+      "bytes": 5817,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 8,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/nyt/NYTnewswire9.txt",
+      "git_blob": "bddb7fb8a8bd35c938365dfbf307dac80274d39b",
+      "sha256": "74481054e9556601edf68be8a110fb9f9a7f3293c8617a33976214fc81c46be3",
+      "bytes": 11003,
+      "genre": "written/newspaper/nyt",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 18,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/unknown/A1.E1-NEW.txt",
+      "git_blob": "ed773caedec415ac1d2348808ecdc7799ad10c1c",
+      "sha256": "dfcae4545cca18269797c6a21e8931f85278a43e7b8b6706a8a4fba21fec3912",
+      "bytes": 1243,
+      "genre": "written/newspaper/unknown",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/unknown/A1.E2-NEW.txt",
+      "git_blob": "26a1482becb4c5606ee6088dbeb344d738c5f94d",
+      "sha256": "e857ab2e9c92892ad917a678823d130300fd2fde9c5b7ffe0e842d46e73dc6cf",
+      "bytes": 1467,
+      "genre": "written/newspaper/unknown",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0006.txt",
+      "git_blob": "a42f9d4795f6f3927b80efef8f0c84175535b687",
+      "sha256": "b536a0464d4fcb0cb4663edb03896c2704e9175fe7166a64f72200c56a93730c",
+      "bytes": 267,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0026.txt",
+      "git_blob": "9990b0d0ce08c3c831e082bd9b89b7de59f5af36",
+      "sha256": "c5f517f9fd4f79a01f9abc65a7243b93d01f8aefacd025fe1424e41e5ccf0f1e",
+      "bytes": 1406,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0027.txt",
+      "git_blob": "ca67c95e0f6ddb76df3cfc826976a59a10826909",
+      "sha256": "1035eb4a33c89da202aaebd9ad08ef5c5352e7f7cfe2ea187733b8ca7cfa1308",
+      "bytes": 1580,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0032.txt",
+      "git_blob": "b94626122de5a48c0d8f85eb08bb27a7d2c68727",
+      "sha256": "14d2fff1b5edcf83b3b1b54eefc4102b01617f81a48829fb2e8dc77c7a622bdb",
+      "bytes": 557,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0068.txt",
+      "git_blob": "8d7840ea0fb0b92638cedc70b40fac77724b8b84",
+      "sha256": "b2f926f3332d71edc970f0ac707b8ccb49dbc4d040313c521c036033c7b1ae92",
+      "bytes": 479,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0073.txt",
+      "git_blob": "94e64d15f22b65532c3d9f37f560dd0cc70fe475",
+      "sha256": "7380b00755944e5c93856756a9df83c88481fe89ab068428bf3d5f645ec70281",
+      "bytes": 727,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0106.txt",
+      "git_blob": "fc490600c76ab4098bab04c1ef639a02d5668f9d",
+      "sha256": "3f718db7717abb7ca53cee890fdfb8be3e54e9b84e95352844d0b599e6918cab",
+      "bytes": 641,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0120.txt",
+      "git_blob": "752c3f256427397a2dfdbeeb46e39ae01229a712",
+      "sha256": "3043d2064c265acda46917632dfe047c2e98fa1f536d2324908bf8d2926fa4b6",
+      "bytes": 5397,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 11,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0124.txt",
+      "git_blob": "fb1deb366ec3970b4df2af1ab1ca47cbd39c6054",
+      "sha256": "dbcf9f6b3b7cc928087a56a0eb16cc2c4b35ba8f9fb0ef8034b194908476d312",
+      "bytes": 1045,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0127.txt",
+      "git_blob": "a4fafdf3fe9d51022f64c617e2409d29d2c7fee1",
+      "sha256": "54ece5607b6cbc0132f0e6657fb9e86f6db377b52f37b4df1a5086cb781f130a",
+      "bytes": 1011,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0132.txt",
+      "git_blob": "b23c63765c762bf0223032a0ef10c2d61f94c4b3",
+      "sha256": "d97344bef1772140c894c7beb416b09fd04c3352585457f78a57d994f36ae4b2",
+      "bytes": 1135,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0135.txt",
+      "git_blob": "e9b0514e329bb90de41562d9eb4de70664884356",
+      "sha256": "481f5f6ebb6e1eb1f1b6886040ab1f28fc1e6556a07b83d56a8b2d728becc3a2",
+      "bytes": 551,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0136.txt",
+      "git_blob": "602940b602f60491129dcfda1c06407fd811e2af",
+      "sha256": "9204ae3d6e4aa0fe35a17f402cf273773ed8da98913af7c5bcb59fc1a350657b",
+      "bytes": 905,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0144.txt",
+      "git_blob": "707bd332b3b666855639f099b2e6b48cc32c78ef",
+      "sha256": "bb07a8cf6f775aa7dbf15c200005dd6259bc910caeea75427e56a821d64def33",
+      "bytes": 1145,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0150.txt",
+      "git_blob": "640da9c1a1610ed6c31185a7b9240bb99091a62d",
+      "sha256": "9870bc488dcb7826da97799da6680632b3ccc35070d6d3bcb2068873477628be",
+      "bytes": 901,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0151.txt",
+      "git_blob": "b79bc21bcf45e2e2f723468a8ab2a14f48a93d8e",
+      "sha256": "fa0089cd17524babce8d91f4d606f048fb8139eecd89edd1091d48d81423b7cd",
+      "bytes": 1165,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0152.txt",
+      "git_blob": "7e2d8596f035aa03dfc2f04daaf15e1f2140ff92",
+      "sha256": "2ba8421fa0c5980073a27f1bf77879e60fd10ba6e50b5b62f685aba691488dc2",
+      "bytes": 812,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0157.txt",
+      "git_blob": "bcd159c0d5221aa1b951c047d98932e7515ca844",
+      "sha256": "7d93ff0be395fa1eece468b3cf6142f3dfa6486c96ecfa43dc2e4aac658c00ac",
+      "bytes": 968,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 5,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0158.txt",
+      "git_blob": "76f568029975798a7a3830b43a5f0d4dfc6d1111",
+      "sha256": "c75bd3c6e55c96f36f3675f5adc40d4cf2506028dfb974ea2a3d94a639ff097f",
+      "bytes": 2139,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 10,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0159.txt",
+      "git_blob": "1e0d3ae5493657973ba8b156ff85c1aa3165759d",
+      "sha256": "0bb453cfe5ad3df68362881854bb8a3bfcb0d06e59916040da8ede0ef8a230f3",
+      "bytes": 1091,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0160.txt",
+      "git_blob": "7333c9223fd9ec0cc4a8a82b7804637f77a6858c",
+      "sha256": "4356b283d90146328c2c20645e2c84818fd6a34ba8ae4231f1e0c5e6c303a685",
+      "bytes": 744,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0161.txt",
+      "git_blob": "d09d19bf07d11295dabf06d679bac93a1dc285fd",
+      "sha256": "bc6fd187f8805c202f6d6222bea6e5a2d0c1eb88adb4903a6a3a11887194f6a4",
+      "bytes": 799,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0165.txt",
+      "git_blob": "87e4057815834a3ec20f67b38e1551087eccea28",
+      "sha256": "1f2bceee9ad2e1593d4f0774d88123af457748efd5b1b0e7995c104ea10b0b74",
+      "bytes": 1022,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 3,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0167.txt",
+      "git_blob": "02f76f72a17c7e7da99fc547b0980f2aef92913d",
+      "sha256": "eeec0d955b2a51edf4d2be367f88f2d900546806a76863a4026608351bc64402",
+      "bytes": 803,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0168.txt",
+      "git_blob": "cf5d5aca215ee2525255eaae5f9ac5fad2e4ddbb",
+      "sha256": "438dcc6c35663a8a299bd3e0645789aff230489b6cca1347edf16f7ea1688e34",
+      "bytes": 940,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0169.txt",
+      "git_blob": "9cc3aa4ebe59efded1f7187cd6d5472bf9bbc90e",
+      "sha256": "d7c6d6a86a3725572b17f7d7cb3f88eecd088c7ea010fd353c78e9b15918e4fb",
+      "bytes": 836,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 9,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0171.txt",
+      "git_blob": "00b6a67dc1800f7135aaec645518ee7c9449bf54",
+      "sha256": "a49811666a2d1b3c72e89e6bdb21a74ed3979f4e100df1e0cb944255e6442a68",
+      "bytes": 1015,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0172.txt",
+      "git_blob": "6bfb0f6be8f96c56c27179bfeaf6873ec9aba7a3",
+      "sha256": "4362c10044b19b8c118372c48ccd369ad1b6c422f6ab0c6392607c49cdd0f7de",
+      "bytes": 937,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0173.txt",
+      "git_blob": "b72e6bf069511fe4385dca3e09bdac008783c0c6",
+      "sha256": "05a5d66e49ec13344895cc70089e7e5fc3c2e550b8550997375508ebf395c056",
+      "bytes": 1116,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0175.txt",
+      "git_blob": "d9d2dd6fed64c5775116c8539f0fd0d0a0fa68e4",
+      "sha256": "d802a8b6bdd9f8cd0cf5f2a75cf779303f2ea8da7a959c583aafbb795517a434",
+      "bytes": 845,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0176.txt",
+      "git_blob": "6599d962a28ecf4b95cd0062677048b328966955",
+      "sha256": "b5128df1fb2e9932b2ae69013c6ceb41fde26e531d9185a43052b49876cadc15",
+      "bytes": 1019,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0184.txt",
+      "git_blob": "c7e3b9041eced49c8b3c10586ae6012bc5d11def",
+      "sha256": "0a84552b5004107c70211386a3e3dd926a965ebe408f9f159ac5b7e1ba0a6d5e",
+      "bytes": 2037,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 6,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0187.txt",
+      "git_blob": "285915ae5906c859c6bff02f08039859d19817a6",
+      "sha256": "e7c61ae094a34e8fc50e97ed0eb1fa4bba9593226fe1f34e6ff5a28bc280d41b",
+      "bytes": 1712,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_0189.txt",
+      "git_blob": "b6b34edecf23611491a9acc84d7e6fda673fb941",
+      "sha256": "b22cb8ab8da31b95a5ba7431c4b2b7a49e69c96da140d7c21652a10ffe202745",
+      "bytes": 1693,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_1640.mrg-NEW.txt",
+      "git_blob": "d6dcb82a3e07678dcdcd7de93744d50af3139eb5",
+      "sha256": "cebaecea99eefdc6e241a48121b91db5d1acf55926f264364a3c43c1cf707d09",
+      "bytes": 3593,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 12,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/newspaper/wsj/wsj_2465.txt",
+      "git_blob": "be0c6e05930a40dbf4a387b140c0fd6c8465db31",
+      "sha256": "bef9a16f19ffd4519a71fad536612f5d03a4104ecea716bdcf57cba36ad3e648",
+      "bytes": 4634,
+      "genre": "written/newspaper/wsj",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 11,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/non-fiction/CUP1.txt",
+      "git_blob": "602e2f0c7a31545e49d81288c5a6ff719debbd45",
+      "sha256": "b0a00c8cd5c0833b71c98ec7e09241b058a3dcebaa6e17f0d490070575da73e9",
+      "bytes": 39112,
+      "genre": "written/non-fiction",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 7,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/non-fiction/CUP2.txt",
+      "git_blob": "d61f3f6a283f85da3782de606a9041b15894f3d3",
+      "sha256": "ccc59f98cc8ab8451b7ea40bfbef47ce53c7f07ae5fe81df9183a14759d72cf3",
+      "bytes": 36481,
+      "genre": "written/non-fiction",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 126,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/non-fiction/ch5.txt",
+      "git_blob": "2d1cf3bae89020cd4273fc4bf370af7d87e9912d",
+      "sha256": "69dce6e6c402eb931f6effe43ca34259ef7d681099457dac61b33cf0cb723a27",
+      "bytes": 31538,
+      "genre": "written/non-fiction",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 20,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/non-fiction/chZ.txt",
+      "git_blob": "3994ff549e2ab5d1d22193937feff827613820d9",
+      "sha256": "3d57d1944cf4092bf3099e409ca0437102ff049b7bc1a756a41729a168945c33",
+      "bytes": 5431,
+      "genre": "written/non-fiction",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/non-fiction/rybczynski-ch3.txt",
+      "git_blob": "dd194bd723e5eaf8b6985ed77d2ab506bfc734d5",
+      "sha256": "4c4d19129459b215769bab61346175ba1d1cf07e49a3b9760d6a9b9fefd42e0a",
+      "bytes": 52179,
+      "genre": "written/non-fiction",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 63,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/technical/1468-6708-3-1.txt",
+      "git_blob": "22e990bc14a71ab3f0aa3462596185ed0f5d33d4",
+      "sha256": "fa26d56436f5fc0f8a93d3b2d65e9334e87797eff51d17a98861bce86326cbb8",
+      "bytes": 24112,
+      "genre": "written/technical",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 20,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/technical/1468-6708-3-3.txt",
+      "git_blob": "bc1ecb2dc7fa4f0528950c63021b3a7ee9b3646a",
+      "sha256": "c4044defdd79690a7277f5453cb0d743e56d769dafb5caf7b1bdf761bb931da6",
+      "bytes": 16882,
+      "genre": "written/technical",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/technical/1471-2091-2-9.txt",
+      "git_blob": "030c75e6a0c24e534c74e57634d81097ac3bc488",
+      "sha256": "6f052734737edc9cb82e371e54222bd8fcb2ea9b4fa829a3dac80792fe8450d5",
+      "bytes": 25298,
+      "genre": "written/technical",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/technical/1471-213X-1-1.txt",
+      "git_blob": "4dd09c3053c6546b48e94d301081173d66d4b188",
+      "sha256": "d08e6b2d00d56c7b69f534cbda2da1d71113732803a7b2a38e2942c5bd86ca78",
+      "bytes": 16722,
+      "genre": "written/technical",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/technical/1471-230X-2-21.txt",
+      "git_blob": "333140b28c5e24509d2c5195b8212ed41832e0ff",
+      "sha256": "71ab2d5724ab76584f0e3b3b49b900c9ea6a575df372868c8dc6aa12408eaeb1",
+      "bytes": 16226,
+      "genre": "written/technical",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 10,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/technical/journal.pbio.0020001.txt",
+      "git_blob": "364978427a93c8b2466d4d58ce9242236494db8b",
+      "sha256": "9919bed1d619212a6e10363097b66b2c7edd7b4a3a6fc48663e27bdd5e344af3",
+      "bytes": 18130,
+      "genre": "written/technical",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 2,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/technical/pmed.0010029.txt",
+      "git_blob": "27eb5dc7c9419d69ec869cf3780bc5f3070ffa1a",
+      "sha256": "9165277f4b1955007f9da65606a8a1d58189dc05c16e8bfc957a98ab8589cbd6",
+      "bytes": 2963,
+      "genre": "written/technical",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 0,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/technical/rr166.txt",
+      "git_blob": "1b529e62a3ecb14679dd02d1a6fa0f2655a333c8",
+      "sha256": "11054580c6b94fe3c62085cabfae4a1c7c15343c6de197c670e5da37ac403933",
+      "bytes": 22439,
+      "genre": "written/technical",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 1,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/travel-guides/HistoryGreek.txt",
+      "git_blob": "1fb3a353ae41fdb82de2654affec73318370040a",
+      "sha256": "c3b8d2cc35037f059db9047a61211f03aebc095ea0e4c9b04a98d5eab879928e",
+      "bytes": 18666,
+      "genre": "written/travel-guides",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 4,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/travel-guides/HistoryJerusalem.txt",
+      "git_blob": "c4534a83986b40bcb57c6ba650a35637443aa8b3",
+      "sha256": "9569842c3832d8d3558c9d665771d648aa339f60c94cfb22b87cb44c81249756",
+      "bytes": 18491,
+      "genre": "written/travel-guides",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 26,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/travel-guides/HistoryLasVegas.txt",
+      "git_blob": "df6c95497ba3d57c782b40d05ed3d7f209fef397",
+      "sha256": "eeb7a8d6b3f0e1eecc3a031eb3a4ffb211f4002581b10bb9620ddc71f57e370d",
+      "bytes": 18968,
+      "genre": "written/travel-guides",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 28,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/travel-guides/IntroDublin.txt",
+      "git_blob": "dd467bcfcb3d52e28f47149c7b2685183f440e8b",
+      "sha256": "ec416a95af0a514f8f192e70fbce208986f37f67da19ef300acec44dacfed660",
+      "bytes": 7820,
+      "genre": "written/travel-guides",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 18,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/travel-guides/IntroHongKong.txt",
+      "git_blob": "6c76de08d90338d3268521453a635138e7ed8a73",
+      "sha256": "e40786a2372c0ff8da10adadecf806f94fbdfd3778d094260b42329716140847",
+      "bytes": 5784,
+      "genre": "written/travel-guides",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 17,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/travel-guides/WhatToHongKong.txt",
+      "git_blob": "a19603bffc41a3ae54493a60c9f20f2977e866e8",
+      "sha256": "9822639aec4db80a5edfed2af75ab40446e783363b8ed18e94e9c81632f6572d",
+      "bytes": 24756,
+      "genre": "written/travel-guides",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 42,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/travel-guides/WhereToHongKong.txt",
+      "git_blob": "32652cec26e04765402ee50acff6c902ab397509",
+      "sha256": "1b4178925323afeadb2b1440344c860d7f1d6c3f6d120fec347115e840ea70d9",
+      "bytes": 67601,
+      "genre": "written/travel-guides",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 140,
+      "tagged_nonwhitespace_agreement": true
+    },
+    {
+      "path": "metadata/FULL_MASC/written/twitter/tweets1.txt",
+      "git_blob": "6327eec9b2f447f137cd5d2c930050284fa03ee1",
+      "sha256": "068b187373ed5e856555b28805969bf7330354e7ea4d5c63bc80ddd3a26a1554",
+      "bytes": 72582,
+      "genre": "written/twitter",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 244,
+      "tagged_nonwhitespace_agreement": false
+    },
+    {
+      "path": "metadata/FULL_MASC/written/twitter/tweets2.txt",
+      "git_blob": "521318bc2accd0c7ab232d6eb58dabef69d98892",
+      "sha256": "54e80f95f25a5008abf07f29a5cd7d2820d4dbecf704a4302d24ab26bd0db82f",
+      "bytes": 80198,
+      "genre": "written/twitter",
+      "archive_comparison": "exact-git-blob-match",
+      "apostrophes": 256,
+      "tagged_nonwhitespace_agreement": true
+    }
+  ],
+  "limitations": [
+    "Repository snapshot is a distinct version; do not silently replace NLTK or prior archive texts.",
+    "Git blob equality establishes byte identity, not linguistic correctness or license scope.",
+    "Publisher resource header says free; publisher public MASC page states CC BY 3.0 US. Preserve both evidence scopes.",
+    "No overlap analysis, split, tokenization or language evaluation performed yet."
+  ]
+}

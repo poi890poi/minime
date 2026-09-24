@@ -67,3 +67,37 @@ evaluation; their union is not a representative phone-conversation distribution.
 
 Reproduce structural results with `masc-audit.py`; `masc-manifest.json` retains
 every file's identity, hash, genre and comparison result without republishing text.
+
+## Publisher Git snapshot follow-up
+
+The publisher's own [oanc/masc repository](https://github.com/oanc/masc) resolves
+the raw-text authentication gap for a distinct, pinned source version. Commit
+`7a718b01af317f7ed8e330b0edd8db30c162da24`, tree
+`97d8b0b9ab6575d5f0a88ab08b30b3a43bbbe45f`, contains 393 original text files below
+`metadata/FULL_MASC/`. All were selected by path/type, with no word or genre
+selection. Commit/tree metadata and unmatched file contents were obtained over
+verified HTTPS. Every byte sequence was checked against its publisher Git blob.
+
+380 texts exactly match the earlier quarantined archive; those individual files
+now have independent authenticated byte-identity evidence. Five differ and eight
+are absent from that archive; the 13 publisher files were fetched separately and
+retained as a distinct version, never patched into the historical audit. Of the
+393 publisher texts, 391 have a same-basename tagged counterpart and 344 match
+after removing whitespace/tags. Version/annotation disagreement remains; blindly
+detokenizing or joining tagged tokens is still inappropriate.
+
+The pinned `metadata/MASC3-resource-header.xml` says availability is free. This
+is distinct from the publisher website's CC BY 3.0 US statement and the NLTK
+package's commercial-development notice. No repository-level license file was
+found in the complete tree. The publisher header is pinned in
+`MASC-PUBLISHER-HEADER.xml`; `masc-publisher-manifest.json` records all text hashes,
+paths, genres, counts and version comparisons. Reproduce with
+`masc-publisher-audit.py`; its optional `--fetch` only retrieves missing text bytes,
+never executes publisher scripts or writes production data.
+
+Decision remains **hold for application/split/overlap and annotation alignment
+review**, with raw-source authentication now resolved for the Git snapshot.
+No model, corpus split, corpus mixture or production refresh was performed. A
+context pilot may use this explicitly named raw version after a frozen evaluation
+plan; an annotation-based contraction pilot also needs source-aligned tags. This
+does not clear the separate EWT distribution-rights item.
