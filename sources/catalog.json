@@ -1202,6 +1202,37 @@
         "docs/source-replacement/personachat-audit.py",
         "docs/source-replacement/personachat-manifest.json"
       ]
+    },
+    {
+      "id": "masc-english-audit",
+      "name": "MASC English multi-genre source audit",
+      "origin": "english-academic-multigenre",
+      "decision": "hold",
+      "uses": [
+        "discovery",
+        "evaluation"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-3.0-US publisher statement; pinned NLTK commercial-development notice",
+        "status": "review",
+        "evidence": "docs/source-replacement/MASC-PACKAGE.xml"
+      },
+      "evidence": [
+        "https://anc.org/data/masc/",
+        "https://raw.githubusercontent.com/nltk/nltk_data/550b6625bcef1f2abff2ff770a5a0d272c9c6b2a/packages/corpora/masc_tagged.xml"
+      ],
+      "editorial": "Academic multi-genre corpus with raw and POS-tagged distributions; conversations and essays remain distinct from scripts/spam.",
+      "coverage": "392 tagged documents; 592469 parseable tagged tokens; 20 labelled genres and three unlisted files. 386 raw counterparts, 344 exact non-whitespace character agreements.",
+      "limitations": "Penn tokenization separates contractions; 67 malformed tagged units; six missing raw counterparts and 42 differing pairs. Original publisher archive retrieved with an expired-certificate transport exception for quarantined audit only; no training or evaluation model created.",
+      "reason": "Hold pending authenticated raw distribution/notice and systematic version/orthography reconciliation, followed by independent whole-document evaluation. Production assets unchanged.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/source-replacement/MASC-DISCOVERY.md",
+        "docs/source-replacement/MASC-PACKAGE.xml",
+        "docs/source-replacement/masc-audit.py",
+        "docs/source-replacement/masc-manifest.json"
+      ]
     }
   ]
 }
