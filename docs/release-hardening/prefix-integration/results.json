@@ -1,0 +1,577 @@
+{
+  "sessions": [
+    {
+      "policy": "ordinary",
+      "shard": 0,
+      "session": "6c78a2a7-2ebd-47a2-86c8-eb97c0de3e2e",
+      "instrumentation_seconds": 12.833,
+      "completed_cases": [
+        0,
+        3,
+        6,
+        9
+      ],
+      "phases": [
+        {
+          "case": 0,
+          "phase": "start",
+          "private": false,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 0,
+          "phase": "typed",
+          "private": false,
+          "elapsed_ms": 751
+        },
+        {
+          "case": 0,
+          "phase": "selected",
+          "private": false,
+          "elapsed_ms": 941
+        },
+        {
+          "case": 0,
+          "phase": "complete",
+          "private": false,
+          "elapsed_ms": 1389
+        },
+        {
+          "case": 3,
+          "phase": "start",
+          "private": false,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 3,
+          "phase": "typed",
+          "private": false,
+          "elapsed_ms": 1102
+        },
+        {
+          "case": 3,
+          "phase": "selected",
+          "private": false,
+          "elapsed_ms": 1348
+        },
+        {
+          "case": 3,
+          "phase": "complete",
+          "private": false,
+          "elapsed_ms": 1471
+        },
+        {
+          "case": 6,
+          "phase": "start",
+          "private": false,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 6,
+          "phase": "typed",
+          "private": false,
+          "elapsed_ms": 1243
+        },
+        {
+          "case": 6,
+          "phase": "selected",
+          "private": false,
+          "elapsed_ms": 1508
+        },
+        {
+          "case": 6,
+          "phase": "complete",
+          "private": false,
+          "elapsed_ms": 1616
+        },
+        {
+          "case": 9,
+          "phase": "start",
+          "private": false,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 9,
+          "phase": "typed",
+          "private": false,
+          "elapsed_ms": 604
+        },
+        {
+          "case": 9,
+          "phase": "selected",
+          "private": false,
+          "elapsed_ms": 1037
+        },
+        {
+          "case": 9,
+          "phase": "complete",
+          "private": false,
+          "elapsed_ms": 1126
+        }
+      ],
+      "cleanup_verified": true
+    },
+    {
+      "policy": "ordinary",
+      "shard": 1,
+      "session": "6a2a5ae0-22fd-4bd0-bd1b-3e6d524aab3b",
+      "instrumentation_seconds": 13.433,
+      "completed_cases": [
+        1,
+        4,
+        7
+      ],
+      "phases": [
+        {
+          "case": 1,
+          "phase": "start",
+          "private": false,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 1,
+          "phase": "typed",
+          "private": false,
+          "elapsed_ms": 1347
+        },
+        {
+          "case": 1,
+          "phase": "selected",
+          "private": false,
+          "elapsed_ms": 1613
+        },
+        {
+          "case": 1,
+          "phase": "complete",
+          "private": false,
+          "elapsed_ms": 1724
+        },
+        {
+          "case": 4,
+          "phase": "start",
+          "private": false,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 4,
+          "phase": "typed",
+          "private": false,
+          "elapsed_ms": 965
+        },
+        {
+          "case": 4,
+          "phase": "selected",
+          "private": false,
+          "elapsed_ms": 1205
+        },
+        {
+          "case": 4,
+          "phase": "complete",
+          "private": false,
+          "elapsed_ms": 1339
+        },
+        {
+          "case": 7,
+          "phase": "start",
+          "private": false,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 7,
+          "phase": "typed",
+          "private": false,
+          "elapsed_ms": 1588
+        },
+        {
+          "case": 7,
+          "phase": "selected",
+          "private": false,
+          "elapsed_ms": 2943
+        },
+        {
+          "case": 7,
+          "phase": "complete",
+          "private": false,
+          "elapsed_ms": 3061
+        }
+      ],
+      "cleanup_verified": true
+    },
+    {
+      "policy": "ordinary",
+      "shard": 2,
+      "session": "d6edba09-6421-4163-b764-519f408c277d",
+      "instrumentation_seconds": 22.452,
+      "completed_cases": [
+        2,
+        5,
+        8
+      ],
+      "phases": [
+        {
+          "case": 2,
+          "phase": "start",
+          "private": false,
+          "elapsed_ms": 1
+        },
+        {
+          "case": 2,
+          "phase": "typed",
+          "private": false,
+          "elapsed_ms": 1205
+        },
+        {
+          "case": 2,
+          "phase": "selected",
+          "private": false,
+          "elapsed_ms": 1452
+        },
+        {
+          "case": 2,
+          "phase": "complete",
+          "private": false,
+          "elapsed_ms": 1562
+        },
+        {
+          "case": 5,
+          "phase": "start",
+          "private": false,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 5,
+          "phase": "typed",
+          "private": false,
+          "elapsed_ms": 1288
+        },
+        {
+          "case": 5,
+          "phase": "selected",
+          "private": false,
+          "elapsed_ms": 1561
+        },
+        {
+          "case": 5,
+          "phase": "complete",
+          "private": false,
+          "elapsed_ms": 1667
+        },
+        {
+          "case": 8,
+          "phase": "start",
+          "private": false,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 8,
+          "phase": "typed",
+          "private": false,
+          "elapsed_ms": 1416
+        },
+        {
+          "case": 8,
+          "phase": "selected",
+          "private": false,
+          "elapsed_ms": 11224
+        },
+        {
+          "case": 8,
+          "phase": "complete",
+          "private": false,
+          "elapsed_ms": 11420
+        }
+      ],
+      "cleanup_verified": true
+    },
+    {
+      "policy": "private",
+      "shard": 0,
+      "session": "8984fbc4-5fbf-466c-bc2b-4a34b53914b7",
+      "instrumentation_seconds": 13.206,
+      "completed_cases": [
+        0,
+        3,
+        6,
+        9
+      ],
+      "phases": [
+        {
+          "case": 0,
+          "phase": "start",
+          "private": true,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 0,
+          "phase": "typed",
+          "private": true,
+          "elapsed_ms": 709
+        },
+        {
+          "case": 0,
+          "phase": "selected",
+          "private": true,
+          "elapsed_ms": 913
+        },
+        {
+          "case": 0,
+          "phase": "complete",
+          "private": true,
+          "elapsed_ms": 1294
+        },
+        {
+          "case": 3,
+          "phase": "start",
+          "private": true,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 3,
+          "phase": "typed",
+          "private": true,
+          "elapsed_ms": 1071
+        },
+        {
+          "case": 3,
+          "phase": "selected",
+          "private": true,
+          "elapsed_ms": 1298
+        },
+        {
+          "case": 3,
+          "phase": "complete",
+          "private": true,
+          "elapsed_ms": 1406
+        },
+        {
+          "case": 6,
+          "phase": "start",
+          "private": true,
+          "elapsed_ms": 1
+        },
+        {
+          "case": 6,
+          "phase": "typed",
+          "private": true,
+          "elapsed_ms": 1273
+        },
+        {
+          "case": 6,
+          "phase": "selected",
+          "private": true,
+          "elapsed_ms": 1551
+        },
+        {
+          "case": 6,
+          "phase": "complete",
+          "private": true,
+          "elapsed_ms": 1675
+        },
+        {
+          "case": 9,
+          "phase": "start",
+          "private": true,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 9,
+          "phase": "typed",
+          "private": true,
+          "elapsed_ms": 603
+        },
+        {
+          "case": 9,
+          "phase": "selected",
+          "private": true,
+          "elapsed_ms": 1052
+        },
+        {
+          "case": 9,
+          "phase": "complete",
+          "private": true,
+          "elapsed_ms": 1127
+        }
+      ],
+      "cleanup_verified": true
+    },
+    {
+      "policy": "private",
+      "shard": 1,
+      "session": "348d8dcb-276e-4223-885b-0bed38cf7f57",
+      "instrumentation_seconds": 13.433,
+      "completed_cases": [
+        1,
+        4,
+        7
+      ],
+      "phases": [
+        {
+          "case": 1,
+          "phase": "start",
+          "private": true,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 1,
+          "phase": "typed",
+          "private": true,
+          "elapsed_ms": 1414
+        },
+        {
+          "case": 1,
+          "phase": "selected",
+          "private": true,
+          "elapsed_ms": 1650
+        },
+        {
+          "case": 1,
+          "phase": "complete",
+          "private": true,
+          "elapsed_ms": 1779
+        },
+        {
+          "case": 4,
+          "phase": "start",
+          "private": true,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 4,
+          "phase": "typed",
+          "private": true,
+          "elapsed_ms": 905
+        },
+        {
+          "case": 4,
+          "phase": "selected",
+          "private": true,
+          "elapsed_ms": 1162
+        },
+        {
+          "case": 4,
+          "phase": "complete",
+          "private": true,
+          "elapsed_ms": 1264
+        },
+        {
+          "case": 7,
+          "phase": "start",
+          "private": true,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 7,
+          "phase": "typed",
+          "private": true,
+          "elapsed_ms": 1560
+        },
+        {
+          "case": 7,
+          "phase": "selected",
+          "private": true,
+          "elapsed_ms": 2952
+        },
+        {
+          "case": 7,
+          "phase": "complete",
+          "private": true,
+          "elapsed_ms": 3062
+        }
+      ],
+      "cleanup_verified": true
+    },
+    {
+      "policy": "private",
+      "shard": 2,
+      "session": "3f282d2c-9046-4d1e-bb55-f7e89085da20",
+      "instrumentation_seconds": 20.892,
+      "completed_cases": [
+        2,
+        5,
+        8
+      ],
+      "phases": [
+        {
+          "case": 2,
+          "phase": "start",
+          "private": true,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 2,
+          "phase": "typed",
+          "private": true,
+          "elapsed_ms": 1236
+        },
+        {
+          "case": 2,
+          "phase": "selected",
+          "private": true,
+          "elapsed_ms": 1476
+        },
+        {
+          "case": 2,
+          "phase": "complete",
+          "private": true,
+          "elapsed_ms": 1594
+        },
+        {
+          "case": 5,
+          "phase": "start",
+          "private": true,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 5,
+          "phase": "typed",
+          "private": true,
+          "elapsed_ms": 1364
+        },
+        {
+          "case": 5,
+          "phase": "selected",
+          "private": true,
+          "elapsed_ms": 1607
+        },
+        {
+          "case": 5,
+          "phase": "complete",
+          "private": true,
+          "elapsed_ms": 1700
+        },
+        {
+          "case": 8,
+          "phase": "start",
+          "private": true,
+          "elapsed_ms": 0
+        },
+        {
+          "case": 8,
+          "phase": "typed",
+          "private": true,
+          "elapsed_ms": 1346
+        },
+        {
+          "case": 8,
+          "phase": "selected",
+          "private": true,
+          "elapsed_ms": 11011
+        },
+        {
+          "case": 8,
+          "phase": "complete",
+          "private": true,
+          "elapsed_ms": 11130
+        }
+      ],
+      "cleanup_verified": true
+    }
+  ],
+  "sha256": {
+    "artifacts/release-hardening/existence-trial.apk": "e4d064d597bbfbe69cb9770d68cd0d5a32829a1c82fc1e0b5f03460357d40332",
+    "artifacts/release-hardening/prefix-shards-tests.apk": "a220735ea849e76bae3a32036271da3548490fbee0fae9f87c5e02c81f3e7bbe",
+    "app/src/androidTest/assets/stored-prefix-cases.json": "91e4563a6c9aedf3c50b61645a1cfc68c01042e72ea28edbff18242c30d0239f"
+  },
+  "episodes": 20,
+  "phone_released": true
+}

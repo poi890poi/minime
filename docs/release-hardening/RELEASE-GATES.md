@@ -114,7 +114,11 @@ checks, then times out in `testStoredPhrasePrefixesAndSuffixEditing`. Its remain
 four checks did not run. [Incomplete run](phone/integration-timeout.txt).
 The standalone prefix replay also exceeds its 600-second budget. Its screenshots
 show progress, so elapsed silence must not be called a proven deadlock; the full
-test still has no completed result. That gate remains incomplete.
+test still had no completed result at that point. The September 24
+[sharded replay](PREFIX-INTEGRATION-RESULTS.md) now completes all six tests and
+20 episodes, preserving every original assertion and both field policies.
+The frozen prefix-selection gate is complete; the old aggregate stall has no
+proven runtime root cause and prolonged-session testing remains distinct.
 
 The frozen Google/MinIME comparison completes 48 observations. Chrome and Keep
 complete 27 editor/mode/query observations with candidates available in each.

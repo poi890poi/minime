@@ -459,22 +459,32 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         click("Candidate 輸入法"); assertEquals("我想輸入法",activity.text.getText().toString());
         clear(); type("nh"); click("Exact input nh"); type(" meeting "); assertEquals("nh meeting ",activity.text.getText().toString());
     }
-    /** All eligible phrase-prefix cases derived from the frozen 18-case plan. */
-    public void testStoredPhrasePrefixesAndSuffixEditing() throws Exception {
-        checkStoredPrefixes("stored-prefix-cases.json","stored-prefix");
+    /** Same frozen eligible cases, sharded so progress and completion are observable. */
+    public void testStoredPrefixesOrdinary0()throws Exception {checkStoredPrefixes(false,0);}
+    public void testStoredPrefixesOrdinary1()throws Exception {checkStoredPrefixes(false,1);}
+    public void testStoredPrefixesOrdinary2()throws Exception {checkStoredPrefixes(false,2);}
+    public void testStoredPrefixesPrivate0()throws Exception {checkStoredPrefixes(true,0);}
+    public void testStoredPrefixesPrivate1()throws Exception {checkStoredPrefixes(true,1);}
+    public void testStoredPrefixesPrivate2()throws Exception {checkStoredPrefixes(true,2);}
+    private void prefixProgress(int index,boolean privacy,String phase,long started) {
+        android.os.Bundle status=new android.os.Bundle();status.putInt("prefix_case",index);
+        status.putBoolean("prefix_private",privacy);status.putString("prefix_phase",phase);
+        status.putLong("prefix_elapsed_ms",SystemClock.uptimeMillis()-started);
+        getInstrumentation().sendStatus(2,status);
     }
-    private void checkStoredPrefixes(String fixture,String capturePrefix) throws Exception {
+    private void checkStoredPrefixes(boolean privacy,int shard) throws Exception {
         org.json.JSONArray cases;
-        try(java.io.InputStream stream=getInstrumentation().getContext().getAssets().open(fixture)) {
+        try(java.io.InputStream stream=getInstrumentation().getContext().getAssets().open("stored-prefix-cases.json")) {
             java.io.ByteArrayOutputStream bytes=new java.io.ByteArrayOutputStream();byte[] buffer=new byte[4096];int n;
             while((n=stream.read(buffer))>=0)bytes.write(buffer,0,n);
             cases=new org.json.JSONArray(bytes.toString("UTF-8"));
         }
         assertTrue("Frozen plan contains multiple eligible prefixes",cases.length()>1);
-        for(boolean privacy:new boolean[]{false,true}) {
             getInstrumentation().runOnMainSync(()->activity.text.setImeOptions(privacy?android.view.inputmethod.EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING:0));
             focus(activity.url);focus(activity.text);
             for(int i=0;i<cases.length();i++) {
+                if(i%3!=shard)continue;
+                long started=SystemClock.uptimeMillis();prefixProgress(i,privacy,"start",started);
                 org.json.JSONObject test=cases.getJSONObject(i);
                 String raw=test.getString("raw"),word=test.getString("text"),remaining=test.getString("remaining");
                 clear();
@@ -486,15 +496,17 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
                     else type(String.valueOf(key));
                 }
                 expectText(raw);
+                prefixProgress(i,privacy,"typed",started);
                 click("Expand candidates");selectExpandedCandidate(word);expectText(word+remaining);
+                prefixProgress(i,privacy,"selected",started);
                 getInstrumentation().runOnMainSync(()-> {
                     assertEquals("Committed prefix stays outside composition",word.length(),android.view.inputmethod.BaseInputConnection.getComposingSpanStart(activity.text.getText()));
                     assertEquals("Every suffix key remains composing",word.length()+remaining.length(),android.view.inputmethod.BaseInputConnection.getComposingSpanEnd(activity.text.getText()));
                 });
                 click("⌫");expectText(word+remaining.substring(0,remaining.length()-1));
-                if(i==0)capture(capturePrefix+"-"+(privacy?"private":"ordinary"));
+                if(i==0)capture("stored-prefix-"+(privacy?"private":"ordinary"));
+                prefixProgress(i,privacy,"complete",started);
             }
-        }
     }
     private AccessibilityNodeInfo verticalCandidates(AccessibilityNodeInfo n) {
         if(n==null)return null;
