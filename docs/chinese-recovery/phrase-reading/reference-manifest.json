@@ -1,0 +1,23 @@
+{
+  "seed": "phrase-reading-reference-20260924",
+  "cases": 28,
+  "eligible": {
+    "unchanged-control": 347,
+    "complete-reading-gain": 10,
+    "complete-reading-loss": 4,
+    "both-supported-changed": 27
+  },
+  "selected": {
+    "complete-reading-loss": 4,
+    "complete-reading-gain": 8,
+    "both-supported-changed": 8,
+    "unchanged-control": 8
+  },
+  "plan_sha256": "136ab2abf6ab40c5643fb69b70b6ce37e7d763d66c88dd9dbfd931125470f525",
+  "inputs": {
+    "artifacts/moe-reading-reference/before.tsv": "5816bd28519966697d1362fe85aac62bc9c1aa22dd1f20e80714594168dd8535",
+    "artifacts/phrase-reading-prior/modern.tsv": "b2b719aa193ccc5c0bc56fc4034cc92c90675df9f1c4611fcf46fb2d7053c946",
+    "artifacts/moe-reading-reference/references.json": "8947794f7136a816103b366690780ff93b2b7d59a2cef37d20235a2910c5c7c4",
+    "artifacts/reading-prior-followup/reference-plan.json": "094a47cf6a96ad6d49512394742445238649a57526fb23c279b2606a03a89802"
+  }
+}

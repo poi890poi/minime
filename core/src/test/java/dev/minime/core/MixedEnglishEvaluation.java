@@ -26,8 +26,8 @@ public final class MixedEnglishEvaluation {
     }
     public static void main(String[] args)throws Exception {
         Path assets=Paths.get("app/src/main/assets");
-        PhoneticDictionary d=PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")),Files.newBufferedReader(assets.resolve("en_us.tsv")),Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));
-        d.englishSpelling(Files.newBufferedReader(assets.resolve("en_spelling.tsv")));
+        PhoneticDictionary d=PhoneticDictionary.load(Files.newBufferedReader(args.length>4?Paths.get(args[4]):assets.resolve("zh_tw.tsv")),Files.newBufferedReader(assets.resolve("en_us.tsv")),Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(args.length>2?Paths.get(args[2]):assets.resolve("context.tsv")));
+        d.englishSpelling(Files.newBufferedReader(args.length>3?Paths.get(args[3]):assets.resolve("en_spelling.tsv")));
         AddonDictionary addons=args.length<2?AddonDictionary.EMPTY:AddonDictionary.combine(
             AddonDictionary.read(Files.newBufferedReader(assets.resolve("addons.tsv"))),
             AddonDictionary.read(Files.newBufferedReader(Paths.get(args[1]))));

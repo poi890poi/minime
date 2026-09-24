@@ -1,0 +1,20 @@
+{
+  "role": "Experimental toneless Pinyin prior; not admitted to production",
+  "source_sha256": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+  "output_sha256": "5d90b9571c901e9d31e7e0db672e24be8ecfdcfe096313b3d1f204cd34690ce3",
+  "estimator_sha256": "6e875a852e04421a11cfc571b3ff5dc9b8515527dee10520137234579f88de07",
+  "statistics": {
+    "changed_rows": 903,
+    "glyphs_with_phrase_evidence": 5382,
+    "glyphs_without_phrase_evidence": 16358,
+    "missing_glyph_reading_observations": 87,
+    "missing_glyph_reading_pairs": 56,
+    "multi_reading_glyphs": 2679,
+    "reading_pairs_without_phrase_evidence": 19482,
+    "rows": 171708,
+    "single_glyphs": 21740,
+    "training_distinct_reading_tuples": 101179,
+    "training_multi_reading_words": 906,
+    "training_words": 100149
+  }
+}

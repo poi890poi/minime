@@ -27,6 +27,12 @@ reference-only decision remains in force. Complete-reading support is distinct
 from spelling completion, conversational frequency and semantic correctness.
 Neither pronunciation joins nor definition text become production vocabulary.
 
+The separate [phrase-derived reading-share experiment](../docs/chinese-recovery/PHRASE-READING-RESULTS.md)
+uses only the retained McBopomofo production source as estimator input. MOE and
+Google evidence are evaluation-only. Its primary screen passes, but broader rank
+tradeoffs and packaged/native integration remain open; this is not authorization
+to refresh production frequencies. Per-query corpus output stays local.
+
 The September 24 Taskmaster-1 pilot is defined in
 `../docs/source-replacement/taskmaster/PLAN.md`. It audits an explicitly licensed
 English dialogue source as a possible replacement for EWT-derived context data.

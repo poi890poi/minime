@@ -1,0 +1,50 @@
+{
+  "scope": "Stratified 28-query diagnostic. Actual Google and accepted MinIME phone outputs, trial evaluated only in core. Not representative accuracy or trial APK validation.",
+  "session": "9d643e89-e4eb-4280-a9ec-9590f97d7568",
+  "observations": 56,
+  "minime_inputs_and_core_space_verified": 28,
+  "google_inputs_visually_verified": 28,
+  "groups": {
+    "all": {
+      "cases": 28,
+      "baseline_matches_google_space": 5,
+      "trial_matches_google_space": 12,
+      "gains": 8,
+      "losses": 1
+    },
+    "complete-reading-loss": {
+      "cases": 4,
+      "baseline_matches_google_space": 0,
+      "trial_matches_google_space": 0,
+      "gains": 0,
+      "losses": 0
+    },
+    "complete-reading-gain": {
+      "cases": 8,
+      "baseline_matches_google_space": 0,
+      "trial_matches_google_space": 5,
+      "gains": 5,
+      "losses": 0
+    },
+    "both-supported-changed": {
+      "cases": 8,
+      "baseline_matches_google_space": 1,
+      "trial_matches_google_space": 3,
+      "gains": 3,
+      "losses": 1
+    },
+    "unchanged-control": {
+      "cases": 8,
+      "baseline_matches_google_space": 4,
+      "trial_matches_google_space": 4,
+      "gains": 0,
+      "losses": 0
+    }
+  },
+  "hashes": {
+    "artifacts/phrase-reading-prior/reference-plan.json": "136ab2abf6ab40c5643fb69b70b6ce37e7d763d66c88dd9dbfd931125470f525",
+    "artifacts/device-tests/9d643e89-e4eb-4280-a9ec-9590f97d7568/parity-observations.json": "193b459eeebe6163c3c4493a9c7485c76ee0b04ce933cc7c13a668cc4dc38fc2",
+    "artifacts/moe-reading-reference/before.tsv": "5816bd28519966697d1362fe85aac62bc9c1aa22dd1f20e80714594168dd8535",
+    "artifacts/phrase-reading-prior/modern.tsv": "b2b719aa193ccc5c0bc56fc4034cc92c90675df9f1c4611fcf46fb2d7053c946"
+  }
+}

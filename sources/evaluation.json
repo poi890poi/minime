@@ -3,6 +3,31 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "phrase-reading-priors-20260924",
+      "source_ids": ["mcbopomofo", "moe-dictionaries", "moztw-chat-evaluation", "taiwan-md", "ud-context", "ud-gum-evaluation"],
+      "genre": ["pronunciation-reference", "encyclopedic", "essay", "authored-conversation-scenarios", "edited-chat-excerpts", "source-retrieval", "isolated-English-word-probes"],
+      "role": "development",
+      "exposure": "previously-evaluated",
+      "selection": "Freeze a no-tuning frequency-share estimator before the 405-query MOE screen; surviving variant uses all 31527 broad, 4608 chat and 6144 English conditions. Freeze 28 diagnostic Google queries before new observations, including all four adverse Space cases and hash-selected strata.",
+      "files": [
+        "docs/chinese-recovery/PHRASE-READING-PLAN.md",
+        "docs/chinese-recovery/PHRASE-READING-REFERENCE-PLAN.md",
+        "docs/chinese-recovery/PHRASE-READING-RESULTS.md",
+        "docs/chinese-recovery/phrase-reading/model-manifest.json",
+        "docs/chinese-recovery/phrase-reading/modern-summary.json",
+        "docs/chinese-recovery/phrase-reading/broad-summary.json",
+        "docs/chinese-recovery/phrase-reading/chat-summary.json",
+        "docs/chinese-recovery/phrase-reading/english-summary.json",
+        "docs/chinese-recovery/phrase-reading/reachability-summary.json",
+        "docs/chinese-recovery/phrase-reading/tradeoffs-summary.json",
+        "docs/chinese-recovery/phrase-reading/reference-manifest.json",
+        "docs/chinese-recovery/phrase-reading/reference-summary.json"
+      ],
+      "report_by": ["genre", "condition", "complete-reading-support", "whole-target", "compatible-prefix", "Space", "reachability", "uncovered", "provider-stratum"],
+      "leakage": "Only retained production phrase counts enter estimation; external readings, corpus targets and phone outputs are scored afterward. Prior corpus exposure is explicit; new provider observations are a diagnostic, not a population holdout.",
+      "limitations": "Lexical phrase frequency is not spoken reading frequency. Incomplete spelling completions can be valid even without full-reading reference support. Trial APK/native merge not verified. Raw corpora, joins and phone captures are not published."
+    },
+    {
       "id": "moe-modern-pronunciation-20260924",
       "source_ids": [
         "moe-dictionaries",

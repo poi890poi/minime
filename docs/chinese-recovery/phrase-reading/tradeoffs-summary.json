@@ -1,0 +1,25 @@
+{
+  "scope": "Post-run pronunciation joins; incomplete input is not a complete-reading error. All losses retained locally. No label edits or estimator inputs.",
+  "groups": {
+    "broad/first8-losses": {
+      "complete-reading-supported": 18,
+      "partial-or-unsupported-complete": 10
+    },
+    "broad/loss-conditions": {
+      "zh-dev-full": 9,
+      "zh-dev-mixed-left": 9,
+      "zh-dev-initial": 1,
+      "zh-dev-mixed-right": 1,
+      "zh-test-full": 3,
+      "zh-test-mixed-left": 3,
+      "zh-test-initial": 1,
+      "zh-test-mixed-right": 1
+    },
+    "modern-space": {
+      "modern-space-gain": 12,
+      "modern-space-loss": 4
+    }
+  },
+  "references_sha256": "8947794f7136a816103b366690780ff93b2b7d59a2cef37d20235a2910c5c7c4",
+  "local_detail_sha256": "66852b409ab108b4f637e2f97b295366bf7c4c8400d9edc09f7a7c48af6deb8e"
+}
