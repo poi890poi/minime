@@ -85,3 +85,7 @@ fixture isolates Chinese dictionary retrieval; it does not certify mixed-mode
 ordering, Space selection, native Rime, optional packs or device behavior.
 The standard core suite passes all 1,770,117 contract assertions after adding
 the audit tooling; that count is not a language-quality score.
+
+The subsequent [24-query phone reference and broad recheck](READING-REFERENCE-RESULTS.md)
+supports better common-reading defaults but identifies unresolved pronunciation
+labels and source-parser data loss. The source-prior trial remains outside production.

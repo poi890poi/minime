@@ -1,0 +1,56 @@
+{
+  "scope": "Evaluation annotation and source-parser audit only; ambiguity is not proof that a chosen reading is wrong.",
+  "groups": {
+    "all": {
+      "full_spelling_word_cases": 2000,
+      "multiple_distinct_source_pinyin_readings": 42,
+      "source_file_order_resolves_equal_frequency": 42
+    },
+    "zh-dev-full": {
+      "full_spelling_word_cases": 1000,
+      "multiple_distinct_source_pinyin_readings": 19,
+      "source_file_order_resolves_equal_frequency": 19
+    },
+    "multi-glyph": {
+      "full_spelling_word_cases": 1652,
+      "multiple_distinct_source_pinyin_readings": 9,
+      "source_file_order_resolves_equal_frequency": 9
+    },
+    "single-glyph": {
+      "full_spelling_word_cases": 348,
+      "multiple_distinct_source_pinyin_readings": 33,
+      "source_file_order_resolves_equal_frequency": 33
+    },
+    "zh-test-full": {
+      "full_spelling_word_cases": 1000,
+      "multiple_distinct_source_pinyin_readings": 23,
+      "source_file_order_resolves_equal_frequency": 23
+    }
+  },
+  "upstream_priority_lists": {
+    "heterophony1.list": {
+      "glyphs": 527,
+      "glyphs_with_multiple_priority_readings": 1,
+      "readings_overwritten_by_single_value_map": 1,
+      "sha256": "7fddbb6a66022b1809181484c7627d79dee4231849cb2d3c8c8cd4578b3d22cb"
+    },
+    "heterophony2.list": {
+      "glyphs": 65,
+      "glyphs_with_multiple_priority_readings": 1,
+      "readings_overwritten_by_single_value_map": 1,
+      "sha256": "4afd69a2702ae3af533cd01b755f81d77a430ace91311a8229319334aec24e37"
+    },
+    "heterophony3.list": {
+      "glyphs": 15,
+      "glyphs_with_multiple_priority_readings": 1,
+      "readings_overwritten_by_single_value_map": 2,
+      "sha256": "8be3f37fe419744c3792df1bdfc67a0abdb215dbbb759c92204d4f8d68a32cd9"
+    }
+  },
+  "warning": "Do not relabel this evaluated corpus with the trial source priorities and call the resulting score independent.",
+  "inputs": {
+    "app/src/main/assets/zh_tw.tsv": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+    "docs/conversation-ranking/corpus/inputs.tsv": "14c186c6589c4081f709f6aa237bb9a0d61a0d5ad32754dad8d72976d478004d",
+    "tools/make_conversation_corpus.py": "9dc0032c0534ef0fc2ebb9734f9923f785e55779b0706a5fc46d7fdd6b208582"
+  }
+}

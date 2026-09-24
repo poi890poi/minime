@@ -1,0 +1,20 @@
+{
+  "seed": "reading-reference-20260924",
+  "eligible": {
+    "changed-complete-top": 54,
+    "changed-partial-first8": 18,
+    "unchanged-complete-control": 212
+  },
+  "selected": {
+    "changed-complete-top": 8,
+    "changed-partial-first8": 8,
+    "unchanged-complete-control": 8
+  },
+  "cases": 24,
+  "plan_sha256": "094a47cf6a96ad6d49512394742445238649a57526fb23c279b2606a03a89802",
+  "inputs": {
+    "artifacts/reading-prior-followup/inventories.tsv": "523ef9d993a7454a6b1edb39c31b1b28deec22a094084c2e281951dbd280cb71",
+    "docs/glyph-ranking/inputs.txt": "c02a4f20da8b2eed3af9bcc3ce9632b5cebf62cdc4180bf919af9e2487711657",
+    "app/src/main/assets/syllables.tsv": "4915d49bbc76e0aad722b25f06e5906bec00694672d6b0f2ff678a58f370c30b"
+  }
+}

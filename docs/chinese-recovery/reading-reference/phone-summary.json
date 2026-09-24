@@ -1,0 +1,50 @@
+{
+  "scope": "Stratified 24-query reference diagnosis; observed accepted MinIME and Google, offline reading-prior trial. Not population accuracy or app-trial validation.",
+  "session": "5e0fdb6d-adaf-4b65-9ad9-0eb04366302d",
+  "observations": 48,
+  "all_status_observed": true,
+  "minime_raw_verified": 24,
+  "google_raw_visually_verified": 24,
+  "google_visual_verification": "All 24 typed captures viewed as three eight-image contact sheets; ignore visual syllable spaces only. No spelling mismatches.",
+  "core_phone_default_matches": 24,
+  "all_accepted_compositions_finished": true,
+  "normalization": "Compare editor output after removing only trailing ASCII spaces; preserve letter case, glyph identity and internal spaces.",
+  "groups": {
+    "all": {
+      "cases": 24,
+      "baseline_matches_google_space": 4,
+      "trial_matches_google_space": 9,
+      "gained_google_space_match": 5,
+      "lost_google_space_match": 0
+    },
+    "changed-complete-top": {
+      "cases": 8,
+      "baseline_matches_google_space": 0,
+      "trial_matches_google_space": 5,
+      "gained_google_space_match": 5,
+      "lost_google_space_match": 0
+    },
+    "changed-partial-first8": {
+      "cases": 8,
+      "baseline_matches_google_space": 1,
+      "trial_matches_google_space": 1,
+      "gained_google_space_match": 0,
+      "lost_google_space_match": 0
+    },
+    "unchanged-complete-control": {
+      "cases": 8,
+      "baseline_matches_google_space": 3,
+      "trial_matches_google_space": 3,
+      "gained_google_space_match": 0,
+      "lost_google_space_match": 0
+    }
+  },
+  "hashes": {
+    "artifacts/reading-prior-followup/reference-plan.json": "094a47cf6a96ad6d49512394742445238649a57526fb23c279b2606a03a89802",
+    "artifacts/reading-prior-followup/reference-core-before.tsv": "f57ccdcd3ec89fa5c5eec6bbf597a42e5bc1fec393173fb9c4f4735b0261618b",
+    "artifacts/reading-prior-followup/reference-core-after.tsv": "c7e5cb25c6d857ad03e76a32d474a0c55d70825dea23c96535b8a123514f2d90",
+    "artifacts/device-tests/5e0fdb6d-adaf-4b65-9ad9-0eb04366302d/parity-observations.json": "ecfc0dc7740876b6210803cbaff596ceb1b9ed6e83d01e32fff84463e9fc1e04",
+    "artifacts/release-hardening/existence-trial.apk": "e4d064d597bbfbe69cb9770d68cd0d5a32829a1c82fc1e0b5f03460357d40332",
+    "artifacts/release-hardening/expanded-frame-tests.apk": "f24d1fe07bf27122790f1761845270be59efa080cc611d9514d5b351af419b82"
+  }
+}
