@@ -20,6 +20,13 @@ consumed evidence, and may not be advertised as a fresh holdout again.
 
 ## Decisions
 
+The September 24 [official MOE reading audit](../docs/chinese-recovery/MOE-READING-RESULTS.md)
+pins the June 26, 2026 concise and elementary releases. Original archives and
+usage notices remain local; only aggregate receipts are published. The existing
+reference-only decision remains in force. Complete-reading support is distinct
+from spelling completion, conversational frequency and semantic correctness.
+Neither pronunciation joins nor definition text become production vocabulary.
+
 The September 24 Taskmaster-1 pilot is defined in
 `../docs/source-replacement/taskmaster/PLAN.md`. It audits an explicitly licensed
 English dialogue source as a possible replacement for EWT-derived context data.

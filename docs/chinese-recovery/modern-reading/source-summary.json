@@ -1,0 +1,115 @@
+{
+  "scope": "Independent pronunciation-reference audit only; no production extraction, relabelling or frequency claim",
+  "source_id": "moe-dictionaries",
+  "attribution": "中華民國教育部（Ministry of Education, R.O.C.）",
+  "licence": "CC-BY-ND-3.0-TW; original archives and full usage notices retained locally",
+  "reference_inventory": {
+    "concise": {
+      "source_rows": 45130,
+      "single_han_rows": 6657,
+      "non_single_han_rows": 38473,
+      "unparsed_word_pinyin": 1,
+      "distinct_single_han_glyphs": 6028,
+      "single_han_reading_pairs": 6657,
+      "single_han_glyphs_with_multiple_readings": 554,
+      "xlsx_sha256": "a9a4fd7259180113bfae2e94110eae87ac4dcf0bfcc91a6437c3ad4773ab7865",
+      "archive": "dict_concised_2014_20260626.zip",
+      "archive_sha256": "fc83d27eb3fbf6fcfdb791e7d05ef60946b58ef8e8857ed165b612217b392806"
+    },
+    "elementary": {
+      "source_rows": 4719,
+      "single_han_rows": 4718,
+      "non_single_han_rows": 1,
+      "distinct_single_han_glyphs": 4310,
+      "single_han_reading_pairs": 4718,
+      "single_han_glyphs_with_multiple_readings": 365,
+      "xlsx_sha256": "51d7b4a01350262a5c7bff6de5ffbc73a13462e4fdc2c723b9fc9c764e58dd28",
+      "archive": "dict_mini_2019_20260626.zip",
+      "archive_sha256": "3067e61841f90a1ba1edff99607b6cb1a081ec1868b6820b6b9a78bed5a2f06a"
+    }
+  },
+  "priority_comparison": {
+    "concise": {
+      "1": {
+        "source_pairs": 528,
+        "reading_present": 490,
+        "reading_absent_on_covered_glyph": 33,
+        "glyph_uncovered": 5
+      },
+      "2": {
+        "source_pairs": 66,
+        "reading_absent_on_covered_glyph": 25,
+        "reading_present": 40,
+        "glyph_uncovered": 1
+      },
+      "3": {
+        "source_pairs": 17,
+        "reading_absent_on_covered_glyph": 6,
+        "reading_present": 11
+      }
+    },
+    "elementary": {
+      "1": {
+        "source_pairs": 528,
+        "reading_present": 466,
+        "glyph_uncovered": 35,
+        "reading_absent_on_covered_glyph": 27
+      },
+      "2": {
+        "source_pairs": 66,
+        "reading_absent_on_covered_glyph": 24,
+        "reading_present": 38,
+        "glyph_uncovered": 4
+      },
+      "3": {
+        "source_pairs": 17,
+        "reading_absent_on_covered_glyph": 7,
+        "reading_present": 9,
+        "glyph_uncovered": 1
+      }
+    }
+  },
+  "evaluation_comparison": {
+    "all": {
+      "cases": 2000,
+      "spelling_present": 1606,
+      "reference_word_has_multiple_spellings": 31,
+      "word_uncovered": 385,
+      "spelling_absent_on_covered_word": 9
+    },
+    "zh-dev-full": {
+      "cases": 1000,
+      "spelling_present": 820,
+      "reference_word_has_multiple_spellings": 16,
+      "word_uncovered": 174,
+      "spelling_absent_on_covered_word": 6
+    },
+    "multi-glyph": {
+      "cases": 1652,
+      "spelling_present": 1262,
+      "reference_word_has_multiple_spellings": 0,
+      "word_uncovered": 385,
+      "spelling_absent_on_covered_word": 5
+    },
+    "single-glyph": {
+      "cases": 348,
+      "spelling_present": 344,
+      "reference_word_has_multiple_spellings": 31,
+      "spelling_absent_on_covered_word": 4
+    },
+    "zh-test-full": {
+      "cases": 1000,
+      "spelling_present": 786,
+      "reference_word_has_multiple_spellings": 15,
+      "word_uncovered": 211,
+      "spelling_absent_on_covered_word": 3
+    }
+  },
+  "source_input_sha256": "14c186c6589c4081f709f6aa237bb9a0d61a0d5ad32754dad8d72976d478004d",
+  "tier_hashes": {
+    "1": "7fddbb6a66022b1809181484c7627d79dee4231849cb2d3c8c8cd4578b3d22cb",
+    "2": "4afd69a2702ae3af533cd01b755f81d77a430ace91311a8229319334aec24e37",
+    "3": "8be3f37fe419744c3792df1bdfc67a0abdb215dbbb759c92204d4f8d68a32cd9"
+  },
+  "local_joins_sha256": "e1ce6a0daa003f44e14457cf6612bd9d10af163f76460d5b9ecd0b8362b2360b"
+}

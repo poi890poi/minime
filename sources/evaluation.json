@@ -3,6 +3,38 @@
   "policy": "Report each source, genre and input condition separately. Essays and conversations are both useful. Do not treat one as a proxy for the other or pool them into an unqualified accuracy score.",
   "corpora": [
     {
+      "id": "moe-modern-pronunciation-20260924",
+      "source_ids": [
+        "moe-dictionaries",
+        "mcbopomofo"
+      ],
+      "genre": [
+        "edited-pronunciation-reference",
+        "source-priority-audit"
+      ],
+      "role": "audit",
+      "exposure": "previously-evaluated",
+      "selection": "All supplied concise single-Han Pinyin readings: 405 spellings, 6402 reference pairs. All three pinned source priority tiers. Original official archives and raw joins stay local; aggregate receipts pin them.",
+      "files": [
+        "docs/chinese-recovery/MOE-READING-AUDIT-PLAN.md",
+        "docs/chinese-recovery/MODERN-READING-PLAN.md",
+        "docs/chinese-recovery/MOE-READING-RESULTS.md",
+        "docs/chinese-recovery/modern-reading/source-summary.json",
+        "docs/chinese-recovery/modern-reading/probe-manifest.json",
+        "docs/chinese-recovery/modern-reading/priority-summary.json"
+      ],
+      "report_by": [
+        "genre",
+        "reference-edition",
+        "reading-tier",
+        "complete-versus-prefix",
+        "uncovered",
+        "selection-kind"
+      ],
+      "leakage": "Independent editorial readings are joined after decoding only. Previously inspected source and overlapping prior inputs are not a fresh holdout. No reference text or label enters estimator/runtime.",
+      "limitations": "Learner references are not conversation frequency. Missing complete readings can be valid completions; no semantic-invalidity claim. CC BY-ND source is reference-only, not a derivative production-data approval."
+    },
+    {
       "id": "language-typing-timing-20260924",
       "source_ids": [
         "ud-gum-evaluation",

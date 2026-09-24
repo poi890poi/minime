@@ -719,12 +719,18 @@
         "evidence": "https://www.moedict.tw/about.html"
       },
       "evidence": [
-        "https://www.moedict.tw/about.html"
+        "https://www.moedict.tw/about.html",
+        "https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/dict_concised_download.html",
+        "https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/dict_mini_download.html"
       ],
       "editorial": "Edited Taiwan dictionaries; revised and concise editions have different purposes.",
       "coverage": "Large dictionary reference with original pronunciation fields.",
       "limitations": "Historical/literary coverage is not modern frequency; ND text terms are not relicensed by a wrapper repository.",
       "reason": "Use as a reference; establish permissible derivative use before adding an importer.",
+      "audit_files": [
+        "docs/chinese-recovery/MOE-READING-RESULTS.md",
+        "docs/chinese-recovery/modern-reading/source-summary.json"
+      ],
       "addon_prefixes": []
     },
     {
