@@ -1,0 +1,139 @@
+diff --git a/app/src/main/java/dev/minime/ime/LocalLearning.java b/app/src/main/java/dev/minime/ime/LocalLearning.java
+--- a/app/src/main/java/dev/minime/ime/LocalLearning.java
++++ b/app/src/main/java/dev/minime/ime/LocalLearning.java
+@@ -39,6 +39,10 @@
+     }
+     private static String key(String c,String r,String v) { return c+"\t"+r+"\t"+v; }
+     public int count(String c,String r,String v) { return preferences.getInt(key(c,r,v),0); }
++    @Override public java.util.function.ToIntFunction<String> counter(String c,String r) {
++        String prefix=c+"\t"+r+"\t";
++        return value->preferences.getInt(prefix+value,0);
++    }
+     public void choose(String c,String r,String v) {
+         if (preferences.getAll().size() >= 2000 && !preferences.contains(key(c,r,v))) return;
+         preferences.edit().putInt(key(c,r,v),Math.min(100,count(c,r,v)+1)).apply();
+diff --git a/core/src/main/java/dev/minime/core/CompositionEngine.java b/core/src/main/java/dev/minime/core/CompositionEngine.java
+--- a/core/src/main/java/dev/minime/core/CompositionEngine.java
++++ b/core/src/main/java/dev/minime/core/CompositionEngine.java
+@@ -419,7 +419,8 @@
+         }
+         if (!englishMode) converted.addAll(custom);
+         String sortContext=contextKey();
+-        CandidateOrder.sort(converted,this::partial,c->privateField?0:learning.count(sortContext,raw,c.text));
++        java.util.function.ToIntFunction<String> votes=privateField?text->0:learning.counter(sortContext,raw);
++        CandidateOrder.sort(converted,this::partial,c->votes.applyAsInt(c.text));
+         Set<String> seen = new HashSet<>(); seen.add(raw);
+         for (Candidate c : converted) if (seen.add(c.text)) candidates.add(c);
+         if (candidates.size() > 1) {
+diff --git a/core/src/main/java/dev/minime/core/Learning.java b/core/src/main/java/dev/minime/core/Learning.java
+--- a/core/src/main/java/dev/minime/core/Learning.java
++++ b/core/src/main/java/dev/minime/core/Learning.java
+@@ -5,6 +5,10 @@
+ /** Stores only explicit choices; caller controls persistence and secure-field isolation. */
+ public interface Learning {
+     int count(String context, String raw, String choice);
++    /** Query-local binding only; values remain live and storage format is unchanged. */
++    default java.util.function.ToIntFunction<String> counter(String context,String raw) {
++        return choice->count(context,raw,choice);
++    }
+     void choose(String context, String raw, String choice);
+     default List<Candidate> custom(String raw) { return Collections.emptyList(); }
+     default List<Candidate> predictEnglish(String context) { return Collections.emptyList(); }
+diff --git a/core/src/test/java/dev/minime/core/Regression.java b/core/src/test/java/dev/minime/core/Regression.java
+--- a/core/src/test/java/dev/minime/core/Regression.java
++++ b/core/src/test/java/dev/minime/core/Regression.java
+@@ -54,6 +54,7 @@
+         dictionary = args.length>0?PhoneticDictionary.readBinary(Files.newInputStream(Paths.get(args[0]))):PhoneticDictionary.load(Files.newBufferedReader(assets.resolve("zh_tw.tsv")), Files.newBufferedReader(assets.resolve("en_us.tsv")), Files.newBufferedReader(assets.resolve("syllables.tsv")),Files.newBufferedReader(assets.resolve("context.tsv")));
+         dictionary.englishSpelling(Files.newBufferedReader(assets.resolve("en_spelling.tsv")));
+         CompletionExistenceRegression.run();
++        LearningCounterRegression.run();
+         MatchEvidenceRegression.run(dictionary);
+         VisibleDefaultRegression.run();
+         CandidateDisplayRegression.run();
+diff --git a/core/src/test/java/dev/minime/core/LearningCounterRegression.java b/core/src/test/java/dev/minime/core/LearningCounterRegression.java
+new file mode 100644
+--- /dev/null
++++ b/core/src/test/java/dev/minime/core/LearningCounterRegression.java
+@@ -0,0 +1,30 @@
++package dev.minime.core;
++
++import java.util.*;
++import java.util.function.ToIntFunction;
++import static dev.minime.core.Regression.*;
++
++final class LearningCounterRegression {
++    static void run() {
++        Memory memory=new Memory();
++        for(String context:Arrays.asList("","EN_NEXT","FOCUS:poj","前文"))for(String raw:Arrays.asList("","abc","𠀀","a'b")) {
++            ToIntFunction<String> bound=memory.counter(context,raw);
++            for(String choice:Arrays.asList("","甲","かな","tâi","𠀀")) {
++                equal(memory.count(context,raw,choice),bound.applyAsInt(choice),"binding matches original lookup");
++                memory.choose(context,raw,choice);
++                equal(memory.count(context,raw,choice),bound.applyAsInt(choice),"binding observes subsequent vote");
++                memory.votes.clear();
++                equal(0,bound.applyAsInt(choice),"binding observes cleared storage");
++            }
++        }
++        Learning forbidden=new Learning() {
++            public int count(String c,String r,String v){throw new AssertionError("Private input read learning");}
++            public ToIntFunction<String> counter(String c,String r){throw new AssertionError("Private input bound learning");}
++            public void choose(String c,String r,String v){throw new AssertionError("Private input stored learning");}
++        };
++        Editor editor=new Editor();CompositionEngine e=new CompositionEngine(editor,forbidden);
++        e.dictionary(dictionary);e.start(false,false,true,false);
++        e.decoder((d,r,b,c,done)->done.accept(Arrays.asList(new Candidate("甲乙",false,10),new Candidate("丙丁",false,9))),()->{});
++        type(e,"nihao");e.space();equal("甲乙",editor.text,"private sort and acceptance remain independent of learning");
++    }
++}
+diff --git a/app/src/androidTest/java/dev/minime/ime/LearningCounterTest.java b/app/src/androidTest/java/dev/minime/ime/LearningCounterTest.java
+new file mode 100644
+--- /dev/null
++++ b/app/src/androidTest/java/dev/minime/ime/LearningCounterTest.java
+@@ -0,0 +1,47 @@
++package dev.minime.ime;
++
++import android.content.*;
++import android.test.InstrumentationTestCase;
++import java.io.*;
++import java.util.*;
++import java.util.function.ToIntFunction;
++
++/** Persistence parity and isolated lookup cost; fixtures are not language-quality data. */
++@SuppressWarnings("deprecation")
++public final class LearningCounterTest extends InstrumentationTestCase {
++    public void testLiveBindingAndLookupCost()throws Exception {
++        Context context=getInstrumentation().getTargetContext();
++        SharedPreferences data=context.getSharedPreferences("learning",0);
++        // The guarded runner backs up/restores the complete original store.
++        LocalLearning learning=new LocalLearning(context);
++        try(PrintWriter out=new PrintWriter(new File(context.getExternalFilesDir(null),"learning-counter.tsv"),"UTF-8")) {
++            out.println("store_size\tround\tcandidates\told_ns\tbound_ns\tchecksum");
++            for(int size:new int[]{0,20,2000}) {
++                SharedPreferences.Editor edit=data.edit().clear();
++                for(int i=0;i<size;i++)edit.putInt("context\treading\tchoice-"+i,i%101);
++                assertTrue(edit.commit());
++                for(String c:Arrays.asList("context","別の文脈",""))for(String r:Arrays.asList("reading","𠀀'a","")) {
++                    ToIntFunction<String> bound=learning.counter(c,r);
++                    for(String value:Arrays.asList("choice-0","choice-19","choice-1999","かな","tâi",""))
++                        assertEquals(learning.count(c,r,value),bound.applyAsInt(value));
++                }
++                List<String> values=new ArrayList<>();for(int i=0;i<512;i++)values.add("choice-"+(i*7%2200));
++                for(int round=-5;round<20;round++) {
++                    long a,b,start;int x=0,y=0;
++                    if((round&1)==0) {
++                        start=System.nanoTime();for(String value:values)x+=learning.count("context","reading",value);a=System.nanoTime()-start;
++                        start=System.nanoTime();ToIntFunction<String> bound=learning.counter("context","reading");for(String value:values)y+=bound.applyAsInt(value);b=System.nanoTime()-start;
++                    } else {
++                        start=System.nanoTime();ToIntFunction<String> bound=learning.counter("context","reading");for(String value:values)y+=bound.applyAsInt(value);b=System.nanoTime()-start;
++                        start=System.nanoTime();for(String value:values)x+=learning.count("context","reading",value);a=System.nanoTime()-start;
++                    }
++                    assertEquals(x,y);if(round>=0)out.println(size+"\t"+round+"\t"+values.size()+"\t"+a+"\t"+b+"\t"+x);
++                }
++                ToIntFunction<String> live=learning.counter("context","reading");
++                assertTrue(data.edit().putInt("context\treading\tかな",37).commit());assertEquals(37,live.applyAsInt("かな"));
++                assertTrue(data.edit().clear().commit());assertEquals(0,live.applyAsInt("かな"));
++                assertTrue(data.edit().putInt("context\treading\tかな",19).commit());assertEquals(19,live.applyAsInt("かな"));
++            }
++        }
++    }
++}

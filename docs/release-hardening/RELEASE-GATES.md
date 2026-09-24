@@ -35,6 +35,11 @@ identical. Repeated Chinese shared-observation timing improves, with modest
 first-pair gains and a slower second baseline that limits causal attribution.
 Unrestricted tail latency remains mixed; this does not clear the release gate.
 
+The [learning-key binding trial](LEARNING-KEY-RESULTS.md) is rejected despite
+lower isolated lookup cost: fast Chinese raw-frame p95 worsens in both phone
+pairs, and candidate gains are conditional on fewer observed frames. Its runtime
+changes are reverted; the accepted runtime remains 1ea175a.
+
 ## Quality loop
 
 The new Taiwan chat-derived evaluation adds 4,608 complete, initial and mixed
