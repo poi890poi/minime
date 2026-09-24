@@ -1,0 +1,21 @@
+{
+  "scope": "Serialization parity; single concurrent load observations are not performance acceptance",
+  "variants": [
+    {
+      "side": "before",
+      "queries": 1894,
+      "bytes": 50026326,
+      "source_sha256": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+      "binary_sha256": "6f4c1e5f8acdb9f62cb63f89a56b4d1d08f801825cdc03b8447a38333e5e3441",
+      "load_ns_observation_only": 1038524300
+    },
+    {
+      "side": "after",
+      "queries": 1894,
+      "bytes": 50026326,
+      "source_sha256": "5d90b9571c901e9d31e7e0db672e24be8ecfdcfe096313b3d1f204cd34690ce3",
+      "binary_sha256": "d82ec850c067e9300246d487967a19f29ab473eac87503234531dcb3a09d4b13",
+      "load_ns_observation_only": 595086400
+    }
+  ]
+}

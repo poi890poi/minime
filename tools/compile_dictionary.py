@@ -7,6 +7,7 @@ import subprocess
 import sys
 from pathlib import Path
 from sources import require_sources
+from phrase_reading_prior import estimate
 require_sources('mcbopomofo','aosp')
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -44,9 +45,12 @@ for line in (SRC / 'BPMFMappings.txt').read_text(encoding='utf-8').splitlines():
         skipped += 1
         continue
     entries[(p[0], ''.join(p[1:]))] = (py, freq.get(p[0], 0.0), ''.join(marked(s) for s in p[1:]))
-with (OUT / 'zh_tw.tsv').open('w', encoding='utf-8', newline='\n') as f:
-    for (word, bpmf), (py, count, explicit) in sorted(entries.items()):
-        f.write('{}\t{}\t{}\t{}\t{}\n'.format(py, bpmf, word, count, explicit))
+original_rows = ['{}\t{}\t{}\t{}\t{}'.format(py, bpmf, word, count, explicit)
+                 for (word, bpmf), (py, count, explicit) in sorted(entries.items())]
+# Keep source identities and phrase counts; allocate glyph frequency among its
+# supplied readings using independent multi-glyph phrase evidence, at build time.
+weighted_rows, _, reading_statistics = estimate(original_rows)
+(OUT / 'zh_tw.tsv').write_bytes(('\n'.join(weighted_rows) + '\n').encode('utf-8'))
 with (OUT / 'syllables.tsv').open('w', encoding='utf-8', newline='\n') as f:
     for bpmf, py in sorted(readings.items()):
         f.write(py + '\t' + bpmf + '\n')
@@ -61,6 +65,9 @@ with (OUT / 'en_us.tsv').open('w', encoding='utf-8', newline='\n') as f:
         f.write('{}\t{}\n'.format(word, count))
 subprocess.run([sys.executable, str(ROOT / 'tools/compile_english_spelling.py')], check=True)
 report = {'chinese_readings': len(entries), 'chinese_labels': len({e[0] for e in entries}),
+          'chinese_frequency_policy': 'phrase-conditioned-toneless-reading-shares-v1',
+          'chinese_unweighted_sha256': hashlib.sha256(('\n'.join(original_rows) + '\n').encode('utf-8')).hexdigest(),
+          'chinese_reading_statistics': reading_statistics,
           'syllables': len(readings), 'skipped_unmapped_readings': skipped,
           'english_words': len(english), 'aosp_decompressed_sha256': hashlib.sha256(raw).hexdigest(),
           'assets': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.glob('*.tsv')}}

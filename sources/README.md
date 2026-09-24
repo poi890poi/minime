@@ -20,6 +20,14 @@ consumed evidence, and may not be advertised as a fresh holdout again.
 
 ## Decisions
 
+The September 25 [pronunciation-frequency admission](../docs/chinese-recovery/PHRASE-READING-ADMISSION.md)
+approves integration of conditional reading shares using the unchanged retained
+McBopomofo source. Independent reading and Google checks, native/core comparisons,
+exact Pinyin/Zhuyin access and binary parity support this scoped data change.
+Packaged verification is still required; no new vocabulary, evaluation-derived
+production text, tuned exception, rights clearance or release certification is
+implied. Earlier pilot decisions below describe their state at the time.
+
 The September 24 [official MOE reading audit](../docs/chinese-recovery/MOE-READING-RESULTS.md)
 pins the June 26, 2026 concise and elementary releases. Original archives and
 usage notices remain local; only aggregate receipts are published. The existing

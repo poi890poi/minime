@@ -6,13 +6,15 @@ on baseline `fd728d5`; the accepted rendering change does not alter dictionary o
 ranking logic. Evaluation-only commit `1231638` adds evidence. Earlier publishing checklists are historical evidence,
 not certification of this build. No Play upload or GitHub CI was used.
 
-The [phrase-derived pronunciation trial](../chinese-recovery/PHRASE-READING-RESULTS.md)
+The [phrase-derived pronunciation change](../chinese-recovery/PHRASE-READING-INTEGRATION.md)
 passes its declared independent reading screen: reference-supported Space choices
 305 → 313 of 405; a new 28-query Google diagnostic agrees on 5 → 12 defaults.
 English retention and full glyph-reading access are preserved, while broad
-first-eight whole-target retrieval has ten net encyclopedic losses. This remains
-an isolated model pending native/packaged integration and completeness-ordering
-review. No shipping dictionary or release gate is silently changed.
+first-eight whole-target retrieval has ten net encyclopedic losses. Native/core
+comparisons preserve first-page metrics, exact Pinyin/Zhuyin access is intact,
+binary size is unchanged, and three packaged integration tests, including 28
+pronunciation cases, pass. Conditional frequencies are integrated; completeness ordering and
+the broader release gates remain open.
 
 September 24 follow-up: [query-local sort keys](ORDER-RESULTS.md) improve fast
 Chinese candidate-frame observations from 52/100 to 62/100 across two corrected

@@ -61,7 +61,12 @@
       "editorial": "Maintained Taiwan input-method data with source readings and correction history.",
       "coverage": "171,708 readings in current compiled base.",
       "limitations": "Original data can still contain uncommon readings; name-unit concatenation is not verified pronunciation.",
-      "reason": "Retain the Taiwan input-method foundation.",
+      "reason": "Retain the Taiwan input-method foundation. Conditional reading shares from existing phrase counts are admitted by the September 25 integration decision; no new source entries or evaluation labels enter production.",
+      "audit_files": [
+        "docs/chinese-recovery/PHRASE-READING-ADMISSION.md",
+        "docs/chinese-recovery/phrase-reading/model-manifest.json",
+        "docs/chinese-recovery/PHRASE-READING-INTEGRATION.md"
+      ],
       "addon_prefixes": []
     },
     {

@@ -13,6 +13,17 @@
         "docs/chinese-recovery/PHRASE-READING-PLAN.md",
         "docs/chinese-recovery/PHRASE-READING-REFERENCE-PLAN.md",
         "docs/chinese-recovery/PHRASE-READING-RESULTS.md",
+        "docs/chinese-recovery/PHRASE-READING-INTEGRATION-PLAN.md",
+        "docs/chinese-recovery/PHRASE-READING-ADMISSION.md",
+        "docs/chinese-recovery/PHRASE-READING-INTEGRATION.md",
+        "docs/chinese-recovery/phrase-reading/integration/binary-summary.json",
+        "docs/chinese-recovery/phrase-reading/integration/desktop-summary.json",
+        "docs/chinese-recovery/phrase-reading/integration/native-broad.json",
+        "docs/chinese-recovery/phrase-reading/integration/native-chat.json",
+        "docs/chinese-recovery/phrase-reading/integration/packaged-assets.json",
+        "docs/chinese-recovery/phrase-reading/integration/phone-summary.json",
+        "docs/chinese-recovery/phrase-reading/integration/source-assets.json",
+        "docs/chinese-recovery/phrase-reading/integration/zhuyin-reachability.json",
         "docs/chinese-recovery/phrase-reading/model-manifest.json",
         "docs/chinese-recovery/phrase-reading/modern-summary.json",
         "docs/chinese-recovery/phrase-reading/broad-summary.json",
@@ -25,7 +36,7 @@
       ],
       "report_by": ["genre", "condition", "complete-reading-support", "whole-target", "compatible-prefix", "Space", "reachability", "uncovered", "provider-stratum"],
       "leakage": "Only retained production phrase counts enter estimation; external readings, corpus targets and phone outputs are scored afterward. Prior corpus exposure is explicit; new provider observations are a diagnostic, not a population holdout.",
-      "limitations": "Lexical phrase frequency is not spoken reading frequency. Incomplete spelling completions can be valid even without full-reading reference support. Trial APK/native merge not verified. Raw corpora, joins and phone captures are not published."
+      "limitations": "Lexical phrase frequency is not spoken reading frequency. Incomplete spelling completions can be valid even without full-reading reference support. Native merge and 28 packaged phone cases now verified; timing, human touch and release gates remain separate. Raw corpora, joins and phone captures are not published."
     },
     {
       "id": "moe-modern-pronunciation-20260924",

@@ -1,15 +1,36 @@
 {
   "chinese_readings": 171708,
   "chinese_labels": 161374,
+  "chinese_frequency_policy": "phrase-conditioned-toneless-reading-shares-v1",
+  "chinese_unweighted_sha256": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473",
+  "chinese_reading_statistics": {
+    "changed_rows": 903,
+    "glyphs_with_phrase_evidence": 5382,
+    "glyphs_without_phrase_evidence": 16358,
+    "missing_glyph_reading_observations": 87,
+    "missing_glyph_reading_pairs": 56,
+    "multi_reading_glyphs": 2679,
+    "reading_pairs_without_phrase_evidence": 19482,
+    "rows": 171708,
+    "single_glyphs": 21740,
+    "training_distinct_reading_tuples": 101179,
+    "training_multi_reading_words": 906,
+    "training_words": 100149
+  },
   "syllables": 429,
   "skipped_unmapped_readings": 0,
   "english_words": 44127,
   "aosp_decompressed_sha256": "b039d9f26aa3e9e999f045158271728e6664f0123fc65a4d9a3725c4040c746c",
   "assets": {
+    "addons.tsv": "803475ae4a4ebc35e2e01813465bb09ff01012619101b3a15eda68ff6372a477",
     "context.tsv": "0627a69373c47f8ffca381245fd48292a50316ff8cbca53efbfa70e545f60952",
     "emoji.tsv": "ef49552c5c117f28a1c7fd143d5fb59957f5ac28cf96de31ba60f4985e7ff36b",
+    "en_spelling.tsv": "9dc2823be8f18e4c12bbeccc1ef6deaf12322f980814efb37c79c605a519db76",
     "en_us.tsv": "00fde127ac14cac7577b54b6f8a59b119456c3890c06667361bac5849dea6ff2",
+    "geography.tsv": "3138bd8c64ffbf3910d1ffd075db85a98a27bb053e55f58b6bcd33d8e0cea12c",
+    "japanese-basic.tsv": "0405d3d65d7c8ed510bef67493e3bc37b9a6096cbd10b2163e3fb59d2c99bca0",
+    "paired-forms.tsv": "e5e6b29e35a829da7d5cb31135fa8ec33cb1a6e2394f8bea0f2103fa006799a3",
     "syllables.tsv": "4915d49bbc76e0aad722b25f06e5906bec00694672d6b0f2ff678a58f370c30b",
-    "zh_tw.tsv": "69df686f257c478d1a8191af04bc4b59e6761827ad7dc458578bc164115ff473"
+    "zh_tw.tsv": "5d90b9571c901e9d31e7e0db672e24be8ecfdcfe096313b3d1f204cd34690ce3"
   }
 }

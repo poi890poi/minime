@@ -77,7 +77,8 @@ def estimate(lines):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--source', type=Path, default=Path('app/src/main/assets/zh_tw.tsv'))
+    parser.add_argument('--source', type=Path, required=True,
+                        help='Original whole-frequency TSV; never reweight an already conditional model')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     artifact_root = Path('artifacts').resolve()
