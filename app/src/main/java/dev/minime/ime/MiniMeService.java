@@ -68,7 +68,11 @@ public final class MiniMeService extends InputMethodService {
             if(getCurrentInputConnection()==null)return;
             shift.interrupt();action.run();render();
         });
-        render(); return keyboard;
+        View surface=keyboard.inputSurface();render();return surface;
+    }
+    @Override public void onComputeInsets(Insets outInsets) {
+        super.onComputeInsets(outInsets);
+        if(keyboard!=null)keyboard.computeInputInsets(outInsets);
     }
     @Override public void onStartInput(EditorInfo attribute,boolean restarting) {
         super.onStartInput(attribute,restarting);

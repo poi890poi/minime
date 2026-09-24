@@ -1,0 +1,91 @@
+{
+  "first_contracts": {
+    "session": "8d1bcbf9-ba4e-405f-bd79-75573bfeaf84",
+    "passed": 13,
+    "failed": 1,
+    "reason": "Accessibility window envelope was mistaken for keyboard body geometry.",
+    "original_apk_preferences_learning_ime_restored": true,
+    "display_off": true,
+    "hashes": {
+      "artifacts\\device-tests\\8d1bcbf9-ba4e-405f-bd79-75573bfeaf84\\instrumentation.txt": "00c857c18d722a555fb3d80ade5763ac2fa9c47042468c52634396a500bd6363",
+      "artifacts\\device-tests\\8d1bcbf9-ba4e-405f-bd79-75573bfeaf84\\display-after.txt": "c228e65423a2009055fb9faba6bd74187bd19adb11e390347b91c8033669723d",
+      "artifacts\\single-window\\contracts.log": "760af92badf09cacf3b74bb438f7b8a00910a9f8ad8ceb10e2d59071d29e890d"
+    }
+  },
+  "corrected_contracts": {
+    "session": "63741887-b022-4476-8d1d-e09c5ab66be9",
+    "passed": 14,
+    "failed": 0,
+    "reason": "",
+    "original_apk_preferences_learning_ime_restored": true,
+    "display_off": true,
+    "hashes": {
+      "artifacts\\device-tests\\63741887-b022-4476-8d1d-e09c5ab66be9\\instrumentation.txt": "e9b469c014f12876f97e8c4ef44c9406b17d03fe716f0250fbdb0060482a568b",
+      "artifacts\\device-tests\\63741887-b022-4476-8d1d-e09c5ab66be9\\display-after.txt": "30586f59b6a4b6985598eac3350df8b799e6362dd4d0e0e538727e3b1ebf72b6",
+      "artifacts\\single-window\\contracts2.log": "5394dc434cea5f4d05af4c3e833916c3ea191a06e64e9b3e8712ccfcdb778ff1"
+    }
+  },
+  "first_landscape": {
+    "session": "8ed6d4a1-f3f4-4dc8-874b-91077a8b7696",
+    "passed": 1,
+    "failed": 1,
+    "reason": "Buffer checks completed; cleanup assertion caught auto-rotation enabled by ROTATION_UNFREEZE. Immediately repaired before further phone work.",
+    "original_apk_preferences_learning_ime_restored": true,
+    "display_off": true,
+    "hashes": {
+      "artifacts\\device-tests\\8ed6d4a1-f3f4-4dc8-874b-91077a8b7696\\instrumentation.txt": "9753ccdee866af3cedf21a46dcc93612be11086b484307369989e0368f2ebeaf",
+      "artifacts\\device-tests\\8ed6d4a1-f3f4-4dc8-874b-91077a8b7696\\display-after.txt": "dd98c02c1af9562e4d1a689dab396325d272885c3850155f58a12127e6eabfdd",
+      "artifacts\\single-window\\landscape.log": "f5feab67a77e62094ef6321bc5902376ef4ddf348708b32b5bbd2af742fa4cac"
+    }
+  },
+  "guarded_landscape": {
+    "session": "b2cf5234-a4fc-4a24-8226-bbb456f8ea86",
+    "passed": 2,
+    "failed": 0,
+    "reason": "",
+    "original_apk_preferences_learning_ime_restored": true,
+    "display_off": true,
+    "hashes": {
+      "artifacts\\device-tests\\b2cf5234-a4fc-4a24-8226-bbb456f8ea86\\instrumentation.txt": "a84bb56fa9bc2022121599e6f7d31ed9f691b9ff5060319df12db27286dd74d6",
+      "artifacts\\device-tests\\b2cf5234-a4fc-4a24-8226-bbb456f8ea86\\display-after.txt": "8bed0f87c9d94f10f61ac95d498464b28c1eb027bbcdbfc0fd2a3429a7782173",
+      "artifacts\\single-window\\landscape-guarded.log": "f60fb4fbc324d18f5271f0a18d64a86a911d5596e76d68de46ee96ccfcb82a50"
+    }
+  },
+  "accepted_baseline_geometry": {
+    "session": "bf0b48a5-2e35-43ed-be88-981595beb7ca",
+    "passed": 1,
+    "failed": 0,
+    "reason": "",
+    "original_apk_preferences_learning_ime_restored": true,
+    "display_off": true,
+    "hashes": {
+      "artifacts\\device-tests\\bf0b48a5-2e35-43ed-be88-981595beb7ca\\instrumentation.txt": "090afc22f10fb1448c1c66bf5ed4724764153d3d3ea8a41c20289f450d416df0",
+      "artifacts\\device-tests\\bf0b48a5-2e35-43ed-be88-981595beb7ca\\display-after.txt": "fc9c06cfe9d60b0ff08fa3756f709d734f1fba123b8971b63c411c12b17083f8",
+      "artifacts\\single-window\\baseline-geometry.log": "f4d548d45b2d134d020ca0e66832ede9ad9ba849155418f8a72c91fdef1295a0"
+    }
+  },
+  "final_apps": {
+    "session": "d203705a-8d6a-4082-bbc7-3b5fbe903e97",
+    "passed": 7,
+    "failed": 0,
+    "reason": "Chrome input unsubmitted; synthetic Keep fields cleared.",
+    "original_apk_preferences_learning_ime_restored": true,
+    "display_off": true,
+    "hashes": {
+      "artifacts\\device-tests\\d203705a-8d6a-4082-bbc7-3b5fbe903e97\\instrumentation.txt": "056a2a20620dcb50a128bda58b15ed87741dea193599afa0bb4e81f7b3d175c3",
+      "artifacts\\device-tests\\d203705a-8d6a-4082-bbc7-3b5fbe903e97\\display-after.txt": "93524ce677ec8795e6eed01d7e2ce05c17248fd7a859d46e32237cebc4de9182",
+      "artifacts\\single-window\\cross-app.log": "a9670d4ae230ec9f63dceda94f75d0a27a188e6af5003d59ff41290975c7ce49"
+    }
+  },
+  "rotation_repair": {
+    "user_rotation": "0",
+    "accelerometer_rotation": "0",
+    "basis": "Recorded pretest auto=0; prior portrait geometry on unrestricted-orientation fixture establishes rotation=0",
+    "hashes": {
+      "artifacts\\single-window\\rotation-repair.json": "ba546d2f22550d12b314cdae4e47531f2183788ca7d0c093d8ba06df03268852",
+      "artifacts\\single-window\\rotation-repair-display.txt": "78e176c5c48a35a689aeef66a1e0d3592bf83c1ccccc2f16b71be7ab9538ed98",
+      "artifacts\\single-window\\landscape-guarded\\rotation-before.json": "10186dd3aeb5df885c69014fa8d2dc2fda78cbaef5673777bacadbe8409b0524",
+      "artifacts\\single-window\\landscape-guarded\\rotation-cleanup.txt": "511752c42b4d875ac2022ab54fcc67983a8a9cf27231fd1bf4077f2b7d03d612"
+    }
+  }
+}

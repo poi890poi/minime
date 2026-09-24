@@ -7,6 +7,10 @@ on baseline `fd728d5`; the accepted rendering change does not alter dictionary o
 ranking logic. Evaluation-only commit `1231638` adds evidence. Earlier publishing checklists are historical evidence,
 not certification of this build. No Play upload or GitHub CI was used.
 
+The current UI includes the admitted single-window composition buffer described
+below. Its ordinary release-source-set packaging check passes, but it is not a
+new signed distribution or permission to publish.
+
 The [grammar-source replacement screen](../source-replacement/PRODUCTIVE-GRAMMAR-RESULTS.md)
 rejects three metadata-only replacements. The broadest preserves annotated
 auxiliary coverage on 40 new documents and passes 486 engine-contract episodes,
@@ -52,6 +56,16 @@ relayouts and reduces mean queued-result wait from 8.996 to 1.408 ms with comple
 request/workload accounting. This supports replacing the extra window while
 preserving the raw-text affordance. The removal itself is not a release change;
 the separately planned single-window trial still needs functional and timing gates.
+
+The [single-window replacement](SINGLE-WINDOW-RESULTS.md) is now admitted. It
+retains the visible raw-text chip, stable keyboard/editor geometry and exact
+touch routing. Fourteen portrait/lifecycle checks, two landscape/height checks,
+the accepted-baseline geometry check and seven final app checks pass. Repeated
+A-B-B-A timing observes all 1,856 raw/Space submissions: fast Chinese candidate
+p95 improves from 58–61 to 39–42 ms; Taiwanese/Japanese are roughly 37–40 ms.
+English stays near 19–20 ms. Slow Chinese candidate p95 remains 68–71 ms and its
+tail still fails the candidate budget. Broad language-specific and large-sample
+gates remain open. No source rights, human-touch or Android-version gate is waived.
 
 The [compiled-validator experiment](VALIDATION-PATTERN-RESULTS.md) is rejected.
 Despite lower isolated ART validation cost and identical desktop predictions,

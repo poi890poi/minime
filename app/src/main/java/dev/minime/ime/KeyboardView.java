@@ -26,10 +26,8 @@ final class KeyboardView extends LinearLayout {
     private final LinearLayout strip, keys;
     private final TextView status,phonetics;
     private final FrameLayout annotation;
-    private final PopupWindow annotationWindow;
+    private final FrameLayout annotationHost;
     private boolean inputActive,annotationRequested;
-    private final Runnable placeAnnotation=this::placeAnnotation;
-    private int annotationX=-1,annotationY=-1,annotationWidth=-1;
     private HorizontalScrollView candidateScroll;
     private LinearLayout candidateWords;
     private static final int STRIP_BATCH=24;
@@ -106,16 +104,16 @@ final class KeyboardView extends LinearLayout {
         phonetics.setPadding(dp(8),0,dp(8),0);phonetics.setMaxLines(1);phonetics.setEllipsize(android.text.TextUtils.TruncateAt.END);
         phonetics.setClickable(true);phonetics.setFocusable(true);phonetics.setOnClickListener(v->{expanded=false;press.accept("CANDIDATE:0");});
         annotation.addView(phonetics,new FrameLayout.LayoutParams(-2,-1));
-        annotationWindow=new PopupWindow(annotation,0,dp(24),false);
-        annotationWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NOT_NEEDED);
-        // Position in screen coordinates, including above the IME's own window.
-        annotationWindow.setIsLaidOutInScreen(true);
-        annotationWindow.setBackgroundDrawable(new ColorDrawable(BACK));
+        annotationHost=new FrameLayout(context);
+        annotationHost.setLayoutParams(new LinearLayout.LayoutParams(-1,dp(24)));
+        annotationHost.addView(annotation,new FrameLayout.LayoutParams(-2,-1,Gravity.TOP|Gravity.LEFT));
+        annotation.setVisibility(INVISIBLE);
         strip=new LinearLayout(context); strip.setGravity(Gravity.CENTER_VERTICAL); strip.setBackgroundColor(0xffe4e7e9); addView(strip,new LayoutParams(-1,dp(48)));
         keys=new LinearLayout(context); keys.setOrientation(VERTICAL); addView(keys);
         setOnApplyWindowInsetsListener((view,insets)-> {
             android.graphics.Insets bars=insets.getSystemWindowInsets();
-            setPadding(bars.left,0,bars.right,bars.bottom); return insets;
+            setPadding(bars.left,0,bars.right,bars.bottom);
+            annotationHost.setPadding(bars.left,0,bars.right,0);return insets;
         });
     }
     View compositionAnnotation() {return annotation;}
@@ -123,28 +121,25 @@ final class KeyboardView extends LinearLayout {
         inputActive=active;queueAnnotation();
     }
     private void queueAnnotation() {
-        removeCallbacks(placeAnnotation);
-        if(!inputActive || !annotationRequested)annotationWindow.dismiss();
-        else post(placeAnnotation);
+        annotation.setVisibility(inputActive && annotationRequested ? VISIBLE : INVISIBLE);
     }
-    private void placeAnnotation() {
-        if(!inputActive || !annotationRequested || !isAttachedToWindow() || !isShown()
-                || getWindowVisibility()!=VISIBLE || getWidth()<=0) {annotationWindow.dismiss();return;}
-        int available=getWidth()-getPaddingLeft()-getPaddingRight();
-        annotation.measure(MeasureSpec.makeMeasureSpec(available,MeasureSpec.AT_MOST),MeasureSpec.makeMeasureSpec(dp(24),MeasureSpec.EXACTLY));
-        int[] at=new int[2];getLocationOnScreen(at);
-        int x=at[0]+getPaddingLeft(),y=Math.max(0,at[1]-dp(24)),width=Math.max(1,annotation.getMeasuredWidth());
-        if(!annotationWindow.isShowing()) {
-            annotationWindow.setWidth(width);annotationWindow.showAtLocation(getRootView(),Gravity.TOP|Gravity.LEFT,x,y);
-        } else if(x!=annotationX || y!=annotationY || width!=annotationWidth)annotationWindow.update(x,y,width,dp(24));
-        annotationX=x;annotationY=y;annotationWidth=width;
+    View inputSurface() {
+        LinearLayout surface=new LinearLayout(getContext());surface.setOrientation(VERTICAL);
+        surface.addView(annotationHost);surface.addView(this,new LinearLayout.LayoutParams(-1,-2));
+        return surface;
     }
-    @Override protected void onLayout(boolean changed,int l,int t,int r,int b) {
-        super.onLayout(changed,l,t,r,b);queueAnnotation();
-    }
-    @Override protected void onWindowVisibilityChanged(int visibility) {
-        super.onWindowVisibilityChanged(visibility);
-        if(annotationWindow!=null)queueAnnotation();
+    void computeInputInsets(android.inputmethodservice.InputMethodService.Insets out) {
+        if(!isShown())return;
+        int[] at=new int[2];getLocationInWindow(at);
+        // Exclude the transparent annotation host from editor resize/pan. Its
+        // visible raw-text chip participates only in the exact touch region.
+        out.contentTopInsets=at[1];out.visibleTopInsets=at[1];
+        out.touchableInsets=android.inputmethodservice.InputMethodService.Insets.TOUCHABLE_INSETS_REGION;
+        out.touchableRegion.set(0,at[1],getRootView().getWidth(),getRootView().getHeight());
+        if(annotation.isShown()) {
+            annotation.getLocationInWindow(at);
+            out.touchableRegion.op(at[0],at[1],at[0]+annotation.getWidth(),at[1]+annotation.getHeight(),android.graphics.Region.Op.UNION);
+        }
     }
     private float[] center(View view) {int[] at=new int[2];view.getLocationOnScreen(at);return new float[]{at[0]+(view.getWidth()+view.getPaddingLeft()-view.getPaddingRight())/2f,at[1]+view.getHeight()/2f};}
     @Override public boolean dispatchTouchEvent(MotionEvent e) {
@@ -196,7 +191,6 @@ final class KeyboardView extends LinearLayout {
         return handled;
     }
     @Override protected void onDetachedFromWindow() {
-        removeCallbacks(placeAnnotation);annotationWindow.dismiss();
         modeMenu=false;
         candidateGesture=false;afterCandidateGesture=null;super.onDetachedFromWindow();
     }

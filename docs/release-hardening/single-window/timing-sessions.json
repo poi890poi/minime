@@ -1,0 +1,62 @@
+{
+  "a1": {
+    "session": "5c5293db-3ca7-4a63-b9eb-936394545a4a",
+    "cooled_start": {
+      "utc": "2026-09-24T20:56:40.4022120Z",
+      "thermal": 0,
+      "batteryC": 32.9
+    },
+    "restoration_verified": true,
+    "hashes": {
+      "artifacts\\device-tests\\5c5293db-3ca7-4a63-b9eb-936394545a4a\\instrumentation.txt": "918c6dd261cfac6cd09d426219ec754bacf546e2577c0e24c9bec772c0d61ff8",
+      "artifacts\\device-tests\\5c5293db-3ca7-4a63-b9eb-936394545a4a\\display-after.txt": "c8c44b71af8d15ef3e666ec929ddeaa742c8c96ce54c68696b199137191a3ed4",
+      "artifacts\\release-hardening\\single-window-a1-environment\\final-display.txt": "6b3144b26e018efe00f5af1f2b2fbe0a26cf05aa0a26b8629128e5a54391f858",
+      "artifacts\\release-hardening\\single-window-a1-environment\\cooldown.jsonl": "10288f31e5331134438b5565e49b5a5b6c9a2b89f9e2741d4d34c2bed3801df6"
+    }
+  },
+  "b1": {
+    "session": "f6c08973-7af8-4a9d-a5c0-a3bcc4cb768a",
+    "cooled_start": {
+      "utc": "2026-09-24T20:58:31.4632064Z",
+      "thermal": 0,
+      "batteryC": 33.6
+    },
+    "restoration_verified": true,
+    "hashes": {
+      "artifacts\\device-tests\\f6c08973-7af8-4a9d-a5c0-a3bcc4cb768a\\instrumentation.txt": "45ce35e061faa08491c3d8571809139cad5baa1bc6269d3de4829a8e5592ac93",
+      "artifacts\\device-tests\\f6c08973-7af8-4a9d-a5c0-a3bcc4cb768a\\display-after.txt": "60abf06ca31778d5e7f57f2942f5f7691a17338b44a01bbe1e3117fd5ae1b329",
+      "artifacts\\release-hardening\\single-window-b1-environment\\final-display.txt": "4d6b5dd0805bded7c6eee10404e18c30d6ee9f64ddfa22e5bec06203605bc917",
+      "artifacts\\release-hardening\\single-window-b1-environment\\cooldown.jsonl": "dacf95612ab8b017cd5d3ca191cc505f0a33bcd76fd5bc976ae4f1c49a19e3e9"
+    }
+  },
+  "b2": {
+    "session": "ec72c93a-2d6e-418c-950d-552ab9c99015",
+    "cooled_start": {
+      "utc": "2026-09-24T21:01:45.6858980Z",
+      "thermal": 0,
+      "batteryC": 33.9
+    },
+    "restoration_verified": true,
+    "hashes": {
+      "artifacts\\device-tests\\ec72c93a-2d6e-418c-950d-552ab9c99015\\instrumentation.txt": "27f1d5b6f9e06c6cce9b50eee2042413d7acb95d45bb9b20a42cc663b3a0d5cb",
+      "artifacts\\device-tests\\ec72c93a-2d6e-418c-950d-552ab9c99015\\display-after.txt": "7fd834634e5f8d9d688e79f02371b4056e5efc5b65b386de4b7dc62b85e94c3b",
+      "artifacts\\release-hardening\\single-window-b2-environment\\final-display.txt": "04888ad3bc7a61a4ebbc2c92f0784df9d5f6bca65f9dc26c5316f538d40b500d",
+      "artifacts\\release-hardening\\single-window-b2-environment\\cooldown.jsonl": "f84dbef90cebb292320012087bf500a2d2c9f5b160f854ac4948d2adf8c95de1"
+    }
+  },
+  "a2": {
+    "session": "39a284d6-63ea-4769-be5c-afcb8676a3a9",
+    "cooled_start": {
+      "utc": "2026-09-24T21:05:44.1625582Z",
+      "thermal": 0,
+      "batteryC": 33.9
+    },
+    "restoration_verified": true,
+    "hashes": {
+      "artifacts\\device-tests\\39a284d6-63ea-4769-be5c-afcb8676a3a9\\instrumentation.txt": "2c915174f8cfb177a7b89e7dd481f8652bf5a83afae68ac48e2650f954f09d6b",
+      "artifacts\\device-tests\\39a284d6-63ea-4769-be5c-afcb8676a3a9\\display-after.txt": "b0ec8cecd6902de2e67411e58bcb53f4b30f4cec0b354bf2b0d6c2bae3b4864c",
+      "artifacts\\release-hardening\\single-window-a2-environment\\final-display.txt": "49726c2151253b05d2db770fe98974a812a02f8537dad3679b60897ee5cc8148",
+      "artifacts\\release-hardening\\single-window-a2-environment\\cooldown.jsonl": "9da2d1cc0c82e5f1f3dda30cc2e69d3f53811a9cb397a690c04cde4d9e21cbf6"
+    }
+  }
+}
