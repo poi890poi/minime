@@ -1,0 +1,13 @@
+diff --git a/app/src/main/java/dev/minime/ime/AsyncDecoder.java b/app/src/main/java/dev/minime/ime/AsyncDecoder.java
+index 378b3d5..a46ed50 100644
+--- a/app/src/main/java/dev/minime/ime/AsyncDecoder.java
++++ b/app/src/main/java/dev/minime/ime/AsyncDecoder.java
+@@ -37,7 +37,7 @@ final class AsyncDecoder implements CompositionEngine.Decoder,AutoCloseable {
+                 useRime?()->RimeBackend.candidates(raw):null,
+                 ()->JapaneseConversion.merge(raw,enabled,addons,addons.lookup(raw,enabled),conversion,current),stats);
+             if(choices!=null)deliver(current,choices,result);
+-        },8,TimeUnit.MILLISECONDS);
++        },0,TimeUnit.MILLISECONDS);
+     }
+     public void cancel() {requests.cancel();if(queued!=null)queued.cancel(false);}
+     private void deliver(BooleanSupplier current,List<Candidate> choices,Consumer<List<Candidate>> result) {

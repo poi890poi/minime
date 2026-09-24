@@ -1,0 +1,17 @@
+{
+  "baseline_commit": "b47bb2a",
+  "trial_change": "AsyncDecoder query scheduling delay: 8 ms to 0 ms only",
+  "binaries": {
+    "schedule-baseline.apk": "1c43b60e9a76e97d9917b9f13545d95dafb5c67498eaa8db42fae1e73c9ca72b",
+    "schedule-trial.apk": "17f4960c29d081a8875bfc551521adc4d6a154a09e9d0200855f318a21dbe0ae",
+    "schedule-tests.apk": "359a505be7904fbd997e378685eee8720f9da1747e4a09631045388b9c49621f"
+  },
+  "core_assertions": 888180,
+  "desktop_rows": 13014,
+  "native_queries": 11272,
+  "desktop_sha256": "72ed6f69cf0a838ec9c03a4d8de2a3e94e5991531b344ae1f173d95bff2d6bfe",
+  "phone_status": "not run; automatic approval review rejected handoff verification twice; explicit user approval pending",
+  "changed_unsigned_apk_entries": [
+    "classes3.dex"
+  ]
+}

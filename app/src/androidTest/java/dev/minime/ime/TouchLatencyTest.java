@@ -141,6 +141,22 @@ public final class TouchLatencyTest extends ActivityInstrumentationTestCase2<Edi
         }
         } finally {active=null;editorActive=null;candidateActive=null;
         if(timing!=null)getInstrumentation().runOnMainSync(()->{try {timing.write(context.getExternalFilesDir(null));}catch(Exception e){throw new RuntimeException(e);}finally{try{timing.close();}catch(Exception e){throw new RuntimeException(e);}}});
+        // Existing aggregate counters, read after the replay; no per-key hook.
+        getInstrumentation().runOnMainSync(()-> {
+            try {
+                Field field=CompositionEngine.class.getDeclaredField("decoder");field.setAccessible(true);
+                Object decoder=field.get(engine);assertTrue(decoder instanceof AsyncDecoder);
+                dev.minime.core.DecodePipeline.Stats stats=((AsyncDecoder)decoder).stats;
+                try(PrintWriter out=new PrintWriter(new File(context.getExternalFilesDir(null),"candidate-work.tsv"),"UTF-8")) {
+                    out.println("metric\tcount\twork_ns");
+                    out.println("requests\t"+stats.requests.get()+"\t0");
+                    out.println("delivered\t"+stats.delivered.get()+"\t0");
+                    out.println("cancelled\t"+stats.cancelled.get()+"\t0");
+                    out.println("stale_delivery\t"+stats.staleDelivery.get()+"\t0");
+                    for(int i=0;i<3;i++)out.println(new String[]{"base","rime","addons"}[i]+"\t"+stats.calls[i].get()+"\t"+stats.nanos[i].get());
+                }
+            } catch(Exception e){throw new RuntimeException(e);}
+        });
         try(PrintWriter out=new PrintWriter(new File(context.getExternalFilesDir(null),"touch-latency.tsv"),"UTF-8")) {
             out.println("mode\tinterval_ms\tquery\texpected\taction\tdown_ns\tup_ns\teditor_callback_ns\teditor_pre_draw_ns\teditor_submit_ns\tcandidate_pre_draw_ns\tcandidate_submit_ns\tpressed_submit_ns");
             for(Sample s:samples)out.println(s.mode+"\t"+s.interval+"\t"+s.query+"\t"+s.expected+"\t"+s.action+"\t"+s.down+"\t"+s.up+"\t"+s.callback+"\t"+s.rawDraw+"\t"+s.rawSubmit+"\t"+s.candidateDraw+"\t"+s.candidateSubmit+"\t"+s.pressedSubmit);
