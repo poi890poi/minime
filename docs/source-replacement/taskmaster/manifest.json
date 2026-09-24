@@ -1,0 +1,115 @@
+{
+  "revision": "d92cb6af3005f1dc09c39e75e7daf4a04905e00b",
+  "urls": {
+    "self-dialogs.json": "https://raw.githubusercontent.com/google-research-datasets/Taskmaster/d92cb6af3005f1dc09c39e75e7daf4a04905e00b/TM-1-2019/self-dialogs.json",
+    "train-dev-test/train.csv": "https://raw.githubusercontent.com/google-research-datasets/Taskmaster/d92cb6af3005f1dc09c39e75e7daf4a04905e00b/TM-1-2019/train-dev-test/train.csv",
+    "train-dev-test/dev.csv": "https://raw.githubusercontent.com/google-research-datasets/Taskmaster/d92cb6af3005f1dc09c39e75e7daf4a04905e00b/TM-1-2019/train-dev-test/dev.csv",
+    "train-dev-test/test.csv": "https://raw.githubusercontent.com/google-research-datasets/Taskmaster/d92cb6af3005f1dc09c39e75e7daf4a04905e00b/TM-1-2019/train-dev-test/test.csv",
+    "README.md": "https://raw.githubusercontent.com/google-research-datasets/Taskmaster/d92cb6af3005f1dc09c39e75e7daf4a04905e00b/TM-1-2019/README.md"
+  },
+  "sha256": {
+    "self-dialogs.json": "1e590ed0ccee279e40c2fb9e083d3b9417477c6bfe35ce5b2277167698dd858d",
+    "train-dev-test/train.csv": "88e48f53524ed123dfc57733ccc23f80e176d1e057d7ea46a62a01ddce02626e",
+    "train-dev-test/dev.csv": "d83a6f413f45e01b376d611aadf07fd0fc49f6cedffb4ffff7e7b1f8393c13bf",
+    "train-dev-test/test.csv": "1938698dc98b71c5256c05da092dff0d4f9eff224ec413b3c3eed57bc0bca928",
+    "README.md": "05e1bc05724716ca7905f567a2ec30d99c8d2f5f58e926c2ca7d9da116002446"
+  },
+  "split_stats": {
+    "train": {
+      "conversations": 6168,
+      "utterances": 135647,
+      "empty_utterances": 0,
+      "utterances_with_apostrophe": 23475,
+      "speakers": {
+        "USER": 68579,
+        "ASSISTANT": 67068
+      },
+      "instruction_counts": {
+        "auto-repair-appt-1": 947,
+        "coffee-ordering-1": 572,
+        "coffee-ordering-2": 533,
+        "movie-finder": 44,
+        "movie-ticket-1": 27,
+        "movie-tickets-1": 510,
+        "movie-tickets-2": 290,
+        "movie-tickets-3": 158,
+        "pizza-ordering-1": 204,
+        "pizza-ordering-2": 974,
+        "restaurant-table-1": 569,
+        "restaurant-table-2": 392,
+        "restaurant-table-3": 80,
+        "uber-lyft-1": 506,
+        "uber-lyft-2": 362
+      },
+      "distinct_dialogue_texts": 6166
+    },
+    "dev": {
+      "conversations": 770,
+      "utterances": 16898,
+      "empty_utterances": 0,
+      "utterances_with_apostrophe": 2845,
+      "speakers": {
+        "USER": 8557,
+        "ASSISTANT": 8341
+      },
+      "instruction_counts": {
+        "auto-repair-appt-1": 106,
+        "coffee-ordering-1": 84,
+        "coffee-ordering-2": 56,
+        "movie-finder": 5,
+        "movie-ticket-1": 7,
+        "movie-tickets-1": 59,
+        "movie-tickets-2": 42,
+        "movie-tickets-3": 11,
+        "pizza-ordering-1": 31,
+        "pizza-ordering-2": 128,
+        "restaurant-table-1": 64,
+        "restaurant-table-2": 54,
+        "restaurant-table-3": 8,
+        "uber-lyft-1": 76,
+        "uber-lyft-2": 39
+      },
+      "distinct_dialogue_texts": 770
+    },
+    "test": {
+      "conversations": 770,
+      "utterances": 16924,
+      "empty_utterances": 0,
+      "utterances_with_apostrophe": 2798,
+      "speakers": {
+        "USER": 8557,
+        "ASSISTANT": 8367
+      },
+      "instruction_counts": {
+        "auto-repair-appt-1": 108,
+        "coffee-ordering-1": 79,
+        "coffee-ordering-2": 52,
+        "movie-finder": 5,
+        "movie-ticket-1": 3,
+        "movie-tickets-1": 73,
+        "movie-tickets-2": 45,
+        "movie-tickets-3": 26,
+        "pizza-ordering-1": 22,
+        "pizza-ordering-2": 109,
+        "restaurant-table-1": 71,
+        "restaurant-table-2": 48,
+        "restaurant-table-3": 14,
+        "uber-lyft-1": 64,
+        "uber-lyft-2": 51
+      },
+      "distinct_dialogue_texts": 770
+    }
+  },
+  "exact_dialogue_text_overlap": {
+    "train/dev": 0,
+    "train/test": 1,
+    "dev/test": 0
+  },
+  "production_changed": false,
+  "exposure": "Structural inventory only; no model queries or example selection. Official conversation splits retained.",
+  "limitations": [
+    "Prompted self-dialogues, not spontaneous two-person conversations",
+    "Task domains and repeated instructions are not broad English frequency evidence",
+    "Identical short turns may recur across otherwise distinct dialogues"
+  ]
+}

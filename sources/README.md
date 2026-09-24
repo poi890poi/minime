@@ -20,6 +20,12 @@ consumed evidence, and may not be advertised as a fresh holdout again.
 
 ## Decisions
 
+The September 24 Taskmaster-1 pilot is defined in
+`../docs/source-replacement/taskmaster/PLAN.md`. It audits an explicitly licensed
+English dialogue source as a possible replacement for EWT-derived context data.
+Official conversation splits remain separate; no production input or source-rights
+gate is changed by pilot admission.
+
 The September 22 release-hardening evaluation admits only the pinned MozTW CC0
 g0v chat-derived excerpt file; see `../docs/release-hardening/SOURCES.md`. It is
 evaluation-only, with edited/shuffled context and shared-reading limitations. No

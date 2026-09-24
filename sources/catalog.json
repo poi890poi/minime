@@ -90,7 +90,9 @@
       "coverage": "Complete pinned normalized POI snapshot; existing sector/reading exclusions in rudy-manifest.",
       "limitations": "Not all names have usable Mandarin readings; map presence is not typing frequency.",
       "reason": "Preserve the high-quality geography source and separate ODbL pack. Compact upstream tags may gain separated aliases only under unique syllabification respecting source separators and Han glyph count; preserve original spelling and reject ambiguous inference.",
-      "audit_files": ["docs/rudy-reading-boundaries/PLAN.md"],
+      "audit_files": [
+        "docs/rudy-reading-boundaries/PLAN.md"
+      ],
       "addon_prefixes": []
     },
     {
@@ -1134,6 +1136,37 @@
       "addon_prefixes": [],
       "audit_files": [
         "docs/prefix-access/CONVERSATION-SOURCES.md"
+      ]
+    },
+    {
+      "id": "taskmaster-english-pilot",
+      "name": "Taskmaster-1 English authored dialogues",
+      "origin": "english-crowdsourced-task-dialogues",
+      "decision": "pilot",
+      "uses": [
+        "frequency",
+        "evaluation",
+        "discovery"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/google-research-datasets/Taskmaster/blob/d92cb6af3005f1dc09c39e75e7daf4a04905e00b/TM-1-2019/README.md"
+      },
+      "evidence": [
+        "https://github.com/google-research-datasets/Taskmaster/tree/d92cb6af3005f1dc09c39e75e7daf4a04905e00b/TM-1-2019"
+      ],
+      "editorial": "Crowdsourced human-authored self-dialogues from explicit service scenarios; dataset-specific CC BY notice covers the authored work.",
+      "coverage": "7,708 self-dialogues; official splits contain 6,168 train, 770 dev and 770 test IDs; 169,469 nonempty utterances.",
+      "limitations": "Six task domains; a single worker plays both sides in self-dialogues. Not spontaneous multi-party chat, general population frequency, or Taiwan Mandarin data. Structural audit found two duplicate train records and one train/test full-dialogue overlap; declared signature decontamination is required before extraction.",
+      "reason": "Audit a licensed replacement for English EWT-derived context counts; production admission requires separate quality comparison.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/source-replacement/taskmaster/PLAN.md",
+        "docs/source-replacement/taskmaster/UPSTREAM-README.md",
+        "docs/source-replacement/taskmaster/manifest.json",
+        "docs/source-replacement/taskmaster/audit.py"
       ]
     }
   ]
