@@ -1089,10 +1089,25 @@ public class KeyboardInteractionTest extends ActivityInstrumentationTestCase2<Ed
         getInstrumentation().waitForIdleSync();
     }
     private Rect keyboardBounds() {
-        for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows()) {
-            if(w.getType()==AccessibilityWindowInfo.TYPE_INPUT_METHOD) {Rect r=new Rect();w.getBoundsInScreen(r);return r;}
+        // Accessibility window bounds include the optional raw-text touch chip.
+        // Measure the actual keyboard body, independent of window ownership.
+        Rect[] result={null};getInstrumentation().runOnMainSync(()-> {
+            for(android.view.View root:android.view.inspector.WindowInspector.getGlobalWindowViews()) {
+                KeyboardView keyboard=findKeyboardBody(root);
+                if(keyboard!=null && keyboard.isShown()) {
+                    int[] at=new int[2];keyboard.getLocationOnScreen(at);
+                    result[0]=new Rect(at[0],at[1],at[0]+keyboard.getWidth(),at[1]+keyboard.getHeight());break;
+                }
+            }
+        });
+        assertNotNull("IME keyboard body missing",result[0]);return result[0];
+    }
+    private KeyboardView findKeyboardBody(android.view.View view) {
+        if(view instanceof KeyboardView)return (KeyboardView)view;
+        if(view instanceof android.view.ViewGroup)for(int i=0;i<((android.view.ViewGroup)view).getChildCount();i++) {
+            KeyboardView found=findKeyboardBody(((android.view.ViewGroup)view).getChildAt(i));if(found!=null)return found;
         }
-        throw new AssertionError("IME window missing");
+        return null;
     }
     private void sameKeyboardBounds(Rect expected,String stage) {
         getInstrumentation().waitForIdleSync();SystemClock.sleep(100);
