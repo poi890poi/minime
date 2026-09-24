@@ -1,0 +1,353 @@
+{
+  "scope": "One instrumented Chinese shard pair; attribution, not release speedup.",
+  "runs": {
+    "baseline": {
+      "session": "f250d978-d29e-40cd-8e68-e9679e4a3bd9",
+      "workload": {
+        "mode": "chinese",
+        "shard": 0,
+        "queries_per_cadence": 32,
+        "actions": 728,
+        "status": "exact action sequence matches frozen corpus"
+      },
+      "queues": 665,
+      "queue_wait": {
+        "n": 665,
+        "mean_ms": 8.995737986466166,
+        "p50_ms": 7.94099,
+        "p95_ms": 18.673333,
+        "p99_ms": 24.599948,
+        "max_ms": 30.729583
+      },
+      "relayout_count": 729,
+      "relayout_wall_ms": 4099.382965,
+      "relayout_wait_mean_ms": 5.085669330827067,
+      "touch_groups": {
+        "chinese/150": {
+          "editor_callback": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 4.273128605421687,
+            "p50_ms": 4.137826499999999,
+            "p95_ms": 5.79676,
+            "p99_ms": 6.711196,
+            "max_ms": 9.143368
+          },
+          "editor_submission": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 13.163296780120483,
+            "p50_ms": 12.53677,
+            "p95_ms": 18.258492,
+            "p99_ms": 21.408437,
+            "max_ms": 24.114686
+          },
+          "candidate_submission": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 38.64769499698795,
+            "p50_ms": 34.896012999999996,
+            "p95_ms": 64.825784,
+            "p99_ms": 87.930619,
+            "max_ms": 110.834465
+          },
+          "pressed_submission": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 21.46890235240964,
+            "p50_ms": 20.842226,
+            "p95_ms": 29.622803,
+            "p99_ms": 32.580007,
+            "max_ms": 34.540048
+          },
+          "space_submission": {
+            "n": 32,
+            "observed": 32,
+            "unobserved": 0,
+            "mean_ms": 22.707393375,
+            "p50_ms": 22.3557935,
+            "p95_ms": 29.963747,
+            "p99_ms": 30.720615,
+            "max_ms": 30.720615
+          },
+          "injected_key_interval": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 150.00903614457832,
+            "p50_ms": 152.0,
+            "p95_ms": 155.0,
+            "p99_ms": 156.0,
+            "max_ms": 157.0
+          },
+          "candidate_deadline": {
+            "letters": 332,
+            "submitted_before_next_up": 332,
+            "observed_submission_at_or_after_next_up": 0,
+            "unobserved": 0
+          }
+        },
+        "chinese/60": {
+          "editor_callback": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 4.074658138554216,
+            "p50_ms": 3.91797,
+            "p95_ms": 5.524241,
+            "p99_ms": 9.541432,
+            "max_ms": 22.224709
+          },
+          "editor_submission": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 13.77621746686747,
+            "p50_ms": 12.979326499999999,
+            "p95_ms": 19.393365,
+            "p99_ms": 25.070489,
+            "max_ms": 31.32737
+          },
+          "candidate_submission": {
+            "n": 332,
+            "observed": 324,
+            "unobserved": 8,
+            "mean_ms": 37.36968763271605,
+            "p50_ms": 33.641093,
+            "p95_ms": 62.590396,
+            "p99_ms": 75.819819,
+            "max_ms": 82.929921
+          },
+          "pressed_submission": {
+            "n": 332,
+            "observed": 326,
+            "unobserved": 6,
+            "mean_ms": 28.3844869601227,
+            "p50_ms": 27.2721845,
+            "p95_ms": 45.511482,
+            "p99_ms": 52.813256,
+            "max_ms": 60.523991
+          },
+          "space_submission": {
+            "n": 32,
+            "observed": 32,
+            "unobserved": 0,
+            "mean_ms": 21.932015125,
+            "p50_ms": 21.572217000000002,
+            "p95_ms": 27.981956,
+            "p99_ms": 35.758614,
+            "max_ms": 35.758614
+          },
+          "injected_key_interval": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 60.23192771084337,
+            "p50_ms": 62.0,
+            "p95_ms": 72.0,
+            "p99_ms": 75.0,
+            "max_ms": 78.0
+          },
+          "candidate_deadline": {
+            "letters": 332,
+            "submitted_before_next_up": 310,
+            "observed_submission_at_or_after_next_up": 14,
+            "unobserved": 8
+          }
+        }
+      },
+      "touch_limitations": [
+        "injected events, not physical digitizer latency",
+        "frame callback delivery, not display presentation",
+        "one session, small sample; no acceptance certification",
+        "same-process test editor, not Chrome",
+        "candidate metrics conditional on observing a fresh matching frame before the next action; unchanged rows and supersession are not distinguished",
+        "source conditions independently sampled; latency differences between conditions are not isolated error effects",
+        "four Space samples per source/condition/shard; p95/p99 equal the maximum, not stable tail estimates"
+      ],
+      "files": {
+        "artifacts\\system-queue\\phone-scoped-fixed\\trace.pftrace": "76e25ea3894006452e421415ba338b1e8fd1c63a52ef8eec58197d1d4b32cefe",
+        "artifacts\\system-queue\\frame-detail.csv": "89491937eae815d3c8cb877309ae39539f2d43dfea23c2c6c1a38e0dd624eed7",
+        "artifacts\\device-tests\\f250d978-d29e-40cd-8e68-e9679e4a3bd9\\touch-latency.tsv": "3b79844387f1f639901a1f09705e98ce97f5d31ea28304c2d689485b9cdd3def"
+      }
+    },
+    "suppressed_popup": {
+      "session": "5c48255b-9ac5-4aeb-9023-0752705f6254",
+      "workload": {
+        "mode": "chinese",
+        "shard": 0,
+        "queries_per_cadence": 32,
+        "actions": 728,
+        "status": "exact action sequence matches frozen corpus"
+      },
+      "queues": 665,
+      "queue_wait": {
+        "n": 665,
+        "mean_ms": 1.4081754962406015,
+        "p50_ms": 0.551875,
+        "p95_ms": 5.371354,
+        "p99_ms": 6.430677,
+        "max_ms": 16.796094
+      },
+      "relayout_count": 0,
+      "relayout_wall_ms": 0.0,
+      "relayout_wait_mean_ms": 0,
+      "touch_groups": {
+        "chinese/150": {
+          "editor_callback": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 4.190935707831326,
+            "p50_ms": 4.10036,
+            "p95_ms": 5.362845,
+            "p99_ms": 6.471834,
+            "max_ms": 8.519859
+          },
+          "editor_submission": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 12.532631114457832,
+            "p50_ms": 12.2710885,
+            "p95_ms": 14.578188,
+            "p99_ms": 18.379879,
+            "max_ms": 31.432483
+          },
+          "candidate_submission": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 34.41477074096385,
+            "p50_ms": 34.808588,
+            "p95_ms": 42.936956,
+            "p99_ms": 78.426531,
+            "max_ms": 93.840689
+          },
+          "pressed_submission": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 24.112347147590363,
+            "p50_ms": 24.4597345,
+            "p95_ms": 31.400496,
+            "p99_ms": 33.954447,
+            "max_ms": 36.512793
+          },
+          "space_submission": {
+            "n": 32,
+            "observed": 32,
+            "unobserved": 0,
+            "mean_ms": 13.8076226875,
+            "p50_ms": 13.424059,
+            "p95_ms": 18.537626,
+            "p99_ms": 20.25196,
+            "max_ms": 20.25196
+          },
+          "injected_key_interval": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 149.95180722891567,
+            "p50_ms": 152.0,
+            "p95_ms": 154.0,
+            "p99_ms": 155.0,
+            "max_ms": 158.0
+          },
+          "candidate_deadline": {
+            "letters": 332,
+            "submitted_before_next_up": 332,
+            "observed_submission_at_or_after_next_up": 0,
+            "unobserved": 0
+          }
+        },
+        "chinese/60": {
+          "editor_callback": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 4.1882706445783136,
+            "p50_ms": 4.200571999999999,
+            "p95_ms": 5.207712,
+            "p99_ms": 5.850371,
+            "max_ms": 6.787914
+          },
+          "editor_submission": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 13.346446340361446,
+            "p50_ms": 13.036665,
+            "p95_ms": 16.47786,
+            "p99_ms": 20.979681,
+            "max_ms": 25.337965
+          },
+          "candidate_submission": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 33.79206238253012,
+            "p50_ms": 35.577168,
+            "p95_ms": 41.272338,
+            "p99_ms": 63.477447,
+            "max_ms": 67.835099
+          },
+          "pressed_submission": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 23.569998475903613,
+            "p50_ms": 23.434763,
+            "p95_ms": 31.446922,
+            "p99_ms": 36.623391,
+            "max_ms": 41.833485
+          },
+          "space_submission": {
+            "n": 32,
+            "observed": 32,
+            "unobserved": 0,
+            "mean_ms": 13.8576090625,
+            "p50_ms": 13.3110105,
+            "p95_ms": 20.712242,
+            "p99_ms": 21.974167,
+            "max_ms": 21.974167
+          },
+          "injected_key_interval": {
+            "n": 332,
+            "observed": 332,
+            "unobserved": 0,
+            "mean_ms": 59.75,
+            "p50_ms": 59.0,
+            "p95_ms": 68.0,
+            "p99_ms": 69.0,
+            "max_ms": 70.0
+          },
+          "candidate_deadline": {
+            "letters": 332,
+            "submitted_before_next_up": 328,
+            "observed_submission_at_or_after_next_up": 4,
+            "unobserved": 0
+          }
+        }
+      },
+      "touch_limitations": [
+        "injected events, not physical digitizer latency",
+        "frame callback delivery, not display presentation",
+        "one session, small sample; no acceptance certification",
+        "same-process test editor, not Chrome",
+        "candidate metrics conditional on observing a fresh matching frame before the next action; unchanged rows and supersession are not distinguished",
+        "source conditions independently sampled; latency differences between conditions are not isolated error effects",
+        "four Space samples per source/condition/shard; p95/p99 equal the maximum, not stable tail estimates"
+      ],
+      "files": {
+        "artifacts\\annotation-ablation\\phone\\trace.pftrace": "bfbc5aa19029878fba7d27f485ba9e6e600945ecd5ec82da8eb90b03ac23dc42",
+        "artifacts\\annotation-ablation\\frame-detail.csv": "caabf8b9d8e12666f4bec6adec0534ca07af4a0ba136852de0cb096f584f56c1",
+        "artifacts\\device-tests\\5c48255b-9ac5-4aeb-9023-0752705f6254\\touch-latency.tsv": "fc4b80a9ac62990429064b9f93be881acce17a771b0fa70507156849ca88d293"
+      }
+    }
+  }
+}

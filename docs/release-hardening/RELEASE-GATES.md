@@ -47,6 +47,12 @@ this points to the floating composition popup but does not identify its ownershi
 causally. A separately frozen diagnostic ablation will test that hypothesis.
 No runtime change or release-latency acceptance follows from instrumented timing.
 
+The [popup ablation](ANNOTATION-ABLATION-RESULTS.md) now removes all 729 measured
+relayouts and reduces mean queued-result wait from 8.996 to 1.408 ms with complete
+request/workload accounting. This supports replacing the extra window while
+preserving the raw-text affordance. The removal itself is not a release change;
+the separately planned single-window trial still needs functional and timing gates.
+
 The [compiled-validator experiment](VALIDATION-PATTERN-RESULTS.md) is rejected.
 Despite lower isolated ART validation cost and identical desktop predictions,
 Taiwanese raw/Space tails and fast Japanese raw tails worsen in both phone pairs.

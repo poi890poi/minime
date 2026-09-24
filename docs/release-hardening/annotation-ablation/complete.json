@@ -1,0 +1,90 @@
+{
+  "status": "complete",
+  "failures": [],
+  "expected_queues": 665,
+  "observed_queues": 665,
+  "expected_callbacks": 665,
+  "observed_callbacks": 665,
+  "health": [],
+  "stages": {
+    "running": {
+      "n": 665,
+      "mean_ms": 0.44640570827067666,
+      "p50_ms": 0.19875,
+      "p95_ms": 1.01099,
+      "p99_ms": 1.176717,
+      "max_ms": 14.732763
+    },
+    "runnable": {
+      "n": 665,
+      "mean_ms": 0.33735903458646616,
+      "p50_ms": 0.229271,
+      "p95_ms": 1.564531,
+      "p99_ms": 2.142709,
+      "max_ms": 2.728281
+    },
+    "sleeping": {
+      "n": 665,
+      "mean_ms": 0.6243808345864662,
+      "p50_ms": 0.166249,
+      "p95_ms": 2.851615,
+      "p99_ms": 4.041667,
+      "max_ms": 7.098386
+    },
+    "other": {
+      "n": 665,
+      "mean_ms": 2.99187969924812e-05,
+      "p50_ms": 0.0,
+      "p95_ms": 0.0,
+      "p99_ms": 0.0,
+      "max_ms": 0.014062
+    },
+    "unknown": {
+      "n": 665,
+      "mean_ms": 0.0,
+      "p50_ms": 0.0,
+      "p95_ms": 0.0,
+      "p99_ms": 0.0,
+      "max_ms": 0.0
+    },
+    "queue": {
+      "n": 665,
+      "mean_ms": 1.4081754962406015,
+      "p50_ms": 0.551875,
+      "p95_ms": 5.371354,
+      "p99_ms": 6.430677,
+      "max_ms": 16.796094
+    },
+    "frame_wall_overlap": {
+      "n": 665,
+      "mean_ms": 0.8106647187969924,
+      "p50_ms": 0.395156,
+      "p95_ms": 2.96026,
+      "p99_ms": 4.653281,
+      "max_ms": 16.562865
+    },
+    "callback_wall_overlap": {
+      "n": 665,
+      "mean_ms": 0.0,
+      "p50_ms": 0.0,
+      "p95_ms": 0.0,
+      "p99_ms": 0.0,
+      "max_ms": 0.0
+    }
+  },
+  "duration_weighted_state_shares": {
+    "running": 0.3170099958864812,
+    "runnable": 0.23957172631331233,
+    "sleeping": 0.44339703130282576,
+    "other": 2.1246497380727936e-05,
+    "unknown": 0.0
+  },
+  "accounting": "States partition each queued-request interval. Shares use summed request-wait duration; frame/callback wall overlap is separate and may include blocked time.",
+  "scope": "Instrumented synthetic Chinese shard only; sleeping does not prove a barrier. No release latency or cross-app claim.",
+  "frame_slice_count": 11317,
+  "unknown_request_count": 0,
+  "inputs": {
+    "artifacts\\annotation-ablation\\scoped.csv": "50b8e01070b73da2f6da5eafe55b3811ad73d3664122c23425b5bde12e185f51",
+    "artifacts\\device-tests\\5c48255b-9ac5-4aeb-9023-0752705f6254\\candidate-queues.tsv": "30f5b881d23ca9f52f7106e6ab5c7ce42f34dfa63656c3bdba24d05db36d4560"
+  }
+}
