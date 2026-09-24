@@ -1,0 +1,57 @@
+{
+  "type": "isolated compiler parser experiment, no production admission",
+  "fixture_original_order_dependent_rows": 6,
+  "fixture_fixed_order_invariant": true,
+  "fixture_all_same_tier_readings_preserved": true,
+  "fixture_single_reading_control_identical": true,
+  "source_revision": "e965b78296b1322d11ce672aaf626c5e65411881",
+  "input_hashes": {
+    "curation/__init__.py": "a850afdc000b3fa8564f10826b4169409686f13159ccab0bf3d45f37c1250b5f",
+    "curation/analyzers/__init__.py": "6da5b5c01a2e22fa52379e108f4d9e9b4ab58d3e7afd8a65a7a85ce8c14a86f0",
+    "curation/analyzers/find_cover_issues.py": "70d3b9135c26c5bb6c87fb38d062ff7b690e8c28da3eef70d8d3f94736b03593",
+    "curation/builders/__init__.py": "a624c18a02bd8403cdb37b9eeaa70c6a7bb4611caa39e4f3b012c224592ff860",
+    "curation/builders/frequency_builder.py": "8042e65097ff209464e702a846e6cea42aa566dc8197f0f712b9e947dd4b26e7",
+    "curation/builders/phrase_deriver.py": "a2403a85ea05fdf864ec0ed539ccea2e2ccad25b03a643c9d0882f88a13589d7",
+    "curation/compilers/__init__.py": "a37876e8e8d15154df6fe9dc88c540b5132994c402263b57ac09bf56bac9d292",
+    "curation/compilers/compiler_utils.py": "828e8faa0adc42053111a08e87e85314e1f83a801c8a0c3a3c3e44f39d32b60a",
+    "curation/compilers/main_compiler.py": "1ba950bc915ef423d3f01b44066e5aa6539293a11da13042f9f30f2c9fa572c4",
+    "curation/compilers/plain_bpmf_compiler.py": "6be7eac7060f933c0c52957c71a6abcdd33e8b8ca1557771fb24ba8f35443108",
+    "curation/compilers/postprocess.py": "e73b83d93e604560663ed4eaa8a0e0ef23467595b758affe961eadb2d9b9fb92",
+    "curation/compilers/update_bpmfvs_pua_db.py": "55a3db4255654b45fa2acae8cd69e9c2bb628625b6e022ac070df98eda4a60d4",
+    "curation/compilers/update_bpmfvs_variant_db.py": "7ffdd02814c9bf61eace19baf0d14d9e94d12cd19d4f321b4745aedf769fd907",
+    "curation/mandarin/components.py": "1d2b2fc1b0ab3dd9ad536d70835c76aca26824e3a5ab45a29301c5ce20097412",
+    "curation/mandarin/converters.py": "dfc9df45137d0fdaea23ad21bb973ee8dcda9e34ccd0ef61bf924f7b225f3736",
+    "curation/mandarin/grid.py": "38132daacd2963001dfe616b48df95a4735a9373825ab01eea3947055f3a748c",
+    "curation/utils/__init__.py": "1a9dff4e2a627a8b63256e45bb374c8902ad8dd67be6ce1664bc98c473e43e66",
+    "curation/utils/lmreader.py": "f0ac0c3fc001385e7d2cee8415ca5ec31fc193b1858cf022ca41546333cac9e5",
+    "curation/utils/text_filter.py": "9a5602ed0efffb539e77a3f3d8747557c242cd4aa590078148c889af2be6f5e2",
+    "curation/validators/__init__.py": "3baf1c8534e266a142253e8ea83fdd69882d84278542576fcca0eb2419d68d65",
+    "curation/validators/score_validator.py": "f50d8793499e90c55375371e9e9d60f85c1dbd19899807731e5d945c5f74ae6b",
+    "heterophony1.list": "7fddbb6a66022b1809181484c7627d79dee4231849cb2d3c8c8cd4578b3d22cb",
+    "heterophony2.list": "4afd69a2702ae3af533cd01b755f81d77a430ace91311a8229319334aec24e37",
+    "heterophony3.list": "8be3f37fe419744c3792df1bdfc67a0abdb215dbbb759c92204d4f8d68a32cd9",
+    "PhraseFreq.txt": "1b556c14f16d127f4ff97c9f45688ff1ff0363d2efde3445c940162cc3cd7556",
+    "BPMFMappings.txt": "51715ee5c731f9994be3b168d7681ed9692b8c335ae6fc2e7cfd4af6fd0e0781",
+    "BPMFBase.txt": "5916b2128627a63cb04138a0ee6dd8dcca18bb8726bd0554f12253725e5d3381",
+    "BPMFPunctuations.txt": "7805f6b813cbc7adcaf8ef3ec08710d404447432f7c7d149f51787e8a8c9b38b",
+    "Symbols.txt": "d05d69afb44cbe6833db98dd46b0a4c6d60fbc97df8fcb361dce8123938e9b94",
+    "Macros.txt": "44f6b29c3d23189f5519ab83c4b9a6cf2d0cf91398276c277d84779b7e472582",
+    "Postprocess.txt": "5f01a9b387f6f1a7198a8c19d3a0181aad4f29663d40307de9cc8de664adf5ab"
+  },
+  "variants": {
+    "original": {
+      "compiler_sha256": "1ba950bc915ef423d3f01b44066e5aa6539293a11da13042f9f30f2c9fa572c4",
+      "raw_sha256": "ad66a14b68ecd5c13c2b244decedd9458b054c90332ba9461b7da6b05c13f091",
+      "final_sha256": "3a4eb17a26ecb5bd3bcf4b15f7aec35659de48b4d31cac2b90a732b87b0c351b"
+    },
+    "sets": {
+      "compiler_sha256": "6a593f98f5d0c9d6419775f7604bb3a433e810f541fb9aafb86921f90d5eab4e",
+      "raw_sha256": "bc56269f9c6017608b76079f2d5a1b71096c3ac66b062a2039b4051ceabf7591",
+      "final_sha256": "5769a77aca4c1a708217947fcf4a59624c872215f5091252510f0f6948b2dbfe"
+    }
+  },
+  "model_rows": 174996,
+  "changed_model_rows": 4,
+  "changed_multi_glyph_rows": 0,
+  "changes_sha256": "7c22b67b1bafbadce75fcceb5863c55bf5c6bb1760faec429066d62d188937b2"
+}
