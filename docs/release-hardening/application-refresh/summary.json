@@ -1,0 +1,26 @@
+{
+  "session": "3bbe5578-dad5-4938-8362-9dd8b46dca28",
+  "diagnostics_passed": 2,
+  "scope": "Isolated precomputed candidate application; fonts/UI/providers excluded. No latency acceptance or historical speedup claim.",
+  "cost": {
+    "application-untraced.tsv": {
+      "observations": 138,
+      "queries": 46,
+      "mean_ms": 1.5073278768115943,
+      "p50_ms": 1.034948,
+      "p95_ms": 3.690938,
+      "max_ms": 5.776928
+    },
+    "application-cost.tsv": {
+      "observations": 138,
+      "queries": 46,
+      "mean_ms": 1.556955804347826,
+      "p50_ms": 1.00625,
+      "p95_ms": 6.477344,
+      "max_ms": 11.097135
+    }
+  },
+  "display_off_verified": true,
+  "original_state_restored": true,
+  "lease_released": true
+}
