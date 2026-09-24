@@ -1171,6 +1171,37 @@
         "docs/source-replacement/taskmaster/pilot.py",
         "docs/source-replacement/taskmaster/RESULTS.md"
       ]
+    },
+    {
+      "id": "personachat-english-audit",
+      "name": "PersonaChat original social dialogues",
+      "origin": "english-crowdsourced-persona-roleplay",
+      "decision": "hold",
+      "uses": [
+        "discovery",
+        "evaluation"
+      ],
+      "inputs": [],
+      "license": {
+        "id": "CC-BY-4.0",
+        "status": "verified",
+        "evidence": "https://github.com/facebookresearch/ParlAI/blob/a29567f7ce76992fd1f03c51ba9e3b155a37ea51/parlai/tasks/personachat/LICENSE_DOCUMENTATION"
+      },
+      "evidence": [
+        "https://github.com/facebookresearch/ParlAI/blob/a29567f7ce76992fd1f03c51ba9e3b155a37ea51/parlai/tasks/personachat/build.py",
+        "https://aclanthology.org/P18-1205/"
+      ],
+      "editorial": "Human-authored persona-conditioned social dialogue; original no-persona file variant avoids multiple source views and excludes distractor candidates.",
+      "coverage": "8939 train, 1000 validation, 968 test dialogues; 162064 utterances; no whole-dialogue signature overlap.",
+      "limitations": "Prompted role-play and tokenized text. No apostrophe occurs in utterances across any split; original orthography/preprocessing not established. No training or model queries performed.",
+      "reason": "Hold until orthography is understood; licensed data alone cannot establish natural English frequency or contraction support.",
+      "addon_prefixes": [],
+      "audit_files": [
+        "docs/source-replacement/PERSONACHAT-DISCOVERY.md",
+        "docs/source-replacement/PERSONACHAT-LICENSE.txt",
+        "docs/source-replacement/personachat-audit.py",
+        "docs/source-replacement/personachat-manifest.json"
+      ]
     }
   ]
 }

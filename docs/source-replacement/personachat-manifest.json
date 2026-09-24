@@ -1,0 +1,159 @@
+{
+  "archive_sha256": "507cf8641d333240654798870ea584d854ab5261071c5e3521c20d8fa41d5622",
+  "repository_revision": "a29567f7ce76992fd1f03c51ba9e3b155a37ea51",
+  "inventory": [
+    {
+      "path": "personachat",
+      "bytes": 0
+    },
+    {
+      "path": "personachat/test_both_original.txt",
+      "bytes": 8927583
+    },
+    {
+      "path": "personachat/test_both_revised.txt",
+      "bytes": 8943764
+    },
+    {
+      "path": "personachat/test_none_original.txt",
+      "bytes": 8491288
+    },
+    {
+      "path": "personachat/test_other_original.txt",
+      "bytes": 8719888
+    },
+    {
+      "path": "personachat/test_other_revised.txt",
+      "bytes": 8728429
+    },
+    {
+      "path": "personachat/test_self_original.txt",
+      "bytes": 8697773
+    },
+    {
+      "path": "personachat/test_self_revised.txt",
+      "bytes": 8705413
+    },
+    {
+      "path": "personachat/train_both_original.txt",
+      "bytes": 77583133
+    },
+    {
+      "path": "personachat/train_both_revised.txt",
+      "bytes": 77607499
+    },
+    {
+      "path": "personachat/train_none_original.txt",
+      "bytes": 73555667
+    },
+    {
+      "path": "personachat/train_other_original.txt",
+      "bytes": 75657556
+    },
+    {
+      "path": "personachat/train_other_revised.txt",
+      "bytes": 75671656
+    },
+    {
+      "path": "personachat/train_self_original.txt",
+      "bytes": 75466344
+    },
+    {
+      "path": "personachat/train_self_revised.txt",
+      "bytes": 75476610
+    },
+    {
+      "path": "personachat/valid_both_original.txt",
+      "bytes": 9399184
+    },
+    {
+      "path": "personachat/valid_both_revised.txt",
+      "bytes": 9410622
+    },
+    {
+      "path": "personachat/valid_none_original.txt",
+      "bytes": 8929234
+    },
+    {
+      "path": "personachat/valid_other_original.txt",
+      "bytes": 9174394
+    },
+    {
+      "path": "personachat/valid_other_revised.txt",
+      "bytes": 9179527
+    },
+    {
+      "path": "personachat/valid_self_original.txt",
+      "bytes": 9152813
+    },
+    {
+      "path": "personachat/valid_self_revised.txt",
+      "bytes": 9159118
+    }
+  ],
+  "splits": {
+    "train": {
+      "file": "personachat/train_none_original.txt",
+      "sha256": "8badd13f9c370b8b32fb895005e75d4bb567ab6dc9ac8abd03548a09f77682b9",
+      "conversations": 8939,
+      "distinct_dialogues": 8939,
+      "punctuation": {
+        "!": 23251,
+        ",": 39500,
+        ".": 101599,
+        ";": 249,
+        "?": 43771,
+        "_": 8
+      },
+      "turn_pairs": 65719,
+      "distractor_fields_ignored": 65719,
+      "utterances": 131438,
+      "utterances_with_spaced_apostrophe": 0,
+      "utterances_with_internal_apostrophe": 0
+    },
+    "valid": {
+      "file": "personachat/valid_none_original.txt",
+      "sha256": "8c6d7a20f0cc8e0ba114a4eec92d3cf89890bec027d6732449dc57ab66063dc9",
+      "conversations": 1000,
+      "distinct_dialogues": 1000,
+      "punctuation": {
+        "!": 2867,
+        ",": 5136,
+        ".": 12580,
+        ";": 20,
+        "?": 4982
+      },
+      "turn_pairs": 7801,
+      "distractor_fields_ignored": 7801,
+      "utterances": 15602,
+      "utterances_with_spaced_apostrophe": 0,
+      "utterances_with_internal_apostrophe": 0
+    },
+    "test": {
+      "file": "personachat/test_none_original.txt",
+      "sha256": "da40ab6d4f161c603710969e07a0a511be775def59e89df13547a1165ecad069",
+      "conversations": 968,
+      "distinct_dialogues": 968,
+      "punctuation": {
+        "!": 2266,
+        ",": 4467,
+        ".": 11990,
+        ";": 24,
+        "?": 5317
+      },
+      "turn_pairs": 7512,
+      "distractor_fields_ignored": 7512,
+      "utterances": 15024,
+      "utterances_with_spaced_apostrophe": 0,
+      "utterances_with_internal_apostrophe": 0
+    }
+  },
+  "whole_dialogue_overlap": {
+    "train/valid": 0,
+    "train/test": 0,
+    "valid/test": 0
+  },
+  "scope": "Original no-persona variant, only two utterance columns; distractors, other perspectives and revised files excluded structurally. No language model built or queried.",
+  "exposure": "Three first training lines inspected for schema. Full structural audit only; split predictions not evaluated.",
+  "limitations": "Persona-conditioned role-play, tokenized orthography, shared short utterances/personas possible. ID disjointness is not semantic independence."
+}
