@@ -16,6 +16,11 @@ $metadata | ConvertTo-Json | Set-Content -Encoding utf8 (Join-Path $rootOutput '
 & python -X utf8 "$PSScriptRoot/verify_apk.py" app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk | Tee-Object -FilePath (Join-Path $rootOutput 'apk-verification.txt')
 if($LASTEXITCODE -ne 0){throw 'APK or frozen test fixture verification failed before phone testing'}
 $phases=if($Phase -eq 'All'){@('Matrix','Development','Holdout')}else{@($Phase)}
+. "$PSScriptRoot/phone-lease.ps1"
+# The nested test-device runner is on this thread and may reenter this mutex.
+# Keep ownership across run-ID transfer, reports and final sleep as well.
+Invoke-WithPhoneLease {
+try {
 foreach($part in $phases) {
     $runId=[guid]::NewGuid().ToString()
     $runFile=Join-Path $rootOutput ($part+'-run-id.txt')
@@ -31,9 +36,9 @@ foreach($part in $phases) {
     try {
         & "$PSScriptRoot/test-device.ps1" -Serial $Serial -SdkDir $SdkDir -TestClass $classes | Tee-Object -FilePath (Join-Path $rootOutput ($part+'-instrumentation.txt'))
     } finally {
-        $power=& $adb -s $Serial shell dumpsys power | Select-String 'mWakefulness='
-        $power | Tee-Object -FilePath (Join-Path $rootOutput ($part+'-power.txt'))
-        if(($power -join '') -notmatch 'mWakefulness=Dozing|mWakefulness=Asleep'){throw 'Phone display did not sleep'}
+        $display=(& $adb -s $Serial shell dumpsys display) -join "`n"
+        [IO.File]::WriteAllText((Join-Path $rootOutput ($part+'-display.txt')),$display)
+        if($LASTEXITCODE -ne 0 -or !(Test-PhoneDisplayOff $display)){throw 'Phone display OFF was not verified'}
         foreach($name in $files) {
             $target=Join-Path $rootOutput ('human-input-'+$name+'.json')
             & $adb -s $Serial pull ('/sdcard/Android/data/app.minime.keyboard/files/human-input-'+$name+'.json') $target
@@ -42,6 +47,14 @@ foreach($part in $phases) {
             if($record.runId -ne $runId){throw "Stale report for $part"}
         }
     }
+}
+} finally {
+    & $adb -s $Serial shell input keyevent KEYCODE_SLEEP
+    Start-Sleep -Milliseconds 500
+    $display=(& $adb -s $Serial shell dumpsys display) -join "`n"
+    [IO.File]::WriteAllText((Join-Path $rootOutput 'display-final.txt'),$display)
+    if($LASTEXITCODE -ne 0 -or !(Test-PhoneDisplayOff $display)){throw 'Final phone display OFF was not verified'}
+}
 }
 & python -X utf8 "$PSScriptRoot/summarize_human_input.py" $rootOutput
 if($LASTEXITCODE -ne 0){throw 'Human input report has failing or incomplete gates'}
