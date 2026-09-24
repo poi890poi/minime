@@ -29,6 +29,12 @@ are mixed and fast Taiwanese raw-text p95 worsens in both pairs. The guard is
 archived; accepted runtime remains b47bb2a. Four further unhooked replays capture
 all raw-editor/Space frames without establishing release acceptance.
 
+The [exact English completion-existence query](EXISTENCE-RESULTS.md) is accepted:
+880,100 comparisons preserve the original decision and desktop outputs are
+identical. Repeated Chinese shared-observation timing improves, with modest
+first-pair gains and a slower second baseline that limits causal attribution.
+Unrestricted tail latency remains mixed; this does not clear the release gate.
+
 ## Quality loop
 
 The new Taiwan chat-derived evaluation adds 4,608 complete, initial and mixed

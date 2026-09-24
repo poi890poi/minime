@@ -210,6 +210,20 @@ public final class PhoneticDictionary {
     public List<Candidate> englishCompletions(String raw) {
         return englishCompletions(raw,false);
     }
+    /** Exact existence counterpart of englishCompletions, without constructing/ranking a list. */
+    public boolean hasEnglishCompletion(String raw,boolean latinContext) {
+        if(raw.length()<2 || !raw.matches("[A-Za-z]+(?:'[A-Za-z]*)?"))return false;
+        String key=raw.toLowerCase(Locale.ROOT);
+        boolean caps=raw.equals(raw.toUpperCase(Locale.ROOT));
+        boolean title=raw.equals(Character.toUpperCase(key.charAt(0))+key.substring(1));
+        if(!caps && !title && !raw.equals(key))return false;
+        for(String word:(latinContext?foldedEnglish:english).tailMap(key).keySet()) {
+            if(!word.startsWith(key))break;
+            if(!latinContext && !word.equals(word.toLowerCase(Locale.ROOT)))continue;
+            if(!word.equals(key))return true;
+        }
+        return false;
+    }
     public List<Candidate> englishCompletions(String raw,boolean latinContext) {
         if (raw.length() < 2 || !raw.matches("[A-Za-z]+(?:'[A-Za-z]*)?")) return Collections.emptyList();
         String key = raw.toLowerCase(Locale.ROOT);

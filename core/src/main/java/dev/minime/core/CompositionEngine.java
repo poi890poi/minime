@@ -661,6 +661,6 @@ public final class CompositionEngine {
     private boolean conversionInput(boolean bpmf) {
         return !bpmf && !literalField && !englishMode && dictionary!=null
             && raw.matches("[a-zv]+(?:'[a-zv]+)*") && raw.length()>1
-            && !IntentClassifier.technicalWord(raw) && !dictionary.isEnglish(raw,afterLatin) && dictionary.englishCompletions(raw,afterLatin).isEmpty();
+            && !IntentClassifier.technicalWord(raw) && !dictionary.isEnglish(raw,afterLatin) && !dictionary.hasEnglishCompletion(raw,afterLatin);
     }
 }

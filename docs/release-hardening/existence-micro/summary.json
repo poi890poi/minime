@@ -1,0 +1,50 @@
+{
+  "true": {
+    "list_ns": {
+      "samples": 6175,
+      "mean_us": 2.6370046963562754,
+      "median_us": 2.099,
+      "p95_us": 4.5,
+      "max_us": 92.899
+    },
+    "exists_ns": {
+      "samples": 6175,
+      "mean_us": 1.4819941700404857,
+      "median_us": 1.4,
+      "p95_us": 1.801,
+      "max_us": 19.4
+    }
+  },
+  "false": {
+    "list_ns": {
+      "samples": 3655,
+      "mean_us": 3.2893764705882353,
+      "median_us": 1.7,
+      "p95_us": 2.299,
+      "max_us": 5502.901
+    },
+    "exists_ns": {
+      "samples": 3655,
+      "mean_us": 1.4838363885088919,
+      "median_us": 1.4,
+      "p95_us": 1.801,
+      "max_us": 55.899
+    }
+  },
+  "all": {
+    "list_ns": {
+      "samples": 9830,
+      "mean_us": 2.8795701932858595,
+      "median_us": 1.9,
+      "p95_us": 3.7,
+      "max_us": 5502.901
+    },
+    "exists_ns": {
+      "samples": 9830,
+      "mean_us": 1.4826791454730417,
+      "median_us": 1.4,
+      "p95_us": 1.801,
+      "max_us": 55.899
+    }
+  }
+}

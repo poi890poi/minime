@@ -1,0 +1,24 @@
+{
+  "baseline_runtime": "b47bb2a",
+  "trial_change": "exact short-circuit English completion existence for conversionInput only",
+  "binaries": {
+    "schedule-baseline.apk": "1c43b60e9a76e97d9917b9f13545d95dafb5c67498eaa8db42fae1e73c9ca72b",
+    "existence-trial.apk": "e4d064d597bbfbe69cb9770d68cd0d5a32829a1c82fc1e0b5f03460357d40332",
+    "layout-tests.apk": "4e4d1901d575bf453b6a00f3f3c5bc21a297b36e419d61a45c36022b581a0197"
+  },
+  "changed_unsigned_apk_entries": [
+    "classes.dex"
+  ],
+  "core_assertions": 1768296,
+  "predicate_comparisons": 880100,
+  "desktop_sha256": "72ed6f69cf0a838ec9c03a4d8de2a3e94e5991531b344ae1f173d95bff2d6bfe",
+  "input_asset_sha256": "cd50e119257521710a601f279f35c28c85b969a1f4a0ad9918011edc57344603",
+  "phone_sessions": {
+    "a1": "6a3b38a3-63da-4035-aa88-24db077c51c4",
+    "b1": "f6636895-a487-421c-a64e-f0cc99e14b71",
+    "b2": "fbecb369-53e1-404a-b27a-b350909a6902",
+    "a2": "781c0f5a-6f61-42af-bfd2-abbf0ede884a"
+  },
+  "decision": "land: exact semantic parity and lower isolated work; modest first-pair Chinese gains, larger second-pair gains confounded by session variation; no general tail-latency or release PASS",
+  "micro_input_sha256": "eecb0b6a7b8f6a9ba25cea7b72e0ac8f22e895005617c65b26309b1b1fd123b2"
+}
