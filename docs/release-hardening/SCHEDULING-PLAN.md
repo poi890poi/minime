@@ -37,19 +37,34 @@ negative results and reject the runtime trial if benefits do not reproduce.
 Phone operations require a fresh explicit SHINE handoff plus shared mutex;
 restore APK/preferences/IME, verify display OFF and explicitly release.
 
-## Prepared, device validation pending
+## Preparation and initially blocked execution
 
 Shared core passes 888,180 assertions. Pinned desktop passes 13,014 inputs and
 11,272 native queries with output SHA-256 identical to the preceding loop.
 Baseline, trial and test APKs build locally; only classes3.dex differs between
 the app APKs outside signature metadata. [Exact identities](schedule-binaries.json).
 The one-line [trial patch](pending-zero-delay.patch) is archived, and production
-retains its original 8 ms delay until phone evidence supports a change.
+retains its original 8 ms delay. The completed comparison rejects the trial;
+see [results and preserved negative evidence](SCHEDULING-RESULTS.md).
 
 Automatic approval review rejected the phone command twice before execution:
 it treated SHINE's explicit reservation acknowledgement as untrusted tool
 output and would not accept it as the required coordination evidence. A fresh
 acknowledgement did not resolve the rejection. User approval to accept that
 handoff and run the prepared comparison was requested. No phone command ran in
-this window. The new Android tests compile but have not run; no timing,
-resource, cancellation or performance improvement is claimed for the trial.
+that initially blocked window. The subsequent authorized window below completed
+the device checks; the original blocked state is preserved here as history.
+
+## Resumed phone window and burst follow-up
+
+The user's explicit "Try now" and fresh SHINE acknowledgement allowed the
+guarded runs to proceed. Both diagnostic builds pass cancellation checks.
+At 4 ms dispatch spacing, zero delay starts 44 base lookups per 50 requests
+versus one with the 8 ms debounce. Ordinary replay lookup counts are essentially
+unchanged. The continuous 4 ms stream is an extreme stress condition, so before
+deciding its practical cost, also measure paired releases: 4 ms within a pair,
+150 ms between pairs, using the same frozen source inputs and both binaries.
+Freeze this timing pattern before running it. Call this a new timing condition,
+not a fresh language holdout or physical two-thumb measurement. Main callbacks
+are still withheld deliberately, so only obsolete-work/cancellation conclusions
+are valid. No scheduling parameters will be tuned to this additional result.

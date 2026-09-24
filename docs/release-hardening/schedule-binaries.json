@@ -10,8 +10,21 @@
   "desktop_rows": 13014,
   "native_queries": 11272,
   "desktop_sha256": "72ed6f69cf0a838ec9c03a4d8de2a3e94e5991531b344ae1f173d95bff2d6bfe",
-  "phone_status": "not run; automatic approval review rejected handoff verification twice; explicit user approval pending",
+  "phone_status": "completed after renewed user authorization; all eight sessions restored state and verified display OFF; explicitly released",
   "changed_unsigned_apk_entries": [
     "classes3.dex"
-  ]
+  ],
+  "paired_tests_sha256": "6a4cfcb83ce807b1b3747ccb2ce9f7fa77711922f46d551bc585ed80f135467a",
+  "phone_sessions": {
+    "stage_a": "3603d520-7917-4ae9-a113-890e454c3850",
+    "stage_b": "48f82b0c-ad33-4c02-b004-bb1dde223d06",
+    "a1": "d85ca634-5c39-4893-be72-398a89536878",
+    "b1": "bd39c5c8-de9c-433e-bbae-4a8844e01519",
+    "b2": "1237a39e-939d-466a-a55b-96534f7fbc2f",
+    "a2": "8b6adbff-6ebf-4fa3-a51c-e17ae806387c",
+    "paired_a": "436185f8-3c2f-40c8-9098-5e96c634c2f5",
+    "paired_b": "b1677ca8-2b21-485a-b3d5-3ccd5e165465"
+  },
+  "decision": "reject zero-delay runtime trial: mixed candidate latency and repeated fast-Chinese raw-text slowdown; production keeps 8 ms",
+  "input_asset_sha256": "cd50e119257521710a601f279f35c28c85b969a1f4a0ad9918011edc57344603"
 }

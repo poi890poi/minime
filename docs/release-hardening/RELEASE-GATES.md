@@ -17,6 +17,12 @@ release; older nominal-interval timings must not be treated as equal-load result
 Core follow-up passes 888,180 assertions and the desktop output is unchanged.
 No new signed release payload has been built for this follow-up.
 
+The subsequent [zero-delay scheduling trial](SCHEDULING-RESULTS.md) is rejected:
+Japanese candidate timing improves, but fast Chinese raw-text p95 worsens in
+both comparison pairs and ordinary candidate gains are mixed. Four unhooked
+runs capture all raw-editor and Space frames; this does not certify human touch
+or release latency. The existing 8 ms scheduling delay remains in production.
+
 ## Quality loop
 
 The new Taiwan chat-derived evaluation adds 4,608 complete, initial and mixed
