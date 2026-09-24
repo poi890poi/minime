@@ -1,0 +1,1384 @@
+{
+  "baseline": "chinese-new",
+  "samples": 728,
+  "groups": {
+    "chinese/150": {
+      "editor_callback": {
+        "n": 332,
+        "observed": 332,
+        "unobserved": 0,
+        "mean_ms": 4.24021318373494,
+        "p50_ms": 4.195043500000001,
+        "p95_ms": 5.24331,
+        "p99_ms": 5.823897,
+        "max_ms": 16.907915
+      },
+      "editor_submission": {
+        "n": 332,
+        "observed": 332,
+        "unobserved": 0,
+        "mean_ms": 12.775219475903615,
+        "p50_ms": 12.662727499999999,
+        "p95_ms": 14.368008,
+        "p99_ms": 18.845039,
+        "max_ms": 21.99599
+      },
+      "candidate_submission": {
+        "n": 332,
+        "observed": 332,
+        "unobserved": 0,
+        "mean_ms": 35.23860361144578,
+        "p50_ms": 35.177519000000004,
+        "p95_ms": 45.431136,
+        "p99_ms": 81.288318,
+        "max_ms": 98.070862
+      },
+      "pressed_submission": {
+        "n": 332,
+        "observed": 332,
+        "unobserved": 0,
+        "mean_ms": 21.133437057228917,
+        "p50_ms": 19.90129,
+        "p95_ms": 30.591551,
+        "p99_ms": 31.938223,
+        "max_ms": 34.430393
+      },
+      "space_submission": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 13.8250024375,
+        "p50_ms": 13.09088,
+        "p95_ms": 18.089472,
+        "p99_ms": 30.124583,
+        "max_ms": 30.124583
+      },
+      "injected_key_interval": {
+        "n": 332,
+        "observed": 332,
+        "unobserved": 0,
+        "mean_ms": 149.9578313253012,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 332,
+        "submitted_before_next_up": 332,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/60": {
+      "editor_callback": {
+        "n": 332,
+        "observed": 332,
+        "unobserved": 0,
+        "mean_ms": 4.219217921686747,
+        "p50_ms": 4.1871025,
+        "p95_ms": 5.375232,
+        "p99_ms": 6.040274,
+        "max_ms": 8.390644
+      },
+      "editor_submission": {
+        "n": 332,
+        "observed": 332,
+        "unobserved": 0,
+        "mean_ms": 13.482176469879517,
+        "p50_ms": 13.126087,
+        "p95_ms": 16.455379,
+        "p99_ms": 17.526004,
+        "max_ms": 19.678617
+      },
+      "candidate_submission": {
+        "n": 332,
+        "observed": 332,
+        "unobserved": 0,
+        "mean_ms": 34.07200419578313,
+        "p50_ms": 34.8076795,
+        "p95_ms": 41.546996,
+        "p99_ms": 57.589711,
+        "max_ms": 68.867564
+      },
+      "pressed_submission": {
+        "n": 332,
+        "observed": 332,
+        "unobserved": 0,
+        "mean_ms": 23.01024078614458,
+        "p50_ms": 22.130249,
+        "p95_ms": 32.695223,
+        "p99_ms": 38.68465,
+        "max_ms": 43.423868
+      },
+      "space_submission": {
+        "n": 32,
+        "observed": 32,
+        "unobserved": 0,
+        "mean_ms": 13.63434584375,
+        "p50_ms": 13.220405,
+        "p95_ms": 17.068819,
+        "p99_ms": 17.75908,
+        "max_ms": 17.75908
+      },
+      "injected_key_interval": {
+        "n": 332,
+        "observed": 332,
+        "unobserved": 0,
+        "mean_ms": 59.91566265060241,
+        "p50_ms": 59.0,
+        "p95_ms": 67.0,
+        "p99_ms": 69.0,
+        "max_ms": 72.0
+      },
+      "candidate_deadline": {
+        "letters": 332,
+        "submitted_before_next_up": 329,
+        "observed_submission_at_or_after_next_up": 3,
+        "unobserved": 0
+      }
+    }
+  },
+  "strata": {
+    "chinese/moztw-g0v-edited/chat-derived-edited-excerpts/full/150": {
+      "labels": {
+        "mode": "chinese",
+        "source": "moztw-g0v-edited",
+        "genre": "chat-derived-edited-excerpts",
+        "condition": "full",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 55,
+        "observed": 55,
+        "unobserved": 0,
+        "mean_ms": 4.315451109090909,
+        "p50_ms": 4.096875,
+        "p95_ms": 5.525622,
+        "p99_ms": 16.907915,
+        "max_ms": 16.907915
+      },
+      "editor_submission": {
+        "n": 55,
+        "observed": 55,
+        "unobserved": 0,
+        "mean_ms": 13.047408509090909,
+        "p50_ms": 12.490363,
+        "p95_ms": 19.298957,
+        "p99_ms": 21.99599,
+        "max_ms": 21.99599
+      },
+      "candidate_submission": {
+        "n": 55,
+        "observed": 55,
+        "unobserved": 0,
+        "mean_ms": 36.7269274,
+        "p50_ms": 35.910364,
+        "p95_ms": 53.824792,
+        "p99_ms": 84.37557,
+        "max_ms": 84.37557
+      },
+      "pressed_submission": {
+        "n": 55,
+        "observed": 55,
+        "unobserved": 0,
+        "mean_ms": 18.71498429090909,
+        "p50_ms": 18.312707,
+        "p95_ms": 28.221405,
+        "p99_ms": 32.040938,
+        "max_ms": 32.040938
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 16.7846595,
+        "p50_ms": 12.5383055,
+        "p95_ms": 30.124583,
+        "p99_ms": 30.124583,
+        "max_ms": 30.124583
+      },
+      "injected_key_interval": {
+        "n": 55,
+        "observed": 55,
+        "unobserved": 0,
+        "mean_ms": 150.2,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 55,
+        "submitted_before_next_up": 55,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/moztw-g0v-edited/chat-derived-edited-excerpts/initials/150": {
+      "labels": {
+        "mode": "chinese",
+        "source": "moztw-g0v-edited",
+        "genre": "chat-derived-edited-excerpts",
+        "condition": "initials",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 4.318441076923077,
+        "p50_ms": 4.385048,
+        "p95_ms": 5.159007,
+        "p99_ms": 5.159007,
+        "max_ms": 5.159007
+      },
+      "editor_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 12.252936230769231,
+        "p50_ms": 12.362755,
+        "p95_ms": 13.393641,
+        "p99_ms": 13.393641,
+        "max_ms": 13.393641
+      },
+      "candidate_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 41.522800153846156,
+        "p50_ms": 35.940829,
+        "p95_ms": 87.999996,
+        "p99_ms": 87.999996,
+        "max_ms": 87.999996
+      },
+      "pressed_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 20.64240346153846,
+        "p50_ms": 18.53984,
+        "p95_ms": 31.465412,
+        "p99_ms": 31.465412,
+        "max_ms": 31.465412
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 13.34887575,
+        "p50_ms": 12.753798,
+        "p95_ms": 15.634213,
+        "p99_ms": 15.634213,
+        "max_ms": 15.634213
+      },
+      "injected_key_interval": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 149.92307692307693,
+        "p50_ms": 151.0,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 13,
+        "submitted_before_next_up": 13,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/moztw-g0v-edited/chat-derived-edited-excerpts/mixed/150": {
+      "labels": {
+        "mode": "chinese",
+        "source": "moztw-g0v-edited",
+        "genre": "chat-derived-edited-excerpts",
+        "condition": "mixed",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 4.27583375,
+        "p50_ms": 4.342988500000001,
+        "p95_ms": 5.230254,
+        "p99_ms": 5.48265,
+        "max_ms": 5.48265
+      },
+      "editor_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 12.743929777777778,
+        "p50_ms": 12.662727499999999,
+        "p95_ms": 14.123899,
+        "p99_ms": 16.112755,
+        "max_ms": 16.112755
+      },
+      "candidate_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 34.91386033333333,
+        "p50_ms": 35.3779875,
+        "p95_ms": 42.549264,
+        "p99_ms": 61.783379,
+        "max_ms": 61.783379
+      },
+      "pressed_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 21.85420472222222,
+        "p50_ms": 20.454316,
+        "p95_ms": 31.15515,
+        "p99_ms": 31.938223,
+        "max_ms": 31.938223
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 14.26246675,
+        "p50_ms": 13.420384,
+        "p95_ms": 18.089472,
+        "p99_ms": 18.089472,
+        "max_ms": 18.089472
+      },
+      "injected_key_interval": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 150.13888888888889,
+        "p50_ms": 152.0,
+        "p95_ms": 153.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 36,
+        "submitted_before_next_up": 36,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/zh-essay/essay/full/150": {
+      "labels": {
+        "mode": "chinese",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "full",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.21301442,
+        "p50_ms": 4.221656,
+        "p95_ms": 5.408322,
+        "p99_ms": 5.823897,
+        "max_ms": 5.823897
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 12.67001654,
+        "p50_ms": 12.670406499999999,
+        "p95_ms": 14.311395,
+        "p99_ms": 14.624207,
+        "max_ms": 14.624207
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 34.0511561,
+        "p50_ms": 35.478113,
+        "p95_ms": 37.964728,
+        "p99_ms": 45.431136,
+        "max_ms": 45.431136
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 21.79361866,
+        "p50_ms": 20.623662500000002,
+        "p95_ms": 30.591551,
+        "p99_ms": 32.398634,
+        "max_ms": 32.398634
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 13.4661615,
+        "p50_ms": 13.562176000000001,
+        "p95_ms": 14.134209,
+        "p99_ms": 14.134209,
+        "max_ms": 14.134209
+      },
+      "injected_key_interval": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 150.04,
+        "p50_ms": 152.0,
+        "p95_ms": 153.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 50,
+        "submitted_before_next_up": 50,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/zh-essay/essay/half/150": {
+      "labels": {
+        "mode": "chinese",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "half",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 4.303791705882353,
+        "p50_ms": 4.576758,
+        "p95_ms": 5.355717,
+        "p99_ms": 5.355717,
+        "max_ms": 5.355717
+      },
+      "editor_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 13.207075941176472,
+        "p50_ms": 12.686132,
+        "p95_ms": 18.845039,
+        "p99_ms": 18.845039,
+        "max_ms": 18.845039
+      },
+      "candidate_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 40.38562064705882,
+        "p50_ms": 36.046133,
+        "p95_ms": 62.157799,
+        "p99_ms": 62.157799,
+        "max_ms": 62.157799
+      },
+      "pressed_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 20.922118823529413,
+        "p50_ms": 20.452748,
+        "p95_ms": 30.068477,
+        "p99_ms": 30.068477,
+        "max_ms": 30.068477
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 14.45704375,
+        "p50_ms": 14.228788999999999,
+        "p95_ms": 15.730402,
+        "p99_ms": 15.730402,
+        "max_ms": 15.730402
+      },
+      "injected_key_interval": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 148.88235294117646,
+        "p50_ms": 151.0,
+        "p95_ms": 154.0,
+        "p99_ms": 154.0,
+        "max_ms": 154.0
+      },
+      "candidate_deadline": {
+        "letters": 17,
+        "submitted_before_next_up": 17,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/zh-essay/essay/initials/150": {
+      "labels": {
+        "mode": "chinese",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "initials",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 29,
+        "observed": 29,
+        "unobserved": 0,
+        "mean_ms": 4.409955379310345,
+        "p50_ms": 4.277118,
+        "p95_ms": 5.382537,
+        "p99_ms": 5.670036,
+        "max_ms": 5.670036
+      },
+      "editor_submission": {
+        "n": 29,
+        "observed": 29,
+        "unobserved": 0,
+        "mean_ms": 12.788743206896552,
+        "p50_ms": 12.705922,
+        "p95_ms": 14.490712,
+        "p99_ms": 16.494151,
+        "max_ms": 16.494151
+      },
+      "candidate_submission": {
+        "n": 29,
+        "observed": 29,
+        "unobserved": 0,
+        "mean_ms": 37.90934665517241,
+        "p50_ms": 34.708473,
+        "p95_ms": 69.45639,
+        "p99_ms": 81.288318,
+        "max_ms": 81.288318
+      },
+      "pressed_submission": {
+        "n": 29,
+        "observed": 29,
+        "unobserved": 0,
+        "mean_ms": 21.318786310344827,
+        "p50_ms": 20.54988,
+        "p95_ms": 30.724932,
+        "p99_ms": 31.307849,
+        "max_ms": 31.307849
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 12.75775725,
+        "p50_ms": 12.884592999999999,
+        "p95_ms": 13.261339,
+        "p99_ms": 13.261339,
+        "max_ms": 13.261339
+      },
+      "injected_key_interval": {
+        "n": 29,
+        "observed": 29,
+        "unobserved": 0,
+        "mean_ms": 149.75862068965517,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 29,
+        "submitted_before_next_up": 29,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/zh-essay/essay/mixed/150": {
+      "labels": {
+        "mode": "chinese",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "mixed",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 51,
+        "observed": 51,
+        "unobserved": 0,
+        "mean_ms": 4.246763823529411,
+        "p50_ms": 4.318365,
+        "p95_ms": 5.164618,
+        "p99_ms": 6.174408,
+        "max_ms": 6.174408
+      },
+      "editor_submission": {
+        "n": 51,
+        "observed": 51,
+        "unobserved": 0,
+        "mean_ms": 12.93903,
+        "p50_ms": 12.769407,
+        "p95_ms": 13.943367,
+        "p99_ms": 18.166128,
+        "max_ms": 18.166128
+      },
+      "candidate_submission": {
+        "n": 51,
+        "observed": 51,
+        "unobserved": 0,
+        "mean_ms": 33.585715019607846,
+        "p50_ms": 34.930605,
+        "p95_ms": 40.302584,
+        "p99_ms": 55.178367,
+        "max_ms": 55.178367
+      },
+      "pressed_submission": {
+        "n": 51,
+        "observed": 51,
+        "unobserved": 0,
+        "mean_ms": 22.784949137254902,
+        "p50_ms": 23.184251,
+        "p95_ms": 30.28623,
+        "p99_ms": 31.088159,
+        "max_ms": 31.088159
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 12.832272249999999,
+        "p50_ms": 12.9151375,
+        "p95_ms": 13.198887,
+        "p99_ms": 13.198887,
+        "max_ms": 13.198887
+      },
+      "injected_key_interval": {
+        "n": 51,
+        "observed": 51,
+        "unobserved": 0,
+        "mean_ms": 150.0,
+        "p50_ms": 152.0,
+        "p95_ms": 153.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 51,
+        "submitted_before_next_up": 51,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/zh-essay/essay/transpose/150": {
+      "labels": {
+        "mode": "chinese",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "transpose",
+        "interval_ms": "150"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 81,
+        "observed": 81,
+        "unobserved": 0,
+        "mean_ms": 4.099288592592592,
+        "p50_ms": 4.043567,
+        "p95_ms": 5.214456,
+        "p99_ms": 5.673204,
+        "max_ms": 5.673204
+      },
+      "editor_submission": {
+        "n": 81,
+        "observed": 81,
+        "unobserved": 0,
+        "mean_ms": 12.554451283950618,
+        "p50_ms": 12.646801,
+        "p95_ms": 13.646693,
+        "p99_ms": 15.578308,
+        "max_ms": 15.578308
+      },
+      "candidate_submission": {
+        "n": 81,
+        "observed": 81,
+        "unobserved": 0,
+        "mean_ms": 33.101038802469134,
+        "p50_ms": 33.560029,
+        "p95_ms": 37.069143,
+        "p99_ms": 98.070862,
+        "max_ms": 98.070862
+      },
+      "pressed_submission": {
+        "n": 81,
+        "observed": 81,
+        "unobserved": 0,
+        "mean_ms": 21.064693703703703,
+        "p50_ms": 19.436852,
+        "p95_ms": 30.197422,
+        "p99_ms": 34.430393,
+        "max_ms": 34.430393
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 12.69078275,
+        "p50_ms": 12.467527,
+        "p95_ms": 14.255342,
+        "p99_ms": 14.255342,
+        "max_ms": 14.255342
+      },
+      "injected_key_interval": {
+        "n": 81,
+        "observed": 81,
+        "unobserved": 0,
+        "mean_ms": 149.93827160493828,
+        "p50_ms": 152.0,
+        "p95_ms": 154.0,
+        "p99_ms": 155.0,
+        "max_ms": 155.0
+      },
+      "candidate_deadline": {
+        "letters": 81,
+        "submitted_before_next_up": 81,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/moztw-g0v-edited/chat-derived-edited-excerpts/full/60": {
+      "labels": {
+        "mode": "chinese",
+        "source": "moztw-g0v-edited",
+        "genre": "chat-derived-edited-excerpts",
+        "condition": "full",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 55,
+        "observed": 55,
+        "unobserved": 0,
+        "mean_ms": 4.268308181818182,
+        "p50_ms": 4.19242,
+        "p95_ms": 5.468098,
+        "p99_ms": 6.026119,
+        "max_ms": 6.026119
+      },
+      "editor_submission": {
+        "n": 55,
+        "observed": 55,
+        "unobserved": 0,
+        "mean_ms": 13.308526890909091,
+        "p50_ms": 12.865597,
+        "p95_ms": 16.807315,
+        "p99_ms": 19.678617,
+        "max_ms": 19.678617
+      },
+      "candidate_submission": {
+        "n": 55,
+        "observed": 55,
+        "unobserved": 0,
+        "mean_ms": 33.5688252,
+        "p50_ms": 33.655128,
+        "p95_ms": 39.561067,
+        "p99_ms": 57.589711,
+        "max_ms": 57.589711
+      },
+      "pressed_submission": {
+        "n": 55,
+        "observed": 55,
+        "unobserved": 0,
+        "mean_ms": 21.626688854545453,
+        "p50_ms": 21.270388,
+        "p95_ms": 30.583098,
+        "p99_ms": 31.76643,
+        "max_ms": 31.76643
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 14.14357875,
+        "p50_ms": 13.829711,
+        "p95_ms": 16.392473,
+        "p99_ms": 16.392473,
+        "max_ms": 16.392473
+      },
+      "injected_key_interval": {
+        "n": 55,
+        "observed": 55,
+        "unobserved": 0,
+        "mean_ms": 60.018181818181816,
+        "p50_ms": 59.0,
+        "p95_ms": 68.0,
+        "p99_ms": 68.0,
+        "max_ms": 68.0
+      },
+      "candidate_deadline": {
+        "letters": 55,
+        "submitted_before_next_up": 55,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/moztw-g0v-edited/chat-derived-edited-excerpts/initials/60": {
+      "labels": {
+        "mode": "chinese",
+        "source": "moztw-g0v-edited",
+        "genre": "chat-derived-edited-excerpts",
+        "condition": "initials",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 4.05368023076923,
+        "p50_ms": 3.984554,
+        "p95_ms": 5.342575,
+        "p99_ms": 5.342575,
+        "max_ms": 5.342575
+      },
+      "editor_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 13.104397384615385,
+        "p50_ms": 12.895699,
+        "p95_ms": 15.848825,
+        "p99_ms": 15.848825,
+        "max_ms": 15.848825
+      },
+      "candidate_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 33.943455923076925,
+        "p50_ms": 34.746116,
+        "p95_ms": 40.418356,
+        "p99_ms": 40.418356,
+        "max_ms": 40.418356
+      },
+      "pressed_submission": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 20.819353384615383,
+        "p50_ms": 18.757835,
+        "p95_ms": 31.361897,
+        "p99_ms": 31.361897,
+        "max_ms": 31.361897
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 12.09599875,
+        "p50_ms": 11.968356,
+        "p95_ms": 13.514657,
+        "p99_ms": 13.514657,
+        "max_ms": 13.514657
+      },
+      "injected_key_interval": {
+        "n": 13,
+        "observed": 13,
+        "unobserved": 0,
+        "mean_ms": 60.07692307692308,
+        "p50_ms": 59.0,
+        "p95_ms": 70.0,
+        "p99_ms": 70.0,
+        "max_ms": 70.0
+      },
+      "candidate_deadline": {
+        "letters": 13,
+        "submitted_before_next_up": 13,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/moztw-g0v-edited/chat-derived-edited-excerpts/mixed/60": {
+      "labels": {
+        "mode": "chinese",
+        "source": "moztw-g0v-edited",
+        "genre": "chat-derived-edited-excerpts",
+        "condition": "mixed",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 4.03794775,
+        "p50_ms": 4.0444215,
+        "p95_ms": 4.887364,
+        "p99_ms": 5.605854,
+        "max_ms": 5.605854
+      },
+      "editor_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 13.224064638888889,
+        "p50_ms": 13.245307,
+        "p95_ms": 15.790229,
+        "p99_ms": 16.034187,
+        "max_ms": 16.034187
+      },
+      "candidate_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 34.81910372222222,
+        "p50_ms": 35.6878855,
+        "p95_ms": 39.046479,
+        "p99_ms": 56.216375,
+        "max_ms": 56.216375
+      },
+      "pressed_submission": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 21.826874305555556,
+        "p50_ms": 20.9177555,
+        "p95_ms": 30.921324,
+        "p99_ms": 32.198927,
+        "max_ms": 32.198927
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 13.362599249999999,
+        "p50_ms": 12.7173905,
+        "p95_ms": 16.499813,
+        "p99_ms": 16.499813,
+        "max_ms": 16.499813
+      },
+      "injected_key_interval": {
+        "n": 36,
+        "observed": 36,
+        "unobserved": 0,
+        "mean_ms": 60.0,
+        "p50_ms": 59.0,
+        "p95_ms": 69.0,
+        "p99_ms": 69.0,
+        "max_ms": 69.0
+      },
+      "candidate_deadline": {
+        "letters": 36,
+        "submitted_before_next_up": 36,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/zh-essay/essay/full/60": {
+      "labels": {
+        "mode": "chinese",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "full",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 4.3511824,
+        "p50_ms": 4.2973365,
+        "p95_ms": 5.831581,
+        "p99_ms": 8.390644,
+        "max_ms": 8.390644
+      },
+      "editor_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 14.1772367,
+        "p50_ms": 13.991008,
+        "p95_ms": 17.103039,
+        "p99_ms": 17.488144,
+        "max_ms": 17.488144
+      },
+      "candidate_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 34.81955844,
+        "p50_ms": 36.235904500000004,
+        "p95_ms": 42.573353,
+        "p99_ms": 49.373769,
+        "max_ms": 49.373769
+      },
+      "pressed_submission": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 24.56057622,
+        "p50_ms": 25.389159499999998,
+        "p95_ms": 36.628092,
+        "p99_ms": 39.508716,
+        "max_ms": 39.508716
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 13.9899405,
+        "p50_ms": 13.6214515,
+        "p95_ms": 15.547883,
+        "p99_ms": 15.547883,
+        "max_ms": 15.547883
+      },
+      "injected_key_interval": {
+        "n": 50,
+        "observed": 50,
+        "unobserved": 0,
+        "mean_ms": 60.0,
+        "p50_ms": 59.0,
+        "p95_ms": 67.0,
+        "p99_ms": 68.0,
+        "max_ms": 68.0
+      },
+      "candidate_deadline": {
+        "letters": 50,
+        "submitted_before_next_up": 50,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/zh-essay/essay/half/60": {
+      "labels": {
+        "mode": "chinese",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "half",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 4.307305882352941,
+        "p50_ms": 4.226268,
+        "p95_ms": 5.607517,
+        "p99_ms": 5.607517,
+        "max_ms": 5.607517
+      },
+      "editor_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 13.89134382352941,
+        "p50_ms": 13.788195,
+        "p95_ms": 17.196841,
+        "p99_ms": 17.196841,
+        "max_ms": 17.196841
+      },
+      "candidate_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 38.056334529411764,
+        "p50_ms": 37.330121,
+        "p95_ms": 54.944288,
+        "p99_ms": 54.944288,
+        "max_ms": 54.944288
+      },
+      "pressed_submission": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 23.24798605882353,
+        "p50_ms": 23.397101,
+        "p95_ms": 34.898194,
+        "p99_ms": 34.898194,
+        "max_ms": 34.898194
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 16.299887000000002,
+        "p50_ms": 16.168533,
+        "p95_ms": 17.75908,
+        "p99_ms": 17.75908,
+        "max_ms": 17.75908
+      },
+      "injected_key_interval": {
+        "n": 17,
+        "observed": 17,
+        "unobserved": 0,
+        "mean_ms": 59.35294117647059,
+        "p50_ms": 59.0,
+        "p95_ms": 63.0,
+        "p99_ms": 63.0,
+        "max_ms": 63.0
+      },
+      "candidate_deadline": {
+        "letters": 17,
+        "submitted_before_next_up": 17,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/zh-essay/essay/initials/60": {
+      "labels": {
+        "mode": "chinese",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "initials",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 29,
+        "observed": 29,
+        "unobserved": 0,
+        "mean_ms": 4.109556103448276,
+        "p50_ms": 4.056422,
+        "p95_ms": 5.361996,
+        "p99_ms": 5.464911,
+        "max_ms": 5.464911
+      },
+      "editor_submission": {
+        "n": 29,
+        "observed": 29,
+        "unobserved": 0,
+        "mean_ms": 13.217567931034482,
+        "p50_ms": 13.156995,
+        "p95_ms": 14.757256,
+        "p99_ms": 15.796578,
+        "max_ms": 15.796578
+      },
+      "candidate_submission": {
+        "n": 29,
+        "observed": 29,
+        "unobserved": 0,
+        "mean_ms": 35.41236127586207,
+        "p50_ms": 31.636526,
+        "p95_ms": 62.814652,
+        "p99_ms": 64.971005,
+        "max_ms": 64.971005
+      },
+      "pressed_submission": {
+        "n": 29,
+        "observed": 29,
+        "unobserved": 0,
+        "mean_ms": 24.100940793103447,
+        "p50_ms": 22.885381,
+        "p95_ms": 33.805693,
+        "p99_ms": 36.961682,
+        "max_ms": 36.961682
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 13.04312775,
+        "p50_ms": 12.7361875,
+        "p95_ms": 14.591735,
+        "p99_ms": 14.591735,
+        "max_ms": 14.591735
+      },
+      "injected_key_interval": {
+        "n": 29,
+        "observed": 29,
+        "unobserved": 0,
+        "mean_ms": 60.3448275862069,
+        "p50_ms": 60.0,
+        "p95_ms": 68.0,
+        "p99_ms": 72.0,
+        "max_ms": 72.0
+      },
+      "candidate_deadline": {
+        "letters": 29,
+        "submitted_before_next_up": 27,
+        "observed_submission_at_or_after_next_up": 2,
+        "unobserved": 0
+      }
+    },
+    "chinese/zh-essay/essay/mixed/60": {
+      "labels": {
+        "mode": "chinese",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "mixed",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 51,
+        "observed": 51,
+        "unobserved": 0,
+        "mean_ms": 4.367733509803921,
+        "p50_ms": 4.321525,
+        "p95_ms": 6.040274,
+        "p99_ms": 6.461524,
+        "max_ms": 6.461524
+      },
+      "editor_submission": {
+        "n": 51,
+        "observed": 51,
+        "unobserved": 0,
+        "mean_ms": 14.15668368627451,
+        "p50_ms": 13.906369,
+        "p95_ms": 17.069129,
+        "p99_ms": 17.795118,
+        "max_ms": 17.795118
+      },
+      "candidate_submission": {
+        "n": 51,
+        "observed": 51,
+        "unobserved": 0,
+        "mean_ms": 33.89632731372549,
+        "p50_ms": 33.457307,
+        "p95_ms": 41.626472,
+        "p99_ms": 53.694389,
+        "max_ms": 53.694389
+      },
+      "pressed_submission": {
+        "n": 51,
+        "observed": 51,
+        "unobserved": 0,
+        "mean_ms": 26.242157647058825,
+        "p50_ms": 25.098972,
+        "p95_ms": 38.462513,
+        "p99_ms": 43.423868,
+        "max_ms": 43.423868
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 13.11703225,
+        "p50_ms": 12.768034499999999,
+        "p95_ms": 14.38866,
+        "p99_ms": 14.38866,
+        "max_ms": 14.38866
+      },
+      "injected_key_interval": {
+        "n": 51,
+        "observed": 51,
+        "unobserved": 0,
+        "mean_ms": 59.78431372549019,
+        "p50_ms": 60.0,
+        "p95_ms": 64.0,
+        "p99_ms": 67.0,
+        "max_ms": 67.0
+      },
+      "candidate_deadline": {
+        "letters": 51,
+        "submitted_before_next_up": 51,
+        "observed_submission_at_or_after_next_up": 0,
+        "unobserved": 0
+      }
+    },
+    "chinese/zh-essay/essay/transpose/60": {
+      "labels": {
+        "mode": "chinese",
+        "source": "zh-essay",
+        "genre": "essay",
+        "condition": "transpose",
+        "interval_ms": "60"
+      },
+      "queries": 4,
+      "editor_callback": {
+        "n": 81,
+        "observed": 81,
+        "unobserved": 0,
+        "mean_ms": 4.138822,
+        "p50_ms": 4.141677,
+        "p95_ms": 5.007825,
+        "p99_ms": 5.289542,
+        "max_ms": 5.289542
+      },
+      "editor_submission": {
+        "n": 81,
+        "observed": 81,
+        "unobserved": 0,
+        "mean_ms": 12.9305567654321,
+        "p50_ms": 12.904021,
+        "p95_ms": 14.403656,
+        "p99_ms": 15.666679,
+        "max_ms": 15.666679
+      },
+      "candidate_submission": {
+        "n": 81,
+        "observed": 81,
+        "unobserved": 0,
+        "mean_ms": 32.43531564197531,
+        "p50_ms": 29.289126,
+        "p95_ms": 37.68673,
+        "p99_ms": 68.867564,
+        "max_ms": 68.867564
+      },
+      "pressed_submission": {
+        "n": 81,
+        "observed": 81,
+        "unobserved": 0,
+        "mean_ms": 21.394951703703704,
+        "p50_ms": 20.236781,
+        "p95_ms": 30.059542,
+        "p99_ms": 40.857668,
+        "max_ms": 40.857668
+      },
+      "space_submission": {
+        "n": 4,
+        "observed": 4,
+        "unobserved": 0,
+        "mean_ms": 13.0226025,
+        "p50_ms": 13.127068000000001,
+        "p95_ms": 13.564752,
+        "p99_ms": 13.564752,
+        "max_ms": 13.564752
+      },
+      "injected_key_interval": {
+        "n": 81,
+        "observed": 81,
+        "unobserved": 0,
+        "mean_ms": 59.77777777777778,
+        "p50_ms": 59.0,
+        "p95_ms": 68.0,
+        "p99_ms": 69.0,
+        "max_ms": 69.0
+      },
+      "candidate_deadline": {
+        "letters": 81,
+        "submitted_before_next_up": 80,
+        "observed_submission_at_or_after_next_up": 1,
+        "unobserved": 0
+      }
+    }
+  },
+  "limitations": [
+    "injected events, not physical digitizer latency",
+    "frame callback delivery, not display presentation",
+    "one session, small sample; no acceptance certification",
+    "same-process test editor, not Chrome",
+    "candidate metrics conditional on observing a fresh matching frame before the next action; unchanged rows and supersession are not distinguished",
+    "source conditions independently sampled; latency differences between conditions are not isolated error effects",
+    "four Space samples per source/condition/shard; p95/p99 equal the maximum, not stable tail estimates"
+  ],
+  "workload_validation": {
+    "mode": "chinese",
+    "shard": 0,
+    "queries_per_cadence": 32,
+    "actions": 728,
+    "status": "exact action sequence matches frozen corpus"
+  },
+  "session": "a5ae0079-f762-4c12-8b74-654725dca06c",
+  "inputs": {
+    "artifacts\\device-tests\\a5ae0079-f762-4c12-8b74-654725dca06c\\touch-latency.tsv": "dabf920ec619699d2ed44a86ad10d26e4811efab56a895fb15af7b921b904d9f",
+    "docs\\release-hardening\\language-timing\\inputs.tsv": "5c316cebea4ed88352a946fafe01fcda4e922c49a47b12783996a53ec1995f49",
+    "artifacts\\single-window-language\\chinese-new.log": "421a7fc3d71ea1efbfa68c3eadf709fc7fab0574a6543f05fa6b649dab20a2b7"
+  },
+  "over_100_ms": [],
+  "raw_space_missing": 0
+}

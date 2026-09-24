@@ -67,6 +67,17 @@ English stays near 19–20 ms. Slow Chinese candidate p95 remains 68–71 ms and
 tail still fails the candidate budget. Broad language-specific and large-sample
 gates remain open. No source rights, human-touch or Android-version gate is waived.
 
+The subsequent [broader paired replay](SINGLE-WINDOW-LANGUAGE-RESULTS.md) completes
+eight sessions and 5,384 injected actions, with every raw/Space submission observed.
+Chinese candidate p95 improves 60.75/56.66 → 45.43/41.55 ms at 150/60 ms cadences;
+Taiwanese improves 60.92/57.84 → 52.17/43.02 ms; Japanese improves
+54.89/56.40 → 37.26/38.66 ms. English remains near 19–20 ms. Ordinary Chinese
+p99 is still 81.29 ms and ordinary Taiwanese p95 is still 52.17 ms, over budget.
+All subgroup tails, unfavorable differences and missing candidate observations
+remain recorded. One pair per language on reused shard 0 does not clear the
+large-sample or physical-touch gates. A [separate diagnostic](POST-WINDOW-STAGES-PLAN.md)
+will locate remaining delay before another runtime change.
+
 The [compiled-validator experiment](VALIDATION-PATTERN-RESULTS.md) is rejected.
 Despite lower isolated ART validation cost and identical desktop predictions,
 Taiwanese raw/Space tails and fast Japanese raw tails worsen in both phone pairs.
@@ -178,7 +189,13 @@ improvement in evidence, not proof of better language quality.
 Core contracts: 887,604 assertions. Pinned desktop evaluator: 13,014 rows, 11,272
 native queries. Neither count is language accuracy or a phone performance result.
 
-## Binary checks
+## Earlier signed baseline package checks
+
+The following checks and hashes belong to the historical signed payload, before
+subsequent admitted changes. They are retained evidence, not certification of the
+current runtime. The current single-window implementation has an ordinary
+unsigned packaging check; a new signed APK/AAB must be built and checked after
+the remaining gates close.
 
 | Check | Result |
 |---|---|
@@ -271,9 +288,11 @@ Earlier low frame counts do not establish missing suggestions. The target remain
 50 ms; the correction does not relax it or clear release acceptance.
 
 Final cleanup restores the original APK/preferences/IME and verifies display OFF.
-The shared-phone reservation has been explicitly released to SHINE.
+That signed-baseline phone reservation was explicitly released to SHINE.
 [Cleanup record](final-package/phone-cleanup.json). The `package` directory retains
-the earlier baseline package evidence; `final-package` identifies the current build.
+the original package evidence; `final-package` identifies the later signed baseline,
+not the subsequently changed current runtime. Later experiment reports record
+their own phone reservations and cleanup receipts.
 
 ## Still required
 
