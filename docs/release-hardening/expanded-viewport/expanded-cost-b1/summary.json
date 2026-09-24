@@ -1,0 +1,63 @@
+{
+  "0": {
+    "apply_ns": {
+      "n": 46,
+      "mean_ms": 12.641105021739131,
+      "median_ms": 4.245729000000001,
+      "p95_ms": 78.371927,
+      "maximum_ms": 103.813542
+    },
+    "strip_ns": {
+      "n": 46,
+      "mean_ms": 42.764832391304346,
+      "median_ms": 41.0133855,
+      "p95_ms": 47.131875,
+      "maximum_ms": 95.147448
+    },
+    "expand_ns": {
+      "n": 46,
+      "mean_ms": 32.355690760869564,
+      "median_ms": 35.691068,
+      "p95_ms": 42.295781,
+      "maximum_ms": 51.557709
+    },
+    "select_ns": {
+      "n": 46,
+      "mean_ms": 0.8634227173913044,
+      "median_ms": 0.722448,
+      "p95_ms": 1.711354,
+      "maximum_ms": 2.013177
+    }
+  },
+  "1": {
+    "apply_ns": {
+      "n": 46,
+      "mean_ms": 5.390161891304348,
+      "median_ms": 2.7289325,
+      "p95_ms": 19.829322,
+      "maximum_ms": 24.693334
+    },
+    "strip_ns": {
+      "n": 46,
+      "mean_ms": 40.44894815217391,
+      "median_ms": 40.5027605,
+      "p95_ms": 43.925521,
+      "maximum_ms": 44.664167
+    },
+    "expand_ns": {
+      "n": 46,
+      "mean_ms": 30.491141239130435,
+      "median_ms": 34.5546355,
+      "p95_ms": 37.63974,
+      "maximum_ms": 38.444844
+    },
+    "select_ns": {
+      "n": 46,
+      "mean_ms": 0.8393444565217392,
+      "median_ms": 0.751276,
+      "p95_ms": 1.664427,
+      "maximum_ms": 1.819427
+    }
+  },
+  "scope": "Detached measure/layout/bitmap draw; selection is a core call, not a visible scrolling operation."
+}

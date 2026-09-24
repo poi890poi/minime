@@ -41,4 +41,19 @@ Verification before admission:
 
 Land only a repeatable expansion improvement with preserved reachability and no
 typing/selection regression. Record negatives and archive a rejected trial.
-No prototype has been implemented by this plan; release gates remain open.
+Release gates remain open.
+
+## Attached-frame follow-up, frozen before measurement
+
+Use every fourth prefix, in original insertion order, from the existing 46-prefix
+diagnostic (12 inputs). No selection by candidate count or measured result. Run
+two passes in portrait and landscape with the same instrumentation APK on A/B.
+For each input, open the list, scroll by three quarters of the current viewport
+until the final candidate is visibly reachable, and select it. Record operation
+work, first subsequent frame submission, scroll offset, and child count before
+and after each action. Preserve full candidate/default hashes and expected output.
+Separate expansion, scroll-with-append, scroll-without-append, and selection;
+compare all-scroll tails as well as opening. Frame submission is not physical
+touch or panel presentation. These sequential settled interactions are not a
+fling or language-quality benchmark. Repeat a surviving A/B result in reverse
+order, then run the frozen language-specific typing shards for nonregression.

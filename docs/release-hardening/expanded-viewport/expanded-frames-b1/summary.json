@@ -1,0 +1,581 @@
+{
+  "portrait": {
+    "groups": {
+      "expand": {
+        "work_ns": {
+          "n": 24,
+          "mean_ms": 20.981097958333333,
+          "median_ms": 22.549713500000003,
+          "p95_ms": 28.004219,
+          "maximum_ms": 31.553125
+        },
+        "draw_ns": {
+          "n": 24,
+          "mean_ms": 24.996807625,
+          "median_ms": 27.801198,
+          "p95_ms": 32.51875,
+          "maximum_ms": 36.855677
+        },
+        "submit_ns": {
+          "n": 24,
+          "mean_ms": 34.932716875,
+          "median_ms": 38.716848999999996,
+          "p95_ms": 45.721927,
+          "maximum_ms": 51.647083
+        }
+      },
+      "scroll": {
+        "work_ns": {
+          "n": 344,
+          "mean_ms": 6.173228523255814,
+          "median_ms": 0.154401,
+          "p95_ms": 31.525157,
+          "maximum_ms": 37.914479
+        },
+        "draw_ns": {
+          "n": 344,
+          "mean_ms": 11.61197277616279,
+          "median_ms": 5.104818,
+          "p95_ms": 44.294166,
+          "maximum_ms": 53.398333
+        },
+        "submit_ns": {
+          "n": 344,
+          "mean_ms": 22.431968215116278,
+          "median_ms": 12.912578,
+          "p95_ms": 83.069636,
+          "maximum_ms": 98.803437
+        }
+      },
+      "select": {
+        "work_ns": {
+          "n": 24,
+          "mean_ms": 34.378083625,
+          "median_ms": 33.129453,
+          "p95_ms": 48.609531,
+          "maximum_ms": 50.30526
+        },
+        "draw_ns": {
+          "n": 24,
+          "mean_ms": 37.06180558333333,
+          "median_ms": 35.980599,
+          "p95_ms": 51.252292,
+          "maximum_ms": 53.01901
+        },
+        "submit_ns": {
+          "n": 24,
+          "mean_ms": 46.496686125000004,
+          "median_ms": 44.927422,
+          "p95_ms": 64.440208,
+          "maximum_ms": 67.795833
+        }
+      },
+      "scroll_append": {
+        "work_ns": {
+          "n": 76,
+          "mean_ms": 27.472997486842104,
+          "median_ms": 28.689088499999997,
+          "p95_ms": 35.733907,
+          "maximum_ms": 37.914479
+        },
+        "draw_ns": {
+          "n": 76,
+          "mean_ms": 36.61744039473684,
+          "median_ms": 36.8293755,
+          "p95_ms": 48.09448,
+          "maximum_ms": 53.398333
+        },
+        "submit_ns": {
+          "n": 76,
+          "mean_ms": 63.350604434210524,
+          "median_ms": 61.659037,
+          "p95_ms": 93.461459,
+          "maximum_ms": 98.803437
+        }
+      },
+      "scroll_no_append": {
+        "work_ns": {
+          "n": 268,
+          "mean_ms": 0.13299553358208954,
+          "median_ms": 0.135312,
+          "p95_ms": 0.22401,
+          "maximum_ms": 0.310469
+        },
+        "draw_ns": {
+          "n": 268,
+          "mean_ms": 4.520870018656717,
+          "median_ms": 3.979453,
+          "p95_ms": 9.110208,
+          "maximum_ms": 9.925312
+        },
+        "submit_ns": {
+          "n": 268,
+          "mean_ms": 10.828175854477612,
+          "median_ms": 9.5874475,
+          "p95_ms": 18.142813,
+          "maximum_ms": 20.868438
+        }
+      }
+    },
+    "episodes": [
+      {
+        "round": "0",
+        "query": "r",
+        "scrolls": 6,
+        "scroll_work_ms": 16.186146,
+        "all_action_work_ms": 62.600781000000005
+      },
+      {
+        "round": "0",
+        "query": "recor",
+        "scrolls": 1,
+        "scroll_work_ms": 0.041354,
+        "all_action_work_ms": 42.191874
+      },
+      {
+        "round": "0",
+        "query": "recordkee",
+        "scrolls": 0,
+        "scroll_work_ms": 0,
+        "all_action_work_ms": 35.776926
+      },
+      {
+        "round": "0",
+        "query": "recordkeeping",
+        "scrolls": 0,
+        "scroll_work_ms": 0,
+        "all_action_work_ms": 34.633905999999996
+      },
+      {
+        "round": "0",
+        "query": "da",
+        "scrolls": 56,
+        "scroll_work_ms": 369.169371,
+        "all_action_work_ms": 436.666142
+      },
+      {
+        "round": "0",
+        "query": "ha",
+        "scrolls": 64,
+        "scroll_work_ms": 454.703646,
+        "all_action_work_ms": 531.209115
+      },
+      {
+        "round": "0",
+        "query": "lan",
+        "scrolls": 9,
+        "scroll_work_ms": 45.228645,
+        "all_action_work_ms": 101.54187399999999
+      },
+      {
+        "round": "0",
+        "query": "leil",
+        "scrolls": 5,
+        "scroll_work_ms": 16.829271,
+        "all_action_work_ms": 72.780208
+      },
+      {
+        "round": "0",
+        "query": "hao",
+        "scrolls": 5,
+        "scroll_work_ms": 20.250575,
+        "all_action_work_ms": 80.67146100000001
+      },
+      {
+        "round": "0",
+        "query": "haohzhi",
+        "scrolls": 4,
+        "scroll_work_ms": 11.700104999999999,
+        "all_action_work_ms": 71.109324
+      },
+      {
+        "round": "0",
+        "query": "qia",
+        "scrolls": 19,
+        "scroll_work_ms": 104.804478,
+        "all_action_work_ms": 169.100832
+      },
+      {
+        "round": "0",
+        "query": "qianghu",
+        "scrolls": 3,
+        "scroll_work_ms": 0.283698,
+        "all_action_work_ms": 46.062604
+      },
+      {
+        "round": "1",
+        "query": "r",
+        "scrolls": 6,
+        "scroll_work_ms": 16.954635999999997,
+        "all_action_work_ms": 65.332396
+      },
+      {
+        "round": "1",
+        "query": "recor",
+        "scrolls": 1,
+        "scroll_work_ms": 0.063542,
+        "all_action_work_ms": 43.096562
+      },
+      {
+        "round": "1",
+        "query": "recordkee",
+        "scrolls": 0,
+        "scroll_work_ms": 0,
+        "all_action_work_ms": 33.55552
+      },
+      {
+        "round": "1",
+        "query": "recordkeeping",
+        "scrolls": 0,
+        "scroll_work_ms": 0,
+        "all_action_work_ms": 35.056353
+      },
+      {
+        "round": "1",
+        "query": "da",
+        "scrolls": 56,
+        "scroll_work_ms": 404.619421,
+        "all_action_work_ms": 480.05613999999997
+      },
+      {
+        "round": "1",
+        "query": "ha",
+        "scrolls": 64,
+        "scroll_work_ms": 468.2001,
+        "all_action_work_ms": 543.482756
+      },
+      {
+        "round": "1",
+        "query": "lan",
+        "scrolls": 9,
+        "scroll_work_ms": 44.775833999999996,
+        "all_action_work_ms": 105.42302099999999
+      },
+      {
+        "round": "1",
+        "query": "leil",
+        "scrolls": 5,
+        "scroll_work_ms": 12.654584,
+        "all_action_work_ms": 69.835677
+      },
+      {
+        "round": "1",
+        "query": "hao",
+        "scrolls": 5,
+        "scroll_work_ms": 16.758907,
+        "all_action_work_ms": 85.672865
+      },
+      {
+        "round": "1",
+        "query": "haohzhi",
+        "scrolls": 4,
+        "scroll_work_ms": 9.157604000000001,
+        "all_action_work_ms": 69.42974
+      },
+      {
+        "round": "1",
+        "query": "qia",
+        "scrolls": 19,
+        "scroll_work_ms": 110.742237,
+        "all_action_work_ms": 179.41270600000001
+      },
+      {
+        "round": "1",
+        "query": "qianghu",
+        "scrolls": 3,
+        "scroll_work_ms": 0.46645800000000004,
+        "all_action_work_ms": 57.512187
+      }
+    ]
+  },
+  "landscape": {
+    "groups": {
+      "expand": {
+        "work_ns": {
+          "n": 24,
+          "mean_ms": 21.956373583333335,
+          "median_ms": 24.7055205,
+          "p95_ms": 30.875261,
+          "maximum_ms": 31.276979
+        },
+        "draw_ns": {
+          "n": 24,
+          "mean_ms": 26.435509791666668,
+          "median_ms": 30.3581765,
+          "p95_ms": 37.094948,
+          "maximum_ms": 37.76302
+        },
+        "submit_ns": {
+          "n": 24,
+          "mean_ms": 35.891586458333336,
+          "median_ms": 41.152891,
+          "p95_ms": 49.359323,
+          "maximum_ms": 50.815521
+        }
+      },
+      "scroll": {
+        "work_ns": {
+          "n": 254,
+          "mean_ms": 6.517824358267717,
+          "median_ms": 0.145703,
+          "p95_ms": 33.875573,
+          "maximum_ms": 41.67573
+        },
+        "draw_ns": {
+          "n": 254,
+          "mean_ms": 12.26757727952756,
+          "median_ms": 5.1205205,
+          "p95_ms": 46.747865,
+          "maximum_ms": 57.213541
+        },
+        "submit_ns": {
+          "n": 254,
+          "mean_ms": 23.691269681102362,
+          "median_ms": 12.451979,
+          "p95_ms": 85.075,
+          "maximum_ms": 107.937761
+        }
+      },
+      "select": {
+        "work_ns": {
+          "n": 24,
+          "mean_ms": 34.756985666666665,
+          "median_ms": 35.1076305,
+          "p95_ms": 51.233489,
+          "maximum_ms": 55.000156
+        },
+        "draw_ns": {
+          "n": 24,
+          "mean_ms": 37.712308875,
+          "median_ms": 38.4157035,
+          "p95_ms": 54.386666,
+          "maximum_ms": 58.112083
+        },
+        "submit_ns": {
+          "n": 24,
+          "mean_ms": 47.0788845,
+          "median_ms": 47.621511,
+          "p95_ms": 70.270573,
+          "maximum_ms": 72.992292
+        }
+      },
+      "scroll_append": {
+        "work_ns": {
+          "n": 58,
+          "mean_ms": 28.13774506896552,
+          "median_ms": 29.6795055,
+          "p95_ms": 40.206666,
+          "maximum_ms": 41.67573
+        },
+        "draw_ns": {
+          "n": 58,
+          "mean_ms": 38.078142965517245,
+          "median_ms": 40.163646,
+          "p95_ms": 53.118021,
+          "maximum_ms": 57.213541
+        },
+        "submit_ns": {
+          "n": 58,
+          "mean_ms": 66.51621406896552,
+          "median_ms": 68.16536450000001,
+          "p95_ms": 102.537813,
+          "maximum_ms": 107.937761
+        }
+      },
+      "scroll_no_append": {
+        "work_ns": {
+          "n": 196,
+          "mean_ms": 0.1200927193877551,
+          "median_ms": 0.110208,
+          "p95_ms": 0.181875,
+          "maximum_ms": 0.335416
+        },
+        "draw_ns": {
+          "n": 196,
+          "mean_ms": 4.629756821428572,
+          "median_ms": 4.255026,
+          "p95_ms": 8.841615,
+          "maximum_ms": 9.678906
+        },
+        "submit_ns": {
+          "n": 196,
+          "mean_ms": 11.01858205612245,
+          "median_ms": 9.358359499999999,
+          "p95_ms": 19.338281,
+          "maximum_ms": 21.270833
+        }
+      }
+    },
+    "episodes": [
+      {
+        "round": "0",
+        "query": "r",
+        "scrolls": 4,
+        "scroll_work_ms": 10.189062,
+        "all_action_work_ms": 62.548905000000005
+      },
+      {
+        "round": "0",
+        "query": "recor",
+        "scrolls": 0,
+        "scroll_work_ms": 0,
+        "all_action_work_ms": 39.670260999999996
+      },
+      {
+        "round": "0",
+        "query": "recordkee",
+        "scrolls": 0,
+        "scroll_work_ms": 0,
+        "all_action_work_ms": 32.924479
+      },
+      {
+        "round": "0",
+        "query": "recordkeeping",
+        "scrolls": 0,
+        "scroll_work_ms": 0,
+        "all_action_work_ms": 33.088021
+      },
+      {
+        "round": "0",
+        "query": "da",
+        "scrolls": 42,
+        "scroll_work_ms": 271.300572,
+        "all_action_work_ms": 338.365624
+      },
+      {
+        "round": "0",
+        "query": "ha",
+        "scrolls": 48,
+        "scroll_work_ms": 395.444169,
+        "all_action_work_ms": 475.695992
+      },
+      {
+        "round": "0",
+        "query": "lan",
+        "scrolls": 7,
+        "scroll_work_ms": 23.718438,
+        "all_action_work_ms": 87.30573
+      },
+      {
+        "round": "0",
+        "query": "leil",
+        "scrolls": 4,
+        "scroll_work_ms": 4.20677,
+        "all_action_work_ms": 63.185207
+      },
+      {
+        "round": "0",
+        "query": "hao",
+        "scrolls": 4,
+        "scroll_work_ms": 11.572083,
+        "all_action_work_ms": 81.772603
+      },
+      {
+        "round": "0",
+        "query": "haohzhi",
+        "scrolls": 2,
+        "scroll_work_ms": 0.222865,
+        "all_action_work_ms": 59.732292
+      },
+      {
+        "round": "0",
+        "query": "qia",
+        "scrolls": 14,
+        "scroll_work_ms": 86.672918,
+        "all_action_work_ms": 147.642085
+      },
+      {
+        "round": "0",
+        "query": "qianghu",
+        "scrolls": 2,
+        "scroll_work_ms": 0.148905,
+        "all_action_work_ms": 53.250363
+      },
+      {
+        "round": "1",
+        "query": "r",
+        "scrolls": 4,
+        "scroll_work_ms": 11.082187,
+        "all_action_work_ms": 62.383333
+      },
+      {
+        "round": "1",
+        "query": "recor",
+        "scrolls": 0,
+        "scroll_work_ms": 0,
+        "all_action_work_ms": 40.204271
+      },
+      {
+        "round": "1",
+        "query": "recordkee",
+        "scrolls": 0,
+        "scroll_work_ms": 0,
+        "all_action_work_ms": 35.906354
+      },
+      {
+        "round": "1",
+        "query": "recordkeeping",
+        "scrolls": 0,
+        "scroll_work_ms": 0,
+        "all_action_work_ms": 34.068906
+      },
+      {
+        "round": "1",
+        "query": "da",
+        "scrolls": 42,
+        "scroll_work_ms": 335.997601,
+        "all_action_work_ms": 418.106351
+      },
+      {
+        "round": "1",
+        "query": "ha",
+        "scrolls": 48,
+        "scroll_work_ms": 383.56505,
+        "all_action_work_ms": 462.967759
+      },
+      {
+        "round": "1",
+        "query": "lan",
+        "scrolls": 7,
+        "scroll_work_ms": 21.417864,
+        "all_action_work_ms": 86.395728
+      },
+      {
+        "round": "1",
+        "query": "leil",
+        "scrolls": 4,
+        "scroll_work_ms": 4.046196999999999,
+        "all_action_work_ms": 67.023644
+      },
+      {
+        "round": "1",
+        "query": "hao",
+        "scrolls": 4,
+        "scroll_work_ms": 9.705624,
+        "all_action_work_ms": 70.885051
+      },
+      {
+        "round": "1",
+        "query": "haohzhi",
+        "scrolls": 2,
+        "scroll_work_ms": 0.219948,
+        "all_action_work_ms": 59.315938
+      },
+      {
+        "round": "1",
+        "query": "qia",
+        "scrolls": 14,
+        "scroll_work_ms": 85.813905,
+        "all_action_work_ms": 155.012967
+      },
+      {
+        "round": "1",
+        "query": "qianghu",
+        "scrolls": 2,
+        "scroll_work_ms": 0.203229,
+        "all_action_work_ms": 49.196144999999994
+      }
+    ]
+  },
+  "scope": "Sequential settled attached-view action to submitted GPU frame; not fling, physical contact, panel presentation, or language accuracy."
+}

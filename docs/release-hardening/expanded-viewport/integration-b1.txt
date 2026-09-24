@@ -1,0 +1,117 @@
+INSTRUMENTATION_STATUS: class=dev.minime.ime.ExpandedCandidatePagingTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+dev.minime.ime.ExpandedCandidatePagingTest:
+INSTRUMENTATION_STATUS: test=testExpandedPairedHoldAndPendingSelection
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.ExpandedCandidatePagingTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stack=java.io.IOException: Invalid paired form
+	at dev.minime.core.PairedForms.read(PairedForms.java:25)
+	at dev.minime.ime.ExpandedCandidatePagingContract.setup(ExpandedCandidatePagingContract.java:48)
+	at dev.minime.ime.ExpandedCandidatePagingContract.testExpandedPairedHoldAndPendingSelection(ExpandedCandidatePagingContract.java:100)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+
+INSTRUMENTATION_STATUS: stream=
+Error in testExpandedPairedHoldAndPendingSelection:
+java.io.IOException: Invalid paired form
+	at dev.minime.core.PairedForms.read(PairedForms.java:25)
+	at dev.minime.ime.ExpandedCandidatePagingContract.setup(ExpandedCandidatePagingContract.java:48)
+	at dev.minime.ime.ExpandedCandidatePagingContract.testExpandedPairedHoldAndPendingSelection(ExpandedCandidatePagingContract.java:100)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+
+INSTRUMENTATION_STATUS: test=testExpandedPairedHoldAndPendingSelection
+INSTRUMENTATION_STATUS_CODE: -1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.ExpandedCandidatePagingTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testExpandedTailTapAndReset
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.ExpandedCandidatePagingTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testExpandedTailTapAndReset
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.minime.ime.ExpandedCandidateLandscapeTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+dev.minime.ime.ExpandedCandidateLandscapeTest:
+INSTRUMENTATION_STATUS: test=testExpandedPairedHoldAndPendingSelection
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.ExpandedCandidateLandscapeTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stack=java.io.IOException: Invalid paired form
+	at dev.minime.core.PairedForms.read(PairedForms.java:25)
+	at dev.minime.ime.ExpandedCandidatePagingContract.setup(ExpandedCandidatePagingContract.java:48)
+	at dev.minime.ime.ExpandedCandidatePagingContract.testExpandedPairedHoldAndPendingSelection(ExpandedCandidatePagingContract.java:100)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+
+INSTRUMENTATION_STATUS: stream=
+Error in testExpandedPairedHoldAndPendingSelection:
+java.io.IOException: Invalid paired form
+	at dev.minime.core.PairedForms.read(PairedForms.java:25)
+	at dev.minime.ime.ExpandedCandidatePagingContract.setup(ExpandedCandidatePagingContract.java:48)
+	at dev.minime.ime.ExpandedCandidatePagingContract.testExpandedPairedHoldAndPendingSelection(ExpandedCandidatePagingContract.java:100)
+	at android.test.InstrumentationTestCase.runMethod(InstrumentationTestCase.java:220)
+	at android.test.InstrumentationTestCase.runTest(InstrumentationTestCase.java:205)
+	at android.test.ActivityInstrumentationTestCase2.runTest(ActivityInstrumentationTestCase2.java:192)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:195)
+	at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:181)
+	at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:563)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2335)
+
+INSTRUMENTATION_STATUS: test=testExpandedPairedHoldAndPendingSelection
+INSTRUMENTATION_STATUS_CODE: -1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.ExpandedCandidateLandscapeTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=testExpandedTailTapAndReset
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.minime.ime.ExpandedCandidateLandscapeTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=InstrumentationTestRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=testExpandedTailTapAndReset
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+Test results for InstrumentationTestRunner=.E..E.
+Time: 10.665
+
+FAILURES!!!
+Tests run: 4,  Failures: 0,  Errors: 2
+
+
+INSTRUMENTATION_CODE: -1

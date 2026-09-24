@@ -1,0 +1,216 @@
+diff --git a/app/src/main/java/dev/minime/ime/KeyboardView.java b/app/src/main/java/dev/minime/ime/KeyboardView.java
+index e98e45b..867c59d 100644
+--- a/app/src/main/java/dev/minime/ime/KeyboardView.java
++++ b/app/src/main/java/dev/minime/ime/KeyboardView.java
+@@ -41,6 +41,14 @@ final class KeyboardView extends LinearLayout {
+         return Math.max(STRIP_BATCH,2*(width/Math.max(1,dp(48))+1));
+     }
+     private CandidateFlowLayout candidateGrid;
++    private int gridLimit=STRIP_BATCH;
++    private int gridBatch() {
++        // The grid has at most four key rows of height. Cover two viewports
++        // even when every candidate uses the minimum 48 dp touch rectangle.
++        int width=Math.max(getWidth(),getResources().getDisplayMetrics().widthPixels);
++        int keyHeight=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE?34:59;
++        return 2*(4*keyHeight/48+1)*(width/Math.max(1,dp(48))+1);
++    }
+     private TextView expandButton;
+     private String gridKey="";
+     private String layoutKey="", lastRaw="";
+@@ -315,12 +323,13 @@ final class KeyboardView extends LinearLayout {
+         ((CandidateWord)word).alternate(alternate,value.pair==null?"":value.pair.phonetic,alternate.isEmpty()?null:
+             ()->{expanded=false;choose.accept(()->engine.selectAlternative(value,composition));});
+     }
+-    private void expandedCandidates(CompositionEngine engine,List<Candidate> candidates,int first,int preferred,String key) {
++    private void expandedCandidates(CompositionEngine engine,List<Candidate> candidates,int first,int preferred,String key,Runnable redraw) {
+         if(key.equals(gridKey))return;
+         gridKey=key;
+         List<TextView> available=candidatePool(candidateGrid);
+-        while(candidateGrid.getChildCount()>candidates.size()-first)candidateGrid.removeViewAt(candidateGrid.getChildCount()-1);
+-        for(int i=first;i<candidates.size();i++) {
++        final int to=Math.min(candidates.size(),first+gridLimit),shownLimit=gridLimit;
++        while(candidateGrid.getChildCount()>to-first)candidateGrid.removeViewAt(candidateGrid.getChildCount()-1);
++        for(int i=first;i<to;i++) {
+             TextView word=reuseCandidate(available,engine,candidates.get(i),snapshotComposition);
+             word.setTextSize(20);word.setMinWidth(dp(48));word.setMinHeight(dp(48));word.setPadding(dp(12),dp(4),dp(12),dp(4));
+             word.setSingleLine(false);word.setMaxLines(Integer.MAX_VALUE);
+@@ -329,6 +338,13 @@ final class KeyboardView extends LinearLayout {
+             if(i==0 && !engine.raw().isEmpty())word.setContentDescription("Exact input "+engine.raw());
+             word.setTextColor(preferred==i && !engine.raw().isEmpty()?Color.BLACK:0xff5d6b71);
+         }
++        ScrollView scroll=(ScrollView)candidateGrid.getParent();
++        scroll.setOnScrollChangeListener((view,x,y,oldX,oldY)-> {
++            if(candidateGrid==null || candidateGrid.getParent()!=view || y<=oldY || view.getHeight()<=0
++                    || to>=candidates.size() || gridLimit!=shownLimit)return;
++            if(y<Math.max(0,candidateGrid.getHeight()-2*view.getHeight()))return;
++            gridLimit+=gridBatch();redraw.run();
++        });
+     }
+     private static List<TextView> candidatePool(ViewGroup parent) {
+         List<TextView> result=new ArrayList<>();
+@@ -390,7 +406,7 @@ final class KeyboardView extends LinearLayout {
+         String hint=engine.privateField()?"Private input · learning off":loading;
+         status.setText(hint);
+         String mode=zhuyin+":"+english+":"+numeric+":"+panel+":"+engine.privateField()+":"+engine.inputMode()+":"+returnMode+":"+new TreeSet<>(configuredModes);
+-        if(!lastRaw.equals(engine.raw()) || !snapshotMode.equals(mode) || snapshotEngine!=engine)stripLimit=stripBatch();
++        if(!lastRaw.equals(engine.raw()) || !snapshotMode.equals(mode) || snapshotEngine!=engine) {stripLimit=stripBatch();gridLimit=gridBatch();}
+         if(!lastRaw.equals(engine.raw()) || !snapshotMode.equals(mode) || panel!=0)modeMenu=false;
+         // Keep the last completed row while its replacement is computed. Core acceptance
+         // still uses the current query, and composition ownership prevents cross-editor reuse.
+@@ -430,7 +446,7 @@ final class KeyboardView extends LinearLayout {
+             Candidate c=candidates.get(i);presentation.append('|').append(c.text.length()).append(':').append(c.text)
+                 .append(':').append(c.literal).append(':').append(c.consumed).append(':').append(c.alternateText());
+         }
+-        String nextStrip=presentation.append(":strip-limit:").append(stripLimit).toString();
++        String nextStrip=presentation.append(":strip-limit:").append(stripLimit).append(":grid-limit:").append(gridLimit).toString();
+         if(!nextStrip.equals(stripKey)) {
+             stripKey=nextStrip;lastRaw=engine.raw();
+             if((expanded || modeMenu) && allowLanguageSwitch) {
+@@ -513,14 +529,17 @@ final class KeyboardView extends LinearLayout {
+         keys.setLayoutParams(new LayoutParams(-1,dp(height)*4+(panel==0?0:dp(48))));
+         String nextLayout=zhuyin+":"+shifted+":"+caps+":"+panel+":"+numeric+":"+asciiPunctuation+":"+english+":"+allowLanguageSwitch+":"+enter+":"+height+":"+expanded+":"+engine.inputMode()+":"+returnMode+":"+joined;
+         if(nextLayout.equals(layoutKey)) {
+-            if(expanded)expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);
++            if(expanded)expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip,
++                ()->render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading));
+             return;
+         }
+         layoutKey=nextLayout; keys.removeAllViews();Arrays.fill(letters,null);typingKeys.clear();candidateGrid=null;gridKey="";
+         if(expanded) {
++            gridLimit=gridBatch();
+             ScrollView scroll=new ScrollView(getContext());scroll.setContentDescription("Expanded candidate list");
+             candidateGrid=new CandidateFlowLayout(getContext());scroll.addView(candidateGrid);
+-            expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip);
++            expandedCandidates(engine,candidates,separatePhonetics?1:0,preferred,nextStrip,
++                ()->render(engine,zhuyin,shifted,caps,panel,numeric,asciiPunctuation,english,allowLanguageSwitch,allowTrace,enter,loading));
+             keys.addView(scroll,new LayoutParams(-1,dp(height*(zhuyin?4:3))));
+         } else if(panel==3) {
+             punctuationChoices(asciiPunctuation,allowLanguageSwitch && !english,height);
+--- /dev/null
++++ b/app/src/androidTest/java/dev/minime/ime/ExpandedCandidatePagingContract.java
+@@ -0,0 +1,111 @@
++package dev.minime.ime;
++
++import android.app.Activity;
++import android.graphics.Rect;
++import android.test.ActivityInstrumentationTestCase2;
++import android.view.*;
++import android.widget.*;
++import dev.minime.core.*;
++import java.io.StringReader;
++import java.util.*;
++import java.util.function.Consumer;
++import java.util.concurrent.TimeUnit;
++
++/** Generated view/acceptance fixtures, never a vocabulary quality benchmark. */
++@SuppressWarnings("deprecation")
++public abstract class ExpandedCandidatePagingContract<T extends Activity> extends ActivityInstrumentationTestCase2<T> {
++    protected ExpandedCandidatePagingContract(Class<T> activity){super(activity);}
++    private KeyboardView board;private CompositionEngine engine;
++    private final StringBuilder accepted=new StringBuilder();
++    private boolean defer;private Runnable reply;
++    private void main(Runnable action){getInstrumentation().runOnMainSync(action);}
++    private void idle(){getInstrumentation().waitForIdleSync();}
++    private View find(View view,String description) {
++        if(description.contentEquals(view.getContentDescription()==null?"":view.getContentDescription()))return view;
++        if(view instanceof ViewGroup)for(int i=0;i<((ViewGroup)view).getChildCount();i++) {
++            View found=find(((ViewGroup)view).getChildAt(i),description);if(found!=null)return found;
++        }
++        return null;
++    }
++    private void render(){board.render(engine,false,false,false,0,false,false,false,true,true,"Enter","");}
++    private ScrollView scroll(){return (ScrollView)find(board,"Expanded candidate list");}
++    private ViewGroup grid(){return (ViewGroup)scroll().getChildAt(0);}
++    private List<String> identities() {
++        List<String> out=new ArrayList<>();for(Candidate c:engine.candidates())out.add(c.text+"\t"+c.alternateText()+"\t"+c.literal+"\t"+c.consumed);
++        return out;
++    }
++    private void setup(boolean paired)throws Exception {
++        Activity activity=getActivity();
++        PhoneticDictionary dictionary=DictionaryRepository.load(activity).get(30,TimeUnit.SECONDS);
++        List<Candidate> choices=new ArrayList<>();
++        if(paired) {
++            StringBuilder words=new StringBuilder(),pairs=new StringBuilder();List<String> keys=new ArrayList<>(),texts=new ArrayList<>();
++            for(int i=0;i<256;i++) {
++                String key="zavora"+(char)('a'+i/26)+(char)('a'+i%26),text=key+(i%9==0?"-zava-zava":""),han="測試"+Integer.toBinaryString(i).replace('0','甲').replace('1','乙');
++                keys.add(key);texts.add(text);words.append("poj\t"+key+"\t"+text+"\titaigi:"+i+"\tfixture\n");
++                pairs.append("poj\t"+text+"\t"+han+"\titaigi:"+i+"\n");
++            }
++            AddonDictionary source=AddonDictionary.read(new StringReader(words.toString()),PairedForms.read(new StringReader(pairs.toString())));
++            for(int i=0;i<256;i++) {
++                String text=texts.get(i);Candidate value=source.lookup(keys.get(i),Collections.singleton("poj")).stream().filter(c->c.text.equals(text)).findFirst().get();
++                assertNotNull(value.pair);choices.add(value);
++            }
++        } else for(int i=0;i<256;i++)choices.add(new Candidate((i%9==0?"較長的測試候選文字":"測試")+String.format(Locale.ROOT,"%03d",i),false,1000-i));
++        main(()-> {
++            board=new KeyboardView(activity,key->{},key->false,(points,caps)->{});
++            engine=new CompositionEngine(new CompositionEngine.Editor() {
++                public void composing(String s){}public void commit(String s){accepted.append(s);}
++                public void delete(){}public void enter(){}public void finish(){}
++            },Learning.NONE);
++            engine.dictionary(dictionary);engine.start(false,false,false,false);
++            if(paired){engine.addons(AddonDictionary.EMPTY,Collections.singleton("poj"));engine.switchMode(InputMode.TAIWANESE_ENGLISH,false);}
++            engine.decoder(new CompositionEngine.Decoder() {
++                public void convert(PhoneticDictionary d,String r,boolean z,String c,Consumer<List<Candidate>> done){throw new AssertionError("query override");}
++                public void query(PhoneticDictionary d,String r,boolean z,String c,boolean p,AddonDictionary a,Set<String> enabled,Consumer<List<Candidate>> done) {
++                    Runnable deliver=()->done.accept(new ArrayList<>(choices));if(defer)reply=deliver;else deliver.run();
++                }
++            },this::render);
++            activity.setContentView(board);engine.type('a');render();
++        });idle();
++    }
++    private void expand(){main(()->assertTrue(find(board,"Expand candidates").performClick()));idle();}
++    private Candidate tail() {List<Candidate> all=engine.candidates();return all.get(all.size()-1);}
++    private Candidate pairedTail() {return engine.candidates().stream().filter(c->c.pair!=null).reduce((a,b)->b).get();}
++    private void reach(Candidate value)throws Exception {
++        String description="Candidate "+value.text;boolean[] visible={false};
++        long deadline=android.os.SystemClock.uptimeMillis()+8000;
++        while(!visible[0] && android.os.SystemClock.uptimeMillis()<deadline) {
++            main(()->{ScrollView s=scroll();assertNotNull(s);s.setSmoothScrollingEnabled(false);s.fullScroll(View.FOCUS_DOWN);});idle();
++            main(()->{View v=find(board,description);visible[0]=v!=null && v.getGlobalVisibleRect(new Rect());});
++            if(!visible[0])android.os.SystemClock.sleep(16);
++        }
++        assertTrue("Tail is visible after scrolling, not merely allocated",visible[0]);
++    }
++    public void testExpandedTailTapAndReset()throws Exception {
++        setup(false);expand();Candidate[] last={null};View[] first={null};List<List<String>> before=new ArrayList<>();
++        main(()-> {
++            last[0]=tail();before.add(identities());first[0]=grid().getChildAt(0);
++            assertNull("Initial expansion does not allocate the distant tail",find(board,"Candidate "+last[0].text));
++            assertTrue("Initial batch can scroll and expose another page",grid().getHeight()>scroll().getHeight());
++        });
++        reach(last[0]);
++        main(()->{assertEquals(before.get(0),identities());assertSame("Append preserves earlier accessibility view identity",first[0],grid().getChildAt(0));
++            assertTrue(find(board,"Collapse candidates").performClick());});idle();expand();
++        main(()->assertNull("Reopen starts with bounded allocation",find(board,"Candidate "+last[0].text)));
++        reach(last[0]);main(()->{assertTrue(find(board,"Candidate "+last[0].text).performClick());assertEquals(last[0].text,accepted.toString());
++            accepted.setLength(0);engine.type('b');render();});idle();expand();
++        main(()->{assertNull("New input resets allocation",find(board,"Candidate "+tail().text));
++            Candidate choice=engine.candidates().get(engine.preferred());String expected=choice.text+(choice.literal?" ":"");engine.space();assertEquals("Paging cannot change Space default",expected,accepted.toString());});
++    }
++    public void testExpandedPairedHoldAndPendingSelection()throws Exception {
++        setup(true);expand();Candidate[] last={null};main(()->{last[0]=pairedTail();assertNull("Distant paired choice starts offscreen",find(board,"Candidate "+last[0].text));});assertFalse(last[0].alternateText().isEmpty());reach(last[0]);
++        main(()->{assertTrue(find(board,"Candidate "+last[0].text).performLongClick());assertEquals(last[0].alternateText(),accepted.toString());
++            accepted.setLength(0);engine.type('b');render();});idle();expand();
++        main(()->{last[0]=pairedTail();defer=true;engine.type('c');render();assertTrue(engine.predictionPending());});
++        reach(last[0]);
++        main(()->{View stale=find(board,"Candidate "+last[0].text);assertTrue(stale.performClick());assertEquals("Pending selection waits", "",accepted.toString());
++            assertNotNull(reply);defer=false;reply.run();assertEquals(last[0].text,accepted.toString());
++            accepted.setLength(0);engine.start(false,false,false,false);engine.type('d');render();
++            stale.performClick();assertEquals("Old composition cannot accept into a new editor", "",accepted.toString());});
++    }
++}
+--- /dev/null
++++ b/app/src/androidTest/java/dev/minime/ime/ExpandedCandidatePagingTest.java
+@@ -0,0 +1,4 @@
++package dev.minime.ime;
++public final class ExpandedCandidatePagingTest extends ExpandedCandidatePagingContract<EditorTestActivity> {
++    public ExpandedCandidatePagingTest(){super(EditorTestActivity.class);}
++}
+--- /dev/null
++++ b/app/src/androidTest/java/dev/minime/ime/ExpandedCandidateLandscapeTest.java
+@@ -0,0 +1,4 @@
++package dev.minime.ime;
++public final class ExpandedCandidateLandscapeTest extends ExpandedCandidatePagingContract<LandscapeStudyActivity> {
++    public ExpandedCandidateLandscapeTest(){super(LandscapeStudyActivity.class);}
++}

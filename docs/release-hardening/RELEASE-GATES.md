@@ -58,6 +58,12 @@ no full-corpus, human-touch or release-latency acceptance is claimed.
 
 ## Quality loop
 
+The [expanded-grid allocation trial](expanded-viewport/RESULTS.md) improves
+opening but is rejected: visible scroll-frame p95 rises from 16–19 ms to
+83–85 ms when appending views. All candidate/default hashes and 20 integration
+checks pass, which does not excuse the scrolling regression. A shared attached
+frame harness now measures both opening and deep scrolling on either runtime.
+
 The new Taiwan chat-derived evaluation adds 4,608 complete, initial and mixed
 spelling conditions. These edited excerpts are not intact conversations or a
 fresh conversation holdout. Source omissions, reading ambiguity and dictionary
