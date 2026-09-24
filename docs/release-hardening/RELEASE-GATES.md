@@ -7,6 +7,12 @@ on baseline `fd728d5`; the accepted rendering change does not alter dictionary o
 ranking logic. Evaluation-only commit `1231638` adds evidence. Earlier publishing checklists are historical evidence,
 not certification of this build. No Play upload or GitHub CI was used.
 
+The [accepted-build language-specific replay](LANGUAGE-BASELINE-RESULTS.md)
+completes 2,692 injected actions across four modes. All raw/Space frames are
+observed and their aggregate tails meet the stated budgets in this sample;
+Chinese/Taiwanese/Japanese candidate p95 remains above 50 ms. This is one shard
+and one session per mode, not large-sample or human-touch release acceptance.
+
 The [compiled-validator experiment](VALIDATION-PATTERN-RESULTS.md) is rejected.
 Despite lower isolated ART validation cost and identical desktop predictions,
 Taiwanese raw/Space tails and fast Japanese raw tails worsen in both phone pairs.
