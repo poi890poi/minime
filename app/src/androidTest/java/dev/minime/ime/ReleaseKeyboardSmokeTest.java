@@ -140,4 +140,51 @@ public final class ReleaseKeyboardSmokeTest extends ActivityInstrumentationTestC
             try(FileOutputStream out=new FileOutputStream(new File(activity.getExternalFilesDir(null),"release-payload-smoke.json"))){out.write(rows.toString(2).getBytes(StandardCharsets.UTF_8));}
         }
     }
+    /** Frozen external plan supplies assertions only; typing goes through visible keys. */
+    public void testPackagedPronunciationPlan()throws Exception {
+        Context context=getInstrumentation().getTargetContext();
+        assertEquals("Non-debuggable payload",0,context.getApplicationInfo().flags&ApplicationInfo.FLAG_DEBUGGABLE);
+        context.getSharedPreferences("settings",0).edit().putBoolean("rime_pinyin",false)
+            .putBoolean("english_mode",false).putBoolean("joined_kalq",false).commit();
+        AccessibilityServiceInfo info=getInstrumentation().getUiAutomation().getServiceInfo();
+        info.flags|=AccessibilityServiceInfo.FLAG_RETRIEVE_INTERACTIVE_WINDOWS;
+        getInstrumentation().getUiAutomation().setServiceInfo(info);
+        SettingsActivity activity=getActivity();EditText text=editor(activity.getWindow().getDecorView());assertNotNull(text);
+        DictionaryRepository.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS);
+        AddonRepository.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS);
+        File directory=activity.getExternalFilesDir(null);
+        JSONArray plan=new JSONArray(new String(java.nio.file.Files.readAllBytes(new File(directory,"pronunciation-plan.json").toPath()),StandardCharsets.UTF_8));
+        JSONArray rows=new JSONArray();
+        try(ParcelFileDescriptor fd=getInstrumentation().getUiAutomation().executeShellCommand("ime set app.minime.keyboard/dev.minime.ime.MiniMeService");InputStream in=new ParcelFileDescriptor.AutoCloseInputStream(fd)){while(in.read()!=-1){}}
+        InputMethodManager imm=(InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        try {
+            for(int index=0;index<plan.length();index++) {
+                JSONObject item=plan.getJSONObject(index);String raw=item.getString("raw"),expected=item.getString("expected");
+                getInstrumentation().runOnMainSync(()->{text.setText("");text.requestFocus();text.requestRectangleOnScreen(new Rect(0,0,text.getWidth(),text.getHeight()),true);imm.restartInput(text);imm.showSoftInput(text,InputMethodManager.SHOW_IMPLICIT);});
+                getInstrumentation().waitForIdleSync();SystemClock.sleep(400);
+                Rect field=new Rect();getInstrumentation().runOnMainSync(()->assertTrue(text.getGlobalVisibleRect(field)));tap(field);SystemClock.sleep(400);
+                String badge=null;
+                for(InputMode mode:new InputMode[]{InputMode.CHINESE,InputMode.ENGLISH,InputMode.TAIWANESE,InputMode.JAPANESE}) {
+                    AccessibilityNodeInfo n=node("Choose language mode: "+mode.id);
+                    if(n!=null){n.recycle();badge="Choose language mode: "+mode.id;break;}
+                }
+                assertNotNull("Visible mode",badge);tap(badge);tap("Choose chinese mode");
+                for(char letter:raw.toCharArray())tap(String.valueOf(letter));
+                getInstrumentation().waitForIdleSync();SystemClock.sleep(500);
+                String[] actual={""};getInstrumentation().runOnMainSync(()->actual[0]=text.getText().toString());
+                assertEquals("Injected spelling "+index,raw,actual[0]);List<String> visible=candidates();
+                tap("Space");int[] composing={0};long until=SystemClock.uptimeMillis()+3000;
+                do {
+                    getInstrumentation().runOnMainSync(()->{actual[0]=text.getText().toString();composing[0]=android.view.inputmethod.BaseInputConnection.getComposingSpanStart(text.getText());});
+                    if(expected.equals(actual[0])&&composing[0]<0)break;SystemClock.sleep(25);
+                }while(SystemClock.uptimeMillis()<until);
+                rows.put(new JSONObject().put("raw",raw).put("expected",expected).put("actual",actual[0])
+                    .put("composingStart",composing[0]).put("visible",new JSONArray(visible)));
+                assertEquals("Packaged model Space "+raw,expected,actual[0]);assertEquals(-1,composing[0]);
+            }
+        } finally {
+            try(Writer out=new OutputStreamWriter(new FileOutputStream(new File(directory,"pronunciation-payload.json")),StandardCharsets.UTF_8)){out.write(rows.toString(2));}
+            getInstrumentation().runOnMainSync(()->text.setText(""));
+        }
+    }
 }
