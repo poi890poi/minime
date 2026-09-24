@@ -1,0 +1,5 @@
+Exception in thread "main" java.lang.AssertionError: Explicit Latin completion on CHINESE private=false prefix=Ab expected [true] actual [false]
+	at dev.minime.core.Regression.equal(Regression.java:30)
+	at dev.minime.core.Regression.yes(Regression.java:32)
+	at dev.minime.core.ExplicitLatinCompletionRegression.run(ExplicitLatinCompletionRegression.java:24)
+	at dev.minime.core.ExplicitLatinCompletionRegression.main(ExplicitLatinCompletionRegression.java:40)

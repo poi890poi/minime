@@ -70,6 +70,7 @@ public final class Regression {
         ModeRegression.run();
         EnglishIsolationRegression.run();
         EnglishContextRegression.run();
+        ExplicitLatinCompletionRegression.run();
         CompletionBoundaryRegression.run();
         FirstGlyphRecoveryRegression.run();
         ModePriorityRegression.run();

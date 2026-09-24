@@ -148,3 +148,5 @@ tools/report_release_ranking_trial.py text eol=lf
 app/src/androidTest/assets/language-timing-inputs.tsv text eol=lf
 # Verbatim publisher metadata retains upstream whitespace and byte hashes.
 docs/source-replacement/MASC-PUBLISHER-HEADER.xml -text -whitespace
+# Byte-pinned local contract logs and aggregate manifests.
+docs/source-replacement/explicit-latin/** -text whitespace=cr-at-eol

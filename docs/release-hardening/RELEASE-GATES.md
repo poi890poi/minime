@@ -17,6 +17,15 @@ release; older nominal-interval timings must not be treated as equal-load result
 Core follow-up passes 888,180 assertions and the desktop output is unchanged.
 No new signed release payload has been built for this follow-up.
 
+The [explicit Latin casing fix](../source-replacement/EXPLICIT-LATIN-RESULTS.md)
+is accepted: title/all-caps input now uses the same complete English vocabulary
+as its already-classified Latin intent. All 37,336 source-derived mode checks
+agree on completion inventories, while 6,144 lowercase English probes and 4,608
+Chinese chat conditions remain identical. Core and pinned desktop checks pass;
+two production-activity phone tests pass on a non-debuggable test-signed APK.
+All 24 packaged asset files are unchanged. This is a scoped completion fix, not
+clearance of broader language quality, latency, rights or platform release gates.
+
 The subsequent [zero-delay scheduling trial](SCHEDULING-RESULTS.md) is rejected:
 Japanese candidate timing improves, but fast Chinese raw-text p95 worsens in
 both comparison pairs and ordinary candidate gains are mixed. Four unhooked

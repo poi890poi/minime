@@ -437,7 +437,9 @@ public final class CompositionEngine {
             for(int i=1;i<candidates.size();i++)if(!partial(candidates.get(i))) {preferred=i;break;}
         }
         if (dictionary != null && inputMode.englishEnabled() && !bpmf && !literalField && (intent == Intent.LATIN_LITERAL || intent == Intent.AMBIGUOUS))
-            for (Candidate c : dictionary.englishCompletions(raw,afterLatin || englishMode)) if (seen.add(c.text)) candidates.add(c);
+            // Explicit Latin casing already determines intent. Pass that same
+            // evidence to vocabulary lookup, including capitalized source words.
+            for (Candidate c : dictionary.englishCompletions(raw,afterLatin || englishMode || raw.codePoints().anyMatch(Character::isUpperCase))) if (seen.add(c.text)) candidates.add(c);
         // With a literal default, expose English completions alongside Chinese
         // choices. Preserve each source's order; neither list buries the other.
         if(!englishMode && preferred==0 && !bpmf) {

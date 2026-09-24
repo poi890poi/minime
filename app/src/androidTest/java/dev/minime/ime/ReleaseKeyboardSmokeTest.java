@@ -58,6 +58,45 @@ public final class ReleaseKeyboardSmokeTest extends ActivityInstrumentationTestC
     private List<String> candidates() {
         List<String> values=new ArrayList<>();for(AccessibilityWindowInfo w:getInstrumentation().getUiAutomation().getWindows())if(w.getType()==AccessibilityWindowInfo.TYPE_INPUT_METHOD)candidates(w.getRoot(),values);return values;
     }
+    public void testExplicitLatinSourceCompletion()throws Exception {
+        Context context=getInstrumentation().getTargetContext();
+        assertEquals("Non-debuggable payload",0,context.getApplicationInfo().flags&ApplicationInfo.FLAG_DEBUGGABLE);
+        context.getSharedPreferences("settings",0).edit().putBoolean("rime_pinyin",false)
+            .putBoolean("english_mode",false).putBoolean("joined_kalq",false).commit();
+        AccessibilityServiceInfo info=getInstrumentation().getUiAutomation().getServiceInfo();info.flags|=AccessibilityServiceInfo.FLAG_RETRIEVE_INTERACTIVE_WINDOWS;getInstrumentation().getUiAutomation().setServiceInfo(info);
+        SettingsActivity activity=getActivity();EditText text=editor(activity.getWindow().getDecorView());assertNotNull(text);
+        DictionaryRepository.load(activity).get(60,java.util.concurrent.TimeUnit.SECONDS);
+        try(ParcelFileDescriptor fd=getInstrumentation().getUiAutomation().executeShellCommand("ime set app.minime.keyboard/dev.minime.ime.MiniMeService");InputStream in=new ParcelFileDescriptor.AutoCloseInputStream(fd)){while(in.read()!=-1){}}
+        InputMethodManager imm=(InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        JSONArray results=new JSONArray();
+        for(boolean select:new boolean[]{true,false}) {
+            getInstrumentation().runOnMainSync(()->{text.setText("");text.requestFocus();text.requestRectangleOnScreen(new Rect(0,0,text.getWidth(),text.getHeight()),true);imm.restartInput(text);imm.showSoftInput(text,InputMethodManager.SHOW_IMPLICIT);});
+            getInstrumentation().waitForIdleSync();SystemClock.sleep(500);
+            Rect field=new Rect();getInstrumentation().runOnMainSync(()->assertTrue(text.getGlobalVisibleRect(field)));tap(field);SystemClock.sleep(400);
+            String badge=null;
+            for(InputMode mode:new InputMode[]{InputMode.CHINESE,InputMode.ENGLISH,InputMode.TAIWANESE,InputMode.JAPANESE}) {
+                AccessibilityNodeInfo n=node("Choose language mode: "+mode.id);
+                if(n!=null){n.recycle();badge="Choose language mode: "+mode.id;break;}
+            }
+            assertNotNull("Visible idle mode",badge);tap(badge);tap("Choose chinese mode");
+            tap("⇧");tap("L");tap("o");tap("n");
+            String[] actual={""};getInstrumentation().runOnMainSync(()->actual[0]=text.getText().toString());assertEquals("Lon",actual[0]);
+            if(select) {
+                tap("Expand candidates");AccessibilityNodeInfo choice=node("Candidate London");assertNotNull("Capitalized source completion is visible",choice);choice.recycle();
+                android.graphics.Bitmap screenshot=getInstrumentation().getUiAutomation().takeScreenshot();assertNotNull(screenshot);
+                try(FileOutputStream out=new FileOutputStream(new File(activity.getExternalFilesDir(null),"explicit-latin-completion.png"))){assertTrue(screenshot.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out));}finally{screenshot.recycle();}
+                tap("Candidate London");
+            } else tap("Space");
+            String expected=select?"London":"Lon ";long until=SystemClock.uptimeMillis()+3000;int[] composing={0};
+            do {
+                getInstrumentation().runOnMainSync(()->{actual[0]=text.getText().toString();composing[0]=android.view.inputmethod.BaseInputConnection.getComposingSpanStart(text.getText());});
+                if(expected.equals(actual[0]) && composing[0]<0)break;SystemClock.sleep(25);
+            }while(SystemClock.uptimeMillis()<until);
+            assertEquals(expected,actual[0]);assertEquals(-1,composing[0]);
+            results.put(new JSONObject().put("raw","Lon").put("action",select?"tap London":"Space").put("committed",actual[0]).put("composingStart",composing[0]));
+        }
+        try(Writer out=new OutputStreamWriter(new FileOutputStream(new File(activity.getExternalFilesDir(null),"explicit-latin-completion.json")),StandardCharsets.UTF_8)){out.write(results.toString(2));}
+    }
     public void testFourModesOnNonDebuggablePayload()throws Exception {
         Context context=getInstrumentation().getTargetContext();
         assertEquals("Release debuggable flag must be absent",0,context.getApplicationInfo().flags&ApplicationInfo.FLAG_DEBUGGABLE);
