@@ -150,3 +150,21 @@ app/src/androidTest/assets/language-timing-inputs.tsv text eol=lf
 docs/source-replacement/MASC-PUBLISHER-HEADER.xml -text -whitespace
 # Byte-pinned local contract logs and aggregate manifests.
 docs/source-replacement/explicit-latin/** -text whitespace=cr-at-eol
+# Preserve existing byte-pinned audit inputs across Windows checkouts.
+docs/japanese-bounded-prediction/Budget.hpp text eol=lf
+docs/source-replacement/taskmaster/audit.py text eol=lf
+docs/source-replacement/taskmaster/pilot.py text eol=lf
+docs/source-replacement/personachat-audit.py text eol=lf
+docs/source-replacement/MASC-PACKAGE.xml text eol=lf
+docs/source-replacement/masc-audit.py text eol=lf
+docs/source-replacement/masc-publisher-audit.py text eol=lf
+tools/make_language_timing_corpus.py text eol=lf
+tools/test_language_timing_corpus.py text eol=lf
+tools/make_context_backoff_corpus.py text eol=lf
+tools/report_context_backoff.py text eol=lf
+tools/simulate_compact_layouts.py text eol=lf
+tools/report_compact_layouts.py text eol=lf
+tools/simulate_kalq_layout.py text eol=lf
+tools/report_kalq_layout.py text eol=lf
+tools/simulate_english_layouts.py text eol=lf
+tools/report_english_layouts.py text eol=lf
