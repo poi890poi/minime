@@ -1207,10 +1207,11 @@
       "id": "masc-english-audit",
       "name": "MASC English multi-genre source audit",
       "origin": "english-academic-multigenre",
-      "decision": "hold",
+      "decision": "pilot",
       "uses": [
         "discovery",
-        "evaluation"
+        "evaluation",
+        "frequency"
       ],
       "inputs": [],
       "license": {
@@ -1225,8 +1226,8 @@
       ],
       "editorial": "Academic multi-genre corpus with raw and POS-tagged distributions; conversations and essays remain distinct from scripts/spam.",
       "coverage": "392 tagged documents; 592469 parseable tagged tokens. Authenticated publisher Git snapshot has 393 original texts: 380 equal prior archive bytes, five differ, eight absent from archive. 391 tagged pairs, 344 exact non-whitespace agreements.",
-      "limitations": "Penn tokenization separates contractions; 67 malformed tagged units. Publisher Git text version differs from earlier archive and NLTK tags; no automatic repair or corpus mixture. No training, split or evaluation model created.",
-      "reason": "Publisher Git snapshot resolves raw-text authentication. Hold pending application plan, document-level splits/overlap audit and annotation alignment for any contraction pilot. EWT rights gate and production assets unchanged.",
+      "limitations": "Penn tagged tokenization/version disagreement remains. The isolated original-text context pilot resets at raw lines and excludes the entire spam category before model outputs. GUM comparisons are reused development evidence; no fresh holdout or production model.",
+      "reason": "Authenticated raw-text context pilot admitted only under the frozen MASC-CONTEXT-PLAN. No production inputs or rights clearance. Tagged contraction extraction remains on hold for annotation alignment.",
       "addon_prefixes": [],
       "audit_files": [
         "docs/source-replacement/MASC-DISCOVERY.md",
@@ -1235,7 +1236,8 @@
         "docs/source-replacement/masc-manifest.json",
         "docs/source-replacement/MASC-PUBLISHER-HEADER.xml",
         "docs/source-replacement/masc-publisher-audit.py",
-        "docs/source-replacement/masc-publisher-manifest.json"
+        "docs/source-replacement/masc-publisher-manifest.json",
+        "docs/source-replacement/MASC-CONTEXT-PLAN.md"
       ]
     }
   ]

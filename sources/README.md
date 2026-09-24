@@ -32,6 +32,13 @@ not offset casual-conversation and essay losses. The pilot remains isolated;
 production counts and the rights gate are unchanged. Evaluation exposure and
 raw-result hashes are recorded separately in evaluation.json.
 
+The authenticated MASC publisher texts now have an isolated
+[context-only pilot plan](../docs/source-replacement/MASC-CONTEXT-PLAN.md).
+Whole-document overlap exclusions precede counts; conversations and essays remain
+separate development comparisons. The entire spam category is excluded before
+model outputs. This admits an offline experiment only: no production inputs,
+tagged contraction extraction, final holdout or rights clearance is implied.
+
 The follow-up [PersonaChat structural audit](../docs/source-replacement/PERSONACHAT-DISCOVERY.md)
 pins the official licensed archive but places the source on hold: its dialogue
 orthography contains no apostrophes, and original preprocessing is not established.
