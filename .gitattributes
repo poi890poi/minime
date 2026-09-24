@@ -144,3 +144,7 @@ docs/release-hardening/*.patch whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 docs/release-hardening/source/** -text -whitespace
 tools/make_release_chat_corpus.py text eol=lf
 tools/report_release_ranking_trial.py text eol=lf
+# New frozen timing asset must match the already byte-pinned review corpus.
+app/src/androidTest/assets/language-timing-inputs.tsv text eol=lf
+# Verbatim publisher metadata retains upstream whitespace and byte hashes.
+docs/source-replacement/MASC-PUBLISHER-HEADER.xml -text -whitespace
