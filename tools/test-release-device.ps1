@@ -7,7 +7,8 @@ param([Parameter(Mandatory=$true)][ValidateSet('RFCR91GWXLX')][string]$Serial,[s
     [Parameter(Mandatory=$true)][string]$RestoreAppApk,
     [string]$TestApk='app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk',
     [ValidateRange(30,900)][int]$TimeoutSeconds=180,
-    [string[]]$Reports=@('release-payload-smoke.json','release-payload-smoke.png'))
+    [string[]]$Reports=@('release-payload-smoke.json','release-payload-smoke.png'),
+    [scriptblock]$BeforeInstrumentation)
 foreach($report in $Reports) {if($report -notmatch '^[a-zA-Z0-9][a-zA-Z0-9_.-]*$'){throw 'Report must be a plain file name'}}
 # Resolve install inputs before taking a device lease or issuing any ADB command.
 $AppApk=(Resolve-Path -LiteralPath $AppApk -ErrorAction Stop).Path
@@ -48,6 +49,9 @@ try {
     # Leave the previous IME selected until instrumentation has restarted the target.
     # ReleaseKeyboardSmokeTest selects MinIME after its activity exists.
     & $adb -s $Serial shell ime set $previousIme
+    # Bounded profilers should start after installation, inside the same lease
+    # and restoration scope. A failed hook still runs the existing finally block.
+    if($BeforeInstrumentation){& $BeforeInstrumentation}
     $outFile=Join-Path $prefBackup 'instrumentation.txt'
     $errFile=Join-Path $prefBackup 'instrumentation-errors.txt'
     $testProcess=Start-Process -FilePath $adb -ArgumentList @('-s',$Serial,'shell','am','instrument','-w','-r','-e','class',$TestClass,'app.minime.keyboard.test/android.test.InstrumentationTestRunner') -WindowStyle Hidden -PassThru -RedirectStandardOutput $outFile -RedirectStandardError $errFile
