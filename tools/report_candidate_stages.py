@@ -15,6 +15,7 @@ def summary(values):
         return {"observed": 0}
     return dict(observed=len(values), mean_ms=statistics.mean(values),
                 p50_ms=statistics.median(values), p95_ms=values[math.ceil(.95*len(values))-1],
+                p99_ms=values[math.ceil(.99*len(values))-1],
                 max_ms=max(values))
 
 

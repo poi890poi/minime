@@ -1,9 +1,19 @@
 """Telemetry contract checks, not candidate-quality or performance acceptance."""
 import unittest
-from report_candidate_stages import observations
+from report_candidate_stages import observations, summary
 
 
 class ObservationContract(unittest.TestCase):
+    def test_p99_does_not_hide_behind_p95_or_maximum(self):
+        result = summary([5000] + list(range(99, 0, -1)))
+        self.assertEqual(100, result['observed'])
+        self.assertEqual(95, result['p95_ms'])
+        self.assertEqual(99, result['p99_ms'])
+        self.assertEqual(5000, result['max_ms'])
+
+    def test_empty_stage_does_not_invent_zero_tail_latency(self):
+        self.assertEqual({'observed': 0}, summary([]))
+
     def check_state(self, finished, changed, expected, frame=0, mode="chinese"):
         touches = [dict(action="key", mode=mode, interval_ms="60", expected="ab", up_ns="100", down_ns="75", candidate_submit_ns=str(frame)),
                    dict(action="space", mode=mode, interval_ms="60", expected="ab", up_ns="200", down_ns="175", candidate_submit_ns="0")]
